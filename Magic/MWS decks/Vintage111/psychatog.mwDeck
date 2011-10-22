@@ -1,0 +1,44 @@
+// Deck file for Magic Workstation (http://www.magicworkstation.com)
+
+// Lands
+    1 [ON] Flooded Strand
+    5 [TE] Island (2)
+    1 [OV] Library of Alexandria
+    4 [ON] Polluted Delta
+    4 [B] Underground Sea
+    4 [B] Volcanic Island
+
+// Creatures
+    3 [OD] Psychatog
+
+// Spells
+    4 [NE] Accumulated Knowledge
+    1 [B] Ancestral Recall
+    4 [MM] Brainstorm
+    3 [JU] Cunning Wish
+    1 [B] Demonic Tutor
+    3 [US] Duress
+    1 [IN] Fact or Fiction
+    3 [AP] Fire/Ice
+    4 [AL] Force of Will
+    3 [LG] Force Spike
+    2 [TE] Intuition
+    2 [MR] Isochron Scepter
+    4 [LG] Mana Drain
+    1 [B] Mind Twist
+    1 [B] Sol Ring
+    1 [FD] Vedalken Shackles
+
+// Sideboard
+SB: 3 [US] Arcane Laboratory
+SB: 1 [TE] Corpse Dance
+SB: 1 [DS] Echoing Truth
+SB: 1 [AP] Fire/Ice
+SB: 1 [SH] Fling
+SB: 1 [MM] Gush
+SB: 1 [CHK] Hideous Laughter
+SB: 1 [MM] Misdirection
+SB: 1 [GP] Repeal
+SB: 1 [VI] Vampiric Tutor
+SB: 2 [FD] Vedalken Shackles
+SB: 1 [US] Yawgmoth's Will

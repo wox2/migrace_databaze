@@ -1,0 +1,42 @@
+// Deck file for Magic Workstation (http://www.magicworkstation.com)
+
+// Lands
+    3 [ON] Polluted Delta
+    3 [ON] Flooded Strand
+    2 [R] Tropical Island
+    4 [B] Underground Sea
+    4 [B] Volcanic Island
+    1 [US] Island (3)
+
+// Creatures
+    4 [SHM] Painter's Servant
+
+// Spells
+    1 [B] Fastbond
+    4 [MM] Gush
+    3 [HL] Merchant Scroll
+    3 [TE] Grindstone
+    4 [5E] Brainstorm
+    1 [MI] Mystical Tutor
+    1 [VI] Vampiric Tutor
+    1 [U] Demonic Tutor
+    1 [B] Black Lotus
+    1 [US] Yawgmoth's Will
+    3 [IA] Pyroblast
+    3 [LRW] Ponder
+    1 [SC] Tendrils of Agony
+    4 [AL] Force of Will
+    1 [U] Mox Jet
+    1 [B] Mox Ruby
+    1 [B] Mox Sapphire
+    3 [LRW] Thoughtseize
+    1 [B] Ancestral Recall
+    1 [DS] Echoing Truth
+
+// Sideboard
+SB: 4 [PLC] Extirpate
+SB: 4 [GP] Leyline of the Void
+SB: 1 [ARE] Gaea's Blessing
+SB: 4 [4E] Hurkyl's Recall
+SB: 1 [DS] Darksteel Colossus
+SB: 1 [UL] Tinker

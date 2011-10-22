@@ -1,0 +1,51 @@
+// Deck file for Magic Workstation (http://www.magicworkstation.com)
+
+// Lands
+    3 [ON] Flooded Strand
+    3 [ON] Polluted Delta
+    2 [B] Island (1)
+    1 [IA] Snow-Covered Island
+    3 [B] Underground Sea
+    2 [B] Volcanic Island
+    1 [US] Tolarian Academy
+
+// Creatures
+    1 [DS] Darksteel Colossus
+
+// Spells
+    1 [MI] Mystical Tutor
+    1 [DS] Echoing Truth
+    1 [AQ] Hurkyl's Recall
+    4 [IA] Brainstorm
+    4 [CHK] Gifts Ungiven
+    1 [IN] Fact or Fiction
+    1 [B] Demonic Tutor
+    1 [VI] Vampiric Tutor
+    1 [UL] Tinker
+    1 [OD] Recoup
+    1 [US] Yawgmoth's Will
+    1 [SC] Tendrils of Agony
+    3 [HL] Merchant Scroll
+    1 [B] Ancestral Recall
+    3 [5E] Dark Ritual
+    1 [TO] Cabal Ritual
+    4 [LG] Mana Drain
+    3 [MM] Misdirection
+    1 [B] Sol Ring
+    1 [B] Mana Vault
+    1 [PR] Mana Crypt
+    1 [TE] Lotus Petal
+    1 [MR] Chrome Mox
+    1 [MI] Lion's Eye Diamond
+    4 [AL] Force of Will
+    1 [TO] Deep Analysis
+
+// Sideboard
+SB: 2 [AQ] Hurkyl's Recall
+SB: 4 [EX] Oath of Druids
+SB: 2 [B] Tropical Island
+SB: 1 [DS] Sundering Titan
+SB: 2 [IA] Pyroblast
+SB: 2 [IA] Pyroclasm
+SB: 1 [LE] Akroma, Angel of Wrath
+SB: 1 [US] Duress

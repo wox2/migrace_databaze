@@ -1,0 +1,36 @@
+// Deck file for Magic Workstation (http://www.magicworkstation.com)
+
+// Lands
+    1 [TSP] Academy Ruins
+    2 [ON] Flooded Strand
+    2 [IA] Island (1)
+    3 [B] Tropical Island
+    3 [ON] Polluted Delta
+    4 [AQ] Mishra's Factory (2)
+    4 [B] Volcanic Island
+    1 [FUT] Tolaria West
+    4 [REW] Wasteland
+
+// Creatures
+    4 [FUT] Tarmogoyf
+
+// Spells
+    2 [CHK] Sensei's Divining Top
+    3 [CS] Counterbalance
+    1 [FD] Crucible of Worlds
+    1 [R] Nevinyrral's Disk
+    3 [DIS] Spell Snare
+    1 [FD] Engineered Explosives
+    4 [FNM] Fire/Ice
+    4 [B] Counterspell
+    1 [SC] Stifle
+    4 [OD] Standstill
+    4 [U] Lightning Bolt
+    4 [IA] Brainstorm
+
+// Sideboard
+SB: 4 [MR] Chalice of the Void
+SB: 4 [U] Blue Elemental Blast
+SB: 2 [ARE] Chill
+SB: 4 [ALA] Relic of Progenitus
+SB: 1 [5E] Pyroblast

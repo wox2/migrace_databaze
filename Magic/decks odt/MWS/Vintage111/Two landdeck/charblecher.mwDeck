@@ -1,0 +1,47 @@
+// Deck file for Magic Workstation (http://www.magicworkstation.com)
+// NAME: Unnamed
+
+// Lands
+    1 [R] Bayou
+    1 [R] Taiga
+
+// Creatures
+    4 [RAV] Birds of Paradise
+    4 [AL] Elvish Spirit Guide
+    4 [IA] Tinder Wall
+    3 [SC] Xantid Swarm
+
+// Spells
+    4 [MR] Chromatic Sphere
+    1 [MR] Chrome Mox
+    4 [MR] Goblin Charbelcher
+    1 [UL] Grim Monolith
+    1 [MI] Lion's Eye Diamond
+    1 [TE] Lotus Petal
+    1 [PR] Mana Crypt
+    1 [5E] Mana Vault
+    1 [UL] Memory Jar
+    1 [R] Sol Ring
+    1 [US] Voltaic Key
+    4 [MM] Dark Ritual
+    1 [IA] Demonic Consultation
+    1 [R] Demonic Tutor
+    2 [7E] Duress
+    1 [5E] Necropotence
+    1 [MR] Spoils of the Vault
+    1 [6E] Vampiric Tutor
+    1 [UL] Tinker
+    1 [4E] Channel
+    4 [MM] Land Grant
+    1 [9E] Naturalize
+    3 [CHK] Desperate Ritual
+    4 [9E] Seething Song
+    1 [R] Wheel of Fortune
+
+// Sideboard
+SB: 2 [9E] Naturalize
+SB: 1 [SC] Xantid Swarm
+SB: 4 [MR] Chalice of the Void
+SB: 4 [DS] Oxidize
+SB: 3 [US] Planar Void
+SB: 1 [CH] Tormod's Crypt

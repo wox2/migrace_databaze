@@ -1,0 +1,55 @@
+// Deck file for Magic Workstation (http://www.magicworkstation.com)
+
+// Lands
+    2 [ON] Flooded Strand
+    2 [B] Island (1)
+    3 [ON] Polluted Delta
+    1 [US] Tolarian Academy
+    3 [A] Underground Sea
+    3 [B] Volcanic Island
+
+// Creatures
+    1 [DS] Darksteel Colossus
+
+// Spells
+    1 [A] Ancestral Recall
+    1 [B] Black Lotus
+    4 [IA] Brainstorm
+    1 [JU] Burning Wish
+    1 [B] Demonic Tutor
+    1 [IN] Fact or Fiction
+    4 [AL] Force of Will
+    3 [CHK] Gifts Ungiven
+    1 [ON] Chain of Vapor
+    1 [TE] Lotus Petal
+    1 [PR] Mana Crypt
+    4 [LG] Mana Drain
+    1 [B] Mana Vault
+    4 [8E] Merchant Scroll
+    3 [MM] Misdirection
+    1 [B] Mox Emerald
+    1 [B] Mox Jet
+    1 [B] Mox Pearl
+    1 [B] Mox Ruby
+    1 [B] Mox Sapphire
+    1 [MI] Mystical Tutor
+    1 [UL] Rebuild
+    1 [OD] Recoup
+    1 [B] Sol Ring
+    1 [U] Time Walk
+    1 [UL] Tinker
+    1 [VI] Vampiric Tutor
+    1 [US] Yawgmoth's Will
+    1 [TO] Deep Analysis
+
+// Sideboard
+SB: 1 [RAV] Darkblast
+SB: 1 [CHK] Eye of Nowhere
+SB: 1 [NE] Massacre
+SB: 2 [SOK] Pithing Needle
+SB: 1 [OV] Pyroblast
+SB: 1 [IA] Pyroclasm
+SB: 1 [R] Red Elemental Blast
+SB: 1 [SC] Tendrils of Agony
+SB: 2 [CH] Tormod's Crypt
+SB: 4 [AQ] Energy Flux

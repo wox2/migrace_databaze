@@ -1,0 +1,1495 @@
+wox2 [CZ] vs Mike [2/23/2010 6:39:52 AM]
+
+0:00:00 [Mike] Mike shuffles library
+0:00:00 [Mike] <Mike> there is no calm before the storm
+0:00:00 [Mike] Mike draws 0 cards
+0:00:00 [<Synchronyze>] Mike shuffles library
+0:00:00 [<Synchronyze>] <Mike> there is no calm before the storm
+0:00:00 [<Synchronyze>] Mike draws 0 cards
+0:00:00 [Mike] Mike shuffles library
+0:00:00 [Mike] Mike shuffles library
+0:00:00 [Mike] Mike shuffles library
+0:00:00 [Mike] Mike shuffles library
+0:00:00 [Mike] Mike shuffles library
+0:00:00 [Mike] Mike shuffles library
+0:00:00 [wox2 [CZ]] <> hi
+0:00:00 [Mike] Mike shuffles library
+0:00:00 [Mike] <Mike> jhi
+0:00:00 [Mike] Mike shuffles library
+0:00:00 [Mike] <Mike> f2
+0:00:00 [Mike] Mike shuffles library
+0:00:00 [wox2 [CZ]] <> fo you play storm?
+0:00:00 [Mike] Mike shuffles library
+0:00:00 [Mike] Mike shuffles library
+0:00:00 [wox2 [CZ]] <> do
+0:00:00 [Mike] Mike shuffles library
+0:00:00 [Mike] <Mike> no
+0:00:00 [Mike] Mike shuffles library
+0:00:00 [Mike] Mike shuffles library
+0:00:00 [wox2 [CZ]] <> ok
+0:00:00 [Mike] <Mike> sf2
+0:00:00 [wox2 [CZ]] wox2 [CZ] shuffles library
+0:00:00 [wox2 [CZ]] <wox2 [CZ]> I am ready.
+0:00:00 [wox2 [CZ]] wox2 [CZ] draws 0 cards
+0:00:00 [wox2 [CZ]] <-------- New Game Started -------->
+0:00:00 [wox2 [CZ]] wox2 [CZ]'s Security Code: 9A80235E [Type 1.5]
+0:00:00 [wox2 [CZ]] Mike's Security Code: 0C4CE3EA [???]
+0:00:00 [wox2 [CZ]] It is now turn 1 (wox2 [CZ])
+0:00:00 [wox2 [CZ]] It is now the Beginning Phase, Untap Step
+0:00:00 [wox2 [CZ]] wox2 [CZ] shuffles library
+0:00:01 [Mike] Mike shuffles library
+0:00:02 [Mike] Mike shuffles library
+0:00:03 [Mike] It is now the Precombat Main Phase
+0:00:03 [wox2 [CZ]] <wox2 [CZ]> I know
+0:00:03 [Mike] Mike shuffles library
+0:00:03 [Mike] Mike rolled a 11, using a 20 sided die
+0:00:04 [wox2 [CZ]] wox2 [CZ] shuffles library
+0:00:04 [Mike] Mike shuffles library
+0:00:04 [wox2 [CZ]] wox2 [CZ] rolled a 2, using a 20 sided die
+0:00:05 [wox2 [CZ]] It is now turn 2 (Mike)
+0:00:05 [wox2 [CZ]] It is now the Beginning Phase, Untap Step
+0:00:05 [Mike] Mike shuffles library
+0:00:06 [wox2 [CZ]] wox2 [CZ] shuffles library
+0:00:07 [wox2 [CZ]] wox2 [CZ] shuffles library
+0:00:07 [Mike] It is now the Precombat Main Phase
+0:00:08 [wox2 [CZ]] wox2 [CZ] shuffles library
+0:00:09 [wox2 [CZ]] wox2 [CZ] shuffles library
+0:00:09 [Mike] Mike draws 7 cards
+0:00:10 [wox2 [CZ]] wox2 [CZ] shuffles library
+0:00:11 [wox2 [CZ]] wox2 [CZ] draws a card
+0:00:11 [wox2 [CZ]] wox2 [CZ] draws a card
+0:00:11 [wox2 [CZ]] wox2 [CZ] draws a card
+0:00:11 [wox2 [CZ]] wox2 [CZ] draws a card
+0:00:12 [wox2 [CZ]] wox2 [CZ] draws a card
+0:00:12 [wox2 [CZ]] wox2 [CZ] draws a card
+0:00:15 [wox2 [CZ]] wox2 [CZ] draws a card
+0:00:18 [Mike] <Mike> kp
+0:00:20 [wox2 [CZ]] wox2 [CZ] takes a mulligan
+0:00:21 [wox2 [CZ]] <wox2 [CZ]> kp
+0:00:23 [Mike] Mike plays Tranquil Thicket from Hand
+0:00:23 [Mike] Mike taps Tranquil Thicket
+0:00:24 [Mike] It is now the End Phase, End Of Turn Step
+0:00:25 [Mike] <Mike> End my turn
+0:00:26 [wox2 [CZ]] It is now turn 3 (wox2 [CZ])
+0:00:26 [wox2 [CZ]] It is now the Beginning Phase, Untap Step
+0:00:27 [wox2 [CZ]] It is now the Beginning Phase, Upkeep Step
+0:00:27 [wox2 [CZ]] It is now the Beginning Phase, Draw Step
+0:00:28 [wox2 [CZ]] wox2 [CZ] draws a card
+0:00:28 [wox2 [CZ]] It is now the Precombat Main Phase
+0:00:30 [wox2 [CZ]] wox2 [CZ] plays Wasteland from Hand
+0:00:30 [wox2 [CZ]] wox2 [CZ] taps Wasteland
+0:00:31 [wox2 [CZ]] wox2 [CZ] puts Wasteland to Graveyard from Play
+0:00:32 [Mike] Mike puts Tranquil Thicket to Graveyard from Play
+0:00:33 [wox2 [CZ]] It is now the End Phase, End Of Turn Step
+0:00:33 [Mike] It is now turn 4 (Mike)
+0:00:33 [Mike] It is now the Beginning Phase, Untap Step
+0:00:35 [Mike] Mike untaps his/her permanents
+0:00:35 [Mike] It is now the Beginning Phase, Upkeep Step
+0:00:36 [Mike] It is now the Beginning Phase, Draw Step
+0:00:36 [Mike] Mike draws a card
+0:00:36 [Mike] It is now the Precombat Main Phase
+0:00:38 [Mike] Mike plays Savannah from Hand
+0:00:38 [Mike] It is now the End Phase, Cleanup Step
+0:00:39 [Mike] <Mike> End my turn
+0:00:41 [wox2 [CZ]] It is now turn 5 (wox2 [CZ])
+0:00:41 [wox2 [CZ]] It is now the Beginning Phase, Untap Step
+0:00:41 [wox2 [CZ]] It is now the Beginning Phase, Upkeep Step
+0:00:42 [wox2 [CZ]] It is now the Beginning Phase, Draw Step
+0:00:42 [wox2 [CZ]] wox2 [CZ] draws a card
+0:00:43 [wox2 [CZ]] It is now the Precombat Main Phase
+0:00:44 [wox2 [CZ]] wox2 [CZ] plays Wasteland from Hand
+0:00:45 [wox2 [CZ]] wox2 [CZ] taps Wasteland
+0:00:46 [wox2 [CZ]] wox2 [CZ] puts Wasteland to Graveyard from Play
+0:00:47 [Mike] Mike puts Savannah to Graveyard from Play
+0:00:47 [wox2 [CZ]] It is now the End Phase, End Of Turn Step
+0:00:48 [Mike] It is now turn 6 (Mike)
+0:00:48 [Mike] It is now the Beginning Phase, Untap Step
+0:00:49 [Mike] It is now the Beginning Phase, Untap Step
+0:00:49 [Mike] Mike untaps his/her permanents
+0:00:49 [Mike] It is now the Beginning Phase, Upkeep Step
+0:00:49 [Mike] It is now the Beginning Phase, Draw Step
+0:00:50 [Mike] Mike draws a card
+0:00:50 [Mike] It is now the Precombat Main Phase
+0:00:51 [Mike] Mike plays Windswept Heath from Hand
+0:00:52 [Mike] It is now the End Phase, End Of Turn Step
+0:00:53 [Mike] <Mike> End my turn
+0:00:54 [wox2 [CZ]] It is now turn 7 (wox2 [CZ])
+0:00:54 [wox2 [CZ]] It is now the Beginning Phase, Untap Step
+0:00:55 [wox2 [CZ]] It is now the Beginning Phase, Draw Step
+0:00:55 [wox2 [CZ]] wox2 [CZ] draws a card
+0:00:55 [wox2 [CZ]] It is now the Precombat Main Phase
+0:00:57 [wox2 [CZ]] wox2 [CZ] plays Bloodstained Mire from Hand
+0:00:58 [wox2 [CZ]] wox2 [CZ] taps Bloodstained Mire
+0:00:59 [wox2 [CZ]] wox2 [CZ] puts Bloodstained Mire to Graveyard from Play
+0:01:00 [wox2 [CZ]] wox2 [CZ]'s life total is now 19 (-1)
+0:01:00 [Mike] <Mike> Ok
+0:01:02 [wox2 [CZ]] wox2 [CZ] is looking its Library...
+0:01:09 [wox2 [CZ]] wox2 [CZ] puts Mountain into play from Library
+0:01:10 [wox2 [CZ]] wox2 [CZ] shuffles library
+0:01:10 [wox2 [CZ]] wox2 [CZ] stops looking its Library...
+0:01:11 [wox2 [CZ]] wox2 [CZ] taps Mountain
+0:01:12 [wox2 [CZ]] wox2 [CZ] plays Goblin Lackey from Hand
+0:01:14 [wox2 [CZ]] It is now the End Phase, End Of Turn Step
+0:01:15 [Mike] <Mike> Ok
+0:01:15 [wox2 [CZ]] <wox2 [CZ]> End my turn
+0:01:16 [Mike] Mike taps Windswept Heath
+0:01:17 [Mike] Mike sacrifices Windswept Heath
+0:01:18 [Mike] Mike's life total is now 19 (-1)
+0:01:20 [Mike] Mike is looking its Library...
+0:01:25 [Mike] Mike puts Plateau into play from Library
+0:01:26 [Mike] Mike shuffles library
+0:01:26 [Mike] Mike stops looking its Library...
+0:01:27 [Mike] Mike taps Plateau
+0:01:28 [Mike] Mike plays Swords to Plowshares from Hand
+0:01:31 [Mike] Mike puts Swords to Plowshares to Graveyard from Play
+0:01:31 [Mike] Mike shuffles library
+0:01:31 [wox2 [CZ]] wox2 [CZ] puts Goblin Lackey to RFG from Play
+0:01:33 [Mike] It is now turn 8 (Mike)
+0:01:33 [Mike] It is now the Beginning Phase, Untap Step
+0:01:33 [wox2 [CZ]] wox2 [CZ]'s life total is now 20 (+1)
+0:01:33 [Mike] Mike untaps his/her permanents
+0:01:34 [Mike] It is now the Beginning Phase, Upkeep Step
+0:01:34 [Mike] It is now the Beginning Phase, Draw Step
+0:01:35 [Mike] Mike draws a card
+0:01:35 [Mike] It is now the Precombat Main Phase
+0:01:35 [Mike] It is now the End Phase, End Of Turn Step
+0:01:36 [Mike] <Mike> End my turn
+0:01:39 [wox2 [CZ]] It is now turn 9 (wox2 [CZ])
+0:01:39 [wox2 [CZ]] It is now the Beginning Phase, Untap Step
+0:01:40 [wox2 [CZ]] wox2 [CZ] untaps his/her permanents
+0:01:40 [wox2 [CZ]] It is now the Beginning Phase, Upkeep Step
+0:01:40 [wox2 [CZ]] It is now the Beginning Phase, Draw Step
+0:01:41 [wox2 [CZ]] wox2 [CZ] draws a card
+0:01:41 [wox2 [CZ]] It is now the Precombat Main Phase
+0:01:46 [wox2 [CZ]] wox2 [CZ] plays Bloodstained Mire from Hand
+0:01:47 [wox2 [CZ]] wox2 [CZ] taps Bloodstained Mire
+0:01:49 [Mike] <Mike> Ok
+0:01:51 [wox2 [CZ]] wox2 [CZ] puts Bloodstained Mire to Graveyard from Play
+0:01:52 [wox2 [CZ]] wox2 [CZ]'s life total is now 19 (-1)
+0:01:53 [wox2 [CZ]] wox2 [CZ] is looking its Library...
+0:01:58 [wox2 [CZ]] wox2 [CZ] puts Plateau into play from Library
+0:01:59 [wox2 [CZ]] wox2 [CZ] shuffles library
+0:01:59 [wox2 [CZ]] wox2 [CZ] stops looking its Library...
+0:02:01 [wox2 [CZ]] wox2 [CZ] plays Goblin Piledriver from Hand
+0:02:02 [Mike] <Mike> Ok
+0:02:02 [wox2 [CZ]] wox2 [CZ] taps Mountain
+0:02:02 [wox2 [CZ]] wox2 [CZ] taps Plateau
+0:02:03 [wox2 [CZ]] It is now the End Phase, End Of Turn Step
+0:02:04 [Mike] Mike taps Plateau
+0:02:05 [Mike] Mike plays Lightning Bolt from Hand
+0:02:06 [Mike] Mike puts Lightning Bolt to Graveyard from Play
+0:02:07 [Mike] It is now turn 10 (Mike)
+0:02:07 [Mike] It is now the Beginning Phase, Untap Step
+0:02:07 [wox2 [CZ]] wox2 [CZ] puts Goblin Piledriver to Graveyard from Play
+0:02:08 [Mike] Mike untaps his/her permanents
+0:02:08 [Mike] It is now the Beginning Phase, Upkeep Step
+0:02:09 [Mike] It is now the Beginning Phase, Draw Step
+0:02:09 [Mike] Mike draws a card
+0:02:09 [Mike] It is now the Precombat Main Phase
+0:02:11 [Mike] It is now the End Phase, End Of Turn Step
+0:02:12 [Mike] <Mike> End my turn
+0:02:14 [wox2 [CZ]] It is now turn 11 (wox2 [CZ])
+0:02:14 [wox2 [CZ]] It is now the Beginning Phase, Untap Step
+0:02:14 [wox2 [CZ]] wox2 [CZ] untaps his/her permanents
+0:02:15 [wox2 [CZ]] It is now the Beginning Phase, Upkeep Step
+0:02:16 [wox2 [CZ]] It is now the Beginning Phase, Draw Step
+0:02:16 [wox2 [CZ]] wox2 [CZ] draws a card
+0:02:17 [wox2 [CZ]] It is now the Precombat Main Phase
+0:02:20 [wox2 [CZ]] wox2 [CZ] plays Mountain from Hand
+0:02:21 [wox2 [CZ]] wox2 [CZ] taps Mountain
+0:02:21 [wox2 [CZ]] wox2 [CZ] taps Plateau
+0:02:21 [wox2 [CZ]] wox2 [CZ] taps Mountain
+0:02:22 [wox2 [CZ]] wox2 [CZ] plays Goblin Warchief from Hand
+0:02:23 [wox2 [CZ]] wox2 [CZ] taps Goblin Warchief
+0:02:24 [Mike] Mike taps Plateau
+0:02:25 [Mike] Mike plays Swords to Plowshares from Hand
+0:02:26 [Mike] Mike puts Swords to Plowshares to Graveyard from Play
+0:02:27 [wox2 [CZ]] wox2 [CZ] puts Goblin Warchief to RFG from Play
+0:02:27 [Mike] It is now turn 12 (Mike)
+0:02:27 [Mike] It is now the Beginning Phase, Untap Step
+0:02:28 [Mike] Mike untaps his/her permanents
+0:02:28 [Mike] It is now the Beginning Phase, Upkeep Step
+0:02:28 [wox2 [CZ]] wox2 [CZ]'s life total is now 21 (+2)
+0:02:29 [Mike] It is now the Beginning Phase, Draw Step
+0:02:29 [Mike] Mike draws a card
+0:02:29 [Mike] It is now the Precombat Main Phase
+0:02:31 [Mike] Mike taps Plateau
+0:02:32 [Mike] Mike plays Sensei's Divining Top from Hand
+0:02:33 [Mike] It is now the End Phase, End Of Turn Step
+0:02:34 [Mike] <Mike> End my turn
+0:02:35 [wox2 [CZ]] It is now turn 13 (wox2 [CZ])
+0:02:35 [wox2 [CZ]] It is now the Beginning Phase, Untap Step
+0:02:36 [wox2 [CZ]] wox2 [CZ] untaps his/her permanents
+0:02:36 [wox2 [CZ]] It is now the Beginning Phase, Upkeep Step
+0:02:37 [wox2 [CZ]] It is now the Beginning Phase, Draw Step
+0:02:37 [wox2 [CZ]] wox2 [CZ] draws a card
+0:02:38 [wox2 [CZ]] It is now the Precombat Main Phase
+0:02:40 [wox2 [CZ]] wox2 [CZ] plays Plateau from Hand
+0:02:44 [wox2 [CZ]] wox2 [CZ] taps Mountain
+0:02:44 [wox2 [CZ]] wox2 [CZ] taps Plateau
+0:02:44 [wox2 [CZ]] wox2 [CZ] taps Mountain
+0:02:45 [wox2 [CZ]] wox2 [CZ] plays Goblin Warchief from Hand
+0:02:46 [wox2 [CZ]] It is now the Combat Phase, Declare Attackers Step
+0:02:47 [wox2 [CZ]] wox2 [CZ] taps Goblin Warchief
+0:02:48 [Mike] wox2 [CZ] taps Goblin Warchief
+0:02:49 [Mike] Mike's life total is now 17 (-2)
+0:02:50 [Mike] It is now the Postcombat Main Phase
+0:02:50 [wox2 [CZ]] It is now the End Phase, End Of Turn Step
+0:02:52 [Mike] It is now turn 14 (Mike)
+0:02:52 [Mike] It is now the Beginning Phase, Untap Step
+0:02:52 [wox2 [CZ]] <wox2 [CZ]> End my turn
+0:02:52 [Mike] Mike untaps his/her permanents
+0:02:52 [Mike] It is now the Beginning Phase, Upkeep Step
+0:02:53 [Mike] Mike taps Plateau
+0:02:56 [Mike] Mike is looking top 3 cards of its Library...
+0:02:59 [Mike] Mike rearranges cards in Mike's Library
+0:03:01 [Mike] Mike stops looking its Library...
+0:03:02 [Mike] It is now the Beginning Phase, Draw Step
+0:03:02 [Mike] Mike draws a card
+0:03:02 [Mike] It is now the Precombat Main Phase
+0:03:08 [Mike] Mike plays Mox Diamond from Hand
+0:03:09 [Mike] Mike puts Forest to Graveyard from Hand
+0:03:10 [Mike] Mike taps Sensei's Divining Top
+0:03:12 [Mike] Mike untaps Sensei's Divining Top
+0:03:18 [Mike] <Mike> Thinking
+0:03:25 [Mike] <Mike> sry
+0:03:29 [Mike] Mike is looking top 3 cards of its Library...
+0:03:31 [Mike] Mike rearranges cards in Mike's Library
+0:03:31 [Mike] Mike stops looking its Library...
+0:03:32 [Mike] Mike taps Sensei's Divining Top
+0:03:33 [Mike] Mike draws a card
+0:03:34 [Mike] Mike puts a Sensei's Divining Top on top of Library from Play
+0:03:35 [Mike] Mike plays Horizon Canopy from Hand
+0:03:35 [Mike] Mike taps Horizon Canopy
+0:03:36 [Mike] Mike taps Mox Diamond
+0:03:37 [wox2 [CZ]] <wox2 [CZ]> wait
+0:03:37 [Mike] Mike's life total is now 16 (-1)
+0:03:47 [wox2 [CZ]] <wox2 [CZ]> you had to look at just two now
+0:03:49 [Mike] <Mike> i put wrong card sry
+0:03:59 [Mike] <Mike> yrs sry
+0:04:04 [wox2 [CZ]] <wox2 [CZ]> go on
+0:04:06 [Mike] <Mike> but i put secind
+0:04:11 [Mike] <Mike> Thinking
+0:04:16 [Mike] Mike plays Tarmogoyf from Hand
+0:04:18 [Mike] It is now the End Phase, Cleanup Step
+0:04:19 [Mike] <Mike> End my turn
+0:04:23 [Mike] Tarmogoyf is now 3/4
+0:04:27 [wox2 [CZ]] It is now turn 15 (wox2 [CZ])
+0:04:27 [wox2 [CZ]] It is now the Beginning Phase, Untap Step
+0:04:28 [wox2 [CZ]] wox2 [CZ] untaps his/her permanents
+0:04:28 [wox2 [CZ]] It is now the Beginning Phase, Upkeep Step
+0:04:29 [wox2 [CZ]] It is now the Beginning Phase, Draw Step
+0:04:29 [wox2 [CZ]] wox2 [CZ] draws a card
+0:04:29 [wox2 [CZ]] It is now the Precombat Main Phase
+0:04:32 [wox2 [CZ]] wox2 [CZ] taps Plateau
+0:04:33 [wox2 [CZ]] wox2 [CZ] taps Mountain
+0:04:35 [wox2 [CZ]] wox2 [CZ] plays Mirror Entity from Hand
+0:04:37 [wox2 [CZ]] wox2 [CZ] taps Mountain
+0:04:39 [wox2 [CZ]] wox2 [CZ] plays Goblin Lackey from Hand
+0:04:41 [wox2 [CZ]] It is now the End Phase, End Of Turn Step
+0:04:43 [wox2 [CZ]] <wox2 [CZ]> End my turn
+0:04:48 [Mike] It is now turn 16 (Mike)
+0:04:48 [Mike] It is now the Beginning Phase, Untap Step
+0:04:49 [Mike] Mike untaps his/her permanents
+0:04:50 [Mike] It is now the Beginning Phase, Upkeep Step
+0:04:52 [Mike] It is now the Beginning Phase, Draw Step
+0:04:52 [Mike] Mike draws a card
+0:04:52 [Mike] It is now the Precombat Main Phase
+0:04:59 [Mike] <Mike> Thinking
+0:05:06 [Mike] Mike taps Horizon Canopy
+0:05:07 [Mike] Mike's life total is now 15 (-1)
+0:05:10 [Mike] Mike plays Sensei's Divining Top from Hand
+0:05:17 [Mike] <Mike> Thinking
+0:05:28 [Mike] Mike taps Plateau
+0:05:29 [Mike] Mike taps Mox Diamond
+0:05:31 [Mike] Mike plays Qasali Pridemage from Hand
+0:05:32 [Mike] It is now the End Phase, End Of Turn Step
+0:05:33 [Mike] <Mike> End my turn
+0:05:35 [wox2 [CZ]] It is now turn 17 (wox2 [CZ])
+0:05:35 [wox2 [CZ]] It is now the Beginning Phase, Untap Step
+0:05:36 [wox2 [CZ]] wox2 [CZ] untaps his/her permanents
+0:05:36 [wox2 [CZ]] It is now the Beginning Phase, Upkeep Step
+0:05:37 [wox2 [CZ]] It is now the Beginning Phase, Draw Step
+0:05:37 [wox2 [CZ]] wox2 [CZ] draws a card
+0:05:37 [wox2 [CZ]] It is now the Precombat Main Phase
+0:05:39 [wox2 [CZ]] wox2 [CZ] plays Wooded Foothills from Hand
+0:05:41 [wox2 [CZ]] It is now the Combat Phase, Declare Attackers Step
+0:05:43 [wox2 [CZ]] wox2 [CZ] taps Goblin Warchief
+0:05:43 [wox2 [CZ]] wox2 [CZ] taps Mirror Entity
+0:05:43 [wox2 [CZ]] wox2 [CZ] taps Goblin Lackey
+0:05:43 [Mike] wox2 [CZ] taps Goblin Warchief
+0:05:44 [Mike] wox2 [CZ] taps Mirror Entity
+0:05:45 [Mike] wox2 [CZ] taps Goblin Lackey
+0:05:46 [wox2 [CZ]] It is now the Combat Phase, Declare Blockers Step
+0:06:00 [wox2 [CZ]] wox2 [CZ] taps Wooded Foothills
+0:06:02 [wox2 [CZ]] wox2 [CZ] puts Wooded Foothills to Graveyard from Play
+0:06:03 [wox2 [CZ]] wox2 [CZ]'s life total is now 20 (-1)
+0:06:04 [wox2 [CZ]] wox2 [CZ] is looking its Library...
+0:06:07 [wox2 [CZ]] wox2 [CZ] puts Plateau into play from Library
+0:06:08 [wox2 [CZ]] wox2 [CZ] shuffles library
+0:06:08 [wox2 [CZ]] wox2 [CZ] stops looking its Library...
+0:06:11 [Mike] <Mike> Ok
+0:06:21 [wox2 [CZ]] <wox2 [CZ]> just this one block?
+0:06:29 [Mike] <Mike> yes
+0:06:30 [wox2 [CZ]] wox2 [CZ] taps Mountain
+0:06:30 [wox2 [CZ]] wox2 [CZ] taps Plateau
+0:06:30 [wox2 [CZ]] wox2 [CZ] taps Mountain
+0:06:30 [wox2 [CZ]] wox2 [CZ] taps Plateau
+0:06:30 [wox2 [CZ]] wox2 [CZ] taps Plateau
+0:06:34 [Mike] Mike's life total is now 5 (-10)
+0:06:35 [Mike] Mike puts Qasali Pridemage to Graveyard from Play
+0:06:37 [wox2 [CZ]] It is now the End Phase, End Of Turn Step
+0:06:38 [Mike] It is now the Postcombat Main Phase
+0:06:39 [wox2 [CZ]] <wox2 [CZ]> End my turn
+0:06:39 [Mike] It is now turn 18 (Mike)
+0:06:39 [Mike] It is now the Beginning Phase, Untap Step
+0:06:40 [Mike] Mike untaps his/her permanents
+0:06:41 [Mike] It is now the Beginning Phase, Upkeep Step
+0:06:41 [Mike] It is now the Beginning Phase, Draw Step
+0:06:41 [Mike] Mike draws a card
+0:06:41 [Mike] It is now the Precombat Main Phase
+0:06:45 [Mike] Mike taps Sensei's Divining Top
+0:06:46 [Mike] Mike draws a card
+0:06:50 [Mike] Mike puts a Sensei's Divining Top on top of Library from Play
+0:06:50 [Mike] Mike taps Plateau
+0:06:51 [Mike] Mike taps Mox Diamond
+0:06:54 [Mike] Mike plays Devastating Dreams from Hand
+0:06:57 [Mike] <Mike> 3
+0:06:59 [Mike] Mike puts Knight of the Reliquary to Graveyard from Hand
+0:07:00 [Mike] Mike puts Seismic Assault to Graveyard from Hand
+0:07:00 [Mike] Mike puts Forgotten Cave to Graveyard from Hand
+0:07:02 [Mike] Mike puts Plateau to Graveyard from Play
+0:07:02 [Mike] Mike puts Horizon Canopy to Graveyard from Play
+0:07:04 [Mike] Mike puts Devastating Dreams to Graveyard from Play
+0:07:06 [wox2 [CZ]] wox2 [CZ] puts Mountain to Graveyard from Play
+0:07:06 [wox2 [CZ]] wox2 [CZ] puts Mountain to Graveyard from Play
+0:07:06 [wox2 [CZ]] wox2 [CZ] puts Plateau to Graveyard from Play
+0:07:09 [wox2 [CZ]] wox2 [CZ] puts Mirror Entity to Graveyard from Play
+0:07:09 [wox2 [CZ]] wox2 [CZ] puts Goblin Warchief to Graveyard from Play
+0:07:09 [wox2 [CZ]] wox2 [CZ] puts Goblin Lackey to Graveyard from Play
+0:07:12 [wox2 [CZ]] wox2 [CZ]'s life total is now 16 (-4)
+0:07:13 [Mike] <Mike> Thinking
+0:07:18 [wox2 [CZ]] wox2 [CZ]'s life total is now 15 (-1)
+0:07:34 [Mike] Tarmogoyf is now 5/6
+0:07:35 [Mike] It is now the Combat Phase, Beginning Of Combat Step
+0:07:35 [Mike] It is now the Combat Phase, Declare Blockers Step
+0:07:36 [Mike] It is now the Combat Phase, Declare Attackers Step
+0:07:36 [wox2 [CZ]] Mike taps Tarmogoyf
+0:07:37 [Mike] Mike taps Tarmogoyf
+0:07:42 [wox2 [CZ]] <wox2 [CZ]> done
+0:07:44 [Mike] It is now the End Phase, End Of Turn Step
+0:07:45 [Mike] <Mike> End my turn
+0:07:46 [wox2 [CZ]] It is now turn 19 (wox2 [CZ])
+0:07:46 [wox2 [CZ]] It is now the Beginning Phase, Untap Step
+0:07:47 [wox2 [CZ]] wox2 [CZ] untaps his/her permanents
+0:07:48 [wox2 [CZ]] It is now the Beginning Phase, Upkeep Step
+0:07:49 [wox2 [CZ]] It is now the Beginning Phase, Draw Step
+0:07:49 [wox2 [CZ]] wox2 [CZ] draws a card
+0:07:50 [wox2 [CZ]] It is now the Precombat Main Phase
+0:07:52 [wox2 [CZ]] wox2 [CZ] plays Wooded Foothills from Hand
+0:07:53 [wox2 [CZ]] <wox2 [CZ]> Thinking
+0:07:57 [wox2 [CZ]] wox2 [CZ] taps Wooded Foothills
+0:08:03 [wox2 [CZ]] wox2 [CZ] puts Wooded Foothills to Graveyard from Play
+0:08:05 [wox2 [CZ]] wox2 [CZ]'s life total is now 14 (-1)
+0:08:07 [wox2 [CZ]] wox2 [CZ] is looking its Library...
+0:08:11 [wox2 [CZ]] wox2 [CZ] puts Mountain into play from Library
+0:08:12 [wox2 [CZ]] wox2 [CZ] shuffles library
+0:08:12 [wox2 [CZ]] wox2 [CZ] stops looking its Library...
+0:08:14 [wox2 [CZ]] wox2 [CZ] plays Gempalm Incinerator from Hand
+0:08:15 [wox2 [CZ]] wox2 [CZ] taps Plateau
+0:08:15 [wox2 [CZ]] wox2 [CZ] taps Mountain
+0:08:17 [wox2 [CZ]] wox2 [CZ] draws a card
+0:08:17 [Mike] <Mike> Ok
+0:08:18 [wox2 [CZ]] wox2 [CZ] puts Gempalm Incinerator to Graveyard from Play
+0:08:20 [wox2 [CZ]] wox2 [CZ] plays Goblin Lackey from Hand
+0:08:21 [wox2 [CZ]] wox2 [CZ] taps Plateau
+0:08:21 [wox2 [CZ]] It is now the End Phase, End Of Turn Step
+0:08:23 [wox2 [CZ]] <wox2 [CZ]> End my turn
+0:08:23 [Mike] It is now turn 20 (Mike)
+0:08:23 [Mike] It is now the Beginning Phase, Untap Step
+0:08:24 [Mike] Mike untaps his/her permanents
+0:08:25 [Mike] It is now the Beginning Phase, Upkeep Step
+0:08:25 [Mike] It is now the Beginning Phase, Draw Step
+0:08:25 [Mike] Mike draws a card
+0:08:25 [Mike] It is now the Precombat Main Phase
+0:08:26 [Mike] Mike taps Mox Diamond
+0:08:28 [Mike] Mike plays Sensei's Divining Top from Hand
+0:08:29 [Mike] It is now the End Phase, End Of Turn Step
+0:08:30 [Mike] <Mike> End my turn
+0:08:31 [wox2 [CZ]] It is now turn 21 (wox2 [CZ])
+0:08:31 [wox2 [CZ]] It is now the Beginning Phase, Untap Step
+0:08:32 [wox2 [CZ]] wox2 [CZ] untaps his/her permanents
+0:08:32 [wox2 [CZ]] It is now the Beginning Phase, Upkeep Step
+0:08:33 [wox2 [CZ]] It is now the Beginning Phase, Draw Step
+0:08:33 [wox2 [CZ]] wox2 [CZ] draws a card
+0:08:33 [wox2 [CZ]] It is now the Precombat Main Phase
+0:08:35 [wox2 [CZ]] wox2 [CZ] plays Swords to Plowshares from Hand
+0:08:36 [wox2 [CZ]] wox2 [CZ] taps Plateau
+0:08:38 [wox2 [CZ]] wox2 [CZ] puts Swords to Plowshares to Graveyard from Play
+0:08:38 [Mike] Mike puts Tarmogoyf to RFG from Play
+0:08:39 [wox2 [CZ]] It is now the Combat Phase, Declare Attackers Step
+0:08:40 [wox2 [CZ]] wox2 [CZ] taps Goblin Lackey
+0:08:40 [Mike] Mike's life total is now 10 (+5)
+0:08:40 [Mike] wox2 [CZ] taps Goblin Lackey
+0:08:40 [wox2 [CZ]] It is now the End Phase, End Of Turn Step
+0:08:42 [Mike] Mike's life total is now 9 (-1)
+0:08:42 [wox2 [CZ]] <wox2 [CZ]> End my turn
+0:08:44 [Mike] It is now turn 22 (Mike)
+0:08:44 [Mike] It is now the Beginning Phase, Untap Step
+0:08:45 [Mike] Mike untaps his/her permanents
+0:08:45 [Mike] It is now the Beginning Phase, Upkeep Step
+0:08:46 [Mike] Mike taps Mox Diamond
+0:08:49 [Mike] Mike is looking top 3 cards of its Library...
+0:08:52 [Mike] Mike rearranges cards in Mike's Library
+0:08:52 [Mike] Mike rearranges cards in Mike's Library
+0:08:53 [Mike] Mike stops looking its Library...
+0:08:54 [Mike] It is now the Beginning Phase, Draw Step
+0:08:54 [Mike] Mike draws a card
+0:08:54 [Mike] It is now the Precombat Main Phase
+0:08:56 [Mike] Mike plays Kor Haven from Hand
+0:08:56 [Mike] It is now the End Phase, End Of Turn Step
+0:08:58 [Mike] <Mike> End my turn
+0:09:01 [wox2 [CZ]] It is now turn 23 (wox2 [CZ])
+0:09:01 [wox2 [CZ]] It is now the Beginning Phase, Untap Step
+0:09:01 [wox2 [CZ]] wox2 [CZ] untaps his/her permanents
+0:09:02 [wox2 [CZ]] It is now the Beginning Phase, Upkeep Step
+0:09:02 [wox2 [CZ]] It is now the Beginning Phase, Draw Step
+0:09:02 [wox2 [CZ]] wox2 [CZ] draws a card
+0:09:03 [wox2 [CZ]] It is now the Precombat Main Phase
+0:09:04 [wox2 [CZ]] It is now the Combat Phase, Declare Attackers Step
+0:09:05 [wox2 [CZ]] wox2 [CZ] taps Goblin Lackey
+0:09:06 [Mike] wox2 [CZ] taps Goblin Lackey
+0:09:07 [Mike] Mike's life total is now 8 (-1)
+0:09:08 [wox2 [CZ]] It is now the End Phase, End Of Turn Step
+0:09:10 [wox2 [CZ]] <wox2 [CZ]> End my turn
+0:09:11 [Mike] Mike taps Kor Haven
+0:09:13 [Mike] Mike is looking top 3 cards of its Library...
+0:09:14 [Mike] Mike stops looking its Library...
+0:09:15 [Mike] It is now turn 24 (Mike)
+0:09:15 [Mike] It is now the Beginning Phase, Untap Step
+0:09:16 [Mike] Mike untaps his/her permanents
+0:09:16 [Mike] It is now the Beginning Phase, Upkeep Step
+0:09:17 [Mike] It is now the Beginning Phase, Draw Step
+0:09:17 [Mike] Mike draws a card
+0:09:17 [Mike] It is now the Precombat Main Phase
+0:09:18 [Mike] It is now the End Phase, End Of Turn Step
+0:09:19 [Mike] <Mike> End my turn
+0:09:21 [wox2 [CZ]] It is now turn 25 (wox2 [CZ])
+0:09:21 [wox2 [CZ]] It is now the Beginning Phase, Untap Step
+0:09:22 [wox2 [CZ]] wox2 [CZ] untaps his/her permanents
+0:09:22 [wox2 [CZ]] It is now the Beginning Phase, Upkeep Step
+0:09:23 [wox2 [CZ]] It is now the Beginning Phase, Draw Step
+0:09:23 [wox2 [CZ]] wox2 [CZ] draws a card
+0:09:23 [wox2 [CZ]] It is now the Precombat Main Phase
+0:09:25 [wox2 [CZ]] It is now the Combat Phase, Declare Attackers Step
+0:09:26 [wox2 [CZ]] wox2 [CZ] taps Goblin Lackey
+0:09:26 [Mike] Mike taps Mox Diamond
+0:09:26 [Mike] wox2 [CZ] taps Goblin Lackey
+0:09:27 [Mike] Mike plays Lightning Bolt from Hand
+0:09:28 [Mike] Mike puts Lightning Bolt to Graveyard from Play
+0:09:30 [wox2 [CZ]] wox2 [CZ] puts Goblin Lackey to Graveyard from Play
+0:09:30 [wox2 [CZ]] It is now the Postcombat Main Phase
+0:09:32 [wox2 [CZ]] wox2 [CZ] plays Rishadan Port from Hand
+0:09:38 [wox2 [CZ]] <wox2 [CZ]> upkeep
+0:09:39 [wox2 [CZ]] It is now turn 26 (Mike)
+0:09:39 [wox2 [CZ]] It is now the Beginning Phase, Untap Step
+0:09:40 [Mike] It is now turn 27 (Mike)
+0:09:40 [Mike] It is now the Beginning Phase, Untap Step
+0:09:40 [Mike] Mike untaps his/her permanents
+0:09:41 [Mike] It is now the Beginning Phase, Upkeep Step
+0:09:42 [wox2 [CZ]] wox2 [CZ] taps Mountain
+0:09:42 [wox2 [CZ]] wox2 [CZ] taps Rishadan Port
+0:09:45 [Mike] Mike taps Kor Haven
+0:09:48 [Mike] Mike is looking top 3 cards of its Library...
+0:09:53 [Mike] Mike stops looking its Library...
+0:09:56 [Mike] Mike is looking top 3 cards of its Library...
+0:09:58 [Mike] Mike rearranges cards in Mike's Library
+0:09:59 [Mike] Mike stops looking its Library...
+0:10:00 [Mike] It is now the Beginning Phase, Draw Step
+0:10:01 [Mike] Mike draws a card
+0:10:01 [Mike] It is now the Precombat Main Phase
+0:10:01 [Mike] It is now the End Phase, End Of Turn Step
+0:10:02 [Mike] <Mike> End my turn
+0:10:04 [wox2 [CZ]] It is now turn 28 (wox2 [CZ])
+0:10:04 [wox2 [CZ]] It is now the Beginning Phase, Untap Step
+0:10:05 [wox2 [CZ]] wox2 [CZ] untaps his/her permanents
+0:10:06 [wox2 [CZ]] It is now the Beginning Phase, Upkeep Step
+0:10:07 [wox2 [CZ]] It is now the Beginning Phase, Draw Step
+0:10:07 [wox2 [CZ]] wox2 [CZ] draws a card
+0:10:08 [wox2 [CZ]] It is now the Precombat Main Phase
+0:10:09 [wox2 [CZ]] It is now the End Phase, End Of Turn Step
+0:10:12 [Mike] It is now turn 29 (Mike)
+0:10:12 [Mike] It is now the Beginning Phase, Untap Step
+0:10:13 [wox2 [CZ]] <wox2 [CZ]> upkeep
+0:10:13 [Mike] Mike untaps his/her permanents
+0:10:13 [Mike] It is now the Beginning Phase, Upkeep Step
+0:10:15 [wox2 [CZ]] wox2 [CZ] taps Mountain
+0:10:15 [wox2 [CZ]] wox2 [CZ] taps Rishadan Port
+0:10:15 [Mike] Mike taps Kor Haven
+0:10:19 [Mike] Mike is looking top 3 cards of its Library...
+0:10:23 [Mike] Mike stops looking its Library...
+0:10:24 [Mike] It is now the Beginning Phase, Draw Step
+0:10:25 [Mike] Mike draws a card
+0:10:25 [Mike] It is now the Precombat Main Phase
+0:10:25 [Mike] It is now the End Phase, End Of Turn Step
+0:10:27 [Mike] <Mike> End my turn
+0:10:28 [wox2 [CZ]] It is now turn 30 (wox2 [CZ])
+0:10:28 [wox2 [CZ]] It is now the Beginning Phase, Untap Step
+0:10:29 [wox2 [CZ]] wox2 [CZ] untaps his/her permanents
+0:10:29 [wox2 [CZ]] It is now the Beginning Phase, Upkeep Step
+0:10:30 [wox2 [CZ]] It is now the Beginning Phase, Draw Step
+0:10:30 [wox2 [CZ]] wox2 [CZ] draws a card
+0:10:30 [wox2 [CZ]] It is now the Precombat Main Phase
+0:10:32 [wox2 [CZ]] It is now the End Phase, End Of Turn Step
+0:10:34 [Mike] It is now turn 31 (Mike)
+0:10:34 [Mike] It is now the Beginning Phase, Untap Step
+0:10:34 [wox2 [CZ]] <wox2 [CZ]> upkeep
+0:10:35 [Mike] Mike untaps his/her permanents
+0:10:35 [Mike] It is now the Beginning Phase, Upkeep Step
+0:10:36 [Mike] Mike taps Kor Haven
+0:10:36 [wox2 [CZ]] wox2 [CZ] taps Mountain
+0:10:36 [wox2 [CZ]] wox2 [CZ] taps Rishadan Port
+0:10:39 [Mike] Mike is looking top 3 cards of its Library...
+0:10:41 [Mike] Mike rearranges cards in Mike's Library
+0:10:41 [Mike] Mike rearranges cards in Mike's Library
+0:10:42 [Mike] Mike stops looking its Library...
+0:10:44 [Mike] It is now the Beginning Phase, Draw Step
+0:10:44 [Mike] Mike draws a card
+0:10:44 [Mike] It is now the Precombat Main Phase
+0:10:45 [Mike] Mike plays Wasteland from Hand
+0:10:45 [Mike] Mike taps Wasteland
+0:10:47 [Mike] Mike taps Mox Diamond
+0:10:48 [Mike] Mike plays Life from the Loam from Hand
+0:10:50 [Mike] Mike puts Forgotten Cave into play from Graveyard
+0:10:53 [Mike] Mike puts Tranquil Thicket into play from Graveyard
+0:10:59 [Mike] Mike puts Plateau into play from Graveyard
+0:11:02 [Mike] Mike puts Life from the Loam to Graveyard from Play
+0:11:03 [Mike] Mike puts Forgotten Cave to Hand from Play
+0:11:03 [Mike] Mike puts Tranquil Thicket to Hand from Play
+0:11:03 [Mike] Mike puts Plateau to Hand from Play
+0:11:04 [Mike] It is now the End Phase, End Of Turn Step
+0:11:05 [Mike] <Mike> End my turn
+0:11:05 [wox2 [CZ]] It is now turn 32 (wox2 [CZ])
+0:11:05 [wox2 [CZ]] It is now the Beginning Phase, Untap Step
+0:11:07 [wox2 [CZ]] wox2 [CZ] untaps his/her permanents
+0:11:07 [wox2 [CZ]] It is now the Beginning Phase, Upkeep Step
+0:11:07 [wox2 [CZ]] It is now the Beginning Phase, Draw Step
+0:11:08 [wox2 [CZ]] wox2 [CZ] draws a card
+0:11:08 [wox2 [CZ]] It is now the Precombat Main Phase
+0:11:09 [wox2 [CZ]] wox2 [CZ] plays Bloodstained Mire from Hand
+0:11:10 [wox2 [CZ]] wox2 [CZ] taps Bloodstained Mire
+0:11:11 [wox2 [CZ]] wox2 [CZ] puts Bloodstained Mire to Graveyard from Play
+0:11:12 [Mike] <Mike> Ok
+0:11:13 [wox2 [CZ]] wox2 [CZ]'s life total is now 13 (-1)
+0:11:14 [wox2 [CZ]] wox2 [CZ] is looking its Library...
+0:11:17 [wox2 [CZ]] wox2 [CZ] puts Mountain into play from Library
+0:11:19 [wox2 [CZ]] wox2 [CZ] shuffles library
+0:11:19 [wox2 [CZ]] wox2 [CZ] stops looking its Library...
+0:11:21 [wox2 [CZ]] wox2 [CZ] taps Plateau
+0:11:21 [wox2 [CZ]] wox2 [CZ] taps Plateau
+0:11:21 [wox2 [CZ]] wox2 [CZ] taps Mountain
+0:11:21 [wox2 [CZ]] wox2 [CZ] taps Rishadan Port
+0:11:21 [wox2 [CZ]] wox2 [CZ] taps Mountain
+0:11:22 [wox2 [CZ]] wox2 [CZ] plays Kiki-Jiki, Mirror Breaker from Hand
+0:11:23 [wox2 [CZ]] It is now the Combat Phase, Declare Attackers Step
+0:11:24 [wox2 [CZ]] wox2 [CZ] taps Kiki-Jiki, Mirror Breaker
+0:11:25 [Mike] Mike's life total is now 6 (-2)
+0:11:26 [wox2 [CZ]] It is now the End Phase, End Of Turn Step
+0:11:26 [Mike] wox2 [CZ] taps Kiki-Jiki, Mirror Breaker
+0:11:27 [wox2 [CZ]] <wox2 [CZ]> End my turn
+0:11:29 [Mike] It is now turn 33 (Mike)
+0:11:29 [Mike] It is now the Beginning Phase, Untap Step
+0:11:30 [Mike] Mike untaps his/her permanents
+0:11:30 [Mike] It is now the Beginning Phase, Upkeep Step
+0:11:32 [Mike] It is now the Beginning Phase, Draw Step
+0:11:33 [Mike] Mike draws a card
+0:11:33 [Mike] It is now the Precombat Main Phase
+0:11:40 [Mike] Mike plays Plateau from Hand
+0:11:40 [Mike] Mike taps Plateau
+0:11:41 [Mike] Mike plays Lightning Bolt from Hand
+0:11:45 [wox2 [CZ]] wox2 [CZ] puts Kiki-Jiki, Mirror Breaker to Graveyard from Play
+0:11:46 [Mike] Mike puts Lightning Bolt to Graveyard from Play
+0:11:50 [Mike] <Mike> End my turn
+0:11:53 [wox2 [CZ]] It is now turn 34 (wox2 [CZ])
+0:11:53 [wox2 [CZ]] It is now the Beginning Phase, Untap Step
+0:11:54 [wox2 [CZ]] wox2 [CZ] untaps his/her permanents
+0:11:54 [wox2 [CZ]] It is now the Beginning Phase, Upkeep Step
+0:11:55 [wox2 [CZ]] It is now the Beginning Phase, Draw Step
+0:11:56 [wox2 [CZ]] wox2 [CZ] draws a card
+0:11:56 [wox2 [CZ]] It is now the Precombat Main Phase
+0:11:58 [wox2 [CZ]] wox2 [CZ] plays Goblin Piledriver from Hand
+0:11:58 [wox2 [CZ]] wox2 [CZ] taps Mountain
+0:12:00 [wox2 [CZ]] wox2 [CZ] taps Mountain
+0:12:01 [wox2 [CZ]] It is now the End Phase, End Of Turn Step
+0:12:02 [Mike] <Mike> Ok
+0:12:03 [wox2 [CZ]] <wox2 [CZ]> End my turn
+0:12:04 [Mike] <Mike> Thinking
+0:12:05 [Mike] Mike taps Kor Haven
+0:12:08 [Mike] Mike is looking top 3 cards of its Library...
+0:12:17 [Mike] Mike rearranges cards in Mike's Library
+0:12:17 [Mike] Mike rearranges cards in Mike's Library
+0:12:18 [Mike] Mike stops looking its Library...
+0:12:19 [Mike] Mike taps Mox Diamond
+0:12:20 [Mike] Mike plays Forgotten Cave from Hand
+0:12:21 [Mike] Mike puts Forgotten Cave to Graveyard from Play
+0:12:22 [Mike] Mike draws a card
+0:12:22 [Mike] Mike taps Wasteland
+0:12:25 [wox2 [CZ]] wox2 [CZ] puts Rishadan Port to Graveyard from Play
+0:12:27 [Mike] Mike puts Wasteland to Graveyard from Play
+0:12:29 [Mike] It is now turn 35 (Mike)
+0:12:29 [Mike] It is now the Beginning Phase, Untap Step
+0:12:30 [Mike] Mike untaps his/her permanents
+0:12:30 [Mike] It is now the Beginning Phase, Upkeep Step
+0:12:30 [Mike] It is now the Beginning Phase, Draw Step
+0:12:31 [Mike] Mike draws a card
+0:12:31 [Mike] It is now the Precombat Main Phase
+0:12:34 [Mike] Mike taps Mox Diamond
+0:12:34 [Mike] Mike taps Plateau
+0:12:35 [Mike] Mike taps Kor Haven
+0:12:36 [Mike] Mike plays Knight of the Reliquary from Hand
+0:12:36 [Mike] It is now the End Phase, End Of Turn Step
+0:12:38 [Mike] <Mike> End my turn
+0:12:41 [wox2 [CZ]] <wox2 [CZ]> Thinking
+0:12:47 [wox2 [CZ]] <wox2 [CZ]> how much is it?
+0:12:51 [Mike] Knight of the Reliquary is now 8/8
+0:12:59 [wox2 [CZ]] wox2 [CZ] taps Plateau
+0:13:00 [wox2 [CZ]] wox2 [CZ] plays Swords to Plowshares from Hand
+0:13:02 [Mike] Mike puts Knight of the Reliquary to RFG from Play
+0:13:03 [wox2 [CZ]] wox2 [CZ] puts Swords to Plowshares to Graveyard from Play
+0:13:04 [Mike] Mike's life total is now 15 (+9)
+0:13:06 [Mike] Mike's life total is now 14 (-1)
+0:13:07 [wox2 [CZ]] It is now turn 36 (wox2 [CZ])
+0:13:07 [wox2 [CZ]] It is now the Beginning Phase, Untap Step
+0:13:08 [wox2 [CZ]] wox2 [CZ] untaps his/her permanents
+0:13:08 [wox2 [CZ]] It is now the Beginning Phase, Upkeep Step
+0:13:09 [wox2 [CZ]] It is now the Beginning Phase, Draw Step
+0:13:09 [wox2 [CZ]] wox2 [CZ] draws a card
+0:13:09 [wox2 [CZ]] It is now the Precombat Main Phase
+0:13:12 [wox2 [CZ]] <wox2 [CZ]> Thinking
+0:13:17 [wox2 [CZ]] It is now the Combat Phase, Declare Attackers Step
+0:13:18 [wox2 [CZ]] wox2 [CZ] taps Goblin Piledriver
+0:13:18 [Mike] wox2 [CZ] taps Goblin Piledriver
+0:13:19 [Mike] Mike's life total is now 13 (-1)
+0:13:19 [wox2 [CZ]] It is now the Postcombat Main Phase
+0:13:21 [wox2 [CZ]] wox2 [CZ] plays Wasteland from Hand
+0:13:25 [wox2 [CZ]] <wox2 [CZ]> Thinking
+0:13:27 [Mike] <Mike> Ok
+0:13:36 [wox2 [CZ]] It is now the End Phase, End Of Turn Step
+0:13:38 [wox2 [CZ]] <wox2 [CZ]> End my turn
+0:13:39 [Mike] It is now turn 37 (Mike)
+0:13:39 [Mike] It is now the Beginning Phase, Untap Step
+0:13:40 [Mike] Mike untaps his/her permanents
+0:13:40 [Mike] It is now the Beginning Phase, Upkeep Step
+0:13:41 [Mike] It is now the Beginning Phase, Draw Step
+0:13:42 [Mike] Mike draws a card
+0:13:42 [Mike] It is now the Precombat Main Phase
+0:13:49 [Mike] Mike taps Plateau
+0:13:51 [Mike] Mike plays Swords to Plowshares from Hand
+0:13:52 [Mike] Mike puts Swords to Plowshares to Graveyard from Play
+0:13:53 [Mike] Mike taps Kor Haven
+0:13:54 [Mike] Mike taps Mox Diamond
+0:13:54 [wox2 [CZ]] wox2 [CZ] puts Goblin Piledriver to RFG from Play
+0:13:55 [Mike] Mike plays Tarmogoyf from Hand
+0:13:55 [wox2 [CZ]] wox2 [CZ]'s life total is now 14 (+1)
+0:13:56 [Mike] It is now the End Phase, End Of Turn Step
+0:13:57 [Mike] <Mike> End my turn
+0:13:57 [wox2 [CZ]] wox2 [CZ] taps Plateau
+0:13:58 [wox2 [CZ]] wox2 [CZ] plays Swords to Plowshares from Hand
+0:14:00 [Mike] Mike puts Tarmogoyf to RFG from Play
+0:14:02 [wox2 [CZ]] wox2 [CZ] puts Swords to Plowshares to Graveyard from Play
+0:14:02 [Mike] Mike's life total is now 18 (+5)
+0:14:03 [wox2 [CZ]] It is now turn 38 (wox2 [CZ])
+0:14:03 [wox2 [CZ]] It is now the Beginning Phase, Untap Step
+0:14:05 [wox2 [CZ]] wox2 [CZ] untaps his/her permanents
+0:14:05 [wox2 [CZ]] It is now the Beginning Phase, Upkeep Step
+0:14:05 [wox2 [CZ]] It is now the Beginning Phase, Draw Step
+0:14:06 [wox2 [CZ]] wox2 [CZ] draws a card
+0:14:06 [wox2 [CZ]] It is now the Precombat Main Phase
+0:14:08 [wox2 [CZ]] wox2 [CZ] plays Rishadan Port from Hand
+0:14:09 [wox2 [CZ]] It is now the End Phase, End Of Turn Step
+0:14:11 [Mike] It is now turn 39 (Mike)
+0:14:11 [Mike] It is now the Beginning Phase, Untap Step
+0:14:11 [Mike] Mike untaps his/her permanents
+0:14:12 [Mike] It is now the Beginning Phase, Upkeep Step
+0:14:12 [wox2 [CZ]] <wox2 [CZ]> upkeep
+0:14:14 [wox2 [CZ]] wox2 [CZ] taps Mountain
+0:14:15 [wox2 [CZ]] wox2 [CZ] taps Rishadan Port
+0:14:20 [wox2 [CZ]] <wox2 [CZ]> kor haven
+0:14:23 [Mike] Mike taps Kor Haven
+0:14:26 [Mike] Mike is looking top 3 cards of its Library...
+0:14:28 [Mike] Mike stops looking its Library...
+0:14:31 [Mike] Mike puts Life from the Loam into play from Graveyard
+0:14:34 [Mike] Mike puts Wooded Foothills into play from Library
+0:14:35 [Mike] Mike puts Arid Mesa into play from Library
+0:14:37 [Mike] Mike puts Devastating Dreams into play from Library
+0:14:40 [Mike] Mike puts Devastating Dreams to Graveyard from Play
+0:14:40 [Mike] Mike puts Wooded Foothills to Graveyard from Play
+0:14:40 [Mike] Mike puts Arid Mesa to Graveyard from Play
+0:14:40 [Mike] It is now the Precombat Main Phase
+0:14:43 [wox2 [CZ]] It is now the Beginning Phase, Upkeep Step
+0:14:43 [Mike] Mike puts Life from the Loam to Hand from Play
+0:14:43 [Mike] Mike taps Plateau
+0:14:43 [Mike] Mike taps Mox Diamond
+0:14:44 [Mike] Mike plays Life from the Loam from Hand
+0:14:44 [wox2 [CZ]] <wox2 [CZ]> Thinking
+0:14:45 [wox2 [CZ]] <wox2 [CZ]> Wait!
+0:14:49 [wox2 [CZ]] It is now the Beginning Phase, Draw Step
+0:14:50 [Mike] It is now the Precombat Main Phase
+0:14:52 [Mike] Mike puts Savannah into play from Graveyard
+0:14:55 [Mike] Mike puts Forgotten Cave into play from Graveyard
+0:14:56 [wox2 [CZ]] <wox2 [CZ]> wait
+0:14:58 [Mike] Mike puts Windswept Heath into play from Graveyard
+0:15:01 [Mike] <Mike> Ok
+0:15:02 [wox2 [CZ]] <wox2 [CZ]> WAIT
+0:15:05 [Mike] Mike puts Savannah to Graveyard from Play
+0:15:05 [Mike] Mike puts Forgotten Cave to Graveyard from Play
+0:15:05 [Mike] Mike puts Windswept Heath to Graveyard from Play
+0:15:06 [Mike] Mike untaps Plateau
+0:15:07 [Mike] Mike untaps Mox Diamond
+0:15:10 [wox2 [CZ]] <wox2 [CZ]> at the end of draw
+0:15:12 [wox2 [CZ]] wox2 [CZ] taps Wasteland
+0:15:14 [wox2 [CZ]] wox2 [CZ] puts Wasteland to Graveyard from Play
+0:15:17 [wox2 [CZ]] <wox2 [CZ]> plateau
+0:15:19 [Mike] <Mike> Ok
+0:15:21 [Mike] Mike puts Plateau to Graveyard from Play
+0:15:22 [Mike] Mike puts Life from the Loam to Hand from Play
+0:15:27 [Mike] Mike taps Mox Diamond
+0:15:29 [Mike] Mike untaps Mox Diamond
+0:15:31 [Mike] Mike plays Tranquil Thicket from Hand
+0:15:31 [Mike] Mike taps Tranquil Thicket
+0:15:32 [Mike] It is now the End Phase, End Of Turn Step
+0:15:33 [Mike] <Mike> End my turn
+0:15:35 [wox2 [CZ]] It is now turn 40 (wox2 [CZ])
+0:15:35 [wox2 [CZ]] It is now the Beginning Phase, Untap Step
+0:15:36 [wox2 [CZ]] wox2 [CZ] untaps his/her permanents
+0:15:37 [wox2 [CZ]] It is now the Beginning Phase, Upkeep Step
+0:15:37 [wox2 [CZ]] It is now the Beginning Phase, Draw Step
+0:15:38 [wox2 [CZ]] wox2 [CZ] draws a card
+0:15:38 [wox2 [CZ]] It is now the Precombat Main Phase
+0:15:41 [wox2 [CZ]] <wox2 [CZ]> Thinking
+0:15:43 [wox2 [CZ]] wox2 [CZ] plays Relic of Progenitus from Hand
+0:15:44 [wox2 [CZ]] wox2 [CZ] taps Mountain
+0:15:46 [Mike] <Mike> Ok
+0:15:54 [wox2 [CZ]] It is now the End Phase, End Of Turn Step
+0:15:55 [wox2 [CZ]] It is now the Postcombat Main Phase
+0:15:56 [wox2 [CZ]] wox2 [CZ] taps Relic of Progenitus
+0:15:59 [wox2 [CZ]] <wox2 [CZ]> remove sth
+0:16:04 [Mike] Mike puts Lightning Bolt to RFG from Graveyard
+0:16:07 [wox2 [CZ]] It is now the End Phase, End Of Turn Step
+0:16:09 [wox2 [CZ]] <wox2 [CZ]> upkeep
+0:16:10 [Mike] It is now turn 41 (Mike)
+0:16:10 [Mike] It is now the Beginning Phase, Untap Step
+0:16:11 [Mike] Mike untaps his/her permanents
+0:16:12 [Mike] It is now the Beginning Phase, Upkeep Step
+0:16:12 [wox2 [CZ]] wox2 [CZ] taps Plateau
+0:16:12 [wox2 [CZ]] wox2 [CZ] taps Rishadan Port
+0:16:14 [wox2 [CZ]] <wox2 [CZ]> thicket
+0:16:17 [Mike] Mike taps Tranquil Thicket
+0:16:19 [Mike] Mike is looking top 3 cards of its Library...
+0:16:33 [Mike] <Mike> Thinking
+0:16:38 [Mike] Mike rearranges cards in Mike's Library
+0:16:40 [Mike] Mike stops looking its Library...
+0:16:42 [Mike] It is now the Beginning Phase, Draw Step
+0:16:43 [Mike] Mike draws a card
+0:16:43 [Mike] It is now the Precombat Main Phase
+0:16:44 [Mike] Mike taps Kor Haven
+0:16:45 [Mike] Mike taps Mox Diamond
+0:16:46 [Mike] Mike plays Life from the Loam from Hand
+0:16:48 [Mike] <Mike> ?????
+0:16:48 [Mike] <Mike> Ok?
+0:16:49 [wox2 [CZ]] <wox2 [CZ]> Thinking
+0:16:50 [Mike] <Mike> Ok?
+0:16:56 [wox2 [CZ]] <wox2 [CZ]> targeting>
+0:16:57 [wox2 [CZ]] <wox2 [CZ]> ?
+0:17:03 [Mike] Mike puts Forgotten Cave into play from Graveyard
+0:17:09 [Mike] Mike puts Windswept Heath into play from Graveyard
+0:17:15 [Mike] Mike puts Plateau into play from Graveyard
+0:17:19 [wox2 [CZ]] wox2 [CZ] taps Plateau
+0:17:20 [wox2 [CZ]] wox2 [CZ] puts Relic of Progenitus to RFG from Play
+0:17:27 [wox2 [CZ]] wox2 [CZ] moves all cards from Graveyard to RFG
+0:17:27 [wox2 [CZ]] wox2 [CZ] moves all cards from Graveyard to RFG
+0:17:27 [wox2 [CZ]] wox2 [CZ] moves all cards from Graveyard to RFG
+0:17:27 [wox2 [CZ]] wox2 [CZ] moves all cards from Graveyard to RFG
+0:17:27 [wox2 [CZ]] wox2 [CZ] moves all cards from Graveyard to RFG
+0:17:27 [wox2 [CZ]] wox2 [CZ] moves all cards from Graveyard to RFG
+0:17:27 [wox2 [CZ]] wox2 [CZ] moves all cards from Graveyard to RFG
+0:17:27 [wox2 [CZ]] wox2 [CZ] moves all cards from Graveyard to RFG
+0:17:27 [wox2 [CZ]] wox2 [CZ] moves all cards from Graveyard to RFG
+0:17:27 [wox2 [CZ]] wox2 [CZ] moves all cards from Graveyard to RFG
+0:17:27 [wox2 [CZ]] wox2 [CZ] moves all cards from Graveyard to RFG
+0:17:27 [wox2 [CZ]] wox2 [CZ] moves all cards from Graveyard to RFG
+0:17:27 [wox2 [CZ]] wox2 [CZ] moves all cards from Graveyard to RFG
+0:17:27 [wox2 [CZ]] wox2 [CZ] moves all cards from Graveyard to RFG
+0:17:27 [wox2 [CZ]] wox2 [CZ] moves all cards from Graveyard to RFG
+0:17:27 [wox2 [CZ]] wox2 [CZ] moves all cards from Graveyard to RFG
+0:17:27 [wox2 [CZ]] wox2 [CZ] moves all cards from Graveyard to RFG
+0:17:27 [wox2 [CZ]] wox2 [CZ] moves all cards from Graveyard to RFG
+0:17:27 [wox2 [CZ]] wox2 [CZ] moves all cards from Graveyard to RFG
+0:17:27 [wox2 [CZ]] wox2 [CZ] moves all cards from Graveyard to RFG
+0:17:27 [wox2 [CZ]] wox2 [CZ] moves all cards from Graveyard to RFG
+0:17:27 [wox2 [CZ]] wox2 [CZ] moves all cards from Graveyard to RFG
+0:17:29 [Mike] <Mike> in resp?
+0:17:32 [wox2 [CZ]] <wox2 [CZ]> yeah
+0:17:36 [Mike] Mike puts Devastating Dreams into play from Graveyard
+0:17:37 [Mike] Mike puts Qasali Pridemage into play from Graveyard
+0:17:37 [Mike] Mike puts Forest into play from Graveyard
+0:17:38 [Mike] Mike puts Horizon Canopy into play from Graveyard
+0:17:39 [Mike] Mike puts Swords to Plowshares into play from Graveyard
+0:17:39 [Mike] Mike puts Knight of the Reliquary into play from Graveyard
+0:17:40 [Mike] Mike puts Seismic Assault into play from Graveyard
+0:17:40 [Mike] Mike puts Lightning Bolt into play from Graveyard
+0:17:41 [Mike] Mike puts Wasteland into play from Graveyard
+0:17:41 [Mike] Mike puts Swords to Plowshares into play from Graveyard
+0:17:42 [Mike] Mike puts Devastating Dreams into play from Graveyard
+0:17:43 [Mike] Mike puts Arid Mesa into play from Graveyard
+0:17:43 [Mike] Mike puts Swords to Plowshares into play from Graveyard
+0:17:44 [Mike] Mike puts Wooded Foothills into play from Graveyard
+0:17:45 [Mike] Mike puts Lightning Bolt into play from Graveyard
+0:17:46 [Mike] Mike puts Savannah into play from Graveyard
+0:17:50 [Mike] Mike puts Swords to Plowshares to RFG from Play
+0:17:51 [Mike] Mike puts Forgotten Cave to RFG from Play
+0:17:51 [Mike] Mike puts Windswept Heath to RFG from Play
+0:17:51 [Mike] Mike puts Plateau to RFG from Play
+0:17:51 [Mike] Mike puts Devastating Dreams to RFG from Play
+0:17:51 [Mike] Mike puts Qasali Pridemage to RFG from Play
+0:17:51 [Mike] Mike puts Forest to RFG from Play
+0:17:51 [Mike] Mike puts Horizon Canopy to RFG from Play
+0:17:51 [Mike] Mike puts Swords to Plowshares to RFG from Play
+0:17:51 [Mike] Mike puts Knight of the Reliquary to RFG from Play
+0:17:51 [Mike] Mike puts Seismic Assault to RFG from Play
+0:17:51 [Mike] Mike puts Lightning Bolt to RFG from Play
+0:17:51 [Mike] Mike puts Wasteland to RFG from Play
+0:17:51 [Mike] Mike puts Swords to Plowshares to RFG from Play
+0:17:51 [Mike] Mike puts Devastating Dreams to RFG from Play
+0:17:51 [Mike] Mike puts Arid Mesa to RFG from Play
+0:17:51 [Mike] Mike puts Wooded Foothills to RFG from Play
+0:17:51 [Mike] Mike puts Lightning Bolt to RFG from Play
+0:17:51 [Mike] Mike puts Savannah to RFG from Play
+0:17:52 [Mike] Mike puts Life from the Loam to Graveyard from Play
+0:17:58 [Mike] Mike taps Sensei's Divining Top
+0:18:02 [Mike] Mike untaps Sensei's Divining Top
+0:18:03 [Mike] <Mike> Thinking
+0:18:06 [Mike] Mike taps Sensei's Divining Top
+0:18:07 [Mike] Mike draws a card
+0:18:08 [Mike] Mike puts a Sensei's Divining Top on top of Library from Play
+0:18:12 [Mike] Mike plays Mox Diamond from Hand
+0:18:13 [Mike] Mike puts Wasteland to Graveyard from Hand
+0:18:14 [Mike] It is now the End Phase, End Of Turn Step
+0:18:15 [Mike] <Mike> End my turn
+0:18:21 [wox2 [CZ]] It is now turn 42 (wox2 [CZ])
+0:18:21 [wox2 [CZ]] It is now the Beginning Phase, Untap Step
+0:18:22 [wox2 [CZ]] wox2 [CZ] untaps his/her permanents
+0:18:22 [wox2 [CZ]] It is now the Beginning Phase, Upkeep Step
+0:18:24 [wox2 [CZ]] It is now the Beginning Phase, Draw Step
+0:18:24 [wox2 [CZ]] wox2 [CZ] draws a card
+0:18:24 [wox2 [CZ]] It is now the Precombat Main Phase
+0:18:26 [wox2 [CZ]] wox2 [CZ] plays Goblin Warchief from Hand
+0:18:28 [wox2 [CZ]] wox2 [CZ] taps Plateau
+0:18:28 [wox2 [CZ]] wox2 [CZ] taps Mountain
+0:18:28 [wox2 [CZ]] wox2 [CZ] taps Mountain
+0:18:29 [wox2 [CZ]] It is now the Combat Phase, Declare Attackers Step
+0:18:30 [wox2 [CZ]] wox2 [CZ] taps Goblin Warchief
+0:18:30 [Mike] wox2 [CZ] taps Goblin Warchief
+0:18:31 [Mike] Mike's life total is now 16 (-2)
+0:18:32 [wox2 [CZ]] It is now the End Phase, End Of Turn Step
+0:18:34 [Mike] It is now turn 43 (Mike)
+0:18:34 [Mike] It is now the Beginning Phase, Untap Step
+0:18:35 [wox2 [CZ]] <wox2 [CZ]> thicket
+0:18:35 [Mike] Mike untaps his/her permanents
+0:18:35 [Mike] It is now the Beginning Phase, Upkeep Step
+0:18:37 [Mike] Mike taps Tranquil Thicket
+0:18:37 [wox2 [CZ]] wox2 [CZ] taps Plateau
+0:18:37 [wox2 [CZ]] wox2 [CZ] taps Rishadan Port
+0:18:38 [Mike] It is now the Beginning Phase, Draw Step
+0:18:38 [Mike] Mike draws a card
+0:18:38 [Mike] It is now the Precombat Main Phase
+0:18:39 [Mike] Mike taps Kor Haven
+0:18:40 [Mike] Mike taps Mox Diamond
+0:18:41 [Mike] Mike taps Mox Diamond
+0:18:42 [Mike] Mike plays Kitchen Finks from Hand
+0:18:44 [Mike] Mike's life total is now 18 (+2)
+0:18:45 [Mike] It is now the End Phase, End Of Turn Step
+0:18:46 [Mike] <Mike> End my turn
+0:18:47 [wox2 [CZ]] It is now turn 44 (wox2 [CZ])
+0:18:47 [wox2 [CZ]] It is now the Beginning Phase, Untap Step
+0:18:48 [wox2 [CZ]] wox2 [CZ] untaps his/her permanents
+0:18:48 [wox2 [CZ]] It is now the Beginning Phase, Upkeep Step
+0:18:49 [wox2 [CZ]] It is now the Beginning Phase, Draw Step
+0:18:49 [wox2 [CZ]] wox2 [CZ] draws a card
+0:18:49 [wox2 [CZ]] It is now the Precombat Main Phase
+0:18:51 [wox2 [CZ]] wox2 [CZ] plays Relic of Progenitus from Hand
+0:18:52 [wox2 [CZ]] wox2 [CZ] taps Mountain
+0:18:55 [Mike] <Mike> Ok
+0:18:56 [wox2 [CZ]] wox2 [CZ] taps Relic of Progenitus
+0:18:58 [wox2 [CZ]] <wox2 [CZ]> remove
+0:19:01 [Mike] Mike puts Wasteland to RFG from Graveyard
+0:19:09 [wox2 [CZ]] It is now the End Phase, End Of Turn Step
+0:19:12 [Mike] It is now turn 45 (Mike)
+0:19:12 [Mike] It is now the Beginning Phase, Untap Step
+0:19:13 [Mike] Mike untaps his/her permanents
+0:19:13 [Mike] It is now the Beginning Phase, Upkeep Step
+0:19:14 [wox2 [CZ]] wox2 [CZ] taps Plateau
+0:19:14 [wox2 [CZ]] wox2 [CZ] taps Rishadan Port
+0:19:17 [Mike] Mike taps Tranquil Thicket
+0:19:19 [Mike] It is now the Beginning Phase, Draw Step
+0:19:19 [Mike] Mike draws a card
+0:19:19 [Mike] It is now the Precombat Main Phase
+0:19:22 [Mike] Mike taps Kor Haven
+0:19:24 [Mike] Mike plays Sensei's Divining Top from Hand
+0:19:29 [Mike] <Mike> Ok?
+0:19:31 [wox2 [CZ]] <wox2 [CZ]> ok
+0:19:36 [Mike] Mike taps Mox Diamond
+0:19:39 [Mike] Mike is looking top 3 cards of its Library...
+0:19:40 [Mike] Mike stops looking its Library...
+0:19:45 [Mike] Mike taps Sensei's Divining Top
+0:19:47 [Mike] <Mike> Ok?
+0:19:49 [wox2 [CZ]] <wox2 [CZ]> o
+0:19:50 [wox2 [CZ]] <wox2 [CZ]> ok
+0:19:55 [Mike] Mike puts Forgotten Cave into play from Library
+0:19:57 [Mike] Mike puts Forgotten Cave into play from Library
+0:19:59 [Mike] Mike puts Taiga into play from Library
+0:20:01 [Mike] Mike puts Life from the Loam into play from Graveyard
+0:20:04 [Mike] Mike puts Life from the Loam to Hand from Play
+0:20:07 [Mike] Mike puts Taiga to Graveyard from Play
+0:20:08 [Mike] Mike puts Forgotten Cave to Graveyard from Play
+0:20:08 [Mike] Mike puts Forgotten Cave to Graveyard from Play
+0:20:09 [Mike] Mike puts a Sensei's Divining Top on top of Library from Play
+0:20:11 [Mike] It is now the End Phase, End Of Turn Step
+0:20:12 [Mike] <Mike> End my turn
+0:20:14 [wox2 [CZ]] It is now turn 46 (wox2 [CZ])
+0:20:14 [wox2 [CZ]] It is now the Beginning Phase, Untap Step
+0:20:15 [wox2 [CZ]] wox2 [CZ] untaps his/her permanents
+0:20:15 [wox2 [CZ]] It is now the Beginning Phase, Upkeep Step
+0:20:16 [wox2 [CZ]] It is now the Beginning Phase, Draw Step
+0:20:16 [wox2 [CZ]] wox2 [CZ] draws a card
+0:20:16 [wox2 [CZ]] It is now the Precombat Main Phase
+0:20:19 [wox2 [CZ]] wox2 [CZ] plays Bloodstained Mire from Hand
+0:20:20 [wox2 [CZ]] It is now the End Phase, End Of Turn Step
+0:20:23 [Mike] It is now turn 47 (Mike)
+0:20:23 [Mike] It is now the Beginning Phase, Untap Step
+0:20:24 [wox2 [CZ]] wox2 [CZ] taps Relic of Progenitus
+0:20:24 [Mike] Mike untaps his/her permanents
+0:20:25 [Mike] It is now the Beginning Phase, Upkeep Step
+0:20:27 [wox2 [CZ]] <wox2 [CZ]> remove
+0:20:29 [Mike] Mike puts Taiga to RFG from Graveyard
+0:20:30 [wox2 [CZ]] wox2 [CZ] taps Plateau
+0:20:30 [wox2 [CZ]] wox2 [CZ] taps Rishadan Port
+0:20:32 [wox2 [CZ]] <wox2 [CZ]> thicket
+0:20:39 [Mike] Mike puts Taiga to Graveyard from RFG
+0:20:42 [Mike] Mike puts Forgotten Cave to RFG from Graveyard
+0:20:45 [Mike] Mike taps Tranquil Thicket
+0:20:50 [Mike] It is now the Beginning Phase, Draw Step
+0:20:51 [Mike] Mike draws a card
+0:20:51 [Mike] It is now the Precombat Main Phase
+0:20:53 [Mike] Mike taps Kor Haven
+0:20:53 [Mike] Mike taps Mox Diamond
+0:20:56 [Mike] Mike plays Life from the Loam from Hand
+0:20:57 [Mike] <Mike> Ok?
+0:20:59 [wox2 [CZ]] <wox2 [CZ]> Thinking
+0:21:15 [wox2 [CZ]] wox2 [CZ] taps Bloodstained Mire
+0:21:16 [wox2 [CZ]] wox2 [CZ] puts Bloodstained Mire to RFG from Play
+0:21:18 [wox2 [CZ]] wox2 [CZ]'s life total is now 13 (-1)
+0:21:19 [wox2 [CZ]] wox2 [CZ] is looking its Library...
+0:21:24 [wox2 [CZ]] wox2 [CZ] puts Mountain into play from Library
+0:21:25 [wox2 [CZ]] wox2 [CZ] shuffles library
+0:21:25 [wox2 [CZ]] wox2 [CZ] stops looking its Library...
+0:21:27 [wox2 [CZ]] wox2 [CZ] taps Mountain
+0:21:30 [wox2 [CZ]] wox2 [CZ] puts Relic of Progenitus to RFG from Play
+0:21:34 [Mike] Mike puts Forgotten Cave to RFG from Graveyard
+0:21:36 [Mike] Mike puts Taiga to RFG from Graveyard
+0:21:37 [wox2 [CZ]] wox2 [CZ] draws a card
+0:21:38 [Mike] Mike puts Life from the Loam to Graveyard from Play
+0:21:40 [Mike] Mike taps Mox Diamond
+0:21:42 [Mike] Mike plays Sensei's Divining Top from Hand
+0:21:42 [Mike] It is now the End Phase, Cleanup Step
+0:21:43 [Mike] <Mike> End my turn
+0:21:45 [wox2 [CZ]] It is now turn 48 (wox2 [CZ])
+0:21:45 [wox2 [CZ]] It is now the Beginning Phase, Untap Step
+0:21:47 [wox2 [CZ]] wox2 [CZ] untaps his/her permanents
+0:21:47 [wox2 [CZ]] It is now the Beginning Phase, Upkeep Step
+0:21:48 [wox2 [CZ]] It is now the Beginning Phase, Draw Step
+0:21:48 [wox2 [CZ]] wox2 [CZ] draws a card
+0:21:48 [wox2 [CZ]] It is now the Precombat Main Phase
+0:21:51 [wox2 [CZ]] wox2 [CZ] plays Rishadan Port from Hand
+0:21:53 [wox2 [CZ]] It is now the End Phase, End Of Turn Step
+0:21:55 [Mike] It is now turn 49 (Mike)
+0:21:55 [Mike] It is now the Beginning Phase, Untap Step
+0:21:56 [Mike] Mike untaps his/her permanents
+0:21:56 [Mike] It is now the Beginning Phase, Upkeep Step
+0:21:57 [Mike] Mike taps Tranquil Thicket
+0:21:57 [wox2 [CZ]] <wox2 [CZ]> both lands
+0:21:59 [Mike] Mike taps Kor Haven
+0:22:00 [wox2 [CZ]] wox2 [CZ] taps Plateau
+0:22:00 [wox2 [CZ]] wox2 [CZ] taps Mountain
+0:22:00 [wox2 [CZ]] wox2 [CZ] taps Rishadan Port
+0:22:00 [wox2 [CZ]] wox2 [CZ] taps Rishadan Port
+0:22:02 [Mike] Mike is looking top 3 cards of its Library...
+0:22:06 [Mike] Mike rearranges cards in Mike's Library
+0:22:06 [Mike] Mike rearranges cards in Mike's Library
+0:22:07 [Mike] Mike stops looking its Library...
+0:22:08 [Mike] It is now the Beginning Phase, Draw Step
+0:22:09 [Mike] Mike draws a card
+0:22:09 [Mike] It is now the Precombat Main Phase
+0:22:10 [Mike] Mike taps Mox Diamond
+0:22:11 [Mike] Mike plays Lightning Bolt from Hand
+0:22:14 [Mike] Mike puts Lightning Bolt to Graveyard from Play
+0:22:15 [wox2 [CZ]] wox2 [CZ] puts Goblin Warchief to Graveyard from Play
+0:22:15 [Mike] It is now the Combat Phase, Beginning Of Combat Step
+0:22:15 [Mike] It is now the Combat Phase, Declare Attackers Step
+0:22:16 [wox2 [CZ]] Mike taps Kitchen Finks
+0:22:16 [Mike] Mike taps Kitchen Finks
+0:22:17 [wox2 [CZ]] wox2 [CZ]'s life total is now 10 (-3)
+0:22:18 [Mike] It is now the End Phase, End Of Turn Step
+0:22:19 [Mike] <Mike> End my turn
+0:22:21 [wox2 [CZ]] It is now turn 50 (wox2 [CZ])
+0:22:21 [wox2 [CZ]] It is now the Beginning Phase, Untap Step
+0:22:22 [wox2 [CZ]] wox2 [CZ] untaps his/her permanents
+0:22:22 [wox2 [CZ]] It is now the Beginning Phase, Upkeep Step
+0:22:22 [wox2 [CZ]] It is now the Beginning Phase, Draw Step
+0:22:23 [wox2 [CZ]] wox2 [CZ] draws a card
+0:22:23 [wox2 [CZ]] It is now the Precombat Main Phase
+0:22:25 [wox2 [CZ]] wox2 [CZ] plays Wooded Foothills from Hand
+0:22:25 [wox2 [CZ]] wox2 [CZ] taps Wooded Foothills
+0:22:26 [wox2 [CZ]] wox2 [CZ] puts Wooded Foothills to Graveyard from Play
+0:22:27 [wox2 [CZ]] wox2 [CZ]'s life total is now 9 (-1)
+0:22:29 [wox2 [CZ]] wox2 [CZ] is looking its Library...
+0:22:33 [wox2 [CZ]] wox2 [CZ] shuffles library
+0:22:33 [wox2 [CZ]] wox2 [CZ] stops looking its Library...
+0:22:35 [wox2 [CZ]] wox2 [CZ] plays Goblin Ringleader from Hand
+0:22:39 [Mike] <Mike> Ok
+0:22:45 [wox2 [CZ]] wox2 [CZ] taps Mountain
+0:22:45 [wox2 [CZ]] wox2 [CZ] taps Rishadan Port
+0:22:45 [wox2 [CZ]] wox2 [CZ] taps Mountain
+0:22:45 [Mike] <Mike> Ok
+0:22:46 [wox2 [CZ]] wox2 [CZ] taps Mountain
+0:22:49 [wox2 [CZ]] wox2 [CZ] puts AEther Vial into play from Library
+0:22:51 [wox2 [CZ]] wox2 [CZ] puts Goblin Ringleader into play from Library
+0:22:52 [wox2 [CZ]] wox2 [CZ] puts Goblin Lackey into play from Library
+0:22:53 [wox2 [CZ]] wox2 [CZ] puts Goblin Piledriver into play from Library
+0:22:58 [wox2 [CZ]] wox2 [CZ] puts a AEther Vial on bottom of Library from Play
+0:23:00 [wox2 [CZ]] wox2 [CZ] puts Goblin Piledriver to Hand from Play
+0:23:00 [wox2 [CZ]] wox2 [CZ] puts Goblin Ringleader to Hand from Play
+0:23:00 [wox2 [CZ]] wox2 [CZ] puts Goblin Lackey to Hand from Play
+0:23:02 [wox2 [CZ]] It is now the Combat Phase, Declare Attackers Step
+0:23:03 [Mike] <Mike> Ok
+0:23:03 [wox2 [CZ]] wox2 [CZ] taps Goblin Ringleader
+0:23:04 [Mike] wox2 [CZ] taps Goblin Ringleader
+0:23:05 [Mike] Mike's life total is now 16 (-2)
+0:23:06 [wox2 [CZ]] It is now the Postcombat Main Phase
+0:23:07 [wox2 [CZ]] wox2 [CZ] taps Plateau
+0:23:09 [wox2 [CZ]] wox2 [CZ] plays Goblin Lackey from Hand
+0:23:10 [wox2 [CZ]] wox2 [CZ] taps Plateau
+0:23:11 [wox2 [CZ]] wox2 [CZ] taps Rishadan Port
+0:23:12 [Mike] <Mike> Ok
+0:23:12 [wox2 [CZ]] wox2 [CZ] plays Goblin Piledriver from Hand
+0:23:13 [wox2 [CZ]] It is now the End Phase, End Of Turn Step
+0:23:14 [Mike] <Mike> Ok
+0:23:15 [wox2 [CZ]] <wox2 [CZ]> End my turn
+0:23:18 [Mike] Mike taps Mox Diamond
+0:23:24 [Mike] Mike is looking top 3 cards of its Library...
+0:23:40 [Mike] Mike rearranges cards in Mike's Library
+0:23:42 [Mike] Mike stops looking its Library...
+0:23:44 [Mike] It is now turn 51 (Mike)
+0:23:44 [Mike] It is now the Beginning Phase, Untap Step
+0:23:45 [Mike] Mike untaps his/her permanents
+0:23:46 [Mike] It is now the Beginning Phase, Upkeep Step
+0:23:48 [Mike] It is now the Beginning Phase, Draw Step
+0:23:48 [Mike] Mike draws a card
+0:23:49 [Mike] It is now the Precombat Main Phase
+0:23:51 [Mike] Mike taps Sensei's Divining Top
+0:23:52 [Mike] Mike draws a card
+0:23:54 [Mike] Mike puts a Sensei's Divining Top on top of Library from Play
+0:23:57 [Mike] Mike taps Mox Diamond
+0:23:58 [Mike] Mike taps Mox Diamond
+0:23:59 [Mike] Mike plays Devastating Dreams from Hand
+0:24:01 [Mike] <Mike> 2
+0:24:04 [Mike] Mike puts Wasteland to Graveyard from Hand
+0:24:05 [Mike] Mike puts Seismic Assault to Graveyard from Hand
+0:24:05 [Mike] Mike puts Devastating Dreams to Graveyard from Play
+0:24:06 [wox2 [CZ]] wox2 [CZ] puts Goblin Piledriver to Graveyard from Play
+0:24:06 [wox2 [CZ]] wox2 [CZ] puts Goblin Ringleader to Graveyard from Play
+0:24:06 [wox2 [CZ]] wox2 [CZ] puts Goblin Lackey to Graveyard from Play
+0:24:07 [Mike] Mike puts Kor Haven to Graveyard from Play
+0:24:08 [Mike] Mike puts Tranquil Thicket to Graveyard from Play
+0:24:09 [Mike] Kitchen Finks now has 1 (+1) counters.
+0:24:11 [Mike] Mike's life total is now 18 (+2)
+0:24:11 [wox2 [CZ]] wox2 [CZ] puts Mountain to Graveyard from Play
+0:24:11 [wox2 [CZ]] wox2 [CZ] puts Mountain to Graveyard from Play
+0:24:13 [Mike] It is now the End Phase, Cleanup Step
+0:24:15 [Mike] <Mike> End my turn
+0:24:16 [wox2 [CZ]] It is now turn 52 (wox2 [CZ])
+0:24:16 [wox2 [CZ]] It is now the Beginning Phase, Untap Step
+0:24:18 [wox2 [CZ]] wox2 [CZ] untaps his/her permanents
+0:24:18 [wox2 [CZ]] It is now the Beginning Phase, Upkeep Step
+0:24:18 [wox2 [CZ]] It is now the Beginning Phase, Draw Step
+0:24:19 [wox2 [CZ]] wox2 [CZ] draws a card
+0:24:19 [wox2 [CZ]] It is now the Precombat Main Phase
+0:24:24 [wox2 [CZ]] <wox2 [CZ]> Thinking
+0:24:57 [Mike] <Mike> Ok
+0:25:06 [wox2 [CZ]] wox2 [CZ] plays Goblin Ringleader from Hand
+0:25:07 [wox2 [CZ]] wox2 [CZ] taps Mountain
+0:25:08 [wox2 [CZ]] wox2 [CZ] taps Rishadan Port
+0:25:09 [wox2 [CZ]] wox2 [CZ] taps Plateau
+0:25:09 [Mike] <Mike> Ok
+0:25:09 [wox2 [CZ]] wox2 [CZ] taps Rishadan Port
+0:25:11 [wox2 [CZ]] wox2 [CZ] puts Wasteland into play from Library
+0:25:12 [wox2 [CZ]] wox2 [CZ] puts Goblin Matron into play from Library
+0:25:13 [wox2 [CZ]] wox2 [CZ] puts AEther Vial into play from Library
+0:25:15 [wox2 [CZ]] wox2 [CZ] puts Gempalm Incinerator into play from Library
+0:25:18 [wox2 [CZ]] wox2 [CZ] puts Goblin Matron to Hand from Play
+0:25:18 [wox2 [CZ]] wox2 [CZ] puts Gempalm Incinerator to Hand from Play
+0:25:19 [Mike] <Mike> Ok
+0:25:21 [wox2 [CZ]] wox2 [CZ] puts a Wasteland on bottom of Library from Play
+0:25:21 [wox2 [CZ]] wox2 [CZ] puts a AEther Vial on bottom of Library from Play
+0:25:35 [wox2 [CZ]] It is now the Combat Phase, Declare Attackers Step
+0:25:36 [wox2 [CZ]] wox2 [CZ] taps Goblin Ringleader
+0:25:37 [Mike] wox2 [CZ] taps Goblin Ringleader
+0:25:39 [Mike] Mike puts Kitchen Finks to Graveyard from Play
+0:25:40 [wox2 [CZ]] wox2 [CZ] puts Goblin Ringleader to Graveyard from Play
+0:25:41 [wox2 [CZ]] It is now the End Phase, End Of Turn Step
+0:25:42 [wox2 [CZ]] <wox2 [CZ]> End my turn
+0:25:44 [Mike] It is now turn 53 (Mike)
+0:25:44 [Mike] It is now the Beginning Phase, Untap Step
+0:25:45 [Mike] Mike untaps his/her permanents
+0:25:45 [Mike] It is now the Beginning Phase, Upkeep Step
+0:25:47 [Mike] It is now the Beginning Phase, Draw Step
+0:25:47 [Mike] Mike draws a card
+0:25:48 [Mike] It is now the Precombat Main Phase
+0:25:49 [Mike] Mike taps Mox Diamond
+0:25:51 [Mike] Mike plays Sensei's Divining Top from Hand
+0:25:51 [Mike] It is now the End Phase, Cleanup Step
+0:25:52 [Mike] <Mike> End my turn
+0:25:54 [wox2 [CZ]] It is now turn 54 (wox2 [CZ])
+0:25:54 [wox2 [CZ]] It is now the Beginning Phase, Untap Step
+0:25:55 [wox2 [CZ]] wox2 [CZ] untaps his/her permanents
+0:25:55 [wox2 [CZ]] It is now the Beginning Phase, Upkeep Step
+0:25:55 [wox2 [CZ]] It is now the Beginning Phase, Draw Step
+0:25:56 [wox2 [CZ]] wox2 [CZ] draws a card
+0:25:56 [wox2 [CZ]] It is now the Precombat Main Phase
+0:26:00 [wox2 [CZ]] wox2 [CZ] taps Plateau
+0:26:00 [wox2 [CZ]] wox2 [CZ] taps Rishadan Port
+0:26:00 [wox2 [CZ]] wox2 [CZ] taps Rishadan Port
+0:26:02 [wox2 [CZ]] wox2 [CZ] plays Goblin Matron from Hand
+0:26:04 [Mike] <Mike> Ok
+0:26:04 [wox2 [CZ]] wox2 [CZ] is looking its Library...
+0:26:13 [wox2 [CZ]] wox2 [CZ] puts Goblin Piledriver into play from Library
+0:26:17 [Mike] <Mike> Ok
+0:26:21 [wox2 [CZ]] wox2 [CZ] shuffles library
+0:26:21 [wox2 [CZ]] wox2 [CZ] stops looking its Library...
+0:26:22 [wox2 [CZ]] wox2 [CZ] taps Plateau
+0:26:22 [wox2 [CZ]] wox2 [CZ] taps Mountain
+0:26:23 [wox2 [CZ]] It is now the End Phase, End Of Turn Step
+0:26:25 [wox2 [CZ]] <wox2 [CZ]> End my turn
+0:26:26 [Mike] Mike taps Mox Diamond
+0:26:29 [Mike] Mike is looking top 3 cards of its Library...
+0:26:31 [Mike] Mike stops looking its Library...
+0:26:32 [Mike] It is now turn 55 (Mike)
+0:26:32 [Mike] It is now the Beginning Phase, Untap Step
+0:26:32 [wox2 [CZ]] <wox2 [CZ]> Wait!
+0:26:33 [Mike] Mike untaps his/her permanents
+0:26:33 [Mike] It is now the Beginning Phase, Upkeep Step
+0:26:33 [wox2 [CZ]] <wox2 [CZ]> Thinking
+0:26:38 [Mike] <Mike> Ok
+0:26:39 [wox2 [CZ]] <wox2 [CZ]> I missplayed
+0:26:42 [Mike] It is now turn 56 (wox2 [CZ])
+0:26:42 [Mike] It is now the Beginning Phase, Untap Step
+0:26:43 [Mike] It is now the Postcombat Main Phase
+0:26:44 [Mike] <Mike> Ok
+0:26:46 [wox2 [CZ]] <wox2 [CZ]> may I find anything else?
+0:26:52 [Mike] <Mike> yes
+0:26:53 [wox2 [CZ]] wox2 [CZ] puts a Goblin Piledriver on top of Library from Play
+0:26:54 [Mike] <Mike> Ok
+0:26:54 [wox2 [CZ]] wox2 [CZ] is looking its Library...
+0:27:00 [wox2 [CZ]] wox2 [CZ] puts Goblin Tinkerer into play from Library
+0:27:01 [wox2 [CZ]] wox2 [CZ] shuffles library
+0:27:01 [wox2 [CZ]] wox2 [CZ] stops looking its Library...
+0:27:02 [wox2 [CZ]] It is now the End Phase, End Of Turn Step
+0:27:03 [wox2 [CZ]] <wox2 [CZ]> End my turn
+0:27:11 [Mike] It is now turn 57 (Mike)
+0:27:11 [Mike] It is now the Beginning Phase, Untap Step
+0:27:12 [Mike] Mike untaps his/her permanents
+0:27:12 [Mike] It is now the Beginning Phase, Upkeep Step
+0:27:15 [Mike] Mike puts Life from the Loam into play from Graveyard
+0:27:17 [Mike] Mike puts Mox Diamond into play from Library
+0:27:18 [Mike] Mike puts Sensei's Divining Top into play from Library
+0:27:19 [Mike] Mike puts Wooded Foothills into play from Library
+0:27:21 [Mike] Mike puts Sensei's Divining Top to Graveyard from Play
+0:27:21 [Mike] Mike puts Mox Diamond to Graveyard from Play
+0:27:21 [Mike] Mike puts Wooded Foothills to Graveyard from Play
+0:27:22 [Mike] It is now the Precombat Main Phase
+0:27:24 [Mike] Mike taps Mox Diamond
+0:27:24 [Mike] Mike taps Mox Diamond
+0:27:28 [wox2 [CZ]] <wox2 [CZ]> Ok
+0:27:28 [Mike] Mike puts Kor Haven into play from Graveyard
+0:27:31 [Mike] Mike puts Wooded Foothills into play from Graveyard
+0:27:32 [Mike] Mike puts Tranquil Thicket into play from Graveyard
+0:27:34 [Mike] Mike puts Life from the Loam to Graveyard from Play
+0:27:37 [Mike] Mike puts Kor Haven to Hand from Play
+0:27:38 [Mike] Mike puts Wooded Foothills to Hand from Play
+0:27:38 [Mike] Mike puts Tranquil Thicket to Hand from Play
+0:27:39 [Mike] Mike plays Wooded Foothills from Hand
+0:27:39 [Mike] Mike taps Wooded Foothills
+0:27:41 [Mike] Mike sacrifices Wooded Foothills
+0:27:42 [Mike] Mike's life total is now 17 (-1)
+0:27:43 [Mike] Mike is looking its Library...
+0:27:51 [Mike] Mike puts Taiga into play from Library
+0:27:52 [Mike] Mike shuffles library
+0:27:53 [Mike] Mike stops looking its Library...
+0:27:53 [Mike] Mike shuffles library
+0:27:54 [Mike] Mike shuffles library
+0:27:55 [Mike] It is now the End Phase, End Of Turn Step
+0:27:56 [Mike] <Mike> End my turn
+0:27:57 [wox2 [CZ]] It is now turn 58 (wox2 [CZ])
+0:27:57 [wox2 [CZ]] It is now the Beginning Phase, Untap Step
+0:27:59 [wox2 [CZ]] wox2 [CZ] untaps his/her permanents
+0:27:59 [wox2 [CZ]] It is now the Beginning Phase, Upkeep Step
+0:28:00 [wox2 [CZ]] It is now the Beginning Phase, Draw Step
+0:28:02 [wox2 [CZ]] wox2 [CZ] draws a card
+0:28:02 [wox2 [CZ]] It is now the Precombat Main Phase
+0:28:03 [wox2 [CZ]] wox2 [CZ] taps Mountain
+0:28:04 [wox2 [CZ]] wox2 [CZ] taps Goblin Tinkerer
+0:28:07 [wox2 [CZ]] <wox2 [CZ]> mox
+0:28:09 [Mike] Mike puts Mox Diamond to Graveyard from Play
+0:28:15 [wox2 [CZ]] It is now the Combat Phase, Declare Attackers Step
+0:28:17 [wox2 [CZ]] wox2 [CZ] taps Goblin Matron
+0:28:18 [Mike] wox2 [CZ] taps Goblin Matron
+0:28:19 [Mike] Mike's life total is now 16 (-1)
+0:28:20 [wox2 [CZ]] It is now the End Phase, End Of Turn Step
+0:28:20 [Mike] It is now the Postcombat Main Phase
+0:28:22 [wox2 [CZ]] It is now the End Phase, End Of Turn Step
+0:28:23 [Mike] It is now turn 59 (Mike)
+0:28:23 [Mike] It is now the Beginning Phase, Untap Step
+0:28:24 [Mike] Mike untaps his/her permanents
+0:28:24 [Mike] It is now the Beginning Phase, Upkeep Step
+0:28:25 [wox2 [CZ]] wox2 [CZ] taps Plateau
+0:28:25 [wox2 [CZ]] wox2 [CZ] taps Rishadan Port
+0:28:27 [Mike] Mike taps Taiga
+0:28:34 [Mike] Mike is looking top 3 cards of its Library...
+0:28:39 [Mike] <Mike> Thinking
+0:29:00 [Mike] Mike stops looking its Library...
+0:29:03 [Mike] It is now the Beginning Phase, Draw Step
+0:29:03 [Mike] Mike draws a card
+0:29:03 [Mike] It is now the Precombat Main Phase
+0:29:04 [Mike] Mike plays Wooded Foothills from Hand
+0:29:05 [Mike] It is now the End Phase, End Of Turn Step
+0:29:06 [Mike] <Mike> End my turn
+0:29:11 [wox2 [CZ]] wox2 [CZ] taps Plateau
+0:29:11 [wox2 [CZ]] wox2 [CZ] taps Rishadan Port
+0:29:13 [wox2 [CZ]] <wox2 [CZ]> eot
+0:29:16 [wox2 [CZ]] <wox2 [CZ]> tap fetch
+0:29:18 [Mike] Mike taps Wooded Foothills
+0:29:19 [Mike] Mike sacrifices Wooded Foothills
+0:29:21 [Mike] Mike's life total is now 15 (-1)
+0:29:23 [Mike] Mike is looking its Library...
+0:29:25 [Mike] Mike puts Taiga into play from Library
+0:29:29 [Mike] Mike shuffles library
+0:29:29 [Mike] Mike stops looking its Library...
+0:29:31 [Mike] Mike shuffles library
+0:29:32 [Mike] Mike shuffles library
+0:29:33 [Mike] <Mike> End my turn
+0:29:41 [wox2 [CZ]] <wox2 [CZ]> I don't think this is right play now
+0:29:43 [wox2 [CZ]] It is now turn 60 (wox2 [CZ])
+0:29:43 [wox2 [CZ]] It is now the Beginning Phase, Untap Step
+0:29:45 [wox2 [CZ]] wox2 [CZ] untaps his/her permanents
+0:29:45 [wox2 [CZ]] It is now the Beginning Phase, Upkeep Step
+0:29:49 [wox2 [CZ]] It is now the Beginning Phase, Draw Step
+0:29:50 [wox2 [CZ]] wox2 [CZ] draws a card
+0:29:50 [wox2 [CZ]] It is now the Precombat Main Phase
+0:29:51 [Mike] <Mike> trust me
+0:29:53 [wox2 [CZ]] wox2 [CZ] taps Mountain
+0:29:56 [wox2 [CZ]] wox2 [CZ] taps Goblin Tinkerer
+0:29:56 [Mike] <Mike> i know my topdeck
+0:29:59 [wox2 [CZ]] <wox2 [CZ]> mox
+0:30:01 [Mike] Mike taps Mox Diamond
+0:30:05 [Mike] Mike is looking top 3 cards of its Library...
+0:30:10 [Mike] Mike stops looking its Library...
+0:30:12 [Mike] Mike puts Mox Diamond to Graveyard from Play
+0:30:17 [wox2 [CZ]] It is now the Combat Phase, Declare Attackers Step
+0:30:18 [wox2 [CZ]] wox2 [CZ] taps Goblin Matron
+0:30:18 [Mike] wox2 [CZ] taps Goblin Matron
+0:30:20 [Mike] Mike's life total is now 14 (-1)
+0:30:24 [Mike] It is now the Postcombat Main Phase
+0:30:24 [wox2 [CZ]] It is now the End Phase, End Of Turn Step
+0:30:28 [Mike] Mike taps Taiga
+0:30:28 [wox2 [CZ]] <wox2 [CZ]> upkeep
+0:30:31 [Mike] Mike is looking top 3 cards of its Library...
+0:30:32 [Mike] Mike rearranges cards in Mike's Library
+0:30:33 [Mike] Mike rearranges cards in Mike's Library
+0:30:41 [Mike] Mike stops looking its Library...
+0:30:42 [Mike] It is now turn 61 (Mike)
+0:30:42 [Mike] It is now the Beginning Phase, Untap Step
+0:30:43 [Mike] Mike untaps his/her permanents
+0:30:43 [wox2 [CZ]] wox2 [CZ] taps Plateau
+0:30:43 [wox2 [CZ]] wox2 [CZ] taps Plateau
+0:30:43 [wox2 [CZ]] wox2 [CZ] taps Rishadan Port
+0:30:43 [wox2 [CZ]] wox2 [CZ] taps Rishadan Port
+0:30:43 [Mike] It is now the Beginning Phase, Upkeep Step
+0:30:45 [Mike] Mike taps Taiga
+0:30:45 [Mike] Mike taps Taiga
+0:30:46 [Mike] It is now the Beginning Phase, Draw Step
+0:30:46 [Mike] Mike draws a card
+0:30:47 [Mike] It is now the Precombat Main Phase
+0:30:47 [Mike] Mike plays Taiga from Hand
+0:30:48 [Mike] It is now the End Phase, End Of Turn Step
+0:30:49 [Mike] <Mike> End my turn
+0:30:51 [wox2 [CZ]] It is now turn 62 (wox2 [CZ])
+0:30:51 [wox2 [CZ]] It is now the Beginning Phase, Untap Step
+0:30:52 [wox2 [CZ]] wox2 [CZ] untaps his/her permanents
+0:30:52 [wox2 [CZ]] It is now the Beginning Phase, Upkeep Step
+0:30:53 [wox2 [CZ]] It is now the Beginning Phase, Draw Step
+0:30:55 [wox2 [CZ]] wox2 [CZ] draws a card
+0:30:55 [wox2 [CZ]] It is now the Precombat Main Phase
+0:31:02 [wox2 [CZ]] <wox2 [CZ]> Thinking
+0:31:08 [wox2 [CZ]] It is now the Combat Phase, Declare Attackers Step
+0:31:09 [wox2 [CZ]] wox2 [CZ] taps Goblin Tinkerer
+0:31:10 [Mike] wox2 [CZ] taps Goblin Tinkerer
+0:31:10 [wox2 [CZ]] wox2 [CZ] taps Goblin Matron
+0:31:10 [Mike] wox2 [CZ] taps Goblin Matron
+0:31:12 [Mike] Mike's life total is now 12 (-2)
+0:31:13 [Mike] It is now the Postcombat Main Phase
+0:31:17 [wox2 [CZ]] wox2 [CZ] taps Plateau
+0:31:18 [wox2 [CZ]] wox2 [CZ] plays AEther Vial from Hand
+0:31:19 [wox2 [CZ]] It is now the End Phase, End Of Turn Step
+0:31:22 [wox2 [CZ]] <wox2 [CZ]> upkeep
+0:31:22 [Mike] <Mike> Ok
+0:31:25 [Mike] Mike taps Taiga
+0:31:29 [Mike] Mike plays Tranquil Thicket from Hand
+0:31:31 [Mike] Mike puts Tranquil Thicket to Graveyard from Play
+0:31:32 [Mike] Mike draws a card
+0:31:34 [Mike] It is now turn 63 (Mike)
+0:31:34 [Mike] It is now the Beginning Phase, Untap Step
+0:31:34 [Mike] Mike untaps his/her permanents
+0:31:35 [Mike] It is now the Beginning Phase, Upkeep Step
+0:31:36 [wox2 [CZ]] wox2 [CZ] taps Plateau
+0:31:36 [wox2 [CZ]] wox2 [CZ] taps Mountain
+0:31:36 [wox2 [CZ]] wox2 [CZ] taps Rishadan Port
+0:31:36 [wox2 [CZ]] wox2 [CZ] taps Rishadan Port
+0:31:36 [Mike] Mike taps Taiga
+0:31:36 [Mike] Mike taps Taiga
+0:31:38 [Mike] Mike is looking top 3 cards of its Library...
+0:31:50 [Mike] Mike stops looking its Library...
+0:31:57 [Mike] Mike puts Life from the Loam into play from Graveyard
+0:31:59 [Mike] Mike puts Tranquil Thicket into play from Library
+0:32:00 [Mike] Mike puts Forgotten Cave into play from Library
+0:32:02 [Mike] Mike puts Sensei's Divining Top into play from Library
+0:32:03 [Mike] Mike puts Tranquil Thicket to Graveyard from Play
+0:32:04 [Mike] Mike puts Forgotten Cave to Graveyard from Play
+0:32:04 [Mike] Mike puts Sensei's Divining Top to Graveyard from Play
+0:32:04 [Mike] It is now the Precombat Main Phase
+0:32:07 [Mike] Mike puts Life from the Loam to Hand from Play
+0:32:08 [Mike] Mike plays Wasteland from Hand
+0:32:10 [Mike] Mike taps Taiga
+0:32:10 [Mike] Mike taps Wasteland
+0:32:11 [Mike] Mike plays Life from the Loam from Hand
+0:32:13 [wox2 [CZ]] <wox2 [CZ]> ok
+0:32:15 [Mike] Mike puts Tranquil Thicket into play from Graveyard
+0:32:17 [Mike] Mike puts Tranquil Thicket into play from Graveyard
+0:32:19 [Mike] Mike puts Forgotten Cave into play from Graveyard
+0:32:21 [Mike] Mike puts Life from the Loam to Graveyard from Play
+0:32:24 [Mike] Mike puts Forgotten Cave to Hand from Play
+0:32:24 [Mike] Mike puts Tranquil Thicket to Hand from Play
+0:32:24 [Mike] Mike puts Tranquil Thicket to Hand from Play
+0:32:25 [Mike] It is now the End Phase, Cleanup Step
+0:32:26 [Mike] <Mike> End my turn
+0:32:27 [wox2 [CZ]] <wox2 [CZ]> Thinking
+0:32:37 [wox2 [CZ]] <wox2 [CZ]> awww
+0:32:42 [wox2 [CZ]] <wox2 [CZ]> I see your topdeck
+0:32:44 [wox2 [CZ]] It is now turn 64 (wox2 [CZ])
+0:32:44 [wox2 [CZ]] It is now the Beginning Phase, Untap Step
+0:32:46 [wox2 [CZ]] wox2 [CZ] untaps his/her permanents
+0:32:46 [wox2 [CZ]] It is now the Beginning Phase, Upkeep Step
+0:32:48 [wox2 [CZ]] AEther Vial now has 1 (+1) counters.
+0:32:49 [Mike] <Mike> how?
+0:32:54 [Mike] <Mike> magic?
+0:32:55 [Mike] <Mike> (=
+0:32:59 [wox2 [CZ]] <wox2 [CZ]> looking in grave :-P
+0:33:05 [wox2 [CZ]] It is now the Beginning Phase, Draw Step
+0:33:07 [wox2 [CZ]] wox2 [CZ] draws a card
+0:33:07 [wox2 [CZ]] It is now the Precombat Main Phase
+0:33:11 [wox2 [CZ]] <wox2 [CZ]> Thinking
+0:33:48 [Mike] <Mike> pliz, little bit faster, cause i gtg in some minutes
+0:33:53 [wox2 [CZ]] <wox2 [CZ]> sorry
+0:33:56 [Mike] <Mike> resp
+0:33:56 [Mike] <Mike> Ok
+0:33:57 [Mike] <Mike> Ok
+0:34:01 [wox2 [CZ]] <wox2 [CZ]> I got to think about dreams
+0:34:09 [wox2 [CZ]] <wox2 [CZ]> and a plan to kill you fast
+0:34:12 [Mike] <Mike> Ok
+0:34:24 [wox2 [CZ]] wox2 [CZ] taps Plateau
+0:34:29 [wox2 [CZ]] wox2 [CZ] taps Rishadan Port
+0:34:35 [wox2 [CZ]] wox2 [CZ] taps Mountain
+0:34:44 [wox2 [CZ]] wox2 [CZ] plays Goblin Warchief from Hand
+0:34:48 [Mike] <Mike> Ok
+0:34:54 [wox2 [CZ]] wox2 [CZ] taps Plateau
+0:34:57 [wox2 [CZ]] wox2 [CZ] plays Goblin Piledriver from Hand
+0:34:58 [wox2 [CZ]] It is now the Combat Phase, Declare Attackers Step
+0:34:59 [Mike] <Mike> Ok
+0:35:00 [wox2 [CZ]] wox2 [CZ] taps Goblin Matron
+0:35:00 [wox2 [CZ]] wox2 [CZ] taps Goblin Tinkerer
+0:35:00 [wox2 [CZ]] wox2 [CZ] taps Goblin Warchief
+0:35:00 [wox2 [CZ]] wox2 [CZ] taps Goblin Piledriver
+0:35:01 [Mike] wox2 [CZ] taps Goblin Matron
+0:35:02 [Mike] wox2 [CZ] taps Goblin Tinkerer
+0:35:02 [Mike] wox2 [CZ] taps Goblin Warchief
+0:35:02 [Mike] wox2 [CZ] taps Goblin Piledriver
+0:35:03 [Mike] Mike's life total is now 11 (-1)
+0:35:05 [Mike] Mike's life total is now 10 (-1)
+0:35:06 [Mike] Mike's life total is now 8 (-2)
+0:35:07 [Mike] Mike's life total is now 7 (-1)
+0:35:11 [Mike] Mike's life total is now 1 (-6)
+0:35:12 [Mike] It is now the Postcombat Main Phase
+0:35:13 [wox2 [CZ]] It is now the End Phase, End Of Turn Step
+0:35:15 [wox2 [CZ]] <wox2 [CZ]> End my turn
+0:35:16 [Mike] It is now turn 65 (Mike)
+0:35:16 [Mike] It is now the Beginning Phase, Untap Step
+0:35:17 [Mike] Mike untaps his/her permanents
+0:35:18 [Mike] It is now the Beginning Phase, Upkeep Step
+0:35:19 [Mike] <Mike> Thinking
+0:35:27 [Mike] Mike taps Wasteland
+0:35:31 [Mike] Mike is looking top 3 cards of its Library...
+0:36:08 [Mike] <Mike> =(
+0:36:20 [Mike] <Mike> if iw ont see top i have a hope
+0:36:28 [wox2 [CZ]] <wox2 [CZ]> :D
+0:36:29 [Mike] <Mike> but i saw
+0:36:34 [Mike] Mike puts Kitchen Finks into play from Library
+0:36:36 [Mike] Mike puts Tarmogoyf into play from Library
+0:36:46 [wox2 [CZ]] <wox2 [CZ]> do you have anything else than dreams?
+0:36:51 [Mike] Mike stops looking its Library...
+0:36:55 [Mike] <Mike> stp
+0:36:58 [Mike] <Mike> assault
+0:37:03 [Mike] <Mike> ok
+0:37:06 [wox2 [CZ]] <wox2 [CZ]> assault helps
+0:37:06 [Mike] <Mike> you win
+0:37:14 [wox2 [CZ]] <wox2 [CZ]> do you have dreams in deck?
+0:37:20 [Mike] <Mike> relic was very bad
+0:37:21 [Mike] <Mike> 3
+0:37:28 [Mike] <Mike> thks
+0:37:31 [wox2 [CZ]] <wox2 [CZ]> so you have a chance to do something
+0:37:34 [Mike] <Mike> hope to see you at GP
+0:37:39 [Mike] <Mike> no
+0:37:46 [wox2 [CZ]] <wox2 [CZ]> you can draw
+0:37:47 [Mike] <Mike> they are all in grave
+0:37:48 [wox2 [CZ]] <wox2 [CZ]> then top
+0:37:53 [wox2 [CZ]] <wox2 [CZ]> and hope for dreams
+0:38:06 [Mike] <Mike> all dreams are in garve
+0:38:09 [wox2 [CZ]] <wox2 [CZ]> Relic is awesome
+0:38:11 [Mike] <Mike> grave
+0:38:20 [wox2 [CZ]] <wox2 [CZ]> ah
+0:38:22 [Mike] <Mike> will you go to GP?
+0:38:26 [wox2 [CZ]] <wox2 [CZ]> I noticed just two
+0:38:29 [wox2 [CZ]] <wox2 [CZ]> nope
+0:38:36 [wox2 [CZ]] <wox2 [CZ]> I stopped playing magic a while ago
+0:38:51 [wox2 [CZ]] <wox2 [CZ]> I play just for fun
+0:38:52 [Mike] <Mike> =(
+0:38:55 [Mike] <Mike> ok (=0
+0:38:59 [Mike] <Mike> thks. man
+0:39:02 [wox2 [CZ]] <wox2 [CZ]> you too
+0:39:11 [Mike] <Mike> see you
+0:39:12 [Mike] <Mike> !
+0:39:14 [Mike] <Mike> (=0
+0:39:23 [wox2 [CZ]] <wox2 [CZ]> this games was great
+0:39:29 [wox2 [CZ]] <wox2 [CZ]> :)
+0:39:29 [Mike] <Mike> yeah
+0:39:42 [Mike] <Mike> bye
+0:39:45 [wox2 [CZ]] <wox2 [CZ]> bye
+0:39:45 [<System>] <System> Player Lost

@@ -1,0 +1,33 @@
+// Deck file for Magic Workstation (http://www.magicworkstation.com)
+
+// Lands
+    4 [AN] Bazaar of Baghdad
+    4 [R] Underground Sea
+    4 [ON] Polluted Delta
+    1 [B] Island (1)
+    1 [B] Swamp (3)
+
+// Creatures
+    4 [RAV] Golgari Grave-Troll
+    4 [TO] Ichorid
+    4 [RAV] Stinkweed Imp
+    2 [DS] Sundering Titan
+    4 [TO] Basking Rootwalla
+    4 [FD] Myr Servitor
+
+// Spells
+    4 [JU] Cabal Therapy
+    2 [SC] Dragon Breath
+    3 [TSP] Dread Return
+    4 [MR] Chalice of the Void
+    3 [OD] Zombie Infestation
+    4 [US] Duress
+    2 [TO] Deep Analysis
+    2 [US] Tolarian Winds
+
+// Sideboard
+SB: 1 [DS] Sundering Titan
+SB: 2 [TSP] Ancient Grudge
+SB: 3 [VI] Emerald Charm
+SB: 4 [GP] Leyline of the Void
+SB: 4 [ON] Chain of Vapor

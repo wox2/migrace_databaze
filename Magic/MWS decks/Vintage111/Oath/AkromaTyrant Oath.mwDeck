@@ -1,0 +1,45 @@
+// Deck file for Magic Workstation (http://www.magicworkstation.com)
+
+// Lands
+    3 [ON] Flooded Strand
+    4 [CHK] Forbidden Orchard
+    2 [6E] Island (1)
+    1 [AN] Library of Alexandria
+    3 [ON] Polluted Delta
+    1 [AQ] Strip Mine (4)
+    3 [B] Tropical Island
+    3 [B] Underground Sea
+
+// Creatures
+    1 [LE] Akroma, Angel of Wrath
+    1 [DIS] Tidespout Tyrant
+
+// Spells
+    1 [B] Ancestral Recall
+    4 [IA] Brainstorm
+    2 [JU] Cunning Wish
+    1 [B] Demonic Tutor
+    3 [US] Duress
+    1 [DS] Echoing Truth
+    4 [AL] Force of Will
+    2 [WL] Gaea's Blessing
+    3 [TE] Intuition
+    1 [RAV] Life from the Loam
+    4 [LG] Mana Drain
+    3 [HL] Merchant Scroll
+    1 [6E] Mystical Tutor
+    4 [EX] Oath of Druids
+    2 [GP] Repeal
+    1 [CHK] Sensei's Divining Top
+    1 [OV] Vampiric Tutor
+
+// Sideboard
+SB: 1 [DS] Echoing Truth
+SB: 2 [PLC] Extirpate
+SB: 1 [IN] Fact or Fiction
+SB: 3 [NE] Massacre
+SB: 2 [AP] Pernicious Deed
+SB: 1 [RAV] Razia, Boros Archangel
+SB: 1 [DIS] Research/Development
+SB: 1 [CHK] Sensei's Divining Top
+SB: 3 [MR] Thirst for Knowledge

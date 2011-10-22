@@ -1,0 +1,35 @@
+// Deck file for Magic Workstation (http://www.magicworkstation.com)
+
+// Lands
+    1 [ARE] Island (1)
+    3 [ON] Polluted Delta
+    3 [ON] Flooded Strand
+    4 [REW] Wasteland
+    3 [B] Tropical Island
+    4 [B] Volcanic Island
+    2 [TSP] Academy Ruins
+
+// Creatures
+    4 [SHM] Painter's Servant
+    2 [FD] Trinket Mage
+
+// Spells
+    2 [FD] Engineered Explosives
+    2 [CHK] Sensei's Divining Top
+    3 [TE] Grindstone
+    2 [IA] Pyroblast
+    1 [TE] Intuition
+    4 [SC] Stifle
+    2 [B] Red Elemental Blast
+    4 [AL] Force of Will
+    4 [IA] Brainstorm
+    4 [FNM] Fire/Ice
+    3 [MR] Fabricate
+    3 [LRW] Ponder
+
+// Sideboard
+SB: 3 [ALA] Relic of Progenitus
+SB: 4 [FUT] Tarmogoyf
+SB: 1 [IA] Pyroblast
+SB: 1 [B] Red Elemental Blast
+SB: 4 [IA] Pyroclasm

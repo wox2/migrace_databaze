@@ -1,0 +1,35 @@
+// Deck file for Magic Workstation (http://www.magicworkstation.com)
+
+// Lands
+    4 [B] Underground Sea
+    4 [ON] Polluted Delta
+    4 [ON] Flooded Strand
+    3 [U] Tropical Island
+    3 [B] Tundra
+    2 [ARE] Island (6)
+
+// Creatures
+    4 [FUT] Tarmogoyf
+    4 [RAV] Dark Confidant
+    2 [DIS] Trygon Predator
+    1 [ARB] Lorescale Coatl
+
+// Spells
+    4 [DD2] Daze
+    4 [B] Swords to Plowshares
+    4 [AL] Force of Will
+    4 [BD] Brainstorm
+    3 [M10] Ponder
+    4 [CS] Counterbalance
+    3 [CHK] Sensei's Divining Top
+    1 [MM] Misdirection
+    2 [FD] Vedalken Shackles
+    1 [FD] Engineered Explosives
+
+// Sideboard
+SB: 1 [B] Circle of Protection: Red
+SB: 3 [UD] Sanctimony
+SB: 3 [AP] Pernicious Deed
+SB: 3 [ALA] Relic of Progenitus
+SB: 3 [US] Duress
+SB: 2 [MR] Chalice of the Void

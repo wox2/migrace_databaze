@@ -1,0 +1,31 @@
+// Deck file for Magic Workstation (http://www.magicworkstation.com)
+
+// Lands
+    3 [WL] Gemstone Mine
+    3 [5E] City of Brass
+    2 [CHK] Forbidden Orchard
+    1 [EX] City of Traitors
+    4 [TSP] Gemstone Caverns
+
+// Creatures
+    2 [AL] Elvish Spirit Guide
+    4 [FD] Auriok Salvagers
+    4 [SC] Xantid Swarm
+
+// Spells
+    4 [DIS] Infernal Tutor
+    4 [US] Gamble
+    3 [MR] Chrome Mox
+    4 [US] Duress
+    4 [SH] Mox Diamond
+    4 [TE] Lotus Petal
+    4 [MI] Lion's Eye Diamond
+    2 [JU] Cunning Wish
+    4 [MM] Brainstorm
+    2 [MR] AEther Spellbomb
+    2 [MR] Pyrite Spellbomb
+
+// Sideboard
+SB: 2 [FD] Engineered Explosives
+SB: 1 [IA] Disenchant
+SB: 1 [SC] Brain Freeze

@@ -1,0 +1,34 @@
+// Deck file for Magic Workstation (http://www.magicworkstation.com)
+
+// Lands
+    4 [B] Tropical Island
+    4 [B] Tundra
+    4 [ON] Polluted Delta
+    4 [ON] Flooded Strand
+    1 [B] Island (1)
+    1 [B] Plains (3)
+
+// Creatures
+    4 [OD] Werebear
+    4 [OD] Nimble Mongoose
+    4 [IN] Galina's Knight
+    2 [OD] Mystic Enforcer
+
+// Spells
+    4 [B] Swords to Plowshares
+    4 [AL] Force of Will
+    4 [MM] Counterspell
+    4 [MM] Brainstorm
+    4 [JU] Mental Note
+    3 [NE] Daze
+    3 [SC] Stifle
+    2 [B] Armageddon
+
+// Sideboard
+SB: 1 [SC] Stifle
+SB: 3 [DK] Tormod's Crypt
+SB: 3 [PS] Meddling Mage
+SB: 2 [NE] Seal of Cleansing
+SB: 1 [B] Armageddon
+SB: 2 [SOK] Pithing Needle
+SB: 3 [US] Worship

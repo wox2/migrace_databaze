@@ -1,0 +1,35 @@
+// Deck file for Magic Workstation (http://www.magicworkstation.com)
+
+// Lands
+    4 [ON] Polluted Delta
+    2 [ON] Bloodstained Mire
+    2 [ON] Flooded Strand
+    4 [B] Underground Sea
+    1 [B] Swamp (2)
+    1 [B] Island (3)
+
+// Spells
+    4 [TE] Lotus Petal
+    4 [MR] Chrome Mox
+    4 [MI] Lion's Eye Diamond
+    4 [B] Dark Ritual
+    4 [TO] Cabal Ritual
+    4 [IA] Brainstorm
+    3 [MI] Mystical Tutor
+    4 [DIS] Infernal Tutor
+    3 [ALA] Ad Nauseam
+    1 [US] Ill-Gotten Gains
+    1 [SC] Tendrils of Agony
+    4 [US] Duress
+    3 [LRW] Ponder
+    1 [GP] Repeal
+    1 [SH] Mox Diamond
+    1 [ON] Chain of Vapor
+
+// Sideboard
+SB: 2 [SC] Tendrils of Agony
+SB: 2 [GP] Repeal
+SB: 3 [RAV] Dark Confidant
+SB: 4 [GP] Leyline of the Void
+SB: 2 [FUT] Pact of Negation
+SB: 2 [SOK] Pithing Needle

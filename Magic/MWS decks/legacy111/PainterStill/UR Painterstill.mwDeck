@@ -1,0 +1,37 @@
+// Deck file for Magic Workstation (http://www.magicworkstation.com)
+
+// Lands
+    1 [ARE] Mountain (6)
+    3 [ON] Bloodstained Mire
+    3 [ON] Polluted Delta
+    3 [ARE] Island (8)
+    4 [REW] Wasteland
+    4 [AQ] Mishra's Factory (4)
+    4 [B] Volcanic Island
+    1 [TSP] Academy Ruins
+
+// Creatures
+    3 [SHM] Painter's Servant
+    2 [FD] Trinket Mage
+
+// Spells
+    2 [FD] Engineered Explosives
+    2 [CHK] Sensei's Divining Top
+    1 [FD] Crucible of Worlds
+    2 [TE] Grindstone
+    1 [ALA] Relic of Progenitus
+    2 [IA] Pyroblast
+    4 [B] Lightning Bolt
+    4 [FNM] Fire/Ice
+    4 [OD] Standstill
+    2 [IA] Counterspell
+    4 [IA] Brainstorm
+    4 [AL] Force of Will
+
+// Sideboard
+SB: 2 [ALA] Relic of Progenitus
+SB: 2 [B] Red Elemental Blast
+SB: 3 [DK] Blood Moon
+SB: 4 [IA] Hydroblast
+SB: 2 [CS] Counterbalance
+SB: 2 [SC] Stifle

@@ -1,0 +1,36 @@
+// Deck file for Magic Workstation (http://www.magicworkstation.com)
+
+// Lands
+    4 [B] Underground Sea
+    4 [B] Island (1)
+    1 [B] Swamp (3)
+    4 [ON] Polluted Delta
+    3 [ON] Flooded Strand
+
+// Creatures
+    4 [DIS] Protean Hulk
+    2 [UD] Body Snatcher
+    1 [UL] Karmic Guide
+    1 [CHK] Kiki-Jiki, Mirror Breaker
+    1 [SC] Carrion Feeder
+    1 [JU] Benevolent Bodyguard
+
+// Spells
+    4 [MI] Flash
+    4 [IA] Brainstorm
+    4 [VI] Impulse
+    4 [FD] Serum Visions
+    4 [NE] Daze
+    4 [AL] Force of Will
+    3 [HL] Merchant Scroll
+    2 [MI] Mystical Tutor
+    1 [AL] Lim-Dul's Vault
+    4 [TE] Lotus Petal
+
+// Sideboard
+SB: 4 [US] Duress
+SB: 3 [JU] Cabal Therapy
+SB: 3 [WL] Disrupt
+SB: 1 [ON] Chain of Vapor
+SB: 2 [DS] Echoing Truth
+SB: 2 [SOK] Pithing Needle

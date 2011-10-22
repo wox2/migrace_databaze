@@ -1,0 +1,33 @@
+// Deck file for Magic Workstation (http://www.magicworkstation.com)
+
+// Lands
+    4 [ON] Wooded Foothills
+    2 [B] Taiga
+    4 [ON] Windswept Heath
+    4 [ZEN] Arid Mesa
+    2 [U] Savannah
+    2 [B] Plateau
+    1 [P2] Mountain (3)
+    1 [ALA] Forest (3)
+
+// Creatures
+    4 [TO] Grim Lavamancer
+    4 [BD] Kird Ape
+    4 [FUT] Tarmogoyf
+    4 [ALA] Wild Nacatl
+    4 [ARB] Qasali Pridemage
+
+// Spells
+    4 [U] Lightning Bolt
+    2 [BOK] Umezawa's Jitte
+    4 [CFX] Path to Exile
+    2 [VI] Fireblast
+    4 [DLM] Incinerate
+    4 [REW] Lightning Helix
+
+// Sideboard
+SB: 1 [BOK] Umezawa's Jitte
+SB: 4 [LRW] Gaddock Teeg
+SB: 2 [TSP] Krosan Grip
+SB: 4 [ALA] Relic of Progenitus
+SB: 4 [SC] Pyrostatic Pillar

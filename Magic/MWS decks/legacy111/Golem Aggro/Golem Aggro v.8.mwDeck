@@ -1,0 +1,36 @@
+// Deck file for Magic Workstation (http://www.magicworkstation.com)
+
+// Lands
+    4 [TE] Ancient Tomb
+    2 [ON] Bloodstained Mire
+    4 [EX] City of Traitors
+    1 [HOP] Great Furnace
+    4 [4E] Mishra's Factory
+    3 [P2] Mountain (1)
+    4 [TE] Wasteland
+
+// Creatures
+    2 [UL] Goblin Welder
+    4 [FNM] Juggernaut
+    4 [ARC] Lodestone Golem
+    3 [UD] Metalworker
+    1 [10E] Razormane Masticore
+
+// Spells
+    2 [FD] Crucible of Worlds
+    3 [UL] Grim Monolith
+    4 [EX] Sphere of Resistance
+    4 [NE] Tangle Wire
+    3 [US] Voltaic Key
+    3 [CHK] Sensei's Divining Top
+    3 [US] Smokestack
+    2 [UD] Powder Keg
+
+// Sideboard
+SB: 1 [10E] Razormane Masticore
+SB: 2 [UD] Powder Keg
+SB: 3 [MR] Chalice of the Void
+SB: 4 [OV] Pyroblast
+SB: 2 [CH] Tormod's Crypt
+SB: 1 [US] Karn, Silver Golem
+SB: 2 [ALA] Relic of Progenitus

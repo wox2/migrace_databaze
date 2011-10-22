@@ -1,0 +1,40 @@
+// Deck file for Magic Workstation (http://www.magicworkstation.com)
+
+// Lands
+    2 [ON] Flooded Strand
+    1 [IA] Island (1)
+    3 [ON] Polluted Delta
+    2 [B] Tropical Island
+    4 [B] Underground Sea
+    2 [U] Volcanic Island
+
+// Spells
+    1 [B] Ancestral Recall
+    4 [MM] Brainstorm
+    4 [B] Dark Ritual
+    1 [B] Demonic Tutor
+    3 [US] Duress
+    1 [B] Fastbond
+    4 [AL] Force of Will
+    1 [CHK] Gifts Ungiven
+    4 [MM] Gush
+    1 [ON] Chain of Vapor
+    1 [MR] Chrome Mox
+    1 [TE] Lotus Petal
+    4 [HL] Merchant Scroll
+    1 [MI] Mystical Tutor
+    1 [PT] Personal Tutor
+    4 [LRW] Ponder
+    1 [OD] Recoup
+    1 [B] Regrowth
+    1 [B] Sol Ring
+    1 [SC] Tendrils of Agony
+    1 [B] Time Walk
+    1 [A] Timetwister
+    1 [VI] Vampiric Tutor
+    1 [B] Wheel of Fortune
+    1 [US] Yawgmoth's Will
+    1 [HPB] Mana Crypt
+
+// Sideboard
+SB: 4 [GP] Leyline of the Void

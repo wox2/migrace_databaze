@@ -1,0 +1,32 @@
+// Deck file for Magic Workstation (http://www.magicworkstation.com)
+
+// Lands
+    14 [P2] Mountain (2)
+    2 [MOR] Mutavault
+    2 [MM] Rishadan Port
+    4 [TE] Wasteland
+
+// Creatures
+    4 [LE] Gempalm Incinerator
+    1 [M10] Goblin Chieftain
+    4 [US] Goblin Lackey
+    4 [US] Goblin Matron
+    4 [ON] Goblin Piledriver
+    4 [AP] Goblin Ringleader
+    4 [FNM] Goblin Warchief
+    1 [CHK] Kiki-Jiki, Mirror Breaker
+    2 [MOR] Lightning Crafter
+    2 [FUT] Magus of the Moon
+    2 [M10] Siege-Gang Commander
+    2 [PLC] Stingscourger
+
+// Spells
+    4 [DS] AEther Vial
+
+// Sideboard
+SB: 1 [B] Goblin King
+SB: 2 [FUT] Magus of the Moon
+SB: 2 [MOR] Mutavault
+SB: 4 [OV] Pyroblast
+SB: 2 [SC] Pyrostatic Pillar
+SB: 4 [ALA] Relic of Progenitus

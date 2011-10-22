@@ -1,0 +1,62 @@
+// Deck file for Magic Workstation (http://www.magicworkstation.com)
+
+// Lands
+    4 [CH] City of Brass
+    1 [CHK] Forbidden Orchard
+    4 [WL] Gemstone Mine
+    1 [US] Tolarian Academy
+    1 [B] Underground Sea
+
+// Creatures
+    2 [PLC] Simian Spirit Guide
+
+// Spells
+    1 [B] Ancestral Recall
+    1 [B] Black Lotus
+    4 [IA] Brainstorm
+    1 [JU] Burning Wish
+    2 [TO] Cabal Ritual
+    4 [US] Dark Ritual
+    1 [B] Demonic Tutor
+    3 [US] Duress
+    3 [ST] Grim Tutor
+    1 [P3] Imperial Seal
+    1 [MI] Lion's Eye Diamond
+    1 [TE] Lotus Petal
+    1 [PR] Mana Crypt
+    1 [B] Mana Vault
+    1 [UL] Memory Jar
+    1 [SC] Mind's Desire
+    1 [B] Mox Emerald
+    1 [B] Mox Jet
+    1 [B] Mox Pearl
+    1 [B] Mox Ruby
+    1 [B] Mox Sapphire
+    1 [MI] Mystical Tutor
+    1 [IA] Necropotence
+    3 [PS] Orim's Chant
+    1 [B] Regrowth
+    1 [B] Sol Ring
+    1 [SC] Tendrils of Agony
+    1 [B] Time Walk
+    1 [B] Timetwister
+    1 [UL] Tinker
+    1 [VI] Vampiric Tutor
+    1 [B] Wheel of Fortune
+    1 [UD] Yawgmoth's Bargain
+    1 [US] Yawgmoth's Will
+
+// Sideboard
+SB: 1 [B] Balance
+SB: 1 [US] Duress
+SB: 1 [DS] Echoing Truth
+SB: 2 [TSP] Empty the Warrens
+SB: 2 [AQ] Hurkyl's Recall
+SB: 1 [DIS] Infernal Tutor
+SB: 1 [IA] Pyroclasm
+SB: 1 [UL] Rebuild
+SB: 1 [GP] Shattering Spree
+SB: 1 [PLC] Simian Spirit Guide
+SB: 1 [DS] Sundering Titan
+SB: 1 [SC] Tendrils of Agony
+SB: 1 [SC] Xantid Swarm

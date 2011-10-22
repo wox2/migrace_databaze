@@ -1,0 +1,34 @@
+// Deck file for Magic Workstation (http://www.magicworkstation.com)
+
+// Lands
+    4 [AN] Bazaar of Baghdad
+    4 [OD] Petrified Field
+    1 [5E] City of Brass
+
+// Creatures
+    2 [JU] Sutured Ghoul
+    4 [ON] Gigapede
+    4 [RAV] Golgari Grave-Troll
+    4 [RAV] Stinkweed Imp
+    4 [RAV] Golgari Thug
+    4 [TO] Ichorid
+    4 [5E] Nether Shadow
+    1 [DS] Sundering Titan
+
+// Spells
+    4 [DS] Serum Powder
+    4 [GP] Leyline of the Void
+    4 [JU] Cabal Therapy
+    4 [MM] Unmask
+    4 [MR] Chalice of the Void
+    2 [SC] Dragon Breath
+    2 [TSP] Dread Return
+
+// Sideboard
+SB: 3 [JU] Riftstone Portal
+SB: 2 [JU] Ray of Revelation
+SB: 2 [SOK] Pithing Needle
+SB: 2 [TSP] Ancient Grudge
+SB: 1 [DS] Sundering Titan
+SB: 2 [5E] City of Brass
+SB: 3 [VI] Emerald Charm

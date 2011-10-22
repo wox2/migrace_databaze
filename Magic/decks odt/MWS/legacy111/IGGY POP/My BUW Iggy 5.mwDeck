@@ -1,0 +1,35 @@
+// Deck file for Magic Workstation (http://www.magicworkstation.com)
+// NAME: Unnamed
+
+// Lands
+    4 [ON] Flooded Strand
+    1 [TSP] Island (1)
+    4 [ON] Polluted Delta
+    1 [TSP] Swamp (1)
+    2 [R] Underground Sea
+    2 [ON] Bloodstained Mire
+    1 [B] Scrubland
+    1 [B] Tundra
+
+// Spells
+    4 [MI] Lion's Eye Diamond
+    4 [TE] Lotus Petal
+    4 [TO] Cabal Ritual
+    4 [MM] Dark Ritual
+    4 [US] Ill-Gotten Gains
+    4 [DIS] Infernal Tutor
+    2 [SC] Tendrils of Agony
+    4 [MM] Brainstorm
+    3 [TE] Intuition
+    3 [6E] Mystical Tutor
+    1 [ON] Chain of Vapor
+    4 [PS] Orim's Chant
+    3 [MI] Infernal Contract
+
+// Sideboard
+SB: 1 [SC] Tendrils of Agony
+SB: 4 [RAV] Dark Confidant
+SB: 2 [DS] Echoing Truth
+SB: 4 [CS] Jotun Grunt
+SB: 3 [UL] Defense Grid
+SB: 1 [AQ] Hurkyl's Recall

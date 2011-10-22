@@ -1,0 +1,42 @@
+// Deck file for Magic Workstation (http://www.magicworkstation.com)
+
+// Lands
+    4 [B] Volcanic Island
+    3 [TE] Wasteland
+    1 [A] Underground Sea
+    2 [AP] Shivan Reef
+    1 [MR] Seat of the Synod
+    1 [TSP] Academy Ruins
+    4 [ON] Polluted Delta
+    2 [ON] Flooded Strand
+    2 [B] Island (2)
+
+// Creatures
+    4 [SHM] Painter's Servant
+    3 [FD] Trinket Mage
+    1 [MI] Phyrexian Dreadnought
+
+// Spells
+    2 [IA] Pyroblast
+    2 [TE] Grindstone
+    4 [IA] Brainstorm
+    4 [AL] Force of Will
+    1 [FD] Engineered Explosives
+    3 [B] Red Elemental Blast
+    1 [FNM] Tormod's Crypt
+    1 [DS] Echoing Truth
+    1 [GP] Repeal
+    3 [SC] Stifle
+    4 [FNM] Accumulated Knowledge
+    4 [FNM] Fire/Ice
+    1 [IN] Fact or Fiction
+    1 [CHK] Sensei's Divining Top
+
+// Sideboard
+SB: 3 [FD] Engineered Explosives
+SB: 1 [B] Red Elemental Blast
+SB: 1 [WL] Gaea's Blessing
+SB: 2 [IA] Hydroblast
+SB: 1 [B] Blue Elemental Blast
+SB: 4 [SOK] Pithing Needle
+SB: 3 [FNM] Tormod's Crypt

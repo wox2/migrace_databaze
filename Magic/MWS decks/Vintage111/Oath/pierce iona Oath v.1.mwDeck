@@ -1,0 +1,56 @@
+// Deck file for Magic Workstation (http://www.magicworkstation.com)
+
+// Lands
+    4 [CHK] Forbidden Orchard
+    2 [ARE] Island (3)
+    2 [B] Tropical Island
+    3 [B] Underground Sea
+    1 [ALA] Forest (3)
+    4 [ZEN] Misty Rainforest
+
+// Creatures
+    1 [ZEN] Iona, Shield of Emeria
+
+// Spells
+    1 [JU] Krosan Reclamation
+    1 [UL] Tinker
+    1 [6E] Vampiric Tutor
+    1 [US] Voltaic Key
+    1 [US] Yawgmoth's Will
+    1 [8E] Merchant Scroll
+    1 [B] Demonic Tutor
+    4 [AL] Force of Will
+    1 [B] Time Walk
+    1 [IA] Brainstorm
+    1 [B] Black Lotus
+    1 [B] Ancestral Recall
+    1 [UL] Rebuild
+    1 [B] Mox Sapphire
+    1 [B] Mox Jet
+    1 [B] Mox Emerald
+    1 [U] Time Vault
+    2 [GP] Repeal
+    1 [B] Mox Ruby
+    1 [MI] Mystical Tutor
+    4 [EX] Oath of Druids
+    1 [LRW] Ponder
+    1 [TE] Lotus Petal
+    2 [CHK] Sensei's Divining Top
+    2 [IA] Mystic Remora
+    1 [U] Mox Pearl
+    1 [ALA] Tezzeret the Seeker
+    4 [ZEN] Spell Pierce
+    1 [V09] Gifts Ungiven
+    1 [TSP] Ancient Grudge
+    1 [FNM] Fact or Fiction
+    1 [LRW] Thoughtseize
+
+// Sideboard
+SB: 1 [CFX] Inkwell Leviathan
+SB: 1 [MM] Misdirection
+SB: 2 [US] Claws of Gix
+SB: 3 [AQ] Hurkyl's Recall
+SB: 2 [10E] Pithing Needle
+SB: 2 [ALA] Relic of Progenitus
+SB: 2 [PLC] Extirpate
+SB: 2 [LRW] Thoughtseize

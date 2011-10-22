@@ -1,0 +1,37 @@
+// Deck file for Magic Workstation (http://www.magicworkstation.com)
+
+// Lands
+    4 [AQ] Mishra's Factory (3)
+    1 [TSP] Academy Ruins
+    4 [TE] Wasteland
+    4 [B] Tropical Island
+    4 [B] Tundra
+    1 [ON] Polluted Delta
+    4 [ON] Flooded Strand
+    1 [APL] Island (3)
+    1 [US] Plains (4)
+
+// Creatures
+    4 [FUT] Tarmogoyf
+
+// Spells
+    4 [4E] Swords to Plowshares
+    2 [FD] Engineered Explosives
+    4 [OD] Standstill
+    4 [AL] Force of Will
+    2 [DIS] Spell Snare
+    2 [CHK] Sensei's Divining Top
+    1 [CFX] Path to Exile
+    2 [LRW] Ponder
+    4 [IA] Brainstorm
+    1 [RAV] Life from the Loam
+    2 [FD] Vedalken Shackles
+    4 [ST] Counterspell
+
+// Sideboard
+SB: 2 [CST] Disenchant
+SB: 4 [ALA] Relic of Progenitus
+SB: 1 [CFX] Path to Exile
+SB: 3 [IA] Circle of Protection: Red
+SB: 2 [MR] Chalice of the Void
+SB: 2 [PS] Meddling Mage

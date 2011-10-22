@@ -1,0 +1,59 @@
+// Deck file for Magic Workstation (http://www.magicworkstation.com)
+
+// Lands
+    3 [ON] Flooded Strand
+    1 [B] Island (1)
+    3 [ZEN] Misty Rainforest
+    3 [ON] Polluted Delta
+    2 [B] Tropical Island
+    2 [B] Underground Sea
+    1 [B] Volcanic Island
+
+// Creatures
+    1 [MBS] Blightsteel Colossus
+    4 [ZEN] Lotus Cobra
+
+// Spells
+    1 [B] Ancestral Recall
+    1 [B] Black Lotus
+    1 [IA] Brainstorm
+    1 [B] Demonic Tutor
+    1 [A] Fastbond
+    4 [AL] Force of Will
+    4 [DD2] Gush
+    1 [5E] Hurkyl's Recall
+    2 [WWK] Jace, the Mind Sculptor
+    1 [BIN] Mana Crypt
+    1 [HL] Merchant Scroll
+    1 [JGC] Mind's Desire
+    1 [B] Mox Emerald
+    1 [B] Mox Jet
+    1 [B] Mox Pearl
+    1 [B] Mox Ruby
+    1 [B] Mox Sapphire
+    1 [MI] Mystical Tutor
+    1 [IA] Necropotence
+    1 [M10] Ponder
+    4 [M11] Preordain
+    1 [IA] Pyroblast
+    1 [UL] Rebuild
+    1 [B] Red Elemental Blast
+    1 [FNM] Tendrils of Agony
+    1 [B] Time Walk
+    1 [U] Timetwister
+    1 [UL] Tinker
+    1 [VI] Vampiric Tutor
+    1 [UD] Yawgmoth's Bargain
+    1 [US] Yawgmoth's Will
+
+// Sideboard
+SB: 1 [TSP] Ancient Grudge
+SB: 1 [FNM] Fire/Ice
+SB: 2 [DD2] Ingot Chewer
+SB: 4 [GP] Leyline of the Void
+SB: 1 [B] Lightning Bolt
+SB: 1 [SOM] Nihil Spellbomb
+SB: 1 [IA] Pyroblast
+SB: 1 [B] Red Elemental Blast
+SB: 2 [DIS] Trygon Predator
+SB: 1 [FUT] Yixlid Jailer

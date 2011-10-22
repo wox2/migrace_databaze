@@ -1,0 +1,38 @@
+// Deck file for Magic Workstation (http://www.magicworkstation.com)
+
+// Lands
+    4 [ON] Flooded Strand
+    10 [B] Island (3)
+    4 [ON] Polluted Delta
+
+// Spells
+    1 [SC] Brain Freeze
+    4 [FNM] Brainstorm
+    2 [TSP] Careful Consideration
+    1 [LRW] Cryptic Command
+    4 [AL] Force of Will
+    3 [FE] High Tide (2)
+    1 [TE] Meditate
+    4 [HL] Merchant Scroll
+    2 [FNM] Remand
+    4 [US] Time Spiral
+    2 [US] Turnabout
+    2 [CHK] Sensei's Divining Top
+    2 [JU] Cunning Wish
+    1 [TE] Lotus Petal
+    1 [SOK] Twincast
+    4 [M10] Ponder
+    4 [M11] Preordain
+
+// Sideboard
+SB: 2 [SC] Brain Freeze
+SB: 1 [FE] High Tide (2)
+SB: 1 [TE] Meditate
+SB: 1 [US] Turnabout
+SB: 1 [SH] Dream Halls
+SB: 1 [EX] Mind Over Matter
+SB: 1 [US] Stroke of Genius
+SB: 2 [A] Blue Elemental Blast
+SB: 2 [DIS] Spell Snare
+SB: 2 [TSP] Wipe Away
+SB: 1 [MM] Misdirection

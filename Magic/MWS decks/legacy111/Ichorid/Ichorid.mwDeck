@@ -1,0 +1,31 @@
+// Deck file for Magic Workstation (http://www.magicworkstation.com)
+
+// Lands
+4 [7E] City of Brass
+4 [OD] Cephalid Coliseum
+4 [WL] Gemstone Mine
+
+// Creatures
+4 [TO] Putrid Imp
+4 [FUT] Narcomoeba
+1 [RAV] Flame-Kin Zealot
+1 [TO] Cephalid Sage
+4 [TO] Ichorid
+4 [RAV] Stinkweed Imp
+4 [RAV] Golgari Thug
+4 [RAV] Golgari Grave-Troll
+
+// Spells
+4 [TO] Breakthrough
+4 [FUT] Bridge from Below
+4 [JU] Cabal Therapy
+3 [TSP] Dread Return
+3 [TO] Deep Analysis
+4 [MI] Lion's Eye Diamond
+
+// Sideboard
+SB: 4 [SOK] Pithing Needle
+SB: 4 [ON] Chain of Vapor
+SB: 3 [TSP] Ancient Grudge
+SB: 2 [JU] Ray of Revelation
+SB: 2 [VI] Emerald Charm

@@ -1,0 +1,31 @@
+// Deck file for Magic Workstation (http://www.magicworkstation.com)
+
+// Lands
+    4 [AQ] Mishra's Factory (3)
+    14 [B] Mountain (3)
+    1 [AQ] Strip Mine (4)
+    4 [TE] Wasteland
+
+// Creatures
+    4 [UL] Goblin Welder
+    4 [PLC] Simian Spirit Guide
+
+// Spells
+    3 [R] Ankh of Mishra
+    4 [B] Black Vise
+    3 [OV] Cursed Scroll
+    4 [B] Lightning Bolt
+    3 [SOK] Pithing Needle
+    3 [IA] Pyroblast
+    3 [SC] Pyrostatic Pillar
+    4 [NE] Tangle Wire
+    2 [TSB] Tormod's Crypt
+
+// Sideboard
+SB: 1 [R] Ankh of Mishra
+SB: 4 [US] Claws of Gix
+SB: 1 [OV] Cursed Scroll
+SB: 3 [AL] Gorilla Shaman (1)
+SB: 3 [MR] Chalice of the Void
+SB: 1 [SC] Pyrostatic Pillar
+SB: 2 [TSB] Tormod's Crypt

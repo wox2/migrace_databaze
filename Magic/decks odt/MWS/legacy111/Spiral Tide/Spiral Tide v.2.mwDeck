@@ -1,0 +1,36 @@
+// Deck file for Magic Workstation (http://www.magicworkstation.com)
+
+// Lands
+    2 [TE] Ancient Tomb
+    2 [EX] City of Traitors
+    4 [ON] Flooded Strand
+    9 [B] Island (3)
+    4 [ON] Polluted Delta
+
+// Spells
+    1 [SC] Brain Freeze
+    4 [FNM] Brainstorm
+    1 [LRW] Cryptic Command
+    1 [SH] Dream Halls
+    4 [AL] Force of Will
+    4 [FE] High Tide (2)
+    4 [BD] Impulse
+    4 [TE] Meditate
+    4 [HL] Merchant Scroll
+    1 [EX] Mind Over Matter
+    2 [UL] Opportunity
+    2 [FNM] Remand
+    1 [US] Stroke of Genius
+    4 [US] Time Spiral
+    2 [US] Turnabout
+
+// Sideboard
+SB: 3 [A] Blue Elemental Blast
+SB: 1 [SC] Brain Freeze
+SB: 1 [LRW] Cryptic Command
+SB: 1 [ON] Chain of Vapor
+SB: 3 [UD] Masticore
+SB: 1 [EX] Mind Over Matter
+SB: 2 [FNM] Remand
+SB: 1 [UL] Snap
+SB: 2 [DIS] Spell Snare

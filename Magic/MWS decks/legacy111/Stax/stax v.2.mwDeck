@@ -1,0 +1,31 @@
+// Deck file for Magic Workstation (http://www.magicworkstation.com)
+
+// Lands
+    4 [TE] Ancient Tomb
+    4 [R] Volcanic Island
+    4 [4E] Mishra's Factory
+    4 [TE] Wasteland
+    4 [ON] Polluted Delta
+    4 [US] Island (3)
+
+// Creatures
+    4 [UL] Goblin Welder
+    2 [DS] Sundering Titan
+    2 [MR] Platinum Angel
+    2 [AQ] Triskelion
+
+// Spells
+    4 [TE] Lotus Petal
+    4 [SH] Mox Diamond
+    4 [DS] Trinisphere
+    4 [US] Smokestack
+    3 [MR] Thirst for Knowledge
+    3 [TE] Intuition
+    4 [FD] Crucible of Worlds
+
+// Sideboard
+SB: 1 [MR] Platinum Angel
+SB: 4 [NE] Tangle Wire
+SB: 2 [AQ] Triskelion
+SB: 4 [IA] Pyroclasm
+SB: 4 [MR] Chalice of the Void

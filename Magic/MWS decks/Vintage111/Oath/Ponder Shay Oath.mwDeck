@@ -1,0 +1,48 @@
+// Deck file for Magic Workstation (http://www.magicworkstation.com)
+
+// Lands
+    1 [B] Island (1)
+    2 [ON] Polluted Delta
+    3 [ON] Flooded Strand
+    4 [CHK] Forbidden Orchard
+    2 [B] Tropical Island
+    1 [B] Volcanic Island
+    3 [B] Underground Sea
+
+// Creatures
+    3 [DIS] Tidespout Tyrant
+
+// Spells
+    1 [B] Mox Emerald
+    1 [B] Mox Ruby
+    1 [B] Mox Jet
+    1 [B] Mox Sapphire
+    1 [B] Mox Pearl
+    1 [B] Black Lotus
+    4 [EX] Oath of Druids
+    1 [B] Fastbond
+    1 [JU] Krosan Reclamation
+    1 [B] Ancestral Recall
+    4 [MM] Brainstorm
+    4 [AL] Force of Will
+    1 [SC] Brain Freeze
+    1 [ON] Chain of Vapor
+    4 [MM] Gush
+    1 [VI] Vampiric Tutor
+    2 [LRW] Thoughtseize
+    3 [HL] Merchant Scroll
+    1 [B] Demonic Tutor
+    1 [B] Time Walk
+    4 [LRW] Ponder
+    1 [US] Yawgmoth's Will
+    1 [US] Duress
+
+// Sideboard
+SB: 3 [US] Duress
+SB: 2 [B] Red Elemental Blast
+SB: 1 [SC] Tendrils of Agony
+SB: 1 [TSP] Empty the Warrens
+SB: 1 [DS] Spawning Pit
+SB: 4 [GP] Leyline of the Void
+SB: 2 [CH] Tormod's Crypt
+SB: 1 [UL] Rebuild

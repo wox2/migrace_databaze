@@ -1,0 +1,40 @@
+// Deck file for Magic Workstation (http://www.magicworkstation.com)
+
+// Lands
+    4 [WL] Gemstone Mine
+    4 [AN] City of Brass
+    2 [VI] Undiscovered Paradise
+
+// Creatures
+    4 [PLC] Simian Spirit Guide
+
+// Spells
+    4 [MI] Lion's Eye Diamond
+    4 [MR] Chrome Mox
+    4 [TE] Lotus Petal
+    4 [CS] Rite of Flame
+    1 [6E] Diminishing Returns
+    1 [US] Ill-Gotten Gains
+    4 [DIS] Infernal Tutor
+    4 [JU] Burning Wish
+    4 [B] Dark Ritual
+    4 [PS] Orim's Chant
+    3 [TSP] Empty the Warrens
+    1 [SC] Tendrils of Agony
+    2 [MI] Infernal Contract
+    4 [IA] Brainstorm
+    2 [TO] Cabal Ritual
+
+// Sideboard
+SB: 1 [6E] Diminishing Returns
+SB: 1 [US] Ill-Gotten Gains
+SB: 1 [TSP] Empty the Warrens
+SB: 1 [SC] Tendrils of Agony
+SB: 1 [MI] Infernal Contract
+SB: 1 [B] Tranquility
+SB: 3 [GP] Shattering Spree
+SB: 1 [US] Duress
+SB: 2 [IA] Pyroblast
+SB: 1 [MM] Cave-In
+SB: 1 [P2] Goblin War Strike
+SB: 1 [R] Red Elemental Blast

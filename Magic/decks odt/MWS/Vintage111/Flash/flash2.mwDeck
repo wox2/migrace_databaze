@@ -1,0 +1,42 @@
+// Deck file for Magic Workstation (http://www.magicworkstation.com)
+
+// Lands
+    1 [ON] Polluted Delta
+    4 [ON] Flooded Strand
+    2 [R] Tropical Island
+    3 [R] Underground Sea
+    2 [B] Island (1)
+
+// Creatures
+    1 [AL] Elvish Spirit Guide
+    4 [DIS] Protean Hulk
+    4 [FUT] Street Wraith
+    4 [FUT] Virulent Sliver
+    2 [TE] Heart Sliver
+
+// Spells
+    4 [AL] Force of Will
+    4 [FUT] Pact of Negation
+    4 [FUT] Summoner's Pact
+    4 [6E] Flash
+    2 [MM] Misdirection
+    1 [ON] Chain of Vapor
+    1 [TE] Lotus Petal
+    1 [U] Mox Sapphire
+    1 [U] Ancestral Recall
+    1 [U] Black Lotus
+    1 [R] Demonic Tutor
+    1 [U] Mox Emerald
+    1 [U] Mox Jet
+    1 [U] Mox Pearl
+    1 [U] Mox Ruby
+    1 [6E] Vampiric Tutor
+    4 [IA] Brainstorm
+
+// Sideboard
+SB: 2 [AL] Elvish Spirit Guide
+SB: 1 [DS] Echoing Truth
+SB: 4 [FUT] Tarmogoyf
+SB: 4 [GP] Leyline of the Void
+SB: 2 [NE] Reverent Silence
+SB: 2 [UL] Rebuild

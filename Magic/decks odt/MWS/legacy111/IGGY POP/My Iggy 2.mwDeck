@@ -1,0 +1,36 @@
+// Deck file for Magic Workstation (http://www.magicworkstation.com)
+// NAME: Unnamed
+
+// Lands
+    4 [ON] Flooded Strand
+    2 [TSP] Island (1)
+    4 [ON] Polluted Delta
+    2 [TSP] Swamp (1)
+    2 [R] Underground Sea
+    2 [ON] Bloodstained Mire
+
+// Creatures
+    1 [MM] Thrashing Wumpus
+
+// Spells
+    4 [MI] Lion's Eye Diamond
+    4 [TE] Lotus Petal
+    4 [TO] Cabal Ritual
+    4 [MM] Dark Ritual
+    4 [US] Ill-Gotten Gains
+    4 [DIS] Infernal Tutor
+    2 [SC] Tendrils of Agony
+    4 [MM] Brainstorm
+    4 [TE] Intuition
+    4 [6E] Mystical Tutor
+    2 [9E] Defense Grid
+    1 [ON] Chain of Vapor
+    2 [JU] Mental Note
+
+// Sideboard
+SB: 2 [9E] Defense Grid
+SB: 1 [5E] Hurkyl's Recall
+SB: 4 [RAV] Dark Confidant
+SB: 2 [DS] Echoing Truth
+SB: 3 [JU] Cabal Therapy
+SB: 3 [MM] Thrashing Wumpus

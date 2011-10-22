@@ -1,0 +1,29 @@
+// Deck file for Magic Workstation (http://www.magicworkstation.com)
+
+// Lands
+    3 [ON] Flooded Strand
+    13 [B] Island (1)
+    3 [ON] Polluted Delta
+
+// Spells
+    1 [B] Ancestral Recall
+    4 [IA] Brainstorm
+    3 [JU] Cunning Wish
+    4 [AL] Force of Will
+    1 [UL] Frantic Search
+    3 [FE] High Tide (3)
+    4 [LG] Mana Drain
+    4 [HL] Merchant Scroll
+    4 [US] Time Spiral
+    1 [B] Timetwister
+    3 [US] Turnabout
+    1 [IN] Fact or Fiction
+    2 [TE] Meditate
+    2 [SC] Brain Freeze
+    2 [RAV] Remand
+    2 [TO] Deep Analysis
+
+// Sideboard
+SB: 1 [US] Turnabout
+SB: 1 [AQ] Hurkyl's Recall
+SB: 1 [GP] Repeal

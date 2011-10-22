@@ -1,0 +1,48 @@
+// Deck file for Magic Workstation (http://www.magicworkstation.com)
+
+// Lands
+    1 [B] Taiga
+
+// Creatures
+    4 [PLC] Simian Spirit Guide
+    4 [AL] Elvish Spirit Guide
+    4 [IA] Tinder Wall
+    3 [UL] Goblin Welder
+
+// Spells
+    4 [MR] Goblin Charbelcher
+    4 [TSP] Empty the Warrens
+    4 [CS] Rite of Flame
+    4 [MM] Land Grant
+    3 [MR] Seething Song
+    4 [TSP] Chromatic Star
+    4 [IA] Pyroblast
+    2 [JU] Living Wish
+    1 [B] Wheel of Fortune
+    1 [UL] Memory Jar
+    1 [TE] Lotus Petal
+    1 [MI] Lion's Eye Diamond
+    1 [B] Mana Vault
+    1 [B] Sol Ring
+    1 [PR] Mana Crypt
+    1 [B] Channel
+    1 [MR] Chrome Mox
+    1 [B] Black Lotus
+    1 [B] Mox Emerald
+    1 [B] Mox Jet
+    1 [B] Mox Pearl
+    1 [B] Mox Ruby
+    1 [B] Mox Sapphire
+
+// Sideboard
+SB: 1 [UL] Goblin Welder
+SB: 1 [B] Taiga
+SB: 4 [SC] Xantid Swarm
+SB: 1 [AN] Bazaar of Baghdad
+SB: 1 [AQ] Mishra's Workshop
+SB: 1 [US] Tolarian Academy
+SB: 1 [GP] Tin Street Hooligan
+SB: 1 [VI] Uktabi Orangutan
+SB: 1 [TSP] Ancient Grudge
+SB: 2 [GP] Shattering Spree
+SB: 1 [AL] Gorilla Shaman (2)

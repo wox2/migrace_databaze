@@ -1,0 +1,38 @@
+// Deck file for Magic Workstation (http://www.magicworkstation.com)
+
+// Lands
+    1 [CH] City of Brass
+    3 [B] Underground Sea
+    2 [B] Tundra
+    3 [B] Tropical Island
+    4 [ON] Polluted Delta
+    4 [ON] Flooded Strand
+    1 [ARE] Island (6)
+
+// Creatures
+    4 [TO] Cephalid Illusionist
+    4 [SH] Nomads en-Kor
+    4 [FUT] Tarmogoyf
+    1 [JU] Sutured Ghoul
+    3 [FUT] Narcomoeba
+    4 [RAV] Dark Confidant
+
+// Spells
+    4 [DD2] Daze
+    4 [AL] Force of Will
+    4 [IA] Brainstorm
+    1 [SC] Dragon Breath
+    2 [US] Duress
+    2 [JU] Cabal Therapy
+    1 [TSP] Dread Return
+    3 [LRW] Ponder
+    1 [CHK] Sensei's Divining Top
+
+// Sideboard
+SB: 2 [CHK] Sensei's Divining Top
+SB: 4 [CS] Counterbalance
+SB: 2 [AP] Vindicate
+SB: 2 [MI] Worldly Tutor
+SB: 2 [B] Swords to Plowshares
+SB: 1 [IA] Hydroblast
+SB: 2 [OD] Mystic Enforcer

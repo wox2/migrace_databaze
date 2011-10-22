@@ -1,0 +1,43 @@
+// Deck file for Magic Workstation (http://www.magicworkstation.com)
+// NAME: Unnamed
+
+// Lands
+    4 [TE] Ancient Tomb
+    1 [EX] City of Traitors
+    2 [DIS] Ghost Quarter
+    3 [4E] Mishra's Factory
+    4 [AQ] Mishra's Workshop
+    1 [AT] Strip Mine
+    1 [US] Tolarian Academy
+    4 [TE] Wasteland
+
+// Creatures
+    1 [US] Karn, Silver Golem
+    1 [MR] Triskelion
+
+// Spells
+    1 [U] Black Lotus
+    4 [4E] Black Vise
+    4 [MR] Chalice of the Void
+    3 [FD] Crucible of Worlds
+    1 [PR] Mana Crypt
+    1 [U] Mox Emerald
+    1 [U] Mox Jet
+    1 [U] Mox Pearl
+    1 [U] Mox Ruby
+    1 [U] Mox Sapphire
+    3 [BOK] Orb of Dreams
+    3 [UD] Powder Keg
+    4 [US] Smokestack
+    1 [R] Sol Ring
+    4 [EX] Sphere of Resistance
+    4 [NE] Tangle Wire
+    1 [DS] Trinisphere
+
+// Sideboard
+SB: 3 [9E] Defense Grid
+SB: 2 [8E] Ensnaring Bridge
+SB: 3 [WL] Null Rod
+SB: 3 [SOK] Pithing Needle
+SB: 2 [FD] Razormane Masticore
+SB: 2 [LG] The Tabernacle at Pendrell Vale

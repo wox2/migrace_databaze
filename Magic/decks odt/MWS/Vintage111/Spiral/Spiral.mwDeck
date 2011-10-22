@@ -1,0 +1,32 @@
+// Deck file for Magic Workstation (http://www.magicworkstation.com)
+
+// Lands
+    3 [ON] Flooded Strand
+    9 [B] Island (1)
+    3 [ON] Polluted Delta
+    4 [B] Tundra
+
+// Spells
+    1 [B] Ancestral Recall
+    4 [IA] Brainstorm
+    2 [JU] Cunning Wish
+    4 [AL] Force of Will
+    1 [UL] Frantic Search
+    4 [FE] High Tide (3)
+    4 [LG] Mana Drain
+    4 [HL] Merchant Scroll
+    3 [EX] Mind Over Matter
+    4 [PS] Orim's Chant
+    1 [US] Stroke of Genius
+    4 [US] Time Spiral
+    1 [B] Timetwister
+    2 [US] Turnabout
+    1 [IN] Fact or Fiction
+    1 [B] Braingeyser
+
+// Sideboard
+SB: 1 [US] Stroke of Genius
+SB: 1 [US] Turnabout
+SB: 1 [WL] Abeyance
+SB: 1 [AQ] Hurkyl's Recall
+SB: 1 [GP] Repeal

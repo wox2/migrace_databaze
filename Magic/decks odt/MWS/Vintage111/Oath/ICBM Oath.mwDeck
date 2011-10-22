@@ -1,0 +1,46 @@
+// Deck file for Magic Workstation (http://www.magicworkstation.com)
+
+// Lands
+    4 [CHK] Forbidden Orchard
+    1 [AQ] Strip Mine (4)
+    2 [TE] Wasteland
+    2 [ON] Polluted Delta
+    2 [ON] Flooded Strand
+    2 [B] Underground Sea
+    3 [B] Tropical Island
+    2 [AQ] Mishra's Factory (3)
+
+// Creatures
+    1 [LE] Akroma, Angel of Wrath
+    1 [RAV] Razia, Boros Archangel
+
+// Spells
+    4 [MR] Chalice of the Void
+    4 [IA] Brainstorm
+    3 [MR] Thirst for Knowledge
+    4 [LG] Mana Drain
+    4 [AL] Force of Will
+    2 [TSP] Trickbind
+    2 [WL] Null Rod
+    1 [B] Ancestral Recall
+    4 [EX] Oath of Druids
+    1 [WL] Gaea's Blessing
+    1 [TSP] Wipe Away
+    1 [B] Black Lotus
+    1 [B] Mox Sapphire
+    1 [UL] Crop Rotation
+    1 [B] Mox Ruby
+    1 [B] Mox Pearl
+    1 [B] Mox Emerald
+    1 [VI] Vampiric Tutor
+    1 [B] Demonic Tutor
+    1 [B] Mox Jet
+    1 [B] Time Walk
+
+// Sideboard
+SB: 2 [DIS] Simic Sky Swallower
+SB: 2 [AQ] Mishra's Factory (3)
+SB: 2 [AQ] Energy Flux
+SB: 2 [RAV] Life from the Loam
+SB: 3 [IA] Pyroclasm
+SB: 4 [DS] Oxidize

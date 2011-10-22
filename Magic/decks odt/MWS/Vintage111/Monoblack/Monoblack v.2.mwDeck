@@ -1,0 +1,33 @@
+// Deck file for Magic Workstation (http://www.magicworkstation.com)
+
+// Lands
+    2 [ON] Bloodstained Mire
+    4 [AQ] Mishra's Factory (1)
+    2 [ON] Polluted Delta
+    1 [AQ] Strip Mine (4)
+    9 [B] Swamp (3)
+    4 [TE] Wasteland
+
+// Creatures
+    4 [RAV] Dark Confidant
+    3 [B] Hypnotic Specter
+    3 [TO] Nantuko Shade
+
+// Spells
+    4 [B] Dark Ritual
+    2 [RAV] Darkblast
+    1 [B] Demonic Tutor
+    2 [TE] Diabolic Edict
+    4 [US] Duress
+    4 [PLC] Extirpate
+    4 [AT] Hymn to Tourach
+    2 [UD] Powder Keg
+    4 [B] Sinkhole
+    1 [OV] Vampiric Tutor
+
+// Sideboard
+SB: 3 [TO] Mesmeric Fiend
+SB: 2 [RAV] Darkblast
+SB: 2 [TE] Diabolic Edict
+SB: 1 [AT] Nevinyrral's Disk
+SB: 4 [TSB] Withered Wretch

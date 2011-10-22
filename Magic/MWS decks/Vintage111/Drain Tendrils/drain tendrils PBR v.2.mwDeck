@@ -1,0 +1,51 @@
+// Deck file for Magic Workstation (http://www.magicworkstation.com)
+
+// Lands
+    3 [B] Volcanic Island
+    3 [B] Underground Sea
+    1 [US] Tolarian Academy
+    2 [B] Island (2)
+    3 [ON] Polluted Delta
+    3 [ON] Flooded Strand
+
+// Spells
+    4 [LG] Mana Drain
+    4 [AL] Force of Will
+    1 [TSP] Empty the Warrens
+    1 [B] Time Walk
+    4 [FNM] Accumulated Knowledge
+    3 [TE] Intuition
+    1 [SC] Tendrils of Agony
+    1 [B] Mox Jet
+    1 [B] Mox Ruby
+    1 [B] Mox Pearl
+    1 [B] Ancestral Recall
+    2 [MR] Thirst for Knowledge
+    1 [TE] Lotus Petal
+    2 [UL] Rebuild
+    1 [B] Dark Ritual
+    2 [PLC] Extirpate
+    1 [VI] Vampiric Tutor
+    1 [HL] Merchant Scroll
+    1 [B] Black Lotus
+    1 [B] Mox Emerald
+    1 [B] Mox Sapphire
+    1 [U] Sol Ring
+    1 [HPB] Mana Crypt
+    1 [IA] Brainstorm
+    1 [LRW] Ponder
+    1 [CHK] Gifts Ungiven
+    1 [OD] Recoup
+    1 [US] Yawgmoth's Will
+    1 [U] Demonic Tutor
+    1 [MI] Mystical Tutor
+    1 [ON] Chain of Vapor
+
+// Sideboard
+SB: 2 [FD] Razormane Masticore
+SB: 4 [GP] Leyline of the Void
+SB: 1 [DS] Darksteel Colossus
+SB: 1 [UL] Tinker
+SB: 3 [FUT] Yixlid Jailer
+SB: 2 [ARE] Duress
+SB: 2 [UL] Rack and Ruin

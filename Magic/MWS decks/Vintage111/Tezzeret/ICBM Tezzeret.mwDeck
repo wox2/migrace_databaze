@@ -1,0 +1,39 @@
+// Deck file for Magic Workstation (http://www.magicworkstation.com)
+
+// Lands
+    8 [ARE] Island (1)
+    3 [ON] Polluted Delta
+    4 [TE] Wasteland
+    1 [AQ] Strip Mine (2)
+    1 [AN] Library of Alexandria
+    2 [ON] Flooded Strand
+
+// Creatures
+    4 [WL] Ophidian
+    3 [ALA] Tezzeret the Seeker
+
+// Spells
+    4 [AL] Force of Will
+    1 [B] Mox Sapphire
+    1 [B] Mox Ruby
+    1 [B] Mox Jet
+    1 [B] Mox Pearl
+    1 [B] Mox Emerald
+    1 [B] Sol Ring
+    1 [B] Black Lotus
+    4 [LG] Mana Drain
+    2 [MOR] Negate
+    4 [REW] Mana Leak
+    4 [BD] Impulse
+    1 [B] Ancestral Recall
+    1 [B] Time Walk
+    2 [US] Back to Basics
+    3 [REW] Powder Keg
+    1 [B] Time Vault
+    1 [IN] Fact or Fiction
+
+// Sideboard
+SB: 4 [MM] Energy Flux
+SB: 4 [TE] Propaganda
+SB: 3 [LRW] Sower of Temptation
+SB: 4 [MR] Chalice of the Void

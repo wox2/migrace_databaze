@@ -1,0 +1,31 @@
+// Deck file for Magic Workstation (http://www.magicworkstation.com)
+
+// Lands
+    4 [B] Tropical Island
+    4 [ON] Polluted Delta
+    4 [ZEN] Misty Rainforest
+    1 [ZEN] Forest (3)
+    5 [DDF] Island (1)
+
+// Creatures
+    4 [SHM] Devoted Druid
+    4 [EVE] Quillspike
+    4 [FUT] Tarmogoyf
+
+// Spells
+    3 [WWK] Jace, the Mind Sculptor
+    3 [M11] Garruk Wildspeaker
+    4 [IA] Brainstorm
+    4 [AL] Force of Will
+    4 [NPH] Mental Misstep
+    2 [FD] Vedalken Shackles
+    3 [CHK] Sensei's Divining Top
+    3 [CS] Counterbalance
+    4 [DD2] Daze
+
+// Sideboard
+SB: 2 [FD] Vedalken Shackles
+SB: 4 [HOP] Relic of Progenitus
+SB: 3 [DIS] Spell Snare
+SB: 3 [CIN] Blue Elemental Blast
+SB: 3 [TSP] Krosan Grip

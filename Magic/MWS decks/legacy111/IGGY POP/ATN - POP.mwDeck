@@ -1,0 +1,40 @@
+// Deck file for Magic Workstation (http://www.magicworkstation.com)
+
+// Lands
+    4 [B] Underground Sea
+    1 [B] Volcanic Island
+    3 [ON] Polluted Delta
+    2 [ON] Flooded Strand
+    1 [ON] Bloodstained Mire
+    2 [TSB] Gemstone Mine
+    1 [B] Badlands
+    1 [B] Tundra
+    1 [B] Scrubland
+
+// Creatures
+    1 [PLC] Simian Spirit Guide
+
+// Spells
+    4 [B] Dark Ritual
+    3 [TO] Cabal Ritual
+    4 [DIS] Infernal Tutor
+    4 [TE] Lotus Petal
+    4 [MI] Lion's Eye Diamond
+    2 [LRW] Ponder
+    4 [5E] Brainstorm
+    2 [SC] Tendrils of Agony
+    1 [US] Ill-Gotten Gains
+    4 [ARE] Duress
+    1 [ALA] Ad Nauseam
+    4 [MI] Mystical Tutor
+    2 [MR] Chrome Mox
+    2 [CHK] Sensei's Divining Top
+    2 [PS] Orim's Chant
+
+// Sideboard
+SB: 3 [TSP] Empty the Warrens
+SB: 3 [TSP] Wipe Away
+SB: 1 [ALA] Ad Nauseam
+SB: 4 [TSP] Angel's Grace
+SB: 3 [PLC] Extirpate
+SB: 1 [PLC] Simian Spirit Guide

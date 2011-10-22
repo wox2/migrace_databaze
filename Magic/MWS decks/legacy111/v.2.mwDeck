@@ -1,0 +1,36 @@
+// Deck file for Magic Workstation (http://www.magicworkstation.com)
+// NAME: Unnamed
+
+// Lands
+    3 [ON] Flooded Strand
+    12 [RAV] Island (1)
+    3 [ON] Polluted Delta
+
+// Spells
+    3 [SC] Brain Freeze
+    4 [MM] Brainstorm
+    3 [JU] Cunning Wish
+    2 [JU] Flash of Insight
+    4 [AL] Force of Will
+    4 [FE] High Tide (1)
+    2 [TE] Meditate
+    4 [IN] Opt
+    4 [RAV] Remand
+    4 [LG] Reset
+    3 [US] Turnabout
+    2 [SOK] Twincast
+    3 [OD] Words of Wisdom
+
+// Sideboard
+SB: 1 [SC] Brain Freeze
+SB: 1 [JU] Flash of Insight
+SB: 1 [TE] Meditate
+SB: 1 [US] Turnabout
+SB: 2 [B] Blue Elemental Blast
+SB: 1 [DS] Echoing Truth
+SB: 3 [5E] Hydroblast
+SB: 1 [ON] Chain of Vapor
+SB: 1 [UL] Rebuild
+SB: 1 [UL] Snap
+SB: 1 [US] Stroke of Genius
+SB: 1 [OD] Words of Wisdom

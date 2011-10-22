@@ -1,0 +1,36 @@
+// Deck file for Magic Workstation (http://www.magicworkstation.com)
+
+// Lands
+    1 [AQ] Strip Mine (4)
+    1 [B] Island (1)
+    4 [TE] Wasteland
+    4 [AQ] Mishra's Factory (4)
+    4 [A] Tundra
+    4 [ON] Flooded Strand
+    1 [B] Plains (1)
+
+// Creatures
+    2 [CS] Jotun Grunt
+    4 [FE] Icatian Javelineers (3)
+    2 [NE] Rootwater Thief
+    3 [PS] Meddling Mage
+    4 [BOK] Ninja of the Deep Hours
+
+// Spells
+    3 [OV] Swords to Plowshares
+    1 [B] Time Walk
+    4 [AL] Force of Will
+    3 [NE] Daze
+    3 [WL] Null Rod
+    4 [IA] Brainstorm
+    1 [U] Ancestral Recall
+    4 [OD] Standstill
+    3 [SC] Stifle
+
+// Sideboard
+SB: 2 [TSP] Trickbind
+SB: 3 [NE] Seal of Cleansing
+SB: 3 [PS] Orim's Chant
+SB: 3 [BOK] Umezawa's Jitte
+SB: 1 [OV] Swords to Plowshares
+SB: 3 [SOK] Kataki, War's Wage

@@ -1,0 +1,31 @@
+// Deck file for Magic Workstation (http://www.magicworkstation.com)
+
+// Lands
+    4 [B] Badlands
+    4 [DIS] Blood Crypt
+    4 [TE] Wasteland
+    2 [ON] Bloodstained Mire
+    8 [B] Mountain (1)
+
+// Creatures
+    4 [RAV] Dark Confidant
+    4 [AT] Mogg Fanatic
+    3 [AL] Gorilla Shaman (2)
+    2 [WL] Goblin Vandal
+    2 [UL] Goblin Welder
+
+// Spells
+    4 [R] Lightning Bolt
+    4 [SC] Pyrostatic Pillar
+    4 [5E] Ankh of Mishra
+    3 [VI] Fireblast
+    3 [BOK] Genju of the Spires
+    4 [MR] Chalice of the Void
+    1 [IA] Pyroblast
+
+// Sideboard
+SB: 2 [WL] Goblin Vandal
+SB: 3 [IA] Pyroblast
+SB: 2 [UL] Goblin Welder
+SB: 4 [GP] Leyline of the Void
+SB: 4 [US] Claws of Gix

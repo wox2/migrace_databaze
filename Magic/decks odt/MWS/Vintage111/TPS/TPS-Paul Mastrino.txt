@@ -1,0 +1,49 @@
+1 Swamp
+1 Island
+4 Duress
+4 Force of Will
+1 Necropotence
+1 Fact or Fiction
+1 Mystical Tutor
+4 Brainstorm
+4 Polluted Delta
+2 Flooded Strand
+1 Chain of Vapor
+1 Hurkyl's Recall
+1 Tendrils of Agony
+1 Mind's Desire
+1 Lotus Petal
+1 Empty the Warrens
+2 Cabal Ritual
+1 Volcanic Island
+2 Underground Sea
+1 Time Walk
+1 Timetwister
+1 Sol Ring
+1 Mox Sapphire
+1 Mox Ruby
+1 Mox Pearl
+1 Mox Jet
+1 Mox Emerald
+1 Mana Vault
+1 Demonic Tutor
+1 Black Lotus
+1 Ancestral Recall
+1 Yawgmoth's Bargain
+1 Tinker
+1 Memory Jar
+1 Yawgmoth's Will
+1 Tolarian Academy
+4 Dark Ritual
+1 Vampiric Tutor
+
+Sideboard
+4 Leyline of the Void
+2 Pyroblast
+1 Platinum Angel
+2 Massacre
+1 Hurkyl's Recall
+2 Dark Confidant
+1 Empty the Warrens
+2 Red Elemental Blast
+

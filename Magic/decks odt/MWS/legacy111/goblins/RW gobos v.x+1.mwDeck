@@ -1,0 +1,34 @@
+// Deck file for Magic Workstation (http://www.magicworkstation.com)
+
+// Lands
+    4 [TE] Wasteland
+    4 [ZEN] Scalding Tarn
+    3 [JGC] Wooded Foothills
+    3 [MM] Rishadan Port
+    4 [R] Plateau
+    3 [US] Mountain (4)
+
+// Creatures
+    4 [V09] Goblin Lackey
+    4 [JGC] Goblin Piledriver
+    4 [FNM] Goblin Warchief
+    4 [US] Goblin Matron
+    4 [EVG] Goblin Ringleader
+    3 [EVG] Gempalm Incinerator
+    1 [SC] Siege-Gang Commander
+    1 [MOR] Lightning Crafter
+    1 [LRW] Mirror Entity
+    1 [CHK] Kiki-Jiki, Mirror Breaker
+
+// Spells
+    4 [IA] Swords to Plowshares
+    4 [V10] AEther Vial
+    4 [HOP] Relic of Progenitus
+
+// Sideboard
+SB: 3 [GP] Shattering Spree
+SB: 3 [FNM] Seal of Cleansing
+SB: 2 [MR] Tempest of Light
+SB: 2 [IA] Pyroblast
+SB: 2 [B] Circle of Protection: Red
+SB: 3 [SOK] Pithing Needle

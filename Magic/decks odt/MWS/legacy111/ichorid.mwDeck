@@ -1,0 +1,29 @@
+// Deck file for Magic Workstation (http://www.magicworkstation.com)
+
+// Lands
+    4 [5E] City of Brass
+    4 [VI] Undiscovered Paradise
+
+// Creatures
+    2 [IA] Ashen Ghoul
+    4 [RAV] Golgari Grave-Troll
+    4 [RAV] Golgari Thug
+    4 [TO] Ichorid
+    4 [5E] Nether Shadow
+    3 [TO] Putrid Imp
+    4 [RAV] Stinkweed Imp
+    3 [DS] Sundering Titan
+    2 [JU] Sutured Ghoul
+
+// Spells
+    4 [JU] Cabal Therapy
+    2 [SC] Dragon Breath
+    3 [TSP] Dread Return
+    4 [IA] Brainstorm
+    4 [TO] Deep Analysis
+    4 [MI] Lion's Eye Diamond
+    1 [OD] Careful Study
+
+// Sideboard
+SB: 1 [IA] Ashen Ghoul
+SB: 1 [DS] Sundering Titan

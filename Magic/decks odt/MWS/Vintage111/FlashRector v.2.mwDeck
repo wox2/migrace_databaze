@@ -1,0 +1,55 @@
+// Deck file for Magic Workstation (http://www.magicworkstation.com)
+
+// Lands
+    2 [ON] Flooded Strand
+    1 [B] Island (1)
+    4 [ON] Polluted Delta
+    1 [US] Tolarian Academy
+    3 [B] Underground Sea
+    1 [B] Swamp (1)
+
+// Creatures
+    4 [UD] Academy Rector
+
+// Spells
+    1 [B] Sol Ring
+    1 [SH] Mox Diamond
+    1 [B] Mox Emerald
+    1 [B] Mox Jet
+    1 [B] Mox Pearl
+    1 [B] Mox Ruby
+    1 [B] Mox Sapphire
+    1 [MI] Mystical Tutor
+    1 [B] Mana Vault
+    2 [SC] Tendrils of Agony
+    1 [U] Timetwister
+    1 [VI] Vampiric Tutor
+    1 [UD] Yawgmoth's Bargain
+    1 [US] Yawgmoth's Will
+    1 [HL] Merchant Scroll
+    1 [IA] Necropotence
+    4 [IA] Brainstorm
+    1 [B] Ancestral Recall
+    1 [B] Black Lotus
+    1 [PR] Mana Crypt
+    1 [MR] Chrome Mox
+    4 [B] Dark Ritual
+    1 [A] Demonic Tutor
+    4 [US] Duress
+    4 [MI] Flash
+    1 [TE] Lotus Petal
+    1 [IA] Illusions of Grandeur
+    3 [TO] Cabal Ritual
+    1 [ON] Chain of Vapor
+
+// Sideboard
+SB: 1 [MI] Lion's Eye Diamond
+SB: 1 [UL] Tinker
+SB: 1 [SC] Mind's Desire
+SB: 1 [ON] Future Sight
+SB: 1 [UL] Memory Jar
+SB: 1 [SC] Form of the Dragon
+SB: 1 [US] Windfall
+SB: 1 [ON] Chain of Vapor
+SB: 2 [AQ] Hurkyl's Recall
+SB: 4 [ST] Grim Tutor

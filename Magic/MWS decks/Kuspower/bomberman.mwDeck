@@ -1,0 +1,52 @@
+// Deck file for Magic Workstation (http://www.magicworkstation.com)
+
+// Lands
+    4 [ON] Flooded Strand
+    2 [APL] Island (3)
+    1 [US] Plains (4)
+    2 [ON] Polluted Delta
+    4 [B] Tundra
+    1 [B] Underground Sea
+    2 [B] Volcanic Island
+
+// Creatures
+    3 [FD] Auriok Salvagers
+    1 [DS] Darksteel Colossus
+    3 [FD] Trinket Mage
+
+// Spells
+    4 [NE] Accumulated Knowledge
+    1 [MR] AEther Spellbomb
+    1 [B] Ancestral Recall
+    1 [B] Black Lotus
+    1 [5E] Brainstorm
+    1 [B] Demonic Tutor
+    1 [DS] Echoing Truth
+    1 [FD] Engineered Explosives
+    4 [AL] Force of Will
+    2 [TE] Intuition
+    1 [TE] Lotus Petal
+    1 [HPB] Mana Crypt
+    4 [LG] Mana Drain
+    1 [HL] Merchant Scroll
+    1 [B] Mox Ruby
+    1 [MI] Mystical Tutor
+    1 [LRW] Ponder
+    1 [MR] Pyrite Spellbomb
+    2 [GP] Repeal
+    2 [CHK] Sensei's Divining Top
+    1 [B] Sol Ring
+    1 [MR] Thirst for Knowledge
+    1 [B] Time Walk
+    1 [UL] Tinker
+    1 [TSB] Tormod's Crypt
+    1 [VI] Vampiric Tutor
+
+// Sideboard
+SB: 2 [FNM] Fire/Ice
+SB: 2 [4E] Hurkyl's Recall
+SB: 2 [CS] Jotun Grunt
+SB: 2 [IA] Pyroblast
+SB: 4 [OV] Pyroclasm
+SB: 2 [UL] Rack and Ruin
+SB: 1 [TSB] Tormod's Crypt

@@ -1,0 +1,54 @@
+// Deck file for Magic Workstation (http://www.magicworkstation.com)
+
+// Lands
+    4 [ON] Flooded Strand
+    3 [B] Volcanic Island
+    4 [B] Underground Sea
+    4 [ON] Polluted Delta
+    1 [B] Island (1)
+    1 [US] Tolarian Academy
+
+// Creatures
+    3 [SHM] Painter's Servant
+    1 [DS] Darksteel Colossus
+
+// Spells
+    1 [IN] Fact or Fiction
+    3 [TE] Grindstone
+    1 [DS] Echoing Truth
+    1 [US] Yawgmoth's Will
+    1 [PT] Personal Tutor
+    2 [IA] Pyroblast
+    2 [LG] Mana Drain
+    1 [MM] Gush
+    1 [MR] Thirst for Knowledge
+    1 [B] Demonic Tutor
+    1 [VI] Vampiric Tutor
+    1 [MI] Mystical Tutor
+    3 [MR] Chrome Mox
+    4 [AL] Arcane Denial (1)
+    1 [IA] Brainstorm
+    1 [U] Ancestral Recall
+    1 [HL] Merchant Scroll
+    4 [AL] Force of Will
+    1 [UL] Tinker
+    1 [B] Black Lotus
+    1 [U] Mox Ruby
+    1 [B] Sol Ring
+    1 [HPB] Mana Crypt
+    1 [5E] Mana Vault
+    1 [CHK] Gifts Ungiven
+    1 [LRW] Ponder
+    1 [A] Time Walk
+
+// Sideboard
+SB: 1 [TE] Grindstone
+SB: 1 [SHM] Painter's Servant
+SB: 2 [TSB] Gaea's Blessing
+SB: 1 [A] Red Elemental Blast
+SB: 1 [IA] Pyroblast
+SB: 1 [OV] Library of Alexandria
+SB: 2 [IA] Hydroblast
+SB: 1 [CFX] Inkwell Leviathan
+SB: 4 [IA] Mystic Remora
+SB: 1 [SC] Tendrils of Agony

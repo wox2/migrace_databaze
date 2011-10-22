@@ -1,0 +1,41 @@
+// Deck file for Magic Workstation (http://www.magicworkstation.com)
+
+// Lands
+    4 [B] Bayou
+    4 [B] Taiga
+    3 [ON] Bloodstained Mire
+    2 [B] Forest (3)
+    1 [B] Mountain (3)
+    2 [MR] Tree of Tales
+    4 [ON] Wooded Foothills
+
+// Creatures
+    1 [MR] Duplicant
+    1 [AL] Shield Sphere
+    1 [MM] Squee, Goblin Nabob
+    1 [AQ] Triskelion
+    4 [MI] Wall of Roots
+    1 [UL] Bone Shredder
+    3 [VI] Quirion Ranger
+    1 [JU] Genesis
+    1 [RAV] Nullstone Gargoyle
+    2 [UL] Goblin Welder
+    1 [DS] Sundering Titan
+    4 [GP] Tin Street Hooligan
+    1 [JU] Anger
+    3 [FD] Eternal Witness
+
+// Spells
+    3 [JU] Burning Wish
+    1 [VG] Rofellos
+    4 [CHK] Sensei's Divining Top
+    3 [MR] Chrome Mox
+    4 [EX] Survival of the Fittest
+
+// Sideboard
+SB: 4 [JU] Cabal Therapy
+SB: 1 [IA] Pyroclasm
+SB: 2 [US] Duress
+SB: 1 [PS] Hull Breach
+SB: 1 [MM] Pulverize
+SB: 3 [SOK] Pithing Needle

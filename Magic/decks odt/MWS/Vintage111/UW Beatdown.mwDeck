@@ -1,0 +1,30 @@
+// Deck file for Magic Workstation (http://www.magicworkstation.com)
+
+// Lands
+    4 [ON] Flooded Strand
+    1 [B] Island (1)
+    8 [B] Plains (3)
+    4 [B] Tundra
+
+// Creatures
+    4 [FUT] Aven Mindcensor
+    4 [TSP] Children of Korlis
+    4 [CS] Jotun Grunt
+    2 [SOK] Kataki, War's Wage
+    4 [CS] Martyr of Sands
+    4 [PS] Meddling Mage
+    4 [B] Savannah Lions
+    4 [ON] True Believer
+
+// Spells
+    4 [DS] AEther Vial
+    4 [MR] Chalice of the Void
+    1 [B] Mox Pearl
+    1 [DIS] Proclamation of Rebirth
+    3 [B] Swords to Plowshares
+
+// Sideboard
+SB: 4 [PS] Orim's Chant
+SB: 3 [WL] Serenity
+SB: 4 [BOK] Umezawa's Jitte
+SB: 4 [TO] Morningtide

@@ -1,0 +1,27 @@
+// Deck file for Magic Workstation (http://www.magicworkstation.com)
+
+// Lands
+    4 [OD] Barbarian Ring
+    4 [JGC] Wooded Foothills
+    10 [9E] Mountain (4)
+    4 [ZEN] Scalding Tarn
+
+// Creatures
+    4 [ZEN] Goblin Guide
+    4 [GTW] Hellspark Elemental
+    4 [JGC] Grim Lavamancer
+
+// Spells
+    4 [M10] Lightning Bolt
+    4 [PD2] Chain Lightning
+    3 [PD2] Price of Progress
+    4 [NE] Flame Rift
+    3 [FNM] Fireblast
+    4 [DLM] Incinerate
+    4 [CHK] Lava Spike
+
+// Sideboard
+SB: 4 [SC] Sulfuric Vortex
+SB: 4 [B] Red Elemental Blast
+SB: 3 [SC] Pyrostatic Pillar
+SB: 4 [CFX] Volcanic Fallout

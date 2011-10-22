@@ -1,0 +1,37 @@
+// Deck file for Magic Workstation (http://www.magicworkstation.com)
+
+// Lands
+    4 [B] Underground Sea
+    1 [TSP] Swamp (4)
+    3 [ON] Flooded Strand
+    8 [ARE] Island (1)
+    4 [ON] Polluted Delta
+
+// Creatures
+    1 [SHM] Oona, Queen of the Fae
+    4 [JU] Worldgorger Dragon
+    1 [WL] Merfolk Traders
+    1 [IN] Vodalian Merchant
+
+// Spells
+    1 [U] Demonic Tutor
+    3 [OD] Careful Study
+    1 [MR] Chrome Mox
+    2 [TE] Intuition
+    1 [ON] Read the Runes
+    1 [5E] Brainstorm
+    3 [U] Animate Dead
+    2 [IA] Dance of the Dead
+    4 [VI] Necromancy
+    4 [AL] Force of Will
+    3 [JU] Cunning Wish
+    3 [TO] Deep Analysis
+    1 [HPB] Mana Crypt
+    2 [ARE] Duress
+    2 [LRW] Thoughtseize
+
+// Sideboard
+SB: 1 [ON] Read the Runes
+SB: 1 [US] Stroke of Genius
+SB: 1 [ON] Chain of Vapor
+SB: 2 [DS] Echoing Truth

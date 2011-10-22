@@ -1,0 +1,28 @@
+// Deck file for Magic Workstation (http://www.magicworkstation.com)
+
+// Lands
+    4 [5E] City of Brass
+    4 [VI] Undiscovered Paradise
+    4 [WL] Gemstone Mine
+
+// Creatures
+    4 [RAV] Golgari Grave-Troll
+    4 [RAV] Golgari Thug
+    4 [TO] Ichorid
+    4 [RAV] Stinkweed Imp
+    1 [RAV] Flame-Kin Zealot
+    4 [FUT] Narcomoeba
+
+// Spells
+    4 [JU] Cabal Therapy
+    2 [TSP] Dread Return
+    2 [IA] Brainstorm
+    4 [TO] Deep Analysis
+    4 [MI] Lion's Eye Diamond
+    4 [OD] Careful Study
+    4 [TO] Breakthrough
+    4 [FUT] Bridge from Below
+
+// Sideboard
+SB: 4 [ON] Chain of Vapor
+SB: 4 [GP] Leyline of the Void

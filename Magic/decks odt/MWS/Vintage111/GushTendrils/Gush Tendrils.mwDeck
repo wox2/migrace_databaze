@@ -1,0 +1,51 @@
+// Deck file for Magic Workstation (http://www.magicworkstation.com)
+
+// Lands
+    3 [ON] Flooded Strand
+    1 [B] Island (1)
+    2 [ON] Polluted Delta
+    1 [US] Tolarian Academy
+    2 [B] Tropical Island
+    3 [B] Underground Sea
+
+// Creatures
+    4 [FUT] Street Wraith
+
+// Spells
+    1 [B] Ancestral Recall
+    1 [B] Black Lotus
+    4 [IA] Brainstorm
+    1 [B] Dark Ritual
+    1 [B] Demonic Tutor
+    3 [US] Duress
+    1 [R] Fastbond
+    4 [AL] Force of Will
+    1 [CHK] Gifts Ungiven
+    4 [MM] Gush
+    1 [ON] Chain of Vapor
+    1 [P3] Imperial Seal
+    1 [TE] Lotus Petal
+    1 [PR] Mana Crypt
+    4 [8E] Merchant Scroll
+    1 [SC] Mind's Desire
+    3 [MM] Misdirection
+    1 [B] Mox Emerald
+    1 [B] Mox Jet
+    1 [B] Mox Pearl
+    1 [B] Mox Ruby
+    1 [U] Mox Sapphire
+    1 [MI] Mystical Tutor
+    1 [B] Sol Ring
+    1 [SC] Tendrils of Agony
+    1 [B] Time Walk
+    1 [VI] Vampiric Tutor
+    1 [US] Yawgmoth's Will
+
+// Sideboard
+SB: 1 [US] Duress
+SB: 2 [AQ] Hurkyl's Recall
+SB: 4 [GP] Leyline of the Void
+SB: 1 [OD] Psychatog
+SB: 1 [UL] Rebuild
+SB: 4 [BOK] Threads of Disloyalty
+SB: 2 [FUT] Yixlid Jailer

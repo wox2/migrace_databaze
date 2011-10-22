@@ -1,0 +1,35 @@
+// Deck file for Magic Workstation (http://www.magicworkstation.com)
+
+// Lands
+    2 [9E] Mountain (4)
+    3 [CST] Plains (2)
+    4 [ZEN] Arid Mesa
+    1 [V09] Strip Mine
+    4 [TE] Wasteland
+    2 [ON] Flooded Strand
+    4 [R] Plateau
+
+// Creatures
+    3 [AL] Gorilla Shaman (2)
+    4 [PLC] Simian Spirit Guide
+    4 [FUT] Aven Mindcensor
+    4 [SOM] Leonin Arbiter
+    4 [FUT] Magus of the Moon
+    3 [SOK] Kataki, War's Wage
+
+// Spells
+    4 [WL] Null Rod
+    1 [B] Black Lotus
+    1 [B] Mox Ruby
+    1 [B] Mox Pearl
+    4 [NPH] Mental Misstep
+    4 [IA] Pyroblast
+    3 [B] Lightning Bolt
+
+// Sideboard
+SB: 3 [HOP] Relic of Progenitus
+SB: 3 [ALA] Ethersworn Canonist
+SB: 3 [CS] Jotun Grunt
+SB: 3 [NE] Seal of Cleansing
+SB: 1 [B] Lightning Bolt
+SB: 2 [IA] Swords to Plowshares

@@ -1,0 +1,31 @@
+// Deck file for Magic Workstation (http://www.magicworkstation.com)
+
+// Lands
+    4 [ON] Polluted Delta
+    4 [B] Underground Sea
+    1 [B] Island (1)
+    2 [ON] Bloodstained Mire
+    9 [US] Swamp (3)
+
+// Creatures
+    4 [JU] Worldgorger Dragon
+    2 [SHM] Oona, Queen of the Fae
+
+// Spells
+    4 [US] Duress
+    2 [LRW] Thoughtseize
+    4 [B] Dark Ritual
+    4 [OD] Entomb
+    1 [U] Ancestral Recall
+    4 [R] Animate Dead
+    4 [IA] Dance of the Dead
+    2 [VI] Necromancy
+    2 [ON] Chain of Vapor
+    4 [OD] Careful Study
+    1 [HPB] Mana Crypt
+    1 [TE] Lotus Petal
+    1 [IA] Brainstorm
+
+// Sideboard
+SB: 4 [FD] Engineered Explosives
+SB: 2 [DS] Echoing Truth

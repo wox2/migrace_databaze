@@ -1,0 +1,40 @@
+// Deck file for Magic Workstation (http://www.magicworkstation.com)
+
+// Lands
+    2 [ON] Flooded Strand
+    1 [RAV] Plains (1)
+    4 [ON] Polluted Delta
+    4 [B] Scrubland
+    1 [AQ] Strip Mine (4)
+    2 [B] Swamp (2)
+    4 [TE] Wasteland
+
+// Creatures
+    4 [RAV] Dark Confidant
+    3 [MI] Phyrexian Dreadnought
+
+// Spells
+    1 [B] Balance
+    3 [JU] Cabal Therapy
+    4 [US] Dark Ritual
+    1 [B] Demonic Tutor
+    4 [US] Duress
+    1 [MI] Enlightened Tutor
+    4 [PLC] Extirpate
+    4 [MR] Chalice of the Void
+    4 [B] Illusionary Mask
+    1 [P3] Imperial Seal
+    4 [PS] Orim's Chant
+    1 [NE] Seal of Cleansing
+    1 [MR] Spoils of the Vault
+    1 [OV] Swords to Plowshares
+    1 [VI] Vampiric Tutor
+    1 [IA] Demonic Consultation
+
+// Sideboard
+SB: 3 [NE] Seal of Cleansing
+SB: 3 [OV] Swords to Plowshares
+SB: 4 [CS] Jotun Grunt
+SB: 1 [SOK] Kataki, War's Wage
+SB: 2 [LG] The Tabernacle at Pendrell Vale
+SB: 2 [BOK] Umezawa's Jitte

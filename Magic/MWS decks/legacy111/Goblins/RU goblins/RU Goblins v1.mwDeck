@@ -1,0 +1,32 @@
+// Deck file for Magic Workstation (http://www.magicworkstation.com)
+
+// Lands
+    4 [B] Volcanic Island
+    4 [TE] Wasteland
+    2 [ON] Wooded Foothills
+    2 [ZEN] Scalding Tarn
+    2 [ZEN] Arid Mesa
+    2 [ON] Bloodstained Mire
+    6 [P2] Mountain (1)
+    1 [ZEN] Soaring Seacliff
+
+// Creatures
+    4 [US] Goblin Lackey
+    4 [FNM] Goblin Warchief
+    4 [EVG] Goblin Matron
+    4 [JGC] Goblin Piledriver
+    3 [EVG] Gempalm Incinerator
+    4 [LRW] Pestermite
+    2 [CHK] Kiki-Jiki, Mirror Breaker
+    2 [PLC] Stingscourger
+    4 [EVG] Goblin Ringleader
+    2 [SC] Siege-Gang Commander
+
+// Spells
+    4 [DS] AEther Vial
+
+// Sideboard
+SB: 4 [DS] Echoing Truth
+SB: 3 [ZEN] Spell Pierce
+SB: 4 [MR] Chalice of the Void
+SB: 4 [GP] Leyline of the Void

@@ -1,0 +1,37 @@
+// Deck file for Magic Workstation (http://www.magicworkstation.com)
+
+// Lands
+    4 [B] Underground Sea
+    4 [ON] Polluted Delta
+    4 [DDF] Island (1)
+    1 [US] Swamp (4)
+    3 [ON] Flooded Strand
+    2 [ZEN] Scalding Tarn
+    2 [ZEN] Verdant Catacombs
+
+// Creatures
+    1 [ARB] Sphinx of the Steel Wind
+    4 [NPH] Jin-Gitaxias, Core Augur
+    1 [NPH] Elesh Norn, Grand Cenobite
+    1 [ZEN] Iona, Shield of Emeria
+    2 [JU] Hapless Researcher
+
+// Spells
+    3 [OD] Careful Study
+    4 [AL] Force of Will
+    3 [BRB] Reanimate
+    4 [US] Exhume
+    4 [OD] Entomb
+    4 [IA] Brainstorm
+    1 [B] Animate Dead
+    4 [NPH] Mental Misstep
+    2 [LRW] Thoughtseize
+    2 [WWK] Jace, the Mind Sculptor
+
+// Sideboard
+SB: 1 [ARB] Sphinx of the Steel Wind
+SB: 2 [10E] Pithing Needle
+SB: 4 [US] Show and Tell
+SB: 1 [DDF] Echoing Truth
+SB: 3 [SOM] Nihil Spellbomb
+SB: 4 [DD2] Daze

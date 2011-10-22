@@ -1,0 +1,40 @@
+// Deck file for Magic Workstation (http://www.magicworkstation.com)
+
+// Lands
+    3 [B] Underground Sea
+    3 [ON] Polluted Delta
+    3 [ON] Flooded Strand
+    6 [B] Island (1)
+
+// Creatures
+    4 [UD] Academy Rector
+
+// Spells
+    4 [MI] Flash
+    1 [TE] Lotus Petal
+    4 [SH] Mana Leak
+    2 [HL] Merchant Scroll
+    2 [LG] Mana Drain
+    1 [MM] Misdirection
+    1 [B] Ancestral Recall
+    1 [MR] Chrome Mox
+    4 [AL] Force of Will
+    1 [B] Black Lotus
+    1 [UD] Yawgmoth's Bargain
+    2 [IA] Illusions of Grandeur
+    2 [UD] Donate
+    1 [B] Mox Sapphire
+    1 [B] Mox Emerald
+    1 [B] Mox Jet
+    1 [US] Yawgmoth's Will
+    1 [B] Mox Pearl
+    1 [B] Mox Ruby
+    2 [ON] Chain of Vapor
+    1 [MI] Mystical Tutor
+    1 [B] Demonic Tutor
+    1 [VI] Vampiric Tutor
+    4 [IA] Brainstorm
+
+// Sideboard
+SB: 4 [US] Duress
+SB: 4 [PLC] Extirpate

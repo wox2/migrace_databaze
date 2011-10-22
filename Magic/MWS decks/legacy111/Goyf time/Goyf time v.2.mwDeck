@@ -1,0 +1,36 @@
+// Deck file for Magic Workstation (http://www.magicworkstation.com)
+
+// Lands
+    4 [TE] Wasteland
+    4 [ON] Wooded Foothills
+    4 [B] Bayou
+    4 [R] Badlands
+    1 [B] Mountain (1)
+    1 [ARE] Forest (8)
+    4 [B] Taiga
+
+// Creatures
+    2 [FD] Eternal Witness
+    4 [FUT] Tarmogoyf
+    4 [RAV] Dark Confidant
+    4 [SHM] Painter's Servant
+
+// Spells
+    2 [LRW] Thoughtseize
+    2 [FD] Engineered Explosives
+    2 [ARE] Duress
+    4 [AP] Pernicious Deed
+    2 [JGC] Regrowth
+    2 [ON] Smother
+    2 [JU] Seedtime
+    4 [TE] Grindstone
+    4 [IA] Pyroblast
+
+// Sideboard
+SB: 1 [LRW] Thoughtseize
+SB: 4 [GP] Leyline of the Void
+SB: 2 [WL] Gaea's Blessing
+SB: 2 [ARE] Duress
+SB: 2 [IA] Pyroclasm
+SB: 2 [ON] Smother
+SB: 2 [JU] Seedtime

@@ -1,0 +1,57 @@
+// Deck file for Magic Workstation (http://www.magicworkstation.com)
+
+// Lands
+    3 [ON] Flooded Strand
+    1 [TSP] Island (1)
+    1 [AN] Library of Alexandria
+    2 [ON] Polluted Delta
+    1 [CS] Snow-Covered Island
+    1 [AT] Strip Mine
+    1 [US] Tolarian Academy
+    2 [R] Underground Sea
+    4 [R] Volcanic Island
+
+// Creatures
+    2 [UL] Goblin Welder
+    1 [DS] Sundering Titan
+    1 [AQ] Triskelion
+
+// Spells
+    1 [U] Ancestral Recall
+    1 [U] Black Lotus
+    4 [MM] Brainstorm
+    1 [FD] Crucible of Worlds
+    1 [R] Demonic Tutor
+    1 [DS] Echoing Truth
+    1 [TSP] Empty the Warrens
+    4 [AL] Force of Will
+    3 [CHK] Gifts Ungiven
+    4 [LG] Mana Drain
+    1 [5E] Mana Vault
+    1 [MR] Mindslaver
+    1 [U] Mox Emerald
+    1 [U] Mox Jet
+    1 [U] Mox Pearl
+    1 [U] Mox Ruby
+    1 [U] Mox Sapphire
+    1 [6E] Mystical Tutor
+    1 [OD] Recoup
+    1 [4E] Red Elemental Blast
+    1 [R] Sol Ring
+    2 [MR] Thirst for Knowledge
+    1 [U] Time Walk
+    1 [UL] Tinker
+    2 [TSB] Tormod's Crypt
+    1 [6E] Vampiric Tutor
+    1 [US] Yawgmoth's Will
+
+// Sideboard
+SB: 2 [TSP] Empty the Warrens
+SB: 1 [4E] Red Elemental Blast
+SB: 1 [5E] Hurkyl's Recall
+SB: 4 [MR] Chalice of the Void
+SB: 2 [JU] Lava Dart
+SB: 1 [5E] Pyroblast
+SB: 1 [GP] Shattering Spree
+SB: 1 [SC] Tendrils of Agony
+SB: 2 [TSP] Trickbind

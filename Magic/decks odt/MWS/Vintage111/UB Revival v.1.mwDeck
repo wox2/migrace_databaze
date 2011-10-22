@@ -1,0 +1,52 @@
+// Deck file for Magic Workstation (http://www.magicworkstation.com)
+
+// Lands
+    4 [B] Island (1)
+    1 [AN] Library of Alexandria
+    4 [ON] Polluted Delta
+    2 [ZEN] Scalding Tarn
+    1 [US] Tolarian Academy
+    4 [B] Underground Sea
+
+// Creatures
+    4 [RAV] Dark Confidant
+    1 [SOM] Myr Battlesphere
+    1 [MOR] Vendilion Clique
+
+// Spells
+    1 [B] Ancestral Recall
+    1 [B] Black Lotus
+    1 [IA] Brainstorm
+    1 [B] Demonic Tutor
+    1 [DDF] Echoing Truth
+    4 [AL] Force of Will
+    1 [TE] Intuition
+    2 [WWK] Jace, the Mind Sculptor
+    1 [BIN] Mana Crypt
+    1 [B] Mana Vault
+    1 [MM] Misdirection
+    1 [B] Mox Emerald
+    1 [B] Mox Jet
+    1 [B] Mox Pearl
+    1 [B] Mox Ruby
+    1 [B] Mox Sapphire
+    2 [NPH] Noxious Revival
+    2 [V09] Sensei's Divining Top
+    1 [V10] Sol Ring
+    4 [ZEN] Spell Pierce
+    2 [MBS] Tezzeret, Agent of Bolas
+    1 [DDF] Thirst for Knowledge
+    1 [B] Time Vault
+    1 [B] Time Walk
+    1 [UL] Tinker
+    1 [VI] Vampiric Tutor
+    2 [US] Voltaic Key
+    1 [US] Yawgmoth's Will
+
+// Sideboard
+SB: 3 [5E] Hurkyl's Recall
+SB: 3 [SOM] Nihil Spellbomb
+SB: 3 [TE] Perish
+SB: 2 [10E] Pithing Needle
+SB: 1 [WWK] Thada Adel, Acquisitor
+SB: 3 [FUT] Yixlid Jailer

@@ -1,0 +1,34 @@
+// Deck file for Magic Workstation (http://www.magicworkstation.com)
+
+// Lands
+    4 [AN] Bazaar of Baghdad
+    4 [OV] City of Brass
+    3 [TSB] Gemstone Mine
+
+// Creatures
+    2 [ALA] Fatestitcher
+    1 [RAV] Flame-Kin Zealot
+    4 [RAV] Golgari Grave-Troll
+    3 [RAV] Golgari Thug
+    4 [TO] Ichorid
+    4 [FUT] Narcomoeba
+    2 [OD] Sadistic Hypnotist
+    4 [DDC] Stinkweed Imp
+
+// Spells
+    4 [FUT] Bridge from Below
+    4 [JU] Cabal Therapy
+    4 [MR] Chalice of the Void
+    2 [UL] Crop Rotation
+    1 [RAV] Darkblast
+    3 [TSP] Dread Return
+    4 [DS] Serum Powder
+    3 [MM] Unmask
+
+// Sideboard
+SB: 4 [ON] Chain of Vapor
+SB: 2 [RAV] Darkblast
+SB: 2 [VI] Emerald Charm
+SB: 1 [TSB] Gemstone Mine
+SB: 4 [SOK] Pithing Needle
+SB: 2 [LRW] Wispmare

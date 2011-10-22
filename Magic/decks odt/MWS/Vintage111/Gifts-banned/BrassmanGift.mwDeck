@@ -1,0 +1,64 @@
+// Deck file for Magic Workstation (http://www.magicworkstation.com)
+// NAME: Unnamed
+
+// Lands
+    1 [ON] Flooded Strand
+    2 [TSP] Island (1)
+    1 [AN] Library of Alexandria
+    4 [ON] Polluted Delta
+    1 [CS] Snow-Covered Island
+    1 [TSP] Swamp (1)
+    1 [US] Tolarian Academy
+    2 [R] Underground Sea
+    2 [R] Volcanic Island
+
+// Creatures
+    1 [AL] Gorilla Shaman (1)
+
+// Spells
+    1 [U] Black Lotus
+    1 [TE] Lotus Petal
+    1 [PR] Mana Crypt
+    1 [U] Mox Emerald
+    1 [U] Mox Jet
+    1 [U] Mox Pearl
+    1 [U] Mox Ruby
+    1 [U] Mox Sapphire
+    1 [R] Sol Ring
+    1 [TSB] Tormod's Crypt
+    1 [MM] Dark Ritual
+    1 [R] Demonic Tutor
+    2 [7E] Duress
+    1 [OD] Skeletal Scrying
+    1 [SC] Tendrils of Agony
+    1 [6E] Vampiric Tutor
+    1 [US] Yawgmoth's Will
+    1 [U] Ancestral Recall
+    4 [MM] Brainstorm
+    4 [AL] Force of Will
+    3 [CHK] Gifts Ungiven
+    1 [5E] Hurkyl's Recall
+    2 [LG] Mana Drain
+    2 [8E] Merchant Scroll
+    1 [6E] Mystical Tutor
+    3 [GP] Repeal
+    1 [U] Time Walk
+    1 [U] Timetwister
+    1 [JU] Burning Wish
+    1 [TSP] Empty the Warrens
+    1 [OD] Recoup
+
+// Sideboard
+SB: 2 [TSB] Tormod's Crypt
+SB: 1 [7E] Duress
+SB: 1 [5E] Hurkyl's Recall
+SB: 1 [GP] Repeal
+SB: 1 [TSP] Empty the Warrens
+SB: 1 [TO] Deep Analysis
+SB: 1 [PLC] Extirpate
+SB: 1 [4E] Mind Twist
+SB: 1 [5E] Pyroblast
+SB: 1 [9E] Pyroclasm
+SB: 1 [UL] Rebuild
+SB: 2 [4E] Red Elemental Blast
+SB: 1 [LG] The Abyss

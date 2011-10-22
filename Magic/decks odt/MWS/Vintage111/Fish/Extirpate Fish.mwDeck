@@ -1,0 +1,40 @@
+// Deck file for Magic Workstation (http://www.magicworkstation.com)
+
+// Lands
+    2 [ON] Flooded Strand
+    3 [R] Underground Sea
+    3 [A] Tundra
+    1 [B] Island (1)
+    4 [TE] Wasteland
+    1 [AQ] Strip Mine (4)
+    2 [ON] Polluted Delta
+
+// Creatures
+    3 [SOK] Kataki, War's Wage
+    4 [PS] Meddling Mage
+    3 [CS] Jotun Grunt
+    4 [RAV] Dark Confidant
+
+// Spells
+    1 [B] Black Lotus
+    1 [B] Mox Pearl
+    4 [AL] Force of Will
+    1 [B] Ancestral Recall
+    4 [NE] Daze
+    4 [PLC] Extirpate
+    4 [US] Duress
+    4 [SC] Stifle
+    1 [B] Mox Jet
+    4 [IA] Brainstorm
+    1 [B] Mox Sapphire
+    1 [B] Time Walk
+
+// Sideboard
+SB: 2 [DS] Echoing Truth
+SB: 2 [RAV] Darkblast
+SB: 2 [NE] Seal of Cleansing
+SB: 3 [IA] Swords to Plowshares
+SB: 3 [BOK] Umezawa's Jitte
+SB: 1 [MI] Mystical Tutor
+SB: 1 [VI] Vampiric Tutor
+SB: 1 [B] Demonic Tutor

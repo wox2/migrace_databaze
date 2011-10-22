@@ -1,0 +1,35 @@
+// Deck file for Magic Workstation (http://www.magicworkstation.com)
+// NAME: Unnamed
+
+// Lands
+    4 [ON] Flooded Strand
+    2 [TSP] Island (1)
+    4 [ON] Polluted Delta
+    1 [R] Scrubland
+    2 [TSP] Swamp (1)
+    1 [R] Tundra
+    2 [R] Underground Sea
+
+// Spells
+    4 [MI] Lion's Eye Diamond
+    4 [TE] Lotus Petal
+    4 [TO] Cabal Ritual
+    4 [MM] Dark Ritual
+    4 [US] Ill-Gotten Gains
+    4 [DIS] Infernal Tutor
+    4 [GP] Leyline of the Void
+    3 [SC] Tendrils of Agony
+    4 [MM] Brainstorm
+    4 [TE] Intuition
+    4 [6E] Mystical Tutor
+    1 [7E] Duress
+
+// Sideboard
+SB: 1 [CHK] Boseiju, Who Shelters All
+SB: 4 [ON] Chain of Vapor
+SB: 1 [9E] Defense Grid
+SB: 3 [7E] Duress
+SB: 1 [TSB] Gaea's Blessing
+SB: 1 [5E] Hurkyl's Recall
+SB: 3 [PS] Orim's Chant
+SB: 1 [RAV] Dark Confidant

@@ -1,0 +1,47 @@
+// Deck file for Magic Workstation (http://www.magicworkstation.com)
+
+// Lands
+    3 [ON] Polluted Delta
+    4 [ON] Flooded Strand
+    2 [B] Tropical Island
+    1 [IA] Island (1)
+    3 [B] Underground Sea
+
+// Spells
+    1 [US] Yawgmoth's Will
+    1 [B] Demonic Tutor
+    1 [VI] Vampiric Tutor
+    1 [MI] Mystical Tutor
+    1 [P3] Imperial Seal
+    2 [HL] Merchant Scroll
+    1 [B] Time Walk
+    1 [A] Timetwister
+    1 [B] Ancestral Recall
+    1 [B] Fastbond
+    1 [IA] Necropotence
+    1 [SC] Tendrils of Agony
+    4 [MM] Gush
+    1 [B] Mox Emerald
+    1 [OV] Black Lotus
+    4 [B] Dark Ritual
+    1 [TE] Lotus Petal
+    4 [LRW] Ponder
+    1 [B] Mox Sapphire
+    4 [AL] Force of Will
+    3 [US] Duress
+    2 [LRW] Thoughtseize
+    1 [DS] Echoing Truth
+    1 [B] Mox Jet
+    4 [IA] Brainstorm
+    1 [AQ] Hurkyl's Recall
+    1 [B] Regrowth
+    1 [HPB] Mana Crypt
+
+// Sideboard
+SB: 1 [AQ] Hurkyl's Recall
+SB: 1 [PLC] Extirpate
+SB: 1 [ON] Chain of Vapor
+SB: 3 [DIS] Spell Snare
+SB: 4 [GP] Leyline of the Void
+SB: 1 [UL] Rebuild
+SB: 4 [RAV] Dark Confidant

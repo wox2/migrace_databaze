@@ -1,0 +1,41 @@
+// Deck file for Magic Workstation (http://www.magicworkstation.com)
+
+// Lands
+    4 [B] Badlands
+    4 [CH] City of Brass
+    2 [VI] Undiscovered Paradise
+
+// Creatures
+    4 [LG] Crimson Kobolds
+    4 [LG] Crookshank Kobolds
+    4 [LG] Kobolds of Kher Keep
+    2 [MR] Ornithopter
+    4 [PLC] Simian Spirit Guide
+    4 [FUT] Street Wraith
+
+// Spells
+    2 [EX] Culling the Weak
+    4 [B] Dark Ritual
+    1 [B] Demonic Tutor
+    1 [PS] Diabolic Intent
+    3 [TSP] Empty the Warrens
+    1 [MR] Chrome Mox
+    1 [MI] Lion's Eye Diamond
+    1 [TE] Lotus Petal
+    1 [IA] Necropotence
+    4 [CS] Rite of Flame
+    4 [DS] Skullclamp
+    1 [SC] Tendrils of Agony
+    1 [VI] Vampiric Tutor
+    1 [B] Wheel of Fortune
+    1 [US] Yawgmoth's Will
+    1 [JU] Burning Wish
+
+// Sideboard
+SB: 1 [TSP] Empty the Warrens
+SB: 1 [SC] Tendrils of Agony
+SB: 3 [LRW] Ingot Chewer
+SB: 4 [5E] Pyroblast
+SB: 1 [ON] Chain of Vapor
+SB: 1 [UL] Rebuild
+SB: 4 [GP] Leyline of the Void

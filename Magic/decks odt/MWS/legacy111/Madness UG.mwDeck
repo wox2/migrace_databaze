@@ -1,0 +1,32 @@
+// Deck file for Magic Workstation (http://www.magicworkstation.com)
+
+// Lands
+    1 [OD] Cephalid Coliseum
+    1 [ON] Flooded Strand
+    1 [B] Forest (3)
+    9 [IA] Island (1)
+    2 [ON] Polluted Delta
+    4 [R] Tropical Island
+    2 [ON] Windswept Heath
+
+// Creatures
+    4 [TO] Aquamoeba
+    4 [TO] Arrogant Wurm
+    4 [TO] Basking Rootwalla
+    4 [OD] Wild Mongrel
+    2 [JU] Wonder
+
+// Spells
+    4 [IA] Brainstorm
+    4 [TO] Circular Logic
+    4 [NE] Daze
+    2 [TO] Deep Analysis
+    4 [AL] Force of Will
+    4 [SC] Stifle
+
+// Sideboard
+SB: 3 [US] Arcane Laboratory
+SB: 2 [A] Blue Elemental Blast
+SB: 3 [IA] Hydroblast
+SB: 4 [DK] Tormod's Crypt
+SB: 3 [BOK] Umezawa's Jitte

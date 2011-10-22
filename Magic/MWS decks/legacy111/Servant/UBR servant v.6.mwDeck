@@ -1,0 +1,40 @@
+// Deck file for Magic Workstation (http://www.magicworkstation.com)
+
+// Lands
+    2 [TE] Ancient Tomb
+    4 [A] Underground Sea
+    3 [ON] Flooded Strand
+    3 [ON] Polluted Delta
+    4 [B] Volcanic Island
+    1 [ARE] Island (1)
+    1 [EX] City of Traitors
+
+// Creatures
+    4 [SHM] Painter's Servant
+    4 [RAV] Dark Confidant
+    2 [UL] Goblin Welder
+
+// Spells
+    1 [DS] Echoing Truth
+    4 [AL] Force of Will
+    2 [ARE] Duress
+    1 [SH] Mox Diamond
+    2 [MR] Chrome Mox
+    4 [TE] Intuition
+    4 [IA] Brainstorm
+    3 [TE] Grindstone
+    2 [TE] Lotus Petal
+    3 [LRW] Ponder
+    1 [B] Red Elemental Blast
+    1 [IA] Pyroblast
+    3 [MR] Thirst for Knowledge
+    1 [AL] Lim-Dul's Vault
+
+// Sideboard
+SB: 1 [B] Red Elemental Blast
+SB: 1 [IA] Pyroblast
+SB: 2 [10E] Platinum Angel
+SB: 2 [FD] Engineered Explosives
+SB: 2 [B] Tropical Island
+SB: 3 [ALA] Relic of Progenitus
+SB: 4 [FUT] Tarmogoyf

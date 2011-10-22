@@ -1,0 +1,56 @@
+// Deck file for Magic Workstation (http://www.magicworkstation.com)
+
+// Lands
+    3 [B] Tropical Island
+    2 [ON] Polluted Delta
+    3 [ON] Flooded Strand
+    3 [B] Underground Sea
+    2 [B] Tundra
+    2 [WL] Gemstone Mine
+    1 [OD] Cephalid Coliseum
+    1 [IA] Glacial Chasm
+    1 [AQ] Strip Mine (4)
+    1 [TE] Wasteland
+
+// Spells
+    2 [FD] Crucible of Worlds
+    1 [B] Mox Sapphire
+    1 [B] Black Lotus
+    1 [B] Sol Ring
+    1 [PR] Mana Crypt
+    1 [MI] Enlightened Tutor
+    2 [IA] Zuran Orb
+    1 [CHK] Gifts Ungiven
+    4 [AL] Force of Will
+    1 [MI] Mystical Tutor
+    1 [B] Balance
+    4 [IA] Brainstorm
+    3 [JU] Cunning Wish
+    3 [TE] Intuition
+    1 [B] Ancestral Recall
+    1 [IN] Fact or Fiction
+    1 [MM] Gush
+    4 [LG] Mana Drain
+    1 [US] Yawgmoth's Will
+    1 [B] Regrowth
+    1 [B] Fastbond
+    1 [HL] Merchant Scroll
+    1 [VI] Vampiric Tutor
+    1 [B] Demonic Tutor
+    1 [GP] Repeal
+    1 [WL] Argivian Find
+
+// Sideboard
+SB: 1 [IA] Swords to Plowshares
+SB: 1 [AP] Pernicious Deed
+SB: 1 [US] Stroke of Genius
+SB: 1 [NE] Seal of Cleansing
+SB: 1 [DS] Darksteel Colossus
+SB: 1 [DIS] Research/Development
+SB: 1 [ON] Naturalize
+SB: 1 [MM] Misdirection
+SB: 1 [ON] Chain of Vapor
+SB: 1 [UL] Crop Rotation
+SB: 1 [UL] Tinker
+SB: 2 [DK] Tormod's Crypt
+SB: 2 [TE] Wasteland

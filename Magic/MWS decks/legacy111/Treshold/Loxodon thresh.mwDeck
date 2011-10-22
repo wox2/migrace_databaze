@@ -1,0 +1,35 @@
+// Deck file for Magic Workstation (http://www.magicworkstation.com)
+
+// Lands
+    3 [ARE] Island (6)
+    4 [U] Tropical Island
+    4 [B] Tundra
+    1 [B] Plains (1)
+    4 [ON] Polluted Delta
+    4 [ON] Flooded Strand
+
+// Creatures
+    1 [ARB] Lorescale Coatl
+    4 [FUT] Tarmogoyf
+    2 [DIS] Trygon Predator
+    2 [RAV] Loxodon Hierarch
+    3 [MOR] Vendilion Clique
+
+// Spells
+    1 [FD] Engineered Explosives
+    3 [M10] Ponder
+    4 [DD2] Daze
+    4 [B] Swords to Plowshares
+    4 [AL] Force of Will
+    4 [BD] Brainstorm
+    4 [CS] Counterbalance
+    4 [CHK] Sensei's Divining Top
+    1 [TSP] Wipe Away
+
+// Sideboard
+SB: 1 [ARB] Lorescale Coatl
+SB: 4 [ALA] Relic of Progenitus
+SB: 4 [TSP] Krosan Grip
+SB: 3 [MR] Chalice of the Void
+SB: 1 [B] Circle of Protection: Red
+SB: 2 [DS] Pulse of the Fields

@@ -1,0 +1,43 @@
+// Deck file for Magic Workstation (http://www.magicworkstation.com)
+
+// Lands
+    4 [AQ] Mishra's Workshop
+    3 [MM] Rishadan Port
+    1 [AQ] Strip Mine (4)
+    1 [US] Tolarian Academy
+    4 [TE] Wasteland
+    2 [EX] City of Traitors
+    3 [TE] Ancient Tomb
+    4 [AN] Bazaar of Baghdad
+
+// Creatures
+    3 [US] Karn, Silver Golem
+
+// Spells
+    3 [FD] Crucible of Worlds
+    1 [B] Sol Ring
+    3 [UD] Powder Keg
+    1 [B] Black Lotus
+    1 [B] Mana Vault
+    1 [B] Mox Jet
+    1 [B] Mox Sapphire
+    1 [B] Mox Ruby
+    1 [B] Mox Emerald
+    1 [B] Mox Pearl
+    1 [PR] Mana Crypt
+    4 [MR] Chalice of the Void
+    4 [US] Smokestack
+    4 [EX] Sphere of Resistance
+    4 [NE] Tangle Wire
+    1 [DS] Trinisphere
+    3 [CHK] Uba Mask
+
+// Sideboard
+SB: 1 [FD] Crucible of Worlds
+SB: 1 [MR] Duplicant
+SB: 1 [US] Karn, Silver Golem
+SB: 1 [UD] Powder Keg
+SB: 4 [BOK] Orb of Dreams
+SB: 3 [DK] Tormod's Crypt
+SB: 3 [AQ] Triskelion
+SB: 1 [TSP] Triskelavus

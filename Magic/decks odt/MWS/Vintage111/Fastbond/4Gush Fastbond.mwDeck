@@ -1,0 +1,49 @@
+// Deck file for Magic Workstation (http://www.magicworkstation.com)
+
+// Lands
+    3 [ON] Flooded Strand
+    3 [B] Island (1)
+    1 [AN] Library of Alexandria
+    3 [ON] Polluted Delta
+    4 [B] Tropical Island
+    4 [B] Underground Sea
+
+// Spells
+    1 [B] Ancestral Recall
+    1 [B] Black Lotus
+    1 [SC] Brain Freeze
+    4 [IA] Brainstorm
+    1 [FD] Crucible of Worlds
+    1 [JU] Cunning Wish
+    1 [B] Demonic Tutor
+    2 [US] Duress
+    1 [R] Fastbond
+    4 [AL] Force of Will
+    4 [MM] Gush
+    2 [TE] Intuition
+    1 [PR] Mana Crypt
+    3 [LG] Mana Drain
+    2 [8E] Merchant Scroll
+    2 [MM] Misdirection
+    1 [U] Mox Sapphire
+    1 [MI] Mystical Tutor
+    1 [UL] Rebuild
+    1 [EX] Reclaim
+    1 [A] Regrowth
+    1 [GP] Repeal
+    1 [U] Sol Ring
+    1 [B] Time Walk
+    1 [VI] Vampiric Tutor
+    1 [US] Yawgmoth's Will
+    1 [OV] Zuran Orb
+
+// Sideboard
+SB: 1 [TE] Intuition
+SB: 1 [MM] Misdirection
+SB: 2 [CHK] Hideous Laughter
+SB: 1 [AQ] Hurkyl's Recall
+SB: 1 [ON] Chain of Vapor
+SB: 2 [ON] Naturalize
+SB: 2 [DIS] Research/Development
+SB: 1 [US] Stroke of Genius
+SB: 4 [GP] Leyline of the Void

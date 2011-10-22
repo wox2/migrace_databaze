@@ -1,0 +1,38 @@
+// Deck file for Magic Workstation (http://www.magicworkstation.com)
+
+// Lands
+    4 [TE] Wasteland
+    4 [B] Tundra
+    4 [B] Underground Sea
+    4 [ON] Polluted Delta
+    3 [ON] Flooded Strand
+    1 [TE] Island (2)
+    1 [US] Plains (1)
+    1 [P3] Swamp (2)
+
+// Creatures
+    4 [RAV] Dark Confidant
+    3 [PS] Meddling Mage
+    4 [ON] Voidmage Prodigy
+    2 [CS] Jotun Grunt
+    2 [MM] Waterfront Bouncer
+
+// Spells
+    4 [DS] AEther Vial
+    3 [NE] Daze
+    4 [AL] Force of Will
+    4 [SC] Stifle
+    2 [BOK] Umezawa's Jitte
+    2 [U] Swords to Plowshares
+    2 [US] Duress
+    1 [EX] Oath of Ghouls
+    1 [RAV] Darkblast
+
+// Sideboard
+SB: 2 [MM] Waterfront Bouncer
+SB: 1 [BOK] Umezawa's Jitte
+SB: 1 [U] Swords to Plowshares
+SB: 3 [EX] Oath of Ghouls
+SB: 3 [OV] Hydroblast
+SB: 1 [RAV] Darkblast
+SB: 4 [US] Arcane Laboratory

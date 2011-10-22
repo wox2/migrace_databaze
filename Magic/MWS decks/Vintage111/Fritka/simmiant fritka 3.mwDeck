@@ -1,0 +1,28 @@
+// Deck file for Magic Workstation (http://www.magicworkstation.com)
+
+// Lands
+    4 [TE] Wasteland
+    14 [B] Mountain (3)
+    4 [AQ] Mishra's Factory (3)
+    1 [AQ] Strip Mine (4)
+
+// Creatures
+    4 [PLC] Simian Spirit Guide
+    4 [AT] Mogg Fanatic
+
+// Spells
+    3 [VI] Fireblast
+    3 [BOK] Genju of the Spires
+    4 [SC] Pyrostatic Pillar
+    4 [WL] Null Rod
+    4 [B] Lightning Bolt
+    4 [LG] Chain Lightning
+    4 [R] Ankh of Mishra
+    3 [MR] Chalice of the Void
+
+// Sideboard
+SB: 1 [MR] Chalice of the Void
+SB: 3 [IA] Pyroblast
+SB: 3 [UL] Goblin Welder
+SB: 4 [OV] Cursed Scroll
+SB: 4 [US] Claws of Gix

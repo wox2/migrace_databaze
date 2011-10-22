@@ -1,0 +1,31 @@
+// Deck file for Magic Workstation (http://www.magicworkstation.com)
+
+// Lands
+    2 [B] Tundra
+    8 [B] Island (1)
+    2 [ON] Flooded Strand
+    4 [ON] Polluted Delta
+    4 [PS] Forsaken City
+
+// Creatures
+    2 [CS] Jotun Grunt
+
+// Spells
+    1 [B] Ancestral Recall
+    4 [VI] Impulse
+    3 [WL] Disrupt
+    2 [DS] Echoing Truth
+    4 [HL] Merchant Scroll
+    4 [B] Stasis
+    4 [IA] Brainstorm
+    4 [NE] Daze
+    4 [PY] Foil
+    4 [AL] Force of Will
+    4 [MM] Gush
+
+// Sideboard
+SB: 4 [SOK] Pithing Needle
+SB: 2 [DIS] Tidespout Tyrant
+SB: 2 [B] Tropical Island
+SB: 4 [EX] Oath of Druids
+SB: 3 [IA] Hydroblast

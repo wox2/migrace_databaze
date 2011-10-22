@@ -1,0 +1,48 @@
+// Deck file for Magic Workstation (http://www.magicworkstation.com)
+
+// Lands
+    1 [US] Tolarian Academy
+    1 [AT] Strip Mine
+    4 [TE] Wasteland
+    4 [AQ] Mishra's Workshop
+    1 [AN] Bazaar of Baghdad
+    4 [AN] City of Brass
+    3 [WL] Gemstone Mine
+    1 [TSP] Academy Ruins
+    1 [OD] Barbarian Ring
+    1 [BOK] Tendo Ice Bridge
+
+// Creatures
+    4 [UL] Goblin Welder
+    1 [AQ] Triskelion
+    1 [DS] Sundering Titan
+
+// Spells
+    1 [U] Mox Jet
+    1 [U] Mox Emerald
+    1 [U] Black Lotus
+    1 [U] Mox Pearl
+    1 [U] Mox Ruby
+    1 [U] Mox Sapphire
+    1 [R] Sol Ring
+    1 [5E] Mana Vault
+    1 [DS] Trinisphere
+    1 [PR] Mana Crypt
+    4 [US] Smokestack
+    4 [NE] Tangle Wire
+    4 [MR] Chalice of the Void
+    3 [FD] Crucible of Worlds
+    1 [UL] Tinker
+    1 [B] Ancestral Recall
+    1 [B] Balance
+    1 [OV] Vampiric Tutor
+    1 [B] Demonic Tutor
+    2 [FD] Engineered Explosives
+    1 [NE] Seal of Cleansing
+
+// Sideboard
+SB: 1 [AQ] Triskelion
+SB: 3 [RAV] Darkblast
+SB: 3 [DK] Tormod's Crypt
+SB: 4 [TE] Choke
+SB: 4 [EX] Sphere of Resistance

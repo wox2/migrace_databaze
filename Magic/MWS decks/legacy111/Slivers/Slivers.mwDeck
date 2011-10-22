@@ -1,0 +1,34 @@
+// Deck file for Magic Workstation (http://www.magicworkstation.com)
+
+// Lands
+    2 [B] Underground Sea
+    2 [B] Tropical Island
+    2 [B] Tundra
+    1 [B] Savannah
+    3 [ON] Flooded Strand
+    3 [ON] Polluted Delta
+    1 [IA] Plains (2)
+    1 [P3] Island (1)
+    3 [MOR] Mutavault
+
+// Creatures
+    4 [FNM] Crystalline Sliver
+    4 [FNM] Muscle Sliver
+    4 [PLC] Sinew Sliver
+    4 [TE] Winged Sliver
+    3 [SH] Hibernation Sliver
+
+// Spells
+    4 [AL] Force of Will
+    4 [NE] Daze
+    4 [R] Swords to Plowshares
+    4 [DS] AEther Vial
+    4 [FNM] Brainstorm
+    3 [LRW] Ponder
+
+// Sideboard
+SB: 3 [SC] Stifle
+SB: 4 [B] Blue Elemental Blast
+SB: 2 [TSP] Harmonic Sliver
+SB: 2 [TSP] Krosan Grip
+SB: 4 [PLC] Extirpate

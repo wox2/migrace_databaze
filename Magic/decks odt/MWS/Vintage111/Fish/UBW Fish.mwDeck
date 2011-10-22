@@ -1,0 +1,39 @@
+// Deck file for Magic Workstation (http://www.magicworkstation.com)
+
+// Lands
+    3 [ON] Flooded Strand
+    3 [B] Island (2)
+    1 [OV] Library of Alexandria
+    1 [B] Plains (3)
+    3 [ON] Polluted Delta
+    1 [AQ] Strip Mine (1)
+    1 [B] Swamp (1)
+    4 [B] Tundra
+    4 [B] Underground Sea
+
+// Creatures
+    4 [RAV] Dark Confidant
+    2 [CS] Jotun Grunt
+    4 [CS] Martyr of Frost
+    3 [PS] Meddling Mage
+    2 [US] Stern Proctor
+    1 [IN] Stormscape Apprentice
+    4 [ON] Voidmage Prodigy
+    2 [MM] Waterfront Bouncer
+
+// Spells
+    4 [DS] AEther Vial
+    1 [RAV] Darkblast
+    3 [NE] Daze
+    4 [AL] Force of Will
+    1 [TE] Lotus Petal
+    2 [EX] Oath of Ghouls
+    1 [B] Sol Ring
+    1 [BOK] Umezawa's Jitte
+
+// Sideboard
+SB: 1 [RAV] Darkblast
+SB: 4 [R] Energy Flux
+SB: 2 [US] Hibernation
+SB: 2 [US] Stern Proctor
+SB: 1 [BOK] Umezawa's Jitte

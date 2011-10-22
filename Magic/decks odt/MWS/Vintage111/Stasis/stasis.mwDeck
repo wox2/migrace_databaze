@@ -1,0 +1,26 @@
+// Deck file for Magic Workstation (http://www.magicworkstation.com)
+
+// Lands
+    4 [PS] Forsaken City
+    4 [ON] Polluted Delta
+    2 [ON] Flooded Strand
+    12 [B] Island (1)
+
+// Spells
+    4 [B] Stasis
+    4 [MM] Gush
+    3 [B] Black Vise
+    4 [AL] Force of Will
+    2 [PLC] Frozen AEther
+    4 [B] Howling Mine
+    4 [PY] Foil
+    4 [NE] Daze
+    4 [5E] Force Spike
+    4 [IA] Brainstorm
+    1 [WL] Disrupt
+
+// Sideboard
+SB: 3 [IA] Hydroblast
+SB: 2 [US] Morphling
+SB: 4 [EX] Oath of Druids
+SB: 4 [SOK] Pithing Needle

@@ -1,0 +1,58 @@
+// Deck file for Magic Workstation (http://www.magicworkstation.com)
+
+// Lands
+    1 [DDF] Island (1)
+    1 [AN] Library of Alexandria
+    1 [ZEN] Misty Rainforest
+    2 [ON] Polluted Delta
+    2 [ZEN] Scalding Tarn
+    1 [US] Tolarian Academy
+    1 [B] Tropical Island
+    4 [B] Underground Sea
+    3 [B] Volcanic Island
+
+// Creatures
+    1 [MBS] Blightsteel Colossus
+    3 [RAV] Dark Confidant
+    2 [MOR] Vendilion Clique
+
+// Spells
+    1 [U] Ancestral Recall
+    2 [TSP] Ancient Grudge
+    1 [B] Black Lotus
+    1 [5E] Brainstorm
+    1 [B] Demonic Tutor
+    4 [AL] Force of Will
+    1 [AQ] Hurkyl's Recall
+    2 [WWK] Jace, the Mind Sculptor
+    1 [BIN] Mana Crypt
+    3 [LG] Mana Drain
+    1 [HL] Merchant Scroll
+    2 [ZEN] Mindbreak Trap
+    1 [B] Mox Emerald
+    1 [B] Mox Jet
+    1 [B] Mox Pearl
+    1 [B] Mox Ruby
+    1 [B] Mox Sapphire
+    3 [IA] Mystic Remora
+    1 [V09] Mystical Tutor
+    1 [V09] Sensei's Divining Top
+    1 [V10] Sol Ring
+    1 [DDF] Thirst for Knowledge
+    1 [U] Time Vault
+    1 [A] Time Walk
+    1 [UL] Tinker
+    1 [JGC] Vampiric Tutor
+    1 [US] Voltaic Key
+    1 [US] Yawgmoth's Will
+
+// Sideboard
+SB: 2 [DD2] Ingot Chewer
+SB: 2 [SOM] Nihil Spellbomb
+SB: 2 [10E] Pithing Needle
+SB: 1 [IA] Pyroclasm
+SB: 2 [B] Red Elemental Blast
+SB: 1 [UL] Viashino Heretic
+SB: 2 [FUT] Yixlid Jailer
+SB: 1 [LRW] Sower of Temptation
+SB: 2 [M10] Lightning Bolt

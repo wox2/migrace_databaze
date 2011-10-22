@@ -1,0 +1,46 @@
+// Deck file for Magic Workstation (http://www.magicworkstation.com)
+
+// Lands
+    3 [B] Island (1)
+    1 [B] Swamp (3)
+    3 [ON] Flooded Strand
+    3 [ON] Polluted Delta
+    3 [B] Underground Sea
+
+// Creatures
+    4 [FUT] Street Wraith
+
+// Spells
+    1 [P3] Imperial Seal
+    1 [B] Time Walk
+    4 [AL] Force of Will
+    3 [US] Duress
+    3 [MM] Unmask
+    1 [B] Demonic Tutor
+    1 [VI] Vampiric Tutor
+    1 [MI] Mystical Tutor
+    4 [IA] Brainstorm
+    1 [TE] Lotus Petal
+    1 [DIS] Research/Development
+    1 [SC] Tendrils of Agony
+    1 [ON] Chain of Vapor
+    1 [FUT] Pact of Negation
+    4 [WL] Doomsday
+    1 [MI] Lion's Eye Diamond
+    1 [B] Mox Sapphire
+    1 [B] Mox Jet
+    1 [SC] Mind's Desire
+    1 [B] Black Lotus
+    4 [B] Dark Ritual
+    2 [TO] Cabal Ritual
+    1 [IA] Necropotence
+    1 [US] Yawgmoth's Will
+    1 [MM] Gush
+    1 [B] Ancestral Recall
+
+// Sideboard
+SB: 1 [DIS] Research/Development
+SB: 1 [SC] Tendrils of Agony
+SB: 1 [ON] Chain of Vapor
+SB: 1 [FD] Beacon of Destruction
+SB: 3 [FUT] Pact of Negation

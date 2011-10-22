@@ -1,0 +1,50 @@
+// Deck file for Magic Workstation (http://www.magicworkstation.com)
+
+// Lands
+    4 [CHK] Forbidden Orchard
+    1 [AN] Library of Alexandria
+    2 [R] Underground Sea
+    2 [B] Tundra
+    1 [AQ] Strip Mine (2)
+    3 [U] Tropical Island
+    1 [US] Island (4)
+    1 [OV] City of Brass
+    2 [ON] Flooded Strand
+    2 [ON] Polluted Delta
+
+// Creatures
+    2 [FD] Auriok Salvagers
+
+// Spells
+    4 [EX] Oath of Druids
+    1 [JU] Krosan Reclamation
+    3 [JU] Cunning Wish
+    4 [LG] Mana Drain
+    2 [TE] Intuition
+    2 [TO] Deep Analysis
+    4 [AL] Force of Will
+    1 [MI] Lion's Eye Diamond
+    1 [MR] AEther Spellbomb
+    1 [MR] Pyrite Spellbomb
+    1 [FD] Engineered Explosives
+    4 [IA] Brainstorm
+    1 [B] Ancestral Recall
+    1 [B] Demonic Tutor
+    1 [VI] Vampiric Tutor
+    1 [MI] Mystical Tutor
+    4 [US] Duress
+    1 [MR] Chrome Mox
+    1 [TE] Lotus Petal
+    1 [SH] Mox Diamond
+
+// Sideboard
+SB: 1 [TO] Deep Analysis
+SB: 1 [US] Stroke of Genius
+SB: 1 [PS] Orim's Chant
+SB: 1 [DIS] Research/Development
+SB: 1 [IN] Fact or Fiction
+SB: 1 [RAV] Life from the Loam
+SB: 1 [DS] Echoing Truth
+SB: 1 [MI] Enlightened Tutor
+SB: 3 [US] Claws of Gix
+SB: 4 [PLC] Extirpate

@@ -1,0 +1,36 @@
+// Deck file for Magic Workstation (http://www.magicworkstation.com)
+// NAME: rwgoblins
+
+// Lands
+    5 [ALA] Mountain (1)
+    4 [TE] Wasteland
+    3 [MM] Rishadan Port
+    3 [R] Plateau
+    4 [ON] Wooded Foothills
+    4 [ON] Bloodstained Mire
+
+// Creatures
+    4 [US] Goblin Lackey
+    4 [ON] Goblin Piledriver
+    4 [EVG] Goblin Matron
+    4 [EVG] Goblin Ringleader
+    4 [EVG] Goblin Warchief
+    3 [EVG] Gempalm Incinerator
+    2 [EVG] Siege-Gang Commander
+    1 [EVG] Skirk Prospector
+    1 [ON] Goblin Sharpshooter
+    1 [ON] Goblin Pyromancer
+    1 [LRW] Mirror Entity
+
+// Spells
+    4 [CST] Swords to Plowshares
+    4 [DS] AEther Vial
+
+// Sideboard
+SB: 1 [EVG] Siege-Gang Commander
+SB: 1 [AT] Goblin Tinkerer
+SB: 4 [5E] Pyroblast
+SB: 3 [SHM] Faerie Macabre
+SB: 3 [TSB] Disenchant
+SB: 2 [GP] Shattering Spree
+SB: 1 [10E] Goblin King

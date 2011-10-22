@@ -1,0 +1,34 @@
+// Deck file for Magic Workstation (http://www.magicworkstation.com)
+
+// Lands
+    4 [LRW] Gilt-Leaf Palace
+    2 [RAV] Overgrown Tomb
+    1 [LG] Pendelhaven
+    9 [IA] Snow-Covered Forest
+
+// Creatures
+    4 [ON] Birchlore Rangers
+    4 [DK] Elves of Deep Shadow
+    4 [ALA] Elvish Visionary
+    1 [FD] Eternal Witness
+    4 [MOR] Heritage Druid
+    4 [9E] Llanowar Elves
+    4 [EVE] Nettle Sentinel
+    1 [EVE] Regal Force
+    2 [MR] Viridian Shaman
+    4 [EVG] Wirewood Symbiote
+
+// Spells
+    4 [CHK] Glimpse of Nature
+    1 [TSP] Grapeshot
+    4 [FUT] Summoner's Pact
+    3 [ON] Weird Harvest
+
+// Sideboard
+SB: 1 [LG] Pendelhaven
+SB: 2 [MR] Viridian Shaman
+SB: 1 [ALA] Mycoloth
+SB: 1 [RAV] Nullmage Shepherd
+SB: 2 [LRW] Thorn of Amethyst
+SB: 4 [LRW] Thoughtseize
+SB: 4 [BOK] Umezawa's Jitte

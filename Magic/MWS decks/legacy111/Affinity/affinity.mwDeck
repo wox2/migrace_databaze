@@ -1,0 +1,32 @@
+// Deck file for Magic Workstation (http://www.magicworkstation.com)
+
+// Lands
+    1 [MR] Ancient Den
+    1 [DS] Blinkmoth Nexus
+    2 [DS] Darksteel Citadel
+    3 [MR] Glimmervoid
+    1 [MR] Great Furnace
+    2 [AQ] Mishra's Factory (1)
+    4 [MR] Seat of the Synod
+    4 [MR] Vault of Whispers
+
+// Creatures
+    4 [DS] Arcbound Ravager
+    4 [DS] Arcbound Worker
+    2 [R] Atog
+    4 [RAV] Dark Confidant
+    4 [MR] Disciple of the Vault
+    4 [MR] Frogmite
+    4 [AQ] Ornithopter
+
+// Spells
+    4 [DS] AEther Vial
+    4 [FD] Cranial Plating
+    4 [TE] Lotus Petal
+    4 [MR] Thoughtcast
+
+// Sideboard
+SB: 3 [RAV] Darkblast
+SB: 4 [US] Duress
+SB: 4 [CHK] Kami of Ancient Law
+SB: 4 [PS] Meddling Mage

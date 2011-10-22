@@ -1,0 +1,38 @@
+// Deck file for Magic Workstation (http://www.magicworkstation.com)
+
+// Lands
+    1 [P3] Island (1)
+    1 [IA] Plains (2)
+    2 [ON] Windswept Heath
+    1 [ON] Polluted Delta
+    4 [ON] Flooded Strand
+    2 [B] Tropical Island
+    1 [B] Savannah
+    2 [B] Tundra
+    2 [B] Scrubland
+    1 [A] Bayou
+
+// Creatures
+    4 [FNM] Muscle Sliver
+    3 [FNM] Crystalline Sliver
+    3 [TE] Winged Sliver
+    1 [PLC] Darkheart Sliver
+    3 [LE] Plated Sliver
+    3 [SH] Hibernation Sliver
+    4 [PLC] Sinew Sliver
+
+// Spells
+    4 [DS] AEther Vial
+    3 [ST] Counterspell
+    4 [FNM] Brainstorm
+    4 [R] Swords to Plowshares
+    4 [AL] Force of Will
+    4 [NE] Daze
+
+// Sideboard
+SB: 2 [DK] Tormod's Crypt
+SB: 3 [PS] Meddling Mage
+SB: 3 [TSP] Harmonic Sliver
+SB: 2 [FNM] Engineered Plague
+SB: 3 [PLC] Extirpate
+SB: 2 [US] Duress

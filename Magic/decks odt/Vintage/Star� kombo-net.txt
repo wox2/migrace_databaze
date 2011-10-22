@@ -1,0 +1,53 @@
+1 Phyrexian Colossus
+
+1 Abeyance
+1 Ancestral Recall
+1 Black Lotus
+1 Braingeyser
+1 Candelabra of Tawnos
+1 Capsize
+1 Crop Rotation
+1 Defense Grid
+1 Demonic Tutor
+1 Donate
+1 Doomsday
+1 Fastbond
+1 Frantic Search
+1 Grim Monolith
+1 Illusions of Grandeur
+1 Intuition
+1 Lion's Eye Diamond
+1 Lotus Petal
+1 Mana Crypt
+1 Mana Vault
+1 Memory Jar
+1 Mind Over Matter
+1 Mox Emerald
+1 Mox Jet
+1 Mox Pearl
+1 Mox Ruby
+1 Mox Sapphire
+1 Mystical Tutor
+1 Necropotence
+1 Orim's Chant
+1 Pandemonium
+1 Power Artifact
+1 Regrowth
+2 Replenish
+1 Saproling Burst
+1 Sol Ring
+1 Stroke of Genius
+1 Time Spiral
+1 Time Walk
+1 Timetwister
+1 Tinker
+1 Vampiric Tutor
+1 Wheel of Fortune
+1 Windfall
+1 Yawgmoth's Bargain
+
+4 City of Brass
+4 Gemstone Mine
+2 Reflecting Pool
+1 Tolarian Academy
+2 Undiscovered Paradise 

@@ -1,0 +1,56 @@
+// Deck file for Magic Workstation (http://www.magicworkstation.com)
+
+// Lands
+    2 [ON] Flooded Strand
+    4 [CHK] Forbidden Orchard
+    1 [ARE] Island (3)
+    2 [ON] Polluted Delta
+    1 [AQ] Strip Mine (2)
+    2 [B] Tropical Island
+    3 [B] Underground Sea
+    1 [TE] Wasteland
+
+// Creatures
+    2 [DIS] Tidespout Tyrant
+    1 [CFX] Inkwell Leviathan
+
+// Spells
+    1 [A] Sol Ring
+    1 [HPB] Mana Crypt
+    4 [LG] Mana Drain
+    1 [B] Mox Ruby
+    1 [MI] Mystical Tutor
+    4 [EX] Oath of Druids
+    1 [LRW] Ponder
+    2 [GP] Repeal
+    2 [CHK] Sensei's Divining Top
+    1 [TE] Lotus Petal
+    1 [U] Time Vault
+    1 [B] Time Walk
+    1 [UL] Tinker
+    1 [6E] Vampiric Tutor
+    2 [US] Voltaic Key
+    1 [US] Yawgmoth's Will
+    1 [8E] Merchant Scroll
+    1 [B] Demonic Tutor
+    1 [CHK] Gifts Ungiven
+    4 [AL] Force of Will
+    1 [JU] Krosan Reclamation
+    1 [IA] Brainstorm
+    1 [B] Black Lotus
+    1 [B] Ancestral Recall
+    1 [UL] Rebuild
+    2 [FNM] Duress
+    1 [SC] Brain Freeze
+    1 [B] Mana Vault
+    1 [B] Regrowth
+
+// Sideboard
+SB: 1 [FNM] Duress
+SB: 1 [ON] Chain of Vapor
+SB: 2 [IA] Mystic Remora
+SB: 2 [AQ] Hurkyl's Recall
+SB: 1 [MM] Misdirection
+SB: 3 [US] Claws of Gix
+SB: 3 [ALA] Relic of Progenitus
+SB: 2 [PLC] Extirpate

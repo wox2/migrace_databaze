@@ -1,0 +1,41 @@
+// Deck file for Magic Workstation (http://www.magicworkstation.com)
+
+// Lands
+    1 [AQ] Strip Mine (3)
+    4 [TE] Wasteland
+    3 [B] Underground Sea
+    3 [B] Tropical Island
+    1 [B] Bayou
+    4 [ON] Polluted Delta
+    2 [ON] Flooded Strand
+
+// Creatures
+    4 [RAV] Dark Confidant
+    3 [SHM] Cursecatcher
+    4 [FUT] Tarmogoyf
+    3 [DIS] Trygon Predator
+
+// Spells
+    1 [B] Black Lotus
+    1 [B] Mox Jet
+    1 [B] Mox Sapphire
+    1 [B] Mox Emerald
+    1 [B] Mox Ruby
+    4 [AL] Force of Will
+    3 [WL] Null Rod
+    3 [SC] Stifle
+    3 [ARE] Mana Leak
+    4 [LRW] Thoughtseize
+    1 [DS] Echoing Truth
+    1 [B] Ancestral Recall
+    1 [B] Time Walk
+    1 [IA] Brainstorm
+    1 [VI] Vampiric Tutor
+    1 [B] Demonic Tutor
+
+// Sideboard
+SB: 2 [B] Volcanic Island
+SB: 4 [B] Red Elemental Blast
+SB: 1 [LRW] Sower of Temptation
+SB: 4 [FUT] Yixlid Jailer
+SB: 4 [TSP] Krosan Grip

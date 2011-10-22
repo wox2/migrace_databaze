@@ -1,0 +1,57 @@
+// Deck file for Magic Workstation (http://www.magicworkstation.com)
+
+// Lands
+    1 [RAV] Island (1)
+    1 [RAV] Swamp (1)
+    1 [ON] Flooded Strand
+    4 [ON] Polluted Delta
+    3 [R] Underground Sea
+    1 [US] Tolarian Academy
+
+// Creatures
+    3 [FUT] Street Wraith
+
+// Spells
+    1 [U] Mox Emerald
+    1 [U] Mox Jet
+    1 [U] Mox Sapphire
+    1 [R] Sol Ring
+    1 [5E] Mana Vault
+    1 [TE] Lotus Petal
+    1 [U] Mox Ruby
+    1 [U] Mox Pearl
+    1 [U] Black Lotus
+    1 [UL] Memory Jar
+    1 [PR] Mana Crypt
+    1 [UD] Yawgmoth's Bargain
+    1 [5E] Necropotence
+    4 [MM] Brainstorm
+    1 [U] Ancestral Recall
+    1 [6E] Mystical Tutor
+    4 [MM] Dark Ritual
+    1 [6E] Vampiric Tutor
+    2 [ON] Chain of Vapor
+    1 [5E] Hurkyl's Recall
+    3 [TO] Cabal Ritual
+    2 [ST] Grim Tutor
+    1 [SC] Mind's Desire
+    2 [SC] Tendrils of Agony
+    1 [R] Demonic Tutor
+    1 [P3] Imperial Seal
+    1 [UL] Tinker
+    1 [U] Timetwister
+    1 [US] Windfall
+    1 [US] Yawgmoth's Will
+    1 [MR] Chrome Mox
+    4 [US] Duress
+
+// Sideboard
+SB: 1 [UL] Rebuild
+SB: 1 [SH] Mox Diamond
+SB: 3 [SC] Xantid Swarm
+SB: 1 [B] Bayou
+SB: 1 [B] Tropical Island
+SB: 2 [B] Badlands
+SB: 1 [B] Wheel of Fortune
+SB: 3 [TSP] Empty the Warrens
+SB: 2 [PLC] Simian Spirit Guide

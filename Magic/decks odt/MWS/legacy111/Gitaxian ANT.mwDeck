@@ -1,0 +1,32 @@
+// Deck file for Magic Workstation (http://www.magicworkstation.com)
+
+// Lands
+    4 [ZEN] Misty Rainforest
+    4 [ON] Polluted Delta
+    1 [B] Swamp (3)
+    2 [B] Underground Sea
+    3 [B] Island (1)
+
+// Spells
+    1 [ALA] Ad Nauseam
+    4 [IA] Brainstorm
+    4 [TO] Cabal Ritual
+    4 [CST] Dark Ritual
+    4 [7E] Duress
+    4 [DIS] Infernal Tutor
+    4 [MI] Lion's Eye Diamond
+    4 [M10] Ponder
+    4 [M11] Preordain
+    3 [LRW] Thoughtseize
+    1 [US] Ill-Gotten Gains
+    4 [TE] Lotus Petal
+    1 [SC] Tendrils of Agony
+    4 [NPH] Gitaxian Probe
+
+// Sideboard
+SB: 1 [ALA] Ad Nauseam
+SB: 2 [SC] Tendrils of Agony
+SB: 4 [RAV] Dark Confidant
+SB: 3 [ON] Chain of Vapor
+SB: 4 [SOM] Nihil Spellbomb
+SB: 1 [DS] Echoing Truth

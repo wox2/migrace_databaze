@@ -1,0 +1,35 @@
+// Deck file for Magic Workstation (http://www.magicworkstation.com)
+
+// Lands
+    1 [TSP] Academy Ruins
+    4 [ON] Flooded Strand
+    4 [B] Island (2)
+    4 [AQ] Mishra's Factory (1)
+    1 [U] Plains (1)
+    4 [U] Tundra
+    4 [TE] Wasteland
+
+// Creatures
+    3 [MI] Phyrexian Dreadnought
+    3 [FD] Trinket Mage
+
+// Spells
+    4 [5E] Brainstorm
+    2 [CS] Counterbalance
+    2 [B] Counterspell
+    1 [FD] Crucible of Worlds
+    3 [NE] Daze
+    2 [FD] Engineered Explosives
+    4 [AL] Force of Will
+    1 [A] Nevinyrral's Disk
+    3 [CHK] Sensei's Divining Top
+    4 [SC] Stifle
+    3 [R] Swords to Plowshares
+    3 [TSP] Trickbind
+
+// Sideboard
+SB: 3 [US] Energy Field
+SB: 3 [IA] Hydroblast
+SB: 1 [MI] Phyrexian Dreadnought
+SB: 4 [BOK] Threads of Disloyalty
+SB: 4 [FNM] Tormod's Crypt

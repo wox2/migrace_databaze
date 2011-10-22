@@ -1,0 +1,50 @@
+// Deck file for Magic Workstation (http://www.magicworkstation.com)
+
+// Lands
+    2 [ON] Flooded Strand
+    1 [CHK] Forbidden Orchard
+    1 [IA] Glacial Chasm
+    3 [B] Island (1)
+    1 [AN] Library of Alexandria
+    2 [ON] Polluted Delta
+    1 [AQ] Strip Mine (2)
+    4 [B] Tropical Island
+    4 [B] Underground Sea
+
+// Spells
+    4 [NE] Accumulated Knowledge
+    1 [B] Ancestral Recall
+    4 [IA] Brainstorm
+    1 [FD] Crucible of Worlds
+    3 [JU] Cunning Wish
+    1 [B] Demonic Tutor
+    1 [R] Fastbond
+    4 [AL] Force of Will
+    1 [CHK] Gifts Ungiven
+    1 [MR] Chrome Mox
+    4 [TE] Intuition
+    1 [TE] Lotus Petal
+    1 [PR] Mana Crypt
+    4 [LG] Mana Drain
+    1 [SH] Mox Diamond
+    1 [MI] Mystical Tutor
+    1 [A] Regrowth
+    1 [U] Sol Ring
+    1 [TE] Time Warp
+    1 [VI] Vampiric Tutor
+    1 [US] Yawgmoth's Will
+    2 [OV] Zuran Orb
+    1 [MM] Gush
+
+// Sideboard
+SB: 1 [CHK] Forbidden Orchard
+SB: 1 [DS] Darksteel Colossus
+SB: 1 [JU] Krosan Reclamation
+SB: 1 [MM] Misdirection
+SB: 2 [ON] Naturalize
+SB: 4 [EX] Oath of Druids
+SB: 1 [UL] Rebuild
+SB: 1 [EX] Reclaim
+SB: 1 [US] Stroke of Genius
+SB: 1 [UL] Tinker
+SB: 1 [CHK] Hideous Laughter

@@ -1,0 +1,61 @@
+// Deck file for Magic Workstation (http://www.magicworkstation.com)
+
+// Lands
+    2 [DD2] Island (1)
+    2 [ALA] Swamp (1)
+    1 [ON] Flooded Strand
+    4 [ON] Polluted Delta
+    2 [R] Underground Sea
+    1 [US] Tolarian Academy
+
+// Creatures
+    1 [DS] Darksteel Colossus
+
+// Spells
+    1 [U] Black Lotus
+    1 [TE] Lotus Petal
+    1 [HPB] Mana Crypt
+    1 [5E] Mana Vault
+    1 [UL] Memory Jar
+    1 [U] Mox Emerald
+    1 [U] Mox Jet
+    1 [U] Mox Pearl
+    1 [U] Mox Ruby
+    1 [U] Mox Sapphire
+    1 [R] Sol Ring
+    1 [DM] Necropotence
+    1 [UD] Yawgmoth's Bargain
+    1 [U] Ancestral Recall
+    1 [CST] Brainstorm
+    2 [TO] Cabal Ritual
+    1 [ON] Chain of Vapor
+    4 [CST] Dark Ritual
+    1 [DD2] Fact or Fiction
+    4 [AL] Force of Will
+    1 [CHK] Gifts Ungiven
+    1 [MM] Misdirection
+    1 [6E] Mystical Tutor
+    1 [UL] Rebuild
+    1 [6E] Vampiric Tutor
+    1 [R] Demonic Tutor
+    4 [7E] Duress
+    1 [ST] Grim Tutor
+    1 [P3] Imperial Seal
+    1 [8E] Merchant Scroll
+    1 [SC] Mind's Desire
+    1 [LRW] Ponder
+    1 [SC] Tendrils of Agony
+    1 [U] Time Walk
+    1 [U] Timetwister
+    1 [UL] Tinker
+    1 [US] Yawgmoth's Will
+
+// Sideboard
+SB: 2 [DD2] Island (1)
+SB: 1 [ALA] Swamp (1)
+SB: 2 [10E] Pithing Needle
+SB: 3 [TSB] Tormod's Crypt
+SB: 3 [FUT] Yixlid Jailer
+SB: 2 [10E] Hurkyl's Recall
+SB: 2 [NE] Massacre
+

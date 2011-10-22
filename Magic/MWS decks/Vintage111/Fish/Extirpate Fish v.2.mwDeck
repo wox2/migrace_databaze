@@ -1,0 +1,41 @@
+// Deck file for Magic Workstation (http://www.magicworkstation.com)
+
+// Lands
+    2 [ON] Flooded Strand
+    3 [R] Underground Sea
+    3 [A] Tundra
+    1 [B] Island (1)
+    4 [TE] Wasteland
+    1 [AQ] Strip Mine (4)
+    3 [ON] Polluted Delta
+
+// Creatures
+    3 [PS] Meddling Mage
+    3 [CS] Jotun Grunt
+    4 [RAV] Dark Confidant
+
+// Spells
+    1 [B] Black Lotus
+    1 [B] Mox Pearl
+    4 [AL] Force of Will
+    1 [B] Ancestral Recall
+    3 [NE] Daze
+    3 [US] Duress
+    4 [SC] Stifle
+    1 [B] Mox Jet
+    4 [IA] Brainstorm
+    1 [B] Mox Sapphire
+    1 [B] Time Walk
+    3 [HL] Merchant Scroll
+    2 [FD] Engineered Explosives
+    2 [LRW] Ponder
+    2 [MR] Thirst for Knowledge
+
+// Sideboard
+SB: 2 [SOK] Kataki, War's Wage
+SB: 1 [US] Duress
+SB: 3 [IA] Swords to Plowshares
+SB: 2 [BOK] Umezawa's Jitte
+SB: 2 [FD] Engineered Explosives
+SB: 1 [R] Energy Flux
+SB: 4 [GP] Leyline of the Void

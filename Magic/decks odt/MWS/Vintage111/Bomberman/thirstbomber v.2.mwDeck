@@ -1,0 +1,52 @@
+// Deck file for Magic Workstation (http://www.magicworkstation.com)
+
+// Lands
+    4 [ON] Flooded Strand
+    5 [TSP] Island (1)
+    1 [AN] Library of Alexandria
+    1 [TSP] Plains (1)
+    2 [ON] Polluted Delta
+    4 [R] Tundra
+
+// Creatures
+    3 [FD] Auriok Salvagers
+    3 [FD] Trinket Mage
+    1 [DS] Darksteel Colossus
+
+// Spells
+    1 [U] Ancestral Recall
+    1 [U] Black Lotus
+    4 [MM] Brainstorm
+    2 [JU] Cunning Wish
+    4 [AL] Force of Will
+    1 [PR] Mana Crypt
+    4 [LG] Mana Drain
+    2 [MM] Misdirection
+    1 [U] Mox Emerald
+    1 [U] Mox Jet
+    1 [U] Mox Pearl
+    1 [U] Mox Ruby
+    1 [U] Mox Sapphire
+    1 [MR] Pyrite Spellbomb
+    1 [CHK] Sensei's Divining Top
+    1 [R] Sol Ring
+    1 [U] Time Walk
+    1 [MR] AEther Spellbomb
+    1 [DK] Tormod's Crypt
+    4 [MR] Thirst for Knowledge
+    1 [IN] Fact or Fiction
+    1 [UL] Tinker
+
+// Sideboard
+SB: 1 [TSB] Disenchant
+SB: 1 [5E] Hurkyl's Recall
+SB: 3 [SOK] Kataki, War's Wage
+SB: 1 [SC] Stifle
+SB: 1 [TSP] Wipe Away
+SB: 2 [CS] Counterbalance
+SB: 1 [US] Stroke of Genius
+SB: 1 [MI] Mystical Tutor
+SB: 1 [TE] Intuition
+SB: 1 [SOK] Pithing Needle
+SB: 1 [FD] Engineered Explosives
+SB: 1 [SC] Brain Freeze

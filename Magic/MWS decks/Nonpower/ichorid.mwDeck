@@ -1,0 +1,31 @@
+// Deck file for Magic Workstation (http://www.magicworkstation.com)
+
+// Lands
+    4 [5E] City of Brass
+    2 [VI] Undiscovered Paradise
+    4 [R] Underground Sea
+
+// Creatures
+    2 [JU] Sutured Ghoul
+    4 [ON] Gigapede
+    4 [RAV] Golgari Grave-Troll
+    4 [RAV] Stinkweed Imp
+    4 [RAV] Golgari Thug
+    4 [TO] Ichorid
+    4 [5E] Nether Shadow
+    4 [TO] Putrid Imp
+
+// Spells
+    4 [JU] Cabal Therapy
+    4 [MM] Unmask
+    2 [SC] Dragon Breath
+    2 [TSP] Dread Return
+    4 [IA] Brainstorm
+    4 [OD] Careful Study
+
+// Sideboard
+SB: 3 [JU] Riftstone Portal
+SB: 2 [JU] Ray of Revelation
+SB: 2 [SOK] Pithing Needle
+SB: 2 [TSP] Ancient Grudge
+SB: 3 [VI] Emerald Charm

@@ -1,0 +1,44 @@
+// Deck file for Magic Workstation (http://www.magicworkstation.com)
+// NAME: Unnamed
+
+// Lands
+    4 [TE] Ancient Tomb
+    3 [EX] City of Traitors
+    1 [DIS] Ghost Quarter
+    4 [AQ] Mishra's Workshop
+    1 [AT] Strip Mine
+    1 [US] Tolarian Academy
+    4 [TE] Wasteland
+
+// Creatures
+    1 [DS] Arcbound Ravager
+    1 [MR] Duplicant
+    1 [US] Karn, Silver Golem
+    4 [UD] Metalworker
+    2 [DS] Sundering Titan
+    2 [MR] Triskelion
+
+// Spells
+    1 [U] Black Lotus
+    4 [MR] Chalice of the Void
+    3 [FD] Crucible of Worlds
+    1 [PR] Mana Crypt
+    1 [UL] Memory Jar
+    1 [U] Mox Emerald
+    1 [U] Mox Jet
+    1 [U] Mox Pearl
+    1 [U] Mox Ruby
+    1 [U] Mox Sapphire
+    3 [BOK] Orb of Dreams
+    4 [US] Smokestack
+    1 [R] Sol Ring
+    4 [EX] Sphere of Resistance
+    3 [FD] Staff of Domination
+    1 [DS] Trinisphere
+
+// Sideboard
+SB: 1 [MR] Duplicant
+SB: 4 [DS] Juggernaut
+SB: 4 [UD] Powder Keg
+SB: 3 [FD] Razormane Masticore
+SB: 3 [TSB] Tormod's Crypt

@@ -1,0 +1,62 @@
+// Deck file for Magic Workstation (http://www.magicworkstation.com)
+
+// Lands
+    1 [DS] Darksteel Citadel
+    2 [ON] Flooded Strand
+    2 [TSP] Island (1)
+    2 [ON] Polluted Delta
+    1 [CS] Snow-Covered Island
+    1 [AT] Strip Mine
+    1 [US] Tolarian Academy
+    2 [R] Underground Sea
+    3 [R] Volcanic Island
+
+// Creatures
+    1 [MR] Duplicant
+    3 [UL] Goblin Welder
+    1 [AL] Gorilla Shaman (1)
+    1 [DS] Sundering Titan
+
+// Spells
+    1 [U] Ancestral Recall
+    1 [U] Black Lotus
+    4 [MM] Brainstorm
+    1 [JU] Burning Wish
+    1 [FD] Crucible of Worlds
+    1 [R] Demonic Tutor
+    1 [DS] Echoing Truth
+    4 [AL] Force of Will
+    1 [CHK] Gifts Ungiven
+    1 [ON] Chain of Vapor
+    1 [PR] Mana Crypt
+    4 [LG] Mana Drain
+    1 [5E] Mana Vault
+    1 [MR] Mindslaver
+    1 [U] Mox Emerald
+    1 [U] Mox Jet
+    1 [U] Mox Pearl
+    1 [U] Mox Ruby
+    1 [U] Mox Sapphire
+    1 [6E] Mystical Tutor
+    1 [R] Sol Ring
+    4 [MR] Thirst for Knowledge
+    1 [U] Time Walk
+    1 [UL] Tinker
+    1 [TSB] Tormod's Crypt
+    1 [6E] Vampiric Tutor
+    1 [US] Yawgmoth's Will
+
+// Sideboard
+SB: 1 [TO] Deep Analysis
+SB: 3 [7E] Duress
+SB: 1 [AP] Fire/Ice
+SB: 1 [5E] Hurkyl's Recall
+SB: 1 [MR] Pyrite Spellbomb
+SB: 1 [5E] Pyroblast
+SB: 1 [9E] Pyroclasm
+SB: 1 [UL] Rack and Ruin
+SB: 1 [4E] Red Elemental Blast
+SB: 1 [GP] Shattering Spree
+SB: 1 [MR] Solemn Simulacrum
+SB: 1 [SC] Stifle
+SB: 1 [SC] Tendrils of Agony

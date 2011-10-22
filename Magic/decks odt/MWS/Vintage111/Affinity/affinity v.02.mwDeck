@@ -1,0 +1,35 @@
+// Deck file for Magic Workstation (http://www.magicworkstation.com)
+
+// Lands
+    3 [AN] City of Brass
+    1 [US] Tolarian Academy
+    4 [AQ] Mishra's Factory (4)
+    4 [MR] Vault of Whispers
+    4 [MR] Great Furnace
+    1 [AQ] Strip Mine (4)
+    2 [TE] Wasteland
+    1 [PLC] Urborg, Tomb of Yawgmoth
+
+// Creatures
+    4 [FD] Myr Servitor
+    4 [AQ] Ornithopter
+    4 [MR] Disciple of the Vault
+    4 [DS] Arcbound Ravager
+    4 [DS] Arcbound Worker
+    4 [RAV] Dark Confidant
+
+// Spells
+    4 [DS] Skullclamp
+    4 [FD] Cranial Plating
+    1 [B] Sol Ring
+    1 [PR] Mana Crypt
+    3 [SH] Fling
+    1 [TSP] Chromatic Star
+    2 [US] Duress
+
+// Sideboard
+SB: 3 [TE] Wasteland
+SB: 2 [US] Duress
+SB: 4 [MR] Chalice of the Void
+SB: 4 [SC] Pyrostatic Pillar
+SB: 3 [RAV] Darkblast

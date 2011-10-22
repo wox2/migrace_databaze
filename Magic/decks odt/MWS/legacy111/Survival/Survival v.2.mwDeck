@@ -1,0 +1,40 @@
+// Deck file for Magic Workstation (http://www.magicworkstation.com)
+
+// Lands
+    4 [B] Taiga
+    4 [ON] Wooded Foothills
+    1 [LG] Pendelhaven
+    1 [US] Gaea's Cradle
+    12 [B] Forest (3)
+    1 [B] Mountain (3)
+
+// Creatures
+    1 [FD] Eternal Witness
+    4 [ON] Ravenous Baloth
+    1 [ON] Goblin Pyromancer
+    4 [TO] Basking Rootwalla
+    1 [PS] Flametongue Kavu
+    1 [JU] Genesis
+    1 [JU] Anger
+    1 [MM] Squee, Goblin Nabob
+    1 [6E] Uktabi Orangutan
+    1 [WL] Orcish Settlers
+    1 [TE] Mogg Fanatic
+    4 [CHK] Sakura-Tribe Elder
+    1 [UD] Rofellos, Llanowar Emissary
+
+// Spells
+    4 [MR] Chalice of the Void
+    4 [DS] AEther Vial
+    4 [EX] Survival of the Fittest
+    3 [LG] Sylvan Library
+
+// Sideboard
+SB: 1 [PS] Flametongue Kavu
+SB: 1 [6E] Uktabi Orangutan
+SB: 1 [WL] Orcish Settlers
+SB: 1 [LG] Sylvan Library
+SB: 3 [EX] Price of Progress
+SB: 4 [SC] Pyrostatic Pillar
+SB: 2 [DIS] Loaming Shaman
+SB: 2 [IA] Pyroclasm

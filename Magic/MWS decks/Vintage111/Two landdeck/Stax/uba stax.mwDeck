@@ -1,0 +1,41 @@
+// Deck file for Magic Workstation (http://www.magicworkstation.com)
+
+// Lands
+    1 [US] Tolarian Academy
+    1 [AT] Strip Mine
+    2 [MM] Rishadan Port
+    3 [RAV] Mountain (1)
+    3 [TE] Wasteland
+    3 [OD] Barbarian Ring
+    4 [AQ] Mishra's Workshop
+    4 [AN] Bazaar of Baghdad
+
+// Creatures
+    1 [MR] Solemn Simulacrum
+    1 [MR] Duplicant
+    4 [UL] Goblin Welder
+
+// Spells
+    1 [U] Mox Jet
+    1 [U] Mox Emerald
+    1 [U] Black Lotus
+    1 [U] Mox Pearl
+    1 [U] Mox Ruby
+    1 [U] Mox Sapphire
+    1 [R] Sol Ring
+    1 [5E] Mana Vault
+    1 [DS] Trinisphere
+    1 [PR] Mana Crypt
+    3 [WL] Null Rod
+    4 [US] Smokestack
+    4 [NE] Tangle Wire
+    4 [MR] Chalice of the Void
+    4 [CHK] Uba Mask
+    4 [FD] Crucible of Worlds
+
+// Sideboard
+SB: 3 [UL] Viashino Heretic
+SB: 4 [MR] Granite Shard
+SB: 3 [CH] Tormod's Crypt
+SB: 3 [9E] Jester's Cap
+SB: 2 [MR] Duplicant

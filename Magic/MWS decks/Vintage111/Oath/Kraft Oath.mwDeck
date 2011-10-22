@@ -1,0 +1,46 @@
+// Deck file for Magic Workstation (http://www.magicworkstation.com)
+
+// Lands
+    4 [CHK] Forbidden Orchard
+    4 [ON] Polluted Delta
+    1 [ON] Flooded Strand
+    1 [B] Island (1)
+    1 [MI] Swamp (1)
+    1 [AQ] Strip Mine (3)
+    2 [TE] Wasteland
+    3 [B] Underground Sea
+    2 [B] Tropical Island
+
+// Creatures
+    1 [LE] Akroma, Angel of Wrath
+    1 [RAV] Razia, Boros Archangel
+
+// Spells
+    4 [EX] Oath of Druids
+    4 [AL] Force of Will
+    4 [TE] Counterspell
+    4 [VI] Impulse
+    4 [IA] Brainstorm
+    4 [US] Duress
+    1 [VI] Vampiric Tutor
+    1 [A] Demonic Tutor
+    1 [AP] Pernicious Deed
+    1 [B] Ancestral Recall
+    2 [SH] Mana Leak
+    3 [MM] Misdirection
+    1 [TSP] Wipe Away
+    1 [WL] Gaea's Blessing
+    1 [B] Black Lotus
+    1 [B] Mox Jet
+    1 [B] Mox Sapphire
+    1 [B] Mox Emerald
+
+// Sideboard
+SB: 2 [US] Claws of Gix
+SB: 1 [OV] Hydroblast
+SB: 1 [B] Red Elemental Blast
+SB: 1 [NE] Ancient Hydra
+SB: 1 [AQ] Triskelion
+SB: 3 [US] Arcane Laboratory
+SB: 4 [DK] Tormod's Crypt
+SB: 2 [NE] Massacre

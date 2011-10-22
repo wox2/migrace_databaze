@@ -1,0 +1,45 @@
+// Deck file for Magic Workstation (http://www.magicworkstation.com)
+
+// Lands
+    3 [ON] Flooded Strand
+    3 [B] Island (1)
+    2 [R] Tropical Island
+    3 [R] Underground Sea
+    2 [ON] Polluted Delta
+
+// Creatures
+    1 [MOR] Reveillark
+    1 [PLC] Body Double
+    1 [SC] Carrion Feeder
+    1 [AT] Mogg Fanatic
+    1 [UD] Body Snatcher
+    4 [DIS] Protean Hulk
+    1 [AL] Elvish Spirit Guide
+
+// Spells
+    1 [6E] Mystical Tutor
+    3 [FUT] Summoner's Pact
+    4 [HL] Merchant Scroll
+    1 [CHK] Sensei's Divining Top
+    1 [LRW] Ponder
+    1 [6E] Vampiric Tutor
+    1 [U] Ancestral Recall
+    4 [FUT] Pact of Negation
+    4 [6E] Flash
+    1 [U] Mox Sapphire
+    4 [IA] Brainstorm
+    4 [AL] Force of Will
+    1 [U] Black Lotus
+    1 [R] Demonic Tutor
+    1 [U] Mox Emerald
+    1 [U] Mox Jet
+    1 [U] Mox Pearl
+    1 [U] Mox Ruby
+    1 [ON] Chain of Vapor
+    1 [LRW] Thoughtseize
+
+// Sideboard
+SB: 3 [ON] Chain of Vapor
+SB: 3 [LRW] Thoughtseize
+SB: 4 [FUT] Tarmogoyf
+SB: 4 [NE] Reverent Silence

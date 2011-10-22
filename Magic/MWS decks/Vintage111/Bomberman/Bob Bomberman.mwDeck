@@ -1,0 +1,47 @@
+// Deck file for Magic Workstation (http://www.magicworkstation.com)
+
+// Lands
+    1 [B] Plains (2)
+    1 [US] Tolarian Academy
+    3 [B] Tundra
+    3 [B] Underground Sea
+    1 [LG] Karakas
+    1 [AQ] Strip Mine (4)
+    4 [ON] Flooded Strand
+    1 [AN] Library of Alexandria
+    2 [B] Island (1)
+
+// Creatures
+    3 [FD] Auriok Salvagers
+    4 [FD] Trinket Mage
+    4 [RAV] Dark Confidant
+    2 [CS] Jotun Grunt
+
+// Spells
+    1 [TSB] Tormod's Crypt
+    1 [B] Mox Ruby
+    1 [B] Sol Ring
+    3 [MR] Thirst for Knowledge
+    1 [B] Time Walk
+    1 [B] Mox Sapphire
+    2 [MR] AEther Spellbomb
+    4 [AL] Force of Will
+    1 [B] Ancestral Recall
+    1 [B] Black Lotus
+    4 [IA] Brainstorm
+    1 [B] Demonic Tutor
+    1 [B] Mox Pearl
+    4 [LG] Mana Drain
+    1 [B] Mox Emerald
+    1 [B] Mox Jet
+    1 [SOK] Pithing Needle
+    1 [FD] Engineered Explosives
+
+// Sideboard
+SB: 2 [FUT] Aven Mindcensor
+SB: 1 [SOK] Pithing Needle
+SB: 2 [FUT] Bitter Ordeal
+SB: 2 [MR] Chalice of the Void
+SB: 2 [DS] Echoing Truth
+SB: 3 [NE] Seal of Cleansing
+SB: 3 [IN] Plague Spitter

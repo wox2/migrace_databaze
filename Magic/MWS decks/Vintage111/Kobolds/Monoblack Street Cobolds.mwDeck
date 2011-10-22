@@ -1,0 +1,40 @@
+// Deck file for Magic Workstation (http://www.magicworkstation.com)
+
+// Lands
+    3 [ON] Polluted Delta
+    4 [B] Swamp (3)
+    2 [B] Underground Sea
+    3 [ON] Bloodstained Mire
+
+// Creatures
+    4 [LG] Crimson Kobolds
+    4 [LG] Crookshank Kobolds
+    4 [LG] Kobolds of Kher Keep
+    3 [AQ] Ornithopter
+    4 [FUT] Street Wraith
+
+// Spells
+    2 [EX] Culling the Weak
+    4 [US] Dark Ritual
+    1 [B] Demonic Tutor
+    1 [PS] Diabolic Intent
+    1 [MR] Chrome Mox
+    1 [MI] Lion's Eye Diamond
+    1 [TE] Lotus Petal
+    1 [5E] Mana Vault
+    1 [IA] Necropotence
+    4 [DS] Skullclamp
+    1 [A] Sol Ring
+    3 [IA] Songs of the Damned
+    2 [SC] Tendrils of Agony
+    1 [VI] Vampiric Tutor
+    1 [US] Yawgmoth's Will
+    2 [7E] Infernal Contract
+    1 [ON] Chain of Vapor
+    1 [HPB] Mana Crypt
+
+// Sideboard
+SB: 4 [GP] Leyline of the Void
+SB: 4 [UD] Phyrexian Negator
+SB: 2 [DS] Echoing Truth
+SB: 4 [RAV] Dark Confidant

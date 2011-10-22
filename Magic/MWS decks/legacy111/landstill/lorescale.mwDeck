@@ -1,0 +1,34 @@
+// Deck file for Magic Workstation (http://www.magicworkstation.com)
+
+// Lands
+    3 [ON] Polluted Delta
+    3 [ON] Flooded Strand
+    4 [8E] Island (3)
+    4 [A] Tropical Island
+    4 [R] Tundra
+    2 [ON] Windswept Heath
+
+// Creatures
+    2 [LRW] Sower of Temptation
+    4 [FUT] Tarmogoyf
+    4 [ARB] Lorescale Coatl
+    2 [DIS] Trygon Predator
+
+// Spells
+    4 [AL] Force of Will
+    3 [R] Swords to Plowshares
+    3 [CS] Counterbalance
+    3 [CHK] Sensei's Divining Top
+    4 [CST] Brainstorm
+    3 [LRW] Ponder
+    2 [FD] Engineered Explosives
+    2 [DD2] Daze
+    4 [BD] Counterspell
+
+// Sideboard
+SB: 1 [R] Swords to Plowshares
+SB: 4 [PS] Meddling Mage
+SB: 4 [ALA] Relic of Progenitus
+SB: 2 [FD] Vedalken Shackles
+SB: 2 [TSP] Krosan Grip
+SB: 2 [ARB] Qasali Pridemage

@@ -1,0 +1,40 @@
+// Deck file for Magic Workstation (http://www.magicworkstation.com)
+
+// Lands
+    4 [OD] Barbarian Ring
+    4 [AN] Bazaar of Baghdad
+    2 [AQ] Mishra's Factory (4)
+    4 [AQ] Mishra's Workshop
+    3 [B] Mountain (3)
+    1 [AQ] Strip Mine (3)
+    1 [US] Tolarian Academy
+    4 [TE] Wasteland
+
+// Creatures
+    4 [UL] Goblin Welder
+    1 [US] Karn, Silver Golem
+
+// Spells
+    1 [A] Black Lotus
+    3 [FD] Crucible of Worlds
+    3 [MR] Chalice of the Void
+    1 [B] Mox Emerald
+    1 [B] Mox Jet
+    1 [B] Mox Pearl
+    1 [B] Mox Ruby
+    1 [B] Mox Sapphire
+    4 [DS] Serum Powder
+    3 [US] Smokestack
+    1 [B] Sol Ring
+    4 [EX] Sphere of Resistance
+    1 [DS] Trinisphere
+    3 [CHK] Uba Mask
+    4 [NE] Tangle Wire
+
+// Sideboard
+SB: 2 [SOK] Pithing Needle
+SB: 2 [MR] Duplicant
+SB: 1 [SH] Ensnaring Bridge
+SB: 2 [LRW] Thorn of Amethyst
+SB: 4 [10E] Razormane Masticore
+SB: 4 [GP] Leyline of the Void

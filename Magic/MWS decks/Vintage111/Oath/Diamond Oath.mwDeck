@@ -1,0 +1,43 @@
+// Deck file for Magic Workstation (http://www.magicworkstation.com)
+
+// Lands
+    1 [AQ] Strip Mine (3)
+    2 [TE] Wasteland
+    3 [ON] Polluted Delta
+    1 [B] Island (3)
+    3 [B] Underground Sea
+    3 [B] Tropical Island
+    4 [CHK] Forbidden Orchard
+    3 [ON] Flooded Strand
+    2 [AQ] Mishra's Factory (3)
+
+// Creatures
+    1 [TSB] Akroma, Angel of Wrath
+    1 [DIS] Tidespout Tyrant
+
+// Spells
+    4 [SH] Mox Diamond
+    2 [RAV] Life from the Loam
+    4 [EX] Oath of Druids
+    2 [BD] Counterspell
+    3 [LRW] Thoughtseize
+    4 [AL] Force of Will
+    1 [WL] Gaea's Blessing
+    1 [U] Regrowth
+    1 [B] Demonic Tutor
+    1 [VI] Vampiric Tutor
+    4 [MR] Thirst for Knowledge
+    1 [IA] Brainstorm
+    1 [LRW] Ponder
+    2 [FNM] Impulse
+    2 [AP] Pernicious Deed
+    1 [DS] Echoing Truth
+    2 [TE] Intuition
+
+// Sideboard
+SB: 2 [TE] Wasteland
+SB: 4 [US] Duress
+SB: 1 [DIS] Tidespout Tyrant
+SB: 4 [MR] Chalice of the Void
+SB: 1 [NE] Ancient Hydra
+SB: 2 [AP] Pernicious Deed

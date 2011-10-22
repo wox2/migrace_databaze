@@ -1,0 +1,33 @@
+// Deck file for Magic Workstation (http://www.magicworkstation.com)
+
+// Lands
+    4 [OV] City of Brass
+    4 [TSB] Gemstone Mine
+    2 [CHK] Forbidden Orchard
+    2 [TSP] Gemstone Caverns
+    3 [TE] Reflecting Pool
+    4 [BOK] Tendo Ice Bridge
+    1 [MI] Island (2)
+
+// Creatures
+    4 [DRB] Bogardan Hellkite
+    4 [DRB] Hellkite Overlord
+    1 [ARB] Karrthus, Tyrant of Jund
+    4 [CFX] Magister Sphinx
+    4 [PLC] Simian Spirit Guide
+    1 [CHK] Kiki-Jiki, Mirror Breaker
+
+// Spells
+    3 [TSP] Hypergenesis
+    4 [ARB] Violent Outburst
+    4 [ARB] Demonic Dread
+    3 [ARB] Ardent Plea
+    4 [SHM] Wound Reflection
+    4 [DS] Serum Powder
+
+// Sideboard
+SB: 2 [ALA] Empyrial Archangel
+SB: 4 [BOK] Toils of Night and Day
+SB: 2 [CFX] Volcanic Fallout
+SB: 3 [TSP] Wipe Away
+SB: 4 [CHK] Dosan the Falling Leaf

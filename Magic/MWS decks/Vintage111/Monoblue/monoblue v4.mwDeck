@@ -1,0 +1,41 @@
+// Deck file for Magic Workstation (http://www.magicworkstation.com)
+
+// Lands
+    4 [TE] Wasteland
+    1 [AQ] Strip Mine (2)
+    2 [ON] Polluted Delta
+    3 [ON] Flooded Strand
+    7 [B] Island (2)
+
+// Creatures
+    4 [SHM] Augury Adept
+    4 [WL] Ophidian
+    1 [US] Morphling
+
+// Spells
+    1 [LRW] Ponder
+    4 [AL] Force of Will
+    1 [IA] Brainstorm
+    1 [U] Ancestral Recall
+    2 [UL] Rebuild
+    4 [LG] Mana Drain
+    2 [IN] Opt
+    2 [REW] Mana Leak
+    4 [REW] Powder Keg
+    4 [SC] Stifle
+    1 [U] Mox Jet
+    1 [B] Mox Ruby
+    1 [U] Mox Pearl
+    1 [A] Mox Emerald
+    1 [B] Mox Sapphire
+    1 [B] Black Lotus
+    1 [B] Time Walk
+    1 [FNM] Fact or Fiction
+    1 [HL] Merchant Scroll
+
+// Sideboard
+SB: 4 [GP] Leyline of Singularity
+SB: 3 [IA] Hydroblast
+SB: 3 [BOK] Threads of Disloyalty
+SB: 3 [SOK] Pithing Needle
+SB: 2 [UD] Masticore

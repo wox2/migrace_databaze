@@ -1,0 +1,49 @@
+// Deck file for Magic Workstation (http://www.magicworkstation.com)
+
+// Lands
+    4 [B] Bayou
+    1 [ON] Polluted Delta
+    1 [US] Tolarian Academy
+    2 [R] Tropical Island
+
+// Creatures
+    2 [AL] Elvish Spirit Guide
+    4 [SC] Xantid Swarm
+
+// Spells
+    1 [B] Ancestral Recall
+    1 [OV] Black Lotus
+    4 [IA] Brainstorm
+    4 [TO] Cabal Ritual
+    4 [US] Dark Ritual
+    1 [B] Demonic Tutor
+    1 [B] Fastbond
+    2 [ON] Chain of Vapor
+    1 [MR] Chrome Mox
+    4 [MM] Land Grant
+    1 [PR] Mana Crypt
+    1 [5E] Mana Vault
+    1 [UL] Memory Jar
+    1 [B] Mox Emerald
+    1 [B] Mox Jet
+    1 [B] Mox Pearl
+    1 [A] Mox Ruby
+    1 [B] Mox Sapphire
+    1 [MI] Mystical Tutor
+    2 [PLC] Null Profusion
+    1 [SC] Tendrils of Agony
+    1 [B] Timetwister
+    1 [UL] Tinker
+    1 [VI] Vampiric Tutor
+    1 [UD] Yawgmoth's Bargain
+    1 [US] Yawgmoth's Will
+    4 [ST] Grim Tutor
+    1 [P3] Imperial Seal
+    1 [PT] Personal Tutor
+
+// Sideboard
+SB: 3 [AL] Elvish Spirit Guide
+SB: 3 [DS] Darksteel Colossus
+SB: 3 [US] Duress
+SB: 3 [AQ] Hurkyl's Recall
+SB: 1 [MI] Lion's Eye Diamond

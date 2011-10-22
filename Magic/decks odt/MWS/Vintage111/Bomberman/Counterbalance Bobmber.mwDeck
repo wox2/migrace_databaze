@@ -1,0 +1,54 @@
+// Deck file for Magic Workstation (http://www.magicworkstation.com)
+// NAME: Unnamed
+
+// Lands
+    3 [R] Tundra
+    1 [TSP] Plains (1)
+    1 [ON] Polluted Delta
+    1 [AT] Strip Mine
+    1 [US] Tolarian Academy
+    1 [AN] Library of Alexandria
+    4 [TSP] Island (1)
+    4 [ON] Flooded Strand
+
+// Creatures
+    3 [FD] Auriok Salvagers
+    4 [FD] Trinket Mage
+
+// Spells
+    1 [TSB] Disenchant
+    1 [FD] Engineered Explosives
+    1 [TSB] Tormod's Crypt
+    1 [U] Black Lotus
+    2 [MR] AEther Spellbomb
+    1 [B] Mox Sapphire
+    2 [CS] Counterbalance
+    1 [U] Mox Emerald
+    1 [U] Mox Jet
+    1 [U] Mox Pearl
+    1 [U] Mox Ruby
+    2 [CHK] Sensei's Divining Top
+    1 [R] Sol Ring
+    1 [U] Ancestral Recall
+    3 [MM] Brainstorm
+    1 [IN] Fact or Fiction
+    4 [AL] Force of Will
+    4 [LG] Mana Drain
+    1 [6E] Mystical Tutor
+    4 [MR] Thirst for Knowledge
+    1 [U] Time Walk
+    1 [TSP] Wipe Away
+    1 [4E] Balance
+
+// Sideboard
+SB: 3 [PS] Orim's Chant
+SB: 2 [7E] Arcane Laboratory
+SB: 2 [ON] Exalted Angel
+SB: 1 [UL] Rebuild
+SB: 1 [SC] Decree of Justice
+SB: 1 [TSB] Disenchant
+SB: 1 [5E] Hurkyl's Recall
+SB: 1 [SOK] Pithing Needle
+SB: 1 [FD] Engineered Explosives
+SB: 1 [TSB] Tormod's Crypt
+SB: 1 [NE] Seal of Cleansing

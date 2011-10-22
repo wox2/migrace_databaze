@@ -1,0 +1,37 @@
+// Deck file for Magic Workstation (http://www.magicworkstation.com)
+
+// Lands
+    1 [US] Tolarian Academy
+    4 [AQ] Mishra's Factory (4)
+    3 [MR] Vault of Whispers
+    3 [MR] Great Furnace
+    1 [AQ] Strip Mine (4)
+    2 [TE] Wasteland
+    4 [B] Badlands
+    2 [ON] Bloodstained Mire
+
+// Creatures
+    4 [FD] Myr Servitor
+    4 [AQ] Ornithopter
+    4 [DS] Arcbound Ravager
+    3 [DS] Arcbound Worker
+    4 [RAV] Dark Confidant
+    4 [PLC] Simian Spirit Guide
+
+// Spells
+    4 [DS] Skullclamp
+    3 [FD] Cranial Plating
+    1 [B] Sol Ring
+    1 [PR] Mana Crypt
+    3 [SC] Pyrostatic Pillar
+    3 [IA] Pyroblast
+    1 [TE] Lotus Petal
+    1 [DS] Genesis Chamber
+
+// Sideboard
+SB: 2 [TE] Wasteland
+SB: 1 [SC] Pyrostatic Pillar
+SB: 1 [IA] Pyroblast
+SB: 3 [US] Duress
+SB: 4 [MR] Chalice of the Void
+SB: 4 [GP] Leyline of the Void

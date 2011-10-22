@@ -1,0 +1,58 @@
+// Deck file for Magic Workstation (http://www.magicworkstation.com)
+
+// Lands
+    1 [US] Tolarian Academy
+    4 [ON] Polluted Delta
+    1 [ON] Flooded Strand
+    2 [B] Underground Sea
+    1 [B] Island (2)
+    1 [B] Swamp (2)
+
+// Spells
+    4 [AL] Force of Will
+    3 [SC] Tendrils of Agony
+    1 [A] Time Walk
+    1 [IA] Brainstorm
+    1 [LRW] Ponder
+    1 [ARE] Duress
+    1 [IA] Necropotence
+    1 [UD] Yawgmoth's Bargain
+    1 [US] Yawgmoth's Will
+    1 [IA] Demonic Consultation
+    1 [U] Demonic Tutor
+    1 [VI] Vampiric Tutor
+    1 [P3] Imperial Seal
+    1 [MI] Mystical Tutor
+    1 [B] Ancestral Recall
+    1 [SC] Mind's Desire
+    1 [B] Timetwister
+    1 [UL] Tinker
+    1 [UL] Memory Jar
+    1 [US] Windfall
+    1 [ON] Chain of Vapor
+    3 [9E] Sleight of Hand
+    3 [TSP] Chromatic Star
+    4 [B] Dark Ritual
+    3 [TO] Cabal Ritual
+    1 [B] Black Lotus
+    1 [TE] Lotus Petal
+    1 [HPB] Mana Crypt
+    1 [B] Mana Vault
+    1 [B] Mox Emerald
+    1 [B] Mox Pearl
+    1 [B] Mox Ruby
+    1 [B] Mox Jet
+    1 [B] Mox Sapphire
+    1 [MI] Lion's Eye Diamond
+    1 [B] Sol Ring
+
+// Sideboard
+SB: 2 [ARE] Duress
+SB: 1 [B] Island (2)
+SB: 1 [B] Swamp (2)
+SB: 1 [DS] Darksteel Colossus
+SB: 3 [RAV] Dark Confidant
+SB: 2 [FUT] Yixlid Jailer
+SB: 2 [UL] Defense Grid
+SB: 2 [AQ] Hurkyl's Recall
+SB: 1 [FD] Engineered Explosives

@@ -1,0 +1,42 @@
+// Deck file for Magic Workstation (http://www.magicworkstation.com)
+
+// Lands
+    2 [ON] Flooded Strand
+    4 [CHK] Forbidden Orchard
+    2 [TE] Island (2)
+    1 [OV] Library of Alexandria
+    2 [ON] Polluted Delta
+    1 [AQ] Strip Mine (1)
+    4 [B] Tropical Island
+    1 [B] Tundra
+    3 [B] Underground Sea
+    2 [TE] Wasteland
+
+// Creatures
+    4 [DIS] Tidespout Tyrant
+
+// Spells
+    4 [NE] Accumulated Knowledge
+    1 [B] Ancestral Recall
+    4 [MM] Brainstorm
+    1 [B] Demonic Tutor
+    3 [US] Duress
+    1 [DS] Echoing Truth
+    4 [AL] Force of Will
+    2 [TE] Intuition
+    2 [AL] Lat-Nam's Legacy (2)
+    1 [TE] Lotus Petal
+    4 [LG] Mana Drain
+    4 [EX] Oath of Druids
+    1 [GP] Repeal
+    1 [B] Sol Ring
+    1 [VI] Vampiric Tutor
+
+// Sideboard
+SB: 4 [US] Arcane Laboratory
+SB: 1 [B] Balance
+SB: 1 [DS] Echoing Truth
+SB: 1 [DIS] Grand Arbiter Augustin IV
+SB: 1 [ON] Chain of Vapor
+SB: 1 [RAV] Life from the Loam
+SB: 1 [MI] Mystical Tutor

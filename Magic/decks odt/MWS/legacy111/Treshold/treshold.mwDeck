@@ -1,0 +1,30 @@
+// Deck file for Magic Workstation (http://www.magicworkstation.com)
+
+// Lands
+    1 [8E] Plains (2)
+    1 [U] Island (3)
+    2 [R] Savannah
+    3 [A] Tundra
+    4 [A] Tropical Island
+    3 [ON] Polluted Delta
+    4 [ON] Flooded Strand
+
+// Creatures
+    2 [OD] Mystic Enforcer
+    4 [PS] Meddling Mage
+    4 [OD] Nimble Mongoose
+    4 [FUT] Tarmogoyf
+    4 [FUT] Street Wraith
+
+// Spells
+    4 [AL] Force of Will
+    2 [JU] Mental Note
+    4 [OV] Swords to Plowshares
+    4 [5E] Brainstorm
+    4 [FD] Serum Visions
+    2 [RAV] Remand
+    4 [NE] Daze
+
+// Sideboard
+SB: 3 [CH] Tormod's Crypt
+SB: 1 [SC] Stifle

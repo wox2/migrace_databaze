@@ -1,0 +1,32 @@
+// Deck file for Magic Workstation (http://www.magicworkstation.com)
+
+// Lands
+    3 [ON] Bloodstained Mire
+    4 [ON] Wooded Foothills
+    4 [R] Taiga
+    7 [CHK] Mountain (3)
+    1 [MI] Forest (3)
+
+// Creatures
+    4 [US] Goblin Lackey
+    4 [ON] Goblin Piledriver
+    4 [SC] Goblin Warchief
+    4 [ON] Skirk Prospector
+    2 [SC] Siege-Gang Commander
+    4 [US] Goblin Matron
+    4 [SC] Xantid Swarm
+
+// Spells
+    1 [PR] Mana Crypt
+    1 [B] Sol Ring
+    1 [TE] Lotus Petal
+    4 [TSP] Empty the Warrens
+    4 [DS] Skullclamp
+    4 [CS] Rite of Flame
+
+// Sideboard
+SB: 3 [B] Goblin King
+SB: 4 [MR] Chalice of the Void
+SB: 3 [ON] Naturalize
+SB: 2 [UL] Goblin Welder
+SB: 2 [OV] Pyroblast

@@ -1,0 +1,40 @@
+// Deck file for Magic Workstation (http://www.magicworkstation.com)
+
+// Lands
+    4 [B] Underground Sea
+    1 [R] Badlands
+    1 [B] Volcanic Island
+    1 [B] Island (2)
+    1 [B] Swamp (2)
+    4 [ON] Polluted Delta
+    3 [ON] Flooded Strand
+    1 [ON] Bloodstained Mire
+
+// Creatures
+    4 [RAV] Dark Confidant
+
+// Spells
+    4 [B] Dark Ritual
+    4 [TO] Cabal Ritual
+    4 [DIS] Infernal Tutor
+    4 [TE] Lotus Petal
+    4 [MI] Lion's Eye Diamond
+    4 [LRW] Ponder
+    4 [5E] Brainstorm
+    2 [SC] Tendrils of Agony
+    1 [TSP] Empty the Warrens
+    2 [US] Ill-Gotten Gains
+    3 [ARE] Duress
+    1 [UL] Rebuild
+    2 [JU] Death Wish
+    1 [AL] Diminishing Returns
+
+// Sideboard
+SB: 1 [SC] Tendrils of Agony
+SB: 2 [TSP] Empty the Warrens
+SB: 1 [US] Ill-Gotten Gains
+SB: 2 [DS] Echoing Truth
+SB: 3 [GP] Leyline of the Void
+SB: 3 [8E] Defense Grid
+SB: 1 [TSP] Wipe Away
+SB: 1 [AL] Diminishing Returns

@@ -1,0 +1,44 @@
+// Deck file for Magic Workstation (http://www.magicworkstation.com)
+
+// Lands
+    1 [AN] Library of Alexandria
+    2 [B] Island (1)
+    3 [ON] Polluted Delta
+    3 [ON] Flooded Strand
+    4 [B] Underground Sea
+    4 [B] Tropical Island
+
+// Spells
+    1 [US] Yawgmoth's Will
+    2 [SC] Tendrils of Agony
+    1 [TE] Lotus Petal
+    1 [B] Time Walk
+    1 [A] Regrowth
+    1 [B] Demonic Tutor
+    1 [VI] Vampiric Tutor
+    1 [ON] Chain of Vapor
+    1 [R] Fastbond
+    1 [MI] Mystical Tutor
+    1 [B] Ancestral Recall
+    2 [MM] Misdirection
+    3 [US] Duress
+    3 [TE] Intuition
+    3 [LG] Mana Drain
+    4 [8E] Merchant Scroll
+    4 [MM] Gush
+    4 [AL] Force of Will
+    4 [IA] Brainstorm
+    2 [TO] Deep Analysis
+    1 [IA] Zuran Orb
+    1 [PT] Personal Tutor
+
+// Sideboard
+SB: 1 [ON] Chain of Vapor
+SB: 1 [US] Duress
+SB: 3 [FUT] Yixlid Jailer
+SB: 1 [DIS] Research/Development
+SB: 1 [EX] Reclaim
+SB: 1 [IN] Fact or Fiction
+SB: 4 [GP] Leyline of the Void
+SB: 1 [5E] Hurkyl's Recall
+SB: 2 [UL] Rebuild

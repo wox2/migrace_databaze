@@ -1,0 +1,50 @@
+// Deck file for Magic Workstation (http://www.magicworkstation.com)
+
+// Lands
+    4 [B] Underground Sea
+    3 [ON] Polluted Delta
+    3 [ON] Flooded Strand
+    3 [ARE] Island (1)
+    1 [B] Swamp (2)
+    1 [US] Tolarian Academy
+
+// Creatures
+    2 [PLC] Serra Sphinx
+    1 [DS] Sundering Titan
+
+// Spells
+    1 [B] Black Lotus
+    1 [HPB] Mana Crypt
+    1 [B] Mox Emerald
+    1 [B] Mox Jet
+    1 [B] Mox Pearl
+    1 [B] Mox Ruby
+    1 [B] Mox Sapphire
+    4 [ARE] Duress
+    4 [AL] Force of Will
+    4 [LG] Mana Drain
+    4 [MR] Thirst for Knowledge
+    3 [SHM] Savor the Moment
+    3 [BD] Impulse
+    2 [DS] Panoptic Mirror
+    1 [B] Ancestral Recall
+    1 [FNM] Brainstorm
+    1 [B] Demonic Tutor
+    1 [DS] Echoing Truth
+    1 [CHK] Gifts Ungiven
+    1 [HL] Merchant Scroll
+    1 [MI] Mystical Tutor
+    1 [PT] Personal Tutor
+    1 [UL] Rebuild
+    1 [B] Time Walk
+    1 [UL] Tinker
+    1 [US] Yawgmoth's Will
+
+// Sideboard
+SB: 1 [UL] Rebuild
+SB: 4 [GP] Leyline of the Void
+SB: 3 [B] Dark Ritual
+SB: 2 [AQ] Hurkyl's Recall
+SB: 2 [SC] Tendrils of Agony
+SB: 2 [FUT] Yixlid Jailer
+SB: 1 [PLC] Damnation

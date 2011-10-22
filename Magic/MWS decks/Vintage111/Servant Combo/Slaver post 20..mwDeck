@@ -1,0 +1,53 @@
+// Deck file for Magic Workstation (http://www.magicworkstation.com)
+
+// Lands
+    1 [ARE] Island (1)
+    1 [AN] Library of Alexandria
+    2 [ON] Polluted Delta
+    1 [AQ] Strip Mine (2)
+    1 [US] Tolarian Academy
+    2 [A] Underground Sea
+    4 [B] Volcanic Island
+    3 [ON] Flooded Strand
+
+// Creatures
+    1 [DS] Sundering Titan
+    3 [SHM] Painter's Servant
+    2 [UL] Goblin Welder
+
+// Spells
+    1 [IA] Brainstorm
+    1 [U] Sol Ring
+    1 [B] Time Walk
+    1 [UL] Tinker
+    1 [VI] Vampiric Tutor
+    1 [US] Yawgmoth's Will
+    1 [HL] Merchant Scroll
+    3 [TE] Grindstone
+    4 [MR] Thirst for Knowledge
+    1 [MI] Mystical Tutor
+    1 [LRW] Ponder
+    2 [IN] Opt
+    2 [AL] Lat-Nam's Legacy (1)
+    2 [IA] Pyroblast
+    3 [LG] Mana Drain
+    1 [FD] Crucible of Worlds
+    1 [B] Ancestral Recall
+    1 [B] Black Lotus
+    1 [B] Mox Sapphire
+    1 [B] Demonic Tutor
+    1 [B] Mox Pearl
+    1 [B] Mox Jet
+    1 [B] Mox Emerald
+    4 [AL] Force of Will
+    1 [B] Mox Ruby
+    1 [DS] Echoing Truth
+
+// Sideboard
+SB: 1 [10E] Platinum Angel
+SB: 1 [B] Red Elemental Blast
+SB: 1 [DS] Darksteel Colossus
+SB: 2 [UL] Rack and Ruin
+SB: 2 [FNM] Tormod's Crypt
+SB: 4 [FD] Engineered Explosives
+SB: 4 [GP] Leyline of the Void

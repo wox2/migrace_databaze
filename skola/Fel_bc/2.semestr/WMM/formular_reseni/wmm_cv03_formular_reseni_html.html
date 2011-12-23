@@ -1,0 +1,114 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html lang="cs">
+<head>
+  <meta http-equiv="Content-Language" content="cs">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta name="author" content="Tomáš Vichta vichtt_zavinac_fel.cvut.cz">
+  <meta name="description" content="Formulář pro objednávku zboží">
+  <meta name="keywords" content="objednávka,zboží">
+    <meta name="robots" content="index,nofollow" >
+  <meta name="copyright" content="ČVUT-FEL 2009" >
+  <!-- styl nechte aktivní, pokud použijete zprávné HTML značky, tak by měl výsledek vypadat stejně jako vzor -->
+  <link rel="stylesheet" type="text/css" href="styl2.css" media="screen" >
+  <title>Cvičení WMM - Objednávka zboží</title>
+</head>
+<body>
+  <h1>
+    Objednávka zboží
+  </h1>
+  <form action="http://amun.felk.cvut.cz/vypis_form.php" method="post" title="Objednávkový formulář">
+  <fieldset>
+    <legend>Jméno &amp; příjmení</legend>
+    <label for="jmeno">
+      Jméno</label>
+    <input tabindex="1" accesskey="j" type="text" name="jmeno" id="jmeno">
+    <label for="prijmeni">
+      Příjmení</label>
+    <input tabindex="2" accesskey="p" type="text" name="prijmeni" id="prijmeni">
+    <label for="titul">
+      Titul</label>
+    <input type="text" tabindex="3" accesskey="t" name="titul" id="titul">
+    <div>
+      <label for="muz">
+        Muž</label><input type="radio" name="pohlavi" value="muz" tabindex="4" id="muz" checked="checked">
+      <label for="zena">
+        Žena</label><input type="radio" name="pohlavi" value="zena" tabindex="5" id="zena">
+    </div>
+  </fieldset>
+  <fieldset>
+    <legend>Adresa</legend>
+    <div>
+      <label for="ulice">
+        Ulice</label>
+      <input tabindex="6" accesskey="u" type="text" name="ulice" id="ulice">
+    </div>
+    <div>
+      <label for="mesto">
+        Město</label>
+      <input tabindex="7" accesskey="s" type="text" name="mesto" id="mesto">
+    </div>
+    <div>
+      <label for="psc">
+        PSČ</label>
+      <input type="text" tabindex="8" accesskey="n" name="psc" id="psc">
+    </div>
+  </fieldset>
+  <fieldset>
+    <legend>Způsob dopravy</legend>
+    <label for="expres">
+      Expres</label>
+    <input tabindex="10" accesskey="x" type="checkbox" name="expres" value="expres" id="expres">
+    <label for="dvr">
+      Do vlastních rukou</label>
+    <input tabindex="11" accesskey="v" type="checkbox" name="dvr" value="do vlastnich rukou"
+      id="dvr">
+    <label for="doprava">
+      Doprava</label>
+    <select name="doprava" tabindex="9" id="doprava">
+      <optgroup label="pozemní">
+        <option value="101">Vlastní </option>
+        <option value="102">Messenger </option>
+        <option value="103" selected="selected">Pošta </option>
+      </optgroup>
+      <optgroup label="letecky">
+        <option value="201">Letecká pošta </option>
+        <option value="202">DHL </option>
+      </optgroup>
+      <optgroup label="vodovodní">
+        <option value="301">Lodní </option>
+        <option value="302">Ponorkou </option>
+      </optgroup>
+    </select>
+  </fieldset>
+  <fieldset>
+    <legend>Zboží 1</legend>
+    <select name="zbozi1[]" tabindex="12" multiple="multiple" id="zbozi1">
+      <option value="1">Parní lokomotiva </option>
+      <option value="2">Ponorka </option>
+      <option value="3" disabled="disabled">Párátko </option>
+      <option value="4">Chléb Šumava </option>
+    </select>
+  </fieldset>
+  <fieldset>
+    <legend>Zboží 2</legend>
+    <label for="zbozi2_1">
+      Koberec</label><input type="checkbox" name="zbozi2[]" value="5" id="zbozi2_1" tabindex="13">
+    <label for="zbozi2_2">
+      Pneumatika</label><input type="checkbox" name="zbozi2[]" value="6" id="zbozi2_2"
+        tabindex="14" checked="checked">
+    <label for="zbozi2_3">
+      Čepice</label><input type="checkbox" name="zbozi2[]" value="7" id="zbozi2_3" tabindex="15">
+  </fieldset>
+  <fieldset>
+    <legend>Vzkaz</legend>
+    <label for="vzkaz">
+      Váš vzkaz nám</label>
+    <textarea name="vzkaz" tabindex="16" accesskey="t" rows="5" cols="15" id="vzkaz">Zde napište Váš vzkaz</textarea>
+  </fieldset>
+  <div>
+    <input accesskey="k" type="submit" value="Odeslat" name="odeslat">
+    <input type="reset" value="Resetovat">
+  </div>
+  </form>
+</body>
+</html>

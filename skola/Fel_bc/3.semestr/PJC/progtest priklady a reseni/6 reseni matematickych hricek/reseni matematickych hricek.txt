@@ -1,0 +1,138 @@
+Úkolem je realizovat program, který dokáže vyrešit hlavolam typu "zapiš císlo X pomocí Y jiných cifer".
+
+Vstupem programu jsou tri císla: pocet, cifra a vysledek. Císlo pocet (celé, vetší než 0, menší než 16) udává pocet cifer, které mají být použité. Císlo cifra udává, cifru (1 až 9), ze kterých má být císlo sestaveno. Konecne, vysledek udává desetinné císlo, kterého chceme dosáhnout.
+
+Program se pokusí podle zadání s využitím pocet cifer o hodnote cifra sestavit aritmetický výraz, který se vyhodnotí na hodnotu vysledek. Mezi cifry muže vkládat operátory +, -, * a / nebo muže cifry "nalepit" k sobe.
+
+Výsledkem programu je seznam všech aritmetických výrazu, které splnují podmínky zadání (za shodu výsledku považujte rozdíl menší než 1e-8). Dále program zobrazí pocet takových výrazu. Výpis má formát podle ukázky níže. Za posledním rádkem je odrádkování (endl).
+
+Program oznámí chybu, pokud vstupní parametry nejsou císla nebo pokud prekrocí zadané meze. Chyba je oznámena okamžite po jejím nalezení. Za chybovým hlášením je odrádkování (endl).
+
+Program je testován v omezeném prostredí. Je omezen dostupnou pametí velikosti nekolika desítek KB (tato úloha není nárocná na spotrebu pameti) a je omezen dobou behu (5 s na cílovém pocítaci, referencní rešení potrebuje pro výpocet cca 500 ms).
+Ukázka práce programu:
+
+ 
+Zadejte pocet cifer:
+5
+Zadejte cifru:
+2
+Zadejte pozadovany vysledek:
+30
+22 + 2 * 2 * 2 = 30
+2 * 2 * 2 + 22 = 30
+Moznosti: 2
+
+ 
+Zadejte pocet cifer:
+8
+Zadejte cifru:
+1
+Zadejte pozadovany vysledek:
+26
+11 + 11 + 1 + 1 + 1 + 1 = 26
+11 + 1 + 11 + 1 + 1 + 1 = 26
+11 + 1 + 1 + 11 + 1 + 1 = 26
+11 + 1 + 1 + 1 + 11 + 1 = 26
+11 + 1 + 1 + 1 + 1 + 11 = 26
+1 + 11 + 11 + 1 + 1 + 1 = 26
+1 + 11 + 1 + 11 + 1 + 1 = 26
+1 + 11 + 1 + 1 + 11 + 1 = 26
+1 + 11 + 1 + 1 + 1 + 11 = 26
+1 + 1 + 11 + 11 + 1 + 1 = 26
+1 + 1 + 11 + 1 + 11 + 1 = 26
+1 + 1 + 11 + 1 + 1 + 11 = 26
+1 + 1 + 1 + 11 + 11 + 1 = 26
+1 + 1 + 1 + 11 + 1 + 11 = 26
+1 + 1 + 1 + 1 + 11 + 11 = 26
+Moznosti: 15
+
+ 
+Zadejte pocet cifer:
+7
+Zadejte cifru:
+2
+Zadejte pozadovany vysledek:
+0.25
+2 / 2 / 2 - 2 / 2 / 2 / 2 = 0.25
+Moznosti: 1
+
+ 
+Zadejte pocet cifer:
+10
+Zadejte cifru:
+3
+Zadejte pozadovany vysledek:
+-30
+3333 * 3 / 33 - 333 = -30
+3333 / 33 * 3 - 333 = -30
+333 + 3 - 33 * 33 / 3 - 3 = -30
+333 + 3 - 33 / 3 * 33 - 3 = -30
+333 + 3 - 3 - 33 * 33 / 3 = -30
+333 + 3 - 3 - 33 / 3 * 33 = -30
+333 - 333 - 3 - 3 * 3 * 3 = -30
+333 - 333 - 3 * 3 * 3 - 3 = -30
+333 - 33 * 33 * 3 / 3 / 3 = -30
+333 - 33 * 33 / 3 + 3 - 3 = -30
+333 - 33 * 33 / 3 - 3 + 3 = -30
+333 - 33 * 33 / 3 * 3 / 3 = -30
+333 - 33 * 33 / 3 / 3 * 3 = -30
+
+  ... zkráceno pro prehlednost, program vypisuje vše ...
+
+3 / 3 / 3 - 3 / 3 / 3 - 3 * 3 * 3 - 3 = -30
+3 / 3 / 3 * 3 + 3 / 3 + 3 / 3 - 33 = -30   
+3 / 3 / 3 * 3 + 3 / 3 - 33 + 3 / 3 = -30   
+3 / 3 / 3 * 3 - 33 + 3 / 3 + 3 / 3 = -30   
+3 / 3 / 3 * 3 - 3 - 3 * 3 * 3 - 3 / 3 = -30
+3 / 3 / 3 * 3 - 3 - 3 / 3 - 3 * 3 * 3 = -30
+3 / 3 / 3 * 3 - 3 * 3 * 3 - 3 - 3 / 3 = -30
+3 / 3 / 3 * 3 - 3 * 3 * 3 - 3 / 3 - 3 = -30
+3 / 3 / 3 * 3 - 3 / 3 - 3 - 3 * 3 * 3 = -30
+3 / 3 / 3 * 3 - 3 / 3 - 3 * 3 * 3 - 3 = -30
+3 / 3 / 3 * 3 * 3 - 3 - 3 - 3 * 3 * 3 = -30
+3 / 3 / 3 * 3 * 3 - 3 - 3 * 3 * 3 - 3 = -30
+3 / 3 / 3 * 3 * 3 - 3 * 3 * 3 - 3 - 3 = -30
+3 / 3 / 3 * 3 * 3 * 3 - 33 - 3 - 3 = -30   
+3 / 3 / 3 * 3 * 3 * 3 - 3 - 33 - 3 = -30   
+3 / 3 / 3 * 3 * 3 * 3 - 3 - 3 - 33 = -30   
+Moznosti: 4259
+
+ 
+Zadejte pocet cifer:
+6
+Zadejte cifru:
+4
+Zadejte pozadovany vysledek:
+1000
+Moznosti: 0
+
+ 
+Zadejte pocet cifer:
+0
+Nespravny vstup.
+
+ 
+Zadejte pocet cifer:
+5
+Zadejte cifru:
+0
+Nespravny vstup.
+
+ 
+Zadejte pocet cifer:
+4
+Zadejte cifru:
+5
+Zadejte pozadovany vysledek:
+asd
+Nespravny vstup.
+
+Nápoveda
+
+    * Vytvorte si pole o pocet - 1 prvcích. V poli si uložte, jaký operátor bude na daném míste použit, prípadne, že na daném míste nebude použit žádný operátor (cifry budou nalepené k sobe). Prvek pole tedy muže nabývat celkem 5 hodnot (4 operátory a príznak pro "lepení").
+    * Pole vyplnte všemi variacemi s opakováním (pocet-1)-té trídy z 5 prvku. Pro vyplnení se hodí rekurze.
+    * Pro každou vygenerovanou kombinaci vyhodnotte vzniklý výraz. Inspirujte se príkladem z prosemináre c. 3. Výraz neobsahuje závorky, to jeho vyhodnocení velmi zjednodušuje.
+    * Je zbytecné prevádet vygenerovaný obsah pole na retezec a ten pak predávat programu z prosemináre c. 3. Rychlejší a prehlednejší je výraz rovnou vyhodnotit z vygenerovaného pole.
+    * Pro výpocet programu není treba alokovat témer žádnou pamet. Stací jedno pole o (pocet-1) prvcích.
+    * Poradí výrazu na výstupu není rozhodující. Duležité je, aby poslední rádek obsahoval informaci o poctu a aby se ve výpisu objevily všechny možné výrazy a každý pouze jednou.
+    * Program a zejména pak vyhodnocení výrazu musí být relativne efektivní. Výpocet všech výrazu je exponenciální, vyhodnocení výrazu tedy bude probíhat mnohokrát. Napr. pro 10 cifer se vygeneruje 5^10 = ~ 10 miliónu výrazu, které musejí být vyhodnocené.

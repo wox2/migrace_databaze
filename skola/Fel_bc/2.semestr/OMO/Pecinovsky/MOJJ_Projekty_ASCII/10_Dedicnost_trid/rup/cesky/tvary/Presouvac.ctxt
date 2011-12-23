@@ -1,0 +1,20 @@
+#BlueJ class context
+comment0.target=Presouvac()
+comment0.text=\nVytvori\ presouvace,\ ktery\ bude\ presouvat\ objekty\ rychlosti\ 1.\n\n
+comment1.params=rychlost
+comment1.target=Presouvac(int)
+comment1.text=\nVytvori\ presouvace,\ ktery\ bude\ presouvat\ objekty\ zadanou\ rychlosti.\n\n@param\ rychlost\ Rychlost,\ kterou\ bude\ presouvac\ pohybovat\nse\ sverenymi\ objekty.\n\n
+comment2.target=String\ toString()
+comment3.params=objekt\ doprava\ dolu
+comment3.target=void\ presunO(IPosuvny,\ int,\ int)
+comment3.text=\nPresune\ zadany\ objekt\ o\ pozadovany\ pocet\ bodu.\n\n@param\ objekt\ \ \ \ Presouvany\ objekt\n@param\ doprava\ \ \ Pocet\ bodu,\ o\ nez\ se\ objekt\ presune\ doprava\n@param\ dolu\ \ \ \ \ \ Pocet\ bodu,\ o\ nez\ se\ objekt\ presune\ dolu\n\n
+comment4.params=objekt\ posun
+comment4.target=void\ presunO(IPosuvny,\ Pozice)
+comment4.text=\nPresune\ zadany\ objekt\ o\ pozadovany\ pocet\ bodu.\n\n@param\ objekt\ \ Presouvany\ objekt\n@param\ posun\ \ \ Pocet\ bodu,\ o\ nez\ se\ objekt\ presune\ doprava\ a\ dolu\nulozeny\ v\ prepravce\n\n
+comment5.params=objekt\ x\ y
+comment5.target=void\ presunNa(IPosuvny,\ int,\ int)
+comment5.text=\nPresune\ zadany\ objekt\ do\ pozadovane\ pozice.\n\n@param\ objekt\ \ Presouvany\ objekt\n@param\ x\ \ \ \ \ \ \ x-ova\ souradnice\ pozadovane\ cilove\ pozice\n@param\ y\ \ \ \ \ \ \ y-ova\ souradnice\ pozadovane\ cilove\ pozice\n\n
+comment6.params=objekt\ pozice
+comment6.target=void\ presunNa(IPosuvny,\ Pozice)
+comment6.text=\nPresune\ zadany\ objekt\ do\ pozadovane\ pozice.\n\n@param\ objekt\ \ Presouvany\ objekt\n@param\ pozice\ \ Pozadovane\ cilove\ pozice.\n\n
+numComments=7

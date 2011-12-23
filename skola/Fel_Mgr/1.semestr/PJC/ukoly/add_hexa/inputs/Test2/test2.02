@@ -1,0 +1,9 @@
+let prvni 0x 81
+let druha 0x FF 80
+let  treti 	0x 30
+
+begin
+add treti prvni
+add treti druha
+print treti
+exit

@@ -1,0 +1,59 @@
+/* CSS Document */
+html{
+      margin:10% 20%;
+      height: 80%;
+      width: 60%;
+
+}
+
+body{
+
+}
+
+div#hornimenu { 
+             width: 95%;
+             height: 5%;
+             padding: 5%;
+             background-color:green; 
+             font-size:1em; 
+             text-align:center;           
+}
+
+div#levemenu { 
+             margin:0% 3% 0% 0%;
+             width: 30%;
+             height: 130%;
+             padding: 5%;
+             background-color:blue; 
+             float:left;
+            
+}
+
+div.tlacitko {   
+               
+             width: 44%;                 
+             padding: 3%;
+             margin: 15% 30%;
+             background-color:green; 
+             font-size: 1.5em;               
+             text-align:center;             
+}
+
+div#clanek{
+          font-size:1.2em;
+          padding:3%;
+}
+div.tlacitko:hover{
+                  background-color:red;
+                  cursor:pointer;
+}
+div#hornimenu h1{
+                font-size: 3em;
+}
+
+select#skola{
+          visibility: hidden;
+}
+img#pointjmeno{
+          visibility: visible;
+}

@@ -1,0 +1,38 @@
+BIOS - program cmos, flashdisc
+HW rutina - nahraj BIOS
+
+GRUB
+LILO-jednodussi
+
+
+
+
+GRUB -  root -korenovy soubor
+        hd0 - primarni disk, 2 partion
+        chainloader + 1 predej rizeni na partition a nacti jeden root sector
+        
+        
+        kernel /boot/vmlinuz root  ro - cesta k jadru, parametry
+        initrd /boot/initrd.img - image
+        
+        
+        
+        startup phase
+        
+        
+spravne poradi zavadeni
+
+boot SW - maly 1. 512 bytu (masterboot record-MBR) - ma prehled o partitionach na disku - 4 primarni partitiony, dale logicky
+-446 B strojovy kod - nabootuje pokud neni partition tabulka zaplnena
+-tabulka partitionu
+
+potom trochu mista pred 1. primarni partitionou je misto pro boot manager
+
+stage 1 - boot
+stage 1,5 - hned za nim, boot manager, znat typ filesystemu a zpusob ulozeni dat
+
+kdyz je smazanej - stage 1,5 - je mozny oeditovat stage 1,5 nebo se s clovekem nebavi...(nutno preinstalovat stage 1,5)
+
+predani rizeni - RAM, bootld, nahrat na spravne adr, zmeni counter (file jump - jmp <adr>)
+
+spec procesy jadra - v hranatych zavorkach, pomocny proces

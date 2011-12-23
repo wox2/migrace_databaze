@@ -1,0 +1,52 @@
+Úkolem je realizovat program, který dostane na vstupu velké nezáporné celé cislo a o tomto císle rozhodne, zda je delitelné 1, 2, 3, ..., 9, 10. Delitelnost vyššími císly není úkolem zjištovat. Program zobrazí na svém výstupu zjištené delitele, prípadne zobrazí chybovou hlášku, pokud nebylo zadané nezáporné císlo V obou prípadech bude výstupem jedna rádka, ukoncená znakem pro odrádkování (endl).
+
+Problém této úlohy je, že je požadováno, aby byla funkcní pro opravdu velká císla, která se nevejdou ani do datového typu int ani do typu long long. Úloha musí být funkcní i pro císla, která mají více než 100000000 cifer. Další omezení spocívá v dostupné pameti. Program bude spoušten v prostredí, kde bude mít k dispozici pouze rádove kilobajty pameti, a to i v situaci, kdy bude zpracovávat císla o miliónech cifer.
+
+60
+Cislo je delitelne 1, 2, 3, 4, 5, 6, 10
+
+24
+Cislo je delitelne 1, 2, 3, 4, 6, 8
+
+720
+Cislo je delitelne 1, 2, 3, 4, 5, 6, 8, 9, 10
+
+5040
+Cislo je delitelne 1, 2, 3, 4, 5, 6, 7, 8, 9, 10
+
+34123461273648125348912534981264376128345812354821354127346821354982135418235489162345891724592183459321864592158
+Cislo je delitelne 1, 2, 3, 6, 9
+
+27t45
+Nespravny vstup.
+
+0aaa
+Nespravny vstup.
+
+zzz
+Nespravny vstup.
+
+Nespravny vstup.
+
+Nápoveda
+
+     Omezení na datové typy znamená, že test delitelnosti budete muset provést jinak než nactením do promenné a operací modulo. Použijte znaky delitelnosti. Pokud je neznáte, zkuste napr. Wikipedii (divisibility rules).
+     Omezení na pamet znamená, že nelze vytvorit pole (retezec, ...), do kterého byste si vstup nacetli. Zpracovávejte císlo ctením z proudu bajt po bajtu. Využijte metody cin . get ().
+     Pro vyrešení úlohy stací udržovat cca 7 promenných typu integer.
+     Delitelnost 7 je nejjednodušší pocítat tak, že si udržujete zbytek podelení 7 a po nacetené cifre jej vždy aktualizujete.
+
+
+6 	23.10.2009 105842 	
+Download
+Stav odevzdání 	Ohodnoceno 
+Hodnocení 	1.0000
+Hodnotitel 	automat
+
+     Program zkompilován
+     Test 'Základní test s daty podle ukázky' Úspech 100.00 %
+     Test 'Kontrola mezních hodnot' Úspech 100.00 %
+     Test 'Kontrola ošetrení správnosti vstupních dat' Úspech 100.00 %
+     Test 'Extenzivní test náhodnými vstupy' Úspech 100.00 %
+     Test 'Kontrola pametové nárocnosti' Úspech 100.00 %
+     Celkový výsledek 100.00 %
+     Celkem 1.00  1.00 = 1.00

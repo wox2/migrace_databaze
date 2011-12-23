@@ -1,0 +1,13 @@
+courses/y01PST/common/cviceni
+courses/y01PST/common/predn-p../du.pdf
+courses/y01PST/common/predn-p../su.pdf
+
+manualy/maple.pdf
+manualy/calc.pdf
+
+
+
+xmaple
+
+
+5,6,7 spocitat...

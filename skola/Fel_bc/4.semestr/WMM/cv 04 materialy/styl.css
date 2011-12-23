@@ -1,0 +1,13 @@
+body {
+	font-family: Calibri, Verdana, Arial; /*pro Operu nezobrazuje hacky a carky */
+	margin-left: 2ex;
+}
+
+h1 {
+	font-family: Cambria, Helvetica, Verdana;
+	font-size: 2.5ex;
+	color: rgb(54,95,145);
+	margin-bottom: 4ex;
+}
+
+tr {background:silver}

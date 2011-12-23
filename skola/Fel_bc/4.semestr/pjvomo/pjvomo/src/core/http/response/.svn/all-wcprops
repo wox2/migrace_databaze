@@ -1,0 +1,71 @@
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/~svobom41/svn/!svn/ver/33/javomo/trunk/src/core/http/response
+END
+HttpResponse200.java
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/~svobom41/svn/!svn/ver/26/javomo/trunk/src/core/http/response/HttpResponse200.java
+END
+HttpResponse200File.java
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/~svobom41/svn/!svn/ver/26/javomo/trunk/src/core/http/response/HttpResponse200File.java
+END
+HttpResponse400.java
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/~svobom41/svn/!svn/ver/26/javomo/trunk/src/core/http/response/HttpResponse400.java
+END
+HttpResponse500.java
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/~svobom41/svn/!svn/ver/26/javomo/trunk/src/core/http/response/HttpResponse500.java
+END
+HttpResponse501.java
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/~svobom41/svn/!svn/ver/26/javomo/trunk/src/core/http/response/HttpResponse501.java
+END
+HttpResponse200Directory.java
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/~svobom41/svn/!svn/ver/33/javomo/trunk/src/core/http/response/HttpResponse200Directory.java
+END
+HttpResponse403.java
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/~svobom41/svn/!svn/ver/26/javomo/trunk/src/core/http/response/HttpResponse403.java
+END
+HttpResponsible.java
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/~svobom41/svn/!svn/ver/26/javomo/trunk/src/core/http/response/HttpResponsible.java
+END
+HttpResponse404.java
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/~svobom41/svn/!svn/ver/26/javomo/trunk/src/core/http/response/HttpResponse404.java
+END
+HttpResponseError.java
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/~svobom41/svn/!svn/ver/26/javomo/trunk/src/core/http/response/HttpResponseError.java
+END
+HttpResponse.java
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/~svobom41/svn/!svn/ver/26/javomo/trunk/src/core/http/response/HttpResponse.java
+END

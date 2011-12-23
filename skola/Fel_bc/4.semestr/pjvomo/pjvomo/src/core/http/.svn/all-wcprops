@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/~svobom41/svn/!svn/ver/33/javomo/trunk/src/core/http
+END
+HttpRequestIsNotParsedException.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/~svobom41/svn/!svn/ver/26/javomo/trunk/src/core/http/HttpRequestIsNotParsedException.java
+END
+HeaderNotExistException.java
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/~svobom41/svn/!svn/ver/26/javomo/trunk/src/core/http/HeaderNotExistException.java
+END
+EmptyRequestException.java
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/~svobom41/svn/!svn/ver/26/javomo/trunk/src/core/http/EmptyRequestException.java
+END
+HttpResponseFactory.java
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/~svobom41/svn/!svn/ver/26/javomo/trunk/src/core/http/HttpResponseFactory.java
+END
+HttpRequest.java
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/~svobom41/svn/!svn/ver/27/javomo/trunk/src/core/http/HttpRequest.java
+END
+HttpHandler.java
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/~svobom41/svn/!svn/ver/26/javomo/trunk/src/core/http/HttpHandler.java
+END
+InvalidRequestException.java
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/~svobom41/svn/!svn/ver/26/javomo/trunk/src/core/http/InvalidRequestException.java
+END

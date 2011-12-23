@@ -1,0 +1,10 @@
+D:\CTU_\4. semestr\VAN\Semestral\MoneyFlow\MoneyFlow\BLL\bin\Debug\BLL.dll
+D:\CTU_\4. semestr\VAN\Semestral\MoneyFlow\MoneyFlow\BLL\bin\Debug\BLL.pdb
+D:\CTU_\4. semestr\VAN\Semestral\MoneyFlow\MoneyFlow\BLL\obj\Debug\ResolveAssemblyReference.cache
+D:\CTU_\4. semestr\VAN\Semestral\MoneyFlow\MoneyFlow\BLL\obj\Debug\BLL.dll
+D:\CTU_\4. semestr\VAN\Semestral\MoneyFlow\MoneyFlow\BLL\obj\Debug\BLL.pdb
+E:\Fel\5.semestr\TSW\MoneyFlow\BLL\bin\Debug\BLL.dll
+E:\Fel\5.semestr\TSW\MoneyFlow\BLL\bin\Debug\BLL.pdb
+E:\Fel\5.semestr\TSW\MoneyFlow\BLL\obj\Debug\ResolveAssemblyReference.cache
+E:\Fel\5.semestr\TSW\MoneyFlow\BLL\obj\Debug\BLL.dll
+E:\Fel\5.semestr\TSW\MoneyFlow\BLL\obj\Debug\BLL.pdb

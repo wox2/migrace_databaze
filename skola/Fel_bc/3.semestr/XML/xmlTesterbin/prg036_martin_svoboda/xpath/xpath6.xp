@@ -1,0 +1,2 @@
+(: Vybere vsechny spolucestujici k cestujici s id="pax_2" :)
+//passenger[@id="pax_2"]/ancestor::*/passenger

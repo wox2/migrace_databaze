@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="chess" default="compile">
+    <fileset id="fileSet" dir=".">
+        <include  name="**/*.java"/>
+    </fileset>
+
+    <property name="docDir" location="doc"/>
+    <property name="fileSetProp" refid="fileSet"/>
+    <property name="reportDir" value="./report"/>
+    <property name="buildDir" value="./report"/>
+    <property name="junit" value="./lib/junit-4.6.jar"/>
+    <property name="srcDir" value="src"/>
+    <property name="testDir" value="test"/>
+    <property name="jar" value="chess.jar"/>
+
+    <target name="compile">
+        <mkdir dir="${buildDir}"/>
+        <javac destdir="${buildDir}" classpath="${junit}">
+            <src path="${srcDir}" />
+            <src path="${testDir}" />
+        </javac>
+    </target>
+
+    <target name="create doc">
+        <mkdir dir="${docDir}" />
+        <javadoc sourcepath="${srcDir}" destdir="${docDir}" windowtitle="Sachy" />
+        <echo message="kompiluji"/>
+    </target>
+
+    <target name="build" depends="compile">
+        <jar destfile="${jar}" >
+            <fileset dir="${buildDir}" excludes="**/*Test*.class" />
+            <manifest>
+                <attribute name="Main-Class" value="controler.Main"/>
+            </manifest>
+        </jar>
+    </target>
+
+    <target name="run" depends="compile">
+        <java classname="controler.Main" classpath="${buildDir}"/>
+    </target>
+
+    <target name="clean">
+        <delete dir="${buildDir}"/>
+        <delete file="chess.jar"/>
+        <delete dir="${reportDir}" />
+        <delete dir="${docDir}" />
+    </target>
+
+    <target name="test" depends="compile">
+        <mkdir dir="${reportDir}"/>
+		<junit printsummary="yes"  haltonfailure="yes">
+			<formatter type="plain"/>
+	   		<classpath>
+	   			<pathelement location="${junit}" />
+	   			<pathelement location="${buildDir}" />
+	   	  	</classpath>
+			<batchtest fork="yes" todir="${reportDir}">
+		    	<fileset dir="${buildDir}">
+                    <include  name="**/*Test.class"/>
+                </fileset>
+		  	</batchtest>
+		</junit>
+    </target>
+</project>

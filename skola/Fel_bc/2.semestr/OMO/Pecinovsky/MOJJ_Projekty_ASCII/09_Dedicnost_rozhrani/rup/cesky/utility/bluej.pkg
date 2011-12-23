@@ -1,0 +1,21 @@
+#Soubor bluej.pkg prevedeny do ASCII
+#Sat Nov 29 12:36:29 CET 2008
+package.showUses=true
+target1.type=ClassTarget
+package.editor.height=290
+package.editor.y=0
+readme.editor.y=0
+package.editor.x=300
+readme.editor.x=0
+package.showExtends=true
+target1.height=50
+package.editor.width=279
+target1.width=80
+readme.editor.height=512
+package.numDependencies=0
+target1.y=90
+target1.x=10
+package.numTargets=1
+target1.name=IO
+readme.editor.width=618
+target1.showInterface=false

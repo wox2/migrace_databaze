@@ -1,0 +1,19 @@
+#BlueJ class context
+comment0.params=x\ y
+comment0.target=Pozice(int,\ int)
+comment0.text=\nVytvori\ instanci\ se\ zadanymi\ souradnicemi.\n\n@param\ x\ \ Vodorovna\ souradnice.\n@param\ y\ \ Svisla\ souradnice.\n\n
+comment1.params=pozice
+comment1.target=Pozice(Pozice)
+comment1.text=\nVytvori\ instanci,\ ktera\ je\ kopii\ zadane\ instance.\n\n@param\ pozice\ \ Referencni\ pozice.\n\n
+comment2.target=int\ getX()
+comment2.text=\nVrati\ hodnotu\ vodorovne\ souradnice\ dane\ pozice.\n\n@return\ \ Pozadovana\ souradnice.\n\n
+comment3.target=int\ getY()
+comment3.text=\nVrati\ hodnotu\ svisle\ souradnice\ dane\ pozice.\n\n@return\ \ Pozadovana\ souradnice.\n\n
+comment4.params=o
+comment4.target=boolean\ equals(Object)
+comment5.target=int\ hashCode()
+comment6.target=String\ toString()
+comment7.params=p
+comment7.target=double\ vzdalenostK(Pozice)
+comment7.text=\nVrati\ vzdalenost\ od\ teto\ pozice\ k\ pozici\ zadane\ jako\ parametr.\n\n@param\ \ p\ \ Pozice,\ k\ niz\ se\ zjistuje\ vzdalenost\n@return\ \ \ \ Zjistena\ vzdalenost\n\n
+numComments=8

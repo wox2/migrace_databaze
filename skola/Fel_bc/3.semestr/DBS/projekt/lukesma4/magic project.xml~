@@ -1,0 +1,1208 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="http://service.felk.cvut.cz/courses/X36DBS/xml/sprojekt_html.xsl"?>
+<!DOCTYPE sproject PUBLIC "-//XMLmind//DTD Sprojekt//EN"
+"http://service.felk.cvut.cz/courses/X36DBS/xml/sprojekt/sprojekt.dtd">
+<sproject>
+  <course>
+    <cname>Databázové systémy</cname>
+
+    <code>Y36DBS</code>
+
+    <semester>Zima 2009, sudý týden 90(zapsán v lichém, navštěvuje
+    sudý)</semester>
+
+    <seminar>Čtvrtek 14:30</seminar>
+  </course>
+
+  <author>
+    <aname>Martin Lukeš</aname>
+
+    <uname>lukesma4</uname>
+
+    <email>lukesma4@fel.cvut.cz</email>
+  </author>
+
+  <content>
+    <declaration>Prohlašuji, že jsem svou semestrální práci vypracoval
+    samostatně. Všechny zdroje, ze kterých jsem čerpal, jsou uvedeny v části
+    Odkazy.</declaration>
+
+    <title>Magicové turnaje</title>
+
+    <description>
+      <title>Popis</title>
+
+      <para>Magic je nejstarší karetní sběratelská hra. Každý rok jsou v něm
+      uspořádány desítky turnajů. Databázový systém slouží k evidenci
+      úspěšných balíčků ( 1 - 8. místo na turnaji), jejich složení, informace
+      o turnaji, na kterém byly hrány, informacemi o jejich pilotech. Databáze
+      by měla ulehčit vývoj nových a vylepšování starších archetypů. V Magicu
+      vyšlo okolo 16 868 karet (karty s stejným jménem z různých edic jsou
+      započítány vícekrát ). Magickový balíček na limited formáty, které
+      databáze eviduje, je složen z maindecku a sideboardu. Maindeck musí
+      obsahovat 60 a více karet, sideboard je složen z maximálně 15 karet.
+      Maindeck označuje karty, s kterými hráč začína každou první hru.
+      Sideboard je určen k vylepšení balíčku proti problematickým soupeřům v
+      2., případně, třetí hře Karta jednoznačně identifikovaná svým jménem se
+      v součtu může v maindecku i sideboardu vyskytovat maximálně v čtyřech
+      kopiích ( existuje jedna karta, která je výjimkou z tohoto pravidla, ale
+      tu tento model nebude zahrnovat). Dále pak je omezení vzhledem k daným
+      formátům, ale ani tuto skutečnost nebude model zahrnovat.</para>
+
+      <comment>
+        <para>Dalším omezením v reálném světě jsou Banned list &amp; Restricted list. Banned list zakazuje hraní karty na formátu, restricted omezuje 
+maximální možný počet jeích kopií  v balíčku na 1 ks. Tyto listy upravují legálnost daných karet na daném formátu a jsou aktualizované 
+jednou za 3 měsíce. Vzhledem k rozsahu těchto listů  a jejich časté obměně
+- viz http://www.wizards.com/Magic/TCG/Resources.aspx?x=judge/resources/
+-http://www.wizards.com/Magic/TCG/Resources.aspx?x=judge/resources/sfrlegacy
+nebude v modelu uvedena kontrola všech listů.
+</para>
+      </comment>
+
+      <para>Každá karta má kromě jména ( primární klíč ), barvu, typ,
+      vyvolávací cenu, počet kopií, které se vyskytují v sb či md. Základních
+      barev je v MTG 5 - červená, zelená, bílá, modrá, černá. Dále pak
+      existují i jejich kombinace a hybridní barvy, split karty - pro
+      jednoduchost budou karty, které nemají jednoznačně určenu barvu označeny
+      jako multicolor. Kombinace barev mohou být téměř libovolné - barvy se
+      zkráceně značí podle prvního písmene anglického slova (B = black, G=
+      green, R = red, W = white , U = BLUE (jedinýjimka, B už bylo použito).
+      Tyto znaky zastupují také manu dané barvy v casting costu. Některé karty
+      nemají barvu a jsou jsou označovány jako colorless (některé artefakty -
+      donedávna všechny, landy)</para>
+
+      <comment>
+        <para> </para>
+      </comment>
+
+      <para>Každá karta má svůj typ - základní typy jsou artifact, instant,
+      enchantment, land, planeswalker, creature, sorcery, artifact creature.
+      Každá karta má svoji vyvolávací cenu - converted mana cost/casting cost,
+      která představuje, kolik a jak barevných man (zdrojů energie) je nutné
+      použít k položení karty do hry - karty bez uvdeného CC mají podle
+      pravidel CC 0. Rozsah vyvolávací ceny je ohromný - začíná nulou a končí
+      u 19. Samozřejmě nejsnou zastoupeny všechny kombinace barev, ale je jich
+      obecně dost. Číslo v CC udává počet many libovolné barvy. CC - 2RG = dvě
+      libovolné many, červená a zelená.</para>
+
+      <comment>
+        <para></para>
+      </comment>
+
+      <para>Na každém limited turnaji se hráč zaregistruje, sepíše decklist,
+      který je po odevzdání brán za závaznou podobu balíčku před první hrou.
+      Decklist slouží k kontrole, jestli hráč nefixluje a nemění balíček či
+      jejich části v průběhu turnaje. Každý hráč tedy může hrát jenom jeden
+      balíček na jednom turnaji. Magickový zápas se hraje většinou na dva
+      vítezné zápasy či do vypršení časového limitu. Deckcheck = kontrola
+      balíčku se provádí před první hrou - v této chvíli musí být všechny
+      karty v maindecku odděleny od karet v sideboardu a balíček musí být
+      legální. V případě, že nesedí karty v decklistu s kartami v maindecku je
+      udělen hráči gameloss a hráč má 20 minut na napravení tohoto svého
+      pochybení. V případě zjištění nelegálnosti balíčku dostává hráč DQ
+      (diskvalifikaci) z turnaje. Po odehrání první hry si může hráč vyměnit
+      libovolný počet karet ze SB za karty z MD a začít třetí hru. Výměna musí
+      být v počtu 1 přidaná : 1 odebraná.</para>
+
+      <comment></comment>
+
+      <para>Turnaje se hraji ruznym systemem - jeden system hrani je single
+      elimination - hraci, kteri prohrali konci v turnaji, takto se pocet
+      hracu kazde kolo puli - je to vlastne play off hokejovych mistrovsti
+      sveta. Double elimination - hraci, kteri jednou prohrali jsou zarazeni
+      do single elimination pavouka - dve prohry znamenaji konec ve hre.
+      Single i double elimination vyhrava, ten, ktery nejdele zustane v
+      turnaji. Svycarsky system nevyrazuje hrace po prohre. Hrac hraje s
+      nahodne vygenerovanym souperem. Za vyhru ziska tri body, za prohru 0, za
+      remizu 1. Po prvnim kole spolu hraji hraci s stejnym nebo podobnym
+      poctem bodu. V dalsich kolech ziskavaji body a jsou k sobe parovani
+      stejnym zpusobem, ale je snaha, aby se vyvarovalo tomu, ze hrac nastoupi
+      do zapasu proti souperi, proti kteremu uz hral. Kazdy turnaj je hran v
+      formatu, ktery jasne vymezuje karty, s kterymi se muze hrat. Turnaje
+      svycarskeho typu mivaji/mohou mit TOP 8 - po urcitem poctu kol se osm
+      hracu vyda do pokracujicih boju v single elimination casti turnaje.
+      Turnaje mohou mit rozhodciho, pokud maji rozhodciho, tak musi mit
+      hlavniho rozhodciho, ktery je nejvyssi instanci, co se tyce pravidel,
+      reseni konfliktnich situaci... Kazdy turnaj ma nejaky pocet kol, v
+      kterych se hraji zapasy jeden proti jednomu. Zapasy se hraji vetsinou na
+      dva vitezne, takze vysledky mohou byt (1:0, 2:0, 1:1, 2:1, 1:2, 0:1, 0:2
+      ), v zapase mohou byt udeleny v prvnich kolech bye, pokud ma hrac dobre
+      vysledky z jinych turnaju (vyhra v TRIALECH, vysoke hodnoceni...) - tzn
+      ma automatickou vyhru. Ve hre mohou byt udeleny postihy ve forme
+      warningu nebo i gamelossu.</para>
+
+      <comment>
+        <para>Warningy a gamelossy jsou evidovany u zapasu v poznamkach. </para>
+      </comment>
+    </description>
+
+    <data_model>
+      <title>datové schéma</title>
+
+      <dm_picture>
+        <mediaobject>
+          <imageobject>
+            <imagedata fileref="mtg.png" />
+          </imageobject>
+        </mediaobject>
+      </dm_picture>
+
+      <comment>
+        <para></para>
+      </comment>
+
+      <dm_discussion>
+        <para></para>
+      </dm_discussion>
+    </data_model>
+
+    <queries>
+      <title>Dotazy</title>
+
+      <dotazy>
+        <dotaz>
+          <popis_dotazu>
+            <para>Seznam turnaju, na kterych bylo vice jak 6 kol</para>
+          </popis_dotazu>
+
+          <comment>
+            <para>Komentář k popisu dotazu.</para>
+          </comment>
+
+          <relacni_algebra>Turnaj(pocet_ucastniku &gt; 30)</relacni_algebra>
+
+          <comment>
+            <para>Komentář k relační algebře.</para>
+          </comment>
+
+          <sql>SELECT * 
+FROM Turnaj
+WHERE pocet_ucastniku &gt; 30;</sql>
+
+          <comment>
+            <para>Komentář k SQL dotazu.</para>
+          </comment>
+        </dotaz>
+
+        <dotaz>
+          <popis_dotazu>
+            <para>Jmena a id balicku, ktere jsou modrocerne (zkratka
+            UB).</para>
+          </popis_dotazu>
+
+          <relacni_algebra>Deck(barvy = UB)[jmeno, id]
+</relacni_algebra>
+
+          <sql>SELECT jmeno, id 
+FROM Deck WHERE (barvy = UB)</sql>
+        </dotaz>
+
+        <dotaz>
+          <popis_dotazu>
+            <para>Jmena a id balicku, ktere nejsou modrocerne (vice nez
+            dvoubarevne balicky obsahujici barvy UB nejsou povazovany za
+            UB).</para>
+          </popis_dotazu>
+
+          <relacni_algebra>Deck[jmeno, id] - Deck(barvy = UB)[jmeno, id]</relacni_algebra>
+
+          <sql>(SELECT jmeno, id FROM Deck)
+EXCEPT
+(SELECT jmeno, id FROM Deck WHERE barvy = UB);</sql>
+        </dotaz>
+
+        <dotaz>
+          <popis_dotazu>
+            <para>Názvy všech skladeb A. Dvořáka v repertoáru.</para>
+          </popis_dotazu>
+
+          <relacni_algebra></relacni_algebra>
+
+          <sql>SELECT nazev 
+FROM Skladba NATURAL JOIN Autorstvi NATURAL JOIN Skladatel
+WHERE jmeno='Antonín' AND prijmeni='Dvořák'; </sql>
+        </dotaz>
+
+        <dotaz>
+          <popis_dotazu>
+            <para>Seznam zpěváků, kteří nemají zapůjčeny šaty.</para>
+          </popis_dotazu>
+
+          <relacni_algebra>Zpevak \ {Zpevak &lt;* Zapujcka_satu} </relacni_algebra>
+
+          <sql>SELECT * FROM Zpevak 
+MINUS
+SELECT Zpevak.* 
+    FROM Zpevak JOIN Zapujcka_satu
+         ON Zpevak.RC = Zapujcka_satu.RC;</sql>
+        </dotaz>
+
+        <dotaz>
+          <popis_dotazu>
+            <para>Stejné zadání jako předchozí, řešení pomocí
+            poddotazu.</para>
+          </popis_dotazu>
+
+          <sql>SELECT * 
+FROM Zpevak
+WHERE RC NOT IN (SELECT RC FROM Zapujcka_satu); </sql>
+        </dotaz>
+
+        <dotaz>
+          <popis_dotazu>
+            <para>Seznam dosud neprovedených skladeb (nebyly na programu
+            žádného koncertu), včetně autorů.</para>
+          </popis_dotazu>
+
+          <relacni_algebra>A := Skladba[id, nazev] \ {Skladba &lt;* {Cast_programu * Koncert}}[id, nazev]
+Vysledek := {A *_L Autorstvi}[jmeno, prijmeni, nazev]</relacni_algebra>
+
+          <sql>SELECT jmeno, prijmeni, nazev
+FROM (
+        SELECT id, nazev FROM Skladba
+        MINUS
+        SELECT id, nazev FROM Skladba
+        NATURAL JOIN Cast_programu NATURAL JOIN Koncert
+       ) LEFT JOIN Autorstvi USING (id)
+         LEFT JOIN Skladatel USING(jmeno, prijmeni);
+</sql>
+        </dotaz>
+
+        <dotaz>
+          <popis_dotazu>
+            <para>Seznam vícedílných skladeb.</para>
+          </popis_dotazu>
+
+          <relacni_algebra>Skladba &lt;* Cast_skladby</relacni_algebra>
+
+          <sql>SELECT jmeno, prijmeni, nazev
+FROM (SELECT * FROM Skladba WHERE id IN (SELECT id FROM Cast_skladby)
+      )LEFT JOIN Autorstvi USING (id)
+       LEFT JOIN Skladatel USING(jmeno, prijmeni); </sql>
+        </dotaz>
+
+        <dotaz>
+          <popis_dotazu>
+            <para>Program koncertu 18. 1. 2005.</para>
+          </popis_dotazu>
+
+          <relacni_algebra>{Skladba * Cast_programu * Koncert(cas='18.01.2005')}[id, nazev] </relacni_algebra>
+
+          <sql>ALTER Session SET NLS_DATE_FORMAT='DD.MM.YYYY';
+SELECT jmeno, prijmeni, nazev 
+FROM Skladatel 
+     JOIN Autorstvi using (jmeno, prijmeni)
+     JOIN Skladba using (id)
+     JOIN Cast_programu using (id)
+     JOIN Koncert using (misto, cas)
+WHERE TRUNC(cas)=TRUNC(TO_DATE('18.01.2005')); 
+</sql>
+
+          <comment>
+            <para>Schválně si můžete vyzkoušet, že, když dotaz změníte takto:
+SELECT jmeno, prijmeni, nazev 
+FROM Skladatel 
+     NATURAL JOIN Autorstvi
+     NATURAL JOIN Skladba
+     NATURAL JOIN Cast_programu
+     NATURAL JOIN Koncert
+WHERE TRUNC(cas)=TRUNC(TO_DATE('18.01.2005')); 
+Dostanete ve výsledku místo 7 řádků (správná odpověď) řádků 3528.
+
+ Proč je tomu tak?
+
+Celá záležitost se pokazí projekcí, pokud v klauzuli SELECT necháte *, je výsledek stále ještě správný.
+
+Pokud bychom tedy trvali na použití NATURAL JOIN, lze dotaz formulovat takto:
+
+Select jmeno, prijmeni, nazev
+from 
+  (select * 
+  from  skladatel 
+      natural join autorstvi 
+      natural join skladba 
+      natural join cast_programu
+      natural join koncert
+  WHERE TRUNC(cas)=TRUNC(TO_DATE('18.01.2005'))
+  );
+
+Oracle má zjevně v tomto kontextu problém, ale pouze tehdy, když pomocí NATURAL JOIN
+spojujeme více než 3 tabulky. Například dotaz 7 funguje správně.
+Ať to budeme nazývat "bug" nebo "feature", je třeba s tímto fenoménem počítat!!!</para>
+          </comment>
+        </dotaz>
+
+        <dotaz>
+          <popis_dotazu>
+            <para>Seznam zpěváků se 100% docházkou.</para>
+          </popis_dotazu>
+
+          <relacni_algebra>Zpevak &lt;* {Ucast[RC] \ Ucast(pritomen=0)[RC]} </relacni_algebra>
+
+          <sql>SELECT Zpevak.* 
+FROM Zpevak JOIN (
+         SELECT DISTINCT RC FROM Ucast
+         MINUS
+         SELECT DISTINCT RC FROM Ucast WHERE pritomen=0
+          ) Vzorni ON Zpevak.RC=Vzorni.RC; </sql>
+        </dotaz>
+
+        <dotaz>
+          <popis_dotazu>
+            <para>Stejný dotaz jako předchozí, tentokrát řešený
+            poddotazem.</para>
+          </popis_dotazu>
+
+          <sql>SELECT * 
+FROM Zpevak 
+WHERE RC NOT IN (
+     SELECT RC FROM Ucast WHERE pritomen=0
+      );</sql>
+        </dotaz>
+
+        <dotaz>
+          <popis_dotazu>
+            <para>Opět stejný dotaz řešený vztaženým poddotazem.</para>
+          </popis_dotazu>
+
+          <sql>SELECT * 
+FROM Zpevak 
+WHERE NOT EXISTS (
+        SELECT * FROM Ucast WHERE pritomen=0 AND Ucast.RC=Zpevak.RC
+         );</sql>
+        </dotaz>
+
+        <dotaz>
+          <popis_dotazu>
+            <para>Seznam zpěváků, kteří nemají noty na Čtyři písně o
+            Marii.</para>
+          </popis_dotazu>
+
+          <relacni_algebra>Zpevak \ {Zpevak &lt;* {Zapujcka_not * Publikace * Zarazeni 
+  * Skladba(nazev='Čtyři písně o Marii')}}</relacni_algebra>
+
+          <sql>SELECT jmeno, prijmeni FROM Zpevak
+ MINUS
+SELECT jmeno, prijmeni FROM Zpevak
+     JOIN Zapujcka_not using (RC)
+     JOIN Publikace using (kat_cislo)
+     JOIN Zarazeni using (kat_cislo)
+     JOIN Skladba using (id)
+WHERE nazev='Čtyři písně o Marii'; </sql>
+
+          <comment>
+            <para>Proč ne NATURAL JOIN?  Viz diskuse u dotazu 9.</para>
+          </comment>
+        </dotaz>
+
+        <dotaz>
+          <popis_dotazu>
+            <para>Skladatelé, kteří jsou autorem nějaké skladby a zároveň
+            upravovatelem nějaké skladby.</para>
+          </popis_dotazu>
+
+          <relacni_algebra>{Skladatel &lt;* Autorstvi(je_uprava=0)} ∩ {Skladatel &lt;* Autorstvi(je_uprava&lt;&gt;0)} </relacni_algebra>
+
+          <sql>SELECT jmeno, prijmeni FROM Skladatel JOIN Autorstvi using (jmeno, prijmeni) WHERE je_uprava=0
+ INTERSECT
+SELECT jmeno, prijmeni FROM Skladatel JOIN Autorstvi using (jmeno, prijmeni) WHERE je_uprava&lt;&gt;0;
+</sql>
+        </dotaz>
+
+        <dotaz>
+          <popis_dotazu>
+            <para>Seznam publikací, od kterých je v inventáři méně než pět
+            exemplářů. První realizaci můžeme zjednodušit tak, vybereme ty
+            publikace, kde existují jen exempláře s pořadovými čísly &lt;
+            5.</para>
+          </popis_dotazu>
+
+          <relacni_algebra>Publikace \ {Publikace * Vytisk}(cislo_exemplare &gt;=5)[Publikace.*]</relacni_algebra>
+
+          <sql>SELECT * 
+FROM Publikace A 
+WHERE NOT EXISTS (
+      SELECT * FROM Vytisk
+      WHERE A.kat_cislo=Vytisk.kat_cislo AND cislo_exemplare &gt;= 5);</sql>
+        </dotaz>
+
+        <dotaz>
+          <popis_dotazu>
+            <para>Stejný dotaz s použitím agregace, navíc bez výše použitého
+            zjednodušeni.</para>
+          </popis_dotazu>
+
+          <sql>SELECT * 
+FROM Publikace
+WHERE 5 &gt; (SELECT COUNT(*) FROM Vytisk
+            WHERE Publikace.kat_cislo=Vytisk.kat_cislo);</sql>
+        </dotaz>
+
+        <dotaz>
+          <popis_dotazu>
+            <para>Seznam publikací, které obsahují více než jednu
+            skladbu.</para>
+          </popis_dotazu>
+
+          <relacni_algebra>Publikace &lt;* 
+  {Zarazeni[kat_cislo=k_c AND id &lt; id_d]Zarazeni&lt;kat_cislo -&gt; k_c, id -&gt; id_d&gt;} </relacni_algebra>
+
+          <sql>SELECT * 
+FROM Publikace NATURAL JOIN (
+      SELECT DISTINCT A.kat_cislo 
+      FROM Zarazeni A JOIN Zarazeni B 
+           ON A.kat_cislo=B.kat_cislo AND A.id &lt; B.id
+);</sql>
+        </dotaz>
+
+        <dotaz>
+          <popis_dotazu>
+            <para>Stejný dotaz přehledněji s agregací.</para>
+          </popis_dotazu>
+
+          <sql>SELECT * 
+FROM Publikace 
+WHERE 1 &lt; (
+            SELECT COUNT(*) FROM Zarazeni
+            WHERE Zarazeni.kat_cislo=Publikace.kat_cislo
+      ); </sql>
+        </dotaz>
+
+        <dotaz>
+          <popis_dotazu>
+            <para>Seznam zpěváků, kteří nikdy nezpívali žádnou skladbu Jana
+            Hanuše.</para>
+          </popis_dotazu>
+
+          <relacni_algebra>  -- Všechny události, kde se zpívala nějaká skladba Jana Hanuše:
+  A := {Skladatel(jmeno='Jan' and prijmeni='Hanuš') 
+      * Autorstvi * Skladba * Cast_programu * Udalost}[misto, cas]
+  -- Seznam zpěváků, kteří byli na některé z těchto událostí:
+  B := {A * Ucast(pritomen&lt;&gt;0)}[RC] 
+Vysl := Zpevak \ {Zpevak * B} </relacni_algebra>
+
+          <sql>SELECT jmeno, prijmeni 
+FROM Zpevak 
+WHERE RC NOT IN (
+      SELECT RC FROM Ucast 
+      WHERE (misto, cas) IN (
+         SELECT misto, cas
+         FROM Skladatel
+              JOIN Autorstvi using (jmeno, prijmeni)
+              JOIN Skladba using (id)
+              JOIN Cast_programu using (id)
+              JOIN Udalost using (misto, cas)
+         WHERE jmeno='Jan' AND prijmeni LIKE 'Hanuš'
+         )
+      AND pritomen &lt;&gt; 0
+      );</sql>
+
+          <comment>
+            <para>Proč ne NATURAL JOIN? Viz diskuse u dotazu 9.</para>
+          </comment>
+        </dotaz>
+
+        <dotaz>
+          <popis_dotazu>
+            <para>Seznam všech koncertů a generálek.</para>
+          </popis_dotazu>
+
+          <relacni_algebra>{Koncert[cas, misto] x {('Koncert')}} 
+ ∪ {Zkouska(je_generalka)[cas, misto] x {('Generálka')}} </relacni_algebra>
+
+          <sql>SELECT cas, misto, 'Koncert' AS druh FROM Koncert
+ UNION
+SELECT cas, misto, 'Generálka' AS druh FROM Zkouska WHERE je_generalka&lt;&gt;0
+ORDER BY cas;</sql>
+        </dotaz>
+
+        <dotaz>
+          <popis_dotazu>
+            <para>Seznam koncertů, na nichž byly provedeny všechny skladby B.
+            Martinů na repertoáru.</para>
+          </popis_dotazu>
+
+          <relacni_algebra>  -- ID všech skladeb B. Martinů:
+ SkladbyBM := {Skladatel(jmeno='Bohuslav' and prijmeni='Martinů') 
+               * Autorstvi * Skladba}[id]
+  -- Všechny kombinace koncert-skladba B. Martinů:
+  VseKomb := SkladbyBM x Koncert[misto, cas]
+  -- Všechny neuskutečněné kombinace:
+  Nerealne := VseKomb \ Cast_programu[id, misto, cas]
+  -- Koncerty, na nichž chyběla nějaká skladba B. Martinů:
+  Neuplne := Koncert &lt;* Nerealne
+
+Vysl := Koncert \ Neuplne </relacni_algebra>
+
+          <sql>SELECT misto, cas FROM Koncert
+ MINUS
+SELECT misto, cas 
+FROM (SELECT id FROM Skladatel
+           JOIN Autorstvi using (jmeno, prijmeni)
+           JOIN Skladba using (id)
+      WHERE jmeno='Bohuslav' AND prijmeni='Martinů'
+      ) CROSS JOIN Koncert
+WHERE (id, misto, cas) NOT IN (SELECT id, misto, cas
+                               FROM Cast_programu); </sql>
+        </dotaz>
+
+        <dotaz>
+          <popis_dotazu>
+            <para>Který zpěvák má největší z půjčených šatů?</para>
+          </popis_dotazu>
+
+          <sql>SELECT jmeno, prijmeni, velikost 
+FROM Zpevak
+     JOIN Zapujcka_satu using (RC)
+     JOIN Saty using (inv_cislo)
+WHERE velikost=(SELECT MAX(velikost) FROM Saty NATURAL JOIN Zapujcka_satu); </sql>
+
+          <comment>
+            <para>Proč ne NATURAL JOIN?  Viz diskuse u dotazu 9.</para>
+          </comment>
+        </dotaz>
+
+        <dotaz>
+          <popis_dotazu>
+            <para>Přehled účasti na zkouškách (v procentech).</para>
+          </popis_dotazu>
+
+          <sql>SELECT jmeno, prijmeni, 
+   CAST((SELECT COUNT(*) FROM Ucast NATURAL JOIN Zkouska
+         WHERE Zpevak.RC=Ucast.RC AND pritomen&lt;&gt;0)
+         AS REAL)
+        /(SELECT COUNT(*) FROM Ucast NATURAL JOIN Zkouska
+          WHERE Zpevak.RC=Ucast.RC
+        )*100 || ' %' AS dochazka
+FROM Zpevak ORDER BY prijmeni; </sql>
+        </dotaz>
+
+        <dotaz>
+          <popis_dotazu>
+            <para>Seznam hlasových skupin: název, počet členů, jméno
+            vedoucího.</para>
+          </popis_dotazu>
+
+          <sql>SELECT  nazev_h,
+  poc_clenu,
+  jmeno || ' ' || prijmeni AS vedouci
+FROM (
+      SELECT zkratka, nazev_h, COUNT(RC) AS poc_clenu
+      FROM Hlas LEFT JOIN Zpevak ON Hlas.zkratka=Zpevak.hlas
+      GROUP BY zkratka, nazev_h
+     )
+     LEFT JOIN Vedeni USING(zkratka) LEFT JOIN Zpevak USING(RC); </sql>
+        </dotaz>
+
+        <dotaz>
+          <popis_dotazu>
+            <para>Seznam míst, na kterých se koncertovalo vícekrát a vždy bylo
+            přítomno více než 50 diváků.</para>
+          </popis_dotazu>
+
+          <sql>SELECT misto, count(misto) AS pocet_koncertu, AVG(divaku) AS prum_divaku
+FROM Koncert
+WHERE divaku &gt; 50 
+GROUP BY misto
+HAVING count(misto) &gt; 1; </sql>
+        </dotaz>
+
+        <dotaz>
+          <popis_dotazu>
+            <para>Skladatel nejvíce zastoupený na koncertech co do počtu
+            skladeb.</para>
+          </popis_dotazu>
+
+          <sql>--Využívám pohled rating_skladatelu:
+SELECT jmeno, prijmeni, pocet 
+FROM Rating_skladatelu
+WHERE pocet = (SELECT MAX(pocet) FROM Rating_skladatelu); </sql>
+        </dotaz>
+
+        <dotaz>
+          <popis_dotazu>
+            <para>Pro divácky nejúspěšnější koncert určit rozdíl ceny
+            vstupného od průměru.</para>
+          </popis_dotazu>
+
+          <sql> SELECT (
+        SELECT vstupne FROM Koncert
+            WHERE divaku = (
+                            SELECT max(divaku) FROM Koncert
+                           )
+       ) - (
+        SELECT AVG(vstupne) FROM Koncert
+       )
+AS odchylka FROM Dual;
+</sql>
+        </dotaz>
+
+        <dotaz>
+          <popis_dotazu>
+            <para>Skladatelé, kteří se mohli během života setkat s Bohuslavem
+            Martinů.</para>
+          </popis_dotazu>
+
+          <sql>SELECT * FROM skladatel
+ WHERE rok_narozeni &lt; (SELECT rok_umrti FROM skladatel
+                       WHERE jmeno='Bohuslav' AND prijmeni='Martinů')
+       AND rok_umrti &gt; (SELECT rok_narozeni FROM skladatel
+                        WHERE jmeno='Bohuslav' AND prijmeni='Martinů');</sql>
+        </dotaz>
+
+        <dotaz>
+          <popis_dotazu>
+            <para>Seznam skladatelů, jejichž skladby byly na programu koncertů
+            s nadprůměrnou návštěvou.</para>
+          </popis_dotazu>
+
+          <sql>SELECT DISTINCT jmeno, prijmeni 
+FROM skladatel
+   JOIN autorstvi using (jmeno, prijmeni)
+   JOIN skladba using (id)
+   JOIN cast_programu using (id)
+   JOIN koncert using (misto, cas)
+WHERE divaku &gt; (SELECT AVG(divaku) FROM koncert); </sql>
+
+          <comment>
+            <para>Proč ne NATURAL JOIN? Viz diskuse u dotazu 9.</para>
+          </comment>
+        </dotaz>
+
+        <dotaz>
+          <popis_dotazu>
+            <para>Koncert, na němž bylo uvedeno nejvíce různých
+            skladeb.</para>
+          </popis_dotazu>
+
+          <sql>SELECT * 
+FROM (
+   SELECT misto, cas, COUNT(*) AS pocet 
+   FROM cast_programu NATURAL JOIN koncert 
+   GROUP BY misto, cas
+      ) WHERE pocet = (
+          SELECT MAX(pocet) FROM (
+               SELECT COUNT(*) AS pocet
+               FROM cast_programu NATURAL JOIN koncert 
+               GROUP BY misto, cas
+              )
+     ); </sql>
+        </dotaz>
+
+        <dotaz>
+          <popis_dotazu>
+            <para>Přehled ošacení - všichni zpěváci a jejich šaty, zároveň
+            všechny šaty a jejich držitelé.</para>
+          </popis_dotazu>
+
+          <sql>SELECT
+    COALESCE(prijmeni, 'VOLNÉ') AS drzitel,
+    inv_cislo, velikost
+FROM Zpevak LEFT JOIN Zapujcka_satu USING(RC)
+     FULL JOIN Saty USING(inv_cislo); </sql>
+        </dotaz>
+
+        <dotaz>
+          <popis_dotazu>
+            <para>Skladatelé a počet uvedení jejich skladeb</para>
+          </popis_dotazu>
+
+          <sql>CREATE OR REPLACE VIEW rating_skladatelu AS 
+SELECT jmeno, prijmeni, count(*) AS pocet 
+FROM Skladatel
+      JOIN Autorstvi using (jmeno, prijmeni)
+      JOIN Skladba using (id)
+      JOIN Cast_programu using (id)
+      JOIN Koncert using (misto, cas) 
+GROUP BY jmeno, prijmeni;
+
+select * from rating_skladatelu;</sql>
+
+          <comment>
+            <para>Všimněte si syntaxe - CREATE OR REPLACE, co to dělá je zřejmé - pokud pohled 
+již existuje v datovém slovníku, je nahrazen novou definicí. 
+Pokud by pohled existoval a vy zadali pouze CREATE VIEW, dostanete chybovou hlášku:
+"ORA-00955: name is already used by an existing object"
+
+Proč JOIN USING namísto NATURAL JOIN?  Viz poznámka u dotazu 9.</para>
+          </comment>
+        </dotaz>
+
+        <dotaz>
+          <popis_dotazu>
+            <para>Vytvoříme redundantní tabulku ucasti_zpevaku, kde budou
+            předspočítané hodnoty. Tuto tabulku naplníme daty. Atribut koef
+            vyjadřuje koeficient (ponechme stranou, co to znamená).</para>
+          </popis_dotazu>
+
+          <sql>drop table ucasti_zpevaku;
+
+create table ucasti_zpevaku (
+  rc number(10),
+  jmeno varchar2(30),
+  prijmeni varchar2(30),
+  zkousek number(4),
+  koncertu number(4),
+  koef number(1));
+
+
+insert into ucasti_zpevaku
+  SELECT rc, jmeno, prijmeni, 
+     (SELECT COUNT(*) FROM Ucast NATURAL JOIN Zkouska
+           WHERE Zpevak.RC=Ucast.RC AND pritomen&lt;&gt;0)
+            as zkousek, 
+     (SELECT COUNT(*) FROM Ucast NATURAL JOIN Koncert
+            WHERE Zpevak.RC=Ucast.RC AND pritomen&lt;&gt;0)
+            as koncertu,
+      0 as koef
+  FROM Zpevak ORDER BY prijmeni;
+
+commit;
+
+select * from ucasti_zpevaku;</sql>
+
+          <comment>
+            <para>Příkaz DROP TABLE na začátku této sekvence je zde opět proto, že předpokládáme vícenásobné
+spouštění skriptu dotazy.sql (viz skripty). Pokud bude odvozena tabulka ucasti_zpevaku již
+existovat, opět bychom dostali hlášku:
+"ORA-00955: name is already used by an existing object"
+Nicméně příkaz CREATE TABLE nemá variantu CREATE OR REPLACE!!!
+
+U testování DML příkazů (INSERT, UPDATE, DELETE) nezapomeňte transakci ukončit 
+příkazem TCL (COMMIT - potvrzení změn nebo ROLLBACK - odvolání změn). 
+
+Když to neuděláte, tak vám následné spuštění skriptu, případně DML nebo DDL příkaz nad
+stejnou tabulkou zůstane viset. 
+
+Z hlediska transakčního zpracování je to správné řešení - zdroje v té tabulce jsou dosud 
+blokovány jinou transakcí!!!
+
+Pokud se do této situace dostanete - může vám pomoci ukončení SQL klienta, ze kterého 
+jste nepotvrzený (tedy nenásledovaný příkazem COMMIT či ROLLBACK) DML příkaz poslali.
+Ale také to může systému chvíli trvat než se vzpamatuje, takže je lepší s tím počítat.
+
+DDL příkazy (CREATE, ALTER, DROP) jsou "samo-potvrzovací" - před jejich provedením se
+automaticky provede COMMIT a po jejich provedení rovněž.
+
+Výše uvedené 3 příkazy můžeme v SQL spojit do jednoho:</para>
+          </comment>
+
+          <sql>drop table ucasti_zpevaku;
+
+create table UCASTI_ZPEVAKU as
+  SELECT rc, jmeno, prijmeni, 
+     (SELECT COUNT(*) FROM Ucast NATURAL JOIN Zkouska
+           WHERE Zpevak.RC=Ucast.RC AND pritomen&lt;&gt;0)
+            as zkousek, 
+     (SELECT COUNT(*) FROM Ucast NATURAL JOIN Koncert
+            WHERE Zpevak.RC=Ucast.RC AND pritomen&lt;&gt;0)
+            as koncertu,
+      0 as koef
+   FROM Zpevak ORDER BY prijmeni;
+
+select * from ucasti_zpevaku;</sql>
+        </dotaz>
+
+        <dotaz>
+          <popis_dotazu>
+            <para>Zpěvákům, kteří zpívají alt nastavíme v relaci
+            ucasti_zpevaku hodnotu atributu koef tak, že vyjadřuje počet jimi
+            zapůjčených výtisků not.</para>
+          </popis_dotazu>
+
+          <sql>update ucasti_zpevaku u
+set koef = 
+    (select count(*) 
+     from zapujcka_not z 
+     where u.rc = z.rc)
+where u.rc in (select rc from zpevak where hlas = 'A');
+
+commit;</sql>
+        </dotaz>
+
+        <dotaz>
+          <popis_dotazu>
+            <para>Z tabulky ucasti_zpevaku vymažeme ty zpěváky, kteří zpívají
+            basy.</para>
+          </popis_dotazu>
+
+          <sql>delete from ucasti_zpevaku
+where rc in (select rc from zpevak where hlas = 'B');
+
+commit;</sql>
+        </dotaz>
+      </dotazy>
+
+      <pokryti_dotazu>
+        <kategorie_dotazu>
+          <entry>A</entry>
+
+          <entry>1, 4, 9</entry>
+
+          <entry>jednoduché dotazy (SELECT ... FROM ... WHERE)</entry>
+        </kategorie_dotazu>
+
+        <kategorie_dotazu>
+          <entry>B</entry>
+
+          <entry>1, 3, 8, 9, 14, 15, 17, 20, 25, 28, 29</entry>
+
+          <entry>Vyber všechny, pro něž platí, že...</entry>
+        </kategorie_dotazu>
+
+        <kategorie_dotazu>
+          <entry>C</entry>
+
+          <entry>5, 7, 13</entry>
+
+          <entry>Vyber všechny, pro něž NEplatí, že...</entry>
+        </kategorie_dotazu>
+
+        <kategorie_dotazu>
+          <entry>D</entry>
+
+          <entry>10, 21</entry>
+
+          <entry>Vyber ty, pro něž všechny...</entry>
+        </kategorie_dotazu>
+
+        <kategorie_dotazu>
+          <entry>E</entry>
+
+          <entry>19</entry>
+
+          <entry>Vyber ty, pro něž žádné...</entry>
+        </kategorie_dotazu>
+
+        <kategorie_dotazu>
+          <entry>F1</entry>
+
+          <entry>2, 5, 17</entry>
+
+          <entry>spojení - JOIN ON</entry>
+        </kategorie_dotazu>
+
+        <kategorie_dotazu>
+          <entry>F2</entry>
+
+          <entry>4, 7, 9, 13, 19, 29, 31</entry>
+
+          <entry>spojení - NATURAL JOIN | JOIN USING</entry>
+        </kategorie_dotazu>
+
+        <kategorie_dotazu>
+          <entry>F3</entry>
+
+          <entry>21</entry>
+
+          <entry>spojení - CROSS JOIN</entry>
+        </kategorie_dotazu>
+
+        <kategorie_dotazu>
+          <entry>F4</entry>
+
+          <entry>7, 8, 24, 31</entry>
+
+          <entry>polospojení (vnější) - LEFT | RIGHT OUTER JOIN</entry>
+        </kategorie_dotazu>
+
+        <kategorie_dotazu>
+          <entry>F5</entry>
+
+          <entry>31</entry>
+
+          <entry>plné (vnější) spojení - FULL (OUTER) JOIN</entry>
+        </kategorie_dotazu>
+
+        <kategorie_dotazu>
+          <entry>G1</entry>
+
+          <entry>3, 6, 8, 11, 15, 16, 18, 19, 21, 22, 28, 29, 30</entry>
+
+          <entry>vnořený dotaz v klauzuli WHERE</entry>
+        </kategorie_dotazu>
+
+        <kategorie_dotazu>
+          <entry>G2</entry>
+
+          <entry>2, 7, 8, 10, 17, 21, 24, 30</entry>
+
+          <entry>vnořený dotaz v klauzuli FROM</entry>
+        </kategorie_dotazu>
+
+        <kategorie_dotazu>
+          <entry>G3</entry>
+
+          <entry>23, 27</entry>
+
+          <entry>vnořený dotaz v klauzuli SELECT</entry>
+        </kategorie_dotazu>
+
+        <kategorie_dotazu>
+          <entry>G4</entry>
+
+          <entry>12, 15, 16, 17</entry>
+
+          <entry>vztažený vnořený dotaz (EXISTS | NOT EXISTS)</entry>
+        </kategorie_dotazu>
+
+        <kategorie_dotazu>
+          <entry>H1</entry>
+
+          <entry>20</entry>
+
+          <entry>množinové sjednocení - UNION</entry>
+        </kategorie_dotazu>
+
+        <kategorie_dotazu>
+          <entry>H2</entry>
+
+          <entry>5, 7, 10, 13, 21</entry>
+
+          <entry>množinový rozdíl - MINUS (v Oracle)</entry>
+        </kategorie_dotazu>
+
+        <kategorie_dotazu>
+          <entry>H3</entry>
+
+          <entry>14</entry>
+
+          <entry>množinový průnik - INTERSECT</entry>
+        </kategorie_dotazu>
+
+        <kategorie_dotazu>
+          <entry>I1</entry>
+
+          <entry>16, 18, 22, 23, 24, 25, 26, 27, 29, 30</entry>
+
+          <entry>agregační funkce (count | sum | min | max| avg)</entry>
+        </kategorie_dotazu>
+
+        <kategorie_dotazu>
+          <entry>I2</entry>
+
+          <entry>24, 25, 30I</entry>
+
+          <entry>agregační funkce nad seskupenými řádky - GROUP BY
+          (HAVING)</entry>
+        </kategorie_dotazu>
+
+        <kategorie_dotazu>
+          <entry>J</entry>
+
+          <entry>10+11+12</entry>
+
+          <entry>stejný dotaz ve třech různých formulacích SQL</entry>
+        </kategorie_dotazu>
+
+        <kategorie_dotazu>
+          <entry>K</entry>
+
+          <entry>25</entry>
+
+          <entry>všechny klauzule - SELECT FROM WHERE GROUP BY HAVING ORDER
+          BY</entry>
+        </kategorie_dotazu>
+
+        <kategorie_dotazu>
+          <entry>L</entry>
+
+          <entry>32</entry>
+
+          <entry>pohled VIEW</entry>
+        </kategorie_dotazu>
+
+        <kategorie_dotazu>
+          <entry>M</entry>
+
+          <entry>26</entry>
+
+          <entry>dotaz nad pohledem</entry>
+        </kategorie_dotazu>
+
+        <kategorie_dotazu>
+          <entry>L</entry>
+
+          <entry>33</entry>
+
+          <entry>INSERT .... SELECT příkaz</entry>
+        </kategorie_dotazu>
+
+        <kategorie_dotazu>
+          <entry>M</entry>
+
+          <entry>34</entry>
+
+          <entry>UPDATE s vnořeným SELECT příkazem</entry>
+        </kategorie_dotazu>
+
+        <kategorie_dotazu>
+          <entry>N</entry>
+
+          <entry>35</entry>
+
+          <entry>DELETE s vnořeným SELECT příkazem</entry>
+        </kategorie_dotazu>
+      </pokryti_dotazu>
+
+      <comment>
+        <para>V semestrálce se požaduje alespoň 10 dotazů v relační algebře a alespoň 25 SQL příkazů. 
+SQL příkazů samozřejmě můžete mít více (jako v této semestrálce), je ale podstatné, abyste 
+jimi pokryli všechny kategorie ve výše uvedené tabulce. 
+Samozřejmě tedy jeden dotaz může pokrýt více kategorií.</para>
+      </comment>
+    </queries>
+
+    <scripts>
+      <title>Skripty</title>
+
+      <para>Zdroj pro ER-modelář - <link
+      url="pevecky_sbor.xml">pevecky_sbor.xml</link></para>
+
+      <para>Skript pro vytvoření databáze - <link
+      url="create.sql">create.sql</link> - vytvořený ER Modelářem, nicméně zde
+      můžete udělat svoje úpravy. Samozřejmě je vhodné je komentovat.</para>
+
+      <comment>
+        <para>I v této sekci můžete komentovat jednotlivé odstavce.
+
+Když vyrobíte uvnitř odstavce (para) entitu link, nezapomeňte, 
+že je třeba u ní zadat též hodnotu atributu url.</para>
+      </comment>
+
+      <para>Skript pro vložení dat do databáze - <link
+      url="data.sql">data.sql</link></para>
+
+      <comment>
+        <para>Vaše testovací data by měla být natolik rozsáhlá a tak navržená, abyste na nich mohli dobře ukázat,
+že vámi navržené SQL příkazy fungují správně.
+Insert příkazy můžete psát přímo v nějakém textovém editoru, ale můžete také své tabulky naplnit pomocí
+formulářů v nástroji SQL Developer, který umožňuje exportovat data z tabulek ve formě INSERT příkazů.</para>
+      </comment>
+
+      <para>Skript s SQL dotazy, který je možné přímo spustit - <link
+      url="dotazy.sql">dotazy.sql</link></para>
+
+      <comment>
+        <para>Pokud máte k dispozici nějaký xslt procesor, pak si výše uvedený skript můžete snadno vyrobit
+ze zdrojového textu semestrálky pomocí formátovací šablony
+ <link url="http://service.felk.cvut.cz/courses/X36DBS/xml/make_sql_queries_script.xsl">http://service.felk.cvut.cz/courses/X36DBS/xml/make_sql_queries_script.xsl</link>
+
+Pokud nemáte k dispozici XSLT procesor, ale používáte Firefox (nebo Mozillu - tedy Sea Monkey, 
+nebo jak se to vlastně teď jmenuje), pak lze použít tento postup:
+
+1. Stáhněte si html dokument:
+<link url="http://service.felk.cvut.cz/courses/X36DBS/xml/zobraz_dotazy.html">http://service.felk.cvut.cz/courses/X36DBS/xml/zobraz_dotazy.html</link>
+    a umístěte ho do svého projektového adresáře na service.felk.cvut.cz.
+
+2. Zdrojový text vaší semestrálky (umístěn tamtéž) nechť se jmenuje semestralka.xml 
+    (jinak je třeba náležitě editovat soubor zobraz_dotazy.html, viz komentáře uvnitř)
+
+3. Když nyní (ve FireFoxu nebo Mozille) necháte zobrazit soubor zobraz_dotazy.html (umístěný ve vašem
+    projektovém adresáři), tak javascript vložený v této stránce provede XSLT transformaci, jejímž výsledkem
+    bude stránka, ve které je výstupní skript dotazy.sql. Je uzavřený v elementu &lt;pre&gt; takže zachovává
+    formátování. Stačí jej tedy přes schránku vložit do textového souboru dotazy.sql
+
+Výsledek celého postupu aplikovaný na ukázkový soubor test.xml) je zde:
+<link url="http://service.felk.cvut.cz/courses/X36DBS/xml/test/zobraz_dotazy_test.html">http://service.felk.cvut.cz/courses/X36DBS/xml/test/zobraz_dotazy_test.html</link>
+
+
+Jednotlivé SQL příkazy budete zřejmě ladit v nástroji SQLDeveloper, protože je to nejpohodlnější.
+Vřele však doporučuji použít řádkového klienta sqlplus (pro generování výstupu - viz dotazy.html) do vaší semestrálky.. 
+Umožňuje totiž formátovat výstup přímo do html. Je to zařízeno pomocí příkazu 
+SET MARKUP HTML a několika dalších příkazů SET, které nastavují prostředí SQL*Plus klienta:
+
+set pagesize 1000
+set echo on
+set markup html on spool on head "
+&lt;title&gt;X36DBS - Čtvrtek 7.30 - Zbyněk Lstibůrek - Výstup SQL příkazů &lt;/title&gt; 
+&lt;style type ='text/css'&gt;&lt;!--body {background: #ffffc6} --&gt;&lt;/style&gt;" 
+body "&lt;h2&gt;X36DBS - Čtvrtek 7.30 - Zbyněk Lstibůrek - Výstup SQL příkazů &lt;/h2&gt;"
+spool dotazy.html
+
+...... pak jsou samotné dotazy, s jejich slovním zadáním (komentář je uvozen pomocí --)
+
+set markup html off
+spool off
+
+!!! A ještě pozor - v tomto komentáři jsem kvůli formátování rozdělil příkaz set markup thml on
+na 4 řádky. Nicméně v souboru dotazy.sql, tohle neprojde !!!!
+
+
+Spuštění souboru dotazy.sql v prostředí SQL*Plus klienta (na solarisech) vypadá takto
+(předpokládám, že v aktuálním adresáři máte skript dotazy.sql, po skončení bude výstup v dotazy.html):
+
+-bash-3.00$ sqlplus
+
+SQL*Plus: Release 10.2.0.2.0 - Production on Mon Sep 24 11:26:50 2007
+
+Copyright (c) 1982, 2005, Oracle.  All Rights Reserved.
+
+Enter user-name: &lt;vaze_uživatelské_jméno&gt;
+Enter password: &lt;vaše_heslo&gt;
+
+Connected to:
+Oracle Database 10g Enterprise Edition Release 10.2.0.2.0 - Production
+With the Partitioning and Data Mining options
+
+SQL&gt; @dotazy.sql
+...... Teď se provádí dotazy, výstup jde na obrazovku a do souboru dotazy.html
+
+SQL&gt; quit
+Disconnected from Oracle Database 10g Enterprise Edition Release 10.2.0.2.0 - Production
+With the Partitioning and Data Mining options
+-bash-3.00$     
+
+
+(Jak vidno, podstatným příkazem v SQL*Plus klientovi je "@jmeno</para>
+      </comment>
+
+      <para>Výstup předchozího skriptu - <link
+      url="dotazy.html">dotazy.html</link>.</para>
+
+      <comment>
+        <para>Vyrobil jsem ho výše uvedeným postupem - tedy s použitím šablony, která ze zdrojového textu vaší semestrálky
+vytáhne pouze SQL příkazy (a jejich slovní specifikaci, ze které udělá komentář) a obalí to řídícími příkazy
+pro vytvoření HTML stránky. 
+Vycházím z toho, že příkazy budete ladit jednotlivě (zřejmě v nástroji SQL Developer, kde to je velmi pohodlné).
+Pro celkovou kontrolu je však mnohem lepší mít všechno pěkně v jednom dokumentu.</para>
+      </comment>
+    </scripts>
+
+    <conclussions>
+      <title>Závěr</title>
+
+      <para>Úspěšně jsem vytvořil svůj první databázový projekt a osvojil jsem
+      si základní metody databázového návrhu. Vzniklé databázi lze jistě
+      vytknout řadu nedostatků. Ty pramení zejména z toho, že v době vytváření
+      ER schématu jsem neměl jasnou představu o některých implementačních
+      problémech souvisejících např. se spojováním tabulek. Kdybych navrhoval
+      databázi znovu, asi bych nevolil za klíč řetězcové atributy, tím méně
+      jejich dvojice. Také bych lépe rozložil atributy v ISA hierarchii
+      Událost-Koncert-Zkouška, aby se např. místo konání nekopírovalo do všech
+      instancí (to souvisí i s předchozí poznámkou o volbě klíčů). Protože
+      jsem si tyto problémy začal naplno uvědomovat teprve v okamžiku, kdy
+      jsem měl již hotová zkušební data a zabýval se dotazy, rozhodl jsem se
+      schéma již neměnit a vyhnout se tak zavlečení nějakých dalších
+      chyb.</para>
+
+      <comment>
+        <para>Stejně tak lze komentovat závěr.</para>
+      </comment>
+    </conclussions>
+
+    <references>
+      <title>Odkazy</title>
+
+      <para>[1] Pokorný, Jaroslav, Halaška, Ivan, Databázové systémy, Praha
+      1998</para>
+
+      <comment>
+        <para>A bude-li to třeba, můžete komentovat také odkazy.</para>
+      </comment>
+
+      <para>[2] Šimůnek, Milan, SQL, kompletní kapesní průvodce, Praha
+      1997</para>
+    </references>
+  </content>
+</sproject>

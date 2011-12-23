@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+    <h:head>
+        <title>Passangers</title>
+    </h:head>
+    <h:body>
+            <ui:param name="pageTitle" value="#{msgs.passangers}" />
+                <h:form>
+                    <h1><h:outputText value="Passangers"/></h1>
+                    <h:commandLink action="#{passangers.newPassanger}" value="Add passanger" />
+                    <h:dataTable value="#{passangers.allPassangers}" var="item" styleClass="dataTable">
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="Name"/>
+                            </f:facet>
+                            <h:outputText value="#{item.firstName} #{item.surname}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="City"/>
+                            </f:facet>
+                            <h:outputText value="#{item.city}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="Username"/>
+                            </f:facet>
+                            <h:outputText value="#{item.username}"/>
+                        </h:column>
+                        <h:column>
+                            <h:commandButton value="Edit" action="#{passangers.editPassanger(item)}" />
+                        </h:column>
+                        <h:column>
+                            <h:commandButton value="Remove" action="#{passangers.removePassanger(item)}" />
+                        </h:column>
+                    </h:dataTable>
+                <h:commandLink action="admin" value="#{msgs.back}" immediate="true" />
+                    <h:messages />
+                </h:form>
+    </h:body>
+</html>
+

@@ -1,0 +1,54 @@
+Úkolem je realizovat program, který dokáže rešit soustavy lineárních rovnic pro libivolný pocet promenných.
+
+Program ocekává data na standardním vstupu. Soustava rovnic je zadaná jako matice n x n+1 desetinných císel. Každý rádek definuje jednu rovnici soustavy. Prvních n císel na rádku predstavuje koeficienty u promenných v zadávané rovnici a n+1 císlo pak hodnotu pravé strany. Zadávání soustavy je ukonceno signalizovaným eof. Pro testování je doporuceno uložit si zadání do textového souboru a tento soubor pak presmerovat testovanému programu na standardní vstup,
+
+Výstup programu je vypoctené rešení soustavy rovnic. Pokud soustava nemá rešení nebo má nekonecne mnoho rešení, pak program odpoví jedním rádkem podle ukázky níže. Pokud má soustava práve jedno rešení, pak program toto rešení zobrazí, pro každou neznámou na jednom rádku podle ukázky níže. V každém prípade je za posledním rádkem výpisu odrádkování (endl).
+
+Program detekuje chybu pokud na vstupu není desetinné císlo nebo pokud vstup není clenen jako matice n x n+1 císel. V takovém prípade zobrazí chybové hlášení podle ukázky. Za prípadným chybovým hlášením je odrádkování (endl).
+
+Realizovaný program nesmí využívat trídy z STL (vector, list, ...). Spouštení programu probíhá v omezeném prostredí, kde je k dispozici pouze omezená velikost pameti (stací pro uložení matice v binární podobe) a kde je limitována dobou behu (rozsah vstupních dat je volen tak, aby kubický algoritmus rešení soustavy vyhovel).
+Ukázka práce programu:
+
+1 2 3 5
+4 5 6 8
+7 8 10 11
+Jedno reseni:
+x1 = -3
+x2 = 4
+x3 = 0
+
+1 2 3 5
+4 5 6 8
+7 8 9 11
+Nekonecne mnoho reseni.
+
+1 2 3 5
+4 5 6 8
+7 8 9 21
+Reseni neexistuje.
+
+1 2 3 4 5 6
+9 8 7 6 5 4
+1 6 4 6 3 8
+9 8 2 5 3 1
+8 5 3 1 4 0
+Jedno reseni:
+x1 = -0.973684
+x2 = 0.736842
+x3 = 0.242105
+x4 = 0.2
+x5 = 0.794737
+
+1 2 4 8
+3 4 8 9
+5 6 8 6 3 
+Nespravny vstup.
+
+2 3 6
+4 7 aa
+Nespravny vstup.
+
+Nápoveda:
+
+    * Pro rešení soustavy použijte Gaussovu eliminacní metodu.
+    * Pro rozhodnutí žádné/nekonecne rešení se hodí Frobeniova podmínka.

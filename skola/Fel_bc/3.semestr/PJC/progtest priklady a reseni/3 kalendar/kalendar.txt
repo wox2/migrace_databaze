@@ -1,0 +1,58 @@
+Úkolem je realizovat program, terý bude na svém výstupu zobrazovat kalendár pro zadaný mesíc. Vstupem programu je mesíc a rok, pro který se kalendár zobrazuje. Výstupem je kalendár, ve tvaru podle ukázky níže. Pro nesprávný vstup je zobrazena chybová hláška.
+
+Pro jednoduchost uvažujte pouze Gregoriánský kalendár, zanedbejte zmenu kalendáre -- požadovaná je správná funkcionalita po roce 1753 (roky do letopoctu 1753 nejsou testované).
+
+Pri zobrazování kalendáre mejte na pameti, že je požadovaná presná shoda. Za posledním rádkem je odrádkování (endl), a to jak pri zobrazní kalendáre tak pri zobrazení chybového hlášení.
+Ukázka behu programu:
+
+Zadejte mesic a rok:
+10 2008
+Rijen 2008
+Po     06 13 20 27
+Ut     07 14 21 28
+St  01 08 15 22 29
+Ct  02 09 16 23 30
+Pa  03 10 17 24 31
+So  04 11 18 25
+Ne  05 12 19 26
+
+Zadejte mesic a rok:
+1 2000
+Leden 2000
+Po     03 10 17 24 31
+Ut     04 11 18 25
+St     05 12 19 26
+Ct     06 13 20 27
+Pa     07 14 21 28
+So  01 08 15 22 29
+Ne  02 09 16 23 30
+
+Zadejte mesic a rok:
+2 1900
+Unor 1900
+Po     05 12 19 26
+Ut     06 13 20 27
+St     07 14 21 28
+Ct  01 08 15 22
+Pa  02 09 16 23
+So  03 10 17 24
+Ne  04 11 18 25
+
+Zadejte mesic a rok:
+12 1980
+Prosinec 1980
+Po  01 08 15 22 29
+Ut  02 09 16 23 30
+St  03 10 17 24 31
+Ct  04 11 18 25
+Pa  05 12 19 26
+So  06 13 20 27
+Ne  07 14 21 28
+
+Zadejte mesic a rok:
+13 2000
+Nespravny vstup.
+
+Zadejte mesic a rok:
+bflm 2000
+Nespravny vstup.

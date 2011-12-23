@@ -1,0 +1,64 @@
+{VERSION 6 0 "IBM INTEL NT" "6.0" }
+{USTYLETAB {CSTYLE "Maple Input" -1 0 "Courier" 0 1 255 0 0 1 0 1 0 0 
+1 0 0 0 0 1 }{CSTYLE "2D Math" -1 2 "Times" 0 1 0 0 0 0 0 0 2 0 0 0 0 
+0 0 1 }{CSTYLE "2D Comment" 2 18 "" 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 }
+{CSTYLE "2D Output" 2 20 "" 0 1 0 0 255 1 0 0 0 0 0 0 0 0 0 1 }
+{CSTYLE "" 0 21 "" 0 1 0 0 0 1 0 0 0 0 2 0 0 0 0 1 }{PSTYLE "Normal" 
+-1 0 1 {CSTYLE "" -1 -1 "" 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 }0 0 0 -1 
+-1 -1 0 0 0 0 0 0 -1 0 }{PSTYLE "Heading 1" 0 3 1 {CSTYLE "" -1 -1 "" 
+1 18 0 0 0 0 0 1 0 0 0 0 0 0 0 0 }1 0 0 0 8 4 0 0 0 0 0 0 -1 0 }
+{PSTYLE "Maple Output" 0 11 1 {CSTYLE "" -1 -1 "" 0 1 0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 }3 3 0 -1 -1 -1 0 0 0 0 0 0 -1 0 }}
+{SECT 0 {EXCHG {PARA 0 "" 0 "" {MPLTEXT 0 21 42 "Interval spolehlivost
+i            fint.mws" }}{PARA 0 "" 0 "" {TEXT -1 26 "pro rozptyl rozd
+\354len\355  N( " }{XPPEDIT 18 0 "mu;" "6#%#muG" }{TEXT -1 3 " ; " }
+{XPPEDIT 18 0 "sigma;" "6#%&sigmaG" }{TEXT -1 4 "^2)." }}}{SECT 0 
+{PARA 3 "" 0 "" {TEXT -1 12 "  Zad\341n\355 dat" }}{PARA 0 "" 0 "" 
+{TEXT -1 0 "" }}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 20 "restart:with
+(stats):" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 12 "alpha:=0.05:" }
+}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 188 "data:=[0.891,0.552,0.001,
+0.081,0.141,0.764,0.851,0.648,0.312,0.281,0.249,0.999,0.917,0.742,0.19
+7,0.686,0.333,0.473,0.344,0.311,0.644,0.741,0.892,0.338,0.618,0.135,0.
+638,0.043,0.805,0.066]:" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 25 "
+n:=describe[count](data);" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%\"nG\"#
+I" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 37 "S2:=describe[moment[2,
+mean,1]](data);" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%#S2G$\"+2;\"oB*!#
+6" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 32 "s2:=describe[variance[
+1]](data);" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%#s2G$\"+2;\"oB*!#6" }}
+}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 22 "describe[range](data);" }}
+{PARA 11 "" 1 "" {XPPMATH 20 "6#;$\"\"\"!\"$$\"$***F&" }}}{EXCHG 
+{PARA 0 "> " 0 "" {MPLTEXT 1 0 21 "describe[mean](data);" }}{PARA 11 "
+" 1 "" {XPPMATH 20 "6#$\"+nmm(*[!#5" }}}{EXCHG {PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 13 "var:=0.5^2/3;" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#$\"+
+LLLL$)!#6" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 0 "" }}}}{SECT 0 
+{PARA 3 "" 0 "" {TEXT -1 22 "  Oboustrann\375 interval" }}{PARA 0 "" 
+0 "" {TEXT -1 0 "" }}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 44 "v1:=sta
+tevalf[icdf,chisquare[n-1]](alpha/2);" }}{PARA 11 "" 1 "" {XPPMATH 20 
+"6#>%#v1G$\"+qrq/;!\")" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 46 "v
+2:=statevalf[icdf,chisquare[n-1]](1-alpha/2);" }}{PARA 11 "" 1 "" 
+{XPPMATH 20 "6#>%#v2G$\"+!eGAd%!\")" }}}{EXCHG {PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 15 "A:=S2*(n-1)/v2;" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%
+\"AG$\"+,rdee!#6" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 15 "B:=S2*(
+n-1)/v1;" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%\"BG$\"+p6Ep;!#5" }}}
+{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 41 "print(\"Interval spolehlivos
+ti je (A,B)\");" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#Q@Interval~spolehli
+vosti~je~(A,B)6\"" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 0 "" }}}}
+{SECT 0 {PARA 3 "" 0 "" {TEXT -1 23 "  Pravostrann\375 interval" }}
+{PARA 0 "" 0 "" {TEXT -1 0 "" }}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 
+43 "v11:=statevalf[icdf,chisquare[n-1]](alpha);" }}{PARA 11 "" 1 "" 
+{XPPMATH 20 "6#>%$v11G$\"+=m$3x\"!\")" }}}{EXCHG {PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 16 "B:=S2*(n-1)/v11;" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>
+%\"BG$\"+I4m7:!#5" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 48 "print(
+\"Interval spolehlivosti je (infinity,B)\");" }}{PARA 11 "" 1 "" 
+{XPPMATH 20 "6#QGInterval~spolehlivosti~je~(infinity,B)6\"" }}}{EXCHG 
+{PARA 0 "> " 0 "" {MPLTEXT 1 0 0 "" }}}}{SECT 0 {PARA 3 "" 0 "" {TEXT 
+-1 22 "  Levostrann\375 interval" }}{PARA 0 "" 0 "" {TEXT -1 0 "" }}
+{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 45 "v21:=statevalf[icdf,chisquar
+e[n-1]](1-alpha);" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%$v21G$\"+!y'pbU
+!\")" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 16 "A:=S2*(n-1)/v21;" }
+}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%\"AG$\"+J&GVH'!#6" }}}{EXCHG {PARA 
+0 "> " 0 "" {MPLTEXT 1 0 48 "print(\"Interval spolehlivosti je (A,infi
+nity)\");" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#QFInterval~spolehlivosti~
+je(A,infinity)6\"" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 0 "" }}}}}
+{MARK "4 4 0 0" 33 }{VIEWOPTS 1 1 0 1 1 1803 1 1 1 1 }{PAGENUMBERS 0 
+1 2 33 1 1 }

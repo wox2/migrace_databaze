@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <h:head>
+        <title>Spoj</title>
+    </h:head>
+    <h:body>
+        <ui:composition template="../resources/composition.xhtml">
+        <ui:param name="pageTitle" value="Edit station" />
+            <ui:define name="content">
+            <h1><h:outputText value="Edit station" /></h1>
+            <h:form>
+                <h:panelGrid columns="3" columnClasses="dataLabel,,">
+                    <h:outputText value="jméno" />
+                    <h:inputText value="#{stations.station.name}" id="un" label="jméno" required="true" requiredMessage="#{msgs.requiredMessage}" />
+                    <h:message for="un" errorClass="errorRequired"/>
+
+
+                </h:panelGrid>
+                <h:commandButton type="submit" value="#{msgs.save}" action="#{stations.saveStation}"/>
+                <h:commandLink action="stations" value="#{msgs.back}" immediate="true" />
+                <h:messages globalOnly="true"/>
+            </h:form>
+            </ui:define>
+        </ui:composition>
+    </h:body>
+</html>

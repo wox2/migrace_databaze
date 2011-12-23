@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="fotbalovy_zapas">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="muzstvo" minOccurs="2" maxOccurs="2"/>
+                <xs:element ref="rozhodci" />
+                <xs:element ref="skore" />
+                <xs:element ref="goly" />
+                <xs:element ref="karty" />
+                <xs:element ref="zaznam" />
+            </xs:sequence>
+            <xs:attribute name="jmeno_turnaje" type="xs:string"/>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="muzstvo">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="sestava" maxOccurs="1"/>
+            </xs:sequence>
+
+            <xs:attribute name="id" type="xs:ID" use="required"/>
+            <xs:attribute name="domaci" type="xs:string"/>
+            <xs:attribute name="hoste" default="ano">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:enumeration value="ano"/>
+                        <xs:enumeration value="ne"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="rozhodci" >
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="hlavni">
+                   
+                </xs:element>
+                <xs:element ref="vedlejsi">
+                   
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="hlavni">
+        <xs:complexType>
+            <xs:all>
+                <xs:element ref="prezdivka"/>
+                <xs:element ref="jmeno"/>
+            </xs:all>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="vedlejsi">
+        <xs:complexType>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="skore" >
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="vysledne"/>
+                <xs:element ref="polocas"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="vysledne">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:any
+            maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="polocas">
+
+    </xs:element>
+
+    <xs:element name="goly" >
+        <xs:complexType>
+            <xs:all>
+                <xs:element name="text" type="xs:string"/>
+                <xs:element name="skorujici_hrac" type="xs:string"/>
+            </xs:all>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="karty" >
+        <xs:complexType>
+            <xs:sequence>
+                <xs:any
+            maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="zaznam" >
+        <xs:complexType>
+            <xs:sequence>
+                <xs:any
+            maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="sestava" >
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="hrac" maxOccurs="1"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="hrac" >
+        <xs:complexType>
+            <xs:all>
+                <xs:element ref="kapitan" minOccurs= "0" maxOccurs="1"/>
+                <xs:element ref="cislo" minOccurs = "1" maxOccurs="1"/>
+            </xs:all>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="kapitan" >
+        <xs:simpleType>
+            <xs:restriction base="xs:string"/>
+        </xs:simpleType>
+    </xs:element>
+
+
+    <xs:element name="cokoliv">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:any
+            maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="cislo">
+        <xs:complexType>
+            <xs:all>
+                <xs:element name="text2" type="xs:string" minOccurs="0"/>
+                <xs:element ref="faul" minOccurs="0" maxOccurs = "1"/>
+                <xs:element ref="jmeno" minOccurs = "1"/>
+                <xs:element ref="prezdivka" />
+            </xs:all>
+            <xs:attribute name="id" type="xs:ID" use="required"/>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="jmeno">
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:minLength value="1"/>
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+
+    <xs:element name="prezdivka">
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:minLength value="1"/>
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+
+
+    <xs:element name="faul">
+        <xs:complexType>
+            <xs:all>
+                <xs:element ref="faul_s_zlutou_kartou" />
+                <xs:element ref="faul_s_cervenou_kartou" />
+            </xs:all>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:complexType name="faul_s_kartou">
+        <xs:attribute name="id" type="xs:ID" use="required"/>
+        <xs:attribute name="faulovany_hrac" type="xs:string" use="optional"/>
+    </xs:complexType>
+
+    <xs:element name="key">
+        <xs:key name="PrimárníKlíč">
+            <xs:selector xpath="."/>
+            <xs:field xpath="."/>
+        </xs:key>
+    </xs:element>
+
+    <xs:element name="key_ref">
+        <xs:keyref name="CizíKlíč" refer="PrimárníKlíč">
+            <xs:selector xpath="."/>
+            <xs:field xpath="."/>
+        </xs:keyref>
+    </xs:element>
+
+
+    <xs:element name="faul_s_zlutou_kartou">
+        <xs:complexType>
+            <xs:complexContent>
+                <xs:extension base="faul_s_kartou">
+                    
+                </xs:extension>
+            </xs:complexContent>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="faul_s_cervenou_kartou">
+        <xs:complexType>
+            <xs:complexContent>
+                <xs:extension base="faul_s_kartou">
+                </xs:extension>
+            </xs:complexContent>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

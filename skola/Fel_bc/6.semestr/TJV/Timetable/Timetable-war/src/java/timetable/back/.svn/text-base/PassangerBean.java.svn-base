@@ -1,0 +1,65 @@
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+package timetable.back;
+
+import java.util.List;
+import javax.ejb.EJB;
+import javax.faces.bean.ManagedBean;
+import javax.faces.bean.SessionScoped;
+import timetable.model.Passanger;
+import timetable.sb.TimetableCenterLocal;
+
+/**
+ *
+ * @author janf
+ */
+@ManagedBean(name="passangers")
+@SessionScoped
+public class PassangerBean {
+
+    @EJB
+    private TimetableCenterLocal tc;
+
+    private Passanger passanger = null;
+
+    /** Creates a new instance of PassangerBean */
+    public PassangerBean() {
+    }
+
+    public String newPassanger() {
+        passanger = new Passanger();
+        return "passanger";
+    }
+
+    public List<Passanger> getAllPassangers() {
+        return tc.getAllPassangers();
+    }
+
+
+    public String savePassanger() {
+        tc.updatePassanger(passanger);
+        return "passangers";
+    }
+
+    public String editPassanger(Passanger passanger) {
+        this.passanger = passanger;
+        return "passanger";
+    }
+
+    public void removePassanger(Passanger passanger) {
+        tc.removePassanger(passanger);
+    }
+
+    public Passanger getPassanger() {
+        return passanger;
+    }
+
+    public void setPassanger(Passanger passanger) {
+        this.passanger = passanger;
+    }
+
+    
+}

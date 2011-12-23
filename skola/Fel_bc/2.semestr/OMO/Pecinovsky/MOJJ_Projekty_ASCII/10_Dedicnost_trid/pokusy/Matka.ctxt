@@ -1,0 +1,18 @@
+#BlueJ class context
+comment0.params=text
+comment0.target=void\ zprava(String)
+comment0.text=\nMetoda\ slouzi\ k\ demonstraci\ relativni\ nezavislosti\ statickych\ metod\nna\ definici\ stejnojmenne\ metody\ v\ dcerine\ tride.\ \ \ \ \ \n\n@param\ text\ Text\ zpravy\n\n
+comment1.target=Matka()
+comment1.text=\nImplicitni\ konstruktor\ vypise\ na\ stadnardni\ vystup\ zpravu\ o\ vytvoreni\ninstance\ s\ uvedenim\ jejiho\ poradi.\ \ \ \ \ \n\n
+comment2.params=s
+comment2.target=Matka(String)
+comment2.text=\nJednoparametricky\ konstruktor\ prida\ za\ zpravu,\ kterou\ by\ vypsal\ \nimplicitni\ konsturktor\ jeste\ text,\ ktery\ prevzal\ jako\ parametr.\n\n@param\ s\ Text\ charakterizujici\ danou\ instanci\n\n
+comment3.target=void\ matka()
+comment3.text=\nMetoda\ slouzi\ k\ demonstraci\ vlivu\ prekryti\ volane\ metody\nna\ funkci\ volajici\ metody.\ \ \ \ \ \n\n
+comment4.target=void\ verejna()
+comment4.text=\nMetoda\ slouzi\ k\ demonstraci\ chovani\ verejnych\ metod\ \nvolanych\ ze\ zdedenych\ metod.\n\n
+comment5.target=void\ zpravy()
+comment5.text=\nMetoda\ slouzi\ k\ demonstraci\ chovani\ statickych\ metod\nv\ hierarchii\ dedicnosti.\n\n
+comment6.target=void\ soukroma()
+comment6.text=\nMetoda\ slouzi\ k\ demonstraci\ chovani\ soukromych\ metod\ \nvolanych\ ze\ zdedenych\ metod.\n\n
+numComments=7

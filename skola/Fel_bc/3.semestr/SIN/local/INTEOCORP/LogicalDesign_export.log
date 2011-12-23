@@ -1,0 +1,301 @@
+Exporting package to 'D:\Fel\3.semestr\SIN\local\INTEOCORP\LogicalDesign.xml'
+Retrieving data for export: diagram elements
+Retrieving data for export: links
+Retrieving data for export: constraints
+Retrieving data for export: attribute tagged values
+Retrieving data for export: operation tagged values
+Retrieving data for export: operation parameter tagged values
+Retrieving data for export: connector tagged values
+Completed data retrieval
+Pre-processing export tree...
+Completed pre-processing
+Processing package: Model
+Element:0: PackageModel
+Element:1: RequirmentsModel
+Element:2: BusinessProcessModel
+Element:3: DeploymentModel
+Element:4: BusinessObjectModel
+Processing package: BusinessObjectModel
+Element:5: StavPozadavku
+Element:6: KomentarPozadavku
+Element:7: Ukol
+Element:8: Rozpracovany
+Element:9: StavUkolu
+Element:10: TypUkolu
+Element:11: PrioritaUkolu
+Element:12: 
+Element:13: Hotovy
+Element:14: Komentar
+Element:15: Zamestnanec
+Element:16: Otevreny
+Element:17: Novy
+Element:18: Uzivatel
+Element:19: Uzavreny
+Element:20: Pozadavek
+Element:21: Zakaznik
+Element:22: KomentarUkolu
+Element:23: Projekt
+Element:24: 
+Element:25: ZastupceZakaznika
+Element:26: 
+Element:27: 
+Element:28: Opravneni
+Diagram: BusinessObjectModel
+Diagram: BusinessObjectModel
+Diagram: StateMachine
+Processing package: BusinessProcessModel
+Element:29: 
+Element:30: 
+Element:31: Oznaci ukol za hotovy
+Element:32: ZakaznikOsoba
+Element:33: 
+Element:34: Zhodnoti pozadavek
+Element:35: 
+Element:36: vytvoreni ukolu
+Element:37: Spravce projektu
+Element:38: 
+Element:39: vytvoreni ukolu
+Element:40: vyber prvniho kandidata ze seznamu
+Element:41: 
+Element:42: Oznaceni ukolu za hotovy
+Element:43: Ma opravneni?
+Element:44: Je potreba ujasnit zadani?
+Element:45: Je vytvorena spolecnost (zakaznik)?
+Element:46: UC01 - Vytvorit Projekt
+Element:47: admin
+Element:48: Je nutne pridat komentar?
+Element:49: 
+Element:50: 
+Element:51: 
+Element:52: 
+Element:53: Je pozadavek realny?
+Element:54: Nutnost vypracovat ukol
+Element:55: Vyhledat ukol
+Element:56: Vytvoreni zakaznika
+Element:57: 
+Element:58: 
+Element:59: 
+Element:60: Issue1
+Element:61: Info ostatnim komentujicim a pridelenemu zamestnanci
+Element:62: Odpovi zakaznikovi
+Element:63: Uzavre pozadavek
+Element:64: 
+Element:65: Vytvoreni zakaznika
+Element:66: 
+Element:67: Je pozadavek realny
+Element:68: UC13 - Vytvorit Zakaznika
+Element:69: 
+Element:70: Sprava projektu
+Element:71: UC10 - Komentovat ukol
+Element:72: UC06 - Komentovat pozadavek
+Element:73: 
+Element:74: 
+Element:75: Zakaznik
+Element:76: Vytvorit novou osobu
+Element:77: 
+Element:78: 
+Element:79: UC06 - Komentovat pozadavek
+Element:80: Osoba
+Element:81: Sprava uzivatelu
+Element:82: 
+Element:83: vytvoreni poradi zamestnancu podle vhodnosti
+Element:84: 
+Element:85: Upresnovani zadani ukolu
+Element:86: prirazeni ukolu zamestnanci
+Element:87: 
+Element:88: 
+Element:89: Potrebuje vyresit problem
+Element:90: 
+Element:91: 
+Element:92: Informace o ukolu
+Element:93: Nastavit nazev
+Element:94: 
+Element:95: zhodnoceni zamestnanosti kandidata
+Element:96: Priradit projekt Spravci
+Element:97: ma moc ukolu?
+Element:98: Vytvoreni popisu
+Element:99: Admin
+Element:100: Pojmenovat projekt
+Element:101: Zapsat komentar
+Element:102: Pridat komentar
+Element:103: 
+Element:104: Event2
+Element:105: Informovani zakaznika a spravce projektu
+Element:106: Zalozit projekt
+Element:107: Vytvoreni pozadavku
+Element:108: Pracuje na ukolu
+Element:109: 
+Element:110: UC04 - Vytvorit ukol
+Element:111: Vytvoreni zakaznika
+Element:112: Komentuje ukol
+Element:113: Existuje zakaznik se stejnym nazvem?
+Element:114: Je potreba komentovat ukol?
+Element:115: urceni vhodnosti zamestnancu
+Element:116: otevreni projektu
+Element:117: 
+Element:118: UC05 - Vytvorit pozadavek
+Element:119: prideleni ukolu zamestnanci
+Element:120: informovani zamestnance
+Element:121: 
+Element:122: Zamestnanec prideleny k ukolu
+Element:123: Sprava zakazniku
+Element:124: Priradit spolecnost (zakaznik) k projektu
+Element:125: UC16 - Uprava zakaznika
+Element:126: Activity1
+Element:127: Komentuje ukol
+Element:128: Priradit osobu k spolecnosti (zakaznik)
+Element:129: Pridat komentar
+Element:130: Admin
+Element:131: 
+Element:132: Vyhledat projekt
+Element:133: Vytvoreni ukolu
+Element:134: Splni ukol
+Element:135: 
+Element:136: Pridat komentar
+Element:137: 
+Element:138: Sprava ukolu
+Element:139: UC09 - Oznacit ukol za hotovy
+Element:140: odstraneni kandidata ze seznamu
+Element:141: 
+Element:142: 
+Element:143: Odesle emailem pozadavek na vytvoreni ukolu spravci projektu
+Element:144: 
+Element:145: Zakaznik prida pozadavek a jeho popis (prvni komentar)
+Element:146: Vytvareni osob (zakaznik)
+Element:147: 
+Element:148: Vytvoreni projektu
+Element:149: 
+Element:150: Komentovani ukolu
+Element:151: UC07 - Uzavrit pozadavek
+Element:152: Zpracovani ukolu
+Element:153: 
+Element:154: vyhledani projektu
+Element:155: UC08 - Pridelit zamestnance k úkolu
+Element:156: admin
+Element:157: UC02-Upravit Projekt
+Element:158: 
+Element:159: 
+Element:160: Spravce projektu
+Diagram: BusinessProcessModel
+Diagram: Pridani komentare
+Diagram: Vytvoreni ukolu
+Diagram: Prideleni ukolu zamestnanci
+Diagram: Vytvoreni projektu
+Diagram: Reseni ukolu
+Diagram: Vytvoreni zakaznika
+Diagram: Vytvoreni ukolu
+Processing package: RequirmentsModel
+Element:161: NonFunctionalRequiments
+Element:162: Use Case Model
+Element:163: FunctionalRequiments
+Diagram: RequirmentsModel
+Processing package: FunctionalRequiments
+Element:164: RQ19:Smazani zakaznika
+Element:165: RQ10: vyhledat ukol podle kriteria
+Element:166: RQ04: Oznaceni pozadavku za uzavreny
+Element:167: RQ01: Evidence pozadavku
+Element:168: RQ17:Evidence zakazniku
+Element:169: RQ23: Editace uzivatele
+Element:170: RQ09: Prideleni ukolu zamestnanci
+Element:171: RQ14:Prirazeni zakaznika k projektu
+Element:172: RQ07: Pridani komentare k ukolu
+Element:173: RQ22: Smazani uzivatele
+Element:174: RQ05: Vyhledani pozadavku podle kriterii
+Element:175: RQ02: Vytvoreni pozadavku
+Element:176: RQ03: Vytvoreni komentare k pozadavku
+Element:177: RQ15: Prirazeni vedouciho projektu
+Element:178: RQ20: Evidence uzivatelu
+Element:179: RQ11: Vytvoreni ukolu
+Element:180: RQ06: Evidence Ukolu
+Element:181: RQ12:Evidence projektu
+Element:182: RQ13:Vytvoreni projektu
+Element:183: RQ21: Vytvoreni noveho uzivatele
+Element:184: RQ18:Vytvoreni zakaznika
+Element:185: RQ08: Oznaceni ukolu za hotovy
+Element:186: RQ16:Uprava projektu
+Diagram: FunctionalRequirments
+Processing package: NonFunctionalRequiments
+Element:187: RQ25:System bude ovladat pomoci GUI
+Element:188: RQ24:System musi byt jednoduse ovladatelny
+Element:189: RQ27:System musi bezet na vsech platformach
+Element:190: RQ26:System musi bezet jako webova aplikace
+Element:191: RQ29:System musi zvladat velky pocet prihlasenych uzivatelu
+Element:192: RQ33: GUI musi umet vice jazyku
+Element:193: RQ32:Spojeni se serverem musi byt bezpecne
+Element:194: RQ31:Uzavrene projekty budou zalohovany
+Element:195: RQ28:System musi byt nenarocny na HW prostredi
+Element:196: RQ30:System musi byt odolny vuci naruseni
+Diagram: NonFunctionalRequirments
+Processing package: Use Case Model
+Element:197: Primary Use Cases
+Element:198: Actors
+Diagram: Use Case Model
+Processing package: Actors
+Element:199: Uživatel
+Element:200: Spravce Projektu
+Element:201: Zakaznik osoba
+Element:202: Zamestnanec prideleny k ukolu
+Element:203: Admin
+Element:204: Zamestnanec
+Diagram: Actors
+Processing package: Primary Use Cases
+Element:205: Ukoly a pozadavky
+Element:206: Sprava Uzivatelu
+Element:207: Sprava Projektu
+Element:208: Sprava Zakaznikov
+Diagram: Primary Use Cases
+Processing package: Sprava Projektu
+Element:209: UC13 - Vyhladat Projekt
+Element:210: System
+Element:211: UC02 - Upravit projekt
+Element:212: UC01 - Vytvorit projekt
+Element:213: UC03 - Ukoncit projekt
+Diagram: Sprava Projektu
+Processing package: Sprava Uzivatelu
+Element:214: UC 16: Vytvoreni uzivatele
+Element:215: UC 15: Editace uzivatele
+Element:216: UC 17: Smazani uzivatele
+Element:217: System
+Element:218: UC 18: Vyhledani uzivatele
+Diagram: Sprava Uzivatelu
+Processing package: Sprava Zakaznikov
+Element:219: UC14 - Vyhladat Zakaznika
+Element:220: System
+Element:221: UC12 - Zmazat Zakaznika
+Element:222: UC13 - Vytvorit Zakaznika
+Element:223: UC16 - Uprava Zakaznika
+Diagram: Sprava Zakaznikov
+Processing package: Ukoly a pozadavky
+Element:224: UC04 - Vytvorit ukol
+Element:225: UC09 - Oznacit ukol za hotovy
+Element:226: System
+Element:227: UC07 - Uzavrit pozadavek
+Element:228: UC06 - Komentovat pozadavek
+Element:229: UC08 - Pridelit zamestnance k úkolu
+Element:230: UC10 - Komentovat ukol
+Element:231: UC05 - Vytvorit pozadavek
+Diagram: Ukoly a pozadavky
+Processing package: PackageModel
+Element:232: entity
+Element:233: presentation
+Element:234: bussiness
+Element:235: data
+Element:236: dao
+Diagram: Package Diagram
+Processing package: bussiness
+Processing package: dao
+Processing package: data
+Processing package: entity
+Processing package: presentation
+Element:237: controller
+Element:238: view
+Processing package: controller
+Processing package: view
+Processing package: DeploymentModel
+Element:239: DB server
+Element:240: ExecutionEnvironment1
+Element:241: Tenky klient
+Element:242: Webovy server
+Diagram: Deployment Model
+Formatting output XML...please wait
+XMI Document Export Complete!

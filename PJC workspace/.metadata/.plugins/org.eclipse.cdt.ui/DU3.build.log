@@ -1,0 +1,16 @@
+
+**** Build of configuration Debug for project DU3 ****
+
+make all 
+Building file: ../DU3.cpp
+Invoking: Cygwin C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"DU3.d" -MT"DU3.d" -o "DU3.o" "../DU3.cpp"
+Finished building: ../DU3.cpp
+ 
+Building target: DU3.exe
+Invoking: Cygwin C++ Linker
+g++  -o "DU3.exe"  ./DU3.o   
+Finished building target: DU3.exe
+ 
+
+**** Build Finished ****

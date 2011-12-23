@@ -1,0 +1,4 @@
+#BlueJ class context
+comment0.target=void\ presunuto()
+comment0.text=\nMetoda\ vyvolana\ multipresouvacem\ pote,\ co\ dovedl\ svereny\ objekt\ndo\ zadane\ cilove\ pozice.\ Pri\ svem\ typickem\ pouziti\ metoda\ nastavi\nnovou\ cilovou\ pozici\ sve\ instance\ a\ instanci\ opet\ preda\ multipresouvaci.\n\n
+numComments=1

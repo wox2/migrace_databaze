@@ -1,0 +1,27 @@
+        POSTGESQL
+valenta@fit.cvut.cz
+cluster - (postgresql) = instance pojena  k vsem databazim, servisni vrstva
+users - v Oracle oddeleni, v Postgesql ne, jsou na clusteru
+schema - u postgresu jich muze byt vic, musi byt jeden public
+
+rysy Posgresql -  minimalni administrace
+               - fully ACID (Atomicity, Consistency, Isolated, Durable)
+               - MVCC - multiversion concurency controls
+               - PITR - Point in time recovery. Pouz - navrat do stavu v danem case
+
+
+-indexy zrychlujou SELECTY, ale zpomalujou DML operace (INSERT, UPDATE, DELETE)
+ pg_ctl - specifikuje rezimy ukonceni
+            -smart- pomaly, pocka az se vsichni odlogujou
+            -fast-dokonci operace(provede rollback)
+            -immediate - shodi vsechny procesy, cluster se musi vzpamatovat pri pristim startu/spusteni
+- role skoro = user
+- role nemusi mit pravo login, obcas pouzitelne
+- prikaz COPY - postgresi SQL, neni v standardu
+-WAL - obsahuje zmenovy vektory (tato transakce zmenila tuto hodnotu v teto tabulce na tuto novou)
+RAID 0+1 - po dvou replikace, stripovani (google)
+
+           
+           
+           
+           

@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuite errors="3" failures="3" hostname="wox2" name="Core.MatrixTest" tests="20" time="0.235" timestamp="2009-07-03T04:26:51">
+  <properties>
+    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment" />
+    <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.6.0_10\jre\bin" />
+    <property name="java.vm.version" value="11.0-b15" />
+    <property name="java.vm.vendor" value="Sun Microsystems Inc." />
+    <property name="java.vendor.url" value="http://java.sun.com/" />
+    <property name="path.separator" value=";" />
+    <property name="java.vm.name" value="Java HotSpot(TM) Client VM" />
+    <property name="file.encoding.pkg" value="sun.io" />
+    <property name="user.country" value="CZ" />
+    <property name="sun.java.launcher" value="SUN_STANDARD" />
+    <property name="sun.os.patch.level" value="Service Pack 3" />
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification" />
+    <property name="user.dir" value="C:\Documents and Settings\já\Dokumenty\NetBeansProjects\MatrixReloaded" />
+    <property name="java.runtime.version" value="1.6.0_10-b33" />
+    <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment" />
+    <property name="java.endorsed.dirs" value="C:\Program Files\Java\jdk1.6.0_10\jre\lib\endorsed" />
+    <property name="os.arch" value="x86" />
+    <property name="java.io.tmpdir" value="C:\DOCUME~1\J1EA6~1\LOCALS~1\Temp\" />
+    <property name="line.separator" value="
+" />
+    <property name="java.vm.specification.vendor" value="Sun Microsystems Inc." />
+    <property name="user.variant" value="" />
+    <property name="os.name" value="Windows XP" />
+    <property name="sun.jnu.encoding" value="Cp1250" />
+    <property name="java.library.path" value="C:\Program Files\Java\jdk1.6.0_10\bin;.;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files\PC Connectivity Solution\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;c:\Xilinx\bin\nt;C:\Program Files\SlikSvn\bin\;C:\Modeltech_xe_starter\win32xoem" />
+    <property name="java.specification.name" value="Java Platform API Specification" />
+    <property name="java.class.version" value="50.0" />
+    <property name="sun.management.compiler" value="HotSpot Client Compiler" />
+    <property name="os.version" value="5.1" />
+    <property name="user.home" value="C:\Documents and Settings\já" />
+    <property name="user.timezone" value="" />
+    <property name="java.awt.printerjob" value="sun.awt.windows.WPrinterJob" />
+    <property name="file.encoding" value="Cp1250" />
+    <property name="java.specification.version" value="1.6" />
+    <property name="user.name" value="já" />
+    <property name="java.class.path" value="C:\Program Files\NetBeans 6.5\java2\ant\patches\72080.jar;C:\Program Files\NetBeans 6.5\java2\ant\patches\ant-42275.jar;C:\Program Files\NetBeans 6.5\java2\ant\lib\ant.jar;C:\Program Files\NetBeans 6.5\java2\ant\lib\ant-junit.jar;C:\Documents and Settings\já\Dokumenty\NetBeansProjects\MatrixReloaded\build\classes;C:\Documents and Settings\já\Dokumenty\NetBeansProjects\MatrixReloaded\src;C:\Program Files\NetBeans 6.5\platform9\modules\ext\junit-4.5.jar;C:\Documents and Settings\já\Dokumenty\NetBeansProjects\MatrixReloaded\build\test\classes;C:\Documents and Settings\já\Dokumenty\NetBeansProjects\MatrixReloaded\test" />
+    <property name="java.vm.specification.version" value="1.0" />
+    <property name="sun.arch.data.model" value="32" />
+    <property name="java.home" value="C:\Program Files\Java\jdk1.6.0_10\jre" />
+    <property name="java.specification.vendor" value="Sun Microsystems Inc." />
+    <property name="user.language" value="cs" />
+    <property name="awt.toolkit" value="sun.awt.windows.WToolkit" />
+    <property name="java.vm.info" value="mixed mode" />
+    <property name="java.version" value="1.6.0_10" />
+    <property name="java.ext.dirs" value="C:\Program Files\Java\jdk1.6.0_10\jre\lib\ext;C:\WINDOWS\Sun\Java\lib\ext" />
+    <property name="sun.boot.class.path" value="C:\Program Files\Java\jdk1.6.0_10\jre\lib\resources.jar;C:\Program Files\Java\jdk1.6.0_10\jre\lib\rt.jar;C:\Program Files\Java\jdk1.6.0_10\jre\lib\sunrsasign.jar;C:\Program Files\Java\jdk1.6.0_10\jre\lib\jsse.jar;C:\Program Files\Java\jdk1.6.0_10\jre\lib\jce.jar;C:\Program Files\Java\jdk1.6.0_10\jre\lib\charsets.jar;C:\Program Files\Java\jdk1.6.0_10\jre\classes" />
+    <property name="java.vendor" value="Sun Microsystems Inc." />
+    <property name="file.separator" value="\" />
+    <property name="java.vendor.url.bug" value="http://java.sun.com/cgi-bin/bugreport.cgi" />
+    <property name="sun.cpu.endian" value="little" />
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle" />
+    <property name="sun.desktop" value="windows" />
+    <property name="sun.cpu.isalist" value="pentium_pro+mmx pentium_pro pentium+mmx pentium i486 i386 i86" />
+  </properties>
+  <testcase classname="Core.MatrixTest" name="testEmptyConstructor" time="0.015" />
+  <testcase classname="Core.MatrixTest" name="testGetField" time="0.0" />
+  <testcase classname="Core.MatrixTest" name="testSetField" time="0.0" />
+  <testcase classname="Core.MatrixTest" name="testGetNumberRows" time="0.0" />
+  <testcase classname="Core.MatrixTest" name="testGetNumberColumns" time="0.0" />
+  <testcase classname="Core.MatrixTest" name="testGetAllRows" time="0.0" />
+  <testcase classname="Core.MatrixTest" name="testFill" time="0.0" />
+  <testcase classname="Core.MatrixTest" name="testAdd" time="0.0" />
+  <testcase classname="Core.MatrixTest" name="testSubtract" time="0.0" />
+  <testcase classname="Core.MatrixTest" name="testTranspose" time="0.0" />
+  <testcase classname="Core.MatrixTest" name="testMultiple" time="0.0" />
+  <testcase classname="Core.MatrixTest" name="testAddRow" time="0.0" />
+  <testcase classname="Core.MatrixTest" name="testAddCollumn" time="0.0" />
+  <testcase classname="Core.MatrixTest" name="testRemoveRow" time="0.0" />
+  <testcase classname="Core.MatrixTest" name="testRemoveCollumn" time="0.0">
+    <error message="Index: 1, Size: 1" type="java.lang.IndexOutOfBoundsException">java.lang.IndexOutOfBoundsException: Index: 1, Size: 1
+	at java.util.ArrayList.RangeCheck(ArrayList.java:547)
+	at java.util.ArrayList.remove(ArrayList.java:387)
+	at Core.Row.removeField(Row.java:103)
+	at Core.Matrix.removeCollumn(Matrix.java:163)
+	at Core.MatrixTest.testRemoveCollumn(MatrixTest.java:346)
+</error>
+  </testcase>
+  <testcase classname="Core.MatrixTest" name="testToXML" time="0.0">
+    <error message="expected:&lt;[]&gt; but was:&lt;[&lt;?xml version=&quot;1.0&quot; encoding=&quot;Window UTF-8&quot;?&gt;
+&lt;Matrix&gt;
+&lt;Description&gt;
+    &lt;rows&gt;5&lt;/rows&gt;
+    &lt;columns&gt;5&lt;/columns&gt;
+&lt;/Description&gt;
+&lt;row&gt;
+    &lt;cell&gt;0.0&lt;/cell&gt;
+    &lt;cell&gt;0.0&lt;/cell&gt;
+    &lt;cell&gt;0.0&lt;/cell&gt;
+    &lt;cell&gt;0.0&lt;/cell&gt;
+    &lt;cell&gt;0.0&lt;/cell&gt;
+&lt;/row&gt;
+&lt;row&gt;
+    &lt;cell&gt;0.0&lt;/cell&gt;
+    &lt;cell&gt;0.0&lt;/cell&gt;
+    &lt;cell&gt;0.0&lt;/cell&gt;
+    &lt;cell&gt;0.0&lt;/cell&gt;
+    &lt;cell&gt;0.0&lt;/cell&gt;
+&lt;/row&gt;
+&lt;row&gt;
+    &lt;cell&gt;0.0&lt;/cell&gt;
+    &lt;cell&gt;0.0&lt;/cell&gt;
+    &lt;cell&gt;0.0&lt;/cell&gt;
+    &lt;cell&gt;0.0&lt;/cell&gt;
+    &lt;cell&gt;0.0&lt;/cell&gt;
+&lt;/row&gt;
+&lt;row&gt;
+    &lt;cell&gt;0.0&lt;/cell&gt;
+    &lt;cell&gt;0.0&lt;/cell&gt;
+    &lt;cell&gt;0.0&lt;/cell&gt;
+    &lt;cell&gt;0.0&lt;/cell&gt;
+    &lt;cell&gt;0.0&lt;/cell&gt;
+&lt;/row&gt;
+&lt;row&gt;
+    &lt;cell&gt;0.0&lt;/cell&gt;
+    &lt;cell&gt;0.0&lt;/cell&gt;
+    &lt;cell&gt;0.0&lt;/cell&gt;
+    &lt;cell&gt;0.0&lt;/cell&gt;
+    &lt;cell&gt;0.0&lt;/cell&gt;
+&lt;/row&gt;
+&lt;/Matrix&gt;]&gt;" type="org.junit.ComparisonFailure">&lt;Matrix&gt;
+&lt;Description&gt;
+    &lt;rows&gt;5&lt;/rows&gt;
+    &lt;columns&gt;5&lt;/columns&gt;
+&lt;/Description&gt;
+&lt;row&gt;
+    &lt;cell&gt;0.0&lt;/cell&gt;
+    &lt;cell&gt;0.0&lt;/cell&gt;
+    &lt;cell&gt;0.0&lt;/cell&gt;
+    &lt;cell&gt;0.0&lt;/cell&gt;
+    &lt;cell&gt;0.0&lt;/cell&gt;
+&lt;/row&gt;
+&lt;row&gt;
+    &lt;cell&gt;0.0&lt;/cell&gt;
+    &lt;cell&gt;0.0&lt;/cell&gt;
+    &lt;cell&gt;0.0&lt;/cell&gt;
+    &lt;cell&gt;0.0&lt;/cell&gt;
+    &lt;cell&gt;0.0&lt;/cell&gt;
+&lt;/row&gt;
+&lt;row&gt;
+    &lt;cell&gt;0.0&lt;/cell&gt;
+    &lt;cell&gt;0.0&lt;/cell&gt;
+    &lt;cell&gt;0.0&lt;/cell&gt;
+    &lt;cell&gt;0.0&lt;/cell&gt;
+    &lt;cell&gt;0.0&lt;/cell&gt;
+&lt;/row&gt;
+&lt;row&gt;
+    &lt;cell&gt;0.0&lt;/cell&gt;
+    &lt;cell&gt;0.0&lt;/cell&gt;
+    &lt;cell&gt;0.0&lt;/cell&gt;
+    &lt;cell&gt;0.0&lt;/cell&gt;
+    &lt;cell&gt;0.0&lt;/cell&gt;
+&lt;/row&gt;
+&lt;row&gt;
+    &lt;cell&gt;0.0&lt;/cell&gt;
+    &lt;cell&gt;0.0&lt;/cell&gt;
+    &lt;cell&gt;0.0&lt;/cell&gt;
+    &lt;cell&gt;0.0&lt;/cell&gt;
+    &lt;cell&gt;0.0&lt;/cell&gt;
+&lt;/row&gt;
+&lt;/Matrix&gt;]&gt;
+	at Core.MatrixTest.testToXML(MatrixTest.java:360)
+</error>
+  </testcase>
+  <testcase classname="Core.MatrixTest" name="testToString" time="0.016">
+    <error message="expected:&lt;[]&gt; but was:&lt;[    0.0    0.0    0.0    0.0    0.0
+    0.0    0.0    0.0    0.0    0.0
+    0.0    0.0    0.0    0.0    0.0
+    0.0    0.0    0.0    0.0    0.0
+    0.0    0.0    0.0    0.0    0.0
+]&gt;" type="org.junit.ComparisonFailure">    0.0    0.0    0.0    0.0    0.0
+    0.0    0.0    0.0    0.0    0.0
+    0.0    0.0    0.0    0.0    0.0
+    0.0    0.0    0.0    0.0    0.0
+]&gt;
+	at Core.MatrixTest.testToString(MatrixTest.java:374)
+</error>
+  </testcase>
+  <testcase classname="Core.MatrixTest" name="testSetRow" time="0.0">
+    <failure message="The test case is a prototype." type="junit.framework.AssertionFailedError">junit.framework.AssertionFailedError: The test case is a prototype.
+	at Core.MatrixTest.testSetRow(MatrixTest.java:390)
+</failure>
+  </testcase>
+  <testcase classname="Core.MatrixTest" name="testGetRow" time="0.0">
+    <failure message="expected:&lt;null&gt; but was:&lt;Core.Row@1989b5&gt;" type="junit.framework.AssertionFailedError">junit.framework.AssertionFailedError: expected:&lt;null&gt; but was:&lt;Core.Row@1989b5&gt;
+	at Core.MatrixTest.testGetRow(MatrixTest.java:403)
+</failure>
+  </testcase>
+  <testcase classname="Core.MatrixTest" name="testMultipleByConstant" time="0.0">
+    <failure message="expected:&lt;null&gt; but was:&lt;    0.0    0.0    0.0    0.0    0.0
+    0.0    0.0    0.0    0.0    0.0
+    0.0    0.0    0.0    0.0    0.0
+    0.0    0.0    0.0    0.0    0.0
+    0.0    0.0    0.0    0.0    0.0
+&gt;" type="junit.framework.AssertionFailedError">junit.framework.AssertionFailedError: expected:&lt;null&gt; but was:&lt;    0.0    0.0    0.0    0.0    0.0
+    0.0    0.0    0.0    0.0    0.0
+    0.0    0.0    0.0    0.0    0.0
+    0.0    0.0    0.0    0.0    0.0
+    0.0    0.0    0.0    0.0    0.0
+&gt;
+    0.0    0.0    0.0    0.0    0.0
+    0.0    0.0    0.0    0.0    0.0
+    0.0    0.0    0.0    0.0    0.0
+    0.0    0.0    0.0    0.0    0.0
+&gt;
+	at Core.MatrixTest.testMultipleByConstant(MatrixTest.java:418)
+</failure>
+  </testcase>
+  <system-out><![CDATA[getField
+setField
+getNumberRows
+getNumberColumns
+getAllRows
+fill
+add
+subtract
+transpose
+multiple
+addRow
+addCollumn
+removeRow
+removeCollumn
+toXML
+toString
+setRow
+getRow
+multipleByConstant
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

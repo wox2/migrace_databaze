@@ -1,0 +1,2 @@
+(:  nalezení všech zákazníků jejichž adresa bydliste je na Praze 10 :)
+//zakaznik[adresa_bydliste/mesto="Praha 10"]

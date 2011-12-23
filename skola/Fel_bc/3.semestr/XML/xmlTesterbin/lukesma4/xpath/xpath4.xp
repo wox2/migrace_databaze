@@ -1,0 +1,2 @@
+(: vybere vsehny "texty" ze vsech hracu a jejich potomku :)
+//hrac/descendant::text()

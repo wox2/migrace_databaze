@@ -1,0 +1,77 @@
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/courses/36sin/INTEOCORP/!svn/ver/420/src/LogicalDesign/BusinessLayer/Services
+END
+ProjektService.java
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/courses/36sin/INTEOCORP/!svn/ver/420/src/LogicalDesign/BusinessLayer/Services/ProjektService.java
+END
+KomentarService.java
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/courses/36sin/INTEOCORP/!svn/ver/420/src/LogicalDesign/BusinessLayer/Services/KomentarService.java
+END
+IZamestnanecService.java
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/courses/36sin/INTEOCORP/!svn/ver/420/src/LogicalDesign/BusinessLayer/Services/IZamestnanecService.java
+END
+ZastupceZakaznikaService.java
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/courses/36sin/INTEOCORP/!svn/ver/420/src/LogicalDesign/BusinessLayer/Services/ZastupceZakaznikaService.java
+END
+IUkolService.java
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/courses/36sin/INTEOCORP/!svn/ver/420/src/LogicalDesign/BusinessLayer/Services/IUkolService.java
+END
+PozadavekService.java
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/courses/36sin/INTEOCORP/!svn/ver/420/src/LogicalDesign/BusinessLayer/Services/PozadavekService.java
+END
+IProjektService.java
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/courses/36sin/INTEOCORP/!svn/ver/420/src/LogicalDesign/BusinessLayer/Services/IProjektService.java
+END
+ZamestnanecService.java
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/courses/36sin/INTEOCORP/!svn/ver/420/src/LogicalDesign/BusinessLayer/Services/ZamestnanecService.java
+END
+IKomentarService.java
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/courses/36sin/INTEOCORP/!svn/ver/420/src/LogicalDesign/BusinessLayer/Services/IKomentarService.java
+END
+UkolService.java
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/courses/36sin/INTEOCORP/!svn/ver/420/src/LogicalDesign/BusinessLayer/Services/UkolService.java
+END
+IZastupceZakaznikaService.java
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/courses/36sin/INTEOCORP/!svn/ver/420/src/LogicalDesign/BusinessLayer/Services/IZastupceZakaznikaService.java
+END
+IPozadavekService.java
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/courses/36sin/INTEOCORP/!svn/ver/420/src/LogicalDesign/BusinessLayer/Services/IPozadavekService.java
+END

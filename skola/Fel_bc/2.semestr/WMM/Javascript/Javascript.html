@@ -1,0 +1,61 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <title>
+      Ukázka JavaScriptu
+    </title>
+    <script type="text/javascript">
+    function dokumentNacten()
+    {
+        alert("Dokument byl nacten.");
+    } 
+    </script>
+  </head>
+ 
+  <body onload="dokumentNacten()">     
+  
+    <h1 id="nadpis_01">
+      WMM - sedmé cvičení
+    </h1>
+ 
+    <ol>
+        <li>Reagujte na událost kompletního nahrání dokumentu. Ukáže se dialogové okénko pomocí metody window.alert()</li>
+        <li>Do dokumentu přidejte pomocí javascriptu text "Toto je napsáno pomocí javascriptu."</li>
+        <li>Reagujte na událost odeslání formuláře a zamezte jí.</li>
+        <li>Napište javascriptovou funkci, která z textového pole přečte jeho hodnotu a vrátí true v případě, že hodnota není prázný řetězec.</li>
+        <li>Změňte podmínku pro odeslání formuláře tak, aby se odeslal jen tehdy, když textové pole bylo neprázdné.</li>
+        <li>Vylepšete funkčnost tak, aby se vedle textového pole objevila varovná hláška tehdy, když je u něj identifikován problém.</li>
+        <li>Reagujte na událost změny v textovém poli a upozorňujte uživatele o případné chybě průběžně.</li>
+        <li>Přidejte tlačítko pro zobrazení a skrytí dalšího textového políčka.</li>
+        <li>Veškeré funkce, které kontrolují správnost prvního pole, upravte tak, aby kontrolovaly i obsah druhého pole, ale pouze tehdy, kdy je dané pole zobrazené.</li>
+    </ol>
+ 
+    <p>Zde se objeví text "Toto je napsáno pomocí javascriptu.", který opravdu vypíše JavaScript.</p>
+ 
+ 
+ 
+    <form action="http://amun.felk.cvut.cz/vypis_form.php" method="get"
+    onreset="return confirm('Opravdu vymazat obsah formuláře?')"
+        onsubmit="return isFormOk()">
+      <div id="div_input_text1" style="display:block">
+         1. řádek:
+         <input    type="text"    value=""    name="text"    onblur="return isPoleOk('input_text1')" id="input_text1"/>
+        </div>
+ 
+        <div id="div_input_text2" style="display:none">
+         2. řádek:
+         <input    type="text"    value="" name="text"    onblur="return isPoleOk('input_text2')" id="input_text2"/>
+             <p id="zprava_input_text2" style="display:none">Toto pole musi byt vyplneno.</p>
+        </div>
+ 
+      <div>
+        <input type="submit" value="Odeslat"/>
+            <input type="reset"  value="Vymazat"/>
+            <input type="button"  value="Zobrazit / skryt" />
+      </div>
+    </form>
+  </body>
+</html>
+

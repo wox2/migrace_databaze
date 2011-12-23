@@ -1,0 +1,87 @@
+Realizujte program, který pro trojúhelník zadaný velikostmi svých stran urcí další jeho parametry.
+
+Vstupem programu jsou tri kladná desetinná císla reprezentující délky stran a, b a c.
+
+Výstupem programu jsou následující informace v poradí dle ukázek:
+
+    * informace, zda trojúhelník existuje,
+    * zda je rovnoramenný/rovnostranný/není ani rovnoramenný ani rovnostranný,
+    * zda je tupoúhlý/pravoúhlý/ostroúhlý,
+    * velikosti jeho vnitrních úhlu ve stupních a radiánech,
+    * obvod a obsah,
+    * velikosti výšek a
+    * polomer kružnice opsané a vepsané.
+
+Program detekuje chybu, zobrazí chybové hlášení dle ukázky a ukoncí se, pokud jsou na vstupu necíselné hodnoty nebo pokud strany nejsou kladná desetinná císla.
+
+Za každým rádkem výpisu (i za posledním, i za prípadnou chybovou hláškou) jsou odrádkování (endl).
+Ukázka práce programu:
+
+Zadejte velikost stran a b c:
+5 5 5
+Trojuhelnik je rovnostranny.
+Trojuhelnik je ostrouhly.
+Uhel alfa: 1.0472 rad = 60s00'00.00''
+Uhel beta: 1.0472 rad = 60s00'00.00''
+Uhel gama: 1.0472 rad = 60s00'00.00''
+Obvod: 15.00
+Obsah: 10.83
+Polomer kruznice vepsane: 1.44
+Polomer kruznice opsane: 2.89
+Vyska va: 4.33
+Vyska vb: 4.33
+Vyska vc: 4.33
+
+Zadejte velikost stran a b c:
+5 4 3
+Trojuhelnik neni ani rovnostranny ani rovnoramenny.
+Trojuhelnik je pravouhly.
+Uhel alfa: 1.5708 rad = 90s00'00.00''
+Uhel beta: 0.9273 rad = 53s07'48.37''
+Uhel gama: 0.6435 rad = 36s52'11.63''
+Obvod: 12.00
+Obsah: 6.00
+Polomer kruznice vepsane: 1.00
+Polomer kruznice opsane: 2.50
+Vyska va: 2.40
+Vyska vb: 3.00
+Vyska vc: 4.00
+
+Zadejte velikost stran a b c:
+4 7 4
+Trojuhelnik je rovnoramenny.
+Trojuhelnik je tupouhly.
+Uhel alfa: 0.5054 rad = 28s57'18.09''
+Uhel beta: 2.1309 rad = 122s05'23.82''
+Uhel gama: 0.5054 rad = 28s57'18.09''
+Obvod: 15.00
+Obsah: 6.78
+Polomer kruznice vepsane: 0.90
+Polomer kruznice opsane: 4.13
+Vyska va: 3.39
+Vyska vb: 1.94
+Vyska vc: 3.39
+
+Zadejte velikost stran a b c:
+3 8 4
+Trojuhelnik neexistuje.
+
+Zadejte velikost stran a b c:
+2 -7 5
+Nespravny vstup.
+
+Zadejte velikost stran a b c:
+2 0 5
+Nespravny vstup.
+
+Zadejte velikost stran a b c:
+4 bfl 8
+Nespravny vstup.
+
+
+Nápoveda:
+
+    * Pro výpocet obsahu použijte Heronuv vzorec.
+    * Pro výpocet vnitrních úhlu použijte kosínovou vetu.
+    * Pro uložení desetinných císel používejte datový typ double, nepoužívejte float.
+    * Použijte konstantu M_PI z matematické knihovny (#include <cmath> nebo #include <math.h>).

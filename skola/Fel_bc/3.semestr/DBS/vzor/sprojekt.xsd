@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+  <xs:element name="sproject">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="course"/>
+        <xs:element ref="author"/>
+        <xs:element ref="content"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="course">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="cname"/>
+        <xs:element ref="code"/>
+        <xs:element ref="semester"/>
+        <xs:element ref="seminar"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="author">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="aname"/>
+        <xs:element ref="uname"/>
+        <xs:element ref="email"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="content">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="declaration"/>
+        <xs:element ref="title"/>
+        <xs:element ref="description"/>
+        <xs:element ref="data_model"/>
+        <xs:element ref="queries"/>
+        <xs:element ref="scripts"/>
+        <xs:element ref="conclussions"/>
+        <xs:element ref="references"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="cname" type="xs:string"/>
+  <xs:element name="code" type="xs:string"/>
+  <xs:element name="semester" type="xs:string"/>
+  <xs:element name="seminar" type="xs:string"/>
+  <xs:element name="aname" type="xs:string"/>
+  <xs:element name="uname" type="xs:string"/>
+  <xs:element name="email" type="xs:string"/>
+  <xs:element name="title" type="xs:string"/>
+  <xs:element name="declaration" type="xs:string"/>
+  <xs:element name="description">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="title"/>
+        <xs:sequence maxOccurs="unbounded">
+          <xs:element ref="para"/>
+          <xs:element minOccurs="0" ref="comment"/>
+        </xs:sequence>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="data_model">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="title"/>
+        <xs:element ref="dm_picture"/>
+        <xs:element minOccurs="0" ref="comment"/>
+        <xs:element ref="dm_discussion"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="scripts">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="title"/>
+        <xs:sequence maxOccurs="unbounded">
+          <xs:element ref="para"/>
+          <xs:element minOccurs="0" ref="comment"/>
+        </xs:sequence>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="queries">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="title"/>
+        <xs:element ref="dotazy"/>
+        <xs:element minOccurs="0" ref="comment"/>
+        <xs:element ref="pokryti_dotazu"/>
+        <xs:element minOccurs="0" ref="comment"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="conclussions">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="title"/>
+        <xs:sequence maxOccurs="unbounded">
+          <xs:element ref="para"/>
+          <xs:element minOccurs="0" ref="comment"/>
+        </xs:sequence>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="references">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="title"/>
+        <xs:sequence maxOccurs="unbounded">
+          <xs:element ref="para"/>
+          <xs:element minOccurs="0" ref="comment"/>
+        </xs:sequence>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <!-- paragraph -->
+  <xs:element name="para">
+    <xs:complexType mixed="true">
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="link"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <!-- comment -->
+  <xs:element name="comment">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="para"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <!-- dm_picture -->
+  <xs:element name="dm_picture" type="mediaobject"/>
+  <!-- dm_discussion -->
+  <xs:element name="dm_discussion">
+    <xs:complexType>
+      <xs:sequence maxOccurs="unbounded">
+        <xs:element ref="para"/>
+        <xs:element minOccurs="0" ref="comment"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <!-- table -->
+  <xs:element name="pokryti_dotazu">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="kategorie_dotazu"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <!-- kategorie dotazu -->
+  <xs:element name="kategorie_dotazu">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="entry"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <!-- entry -->
+  <xs:element name="entry" type="xs:string"/>
+  <!-- link -->
+  <xs:element name="link">
+    <xs:complexType mixed="true">
+      <xs:attribute name="url" use="required"/>
+    </xs:complexType>
+  </xs:element>
+  <!-- dotazy -->
+  <xs:element name="dotazy">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="dotaz"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <!-- dotaz -->
+  <xs:element name="dotaz">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="popis_dotazu"/>
+        <xs:element minOccurs="0" ref="comment"/>
+        <xs:element minOccurs="0" ref="relacni_algebra"/>
+        <xs:element minOccurs="0" ref="comment"/>
+        <xs:sequence maxOccurs="unbounded">
+          <xs:element ref="sql"/>
+          <xs:element minOccurs="0" ref="comment"/>
+        </xs:sequence>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <!-- popis dotazu -->
+  <xs:element name="popis_dotazu">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="para"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <!-- relacni algebra -->
+  <xs:element name="relacni_algebra" type="xs:string"/>
+  <!-- sql -->
+  <xs:element name="sql" type="xs:string"/>
+  <!-- mediaobject -->
+  <xs:complexType name="mediaobject">
+    <xs:sequence>
+      <xs:element ref="mediaobject"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="mediaobject" type="imageobject"/>
+  <!-- imageobject -->
+  <xs:complexType name="imageobject">
+    <xs:sequence>
+      <xs:element ref="imageobject"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="imageobject" type="imagedata"/>
+  <!-- imagedata -->
+  <xs:complexType name="imagedata">
+    <xs:sequence>
+      <xs:element ref="imagedata"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="imagedata">
+    <xs:complexType>
+      <xs:attribute name="fileref" use="required"/>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

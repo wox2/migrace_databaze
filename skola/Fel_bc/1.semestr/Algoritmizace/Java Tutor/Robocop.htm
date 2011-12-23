@@ -1,0 +1,655 @@
+<html><head>
+ 
+  <link href="Robocop_soubory/styly.css" type="text/css" rel="stylesheet">
+  <meta http-equiv="Content-Type" content="text/html;" charset="windows-1250">
+  <meta content="časopis o programování, Internetu a počítačích" name="description">
+  <meta content="PHP,ASM,ASP,developer,forum,fórum,programator,programátor,SQL,Pascal,TP,Jan Sova,Sova,MySQL,C/C++,C++,JS,JavaScript,HW,
+   Visual Basic,Hardware,Software,Flash,Assembler,Asembler,Apache,Java,Python name=" keywords="">
+  <meta http-equiv="Author" content="Jan" sova,="" jansova@programator.cz=""><title>Programátor - Robocode - aneb Java (bojovou) hrou.</title></head><body topmargin="5" leftmargin="5" bgcolor="#eff1f8" marginheight="0" marginwidth="0">
+
+<table style="border: 1px solid rgb(32, 32, 32);" align="center" bgcolor="black" border="0" cellspacing="1" width="770">
+  <tbody><tr>
+    <td align="center">
+     <span class="top">
+      <a title="Projekt pro všechny programátory" href="http://www.programator.cz/">ProgramatorCZ</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+      <a title="Diskuse na www.programator.cz" href="http://linux.programator.cz/forum">Diskusní
+      fórum</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+      <a title="Největší zdroj dokumentace o Assembleru v ČR" href="http://asm.programator.cz/">ASMDprojekt</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+      <a title="Vtipy nejen pro programátory" href="http://vtipy.programator.cz/">Vtipy</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+      <a title="Knihovna JavaScriptu" href="http://javascript.programator.cz/">JavaScript</a>
+   </span>
+  </td>
+ </tr>
+</tbody></table>
+
+<table style="border-left: 1px solid rgb(32, 32, 32); border-right: 1px solid rgb(32, 32, 32);" align="center" background="Robocop_soubory/logo.gif" border="0" cellpadding="0" cellspacing="0" width="770">
+  <tbody><tr>
+    <td align="right">
+<!-- BBSTART: ad2.billboard.cz kod 1.1 - SERVER: Časopis(8512), SEKCE: top(1), POZICE: (1), TYPBANNERU: Full Banner(1), OKRAJ: ne, POPIS: ne. -->
+<script language="JavaScript" type="text/javascript">
+<!--
+var bbs=screen,bbn=navigator,bbh;bbh='&ubl='+bbn.browserLanguage+'&ucc='+bbn.cpuClass+'&ucd='+bbs.colorDepth+'&uce='+bbn.cookieEnabled+'&udx='+bbs.deviceXDPI+'&udy='+bbs.deviceYDPI+'&usl='+bbn.systemLanguage+'&uje='+bbn.javaEnabled()+'&uah='+bbs.availHeight+'&uaw='+bbs.availWidth+'&ubd='+bbs.bufferDepth+'&uhe='+bbs.height+'&ulx='+bbs.logicalXDPI+'&uly='+bbs.logicalYDPI+'&use='+bbs.fontSmoothingEnabled+'&uto='+(new Date()).getTimezoneOffset()+'&uui='+bbs.updateInterval+'&uul='+bbn.userLanguage+'&uwi='+bbs.width;
+var bb9_bgcolor='C0C0C0';
+var bb9_text='000000';
+var bb9_link='0000FF';
+if(document.bgColor) { bb9_bgcolor=document.bgColor.substr(1); }
+if(document.fgColor) { bb9_text=document.fgColor.substr(1); }
+if(document.linkColor) { bb9_link=document.linkColor.substr(1); }
+document.write("<IFRAME WIDTH=468 HEIGHT=60 MARGINWIDTH=0 MARGINHEIGHT=0 FRAMEBORDER=0 HSPACE=0 VSPACE=0 SCROLLING=no BORDERCOLOR='#000000' SRC='http://ad2.billboard.cz/please/showit/8512/1/1/1/?typkodu=html&topmargin=0&leftmargin=0"+bbh+"&href="+escape(location.href)+"&popis=ne&okraj=ne&bgcolor="+bb9_bgcolor+"&text="+bb9_text+"&link="+bb9_link+"&bust="+Math.random()+"&target=_top'>");
+document.write("<scr"+"ipt language='JavaScript' type='text/javascript'>");
+document.write("document.write(\"<scr\"+\"ipt language='JavaScript' type='text/javascript' src='http://ad2.billboard.cz/please/showit/8512/1/1/1/?typkodu=js\"+bbh+\"&href=\"+escape(location.href)+\"&popis=ne&okraj=ne&bust=\"+Math.floor(10000000*Math.random())+\"&target=_top'><\/scr\"+\"ipt>\");");
+document.write("<\/scr"+"ipt>");
+document.write("<\/IFRAME>");
+/**///-->
+</script><iframe marginwidth="0" marginheight="0" hspace="0" vspace="0" bordercolor="#000000" src="Robocop_soubory/a.html" frameborder="0" height="60" scrolling="no" width="468">&lt;script
+language='JavaScript'
+type='text/javascript'&gt;document.write("&lt;scr"+"ipt
+language='JavaScript' type='text/javascript'
+src='http://ad2.billboard.cz/please/showit/8512/1/1/1/?typkodu=js"+bbh+"&amp;href="+escape(location.href)+"&amp;popis=ne&amp;okraj=ne&amp;bust="+Math.floor(10000000*Math.random())+"&amp;target=_top'&gt;&lt;/scr"+"ipt&gt;");&lt;/script&gt;</iframe>
+<noscript>
+<table border="0" cellpadding="0" cellspacing="0"><tr><td>
+<a href="http://ad2.billboard.cz/please/redir.bb/8512/1/1/1/"
+target="_top">
+<img
+src="http://ad2.billboard.cz/please/showit/8512/1/1/1/?typkodu=img"
+border="0" width="468" height="60" alt='Kliknete prosim!'></a>
+</td></tr></table>
+</noscript>
+<!-- BBEND: ad2.billboard.cz kod 1.1 -->
+  </td>
+ </tr>
+</tbody></table>
+
+
+<table style="border: 1px solid rgb(32, 32, 32);" align="center" bgcolor="#ccd1ef" cellspacing="1" width="770">
+ <tbody><tr>
+  <td align="left">
+   <span class="top2">
+    <i>Spolupracujeme</i>:&nbsp;&nbsp;
+    <a href="http://www.webguru.cz/">WebGuru</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+    <a href="http://www.komplikator.cz/">Komplikátor</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+    <a href="http://www.minasite.cz/">MinaSite</a>
+   </span>
+   </td>
+   <td align="right">
+    <span class="top2">
+      <a href="javascript:window.external.AddFavorite%20('http://casopis.programator.cz',%20'%C4%8Casopis%20Program%C3%A1tor-%20Internet,%20PHP,%20JavaScipt,%20Pascal,%20Delphi');">Přidat
+         k oblíbeným položkám</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+      <a href="http://casopis.programator.cz/" onclick="this.style.behavior='url(#default#homepage)';this.setHomePage('http://casopis.programator.cz');return(false);">Nastavit
+         jako výchozí stránku</a>
+    </span>
+   </td>
+ </tr>
+</tbody></table>
+
+
+<table align="center" border="0" cellpadding="0" cellspacing="0" width="770">
+  <tbody><tr>
+
+
+    <td cellspacing="0" cellpadding="0" valign="top" width="120">
+
+    <table style="border-left: 1px solid rgb(32, 32, 32); border-right: 1px solid rgb(32, 32, 32); border-bottom: 1px solid rgb(32, 32, 32);" bgcolor="#dce1ef" cellpadding="0" cellspacing="0">
+     <tbody><tr>
+      <td>
+       <img src="Robocop_soubory/icon.gif" border="0" height="0" width="1">
+
+
+
+
+      <table align="center" border="0" cellpadding="1" cellspacing="0" width="120">
+        <tbody><tr>
+         <td align="left" bgcolor="#0d3b8e">
+          <span class="supmenu">
+           <b><img src="Robocop_soubory/double_point.gif">Časopis</b>
+          </span>
+         </td>
+        </tr>
+        <tr>
+         <td>
+          <span class="mn">
+            <img src="Robocop_soubory/x.gif" width="1"><img src="Robocop_soubory/odrazka.gif">
+            <a href="http://casopis.programator.cz/index.php"> Hlavní stránka</a><br>
+                        <img src="Robocop_soubory/x.gif" width="1"><img src="Robocop_soubory/odrazka.gif">
+                 <a href="http://casopis.programator.cz/index.php?rubrika=9" title="I dnes se vyplatí vědět něco o ASM">                 Assembler            </a><br>
+                             <img src="Robocop_soubory/x.gif" width="1"><img src="Robocop_soubory/odrazka.gif">
+                 <a href="http://casopis.programator.cz/index.php?rubrika=8" title="Vše o C/C++">                 C,C++            </a><br>
+                             <img src="Robocop_soubory/x.gif" width="1"><img src="Robocop_soubory/odrazka.gif">
+                 <a href="http://casopis.programator.cz/index.php?rubrika=1" title="Programování v Delphi">                 Delphi            </a><br>
+                             <img src="Robocop_soubory/x.gif" width="1"><img src="Robocop_soubory/odrazka.gif">
+                 <a href="http://casopis.programator.cz/index.php?rubrika=15" title="Vše o Microsoft  .NET - nové platformě">                 DOTNET            </a><br>
+                             <img src="Robocop_soubory/x.gif" width="1"><img src="Robocop_soubory/odrazka.gif">
+                 <a href="http://casopis.programator.cz/index.php?rubrika=10" title="Velmi zajímavá technologie">                 Flash            </a><br>
+                             <img src="Robocop_soubory/x.gif" width="1"><img src="Robocop_soubory/odrazka.gif">
+                 <a href="http://casopis.programator.cz/index.php?rubrika=3" title="Stále důležitější jazyk">                 HTML            </a><br>
+                             <img src="Robocop_soubory/x.gif" width="1"><img src="Robocop_soubory/odrazka.gif">
+                 <a href="http://casopis.programator.cz/index.php?rubrika=16" title="Java">                 Java            </a><br>
+                             <img src="Robocop_soubory/x.gif" width="1"><img src="Robocop_soubory/odrazka.gif">
+                 <a href="http://casopis.programator.cz/index.php?rubrika=4" title="JavaScript">                 JavaScript            </a><br>
+                             <img src="Robocop_soubory/x.gif" width="1"><img src="Robocop_soubory/odrazka.gif">
+                 <a href="http://casopis.programator.cz/index.php?rubrika=12" title="Doporučená četba">                 Knihy            </a><br>
+                             <img src="Robocop_soubory/x.gif" width="1"><img src="Robocop_soubory/odrazka.gif">
+                 <a href="http://casopis.programator.cz/index.php?rubrika=13" title="Vše možné o Internetu">                 O Internetu            </a><br>
+                             <img src="Robocop_soubory/x.gif" width="1"><img src="Robocop_soubory/odrazka.gif">
+                 <a href="http://casopis.programator.cz/index.php?rubrika=2" title="Vše o programování hlavně v Turbo Pascalu">                 Pascal            </a><br>
+                             <img src="Robocop_soubory/x.gif" width="1"><img src="Robocop_soubory/odrazka.gif">
+                 <a href="http://casopis.programator.cz/index.php?rubrika=6" title="Vše o PHP">                 PHP            </a><br>
+                             <img src="Robocop_soubory/x.gif" width="1"><img src="Robocop_soubory/odrazka.gif">
+                 <a href="http://casopis.programator.cz/index.php?rubrika=5" title="Co je nového v projektu Programátor">                 Pro. programátor            </a><br>
+                             <img src="Robocop_soubory/x.gif" width="1"><img src="Robocop_soubory/odrazka.gif">
+                 <a href="http://casopis.programator.cz/index.php?rubrika=7" title="Programy z našeho projektu">                 Programy            </a><br>
+                             <img src="Robocop_soubory/x.gif" width="1"><img src="Robocop_soubory/odrazka.gif">
+                 <a href="http://casopis.programator.cz/index.php?rubrika=11" title="Zajímavý programovací jazyk">                 Python            </a><br>
+                             <img src="Robocop_soubory/x.gif" width="1"><img src="Robocop_soubory/odrazka.gif">
+                 <a href="http://casopis.programator.cz/index.php?rubrika=14" title="Externí zprávy">                 Tiskové zprávy            </a><br>
+                           </span>
+         </td>
+        </tr>
+      </tbody></table>
+      <p></p>
+
+              <table align="center" border="0" cellpadding="1" cellspacing="0" width="120">
+        <tbody><tr>
+         <td align="left" bgcolor="#0d3b8e">
+          <span class="supmenu">
+           <b><img src="Robocop_soubory/double_point.gif">Projekty</b>
+          </span>
+         </td>
+        </tr>
+        <tr>
+         <td>
+          <span class="mn">
+            <p>
+             <img src="Robocop_soubory/x.gif" width="1"><img src="Robocop_soubory/odrazka.gif">
+            <a href="http://casopis.programator.cz/index.php"> </a><a href="http://linux.programator.cz/projekty/javascript">JScript Planet</a><br>
+             <img src="Robocop_soubory/x.gif" width="1"><img src="Robocop_soubory/odrazka.gif">
+            <a href="http://casopis.programator.cz/index.php"> </a><a href="http://linux.programator.cz/forum">ProProjekty</a></p>
+          </span>
+         </td>
+        </tr>
+        </tbody></table>
+        <p></p>
+
+        <table align="center" border="0" cellpadding="1" cellspacing="0" width="120">
+        <tbody><tr>
+         <td align="left" bgcolor="#0d3b8e">
+          <span class="supmenu">
+           <b><img src="Robocop_soubory/double_point.gif">Služby</b>
+          </span>
+         </td>
+        </tr>
+        <tr>
+         <td>
+          <span class="mn">
+            <p>
+             <img src="Robocop_soubory/x.gif" width="1"><img src="Robocop_soubory/odrazka.gif">
+            <a href="http://casopis.programator.cz/index.php"> </a><a href="http://casopis.programator.cz/monitor.programator.cz">Monitoring</a><br>
+          </p></span>
+         </td>
+        </tr>
+        </tbody></table>
+        <p></p>
+
+       <table align="center" border="0" cellpadding="1" cellspacing="0" width="120">
+        <tbody><tr>
+         <td align="left" bgcolor="#0d3b8e">
+          <span class="supmenu">
+           <b><img src="Robocop_soubory/double_point.gif">Informace</b>
+          </span>
+         </td>
+        </tr>
+        <tr>
+         <td>
+          <span class="mn">
+            <img src="Robocop_soubory/x.gif" width="1"><img src="Robocop_soubory/odrazka.gif">
+            <a href="http://casopis.programator.cz/index.php"> </a><a href="http://casopis.programator.cz/r-users.php">Redakce</a><br>
+            <img src="Robocop_soubory/x.gif" width="1"><img src="Robocop_soubory/odrazka.gif">
+            <a href="http://casopis.programator.cz/index.php"> </a><a href="http://casopis.programator.cz/o.php">O časopisu</a><br>
+            <img src="Robocop_soubory/x.gif" width="1"><img src="Robocop_soubory/odrazka.gif">
+            <a href="http://casopis.programator.cz/index.php"> </a><a href="http://casopis.programator.cz/odkazy.php">Odkazy</a><br>
+            <img src="Robocop_soubory/x.gif" width="1"><img src="Robocop_soubory/odrazka.gif">
+            <a href="http://casopis.programator.cz/index.php"> </a><a href="http://casopis.programator.cz/newredaktor.php">Nový redaktor</a><br>
+          </span>
+         </td>
+       </tr>
+      </tbody></table>
+      <p></p>
+
+      <hr size="1" width="110">
+      <p align="center">ISSN 1213-7359
+      <br>
+      </p><p align="center"><font size="1">Šéfredaktor:</font>
+      <br>
+      <span class="mn"><a href="mailto:jansova@programator.cz"><b>Jan Sova</b></a></span>
+      <br>
+      <br>
+      <font size="1">Zástupci šéfredaktora</font>
+      <br>
+      <b>Frerenzy Dawid</b>
+      <br>
+      <b>Krásenský David</b>
+      <br>
+      <br>
+      <font size="1">Šéfredaktoři rubrik</font>
+      <br>
+      <b>Michal Chalupník</b><br>
+      <b>Formánek Jiří</b><br>
+      <b>Pavel Aleš</b><br>
+      <b>Sojka Zdeněk</b><br>
+      <b>Petr Rympler</b><br>
+      <br>
+      <font size="1">Administrátor</font><br>
+      <span class="mn"><a href="mailto:jansova@programator.cz"><b>Jan Sova</b></a></span>
+      <br>
+      <br>
+
+
+
+      </p><p align="center"><a href="http://casopis.programator.cz/"><img src="Robocop_soubory/icon.gif" alt="Naše ikonka" border="0"></a><br>
+      <a href="http://www.minasite.cz/"><img src="Robocop_soubory/minasite.gif" alt="MinaSite" border="0"></a><br>
+      <!-- Komplikátorovy stránky - Začátek -->
+       <a href="http://www.komplikator.cz/" target="_top">
+       <img src="Robocop_soubory/kikona.gif" alt="Komplikátorovy Stránky" border="0" height="31" width="88"></a><br>
+      <!-- Komplikátorovy stránky - Konec -->
+      <a href="http://www.toplist.cz/" target="_top"><img src="Robocop_soubory/count.gif" alt="TOPlist" border="0"></a><br>
+      <a href="http://www.galactica.cz/"><img src="Robocop_soubory/gal.gif" alt="GALACTICA" border="0"></a><br>
+
+
+      <br>
+
+      </p><p align="center"><font size="1">Časopis používá redakční systém Sova-Press.</font></p>
+        <br>
+       </td>
+      </tr>
+     </tbody></table>
+
+
+    <!-- vynechání prostoru mezi buňkami -->
+    </td><td width="4">
+    <img src="Robocop_soubory/x.gif" width="4"></td>
+      <!--
+          zde končí levá část stránky a začíná střed, musí začítt tm, že se
+          definuje velikost buňky pro střed
+      -->    
+    <td valign="top" width="522">
+    <br>
+         <p><span class="nadpis">Robocode - aneb Java (bojovou) hrou.</span> v rubrice Java</p>
+
+        <p><b>Pokud vás už nebaví donekonečna hrát hry a chcete zkusit něco jiného, čtěte 
+dál. A pokud už popáté hrajete jednu a tu samou strategii, a napadlo vás někdy, 
+jaké to je, postavit se na druhou stranu a naprogramovat si vlastního "soupeře" - tank, který 
+smaže své nepřátele z povrchu monitoru, jste tu správně.</b></p>
+        <p></p><p><b>Robocode </b>je jednoduše geniální hračka - <b>simulátor souboje tanků</b> od IBM. Naprogramujete si v Javě svůj 
+vlastní tank a můžete jej poslat do bitvy proti ostatním tankům. Do hrubé, typu všichni proti všem a 
+nebo naopak do bitvy týmů, kde každý z tanků bude mít svou specializaci a svůj 
+úkol. Co je k tomu potřeba? Kromě samotného prostředí, které lze stáhnout na 
+stránkách <a target="_blank" href="http://robocode.alphaworks.ibm.com/">Robocode</a> samozřejmě i počítač - dle IBM je dostačující konfigurace 
+Pentium II 400 MHz, 64 MB RAM a 10 MB na pevném disku - tedy žádné přehnané 
+požadavky. Dále samozřejmě nainstalovaný JDK a to minimálně verze 1.3. Toliko k 
+počítači. A co programátor? Třeba jsou samozřejmě alespoň základní znalosti 
+Javy, něco málo z matematiky a pak už jen co nejvíc důvtipu.</p>
+<p>Po stažení a nainstalování máte k dispozici samotné grafické rozhraní, editor 
+zdrojových kódů, překladač (jikes - od IBM), popis API a nakonec celou řadu 
+ukázkových robotů.</p>
+<p>Prostředí spustíte pomocí <code>robocode.bat</code> (nebo <code>robocode.sh</code> na linuxu, 
+případně přímo soubor <code>robocode.jar</code>), který se 
+nachází v adresáři Robocode. Prostředí vypadá takto (pro plnou velikost, 
+klikněte na náhled):</p>
+<p><a target="_blank" href="http://casopis.programator.cz/img/cdome/RoboCode/GUI.jpg">
+<img src="Robocop_soubory/GUIn.jpeg" alt="Probíhající bitva" border="0" height="139" width="176"></a></p>
+<p>Vlevo vidíte hrací plochu a vpravo editor zdrojových kódů. Na hrací ploše je 
+již rozehrána bitva. V levém dolním rohu právě explodoval zasažený tank, vpravo 
+pak tank obdržel zásah. Vlevo je možno zahlédnout i dvě letící střely. Pod 
+každým z tanků je jeho jméno a nad ním je jeho energie (vysvětlena níže). V 
+pravé části hlavního okna se nacházejí tlačítka, po jejichž stisknutí se zobrazí 
+"konzole" každého z tanků, kam mohou zapisovat zprávy pro programátora.</p>
+<h3>Tank</h3>
+<p>
+<img src="Robocop_soubory/anatomie.gif" alt="Anatomie tanku" border="0" height="137" width="177"></p>
+<p>Takto vypadá náš tank - je jednoduchý. Skládá se ze tří částí - na samotném tanku se nachází 
+věž s hlavní a na ní potom radar. To znamená, že pokud např. otáčí hlavní, 
+otáčí se s ní i radar. Nicméně je možné s každou touto součástí pohybovat 
+odděleně.</p>
+<h3>Programování robota (tanku)</h3>
+<p>Pokud jde o implementaci robota, každý  robot je potomkem některé ze 
+tříd <code>robocode.Robot</code>, <code>robocode.AdvancedRobot</code> a <code>robocode.TeamRobot</code>. Nejjednodušší 
+je třída <code>Robot</code>, na které si ukážeme, jak vytvořit vlastní tank. Třída
+<code>AdvancedRobot</code> především umožňuje navíc kombinování činností či 
+vytváření vlastních událostí (níže) a třída 
+<code>TeamRobot</code>, 
+která je vhodná pro psaní robotů do týmu (jak jinak), a která je potomkem třídy
+<code>AdvancedRobot</code>, umožňuje navíc zasílání zpráv mezi roboty. Navíc 
+může každý robot implementovat rozhraní <code>robocode.Droid</code>, které 
+přidává 20 bodů energie, ale deaktivuje radar, takže takový robot se hodí spíše 
+(no, vlastně jedině...:-)) 
+do týmů, kde může dostávat informace od robotů-velitelů - viz. ukázkový tým
+<code>sampleteam.MyFirstTeam</code>.</p>
+<p>Nového robota vytvoříme tak, že ve spuštěném prostředí vybereme v nabídce 
+Robot položku Editor. V tomto editoru pak v menu File-&gt;New-&gt;Robot. Zadáme jak se 
+bude jmenovat (název třídy) a po té název balíčku (třeba jméno autora). Ve vytvořeném souboru se 
+nachází základ nového robota, odvozeného od třídy <code>robocode.Robot</code>. Co teď?</p>
+<p>Je dobré si uvědomit, že jakmile robota pustíme do boje, nemůžeme ho vést za 
+ručičku (za hlaveň). Robot musí být soběstačný a musí se umět rozhodnout co 
+dělat. Jestli má střílet, jestli a kam má poodjet atd. Stěžejní metodou třídy je metoda <code>run()</code>, kterou se robot spouští. 
+Tato se spustí jen jednou - na začátku kola a v ní musí být základ všeho, co má 
+robot po celou dobu dělat. Jak je 
+vidět, v této metodě se  nachází nekonečná smyčka <code>while(true)</code>, 
+která běží po celou dobu  života robota, a ve které 
+mu musíme dát instrukce, co dělat. Dále se tu nachází několik metod ve 
+tvaru <code>onXXX()</code>, které obsluhují události jako zaměření jiného robota či fakt, že 
+náš robot byl zasažen.</p>
+<p>K ovládání robota existuje několik základních metod: <code>ahead()</code>,<code> back()</code>, kde se 
+v parametru uvádí vzdálenost, kterou mají urazit. Dále <code>turnRight()</code> a
+<code>turnLeft()</code>, 
+které říkají robotu, aby se otočil daným směrem o počet stupňů zadaných v 
+parametru. A konečně <code>turnGunRight()</code> a <code>turnGunLeft()</code>, které podobně otáčí věží se 
+zbraní (a s radarem). Dále můžete získat informace o poloze robota - <code>getX()</code> a
+<code>getY()</code>, o jeho natočení - <code>getHeading()</code>, o jeho energii -
+<code>getEnergy()</code> atd. Střílí 
+se metodou<code> fire()</code>, případně <code>fireBullet()</code>, která navíc vrací objekt vystřeleného 
+projektilu. V parametru těchto metod se udává energie, jakou se má se střílet. 
+Samozřejmě, existuje celá řada dalších metod, ale jejich popis je nad možnosti 
+článku, takže odkazuji na popis API, které se nachází v adresáři {robocode}\javadoc.</p>
+<p>Kupříkladu, robot, který bude neustále jezdit ve čtverečku by měl takovouto 
+metodu<code> run()</code>:</p>
+<p><code><font color="#0000ff">public void</font> run(){<br>
+&nbsp; <font color="#0000ff">while</font>(<font color="#0000ff">true</font>){<br>
+&nbsp;&nbsp;&nbsp; ahead(200);<br>
+&nbsp;&nbsp;&nbsp; turnRight(90);<br>
+&nbsp; }<br>
+}</code></p>
+<p>Vždy popojede o 200 bodů, otočí se doprava o 90° a 
+pokračuje zase dopředu...</p>
+<p>Teď by nebylo na škodu na chvíli přerušit základní popis a říci si něco málo 
+k pravidlům střelby. Na začátku každého souboje má každý robot počáteční energii 100. 
+Každý výstřel stojí nějakou energii (označme si ji <i>e</i>) v rozsahu 0.1 až 3, 
+která se odečítá z energie tanku, a která se zadává v parametru metody <code>
+fire()</code>. Pokud je zasáhnut cíl, odebere mu 4*<i>e</i>. 
+Pokud však bylo však <i>e</i>&gt;1, odebere se mu navíc ještě 2*(<i>e </i>- 1). 
+Takže např. zásah plnou silou (<i>e</i> = 3) odebere zasaženému 4*3 + 2*(3-1) 
+energie - tedy 16 bodů energie. Zásah střelou o síle 1 odebere jen 4*1 - tedy 4 
+body. A pokud se podařilo cíl zasáhnout, získá útočník 
+trojnásobek této energie zpět (takže pokud začínal na 100, zasáhl s energií 3, 
+má teď 106 bodů - tři mu sebral výstřel a devět obdržel za zásah). Robot, který 
+už nemá energii je mrtev. Kolo vyhraje ten, který zůstane jako poslední.</p>
+<p>Osud robota by měl být řízen zpracováním událostí. Několik základních 
+je <code>HitByBulletEvent</code><b>, </b>ke které dojde, pokud jsme byli 
+zasaženi, 
+<code>HitRobotEvent</code>, pokud jsme se srazili s cizím robotem,<b> </b><code>HitWallEvent</code>, pokud 
+jsme vrazili do zdi a konečně <code>ScannedRobotEvent</code><font class="FrameItemFont">, 
+pokud jsme zachytili cizího robota radarem</font>. K obsluze těchto událostí 
+slouží metody ve tvaru např. <code>public void onScannedRobot(ScannedRobotEvent&nbsp;event)</code>, které musíme implementovat, pokud chceme tuto událost ošetřit. Objekty v 
+parametru nám potom podávají informace o události jako např. vzdálenost 
+zaměřeného 
+robota, jeho rychlost či jeho energii. Na ukázku ošetříme událost 
+<code>ScannedRobotEvent</code> tak, že vystřelíme na nepřítele. Pokud bude blízko (a tedy 
+bude větší šance, že jej zasáhneme) vystřelíme s energií 3, jinak s energií 1:</p>
+
+<p><code><font color="#0000ff">public</font> <font color="#0000ff">void</font> onScannedRobot(ScannedRobotEvent e) {<br>
+&nbsp; <font color="#0000ff">if</font> (e.getDistance()&lt;100)<br>
+&nbsp;&nbsp;&nbsp; fire(3);<br>
+&nbsp; <font color="#0000ff">else<br>
+</font>&nbsp;&nbsp;&nbsp; fire(1);<br>
+}</code></p>
+
+<p>Podobným způsobem ošetřujeme i další události.</p>
+
+<p>Už s těmito několika základními metodami a událostmi se dají psát celkem solidní 
+roboti. Navíc máme k dispozici třídy pro práci se soubory, do kterých si mohou 
+naši roboti zapisovat  údaje, čímž se mohou i učit. Protože se obvykle hrají 
+souboje o několika kolech, mohou si roboti ukládat např. informace o soupeřích.</p>
+
+<p>Pokud je náš robot hotov, musíme jej zkompilovat - menu Compiler -&gt; Compile. 
+Nyní už můžeme vytvořit novu bitvu - v hlavním okně menu Battle -&gt; New, kde 
+vybereme roboty, kteří mají bojovat (můžeme vybrat i jen jediného, abychom si 
+vyzkoušeli jeho pohyb), zadáme počet kol, velikost "arény", další hodnoty jako 
+např. rychlost chladnutí zbraně (každým výstřelem se zbraň zahřívá a tank může 
+střílet jen tehdy, pokud je teplota rovna nule). A bitva může začít.</p>
+
+<p>Roboti řešení jako potomci třídy <code>robocode.Robot</code> mají však jednu nevýhodu. A 
+to tu, že novou činnost (např. pohyb) mohou dělat až po té, co se dokončí ta 
+předešlá. Takže např. nejprve popojedeme, pak se otočíme, pak zase popojedeme, 
+ale nelze se za jízdy otáčet. Toto je vyřešeno až ve třídě <code>robocode.AdvancedRobot</code>, 
+ve které jsou navíc metody typu <code>setTurnRight()</code>, <code>setAhead()</code> atd. (tedy, začínají 
+slovem set). Takto můžeme vytvořit celý seznam činností, které pak můžeme 
+"odpálit" metodou <code>execute()</code>:</p>
+
+<p><code><font color="#0000ff">void</font> run(){<br>
+&nbsp; <font color="#0000ff">while</font>(<font color="#0000ff">true</font>){<br>
+&nbsp;&nbsp;&nbsp; setAhead(200);<br>
+&nbsp;&nbsp;&nbsp; setTurnRight(90);<br>
+&nbsp;&nbsp;&nbsp; execute();<br>
+&nbsp; }<br>
+}</code></p>
+
+<p>Tento robot bude jezdit neustále po kružnici.</p>
+
+<h3>Základy strategie</h3>
+
+<p>Shrňme si pár užitečných bodů, na co dbát. Určitě je vhodné ošetřit nárazy do 
+stěn a do ostatních robotů, protože tyto rovněž odebírají energii. Dobré je dbát 
+na pohyb, aby se dal náš robot těžko zaměřit. Osobně mám raději polohy poblíž 
+kraje, alespoň do té doby, dokud je v poli ještě hodně soupeřů. Je tam menší 
+riziko jak zásahu zbloudilou střelou, tak i menší riziko palby od více nepřátel 
+zároveň. Není nejlepší střílet jen tak nazdařbůh, protože každé minutí ubírá 
+energii. Objekty získané při zpracovávání událostí jsou plné užitečných 
+informací. Kupříkladu, když se srazíme s robotem, který má vyšší energii než my, 
+nemá moc smysl se ho snažit za každou cenu "přestřílet" a je lepší odtamtud co 
+nejrychleji zmizet. Zatímco, pokud je tento robot slabší, nám nic nebrání si na 
+něm zvednout sebevědomí.</p>
+
+<p>O  robotech by se dalo ještě dlouho povídat, ale to není účelem tohoto 
+článku. Jeho cílem bylo ukázat, že i programování může být zábava a ukázat kde 
+je možné tuto zábavu hledat. A já jen doufám, že svůj cíl splnil. Pokud vás myšlenka Robocode 
+nadchla, určitě nakoukněte jak na stránky 
+<a target="_blank" href="http://robocode.alphaworks.ibm.com/">Robocode</a> na serveru Alphaworks od IBM, 
+kde je řada odkazů na ostatní servery. Stejně tak se na stránkách
+<a target="_blank" href="http://www-106.ibm.com/developerworks/java/">IBM 
+Developer Works</a> nachází několik článků k tématu. Dalším vynikajícím serverem 
+je <a target="_blank" href="http://robocoderepository.com/">RoboCodeRepository</a>, 
+kde se mimo jiné nachází řada jiných robotů ke stažení a ke studiu. A pokud 
+pořád nevíte kam skočit, zkuste server
+<a target="_blank" href="http://robocode.net/">Robocode.net</a>.</p>
+
+<p>Pokud Vám tyto odkazy nestačí, stačí lehce 
+<a target="_blank" href="http://www.google.com/">zagooglovat</a>. 
+A pokud se chcete přiučit Javě, můžete sledovat seriál, který na tomto serveru 
+vychází ;-).</p>   <p></p>
+        <p>
+        Autor: <a href="http://casopis.programator.cz/r-users.php?id=50" title="informace o autorovi">Pavel Patz</a>
+        e-mail: <a href="http://casopis.programator.cz/index.php?autor=cdome@centrum.cz" title="e-mail autora" class="mn">cdome@centrum.cz</a>
+        web: <a href="http:///" title="Stránky autora" class="mn"></a>
+        </p>
+        <p align="right"><i></i></p>
+
+
+     <table style="border: 1px solid rgb(0, 0, 128);" align="center" bgcolor="#f0f0f0" cellspacing="1" width="495">
+      <tbody><tr>
+       <td>
+        <p><b>Příspěvky ke článku</b></p>
+       </td>
+      </tr>
+     </tbody></table>
+
+     <table align="center" width="495">
+      <tbody><tr>
+       <td>
+        <span class="mn">
+         <a href="http://casopis.programator.cz/forum.php?clanek=205">zajimave</a> 09.11.2003 12:24:47 Autor: skyWalker <br><a href="http://casopis.programator.cz/forum.php?clanek=205">Download</a> 09.12.2003 20:28:41 Autor: Stano <br><a href="http://casopis.programator.cz/forum.php?clanek=205">download, dalsi info</a> 18.12.2003 09:51:04 Autor: cooler <br><a href="http://casopis.programator.cz/forum.php?clanek=205">40</a> 06.12.2004 23:17:07 Autor: 30 <br><a href="http://casopis.programator.cz/forum.php?clanek=205">Robocode</a> 27.03.2005 13:56:36 Autor: Oroborus <br><a href="http://casopis.programator.cz/forum.php?clanek=205">Zni to uzasne</a> 13.09.2005 22:02:38 Autor: H4wk.cz <br><a href="http://casopis.programator.cz/forum.php?clanek=205">nevim jak na to!!!</a> 02.12.2005 22:18:27 Autor: Tommyx <br>        </span>
+       </td>
+      </tr>
+      <tr>
+       <td align="center">
+        <span class="mn">
+         <a href="http://casopis.programator.cz/forum.php?clanek=205">Přidat komentář</a>
+        </span>
+       </td>
+      </tr>
+     </tbody></table>
+     <p></p>
+
+
+    <table style="border: 1px solid rgb(0, 0, 128);" align="center" bgcolor="#f0f0f0" cellspacing="1" width="495">
+     <tbody><tr>
+      <td>
+       <p><b>Poslední ze stejné rubriky</b></p>
+      </td>
+     </tr>
+    </tbody></table>
+
+
+    <table align="center" width="495">
+     <tbody><tr>
+      <td>
+       <span class="mn">
+        <img src="Robocop_soubory/odrazka.gif"> <a href="http://casopis.programator.cz/r-art.php?clanek=208">Začínáme v Javě (7.): Konstruktory a přetěžování metod</a><br><img src="Robocop_soubory/odrazka.gif"> <a href="http://casopis.programator.cz/r-art.php?clanek=204">Začínáme v Javě (6.): Třídy a objekty.</a><br><img src="Robocop_soubory/odrazka.gif"> <a href="http://casopis.programator.cz/r-art.php?clanek=203">Začínáme v Javě (5.): Podmínky, cykly a kolektiv.</a><br><img src="Robocop_soubory/odrazka.gif"> <a href="http://casopis.programator.cz/r-art.php?clanek=202">Začínáme v Javě (4.): Operace s operátory</a><br><img src="Robocop_soubory/odrazka.gif"> <a href="http://casopis.programator.cz/r-art.php?clanek=201">Java a její layout managery</a><br>       </span>
+      </td>
+     </tr>
+    </tbody></table>
+
+
+   </td>
+   <td width="4">
+    <img src="Robocop_soubory/x.gif" width="4">
+   </td>
+
+
+   <!-- tak tady začíná pravý sloupek -->
+   <td valign="top" width="120">
+   <br>
+
+    <table style="border: 1px solid rgb(32, 32, 32);" align="center" border="0" cellpadding="1" cellspacing="0" width="120">
+        <tbody><tr>
+         <td align="left" bgcolor="#0d3b8e">
+          <span class="supmenu">
+           <b><img src="Robocop_soubory/double_point.gif">Funkce ke článku</b>
+       </span>
+      </td>
+     </tr>
+     <tr>
+      <td>
+     <span class="mn">
+         <img src="Robocop_soubory/diskuse.gif"> <a href="http://casopis.programator.cz/forum.php?clanek=205">Přidat komentář</a>
+        </span>
+      </td>
+     </tr>
+    </tbody></table>
+    <br>
+        <table style="border: 1px solid rgb(32, 32, 32);" align="center" border="0" cellpadding="1" cellspacing="0" width="120">
+        <tbody><tr>
+         <td align="left" bgcolor="#0d3b8e">
+          <span class="supmenu">
+           <b><img src="Robocop_soubory/double_point.gif">Nejnovější články</b></span>
+<b>       </b></td>
+      </tr>
+      <tr>
+       <td>
+        <span class="mn">
+
+                 <img src="Robocop_soubory/x.gif" width="1"><img src="Robocop_soubory/odrazka.gif"> <a href="http://casopis.programator.cz/r-art.php?clanek=218">
+            Práce s událostmi v .NET Framework. </a>[13886]<br>         <img src="Robocop_soubory/x.gif" width="1"><img src="Robocop_soubory/odrazka.gif"> <a href="http://casopis.programator.cz/r-art.php?clanek=217">
+            Nová soutěž na 3D Contestu CZ </a>[10603]<br>         <img src="Robocop_soubory/x.gif" width="1"><img src="Robocop_soubory/odrazka.gif"> <a href="http://casopis.programator.cz/r-art.php?clanek=216">
+            Práce v .NET Framework - Zástupci </a>[12651]<br>         <img src="Robocop_soubory/x.gif" width="1"><img src="Robocop_soubory/odrazka.gif"> <a href="http://casopis.programator.cz/r-art.php?clanek=215">
+            Práce s XML v C# (5.) - ověřování dokumentu pomocí třídy XmlValidatingReader </a>[10510]<br>         <img src="Robocop_soubory/x.gif" width="1"><img src="Robocop_soubory/odrazka.gif"> <a href="http://casopis.programator.cz/r-art.php?clanek=214">
+            Práce s XML v C# (4.) - třídy XmlDocument a dotazy jazyka XPath </a>[11856]<br>         </span>
+       </td>
+      </tr>
+     </tbody></table>
+     <br>
+
+    <center>
+<!-- BBSTART: ad2.billboard.cz kod 1.1 - SERVER: Časopis(8512), SEKCE: 120*90(5), POZICE: (1), TYPBANNERU: Button 1(5), OKRAJ: ne, POPIS: ne. -->
+<script language="JavaScript" type="text/javascript">
+<!--
+var bbs=screen,bbn=navigator,bbh;bbh='&ubl='+bbn.browserLanguage+'&ucc='+bbn.cpuClass+'&ucd='+bbs.colorDepth+'&uce='+bbn.cookieEnabled+'&udx='+bbs.deviceXDPI+'&udy='+bbs.deviceYDPI+'&usl='+bbn.systemLanguage+'&uje='+bbn.javaEnabled()+'&uah='+bbs.availHeight+'&uaw='+bbs.availWidth+'&ubd='+bbs.bufferDepth+'&uhe='+bbs.height+'&ulx='+bbs.logicalXDPI+'&uly='+bbs.logicalYDPI+'&use='+bbs.fontSmoothingEnabled+'&uto='+(new Date()).getTimezoneOffset()+'&uui='+bbs.updateInterval+'&uul='+bbn.userLanguage+'&uwi='+bbs.width;
+var bb9_bgcolor='C0C0C0';
+var bb9_text='000000';
+var bb9_link='0000FF';
+if(document.bgColor) { bb9_bgcolor=document.bgColor.substr(1); }
+if(document.fgColor) { bb9_text=document.fgColor.substr(1); }
+if(document.linkColor) { bb9_link=document.linkColor.substr(1); }
+document.write("<IFRAME WIDTH=120 HEIGHT=90 MARGINWIDTH=0 MARGINHEIGHT=0 FRAMEBORDER=0 HSPACE=0 VSPACE=0 SCROLLING=no BORDERCOLOR='#000000' SRC='http://ad2.billboard.cz/please/showit/8512/5/1/5/?typkodu=html&topmargin=0&leftmargin=0"+bbh+"&href="+escape(location.href)+"&popis=ne&okraj=ne&bgcolor="+bb9_bgcolor+"&text="+bb9_text+"&link="+bb9_link+"&bust="+Math.random()+"&target=_top'>");
+document.write("<scr"+"ipt language='JavaScript' type='text/javascript'>");
+document.write("document.write(\"<scr\"+\"ipt language='JavaScript' type='text/javascript' src='http://ad2.billboard.cz/please/showit/8512/5/1/5/?typkodu=js\"+bbh+\"&href=\"+escape(location.href)+\"&popis=ne&okraj=ne&bust=\"+Math.floor(10000000*Math.random())+\"&target=_top'><\/scr\"+\"ipt>\");");
+document.write("<\/scr"+"ipt>");
+document.write("<\/IFRAME>");
+/**///-->
+</script><iframe marginwidth="0" marginheight="0" hspace="0" vspace="0" bordercolor="#000000" src="Robocop_soubory/a_002.html" frameborder="0" height="90" scrolling="no" width="120">&lt;script
+language='JavaScript'
+type='text/javascript'&gt;document.write("&lt;scr"+"ipt
+language='JavaScript' type='text/javascript'
+src='http://ad2.billboard.cz/please/showit/8512/5/1/5/?typkodu=js"+bbh+"&amp;href="+escape(location.href)+"&amp;popis=ne&amp;okraj=ne&amp;bust="+Math.floor(10000000*Math.random())+"&amp;target=_top'&gt;&lt;/scr"+"ipt&gt;");&lt;/script&gt;</iframe>
+<noscript>
+<table border="0" cellpadding="0" cellspacing="0"><tr><td>
+<a href="http://ad2.billboard.cz/please/redir.bb/8512/5/1/5/"
+target="_top">
+<img
+src="http://ad2.billboard.cz/please/showit/8512/5/1/5/?typkodu=img"
+border="0" width="120" height="90" alt='Kliknete prosim!'></a>
+</td></tr></table>
+</noscript>
+<!-- BBEND: ad2.billboard.cz kod 1.1 -->
+</center>
+<br>
+
+    <table style="border: 1px solid rgb(32, 32, 32);" align="center" border="0" cellpadding="1" cellspacing="0" width="120">
+        <tbody><tr>
+         <td align="left" bgcolor="#0d3b8e">
+          <span class="supmenu">
+           <b><img src="Robocop_soubory/double_point.gif">O článku</b>
+       </span>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       <span class="mn">
+         Datum: 17.10.2003<br>Rubrika: <a href="http://casopis.programator.cz/index.php?16">Java</a><br>Čtenářů: 16167<br>Autor: <a href="mailto:cdome@centrum.cz">Pavel Patz</a><br><p></p><p><b>Hodnocení článku:</b><br>Znamka: 2.72<br>Počet známek: 2117<br>[<a href="http://casopis.programator.cz/r-art.php?clanek=205&amp;znamka=1">1</a>] [<a href="http://casopis.programator.cz/r-art.php?clanek=205&amp;znamka=2">2</a>] [<a href="http://casopis.programator.cz/r-art.php?clanek=205&amp;znamka=3">3</a>] [<a href="http://casopis.programator.cz/r-art.php?clanek=205&amp;znamka=4">4</a>] [<a href="http://casopis.programator.cz/r-art.php?clanek=205&amp;znamka=5">5</a>]<br>
+ </p></span><p></p>       
+      </td>
+     </tr>
+    </tbody></table>
+
+       </td>
+  </tr>
+</tbody></table>
+<p>&nbsp;</p>
+<div align="center">
+
+<!-- BBSTART: ad2.billboard.cz kod 1.1 - SERVER: Časopis(8512), SEKCE: bottom(2), POZICE: (2), TYPBANNERU: Full Banner(1), OKRAJ: ne, POPIS: ne. -->
+<script language="JavaScript" type="text/javascript">
+<!--
+var bbs=screen,bbn=navigator,bbh;bbh='&ubl='+bbn.browserLanguage+'&ucc='+bbn.cpuClass+'&ucd='+bbs.colorDepth+'&uce='+bbn.cookieEnabled+'&udx='+bbs.deviceXDPI+'&udy='+bbs.deviceYDPI+'&usl='+bbn.systemLanguage+'&uje='+bbn.javaEnabled()+'&uah='+bbs.availHeight+'&uaw='+bbs.availWidth+'&ubd='+bbs.bufferDepth+'&uhe='+bbs.height+'&ulx='+bbs.logicalXDPI+'&uly='+bbs.logicalYDPI+'&use='+bbs.fontSmoothingEnabled+'&uto='+(new Date()).getTimezoneOffset()+'&uui='+bbs.updateInterval+'&uul='+bbn.userLanguage+'&uwi='+bbs.width;
+var bb9_bgcolor='C0C0C0';
+var bb9_text='000000';
+var bb9_link='0000FF';
+if(document.bgColor) { bb9_bgcolor=document.bgColor.substr(1); }
+if(document.fgColor) { bb9_text=document.fgColor.substr(1); }
+if(document.linkColor) { bb9_link=document.linkColor.substr(1); }
+document.write("<IFRAME WIDTH=468 HEIGHT=60 MARGINWIDTH=0 MARGINHEIGHT=0 FRAMEBORDER=0 HSPACE=0 VSPACE=0 SCROLLING=no BORDERCOLOR='#000000' SRC='http://ad2.billboard.cz/please/showit/8512/2/2/1/?typkodu=html&topmargin=0&leftmargin=0"+bbh+"&href="+escape(location.href)+"&popis=ne&okraj=ne&bgcolor="+bb9_bgcolor+"&text="+bb9_text+"&link="+bb9_link+"&bust="+Math.random()+"&target=_top'>");
+document.write("<scr"+"ipt language='JavaScript' type='text/javascript'>");
+document.write("document.write(\"<scr\"+\"ipt language='JavaScript' type='text/javascript' src='http://ad2.billboard.cz/please/showit/8512/2/2/1/?typkodu=js\"+bbh+\"&href=\"+escape(location.href)+\"&popis=ne&okraj=ne&bust=\"+Math.floor(10000000*Math.random())+\"&target=_top'><\/scr\"+\"ipt>\");");
+document.write("<\/scr"+"ipt>");
+document.write("<\/IFRAME>");
+/**///-->
+</script><iframe marginwidth="0" marginheight="0" hspace="0" vspace="0" bordercolor="#000000" src="Robocop_soubory/a_003.html" frameborder="0" height="60" scrolling="no" width="468">&lt;script
+language='JavaScript'
+type='text/javascript'&gt;document.write("&lt;scr"+"ipt
+language='JavaScript' type='text/javascript'
+src='http://ad2.billboard.cz/please/showit/8512/2/2/1/?typkodu=js"+bbh+"&amp;href="+escape(location.href)+"&amp;popis=ne&amp;okraj=ne&amp;bust="+Math.floor(10000000*Math.random())+"&amp;target=_top'&gt;&lt;/scr"+"ipt&gt;");&lt;/script&gt;</iframe>
+<noscript>
+<table border="0" cellpadding="0" cellspacing="0"><tr><td>
+<a href="http://ad2.billboard.cz/please/redir.bb/8512/2/2/1/"
+target="_top">
+<img
+src="http://ad2.billboard.cz/please/showit/8512/2/2/1/?typkodu=img"
+border="0" width="468" height="60" alt='Kliknete prosim!'></a>
+</td></tr></table>
+</noscript>
+<!-- BBEND: ad2.billboard.cz kod 1.1 -->
+</div><hr size="1" width="760">
+<p align="center"><span class="mn">(c) Systém Jan Sova, Design David Krásenský a Jan Sova<br>Se svými dotazy či problémy se obracejte na diskusní
+<a href="http://linux.prgramator.cz/forum">fórum.</a><br>
+Časopis je součástí projektu <a href="http://www.programator.cz/">Programator</a>
+</span></p>
+
+</body></html>

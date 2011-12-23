@@ -1,0 +1,57 @@
+#BlueJ class context
+comment0.target=Barva[]\ getZnameBarvy()
+comment0.text=\nVrati\ vektor\ doposud\ definovanych\ barev.\n\n@return\ \ Vektor\ doposud\ definovanych\ barev\n\n
+comment1.target=String[]\ getZnameNazvy()
+comment1.text=\nVrati\ vektor\ retezcu\ s\ dopsud\ definovanymi\ nazvy\ barev.\ \nNazvu\ barev\ je\ vice\ nez\ definovanych\ barev,\ protoze\ barvy\ mohou\ mit\nvice\ nazvu\ (a\ nektere\ jich\ opravdu\ maji\ nekolik).\n\n@return\ \ Vektor\ retezcu\ s\ dopsud\ definovanymi\ nazvy\ barev\n\n
+comment10.params=red\ green\ blue\ alpha
+comment10.target=Barva\ getBarva(int,\ int,\ int,\ int)
+comment10.text=\nVytvori\ instanci\ nepojmenovane\ barvy\ se\ zadanou\ velikosti\ barevnych\nslozeka\ hladinou\ pruhlednosti\ nastavovanou\ v\ kanale\ alfa.\n\n@param\ red\ \ \ \ Velikost\ cervene\ slozky\n@param\ green\ \ Velikost\ zelene\ slozky\n@param\ blue\ \ \ Velikost\ modre\ slozky\n@param\ alpha\ \ Hladina\ pruhlednosti\:\ 0\=pruhledna,\ 255\=nepruhledna\n@return\ Barva\ se\ zadanymi\ velikostmi\ jednotlivych\ slozek\n\n
+comment11.params=red\ green\ blue\ nazev
+comment11.target=Barva\ getBarva(int,\ int,\ int,\ String)
+comment11.text=\nExistuje-li\ zadana\ barva\ mezi\ znamymi,\ vrati\ ji;\ v\ opacnem\ pripade\nvytvori\ novou\ barvu\ se\ zadanymi\ parametry\ a\ vrati\ odkaz\ na\ ni.\n\n@param\ red\ \ \ \ \ \ \ Velikost\ cervene\ slozky\n@param\ green\ \ \ \ \ Velikost\ zelene\ slozky\n@param\ blue\ \ \ \ \ \ Velikost\ modre\ slozky\n@param\ nazev\ \ \ \ \ Nazev\ vytvorene\ barvy\n\n@return\ Barva\ se\ zadanym\ nazvem\ a\ velikostmi\ jednotlivych\ slozek\n@throws\ IllegalArgumentException\ ma-li\ nektere\ ze\ znamych\ barev\ nektery\nze\ zadanych\ nazvu\ a\ pritom\ ma\ jine\ nastaveni\ barevnych\ slozek\nnebo\ ma\ jiny\ druhy\ nazev.\n\n
+comment12.params=red\ green\ blue\ alpha\ nazev
+comment12.target=Barva\ getBarva(int,\ int,\ int,\ int,\ String)
+comment12.text=\nExistuje-li\ zadana\ barva\ mezi\ znamymi,\ vrati\ ji;\ v\ opacnem\ pripade\nvytvori\ novou\ barvu\ se\ zadanymi\ parametry\ a\ vrati\ odkaz\ na\ ni.\n\n@param\ red\ \ \ \ \ \ \ Velikost\ cervene\ slozky\n@param\ green\ \ \ \ \ Velikost\ zelene\ slozky\n@param\ blue\ \ \ \ \ \ Velikost\ modre\ slozky\n@param\ alpha\ \ \ \ \ Hladina\ pruhlednosti\:\ 0\=pruhledna,\ 255\=nepruhledna\n@param\ nazev\ \ \ \ \ Nazev\ vytvorene\ barvy\n\n@return\ Instance\ tridy\ Barva\ reprezentujici\ zadanou\ barvu.\n\n@throws\ IllegalArgumentException\ ma-li\ nektere\ ze\ znamych\ barev\ nektery\nze\ zadanych\ nazvu\ a\ pritom\ ma\ jine\ nastaveni\ barevnych\ slozek\nnebo\ ma\ jiny\ druhy\ nazev.\n\n
+comment13.target=Color\ getColor()
+comment13.text=\nPrevede\ nami\ pouzivanou\ barvu\ na\ typ\ pouzivany\ kreslitkem.\n\n@return\ Instance\ tridy\ Color\ reprezentujici\ zadanou\ barvu\n\n
+comment14.target=String\ getCharakteristikaDec()
+comment14.text=\nPrevede\ nami\ pouzivanou\ barvu\ na\ typ\ pouzivany\ kreslitkem.\n\n@return\ Instance\ tridy\ Color\ reprezentujici\ zadanou\ barvu\n\n
+comment15.target=String\ getCharakteristikaHex()
+comment15.text=\nPrevede\ nami\ pouzivanou\ barvu\ na\ typ\ pouzivany\ kreslitkem.\n\n@return\ Instance\ tridy\ Color\ reprezentujici\ zadanou\ barvu\n\n
+comment16.target=String\ getNazev()
+comment16.text=\nVrati\ nazev\ barvy.\n\n@return\ Retezec\ definujici\ zadanou\ barvu.\n\n
+comment17.target=String[]\ getNazvy()
+comment17.text=\nVrati\ vektor\ nazvu\ dane\ barvy.\n\n@return\ Vektor\ navzu\ barvy\n\n
+comment18.target=Collection<String>\ nazvy()
+comment18.text=\nVrati\ kolekci\ nazvu\ dane\ barvy.\n\n@return\ Kolekce\ navzu\ barvy\n\n
+comment19.params=dalsiNazev
+comment19.target=void\ pridejNazev(String)
+comment19.text=\nPrida\ barve\ dalsi\ nazev\ -\ prezdivku.\n\n@param\ dalsiNazev\ Pridavany\ nazev,\ ktery\ se\ musi\ lisit\ od\ vsech\ndoposud\ zavedenych\ nazvu,\ jejichz\ seznam\ lze\ ziskat\nzavolanim\ metody\ {@link\ \#getZnameNazvy()}\n@throws\ IllegalArgumentException\ je-li\ zadany\ nazev\ jiz\ pouzit\n\n
+comment2.params=velkymi
+comment2.target=boolean\ setVelkymi(boolean)
+comment2.text=\nNastavi,\ zda\ se\ budou\ nazvy\ barev\ vypisovat\ velkymi\ pismeny.\n\n@param\ velkymi\ {@code\ true}\ maji-li\ se\ nazvy\ vypisovat\ velkymi\ pismeny,\njinak\ {@code\ false}\n@return\ Puvdoni\ nastaveni\n\n
+comment20.target=String\ toString()
+comment21.params=nazev
+comment21.target=Barva\ barvaSNazvem(String)
+comment21.text=\nVrati\ barvu\ s\ danym\ nazvem\ pricem\ je\ schopen\ ignorovat\ diakritiku.\n\n
+comment22.target=void\ pridejNazevBezDiakritiky()
+comment22.text=\nObsahuje-li\ nazev\ diakritiku,\ ulozi\ do\ prislusne\ mapy\ \njeho\ verzi\ bez\ diakritiky.\n\n
+comment3.target=void\ vypisZnameNazvy()
+comment3.text=\nOtevre\ dialogove\ okno,\ v\ nemz\ vypise\ vsechny\ doposud\ definovane\ \nnazvy\ barev.\ Jmena\ jsou\ lexikograficky\ serazena.\n\n
+comment4.target=Collection<Barva>\ znameBarvy()
+comment4.text=\nVrati\ kolekci\ doposud\ definovanych\ barev.\n\n@return\ \ Vektor\ doposud\ definovanych\ barev\n\n
+comment5.target=Collection<String>\ znameNazvy()
+comment5.text=\nVrati\ kolekci\ retezcu\ doposud\ definovanych\ nazvu\ barev.\ \ \ \ \ \ \nNazvu\ barev\ je\ vice\ nez\ definovanych\ barev,\ protoze\ barvy\ mohou\ mit\nvice\ nazvu\ (a\ nektere\ jich\ opravdu\ maji\ nekolik).\n\n@return\ \ Vektor\ retezcu\ s\ dopsud\ definovanymi\ nazvy\ barev\n\n
+comment6.params=red\ green\ blue\ alpha\ nazev
+comment6.target=Barva(int,\ int,\ int,\ int,\ String)
+comment6.text=\nVytvori\ instanci\ barvy\ se\ zadanou\ velikosti\ barevnych\ slozek\na\ hladinou\ pruhlednosti\ nastavovanou\ v\ kanale\ alfa\na\ se\ zadanym\ ceskym\ nazvem\ a\ nazvem\ bez\ diakritiky.\n\n@param\ red\ \ \ \ \ \ \ Velikost\ cervene\ slozky\n@param\ green\ \ \ \ \ Velikost\ zelene\ slozky\n@param\ blue\ \ \ \ \ \ Velikost\ modre\ slozky\n@param\ alpha\ \ \ \ \ Hladina\ pruhlednosti\:\ 0\=pruhledna,\ 255\=nepruhledna\n@param\ nazev\ \ \ \ \ Nazev\ vytvorene\ barvy\n@param\ nazevBHC\ \ Nazev\ bez\ hacku\ a\ carek\n\n
+comment7.params=c\ nazev
+comment7.target=Barva(Color,\ String)
+comment7.text=\nVytvori\ barvu\ ekvivalentni\ zadane\ instanci\ tridy\ \n{@link\ java.awt.Color}\ se\ zadanym\ ceskym\ nazvem.\n\n@param\ c\ \ \ \ \ \ Instance\ tridy\ {@link\ java.awt.Color}\ pozadovane\ barvy\n@param\ nazev\ \ Nazev\ vytvarene\ barvy;\ {@code\ null}\ oznaucje,\ \nze\ se\ ma\ pro\ barvu\ vytvorit\ genericky\ nazev\n\n
+comment8.params=nazevBarvy
+comment8.target=Barva\ getBarva(String)
+comment8.text=\nPrevede\ nazev\ barvy\ na\ prislusny\ objekt\ typu\ Barva.\n\n@param\ nazevBarvy\ \ Nazev\ pozadovane\ barvy\ --\ seznam\ znamych\ nazvu\nje\ mozno\ ziskat\ zavolanim\ metody\ getZnameNazvy()\n\n@return\ Instance\ tridy\ Barva\ reprezentujici\ zadanou\ barvu\n\n@throws\ IllegalArgumentException\ neni-li\ barva\ (nazev)\ mezi\ znamymi\n\n
+comment9.params=red\ green\ blue
+comment9.target=Barva\ getBarva(int,\ int,\ int)
+comment9.text=\nVytvori\ instanci\ barvy\ se\ zadanou\ velikosti\ barevnych\ slozeka.\n\n@param\ red\ \ \ Velikost\ cervene\ slozky\n@param\ green\ Velikost\ zelene\ slozky\n@param\ blue\ \ Velikost\ modre\ slozky\n@return\ Barva\ se\ zadanymi\ velikostmi\ jednotlivych\ slozek\n\n
+numComments=23

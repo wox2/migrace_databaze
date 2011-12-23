@@ -1,0 +1,3 @@
+(: vraci prvniho hrace z kazdeho muzstva :)
+
+//muzstvo/hrac[position() = 1]

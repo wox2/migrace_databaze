@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!ENTITY % address "(street, house_number, city, country, postcode)">
+<!ENTITY % birthday "(day, month, year)">
+
+<!ENTITY dia "Diabetes" >
+
+
+<!ELEMENT flights (flight*)>
+<!ELEMENT flight (passengers)>
+<!ATTLIST flight
+	id ID #REQUIRED
+	number CDATA #REQUIRED
+	date CDATA #REQUIRED
+>
+
+<!ELEMENT passengers (passenger*)>
+
+<!-- Cestujici povinne jsou pouze trida a jmeno cestujiciho -->
+<!ELEMENT passenger (
+	class, seat?, first_name, middle_name?, last_name,
+	birthday?, nationality?, passport?, address?,
+	(notice,raw_notice)?
+)>
+<!-- infant_ref urcuje dite, ktere sedi dospeleho (nema vlastni sedacku) -->
+<!ATTLIST passenger
+	id ID #REQUIRED
+	gender (MR|MRS|CHD|INF) #IMPLIED
+	infant_ref IDREF #IMPLIED
+>
+
+<!ELEMENT class (#PCDATA)>
+<!ELEMENT seat (#PCDATA)>
+<!ELEMENT first_name (#PCDATA)>
+<!ELEMENT last_name (#PCDATA)>
+<!ELEMENT middle_name (#PCDATA)>
+
+<!ELEMENT passport EMPTY>
+<!ATTLIST passport
+	number CDATA #REQUIRED
+>
+<!ELEMENT nationality (#PCDATA)>
+
+<!ELEMENT birthday %birthday;>
+	<!ELEMENT day (#PCDATA)>
+	<!ELEMENT month (#PCDATA)>
+	<!ELEMENT year (#PCDATA)>
+
+
+<!ELEMENT address %address;>
+<!ELEMENT street (#PCDATA)>
+<!ELEMENT house_number (#PCDATA)>
+<!ELEMENT city (#PCDATA)>
+<!ELEMENT country (#PCDATA)>
+<!ELEMENT postcode (#PCDATA)>
+
+
+<!ELEMENT notice (#PCDATA|separator)*>
+<!ELEMENT separator EMPTY>
+<!ELEMENT raw_notice (#PCDATA)>

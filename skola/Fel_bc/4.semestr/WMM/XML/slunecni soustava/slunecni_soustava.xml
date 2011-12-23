@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE slunecni_soustava SYSTEM "slunecni_soustava.dtd">
+<!--
+    Document   : slunecni_soustava.xml
+    Created on : 1. duben 2010, 9:55
+    Author     : woxie
+    Description:
+        Purpose of the document follows.
+-->
+
+<slunecni_soustava>
+    <planeta>
+        <jmeno jazyk="CZ">Zeme</jmeno>
+        <jmeno jazyk="LAT">GAIA</jmeno>
+        <polomer jednotka="km">6378</polomer>
+        <hustota jednotka="kg/m^3">5 515</hustota>
+
+        <vzdalenost_od_slunce>
+            <perihelium jednotka="km">
+                147 098 074
+            </perihelium>
+            <afelium jednotka="km">
+                152 097 701
+            </afelium>
+        </vzdalenost_od_slunce>
+
+        <doba_obehu>
+            <kolem_slunce jednotka="den">
+                365,256
+            </kolem_slunce>
+            <kolem_osy jednotka="h">
+                23,934 h
+            </kolem_osy>
+        </doba_obehu>
+        pevne
+        <skupenstvi>
+
+        </skupenstvi>
+
+        <satelity pocet="1">
+            <mesic>
+                <polomer jednotka="km">
+                    	3 476,2
+                </polomer>
+            </mesic>
+        </satelity>
+    </planeta>
+
+
+    <planeta>
+        <jmeno jazyk="CZ">Merkur</jmeno>
+        <polomer jednotka="km">2439,7</polomer>
+        <hustota jednotka="kg/m^3">5400</hustota>
+
+        <vzdalenost_od_slunce>
+            <perihelium jednotka="km">
+                46 001 272
+            </perihelium>
+            <afelium jednotka="km">
+               69 817 079
+            </afelium>
+        </vzdalenost_od_slunce>
+
+        <doba_obehu>
+            <kolem_slunce jednotka="den">
+                	87,969
+            </kolem_slunce>
+            <kolem_osy jednotka="den">
+                115.88
+            </kolem_osy>
+        </doba_obehu>
+        pevne
+        <skupenstvi>
+
+            </skupenstvi>
+
+        <satelity pocet="1">
+            <mesic>
+                <polomer jednotka="km">
+                    	3 476,2
+                </polomer>
+            </mesic>
+        </satelity>
+    </planeta>
+
+</slunecni_soustava>
+
+
+
+

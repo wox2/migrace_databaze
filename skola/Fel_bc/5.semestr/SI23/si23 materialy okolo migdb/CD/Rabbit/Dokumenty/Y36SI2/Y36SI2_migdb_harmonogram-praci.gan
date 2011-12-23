@@ -1,0 +1,385 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="Migrace Databáze [MigDB]" company="ČVUT FEL" webLink="https://rabbit.felk.cvut.cz/trac/migdb/" view-date="2010-09-21" view-index="0" gantt-divider-location="631" resource-divider-location="301" version="2.0">
+    <description><![CDATA[Cílem projektu je migrace dat v databázi při změně jejího schématu.]]></description>
+    <view zooming-state="default:2" id="gantt-chart"/>
+    <view id="resource-table">
+        <field id="0" name="Jméno" width="55" order="0"/>
+        <field id="1" name="Výchozí role" width="44" order="1"/>
+    </view>
+    <!-- -->
+    <calendars>
+        <day-types>
+            <day-type id="0"/>
+            <day-type id="1"/>
+            <calendar id="1" name="default">
+                <default-week sun="1" mon="0" tue="0" wed="0" thu="0" fri="0" sat="1"/>
+                <overriden-day-types/>
+                <days/>
+            </calendar>
+        </day-types>
+    </calendars>
+    <tasks color="#8cb6ce">
+        <taskproperties>
+            <taskproperty id="tpd0" name="type" type="default" valuetype="icon"/>
+            <taskproperty id="tpd1" name="priority" type="default" valuetype="icon"/>
+            <taskproperty id="tpd2" name="info" type="default" valuetype="icon"/>
+            <taskproperty id="tpd3" name="name" type="default" valuetype="text"/>
+            <taskproperty id="tpd4" name="begindate" type="default" valuetype="date"/>
+            <taskproperty id="tpd5" name="enddate" type="default" valuetype="date"/>
+            <taskproperty id="tpd6" name="duration" type="default" valuetype="int"/>
+            <taskproperty id="tpd7" name="completion" type="default" valuetype="int"/>
+            <taskproperty id="tpd8" name="coordinator" type="default" valuetype="text"/>
+            <taskproperty id="tpd9" name="predecessorsr" type="default" valuetype="text"/>
+            <taskproperty id="tpc0" name="Responsible" type="custom" valuetype="text"/>
+        </taskproperties>
+        <task id="18" name="INFRASTRUKTURA" meeting="false" start="2010-09-24" duration="21" complete="0" priority="1" expand="true">
+            <customproperty taskproperty-id="tpc0"/>
+            <task id="5" name="Swinpro/Rabbit" meeting="false" start="2010-09-24" duration="1" complete="0" priority="1" expand="true">
+                <customproperty taskproperty-id="tpc0" value="Tomáš"/>
+            </task>
+            <task id="6" name="Google groups + docs" meeting="false" start="2010-09-24" duration="1" complete="0" priority="1" expand="true">
+                <customproperty taskproperty-id="tpc0" value="Tomáš"/>
+            </task>
+            <task id="7" name="Vytvoření adresářové struktury na SVN" meeting="false" start="2010-09-24" duration="1" complete="0" priority="1" expand="true">
+                <customproperty taskproperty-id="tpc0" value="Tomáš"/>
+            </task>
+            <task id="42" name="Oprava SVN" meeting="false" start="2010-10-22" duration="1" complete="0" priority="1" expand="true">
+                <customproperty taskproperty-id="tpc0" value="Tomáš"/>
+            </task>
+            <task id="84" name="Rozchození GITu" meeting="false" start="2010-10-19" duration="1" complete="0" priority="1" expand="true">
+                <customproperty taskproperty-id="tpc0" value="všichni"/>
+            </task>
+        </task>
+        <task id="8" name="SCHŮZKY" meeting="false" start="2010-09-29" duration="56" complete="0" priority="1" expand="true">
+            <customproperty taskproperty-id="tpc0"/>
+            <task id="9" name="1. schůzka" meeting="false" start="2010-09-29" duration="1" complete="0" priority="1" expand="true">
+                <customproperty taskproperty-id="tpc0" value="Zdeněk"/>
+            </task>
+            <task id="10" name="2. schůzka" meeting="false" start="2010-10-05" duration="1" complete="0" priority="1" expand="true">
+                <customproperty taskproperty-id="tpc0" value="Tomáš, Michal"/>
+            </task>
+            <task id="11" name="3. schůzka" meeting="false" start="2010-10-08" duration="1" complete="0" priority="1" expand="true">
+                <customproperty taskproperty-id="tpc0" value="Tomáš, Michal"/>
+            </task>
+            <task id="12" name="4. schůzka" meeting="false" start="2010-10-12" duration="1" complete="0" priority="1" expand="true">
+                <customproperty taskproperty-id="tpc0" value="Zdeněk, Michal"/>
+            </task>
+            <task id="13" name="5. schůzka" meeting="false" start="2010-10-19" duration="1" complete="0" priority="1" expand="true">
+                <customproperty taskproperty-id="tpc0" value="Zdeněk, Michal"/>
+            </task>
+            <task id="14" name="6. schůzka" meeting="false" start="2010-11-02" duration="1" complete="0" priority="1" expand="true">
+                <customproperty taskproperty-id="tpc0" value="Tomáš, Zdeněk"/>
+            </task>
+            <task id="15" name="7. schůzka" meeting="false" start="2010-11-12" duration="1" complete="0" priority="1" expand="true">
+                <customproperty taskproperty-id="tpc0" value="Tomáš, Zdeněk"/>
+            </task>
+            <task id="86" name="8. schůzka" color="#8cb6ce" meeting="false" start="2010-11-18" duration="1" complete="0" priority="1" expand="true">
+                <customproperty taskproperty-id="tpc0" value="Tomáš, Zdeněk"/>
+            </task>
+            <task id="89" name="9. schůzka" color="#8cb6ce" meeting="false" start="2010-12-03" duration="1" complete="0" priority="1" expand="true">
+                <customproperty taskproperty-id="tpc0" value="Tomáš, Zdeněk"/>
+            </task>
+            <task id="90" name="10. schůzka" color="#8cb6ce" meeting="false" start="2010-12-08" duration="1" complete="0" priority="1" expand="true">
+                <customproperty taskproperty-id="tpc0" value="MigDB + new gen."/>
+            </task>
+            <task id="94" name="11. schůzka" color="#8cb6ce" meeting="false" start="2010-12-15" duration="1" complete="0" priority="1" expand="true">
+                <customproperty taskproperty-id="tpc0" value="MigDB + new gen."/>
+            </task>
+        </task>
+        <task id="16" name="VZDĚLÁVÁNÍ" meeting="false" start="2010-10-04" duration="33" complete="0" priority="1" expand="true">
+            <customproperty taskproperty-id="tpc0"/>
+            <task id="72" name="ATL" meeting="false" start="2010-10-04" duration="1" complete="0" priority="1" expand="true">
+                <customproperty taskproperty-id="tpc0" value="všichni"/>
+            </task>
+            <task id="74" name="Ecore" meeting="false" start="2010-10-11" duration="1" complete="0" priority="1" expand="true">
+                <customproperty taskproperty-id="tpc0" value="všichni"/>
+            </task>
+            <task id="85" name="Operational QVT" meeting="false" start="2010-11-05" duration="1" complete="0" priority="1" expand="true">
+                <customproperty taskproperty-id="tpc0" value="všichni"/>
+            </task>
+            <task id="87" name="Acceleo" color="#8cb6ce" meeting="false" start="2010-11-02" duration="1" complete="0" priority="1" expand="true">
+                <customproperty taskproperty-id="tpc0" value="všichni"/>
+            </task>
+            <task id="88" name="Analýza JAM transformace" color="#8cb6ce" meeting="false" start="2010-11-17" duration="1" complete="0" priority="1" expand="true">
+                <customproperty taskproperty-id="tpc0" value="všichni"/>
+            </task>
+        </task>
+        <task id="17" name="IMPLEMENTACE" meeting="false" start="2010-10-11" duration="39" complete="0" priority="1" expand="true">
+            <customproperty taskproperty-id="tpc0"/>
+            <task id="43" name="modifikace zadavatelovo modelu" meeting="false" start="2010-10-25" duration="1" complete="0" priority="1" expand="true">
+                <customproperty taskproperty-id="tpc0" value="Zdeněk"/>
+            </task>
+            <task id="91" name="transformace app2db" color="#8cb6ce" meeting="false" start="2010-11-22" duration="1" complete="0" priority="1" expand="true">
+                <customproperty taskproperty-id="tpc0" value="Tomáš"/>
+            </task>
+            <task id="92" name="primary key" color="#8cb6ce" meeting="false" start="2010-11-29" duration="1" complete="0" priority="1" expand="true">
+                <customproperty taskproperty-id="tpc0" value="Martin"/>
+            </task>
+            <task id="93" name="foreign key" color="#8cb6ce" meeting="false" start="2010-12-02" duration="1" complete="0" priority="1" expand="true">
+                <customproperty taskproperty-id="tpc0" value="Martin"/>
+            </task>
+            <task id="45" name="jUnit testy" meeting="false" start="2010-10-25" duration="1" complete="0" priority="1" expand="true">
+                <customproperty taskproperty-id="tpc0" value="Tomáš"/>
+            </task>
+            <task id="83" name="Java" meeting="false" start="2010-10-11" duration="17" complete="0" priority="1" expand="true">
+                <customproperty taskproperty-id="tpc0"/>
+                <task id="81" name="modifikace Ecore" meeting="false" start="2010-10-11" duration="1" complete="0" priority="1" expand="true">
+                    <customproperty taskproperty-id="tpc0" value="Tomáš"/>
+                </task>
+                <task id="75" name="licence ve zdrojovém kódu" meeting="false" start="2010-10-22" duration="1" complete="0" priority="1" expand="true">
+                    <customproperty taskproperty-id="tpc0" value="Tomáš"/>
+                </task>
+                <task id="80" name="parsování vstupního XML" meeting="false" start="2010-11-01" duration="1" complete="0" priority="1" expand="true">
+                    <customproperty taskproperty-id="tpc0" value="Tomáš"/>
+                </task>
+                <task id="82" name="generování SQL" meeting="false" start="2010-11-02" duration="1" complete="0" priority="1" expand="true">
+                    <customproperty taskproperty-id="tpc0" value="Tomáš, Martin"/>
+                </task>
+            </task>
+        </task>
+        <task id="19" name="SI2" meeting="false" start="2010-10-04" duration="5" complete="0" priority="1" expand="true">
+            <customproperty taskproperty-id="tpc0"/>
+            <task id="21" name="Akceptační testy" meeting="false" start="2010-10-08" duration="1" complete="0" priority="1" expand="true">
+                <customproperty taskproperty-id="tpc0" value="Martin"/>
+            </task>
+            <task id="22" name="Analýza rizik" meeting="false" start="2010-10-04" duration="1" complete="0" priority="1" expand="true">
+                <customproperty taskproperty-id="tpc0" value="Martin"/>
+            </task>
+        </task>
+        <task id="20" name="SI3" meeting="false" start="2010-10-05" duration="56" complete="0" priority="1" expand="true">
+            <customproperty taskproperty-id="tpc0"/>
+            <task id="26" name="Analýza" meeting="false" start="2010-10-11" duration="16" complete="0" priority="1" expand="true">
+                <customproperty taskproperty-id="tpc0"/>
+                <task id="44" name="Use Cases" meeting="false" start="2010-10-11" duration="1" complete="0" priority="1" expand="true">
+                    <customproperty taskproperty-id="tpc0" value="Zdeněk"/>
+                </task>
+                <task id="77" name="Imperativní vs. Deklartivní přístup" meeting="false" start="2010-10-11" duration="1" complete="0" priority="1" expand="true">
+                    <customproperty taskproperty-id="tpc0" value="Martin"/>
+                </task>
+                <task id="76" name="DDL operace" meeting="false" start="2010-10-18" duration="1" complete="0" priority="1" expand="true">
+                    <customproperty taskproperty-id="tpc0" value="Tomáš, Zdeněk, Martin"/>
+                </task>
+                <task id="79" name="Doplnění na aktuální stav" meeting="false" start="2010-10-25" duration="1" complete="0" priority="1" expand="true">
+                    <customproperty taskproperty-id="tpc0" value="Tomáš, Zdeněk"/>
+                </task>
+                <task id="78" name="Definice formátu změn" meeting="false" start="2010-11-01" duration="1" complete="0" priority="1" expand="true">
+                    <customproperty taskproperty-id="tpc0" value="Tomáš"/>
+                </task>
+            </task>
+            <task id="27" name="Návrh" meeting="false" start="2010-10-05" duration="1" complete="0" priority="1" expand="true">
+                <customproperty taskproperty-id="tpc0" value="Zdeněk"/>
+            </task>
+            <task id="28" name="Plán projektu" meeting="false" start="2010-10-19" duration="1" complete="0" priority="1" expand="true">
+                <customproperty taskproperty-id="tpc0" value="Zdeněk"/>
+            </task>
+            <task id="29" name="Přerozdělení bodů" meeting="false" start="2010-10-05" duration="56" complete="0" priority="1" expand="true">
+                <customproperty taskproperty-id="tpc0"/>
+                <task id="33" name="1. přerozdělení bodů" meeting="false" start="2010-10-05" duration="1" complete="0" priority="1" expand="true">
+                    <customproperty taskproperty-id="tpc0" value="Tomáš"/>
+                </task>
+                <task id="35" name="2. přerozdělení bodů" meeting="false" start="2010-10-26" duration="1" complete="0" priority="1" expand="false">
+                    <customproperty taskproperty-id="tpc0" value="Tomáš"/>
+                </task>
+                <task id="37" name="3. přerozdělení bodů" meeting="false" start="2010-11-16" duration="1" complete="0" priority="1" expand="false">
+                    <customproperty taskproperty-id="tpc0" value="Tomáš"/>
+                </task>
+                <task id="39" name="4. přerozdělení bodů" meeting="false" start="2010-12-07" duration="1" complete="0" priority="1" expand="false">
+                    <customproperty taskproperty-id="tpc0" value="Tomáš"/>
+                </task>
+                <task id="41" name="5. přerozdělení bodů" meeting="false" start="2010-12-21" duration="1" complete="0" priority="1" expand="false">
+                    <customproperty taskproperty-id="tpc0" value="Tomáš"/>
+                </task>
+            </task>
+            <task id="30" name="Rešerše" meeting="false" start="2010-10-25" duration="1" complete="0" priority="1" expand="true">
+                <customproperty taskproperty-id="tpc0" value="Tomáš"/>
+            </task>
+            <task id="31" name="Testy" meeting="false" start="2010-10-25" duration="1" complete="0" priority="1" expand="true">
+                <customproperty taskproperty-id="tpc0" value="Tomáš"/>
+            </task>
+            <task id="32" name="Infrastruktura" meeting="false" start="2010-11-16" duration="1" complete="0" priority="1" expand="true">
+                <customproperty taskproperty-id="tpc0" value="Zdeněk"/>
+            </task>
+        </task>
+        <task id="46" name="CVIČENÍ" meeting="false" start="2010-09-22" duration="61" complete="0" priority="1" expand="true">
+            <customproperty taskproperty-id="tpc0"/>
+            <task id="48" name="1. cvičení" meeting="false" start="2010-09-22" duration="1" complete="0" priority="1" expand="true">
+                <customproperty taskproperty-id="tpc0" value="všichni"/>
+            </task>
+            <task id="50" name="2. cvičení" meeting="false" start="2010-09-29" duration="1" complete="0" priority="1" expand="false">
+                <customproperty taskproperty-id="tpc0" value="všichni"/>
+            </task>
+            <task id="52" name="3. cvičení" meeting="false" start="2010-10-06" duration="1" complete="0" priority="1" expand="false">
+                <customproperty taskproperty-id="tpc0" value="všichni"/>
+            </task>
+            <task id="54" name="4. cvičení" meeting="false" start="2010-10-13" duration="1" complete="0" priority="1" expand="false">
+                <customproperty taskproperty-id="tpc0" value="všichni"/>
+            </task>
+            <task id="56" name="5. cvičení" meeting="false" start="2010-10-20" duration="1" complete="0" priority="1" expand="false">
+                <customproperty taskproperty-id="tpc0" value="všichni"/>
+            </task>
+            <task id="58" name="6. cvičení" meeting="false" start="2010-10-27" duration="1" complete="0" priority="1" expand="false">
+                <customproperty taskproperty-id="tpc0" value="Tomáš, Zdeněk, Martin"/>
+            </task>
+            <task id="60" name="7. cvičení" meeting="false" start="2010-11-03" duration="1" complete="0" priority="1" expand="false">
+                <customproperty taskproperty-id="tpc0" value="Tomáš, Zdeněk, Martin"/>
+            </task>
+            <task id="71" name="8. cvičení" meeting="false" start="2010-11-10" duration="1" complete="0" priority="1" expand="true">
+                <customproperty taskproperty-id="tpc0" value="všichni"/>
+            </task>
+            <task id="62" name="9. cvičení (10. týden)" meeting="false" start="2010-11-24" duration="1" complete="0" priority="1" expand="false">
+                <customproperty taskproperty-id="tpc0" value="Tomáš, Zdeněk, Martin"/>
+            </task>
+            <task id="64" name="10. cvičení (11. týden)" meeting="false" start="2010-12-01" duration="1" complete="0" priority="1" expand="false">
+                <customproperty taskproperty-id="tpc0" value="Tomáš, Zdeněk, Martin"/>
+            </task>
+            <task id="66" name="11. cvičení (12. týden)" meeting="false" start="2010-12-08" duration="1" complete="0" priority="1" expand="false">
+                <customproperty taskproperty-id="tpc0" value="Tomáš, Zdeněk, Martin, new gen."/>
+            </task>
+            <task id="68" name="12. cvičení (13. týden)" meeting="false" start="2010-12-15" duration="1" complete="0" priority="1" expand="false">
+                <customproperty taskproperty-id="tpc0" value="Tomáš, Zdeněk, Martin, new gen."/>
+            </task>
+        </task>
+    </tasks>
+    <resources>
+        <resource id="0" name="Tomáš Herout" function="Default:0" contacts="" phone=""/>
+        <resource id="1" name="Zdeněk Pecka" function="Default:0" contacts="" phone=""/>
+        <resource id="2" name="Martin Lukeš" function="Default:0" contacts="" phone=""/>
+        <resource id="3" name="Michal Líška" function="Default:0" contacts="" phone=""/>
+        <resource id="4" name="new generation" function="Default:0" contacts="" phone=""/>
+    </resources>
+    <allocations>
+        <allocation task-id="5" resource-id="0" function="Default:0" responsible="true" load="100.0"/>
+        <allocation task-id="6" resource-id="0" function="Default:0" responsible="true" load="100.0"/>
+        <allocation task-id="7" resource-id="0" function="Default:0" responsible="true" load="100.0"/>
+        <allocation task-id="42" resource-id="0" function="Default:0" responsible="true" load="100.0"/>
+        <allocation task-id="84" resource-id="3" function="Default:0" responsible="false" load="100.0"/>
+        <allocation task-id="84" resource-id="0" function="Default:0" responsible="true" load="100.0"/>
+        <allocation task-id="84" resource-id="1" function="Default:0" responsible="false" load="100.0"/>
+        <allocation task-id="84" resource-id="2" function="Default:0" responsible="false" load="100.0"/>
+        <allocation task-id="9" resource-id="1" function="Default:0" responsible="true" load="100.0"/>
+        <allocation task-id="10" resource-id="3" function="Default:0" responsible="false" load="100.0"/>
+        <allocation task-id="10" resource-id="0" function="Default:0" responsible="true" load="100.0"/>
+        <allocation task-id="11" resource-id="3" function="Default:0" responsible="false" load="100.0"/>
+        <allocation task-id="11" resource-id="0" function="Default:0" responsible="true" load="100.0"/>
+        <allocation task-id="12" resource-id="3" function="Default:0" responsible="false" load="100.0"/>
+        <allocation task-id="12" resource-id="1" function="Default:0" responsible="true" load="100.0"/>
+        <allocation task-id="13" resource-id="3" function="Default:0" responsible="false" load="100.0"/>
+        <allocation task-id="13" resource-id="1" function="Default:0" responsible="true" load="100.0"/>
+        <allocation task-id="14" resource-id="0" function="Default:0" responsible="true" load="100.0"/>
+        <allocation task-id="14" resource-id="1" function="Default:0" responsible="false" load="100.0"/>
+        <allocation task-id="15" resource-id="0" function="Default:0" responsible="true" load="100.0"/>
+        <allocation task-id="15" resource-id="1" function="Default:0" responsible="false" load="100.0"/>
+        <allocation task-id="86" resource-id="0" function="Default:0" responsible="true" load="100.0"/>
+        <allocation task-id="86" resource-id="1" function="Default:0" responsible="false" load="100.0"/>
+        <allocation task-id="89" resource-id="0" function="Default:0" responsible="true" load="100.0"/>
+        <allocation task-id="89" resource-id="1" function="Default:0" responsible="false" load="100.0"/>
+        <allocation task-id="90" resource-id="4" function="Default:0" responsible="false" load="100.0"/>
+        <allocation task-id="90" resource-id="0" function="Default:0" responsible="false" load="100.0"/>
+        <allocation task-id="90" resource-id="1" function="Default:0" responsible="false" load="100.0"/>
+        <allocation task-id="90" resource-id="2" function="Default:0" responsible="false" load="100.0"/>
+        <allocation task-id="94" resource-id="4" function="Default:0" responsible="false" load="100.0"/>
+        <allocation task-id="94" resource-id="3" function="Default:0" responsible="false" load="100.0"/>
+        <allocation task-id="94" resource-id="0" function="Default:0" responsible="true" load="100.0"/>
+        <allocation task-id="94" resource-id="1" function="Default:0" responsible="false" load="100.0"/>
+        <allocation task-id="94" resource-id="2" function="Default:0" responsible="false" load="100.0"/>
+        <allocation task-id="72" resource-id="3" function="Default:0" responsible="false" load="100.0"/>
+        <allocation task-id="72" resource-id="0" function="Default:0" responsible="true" load="100.0"/>
+        <allocation task-id="72" resource-id="1" function="Default:0" responsible="false" load="100.0"/>
+        <allocation task-id="72" resource-id="2" function="Default:0" responsible="false" load="100.0"/>
+        <allocation task-id="74" resource-id="3" function="Default:0" responsible="false" load="100.0"/>
+        <allocation task-id="74" resource-id="0" function="Default:0" responsible="true" load="100.0"/>
+        <allocation task-id="74" resource-id="1" function="Default:0" responsible="false" load="100.0"/>
+        <allocation task-id="74" resource-id="2" function="Default:0" responsible="false" load="100.0"/>
+        <allocation task-id="85" resource-id="0" function="Default:0" responsible="true" load="100.0"/>
+        <allocation task-id="85" resource-id="1" function="Default:0" responsible="false" load="100.0"/>
+        <allocation task-id="85" resource-id="2" function="Default:0" responsible="false" load="100.0"/>
+        <allocation task-id="88" resource-id="3" function="Default:0" responsible="false" load="100.0"/>
+        <allocation task-id="88" resource-id="0" function="Default:0" responsible="true" load="100.0"/>
+        <allocation task-id="88" resource-id="1" function="Default:0" responsible="false" load="100.0"/>
+        <allocation task-id="88" resource-id="2" function="Default:0" responsible="false" load="100.0"/>
+        <allocation task-id="43" resource-id="1" function="Default:0" responsible="true" load="100.0"/>
+        <allocation task-id="91" resource-id="0" function="Default:0" responsible="true" load="100.0"/>
+        <allocation task-id="92" resource-id="2" function="Default:0" responsible="true" load="100.0"/>
+        <allocation task-id="93" resource-id="2" function="Default:0" responsible="true" load="100.0"/>
+        <allocation task-id="45" resource-id="0" function="Default:0" responsible="true" load="100.0"/>
+        <allocation task-id="81" resource-id="0" function="Default:0" responsible="true" load="100.0"/>
+        <allocation task-id="75" resource-id="0" function="Default:0" responsible="true" load="100.0"/>
+        <allocation task-id="80" resource-id="0" function="Default:0" responsible="true" load="100.0"/>
+        <allocation task-id="82" resource-id="0" function="Default:0" responsible="true" load="100.0"/>
+        <allocation task-id="82" resource-id="2" function="Default:0" responsible="false" load="100.0"/>
+        <allocation task-id="21" resource-id="2" function="Default:0" responsible="true" load="100.0"/>
+        <allocation task-id="22" resource-id="2" function="Default:0" responsible="true" load="100.0"/>
+        <allocation task-id="44" resource-id="1" function="Default:0" responsible="true" load="100.0"/>
+        <allocation task-id="77" resource-id="2" function="Default:0" responsible="true" load="100.0"/>
+        <allocation task-id="76" resource-id="0" function="Default:0" responsible="true" load="100.0"/>
+        <allocation task-id="76" resource-id="1" function="Default:0" responsible="false" load="100.0"/>
+        <allocation task-id="76" resource-id="2" function="Default:0" responsible="false" load="100.0"/>
+        <allocation task-id="79" resource-id="0" function="Default:0" responsible="true" load="100.0"/>
+        <allocation task-id="79" resource-id="1" function="Default:0" responsible="false" load="100.0"/>
+        <allocation task-id="78" resource-id="0" function="Default:0" responsible="true" load="100.0"/>
+        <allocation task-id="27" resource-id="1" function="Default:0" responsible="true" load="100.0"/>
+        <allocation task-id="28" resource-id="1" function="Default:0" responsible="true" load="100.0"/>
+        <allocation task-id="33" resource-id="0" function="Default:0" responsible="true" load="100.0"/>
+        <allocation task-id="35" resource-id="0" function="Default:0" responsible="true" load="100.0"/>
+        <allocation task-id="37" resource-id="0" function="Default:0" responsible="true" load="100.0"/>
+        <allocation task-id="39" resource-id="0" function="Default:0" responsible="true" load="100.0"/>
+        <allocation task-id="41" resource-id="0" function="Default:0" responsible="true" load="100.0"/>
+        <allocation task-id="30" resource-id="0" function="Default:0" responsible="true" load="100.0"/>
+        <allocation task-id="31" resource-id="0" function="Default:0" responsible="true" load="100.0"/>
+        <allocation task-id="32" resource-id="1" function="Default:0" responsible="true" load="100.0"/>
+        <allocation task-id="48" resource-id="3" function="Default:0" responsible="false" load="100.0"/>
+        <allocation task-id="48" resource-id="0" function="Default:0" responsible="true" load="100.0"/>
+        <allocation task-id="48" resource-id="1" function="Default:0" responsible="false" load="100.0"/>
+        <allocation task-id="48" resource-id="2" function="Default:0" responsible="false" load="100.0"/>
+        <allocation task-id="50" resource-id="3" function="Default:0" responsible="false" load="100.0"/>
+        <allocation task-id="50" resource-id="0" function="Default:0" responsible="true" load="100.0"/>
+        <allocation task-id="50" resource-id="1" function="Default:0" responsible="false" load="100.0"/>
+        <allocation task-id="50" resource-id="2" function="Default:0" responsible="false" load="100.0"/>
+        <allocation task-id="52" resource-id="3" function="Default:0" responsible="false" load="100.0"/>
+        <allocation task-id="52" resource-id="0" function="Default:0" responsible="true" load="100.0"/>
+        <allocation task-id="52" resource-id="1" function="Default:0" responsible="false" load="100.0"/>
+        <allocation task-id="52" resource-id="2" function="Default:0" responsible="false" load="100.0"/>
+        <allocation task-id="54" resource-id="3" function="Default:0" responsible="false" load="100.0"/>
+        <allocation task-id="54" resource-id="0" function="Default:0" responsible="true" load="100.0"/>
+        <allocation task-id="54" resource-id="1" function="Default:0" responsible="false" load="100.0"/>
+        <allocation task-id="54" resource-id="2" function="Default:0" responsible="false" load="100.0"/>
+        <allocation task-id="56" resource-id="3" function="Default:0" responsible="false" load="100.0"/>
+        <allocation task-id="56" resource-id="0" function="Default:0" responsible="true" load="100.0"/>
+        <allocation task-id="56" resource-id="1" function="Default:0" responsible="false" load="100.0"/>
+        <allocation task-id="56" resource-id="2" function="Default:0" responsible="false" load="100.0"/>
+        <allocation task-id="58" resource-id="0" function="Default:0" responsible="true" load="100.0"/>
+        <allocation task-id="58" resource-id="1" function="Default:0" responsible="false" load="100.0"/>
+        <allocation task-id="58" resource-id="2" function="Default:0" responsible="false" load="100.0"/>
+        <allocation task-id="60" resource-id="0" function="Default:0" responsible="true" load="100.0"/>
+        <allocation task-id="60" resource-id="1" function="Default:0" responsible="false" load="100.0"/>
+        <allocation task-id="60" resource-id="2" function="Default:0" responsible="false" load="100.0"/>
+        <allocation task-id="71" resource-id="3" function="Default:0" responsible="false" load="100.0"/>
+        <allocation task-id="71" resource-id="0" function="Default:0" responsible="true" load="100.0"/>
+        <allocation task-id="71" resource-id="1" function="Default:0" responsible="false" load="100.0"/>
+        <allocation task-id="71" resource-id="2" function="Default:0" responsible="false" load="100.0"/>
+        <allocation task-id="62" resource-id="0" function="Default:0" responsible="true" load="100.0"/>
+        <allocation task-id="62" resource-id="1" function="Default:0" responsible="false" load="100.0"/>
+        <allocation task-id="62" resource-id="2" function="Default:0" responsible="false" load="100.0"/>
+        <allocation task-id="64" resource-id="0" function="Default:0" responsible="true" load="100.0"/>
+        <allocation task-id="64" resource-id="1" function="Default:0" responsible="false" load="100.0"/>
+        <allocation task-id="64" resource-id="2" function="Default:0" responsible="false" load="100.0"/>
+        <allocation task-id="66" resource-id="4" function="Default:0" responsible="false" load="100.0"/>
+        <allocation task-id="66" resource-id="0" function="Default:0" responsible="true" load="100.0"/>
+        <allocation task-id="66" resource-id="1" function="Default:0" responsible="false" load="100.0"/>
+        <allocation task-id="66" resource-id="2" function="Default:0" responsible="false" load="100.0"/>
+        <allocation task-id="68" resource-id="4" function="Default:0" responsible="false" load="100.0"/>
+        <allocation task-id="68" resource-id="3" function="Default:0" responsible="false" load="100.0"/>
+        <allocation task-id="68" resource-id="0" function="Default:0" responsible="true" load="100.0"/>
+        <allocation task-id="68" resource-id="1" function="Default:0" responsible="false" load="100.0"/>
+        <allocation task-id="68" resource-id="2" function="Default:0" responsible="false" load="100.0"/>
+    </allocations>
+    <vacations/>
+    <taskdisplaycolumns>
+        <displaycolumn property-id="tpd3" order="0" width="159"/>
+        <displaycolumn property-id="tpd4" order="1" width="15"/>
+        <displaycolumn property-id="tpd5" order="2" width="16"/>
+        <displaycolumn property-id="tpc0" order="3" width="197"/>
+    </taskdisplaycolumns>
+    <previous/>
+    <roles roleset-name="Default"/>
+</project>

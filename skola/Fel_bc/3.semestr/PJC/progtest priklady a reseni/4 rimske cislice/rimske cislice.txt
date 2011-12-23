@@ -1,0 +1,49 @@
+
+
+Úkolem je realizovat program, který bude prevádet císla z rímské soustavy do arabské a naopak. Vstupem programu bude rímské nebo arabské císlo v rozsahu 1 - 3999 a výstupem císlo prevedené do opacné soustavy. V prípade nesprávného vstupu bude zobrazena chybová hláška.
+
+Program sám musí rozeznat, zda se jedná o císlo v zápisu arabském nebo rímském. Výstupem programu je výzva uživateli a prevedené císlo nebo hlášení o chybe. V obou prípadech (prevedené císlo nebo oznámení chyby) je rádka ukoncena odrádkováním (endl). Program pracuje ve smycce, ceká na zadání vstupu dokud není na vstupním zarízení (cin)indikován konec souboru.
+Ukázky práce programu:
+
+2008
+MMVIII
+
+MCMXCVIII
+1998
+
+1999
+MCMXCIX
+
+MDCCCLVII
+1857
+
+900
+CM
+1000
+M
+L
+50
+IX
+9
+
+v
+Nespravny vstup.
+
+ID
+Nespravny vstup.
+
+5000
+Nespravny vstup.
+
+X L
+Nespravny vstup.
+
+300x
+Nespravny vstup.
+
+Nápoveda:
+
+    * Rímská císla se obecne definují pomocí 7 cifer: I=1, V=5, X=10, L=50, C=100, D=500, M=1000. Ostatní císla se skládají z techto cifer.
+    * Pravidlo je, že vždy používáme císlici s nejvetší možnou hodnotou, napr. 1500 je zapsáno jako MD, nikoli jako DDD nebo MCCCCC.
+    * Dále, stejné císlice se nesmí nacházet více než 3 krát za sebou.
+    * Císla jsou zapsaná tak, že se vyšší cifry nacházej pred nižšími. Výjimku tvorí kombinace IV, IX, XL, XC, CD a CM. V techto prípadech je cifra s menší hodnotou odectena z následující cifry.

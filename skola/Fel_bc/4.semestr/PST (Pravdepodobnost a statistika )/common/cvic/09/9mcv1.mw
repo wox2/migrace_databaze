@@ -1,0 +1,1526 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Worksheet>
+<Version major="13" minor="2"/>
+<Label-Scheme value="2" prefix=""/>
+<View-Properties presentation="false"></View-Properties>
+<MapleNet-Properties elisiondigitsbefore="100" labelling="true" indentamount="4" elisiontermsthreshold="10000" ansi="false" errorbreak="1" useclientjvm="true" echo="1" imaginaryunit="I" labelwidth="20" plotdriver="openviz" elisiondigitsafter="100" plotoutput="terminal" rtablesize="10" elisiontermsbefore="100" elisiondigitsthreshold="10000" typesetting="standard" plotdevice="inline" verboseproc="1" showassumed="1" errorcursor="false" longdelim="true" plotoptions="" quiet="false" elisiontermsafter="100" screenwidth="79" preplot="" prettyprint="3" displayprecision="-1" warnlevel="3" screenheight="25" latexwidth="6.0" postplot="" prompt="&gt; " ShowLabels="true"/>
+<Styles><Font name="Ordered List 1" background="[255,255,255]" bold="false" executable="false" family="Times New Roman" foreground="[0,0,0]" italic="false" opaque="false" readonly="false" size="12" subscript="false" superscript="false" underline="false" placeholder="false"/>
+<Font name="Annotation Text" background="[255,255,255]" bold="false" executable="false" family="Times New Roman" foreground="[0,0,0]" italic="false" opaque="false" readonly="false" size="12" subscript="false" superscript="false" underline="false" placeholder="false"/>
+<Font name="Ordered List 2" background="[255,255,255]" bold="false" executable="false" family="Times New Roman" foreground="[0,0,0]" italic="false" opaque="false" readonly="false" size="12" subscript="false" superscript="false" underline="false" placeholder="false"/>
+<Font name="Ordered List 3" background="[255,255,255]" bold="false" executable="false" family="Times New Roman" foreground="[0,0,0]" italic="false" opaque="false" readonly="false" size="12" subscript="false" superscript="false" underline="false" placeholder="false"/>
+<Font name="Ordered List 4" background="[255,255,255]" bold="false" executable="false" family="Times New Roman" foreground="[0,0,0]" italic="false" opaque="false" readonly="false" size="12" subscript="false" superscript="false" underline="false" placeholder="false"/>
+<Font name="Ordered List 5" background="[255,255,255]" bold="false" executable="false" family="Times New Roman" foreground="[0,0,0]" italic="false" opaque="false" readonly="false" size="12" subscript="false" superscript="false" underline="false" placeholder="false"/>
+<Font name="Author" background="[255,255,255]" bold="false" executable="false" family="Times New Roman" foreground="[0,0,0]" italic="false" opaque="false" readonly="false" size="12" subscript="false" superscript="false" underline="false" placeholder="false"/>
+<Font name="Annotation Title" background="[255,255,255]" bold="true" executable="false" family="Times New Roman" foreground="[0,0,0]" italic="false" opaque="false" readonly="false" size="18" subscript="false" superscript="false" underline="false" placeholder="false"/>
+<Font name="Warning" background="[255,255,255]" bold="false" executable="false" family="Monospaced" foreground="[0,0,255]" italic="false" opaque="false" readonly="true" size="12" subscript="false" superscript="false" underline="false" placeholder="false"/>
+<Font name="Maple Input Placeholder" background="[255,255,255]" bold="true" executable="true" family="Monospaced" foreground="[200,0,200]" italic="false" opaque="false" readonly="false" size="12" subscript="false" superscript="false" underline="false" placeholder="true"/>
+<Font name="Maple Plot" background="[255,255,255]" bold="false" executable="false" family="Times New Roman" foreground="[0,0,0]" italic="false" opaque="false" readonly="false" size="12" subscript="false" superscript="false" underline="false" placeholder="false"/>
+<Font name="Code" background="[255,255,255]" bold="false" executable="false" family="Monospaced" foreground="[255,0,0]" italic="false" opaque="false" readonly="false" size="12" subscript="false" superscript="false" underline="false" placeholder="false"/>
+<Font name="Line Printed Output" background="[255,255,255]" bold="false" executable="false" family="Monospaced" foreground="[0,0,255]" italic="false" opaque="false" readonly="true" size="12" subscript="false" superscript="false" underline="false" placeholder="false"/>
+<Font name="Text Output" background="[255,255,255]" bold="false" executable="false" family="Monospaced" foreground="[0,0,255]" italic="false" opaque="false" readonly="true" size="12" subscript="false" superscript="false" underline="false" placeholder="false"/>
+<Font name="Diagnostic" background="[255,255,255]" bold="false" executable="false" family="Monospaced" foreground="[40,120,40]" italic="false" opaque="false" readonly="true" size="12" subscript="false" superscript="false" underline="false" placeholder="false"/>
+<Font name="2D Inert Output" background="[255,255,255]" bold="false" executable="true" family="Times New Roman" foreground="[144,144,144]" italic="false" opaque="false" readonly="false" size="12" subscript="false" superscript="false" underline="false" placeholder="false"/>
+<Font name="Normal" background="[255,255,255]" bold="false" executable="false" family="Times New Roman" foreground="[0,0,0]" italic="false" opaque="false" readonly="false" size="12" subscript="false" superscript="false" underline="false" placeholder="false"/>
+<Font name="Hyperlink" background="[255,255,255]" bold="false" executable="false" family="Serif" foreground="[0,128,128]" italic="false" opaque="false" readonly="false" size="12" subscript="false" superscript="false" underline="true" placeholder="false"/>
+<Font name="Maple Output" background="[255,255,255]" bold="false" executable="false" family="Times New Roman" foreground="[0,0,0]" italic="false" opaque="false" readonly="false" size="12" subscript="false" superscript="false" underline="false" placeholder="false"/>
+<Font name="Dash Item" background="[255,255,255]" bold="false" executable="false" family="Times New Roman" foreground="[0,0,0]" italic="false" opaque="false" readonly="false" size="12" subscript="false" superscript="false" underline="false" placeholder="false"/>
+<Font name="2D Math" background="[0,0,0]" bold="false" executable="false" family="Times New Roman" foreground="[0,0,0]" italic="false" opaque="false" readonly="false" size="12" subscript="false" superscript="false" underline="false" placeholder="false"/>
+<Font name="Maple Input" background="[0,0,0]" bold="true" executable="true" family="Monospaced" foreground="[255,0,0]" italic="false" opaque="false" readonly="false" size="12" subscript="false" superscript="false" underline="false" placeholder="false"/>
+<Font name="2D Output" background="[0,0,0]" bold="false" executable="false" family="Times New Roman" foreground="[0,0,255]" italic="false" opaque="false" readonly="true" size="12" subscript="false" superscript="false" underline="false" placeholder="false"/>
+<Font name="2D Input" background="[255,255,255]" bold="false" executable="true" family="Times New Roman" foreground="[0,0,0]" italic="false" opaque="false" readonly="false" size="12" subscript="false" superscript="false" underline="false" placeholder="false"/>
+<Font name="HyperlinkError" background="[255,255,255]" bold="false" executable="false" family="Monospaced" foreground="[255,0,255]" italic="false" opaque="false" readonly="true" size="12" subscript="false" superscript="false" underline="true" placeholder="false"/>
+<Font name="Header and Footer" background="[255,255,255]" bold="false" executable="false" family="Times New Roman" foreground="[0,0,0]" italic="false" opaque="false" readonly="false" size="10" subscript="false" superscript="false" underline="false" placeholder="false"/>
+<Font name="Error" background="[0,0,0]" bold="false" executable="false" family="Monospaced" foreground="[255,0,255]" italic="false" opaque="false" readonly="true" size="12" subscript="false" superscript="false" underline="false" placeholder="false"/>
+<Font name="Title" background="[255,255,255]" bold="true" executable="false" family="Times New Roman" foreground="[0,0,0]" italic="false" opaque="false" readonly="false" size="18" subscript="false" superscript="false" underline="false" placeholder="false"/>
+<Font name="Page Number" background="[0,0,0]" bold="false" executable="false" family="Times New Roman" foreground="[0,0,0]" italic="false" opaque="false" readonly="false" size="10" subscript="false" superscript="false" underline="false" placeholder="false"/>
+<Font name="Heading 1" background="[0,0,0]" bold="true" executable="false" family="Serif" foreground="[0,0,0]" italic="false" opaque="false" readonly="false" size="18" subscript="false" superscript="false" underline="false" placeholder="false"/>
+<Font name="Text" background="[0,0,0]" bold="false" executable="false" family="Times New Roman" foreground="[0,0,0]" italic="false" opaque="false" readonly="false" size="12" subscript="false" superscript="false" underline="false" placeholder="false"/>
+<Font name="Bullet Item" background="[255,255,255]" bold="false" executable="false" family="Times New Roman" foreground="[0,0,0]" italic="false" opaque="false" readonly="false" size="12" subscript="false" superscript="false" underline="false" placeholder="false"/>
+<Font name="Heading 4" background="[255,255,255]" bold="false" executable="false" family="Serif" foreground="[0,0,0]" italic="true" opaque="false" readonly="false" size="12" subscript="false" superscript="false" underline="false" placeholder="false"/>
+<Font name="Equation Label" background="[255,255,255]" bold="true" executable="false" family="Times New Roman" foreground="[0,0,0]" italic="false" opaque="false" readonly="false" size="12" subscript="false" superscript="false" underline="false" placeholder="false"/>
+<Font name="Heading 3" background="[255,255,255]" bold="true" executable="false" family="Serif" foreground="[0,0,0]" italic="true" opaque="false" readonly="false" size="14" subscript="false" superscript="false" underline="false" placeholder="false"/>
+<Font name="Heading 2" background="[0,0,0]" bold="true" executable="false" family="Serif" foreground="[0,0,0]" italic="false" opaque="false" readonly="false" size="16" subscript="false" superscript="false" underline="false" placeholder="false"/>
+<Font name="HyperlinkWarning" background="[255,255,255]" bold="false" executable="false" family="Monospaced" foreground="[0,0,255]" italic="false" opaque="false" readonly="true" size="12" subscript="false" superscript="false" underline="true" placeholder="false"/>
+<Font name="Dictionary Hyperlink" background="[255,255,255]" bold="false" executable="false" family="Serif" foreground="[147,0,15]" italic="false" opaque="false" readonly="false" size="12" subscript="false" superscript="false" underline="true" placeholder="false"/>
+<Font name="List Item" background="[255,255,255]" bold="false" executable="false" family="Times New Roman" foreground="[0,0,0]" italic="false" opaque="false" readonly="false" size="12" subscript="false" superscript="false" underline="false" placeholder="false"/>
+<Layout name="Ordered List 1" alignment="left" bullet="numeric" firstindent="0" leftmargin="0" rightmargin="0" linespacing="0.0" spaceabove="3" spacebelow="3" linebreak="space" pagebreak-before="false" initial="-1" bulletsuffix=""/>
+<Layout name="Ordered List 2" alignment="left" bullet="alphabetic" firstindent="0" leftmargin="36" rightmargin="0" linespacing="0.0" spaceabove="3" spacebelow="3" linebreak="space" pagebreak-before="false" initial="-1" bulletsuffix=""/>
+<Layout name="Ordered List 3" alignment="left" bullet="roman" firstindent="0" leftmargin="72" rightmargin="0" linespacing="0.0" spaceabove="3" spacebelow="3" linebreak="space" pagebreak-before="false" initial="-1" bulletsuffix=""/>
+<Layout name="Ordered List 4" alignment="left" bullet="ALPHABETIC" firstindent="0" leftmargin="108" rightmargin="0" linespacing="0.0" spaceabove="3" spacebelow="3" linebreak="space" pagebreak-before="false" initial="-1" bulletsuffix=""/>
+<Layout name="Ordered List 5" alignment="left" bullet="ROMAN" firstindent="0" leftmargin="144" rightmargin="0" linespacing="0.0" spaceabove="3" spacebelow="3" linebreak="space" pagebreak-before="false" initial="-1" bulletsuffix=""/>
+<Layout name="Author" alignment="centred" bullet="none" firstindent="0" leftmargin="0" rightmargin="0" linespacing="0.0" spaceabove="8" spacebelow="8" linebreak="space" pagebreak-before="false" initial="0" bulletsuffix=""/>
+<Layout name="Warning" alignment="left" bullet="none" firstindent="0" leftmargin="0" rightmargin="0" linespacing="0.0" spaceabove="0" spacebelow="0" linebreak="space" pagebreak-before="false" initial="0" bulletsuffix=""/>
+<Layout name="Annotation Title" alignment="centred" bullet="none" firstindent="0" leftmargin="0" rightmargin="0" linespacing="0.0" spaceabove="12" spacebelow="12" linebreak="space" pagebreak-before="false" initial="0" bulletsuffix=""/>
+<Layout name="Maple Plot" alignment="centred" bullet="none" firstindent="0" leftmargin="0" rightmargin="0" linespacing="0.0" spaceabove="0" spacebelow="0" linebreak="space" pagebreak-before="false" initial="0" bulletsuffix=""/>
+<Layout name="Line Printed Output" alignment="left" bullet="none" firstindent="0" leftmargin="0" rightmargin="0" linespacing="0.0" spaceabove="0" spacebelow="0" linebreak="any" pagebreak-before="false" initial="0" bulletsuffix=""/>
+<Layout name="Text Output" alignment="left" bullet="none" firstindent="0" leftmargin="0" rightmargin="0" linespacing="0.0" spaceabove="0" spacebelow="0" linebreak="newline" pagebreak-before="false" initial="0" bulletsuffix=""/>
+<Layout name="Diagnostic" alignment="left" bullet="none" firstindent="0" leftmargin="0" rightmargin="0" linespacing="0.0" spaceabove="0" spacebelow="0" linebreak="any" pagebreak-before="false" initial="0" bulletsuffix=""/>
+<Layout name="Normal" alignment="left" bullet="none" firstindent="0" leftmargin="0" rightmargin="0" linespacing="0.0" spaceabove="0" spacebelow="0" linebreak="space" pagebreak-before="false" initial="0" bulletsuffix=""/>
+<Layout name="Maple Output" alignment="centred" bullet="none" firstindent="0" leftmargin="0" rightmargin="0" linespacing="0.5" spaceabove="0" spacebelow="0" linebreak="space" pagebreak-before="false" initial="0" bulletsuffix=""/>
+<Layout name="Dash Item" alignment="left" bullet="dash" firstindent="0" leftmargin="0" rightmargin="0" linespacing="0.0" spaceabove="3" spacebelow="3" linebreak="space" pagebreak-before="false" initial="0" bulletsuffix=""/>
+<Layout name="HyperlinkError" alignment="left" bullet="none" firstindent="0" leftmargin="0" rightmargin="0" linespacing="0.0" spaceabove="0" spacebelow="0" linebreak="space" pagebreak-before="false" initial="0" bulletsuffix=""/>
+<Layout name="Error" alignment="left" bullet="none" firstindent="0" leftmargin="0" rightmargin="0" linespacing="0.0" spaceabove="0" spacebelow="0" linebreak="space" pagebreak-before="false" initial="0" bulletsuffix=""/>
+<Layout name="Title" alignment="centred" bullet="none" firstindent="0" leftmargin="0" rightmargin="0" linespacing="0.0" spaceabove="12" spacebelow="12" linebreak="space" pagebreak-before="false" initial="0" bulletsuffix=""/>
+<Layout name="Heading 1" alignment="left" bullet="none" firstindent="0" leftmargin="0" rightmargin="0" linespacing="0.0" spaceabove="8" spacebelow="4" linebreak="space" pagebreak-before="false" initial="0" bulletsuffix=""/>
+<Layout name="Bullet Item" alignment="left" bullet="dot" firstindent="0" leftmargin="0" rightmargin="0" linespacing="0.0" spaceabove="3" spacebelow="3" linebreak="space" pagebreak-before="false" initial="0" bulletsuffix=""/>
+<Layout name="Heading 4" alignment="left" bullet="none" firstindent="0" leftmargin="0" rightmargin="0" linespacing="0.0" spaceabove="0" spacebelow="0" linebreak="space" pagebreak-before="false" initial="0" bulletsuffix=""/>
+<Layout name="Heading 3" alignment="left" bullet="none" firstindent="0" leftmargin="0" rightmargin="0" linespacing="0.0" spaceabove="0" spacebelow="0" linebreak="space" pagebreak-before="false" initial="0" bulletsuffix=""/>
+<Layout name="Heading 2" alignment="left" bullet="none" firstindent="0" leftmargin="0" rightmargin="0" linespacing="0.0" spaceabove="8" spacebelow="2" linebreak="space" pagebreak-before="false" initial="0" bulletsuffix=""/>
+<Layout name="HyperlinkWarning" alignment="left" bullet="none" firstindent="0" leftmargin="0" rightmargin="0" linespacing="0.0" spaceabove="0" spacebelow="0" linebreak="space" pagebreak-before="false" initial="0" bulletsuffix=""/>
+<Layout name="List Item" alignment="left" bullet="indent" firstindent="0" leftmargin="0" rightmargin="0" linespacing="0.0" spaceabove="3" spacebelow="3" linebreak="space" pagebreak-before="false" initial="0" bulletsuffix=""/>
+<Pencil-style name="Pencil 5" pen-color="[255,0,0]" pen-height="5.0" pen-width="5.0" pen-opacity="1.0"/>
+<Pencil-style name="Pencil 4" pen-color="[0,0,255]" pen-height="3.0" pen-width="3.0" pen-opacity="1.0"/>
+<Pencil-style name="Pencil 3" pen-color="[0,0,0]" pen-height="3.0" pen-width="3.0" pen-opacity="1.0"/>
+<Pencil-style name="Pencil 2" pen-color="[0,0,255]" pen-height="1.0" pen-width="1.0" pen-opacity="1.0"/>
+<Pencil-style name="Pencil 1" pen-color="[0,0,0]" pen-height="1.0" pen-width="1.0" pen-opacity="1.0"/>
+<Highlighter-style name="Highlighter 2" pen-color="[255,204,0]" pen-height="14.0" pen-width="14.0" pen-opacity="0.8"/>
+<Highlighter-style name="Highlighter 1" pen-color="[255,153,255]" pen-height="12.0" pen-width="8.0" pen-opacity="0.8"/>
+<Highlighter-style name="Highlighter 4" pen-color="[0,255,255]" pen-height="32.0" pen-width="32.0" pen-opacity="0.8"/>
+<Highlighter-style name="Highlighter 3" pen-color="[51,255,0]" pen-height="24.0" pen-width="24.0" pen-opacity="0.8"/>
+<Highlighter-style name="Highlighter 5" pen-color="[255,255,0]" pen-height="48.0" pen-width="48.0" pen-opacity="0.8"/>
+</Styles>
+<Header left-content="" center-content="" right-content="&amp;[Page]" left-image-scale-width="100" center-image-scale-width="100" right-image-scale-width="100" left-image-scale-height="100" center-image-scale-height="100" right-image-scale-height="100" date-format="2" selected-index="0" first-number="1" first-numbered-page="1"/>
+<Task-table>
+    <Task-category name="&lt;default&gt;">
+    </Task-category>
+</Task-table>
+<Task>
+</Task>
+<Group labelreference="L2">
+<Input>
+<Text-field style="Text" layout="Normal"><Font bold="true" size="18">Y01PST 2008-9                                        9mcv1.mw</Font></Text-field>
+</Input>
+</Group>
+<Group labelreference="L3">
+<Input>
+<Text-field style="Text" size="18" bold="true" layout="Normal"><Font bold="true" size="18">  1. Kombinatorika</Font></Text-field>
+</Input>
+</Group>
+<Section collapsed="false" MultipleChoiceAnswerIndex="-1" MultipleChoiceRandomizeChoices="false" TrueFalseAnswerIndex="-1" EssayAnswerRows="5" EssayAnswerColumns="60"><Title>
+<Text-field style="Text" size="18" bold="true" layout="Heading 1"><Font bold="true" encoding="UTF-8" size="18">  P\305\231\303\255klad 1.</Font></Text-field></Title>
+<Text-field style="Text" layout="Normal"></Text-field>
+<Group labelreference="L4">
+<Input>
+<Text-field style="Text" layout="Normal"><Font encoding="UTF-8">Cestujeme z Chrudimi do Lond\303\275na. Pro cestu z Chrudimi do Pardubic m\305\257\305\276eme pou\305\276\303\255t osobn\303\255 auto (OA), vlak (OV) nebo autobus (B). Pro cestu z Pardubic do Prahy m\305\257\305\276eme pou\305\276\303\255t OA, OV, B nebo rychl\303\255k (R). Pro cestu z Prahy do Lond\303\275na m\305\257\305\276eme pou\305\276\303\255t B, R  nebo letadlo (L). Kolik r\305\257zn\303\275ch zp\305\257sob\305\257 cesty z pohledu pou\305\276it\303\251ho dopravn\303\255ho prost\305\231edku m\305\257\305\276eme vybrat?</Font></Text-field>
+</Input>
+</Group>
+<Group labelreference="L5">
+<Input>
+<Text-field style="Text" layout="Normal"><Font underline="true" encoding="UTF-8" size="14">\305\230e\305\241en\303\255:</Font></Text-field>
+</Input>
+</Group>
+<Group labelreference="L6">
+<Input>
+<Text-field style="Text" layout="Normal"><Font encoding="UTF-8">Pro jednotliv\303\251 etapy cesty m\305\257\305\276eme po\305\231ad\304\233 volit 3 (OA, OV, B), 4 (OA,OV, B, R) a 3 (B,R,L) zp\305\257sob\305\257 cest. Podle pravidla sou\304\215inu je celkem 3*4*3 mo\305\276nost\303\255 volby cest.</Font></Text-field>
+</Input>
+</Group>
+<Group labelreference="L7">
+<Input>
+<Text-field prompt="&gt; " style="Maple Input" layout="Normal">restart:</Text-field>
+</Input>
+</Group>
+<Group labelreference="L8">
+<Input>
+<Text-field prompt="&gt; " style="Maple Input" layout="Normal">X:=3*4*3;</Text-field>
+</Input>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">NiM+SSJYRzYiIiNP</Equation></Text-field>
+</Output>
+</Group>
+<Group labelreference="L9">
+<Input>
+<Text-field style="Text" layout="Normal"><Font encoding="UTF-8">     Je 36 mo\305\276n\303\275ch cest.</Font></Text-field>
+</Input>
+</Group>
+<Group labelreference="L10">
+<Input>
+<Text-field prompt="&gt; " style="Maple Input" layout="Normal"></Text-field>
+</Input>
+</Group>
+<Group labelreference="L11">
+<Input>
+<Text-field prompt="&gt; " style="Maple Input" layout="Normal"></Text-field><Pagebreak></Pagebreak>
+</Input>
+</Group>
+</Section>
+<Section collapsed="false" MultipleChoiceAnswerIndex="-1" MultipleChoiceRandomizeChoices="false" TrueFalseAnswerIndex="-1" EssayAnswerRows="5" EssayAnswerColumns="60"><Title>
+<Text-field style="Heading 1" layout="Heading 1">  <Font encoding="UTF-8">P\305\231\303\255klad 2. </Font></Text-field></Title>
+<Group labelreference="L12">
+<Input>
+<Text-field style="Text" layout="Normal"><Font encoding="UTF-8">Tvo\305\231\303\255me slova z 0 a 1. Ur\304\215ete kolik r\305\257zn\303\275ch slov</Font></Text-field>
+<Text-field style="Text" layout="Normal"><Font encoding="UTF-8">a) d\303\251lky </Font><Font italic="true">n</Font><Font encoding="UTF-8"> je mo\305\276n\303\251 vytvo\305\231it;</Font></Text-field>
+<Text-field style="Text" layout="Normal"><Font encoding="UTF-8">b) d\303\251lky nejv\303\275\305\241e  </Font><Font italic="true">n</Font><Font encoding="UTF-8"> je mo\305\276n\303\251 vytvo\305\231it.</Font></Text-field>
+<Text-field style="Text" layout="Normal"><Font encoding="UTF-8">Vy\304\215\303\255slete hodnoty pro  </Font><Font italic="true">n </Font>= 4,5,6 a 8 a 16. </Text-field>
+</Input>
+</Group>
+<Group labelreference="L13">
+<Input>
+<Text-field style="Text" layout="Normal"><Font underline="true" encoding="UTF-8" size="14">\305\230e\305\241en\303\255:</Font></Text-field>
+</Input>
+</Group>
+<Group labelreference="L14">
+<Input>
+<Text-field prompt="&gt; " style="Maple Input" layout="Normal">restart;</Text-field>
+</Input>
+</Group>
+<Group labelreference="L15">
+<Input>
+<Text-field style="Text" layout="Normal"><Font encoding="UTF-8">Podle pravidla sou\304\215inu je mo\305\276n\303\251 vytvo\305\231it celkem dn= </Font><Equation executable="false" style="2D Math" input-equation="">LUklbXJvd0c2Iy9JK21vZHVsZW5hbWVHNiJJLFR5cGVzZXR0aW5nR0koX3N5c2xpYkdGJzYjLUklbXN1cEdGJDYlLUkjbW5HRiQ2JFEiMkYnLyUsbWF0aHZhcmlhbnRHUSdub3JtYWxGJy1JI21pR0YkNiVRIm5GJy8lJ2l0YWxpY0dRJXRydWVGJy9GM1EnaXRhbGljRicvJTFzdXBlcnNjcmlwdHNoaWZ0R1EiMEYn</Equation><Font encoding="UTF-8"> r\305\257zn\303\275ch slov d\303\251lky </Font><Font italic="true">n </Font>a tedy </Text-field>
+<Text-field style="Text" layout="Normal">Dn = <Equation executable="false" style="2D Math" input-equation="">LUklbXJvd0c2Iy9JK21vZHVsZW5hbWVHNiJJLFR5cGVzZXR0aW5nR0koX3N5c2xpYkdGJzYlLUkjbWlHRiQ2I1EhRictRiM2Ji1JI21uR0YkNiRRIjJGJy8lLG1hdGh2YXJpYW50R1Enbm9ybWFsRictSSNtb0dGJDYtUSIrRidGNS8lJmZlbmNlR1EmZmFsc2VGJy8lKnNlcGFyYXRvckdGPi8lKXN0cmV0Y2h5R0Y+LyUqc3ltbWV0cmljR0Y+LyUobGFyZ2VvcEdGPi8lLm1vdmFibGVsaW1pdHNHRj4vJSdhY2NlbnRHRj4vJSdsc3BhY2VHUSwwLjIyMjIyMjJlbUYnLyUncnNwYWNlR0ZNLUYjNiMtSSVtc3VwR0YkNiVGMUYxLyUxc3VwZXJzY3JpcHRzaGlmdEdRIjBGJ0YrRis=</Equation>+...  +<Equation executable="false" style="2D Math" input-equation="">LUklbXJvd0c2Iy9JK21vZHVsZW5hbWVHNiJJLFR5cGVzZXR0aW5nR0koX3N5c2xpYkdGJzYjLUklbXN1cEdGJDYlLUkjbW5HRiQ2JFEiMkYnLyUsbWF0aHZhcmlhbnRHUSdub3JtYWxGJy1JI21pR0YkNiVRIm5GJy8lJ2l0YWxpY0dRJXRydWVGJy9GM1EnaXRhbGljRicvJTFzdXBlcnNjcmlwdHNoaWZ0R1EiMEYn</Equation> = <Equation executable="false" style="2D Math" input-equation="">LUklbXJvd0c2Iy9JK21vZHVsZW5hbWVHNiJJLFR5cGVzZXR0aW5nR0koX3N5c2xpYkdGJzYlLUkjbWlHRiQ2I1EhRictRiM2JS1JI21uR0YkNiRRIjJGJy8lLG1hdGh2YXJpYW50R1Enbm9ybWFsRictSSNtb0dGJDYtUTEmSW52aXNpYmxlVGltZXM7RidGNS8lJmZlbmNlR1EmZmFsc2VGJy8lKnNlcGFyYXRvckdGPi8lKXN0cmV0Y2h5R0Y+LyUqc3ltbWV0cmljR0Y+LyUobGFyZ2VvcEdGPi8lLm1vdmFibGVsaW1pdHNHRj4vJSdhY2NlbnRHRj4vJSdsc3BhY2VHUSYwLjBlbUYnLyUncnNwYWNlR0ZNLUkobWZlbmNlZEdGJDYkLUYjNiUtSSVtc3VwR0YkNiVGMS1GLDYlUSJuRicvJSdpdGFsaWNHUSV0cnVlRicvRjZRJ2l0YWxpY0YnLyUxc3VwZXJzY3JpcHRzaGlmdEdRIjBGJy1GOTYtUSgmbWludXM7RidGNUY8Rj9GQUZDRkVGR0ZJL0ZMUSwwLjIyMjIyMjJlbUYnL0ZPRmFvLUYyNiRRIjFGJ0Y1RjVGKw==</Equation> = <Equation executable="false" style="2D Math" input-equation="">LUklbXJvd0c2Iy9JK21vZHVsZW5hbWVHNiJJLFR5cGVzZXR0aW5nR0koX3N5c2xpYkdGJzYlLUkjbWlHRiQ2I1EhRictRiM2JS1JJW1zdXBHRiQ2JS1JI21uR0YkNiRRIjJGJy8lLG1hdGh2YXJpYW50R1Enbm9ybWFsRictRiM2JS1GLDYlUSJuRicvJSdpdGFsaWNHUSV0cnVlRicvRjlRJ2l0YWxpY0YnLUkjbW9HRiQ2LVEiK0YnRjgvJSZmZW5jZUdRJmZhbHNlRicvJSpzZXBhcmF0b3JHRksvJSlzdHJldGNoeUdGSy8lKnN5bW1ldHJpY0dGSy8lKGxhcmdlb3BHRksvJS5tb3ZhYmxlbGltaXRzR0ZLLyUnYWNjZW50R0ZLLyUnbHNwYWNlR1EsMC4yMjIyMjIyZW1GJy8lJ3JzcGFjZUdGWi1GNTYkUSIxRidGOC8lMXN1cGVyc2NyaXB0c2hpZnRHUSIwRictRkY2LVEoJm1pbnVzO0YnRjhGSUZMRk5GUEZSRlRGVkZYRmVuRjRGKw==</Equation><Font encoding="UTF-8"> r\305\257zn\303\275ch slov d\303\251lky nejv\303\275\305\241e </Font><Font italic="true">n</Font>.</Text-field>
+</Input>
+</Group>
+<Group labelreference="L16">
+<Input>
+<Text-field prompt="&gt; " style="Maple Input" layout="Normal">s4:=2^4;S4:=2^5-2;</Text-field>
+</Input>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">NiM+SSNzNEc2IiIjOw==</Equation></Text-field>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">NiM+SSNTNEc2IiIjSQ==</Equation></Text-field>
+</Output>
+</Group>
+<Group labelreference="L17">
+<Input>
+<Text-field prompt="&gt; " style="Maple Input" layout="Normal">s5:=2^5;S5:=2^6-2;</Text-field>
+</Input>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">NiM+SSNzNUc2IiIjSw==</Equation></Text-field>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">NiM+SSNTNUc2IiIjaQ==</Equation></Text-field>
+</Output>
+</Group>
+<Group labelreference="L18">
+<Input>
+<Text-field prompt="&gt; " style="Maple Input" layout="Normal">s6:=2^6; S6:=2^7-2;</Text-field>
+</Input>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">NiM+SSNzNkc2IiIjaw==</Equation></Text-field>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">NiM+SSNTNkc2IiIkRSI=</Equation></Text-field>
+</Output>
+</Group>
+<Group labelreference="L19">
+<Input>
+<Text-field prompt="&gt; " style="Maple Input" layout="Normal">s8:=2^8;S8:=2^9-2;</Text-field>
+</Input>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">NiM+SSNzOEc2IiIkYyM=</Equation></Text-field>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">NiM+SSNTOEc2IiIkNSY=</Equation></Text-field>
+</Output>
+</Group>
+<Group labelreference="L20">
+<Input>
+<Text-field prompt="&gt; " style="Maple Input" layout="Normal">s16:=2^(16);S16:=2^(17)-2;</Text-field>
+</Input>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">NiM+SSRzMTZHNiIiJk9iJw==</Equation></Text-field>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">NiM+SSRTMTZHNiIiJ3E1OA==</Equation></Text-field>
+</Output>
+</Group>
+<Group labelreference="L21">
+<Input>
+<Text-field prompt="&gt; " style="Maple Input" layout="Normal"></Text-field>
+</Input>
+</Group>
+<Group labelreference="L22">
+<Input>
+<Text-field prompt="&gt; " style="Maple Input" layout="Normal"></Text-field><Pagebreak></Pagebreak>
+</Input>
+</Group>
+<Section collapsed="false" MultipleChoiceAnswerIndex="-1" MultipleChoiceRandomizeChoices="false" TrueFalseAnswerIndex="-1" EssayAnswerRows="5" EssayAnswerColumns="60"><Title>
+<Text-field style="Heading 2" layout="Heading 2"><Font encoding="UTF-8"> Pozn\303\241mka k sou\304\215tu geometrick\303\251 \305\231ady</Font></Text-field></Title>
+<Group labelreference="L23">
+<Input>
+<Text-field prompt="&gt; " style="Maple Input" layout="Normal">Sn:=Sum(2^k,k=1..n)=sum(2^k,k=1..n);</Text-field>
+</Input>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">NiM+SSNTbkc2Ii8tSSRTdW1HNiQlKnByb3RlY3RlZEdJKF9zeXNsaWJHNiI2JCkiIiNJImtHNiIvSSJrRzYiOyIiIkkibkc2IiwmKSIiIywmSSJuRzYiIiIiIiIiIiIiIiIiIiIjISIi</Equation></Text-field>
+</Output>
+</Group>
+<Group labelreference="L24">
+<Input>
+<Text-field prompt="&gt; " style="Maple Input" layout="Normal">evalf(%);</Text-field>
+</Input>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">NiMtSSRTdW1HNiQlKnByb3RlY3RlZEdJKF9zeXNsaWJHNiI2JCkiIiNJImtHNiIvSSJrRzYiOyIiIkkibkc2Ig==</Equation></Text-field>
+</Output>
+</Group>
+<Group labelreference="L25">
+<Input>
+<Text-field prompt="&gt; " style="Maple Input" layout="Normal"><Font encoding="UTF-8"># Maple um\303\255 s\304\215\303\255tat \305\231adu mocninn\303\275ch \305\231ad, mnohem v\303\255ce ne\305\276 V\303\241s u\304\215ili v kurzu MA1</Font></Text-field>
+</Input>
+</Group>
+<Group labelreference="L26">
+<Input>
+<Text-field prompt="&gt; " style="Maple Input" layout="Normal">Sn1:=Sum(a1*q^(k-1),k=1..n)=sum(a1*q^(k-1),k=1..n);</Text-field>
+</Input>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output" display="LUklbXJvd0c2Iy9JK21vZHVsZW5hbWVHNiJJLFR5cGVzZXR0aW5nR0koX3N5c2xpYkdGJzYpLUkjbWlHRiQ2JVEkU24xRicvJSdpdGFsaWNHUSV0cnVlRicvJSxtYXRodmFyaWFudEdRJ2l0YWxpY0YnLUkjbW9HRiQ2LVEjOj1GJy9GM1Enbm9ybWFsRicvJSZmZW5jZUdRJmZhbHNlRicvJSpzZXBhcmF0b3JHRj0vJSlzdHJldGNoeUdGPS8lKnN5bW1ldHJpY0dGPS8lKGxhcmdlb3BHRj0vJS5tb3ZhYmxlbGltaXRzR0Y9LyUnYWNjZW50R0Y9LyUnbHNwYWNlR1EsMC4yNzc3Nzc4ZW1GJy8lJ3JzcGFjZUdGTC1GIzYpLUYjNiktSSttdW5kZXJvdmVyR0YkNictRjY2L1EmJlN1bTtGJy8lK2ZvcmVncm91bmRHUS5bMTQ0LDE0NCwxNDRdRidGOS9JK21zZW1hbnRpY3NHRiRRJmluZXJ0RidGO0Y+L0ZBRjFGQi9GRUYxL0ZHRjFGSC9GS1EmMC4wZW1GJy9GTlEsMC4xNjY2NjY3ZW1GJy1GIzYpLUYsNiVRImtGJ0YvRjItRjY2LVEiPUYnRjlGO0Y+RkBGQkZERkZGSEZKRk0tSSNtbkdGJDYkUSIxRidGOS9GWlEoWzAsMCwwXUYnLyUrYmFja2dyb3VuZEdRLlsyNTUsMjU1LDI1NV1GJy8lKXJlYWRvbmx5R0Y9RjktRiw2JVEibkYnRi9GMkZILyUsYWNjZW50dW5kZXJHRj0tSSdtc3BhY2VHRiQ2Ji8lJ2hlaWdodEdRJjAuMGV4RicvJSZ3aWR0aEdRJDUuMEYnLyUmZGVwdGhHRl1xLyUqbGluZWJyZWFrR1ElYXV0b0YnLUYjNiYtRiw2JVEjYTFGJ0YvRjItRjY2LVExJkludmlzaWJsZVRpbWVzO0YnRjlGO0Y+RkBGQkZERkZGSEZcby9GTkZdby1JJW1zdXBHRiQ2JS1GLDYlUSJxRidGL0YyLUYjNiZGYm8tRjY2LVEoJm1pbnVzO0YnRjlGO0Y+RkBGQkZERkZGSC9GS1EsMC4yMjIyMjIyZW1GJy9GTkZbc0Zob0Y5LyUxc3VwZXJzY3JpcHRzaGlmdEdRIjBGJ0Y5RlxwRl5wRmFwRjlGZW8tRiM2Ji1JJm1mcmFjR0YkNigtRiM2KUZocUZbci1GYHI2JUZici1GIzYmRmNwLUY2Ni1RIitGJ0Y5RjtGPkZARkJGREZGRkhGanJGXHNGaG9GOUZdc0ZccEZecEZhcEY5LUYjNilGYnJGW3ItSShtZmVuY2VkR0YkNiQtRiM2JkZickZnckZob0Y5RjlGXHBGXnBGYXBGOS8lLmxpbmV0aGlja25lc3NHRltwLyUrZGVub21hbGlnbkdRJ2NlbnRlckYnLyUpbnVtYWxpZ25HRml0LyUpYmV2ZWxsZWRHRj1GZ3ItRmNzNigtRiM2J0ZocUZccEZecEZhcEY5LUYjNidGY3RGXHBGXnBGYXBGOUZldEZndEZqdEZcdUY5RlxwRl5wRmFwRjlGXHBGXnBGYXBGOQ==">Ly1JJFN1bUc2JCUqcHJvdGVjdGVkR0koX3N5c2xpYkc2IjYkKiZJI2ExR0YoIiIiKUkicUdGKCwmSSJrR0YoRiwhIiJGLEYsL0YwO0YsSSJuR0YoLCYqKkYrRixGLkYxKUYuLCZGNEYsRixGLEYsLCZGLkYsRjFGLEYxRiwqJkYrRixGOUYxRjE=</Equation></Text-field>
+</Output>
+</Group>
+<Group labelreference="L27">
+<Input>
+<Text-field prompt="&gt; " style="Maple Input" layout="Normal">Sn1:=simplify(Sn1);</Text-field>
+</Input>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output" display="LUklbXJvd0c2Iy9JK21vZHVsZW5hbWVHNiJJLFR5cGVzZXR0aW5nR0koX3N5c2xpYkdGJzYpLUkjbWlHRiQ2JVEkU24xRicvJSdpdGFsaWNHUSV0cnVlRicvJSxtYXRodmFyaWFudEdRJ2l0YWxpY0YnLUkjbW9HRiQ2LVEjOj1GJy9GM1Enbm9ybWFsRicvJSZmZW5jZUdRJmZhbHNlRicvJSpzZXBhcmF0b3JHRj0vJSlzdHJldGNoeUdGPS8lKnN5bW1ldHJpY0dGPS8lKGxhcmdlb3BHRj0vJS5tb3ZhYmxlbGltaXRzR0Y9LyUnYWNjZW50R0Y9LyUnbHNwYWNlR1EsMC4yNzc3Nzc4ZW1GJy8lJ3JzcGFjZUdGTC1GIzYpLUYjNiYtRiw2JVEjYTFGJ0YvRjItRjY2LVExJkludmlzaWJsZVRpbWVzO0YnRjlGO0Y+RkBGQkZERkZGSC9GS1EmMC4wZW1GJy9GTkZaLUkobWZlbmNlZEdGJDYkLUYjNiktSSttdW5kZXJvdmVyR0YkNictRjY2L1EmJlN1bTtGJy8lK2ZvcmVncm91bmRHUS5bMTQ0LDE0NCwxNDRdRidGOS9JK21zZW1hbnRpY3NHRiRRJmluZXJ0RidGO0Y+L0ZBRjFGQi9GRUYxL0ZHRjFGSEZZL0ZOUSwwLjE2NjY2NjdlbUYnLUYjNiktRiw2JVEia0YnRi9GMi1GNjYtUSI9RidGOUY7Rj5GQEZCRkRGRkZIRkpGTS1JI21uR0YkNiRRIjFGJ0Y5L0Zib1EoWzAsMCwwXUYnLyUrYmFja2dyb3VuZEdRLlsyNTUsMjU1LDI1NV1GJy8lKXJlYWRvbmx5R0Y9RjktRiw2JVEibkYnRi9GMkZILyUsYWNjZW50dW5kZXJHRj0tSSdtc3BhY2VHRiQ2Ji8lJ2hlaWdodEdRJjAuMGV4RicvJSZ3aWR0aEdRJDUuMEYnLyUmZGVwdGhHRmlxLyUqbGluZWJyZWFrR1ElYXV0b0YnLUklbXN1cEdGJDYlLUYsNiVRInFGJ0YvRjItRiM2JkZecC1GNjYtUSgmbWludXM7RidGOUY7Rj5GQEZCRkRGRkZIL0ZLUSwwLjIyMjIyMjJlbUYnL0ZORl5zRmRwRjkvJTFzdXBlcnNjcmlwdHNoaWZ0R1EiMEYnRmhwRmpwRl1xRjlGOUY5RmFwLUkmbWZyYWNHRiQ2KC1GIzYpRlNGVi1GZ242JC1GIzYmLUZjcjYlRmVyRl9xRmBzRmpyRmRwRjlGOUZocEZqcEZdcUY5LUYjNictRiM2JkZlckZqckZkcEY5RmhwRmpwRl1xRjkvJS5saW5ldGhpY2tuZXNzR0ZncC8lK2Rlbm9tYWxpZ25HUSdjZW50ZXJGJy8lKW51bWFsaWduR0ZmdC8lKWJldmVsbGVkR0Y9RmhwRmpwRl1xRjlGaHBGanBGXXFGOQ==">LyomSSNhMUc2IiIiIi1JJFN1bUc2JCUqcHJvdGVjdGVkR0koX3N5c2xpYkdGJTYkKUkicUdGJSwmSSJrR0YlRiYhIiJGJi9GMDtGJkkibkdGJUYmKigsJkYuRiZGMUYmRjFGJEYmLCYpRi5GNEYmRjFGJkYm</Equation></Text-field>
+</Output>
+</Group>
+<Group labelreference="L28">
+<Input>
+<Text-field prompt="&gt; " style="Maple Input" layout="Normal"><Font encoding="UTF-8"># je V\303\241m dob\305\231e zn\303\241m\303\275 vzore\304\215ek pro sou\304\215et prvn\303\255ch </Font><Font italic="true">n </Font><Font encoding="UTF-8">\304\215len\305\257 geometrick\303\251 posloupnosti s prvn\303\255m \304\215lenem </Font><Font italic="true">a1</Font> a kvocientem <Font italic="true">q</Font>.</Text-field>
+</Input>
+</Group>
+<Group labelreference="L29">
+<Input>
+<Text-field prompt="&gt; " style="Maple Input" layout="Normal">S:=Sum(a1*q^(k-1),k=1..infinity)=sum(a1*q^(k-1),k=1..infinity);</Text-field>
+</Input>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">NiM+SSJTRzYiLy1JJFN1bUc2JCUqcHJvdGVjdGVkR0koX3N5c2xpYkc2IjYkKiZJI2ExRzYiIiIiKUkicUc2IiwmSSJrRzYiIiIiIiIiISIiIiIiL0kia0c2IjsiIiJJKWluZmluaXR5RyUqcHJvdGVjdGVkRywkKiZJI2ExRzYiIiIiLCZJInFHNiIiIiIiIiIhIiIhIiIhIiI=</Equation></Text-field>
+</Output>
+</Group>
+<Group labelreference="L30">
+<Input>
+<Text-field prompt="&gt; " style="Maple Input" layout="Normal"><Font encoding="UTF-8"># je sou\304\215et cel\303\251 \305\231ady, pochopiteln\304\233 bez uveden\303\255 p\305\231edpokladu, \305\276e |q|&lt;1.</Font></Text-field>
+</Input>
+</Group>
+<Group labelreference="L31">
+<Input>
+<Text-field prompt="&gt; " style="Maple Input" layout="Normal"></Text-field>
+</Input>
+</Group>
+<Group labelreference="L32">
+<Input>
+<Text-field prompt="&gt; " style="Maple Input" layout="Normal"></Text-field><Pagebreak></Pagebreak>
+</Input>
+</Group>
+</Section>
+</Section>
+<Section collapsed="false" MultipleChoiceAnswerIndex="-1" MultipleChoiceRandomizeChoices="false" TrueFalseAnswerIndex="-1" EssayAnswerRows="5" EssayAnswerColumns="60"><Title>
+<Text-field style="Heading 1" layout="Heading 1">  <Font encoding="UTF-8">P\305\231\303\255klad 3.</Font></Text-field></Title>
+<Group labelreference="L33">
+<Input>
+<Text-field style="Text" layout="Normal"><Font encoding="UTF-8">Dosp\304\233l\303\275 \304\215lov\304\233k m\303\241 32 zub\305\257. V Praze \305\276ije p\305\231ibli\305\276n\304\233 750 000 dosp\304\233l\303\275ch, v \304\214esk\303\251 republice asi 8 milion\305\257, ve st\303\241tech EU asi 350 milion\305\257. M\305\257\305\276eme s ur\304\215itost\303\255 tvrdit, \305\276e nalezneme v Praze, \304\214R \304\215i EU alespo\305\210 dva dosp\304\233l\303\251 se stejnou sestavou zub\305\257?</Font></Text-field>
+</Input>
+</Group>
+<Group labelreference="L34">
+<Input>
+<Text-field style="Text" layout="Normal"><Font underline="true" encoding="UTF-8" size="14">\305\230e\305\241en\303\255:</Font></Text-field>
+</Input>
+</Group>
+<Group labelreference="L35">
+<Input>
+<Text-field style="Text" layout="Normal"><Font encoding="UTF-8"> Sestavu zub\305\257 u ka\305\276d\303\251ho \304\215lov\304\233ka m\305\257\305\276eme zak\303\263dovat jako posloupnost z 0 a 1 o 32 \304\215lenech. Po\304\215et r\305\257zn\303\275ch mo\305\276n\303\275ch sestav je roven (srovnej p\305\231\303\255klad 2a)</Font></Text-field>
+</Input>
+</Group>
+<Group labelreference="L36">
+<Input>
+<Text-field prompt="&gt; " style="Maple Input" layout="Normal">restart:</Text-field>
+</Input>
+</Group>
+<Group labelreference="L37">
+<Input>
+<Text-field prompt="&gt; " style="Maple Input" layout="Normal">Z:=2^32;</Text-field>
+</Input>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">NiM+SSJaRzYiIisnSG5cSCU=</Equation></Text-field>
+</Output>
+</Group>
+<Group labelreference="L38">
+<Input>
+<Text-field style="Text" layout="Normal"> tedy Z1= 4 294 967 296 = <Equation executable="false" style="2D Math" input-equation="">LUklbXJvd0c2Iy9JK21vZHVsZW5hbWVHNiJJLFR5cGVzZXR0aW5nR0koX3N5c2xpYkdGJzYlLUkjbWlHRiQ2I1EhRictRiM2Ji1JI21uR0YkNiRRJDQuM0YnLyUsbWF0aHZhcmlhbnRHUSdub3JtYWxGJy1JI21vR0YkNi1RMSZJbnZpc2libGVUaW1lcztGJ0Y1LyUmZmVuY2VHUSZmYWxzZUYnLyUqc2VwYXJhdG9yR0Y+LyUpc3RyZXRjaHlHRj4vJSpzeW1tZXRyaWNHRj4vJShsYXJnZW9wR0Y+LyUubW92YWJsZWxpbWl0c0dGPi8lJ2FjY2VudEdGPi8lJ2xzcGFjZUdRJjAuMGVtRicvJSdyc3BhY2VHRk0tRiM2Iy1JJW1zdXBHRiQ2JS1GMjYkUSMxMEYnRjUtRjI2JFEiOUYnRjUvJTFzdXBlcnNjcmlwdHNoaWZ0R1EiMEYnRitGKw==</Equation><Font encoding="UTF-8">. Toto \304\215\303\255slo p\305\231evy\305\241uje po\304\215et v\305\241ech dosp\304\233l\303\275ch obyvatel ve v\305\241ech t\305\231ech skupin\303\241ch. M\305\257\305\276eme tvrdit, \305\276e ur\304\215it\304\233 na cel\303\251 Zemi \305\276ij\303\255 dva lid\303\251 se stejnou skupinou zub\305\257, jestli\305\276e uv\303\241\305\276\303\255me po\304\215et obyvatel na Zemi.  </Font></Text-field>
+</Input>
+</Group>
+<Group labelreference="L39">
+<Input>
+<Text-field prompt="&gt; " style="Maple Input" layout="Normal"></Text-field><Pagebreak></Pagebreak>
+</Input>
+</Group>
+</Section>
+<Section collapsed="false" MultipleChoiceAnswerIndex="-1" MultipleChoiceRandomizeChoices="false" TrueFalseAnswerIndex="-1" EssayAnswerRows="5" EssayAnswerColumns="60"><Title>
+<Text-field style="Heading 1" layout="Heading 1">  <Font encoding="UTF-8">P\305\231\303\255klad 4. </Font></Text-field></Title>
+<Group labelreference="L40">
+<Input>
+<Text-field style="Text" layout="Normal"><Font encoding="UTF-8">Morseova abeceda se skl\303\241d\303\241 ze &quot;slov&quot; tvo\305\231en\303\275ch symboly 0 a 1. Anglick\303\241 abeceda m\303\241 26 p\303\255smen, \304\215esk\303\241 40. Jakou nejmen\305\241\303\255 d\303\251lku &quot;slova&quot; mus\303\255me volit, abychom vyj\303\241d\305\231ili v\305\241echna p\303\255smena abecedy.</Font></Text-field>
+</Input>
+</Group>
+<Group labelreference="L41">
+<Input>
+<Text-field style="Text" layout="Normal"><Font underline="true" encoding="UTF-8" size="14">\305\230e\305\241en\303\255:</Font></Text-field>
+</Input>
+</Group>
+<Group labelreference="L42">
+<Input>
+<Text-field style="Text" layout="Normal"><Font encoding="UTF-8">Ozna\304\215\303\255me-li </Font><Font italic="true">n</Font><Font encoding="UTF-8"> d\303\251lku &quot;slova&quot;, pak r\305\257zn\303\275ch slov d\303\251lky n je</Font><Font style="2D Math">  <Font italic="true">sn</Font></Font>=<Equation executable="false" style="2D Math" input-equation="">LUklbXJvd0c2Iy9JK21vZHVsZW5hbWVHNiJJLFR5cGVzZXR0aW5nR0koX3N5c2xpYkdGJzYjLUklbXN1cEdGJDYlLUkjbW5HRiQ2JFEiMkYnLyUsbWF0aHZhcmlhbnRHUSdub3JtYWxGJy1JI21pR0YkNiVRIm5GJy8lJ2l0YWxpY0dRJXRydWVGJy9GM1EnaXRhbGljRicvJTFzdXBlcnNjcmlwdHNoaWZ0R1EiMEYn</Equation> a tedy <Font italic="true">Sn</Font>= <Equation executable="false" style="2D Math" input-equation="">LUklbXJvd0c2Iy9JK21vZHVsZW5hbWVHNiJJLFR5cGVzZXR0aW5nR0koX3N5c2xpYkdGJzYlLUkjbWlHRiQ2I1EhRictRiM2Ji1JK211bmRlcm92ZXJHRiQ2Jy1JI21vR0YkNi9RJiZTdW07RicvJStmb3JlZ3JvdW5kR1EuWzE0NCwxNDQsMTQ0XUYnLyUsbWF0aHZhcmlhbnRHUSdub3JtYWxGJy9JK21zZW1hbnRpY3NHRiRRJmluZXJ0RicvJSZmZW5jZUdRJmZhbHNlRicvJSpzZXBhcmF0b3JHRkMvJSlzdHJldGNoeUdRJXRydWVGJy8lKnN5bW1ldHJpY0dGQy8lKGxhcmdlb3BHRkgvJS5tb3ZhYmxlbGltaXRzR0ZILyUnYWNjZW50R0ZDLyUnbHNwYWNlR1EmMC4wZW1GJy8lJ3JzcGFjZUdRLDAuMTY2NjY2N2VtRictRiM2JS1GLDYlUSJrRicvJSdpdGFsaWNHRkgvRjxRJ2l0YWxpY0YnLUY1Ni1RIj1GJ0Y7RkFGRC9GR0ZDRkkvRkxGQy9GTkZDRk8vRlJRLDAuMjc3Nzc3OGVtRicvRlVGYW8tSSNtbkdGJDYkUSIxRidGOy1GLDYlUSJuRidGZm5GaG5GTy8lLGFjY2VudHVuZGVyR0ZDRistSSdtc3BhY2VHRiQ2Ji8lJ2hlaWdodEdRJjAuMGV4RicvJSZ3aWR0aEdRJDUuMEYnLyUmZGVwdGhHRmFwLyUqbGluZWJyZWFrR1ElYXV0b0YnLUYsNiVRI3NrRidGZm5GaG5GKw==</Equation>  <Font encoding="UTF-8">je po\304\215et r\305\257zn\303\275ch &quot;slov,&quot; kter\303\241 maj\303\255 d\303\251lku nejv\303\275\305\241e </Font><Font italic="true">n </Font><Font encoding="UTF-8">. Postupn\304\233 dostaneme:</Font></Text-field>
+</Input>
+</Group>
+<Group labelreference="L43">
+<Input>
+<Text-field prompt="&gt; " style="Maple Input" layout="Normal">for n from 1 to 6 do S[k]:=Sum(2^k,k=1..n)=sum(2^k,k=1..n) end do;</Text-field>
+</Input>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">NiM+JkkiU0c2IjYjSSJrRzYiLy1JJFN1bUc2JCUqcHJvdGVjdGVkR0koX3N5c2xpYkc2IjYkKSIiI0kia0c2Ii9JImtHNiI7IiIiIiIiIiIj</Equation></Text-field>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">NiM+JkkiU0c2IjYjSSJrRzYiLy1JJFN1bUc2JCUqcHJvdGVjdGVkR0koX3N5c2xpYkc2IjYkKSIiI0kia0c2Ii9JImtHNiI7IiIiIiIjIiIn</Equation></Text-field>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">NiM+JkkiU0c2IjYjSSJrRzYiLy1JJFN1bUc2JCUqcHJvdGVjdGVkR0koX3N5c2xpYkc2IjYkKSIiI0kia0c2Ii9JImtHNiI7IiIiIiIkIiM5</Equation></Text-field>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">NiM+JkkiU0c2IjYjSSJrRzYiLy1JJFN1bUc2JCUqcHJvdGVjdGVkR0koX3N5c2xpYkc2IjYkKSIiI0kia0c2Ii9JImtHNiI7IiIiIiIlIiNJ</Equation></Text-field>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">NiM+JkkiU0c2IjYjSSJrRzYiLy1JJFN1bUc2JCUqcHJvdGVjdGVkR0koX3N5c2xpYkc2IjYkKSIiI0kia0c2Ii9JImtHNiI7IiIiIiImIiNp</Equation></Text-field>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">NiM+JkkiU0c2IjYjSSJrRzYiLy1JJFN1bUc2JCUqcHJvdGVjdGVkR0koX3N5c2xpYkc2IjYkKSIiI0kia0c2Ii9JImtHNiI7IiIiIiInIiRFIg==</Equation></Text-field>
+</Output>
+</Group>
+<Group labelreference="L44">
+<Input>
+<Text-field style="Text" layout="Normal"><Font encoding="UTF-8">Z v\303\275sledku vid\303\255me, \305\276e angli\304\215tina vysta\304\215\303\255 s d\303\251lkou slova 4, kde\305\276to \304\215e\305\241tina pot\305\231ebuje d\303\251lku 5.</Font></Text-field>
+</Input>
+</Group>
+<Group labelreference="L45">
+<Input>
+<Text-field prompt="&gt; " style="Maple Input" layout="Normal">[[n,sum(2^k,k=1..n)]$n=1..6];</Text-field>
+</Input>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">NiM3KDckIiIiIiIjNyQiIiMiIic3JCIiJCIjOTckIiIlIiNJNyQiIiYiI2k3JCIiJyIkRSI=</Equation></Text-field>
+</Output>
+</Group>
+<Group labelreference="L46">
+<Input>
+<Text-field prompt="&gt; " style="Maple Input" layout="Normal"></Text-field><Pagebreak></Pagebreak>
+</Input>
+</Group>
+</Section>
+<Section collapsed="false" MultipleChoiceAnswerIndex="-1" MultipleChoiceRandomizeChoices="false" TrueFalseAnswerIndex="-1" EssayAnswerRows="5" EssayAnswerColumns="60"><Title>
+<Text-field style="Heading 1" layout="Heading 1">  <Font encoding="UTF-8">P\305\231\303\255klad  5.</Font></Text-field></Title>
+<Group labelreference="L47">
+<Input>
+<Text-field style="Text" layout="Normal"><Font encoding="UTF-8">Kolik r\305\257zn\303\275ch \304\215\303\255sel m\305\257\305\276eme zapsat pomoc\303\255 \304\215\303\255slic 0, 1, 2, ... 9, jestli\305\276e po\305\276adujeme:</Font></Text-field>
+<Text-field style="Text" layout="Normal"><Font encoding="UTF-8">a) \304\215\303\255slo m\303\241  4 navz\303\241jem r\305\257zn\303\251 \304\215\303\255slice;</Font></Text-field>
+<Text-field style="Text" layout="Normal"><Font encoding="UTF-8">b) \304\215\303\255slo m\303\241 nejv\303\275\305\241e 4 \304\215\303\255slice, kter\303\251 jsou navz\303\241jem r\305\257zn\303\251;</Font></Text-field>
+<Text-field style="Text" layout="Normal"><Font encoding="UTF-8">c) \304\215\303\255slo m\303\241 4 \304\215\303\255slice a nesm\303\255 za\304\215\303\255nat 0.  </Font></Text-field>
+</Input>
+</Group>
+<Group labelreference="L48">
+<Input>
+<Text-field style="Text" layout="Normal"><Font underline="true" encoding="UTF-8" size="14">\305\230e\305\241en\303\255:</Font></Text-field>
+</Input>
+</Group>
+<Group labelreference="L49">
+<Input>
+<Text-field style="Text" layout="Normal"><Font encoding="UTF-8">a) Prvn\303\255 \304\215\303\255slici m\305\257\305\276eme volit 10 zp\305\257soby, druhou 9, t\305\231et\303\255 8 a \304\215trvtou 7. Podle pravidla sou\304\215inu m\303\241me celkem</Font></Text-field>
+<Text-field style="Text" layout="Normal">              pa = <Equation executable="false" style="2D Math" input-equation="">LUklbXJvd0c2Iy9JK21vZHVsZW5hbWVHNiJJLFR5cGVzZXR0aW5nR0koX3N5c2xpYkdGJzYlLUkjbWlHRiQ2I1EhRictRiM2KS1JI21uR0YkNiRRIzEwRicvJSxtYXRodmFyaWFudEdRJ25vcm1hbEYnLUkjbW9HRiQ2LVEnJnNkb3Q7RidGNS8lJmZlbmNlR1EmZmFsc2VGJy8lKnNlcGFyYXRvckdGPi8lKXN0cmV0Y2h5R0Y+LyUqc3ltbWV0cmljR0Y+LyUobGFyZ2VvcEdGPi8lLm1vdmFibGVsaW1pdHNHRj4vJSdhY2NlbnRHRj4vJSdsc3BhY2VHUSYwLjBlbUYnLyUncnNwYWNlR0ZNLUYyNiRRIjlGJ0Y1RjgtRjI2JFEiOEYnRjVGOC1GMjYkUSI3RidGNUYr</Equation><Font encoding="UTF-8">=  5 040   mo\305\276nost\303\255 volby.</Font></Text-field>
+</Input>
+</Group>
+<Group labelreference="L50">
+<Input>
+<Text-field prompt="&gt; " style="Maple Input" layout="Normal">restart:</Text-field>
+</Input>
+</Group>
+<Group labelreference="L51">
+<Input>
+<Text-field prompt="&gt; " style="Maple Input" layout="Normal">pa:=10*9*8*7;</Text-field>
+</Input>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">NiM+SSNwYUc2IiIlU10=</Equation></Text-field>
+</Output>
+</Group>
+<Group labelreference="L52">
+<Input>
+<Text-field style="Text" layout="Normal"><Font encoding="UTF-8">b)  Podobn\304\233 jako v a) dostaneme pb= </Font><Equation executable="false" style="2D Math" input-equation="">LUklbXJvd0c2Iy9JK21vZHVsZW5hbWVHNiJJLFR5cGVzZXR0aW5nR0koX3N5c2xpYkdGJzYlLUkjbWlHRiQ2I1EhRictRiM2Ki1JI21uR0YkNiRRIzEwRicvJSxtYXRodmFyaWFudEdRJ25vcm1hbEYnLUkjbW9HRiQ2LVEiK0YnRjUvJSZmZW5jZUdRJmZhbHNlRicvJSpzZXBhcmF0b3JHRj4vJSlzdHJldGNoeUdGPi8lKnN5bW1ldHJpY0dGPi8lKGxhcmdlb3BHRj4vJS5tb3ZhYmxlbGltaXRzR0Y+LyUnYWNjZW50R0Y+LyUnbHNwYWNlR1EsMC4yMjIyMjIyZW1GJy8lJ3JzcGFjZUdGTS1GIzYlRjEtRjk2LVEnJnNkb3Q7RidGNUY8Rj9GQUZDRkVGR0ZJL0ZMUSYwLjBlbUYnL0ZPRlYtRjI2JFEiOUYnRjVGOC1GIzYnRjFGUkZYRlItRjI2JFEiOEYnRjVGOC1GIzYpRjFGUkZYRlJGZ25GUi1GMjYkUSI3RidGNUYrRis=</Equation><Font encoding="UTF-8">=  5 860  r\305\257zn\303\275ch \304\215\303\255sel.</Font></Text-field>
+</Input>
+</Group>
+<Group labelreference="L53">
+<Input>
+<Text-field prompt="&gt; " style="Maple Input" layout="Normal">pb:=10+10*9+10*9*8+10*9*8*7;</Text-field>
+</Input>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">NiM+SSNwYkc2IiIlZ2U=</Equation></Text-field>
+</Output>
+</Group>
+<Group labelreference="L54">
+<Input>
+<Text-field style="Text" layout="Normal"><Font encoding="UTF-8">c) Jestli\305\276e p\303\255\305\241eme \304\215\303\255slo od za\304\215\303\241tku, tak podobn\304\233 jako v a) dostaneme pc= </Font><Equation executable="false" style="2D Math" input-equation="">LUklbXJvd0c2Iy9JK21vZHVsZW5hbWVHNiJJLFR5cGVzZXR0aW5nR0koX3N5c2xpYkdGJzYlLUkjbWlHRiQ2I1EhRictRiM2KS1JI21uR0YkNiRRIjlGJy8lLG1hdGh2YXJpYW50R1Enbm9ybWFsRictSSNtb0dGJDYtUScmc2RvdDtGJ0Y1LyUmZmVuY2VHUSZmYWxzZUYnLyUqc2VwYXJhdG9yR0Y+LyUpc3RyZXRjaHlHRj4vJSpzeW1tZXRyaWNHRj4vJShsYXJnZW9wR0Y+LyUubW92YWJsZWxpbWl0c0dGPi8lJ2FjY2VudEdGPi8lJ2xzcGFjZUdRJjAuMGVtRicvJSdyc3BhY2VHRk1GMUY4LUYyNiRRIjhGJ0Y1RjgtRjI2JFEiN0YnRjVGKw==</Equation><Font encoding="UTF-8"> =  4 536  r\305\257zn\303\275ch \304\215\303\255sel.</Font></Text-field>
+</Input>
+</Group>
+<Group labelreference="L55">
+<Input>
+<Text-field prompt="&gt; " style="Maple Input" layout="Normal">pc:=9*9*8*7;</Text-field>
+</Input>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">NiM+SSNwY0c2IiIlT1g=</Equation></Text-field>
+</Output>
+</Group>
+<Group labelreference="L56">
+<Input>
+<Text-field prompt="&gt; " style="Maple Input" layout="Normal"></Text-field><Pagebreak></Pagebreak>
+</Input>
+</Group>
+</Section>
+<Section collapsed="false" MultipleChoiceAnswerIndex="-1" MultipleChoiceRandomizeChoices="false" TrueFalseAnswerIndex="-1" EssayAnswerRows="5" EssayAnswerColumns="60"><Title>
+<Text-field style="Heading 1" layout="Heading 1">  <Font encoding="UTF-8">P\305\231\303\255klad  6.</Font></Text-field></Title>
+<Group labelreference="L57">
+<Input>
+<Text-field style="Text" layout="Normal"><Font encoding="UTF-8">Kolik r\305\257zn\303\275ch slov lze v\303\275m\304\233nou p\303\255smen vytvo\305\231it ze slov </Font></Text-field>
+<Text-field style="Text" layout="Normal">a)  <Font italic="true">stop</Font>            b)  <Font italic="true">ananas</Font>            c)   <Font italic="true">matematika</Font></Text-field>
+</Input>
+</Group>
+<Group labelreference="L58">
+<Input>
+<Text-field style="Text" layout="Normal"><Font underline="true" encoding="UTF-8" size="14">\305\230e\305\241en\303\255:</Font></Text-field>
+</Input>
+</Group>
+<Group labelreference="L59">
+<Input>
+<Text-field style="Text" layout="Normal"><Font encoding="UTF-8">a) Slovo m\303\241 4 r\305\257zn\303\241 p\303\255smena a lze tedy prov\303\251st  4! = </Font><Equation executable="false" style="2D Math" input-equation="">LUklbXJvd0c2Iy9JK21vZHVsZW5hbWVHNiJJLFR5cGVzZXR0aW5nR0koX3N5c2xpYkdGJzYlLUkjbWlHRiQ2I1EhRictRiM2KS1JI21uR0YkNiRRIjFGJy8lLG1hdGh2YXJpYW50R1Enbm9ybWFsRictSSNtb0dGJDYtUScmc2RvdDtGJ0Y1LyUmZmVuY2VHUSZmYWxzZUYnLyUqc2VwYXJhdG9yR0Y+LyUpc3RyZXRjaHlHRj4vJSpzeW1tZXRyaWNHRj4vJShsYXJnZW9wR0Y+LyUubW92YWJsZWxpbWl0c0dGPi8lJ2FjY2VudEdGPi8lJ2xzcGFjZUdRJjAuMGVtRicvJSdyc3BhY2VHRk0tRjI2JFEiMkYnRjVGOC1GMjYkUSIzRidGNUY4LUYyNiRRIjRGJ0Y1Ris=</Equation><Font encoding="UTF-8"> = 24 r\305\257zn\303\275ch v\303\275m\304\233n. P\305\231i ka\305\276d\303\251 dostaneme jin\303\251 slovo.</Font></Text-field>
+</Input>
+</Group>
+<Group labelreference="L60">
+<Input>
+<Text-field prompt="&gt; " style="Maple Input" layout="Normal">restart: # n! nebo factorial(n)</Text-field>
+</Input>
+</Group>
+<Group labelreference="L61">
+<Input>
+<Text-field prompt="&gt; " style="Maple Input" layout="Normal">ra:=4!;</Text-field>
+</Input>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">NiM+SSNyYUc2IiIjQw==</Equation></Text-field>
+</Output>
+</Group>
+<Group labelreference="L62">
+<Input>
+<Text-field style="Text" layout="Normal"><Font encoding="UTF-8">b) Slovo m\303\241 celkem 6 p\303\255smen, ale pouze 3 r\305\257zn\303\241. P\303\255smeno </Font><Font italic="true">a</Font><Font encoding="UTF-8"> se opakuje t\305\231ikr\303\241t, p\303\255smeno </Font><Font italic="true">n</Font><Font encoding="UTF-8"> dvakr\303\241t a p\303\255smeno </Font><Font italic="true">s</Font><Font encoding="UTF-8"> jednou. Dostaneme celkem 6!= 720  slov, ale p\305\231i 3!= 6 v\303\275m\304\233n\303\241ch p\303\255smene </Font><Font italic="true">a</Font><Font encoding="UTF-8"> a 2! = 2 v\303\275m\304\233n\303\241ch p\303\255smena </Font><Font italic="true">n</Font><Font encoding="UTF-8"> se slovo nezm\304\233n\303\255. Z\303\255sk\303\241me tud\303\255\305\276 </Font><Equation executable="false" style="2D Math" input-equation="">LUklbXJvd0c2Iy9JK21vZHVsZW5hbWVHNiJJLFR5cGVzZXR0aW5nR0koX3N5c2xpYkdGJzYjLUkmbWZyYWNHRiQ2KC1GIzYlLUkjbWlHRiQ2I1EhRictRiM2JC1JI21uR0YkNiRRIjZGJy8lLG1hdGh2YXJpYW50R1Enbm9ybWFsRictSSNtb0dGJDYtUSIhRidGOi8lJmZlbmNlR1EmZmFsc2VGJy8lKnNlcGFyYXRvckdGQy8lKXN0cmV0Y2h5R0ZDLyUqc3ltbWV0cmljR0ZDLyUobGFyZ2VvcEdGQy8lLm1vdmFibGVsaW1pdHNHRkMvJSdhY2NlbnRHRkMvJSdsc3BhY2VHUSwwLjExMTExMTFlbUYnLyUncnNwYWNlR0ZSRjAtRiM2JUYwLUYjNilGMC1GIzYkLUY3NiRRIjNGJ0Y6Rj0tRj42LVExJkludmlzaWJsZVRpbWVzO0YnRjpGQUZERkZGSEZKRkxGTi9GUVEmMC4wZW1GJy9GVEZcby1GIzYkLUY3NiRRIjJGJ0Y6Rj1GaG4tRiM2JC1GNzYkUSIxRidGOkY9RjBGMC8lLmxpbmV0aGlja25lc3NHRmdvLyUrZGVub21hbGlnbkdRJ2NlbnRlckYnLyUpbnVtYWxpZ25HRlxwLyUpYmV2ZWxsZWRHRkM=</Equation><Font encoding="UTF-8"> =  60 r\305\257zn\303\275ch slov.</Font></Text-field>
+</Input>
+</Group>
+<Group labelreference="L63">
+<Input>
+<Text-field prompt="&gt; " style="Maple Input" layout="Normal">rb:=6!/3!/2!;</Text-field>
+</Input>
+<Input>
+<Text-field prompt="&gt; " style="Maple Input" alignment="left" firstindent="0" spacebelow="0" leftmargin="0" linespacing="0.0" initial="0" linebreak="space" rightmargin="0" bulletsuffix="" spaceabove="0" bullet="none" pagebreak-before="false"></Text-field>
+</Input>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">NiM+SSNyYkc2IiIjZw==</Equation></Text-field>
+</Output>
+</Group>
+<Group labelreference="L64">
+<Input>
+<Text-field style="Text" layout="Normal"><Font encoding="UTF-8">c) Slovo m\303\241 celkem 10 p\303\255smen, ale </Font><Font italic="true">a </Font><Font encoding="UTF-8">se opakuje t\305\231ikr\303\241t, </Font><Font italic="true">m </Font>a <Font italic="true">t </Font><Font encoding="UTF-8">dvakr\303\241t </Font><Font italic="true">i</Font> a <Font italic="true">k</Font><Font encoding="UTF-8"> jednou. Podobn\304\233 jako v b) dostaneme pro po\304\215et r\305\257zn\303\275ch slov vzorec rc = </Font><Equation executable="false" style="2D Math" input-equation="">LUklbXJvd0c2Iy9JK21vZHVsZW5hbWVHNiJJLFR5cGVzZXR0aW5nR0koX3N5c2xpYkdGJzYjLUkmbWZyYWNHRiQ2KC1GIzYlLUkjbWlHRiQ2I1EhRictRiM2JC1JI21uR0YkNiRRIzEwRicvJSxtYXRodmFyaWFudEdRJ25vcm1hbEYnLUkjbW9HRiQ2LVEiIUYnRjovJSZmZW5jZUdRJmZhbHNlRicvJSpzZXBhcmF0b3JHRkMvJSlzdHJldGNoeUdGQy8lKnN5bW1ldHJpY0dGQy8lKGxhcmdlb3BHRkMvJS5tb3ZhYmxlbGltaXRzR0ZDLyUnYWNjZW50R0ZDLyUnbHNwYWNlR1EsMC4xMTExMTExZW1GJy8lJ3JzcGFjZUdGUkYwLUYjNilGMC1GIzYkLUY3NiRRIjNGJ0Y6Rj0tRj42LVExJkludmlzaWJsZVRpbWVzO0YnRjpGQUZERkZGSEZKRkxGTi9GUVEmMC4wZW1GJy9GVEZqbi1GIzYkLUY3NiRRIjJGJ0Y6Rj1GZm5GXG9GMC8lLmxpbmV0aGlja25lc3NHUSIxRicvJStkZW5vbWFsaWduR1EnY2VudGVyRicvJSludW1hbGlnbkdGZm8vJSliZXZlbGxlZEdGQw==</Equation> = 151 200.</Text-field>
+</Input>
+</Group>
+<Group labelreference="L65">
+<Input>
+<Text-field prompt="&gt; " style="Maple Input" layout="Normal">rc:=10!/3!/2!/2!;</Text-field>
+</Input>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">NiM+SSNyY0c2IiInKzc6</Equation></Text-field>
+</Output>
+</Group>
+<Group labelreference="L66">
+<Input>
+<Text-field prompt="&gt; " style="Maple Input" layout="Normal"></Text-field><Pagebreak></Pagebreak>
+</Input>
+</Group>
+<Section collapsed="false" MultipleChoiceAnswerIndex="-1" MultipleChoiceRandomizeChoices="false" TrueFalseAnswerIndex="-1" EssayAnswerRows="5" EssayAnswerColumns="60"><Title>
+<Text-field style="Heading 2" layout="Heading 2">  Funkce <Font italic="true">n</Font>!  <Font italic="true"> n </Font><Font encoding="UTF-8">- faktori\303\241l</Font></Text-field></Title>
+<Group labelreference="L67">
+<Input>
+<Text-field style="Text" layout="Normal"><Font encoding="UTF-8"> Pro p\305\231irozen\303\251 \304\215\303\255slo n zav\303\241d\303\255me symbol   </Font><Font italic="true">n</Font>! = <Equation executable="false" style="2D Math" input-equation="">LUklbXJvd0c2Iy9JK21vZHVsZW5hbWVHNiJJLFR5cGVzZXR0aW5nR0koX3N5c2xpYkdGJzYlLUkjbWlHRiQ2I1EhRictRiM2Jy1JI21uR0YkNiRRIjFGJy8lLG1hdGh2YXJpYW50R1Enbm9ybWFsRictSSNtb0dGJDYtUScmc2RvdDtGJ0Y1LyUmZmVuY2VHUSZmYWxzZUYnLyUqc2VwYXJhdG9yR0Y+LyUpc3RyZXRjaHlHRj4vJSpzeW1tZXRyaWNHRj4vJShsYXJnZW9wR0Y+LyUubW92YWJsZWxpbWl0c0dGPi8lJ2FjY2VudEdGPi8lJ2xzcGFjZUdRJjAuMGVtRicvJSdyc3BhY2VHRk0tRjI2JFEiMkYnRjVGOC1GMjYkUSIzRidGNUYr</Equation> ...<Font italic="true"> n </Font><Font encoding="UTF-8">  pro sou\304\215in \304\215\303\255sel 1, 2 a\305\276 </Font><Font italic="true">n</Font><Font encoding="UTF-8"> a  \304\215teme jej </Font><Font italic="true">n</Font><Font encoding="UTF-8"> - faktori\303\241l. D\303\241le definujeme 0! = 1. Maple tuto funkci zn\303\241 a to jako   </Font><Font italic="true">n</Font>!   nebo factorial(<Font italic="true">n</Font>).</Text-field>
+</Input>
+</Group>
+<Group labelreference="L68">
+<Input>
+<Text-field prompt="&gt; " style="Maple Input" layout="Normal">restart:</Text-field>
+</Input>
+</Group>
+<Group labelreference="L69">
+<Input>
+<Text-field prompt="&gt; " style="Maple Input" layout="Normal">1!; 2!;5!;0!;</Text-field>
+</Input>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">IiIi</Equation></Text-field>
+</Output>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">IiIj</Equation></Text-field>
+</Output>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">IiQ/Ig==</Equation></Text-field>
+</Output>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">IiIi</Equation></Text-field>
+</Output>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">IigrKUdP</Equation></Text-field>
+</Output>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">IiM1</Equation></Text-field>
+</Output>
+</Group>
+<Group labelreference="L70">
+<Input>
+<Text-field prompt="&gt; " style="Maple Input" layout="Normal"></Text-field>
+</Input>
+</Group>
+<Group labelreference="L71">
+<Input>
+<Text-field prompt="&gt; " style="Maple Input" layout="Normal">factorial(1); factorial(2); factorial(5);</Text-field>
+</Input>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">NiMiIiI=</Equation></Text-field>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">NiMiIiM=</Equation></Text-field>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">NiMiJD8i</Equation></Text-field>
+</Output>
+</Group>
+<Group labelreference="L72">
+<Input>
+<Text-field prompt="&gt; " style="Maple Input" layout="Normal">0!; factorial(0);</Text-field>
+</Input>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">NiMiIiI=</Equation></Text-field>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">NiMiIiI=</Equation></Text-field>
+</Output>
+</Group>
+</Section>
+<Group labelreference="L73">
+<Input>
+<Text-field prompt="&gt; " style="Maple Input" layout="Normal"></Text-field><Pagebreak></Pagebreak>
+</Input>
+</Group>
+</Section>
+<Section collapsed="false" MultipleChoiceAnswerIndex="-1" MultipleChoiceRandomizeChoices="false" TrueFalseAnswerIndex="-1" EssayAnswerRows="5" EssayAnswerColumns="60"><Title>
+<Text-field style="Heading 1" layout="Heading 1">  <Font encoding="UTF-8">P\305\231\303\255klad  7.</Font></Text-field></Title>
+<Group labelreference="L74">
+<Input>
+<Text-field style="Text" layout="Normal"><Font encoding="UTF-8">Ze souboru 52 karet n\303\241hodn\304\233 vybereme 10 z nich. Kolik je mo\305\276n\303\275ch v\303\275b\304\233r\305\257, jestli\305\276e po\305\276adujeme</Font></Text-field>
+<Text-field style="Text" layout="Normal"><Font encoding="UTF-8">a)  v\303\275b\304\233r bez omezen\303\255;</Font></Text-field>
+<Text-field style="Text" layout="Normal"><Font encoding="UTF-8">b)  ve v\303\275b\304\233ru je jedno eso;</Font></Text-field>
+<Text-field style="Text" layout="Normal"><Font encoding="UTF-8">c)  ve v\303\275b\304\233ru je alespo\305\210 jedno eso.</Font></Text-field>
+</Input>
+</Group>
+<Group labelreference="L75">
+<Input>
+<Text-field style="Text" layout="Normal"><Font underline="true" encoding="UTF-8" size="14">\305\230e\305\241en\303\255:</Font></Text-field>
+</Input>
+</Group>
+<Group labelreference="L76">
+<Input>
+<Text-field style="Text" layout="Normal"><Font encoding="UTF-8">P\305\231i v\303\275b\304\233ru nez\303\241le\305\276\303\255 na po\305\231ad\303\255 vybran\303\275ch prvk\305\257 a proto je po\304\215et v\303\275b\304\233r\305\257 roven po\304\215tu kombinac\303\255 </Font><Font italic="true">k</Font><Font encoding="UTF-8"> prvk\305\257 z </Font><Font italic="true">n</Font><Font encoding="UTF-8"> prvk\305\257. \304\214\303\255slo zna\304\215\303\255me   a je rovno </Font><Equation executable="false" style="2D Math" input-equation="">LUklbXJvd0c2Iy9JK21vZHVsZW5hbWVHNiJJLFR5cGVzZXR0aW5nR0koX3N5c2xpYkdGJzYjLUkmbWZyYWNHRiQ2KC1GIzYlLUkjbWlHRiQ2I1EhRictRiM2JC1GMTYlUSJuRicvJSdpdGFsaWNHUSV0cnVlRicvJSxtYXRodmFyaWFudEdRJ2l0YWxpY0YnLUkjbW9HRiQ2LVEiIUYnL0Y9USdub3JtYWxGJy8lJmZlbmNlR1EmZmFsc2VGJy8lKnNlcGFyYXRvckdGRy8lKXN0cmV0Y2h5R0ZHLyUqc3ltbWV0cmljR0ZHLyUobGFyZ2VvcEdGRy8lLm1vdmFibGVsaW1pdHNHRkcvJSdhY2NlbnRHRkcvJSdsc3BhY2VHUSwwLjExMTExMTFlbUYnLyUncnNwYWNlR0ZWRjAtRiM2J0YwLUYjNiQtRjE2JVEia0YnRjlGPEY/LUZANi1RMSZJbnZpc2libGVUaW1lcztGJ0ZDRkVGSEZKRkxGTkZQRlIvRlVRJjAuMGVtRicvRlhGXm8tRiM2JC1JKG1mZW5jZWRHRiQ2JC1GIzYlRjYtRkA2LVEoJm1pbnVzO0YnRkNGRUZIRkpGTEZORlBGUi9GVVEsMC4yMjIyMjIyZW1GJy9GWEZbcEZnbkZDRj9GMC8lLmxpbmV0aGlja25lc3NHUSIxRicvJStkZW5vbWFsaWduR1EnY2VudGVyRicvJSludW1hbGlnbkdGYnAvJSliZXZlbGxlZEdGRw==</Equation><Font encoding="UTF-8">.  \304\214teme jej </Font><Font italic="true">n</Font> nad <Font italic="true">k</Font>.</Text-field>
+</Input>
+</Group>
+<Group labelreference="L77">
+<Input>
+<Text-field style="Text" layout="Normal"><Font encoding="UTF-8">a) Prvn\303\255 kartu m\305\257\305\276eme vybrat 52 zp\305\257soby, druhou 51, t\305\231et\303\255 50 a posledn\303\255  52-9 =43 zp\305\257soby a karty mezi sebou m\305\257\305\276eme vym\304\233nit celkem 10! kr\303\241t.   Podle pravidla sou\304\215inu dostaneme pro po\304\215et v\303\275m\304\233n vzorec   52!/10!/42!. V\303\275po\304\215tem dostaneme</Font></Text-field>
+</Input>
+</Group>
+<Group labelreference="L78">
+<Input>
+<Text-field prompt="&gt; " style="Maple Input" layout="Normal">restart; # binomial(n,k)</Text-field>
+</Input>
+</Group>
+<Group labelreference="L79">
+<Input>
+<Text-field prompt="&gt; " style="Maple Input" layout="Normal">va:=binomial(52,10);</Text-field>
+</Input>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">NiM+SSN2YUc2IiIsP1UtP2Ui</Equation></Text-field>
+</Output>
+</Group>
+<Group labelreference="L80">
+<Input>
+<Text-field prompt="&gt; " style="Maple Input" layout="Normal">va1:=52!/10!/42!;</Text-field>
+</Input>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">NiM+SSR2YTFHNiIiLD9VLT9lIg==</Equation></Text-field>
+</Output>
+</Group>
+<Group labelreference="L81">
+<Input>
+<Text-field style="Text" layout="Normal"><Font encoding="UTF-8">b) P\305\231i tomto v\303\275b\304\233ru nejd\305\231\303\255ve vol\303\255me 1 eso ze 4 a pot\303\251 9 zb\303\275vaj\303\255c\303\255ch karet z  52-10=42 karet. Podle pravidla sou\304\215inu dostaneme pro celkov\303\275 po\304\215et v\303\275b\304\233r\305\257 hodnotu</Font></Text-field>
+</Input>
+</Group>
+<Group labelreference="L82">
+<Input>
+<Text-field prompt="&gt; " style="Maple Input" layout="Normal">vb:=binomial(4,1)*binomial(48,9);</Text-field>
+</Input>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">NiM+SSN2Ykc2IiIrZ2xVM24=</Equation></Text-field>
+</Output>
+</Group>
+<Group labelreference="L83">
+<Input>
+<Text-field style="Text" layout="Normal"><Font encoding="UTF-8">c) Podm\303\255nku pro v\303\275b\304\233r uplatn\303\255me obdobn\304\233 jako v b) pouze mus\303\255me po\304\215\303\255tat po \305\231ad\304\233 mo\305\276nosti  po\304\215tu es 1, 2, 3 a 4 ze zb\303\275vaj\303\255c\303\255ch 48 karet vyb\303\255r\303\241me 9, 8, 7 a 6 karet. Jednotliv\303\251 hodnoty se\304\215teme a pro celkov\303\275 po\304\215et dostaneme </Font></Text-field>
+</Input>
+</Group>
+<Group labelreference="L84">
+<Input>
+<Text-field prompt="&gt; " style="Maple Input" layout="Normal">c1:=binomial(4,1)*binomial(48,9);</Text-field>
+</Input>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">NiM+SSNjMUc2IiIrZ2xVM24=</Equation></Text-field>
+</Output>
+</Group>
+<Group labelreference="L85">
+<Input>
+<Text-field prompt="&gt; " style="Maple Input" layout="Normal">c2:=binomial(4,2)*binomial(48,8);</Text-field>
+</Input>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">NiM+SSNjMkc2IiIra1I0a0E=</Equation></Text-field>
+</Output>
+</Group>
+<Group labelreference="L86">
+<Input>
+<Text-field prompt="&gt; " style="Maple Input" layout="Normal">c3:=binomial(4,3)*binomial(48,7);</Text-field>
+</Input>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">NiM+SSNjM0c2IiIqKUc7WEg=</Equation></Text-field>
+</Output>
+</Group>
+<Group labelreference="L87">
+<Input>
+<Text-field prompt="&gt; " style="Maple Input" layout="Normal">c4:=binomial(4,4)*binomial(48,6);</Text-field>
+</Input>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">NiM+SSNjNEc2IiIpNzpGNw==</Equation></Text-field>
+</Output>
+</Group>
+<Group labelreference="L88">
+<Input>
+<Text-field prompt="&gt; " style="Maple Input" layout="Normal">vc:=c1+c2+c3+c4;</Text-field>
+</Input>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">NiM+SSN2Y0c2IiIrQyQzJHojKg==</Equation></Text-field>
+</Output>
+</Group>
+<Group labelreference="L89">
+<Input>
+<Text-field prompt="&gt; " style="Maple Input" layout="Normal">binomial(52,10)-binomial(48,10);</Text-field>
+</Input>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">NiMiK0MkMyR6Iyo=</Equation></Text-field>
+</Output>
+</Group>
+<Group labelreference="L90">
+<Input>
+<Text-field prompt="&gt; " style="Maple Input" layout="Normal"></Text-field>
+</Input>
+</Group>
+<Group labelreference="L91">
+<Input><Pagebreak></Pagebreak>
+</Input>
+</Group>
+</Section>
+<Section collapsed="false" MultipleChoiceAnswerIndex="-1" MultipleChoiceRandomizeChoices="false" TrueFalseAnswerIndex="-1" EssayAnswerRows="5" EssayAnswerColumns="60"><Title>
+<Text-field style="Heading 1" layout="Heading 1">  <Font encoding="UTF-8">P\305\231\303\255klad  8.</Font></Text-field></Title>
+<Group labelreference="L92">
+<Input>
+<Text-field style="Text" layout="Normal"><Font encoding="UTF-8">Ve Sportce se losuje (n\303\241hodn\304\233 vyb\303\255r\303\241) ze 49 \304\215\303\255sel</Font></Text-field>
+<Text-field style="Text" layout="Normal"><Font encoding="UTF-8">a)  6 \304\215\303\255sel</Font></Text-field>
+<Text-field style="Text" layout="Normal"><Font encoding="UTF-8">b) 6 \304\215\303\255sel a potom jedno pr\303\251miov\303\251.</Font></Text-field>
+<Text-field style="Text" layout="Normal"><Font encoding="UTF-8">Ur\304\215ete po\304\215ty mo\305\276n\303\275ch v\303\275b\304\233r\305\257.</Font></Text-field>
+</Input>
+</Group>
+<Group labelreference="L93">
+<Input>
+<Text-field style="Text" layout="Normal"><Font underline="true" encoding="UTF-8" size="14">\305\230e\305\241en\303\255:</Font></Text-field>
+</Input>
+</Group>
+<Group labelreference="L94">
+<Input>
+<Text-field style="Text" layout="Normal"><Font encoding="UTF-8">a)  Pro prvn\303\255 v\303\275b\304\233r je po\304\215et roven po\304\215tu kombinac\303\255 6 prvk\305\257 ze 49, tedy </Font></Text-field>
+</Input>
+</Group>
+<Group labelreference="L95">
+<Input>
+<Text-field prompt="&gt; " style="Maple Input" layout="Normal">wa:=binomial(49,6);</Text-field>
+</Input>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">NiM+SSN3YUc2IiIpO1EpUiI=</Equation></Text-field>
+</Output>
+</Group>
+<Group labelreference="L96">
+<Input>
+<Text-field style="Text" layout="Normal"><Font encoding="UTF-8">b) ve druh\303\251m p\305\231\303\255pad\304\233 je\305\241t\304\233 uva\305\276ujeme v\303\275b\304\233r jednoho \304\215\303\255sla ze 49-6=43 zb\303\275vaj\303\255c\303\255ch \304\215\303\255sel. Podle pravidla sou\304\215inu dostaneme pro po\304\215et mo\305\276n\303\275ch v\303\275b\304\233r\305\257 hodnotu</Font></Text-field>
+</Input>
+</Group>
+<Group labelreference="L97">
+<Input>
+<Text-field prompt="&gt; " style="Maple Input" layout="Normal">wb:=binomial(49,6)*binomial(43,1);</Text-field>
+</Input>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">NiM+SSN3Ykc2IiIqKTMvOGc=</Equation></Text-field>
+</Output>
+</Group>
+<Group labelreference="L98">
+<Input>
+<Text-field prompt="&gt; " style="Maple Input" layout="Normal"></Text-field><Pagebreak></Pagebreak>
+</Input>
+</Group>
+</Section>
+<Section collapsed="false" MultipleChoiceAnswerIndex="-1" MultipleChoiceRandomizeChoices="false" TrueFalseAnswerIndex="-1" EssayAnswerRows="5" EssayAnswerColumns="60"><Title>
+<Text-field style="Heading 1" layout="Heading 1"> <Font encoding="UTF-8"> P\305\231\303\255klad  9.</Font></Text-field></Title>
+<Group labelreference="L99">
+<Input>
+<Text-field style="Text" layout="Normal"><Font encoding="UTF-8">a) Zn\303\241zorn\304\233te z\303\241vislost hodnoty kombina\304\215n\303\255ho \304\215\303\255sla na parametru </Font><Font italic="true">k</Font>;  </Text-field>
+<Text-field style="Text" layout="Normal"><Font encoding="UTF-8">b) Zn\303\241zorn\304\233te z\303\241vislost hodnoty kombina\304\215n\303\255ho \304\215\303\255sla na parametru </Font><Font italic="true">n</Font>.</Text-field>
+</Input>
+</Group>
+<Group labelreference="L100">
+<Input>
+<Text-field style="Text" layout="Normal"><Font underline="true" encoding="UTF-8" size="14">\305\230e\305\241en\303\255:</Font></Text-field>
+</Input>
+</Group>
+<Group labelreference="L101">
+<Input>
+<Text-field prompt="&gt; " style="Maple Input" layout="Normal">restart:</Text-field>
+</Input>
+</Group>
+<Group labelreference="L102">
+<Input>
+<Text-field prompt="&gt; " style="Maple Input" layout="Normal">A:=k-&gt;binomial(n,k);</Text-field>
+</Input>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">NiM+SSJBRzYiZio2I0kia0c2IjYiNiRJKW9wZXJhdG9yRzYiSSZhcnJvd0c2IjYiLUkpYmlub21pYWxHNiI2JEkibkc2Ikkia0c2IjYiNiI2Ig==</Equation></Text-field>
+</Output>
+</Group>
+<Group labelreference="L103">
+<Input>
+<Text-field prompt="&gt; " style="Maple Input" layout="Normal">n:=20;</Text-field>
+</Input>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">NiM+SSJuRzYiIiM/</Equation></Text-field>
+</Output>
+</Group>
+<Group labelreference="L104">
+<Input>
+<Text-field prompt="&gt; " style="Maple Input" layout="Normal">B:=[[k,A(k)]$k=0..n]:</Text-field>
+</Input>
+</Group>
+<Group labelreference="L105">
+<Input>
+<Text-field prompt="&gt; " style="Maple Input" layout="Normal">plot(B,x=0..n,style=point,color=blue,symbol=box);</Text-field>
+</Input>
+<Output>
+<Text-field style="HyperlinkError" layout="HyperlinkError"><Hyperlink linktarget="http://www.maplesoft.com/support/help/errors/view.aspx?path=Error,%20(in%20plot)%20expecting%20a%20real%20constant%20as%20range%20endpoint%20but%20received%20n" hyperlink="true"><Font style="HyperlinkError">Error, (in plot) expecting a real constant as range endpoint but received n</Font></Hyperlink></Text-field>
+</Output>
+</Group>
+<Group labelreference="L106">
+<Input>
+<Text-field prompt="&gt; " style="Maple Input" layout="Normal"></Text-field><Pagebreak></Pagebreak>
+</Input>
+</Group>
+<Group labelreference="L107">
+<Input>
+<Text-field prompt="&gt; " style="Maple Input" layout="Normal">A1:=n-&gt;binomial(n,k);</Text-field>
+</Input>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">NiM+SSNBMUc2ImYqNiNJIm5HNiI2IjYkSSlvcGVyYXRvckc2IkkmYXJyb3dHNiI2Ii1JKWJpbm9taWFsRzYkJSpwcm90ZWN0ZWRHSShfc3lzbGliRzYiNiRJIm5HNiJJImtHNiI2IjYiNiI=</Equation></Text-field>
+</Output>
+</Group>
+<Group labelreference="L108">
+<Input>
+<Text-field prompt="&gt; " style="Maple Input" layout="Normal">k:=10;</Text-field>
+</Input>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">NiM+SSJrRzYiIiM1</Equation></Text-field>
+</Output>
+</Group>
+<Group labelreference="L109">
+<Input>
+<Text-field prompt="&gt; " style="Maple Input" layout="Normal">B1:=[[m,A1(m)]$m=k..2*k]:</Text-field>
+</Input>
+</Group>
+<Group labelreference="L110">
+<Input>
+<Text-field prompt="&gt; " style="Maple Input" layout="Normal">plot(B1,x=k..2*k,style=point,color=blue,symbol=box);</Text-field>
+</Input>
+<Output>
+<Text-field superscript="false" placeholder="false" executable="false" selection-placeholder="false" italic="false" size="12" bold="false" subscript="false" family="Times New Roman" opaque="false" underline="false" background="[255,255,255]" readonly="false" foreground="[0,0,0]" layout="Maple Plot"><Plot height="403" type="two-dimensional" width="456" gridlinevisibility="1" legendvisibility="false">LSUlUExPVEc2KS0lJ0NVUlZFU0c2IzctNyQkIiQrIiEiIiQiIzUhIiI3JCQiJDUiISIiJCIkNSIhIiI3JCQiJD8iISIiJCIkZychIiI3JCQiJEkiISIiJCIlZ0chIiI3JCQiJFMiISIiJCImNSsiISIiNyQkIiRdIiEiIiQiJkkrJCEiIjckJCIkZyIhIiIkIiYhMyEpISIiNyQkIiRxIiEiIiQiJyFbJT4hIiI3JCQiJCE9ISIiJCInIWVQJSEiIjckJCIkIT4hIiIkIicheUIqISIiNyQkIiQrIyEiIiQiKGd2JT0hIiItJSVWSUVXRzYkOyQiJCsiISIiJCIkKyMhIiI7JCEmVHAkISIiJCIoNlgpPSEiIi0lK0FYRVNMQUJFTFNHNiRRIng2IlEhNiItJSZDT0xPUkc2JiUkUkdCRyQiIiEhIiIkIiIhISIiJCIjNSEiIi0lJ1NZTUJPTEc2JCUkQk9YRyIjNS0lJlNUWUxFRzYjJSZQT0lOVEctJSVST09URzYnLSUpQk9VTkRTX1hHNiMkIiRTJyEiIi0lKUJPVU5EU19ZRzYjJCIjISkhIiItJS1CT1VORFNfV0lEVEhHNiMkIiU1USEiIi0lLkJPVU5EU19IRUlHSFRHNiMkIiUhZiQhIiItJSlDSElMRFJFTkc2Ig==</Plot></Text-field>
+</Output>
+</Group>
+<Group labelreference="L111">
+<Input>
+<Text-field prompt="&gt; " style="Maple Input" layout="Normal"></Text-field><Pagebreak></Pagebreak>
+</Input>
+</Group>
+</Section>
+<Group labelreference="L112">
+<Input>
+<Text-field style="Text" layout="Normal"></Text-field>
+<Text-field style="Text" layout="Normal"><Font bold="true" encoding="UTF-8" size="16">Limitn\303\255 vlastnosti kombina\304\215n\303\255ch \304\215\303\255sel a odhady pro velk\303\251 rozsahy v\303\275b\304\233r\305\257</Font></Text-field>
+</Input>
+</Group>
+<Section collapsed="false" MultipleChoiceAnswerIndex="-1" MultipleChoiceRandomizeChoices="false" TrueFalseAnswerIndex="-1" EssayAnswerRows="5" EssayAnswerColumns="60"><Title>
+<Text-field style="Heading 1" layout="Heading 1">  <Font encoding="UTF-8">P\305\231\303\255klad  10.</Font></Text-field></Title>
+<Group labelreference="L113">
+<Input>
+<Text-field style="Text" layout="Normal"><Font encoding="UTF-8">Uka\305\276te, \305\276e pro kombina\304\215n\303\255 \304\215\303\255sla plat\303\255</Font></Text-field>
+<Text-field style="Text" layout="Normal"><Equation executable="false" style="2D Math" input-equation="">LUklbXJvd0c2Iy9JK21vZHVsZW5hbWVHNiJJLFR5cGVzZXR0aW5nR0koX3N5c2xpYkdGJzYlLUkjbWlHRiQ2I1EhRictRiM2Ji1JJ211bmRlckdGJDYlLUkjbW9HRiQ2L1EkbGltRicvJStmb3JlZ3JvdW5kR1EuWzE0NCwxNDQsMTQ0XUYnLyUsbWF0aHZhcmlhbnRHUSdub3JtYWxGJy9JK21zZW1hbnRpY3NHRiRRJmluZXJ0RicvJSZmZW5jZUdRJmZhbHNlRicvJSpzZXBhcmF0b3JHRkMvJSlzdHJldGNoeUdGQy8lKnN5bW1ldHJpY0dGQy8lKGxhcmdlb3BHRkMvJS5tb3ZhYmxlbGltaXRzR1EldHJ1ZUYnLyUnYWNjZW50R0ZDLyUnbHNwYWNlR1EmMC4wZW1GJy8lJ3JzcGFjZUdRLDAuMTY2NjY2N2VtRictRiM2JS1GLDYlUSJuRicvJSdpdGFsaWNHRk4vRjxRJ2l0YWxpY0YnLUY1Ni1RJyZyYXJyO0YnRjtGQUZERkZGSEZKL0ZNRkNGT0ZRL0ZVRlMtRiw2JVEpaW5maW5pdHlGJ0ZmbkZobi8lLGFjY2VudHVuZGVyR0ZDRistSSdtc3BhY2VHRiQ2Ji8lJ2hlaWdodEdRJjAuMGV4RicvJSZ3aWR0aEdRJjAuNGVtRicvJSZkZXB0aEdGaW8vJSpsaW5lYnJlYWtHUSVhdXRvRictSSZtZnJhY0dGJDYoLUYjNiMtSSVtc3VwR0YkNiVGWS1GLDYlUSJrRidGZm5GaG4vJTFzdXBlcnNjcmlwdHNoaWZ0R1EiMEYnLUYjNiMtRmNwNigtRiM2JUYrLUYjNiRGWS1GNTYtUSIhRidGO0ZBRkRGRkZIRkpGXW9GTy9GUlEsMC4xMTExMTExZW1GJy9GVUZcckYrLUYjNiVGKy1GIzYkLUkobWZlbmNlZEdGJDYkLUYjNiVGWS1GNTYtUSgmbWludXM7RidGO0ZBRkRGRkZIRkpGXW9GTy9GUlEsMC4yMjIyMjIyZW1GJy9GVUZbc0ZqcEY7RmhxRisvJS5saW5ldGhpY2tuZXNzR1EiMUYnLyUrZGVub21hbGlnbkdRJ2NlbnRlckYnLyUpbnVtYWxpZ25HRmJzLyUpYmV2ZWxsZWRHRkNGXXNGYHNGY3NGZXNGKw==</Equation><Font encoding="UTF-8">= 1, tedy \305\276e pro velk\303\251 rozsahy soubor\305\257 je po\304\215et variac\303\255 s opakovan\303\255m a bez opakovan\303\255 p\305\231ibli\305\276n\304\233 stejn\303\275.</Font></Text-field>
+<Text-field style="Text" layout="Normal"><Font encoding="UTF-8">a) Vypo\304\215t\304\233te hodnoty posloupnosti pro n\304\233kter\303\251 hodnoty v rozsahu 10 &lt; </Font><Font italic="true">n </Font>&lt;2 000 a 10 &lt; <Font italic="true">k</Font> &lt; 50.</Text-field>
+<Text-field style="Text" layout="Normal"><Font encoding="UTF-8">b) Nalezn\304\233te index </Font><Font italic="true">m0</Font><Font encoding="UTF-8">, pro kter\303\275 plat\303\255  1 &lt; </Font><Font italic="true">a</Font>(<Font italic="true">m0</Font>) &lt; 1+ <Equation executable="false" style="2D Math" input-equation="">LUklbXJvd0c2Iy9JK21vZHVsZW5hbWVHNiJJLFR5cGVzZXR0aW5nR0koX3N5c2xpYkdGJzYjLUkjbWlHRiQ2JVEmYWxwaGFGJy8lJ2l0YWxpY0dRJmZhbHNlRicvJSxtYXRodmFyaWFudEdRJ25vcm1hbEYn</Equation>, <Equation executable="false" style="2D Math" input-equation="">LUklbXJvd0c2Iy9JK21vZHVsZW5hbWVHNiJJLFR5cGVzZXR0aW5nR0koX3N5c2xpYkdGJzYjLUkjbWlHRiQ2JVEmYWxwaGFGJy8lJ2l0YWxpY0dRJmZhbHNlRicvJSxtYXRodmFyaWFudEdRJ25vcm1hbEYn</Equation>&gt; 0. </Text-field>
+</Input>
+</Group>
+<Group labelreference="L114">
+<Input>
+<Text-field style="Text" layout="Normal"><Font underline="true" encoding="UTF-8" size="14">\305\230e\305\241en\303\255:</Font></Text-field>
+</Input>
+</Group>
+<Group labelreference="L115">
+<Input>
+<Text-field prompt="&gt; " style="Maple Input" layout="Normal">restart:</Text-field>
+</Input>
+</Group>
+<Group labelreference="L116">
+<Input>
+<Text-field prompt="&gt; " style="Maple Input" layout="Normal">a:=n-&gt;n^k/(n!/(n-k)!);</Text-field>
+</Input>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">NiM+SSJhRzYiZio2I0kibkc2IjYiNiRJKW9wZXJhdG9yRzYiSSZhcnJvd0c2IjYiKigpSSJuRzYiSSJrRzYiIiIiLUkqZmFjdG9yaWFsRyUqcHJvdGVjdGVkRzYjSSJuRzYiISIiLUkqZmFjdG9yaWFsRyUqcHJvdGVjdGVkRzYjLCZJIm5HNiIiIiJJImtHNiIhIiIiIiI2IjYiNiI=</Equation></Text-field>
+</Output>
+</Group>
+<Group labelreference="L117">
+<Input>
+<Text-field prompt="&gt; " style="Maple Input" layout="Normal">k:=10;</Text-field>
+</Input>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">NiM+SSJrRzYiIiM1</Equation></Text-field>
+</Output>
+</Group>
+<Group labelreference="L118">
+<Input>
+<Text-field prompt="&gt; " style="Maple Input" layout="Normal">Limit(a(n),n=infinity)=limit(a(n),n=infinity);</Text-field>
+</Input>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">NiMvLUkmTGltaXRHNiQlKnByb3RlY3RlZEdJKF9zeXNsaWJHNiI2JCooKUkibkc2IiIjNSIiIi1JKmZhY3RvcmlhbEclKnByb3RlY3RlZEc2I0kibkc2IiEiIi1JKmZhY3RvcmlhbEclKnByb3RlY3RlZEc2IywmSSJuRzYiIiIiIiM1ISIiIiIiL0kibkc2IkkpaW5maW5pdHlHJSpwcm90ZWN0ZWRHIiIi</Equation></Text-field>
+</Output>
+</Group>
+<Group labelreference="L119">
+<Input>
+<Text-field prompt="&gt; " style="Maple Input" layout="Normal"></Text-field><Pagebreak></Pagebreak>
+</Input>
+</Group>
+<Section collapsed="false" MultipleChoiceAnswerIndex="-1" MultipleChoiceRandomizeChoices="false" TrueFalseAnswerIndex="-1" EssayAnswerRows="5" EssayAnswerColumns="60"><Title>
+<Text-field style="Heading 2" layout="Heading 2"><Font encoding="UTF-8"> a)  Hodnoty posloupnosti pro n\304\233kter\303\251 rozsahy v\303\275b\304\233ru</Font></Text-field></Title>
+<Group labelreference="L120">
+<Input>
+<Text-field style="Text" layout="Normal"><Font encoding="UTF-8">zad\303\241v\303\241me </Font><Font italic="true">k</Font>  a 100 &lt; <Font italic="true">n</Font> &lt; 2000</Text-field>
+</Input>
+</Group>
+<Group labelreference="L121">
+<Input>
+<Text-field prompt="&gt; " style="Maple Input" layout="Normal">for m from 1 to 20 do evalf(a(100*m)) end do ;</Text-field>
+</Input>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">NiMkIitUKmY+ZiIhIio=</Equation></Text-field>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">NiMkIitHNyFwRCIhIio=</Equation></Text-field>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">NiMkIitFXHFqNiEiKg==</Equation></Text-field>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">NiMkIitlODM/NiEiKg==</Equation></Text-field>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">NiMkIitAVCFbNCIhIio=</Equation></Text-field>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">NiMkIisrVkp5NSEiKg==</Equation></Text-field>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">NiMkIitGJDRuMSIhIio=</Equation></Text-field>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">NiMkIisoMyo0ZTUhIio=</Equation></Text-field>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">NiMkIitRcVheNSEiKg==</Equation></Text-field>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">NiMkIitTdzxZNSEiKg==</Equation></Text-field>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">NiMkIitAMSk9LyIhIio=</Equation></Text-field>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">NiMkIitcXkpRNSEiKg==</Equation></Text-field>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">NiMkIiskMzRgLiIhIio=</Equation></Text-field>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">NiMkIitiLnVLNSEiKg==</Equation></Text-field>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">NiMkIiswK19JNSEiKg==</Equation></Text-field>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">NiMkIitsO2VHNSEiKg==</Equation></Text-field>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">NiMkIis/WyhvLSIhIio=</Equation></Text-field>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">NiMkIitOLk9ENSEiKg==</Equation></Text-field>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">NiMkIitJdStDNSEiKg==</Equation></Text-field>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">NiMkIitkOnpBNSEiKg==</Equation></Text-field>
+</Output>
+</Group>
+<Group labelreference="L122">
+<Input>
+<Text-field prompt="&gt; " style="Maple Input" layout="Normal">A:=[[100*r,a(100*r)]$r=1..20]:</Text-field>
+</Input>
+</Group>
+<Group labelreference="L123">
+<Input>
+<Text-field prompt="&gt; " style="Maple Input" layout="Normal">evalf(A);</Text-field>
+</Input>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">NiM3NjckJCIkKyIiIiEkIitUKmY+ZiIhIio3JCQiJCsjIiIhJCIrRzchcEQiISIqNyQkIiQrJCIiISQiK0VccWo2ISIqNyQkIiQrJSIiISQiK2U4Mz82ISIqNyQkIiQrJiIiISQiK0BUIVs0IiEiKjckJCIkKyciIiEkIisrVkp5NSEiKjckJCIkKygiIiEkIitGJDRuMSIhIio3JCQiJCspIiIhJCIrKDMqNGU1ISIqNyQkIiQrKiIiISQiK1FxWF41ISIqNyQkIiUrNSIiISQiK1N3PFk1ISIqNyQkIiUrNiIiISQiK0AxKT0vIiEiKjckJCIlKzciIiEkIitcXkpRNSEiKjckJCIlKzgiIiEkIiskMzRgLiIhIio3JCQiJSs5IiIhJCIrYi51SzUhIio3JCQiJSs6IiIhJCIrMCtfSTUhIio3JCQiJSs7IiIhJCIrbDtlRzUhIio3JCQiJSs8IiIhJCIrP1soby0iISIqNyQkIiUrPSIiISQiK04uT0Q1ISIqNyQkIiUrPiIiISQiK0l1K0M1ISIqNyQkIiUrPyIiISQiK2Q6ekE1ISIq</Equation></Text-field>
+</Output>
+</Group>
+<Group labelreference="L124">
+<Input>
+<Text-field prompt="&gt; " style="Maple Input" layout="Normal"></Text-field><Pagebreak></Pagebreak>
+</Input>
+</Group>
+</Section>
+<Section collapsed="false" MultipleChoiceAnswerIndex="-1" MultipleChoiceRandomizeChoices="false" TrueFalseAnswerIndex="-1" EssayAnswerRows="5" EssayAnswerColumns="60"><Title>
+<Text-field style="Heading 2" layout="Heading 2"><Font encoding="UTF-8"> b) V\303\275po\304\215et indexu </Font><Font italic="true">m0</Font><Font encoding="UTF-8"> pro po\305\276adovanou odchylku  </Font><Equation executable="false" style="2D Math" input-equation="">LUklbXJvd0c2Iy9JK21vZHVsZW5hbWVHNiJJLFR5cGVzZXR0aW5nR0koX3N5c2xpYkdGJzYjLUkjbWlHRiQ2JVEmYWxwaGFGJy8lJ2l0YWxpY0dRJmZhbHNlRicvJSxtYXRodmFyaWFudEdRJ25vcm1hbEYn</Equation> od 1.</Text-field></Title>
+<Text-field style="Text" layout="Normal"></Text-field>
+<Group labelreference="L125">
+<Input>
+<Text-field style="Text" layout="Normal"><Font encoding="UTF-8">Zad\303\241v\303\241me  </Font><Equation executable="false" style="2D Math" input-equation="">LUklbXJvd0c2Iy9JK21vZHVsZW5hbWVHNiJJLFR5cGVzZXR0aW5nR0koX3N5c2xpYkdGJzYjLUkjbWlHRiQ2JVEmYWxwaGFGJy8lJ2l0YWxpY0dRJmZhbHNlRicvJSxtYXRodmFyaWFudEdRJ25vcm1hbEYn</Equation> &gt; 0.</Text-field>
+</Input>
+</Group>
+<Group labelreference="L126">
+<Input>
+<Text-field prompt="&gt; " style="Maple Input" layout="Normal">k:=10; alpha:=0.1; m:='m':</Text-field>
+</Input>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">NiM+SSJrRzYiIiM1</Equation></Text-field>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">NiM+SSZhbHBoYUc2IiQiIiIhIiI=</Equation></Text-field>
+</Output>
+</Group>
+<Group labelreference="L127">
+<Input>
+<Text-field prompt="&gt; " style="Maple Input" layout="Normal">for m from k+1 while a(m)&gt;1+alpha do m:=m+1 end do: m0:=m-1;</Text-field>
+</Input>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">NiM+SSNtMEc2IiIkdyU=</Equation></Text-field>
+</Output>
+</Group>
+<Group labelreference="L128">
+<Input>
+<Text-field prompt="&gt; " style="Maple Input" layout="Normal"></Text-field><Pagebreak></Pagebreak>
+</Input>
+</Group>
+</Section>
+</Section>
+<Section collapsed="false" MultipleChoiceAnswerIndex="-1" MultipleChoiceRandomizeChoices="false" TrueFalseAnswerIndex="-1" EssayAnswerRows="5" EssayAnswerColumns="60"><Title>
+<Text-field style="Heading 1" layout="Heading 1">  <Font encoding="UTF-8">P\305\231\303\255klad  11.</Font></Text-field></Title>
+<Group labelreference="L129">
+<Input>
+<Text-field style="Text" layout="Normal"><Font encoding="UTF-8">Uka\305\276te, \305\276e pro velk\303\251 rozsahy v\303\275b\304\233r\305\257 </Font><Font italic="true">n</Font><Font encoding="UTF-8"> m\305\257\305\276eme zanedbat vy\305\231azov\303\241n\303\255 vybran\303\275ch prvk\305\257. Plat\303\255 </Font></Text-field>
+<Text-field style="Text" layout="Normal"><Equation executable="false" style="2D Math" input-equation="">LUklbXJvd0c2Iy9JK21vZHVsZW5hbWVHNiJJLFR5cGVzZXR0aW5nR0koX3N5c2xpYkdGJzYlLUkjbWlHRiQ2I1EhRictRiM2Ji1JJ211bmRlckdGJDYlLUkjbW9HRiQ2L1EkbGltRicvJStmb3JlZ3JvdW5kR1EuWzE0NCwxNDQsMTQ0XUYnLyUsbWF0aHZhcmlhbnRHUSdub3JtYWxGJy9JK21zZW1hbnRpY3NHRiRRJmluZXJ0RicvJSZmZW5jZUdRJmZhbHNlRicvJSpzZXBhcmF0b3JHRkMvJSlzdHJldGNoeUdGQy8lKnN5bW1ldHJpY0dGQy8lKGxhcmdlb3BHRkMvJS5tb3ZhYmxlbGltaXRzR1EldHJ1ZUYnLyUnYWNjZW50R0ZDLyUnbHNwYWNlR1EmMC4wZW1GJy8lJ3JzcGFjZUdRLDAuMTY2NjY2N2VtRictRiM2JS1GLDYlUSJuRicvJSdpdGFsaWNHRk4vRjxRJ2l0YWxpY0YnLUY1Ni1RJyZyYXJyO0YnRjtGQUZERkZGSEZKL0ZNRkNGT0ZRL0ZVRlMtRiw2JVEpaW5maW5pdHlGJ0ZmbkZobi8lLGFjY2VudHVuZGVyR0ZDRistSSdtc3BhY2VHRiQ2Ji8lJ2hlaWdodEdRJjAuMGV4RicvJSZ3aWR0aEdRJjAuNGVtRicvJSZkZXB0aEdGaW8vJSpsaW5lYnJlYWtHUSVhdXRvRictSSZtZnJhY0dGJDYoLUYjNiVGKy1GIzYlLUYsNiVRKWJpbm9taWFsRicvRmduRkNGOy1GNTYtUTAmQXBwbHlGdW5jdGlvbjtGJ0Y7RkFGREZGRkhGSkZdb0ZPRlFGXm8tSShtZmVuY2VkR0YkNiQtRiM2JUZZLUY1Ni1RIixGJ0Y7RkEvRkVGTkZGRkhGSkZdb0ZPRlEvRlVRLDAuMzMzMzMzM2VtRictRiw2JVEia0YnRmZuRmhuRjtGKy1GIzYjLUZjcDYoLUYjNiMtSSVtc3VwR0YkNiVGWUZbci8lMXN1cGVyc2NyaXB0c2hpZnRHUSIwRictRiM2JUYrLUYjNiRGW3ItRjU2LVEiIUYnRjtGQUZERkZGSEZKRl1vRk8vRlJRLDAuMTExMTExMWVtRicvRlVGYnNGKy8lLmxpbmV0aGlja25lc3NHUSIxRicvJStkZW5vbWFsaWduR1EnY2VudGVyRicvJSludW1hbGlnbkdGaXMvJSliZXZlbGxlZEdGQ0Zkc0Znc0Zqc0ZcdEYr</Equation> = 1. </Text-field>
+<Text-field style="Text" layout="Normal"><Font encoding="UTF-8">a) Vypo\304\215t\304\233te hodnoty posloupnosti pro rozsahy 10 &lt; </Font><Font italic="true">n</Font> &lt; 2 000 a 10 &lt; <Font italic="true">k</Font> &lt; 100.</Text-field>
+<Text-field style="Text" layout="Normal">b) Pro zadanou odchylku <Equation executable="false" style="2D Math" input-equation="">LUklbXJvd0c2Iy9JK21vZHVsZW5hbWVHNiJJLFR5cGVzZXR0aW5nR0koX3N5c2xpYkdGJzYjLUkjbWlHRiQ2JVEmYWxwaGFGJy8lJ2l0YWxpY0dRJmZhbHNlRicvJSxtYXRodmFyaWFudEdRJ25vcm1hbEYn</Equation> &gt;0<Font encoding="UTF-8"> ur\304\215ete index </Font><Font italic="true">m0 </Font><Font encoding="UTF-8">takov\303\275, \305\276e se \304\215len posloupnosti od limity li\305\241\303\255 o m\303\251n\304\233 ne\305\276 </Font><Equation executable="false" style="2D Math" input-equation="">LUklbXJvd0c2Iy9JK21vZHVsZW5hbWVHNiJJLFR5cGVzZXR0aW5nR0koX3N5c2xpYkdGJzYjLUkjbWlHRiQ2JVEmYWxwaGFGJy8lJ2l0YWxpY0dRJmZhbHNlRicvJSxtYXRodmFyaWFudEdRJ25vcm1hbEYn</Equation>.</Text-field>
+</Input>
+</Group>
+<Group labelreference="L130">
+<Input>
+<Text-field style="Text" layout="Normal"><Font underline="true" encoding="UTF-8" size="14">\305\230e\305\241en\303\255:</Font></Text-field>
+</Input>
+</Group>
+<Group labelreference="L131">
+<Input>
+<Text-field prompt="&gt; " style="Maple Input" layout="Normal">restart;</Text-field>
+</Input>
+</Group>
+<Group labelreference="L132">
+<Input>
+<Text-field prompt="&gt; " style="Maple Input" layout="Normal">b:=n-&gt;binomial(n,k)/n^k*k!;</Text-field>
+</Input>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">NiM+SSJiRzYiZio2I0kibkc2IjYiNiRJKW9wZXJhdG9yRzYiSSZhcnJvd0c2IjYiKigtSSliaW5vbWlhbEc2IjYkSSJuRzYiSSJrRzYiIiIiKUkibkc2Ikkia0c2IiEiIi1JKmZhY3RvcmlhbEclKnByb3RlY3RlZEc2I0kia0c2IiIiIjYiNiI2Ig==</Equation></Text-field>
+</Output>
+</Group>
+<Group labelreference="L133">
+<Input>
+<Text-field prompt="&gt; " style="Maple Input" layout="Normal">k:=20;</Text-field>
+</Input>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">NiM+SSJrRzYiIiM/</Equation></Text-field>
+</Output>
+</Group>
+<Group labelreference="L134">
+<Input>
+<Text-field prompt="&gt; " style="Maple Input" layout="Normal">Limit(b(n),n=infinity)=limit(b(n),n=infinity);</Text-field>
+</Input>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">NiMvLUkmTGltaXRHNiQlKnByb3RlY3RlZEdJKF9zeXNsaWJHNiI2JCwkKigiNCsra3ciMz8hSFYjIiIiLUkpYmlub21pYWxHNiQlKnByb3RlY3RlZEdJKF9zeXNsaWJHNiI2JEkibkc2IiIjPyIiIilJIm5HNiIiIz8hIiIiIiIvSSJuRzYiSSlpbmZpbml0eUclKnByb3RlY3RlZEciIiI=</Equation></Text-field>
+</Output>
+</Group>
+<Group labelreference="L135">
+<Input>
+<Text-field prompt="&gt; " style="Maple Input" layout="Normal"></Text-field><Pagebreak></Pagebreak>
+</Input>
+</Group>
+<Section collapsed="false" MultipleChoiceAnswerIndex="-1" MultipleChoiceRandomizeChoices="false" TrueFalseAnswerIndex="-1" EssayAnswerRows="5" EssayAnswerColumns="60"><Title>
+<Text-field style="Heading 2" layout="Heading 2"><Font encoding="UTF-8"> a) V\303\275po\304\215et hodnot \304\215len\305\257 posloupnosti pro n\304\233kter\303\251 rozsahy v\303\275b\304\233r\305\257</Font></Text-field></Title>
+<Group labelreference="L136">
+<Input>
+<Text-field style="Text" layout="Normal"><Font encoding="UTF-8"> Zad\303\241v\303\241me</Font><Font italic="true"> k</Font> a  100 &lt; <Font italic="true">n </Font>&lt; 2 000.</Text-field>
+</Input>
+</Group>
+<Group labelreference="L137">
+<Input>
+<Text-field prompt="&gt; " style="Maple Input" layout="Normal">k:=20;</Text-field>
+</Input>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">NiM+SSJrRzYiIiM/</Equation></Text-field>
+</Output>
+</Group>
+<Group labelreference="L138">
+<Input>
+<Text-field prompt="&gt; " style="Maple Input" layout="Normal">for m from 1 to 20 do evalf(b(100*m)) end do ;</Text-field>
+</Input>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">NiMkIis9XSpSSSIhIzU=</Equation></Text-field>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">NiMkIisqPVNRdSQhIzU=</Equation></Text-field>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">NiMkIituUFVMXyEjNQ==</Equation></Text-field>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">NiMkIit4JFEpcGghIzU=</Equation></Text-field>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">NiMkIituUUMvbyEjNQ==</Equation></Text-field>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">NiMkIisnKT1QZ3MhIzU=</Equation></Text-field>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">NiMkIismUlBNZyghIzU=</Equation></Text-field>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">NiMkIispUnkwKHkhIzU=</Equation></Text-field>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">NiMkIisoKSpwVjMpISM1</Equation></Text-field>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">NiMkIitNVEdmIykhIzU=</Equation></Text-field>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">NiMkIitVMCwwJSkhIzU=</Equation></Text-field>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">NiMkIismeXUjRyYpISM1</Equation></Text-field>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">NiMkIitAIykpUWopISM1</Equation></Text-field>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">NiMkIiskSCNRRCgpISM1</Equation></Text-field>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">NiMkIis9b1MwKSkhIzU=</Equation></Text-field>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">NiMkIis/JikpZigpKSEjNQ==</Equation></Text-field>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">NiMkIitlUHFRKikhIzU=</Equation></Text-field>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">NiMkIisqKm96JSoqKSEjNQ==</Equation></Text-field>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">NiMkIitZS0VYISohIzU=</Equation></Text-field>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">NiMkIitNJDM0NCohIzU=</Equation></Text-field>
+</Output>
+</Group>
+<Group labelreference="L139">
+<Input>
+<Text-field prompt="&gt; " style="Maple Input" layout="Normal">B:=[[100*r,b(100*r)]$r=1..20]:</Text-field>
+</Input>
+</Group>
+<Group labelreference="L140">
+<Input>
+<Text-field prompt="&gt; " style="Maple Input" layout="Normal">evalf(B);</Text-field>
+</Input>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">NiM3NjckJCIkKyIiIiEkIis9XSpSSSIhIzU3JCQiJCsjIiIhJCIrKj1TUXUkISM1NyQkIiQrJCIiISQiK25QVUxfISM1NyQkIiQrJSIiISQiK3gkUSlwaCEjNTckJCIkKyYiIiEkIituUUMvbyEjNTckJCIkKyciIiEkIisnKT1QZ3MhIzU3JCQiJCsoIiIhJCIrJlJQTWcoISM1NyQkIiQrKSIiISQiKylSeTAoeSEjNTckJCIkKyoiIiEkIisoKSpwVjMpISM1NyQkIiUrNSIiISQiK01UR2YjKSEjNTckJCIlKzYiIiEkIitVMCwwJSkhIzU3JCQiJSs3IiIhJCIrJnl1I0cmKSEjNTckJCIlKzgiIiEkIitAIykpUWopISM1NyQkIiUrOSIiISQiKyRII1FEKCkhIzU3JCQiJSs6IiIhJCIrPW9TMCkpISM1NyQkIiUrOyIiISQiKz8mKSlmKCkpISM1NyQkIiUrPCIiISQiK2VQcVEqKSEjNTckJCIlKz0iIiEkIisqKm96JSoqKSEjNTckJCIlKz4iIiEkIitZS0VYISohIzU3JCQiJSs/IiIhJCIrTSQzNDQqISM1</Equation></Text-field>
+</Output>
+</Group>
+<Group labelreference="L141">
+<Input>
+<Text-field prompt="&gt; " style="Maple Input" layout="Normal"></Text-field><Pagebreak></Pagebreak>
+</Input>
+</Group>
+</Section>
+<Section collapsed="false" MultipleChoiceAnswerIndex="-1" MultipleChoiceRandomizeChoices="false" TrueFalseAnswerIndex="-1" EssayAnswerRows="5" EssayAnswerColumns="60"><Title>
+<Text-field style="Heading 2" layout="Heading 2"><Font encoding="UTF-8"> Stanoven\303\255 indexu  </Font><Font italic="true">m</Font><Font encoding="UTF-8">0 pro dosa\305\276en\303\255 po\305\276adovan\303\251 p\305\231esnosti </Font><Equation executable="false" style="2D Math" input-equation="">LUklbXJvd0c2Iy9JK21vZHVsZW5hbWVHNiJJLFR5cGVzZXR0aW5nR0koX3N5c2xpYkdGJzYjLUkjbWlHRiQ2JVEmYWxwaGFGJy8lJ2l0YWxpY0dRJmZhbHNlRicvJSxtYXRodmFyaWFudEdRJ25vcm1hbEYn</Equation></Text-field></Title>
+<Group labelreference="L142">
+<Input>
+<Text-field style="Text" layout="Normal"><Font encoding="UTF-8">Zad\303\241v\303\241me </Font><Font italic="true">k</Font> a <Equation executable="false" style="2D Math" input-equation="">LUklbXJvd0c2Iy9JK21vZHVsZW5hbWVHNiJJLFR5cGVzZXR0aW5nR0koX3N5c2xpYkdGJzYjLUkjbWlHRiQ2JVEmYWxwaGFGJy8lJ2l0YWxpY0dRJmZhbHNlRicvJSxtYXRodmFyaWFudEdRJ25vcm1hbEYn</Equation> &gt; 0. </Text-field>
+</Input>
+</Group>
+<Group labelreference="L143">
+<Input>
+<Text-field prompt="&gt; " style="Maple Input" layout="Normal">k:=10; alpha:=0.2;m:='m':</Text-field>
+</Input>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">NiM+SSJrRzYiIiM1</Equation></Text-field>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">NiM+SSZhbHBoYUc2IiQiIiMhIiI=</Equation></Text-field>
+</Output>
+</Group>
+<Group labelreference="L144">
+<Input>
+<Text-field prompt="&gt; " style="Maple Input" layout="Normal">for m from k+1 while b(m)&lt; 1-alpha do m:=m+1 end do: m0:=m-1;</Text-field>
+</Input>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">NiM+SSNtMEc2IiIkLyM=</Equation></Text-field>
+</Output>
+</Group>
+<Group labelreference="L145">
+<Input>
+<Text-field prompt="&gt; " style="Maple Input" layout="Normal"></Text-field>
+</Input>
+</Group>
+</Section>
+<Group labelreference="L146">
+<Input>
+<Text-field prompt="&gt; " style="Maple Input" layout="Normal"></Text-field><Pagebreak></Pagebreak>
+</Input>
+</Group>
+</Section>
+<Section collapsed="false" MultipleChoiceAnswerIndex="-1" MultipleChoiceRandomizeChoices="false" TrueFalseAnswerIndex="-1" EssayAnswerRows="5" EssayAnswerColumns="60"><Title>
+<Text-field style="Heading 1" layout="Heading 1"> <Font encoding="UTF-8">P\305\231\303\255klad  12.</Font></Text-field></Title>
+<Group labelreference="L147">
+<Input>
+<Text-field style="Text" layout="Normal"><Font encoding="UTF-8">Uka\305\276te, pro velk\303\251 rozsahy v\303\275b\304\233r\305\257 je po\304\215et kombinac\303\255  a kombinac\303\255 s opakov\303\241n\303\255m shodn\303\275, tedy</Font></Text-field>
+<Text-field style="Text" layout="Normal"><Equation executable="false" style="2D Math" input-equation="">LUklbXJvd0c2Iy9JK21vZHVsZW5hbWVHNiJJLFR5cGVzZXR0aW5nR0koX3N5c2xpYkdGJzYlLUkjbWlHRiQ2I1EhRictRiM2Ji1JJ211bmRlckdGJDYlLUkjbW9HRiQ2L1EkbGltRicvJStmb3JlZ3JvdW5kR1EuWzE0NCwxNDQsMTQ0XUYnLyUsbWF0aHZhcmlhbnRHUSdub3JtYWxGJy9JK21zZW1hbnRpY3NHRiRRJmluZXJ0RicvJSZmZW5jZUdRJmZhbHNlRicvJSpzZXBhcmF0b3JHRkMvJSlzdHJldGNoeUdGQy8lKnN5bW1ldHJpY0dGQy8lKGxhcmdlb3BHRkMvJS5tb3ZhYmxlbGltaXRzR1EldHJ1ZUYnLyUnYWNjZW50R0ZDLyUnbHNwYWNlR1EmMC4wZW1GJy8lJ3JzcGFjZUdRLDAuMTY2NjY2N2VtRictRiM2JS1GLDYlUSJuRicvJSdpdGFsaWNHRk4vRjxRJ2l0YWxpY0YnLUY1Ni1RJyZyYXJyO0YnRjtGQUZERkZGSEZKL0ZNRkNGT0ZRL0ZVRlMtRiw2JVEpaW5maW5pdHlGJ0ZmbkZobi8lLGFjY2VudHVuZGVyR0ZDRistSSdtc3BhY2VHRiQ2Ji8lJ2hlaWdodEdRJjAuMGV4RicvJSZ3aWR0aEdRJjAuNGVtRicvJSZkZXB0aEdGaW8vJSpsaW5lYnJlYWtHUSVhdXRvRictSSZtZnJhY0dGJDYoLUYjNiVGKy1GIzYlLUYsNiVRKWJpbm9taWFsRicvRmduRkNGOy1GNTYtUTAmQXBwbHlGdW5jdGlvbjtGJ0Y7RkFGREZGRkhGSkZdb0ZPRlFGXm8tSShtZmVuY2VkR0YkNiQtRiM2JkYrLUYjNidGWS1GNTYtUSIrRidGO0ZBRkRGRkZIRkpGXW9GTy9GUlEsMC4yMjIyMjIyZW1GJy9GVUZbci1GLDYlUSJrRidGZm5GaG4tRjU2LVEoJm1pbnVzO0YnRjtGQUZERkZGSEZKRl1vRk9GanFGXHItSSNtbkdGJDYkUSIxRidGOy1GNTYtUSIsRidGO0ZBL0ZFRk5GRkZIRkpGXW9GT0ZRL0ZVUSwwLjMzMzMzMzNlbUYnRl1yRjtGKy1GIzYlRistRiM2JUZpcEZdcS1GYXE2JC1GIzYlRllGZ3JGXXJGO0YrLyUubGluZXRoaWNrbmVzc0dGZnIvJStkZW5vbWFsaWduR1EnY2VudGVyRicvJSludW1hbGlnbkdGaXMvJSliZXZlbGxlZEdGQ0Yr</Equation>= 1.</Text-field>
+<Text-field style="Text" layout="Normal"><Font encoding="UTF-8">a) Vypo\304\215t\304\233te hodnoty pom\304\233r\305\257 pro rozsahy 10 &lt; </Font><Font italic="true">n </Font>&lt; 2 000 a 10 &lt;<Font italic="true"> k </Font>&lt;50;</Text-field>
+<Text-field style="Text" layout="Normal"><Font encoding="UTF-8">b) Ur\304\215ete index </Font><Font italic="true">m</Font>0<Font encoding="UTF-8"> tak, aby se pom\304\233r li\305\241il od 1 o m\303\251n\304\233 ne\305\276 zadan\303\241 hodnota </Font><Equation executable="false" style="2D Math" input-equation="">LUklbXJvd0c2Iy9JK21vZHVsZW5hbWVHNiJJLFR5cGVzZXR0aW5nR0koX3N5c2xpYkdGJzYjLUkjbWlHRiQ2JVEmYWxwaGFGJy8lJ2l0YWxpY0dRJmZhbHNlRicvJSxtYXRodmFyaWFudEdRJ25vcm1hbEYn</Equation>  &gt; 0. </Text-field>
+</Input>
+</Group>
+<Group labelreference="L148">
+<Input>
+<Text-field style="Text" layout="Normal"><Font underline="true" encoding="UTF-8" size="14">\305\230e\305\241en\303\255:</Font></Text-field>
+</Input>
+</Group>
+<Group labelreference="L149">
+<Input>
+<Text-field prompt="&gt; " style="Maple Input" layout="Normal">restart;</Text-field>
+</Input>
+</Group>
+<Group labelreference="L150">
+<Input>
+<Text-field prompt="&gt; " style="Maple Input" layout="Normal">c:=n-&gt;binomial(n+k-1,k)/binomial(n,k);</Text-field>
+</Input>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">NiM+SSJjRzYiZio2I0kibkc2IjYiNiRJKW9wZXJhdG9yRzYiSSZhcnJvd0c2IjYiKiYtSSliaW5vbWlhbEc2IjYkLChJIm5HNiIiIiJJImtHNiIiIiIiIiIhIiJJImtHNiIiIiItSSliaW5vbWlhbEc2IjYkSSJuRzYiSSJrRzYiISIiNiI2IjYi</Equation></Text-field>
+</Output>
+</Group>
+<Group labelreference="L151">
+<Input>
+<Text-field prompt="&gt; " style="Maple Input" layout="Normal">k:=10;</Text-field>
+</Input>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">NiM+SSJrRzYiIiM1</Equation></Text-field>
+</Output>
+</Group>
+<Group labelreference="L152">
+<Input>
+<Text-field prompt="&gt; " style="Maple Input" layout="Normal">Limit(c(n),n=infinity)=limit(c(n),n=infinity);</Text-field>
+</Input>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">NiMvLUkmTGltaXRHNiQlKnByb3RlY3RlZEdJKF9zeXNsaWJHNiI2JComLUkpYmlub21pYWxHNiQlKnByb3RlY3RlZEdJKF9zeXNsaWJHNiI2JCwmSSJuRzYiIiIiIiIqIiIiIiM1IiIiLUkpYmlub21pYWxHNiQlKnByb3RlY3RlZEdJKF9zeXNsaWJHNiI2JEkibkc2IiIjNSEiIi9JIm5HNiJJKWluZmluaXR5RyUqcHJvdGVjdGVkRyIiIg==</Equation></Text-field>
+</Output>
+</Group>
+<Group labelreference="L153">
+<Input>
+<Text-field prompt="&gt; " style="Maple Input" layout="Normal"></Text-field><Pagebreak></Pagebreak>
+</Input>
+</Group>
+<Section collapsed="false" MultipleChoiceAnswerIndex="-1" MultipleChoiceRandomizeChoices="false" TrueFalseAnswerIndex="-1" EssayAnswerRows="5" EssayAnswerColumns="60"><Title>
+<Text-field style="Heading 2" layout="Heading 2"><Font encoding="UTF-8"> a) Hodnoty pom\304\233ru pro n\304\233kter\303\251 rozsahy , 10 &lt;</Font><Font italic="true"> n</Font> &lt; 2 000, 10 &lt; <Font italic="true">k</Font> &lt; 100</Text-field></Title>
+<Group labelreference="L154">
+<Input>
+<Text-field style="Text" layout="Normal"><Font encoding="UTF-8">Zad\303\241v\303\241me </Font><Font italic="true">k</Font>.</Text-field>
+</Input>
+</Group>
+<Group labelreference="L155">
+<Input>
+<Text-field prompt="&gt; " style="Maple Input" layout="Normal">for m from 1 to 20 do evalf(c(100*m)) end do;</Text-field>
+</Input>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">NiMkIit5eCRIWSMhIio=</Equation></Text-field>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">NiMkIispNHgmbzohIio=</Equation></Text-field>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">NiMkIitIaiMqXDghIio=</Equation></Text-field>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">NiMkIitSIlxCRCIhIio=</Equation></Text-field>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">NiMkIismSElzPiIhIio=</Equation></Text-field>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">NiMkIiswOiU9OyIhIio=</Equation></Text-field>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">NiMkIitCcj9QNiEiKg==</Equation></Text-field>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">NiMkIiszXzI+NiEiKg==</Equation></Text-field>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">NiMkIitsSDwwNiEiKg==</Equation></Text-field>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">NiMkIitoZDwlNCIhIio=</Equation></Text-field>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">NiMkIit0JmZfMyIhIio=</Equation></Text-field>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">NiMkIiskKlwpeTIiISIq</Equation></Text-field>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">NiMkIiteVG9yNSEiKg==</Equation></Text-field>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">NiMkIitsdlJtNSEiKg==</Equation></Text-field>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">NiMkIitycCQ9MSIhIio=</Equation></Text-field>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">NiMkIitsQyd5MCIhIio=</Equation></Text-field>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">NiMkIis2ek9hNSEiKg==</Equation></Text-field>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">NiMkIitTOEZeNSEiKg==</Equation></Text-field>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">NiMkIitQJTMmWzUhIio=</Equation></Text-field>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">NiMkIitPIUdnLyIhIio=</Equation></Text-field>
+</Output>
+</Group>
+<Group labelreference="L156">
+<Input>
+<Text-field prompt="&gt; " style="Maple Input" layout="Normal">C:=[[100*r,c(100*r)]$r=1..20]:</Text-field>
+</Input>
+</Group>
+<Group labelreference="L157">
+<Input>
+<Text-field prompt="&gt; " style="Maple Input" layout="Normal">evalf(C);</Text-field>
+</Input>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">NiM3NjckJCIkKyIiIiEkIit5eCRIWSMhIio3JCQiJCsjIiIhJCIrKTR4Jm86ISIqNyQkIiQrJCIiISQiK0hqIypcOCEiKjckJCIkKyUiIiEkIitSIlxCRCIhIio3JCQiJCsmIiIhJCIrJkhJcz4iISIqNyQkIiQrJyIiISQiKzA6JT07IiEiKjckJCIkKygiIiEkIitCcj9QNiEiKjckJCIkKykiIiEkIiszXzI+NiEiKjckJCIkKyoiIiEkIitsSDwwNiEiKjckJCIlKzUiIiEkIitoZDwlNCIhIio3JCQiJSs2IiIhJCIrdCZmXzMiISIqNyQkIiUrNyIiISQiKyQqXCl5MiIhIio3JCQiJSs4IiIhJCIrXlRvcjUhIio3JCQiJSs5IiIhJCIrbHZSbTUhIio3JCQiJSs6IiIhJCIrcnAkPTEiISIqNyQkIiUrOyIiISQiK2xDJ3kwIiEiKjckJCIlKzwiIiEkIis2ek9hNSEiKjckJCIlKz0iIiEkIitTOEZeNSEiKjckJCIlKz4iIiEkIitQJTMmWzUhIio3JCQiJSs/IiIhJCIrTyFHZy8iISIq</Equation></Text-field>
+</Output>
+</Group>
+<Group labelreference="L158">
+<Input>
+<Text-field prompt="&gt; " style="Maple Input" layout="Normal"></Text-field><Pagebreak></Pagebreak>
+</Input>
+</Group>
+</Section>
+<Section collapsed="false" MultipleChoiceAnswerIndex="-1" MultipleChoiceRandomizeChoices="false" TrueFalseAnswerIndex="-1" EssayAnswerRows="5" EssayAnswerColumns="60"><Title>
+<Text-field style="Heading 2" layout="Heading 2"><Font encoding="UTF-8"> Ur\304\215en\303\255 mezn\303\255ho indexu </Font><Font italic="true">m</Font>0 pro zadanou odchylku <Equation executable="false" style="2D Math" input-equation="">LUklbXJvd0c2Iy9JK21vZHVsZW5hbWVHNiJJLFR5cGVzZXR0aW5nR0koX3N5c2xpYkdGJzYjLUkjbWlHRiQ2JVEmYWxwaGFGJy8lJ2l0YWxpY0dRJmZhbHNlRicvJSxtYXRodmFyaWFudEdRJ25vcm1hbEYn</Equation>.</Text-field></Title>
+<Group labelreference="L159">
+<Input>
+<Text-field style="Text" layout="Normal"><Font encoding="UTF-8">Zad\303\241v\303\241me </Font><Font italic="true">k</Font> a odchylku <Equation executable="false" style="2D Math" input-equation="">LUklbXJvd0c2Iy9JK21vZHVsZW5hbWVHNiJJLFR5cGVzZXR0aW5nR0koX3N5c2xpYkdGJzYjLUkjbWlHRiQ2JVEmYWxwaGFGJy8lJ2l0YWxpY0dRJmZhbHNlRicvJSxtYXRodmFyaWFudEdRJ25vcm1hbEYn</Equation>.</Text-field>
+</Input>
+</Group>
+<Group labelreference="L160">
+<Input>
+<Text-field prompt="&gt; " style="Maple Input" layout="Normal">k:=20;alpha:=0.1;m:='m':</Text-field>
+</Input>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">NiM+SSJrRzYiIiM/</Equation></Text-field>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">NiM+SSZhbHBoYUc2IiQiIiIhIiI=</Equation></Text-field>
+</Output>
+</Group>
+<Group labelreference="L161">
+<Input>
+<Text-field prompt="&gt; " style="Maple Input" layout="Normal">for m from k+1 while c(m)&gt;1+alpha do m:=m+1 end do:m:=m-1;</Text-field>
+</Input>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">NiM+SSJtRzYiIiUnKVI=</Equation></Text-field>
+</Output>
+</Group>
+<Group labelreference="L162">
+<Input>
+<Text-field prompt="&gt; " style="Maple Input" layout="Normal"></Text-field>
+</Input>
+</Group>
+</Section>
+<Group labelreference="L163">
+<Input>
+<Text-field prompt="&gt; " style="Maple Input" layout="Normal"></Text-field><Pagebreak></Pagebreak>
+</Input>
+</Group>
+</Section>
+<Section collapsed="false" MultipleChoiceAnswerIndex="-1" MultipleChoiceRandomizeChoices="false" TrueFalseAnswerIndex="-1" EssayAnswerRows="5" EssayAnswerColumns="60"><Title>
+<Text-field style="Heading 1" layout="Heading 1"><Font encoding="UTF-8"> P\305\231\303\255klad  13.</Font></Text-field></Title>
+<Group labelreference="L164">
+<Input>
+<Text-field style="Text" layout="Normal"><Font encoding="UTF-8">Uka\305\276te, \305\276e pro velk\303\251 rozsahy v\303\275b\304\233ru lze p\305\231i v\303\275po\304\215tu zanedbat opakov\303\241n\303\255 a vracen\303\255 prvk\305\257, tedy </Font></Text-field>
+<Text-field style="Text" layout="Normal"><Equation executable="false" style="2D Math" input-equation="">LUklbXJvd0c2Iy9JK21vZHVsZW5hbWVHNiJJLFR5cGVzZXR0aW5nR0koX3N5c2xpYkdGJzYlLUkjbWlHRiQ2I1EhRictRiM2Ji1JJ211bmRlckdGJDYlLUkjbW9HRiQ2L1EkbGltRicvJStmb3JlZ3JvdW5kR1EuWzE0NCwxNDQsMTQ0XUYnLyUsbWF0aHZhcmlhbnRHUSdub3JtYWxGJy9JK21zZW1hbnRpY3NHRiRRJmluZXJ0RicvJSZmZW5jZUdRJmZhbHNlRicvJSpzZXBhcmF0b3JHRkMvJSlzdHJldGNoeUdGQy8lKnN5bW1ldHJpY0dGQy8lKGxhcmdlb3BHRkMvJS5tb3ZhYmxlbGltaXRzR1EldHJ1ZUYnLyUnYWNjZW50R0ZDLyUnbHNwYWNlR1EmMC4wZW1GJy8lJ3JzcGFjZUdRLDAuMTY2NjY2N2VtRictRiM2JS1GLDYlUSJuRicvJSdpdGFsaWNHRk4vRjxRJ2l0YWxpY0YnLUY1Ni1RJyZyYXJyO0YnRjtGQUZERkZGSEZKL0ZNRkNGT0ZRL0ZVRlMtRiw2JVEpaW5maW5pdHlGJ0ZmbkZobi8lLGFjY2VudHVuZGVyR0ZDRistSSdtc3BhY2VHRiQ2Ji8lJ2hlaWdodEdRJjAuMGV4RicvJSZ3aWR0aEdRJjAuNGVtRicvJSZkZXB0aEdGaW8vJSpsaW5lYnJlYWtHUSVhdXRvRictSSZtZnJhY0dGJDYoLUYjNiVGKy1GIzYlLUYsNiVRKWJpbm9taWFsRicvRmduRkNGOy1GNTYtUTAmQXBwbHlGdW5jdGlvbjtGJ0Y7RkFGREZGRkhGSkZdb0ZPRlFGXm8tSShtZmVuY2VkR0YkNiQtRiM2JkYrLUYjNidGWS1GNTYtUSIrRidGO0ZBRkRGRkZIRkpGXW9GTy9GUlEsMC4yMjIyMjIyZW1GJy9GVUZbci1GLDYlUSJrRidGZm5GaG4tRjU2LVEoJm1pbnVzO0YnRjtGQUZERkZGSEZKRl1vRk9GanFGXHItSSNtbkdGJDYkUSIxRidGOy1GNTYtUSIsRidGO0ZBL0ZFRk5GRkZIRkpGXW9GT0ZRL0ZVUSwwLjMzMzMzMzNlbUYnRl1yRjtGKy1GIzYjLUZjcDYoLUYjNiMtSSVtc3VwR0YkNiVGWUZdci8lMXN1cGVyc2NyaXB0c2hpZnRHUSIwRictRiM2JUYrLUYjNiRGXXItRjU2LVEiIUYnRjtGQUZERkZGSEZKRl1vRk8vRlJRLDAuMTExMTExMWVtRicvRlVGYXRGKy8lLmxpbmV0aGlja25lc3NHRmZyLyUrZGVub21hbGlnbkdRJ2NlbnRlckYnLyUpbnVtYWxpZ25HRmd0LyUpYmV2ZWxsZWRHRkNGY3RGZXRGaHRGanRGKw==</Equation> = 1.</Text-field>
+<Text-field style="Text" layout="Normal"><Font encoding="UTF-8">a) Vypo\304\215t\304\233te hodnoty pom\304\233ru pro rozsahy 100 &lt; </Font><Font italic="true">n</Font> &lt; 2 000 a 10 &lt; <Font italic="true">k</Font> &lt; 50;</Text-field>
+<Text-field style="Text" layout="Normal"><Font encoding="UTF-8">b) Ur\304\215ete index </Font><Font italic="true">m</Font><Font encoding="UTF-8">0, pro kter\303\275 se pom\304\233r li\305\241\303\255 od 1 o m\303\251n\304\233 ne\305\276 zadan\303\241 hodnota </Font><Equation executable="false" style="2D Math" input-equation="">LUklbXJvd0c2Iy9JK21vZHVsZW5hbWVHNiJJLFR5cGVzZXR0aW5nR0koX3N5c2xpYkdGJzYjLUkjbWlHRiQ2JVEmYWxwaGFGJy8lJ2l0YWxpY0dRJmZhbHNlRicvJSxtYXRodmFyaWFudEdRJ25vcm1hbEYn</Equation> &gt;0.</Text-field>
+</Input>
+</Group>
+<Group labelreference="L165">
+<Input>
+<Text-field style="Text" layout="Normal"><Font underline="true" encoding="UTF-8" size="14">\305\230e\305\241en\303\255:</Font></Text-field>
+</Input>
+</Group>
+<Group labelreference="L166">
+<Input>
+<Text-field prompt="&gt; " style="Maple Input" layout="Normal">restart;</Text-field>
+</Input>
+</Group>
+<Group labelreference="L167">
+<Input>
+<Text-field prompt="&gt; " style="Maple Input" layout="Normal">d:=n-&gt;binomial(n+k-1,k)/(n^k/k!);</Text-field>
+</Input>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">NiM+SSJkRzYiZio2I0kibkc2IjYiNiRJKW9wZXJhdG9yRzYiSSZhcnJvd0c2IjYiKigtSSliaW5vbWlhbEc2IjYkLChJIm5HNiIiIiJJImtHNiIiIiIiIiIhIiJJImtHNiIiIiIpSSJuRzYiSSJrRzYiISIiLUkqZmFjdG9yaWFsRyUqcHJvdGVjdGVkRzYjSSJrRzYiIiIiNiI2IjYi</Equation></Text-field>
+</Output>
+</Group>
+<Group labelreference="L168">
+<Input>
+<Text-field prompt="&gt; " style="Maple Input" layout="Normal">k:=20;</Text-field>
+</Input>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">NiM+SSJrRzYiIiM/</Equation></Text-field>
+</Output>
+</Group>
+<Group labelreference="L169">
+<Input>
+<Text-field prompt="&gt; " style="Maple Input" layout="Normal">Limit(d(n),n=infinity)=limit(d(n),n=infinity);</Text-field>
+</Input>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">NiMvLUkmTGltaXRHNiQlKnByb3RlY3RlZEdJKF9zeXNsaWJHNiI2JCwkKigiNCsra3ciMz8hSFYjIiIiLUkpYmlub21pYWxHNiQlKnByb3RlY3RlZEdJKF9zeXNsaWJHNiI2JCwmSSJuRzYiIiIiIiM+IiIiIiM/IiIiKUkibkc2IiIjPyEiIiIiIi9JIm5HNiJJKWluZmluaXR5RyUqcHJvdGVjdGVkRyIiIg==</Equation></Text-field>
+</Output>
+</Group>
+<Group labelreference="L170">
+<Input>
+<Text-field prompt="&gt; " style="Maple Input" layout="Normal"></Text-field><Pagebreak></Pagebreak>
+</Input>
+</Group>
+<Section collapsed="false" MultipleChoiceAnswerIndex="-1" MultipleChoiceRandomizeChoices="false" TrueFalseAnswerIndex="-1" EssayAnswerRows="5" EssayAnswerColumns="60"><Title>
+<Text-field style="Heading 2" layout="Heading 2"><Font encoding="UTF-8"> a) V\303\275po\304\215et hodnot pro n\304\233kter\303\251 rozsahy  100 &lt;</Font><Font italic="true"> n </Font>&lt; 2 000 a 10 &lt; <Font italic="true">k</Font> &lt; 50.</Text-field></Title>
+<Group labelreference="L171">
+<Input>
+<Text-field style="Text" layout="Normal"><Font encoding="UTF-8">Zad\303\241v\303\241me rozsahy </Font><Font italic="true">n</Font> a <Font italic="true">k</Font>.</Text-field>
+</Input>
+</Group>
+<Group labelreference="L172">
+<Input>
+<Text-field prompt="&gt; " style="Maple Input" layout="Normal">k:=10;</Text-field>
+</Input>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">NiM+SSJrRzYiIiM1</Equation></Text-field>
+</Output>
+</Group>
+<Group labelreference="L173">
+<Input>
+<Text-field prompt="&gt; " style="Maple Input" layout="Normal">for m from 1 to 20 do evalf(d(100*m)) end do;</Text-field>
+</Input>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">NiMkIispUjVyYSIhIio=</Equation></Text-field>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">NiMkIitcOyh6QyIhIio=</Equation></Text-field>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">NiMkIishZkMrOyIhIio=</Equation></Text-field>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">NiMkIithdzM9NiEiKg==</Equation></Text-field>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">NiMkIitAbWIkNCIhIio=</Equation></Text-field>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">NiMkIiszNFl4NSEiKg==</Equation></Text-field>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">NiMkIitUISozbTUhIio=</Equation></Text-field>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">NiMkIisoKXppZDUhIio=</Equation></Text-field>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">NiMkIitNcjNeNSEiKg==</Equation></Text-field>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">NiMkIis5JnplLyIhIio=</Equation></Text-field>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">NiMkIitVX2pUNSEiKg==</Equation></Text-field>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">NiMkIittJzQiUTUhIio=</Equation></Text-field>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">NiMkIissWDhONSEiKg==</Equation></Text-field>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">NiMkIismPiFmSzUhIio=</Equation></Text-field>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">NiMkIit6JSpRSTUhIio=</Equation></Text-field>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">NiMkIitocllHNSEiKg==</Equation></Text-field>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">NiMkIitkTnhFNSEiKg==</Equation></Text-field>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">NiMkIitYLEZENSEiKg==</Equation></Text-field>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">NiMkIishZkVSLSIhIio=</Equation></Text-field>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">NiMkIismbz1GLSIhIio=</Equation></Text-field>
+</Output>
+</Group>
+<Group labelreference="L174">
+<Input>
+<Text-field prompt="&gt; " style="Maple Input" layout="Normal">D:=[[100*r,d(100*r)]$r=1..20]:</Text-field>
+</Input>
+<Output>
+<Text-field style="Error" layout="Error">Error, attempting to assign to `D` which is protected</Text-field>
+</Output>
+</Group>
+<Group labelreference="L175">
+<Input>
+<Text-field prompt="&gt; " style="Maple Input" layout="Normal">D1:=[[100*r,d(100*r)]$r=1..20]:</Text-field>
+</Input>
+</Group>
+<Group labelreference="L176">
+<Input>
+<Text-field prompt="&gt; " style="Maple Input" layout="Normal">evalf(D1);</Text-field>
+</Input>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">NiM3NjckJCIkKyIiIiEkIispUjVyYSIhIio3JCQiJCsjIiIhJCIrXDsoekMiISIqNyQkIiQrJCIiISQiKyFmQys7IiEiKjckJCIkKyUiIiEkIithdzM9NiEiKjckJCIkKyYiIiEkIitAbWIkNCIhIio3JCQiJCsnIiIhJCIrMzRZeDUhIio3JCQiJCsoIiIhJCIrVCEqM201ISIqNyQkIiQrKSIiISQiKygpemlkNSEiKjckJCIkKyoiIiEkIitNcjNeNSEiKjckJCIlKzUiIiEkIis5JnplLyIhIio3JCQiJSs2IiIhJCIrVV9qVDUhIio3JCQiJSs3IiIhJCIrbSc0IlE1ISIqNyQkIiUrOCIiISQiKyxYOE41ISIqNyQkIiUrOSIiISQiKyY+IWZLNSEiKjckJCIlKzoiIiEkIit6JSpRSTUhIio3JCQiJSs7IiIhJCIraHJZRzUhIio3JCQiJSs8IiIhJCIrZE54RTUhIio3JCQiJSs9IiIhJCIrWCxGRDUhIio3JCQiJSs+IiIhJCIrIWZFUi0iISIqNyQkIiUrPyIiISQiKyZvPUYtIiEiKg==</Equation></Text-field>
+</Output>
+</Group>
+<Group labelreference="L177">
+<Input>
+<Text-field prompt="&gt; " style="Maple Input" layout="Normal"></Text-field><Pagebreak></Pagebreak>
+</Input>
+</Group>
+</Section>
+<Section collapsed="false" MultipleChoiceAnswerIndex="-1" MultipleChoiceRandomizeChoices="false" TrueFalseAnswerIndex="-1" EssayAnswerRows="5" EssayAnswerColumns="60"><Title>
+<Text-field style="Heading 2" layout="Heading 2"><Font encoding="UTF-8"> b) Ur\304\215en\303\255 mezn\303\255ho indexu </Font><Font italic="true">m</Font><Font encoding="UTF-8">0 pro dosa\305\276en\303\255 po\305\276adovan\303\251 p\305\231esnosti </Font><Equation executable="false" style="2D Math" input-equation="">LUklbXJvd0c2Iy9JK21vZHVsZW5hbWVHNiJJLFR5cGVzZXR0aW5nR0koX3N5c2xpYkdGJzYjLUkjbWlHRiQ2JVEmYWxwaGFGJy8lJ2l0YWxpY0dRJmZhbHNlRicvJSxtYXRodmFyaWFudEdRJ25vcm1hbEYn</Equation>.</Text-field></Title>
+<Group labelreference="L178">
+<Input>
+<Text-field style="Text" layout="Normal"><Font encoding="UTF-8">Zad\303\241v\303\241me</Font><Font italic="true"> k</Font><Font encoding="UTF-8"> a p\305\231esnost </Font><Equation executable="false" style="2D Math" input-equation="">LUklbXJvd0c2Iy9JK21vZHVsZW5hbWVHNiJJLFR5cGVzZXR0aW5nR0koX3N5c2xpYkdGJzYjLUkjbWlHRiQ2JVEmYWxwaGFGJy8lJ2l0YWxpY0dRJmZhbHNlRicvJSxtYXRodmFyaWFudEdRJ25vcm1hbEYn</Equation>.</Text-field>
+</Input>
+</Group>
+<Group labelreference="L179">
+<Input>
+<Text-field prompt="&gt; " style="Maple Input" layout="Normal">k:=10; alpha:=0.1;m:='m':</Text-field>
+</Input>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">NiM+SSJrRzYiIiM1</Equation></Text-field>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">NiM+SSZhbHBoYUc2IiQiIiIhIiI=</Equation></Text-field>
+</Output>
+</Group>
+<Group labelreference="L180">
+<Input>
+<Text-field prompt="&gt; " style="Maple Input" layout="Normal">for m from k+1 while d(m)&gt; 1+alpha do m:=m+1 end do:m:=m-1;</Text-field>
+</Input>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">NiM+SSJtRzYiIiRvJQ==</Equation></Text-field>
+</Output>
+</Group>
+<Group labelreference="L181">
+<Input>
+<Text-field prompt="&gt; " style="Maple Input" layout="Normal"></Text-field><Pagebreak></Pagebreak>
+</Input>
+</Group>
+</Section>
+</Section>
+<Section collapsed="false" MultipleChoiceAnswerIndex="-1" MultipleChoiceRandomizeChoices="false" TrueFalseAnswerIndex="-1" EssayAnswerRows="5" EssayAnswerColumns="60"><Title>
+<Text-field style="Heading 1" layout="Heading 1"><Font encoding="UTF-8"> P\305\231\303\255klad  14.</Font></Text-field></Title>
+<Group labelreference="L182">
+<Input>
+<Text-field style="Text" layout="Normal"><Font encoding="UTF-8">Vypo\304\215t\304\233te po\304\215et kombinac\303\255 s opakov\303\241n\303\255m a graficky zn\303\241zorn\304\233te po\304\215et kombinac\303\255 na hodnot\304\233 parametru </Font><Font italic="true">k</Font>.</Text-field>
+</Input>
+</Group>
+<Group labelreference="L183">
+<Input>
+<Text-field style="Text" layout="Normal"><Font underline="true" encoding="UTF-8" size="14">\305\230e\305\241en\303\255:</Font></Text-field>
+</Input>
+</Group>
+<Group labelreference="L184">
+<Input>
+<Text-field style="Text" layout="Normal"><Font encoding="UTF-8">Po\304\215et kombinac\303\255 s opakov\303\241n\303\255m k prvk\305\257 z n druh\305\257 prvk\305\257 je d\303\241n kombina\304\215n\303\255m \304\215\303\255slem</Font></Text-field>
+<Text-field style="Text" layout="Normal"><Equation executable="false" style="2D Math" input-equation="">LUklbXJvd0c2Iy9JK21vZHVsZW5hbWVHNiJJLFR5cGVzZXR0aW5nR0koX3N5c2xpYkdGJzYlLUkjbWlHRiQ2I1EhRictRiM2JS1GLDYlUSliaW5vbWlhbEYnLyUnaXRhbGljR1EmZmFsc2VGJy8lLG1hdGh2YXJpYW50R1Enbm9ybWFsRictSSNtb0dGJDYtUTAmQXBwbHlGdW5jdGlvbjtGJ0Y3LyUmZmVuY2VHRjYvJSpzZXBhcmF0b3JHRjYvJSlzdHJldGNoeUdGNi8lKnN5bW1ldHJpY0dGNi8lKGxhcmdlb3BHRjYvJS5tb3ZhYmxlbGltaXRzR0Y2LyUnYWNjZW50R0Y2LyUnbHNwYWNlR1EmMC4wZW1GJy8lJ3JzcGFjZUdGTi1JKG1mZW5jZWRHRiQ2JC1GIzYmRistRiM2Jy1GLDYlUSJuRicvRjVRJXRydWVGJy9GOFEnaXRhbGljRictRjs2LVEiK0YnRjdGPkZARkJGREZGRkhGSi9GTVEsMC4yMjIyMjIyZW1GJy9GUEZdby1GLDYlUSJrRidGZW5GZ24tRjs2LVEoJm1pbnVzO0YnRjdGPkZARkJGREZGRkhGSkZcb0Zeby1JI21uR0YkNiRRIjFGJ0Y3LUY7Ni1RIixGJ0Y3Rj4vRkFGZm5GQkZERkZGSEZKRkwvRlBRLDAuMzMzMzMzM2VtRidGX29GN0Yr</Equation> .</Text-field>
+</Input>
+</Group>
+<Group labelreference="L185">
+<Input>
+<Text-field prompt="&gt; " style="Maple Input" layout="Normal">restart:</Text-field>
+</Input>
+</Group>
+<Group labelreference="L186">
+<Input>
+<Text-field prompt="&gt; " style="Maple Input" layout="Normal">vp:=binomial(n+k-1,k);</Text-field>
+</Input>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">NiM+SSN2cEc2Ii1JKWJpbm9taWFsRzYkJSpwcm90ZWN0ZWRHSShfc3lzbGliRzYiNiQsKEkibkc2IiIiIkkia0c2IiIiIiIiIiEiIkkia0c2Ig==</Equation></Text-field>
+</Output>
+</Group>
+<Group labelreference="L187">
+<Input>
+<Text-field prompt="&gt; " style="Maple Input" layout="Normal">n:=20:m:=20:</Text-field>
+</Input>
+</Group>
+<Group labelreference="L188">
+<Input>
+<Text-field prompt="&gt; " style="Maple Input" layout="Normal">V:=[[k,vp(k)]$k=0..m]:</Text-field>
+</Input>
+</Group>
+<Group labelreference="L189">
+<Input>
+<Text-field prompt="&gt; " style="Maple Input" layout="Normal">plot(V,x=0..m,style=point,color=blue,symbol=box);</Text-field>
+</Input>
+<Output>
+<Text-field superscript="false" placeholder="false" executable="false" selection-placeholder="false" italic="false" size="12" bold="false" subscript="false" family="Times New Roman" opaque="false" underline="false" background="[255,255,255]" readonly="false" foreground="[0,0,0]" layout="Maple Plot"><Plot height="400" type="two-dimensional" width="400" gridlinevisibility="1" legendvisibility="false"></Plot></Text-field>
+</Output>
+</Group>
+<Group labelreference="L190">
+<Input><Pagebreak></Pagebreak>
+</Input>
+</Group>
+</Section>
+<Section collapsed="false" MultipleChoiceAnswerIndex="-1" MultipleChoiceRandomizeChoices="false" TrueFalseAnswerIndex="-1" EssayAnswerRows="5" EssayAnswerColumns="60"><Title>
+<Text-field style="Heading 1" layout="Heading 1"> <Font encoding="UTF-8">P\305\231\303\255klad  15.</Font></Text-field></Title>
+<Group labelreference="L191">
+<Input>
+<Text-field style="Text" layout="Normal"><Font encoding="UTF-8">Ur\304\215ete po\304\215et r\305\257zn\303\275ch posloupnost\303\255 z 0 a 1, kter\303\251 obsahuj\303\255 </Font><Font italic="true">n</Font> nul a <Font italic="true">k</Font>, <Font italic="true">k &lt;= n+1</Font><Font encoding="UTF-8">, jedni\304\215ek, ve kter\303\275ch nejsou \305\276\303\241dn\303\251 dv\304\233 jedni\304\215ky za sebou. Zn\303\241zorn\304\233te z\303\241vislost na parametru </Font><Font italic="true">k</Font>.</Text-field>
+</Input>
+</Group>
+<Group labelreference="L192">
+<Input>
+<Text-field style="Text" layout="Normal"><Font underline="true" encoding="UTF-8" size="14">\305\230e\305\241en\303\255:</Font></Text-field>
+</Input>
+</Group>
+<Group labelreference="L193">
+<Input>
+<Text-field style="Text" layout="Normal"><Font encoding="UTF-8">Nejprve um\303\255st\303\255me nuly. Potom za\304\215neme s rozmis\305\245ov\303\241n\303\255m jedni\304\215ek. Prvn\303\255 m\305\257\305\276eme um\303\255stit p\305\231ed prvn\303\255 nulu a pak dal\305\241\303\255 v\305\276dy za n\304\233kterou z nul (i za posledn\303\255). Dostaneme pro v\305\241echny celkem </Font><Font italic="true">n</Font><Font encoding="UTF-8">+1 mo\305\276n\303\275ch pozic pro </Font><Font italic="true">k</Font><Font encoding="UTF-8"> jedni\304\215ek. To lze prov\303\251st pokud je spln\304\233na podm\303\255nka z \303\272lohy a po\304\215et mo\305\276nost\303\255 je d\303\241n po\304\215tem kombinac\303\255 k prvk\305\257 z </Font><Font italic="true">n</Font><Font encoding="UTF-8">+1prvk\305\257.</Font></Text-field>
+</Input>
+</Group>
+<Group labelreference="L194">
+<Input>
+<Text-field prompt="&gt; " style="Maple Input" layout="Normal">restart:</Text-field>
+</Input>
+<Input>
+<Text-field prompt="&gt; " style="Maple Input" alignment="left" firstindent="0" spacebelow="0" leftmargin="0" linespacing="0.0" initial="0" linebreak="space" rightmargin="0" bulletsuffix="" spaceabove="0" bullet="none" pagebreak-before="false">p:=k-&gt;binomial(n+1,k);</Text-field>
+</Input>
+<Output>
+<Text-field style="2D Output" layout="Maple Output"><Equation executable="false" style="2D Output">NiM+SSJwRzYiZio2I0kia0c2IjYiNiRJKW9wZXJhdG9yRzYiSSZhcnJvd0c2IjYiLUkpYmlub21pYWxHNiI2JCwmSSJuRzYiIiIiIiIiIiIiSSJrRzYiNiI2IjYi</Equation></Text-field>
+</Output>
+</Group>
+<Group labelreference="L195">
+<Input>
+<Text-field prompt="&gt; " style="Maple Input" layout="Normal">n:=30:</Text-field>
+</Input>
+</Group>
+<Group labelreference="L196">
+<Input>
+<Text-field prompt="&gt; " style="Maple Input" layout="Normal">P:=[[k,p(k)]$k=0..n+1]:</Text-field>
+</Input>
+</Group>
+<Group labelreference="L197">
+<Input>
+<Text-field prompt="&gt; " style="Maple Input" layout="Normal">plot(P,x=0..n+1,style=point,color=green,symbol=box);</Text-field>
+</Input>
+<Output>
+<Text-field superscript="false" placeholder="false" executable="false" selection-placeholder="false" italic="false" size="12" bold="false" subscript="false" family="Times New Roman" opaque="false" underline="false" background="[255,255,255]" readonly="false" foreground="[0,0,0]" layout="Maple Plot"><Plot height="388" type="two-dimensional" width="400" gridlinevisibility="1" legendvisibility="false">LSUlUExPVEc2KS0lJ0NVUlZFU0c2IzdCNyQkIiIhISIiJCIjNSEiIjckJCIjNSEiIiQiJDUkISIiNyQkIiM/ISIiJCIlXVkhIiI3JCQiI0khIiIkIiZdXCUhIiI3JCQiI1MhIiIkIiddWUohIiI3JCQiI10hIiIkIig1IipwIiEiIjckJCIjZyEiIiQiKDVHTyghIiI3JCQiI3EhIiIkIildZEhFISIiNyQkIiMhKSEiIiQiKV1zKSl5ISIiNyQkIiMhKiEiIiQiKXYrOz8iIiE3JCQiJCsiISIiJCIpbEBOVyIiITckJCIkNSIhIiIkIik6Qm4lKSIiITckJCIkPyIhIiIkIipEMDdUIiIiITckJCIkSSIhIiIkIip2SUQxIyIiITckJCIkUyIhIiIkIipERD1sIyIiITckJCIkXSIhIiIkIiomPlMwSSIiITckJCIkZyIhIiIkIiomPlMwSSIiITckJCIkcSIhIiIkIipERD1sIyIiITckJCIkIT0hIiIkIip2SUQxIyIiITckJCIkIT4hIiIkIipEMDdUIiIiITckJCIkKyMhIiIkIik6Qm4lKSIiITckJCIkNSMhIiIkIilsQE5XIiIhNyQkIiQ/IyEiIiQiKXYrOz8iIiE3JCQiJEkjISIiJCIpXXMpKXkhIiI3JCQiJFMjISIiJCIpXWRIRSEiIjckJCIkXSMhIiIkIig1R08oISIiNyQkIiRnIyEiIiQiKDUiKnAiISIiNyQkIiRxIyEiIiQiJ11ZSiEiIjckJCIkIUchIiIkIiZdXCUhIiI3JCQiJCFIISIiJCIlXVkhIiI3JCQiJCskISIiJCIkNSQhIiI3JCQiJDUkISIiJCIjNSEiIi0lJVZJRVdHNiQ7JCIiISEiIiQiJDUkISIiOyQhKilHITMsJyEiIyQiLCkpKSo0YjEkISIjLSUrQVhFU0xBQkVMU0c2JFEieDYiUSE2Ii0lJkNPTE9SRzYmJSRSR0JHJCIiISEiIiQiIzUhIiIkIiIhISIiLSUnU1lNQk9MRzYkJSRCT1hHIiM1LSUmU1RZTEVHNiMlJlBPSU5URy0lJVJPT1RHNictJSlCT1VORFNfWEc2IyQiJF0nISIiLSUpQk9VTkRTX1lHNiMkIiNdISIiLSUtQk9VTkRTX1dJRFRIRzYjJCIlcUshIiItJS5CT1VORFNfSEVJR0hURzYjJCIlIVskISIiLSUpQ0hJTERSRU5HNiI=</Plot></Text-field>
+</Output>
+</Group>
+<Group labelreference="L198">
+<Input><Pagebreak></Pagebreak>
+</Input>
+</Group>
+</Section>
+<Text-field superscript="false" placeholder="false" executable="false" selection-placeholder="false" italic="false" size="12" bold="false" subscript="false" family="Times New Roman" opaque="false" underline="false" background="[255,255,255]" readonly="false" foreground="[0,0,0]" alignment="left" firstindent="0" spacebelow="0" leftmargin="0" linespacing="0.0" initial="0" linebreak="space" rightmargin="0" bulletsuffix="" spaceabove="0" bullet="none" pagebreak-before="false"></Text-field>
+<Text-field superscript="false" placeholder="false" executable="false" selection-placeholder="false" italic="false" size="12" bold="false" subscript="false" family="Times New Roman" opaque="false" underline="false" background="[255,255,255]" readonly="false" foreground="[0,0,0]" alignment="left" firstindent="0" spacebelow="0" leftmargin="0" linespacing="0.0" initial="0" linebreak="space" rightmargin="0" bulletsuffix="" spaceabove="0" bullet="none" pagebreak-before="false"></Text-field>
+<Text-field superscript="false" placeholder="false" executable="false" selection-placeholder="false" italic="false" size="12" bold="false" subscript="false" family="Times New Roman" opaque="false" underline="false" background="[255,255,255]" readonly="false" foreground="[0,0,0]" alignment="left" firstindent="0" spacebelow="0" leftmargin="0" linespacing="0.0" initial="0" linebreak="space" rightmargin="0" bulletsuffix="" spaceabove="0" bullet="none" pagebreak-before="false"></Text-field>
+<Text-field superscript="false" placeholder="false" executable="false" selection-placeholder="false" italic="false" size="12" bold="false" subscript="false" family="Times New Roman" opaque="false" underline="false" background="[255,255,255]" readonly="false" foreground="[0,0,0]" alignment="left" firstindent="0" spacebelow="0" leftmargin="0" linespacing="0.0" initial="0" linebreak="space" rightmargin="0" bulletsuffix="" spaceabove="0" bullet="none" pagebreak-before="false"></Text-field>
+<Text-field superscript="false" placeholder="false" executable="false" selection-placeholder="false" italic="false" size="12" bold="false" subscript="false" family="Times New Roman" opaque="false" underline="false" background="[255,255,255]" readonly="false" foreground="[0,0,0]" alignment="left" firstindent="0" spacebelow="0" leftmargin="0" linespacing="0.0" initial="0" linebreak="space" rightmargin="0" bulletsuffix="" spaceabove="0" bullet="none" pagebreak-before="false"></Text-field>
+<Text-field superscript="false" placeholder="false" executable="false" selection-placeholder="false" italic="false" size="12" bold="false" subscript="false" family="Times New Roman" opaque="false" underline="false" background="[255,255,255]" readonly="false" foreground="[0,0,0]" alignment="left" firstindent="0" spacebelow="0" leftmargin="0" linespacing="0.0" initial="0" linebreak="space" rightmargin="0" bulletsuffix="" spaceabove="0" bullet="none" pagebreak-before="false"></Text-field>
+<Text-field superscript="false" placeholder="false" executable="false" selection-placeholder="false" italic="false" size="12" bold="false" subscript="false" family="Times New Roman" opaque="false" underline="false" background="[255,255,255]" readonly="false" foreground="[0,0,0]" alignment="left" firstindent="0" spacebelow="0" leftmargin="0" linespacing="0.0" initial="0" linebreak="space" rightmargin="0" bulletsuffix="" spaceabove="0" bullet="none" pagebreak-before="false"></Text-field>
+<Text-field superscript="false" placeholder="false" executable="false" selection-placeholder="false" italic="false" size="12" bold="false" subscript="false" family="Times New Roman" opaque="false" underline="false" background="[255,255,255]" readonly="false" foreground="[0,0,0]" alignment="left" firstindent="0" spacebelow="0" leftmargin="0" linespacing="0.0" initial="0" linebreak="space" rightmargin="0" bulletsuffix="" spaceabove="0" bullet="none" pagebreak-before="false"></Text-field>
+<Text-field superscript="false" placeholder="false" executable="false" selection-placeholder="false" italic="false" size="12" bold="false" subscript="false" family="Times New Roman" opaque="false" underline="false" background="[255,255,255]" readonly="false" foreground="[0,0,0]" alignment="left" firstindent="0" spacebelow="0" leftmargin="0" linespacing="0.0" initial="0" linebreak="space" rightmargin="0" bulletsuffix="" spaceabove="0" bullet="none" pagebreak-before="false"></Text-field>
+</Worksheet>

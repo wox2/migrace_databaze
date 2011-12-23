@@ -1,0 +1,56 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+    <h:head>
+        <title>Spoje</title>
+    </h:head>
+    <h:body>
+            <ui:param name="pageTitle" value="Spoje" />
+                <h:form>
+                    <h1><h:outputText value="Spoje"/></h1>
+                    <h:commandLink action="#{links.newLink}" value="Add link" />
+                    <h:dataTable value="#{links.allLinks}" var="item" styleClass="dataTable">
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="Odjezd"/>
+                            </f:facet>
+                            <h:outputText value="#{item.departureTime}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="Číslo"/>
+                            </f:facet>
+                            <h:outputText value="#{item.linkNumber}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="Trasa"/>
+                            </f:facet>
+                            <h:outputText value="#{item.route}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="Poznamky"/>
+                            </f:facet>
+                            <h:dataTable value="#{item.notes}" var="n" styleClass="innerDataTable">
+                                <h:column>
+                                    <h:outputText value="#{n.explanation}"/>
+                                </h:column>
+                            </h:dataTable>
+                        </h:column>
+                        <h:column>
+                            <h:commandButton value="Edit" action="#{links.editLink(item)}" />
+                        </h:column>
+                        <h:column>
+                            <h:commandButton value="Remove" action="#{links.removeLink(item)}" />
+                        </h:column>
+                    </h:dataTable>
+                <h:commandLink action="admin" value="#{msgs.back}" immediate="true" />
+                    <h:messages />
+                </h:form>
+    </h:body>
+</html>
+

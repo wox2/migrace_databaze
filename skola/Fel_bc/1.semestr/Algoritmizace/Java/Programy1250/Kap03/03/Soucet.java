@@ -1,0 +1,11 @@
+/* Sèítání dvou èísel - první pokus
+   soubor kap03\03\Soucet.java
+*/
+public class Soucet {
+  public static void main(String[] arg){
+   int i = 12, j = 25, k;	// První a druhý sèítanec, výsledek
+   k = i+j;			// Vypoèti výsledek
+   System.out.println(	"Soucet cisel " + i + 
+			" + " + j + " je " + k);
+  }
+}

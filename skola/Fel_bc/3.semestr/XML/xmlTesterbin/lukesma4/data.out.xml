@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="windows-1250"?><fotbalovy_zapas jmeno_turnaje="fotbalovy turnaj pseudohvezd">
+    <muzstvo domaci="ano" hoste="ne" id="Horni_Dolni">
+        <sestava>
+            <hrac>
+                <cislo id="A1">
+                   1
+                    <jmeno>Jiri Paroubek</jmeno>
+                    <prezdivka>buldozer</prezdivka>
+                </cislo>
+                <kapitan>ano</kapitan>
+            </hrac>
+            <hrac>
+                <cislo id="A2">
+                   2
+                    <jmeno>Milos Melcak</jmeno>
+                    <prezdivka>kecal</prezdivka>
+                </cislo>
+            </hrac>
+            <hrac>
+                <cislo id="A3">
+                   3
+                    <jmeno>Milos Zeman</jmeno>
+                </cislo>
+            </hrac>
+            <hrac>
+                <cislo id="A4">
+                   4
+                    <jmeno>Petra Buzkova</jmeno>
+                </cislo>
+            </hrac>
+            
+            <hrac>
+                <cislo id="A5">
+                   5
+                    <jmeno>Stanislav Gross</jmeno>
+                </cislo>
+            </hrac>
+            
+            <hrac>
+                <cislo id="A6">
+                   6
+                    <jmeno>Vladimir Spidla</jmeno>
+                </cislo>
+            </hrac>
+            <hrac>
+                <cislo id="A7">
+                   7
+                    <jmeno>David Rath</jmeno>
+                </cislo>
+            </hrac>
+            <hrac>
+                <cislo id="A8">
+                   8
+                    <jmeno>Michal Pohanka</jmeno>
+                </cislo>
+            </hrac>
+            <hrac>
+                <cislo id="A9">
+                   9
+                    <jmeno>Bohuslav Sobotka</jmeno>
+                </cislo>
+            </hrac>
+            <hrac>
+                <cislo id="A10">
+                   10
+                    <jmeno>Vitezslav Jandak</jmeno>
+                    <prezdivka>kecal</prezdivka>
+                </cislo>
+            </hrac>
+            <hrac>
+                <cislo id="A11">
+                   11
+                    <jmeno>Zdenek Skromach</jmeno>
+                </cislo>
+            </hrac>
+        </sestava>
+    </muzstvo>
+
+    <muzstvo domaci="ne" hoste="ano" id="Dolni_Horni">
+        
+    <sestava prezdivka="zabijaci"><hrac prezdivka="zabijak"/><hrac prezdivka="zabijak"/>
+
+        <hrac>
+                <cislo id="B11">
+                   11
+                    <jmeno>Miroslava Nemcova</jmeno>
+                </cislo>
+            </hrac>
+
+            <hrac>
+                <cislo id="B10">
+                   10
+                    <jmeno>Petr Bendl</jmeno>
+                </cislo>
+            </hrac>
+
+            <hrac>
+                <cislo id="B9">
+                   9
+                    <faul>
+                    </faul>
+                    <jmeno>Petr Gandalovic</jmeno>
+                </cislo>
+            </hrac>
+
+            <hrac>
+                <cislo id="B8">
+                   8
+                   <faul>
+                       <faul_s_zlutou_kartou id="CB81"/>
+                   </faul>
+                   <faul>
+                      <faul_s_cervenou_kartou id="CB7"/>
+                   </faul>
+                   
+                    <jmeno>Lucie Talmanova</jmeno>
+                </cislo>
+            </hrac>
+
+            <hrac>
+                <cislo id="B7">
+                   7
+                    <faul>
+                        <faul_s_cervenou_kartou id="CB7"/>
+                    </faul>
+                    <jmeno>Miroslav Macek</jmeno>
+                </cislo>
+            </hrac>
+
+            <hrac>
+                <cislo id="B6">
+                   6
+                    <jmeno>Jan Zahradil</jmeno>
+                </cislo>
+            </hrac>
+
+            <hrac>
+                <cislo id="B5">
+                   5
+                    <jmeno>Petr Necas</jmeno>
+                </cislo>
+            </hrac>
+
+            <hrac>
+                <cislo id="B4">
+                   4
+                    <jmeno>Pavel Bem</jmeno>
+                </cislo>
+            </hrac>
+            <hrac>
+                <cislo id="B3">
+                   3
+                    <jmeno>Ivan Langer</jmeno>
+                </cislo>
+            </hrac>
+            <hrac>
+                <cislo id="B2">
+                   2
+                    <jmeno>Vlastimil Tlusty</jmeno>
+                </cislo>
+            </hrac>
+            <hrac>
+                <cislo id="B1">
+                   1
+                    <jmeno>Mirek Topolanek</jmeno>
+                </cislo>
+                <kapitan>
+                   ano
+                </kapitan>
+            </hrac>
+            </sestava></muzstvo>
+
+    <rozhodci>
+        <hlavni>
+            <jmeno>Vaclav Klaus</jmeno>
+            <prezdivka>nestranny prezident</prezdivka>
+        <hlavni>
+            <jmeno>Vaclav Havel</jmeno>
+            <prezdivka>Prikulovac</prezdivka>
+        </hlavni></hlavni>
+        <vedlejsi/>
+        <vedlejsi/>
+    </rozhodci>
+    <skore>
+        <polocas>
+                    1:1
+        </polocas>
+        <vysledne>
+             1:2
+        </vysledne>
+    </skore>
+
+    <goly>
+        25. minuta dava
+        <skorujici_hrac id_ref="A2"/> vlastni gol.
+        36. minuta dava
+        <skorujici_hrac id_ref="B2"/> vlastni gol.
+        89. minuta dava
+        <skorujici_hrac id_ref="B6"/> gol.
+    </goly>
+    
+    <karty>
+        <zlute>
+        </zlute>
+        <cervene>V 67. minute dostal
+            <faulujici_cerveny_hrac id_ref="CB7"/> cervenou kartu a jeho
+             tym odehraval v pocetni nevyhode.
+        </cervene>
+    </karty>
+    <zaznam>
+        Kratky sestrih zapasu Dolni_Horni &gt; Horni_Dolni.        
+        Kratky sestrih zapasu Dolni_Horni &gt;(&amp;gt) Horni_Dolni.   
+        <?php echo "neco" ?>
+        <!-- rozdilny zapis, stejny vysledek jako sekce pred CDATA-->
+        Copyright: Martin Lukes, 30.9. 2009
+        Zadani DU : 
+
+<zadani xml:base="file:/D:/Fel/3.semestr/XML/xmlTesterbin/lukesma4/zadani.xml">
+     Podmínky pro splnení DÚ:
+
+    * Odevzdaná úloha smysluplne modeluje zvolenou realitu.
+    * XML dokument musí být validní vuci DTD.
+    * DTD musí obsahovat všechny konstrukty probírané na prednášce, tj.
+          o elementy (prázdné, textové, s modelem obsahu),
+          o atributy,
+          o datové typy (textové, výctové),
+          o klíce a reference na ne,
+          o operátory,
+          o omezení výskytu pro elementy i atributy.
+    * XML dokument musí být dostatecne složitý, tj. splnovat následující požadavky:
+          o Využití elementu, atributu, klícu a referencí na ne, textového i smíšeného obsahu.
+          o Maximální hloubka dokumentu bude min. 5.
+          o Fan-out (pocet podelementu) alespon jednoho z elementu bude min. 10.
+    * DTD nebo XML dokument musí obsahovat:
+          o entity,
+          o instrukce pro zpracování,
+          o sekce CDATA,
+          o komentáre.
+</zadani>
+    </zaznam>
+</fotbalovy_zapas>

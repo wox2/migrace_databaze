@@ -1,0 +1,17 @@
+
+        TSW
+5 syst, 5 soft        
+3UC(Pepa), 3TC (3TC Ja)
+attribute matrix (ja) & traceability matrix (Pepa)
+
+                    
+1. UC diagram       Pepa, extends http://www.agilemodeling.com/essays/useCaseReuse.htm
+2. Class diagram        Pepa
+3. Sequence diagram  - ja
+
+
+ 1) C-E diagram
+ 2) Why - Why diagram  -jen prepsany C-E
+ 3) Jen checknout How - How diagram   - solutions of problem
+ 
+grafy, popsat pocet generaci vytvorenych, prezivajicich

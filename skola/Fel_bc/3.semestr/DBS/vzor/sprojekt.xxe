@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='ISO-8859-1'?>
+<configuration name="DBS - Semestral Work Documentation"
+xmlns="http://www.xmlmind.com/xmleditor/schema/configuration"
+xmlns:cfg="http://www.xmlmind.com/xmleditor/schema/configuration">
+
+<cfg:preserveSpace xmlns="" 
+    elements="sql relacni_algebra comment" />
+
+
+<detect>
+<dtdPublicId>-//XMLmind//DTD Sprojekt//EN</dtdPublicId>
+</detect>
+<css name="Display with comments" location="css/sprojekt_with_comments.css" />
+<css name="Hide comments" location="css/sprojekt_without_comments.css" />
+<template name="A Template For Semestral Work With Comments" location="templates/dbs_semestral_work_template.xml" />
+<template name="Sample of Semestral Work" location="templates/dbs_semestral_work_sample.xml" />
+</configuration> 

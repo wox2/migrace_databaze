@@ -1,0 +1,285 @@
+{VERSION 6 0 "IBM INTEL NT" "6.0" }
+{USTYLETAB {CSTYLE "Maple Input" -1 0 "Courier" 0 1 255 0 0 1 0 1 0 0 
+1 0 0 0 0 1 }{CSTYLE "2D Math" -1 2 "Times" 0 1 0 0 0 0 0 0 2 0 0 0 0 
+0 0 1 }{CSTYLE "2D Comment" 2 18 "" 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 }
+{CSTYLE "2D Output" 2 20 "" 0 1 0 0 255 1 0 0 0 0 0 0 0 0 0 1 }
+{CSTYLE "" 0 21 "" 0 1 0 0 0 1 0 0 0 0 2 0 0 0 0 1 }{CSTYLE "" -1 256 
+"" 0 1 0 0 0 0 1 0 0 0 0 0 0 0 0 0 }{CSTYLE "" -1 257 "" 0 1 0 0 0 0 
+1 0 0 0 0 0 0 0 0 0 }{CSTYLE "" -1 258 "" 0 1 0 0 0 0 1 0 0 0 0 0 0 0 
+0 0 }{CSTYLE "" -1 259 "" 0 1 0 0 0 0 1 0 0 0 0 0 0 0 0 0 }{CSTYLE "" 
+-1 260 "" 0 1 0 0 0 0 1 0 0 0 0 0 0 0 0 0 }{CSTYLE "" -1 261 "" 0 1 0 
+0 0 0 1 0 0 0 0 0 0 0 0 0 }{CSTYLE "" -1 262 "" 0 1 0 0 0 0 1 0 0 0 0 
+0 0 0 0 0 }{PSTYLE "Normal" -1 0 1 {CSTYLE "" -1 -1 "Times" 1 12 0 0 
+0 1 2 2 2 2 2 2 1 1 1 1 }1 1 0 0 0 0 1 0 1 0 2 2 0 1 }{PSTYLE "Heading
+ 1" -1 3 1 {CSTYLE "" -1 -1 "Times" 1 18 0 0 0 1 2 1 2 2 2 2 1 1 1 1 }
+1 1 0 0 8 4 1 0 1 0 2 2 0 1 }{PSTYLE "Heading 2" -1 4 1 {CSTYLE "" -1 
+-1 "Times" 1 14 0 0 0 1 2 1 2 2 2 2 1 1 1 1 }1 1 0 0 8 2 1 0 1 0 2 2 
+0 1 }{PSTYLE "Heading 3" -1 5 1 {CSTYLE "" -1 -1 "Times" 1 12 0 0 0 1 
+1 1 2 2 2 2 1 1 1 1 }1 1 0 0 0 0 1 0 1 0 2 2 0 1 }{PSTYLE "Maple Outpu
+t" -1 11 1 {CSTYLE "" -1 -1 "Times" 1 12 0 0 0 1 2 2 2 2 2 2 1 1 1 1 }
+3 3 0 0 0 0 1 0 1 0 2 2 0 1 }{PSTYLE "Heading 4" -1 20 1 {CSTYLE "" 
+-1 -1 "Times" 1 10 0 0 0 1 1 1 2 2 2 2 1 1 1 1 }1 1 0 0 0 0 1 0 1 0 2 
+2 0 1 }}
+{SECT 0 {EXCHG {PARA 0 "" 0 "" {MPLTEXT 0 21 53 "Hry s kombina\350n
+\355mi \350\355sly                     mcv1.mws" }}}{EXCHG {PARA 0 "" 
+0 "" {TEXT -1 45 "Odhady kombina\350n\355ch \350\355sel pro rozs\341hl
+\351 v\375b\354ry" }}}{SECT 0 {PARA 3 "" 0 "" {TEXT -1 37 "Limitn\355 \+
+vlastnosti kombina\350n\355ch \350\355sel" }}{PARA 0 "" 0 "" {TEXT -1 
+0 "" }}{SECT 0 {PARA 4 "" 0 "" {TEXT -1 10 "P\370\355klad 16" }}{PARA 
+0 "" 0 "" {TEXT -1 0 "" }}{EXCHG {PARA 0 "" 0 "" {TEXT -1 15 "Uka\236t
+e, \236e lim " }{XPPEDIT 18 0 "n^k/(n!/(n-k)!) = 1;" "6#/*&)%\"nG%\"kG
+\"\"\"*&-%*factorialG6#F&F(-F+6#,&F&F(F'!\"\"F0F0F(" }}}{EXCHG {PARA 
+0 "> " 0 "" {MPLTEXT 1 0 8 "restart:" }}}{EXCHG {PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 6 "k:=10:" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 34 "l
+imit(n^k/(n!/(n-k)!),n=infinity);" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#
+\"\"\"" }}}{SECT 0 {PARA 5 "" 0 "" {TEXT -1 0 "" }}{PARA 0 "" 0 "" 
+{TEXT -1 0 "" }}{EXCHG {PARA 0 "" 0 "" {TEXT -1 60 "Vypo\350t\354te ho
+dnoty posloupnosti pro  10 < n 2 000 a 10 <k <50" }}}{EXCHG {PARA 0 ">
+ " 0 "" {MPLTEXT 1 0 13 "n:=100:k:=10:" }}}{EXCHG {PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 28 "a:=n^k/(n!/(n-k)!):evalf(%);" }}{PARA 11 "" 1 "" 
+{XPPMATH 20 "6#$\"+T*f>f\"!\"*" }}}}{SECT 0 {PARA 5 "" 0 "" {TEXT -1 
+0 "" }}{PARA 0 "" 0 "" {TEXT -1 63 "Nalezn\354te index, pro kter\375 j
+e \350len posloupnosti a(n) men\232\355 ne\236 " }{XPPEDIT 18 0 "alpha
+;" "6#%&alphaG" }}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 22 "A:=m->m^k/
+(m!/(m-k)!):" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 61 "alpha:=1.1;
+for m from k+1 while A(m)>alpha do m1:=m+1 end do:" }}{PARA 0 "> " 0 "
+" {MPLTEXT 1 0 3 "m1;" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%&alphaG$\"#
+6!\"\"" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#\"$w%" }}}}}{SECT 0 {PARA 4 
+"" 0 "" {TEXT -1 10 "P\370\355klad 17" }}{PARA 0 "" 0 "" {TEXT -1 0 "
+" }}{EXCHG {PARA 0 "" 0 "" {TEXT -1 16 "Uka\236te, \236e  lim " }
+{XPPEDIT 18 0 "binomial(n,k)/(n^k/k!) = 1;" "6#/*&-%)binomialG6$%\"nG%
+\"kG\"\"\"*&)F(F)F*-%*factorialG6#F)!\"\"F0F*" }}}{EXCHG {PARA 0 "> " 
+0 "" {MPLTEXT 1 0 8 "restart:" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 
+0 6 "k:=10:" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 41 "limit(binomi
+al(n,k)/(n^k/k!),n=infinity);" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#\"\"
+\"" }}}{SECT 0 {PARA 5 "" 0 "" {TEXT -1 0 "" }}{PARA 0 "" 0 "" {TEXT 
+-1 61 "Vypo\350t\354te hodnoty posloupnosti pro  10 < n< 2 000 a 10 <k
+ <50" }}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 13 "n:=200:k:=10:" }}}
+{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 35 "b:=binomial(n,k)/(n^k/k!):ev
+alf(%);" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#$\"+_Y2cz!#5" }}}{SECT 0 
+{PARA 5 "" 0 "" {TEXT -1 0 "" }}{PARA 0 "" 0 "" {TEXT -1 63 "Nalezn
+\354te index, pro kter\375 je \350len posloupnosti a(n) v\354t\232\355
+ ne\236 " }{XPPEDIT 18 0 "alpha;" "6#%&alphaG" }}{EXCHG {PARA 0 "> " 
+0 "" {MPLTEXT 1 0 29 "B:=m->binomial(m,k)/(m^k/k!):" }}}{EXCHG {PARA 
+0 "> " 0 "" {MPLTEXT 1 0 61 "alpha:=0.8;for m from k+1 while B(m)<alph
+a do m1:=m+1 end do:" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%&alphaG$\"\"
+)!\"\"" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 3 "m1;" }}{PARA 11 "
+" 1 "" {XPPMATH 20 "6#\"$0#" }}}{PARA 20 "" 0 "" {TEXT -1 0 "" }}}}}
+{SECT 0 {PARA 4 "" 0 "" {TEXT -1 10 "P\370\355klad 18" }}{PARA 0 "" 0 
+"" {TEXT -1 15 "Uka\236te, \236e lim " }{XPPEDIT 18 0 "binomial(n+k-1,
+k)/binomial(n,k) = 1;" "6#/*&-%)binomialG6$,(%\"nG\"\"\"%\"kGF*F*!\"\"
+F+F*-F&6$F)F+F,F*" }}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 8 "restart:
+" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 6 "k:=10:" }}}{EXCHG {PARA 
+0 "> " 0 "" {MPLTEXT 1 0 50 "limit(binomial(n+k-1,k)/binomial(n,k),n=i
+nfinity);" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#\"\"\"" }}}{SECT 0 {PARA 
+5 "" 0 "" {TEXT -1 0 "" }}{PARA 0 "" 0 "" {TEXT -1 61 "Vypo\350t\354te
+ hodnoty posloupnosti pro  10 < n< 2 000 a 10 <k <50" }}{PARA 0 "" 0 "
+" {TEXT -1 0 "" }}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 13 "n:=200:k:=
+10:" }}{PARA 0 "> " 0 "" {MPLTEXT 1 0 44 "c:=binomial(n+k-1,k)/binomia
+l(n,k):evalf(%);" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#$\"+)4x&o:!\"*" }}
+}{SECT 0 {PARA 0 "" 0 "" {TEXT -1 63 "Nalezn\354te index, pro kter\375
+ je \350len posloupnosti a(n) men\232\355 ne\236 " }{XPPEDIT 18 0 "alp
+ha;" "6#%&alphaG" }}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 38 "C:=m->bi
+nomial(m+k-1,k)/binomial(m,k):" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 
+1 0 61 "alpha:=1.1;for m from k+1 while C(m)>alpha do m1:=m+1 end do:
+" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%&alphaG$\"#6!\"\"" }}}{EXCHG 
+{PARA 0 "> " 0 "" {MPLTEXT 1 0 3 "m1;" }}{PARA 11 "" 1 "" {XPPMATH 20 
+"6#\"$X*" }}}{PARA 0 "" 0 "" {XPPMATH 20 "6#>%&alphaG$\"#6!\"\"" }}
+{PARA 20 "" 0 "" {TEXT -1 0 "" }}}}}{SECT 0 {PARA 4 "" 0 "" {TEXT -1 
+10 "P\370\355klad 19" }}{EXCHG {PARA 0 "" 0 "" {TEXT -1 16 "Uka\236te,
+ \236e  lim " }{XPPEDIT 18 0 "binomial(n+k-1,k)/(n^k/k!) = 1;" "6#/*&-
+%)binomialG6$,(%\"nG\"\"\"%\"kGF*F*!\"\"F+F**&)F)F+F*-%*factorialG6#F+
+F,F,F*" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 8 "restart:" }}}
+{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 6 "k:=10:" }}}{EXCHG {PARA 0 "> \+
+" 0 "" {MPLTEXT 1 0 45 "limit(binomial(n+k-1,k)/(n^k/k!),n=infinity);
+" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#\"\"\"" }}}{PARA 5 "" 0 "" {TEXT 
+-1 0 "" }}{SECT 0 {PARA 0 "" 0 "" {TEXT -1 61 "Vypo\350t\354te hodnoty
+ posloupnosti pro  10 < n< 2 000 a 10 <k <50" }}{EXCHG {PARA 0 "> " 0 
+"" {MPLTEXT 1 0 13 "n:=200:k:=10:" }}}{EXCHG {PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 40 "b1:=binomial(n+k-1,k)/(n^k/k!):evalf(%);" }}{PARA 11 
+"" 1 "" {XPPMATH 20 "6#$\"+\\;(zC\"!\"*" }}}{PARA 0 "" 0 "" {XPPMATH 
+20 "6#$\"+\\;(zC\"!\"*" }}{PARA 5 "" 0 "" {TEXT -1 0 "" }}{PARA 0 "" 
+0 "" {TEXT -1 0 "" }}}{PARA 0 "" 0 "" {TEXT -1 0 "" }}{PARA 0 "" 0 "" 
+{TEXT -1 0 "" }}{SECT 0 {PARA 0 "" 0 "" {TEXT -1 63 "Nalezn\354te inde
+x, pro kter\375 je \350len posloupnosti a(n) men\232\355 ne\236 " }
+{XPPEDIT 18 0 "alpha;" "6#%&alphaG" }}{EXCHG {PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 34 "B1:=m->binomial(m+k-1,k)/(m^k/k!):" }}}{EXCHG {PARA 
+0 "> " 0 "" {MPLTEXT 1 0 62 "alpha:=1.1;for m from k+1 while B1(m)>alp
+ha do m1:=m+1 end do:" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%&alphaG$\"#
+6!\"\"" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 3 "m1;" }}{PARA 11 "
+" 1 "" {XPPMATH 20 "6#\"$p%" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 
+0 "" }}}{PARA 5 "" 0 "" {TEXT -1 0 "" }}}}{SECT 0 {PARA 4 "" 0 "" 
+{TEXT -1 0 "" }}}}{SECT 0 {PARA 3 "" 0 "" {TEXT -1 9 "P\370\355klad 1
+" }}{PARA 0 "" 0 "" {TEXT -1 301 "Cestujeme z Chrudim\354 do Lond\375n
+a. Pro cestu z Chrudim\354 do Pardubic m\371\236eme pou\236\355t osobn
+\355 auto nebo vlak. Pro cestu z Pardubic do Prahy si m\371\236eme zvo
+lit osobn\355 vlak, rychl\355k nebo autobus. Pro cestu z Prahy do Lond
+\375na m\371\236eme volit rychl\355k, letadlo nebo autobus. Kolik r
+\371zn\375ch druh\371 dopravy m\371\236eme vybrat? " }}{EXCHG {PARA 0 
+"> " 0 "" {MPLTEXT 1 0 8 "restart:" }}}{EXCHG {PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 9 "a:=2*3*3;" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%\"aG\"#
+=" }}}}{SECT 0 {PARA 3 "" 0 "" {TEXT -1 9 "P\370\355klad 2" }}{PARA 0 
+"" 0 "" {TEXT -1 69 "Kolika zp\371soby lze vybrat jednu souhl\341sku a
+ jednu samohl\341sku ze slov " }{TEXT 256 11 "statistika " }{TEXT -1 
+2 "a " }{TEXT 257 6 "lavice" }{TEXT -1 1 "?" }}{EXCHG {PARA 0 "> " 0 "
+" {MPLTEXT 1 0 8 "restart:" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 
+7 "a:=3*2;" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%\"aG\"\"'" }}}{EXCHG 
+{PARA 0 "> " 0 "" {MPLTEXT 1 0 7 "b:=3*3;" }}{PARA 11 "" 1 "" 
+{XPPMATH 20 "6#>%\"bG\"\"*" }}}}{SECT 0 {PARA 3 "" 0 "" {TEXT -1 9 "P
+\370\355klad 3" }}{PARA 0 "" 0 "" {TEXT -1 64 "Kolik r\371zn\375ch slo
+v (symbol\371) d\351lky 10 je mo\236n\351 vytvo\370it z 0 a 1?" }}
+{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 8 "restart:" }}}{EXCHG {PARA 0 "
+> " 0 "" {MPLTEXT 1 0 8 "a:=2^10;" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>
+%\"aG\"%C5" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 0 "" }}}}{SECT 0 
+{PARA 3 "" 0 "" {TEXT -1 9 "P\370\355klad 4" }}{PARA 0 "" 0 "" {TEXT 
+-1 32 "Kolik r\371zn\375ch slov d\351lky nejv\375\232e" }{TEXT 258 2 "
+ n" }{TEXT -1 51 " je mo\236n\351 vytvo\370it ze symbol\371 0 a 1? Vy
+\350\355slete pro " }{TEXT 259 1 "n" }{TEXT -1 3 "=3." }}{EXCHG {PARA 
+0 "> " 0 "" {MPLTEXT 1 0 8 "restart:" }}}{EXCHG {PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 23 "a:=sum('2^k','k'=1..n);" }}{PARA 11 "" 1 "" {XPPMATH 
+20 "6#>%\"aG,&)\"\"#,&%\"nG\"\"\"F*F*F*F'!\"\"" }}}{EXCHG {PARA 0 "> \+
+" 0 "" {MPLTEXT 1 0 7 "n:=3:a;" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#\"#9
+" }}}}{SECT 0 {PARA 3 "" 0 "" {TEXT -1 10 "P\370\355klad 5 " }}{PARA 
+0 "" 0 "" {TEXT -1 61 "Uka\236te, \236e pro \350\341ste\350n\375 sou
+\350et geometrick\351 \370ady plat\355 vzorec:" }}{SECT 0 {PARA 4 "" 
+0 "" {TEXT -1 18 "a) \350\341ste\350n\375 sou\350et" }}{PARA 0 "" 0 "
+" {TEXT -1 0 "" }}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 8 "restart:" }
+}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 23 "s:=sum('q^k','k'=1..n);" }
+}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%\"sG,&*&)%\"qG,&%\"nG\"\"\"F+F+F+,&
+F(F+F+!\"\"F-F+*&F(F+F,F-F-" }}}}{SECT 0 {PARA 4 "" 0 "" {TEXT -1 14 "
+b) sou\350et \370ady" }}{PARA 0 "" 0 "" {TEXT -1 0 "" }}{EXCHG {PARA 
+0 "> " 0 "" {MPLTEXT 1 0 8 "restart:" }}}{EXCHG {PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 31 "sc:=sum('q^k','k'=1..infinity);" }}{PARA 11 "" 1 "" 
+{XPPMATH 20 "6#>%#scG,$*&%\"qG\"\"\",&F'F(F(!\"\"F*F*" }}}}}{SECT 0 
+{PARA 3 "" 0 "" {TEXT -1 9 "P\370\355klad 6" }}{PARA 0 "" 0 "" {TEXT 
+-1 206 "Dosp\354l\375 \350lov\354k m\341 32 zub\371. V Praze \236ije p
+\370ibli\236n\354 750 000 dosp\354l\375ch lid\355 a v \310R p\370ibli
+\236n\354 10 milion\371. M\371\236eme s ur\350itost\355 tvrdit, \236e \+
+nalezneme v Praze nebo v cel\351 republice dva lidi se stejnou skupino
+u zub\371?" }}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 8 "restart:" }}}
+{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 8 "a:=2^32;" }}{PARA 11 "" 1 "" 
+{XPPMATH 20 "6#>%\"aG\"+'Hn\\H%" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 
+1 0 0 "" }}}}{SECT 0 {PARA 3 "" 0 "" {TEXT -1 9 "P\370\355klad 7" }}
+{PARA 0 "" 0 "" {TEXT -1 173 "Morseova abeceda se skl\341d\341 ze symb
+ol\371 slo\236en\375ch z  . a -. Anglick\341 abeceda m\341 26 p\355sme
+n, \350esk\341 40. Jakou mus\355me volit minim\341ln\355 d\351lku symb
+ol\371, abychom zapsali celou abecedu?" }}{EXCHG {PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 8 "restart:" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 23 
+"a:=sum('2^k','k'=1..n):" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 7 "
+n:=1:a;" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#\"\"#" }}}{EXCHG {PARA 0 ">
+ " 0 "" {MPLTEXT 1 0 7 "n:=2:a;" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#\"
+\"'" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 7 "n:=3:a;" }}{PARA 11 "
+" 1 "" {XPPMATH 20 "6#\"#9" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 
+7 "n:=4:a;" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#\"#I" }}}{EXCHG {PARA 0 
+"> " 0 "" {MPLTEXT 1 0 7 "n:=5:a;" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#
+\"#i" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 0 "" }}}}{SECT 0 {PARA 
+3 "" 0 "" {TEXT -1 9 "P\370\355klad 8" }}{PARA 0 "" 0 "" {TEXT -1 67 "
+Kolik r\371zn\375ch \350\355sel m\371\236eme zapsat pomoc\355 \350\355
+slic 0,1,...,9 jestli\236e:" }}{PARA 0 "" 0 "" {TEXT -1 38 "a)  \350
+\355slo m\341 4 navz\341jem r\371zn\351 \350\355slice;" }}{PARA 0 "" 
+0 "" {TEXT -1 46 "b)  \350\355slo m\341 nejv\375\232e 4 navz\341jem r
+\371zn\351 \350\355slice;" }}{PARA 0 "" 0 "" {TEXT -1 45 "c)  \350\355
+slo m\341 4 \350\355slice a nesm\355 za\350\355nat nulou." }}{EXCHG 
+{PARA 0 "> " 0 "" {MPLTEXT 1 0 8 "restart:" }}}{SECT 0 {PARA 4 "" 0 "
+" {TEXT -1 2 "a)" }}{PARA 0 "" 0 "" {TEXT -1 0 "" }}{EXCHG {PARA 0 "> \+
+" 0 "" {MPLTEXT 1 0 13 "ca:=10*9*8*7;" }}{PARA 11 "" 1 "" {XPPMATH 20 
+"6#>%#caG\"%S]" }}}}{SECT 0 {PARA 4 "" 0 "" {TEXT -1 2 "b)" }}{PARA 0 
+"" 0 "" {TEXT -1 0 "" }}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 28 "cb:=
+10+10*9+10*9*8+10*9*8*7;" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%#cbG\"%g
+e" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 0 "" }}}}{SECT 0 {PARA 4 "
+" 0 "" {TEXT -1 2 "c)" }}{PARA 0 "" 0 "" {TEXT -1 0 "" }}{EXCHG {PARA 
+0 "> " 0 "" {MPLTEXT 1 0 12 "cc:=9*9*8*7;" }}{PARA 11 "" 1 "" 
+{XPPMATH 20 "6#>%#ccG\"%OX" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 
+0 "" }}}}}{SECT 0 {PARA 3 "" 0 "" {TEXT -1 9 "P\370\355klad 9" }}
+{PARA 0 "" 0 "" {TEXT -1 50 "Kolika r\371zn\375mi zp\371soby m\371\236
+eme vybrat na \232achovnici" }}{PARA 0 "" 0 "" {TEXT -1 18 "a) dv\354 \+
+r\371zn\341 pole;" }}{PARA 0 "" 0 "" {TEXT -1 24 "b) dv\354 pole r\371
+zn\351 barvy;" }}{PARA 0 "" 0 "" {TEXT -1 70 "c) dv\354 pole r\371zn
+\351 barvy, kter\341 nele\236\355 v jedn\351 \370ad\354 a v jednom slo
+upci." }}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 8 "restart:" }}}{SECT 
+0 {PARA 4 "" 0 "" {TEXT -1 2 "a)" }}{PARA 0 "" 0 "" {TEXT -1 0 "" }}
+{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 10 "pa:=64*63;" }}{PARA 11 "" 1 
+"" {XPPMATH 20 "6#>%#paG\"%KS" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 
+0 0 "" }}}}{SECT 0 {PARA 4 "" 0 "" {TEXT -1 2 "b)" }}{PARA 0 "" 0 "" 
+{TEXT -1 0 "" }}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 10 "pb:=32*32;" 
+}}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%#pbG\"%C5" }}}{EXCHG {PARA 0 "> " 
+0 "" {MPLTEXT 1 0 0 "" }}}}{SECT 0 {PARA 4 "" 0 "" {TEXT -1 2 "c)" }}
+{PARA 0 "" 0 "" {TEXT -1 0 "" }}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 
+10 "pc:=32*24;" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%#pcG\"$o(" }}}
+{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 0 "" }}}}}{SECT 0 {PARA 3 "" 0 "
+" {TEXT -1 10 "P\370\355klad 10" }}{PARA 0 "" 0 "" {TEXT -1 46 "Kolik \+
+r\371zn\375ch slov lze vytvo\370it z p\355smen slov:" }}{PARA 0 "" 0 "
+" {TEXT -1 3 "a) " }{TEXT 260 4 "stop" }{TEXT -1 7 ";   b) " }{TEXT 
+261 6 "ananas" }{TEXT -1 6 ";  c) " }{TEXT 262 11 "matematika." }
+{TEXT -1 1 " " }}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 8 "restart:" }}
+}{SECT 0 {PARA 4 "" 0 "" {TEXT -1 2 "a)" }}{PARA 0 "" 0 "" {TEXT -1 0 
+"" }}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 7 "sa:=4!;" }}{PARA 11 "" 
+1 "" {XPPMATH 20 "6#>%#saG\"#C" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 
+1 0 0 "" }}}}{SECT 0 {PARA 4 "" 0 "" {TEXT -1 2 "b)" }}{PARA 0 "" 0 "
+" {TEXT -1 0 "" }}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 16 "sb:=6!/3!/
+2!/1!;" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%#sbG\"#g" }}}{EXCHG {PARA 
+0 "> " 0 "" {MPLTEXT 1 0 0 "" }}}}{SECT 0 {PARA 4 "" 0 "" {TEXT -1 2 "
+c)" }}{PARA 0 "" 0 "" {TEXT -1 0 "" }}{EXCHG {PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 17 "sc:=10!/2!/3!/2!;" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#
+>%#scG\"'+7:" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 0 "" }}}}}
+{SECT 0 {PARA 3 "" 0 "" {TEXT -1 10 "P\370\355klad 11" }}{PARA 0 "" 0 
+"" {TEXT -1 92 "M\341me 7 r\371zn\375ch kor\341lk\371. Kolik r\371zn
+\375ch n\341hrdeln\355k\371 m\371\236eme vytvo\370it navl\351knut\355m
+ v\232ech kor\341lk\371?" }}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 8 "r
+estart:" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 10 "k:=7!/7/2;" }}
+{PARA 11 "" 1 "" {XPPMATH 20 "6#>%\"kG\"$g$" }}}{EXCHG {PARA 0 "> " 0 
+"" {MPLTEXT 1 0 0 "" }}}}{SECT 0 {PARA 3 "" 0 "" {TEXT -1 10 "P\370
+\355klad 12" }}{PARA 0 "" 0 "" {TEXT -1 72 "Ze souboru 52 karet vybere
+me n\341hodn\354 10 z nich. Kolik je r\371zn\375ch v\375b\354r\371:" }
+}{PARA 0 "" 0 "" {TEXT -1 17 "a) v\232ech mo\236n\375ch;" }}{PARA 0 "
+" 0 "" {TEXT -1 32 "b) ve v\375b\354ru je pr\341v\354 jedno eso;" }}
+{PARA 0 "" 0 "" {TEXT -1 34 "c) ve v\375b\354ru je alespo\362 jedno es
+o." }}{SECT 0 {PARA 4 "" 0 "" {TEXT -1 0 "" }}{EXCHG {PARA 0 "> " 0 "
+" {MPLTEXT 1 0 8 "restart:" }}}}{PARA 0 "" 0 "" {TEXT -1 0 "" }}{SECT 
+0 {PARA 4 "" 0 "" {TEXT -1 2 "a)" }}{PARA 0 "" 0 "" {TEXT -1 0 "" }}
+{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 19 "v:=binomial(52,10);" }}
+{PARA 11 "" 1 "" {XPPMATH 20 "6#>%\"vG\",?U-?e\"" }}}{EXCHG {PARA 0 ">
+ " 0 "" {MPLTEXT 1 0 0 "" }}}}{SECT 0 {PARA 4 "" 0 "" {TEXT -1 2 "b)" 
+}}{PARA 0 "" 0 "" {TEXT -1 0 "" }}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 
+0 33 "vb:=binomial(4,1)*binomial(48,9);" }}{PARA 11 "" 1 "" {XPPMATH 
+20 "6#>%#vbG\"+glU3n" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 0 "" }}
+}}{SECT 0 {PARA 4 "" 0 "" {TEXT -1 2 "c)" }}{PARA 0 "" 0 "" {TEXT -1 
+0 "" }}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 120 "vc:=binomial(4,1)*bi
+nomial(48,9)+binomial(4,2)*binomial(48,8)+binomial(4,3)*binomial(48,7)
++binomial(4,4)*binomial(48,6);" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%#v
+cG\"+C$3$z#*" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 57 "vcc:=sum(bi
+nomial(4,4-'k')*binomial(48,10-'k'),'k'=1..4);" }}{PARA 11 "" 1 "" 
+{XPPMATH 20 "6#>%$vccG\"+C$3$z#*" }}}{EXCHG {PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 0 "" }}}}}{SECT 0 {PARA 3 "" 0 "" {TEXT -1 10 "P\370\355k
+lad 13" }}{PARA 0 "" 0 "" {TEXT -1 33 "Ve Sportce se losuje ze 49 \350
+\355sel:" }}{PARA 0 "" 0 "" {TEXT -1 46 "a) 6 \350\355sel;   b) 1 \350
+\355slo premiov\351 a 6 dal\232\355ch." }}{PARA 0 "" 0 "" {TEXT -1 24 
+"Kolik je r\371zn\375ch v\375b\354r\371?" }}{EXCHG {PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 8 "restart:" }}}{SECT 0 {PARA 4 "" 0 "" {TEXT -1 2 "a)" }
+}{PARA 0 "" 0 "" {TEXT -1 0 "" }}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 
+0 19 "ba:=binomial(49,6);" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%#baG\")
+;Q)R\"" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 0 "" }}}}{SECT 0 
+{PARA 4 "" 0 "" {TEXT -1 2 "b)" }}{PARA 0 "" 0 "" {TEXT -1 0 "" }}
+{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 34 "bb:=binomial(49,1)*binomial(
+48,6);" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%#bbG\"*)3/8g" }}}{EXCHG 
+{PARA 0 "> " 0 "" {MPLTEXT 1 0 0 "" }}}}}{SECT 0 {PARA 3 "" 0 "" 
+{TEXT -1 10 "P\370\355klad 14" }}{PARA 0 "" 0 "" {TEXT -1 106 "Krotite
+l vh\341n\355 do man\351\236e 5 lv\371 a 4 tygry. \216\341dn\355 dva t
+yg\370i nesm\355 b\375t za sebou. Kolik je mo\236n\375ch uspo\370\341d
+\341n\355." }}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 8 "restart:" }}}
+{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 25 "l:=5!:t:=6*5*4*3:lt:=l*t;" }
+}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%#ltG\"&+K%" }}}{EXCHG {PARA 0 "> " 
+0 "" {MPLTEXT 1 0 0 "" }}}}{SECT 0 {PARA 3 "" 0 "" {TEXT -1 10 "P\370
+\355klad 15" }}{PARA 0 "" 0 "" {TEXT -1 208 "U stolu kr\341le Artu\232
+e sed\355 u kulat\351ho stolu 12 ryt\355\370\371. Ka\236d\375 m\341 dv
+a nep\370\341tele, kte\370\355 jsou u stolu jeho sousedy. Na v\375prav
+u je t\370eba vybrat 5 ryt\355\370\371 tak, aby mezi nimi nebyli nep
+\370\341tel\351. Kolik je mo\236n\375ch v\375b\354r\371 " }}{EXCHG 
+{PARA 0 "> " 0 "" {MPLTEXT 1 0 8 "restart:" }}}{EXCHG {PARA 0 "> " 0 "
+" {MPLTEXT 1 0 18 "a1:=binomial(6,4);" }}{PARA 11 "" 1 "" {XPPMATH 20 
+"6#>%#a1G\"#:" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 18 "a2:=binomi
+al(7,5);" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%#a2G\"#@" }}}{EXCHG 
+{PARA 0 "> " 0 "" {MPLTEXT 1 0 10 "aa:=a1+a2;" }}{PARA 11 "" 1 "" 
+{XPPMATH 20 "6#>%#aaG\"#O" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 0 
+"" }}}}}{MARK "17 1 0" 34 }{VIEWOPTS 1 1 0 1 1 1803 1 1 1 1 }
+{PAGENUMBERS 0 1 2 33 1 1 }

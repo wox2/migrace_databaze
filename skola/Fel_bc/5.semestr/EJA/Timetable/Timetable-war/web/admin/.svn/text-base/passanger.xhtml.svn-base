@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <h:head>
+        <title>Cestující</title>
+    </h:head>
+    <h:body>
+        <ui:param name="pageTitle" value="#{msgs.passangerEditTitle}" />
+            <h1><h:outputText value="#{msgs.passangerEditTitle}" /></h1>
+            <h:form>
+                <h:panelGrid columns="3" columnClasses="dataLabel,,">
+                    <h:outputText value="#{msgs.username}:" />
+                    <h:inputText value="#{passangers.passanger.username}" id="un" label="#{msgs.username}" required="true" requiredMessage="#{msgs.requiredMessage}">
+                        <f:validateLength minimum="2"/>
+                    </h:inputText>
+                    <h:message for="un" errorClass="errorRequired"/>
+
+                    <h:outputText value="#{msgs.firstName}:" />
+                    <h:inputText value="#{passangers.passanger.firstName}" id="fn" label="#{msgs.firstName}" required="true" />
+                    <h:message for="fn" errorClass="errorRequired"/>
+
+                    <h:outputText value="#{msgs.surname}:" />
+                    <h:inputText value="#{passangers.passanger.surname}" id="sn" label="#{msgs.surname}" required="true" requiredMessage="#{msgs.requiredMessage}">
+                        <f:validateLength minimum="2" />
+                    </h:inputText>
+                    <h:message for="sn" errorClass="errorRequired"/>
+
+                    <h:outputText value="#{msgs.city}:" />
+                    <h:inputText value="#{passangers.passanger.city}" id="ci" label="#{msgs.city}" required="true" requiredMessage="#{msgs.city}">
+                        <f:validateLength minimum="2" />
+                    </h:inputText>
+                    <h:message for="ci" errorClass="errorRequired"/>
+                </h:panelGrid>
+                <h:commandButton type="submit" value="#{msgs.save}" action="#{passangers.savePassanger}"/>
+                <h:commandLink action="passangers" value="#{msgs.back}" immediate="true" />
+                <h:messages globalOnly="true"/>
+            </h:form>
+    </h:body>
+</html>

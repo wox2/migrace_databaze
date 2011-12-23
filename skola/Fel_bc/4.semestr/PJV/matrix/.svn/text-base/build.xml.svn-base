@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="Matrix" default="compile" basedir=".">
+
+    <property name="classDir" location="Classes" />
+    <property name="javaDocDir" location="JavaDoc" />
+    <property name="testDir" location="${classDir}/Test" />
+    
+    <target name="compile">
+        <echo message="Compiling..." />
+        <mkdir dir="${classDir}" />
+        <mkdir dir="${testDir}" />
+        <javac srcdir="src/" destdir="${classDir}" includes="**/*.java" />
+    </target>
+
+    <target name="build" depends="compile">
+        <echo message="Building..." />
+		<jar destfile="src/Matrix.jar" basedir="${classDir}">
+            <manifest>
+                <attribute name="Main-Class" value="Core.Main" />
+            </manifest>
+        </jar>
+	</target>
+
+    <target name="run" depends="compile">
+         <echo message="Starting..." />
+        <java classname="Core.Main" classpath="${classDir}" />
+    </target>
+
+    	<target name="test" depends="instrument">
+		<mkdir dir="reports" />
+		<mkdir dir="reports/junit" />
+
+		<junit printsummary="yes" haltonfailure="yes" fork="true"> <!-- pusti JUnit testy -->
+			<classpath>
+				<pathelement location="build/test" />
+				<pathelement location="build/instrumented" />
+				<pathelement location="lib/emma.jar" />
+				<pathelement location="lib/emma_ant.jar" />
+			</classpath>
+
+			<formatter type="plain"/>
+
+			<batchtest fork="yes" todir="reports/junit"> <!-- reporty budou v adresari reports/junit -->
+				<fileset dir="test">
+      					<include name="**/*.java"/>
+				</fileset>
+			</batchtest>
+			<jvmarg value="-Demma.coverage.out.file=build/coverage.emma"/>
+			<jvmarg value="-Demma.coverage.out.merge=true" />
+		</junit>
+
+		<emma enabled="true"> <!-- vygeneruje report emmy -->
+			<report sourcepath="src">
+				<fileset dir="build">
+					<include name="*.emma" />
+				</fileset>
+				<html outfile="reports/coverage.html" />
+			</report>
+		</emma>
+	</target>
+    <target name="createJavaDoc">
+        <echo message="Creating JavaDoc..." />
+        <mkdir dir="${javaDocDir}" />
+        <javadoc sourcepath="src/" destdir="${javaDocDir}" windowtitle="My JavaDoc" />
+    </target>
+
+    <target name="clean">
+        <echo message="Deleting..." />
+		<delete dir="${classDir}"/>
+        <delete dir="${javaDocDir}"/>
+		<delete file="src/Matrix.jar"/>
+	</target>
+</project>

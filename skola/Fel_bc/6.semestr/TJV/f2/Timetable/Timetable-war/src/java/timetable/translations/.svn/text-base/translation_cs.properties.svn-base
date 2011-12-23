@@ -1,0 +1,17 @@
+# To change this template, choose Tools | Templates
+# and open the template in the editor.
+
+header=J\u00edzdn\u00ed \u0159\u00e1dy
+passangers=Cestuj\u00edc\u00ed
+passangerEditTitle=Upravit cestuj\u00edc\u00edho
+username=Username
+firstName=Jm\u00e9no
+surname=P\u0159\u00edjmen\u00ed
+requiredMessage=Toto pole je povinn\u00e9
+city=M\u011bsto
+save=Ulo\u017eit
+back=Zp\u011bt
+routes=Trasy
+routeEditTitle=Upravit trasu
+noteEditTitle=Upravit pozn\u00e1mku
+linkTypeEditTitle=Upravit typ spojen\u00ed

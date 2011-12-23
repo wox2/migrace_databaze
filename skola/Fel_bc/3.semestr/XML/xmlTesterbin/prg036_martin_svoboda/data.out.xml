@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><?xml-stylesheet href="xyz.css" type="text/css"?>
+<flights>
+	<flight date="2009-10-10" id="flight_1" number="TVS123">
+		<passengers>
+			<passenger gender="MR" id="pax_5">
+				<class>C</class>
+				<first_name>Pavel</first_name>
+				<last_name>Janota</last_name>
+				<birthday>
+					<day>10</day>
+					<month>8</month>
+					<year>1971</year>
+				</birthday>
+				<address>
+					<street>Nová</street>
+					<house_number>10</house_number>
+					<city>Praha</city>
+					<country>CZE</country>
+					<postcode>10100</postcode>
+				</address>
+			</passenger>
+			<passenger gender="MR" id="pax_3">
+				<class>Y</class>
+				<first_name>Petr</first_name>
+				<last_name>Kratochvíl</last_name>
+				<birthday>
+					<day>10</day>
+					<month>12</month>
+					<year>1970</year>
+				</birthday>
+				<address>
+					<street>Krátká</street>
+					<house_number>10</house_number>
+					<city>Praha</city>
+					<country>CZE</country>
+					<postcode>10100</postcode>
+				</address>
+			</passenger>
+			<passenger gender="MRS" id="pax_4">
+				<class>Y</class>
+				<first_name>Pavla</first_name>
+				<last_name>Nová</last_name>
+				<birthday>
+					<day>10</day>
+					<month>1</month>
+					<year>1991</year>
+				</birthday>
+				<address>
+					<street>Jasná</street>
+					<house_number>10</house_number>
+					<city>Jablonec nad nisou</city>
+					<country>CZE</country>
+					<postcode>46606</postcode>
+				</address>
+			</passenger>
+			<passenger gender="MRS" id="pax_1" infant_ref="pax_2">
+				<class>C</class>
+				<seat>12E</seat>
+				<first_name>Jana</first_name>
+				<middle_name>Petra</middle_name>
+				<last_name>Nováková</last_name>
+				<birthday>
+					<day>10</day>
+					<month>12</month>
+					<year>1980</year>
+				</birthday>
+				<nationality>CZE</nationality>
+				<passport number="123456" />
+				<address>
+					<street>Dolní</street>
+					<house_number>14</house_number>
+					<city>Praha</city>
+					<country>CZE</country>
+					<postcode>10010</postcode>
+				</address>
+				<notice>
+					Ticketless travel
+					<separator />
+					Diabetes
+				</notice>
+				<raw_notice>
+					<![CDATA[
+					ticketless travel,
+					<b>diabetic</b>
+					]]>
+				</raw_notice>
+			</passenger>
+			<passenger gender="INF" id="pax_2">
+				<class>C</class>
+				<first_name>Natálie</first_name>
+				<last_name>Nováková</last_name>
+				<birthday>
+					<day>12</day>
+					<month>4</month>
+					<year>2003</year>
+				</birthday>
+				<notice>
+					ticketless travel
+				</notice>
+				<raw_notice>
+					<![CDATA[
+					ticketless travel,
+					]]>
+				</raw_notice>
+			</passenger>
+		</passengers>
+	</flight>
+	<flight date="2009-10-11" id="flight_2" number="TVS124">
+		<passengers>
+			<passenger gender="CHD" id="pax_8">
+				<class>C</class>
+				<first_name>Petr</first_name>
+				<last_name>Kratochvíl</last_name>
+				<birthday>
+					<day>10</day>
+					<month>12</month>
+					<year>2004</year>
+				</birthday>
+				<address>
+					<street>Stavební</street>
+					<house_number>14</house_number>
+					<city>Jablonec nad Nisou</city>
+					<country>CZE</country>
+					<postcode>46606</postcode>
+				</address>
+			</passenger>
+			<passenger gender="MR" id="pax_7">
+				<class>C</class>
+				<first_name>Jan</first_name>
+				<last_name>Svoboda</last_name>
+				<birthday>
+					<day>12</day>
+					<month>4</month>
+					<year>1978</year>
+				</birthday>
+				<address>
+					<street>Stavební</street>
+					<house_number>14</house_number>
+					<city>Jablonec nad Nisou</city>
+					<country>CZE</country>
+					<postcode>46606</postcode>
+				</address>
+			</passenger>
+			<passenger gender="MRS" id="pax_6">
+				<class>C</class>
+				<first_name>Jana</first_name>
+				<last_name>Svobodová</last_name>
+				<birthday>
+					<day>10</day>
+					<month>12</month>
+					<year>1980</year>
+				</birthday>
+				<address>
+					<street>Stavební</street>
+					<house_number>14</house_number>
+					<city>Jablonec nad Nisou</city>
+					<country>CZE</country>
+					<postcode>46606</postcode>
+				</address>
+				<notice>
+					diabetic
+				</notice>
+				<raw_notice>
+					<![CDATA[
+					<b>diabetic</b>
+					]]>
+				</raw_notice>
+			</passenger>
+		</passengers>
+	</flight>
+</flights>

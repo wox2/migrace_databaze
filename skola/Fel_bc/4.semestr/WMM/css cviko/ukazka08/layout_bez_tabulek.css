@@ -1,0 +1,75 @@
+body { margin: 0px;}
+
+div.sekce {
+/*  border: 1px solid black;
+  padding: 10px;
+  margin:10px 10px 50px 10px;
+*/
+  margin: 9px;
+  background-color: lightgrey;
+  border: 1px solid transparent;
+  padding: 10px;
+}
+
+div#navigace {
+  float: left;
+  width: 300px;
+  margin-top: 0px;
+  padding-left: 0px;
+}
+
+div#hlavni_text {
+  margin-left: 329px;
+}
+
+div#napoveda {
+  clear: both;
+  text-align:center;
+}
+
+div#napoveda li {
+  display: inline;
+  margin: 0px 20px;
+}
+
+div#kategorie {
+  background-color: red;
+  border: 5px solid white;
+  position: relative; /* vyzkousejte take hodnoty "absolute" a "fixed"*/
+  top: 100px;
+  left: 100px;
+}
+
+/* 
+Pote co ukazete hodnoty position "relative", "absolute" a "fixed" elementu "div#kategorie" odkomentujte a sledujte co se stane. 
+Vyzkousejte take ruzne hodnoty position pro "div#kategorie ol".
+Dulezite jsou hlavne tyto kombinace:
+
+- div#kategorie { position: relative } 
+  div#kategorie ol { position: relative }
+
+- div#kategorie { position: absolute } 
+  div#kategorie ol { position: relative }
+
+- div#kategorie { position: fixed } 
+  div#kategorie ol { position: relative }
+
+- div#kategorie { position: relative } 
+  div#kategorie ol { position: absolute }
+
+- div#kategorie { position: absolute } 
+  div#kategorie ol { position: absolute }
+
+- div#kategorie { position: fixed } 
+  div#kategorie ol { position: absolute }
+
+
+Z ukazek kombinaci by studentum melo byt jasne kde je v kterem pripade pocatek od ktereho se pocita pozice elementu na strance.
+*/
+/*div#kategorie ol {
+  background-color: green;
+  border: 5px solid white;
+  position: relative;
+  top: 100px;
+  left: 100px;
+}*/

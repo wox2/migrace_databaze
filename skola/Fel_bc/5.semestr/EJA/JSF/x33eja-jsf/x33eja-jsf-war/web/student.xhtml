@@ -1,0 +1,53 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+    <h:head>
+        <title>Student</title>
+    </h:head>
+    <h:body>
+        <ui:composition template="./WEB-INF/includes-templates/x33eja-template.xhtml">
+            <ui:param name="pageTitle" value="#{msgs.student_edit_title}" />
+            <ui:define name="content">
+                <h1>Student</h1>
+                <h:form>
+                    <h:panelGrid columns="3" columnClasses="dataLabel,,">
+                        <h:outputText value="#{msgs.birthnumber}:" />
+                        <h:inputText value="#{students.student.birthNumber}" id="bn" label="#{msgs.birthnumber}" required="true" disabled="#{students.student.birthNumber != 0}" validator="birthnumberValidator" />
+                        <h:message for="bn" errorClass="errorRequired"/>
+
+                        <h:outputText value="#{msgs.firstname}:" />
+                        <h:inputText value="#{students.student.firstName}" id="fn" label="#{msgs.firstname}" required="true" requiredMessage="#{msgs.required_message}">
+                            <f:validateLength minimum="2"/>
+                        </h:inputText>
+                        <h:message for="fn" errorClass="errorRequired"/>
+
+                        <h:outputText value="#{msgs.surname}:" />
+                        <h:inputText value="#{students.student.surname}" id="sn" label="#{msgs.surname}" required="true" requiredMessage="#{msgs.required_message}" validatorMessage="#{msgs.wrong_length}">
+                            <f:validateLength minimum="2" />
+                        </h:inputText>
+                        <h:message for="sn" errorClass="errorRequired"/>
+
+                        <h:outputText value="#{msgs.supervisor}:" />
+                        <h:selectOneListbox id="sv" value="#{students.student.hasSupervisor}" label="#{msgs.supervisor}" size="1" converter="teacherConv" validatorMessage="#{msgs.wrong_length}">
+                            <f:selectItems value="#{teachers.allTeachers}" />
+                        </h:selectOneListbox>
+                        <h:message for="sv" />
+
+                        <h:outputText value="#{msgs.enrolled_in}:" />
+                        <h:selectManyListbox id="enrolledIn" value="#{students.student.enrolledIn}" label="#{msgs.enrolled_in}" converter="courseConv">
+                            <f:selectItems value="#{courses.allCourses}" />
+                        </h:selectManyListbox>
+                        <h:message for="enrolledIn" />
+                    </h:panelGrid>
+                    <h:commandButton type="submit" value="#{msgs.save}" action="#{students.saveStudent}"/>
+                    <h:commandLink action="students" value="#{msgs.back_student_list}" immediate="true" />
+                    <h:messages globalOnly="true"/>
+                </h:form>
+            </ui:define>
+        </ui:composition>
+    </h:body>
+</html>
+

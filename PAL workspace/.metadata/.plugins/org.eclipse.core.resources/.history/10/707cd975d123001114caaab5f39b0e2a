@@ -1,0 +1,19 @@
+#include <string>
+#include <string.h>
+#include <iostream>
+#include <stdlib.h>
+#include <fstream>
+#include <vector>
+using namespace std;
+
+struct Gen{
+
+};
+
+string alphabet;
+string dna;
+vector <string> gens;
+
+int void main(){
+
+}

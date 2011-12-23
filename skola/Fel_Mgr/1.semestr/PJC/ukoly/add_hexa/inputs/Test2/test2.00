@@ -1,0 +1,8 @@
+let ax 0x 23
+let bx 0x 11
+
+begin
+add bx ax
+print bx
+exit
+

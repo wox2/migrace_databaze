@@ -1,0 +1,362 @@
+/*
+'''Toto je CSS stylopis pro vzhled Monobook'''
+
+Pokud chcete změnit styly společné pro všechny, editujte [[MediaWiki:Common.css]].
+
+Veškeré změny byste měli otestovat pomocí [http://jigsaw.w3.org/css-validator/validator?uri=http%3A%2F%2Fcs.wikipedia.org%2Fw%2Findex.php%3Ftitle%3DMediaWiki%3AMonobook.css%26action%3Draw%26ctype%3Dtext%2Fcss%26usermedium%3Dall&usermedium=all Validátoru W3C].
+
+== Globální styly pro [[MediaWiki]] ==
+
+=== relativní výška řádku ===
+workaround pro [[bugzilla:2013]]
+<source lang="css">*/
+
+p,
+ul,
+ol,
+dd,
+fieldset,
+.documentDescription,
+.portlet ul
+   {
+   line-height: 1.5;
+   }
+
+div.thumb div div.thumbcaption,
+.special li,
+#p-personal ul
+   {
+   line-height: 1.4;
+   }
+
+#contentSub,
+#contentSub2,
+#p-personal,
+#p-personal li,
+#login-emailforlost
+   {
+   line-height: 1.2;
+   }
+
+pre,
+#p-cactions
+   {
+   line-height: 1.1;
+   }
+
+/*</source>
+=== pozicování elementů v datové části stránky ===
+vůči obsahu (bez nadpisu), nikoliv vůči celé stránce
+<source lang="css">*/
+
+#bodyContent
+   {
+   height: 100%;
+   position: relative;
+   }
+
+/*</source>
+=== pozadí stránek podle jmenného prostoru ===
+<source lang="css">*/
+
+#content,
+#mytabs li.selected a,
+#p-cactions li.selected a
+   {
+   background-color: #f9fcff;
+   }
+div.thumb
+   {
+   border-color: #f9fcff;
+   }
+
+.ns-0 #content,
+.ns-0 #mytabs li.selected a,
+.ns-0 #p-cactions li.selected a,
+.ns-102 #content,
+.ns-102 #mytabs li.selected a,
+.ns-102 #p-cactions li.selected a
+   {
+   background-color: #fff;
+   }
+.ns-0 div.thumb,
+.ns-102 div.thumb
+   {
+   border-color: #fff;
+   }
+
+.ns-12 #content,
+.ns-12 #mytabs li.selected a,
+.ns-12 #p-cactions li.selected a
+   {
+   background-color: #ffe;
+   }
+.ns-12 div.thumb
+   {
+   border-color: #ffe;
+   }
+
+.ns--1 table,
+.ns-4 table,
+.ns--1 form
+   {
+   background: inherit;
+   }
+
+/*</source>
+=== pozadí náhledů ===
+<source lang="css">*/
+
+div.thumb img
+   {
+   background-color: #fff;
+   }
+
+/*</source>
+=== záložka "editovat" ===
+<source lang="css">*/
+
+#ca-edit a
+   {
+   font-weight: bold;
+   }
+
+/*</source>
+=== odkaz "Přihlaste se" ===
+<source lang="css">*/
+
+#pt-login
+   {
+   font-size: 110%;
+   font-weight: bold;
+   }
+
+/*</source>
+=== [[MediaWiki:Sitenotice]] a [[MediaWiki:Anonnotice]] ===
+<source lang="css">*/
+
+#siteNotice #mw-dismissable-notice
+   {
+   font-style: italic;
+   text-align: center;
+   }
+
+/*</source>
+=== [[MediaWiki:Noarticletext]] ===
+<source lang="css">*/
+
+div.noarticletext
+   {
+   border: 1px solid #fabd23;
+   padding: .25em .5em;
+   }
+
+/*</source>
+=== políčko pro shrnutí ===
+<source lang="css">*/
+
+input#wpSummary
+   {
+   width: 100%;
+   }
+
+/*</source>
+===Řádkování dlouhých nadpisů===
+z cswikisource, navrhl User:Milda, odsazuje trochu řádky nadpisů, jdoucích přes více řádků
+<source lang="css">*/
+
+h1.firstHeading { line-height: 110%; padding-bottom: 0 }
+
+/*</source>
+
+== Obecné styly ==
+
+=== pozadí tabulek ===
+override změny provedené vývojáři v globálních needitovatelných stylech způsobující "přeškrtávání" infoboxů (dočasný workaround)
+<source lang="css">*/
+
+table
+   {
+   background-color: #fff;
+   }
+
+/*</source>
+=== nadpis tabulek (pomocí |+) ===
+<source lang="css"> */
+
+caption
+   {
+   font-size: larger;
+   font-weight: bold;
+   }
+
+/*</source>
+=== obrázek v rámečku ===
+<source lang="css">*/
+
+.framedpicture img
+   {
+   border: 1px solid #aaa;
+   }
+
+/*</source>
+=== označení nejlepších článků v interwiki odkazech hvězdičkou ===
+<source lang="css">*/
+
+li.featured
+   {
+   list-style-image: url(http://upload.wikimedia.org/wikipedia/en/d/d4/Monobook-bullet-star.png)
+   }
+li.good {
+    list-style-image: url(http://upload.wikimedia.org/wikipedia/commons/a/a1/Monobook-bullet-star-gray.png);
+}
+
+
+/*</source>
+=== odrážky v definicích v seznamu definic (např. v [[Portál:Aktuality|Aktuality]]) ===
+<source lang="css">*/
+
+.odrazenedefinice dd
+   {
+   list-style-image: url("/skins-1.5/monobook/bullet.gif");
+   }
+
+/*</source>
+
+== Specifické styly pro šablony ==
+
+=== Geo cz/dm/dms ===
+<source lang="css">*/
+
+#geocoord
+   {
+   background: none;
+   border: none;
+   float: right;
+   font-size: 85%;
+   line-height: 1.5;
+   margin: 0;
+   padding: 0;
+   position: absolute;
+   right: 12px;
+   text-align: right;
+   text-indent: 0;
+   text-transform: none;
+   top: -3.7em;
+   white-space: normal;
+   width: 45em;
+   z-index: 1;
+   }
+
+#geocoord a[href ^="http://"]
+   {
+   background: url(http://upload.wikimedia.org/wikipedia/commons/thumb/5/59/Geographylogo.png/20px-Geographylogo.png) center right no-repeat;
+   padding-right: 18px;
+   }
+
+span.souradnice-vesmir
+  {
+  background: url(http://upload.wikimedia.org/wikipedia/commons/7/70/Skymap.png) right no-repeat;
+  padding-right: 28px;
+  }
+
+span.souradnice-blok sup,
+span.souradnice-inline sup
+  {
+  vertical-align: top;
+  }
+
+span.souradnice-blok
+  {
+  font-family: monospace;
+  font-size: 85%;
+  position: absolute;
+  right: 0;
+  text-align: right;
+  top: -3.7em;
+  }
+
+span.souradnice-inline
+  {
+  background: none;
+  padding-right: 0;
+  }
+
+/*</source>
+
+=== Styl pro HTML matematické vzorce ===
+<source lang="css">*/
+
+.texhtml {
+  font-size: 125%;
+  line-height: 1.5em;
+}
+
+/*</source>
+== Specifické styly pro jednotlivé stránky ==
+
+=== [[Hlavní strana]] ===
+<source lang="css">*/
+
+body.page-Hlavní_strana #ca-delete,
+body.page-Hlavní_strana #ca-move,
+body.page-Hlavní_strana #lastmod,
+body.page-Hlavní_strana #siteSub,
+body.page-Hlavní_strana #contentSub,
+body.page-Hlavní_strana h1.firstHeading
+{
+    display: none;
+}
+
+/*</source>
+=== [[Speciální:Userlogin]] ===
+registrační část
+<source lang="css">*/
+
+#userlogin2
+   {
+   background-color: #ffe;
+   border: 2px solid #fc6;
+   color: #000;
+   float: left;
+   margin-right: 2em;
+   padding: 1em;
+   width: 40%;
+   }
+
+#userlogin2 table
+   {
+   background-color: #ffe;
+   color: #000;
+   float: left;
+   }
+
+/*</source>
+=== [[Wikipedie:Údržba]] a podstránky ===
+specifická část pro vzhled Monobook, společná část je v [[MediaWiki:Common.css]]
+<source lang="css">*/
+
+#Wikipedie--Udrzba__Akce h2,
+ table.udrzbawikipedie h2
+   {
+   margin: 0;
+   padding-top: 0;
+   }
+
+#Wikipedie--Udrzba__Akce h3,
+ table.udrzbawikipedie h3
+   {
+   margin: 0 0 .25em 0;
+   padding: 0;
+   }
+
+#Wikipedie--Udrzba__Akce ul,
+ table.udrzbawikipedie ul
+   {
+   margin-bottom: 0;
+   margin-right: 0;
+   margin-top: 0;
+   padding: 0;
+   }
+
+/*</source>*/

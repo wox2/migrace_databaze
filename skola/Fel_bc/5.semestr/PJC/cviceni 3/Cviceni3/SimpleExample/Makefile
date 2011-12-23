@@ -1,0 +1,41 @@
+# Tohle je komentar
+
+# Nazev vysledne aplikace
+TARGET = SimpleExample
+
+# Nazev zdrojoveho kodu
+SOURCE = SimpleExample.cpp
+
+# Nazev kompileru
+CC = g++
+
+# Dodatecne parametry pro kompilator
+CFLAGS = -I/opt/sfw/include/boost_1_44_0 -L/opt/sfw/lib/boost_1_44_0/ -lboost_test_exec_monitor
+
+# Dodatecne definice pro kompilator
+DEFINE = 
+
+# Pravidlo, ktere se vola defaultne pokud se zavola samotny prikaz make
+all: $(TARGET)
+
+# Oznaceni cilu, ktere nejsou vystupnim souborem
+.PHONY: clean run detail
+
+# Pravidlo pro prelozeni aplikace
+$(TARGET): $(SOURCE)
+	$(CC) -o $(TARGET) $(SOURCE) $(CFLAGS) $(DEFINE)
+
+# Peavidlo pro prelozeni a spusteni aplikace
+run: $(TARGET)
+	./$(TARGET)
+
+# Pravidlo pro prelozeni a spusteni aplikace s detailnim vypisem
+detail: $(TARGET)
+	./$(TARGET) --report_level=detailed
+
+# Pravidlo, ktere vrati stav adresare do stavu pred kompilaci. 
+# Vola se explicitne "make clean".
+clean:
+	rm $(TARGET)
+
+

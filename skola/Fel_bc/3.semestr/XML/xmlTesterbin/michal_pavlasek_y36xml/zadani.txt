@@ -1,0 +1,2 @@
+21. Televizní program
+Uvažujte televizní program pro různé televizní stanice. Program se skládá z vysílaných pořadů. Pro každý vysílaný pořad máme den a čas vysílání, jeho název a popis a délku v minutách. Pokud se jedná o film nebo seriál, tak máme i režiséra a herce v hlavních rolích.

@@ -1,0 +1,298 @@
+<?xml version="1.0" encoding="iso-8859-2" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="cz" dir="ltr">
+<head>
+<meta http-equiv="Content-type" content="text/html; charset=iso-8859-2" />
+<meta name="keywords" content="UNIX administration" />
+
+<title>Y36UAD -- Analýza a úpravy rc-skriptů</title>
+<link rel="stylesheet" type="text/css" href="./uad.css" />
+</head>
+<!-- Last 29.3.2008, 91, valid X -->
+
+<body> 
+<h1>Analýza a úpravy startovacích skriptů</h1>
+<hr />
+<h2>Start systému</h2>
+<p>
+Operační systém UNIX se startuje v následujících fázích:
+</p>
+<ul>
+<li> Superblok (bootblok, první blok na disku),</li>
+<li> zavaděč (zpravidla víceúrovňový, umí na disku najít a přečíst jádro),</li>
+<li> jádro (spustí program <tt>init</tt>),</li>
+<li> program <tt>init</tt> (spouští jednotlivé rc-skripty v&nbsp;závislosti na 
+runlevelu),</li>
+<li> rc-skripty (inicializují systém, spouštějí daemony).</li>
+</ul>
+<p>
+Cílem cvičení bude procvičit konfiguraci startup-fáze, tedy fáze zavádění 
+součástí systému po spuštění procesu <tt>init</tt>.
+</p>
+<h2>Proces <tt>init</tt></h2>
+<p>
+Proces <tt>init</tt> spouští rc-skripty podle konfiguračního souboru 
+<tt>/etc/inittab</tt>. Připoměňme si jeho strukturu, tvořenou řádky:<br />
+<tt>id:runlevel:způsob:příkaz</tt><br />
+</p>
+<table style="border: 1px solid gray;">
+<tr><td><tt>id</tt></td><td>jednoznačný dvouznakový identifikátor řádku</td></tr>
+<tr><td><tt>rulevel</tt></td><td>runlevely, pro které je řádek aktivní &ndash; 
+            navzájem ničím neoddělené znaky 0-6, S nebo s</td></tr>
+<tr><td style="vertical-align: top;"><tt>způsob</tt></td><td>označuje způsob spouštění:<br />
+ <table>
+ <tr><td>&nbsp;</td><td>respawn</td>
+     <td>opakované spouštění &ndash; po ukončení je spuštěn znova</td></tr>
+ <tr><td></td><td>wait</td>
+     <td>jednorázové spuštění, <tt>init</tt> čeká na dokončení procesu a pak
+         pokračuje dalšími akcemi</td></tr>
+ <tr><td></td><td>once</td>
+     <td>proces bude spuštěn jednou, při vstupu do daného runlevelu</td></tr>
+ <tr><td></td><td>sysinit</td>
+     <td>proces se spustí jednou při startu systému</td></tr>
+ <tr><td></td><td>powerfail</td>
+     <td>proces se spustí, když přijde signál SIGPWR (zálohovací zdroj napájení (UPS) detekuje výpadek napájení)</td></tr>
+ </table></td></tr>
+<tr><td><tt>příkaz</tt></td><td>program či skript s&nbsp;případnými parametry, který se má spustit</td></tr>
+</table>
+<h2>Runlevely</h2>
+<p>
+Runlevel je vlastně stav standardních procesů (služeb) systému, 
+vzdáleně připomínající režimy <em>normální</em>, <em>nouzový</em>
+u operačního systému MS Windows. Zásadní rozdíl je v tom, že administrátor může
+runlevel měnit nejen při startu, ale kdykoliv je to potřeba. 
+Důležitou vlastností je, že lze snadno vytvořit další, speciální runlevel, 
+nebo jednoduše měnit vlastnosti standardních runlevelů. S&nbsp;dostupnými 
+runlevely (0,1,2,3,4,5,6,s,S,7-9,a-c) a jejich významem jste se seznámili na 
+přednášce.
+</p>
+<h2>Změna runlevelu</h2>
+<p>
+Změnu runlevelu můžeme provést programem <tt>/sbin/telinit</tt>, 
+resp.&nbsp;přímo <tt>/sbin/init</tt>, kterému požadovaný runlevel předáme jako 
+parametr.
+Například <tt>init 6</tt> provede vypnutí daemonů a restart počítače.
+<tt>init 0</tt> provede vypnutí daemonů a vypnutí počítače, pokud to HW umožňuje.
+(<tt>init</tt> je chytře napsaný, a proto ví, že pokud neběží s&nbsp;PID=1,
+má se chovat jako <tt>telinit</tt>, <tt>/sbin/telinit</tt> je tedy jen link. 
+Ověřte!)
+</p>
+<p>
+Účelem runlevelů je zamezit uživatelům v používání těch částí systému, které
+zrovna správce mění, nebo opravuje. Chce-li administrátor měnit konfiguraci
+<i>http serveru</i>, měl by přejít např. do runlevelu 2, kde sice mohou 
+uživatelé normálně pracovat, ale jsou pozastaveny nabízené síťové služby. 
+Z našeho hlediska je nejdůležitější runlevel 3 (běžný provoz), 
+5 (běžný provoz, pokud se chceme přihlašovat v grafickém rozhraní &ndash; 
+v tomto případě je dobré dát 5 jako implicitní runlevel do souboru 
+<tt>inittab</tt> &ndash; viz položka 
+<tt>initdefault</tt>) a runlevel S (radikální administrace). 
+Runlevel S je zvláště důležitý pro opravu porušených systémů souborů. 
+Disky lze kontrolovat jen odpojené a odpojit je lze jen, když k danému 
+systému souborů nepřistupuje žádný proces. Proto je při opravě disků zcela 
+nezbytné přejít do runlevelu S, kdy jsou ukončeny všechny uživatelské procesy 
+a je tedy možné systém souborů odpojit za účelem oprav.
+</p>
+<h3>Úkol 1:</h3>
+<p>
+Zkuste přepnout runlevel na 2 a po nějaké době zpět na 3.
+Pozorujte změny. Porovnejte běžící procesy.
+</p>  
+<p>
+Při aktivaci runlevelu spouští proces <tt>init</tt> na základě řádek
+</p>
+<pre>
+l0:0:wait:/etc/rc.d/rc 0
+l1:1:wait:/etc/rc.d/rc 1
+l2:2:wait:/etc/rc.d/rc 2
+l3:3:wait:/etc/rc.d/rc 3
+l4:4:wait:/etc/rc.d/rc 4
+l5:5:wait:/etc/rc.d/rc 5
+l6:6:wait:/etc/rc.d/rc 6
+</pre>
+<p>
+skript <tt>/etc/rc.d/rc</tt> s číslem cílového runlevelu jako parametrem. 
+</p>
+<h3>Úkol 2:</h3>
+<p>
+Najděte ve skriptu <code>/etc/rc.d/rc</code> část, která spouští startovací 
+skripty jednotlivých subsystémů.
+</p>
+<h2>Ovládání jednotlivých služeb, daemonů</h2>
+<p>
+Pokud administrátor potřebuje dočasně pozastavit provoz některého ze
+daemonů (např. za účelem oprav, či zálohování), může ho ovládat
+příslušným startovacím skriptem (rc-skriptem) z adresáře 
+<tt>/etc/rc.d/init.d</tt>.
+Skripty reagují na parametry <tt>start</tt> a <tt>stop</tt>, často ale i 
+na další, jako např. <tt>status</tt> a <tt>restart</tt>.
+</p>
+<p>
+Např. příkaz<br />
+<tt>/etc/rc.d/init.d/sshd stop</tt><br />
+způsobí zastavení daemona SSH serveru, umožňujícího vzdálené interaktivní 
+přihlášování.
+Znovu jej spustíme stejným příkazem, ale s parametrem <tt>start</tt>.
+</p>
+<p>
+Na některých distribucích (Fedora) existuje usnadnění v podobě skriptu 
+<tt>service</tt>. Není nutné pokaždé psát plnou cestu k rc-skriptům, stačí
+např. místo předchozího příkladu napsat<br />  
+<code>service sshd stop</code>.
+</p>
+<h2>Automatické startování služeb, daemonů</h2>
+<p>
+Pro každý runlevel je předepsáno, jaké systémy se mají spustit a které se
+mají zastavit. Konrétní umístění a pojmenování adresářů a linků se však 
+často liší. Pro Fedoru, jejíž systém je blízký původní System V koncepci, 
+je předpis tvořen symbolickými linky z adresářů
+<tt>/etc/rc.d/rc?.d/</tt> zvlášť pro každý runlevel do adresáře
+<tt>/etc/rc.d/init.d/</tt>. Podívejte se např. pro runlevel 3 do adresáře
+<tt>/etc/rc.d/rc3.d/</tt>: jsou tam jednak linky začínající písmenem K
+určující, které systémy mají být zastaveny při vstupu do runlevelu 3, 
+a jednak začínající písmeny S, které definují startovací akce. Dvojčíslí ve
+jméně linku určuje pořadí provádění. Všiměte si, že existují např. linky 
+<tt>S10network</tt> a <tt>S11portmap</tt> &ndash; síťový program <tt>portmap</tt>
+se spustí až po inicializaci síťových adaptérů, které používá. 
+Nechcete-li automaticky spouštět některý subsystém, stačí daný link smazat, 
+nebo přejmenovat na link s prvním písmenem K.
+</p>
+<h2>Automatizovaná správa rc-skriptů</h2>
+<p>
+Na většině distribucí existují pomůcky pro udržování symbolických linků 
+spouštěných služeb z adresářů <tt>/etc/rc.d/rc?.d</tt> do 
+<tt>/etc/rc.d/init.d</tt> usnadňuje na Fedoře program <tt>chkconfig</tt>.
+Umí přidat či zrušit provádění určitého rc-skriptu v daném runlevelu, případně 
+vypsat nastavení.
+</p>
+<!--
+<P>
+Zkuste si vyrobit vlastní startovací script reagující na parametr start/stop
+pro svůj vlastní subsystém. Řekněme, že nebude spouštět žádné démony, ale
+prostě jen vytvoří či smaže např. soubor <TT>/tmp/bezi_muj_subsystem</TT>.
+Nyní ho nakopírujte do <TT>/etc/init.d</TT> a zkuste ho zařadit do některých
+runlevelů ručně nebo pomocí programu <TT>chkconfig</TT>. Otestujte přechody
+mezi runlevely, sledujte, jak se váš subsystém spouští a ukončuje.
+-->
+
+<h3>Úkol 3:</h3>
+<p>
+Prostudujte rc-skript <tt>/etc/init.d/crond</tt>. Použijte tento
+skript k ručnímu zablokování pravidelně naplánovaných úloh a ověřte, že
+pravidelně plánované úlohy se přestaly spouštět. Poté daemona <tt>crond</tt> 
+opět spusťte.
+</p>
+<h2>Singleuser mód</h2>
+<p>
+Při závažnějších poruchách systému se může stát, že některý startovací
+skript uvázne, systém nedokončí startup fázi a uživatel, ani <tt>root</tt>, 
+se nemůže přihlásit, aby problém odstranil. V takových případech je možné
+restartovat systém do runlevelu <b>S</b>, kdy se spouští jen minimum
+startovacích skriptů a je tedy větší šance, že systém dovolí správci
+přihlášení a tím analyzovat a opravit poruchu. Po spuštění počítače je 
+nutné v programu zavádějícím jádro zadat parametr jádra <tt>S</tt>, <tt>s</tt> 
+nebo <tt>single</tt>, který způsobí start přímo do runlevelu S.
+</p>
+<p>
+V následujícím úkolu zkusíme na základě předchozích poznatků vytvořit vlastní
+součást systému rc-skriptů a vyzkoušíme její funkčnost při změnách runlevelu.
+</p>
+<h3>Úkol 4:</h3>
+<ol>
+  <li>Vytvořte vlastní testovací rc-skript.</li>
+  <li>Pokud skript obdrží parametr <tt>start</tt>, 
+  vypíše na svůj standardní výstup aktuální datum a čas a seznam běžících 
+  procesů (<tt>ps</tt>(1)).
+  <!-- vypíše do souboru aktuální datum a čas a seznam běžících 
+  procesů (<tt>ps</tt>(1)).
+  Jméno souboru bude načítat ze svého konfiguračního souboru v adresáři
+  <tt>/etc/sysconfig</tt>.<br />
+  (Pro provozní informace různých systémových programů se často používá 
+  adresář <tt>/var/run</tt>, využijte jej.
+  -->
+  <br />
+  Příklad výstupu:
+<pre>
+--- Wed Mar 12 19:05:23 CET 2008 ---
+  PID TTY          TIME CMD
+    1 ?        00:00:01 init
+    2 ?        00:00:00 kthreadd
+    3 ?        00:00:00 ksoftirqd/0
+    4 ?        00:00:04 events/0
+    5 ?        00:00:00 khelper
+   82 ?        00:00:00 kblockd/0
+   86 ?        00:00:00 kacpid
+   87 ?        00:00:00 kacpi_notify
+  185 ?        00:00:00 ata/0
+  186 ?        00:00:00 ata_aux
+  187 ?        00:00:00 ksuspend_usbd
+  192 ?        00:00:00 khubd
+  195 ?        00:00:00 kseriod
+  244 ?        00:00:00 pdflush
+  245 ?        00:00:00 pdflush
+  246 ?        00:00:00 kswapd0
+  247 ?        00:00:00 aio/0
+  248 ?        00:00:00 cifsoplockd
+  249 ?        00:00:00 cifsdnotifyd
+  422 ?        00:00:00 scsi_eh_0
+  424 ?        00:00:00 scsi_eh_1
+  426 ?        00:00:00 khpsbpkt
+  436 ?        00:00:00 knodemgrd_0
+  488 ?        00:00:00 kpsmoused
+  501 ?        00:00:00 kondemand/0
+  523 ?        00:00:00 rpciod/0
+  525 ?        00:00:01 kjournald
+  618 ?        00:00:00 udevd
+ 1143 ?        00:00:00 kjournald
+ 1876 ?        00:00:00 syslogd
+ 1886 ?        00:00:00 klogd
+15037 tty1     00:00:00 rc
+15932 tty1     00:00:00 S10logskript
+16091 tty1     00:00:00 ps
+-- -- -- -- -- -- -- -- -- -- -- --
+</pre>
+  Obdrží-li parametr <tt>stop</tt>, vypíše jen aktuální datum a čas a jméno 
+  skriptu.
+  Příklad výstupu:
+<pre>
+== Wed Mar 12 19:09:22 CET 2008: logskript ==
+</pre>
+  (Za výstupní operaci lze dát též volání <tt>sleep</tt>(1), abyste si výpisu stihli všimnout.)
+  </li>
+  <li>Přidejte mezi linky na rc-skripty spouštěné v runlevelu <b>1</b> link 
+  na svůj nový skript.</li>
+  <li>Přejděte nyní do runlevelu S (na GNU/Linuxu přes runlevel 1) příkazem<br />
+  <tt>telinit 1</tt><br />
+  a vyzkoušejte jeho funkčnost.</li>
+  <li>Přidejte link na tento nový skript mezi linky na rc-skripty, které se 
+  mají ukončit v runlevelu <b>2</b>.</li>
+  <li>Přejděte nyní do runlevelu 2 příkazem<br />
+  <tt>telinit 2</tt><br />
+  a vyzkoušejte jeho funkčnost.</li>
+</ol>
+<h2>Vypínání a restart systému</h2>
+<p>
+Přepnutí runlevelu může sloužit rovněž k restartu či vypnutí počítače.
+Restart resp. zastavení systému lze provést příkazem <tt>init 6</tt>, 
+resp. <tt>init 0</tt>, jak bylo uvedeno výše. Běžně se však zastavuje či 
+restartuje systém příkazem <tt>shutdown</tt>, který umožní poslat přihlášeným 
+uživatelům varování a odložit provedení na stanovenou dobu, aby uživatelé 
+stihli ukončit svou práci.
+</p>
+<h3>Úkol 5:</h3>
+<p>
+Podívejte se na <tt>shutdown</tt>(8) a vyzkoušejte příkaz<br />
+<tt>shutdown -r +1 "Server bude za minutu restartovan."</tt><br />
+Má-li systém přerušit svoji činnost, není vhodné, aby se přihlašovali další 
+uživatelé, <tt>shutdown</tt> proto vyrobí soubor <tt>/etc/nologin</tt>.
+Ověřte existenci tohoto souboru. Existuje tento soubor i po restartu?
+</p>
+<h3>Bodované úlohy</h3>
+<p>
+Vyřešte bodované úlohy zadané cvičícím a předveďte mu jejich správná řešení.
+</p>
+<hr />
+<p><img src="../obr/ESFgrant.png" width="161" height="22" alt="Partially supported by ESF and City of Prague." /></p>
+</body>
+</html>

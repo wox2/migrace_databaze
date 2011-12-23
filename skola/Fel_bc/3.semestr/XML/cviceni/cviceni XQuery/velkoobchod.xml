@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<velkoobchod>
+  <objednavky>
+    <objednavka kod="OBJ0001">
+      <datum>19.9.2007</datum>
+      <zakaznik kod="Z001" />
+      <polozka>
+        <cislo>VYR001</cislo>
+        <cena>10</cena>
+        <mnozstvi>1000</mnozstvi>
+      </polozka>
+      <polozka>
+        <cislo>VYR005</cislo>
+        <cena>15</cena>
+        <mnozstvi>2000</mnozstvi>
+      </polozka>
+    </objednavka>
+    <objednavka kod="OBJ0002">
+      <datum>19.9.2007</datum>
+      <zakaznik kod="Z002" />
+      <polozka>
+        <cislo>VYR004</cislo>
+        <cena>20</cena>
+        <mnozstvi>1000</mnozstvi>
+      </polozka>
+    </objednavka>
+    <objednavka kod="OBJ0003">
+      <datum>20.9.2007</datum>
+      <zakaznik kod="Z002" />
+      <polozka>
+        <cislo>VYR002</cislo>
+        <cena>5</cena>
+        <mnozstvi>4000</mnozstvi>
+      </polozka>
+      <polozka>
+        <cislo>VYR001</cislo>
+        <cena>10</cena>
+        <mnozstvi>2000</mnozstvi>
+      </polozka>
+    </objednavka>
+  </objednavky>
+  <zakaznici>
+    <zakaznik kod="Z001">
+      <jmeno>ABC Inc.</jmeno>
+      <adresa>
+        <ulice>Smrkova 11</ulice>
+        <mesto>Smrkov</mesto>
+        <psc>111 11</psc>
+      </adresa>
+    </zakaznik>
+    <zakaznik kod="Z002">
+      <jmeno>DEF Inc.</jmeno>
+      <adresa>
+        <ulice>Borovicova 22</ulice>
+        <mesto>Borov</mesto>
+        <psc>222 22</psc>
+      </adresa>
+    </zakaznik>
+  </zakaznici>
+</velkoobchod>

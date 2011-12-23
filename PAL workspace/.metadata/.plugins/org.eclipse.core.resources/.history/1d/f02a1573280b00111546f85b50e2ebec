@@ -1,0 +1,22 @@
+
+public class Example {
+
+}
+
+class Cls{
+	private Cls parent;
+	private int val;
+	
+	Cls(int value){
+		val = value;
+	}
+	
+	Cls(Cls val){
+		parent = val;
+	}
+	
+	Cls get(){
+		return parent;
+	}
+	
+}

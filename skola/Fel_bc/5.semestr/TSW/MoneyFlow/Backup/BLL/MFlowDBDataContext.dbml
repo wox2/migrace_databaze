@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Database Name="MFlowDB" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Table Name="Account">
+    <Type Name="Account">
+      <Column Name="account_id" Member="Account_id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="pass" Member="Pass" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="nick" Member="Nick" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="name" Member="Name" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="Account_Profile" Member="Profile" ThisKey="Account_id" OtherKey="Account_id" Type="Profile" />
+    </Type>
+  </Table>
+  <Table Name="Cashed">
+    <Type Name="Cashed">
+      <Column Name="paid" Member="Paid" Type="System.DateTime" DbType="DateTime NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="cashtype" Member="Cashtype" Type="System.String" DbType="NVarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="category_id" Member="Category_id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="item_id" Member="Item_id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="Category_Cashed" Member="Category" ThisKey="Category_id" OtherKey="Category_id" Type="Category" IsForeignKey="true" />
+      <Association Name="Item_Cashed" Member="Item" ThisKey="Item_id" OtherKey="Item_id" Type="Item" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="Category">
+    <Type Name="Category">
+      <Column Name="sup_category_id" Member="Sup_category_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="profile_id" Member="Profile_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="category_id" Member="Category_id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="name" Member="Name" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="description" Member="Description" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Association Name="Category_Cashed" Member="Cashed" ThisKey="Category_id" OtherKey="Category_id" Type="Cashed" />
+      <Association Name="Category_Category" Member="Category_" ThisKey="Category_id" OtherKey="Sup_category_id" Type="Category" />
+      <Association Name="Category_Monitoring" Member="Monitoring" ThisKey="Category_id" OtherKey="Category_id" Type="Monitoring" />
+      <Association Name="Category_Category" Member="Sup_category_" ThisKey="Sup_category_id" OtherKey="Category_id" Type="Category" IsForeignKey="true" />
+      <Association Name="Profile_Category" Member="Profile" ThisKey="Profile_id" OtherKey="Profile_id" Type="Profile" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="Item">
+    <Type Name="Item">
+      <Column Name="item_id" Member="Item_id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="item_value" Member="Item_value" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="description" Member="Description" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Association Name="Item_Cashed" Member="Cashed" ThisKey="Item_id" OtherKey="Item_id" Type="Cashed" />
+    </Type>
+  </Table>
+  <Table Name="Monitoring">
+    <Type Name="Monitoring">
+      <Column Name="from_date" Member="From_date" Type="System.DateTime" DbType="DateTime NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="to_date" Member="To_date" Type="System.DateTime" DbType="DateTime NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="treshold_type" Member="Treshold_type" Type="System.String" DbType="NVarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="category_id" Member="Category_id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="stopper_id" Member="Stopper_id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="Category_Monitoring" Member="Category" ThisKey="Category_id" OtherKey="Category_id" Type="Category" IsForeignKey="true" />
+      <Association Name="Stopper_Monitoring" Member="Stopper" ThisKey="Stopper_id" OtherKey="Stopper_id" Type="Stopper" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="Profile">
+    <Type Name="Profile">
+      <Column Name="account_id" Member="Account_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="profile_id" Member="Profile_id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="type" Member="Type" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="description" Member="Description" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="name" Member="Name" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+      <Association Name="Profile_Category" Member="Category" ThisKey="Profile_id" OtherKey="Profile_id" Type="Category" />
+      <Association Name="Account_Profile" Member="Account" ThisKey="Account_id" OtherKey="Account_id" Type="Account" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="Stopper">
+    <Type Name="Stopper">
+      <Column Name="stopper_id" Member="Stopper_id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="reason" Member="Reason" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="treshold_value" Member="Treshold_value" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="warning_value" Member="Warning_value" Type="System.Int32" DbType="int" CanBeNull="true" />
+      <Column Name="caution_value" Member="Caution_value" Type="System.Int32" DbType="int" CanBeNull="true" />
+      <Association Name="Stopper_Monitoring" Member="Monitoring" ThisKey="Stopper_id" OtherKey="Stopper_id" Type="Monitoring" />
+    </Type>
+  </Table>
+</Database>

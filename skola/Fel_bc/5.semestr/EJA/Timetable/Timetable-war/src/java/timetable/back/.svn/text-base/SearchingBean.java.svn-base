@@ -1,0 +1,102 @@
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+package timetable.back;
+
+import java.sql.Time;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.GregorianCalendar;
+import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.ejb.EJB;
+import javax.faces.bean.SessionScoped;
+import javax.faces.bean.ManagedBean;
+import timetable.model.Link;
+import timetable.model.Station;
+import timetable.sb.TimetableCenterLocal;
+
+/**
+ *
+ * @author janf
+ */
+@ManagedBean(name="searching")
+@SessionScoped
+public class SearchingBean {
+
+
+
+    @EJB
+    private TimetableCenterLocal tc;
+
+    private List<Link> results;
+
+    private Station departing = null;
+    private Station arriving = null;
+    private String departureTime = null;
+
+    /** Creates a new instance of SearchingBean */
+    public SearchingBean() {
+    }
+
+    public String findResults() {
+        results = tc.getLinksForJourney(departing, arriving, new Date(0,0,0,5,0) /*departureTime*/);
+        return "results";
+    }
+
+    public String departureTime(Link link) {
+        return
+        (link.getDepartureTime().getHours() + tc.getPositionByRouteAndStation(departing, link.getRoute()).getTimePosition().getHours())
+        + ":" + (link.getDepartureTime().getMinutes() + tc.getPositionByRouteAndStation(departing, link.getRoute()).getTimePosition().getMinutes());
+    }
+
+    public String arrivalTime(Link link) {
+        return
+        (link.getDepartureTime().getHours() + tc.getPositionByRouteAndStation(departing, link.getRoute()).getTimePosition().getHours())
+        + ":" + (link.getDepartureTime().getMinutes() + tc.getPositionByRouteAndStation(arriving, link.getRoute()).getTimePosition().getMinutes());
+    }
+    
+    public Integer distance(Link link) {
+        return tc.getPositionByRouteAndStation(arriving, link.getRoute()).getKmPosition()
+                - tc.getPositionByRouteAndStation(departing, link.getRoute()).getKmPosition();
+    }
+
+
+    public List<Link> getResults() {
+        return results;
+    }
+    
+    public Station getArriving() {
+        return arriving;
+    }
+
+    public void setArriving(Station arriving) {
+        this.arriving = arriving;
+    }
+
+    public Station getDeparting() {
+        return departing;
+    }
+
+    public void setDeparting(Station departing) {
+        this.departing = departing;
+    }
+
+    public String getDepartureTime() {
+        return departureTime;
+    }
+
+    public void setDepartureTime(String departureTime) {
+            this.departureTime = departureTime;
+    }
+
+    
+
+    
+
+}

@@ -1,0 +1,27 @@
+div.sekce {
+/*  border: 1px solid black;
+  padding: 10px;
+  margin:10px 10px 50px 10px;
+*/
+  background-color: lightgrey;
+}
+
+
+body {
+  margin: 10px;
+}
+
+div#navigace {
+  float: left;
+  width: 25%;
+}
+
+div#hlavni_text {
+  float: left;
+  width: 75%;
+}
+
+div#napoveda {
+  clear: both;
+
+}

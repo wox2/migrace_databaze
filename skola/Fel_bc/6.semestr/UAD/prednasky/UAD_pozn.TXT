@@ -1,0 +1,6 @@
+maj(or), min(or) - 
+
+c - 
+b - blokove zarizeni, zapisuje se po blocich, zapisu 1 bajt, 
+ale musim pouzit cely blok, je seekovatelne
+c - znakove zarizeni - neni seekovatelne

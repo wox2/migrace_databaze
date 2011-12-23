@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuite errors="1" failures="0" hostname="wox2" name="Core.RowTest" tests="11" time="0.141" timestamp="2009-06-28T15:26:56">
+  <properties>
+    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment" />
+    <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.6.0_10\jre\bin" />
+    <property name="java.vm.version" value="11.0-b15" />
+    <property name="java.vm.vendor" value="Sun Microsystems Inc." />
+    <property name="java.vendor.url" value="http://java.sun.com/" />
+    <property name="path.separator" value=";" />
+    <property name="java.vm.name" value="Java HotSpot(TM) Client VM" />
+    <property name="file.encoding.pkg" value="sun.io" />
+    <property name="user.country" value="CZ" />
+    <property name="sun.java.launcher" value="SUN_STANDARD" />
+    <property name="sun.os.patch.level" value="Service Pack 3" />
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification" />
+    <property name="user.dir" value="C:\Documents and Settings\já\Dokumenty\NetBeansProjects\MatrixReloaded" />
+    <property name="java.runtime.version" value="1.6.0_10-b33" />
+    <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment" />
+    <property name="java.endorsed.dirs" value="C:\Program Files\Java\jdk1.6.0_10\jre\lib\endorsed" />
+    <property name="os.arch" value="x86" />
+    <property name="java.io.tmpdir" value="C:\DOCUME~1\J1EA6~1\LOCALS~1\Temp\" />
+    <property name="line.separator" value="
+" />
+    <property name="java.vm.specification.vendor" value="Sun Microsystems Inc." />
+    <property name="user.variant" value="" />
+    <property name="os.name" value="Windows XP" />
+    <property name="sun.jnu.encoding" value="Cp1250" />
+    <property name="java.library.path" value="C:\Program Files\Java\jdk1.6.0_10\bin;.;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files\PC Connectivity Solution\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;c:\Xilinx\bin\nt;C:\Modeltech_xe_starter\win32xoem" />
+    <property name="java.specification.name" value="Java Platform API Specification" />
+    <property name="java.class.version" value="50.0" />
+    <property name="sun.management.compiler" value="HotSpot Client Compiler" />
+    <property name="os.version" value="5.1" />
+    <property name="user.home" value="C:\Documents and Settings\já" />
+    <property name="user.timezone" value="" />
+    <property name="java.awt.printerjob" value="sun.awt.windows.WPrinterJob" />
+    <property name="file.encoding" value="Cp1250" />
+    <property name="java.specification.version" value="1.6" />
+    <property name="user.name" value="já" />
+    <property name="java.class.path" value="C:\Program Files\NetBeans 6.5\java2\ant\patches\72080.jar;C:\Program Files\NetBeans 6.5\java2\ant\patches\ant-42275.jar;C:\Program Files\NetBeans 6.5\java2\ant\lib\ant.jar;C:\Program Files\NetBeans 6.5\java2\ant\lib\ant-junit.jar;C:\Documents and Settings\já\Dokumenty\NetBeansProjects\MatrixReloaded\build\classes;C:\Documents and Settings\já\Dokumenty\NetBeansProjects\MatrixReloaded\src;C:\Program Files\NetBeans 6.5\platform9\modules\ext\junit-4.5.jar;C:\Documents and Settings\já\Dokumenty\NetBeansProjects\MatrixReloaded\build\test\classes;C:\Documents and Settings\já\Dokumenty\NetBeansProjects\MatrixReloaded\test" />
+    <property name="java.vm.specification.version" value="1.0" />
+    <property name="sun.arch.data.model" value="32" />
+    <property name="java.home" value="C:\Program Files\Java\jdk1.6.0_10\jre" />
+    <property name="java.specification.vendor" value="Sun Microsystems Inc." />
+    <property name="user.language" value="cs" />
+    <property name="awt.toolkit" value="sun.awt.windows.WToolkit" />
+    <property name="java.vm.info" value="mixed mode" />
+    <property name="java.version" value="1.6.0_10" />
+    <property name="java.ext.dirs" value="C:\Program Files\Java\jdk1.6.0_10\jre\lib\ext;C:\WINDOWS\Sun\Java\lib\ext" />
+    <property name="sun.boot.class.path" value="C:\Program Files\Java\jdk1.6.0_10\jre\lib\resources.jar;C:\Program Files\Java\jdk1.6.0_10\jre\lib\rt.jar;C:\Program Files\Java\jdk1.6.0_10\jre\lib\sunrsasign.jar;C:\Program Files\Java\jdk1.6.0_10\jre\lib\jsse.jar;C:\Program Files\Java\jdk1.6.0_10\jre\lib\jce.jar;C:\Program Files\Java\jdk1.6.0_10\jre\lib\charsets.jar;C:\Program Files\Java\jdk1.6.0_10\jre\classes" />
+    <property name="java.vendor" value="Sun Microsystems Inc." />
+    <property name="file.separator" value="\" />
+    <property name="java.vendor.url.bug" value="http://java.sun.com/cgi-bin/bugreport.cgi" />
+    <property name="sun.cpu.endian" value="little" />
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle" />
+    <property name="sun.desktop" value="windows" />
+    <property name="sun.cpu.isalist" value="pentium_pro+mmx pentium_pro pentium+mmx pentium i486 i386 i86" />
+  </properties>
+  <testcase classname="Core.RowTest" name="testSetField" time="0.016" />
+  <testcase classname="Core.RowTest" name="testGetLength" time="0.0" />
+  <testcase classname="Core.RowTest" name="testSetArray" time="0.0" />
+  <testcase classname="Core.RowTest" name="testAdd" time="0.0" />
+  <testcase classname="Core.RowTest" name="testSubtract" time="0.0" />
+  <testcase classname="Core.RowTest" name="testGetField" time="0.0" />
+  <testcase classname="Core.RowTest" name="testScalarMultiply" time="0.0" />
+  <testcase classname="Core.RowTest" name="testIsZero" time="0.0" />
+  <testcase classname="Core.RowTest" name="testAddField" time="0.0" />
+  <testcase classname="Core.RowTest" name="testRemoveField" time="0.0" />
+  <testcase classname="Core.RowTest" name="testConstructor" time="0.0">
+    <error message="Index: 12, Size: 12" type="java.lang.IndexOutOfBoundsException">java.lang.IndexOutOfBoundsException: Index: 12, Size: 12
+	at java.util.ArrayList.RangeCheck(ArrayList.java:547)
+	at java.util.ArrayList.remove(ArrayList.java:387)
+	at Core.Row.removeField(Row.java:94)
+	at Core.RowTest.testConstructor(RowTest.java:240)
+</error>
+  </testcase>
+  <system-out><![CDATA[setField
+getLength
+yes
+setArray
+add
+subtract
+getField
+scalarMultiply
+isZero
+addField
+removeField
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

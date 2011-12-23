@@ -1,0 +1,65 @@
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svnroot/e-timetable/!svn/ver/22/e-timetable/Timetable-ejb/src/java/timetable/model
+END
+LinkType.java
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svnroot/e-timetable/!svn/ver/21/e-timetable/Timetable-ejb/src/java/timetable/model/LinkType.java
+END
+Administrator.java
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svnroot/e-timetable/!svn/ver/19/e-timetable/Timetable-ejb/src/java/timetable/model/Administrator.java
+END
+Station.java
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svnroot/e-timetable/!svn/ver/19/e-timetable/Timetable-ejb/src/java/timetable/model/Station.java
+END
+Ticket.java
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svnroot/e-timetable/!svn/ver/19/e-timetable/Timetable-ejb/src/java/timetable/model/Ticket.java
+END
+Passanger.java
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svnroot/e-timetable/!svn/ver/19/e-timetable/Timetable-ejb/src/java/timetable/model/Passanger.java
+END
+Position.java
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svnroot/e-timetable/!svn/ver/22/e-timetable/Timetable-ejb/src/java/timetable/model/Position.java
+END
+Note.java
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svnroot/e-timetable/!svn/ver/19/e-timetable/Timetable-ejb/src/java/timetable/model/Note.java
+END
+Person.java
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svnroot/e-timetable/!svn/ver/19/e-timetable/Timetable-ejb/src/java/timetable/model/Person.java
+END
+Link.java
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svnroot/e-timetable/!svn/ver/22/e-timetable/Timetable-ejb/src/java/timetable/model/Link.java
+END
+Route.java
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svnroot/e-timetable/!svn/ver/19/e-timetable/Timetable-ejb/src/java/timetable/model/Route.java
+END

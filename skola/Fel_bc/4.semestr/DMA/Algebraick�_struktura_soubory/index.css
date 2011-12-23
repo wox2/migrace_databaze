@@ -1,0 +1,1049 @@
+/*
+'''Toto je CSS stylopis společný pro všechny vzhledy'''
+
+Pokud chcete změnit pouze vzhled Monobook, editujte [[MediaWiki:Monobook.css]].
+
+Veškeré změny byste měli otestovat pomocí [http://jigsaw.w3.org/css-validator/validator?uri=http%3A%2F%2Fcs.wikipedia.org%2Fwiki%2FMediaWiki%3ACommon.css%3Faction%3Draw%26ctype%3Dtext%2Fcss%26usermedium%3Dall&usermedium=all Validátoru W3C].
+ */
+ /*
+== Import testovacích stylů ==
+[[MediaWiki:Test.css]] slouží k testování stylů před jejich konečným zakomponováním do globálních stylových předpisů.
+ */
+ @import url("/w/index.php?title=MediaWiki:Test.css&action=raw&ctype=text/css");
+ /*
+== Globální styly pro [[MediaWiki]] ==
+ */
+ /*
+=== styl pro generovaný obsah ===
+ */
+ #toc
+   {
+   clear:left;
+   }
+ /*
+=== zaškrtávací boxy a jejich popisky v [[Speciální:Search]] ===
+v rozšířeném módu
+ */
+ #powersearch label
+   {
+   white-space: nowrap;
+   }
+ /*
+=== přesměrování v [[Speciální:Allpages]], [[Speciální:Prefixindex]] a kategoriích ===
+ */
+ .allpagesredirect, .redirect-in-category
+   {
+   font-style: italic;
+   }
+ /*
+=== bytecounter v [[Speciální:Recentchanges]] a [[Speciální:Watchlist]] ===
+ */
+ strong.mw-plusminus-neg
+   {
+   color: #c00;
+   }
+
+ span.mw-plusminus-neg
+   {
+   color: #900;
+   }
+
+ span.mw-plusminus-pos
+   {
+   color: #060;
+   }
+ 
+ strong.mw-plusminus-pos
+   {
+   color: #060;
+   }
+
+ span.mw-plusminus-null
+   {
+   color: #666;
+   }
+ /*
+=== varování u editací ===
+(editace staré verze, zamčené stránky...)
+ */
+ .editwarning
+   {
+   background-color: #ffc;
+   border: 3px double #c00;
+   margin: 0 0 1em 0;
+   padding: .5em 1em;
+   }
+ /*
+=== reference ===
+ */
+ sup.reference
+   {
+   vertical-align: top;
+   }
+
+ .references
+   {
+   font-size: 90%;
+   }
+ /*
+=== pozadí pod průhlednými obrázky na stránce souboru ===
+ */
+ #file img
+   {
+   background: url("http://upload.wikimedia.org/wikipedia/commons/5/5d/Checker-16x16.png") repeat;
+   }
+ /*
+=== hlášení změn v globálních stylech a/nebo skriptech ===
+při větší změně stylů změnit datové razítko zde a v [[MediaWiki:ChangedCSS]]
+ */
+ div.changedCSS
+   {
+   background-color: #ffc;
+   border: 3px double #c00;
+   font-style: normal;
+   font-weight: bold;
+   line-height: 32px;
+   margin: 1em 0;
+   padding: 0 .5em;
+   }
+
+ #ChangedCSS_061003 /* yymmdd */
+   {
+   display: none;
+   }
+ /*
+
+== Obecné styly ==
+ */
+ /*
+=== skrývání obsahu ===
+umožňuje podmíněné skrývání textu v šablonách (toto použití je '''ZASTARALÉ''')
+ */
+ .hiddenStructure
+   {
+   display: none;
+   speak: none;
+   }
+ /*
+=== externí odkazy bez ikonky ===
+ */
+ .plainlinksneverexpand a
+   {
+   background: none !important;
+   padding: 0 !important
+   }
+
+ .plainlinksneverexpand a.external.text:after
+   {
+   display: none !important;
+   }
+
+ .plainlinksneverexpand a.external.autonumber:after
+   {
+   display: none !important;
+   }
+ /*
+=== pěkná tabulka ===
+ */
+ table.wikitable,
+ table.prettytable
+   {
+   background-color: #f9f9f9;
+   border: 1px solid #aaa;
+   border-collapse: collapse;
+   margin-top: 1em;
+   }
+
+ table.wikitable th, table.wikitable td,
+ table.prettytable th, table.prettytable td
+   {
+   border: 1px solid #aaa;
+   padding: .2em;
+   }
+
+ table.wikitable th,
+ table.prettytable th
+   {
+   background-color: #f2f2f2;
+   text-align: center;
+   }
+
+ table.wikitable caption,
+ table.prettytable caption
+   {
+   margin-left: inherit;
+   margin-right: inherit;
+   }
+ /*
+=== vynucené zalomení ===
+za plovoucím objektem pomocí <code><nowiki><div class="cleaner"><br /></div></nowiki></code> nebo <code><nowiki><div class="cleaner"><hr /></div></nowiki></code>
+ */
+ div.cleaner
+   {
+   clear: both;
+   }
+
+ div.cleaner br,
+ div.cleaner hr
+   {
+   clear: both;
+   display: none;
+   }
+ /*
+=== náhrada za <code><nowiki><abbr></nowiki></code> a <code><nowiki><acronym></nowiki></code> ===
+ */
+ span.abbr,
+ span.acronym
+   {
+   border-bottom: 1px dotted;
+   cursor: help;
+   }
+ /*
+=== nezalamování textu ===
+ */
+ .nowrap
+   {
+   white-space: pre;
+   }
+ /*
+=== odsazení ===
+ */
+ .odsadit
+   {
+   margin-left: 2em;
+   }
+ /*
+=== skrytí přetékajícího obsahu ===
+ */
+ .hiddenOverflow
+   {
+   overflow: hidden;
+   }
+ /*
+=== odrážky v definicích v seznamu definic (např. v [[Portál:Aktuality|Aktuality]]) ===
+ */
+ .odrazenedefinice dd
+   {
+   display: list-item;
+   list-style-type: square;
+   padding: 0;
+   }
+ /*
+=== netučné termíny v seznamu definic (např. v [[Portál:Aktuality|Aktuality]]) ===
+ */
+ .netucneterminy dt
+   {
+   font-weight: normal;
+   }
+ /*
+=== varování ===
+ */
+ span.varovani,
+ span.warning
+   {
+   background-color: #c00;
+   color: #ff0;
+   font-weight: bold;
+   padding: 0 .5em;
+   }
+ /*
+=== zarovnání ===
+ */
+ .alLeft
+   {
+   text-align: left;
+   }
+
+ .alRight
+   {
+   text-align: right;
+   }
+
+ .alJustify
+   {
+   text-align: justify;
+   }
+ /*
+== Specifické styly pro šablony ==
+ */
+ /*
+=== infobox ===
+převzato z en
+ */
+ .infobox
+   {
+   background-color: #f9f9f9;
+   border: 1px solid #aaa;
+   clear: right;
+   float: right;
+   margin-bottom: .5em;
+   margin-left: 1em; 
+   padding: .2em;
+   }
+
+ .infobox caption
+   {
+   margin-left: inherit;
+   }
+
+ .infobox tr
+   {
+   vertical-align: top;
+   }
+
+ .infobox.bordered
+   {
+   border-collapse: collapse;
+   }
+
+ .infobox.bordered td,
+ .infobox.bordered th
+   {
+   border: 1px solid #aaa;
+   }
+ /*
+=== navboxy ===
+ */
+/* Default skin for navigation boxes */
+table.navbox {            /* Navbox container style */
+  border: 1px solid #aaa;
+  width: 100%; 
+  margin: auto;
+  clear: both;
+  font-size: 88%;
+  text-align: center;
+  padding: 1px;
+}
+table.navbox + table.navbox {  /* Single pixel border between adjacent navboxes */
+  margin-top: -1px;            /* (doesn't work for IE6, but that's okay)       */
+}
+.navbox-title,
+.navbox-abovebelow,
+table.navbox th {
+  text-align: center;      /* Title and above/below styles */
+  padding-left: 1em;
+  padding-right: 1em;
+}
+.navbox-group {            /* Group style */
+  white-space: nowrap;
+  text-align: right;
+  font-weight: bold;
+  padding-left: 1em;
+  padding-right: 1em;
+}
+.navbox, .navbox-subgroup {
+  background: #fdfdfd;     /* Background color */
+}
+.navbox-list {
+  border-color: #fdfdfd;   /* Must match background color */
+}
+.navbox-title,
+table.navbox th {
+  background: #ccccff;     /* Level 1 color */
+}
+.navbox-abovebelow,
+.navbox-group,
+.navbox-subgroup .navbox-title {
+  background: #ddddff;     /* Level 2 color */
+}
+.navbox-subgroup .navbox-group, .navbox-subgroup .navbox-abovebelow {
+  background: #e6e6ff;     /* Level 3 color */
+}
+.navbox-even {
+  background: #f7f7f7;     /* Even row striping */
+}
+.navbox-odd {
+  background: transparent; /* Odd row striping */
+}
+ 
+.collapseButton {          /* 'show'/'hide' buttons created dynamically */
+    float: right;          /* by the CollapsibleTables javascript in    */
+    font-weight: normal;   /* [[MediaWiki:Common.js]]are styled here    */
+    text-align: right;     /* so they can be customised.                */
+    width: auto;
+}
+.navbox .collapseButton {  /* In navboxes, the show/hide button balances */
+    width: 6em;            /* the vde links from [[Template:Tnavbar]],   */
+}                          /* so they need to be the same width.         */
+
+ /*
+=== styly pro šablony jazykových dovedností ===
+*/
+
+table.userlangbox
+ {
+  border-collapse: collapse;
+  margin: 2px;
+  width: 238px;
+  height: 45px;
+  float: left;
+  color: black;
+ }
+
+.userlangbox th
+ {
+  width: 45px;
+  text-align: center;
+  font-size: 14pt;
+ }
+
+.userlangbox td
+ {
+  font-size: 8pt;
+  padding: 4pt;
+  line-height: 1.25em;
+ }
+
+table.langlevel0
+ {
+  border: solid #FFB3B3 1px;
+  background: #FFE0E8;
+ }
+
+.langlevel0 th
+ {
+  background: #FFB3B3;
+ }
+
+table.langlevel1
+ {
+  border:solid #C0C8FF 1px;
+  background: #F0F8FF;
+ }
+
+.langlevel1 th
+ {
+  background: #C0C8FF;
+ }
+
+table.langlevel2
+ {
+  border:solid #77E0E8 1px;
+  background: #D0F8FF;
+ }
+
+.langlevel2 th
+ {
+  background: #77E0E8;
+ }
+
+table.langlevel3
+ {
+  border:solid #99B3FF 1px;
+  background: #E0E8FF;
+ }
+
+.langlevel3 th
+ {
+  background: #99B3FF;
+ }
+
+table.langlevel4
+ {
+  border:solid #CCCC00 1px;
+  background: #FFFF99;
+ }
+
+.langlevel4 th
+ {
+  background: #FFFF00;
+ }
+
+table.langlevelN
+ {
+  border:solid #6EF7A7 1px;
+  background: #C5FCDC;
+ }
+
+.langlevelN th
+ {
+  background: #6EF7A7;
+ }
+
+/*
+=== dokumentace k šablonám ===
+ */
+ .template-documentation
+   {
+   background-color:#ECFCF4;
+   border:1px solid #AAAAAA;
+   clear:both;
+   margin:1em 0 0;
+   padding:5px;
+   }
+
+ /*
+=== sesterské projekty ===
+ */
+ .sisterproject
+   {
+   background-color: #f9f9f9;
+   border: 1px solid #aaa;
+   clear: right;
+   float: right;
+   font-size: smaller;
+   margin: 0 0 1em 1em;
+   padding: 4px;
+   width: 250px;
+   }
+
+ .sisterproject b
+   {
+   font-size: small;
+   }
+ /*
+=== licence ===
+ */
+ .licensebox
+   {
+   clear: both;
+   font-size: 85%;
+   margin: .5em auto;
+   min-height: 64px;
+   padding: 4px;
+   vertical-align: middle;
+   width: 80%;
+   }
+
+ .licensebox-icon /* ikonka */
+   {
+   float: left;
+   }
+
+ .licensebox-text /* text licence */
+   {
+   margin-left: 68px;
+   text-align: left;
+   }
+
+ .licensebox-interwiki /* odkazy na další projekty (Commons, en:) */
+   {
+   font-size: x-small;
+   text-align: right;
+   }
+
+ .licensebox-free /* Svobodné licence (PD, GFDL, …) */
+   {
+   background-color: #f1f1de;
+   border: 1px solid #cc9;
+   }
+
+ .licensebox-edp /* Výjimečná nesvobodná díla podle [[Wikipedie:Licenční politika u souborů]] */
+   {
+   background-color: white;
+   border: 1px solid #cc9;
+   }
+
+ .licensebox-problem /* Šablony indikující problém (nolicence, nosource) */
+   {
+   background-color: #fff;
+   border: 8px solid red;
+   padding: 10px;
+   }
+ /*
+
+=== odkazy na média ===
+z enwiki
+ */
+
+/* Class for links with loudspeaker icon next to them */
+ 
+ .audiolink a
+    {
+    background: url("http://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Loudspeaker.svg/11px-Loudspeaker.svg.png") center left   no-repeat !important;
+    padding-left: 16px !important;
+    padding-right: 0 !important;
+    }
+ 
+/* Icons for medialist templates  */
+ 
+ div.listenlist
+    {
+    background: url("http://upload.wikimedia.org/wikipedia/commons/thumb/9/94/Gnome-speakernotes.svg/30px-Gnome-speakernotes.svg.png");
+    padding-left: 40px;
+    }
+ 
+ div.videolist, div.multivideolist
+    {
+    background: url("http://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Video-x-generic.svg/40px-Video-x-generic.svg.png");
+    padding-left: 50px;
+    }
+ 
+/* Style rules for media list templates */
+ 
+ div.medialist
+    {
+    min-height: 50px;
+    margin: 1em;
+    background-position: top left;
+    background-repeat: no-repeat;
+    }
+ 
+ div.medialist ul
+    {
+    list-style-type: none; 
+    list-style-image: none;
+    margin: 0;
+    }
+ 
+ div.medialist ul li
+   {
+    padding-bottom: 0.5em;
+   }
+ 
+ div.medialist ul li li
+   {
+    font-size: 91%;
+    padding-bottom: 0;
+    }
+
+/*
+
+=== různá hlášení ===
+'''ZASTARALÉ'''
+ */
+ .messagebox
+   {
+   background-color: #f9f9f9;
+   border: 1px solid #aaa;
+   margin: 0 auto 1em auto;
+   padding: .2em;
+   text-align: justify;
+   width: 85%;
+   }
+
+ .messagebox.merge
+   {
+   background-color: #f5edf5;
+   border: 1px solid #c9f;
+   text-align: center;
+   }
+
+ .messagebox.cleanup
+   {
+   background-color: #eef;
+   border: 1px solid #99f;
+   text-align: center;
+   }
+
+ .messagebox.standard-talk
+   {
+   background-color: #f8eaba;
+   border: 1px solid #cc9;
+   }
+ /*
+=== upozornění ===
+'''ZASTARALÉ'''
+ */
+ .Talk-Notice
+   {
+   background-color: #f8eaba;
+   border: 1px solid #cc9;
+   border-spacing: 3px;
+   margin: 0 auto 3px auto;
+   width: 85%;
+   }
+
+ .Talk-Notice td  /* Správné pozadí pro všechny prohlížeče */
+   {
+   background: inherit;
+   }
+ /*
+=== SHORTTOC ===
+ */
+ #shorttoc,
+ #shorttoc #toc
+   {
+   width: 100%;
+   }
+
+ #shorttoc #toc #toctitle,
+ #shorttoc h2,
+ #shorttoc ul,
+ #shorttoc li
+   {
+   float: left;
+   }
+
+ #shorttoc #toc span.tocnumber,
+ #shorttoc #toc .toctoggle
+   {
+   display: none;
+   }
+
+ #shorttoc h2,
+ #shorttoc ul
+   {
+   margin: 0 .5em 0 0;
+   }
+
+ div#content #shorttoc ul
+   {
+   list-style-type: none;
+   list-style-image: none;
+   }
+
+ #shorttoc li
+   {
+   margin-left: .5em;
+   }
+
+ * html #shorttoc td
+   {
+   padding: .5em 0 .5em .5em;
+   }
+ /*
+=== šablony úvodních upozornění ===
+(Název, Různé významy - sdílená část)
+ */ 
+ .uvodni-upozorneni
+   {
+   font-style: italic;
+   margin: 0 0 1em 2em;
+   }
+ /*
+=== Název ===
+ */
+ #Sablona__Nazev #Sablona__Nazev_Spravny-nazev
+   {
+   font-weight: bold;
+   }
+ /*
+=== Odmocnina ===
+ */
+ span.odmocnina
+   {
+   text-decoration: overline;
+   }
+ /*
+=== Klávesa ===
+ */
+ span.Sablona__Klavesa
+   {
+   background-color: #ddd;
+   border: medium outset #ddd;
+   font-family: monospace;
+   font-weight: bold;
+   padding: 0 .2em;
+   }
+ /*
+=== IPA ===
+s použitím původního stylu
+
+deklaraci s inherit je třeba ponechat včetně prázdného komentáře - css hack kvůli IE6
+ */
+ .IPA
+   {
+   cursor: help;
+   font-family: "Chrysanthi Unicode", "Doulos SIL", Gentium, GentiumAlt, Code2000, "TITUS Cyberbit Basic", "DejaVu Sans", "Bitstream Vera Sans", "Bitstream Cyberbit", "Arial Unicode MS", "Lucida Sans Unicode", "Hiragino Kaku Gothic Pro", "Matrix Unicode";
+   font-family /**/:inherit;
+   }
+
+ a span.IPA
+   {
+   cursor: pointer;
+   _cursor: hand;
+   }
+ /*
+=== Pravidla a Pravidlo - @@@ ===
+ */
+ #Sablona--Pravidla
+   {
+   border: thin solid #aaa;
+   float: right;
+   font-size: smaller;
+   line-height: 1.2;
+   margin: 0 0 0 1em;
+   padding: .2em;
+   }
+
+ #Sablona--Pravidla span
+   {
+   font-weight: bold;
+   }
+
+ #Sablona--Pravidla ul
+   {
+   display: block;
+   line-height: 1.0;
+   }
+
+ #Sablona--Pravidla ul li
+   {
+   border-left-style: solid;
+   border-left-width: 1em;
+   display: block;
+   }
+
+ div.wikipravidlo
+   {
+   border-width: thick;
+   border-style: solid;
+   margin-bottom: 1em;
+   padding: .5em;
+   text-align: justify;
+   }
+
+ div.wikipravidlo-obrazek
+   {
+   float: left;
+   margin: 0;
+   }
+
+ div.wikipravidlo-obsah
+   {
+   margin-left: 70px;
+   }
+
+ div.wikipravidlo-nadpis
+   {
+   font-size: large;
+   font-weight: bold;
+   }
+
+ #Sablona--Pravidlo-zavazne,
+ #Sablona--Pravidla__Zavazne
+   {
+   border-color: #9f9;
+   }
+
+ #Sablona--Pravidlo-doporuceni,
+ #Sablona--Pravidla__Doporuceni
+   {
+   border-color: #cf9;
+   }
+
+ #Sablona--Pravidlo-hlasovani,
+ #Sablona--Pravidla__Hlasovani
+   {
+   border-color: #ff9;
+   }
+
+ #Sablona--Pravidlo-navrh,
+ #Sablona--Pravidla__Navrh
+   {
+   border-color: #fc9;
+   }
+
+ #Sablona--Pravidlo-neschvalene,
+ #Sablona--Pravidla__Neschvalene
+   {
+   border-color: #f99;
+   }
+
+ #Sablona--Uvaha,
+ #Sablona--Pravidla__Uvaha
+   {
+   border-color: #ccc;
+   }
+ /*
+=== Popis souboru ===
+ */
+ #Sablona--Popis-souboru
+   {
+   width: 100%;
+   }
+
+ #Sablona--Popis-souboru td
+   {
+   vertical-align: top;
+   }
+
+ #Sablona--Popis-souboru th
+   {
+   text-align: right;
+   vertical-align: top;
+   white-space: nowrap;
+   width: 6em;
+   }
+
+#shared-image-desc .cs
+  {
+    font-size: large;
+  }
+
+ /*
+
+== Specifické styly pro jednotlivé stránky ==
+ */
+ /*
+=== [[Šablona:OznámeníRC]] ===
+ */
+ #Sablona--OznameniRC__IRC 
+   {
+   font-size: 85%;
+   margin-top: -3.2em;
+   text-align: right;
+   /* hack pro IE */
+   _margin-top: -2.2em;
+   position: relative;
+   }
+
+ #Sablona--OznameniRC
+   {
+   font-size: 85%;
+   line-height: 1.15;
+   }
+
+ #Sablona--OznameniRC__Oznameni
+   {
+   border: 1px solid #aaa;
+   border-top: none;
+   margin: 0;
+   padding: 0;
+   }
+
+ #Sablona--OznameniRC__Oznameni table
+   {
+   border-collapse: collapse;
+   margin: .3em .5em;
+   }
+
+ #Sablona--OznameniRC__Oznameni table tr
+   {
+   vertical-align: top;
+   }
+
+ #Sablona--OznameniRC__Oznameni table tr th
+   {
+   text-align: right;
+   white-space: pre;
+   }
+ /*
+výchozí zobrazení
+ */
+ #Sablona--OznameniRC__Oznameni_Chybejici-clanky td div.hiddenOverflow
+   {
+   height: 1.15em;
+   }
+
+ #Sablona--OznameniRC__Oznameni_Hlasovani-o-smazani,
+ #Sablona--OznameniRC__Oznameni_Reseni-konfliktu 
+   { 
+   display: none; 
+   }
+ /*
+
+=== [[Wikipedie:Údržba]] ===
+společná část pro všechny skiny
+ */
+ #Wikipedie--Udrzba__Obsah
+   {
+   margin: 0 1em 1em 1em;
+   }
+
+ #Wikipedie--Udrzba__Obsah #toc
+   {
+   font-size: smaller;
+   }
+
+ #Wikipedie--Udrzba__Obsah h2
+   {
+   display: none;
+   }
+
+ #Wikipedie--Udrzba__Akce,
+ table.udrzbawikipedie
+   {
+   background-color: transparent;
+   border: none;
+   border-collapse: collapse;
+   border-color: #aaa;
+   width: 100%;
+   }
+
+ #Wikipedie--Udrzba__Akce td,
+ table.udrzbawikipedie td
+   {
+   padding: 1em;
+   vertical-align: top;
+   width: 50%;
+   }
+
+ #Wikipedie--Udrzba__Akce div.typ
+   {
+   border: 1px solid transparent;
+   margin-top: .5em;
+   }
+ * html #Wikipedie--Udrzba__Akce div.typ
+   {
+   border-color: #f8fcff;
+   }
+
+ #Wikipedie--Udrzba__Akce div.popis
+   {
+   font-size: smaller;
+   line-height: 1.1;
+   text-align: justify;
+   }
+
+ #Wikipedie--Udrzba__Akce div.sekce
+   {
+   font-style: italic;
+   }
+ /*
+=== [[Wikipedie:Změny na Commons]] ===
+originální verze, bude přizpůsobeno
+ */
+
+ /* links */
+ .tickerDiffLink { } /* diff links in ticker */
+ .tickerMiscLink { } /* misc links in ticker */
+
+ /* remove list bullets */
+ .tickerList ul,    .tickerList ul li    { list-style: none; text-indent:-2em; margin-left:2em;   text-align:left; }
+ .tickerList ul ul, .tickerList ul ul li { list-style: none; text-indent:0;    margin-left:1.5em; text-align:left; }
+
+ /* per-type styles */
+ .tickerEntry_deleted     { }  /* entry for image deletion */
+ .tickerEntry_restored    { }  /* entry for restored image */
+ .tickerEntry_replaced    { }  /* entry for image replacement */
+ .tickerEntry_tagged      { }  /* entry for adding/removing problem tags */
+ .tickerEntry_redir       { }  /* entry for critical redirection (fot tag redirects) */
+ .tickerEntry_recat       { }  /* entry for critical re-categorization (for tag categories) */
+ .tickerEntry_notify      { }  /* entry for global notifications */
+ .tickerEntry_changed     { }  /* entry for generic change */
+
+  /* per-status styles */
+  .tickerStatus_done { text-decoration:line-through; } /* strike through when entry has been handled */
+
+ /* per-action styles */
+ .tickerAction_deleted:before     { content:" GONE "; color: #FF0000; font-family:monospace; font-weight:bold; font-size:100%; }  
+ .tickerAction_deletedRev:before  { content:" -OLD "; color: #DDAAAA; font-family:monospace; font-weight:bold; font-size:100%; }  
+ .tickerAction_restored:before    { content:" BACK "; color: #00BB00; font-family:monospace; font-weight:bold; font-size:100%; }
+ .tickerAction_replaced:before    { content:" REPL "; color: #CC88FF; font-family:monospace; font-weight:bold; font-size:100%; }  
+ .tickerAction_replacedOwn:before { content:" UPDT "; color: #EEAAFF; font-family:monospace; font-weight:bold; font-size:100%; }  
+ .tickerAction_addedBad:before    { content:" +VfD "; color: #FF8800; font-family:monospace; font-weight:bold; font-size:100%; }  
+ .tickerAction_removedBad:before  { content:" -VfD "; color: #00BB00; font-family:monospace; font-weight:bold; font-size:100%; }  
+ .tickerAction_addedGood:before   { content:" +OK  "; color: #00BB00; font-family:monospace; font-weight:bold; font-size:100%; }  
+ .tickerAction_removedGood:before { content:" -OK  "; color: #FF8800; font-family:monospace; font-weight:bold; font-size:100%; }
+
+ /* ticker usage list */
+ .tickerUsage  { font-size:80%; }  
+ 
+ /* entry applies to a template used by multiple images */
+ .tickerTemplateEntry    { font-weight: bold; } 
+ 
+ /* entry applies to sub-entries, i.e. images that use a specific template */
+ .tickerSubEntry         { }                       
+
+ /* minor entry styles */ 
+ .tickerMinorEntry  { color:#666; }     /* minor entry */
+ .tickerMinorEntry a,
+ .tickerMinorEntry a:link,
+ .tickerMinorEntry a:visited { color:#669; }
+ #bodyContent .tickerMinorEntry a.extiw,
+ #bodyContent .tickerMinorEntry a.extiw:link,
+ #bodyContent .tickerMinorEntry a.extiw:visited { color:#669; }
+
+ /*
+=== [[Hlavní strana]] ===
+ */
+ body.page-Hlavní_strana div.magnify
+   {
+   display: none;
+   }
+
+/* Nezobrazování odkazu pro nahrání souboru na lokální Wiki v liště nástrojů */
+li#t-upload
+   {display: none;}

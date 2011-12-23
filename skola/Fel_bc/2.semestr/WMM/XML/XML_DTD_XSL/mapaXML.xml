@@ -1,0 +1,272 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="transform.xsl"?>
+<!DOCTYPE home SYSTEM "./definice.dtd">
+
+<home>
+  <title>Home</title>
+  
+  <stranka>
+    <title>O skupině</title>
+    <subStranka>
+      <title>
+        Jon Bon Jovi
+      </title>      
+    </subStranka>
+    <subStranka>
+      <title>
+        Richie Sambora
+      </title>
+    </subStranka>
+    <subStranka>
+      <title>
+        David Bryan
+      </title>
+    </subStranka>
+    <subStranka>
+      <title>
+        Tico Torres
+      </title>      
+    </subStranka>
+    <subStranka>
+      <title>
+        Alec Jon Such
+      </title>      
+    </subStranka>
+    <subStranka>
+      <title>
+        Hugh Mc Donald
+      </title>      
+    </subStranka>
+  </stranka>
+
+  <stranka>
+    <title>Diskografie</title>
+    <subStranka>
+      <title>
+        Bon Jovi
+      </title>      
+    </subStranka>
+    <subStranka>
+      <title>
+        7800° Fahrenheit
+      </title>      
+    </subStranka>
+    <subStranka>
+      <title>
+        Slippery when wet
+      </title>      
+    </subStranka>
+    <subStranka>
+      <title>
+        New Jersey
+      </title>      
+    </subStranka>
+    <subStranka>
+      <title>
+        Keep the faith
+      </title>      
+    </subStranka>
+    <subStranka>
+      <title>
+        Crossroad
+      </title>      
+    </subStranka>
+    <subStranka>
+      <title>
+        These days
+      </title>      
+    </subStranka>
+    <subStranka>
+      <title>
+        Crush
+      </title>      
+    </subStranka>
+    <subStranka>
+      <title>
+        One wild night
+      </title>      
+    </subStranka>
+    <subStranka>
+      <title>
+        Bounce
+      </title>
+    </subStranka>
+    <subStranka>
+      <title>
+        This left feels right
+      </title>      
+    </subStranka>
+    <subStranka>
+      <title>
+        100,000,000 Fans can't be wrong
+      </title>      
+    </subStranka>
+    <subStranka>
+      <title>
+        Have a nice day
+      </title>      
+    </subStranka>
+    <subStranka>
+      <title>
+        Lost highway
+      </title>      
+    </subStranka>
+    <subStranka>
+      <title>
+        Demo singles
+      </title>      
+    </subStranka>
+  </stranka>
+
+  <stranka>
+    <title>Bon Jovi</title>
+    <subStranka>
+      <title>
+        Bon Jovi
+      </title>
+    </subStranka>
+    <subStranka>
+      <title>
+        7800° Fahrenheit
+      </title>
+    </subStranka>
+    <subStranka>
+      <title>
+        Slippery when wet
+      </title>
+    </subStranka>
+    <subStranka>
+      <title>
+        New Jersey
+      </title>
+    </subStranka>
+    <subStranka>
+      <title>
+        Keep the faith
+      </title>
+    </subStranka>
+    <subStranka>
+      <title>
+        Crossroad
+      </title>
+    </subStranka>
+    <subStranka>
+      <title>
+        These days
+      </title>
+    </subStranka>
+    <subStranka>
+      <title>
+        Crush
+      </title>
+    </subStranka>
+    <subStranka>
+      <title>
+        One wild night
+      </title>
+    </subStranka>
+    <subStranka>
+      <title>
+        Bounce
+      </title>
+    </subStranka>
+    <subStranka>
+      <title>
+        This left feels right
+      </title>
+    </subStranka>
+    <subStranka>
+      <title>
+        100,000,000 Fans can't be wrong
+      </title>
+    </subStranka>
+    <subStranka>
+      <title>
+        Have a nice day
+      </title>
+    </subStranka>
+    <subStranka>
+      <title>
+        Lost highway
+      </title>
+    </subStranka>
+    <subStranka>
+      <title>
+        Demo singles
+      </title>
+    </subStranka>
+  </stranka>
+
+  <stranka>
+    <title>Jon Bon Jovi</title>
+    <subStranka>
+      <title>
+        Blaze of glory
+      </title>
+    </subStranka>
+    <subStranka>
+      <title>
+        Destination anywhere
+      </title>
+    </subStranka>
+    <subStranka>
+      <title>
+        Power station years 1980-1983
+      </title>
+    </subStranka>
+    <subStranka>
+      <title>
+        More songs from power station years
+      </title>
+    </subStranka>
+  </stranka>
+
+  <stranka>
+    <title>Richie Sambora</title>
+    <subStranka>
+      <title>
+        Stranger in this town
+      </title>
+    </subStranka>
+    <subStranka>
+      <title>
+        Undiscovered soul
+      </title>
+    </subStranka>
+  </stranka>
+
+  <stranka>
+    <title>David Bryan</title>
+    <subStranka>
+      <title>
+        On a full moon
+      </title>
+    </subStranka>
+    <subStranka>
+      <title>
+        Lunar eclipse
+      </title>
+    </subStranka>
+  </stranka>
+
+  <stranka>
+    <title>Membership</title>
+  </stranka>
+
+  <stranka>
+    <title>Dates</title>
+  </stranka>
+
+  <stranka>
+    <title>Galerie</title>
+  </stranka>
+  
+  <stranka>
+    <title>Mapa stranek (XML)</title>
+  </stranka>
+
+  <stranka>
+    <title>Mapa stránek</title>
+  </stranka>
+
+</home>

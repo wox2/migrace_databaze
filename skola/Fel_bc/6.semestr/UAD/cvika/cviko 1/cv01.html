@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="iso-8859-2" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="cz" dir="ltr">
+<head>
+<meta http-equiv="Content-type" content="text/html; charset=iso-8859-2" />
+<meta name="keywords" content="UNIX administration" />
+
+<title>Y36UAD -- Správa software, instalace oprav</title>
+<link rel="stylesheet" type="text/css" href="./uad.css" />
+</head>
+<!-- 75, XHTML-strict 11.2.2011 -->
+
+<body> 
+<h1>Seznámení s prostředím, správa software, instalace oprav</h1>
+<hr />
+<h2>Instalace balíčků software</h2>
+<p>
+Používaný software bývá dnes tvořen řadou souborů, nejen spustitelných 
+(a souborů knihoven), ale i soubory dokumentace, spouštěcími skripty,
+konfiguračními soubory aj. Distribuce software tedy probíhá pomocí tzv.&nbsp;
+balíčků, ať už to jsou nejjednodušší klasické zabalené archivy souborů, 
+nebo sofistikované balíčky některých distribucí, které umí provést instalaci a
+odinstalování balíčku i počáteční implicitní konfiguraci pro danou platformu.
+Každý uživatel chce něco jiného, proto různé UNIXy a různé GNU/Linux distribuce 
+podporují různé formy distribuce a správy SW.
+</p>
+<p>
+Zásadní rozdíl ,,chytrého" balíčku a obyčejného archivu spočívá ve 
+stanovení tzv.&nbsp;závislostí, tj.&nbsp;schopnost vyžádat si instalaci
+nebo upgrade dalších potřebných souborů a jim odpovídajícím balíčkům, 
+typicky balíčků s&nbsp;použitými knihovnami.
+V&nbsp;poslední době ale složitost vazeb narůstá a snaha o aktualizaci 
+jednoho programu může vést i k&nbsp;indukované aktualizaci třeba desítek 
+podpůrných balíčků.
+</p>
+<p>
+Další výhodou jsou instalační a odinstalační skripty, automatizující 
+přidání resp.&nbsp;odstranění ze systému. Odinstalování ale (obvykle) odstraní 
+jen primární balíček, nikoliv (často početné) závislosti. Některé 
+balíčkovací systémy ale umí tyto potenciálně zbytečné balíčky zjistit.
+Na všech systémech, které podporují alespoň zjištění všech nainstalovaných 
+balíčků a jejich přímých závislostí, můžeme ale zbytečné balíčky 
+identifikovat sami.
+</p>
+<h2>Systém balíčků RPM</h2>
+<p>
+Distribuce RedHat/SUSE/Fedora a další používají balíčky formátu RPM, 
+který se už stačil stát standardem. V&nbsp;distribucích, které RPM nepoužívají, 
+se obvykle nacházejí nástroje na konverzi z&nbsp;RPM do balíčku dané distribuce 
+a případně i naopak.
+</p>
+<p>
+RPM obsahuje preinstalační a postinstalační skripty, informace o názvu
+balíčku, detailní popis funkce, verzi, informace o autorovi, datum
+vytvoření, název balíčku se zdrojovým kódem, atd.  
+Významnou informací je seznam identifikátorů vlastností (rozhraní, 
+<em>capabilities</em>),
+které balíček nabízí, a dále seznam identifikátorů vlastností, které pro svou
+práci potřebuje. Tak lze zcela automaticky kontrolovat závislosti mezi
+balíčky a upozorňovat na případnou nefunkčnost z důvodů používaného
+programu, který však není nainstalován, případně rovnou nechat potřebné
+závislosti stáhnout z&nbsp;Internetu a nainstalovat.
+</p>
+<p>
+Správu balíčků RPM provádíme příkazem <code>rpm</code>. Program <code>rpm</code>
+pracuje v&nbsp;několika módech:
+</p>
+<table>
+<tr><td><b>Instalace</b></td><td><code>rpm -i balik.rpm</code></td>
+    <td>Nainstaluje přískušný balík.rpm</td></tr>
+<tr><td><b>Odinstalování</b></td><td><code>rpm -e balik</code></td>
+    <td>Odinstaluje nainstalovaný balík</td></tr>
+<tr><td rowspan="9" style="vertical-align: top;"><b>Dotaz</b></td>
+    <td><code>rpm -q -a</code></td><td>Zobrazí seznam nainstalovaných balíčků.</td></tr>
+<tr><td><code>rpm -q -i balik</code></td><td> Informace o nainstalovaném balíčku <code>balik</code>.</td></tr>
+<tr><td><code>rpm -q -p -i balik.rpm</code></td><td> Informace o nenainstalovaném 
+        balíčku <code>balik.rpm</code>.</td></tr>
+<tr><td><code>rpm -q -g <i>group_name</i></code></td><td>Vypíše balíčky patřící
+        do skupiny balíčků <code><i>group_name</i></code>.</td></tr>
+<tr><td><code>rpm -q -f /dir/file</code></td><td>Ke kterému balíčku patří soubor
+        <code>/dir/file</code>.</td></tr>
+<tr><td><code>rpm -q --provides balik</code></td><td> Které vlastnosti 
+        implementuje (nabízí) balíček <code>balik</code>.</td></tr>
+<tr><td><code>rpm -q --requires balik</code></td><td> Které vlastnosti ke 
+        své činnosti potřebuje balík <code>balik</code>.</td></tr>
+<tr><td><code>rpm -q --whatprovides</code> C</td><td> Vypíše balíky, které
+        implementují (nabízí) vlastnost C.</td></tr>
+<tr><td><code>rpm -q --whatrequires</code> C</td><td> Vypíše balíky, které 
+        potřebují ke své činnosti vlastnost C.</td></tr>
+</table>
+<p>
+Na Internetu existují rozsáhlé archivy RPM balíčků, které lze stáhnout a
+okamžitě nainstalovat. 
+</p>
+<h3>YUM</h3>
+<p>
+Další významnou pomocí administrátora je systém automatizovaného získávání
+balíčků a udržování jejich aktuálních verzí. Distribuce Fedora používá
+systém YUM. YUM pracuje s RPM balíčky. Umí stáhnout potřebný balíček, 
+v&nbsp;případě potřeby i včetně závislých balíčků, nebo umí zkontrolovat, 
+zda některý z balíčků není dostupný v&nbsp;novější verzi a pokud ano, umí 
+balíček aktualizovat. Informace o dostupných balíčcích získává 
+z&nbsp;tzv.&nbsp;<em>repository</em>, což je specializovaný server
+se sadou RPM balíčků. Seznam dotazovaných repositories naleznete v adresáři
+<tt>/etc/yum.repos.d/</tt>.
+</p>
+<h4>Příklady</h4>
+<table>
+<!-- <tr><td></td><td></td></tr> -->
+<tr><td><code>yum install balik&nbsp;&nbsp;&nbsp;</code></td><td>stáhne a nainstaluje balik.rpm</td></tr>
+<tr><td><code>yum update</code></td><td>zjistí aktuální dostupné verze všech
+nainstalovaných balíků a v případě potřeby provede aktualizaci</td></tr>
+</table>
+<h3>Cvičení 1</h3>
+<p>
+Zjistěte, jaké všechny balíčky jsou nainstalovány. Kolik jich celkem je?
+</p>
+<h3>Cvičení 2</h3>
+<p>
+Vyberte si libovolný balíček a zjistěte, jaké jsou jeho závislosti.
+</p>
+<h3>Cvičení 3</h3>
+<p>
+U vybraného balíčku ještě vypište všechny soubory, které obsahuje.
+</p>
+<h3>Cvičení 4</h3>
+<p>
+Kterému balíčku patří soubor <tt>/usr/bin/less</tt>?
+</p>
+<h3>Cvičení 5</h3>
+<p>
+Dokážete odvodit algoritmus, který by vypsal seznam nepotřebných balíčků 
+(na nichž nic nezávisí)? 
+Dokážete jej napsat? 
+Pokud ne, je nejvyšší čas zopakovat si použití shellu (Y36UOS),
+jehož zvládnutí v&nbsp;tomto předmětu bereme jako prerekvizitu (=samozřejmost)!
+</p>
+<h3>Bodované úlohy</h3>
+<p>
+Vyřešte bodované úlohy zadané cvičícím a předveďte mu jejich správná řešení.
+</p>
+<hr />
+<p><img src="http://moon.felk.cvut.cz/~zdarekj/obr/ESFgrant.png" width="161" height="22" alt="Partially supported by ESF and City of Prague." /></p>
+</body>
+</html>

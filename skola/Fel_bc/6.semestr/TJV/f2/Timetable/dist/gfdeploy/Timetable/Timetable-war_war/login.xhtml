@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+    <h:head>
+        <title>#{msgs.header}: #{msgs.login}</title>
+    </h:head>
+    <h:body>
+        <ui:composition template="./resources/composition.xhtml">
+            <ui:param name="pageTitle" value="#{msgs.search}" />
+            <ui:define name="content">
+                 <h1>#{msgs.login}</h1>
+                <form action="j_security_check" method="post">
+                    <h:panelGrid columns="2" columnClasses="dataLabel,,">
+                        <h:outputText value="#{msgs.username}:" />
+                        <input type="text" name="j_username" />
+
+                        <h:outputText value="#{msgs.password}:" />
+                        <input type="password" name="j_password" />
+                    </h:panelGrid>
+                    <input type="submit" value="#{msgs.login_submit}" />
+                </form>
+                 <h:form>
+                    <h:commandButton value="#{msgs.cancel}" action="index" />
+                 </h:form>
+            </ui:define>
+        </ui:composition>
+    </h:body>
+</html>

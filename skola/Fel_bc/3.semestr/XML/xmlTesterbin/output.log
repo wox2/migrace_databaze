@@ -1,0 +1,149 @@
+INFO: System info:
+INFO: java.runtime.name=Java(TM) SE Runtime Environment
+INFO: sun.boot.library.path=C:\Program Files\Java\jre6\bin
+INFO: java.vm.version=14.3-b01
+INFO: java.vm.vendor=Sun Microsystems Inc.
+INFO: java.vendor.url=http://java.sun.com/
+INFO: path.separator=;
+INFO: java.vm.name=Java HotSpot(TM) Client VM
+INFO: file.encoding.pkg=sun.io
+INFO: java.util.logging.config.file=logging.properties
+INFO: user.country=US
+INFO: sun.java.launcher=SUN_STANDARD
+INFO: sun.os.patch.level=Service Pack 3
+INFO: java.vm.specification.name=Java Virtual Machine Specification
+INFO: user.dir=D:\Fel\3.semestr\XML\xmlTesterbin
+INFO: java.runtime.version=1.6.0_17-b04
+INFO: java.awt.graphicsenv=sun.awt.Win32GraphicsEnvironment
+INFO: java.endorsed.dirs=C:\Program Files\Java\jre6\lib\endorsed
+INFO: os.arch=x86
+INFO: java.io.tmpdir=C:\DOCUME~1\martin\LOCALS~1\Temp\
+INFO: line.separator=
+
+INFO: java.vm.specification.vendor=Sun Microsystems Inc.
+INFO: user.variant=
+INFO: os.name=Windows XP
+INFO: sun.jnu.encoding=Cp1252
+INFO: java.library.path=C:\WINDOWS\SYSTEM32;.;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;%SYSTEMROOT%\SYSTEM32;%SYSTEMROOT%;%SYSTEMROOT%\SYSTEM32\WBEM;C:\PROGRAM FILES\SLIKSVN\BIN\;D:\CYGWIN\BIN;C:\PROGRAM FILES\MICROSOFT SQL SERVER\90\TOOLS\BINN\;C:\PROGRAM FILES\QUICKTIME\QTSYSTEM\;C:\PROGRAM FILES\TORTOISESVN\BIN;C:\PROGRAM FILES\SUBVERSION\BIN;C:\WINDOWS\SYSTEM32\WINDOWSPOWERSHELL\V1.0;C:\PROGRAM FILES\JZIP;C:\WINDOWS;C:\WINDOWS\SYSTEM32\WBEM;C:\WINDOWS\SYSTEM32;
+INFO: java.specification.name=Java Platform API Specification
+INFO: java.class.version=50.0
+INFO: sun.management.compiler=HotSpot Client Compiler
+INFO: os.version=5.1
+INFO: user.home=C:\Documents and Settings\martin
+INFO: user.timezone=
+INFO: java.awt.printerjob=sun.awt.windows.WPrinterJob
+INFO: file.encoding=Cp1252
+INFO: java.specification.version=1.6
+INFO: user.name=martin
+INFO: java.class.path=xmlTester.jar
+INFO: java.vm.specification.version=1.0
+INFO: sun.arch.data.model=32
+INFO: java.home=C:\Program Files\Java\jre6
+INFO: java.specification.vendor=Sun Microsystems Inc.
+INFO: user.language=en
+INFO: awt.toolkit=sun.awt.windows.WToolkit
+INFO: java.vm.info=mixed mode, sharing
+INFO: java.version=1.6.0_17
+INFO: java.ext.dirs=C:\Program Files\Java\jre6\lib\ext;C:\WINDOWS\Sun\Java\lib\ext
+INFO: sun.boot.class.path=C:\Program Files\Java\jre6\lib\resources.jar;C:\Program Files\Java\jre6\lib\rt.jar;C:\Program Files\Java\jre6\lib\sunrsasign.jar;C:\Program Files\Java\jre6\lib\jsse.jar;C:\Program Files\Java\jre6\lib\jce.jar;C:\Program Files\Java\jre6\lib\charsets.jar;C:\Program Files\Java\jre6\classes
+INFO: java.vendor=Sun Microsystems Inc.
+INFO: file.separator=\
+INFO: java.vendor.url.bug=http://java.sun.com/cgi-bin/bugreport.cgi
+INFO: sun.cpu.endian=little
+INFO: sun.io.unicode.encoding=UnicodeLittle
+INFO: sun.desktop=windows
+INFO: sun.cpu.isalist=pentium_pro+mmx pentium_pro pentium+mmx pentium i486 i386 i86
+INFO: Running XmlTester on project path: D:\Fel\3.semestr\XML\xmlTesterbin\lukesma4
+INFO: Validation details can be found in logfile.
+INFO: ===========================================================================
+INFO: Executing test 'Validate XML'
+INFO: Final report: Test 'Validate XML' completed SUCCESSFULY!
+INFO: ===========================================================================
+
+INFO: ===========================================================================
+INFO: Executing test 'Validate DTD'
+INFO: Final report: Test 'Validate DTD' completed SUCCESSFULY!
+INFO: ===========================================================================
+
+INFO: ===========================================================================
+INFO: Executing test 'Validate XML document against DTD'
+WARNING: java.lang.Exception: Error: Line number: 143, Column number: 56, Message: Attribute value "CB7" of type ID must be unique within the document.
+INFO: Final report: Test 'Validate XML document against DTD' FAILED!
+INFO: ===========================================================================
+
+INFO: ===========================================================================
+INFO: Executing test 'XPath'
+INFO: XPath expression '(: vybere muzstvo s atributem domaci rovnym 'ano' :)
+//muzstvo[@domaci='ano']
+
+
+' in file 'xpath1.xp' finished successfully. 1 nodes were selected.
+INFO: XPath expression '(: vybere vsechny elementy cisla hracu s prezdivkou :)
+
+//hrac/cislo[prezdivka]
+' in file 'xpath2.xp' finished successfully. 3 nodes were selected.
+INFO: XPath expression '(: vypise jmena vsech hracu, kteri nefaulovali :)
+//hrac/cislo[not(faul)]/jmeno/text()
+' in file 'xpath3.xp' finished successfully. 19 nodes were selected.
+INFO: XPath expression '(: vybere vsehny "texty" ze vsech hracu a jejich potomku :)
+//hrac/descendant::text()
+' in file 'xpath4.xp' finished successfully. 78 nodes were selected.
+INFO: XPath expression '(: vraci prvniho hrace z kazdeho muzstva :)
+
+//muzstvo/hrac[position() = 1]' in file 'xpath5.xp' finished successfully. 0 nodes were selected.
+INFO: XPath expression '(: vraci vsechny sestavy, ktere maji jedenact podelementu, vzhledem k faktu, :) 
+(:ze sestava muze mit jako podlelement, tak vraci sestavy s 11 hraci :)
+//muzstvo/sestava[count(expression)= 11]
+' in file 'xpath6.xp' finished successfully. 0 nodes were selected.
+INFO: Total 6 XPath expressions were processed.
+INFO: Final report: Test 'XPath' completed SUCCESSFULY!
+INFO: ===========================================================================
+
+INFO: ===========================================================================
+INFO: Executing test 'Validate XML Schema'
+INFO: Final report: Test 'Validate XML Schema' completed SUCCESSFULY!
+INFO: ===========================================================================
+
+INFO: ===========================================================================
+INFO: Executing test 'Validate XML document against XML Schema'
+WARNING: org.xml.sax.SAXParseException: cvc-complex-type.2.3: Element 'cislo' cannot have character [children], because the type's content type is element-only.
+INFO: Final report: Test 'Validate XML document against XML Schema' FAILED!
+INFO: ===========================================================================
+
+INFO: ===========================================================================
+INFO: Executing test 'XSLT'
+INFO: XSLT Transformation data2html.xsl SUCCESSFUL
+INFO: Total 1 XSL transformations were processed.
+INFO: Final report: Test 'XSLT' completed SUCCESSFULY!
+INFO: ===========================================================================
+
+INFO: ===========================================================================
+INFO: Executing test 'XQuery'
+INFO: XQuery: query1.xq finished successfully. Output written to file query1.xq.out.xml (136 bytes)
+INFO: XQuery: query2.xq finished successfully. Output written to file query2.xq.out.xml (4878 bytes)
+INFO: XQuery: query3.xq finished successfully. Output written to file query3.xq.out.xml (58 bytes)
+INFO: XQuery: query4.xq finished successfully. Output written to file query4.xq.out.xml (89 bytes)
+INFO: XQuery: query5.xq finished successfully. Output written to file query5.xq.out.xml (1074 bytes)
+INFO: Total 5 XQueries were processed.
+INFO: Final report: Test 'XQuery' completed SUCCESSFULY!
+INFO: ===========================================================================
+
+INFO: ===========================================================================
+INFO: Executing test 'SAX'
+INFO: Checking file 'TestSax.java'
+INFO: Compilation successful
+INFO: Run successful
+INFO: Total 1 files were processed.
+INFO: Final report: Test 'SAX' completed SUCCESSFULY!
+INFO: ===========================================================================
+
+INFO: ===========================================================================
+INFO: Executing test 'DOM'
+INFO: Checking file 'TestDom.java'
+INFO: Compilation successful
+INFO: Run successful
+INFO: Total 1 files were processed.
+INFO: Final report: Test 'DOM' completed SUCCESSFULY!
+INFO: ===========================================================================
+
+INFO: Running XmlTester on project path: D:\Fel\3.semestr\XML\xmlTesterbin\lukesma4\dom\lukesma4 completed.

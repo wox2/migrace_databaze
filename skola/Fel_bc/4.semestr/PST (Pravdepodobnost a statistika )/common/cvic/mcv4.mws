@@ -1,0 +1,805 @@
+{VERSION 6 1 "SunOS" "6.1" }
+{USTYLETAB {PSTYLE "Left Justified Maple Output" -1 12 1 {CSTYLE "" 
+-1 -1 "Times" 1 12 0 0 0 1 2 2 2 2 2 2 0 0 0 1 }1 3 0 0 0 0 2 0 2 0 2 
+2 -1 1 }{PSTYLE "Warning" -1 7 1 {CSTYLE "" -1 -1 "Courier" 1 10 0 0 
+255 1 0 0 0 2 2 1 0 0 0 1 }1 0 0 -1 -1 -1 1 0 1 0 2 2 -1 1 }{PSTYLE "D
+ash Item" -1 16 1 {CSTYLE "" -1 -1 "Times" 1 12 0 0 0 1 2 2 2 2 2 2 0 
+0 0 1 }1 1 0 0 3 3 2 0 2 0 2 2 -1 3 }{PSTYLE "Heading 4" -1 20 1 
+{CSTYLE "" -1 -1 "Times" 1 10 0 0 0 1 1 1 2 2 2 2 0 0 0 1 }1 1 0 0 0 
+0 2 0 2 0 2 2 -1 1 }{PSTYLE "Heading 3" -1 5 1 {CSTYLE "" -1 -1 "Times
+" 1 12 0 0 0 1 1 1 2 2 2 2 0 0 0 1 }1 1 0 0 0 0 2 0 2 0 2 2 -1 1 }
+{PSTYLE "Error" -1 8 1 {CSTYLE "" -1 -1 "Courier" 1 10 255 0 255 1 0 
+0 0 2 2 1 0 0 0 1 }1 0 0 -1 -1 -1 1 0 1 0 2 2 -1 1 }{PSTYLE "Author" 
+-1 19 1 {CSTYLE "" -1 -1 "Times" 1 12 0 0 0 1 2 2 2 2 2 2 0 0 0 1 }3 
+1 0 0 8 8 2 0 2 0 2 2 -1 1 }{PSTYLE "Heading 2" -1 4 1 {CSTYLE "" -1 
+-1 "Times" 1 14 0 0 0 1 2 1 2 2 2 2 0 0 0 1 }1 1 0 0 8 2 2 0 2 0 2 2 
+-1 1 }{PSTYLE "Help" -1 10 1 {CSTYLE "" -1 -1 "Courier" 1 9 0 0 255 1 
+0 0 0 2 2 1 0 0 0 1 }1 0 0 -1 -1 -1 1 0 1 0 2 2 -1 1 }{PSTYLE "Text Ou
+tput" -1 2 1 {CSTYLE "" -1 -1 "Courier" 1 10 0 0 255 1 0 0 0 2 2 1 0 
+0 0 1 }1 0 0 -1 -1 -1 1 0 1 0 2 2 -1 1 }{PSTYLE "Heading 1" -1 3 1 
+{CSTYLE "" -1 -1 "Times" 1 18 0 0 0 1 2 1 2 2 2 2 0 0 0 1 }1 1 0 0 8 
+4 2 0 2 0 2 2 -1 1 }{PSTYLE "Normal" -1 0 1 {CSTYLE "" -1 -1 "Times" 
+1 12 0 0 0 1 2 2 2 2 2 2 0 0 0 1 }1 1 0 0 0 0 2 0 2 0 2 2 -1 1 }
+{PSTYLE "Maple Plot" -1 13 1 {CSTYLE "" -1 -1 "Times" 1 12 0 0 0 1 2 
+2 2 2 2 2 0 0 0 1 }3 1 0 0 0 0 2 0 2 0 2 2 -1 1 }{PSTYLE "Line Printed
+ Output" -1 6 1 {CSTYLE "" -1 -1 "Courier" 1 10 0 0 255 1 0 0 0 2 2 1 
+0 0 0 1 }1 0 0 -1 -1 -1 1 0 1 0 2 2 -1 1 }{PSTYLE "Title" -1 18 1 
+{CSTYLE "" -1 -1 "Times" 1 18 0 0 0 1 2 1 1 2 2 2 0 0 0 1 }3 1 0 0 12 
+12 2 0 2 0 2 2 -1 1 }{PSTYLE "Diagnostic" -1 9 1 {CSTYLE "" -1 -1 "Cou
+rier" 1 10 64 128 64 1 0 0 0 2 2 1 0 0 0 1 }1 0 0 -1 -1 -1 1 0 1 0 2 
+2 -1 1 }{PSTYLE "Maple Output" -1 11 1 {CSTYLE "" -1 -1 "Times" 1 12 
+0 0 0 1 2 2 2 2 2 2 0 0 0 1 }3 3 0 0 0 0 2 0 2 0 2 2 -1 1 }{PSTYLE "Li
+st Item" -1 14 1 {CSTYLE "" -1 -1 "Times" 1 12 0 0 0 1 2 2 2 2 2 2 0 
+0 0 1 }1 1 0 0 3 3 2 0 2 0 2 2 -1 5 }{PSTYLE "Bullet Item" -1 15 1 
+{CSTYLE "" -1 -1 "Times" 1 12 0 0 0 1 2 2 2 2 2 2 0 0 0 1 }1 1 0 0 3 
+3 2 0 2 0 2 2 -1 2 }{PSTYLE "Fixed Width" -1 17 1 {CSTYLE "" -1 -1 "Co
+urier" 1 10 0 0 0 1 2 2 2 2 2 2 0 0 0 1 }3 1 0 0 0 0 2 0 2 0 2 2 -1 1 
+}{CSTYLE "LaTeX" -1 32 "" 0 1 0 0 0 0 0 0 0 2 2 2 0 0 0 1 }{CSTYLE "Ma
+ple Comment" -1 21 "Courier" 0 1 0 0 0 1 0 0 0 2 2 2 0 0 0 1 }{CSTYLE 
+"2D Math Bold" -1 5 "Times" 0 1 0 0 0 0 0 1 2 2 2 2 0 0 0 1 }{CSTYLE "
+Help Underlined" -1 44 "Times" 1 12 0 0 0 0 0 0 1 2 2 2 0 0 0 1 }
+{CSTYLE "Output Labels" -1 29 "Times" 1 8 0 0 0 1 0 0 0 2 2 2 0 0 0 1 
+}{CSTYLE "Maple Input" -1 0 "Courier" 0 1 255 0 0 1 0 1 0 2 1 2 0 0 0 
+1 }{CSTYLE "Page Number" -1 33 "Times" 0 1 0 0 0 0 0 0 2 2 2 2 0 0 0 
+1 }{CSTYLE "_cstyle281" -1 200 "" 0 1 0 0 0 0 1 0 0 2 2 2 0 0 0 1 }
+{CSTYLE "_cstyle280" -1 201 "" 0 1 0 0 0 0 1 0 0 2 2 2 0 0 0 1 }
+{CSTYLE "Maple Input Placeholder" -1 202 "Courier" 1 12 200 0 200 1 0 
+1 0 2 1 2 0 0 0 1 }{CSTYLE "Text" -1 203 "Times" 1 12 0 0 0 1 2 2 2 2 
+2 2 0 0 0 1 }{CSTYLE "2D Math Italic Small" -1 204 "Times" 0 1 0 0 0 
+0 1 0 2 2 2 2 0 0 0 1 }{CSTYLE "Help Heading" -1 26 "" 1 14 0 0 0 0 0 
+1 0 2 2 2 0 0 0 1 }{CSTYLE "Help Italic Bold" -1 40 "Times" 1 12 0 0 
+0 0 1 1 0 2 2 2 0 0 0 1 }{CSTYLE "Help Normal" -1 30 "Times" 1 12 0 0 
+0 0 0 0 0 2 2 2 0 0 0 1 }{CSTYLE "Help Nonterminal" -1 24 "Courier" 0 
+1 0 0 0 1 0 1 0 2 2 2 0 0 0 1 }{CSTYLE "_cstyle279" -1 205 "" 0 1 0 0 
+0 0 1 0 0 2 2 2 0 0 0 1 }{CSTYLE "2D Math Small" -1 7 "Times" 0 1 0 0 
+0 0 0 0 2 2 2 2 0 0 0 1 }{CSTYLE "_cstyle278" -1 206 "" 0 1 0 0 0 0 1 
+0 0 2 2 2 0 0 0 1 }{CSTYLE "_cstyle277" -1 207 "" 0 1 0 0 0 0 1 0 0 2 
+2 2 0 0 0 1 }{CSTYLE "_cstyle276" -1 208 "" 0 1 0 0 0 0 1 0 0 2 2 2 0 
+0 0 1 }{CSTYLE "_cstyle275" -1 209 "" 0 1 0 0 0 0 1 0 0 2 2 2 0 0 0 1 
+}{CSTYLE "_cstyle274" -1 210 "" 0 1 0 0 0 0 1 0 0 2 2 2 0 0 0 1 }
+{CSTYLE "_cstyle273" -1 211 "" 0 1 0 0 0 0 1 0 0 2 2 2 0 0 0 1 }
+{CSTYLE "_cstyle272" -1 212 "" 0 1 0 0 0 0 1 0 0 2 2 2 0 0 0 1 }
+{CSTYLE "_cstyle271" -1 213 "" 0 1 0 0 0 0 1 0 0 2 2 2 0 0 0 1 }
+{CSTYLE "Help Underlined Italic" -1 43 "Times" 1 12 0 0 0 0 1 0 1 2 2 
+2 0 0 0 1 }{CSTYLE "_cstyle270" -1 214 "" 0 1 0 0 0 0 1 0 0 2 2 2 0 0 
+0 1 }{CSTYLE "2D Math" -1 2 "Times" 0 1 0 0 0 0 0 0 2 2 2 2 0 0 0 1 }
+{CSTYLE "Copyright" -1 34 "Times" 1 10 0 0 0 0 2 2 2 2 2 2 0 0 0 1 }
+{CSTYLE "Hyperlink" -1 17 "" 0 1 0 128 128 1 2 0 1 2 2 2 0 0 0 1 }
+{CSTYLE "Plot Title" -1 27 "" 1 10 0 0 0 0 0 1 0 2 2 2 0 0 0 1 }
+{CSTYLE "2D Input" -1 19 "Times" 0 1 255 0 0 1 0 0 2 2 1 2 0 0 0 1 }
+{CSTYLE "_cstyle21" -1 215 "Courier" 0 1 0 0 0 1 0 1 0 2 2 2 0 0 0 1 }
+{CSTYLE "Help Maple Name" -1 35 "" 0 1 104 64 92 1 0 1 0 2 2 2 0 0 0 
+1 }{CSTYLE "Help Italic" -1 42 "Times" 1 12 0 0 0 0 1 0 0 2 2 2 0 0 0 
+1 }{CSTYLE "Help Underlined Bold" -1 41 "Times" 1 12 0 0 0 0 0 1 1 2 
+2 2 0 0 0 1 }{CSTYLE "_cstyle268" -1 216 "" 0 1 0 0 0 0 1 0 0 2 2 2 0 
+0 0 1 }{CSTYLE "_cstyle267" -1 217 "" 0 1 0 0 0 0 1 0 0 2 2 2 0 0 0 1 
+}{CSTYLE "Default" -1 38 "" 0 1 0 0 0 0 0 0 0 2 2 2 0 0 0 1 }{CSTYLE "
+Help Fixed" -1 23 "Courier" 1 10 0 0 0 0 0 0 0 2 2 2 0 0 0 1 }{CSTYLE 
+"_cstyle266" -1 218 "" 0 1 0 0 0 0 1 0 0 2 2 2 0 0 0 1 }{CSTYLE "_csty
+le265" -1 219 "" 0 1 0 0 0 0 1 0 0 2 2 2 0 0 0 1 }{CSTYLE "_cstyle264"
+ -1 220 "" 0 1 0 0 0 0 1 0 0 2 2 2 0 0 0 1 }{CSTYLE "_cstyle263" -1 
+221 "" 0 1 0 0 0 0 1 0 0 2 2 2 0 0 0 1 }{CSTYLE "_cstyle262" -1 222 ""
+ 0 1 0 0 0 0 1 0 0 2 2 2 0 0 0 1 }{CSTYLE "Dictionary Hyperlink" -1 
+45 "" 0 1 147 0 15 1 2 0 1 2 2 2 0 0 0 1 }{CSTYLE "_cstyle261" -1 223 
+"" 0 1 0 0 0 0 1 0 0 2 2 2 0 0 0 1 }{CSTYLE "2D Output" -1 20 "Times" 
+0 1 0 0 255 1 0 0 2 2 2 2 0 0 0 1 }{CSTYLE "_cstyle260" -1 224 "" 0 1 
+0 0 0 0 1 0 0 2 2 2 0 0 0 1 }{CSTYLE "2D Math Italic" -1 3 "Times" 0 
+1 0 0 0 0 1 0 2 2 2 2 0 0 0 1 }{CSTYLE "Popup" -1 31 "" 0 1 0 128 128 
+1 1 0 1 2 2 2 0 0 0 1 }{CSTYLE "2D Math Symbol 2" -1 16 "Times" 0 1 0 
+0 0 0 2 2 2 2 2 2 0 0 0 1 }{CSTYLE "Plot Text" -1 28 "" 1 8 0 0 0 0 0 
+0 0 2 2 2 0 0 0 1 }{CSTYLE "Help Notes" -1 37 "" 0 1 0 0 0 1 0 1 0 2 
+2 2 0 0 0 1 }{CSTYLE "Help Bold" -1 39 "Times" 1 12 0 0 0 0 0 1 0 2 2 
+2 0 0 0 1 }{CSTYLE "Help Menus" -1 36 "" 0 1 0 0 0 1 0 1 0 2 2 2 0 0 
+0 1 }{CSTYLE "_cstyle259" -1 225 "" 0 1 0 0 0 0 1 0 0 2 2 2 0 0 0 1 }
+{CSTYLE "_cstyle258" -1 226 "" 0 1 0 0 0 0 1 0 0 2 2 2 0 0 0 1 }
+{CSTYLE "_cstyle257" -1 227 "" 0 1 0 0 0 0 1 0 0 2 2 2 0 0 0 1 }
+{CSTYLE "_cstyle256" -1 228 "" 0 1 0 0 0 0 1 0 0 2 2 2 0 0 0 1 }
+{CSTYLE "2D Comment" -1 18 "Times" 0 1 0 0 0 0 0 0 2 2 2 2 0 0 0 1 }
+{CSTYLE "Help Variable" -1 25 "Courier" 0 1 0 0 0 1 2 2 0 2 2 2 0 0 0 
+1 }{CSTYLE "2D Math Bold Small" -1 10 "Times" 0 1 0 0 0 0 0 1 2 2 2 2 
+0 0 0 1 }{CSTYLE "Help Emphasized" -1 229 "" 0 1 0 0 0 0 1 2 0 2 2 2 
+0 0 0 1 }{CSTYLE "Prompt" -1 1 "Courier" 0 1 0 0 0 1 0 0 0 2 2 2 0 0 
+0 1 }{PSTYLE "_pstyle1" -1 200 1 {CSTYLE "" -1 -1 "Courier" 0 1 0 0 0 
+1 0 1 0 2 2 2 1 0 0 1 }1 1 0 0 0 0 2 0 2 0 2 2 -1 1 }{CSTYLE "_cstyle1
+" -1 230 "Courier" 1 12 0 0 0 1 2 1 2 2 2 2 0 0 0 1 }{PSTYLE "_pstyle2
+" -1 201 1 {CSTYLE "" -1 -1 "Times" 1 12 0 0 0 1 2 2 2 2 2 2 1 0 0 1 }
+1 1 0 0 0 0 2 0 2 0 2 2 -1 1 }{CSTYLE "_cstyle2" -1 231 "Times" 1 12 
+0 0 0 1 2 2 2 2 2 2 0 0 0 1 }{PSTYLE "_pstyle3" -1 202 1 {CSTYLE "" 
+-1 -1 "Times" 1 18 0 0 0 1 2 1 2 2 2 2 1 0 0 1 }1 1 0 0 8 4 2 0 2 0 2 
+2 -1 1 }{CSTYLE "_cstyle3" -1 232 "Times" 1 18 0 0 0 1 2 1 2 2 2 2 0 
+0 0 1 }{PSTYLE "_pstyle4" -1 203 1 {CSTYLE "" -1 -1 "Times" 1 14 0 0 
+0 1 2 1 2 2 2 2 1 0 0 1 }1 1 0 0 8 2 2 0 2 0 2 2 -1 1 }{CSTYLE "_cstyl
+e4" -1 233 "Times" 1 14 0 0 0 1 2 1 2 2 2 2 0 0 0 1 }{PSTYLE "_pstyle5
+" -1 204 1 {CSTYLE "" -1 -1 "Courier" 0 1 255 0 0 1 0 1 0 2 1 2 1 0 0 
+1 }1 1 0 0 0 0 2 0 2 0 2 2 -1 1 }{CSTYLE "_cstyle5" -1 234 "Courier" 
+1 12 255 0 0 1 2 1 2 2 1 2 0 0 0 1 }{PSTYLE "_pstyle6" -1 205 1 
+{CSTYLE "" -1 -1 "Times" 0 1 0 0 255 1 0 0 2 2 2 2 1 0 0 1 }3 3 0 0 0 
+0 2 0 2 0 2 2 -1 1 }{CSTYLE "_cstyle6" -1 235 "Times" 1 12 0 0 255 1 
+2 2 2 2 2 2 0 0 0 1 }{CSTYLE "_cstyle7" -1 236 "Times" 0 1 0 0 255 1 
+0 0 2 2 2 2 0 0 0 1 }{PSTYLE "_pstyle7" -1 206 1 {CSTYLE "" -1 -1 "" 
+0 1 0 0 0 0 0 0 0 2 2 2 1 0 0 1 }3 1 0 0 0 0 2 0 2 0 2 2 -1 1 }
+{CSTYLE "_cstyle8" -1 237 "Times" 0 1 0 0 0 0 0 0 0 2 2 2 0 0 0 1 }
+{CSTYLE "_cstyle9" -1 238 "Times" 1 12 0 0 0 1 1 2 2 2 2 2 0 0 0 1 }
+{PSTYLE "_pstyle8" -1 207 1 {CSTYLE "" -1 -1 "Times" 1 12 0 0 0 1 2 2 
+2 2 2 2 1 0 0 1 }3 1 0 0 0 0 2 0 2 0 2 2 -1 1 }{CSTYLE "_cstyle10" -1 
+239 "Times" 1 12 0 0 0 1 2 2 2 2 2 2 0 0 0 1 }{PSTYLE "_pstyle9" -1 
+208 1 {CSTYLE "" -1 -1 "Times" 1 12 0 0 0 1 1 1 2 2 2 2 1 0 0 1 }1 1 
+0 0 0 0 2 0 2 0 2 2 -1 1 }{CSTYLE "_cstyle11" -1 240 "Times" 1 12 0 0 
+0 1 1 1 2 2 2 2 0 0 0 1 }{PSTYLE "_pstyle10" -1 209 1 {CSTYLE "" -1 
+-1 "Times" 0 1 0 0 255 1 0 0 2 2 2 2 1 0 0 1 }1 1 0 0 0 0 2 0 2 0 2 2 
+-1 1 }{PSTYLE "_pstyle11" -1 210 1 {CSTYLE "" -1 -1 "" 0 1 0 0 0 0 0 
+0 0 2 2 2 0 0 0 1 }0 0 0 -1 -1 -1 1 0 1 0 2 2 -1 1 }}
+{SECT 0 {EXCHG {PARA 200 "" 0 "" {TEXT 230 66 "4. Opakovan\351 pokusy \+
+a Bernoulliho schema                  mcv4.mws" }{TEXT 230 0 "" }}
+{PARA 201 "" 0 "" {TEXT 231 0 "" }}}{SECT 0 {PARA 202 "" 0 "" {TEXT 
+232 9 "P\370\355klad 1" }{TEXT 232 0 "" }}{PARA 201 "" 0 "" {TEXT 231 
+141 "H\341z\355me 5kr\341t hrac\355 kostkou a po\350\355t\341me v\375s
+kyt 6. Ur\350ete pravd\354podobnosti jednotliv\375ch v\375sledk\371 a \+
+v\375sledek, kter\375 m\341 nejv\354t?\355 pravd\354podobnost. " }
+{TEXT 231 0 "" }}{SECT 0 {PARA 203 "" 0 "" {TEXT 233 24 "Hodnoty pravd
+\354podobnost\355" }{TEXT 233 0 "" }}{PARA 201 "" 0 "" {TEXT 231 0 "" 
+}}{EXCHG {PARA 204 "> " 0 "" {MPLTEXT 1 234 8 "restart:" }{MPLTEXT 1 
+234 0 "" }}}{EXCHG {PARA 204 "> " 0 "" {MPLTEXT 1 234 12 "n:=5:p:=0.5;
+" }{MPLTEXT 1 234 0 "" }}{PARA 205 "" 1 "" {XPPMATH 20 "6#>%\"pG$\"\"&
+!\"\"" }{TEXT 235 0 "" }}}{EXCHG {PARA 204 "> " 0 "" {MPLTEXT 1 234 
+36 "P:=k->binomial(n,k)*p^k*(1-p)^(n-k):" }{MPLTEXT 1 234 0 "" }}}
+{EXCHG {PARA 204 "> " 0 "" {MPLTEXT 1 234 19 "A:=[[P(k)]$k=0..n];" }
+{MPLTEXT 1 234 0 "" }{MPLTEXT 1 234 1 "\n" }}{PARA 205 "" 1 "" 
+{XPPMATH 20 "6#>%\"AG7(7#$\"%DJ!\"&7#$\"&Dc\"F)7#$\"&]7$F)F-F*F&" }
+{TEXT 235 0 "" }}{PARA 205 "" 1 "" {XPPMATH 20 "6#7(7#$\"%DJ!\"&7#$\"&
+Dc\"F'7#$\"&]7$F'F+F(F$" }{TEXT 235 0 "" }}}{EXCHG {PARA 204 "> " 0 ""
+ {MPLTEXT 1 234 0 "" }}}}{SECT 0 {PARA 203 "" 0 "" {TEXT 233 36 "Graf \+
+posloupnosti hodnot - histogram" }{TEXT 233 0 "" }}{PARA 201 "" 0 "" 
+{TEXT 231 0 "" }}{EXCHG {PARA 204 "> " 0 "" {MPLTEXT 1 234 8 "restart:
+" }{MPLTEXT 1 234 0 "" }}}{EXCHG {PARA 204 "> " 0 "" {MPLTEXT 1 234 
+12 "n:=5:p:=0.5;" }{MPLTEXT 1 234 0 "" }}{PARA 205 "" 1 "" {XPPMATH 
+20 "6#>I\"pG6\"$\"\"&!\"\"" }{TEXT 236 0 "" }}}{EXCHG {PARA 204 "> " 0
+ "" {MPLTEXT 1 234 36 "P:=k->binomial(n,k)*p^k*(1-p)^(n-k):" }
+{MPLTEXT 1 234 0 "" }}{PARA 204 "> " 0 "" {MPLTEXT 1 234 21 "A:=[[k,P(
+k)]$k=0..n]:" }{MPLTEXT 1 234 0 "" }{MPLTEXT 1 234 57 "\nB:=plot(A,x=0
+..n+1,style=point,symbol=POINT,colour=red):" }{MPLTEXT 1 234 0 "" }
+{MPLTEXT 1 234 21 "\nplots[display](\{B\});" }{MPLTEXT 1 234 0 "" }}
+{PARA 201 "" 0 "" {TEXT 231 0 "" }}{PARA 206 "" 1 "" {GLPLOT2D 397 
+162 162 {PLOTDATA 2 "6%-%'CURVESG6&7(7$$\"\"!F)$\"3+++++++DJ!#>7$$\"\"
+\"F)$\"3++++++]i:!#=7$$\"\"#F)$F+F27$$\"\"$F)F67$$\"\"%F)F07$$\"\"&F)F
+*-%&STYLEG6#%&POINTG-%'SYMBOLG6$FC\"#5-%&COLORG6&%$RGBG$FG!\"\"$F)FMFN
+-%+AXESLABELSG6$Q\"x6\"Q!FS-%%VIEWG6$;FN$\"#gFM;$\"&Dc#!\"'$\"'D\"=$Fh
+n" 1 2 2 0 10 1 2 6 1 4 2 1.0 45.0 45.0 1 0 "Curve 1" }}{TEXT 237 0 ""
+ }}}{EXCHG {PARA 204 "> " 0 "" {MPLTEXT 1 234 0 "" }}}}{SECT 0 {PARA 
+203 "" 0 "" {TEXT 233 25 "Maxim\341ln\355 pravd\354podobnost" }{TEXT 
+233 0 "" }}{PARA 201 "" 0 "" {TEXT 231 0 "" }}{EXCHG {PARA 204 "> " 0 
+"" {MPLTEXT 1 234 8 "restart:" }{MPLTEXT 1 234 0 "" }}}{EXCHG {PARA 
+204 "> " 0 "" {MPLTEXT 1 234 12 "n:=5:p:=0.5;" }{MPLTEXT 1 234 0 "" }}
+{PARA 205 "" 1 "" {XPPMATH 20 "6#>%\"pG$\"\"&!\"\"" }{TEXT 235 0 "" }}
+}{EXCHG {PARA 204 "> " 0 "" {MPLTEXT 1 234 36 "P:=k->binomial(n,k)*p^k
+*(1-p)^(n-k):" }{MPLTEXT 1 234 0 "" }}}{EXCHG {PARA 204 "> " 0 "" 
+{MPLTEXT 1 234 50 "for k from 0 while P(k)<=P(k+1) do k1:=k+1 end do:"
+ }{MPLTEXT 1 234 0 "" }}}{EXCHG {PARA 204 "> " 0 "" {MPLTEXT 1 234 21 
+"k0:=k1-1;P(k0);P(k1);" }{MPLTEXT 1 234 0 "" }}{PARA 205 "" 1 "" 
+{XPPMATH 20 "6#>%#k0G\"\"#" }{TEXT 235 0 "" }}{PARA 205 "" 1 "" 
+{XPPMATH 20 "6#$\"&]7$!\"&" }{TEXT 235 0 "" }}{PARA 205 "" 1 "" 
+{XPPMATH 20 "6#$\"&]7$!\"&" }{TEXT 235 0 "" }}}{EXCHG {PARA 204 "> " 0
+ "" {MPLTEXT 1 234 0 "" }}}}}{SECT 0 {PARA 202 "" 0 "" {TEXT 232 9 "P
+\370\355klad 2" }{TEXT 232 0 "" }}{PARA 201 "" 0 "" {TEXT 231 73 "Opak
+ujeme 7 kr\341t pokus, kter\375 d\341v\341 sledovan\375 v\375sledek s \+
+pravd\354podobnost\355 " }{TEXT 238 1 "P" }{TEXT 231 1 "(" }{TEXT 238 
+1 "A" }{TEXT 231 2 ")=" }{TEXT 238 1 "p" }{TEXT 231 124 ". Ur\350ete p
+ravd\354podobnosti jednotliv\375ch mo?nost\355 a ur\350ete v\375sledek
+ s nejv\354t?\355 pravd\354podobnost\355. V\375po\350et prove\357te pr
+o hodnoty:" }{TEXT 231 0 "" }}{PARA 201 "" 0 "" {TEXT 231 4 "a)  " }
+{TEXT 238 1 "p" }{TEXT 231 10 "=0,1;  b) " }{TEXT 238 1 "p" }{TEXT 
+231 10 "=0,3;  c) " }{TEXT 238 1 "p" }{TEXT 231 5 "=0,7." }{TEXT 231 
+0 "" }}{SECT 0 {PARA 203 "" 0 "" {TEXT 233 8 "a) p=0.1" }{TEXT 233 0 "
+" }}{PARA 201 "" 0 "" {TEXT 231 0 "" }}{EXCHG {PARA 204 "> " 0 "" 
+{MPLTEXT 1 234 8 "restart:" }{MPLTEXT 1 234 0 "" }}}{EXCHG {PARA 204 "
+> " 0 "" {MPLTEXT 1 234 12 "n:=7:p:=0.1;" }{MPLTEXT 1 234 0 "" }}
+{PARA 205 "" 1 "" {XPPMATH 20 "6#>I\"pG6\"$\"\"\"!\"\"" }{TEXT 236 0 "
+" }}}{EXCHG {PARA 204 "> " 0 "" {MPLTEXT 1 234 36 "P:=k->binomial(n,k)
+*p^k*(1-p)^(n-k):" }{MPLTEXT 1 234 0 "" }}{PARA 204 "> " 0 "" 
+{MPLTEXT 1 234 23 "A1a:=[[k,P(k)]$k=0..n]:" }{MPLTEXT 1 234 0 "" }
+{MPLTEXT 1 234 61 "\nB1a:=plot(A1a,x=0..n+1,style=point,symbol=POINT,c
+olour=red):" }{MPLTEXT 1 234 0 "" }{MPLTEXT 1 234 23 "\nplots[display]
+(\{B1a\});" }{MPLTEXT 1 234 0 "" }}{PARA 206 "" 1 "" {GLPLOT2D 620 
+154 154 {PLOTDATA 2 "6%-%'CURVESG6&7*7$$\"\"!F)$\"3D++++!pHy%!#=7$$\"
+\"\"F)$\"3E++++q3?PF,7$$\"\"#F)$\"3***********G+C\"F,7$$\"\"$F)$\"37++
++++N'H#!#>7$$\"\"%F)$\"3&***********\\^D!#?7$$\"\"&F)$\"3))***********
+4q\"!#@7$$\"\"'F)$\"3#)*************H'!#B7$$\"\"(F)$\"2'**************
+**!#C-%&STYLEG6#%&POINTG-%'SYMBOLG6$FX\"#5-%&COLORG6&%$RGBG$Ffn!\"\"$F
+)F\\oF]o-%+AXESLABELSG6$Q\"x6\"Q!Fbo-%%VIEWG6$;F]o$\"#!)F\\o;$!1-+++g$
+ec*F,$\"*OG'y[!\"*" 1 2 2 0 10 1 2 6 1 4 2 1.0 45.0 45.0 1 0 "Curve 1"
+ }}{TEXT 237 0 "" }}}{EXCHG {PARA 204 "> " 0 "" {MPLTEXT 1 234 0 "" }}
+}}{SECT 0 {PARA 203 "" 0 "" {TEXT 233 8 "b) p=0.3" }{TEXT 233 0 "" }}
+{PARA 201 "" 0 "" {TEXT 231 0 "" }}{EXCHG {PARA 204 "> " 0 "" 
+{MPLTEXT 1 234 0 "" }}}{EXCHG {PARA 204 "> " 0 "" {MPLTEXT 1 234 12 "n
+:=7:p:=0.3;" }{MPLTEXT 1 234 0 "" }}{PARA 205 "" 1 "" {XPPMATH 20 "6#>
+%\"pG$\"\"$!\"\"" }{TEXT 235 0 "" }}}{EXCHG {PARA 204 "> " 0 "" 
+{MPLTEXT 1 234 36 "P:=k->binomial(n,k)*p^k*(1-p)^(n-k):" }{MPLTEXT 1 
+234 0 "" }}}{EXCHG {PARA 204 "> " 0 "" {MPLTEXT 1 234 23 "A1b:=[[k,P(k
+)]$k=0..n]:" }{MPLTEXT 1 234 0 "" }{MPLTEXT 1 234 61 "\nB1b:=plot(A1b,
+x=0..n+1,style=point,symbol=box,colour=black):" }{MPLTEXT 1 234 0 "" }
+{MPLTEXT 1 234 23 "\nplots[display](\{B1b\});" }{MPLTEXT 1 234 0 "" }}
+{PARA 207 "" 1 "" {GLPLOT2D 707 220 220 {PLOTDATA 2 "6)-%'CURVESG6&7*7
+$$\"\"!F)$\"3`+++++VN#)!#>7$$\"\"\"F)$\"3-++++!H1Z#!#=7$$\"\"#F)$\"3)*
+********H_wJF27$$\"\"$F)$\"3)*********\\%*oAF27$$\"\"%F)$\"3O*********
+\\Ss*F,7$$\"\"&F)$\"37+++++Z+DF,7$$\"\"'F)$\"3%***********4sN!#?7$$\"
+\"(F)$\"3/++++++(=#!#@-%&STYLEG6#%&POINTG-%'SYMBOLG6$%$BOXG\"#5-%&COLO
+RG6&%$RGBG$F)!\"\"FjnFjn-%+AXESLABELSG6$Q\"x6\"Q!F`o-Fgn6#%%NONEG-%%VI
+EWG6$;Fjn$\"#!)F[o;$!(s*Hh!\"*$\"2'******>(4+C$!#<-%*LINESTYLEG6#F)-%+
+PROJECTIONG6#$FenF[o-%*GRIDSTYLEG6#%,RECTANGULARG" 1 2 2 0 10 1 2 9 1 
+4 2 1.0 45.0 45.0 1 0 "Curve 1" }}{TEXT 239 0 "" }}}{EXCHG {PARA 204 "
+> " 0 "" {MPLTEXT 1 234 0 "" }}}}{SECT 0 {PARA 203 "" 0 "" {TEXT 233 
+8 "c) p=0.5" }{TEXT 233 0 "" }}{PARA 201 "" 0 "" {TEXT 231 0 "" }}
+{EXCHG {PARA 204 "> " 0 "" {MPLTEXT 1 234 0 "" }}}{EXCHG {PARA 204 "> \+
+" 0 "" {MPLTEXT 1 234 12 "n:=7:p:=0.5;" }{MPLTEXT 1 234 0 "" }}{PARA 
+205 "" 1 "" {XPPMATH 20 "6#>%\"pG$\"\"&!\"\"" }{TEXT 235 0 "" }}}
+{EXCHG {PARA 204 "> " 0 "" {MPLTEXT 1 234 36 "P:=k->binomial(n,k)*p^k*
+(1-p)^(n-k):" }{MPLTEXT 1 234 0 "" }}}{EXCHG {PARA 204 "> " 0 "" 
+{MPLTEXT 1 234 23 "A1c:=[[k,P(k)]$k=0..n]:" }{MPLTEXT 1 234 0 "" }
+{MPLTEXT 1 234 60 "\nB1c:=plot(A1c,x=0..n+1,style=point,symbol=box,col
+our=blue):" }{MPLTEXT 1 234 0 "" }{MPLTEXT 1 234 23 "\nplots[display](
+\{B1c\});" }{MPLTEXT 1 234 0 "" }}{PARA 207 "" 1 "" {GLPLOT2D 587 209 
+209 {PLOTDATA 2 "6)-%'CURVESG6&7*7$$\"\"!F)$\"3++++++]7y!#?7$$\"\"\"F)
+$\"3++++++voa!#>7$$\"\"#F)$\"3+++++]iS;!#=7$$\"\"$F)$\"3+++++]PMFF87$$
+\"\"%F)F<7$$\"\"&F)F67$$\"\"'F)F07$$\"\"(F)F*-%&STYLEG6#%&POINTG-%'SYM
+BOLG6$%$BOXG\"#5-%&COLORG6&%$RGBG$F)!\"\"FW$FRFX-%+AXESLABELSG6$Q\"x6
+\"Q!Fhn-FT6#%%NONEG-%%VIEWG6$;FW$\"#!)FX;$\"2'*************\\#F2$\"&vy
+#!\"&-%*LINESTYLEG6#F)-%+PROJECTIONG6#FY-%*GRIDSTYLEG6#%,RECTANGULARG"
+ 1 2 2 0 10 1 2 9 1 4 2 1.0 46.0 45.0 1 0 "Curve 1" }}{TEXT 239 0 "" }
+}}{EXCHG {PARA 204 "> " 0 "" {MPLTEXT 1 234 0 "" }}}}{SECT 0 {PARA 
+203 "" 0 "" {TEXT 233 10 "Porovn\341n\355 " }{TEXT 233 0 "" }}{PARA 
+201 "" 0 "" {TEXT 231 0 "" }}{EXCHG {PARA 204 "> " 0 "" {MPLTEXT 1 
+234 30 "plots[display](\{B1a,B1b,B1c\});" }{MPLTEXT 1 234 0 "" }}
+{PARA 207 "" 1 "" {GLPLOT2D 686 220 220 {PLOTDATA 2 "6+-%'CURVESG6&7*7
+$$\"\"!F)$\"3E++++!pHy%!#=7$$\"\"\"F)$\"3E++++q3?PF,7$$\"\"#F)$\"3****
+*******G+C\"F,7$$\"\"$F)$\"37+++++N'H#!#>7$$\"\"%F)$\"3'***********\\^
+D!#?7$$\"\"&F)$\"3))***********4q\"!#@7$$\"\"'F)$\"3#)*************H'!
+#B7$$\"\"(F)$\"2'****************!#C-%&STYLEG6#%&POINTG-%'SYMBOLG6$%$B
+OXG\"#5-%&COLORG6&%$RGBG$Fgn!\"\"$F)F]oF^o-F$6&7*7$F($\"3`+++++VN#)F<7
+$F.$\"3-++++!H1Z#F,7$F3$\"3)*********H_wJF,7$F8$\"3)*********\\%*oAF,7
+$F>$\"3O*********\\Ss*F<7$FD$\"37+++++Z+DF<7$FJ$\"3%***********4sNFB7$
+FP$\"3/++++++(=#FHFUFY-Fin6&F[oF^oF^oF^o-F$6&7*7$F($\"3++++++]7yFB7$F.
+$\"3++++++voaF<7$F3$\"3+++++]iS;F,7$F8$\"3+++++]PMFF,7$F>Fiq7$FDFfq7$F
+JFcq7$FPF`qFUFY-Fin6&F[oF^oF^oF\\o-%+AXESLABELSG6'Q\"x6\"Q!Fer-%%FONTG
+6$%*HELVETICAGFgn%+HORIZONTALGF[s-Fin6#%%NONEG-%%VIEWG6$;F^o$\"#!)F]o;
+$!1-+++g$ec*F,$\"*OG'y[!\"*-%*LINESTYLEG6#F)-%+PROJECTIONG6#F\\o-%*GRI
+DSTYLEG6#%,RECTANGULARG" 1 2 2 0 10 1 2 9 1 4 2 1.0 44.0 45.0 1 0 "Cur
+ve 1" "Curve 2" "Curve 3" }}{TEXT 239 0 "" }}}{EXCHG {PARA 204 "> " 0 
+"" {MPLTEXT 1 234 0 "" }}}}}{SECT 0 {PARA 202 "" 0 "" {TEXT 232 9 "P\3
+70\355klad 3" }{TEXT 232 0 "" }}{PARA 201 "" 0 "" {TEXT 231 135 "H\341
+z\355me kostkou(minc\355) dokud nepadne 6 (rub). Kolik mus\355me prov
+\351st minim\341ln\354 hod\371, aby se sledovan\375 jev objevil s prav
+d\354podobnost\355:  a) " }{TEXT 238 1 "P" }{TEXT 231 10 "=0,9;  b) " 
+}{TEXT 238 1 "P" }{TEXT 231 6 "=0,99." }{TEXT 231 0 "" }}{PARA 201 "" 
+0 "" {TEXT 231 0 "" }}{SECT 0 {PARA 203 "" 0 "" {TEXT 233 13 " Hody ko
+stkou" }{TEXT 233 0 "" }}{PARA 201 "" 0 "" {TEXT 231 0 "" }}{SECT 0 
+{PARA 208 "" 0 "" {TEXT 240 9 "a)  P=0.9" }{TEXT 240 0 "" }}{PARA 201 
+"" 0 "" {TEXT 231 0 "" }}{EXCHG {PARA 204 "> " 0 "" {MPLTEXT 1 234 8 "
+restart:" }{MPLTEXT 1 234 0 "" }}}{EXCHG {PARA 204 "> " 0 "" {MPLTEXT 
+1 234 16 "p:=1/6;PP1:=0.9:" }{MPLTEXT 1 234 0 "" }}{PARA 205 "" 1 "" 
+{XPPMATH 20 "6#>%\"pG#\"\"\"\"\"'" }{TEXT 235 0 "" }}}{EXCHG {PARA 
+204 "> " 0 "" {MPLTEXT 1 234 21 "P3:=k->p*(1-p)^(k-1):" }{MPLTEXT 1 
+234 0 "" }}}{EXCHG {PARA 204 "> " 0 "" {MPLTEXT 1 234 25 "F3:=k->sum(P
+3(i),i=1..k):" }{MPLTEXT 1 234 0 "" }}}{EXCHG {PARA 204 "> " 0 "" 
+{MPLTEXT 1 234 47 "for k from 1 while F3(k)<PP1 do k1:=k+1 end do:" }
+{MPLTEXT 1 234 0 "" }}}{EXCHG {PARA 204 "> " 0 "" {MPLTEXT 1 234 21 "n
+:=k1;F3(n):evalf(%);" }{MPLTEXT 1 234 0 "" }}{PARA 205 "" 1 "" 
+{XPPMATH 20 "6#>%\"nG\"#8" }{TEXT 235 0 "" }}{PARA 205 "" 1 "" 
+{XPPMATH 20 "6#$\"+57Ol!*!#5" }{TEXT 235 0 "" }}}{EXCHG {PARA 204 "> "
+ 0 "" {MPLTEXT 1 234 31 "na:=ln(1-PP1)/ln(1-p):evalf(%);" }{MPLTEXT 1 
+234 0 "" }}{PARA 205 "" 1 "" {XPPMATH 20 "6#$\"+9`#HE\"!\")" }{TEXT 
+235 0 "" }}}{PARA 209 "" 0 "" {XPPMATH 20 "6#>%\"nG\"\"&" }{TEXT 235 
+0 "" }}}{SECT 0 {PARA 208 "" 0 "" {TEXT 240 10 "b)  P=0.99" }{TEXT 
+240 0 "" }}{PARA 201 "" 0 "" {TEXT 231 0 "" }}{EXCHG {PARA 204 "> " 0 
+"" {MPLTEXT 1 234 8 "restart:" }{MPLTEXT 1 234 0 "" }}}{EXCHG {PARA 
+204 "> " 0 "" {MPLTEXT 1 234 17 "p:=1/6;PP2:=0.99:" }{MPLTEXT 1 234 0 
+"" }}{PARA 205 "" 1 "" {XPPMATH 20 "6#>%\"pG#\"\"\"\"\"'" }{TEXT 235 
+0 "" }}}{EXCHG {PARA 204 "> " 0 "" {MPLTEXT 1 234 21 "P3:=k->p*(1-p)^(
+k-1):" }{MPLTEXT 1 234 0 "" }}}{EXCHG {PARA 204 "> " 0 "" {MPLTEXT 1 
+234 25 "F3:=k->sum(P3(i),i=1..k):" }{MPLTEXT 1 234 0 "" }}}{EXCHG 
+{PARA 204 "> " 0 "" {MPLTEXT 1 234 47 "for k from 1 while F3(k)<PP2 do
+ k1:=k+1 end do:" }{MPLTEXT 1 234 0 "" }}}{EXCHG {PARA 204 "> " 0 "" 
+{MPLTEXT 1 234 21 "n:=k1;F3(n):evalf(%);" }{MPLTEXT 1 234 0 "" }}
+{PARA 205 "" 1 "" {XPPMATH 20 "6#>%\"nG\"#E" }{TEXT 235 0 "" }}{PARA 
+205 "" 1 "" {XPPMATH 20 "6#$\"+L]k7**!#5" }{TEXT 235 0 "" }}}{EXCHG 
+{PARA 204 "> " 0 "" {MPLTEXT 1 234 31 "nb:=ln(1-PP2)/ln(1-p):evalf(%);
+" }{MPLTEXT 1 234 0 "" }}{PARA 205 "" 1 "" {XPPMATH 20 "6#$\"+F1&e_#!
+\")" }{TEXT 235 0 "" }}}{PARA 209 "" 0 "" {XPPMATH 20 "6#>%\"nG\"\"&" 
+}{TEXT 235 0 "" }}}}{SECT 0 {PARA 203 "" 0 "" {TEXT 233 10 "Hody minc
+\355" }{TEXT 233 0 "" }}{PARA 201 "" 0 "" {TEXT 231 0 "" }}{SECT 0 
+{PARA 208 "" 0 "" {TEXT 240 9 "a)  P=0.9" }{TEXT 240 0 "" }}{PARA 201 
+"" 0 "" {TEXT 231 0 "" }}{EXCHG {PARA 204 "> " 0 "" {MPLTEXT 1 234 8 "
+restart:" }{MPLTEXT 1 234 0 "" }}}{EXCHG {PARA 204 "> " 0 "" {MPLTEXT 
+1 234 16 "p:=0.5;PP1:=0.9:" }{MPLTEXT 1 234 0 "" }}{PARA 205 "" 1 "" 
+{XPPMATH 20 "6#>%\"pG$\"\"&!\"\"" }{TEXT 235 0 "" }}}{EXCHG {PARA 204 
+"> " 0 "" {MPLTEXT 1 234 21 "P3:=k->p*(1-p)^(k-1):" }{MPLTEXT 1 234 0 
+"" }}}{EXCHG {PARA 204 "> " 0 "" {MPLTEXT 1 234 25 "F3:=k->sum(P3(i),i
+=1..k):" }{MPLTEXT 1 234 0 "" }}}{EXCHG {PARA 204 "> " 0 "" {MPLTEXT 
+1 234 47 "for k from 1 while F3(k)<PP1 do k1:=k+1 end do:" }{MPLTEXT 
+1 234 0 "" }}}{EXCHG {PARA 204 "> " 0 "" {MPLTEXT 1 234 12 "n:=k1;F3(n
+);" }{MPLTEXT 1 234 0 "" }}{PARA 205 "" 1 "" {XPPMATH 20 "6#>%\"nG\"\"
+%" }{TEXT 235 0 "" }}{PARA 205 "" 1 "" {XPPMATH 20 "6#$\"++++v$*!#5" }
+{TEXT 235 0 "" }}}{EXCHG {PARA 204 "> " 0 "" {MPLTEXT 1 234 31 "na:=ln
+(1-PP1)/ln(1-p):evalf(%);" }{MPLTEXT 1 234 0 "" }}{PARA 205 "" 1 "" 
+{XPPMATH 20 "6#$\"+&4G>K$!\"*" }{TEXT 235 0 "" }}}{PARA 209 "" 0 "" 
+{XPPMATH 20 "6#>%\"nG\"\"&" }{TEXT 235 0 "" }}}{SECT 0 {PARA 208 "" 0 
+"" {TEXT 240 10 "b)  P=0.99" }{TEXT 240 0 "" }}{PARA 201 "" 0 "" 
+{TEXT 231 0 "" }}{EXCHG {PARA 204 "> " 0 "" {MPLTEXT 1 234 8 "restart:
+" }{MPLTEXT 1 234 0 "" }}}{EXCHG {PARA 204 "> " 0 "" {MPLTEXT 1 234 
+17 "p:=0.5;PP2:=0.99:" }{MPLTEXT 1 234 0 "" }}{PARA 205 "" 1 "" 
+{XPPMATH 20 "6#>%\"pG$\"\"&!\"\"" }{TEXT 235 0 "" }}}{EXCHG {PARA 204 
+"> " 0 "" {MPLTEXT 1 234 21 "P3:=k->p*(1-p)^(k-1):" }{MPLTEXT 1 234 0 
+"" }}}{EXCHG {PARA 204 "> " 0 "" {MPLTEXT 1 234 25 "F3:=k->sum(P3(i),i
+=1..k):" }{MPLTEXT 1 234 0 "" }}}{EXCHG {PARA 204 "> " 0 "" {MPLTEXT 
+1 234 47 "for k from 1 while F3(k)<PP2 do k1:=k+1 end do:" }{MPLTEXT 
+1 234 0 "" }}}{EXCHG {PARA 204 "> " 0 "" {MPLTEXT 1 234 12 "n:=k1;F3(n
+);" }{MPLTEXT 1 234 0 "" }}{PARA 205 "" 1 "" {XPPMATH 20 "6#>%\"nG\"\"
+(" }{TEXT 235 0 "" }}{PARA 205 "" 1 "" {XPPMATH 20 "6#$\"++](=#**!#5" 
+}{TEXT 235 0 "" }}}{EXCHG {PARA 204 "> " 0 "" {MPLTEXT 1 234 31 "nb:=l
+n(1-PP2)/ln(1-p):evalf(%);" }{MPLTEXT 1 234 0 "" }}{PARA 205 "" 1 "" 
+{XPPMATH 20 "6#$\"+*=cQk'!\"*" }{TEXT 235 0 "" }}}{PARA 209 "" 0 "" 
+{XPPMATH 20 "6#>%\"nG\"\"&" }{TEXT 235 0 "" }}}}}{SECT 0 {PARA 202 "" 
+0 "" {TEXT 232 9 "P\370\355klad 4" }{TEXT 232 0 "" }}{PARA 201 "" 0 ""
+ {TEXT 231 58 "Na automatick\351 lince se objevuje chyba s pravd\354po
+dobnost\355 " }{TEXT 238 1 "p" }{TEXT 231 62 "=0,005. Kolik mus\355 pr
+ob\354hnou cykl\371, aby se s pravd\354podobnost\355 " }{TEXT 238 1 "P
+" }{TEXT 231 15 "=0,95 objevila:" }{TEXT 231 0 "" }}{PARA 201 "" 0 "" 
+{TEXT 231 46 "a) alespo\362 jedna chyba;  b) alespo\362 dv\354 chyby."
+ }{TEXT 231 0 "" }}{PARA 201 "" 0 "" {TEXT 231 0 "" }}{SECT 0 {PARA 
+203 "" 0 "" {TEXT 233 22 "a) alespo\362 jedna chyba" }{TEXT 233 0 "" }
+}{PARA 201 "" 0 "" {TEXT 231 0 "" }}{EXCHG {PARA 204 "> " 0 "" 
+{MPLTEXT 1 234 8 "restart:" }{MPLTEXT 1 234 0 "" }}}{EXCHG {PARA 204 "
+> " 0 "" {MPLTEXT 1 234 17 "p:=0.005:P:=0.95:" }{MPLTEXT 1 234 0 "" }}
+}{EXCHG {PARA 204 "> " 0 "" {MPLTEXT 1 234 28 "n:=trunc(ln(1-P)/ln(1-p
+))+1;" }{MPLTEXT 1 234 0 "" }}{PARA 205 "" 1 "" {XPPMATH 20 "6#>%\"nG
+\"$)f" }{TEXT 235 0 "" }}}{EXCHG {PARA 204 "> " 0 "" {MPLTEXT 1 234 0 
+"" }}}}{SECT 0 {PARA 203 "" 0 "" {TEXT 233 21 "b) alespo\362 dv\354 ch
+yby " }{TEXT 233 0 "" }}{PARA 201 "" 0 "" {TEXT 231 0 "" }}{EXCHG 
+{PARA 204 "> " 0 "" {MPLTEXT 1 234 8 "restart:" }{MPLTEXT 1 234 0 "" }
+}}{EXCHG {PARA 204 "> " 0 "" {MPLTEXT 1 234 17 "p:=0.005:P:=0.95:" }
+{MPLTEXT 1 234 0 "" }}}{EXCHG {PARA 204 "> " 0 "" {MPLTEXT 1 234 30 "V
+:=k->(1-p)^k+k*p*(1-p)^(k-1):" }{MPLTEXT 1 234 0 "" }}}{EXCHG {PARA 
+204 "> " 0 "" {MPLTEXT 1 234 48 "for k from 0 while V(k) > 1-P do k1:=
+k+1 end do:" }{MPLTEXT 1 234 0 "" }}}{EXCHG {PARA 204 "> " 0 "" 
+{MPLTEXT 1 234 6 "n:=k1;" }{MPLTEXT 1 234 0 "" }}{PARA 205 "" 1 "" 
+{XPPMATH 20 "6#>%\"nG\"$Z*" }{TEXT 235 0 "" }}}{EXCHG {PARA 204 "> " 0
+ "" {MPLTEXT 1 234 0 "" }}}}}{SECT 0 {PARA 202 "" 0 "" {TEXT 232 9 "P
+\370\355klad 5" }{TEXT 232 0 "" }}{PARA 201 "" 0 "" {TEXT 231 86 "H\34
+1z\355me 100kr\341t minc\355. Odhadn\354te pravd\354podobnost toho, ?e
+ se po\350et rub\371 bude pohybovat " }{TEXT 231 0 "" }}{PARA 201 "" 0
+ "" {TEXT 231 81 "v intervalu:  a) (46,54);  b) (40,60) . Pro porovn\3
+41n\355 pravd\354podobnosti vypo\350t\354te." }{TEXT 231 0 "" }}{SECT 
+0 {PARA 203 "" 0 "" {TEXT 233 20 "a)  interval (46,54)" }{TEXT 233 0 "
+" }}{PARA 201 "" 0 "" {TEXT 231 0 "" }}{EXCHG {PARA 204 "> " 0 "" 
+{MPLTEXT 1 234 8 "restart:" }{MPLTEXT 1 234 0 "" }}}{EXCHG {PARA 204 "
+> " 0 "" {MPLTEXT 1 234 14 "p:=0.5:n:=100;" }{MPLTEXT 1 234 0 "" }}
+{PARA 205 "" 1 "" {XPPMATH 20 "6#>%\"nG\"$+\"" }{TEXT 235 0 "" }}}
+{EXCHG {PARA 204 "> " 0 "" {MPLTEXT 1 234 14 "k1:=47:k2:=53:" }
+{MPLTEXT 1 234 0 "" }}{PARA 204 "> " 0 "" {MPLTEXT 1 234 37 "p5:=k->bi
+nomial(n,k)*p^k*(1-p)^(n-k):" }{MPLTEXT 1 234 0 "" }}{PARA 204 "> " 0 
+"" {MPLTEXT 1 234 32 "P:=sum(p5(k),k=k1..k2):evalf(%);" }{MPLTEXT 1 
+234 0 "" }}{PARA 205 "" 1 "" {XPPMATH 20 "6#$\"+ke\")e^!#5" }{TEXT 
+235 0 "" }}}{EXCHG {PARA 204 "> " 0 "" {MPLTEXT 1 234 19 "eps:=(k2-k1+
+2)/2/n:" }{MPLTEXT 1 234 0 "" }}}{EXCHG {PARA 204 "> " 0 "" {MPLTEXT 
+1 234 24 "P0:=1-p*(1-p)/(n*eps^2);" }{MPLTEXT 1 234 0 "" }}{PARA 205 "
+" 1 "" {XPPMATH 20 "6#>%#P0G$!*++]i&!\"*" }{TEXT 235 0 "" }}}}{SECT 0 
+{PARA 203 "" 0 "" {TEXT 233 20 "b)  interval (40,60)" }{TEXT 233 0 "" 
+}}{PARA 201 "" 0 "" {TEXT 231 0 "" }}{EXCHG {PARA 204 "> " 0 "" 
+{MPLTEXT 1 234 8 "restart:" }{MPLTEXT 1 234 0 "" }}}{EXCHG {PARA 204 "
+> " 0 "" {MPLTEXT 1 234 14 "p:=0.5:n:=100;" }{MPLTEXT 1 234 0 "" }}
+{PARA 205 "" 1 "" {XPPMATH 20 "6#>%\"nG\"$+\"" }{TEXT 235 0 "" }}}
+{EXCHG {PARA 204 "> " 0 "" {MPLTEXT 1 234 14 "k1:=41:k2:=59:" }
+{MPLTEXT 1 234 0 "" }}{PARA 204 "> " 0 "" {MPLTEXT 1 234 37 "p5:=k->bi
+nomial(n,k)*p^k*(1-p)^(n-k):" }{MPLTEXT 1 234 0 "" }}{PARA 204 "> " 0 
+"" {MPLTEXT 1 234 32 "P:=sum(p5(k),k=k1..k2):evalf(%);" }{MPLTEXT 1 
+234 0 "" }}{PARA 205 "" 1 "" {XPPMATH 20 "6#$\"+k17J%*!#5" }{TEXT 235 
+0 "" }}}{EXCHG {PARA 204 "> " 0 "" {MPLTEXT 1 234 19 "eps:=(k2-k1+2)/2
+/n:" }{MPLTEXT 1 234 0 "" }}}{EXCHG {PARA 204 "> " 0 "" {MPLTEXT 1 
+234 24 "P0:=1-p*(1-p)/(n*eps^2);" }{MPLTEXT 1 234 0 "" }}{PARA 205 "" 
+1 "" {XPPMATH 20 "6#>%#P0G$\"+++++v!#5" }{TEXT 235 0 "" }}}{EXCHG 
+{PARA 204 "> " 0 "" {MPLTEXT 1 234 0 "" }}}{PARA 201 "" 0 "" {TEXT 
+231 0 "" }}}}{SECT 0 {PARA 202 "" 0 "" {TEXT 232 9 "P\370\355klad 6" }
+{TEXT 232 0 "" }}{PARA 201 "" 0 "" {TEXT 231 12 "N\341hodn\375 jev " }
+{TEXT 238 1 "A" }{TEXT 231 28 " nast\341v\341 s pravd\354podobnost\355
+ " }{TEXT 238 1 "P" }{TEXT 231 1 "(" }{TEXT 238 1 "A" }{TEXT 231 4 ") \+
+= " }{TEXT 238 2 " p" }{TEXT 231 82 " = 0,9. Odhadn\354te s jakou prav
+d\354podobnost\355 se bude relativn\355 \350etnost v\375skytu jevu " }
+{TEXT 238 2 "A " }{TEXT 231 17 "li?it od hodnoty " }{TEXT 238 2 "p " }
+{TEXT 231 10 "nejv\375?e o " }{TEXT 231 0 "" }}{PARA 201 "" 0 "" 
+{TEXT 231 4 "a)  " }{XPPEDIT 18 0 "epsilon;" "6#%(epsilonG" }{TEXT 
+231 14 " = 0,2  ; b)  " }{XPPEDIT 18 0 "epsilon;" "6#%(epsilonG" }
+{TEXT 231 13 " = 0,1; c)   " }{XPPEDIT 18 0 "epsilon;" "6#%(epsilonG" 
+}{TEXT 231 28 " = 0,05 ,provedeme-li serii " }{TEXT 238 1 "n" }{TEXT 
+231 16 "=1000 opakov\341n\355." }{TEXT 231 0 "" }}{PARA 201 "" 0 "" 
+{TEXT 231 41 "Pro porovn\341n\355 pravd\354podobnosti vypo\350t\354te.
+" }{TEXT 231 0 "" }}{SECT 0 {PARA 203 "" 0 "" {TEXT 233 32 "a) eps=0.2
+  interval  (700,1000)" }{TEXT 233 0 "" }}{PARA 201 "" 0 "" {TEXT 231 
+0 "" }}{EXCHG {PARA 204 "> " 0 "" {MPLTEXT 1 234 8 "restart:" }
+{MPLTEXT 1 234 0 "" }}}{EXCHG {PARA 204 "> " 0 "" {MPLTEXT 1 234 24 "p
+:=0.9:n:=1000:eps:=0.2;" }{MPLTEXT 1 234 0 "" }}{PARA 205 "" 1 "" 
+{XPPMATH 20 "6#>%$epsG$\"\"#!\"\"" }{TEXT 235 0 "" }}}{EXCHG {PARA 
+204 "> " 0 "" {MPLTEXT 1 234 28 "k1:=n*(p-eps):k2:=n*(p+eps):" }
+{MPLTEXT 1 234 0 "" }}{PARA 204 "> " 0 "" {MPLTEXT 1 234 37 "p5:=k->bi
+nomial(n,k)*p^k*(1-p)^(n-k):" }{MPLTEXT 1 234 0 "" }}{PARA 204 "> " 0 
+"" {MPLTEXT 1 234 32 "P:=sum(p5(k),k=k1..k2):evalf(%);" }{MPLTEXT 1 
+234 0 "" }}{PARA 205 "" 1 "" {XPPMATH 20 "6#^$$\"+(*********!#5$\"\"!F
+(" }{TEXT 235 0 "" }}}{EXCHG {PARA 204 "> " 0 "" {MPLTEXT 1 234 25 ":P
+0:=1-p*(1-p)/(n*eps^2);" }{MPLTEXT 1 234 0 "" }}{PARA 205 "" 1 "" 
+{XPPMATH 20 "6#>%#P0G$\"+++]x**!#5" }{TEXT 235 0 "" }}}{PARA 201 "" 0 
+"" {TEXT 231 0 "" }}}{SECT 0 {PARA 203 "" 0 "" {TEXT 233 32 "b) eps=0.
+1  interval  (800,1000)" }{TEXT 233 0 "" }}{PARA 201 "" 0 "" {TEXT 
+231 0 "" }}{EXCHG {PARA 204 "> " 0 "" {MPLTEXT 1 234 8 "restart:" }
+{MPLTEXT 1 234 0 "" }}}{EXCHG {PARA 204 "> " 0 "" {MPLTEXT 1 234 24 "p
+:=0.9:n:=1000:eps:=0.1;" }{MPLTEXT 1 234 0 "" }}{PARA 205 "" 1 "" 
+{XPPMATH 20 "6#>%$epsG$\"\"\"!\"\"" }{TEXT 235 0 "" }}}{EXCHG {PARA 
+204 "> " 0 "" {MPLTEXT 1 234 28 "k1:=n*(p-eps):k2:=n*(p+eps):" }
+{MPLTEXT 1 234 0 "" }}{PARA 204 "> " 0 "" {MPLTEXT 1 234 37 "p5:=k->bi
+nomial(n,k)*p^k*(1-p)^(n-k):" }{MPLTEXT 1 234 0 "" }}{PARA 204 "> " 0 
+"" {MPLTEXT 1 234 32 "P:=sum(p5(k),k=k1..k2):evalf(%);" }{MPLTEXT 1 
+234 0 "" }}{PARA 205 "" 1 "" {XPPMATH 20 "6#$\"+(*********!#5" }{TEXT 
+235 0 "" }}}{EXCHG {PARA 204 "> " 0 "" {MPLTEXT 1 234 24 "P0:=1-p*(1-p
+)/(n*eps^2);" }{MPLTEXT 1 234 0 "" }}{PARA 205 "" 1 "" {XPPMATH 20 "6#
+>%#P0G$\"++++5**!#5" }{TEXT 235 0 "" }}}{PARA 201 "" 0 "" {TEXT 231 0 
+"" }}}{SECT 0 {PARA 203 "" 0 "" {TEXT 233 31 "c) eps=0.05  interval (8
+50,950)" }{TEXT 233 0 "" }}{PARA 201 "" 0 "" {TEXT 231 0 "" }}{EXCHG 
+{PARA 204 "> " 0 "" {MPLTEXT 1 234 8 "restart:" }{MPLTEXT 1 234 0 "" }
+}}{EXCHG {PARA 204 "> " 0 "" {MPLTEXT 1 234 25 "p:=0.9:n:=1000:eps:=0.
+05;" }{MPLTEXT 1 234 0 "" }}{PARA 205 "" 1 "" {XPPMATH 20 "6#>%$epsG$
+\"\"&!\"#" }{TEXT 235 0 "" }}}{EXCHG {PARA 204 "> " 0 "" {MPLTEXT 1 
+234 28 "k1:=n*(p-eps):k2:=n*(p+eps):" }{MPLTEXT 1 234 0 "" }}{PARA 
+204 "> " 0 "" {MPLTEXT 1 234 37 "p5:=k->binomial(n,k)*p^k*(1-p)^(n-k):
+" }{MPLTEXT 1 234 0 "" }}{PARA 204 "> " 0 "" {MPLTEXT 1 234 32 "P:=sum
+(p5(k),k=k1..k2):evalf(%);" }{MPLTEXT 1 234 0 "" }}{PARA 205 "" 1 "" 
+{XPPMATH 20 "6#$\"+'>(******!#5" }{TEXT 235 0 "" }}}{EXCHG {PARA 204 "
+> " 0 "" {MPLTEXT 1 234 24 "P0:=1-p*(1-p)/(n*eps^2);" }{MPLTEXT 1 234 
+0 "" }}{PARA 205 "" 1 "" {XPPMATH 20 "6#>%#P0G$\"++++S'*!#5" }{TEXT 
+235 0 "" }}}{EXCHG {PARA 204 "> " 0 "" {MPLTEXT 1 234 0 "" }}}{PARA 
+201 "" 0 "" {TEXT 231 0 "" }}}}{SECT 0 {PARA 202 "" 0 "" {TEXT 232 9 "
+P\370\355klad 7" }{TEXT 232 0 "" }}{PARA 201 "" 0 "" {TEXT 231 100 "H
+\341z\355me 1 000kr\341t minc\355. Odhadn\354te pravd\354podobnost, s \+
+jakou se po\350et rub\371 bude vyskytovat v intervalu" }{TEXT 231 0 ""
+ }}{PARA 201 "" 0 "" {TEXT 231 88 "a)  (480,520);  b)  (450,550);  c) \+
+ (400,600). Pro porovn\341n\355 pravd\354podobnosti vypo\350t\354te." 
+}{TEXT 231 0 "" }}{SECT 0 {PARA 203 "" 0 "" {TEXT 233 21 "a) interval \+
+(480,520)" }{TEXT 233 0 "" }}{PARA 201 "" 0 "" {TEXT 231 0 "" }}
+{EXCHG {PARA 204 "> " 0 "" {MPLTEXT 1 234 15 "p:=0.5:n:=1000:" }
+{MPLTEXT 1 234 0 "" }}}{EXCHG {PARA 204 "> " 0 "" {MPLTEXT 1 234 37 "P
+7:=k->binomial(n,k)*p^k*(1-p)^(n-k):" }{MPLTEXT 1 234 0 "" }}}{EXCHG 
+{PARA 204 "> " 0 "" {MPLTEXT 1 234 16 "k1:=480:k2:=520:" }{MPLTEXT 1 
+234 0 "" }}}{EXCHG {PARA 204 "> " 0 "" {MPLTEXT 1 234 24 "Pa:=sum(P7(k
+),k=k1..k2);" }{MPLTEXT 1 234 0 "" }}{PARA 205 "" 1 "" {XPPMATH 20 "6#
+>%#PaG$\"+:nL_!)!#5" }{TEXT 235 0 "" }}}{EXCHG {PARA 204 "> " 0 "" 
+{MPLTEXT 1 234 17 "eps:=(k2-k1)/2/n:" }{MPLTEXT 1 234 0 "" }}{PARA 
+204 "> " 0 "" {MPLTEXT 1 234 24 "P0:=1-p*(1-p)/(n*eps^2);" }{MPLTEXT 
+1 234 0 "" }}{PARA 205 "" 1 "" {XPPMATH 20 "6#>%#P0G$\"++++]P!#5" }
+{TEXT 235 0 "" }}}{EXCHG {PARA 204 "> " 0 "" {MPLTEXT 1 234 0 "" }}}}
+{SECT 0 {PARA 203 "" 0 "" {TEXT 233 21 "b) interval (450,550)" }{TEXT 
+233 0 "" }}{PARA 201 "" 0 "" {TEXT 231 0 "" }}{EXCHG {PARA 204 "> " 0 
+"" {MPLTEXT 1 234 15 "p:=0.5:n:=1000:" }{MPLTEXT 1 234 0 "" }}}{EXCHG 
+{PARA 204 "> " 0 "" {MPLTEXT 1 234 37 "P7:=k->binomial(n,k)*p^k*(1-p)^
+(n-k):" }{MPLTEXT 1 234 0 "" }}}{EXCHG {PARA 204 "> " 0 "" {MPLTEXT 1 
+234 16 "k1:=450:k2:=550:" }{MPLTEXT 1 234 0 "" }}}{EXCHG {PARA 204 "> \+
+" 0 "" {MPLTEXT 1 234 24 "Pb:=sum(P7(k),k=k1..k2);" }{MPLTEXT 1 234 0 
+"" }}{PARA 205 "" 1 "" {XPPMATH 20 "6#>%#PbG$\"+%e#3')**!#5" }{TEXT 
+235 0 "" }}}{EXCHG {PARA 204 "> " 0 "" {MPLTEXT 1 234 17 "eps:=(k2-k1)
+/2/n:" }{MPLTEXT 1 234 0 "" }}}{EXCHG {PARA 204 "> " 0 "" {MPLTEXT 1 
+234 24 "P0:=1-p*(1-p)/(n*eps^2);" }{MPLTEXT 1 234 0 "" }}{PARA 205 "" 
+1 "" {XPPMATH 20 "6#>%#P0G$\"+++++!*!#5" }{TEXT 235 0 "" }}}}{SECT 0 
+{PARA 203 "" 0 "" {TEXT 233 21 "c) interval (400,600)" }{TEXT 233 0 ""
+ }}{PARA 201 "" 0 "" {TEXT 231 0 "" }}{EXCHG {PARA 204 "> " 0 "" 
+{MPLTEXT 1 234 15 "p:=0.5:n:=1000:" }{MPLTEXT 1 234 0 "" }}}{EXCHG 
+{PARA 204 "> " 0 "" {MPLTEXT 1 234 37 "P7:=k->binomial(n,k)*p^k*(1-p)^
+(n-k):" }{MPLTEXT 1 234 0 "" }}}{EXCHG {PARA 204 "> " 0 "" {MPLTEXT 1 
+234 16 "k1:=400:k2:=600:" }{MPLTEXT 1 234 0 "" }}}{EXCHG {PARA 204 "> \+
+" 0 "" {MPLTEXT 1 234 24 "Pc:=sum(P7(k),k=k1..k2);" }{MPLTEXT 1 234 0 
+"" }}{PARA 205 "" 1 "" {XPPMATH 20 "6#>%#PcG$\"+)*********!#5" }{TEXT 
+235 0 "" }}}{EXCHG {PARA 204 "> " 0 "" {MPLTEXT 1 234 17 "eps:=(k2-k1)
+/2/n:" }{MPLTEXT 1 234 0 "" }}}{EXCHG {PARA 204 "> " 0 "" {MPLTEXT 1 
+234 24 "P0:=1-p*(1-p)/(n*eps^2);" }{MPLTEXT 1 234 0 "" }}{PARA 205 "" 
+1 "" {XPPMATH 20 "6#>%#P0G$\"++++](*!#5" }{TEXT 235 0 "" }}}{EXCHG 
+{PARA 204 "> " 0 "" {MPLTEXT 1 234 0 "" }}}}}{SECT 0 {PARA 202 "" 0 ""
+ {TEXT 232 9 "P\370\355klad 8" }{TEXT 232 0 "" }}{PARA 201 "" 0 "" 
+{TEXT 231 63 "Provedeme s\351rii 500 nez\341visl\375ch pokus\371, ve k
+etr\375ch nast\341v\341 jev " }{TEXT 238 1 "A" }{TEXT 231 20 " s pravd
+\354podobnost\355 " }{TEXT 231 0 "" }}{PARA 201 "" 0 "" {TEXT 238 1 "P
+" }{TEXT 231 1 "(" }{TEXT 238 2 "A)" }{TEXT 231 1 "=" }{TEXT 238 1 "p"
+ }{TEXT 231 106 "=0,3. Odhadn\354te v jak\351m intervalu se st\370edem
+ v bod\354 np se bude po\350et jev\371 A vyskytovat s pravd\354podobno
+st\355:" }{TEXT 231 0 "" }}{PARA 201 "" 0 "" {TEXT 231 4 "a)  " }
+{TEXT 238 1 "P" }{TEXT 231 10 "=0,9;  b) " }{TEXT 238 1 "P" }{TEXT 
+231 11 "=0,95;  c) " }{TEXT 238 1 "P" }{TEXT 231 7 "=0,99. " }{TEXT 
+231 0 "" }}{PARA 201 "" 0 "" {TEXT 231 37 "Pro porovn\341n\355 ur\350e
+te interval p\370esn\354." }{TEXT 231 0 "" }}{SECT 0 {PARA 203 "" 0 ""
+ {TEXT 233 10 "a)  Pa=0.9" }{TEXT 233 0 "" }}{PARA 201 "" 0 "" {TEXT 
+231 0 "" }}{EXCHG {PARA 204 "> " 0 "" {MPLTEXT 1 234 22 "p:=0.3:n:=500
+:Pa:=0.9:" }{MPLTEXT 1 234 0 "" }}}{EXCHG {PARA 204 "> " 0 "" 
+{MPLTEXT 1 234 38 "eps:=sqrt(p*(1-p)/(n*(1-Pa))): # odhad" }{MPLTEXT 
+1 234 0 "" }}}{EXCHG {PARA 204 "> " 0 "" {MPLTEXT 1 234 53 "k1:=trunc(
+n*(p-eps));k2:=trunc(n*(p+eps))+1;d:=k2-k1;" }{MPLTEXT 1 234 0 "" }}
+{PARA 205 "" 1 "" {XPPMATH 20 "6#>%#k1G\"$<\"" }{TEXT 235 0 "" }}
+{PARA 205 "" 1 "" {XPPMATH 20 "6#>%#k2G\"$$=" }{TEXT 235 0 "" }}{PARA 
+205 "" 1 "" {XPPMATH 20 "6#>%\"dG\"#m" }{TEXT 235 0 "" }}}{EXCHG 
+{PARA 204 "> " 0 "" {MPLTEXT 1 234 37 "P8:=k->binomial(n,k)*p^k*(1-p)^
+(n-k):" }{MPLTEXT 1 234 0 "" }}}{EXCHG {PARA 204 "> " 0 "" {MPLTEXT 1 
+234 15 "k0:=trunc(n*p):" }{MPLTEXT 1 234 0 "" }}}{EXCHG {PARA 204 "> "
+ 0 "" {MPLTEXT 1 234 31 "F8:=m->sum(P8(i),i=k0-m..k0+m):" }{MPLTEXT 1 
+234 0 "" }}}{EXCHG {PARA 204 "> " 0 "" {MPLTEXT 1 234 48 "for m from 0
+ while F8(m) < Pa do m1:=m+1 end do:" }{MPLTEXT 1 234 0 "" }}}{EXCHG 
+{PARA 204 "> " 0 "" {MPLTEXT 1 234 6 "m:=m1;" }{MPLTEXT 1 234 0 "" }}
+{PARA 205 "" 1 "" {XPPMATH 20 "6#>%\"mG\"#<" }{TEXT 235 0 "" }}}
+{EXCHG {PARA 204 "> " 0 "" {MPLTEXT 1 234 31 "k01:=k0-m;k02:=k0+m;d:=k
+02-k01;" }{MPLTEXT 1 234 0 "" }}{PARA 205 "" 1 "" {XPPMATH 20 "6#>%$k0
+1G\"$L\"" }{TEXT 235 0 "" }}{PARA 205 "" 1 "" {XPPMATH 20 "6#>%$k02G\"
+$n\"" }{TEXT 235 0 "" }}{PARA 205 "" 1 "" {XPPMATH 20 "6#>%\"dG\"#M" }
+{TEXT 235 0 "" }}}{EXCHG {PARA 204 "> " 0 "" {MPLTEXT 1 234 0 "" }}}}
+{SECT 0 {PARA 203 "" 0 "" {TEXT 233 11 "b)  Pb=0.95" }{TEXT 233 0 "" }
+}{PARA 201 "" 0 "" {TEXT 231 0 "" }}{EXCHG {PARA 204 "> " 0 "" 
+{MPLTEXT 1 234 23 "p:=0.3:n:=500:Pb:=0.95:" }{MPLTEXT 1 234 0 "" }}}
+{EXCHG {PARA 204 "> " 0 "" {MPLTEXT 1 234 38 "eps:=sqrt(p*(1-p)/(n*(1-
+Pb))): # odhad" }{MPLTEXT 1 234 0 "" }}}{EXCHG {PARA 204 "> " 0 "" 
+{MPLTEXT 1 234 53 "k1:=trunc(n*(p-eps));k2:=trunc(n*(p+eps))+1;d:=k2-k
+1;" }{MPLTEXT 1 234 0 "" }}{PARA 205 "" 1 "" {XPPMATH 20 "6#>%#k1G\"$/
+\"" }{TEXT 235 0 "" }}{PARA 205 "" 1 "" {XPPMATH 20 "6#>%#k2G\"$'>" }
+{TEXT 235 0 "" }}{PARA 205 "" 1 "" {XPPMATH 20 "6#>%\"dG\"##*" }{TEXT 
+235 0 "" }}}{EXCHG {PARA 204 "> " 0 "" {MPLTEXT 1 234 37 "P8:=k->binom
+ial(n,k)*p^k*(1-p)^(n-k):" }{MPLTEXT 1 234 0 "" }}}{EXCHG {PARA 204 ">
+ " 0 "" {MPLTEXT 1 234 15 "k0:=trunc(n*p):" }{MPLTEXT 1 234 0 "" }}}
+{EXCHG {PARA 204 "> " 0 "" {MPLTEXT 1 234 31 "F8:=m->sum(P8(i),i=k0-m.
+.k0+m):" }{MPLTEXT 1 234 0 "" }}}{EXCHG {PARA 204 "> " 0 "" {MPLTEXT 
+1 234 48 "for m from 0 while F8(m) < Pb do m1:=m+1 end do:" }{MPLTEXT 
+1 234 0 "" }}}{EXCHG {PARA 204 "> " 0 "" {MPLTEXT 1 234 6 "m:=m1;" }
+{MPLTEXT 1 234 0 "" }}{PARA 205 "" 1 "" {XPPMATH 20 "6#>%\"mG\"#?" }
+{TEXT 235 0 "" }}}{EXCHG {PARA 204 "> " 0 "" {MPLTEXT 1 234 31 "k01:=k
+0-m;k02:=k0+m;d:=k02-k01;" }{MPLTEXT 1 234 0 "" }}{PARA 205 "" 1 "" 
+{XPPMATH 20 "6#>%$k01G\"$I\"" }{TEXT 235 0 "" }}{PARA 205 "" 1 "" 
+{XPPMATH 20 "6#>%$k02G\"$q\"" }{TEXT 235 0 "" }}{PARA 205 "" 1 "" 
+{XPPMATH 20 "6#>%\"dG\"#S" }{TEXT 235 0 "" }}}}{SECT 0 {PARA 203 "" 0 
+"" {TEXT 233 11 "c)  Pc=0.99" }{TEXT 233 0 "" }}{PARA 201 "" 0 "" 
+{TEXT 231 0 "" }}{EXCHG {PARA 204 "> " 0 "" {MPLTEXT 1 234 23 "p:=0.3:
+n:=500:Pc:=0.99:" }{MPLTEXT 1 234 0 "" }}}{EXCHG {PARA 204 "> " 0 "" 
+{MPLTEXT 1 234 38 "eps:=sqrt(p*(1-p)/(n*(1-Pc))): # odhad" }{MPLTEXT 
+1 234 0 "" }}}{EXCHG {PARA 204 "> " 0 "" {MPLTEXT 1 234 53 "k1:=trunc(
+n*(p-eps));k2:=trunc(n*(p+eps))+1;d:=k2-k1;" }{MPLTEXT 1 234 0 "" }}
+{PARA 205 "" 1 "" {XPPMATH 20 "6#>%#k1G\"#Z" }{TEXT 235 0 "" }}{PARA 
+205 "" 1 "" {XPPMATH 20 "6#>%#k2G\"$`#" }{TEXT 235 0 "" }}{PARA 205 ""
+ 1 "" {XPPMATH 20 "6#>%\"dG\"$1#" }{TEXT 235 0 "" }}}{EXCHG {PARA 204 
+"> " 0 "" {MPLTEXT 1 234 37 "P8:=k->binomial(n,k)*p^k*(1-p)^(n-k):" }
+{MPLTEXT 1 234 0 "" }}}{EXCHG {PARA 204 "> " 0 "" {MPLTEXT 1 234 15 "k
+0:=trunc(n*p):" }{MPLTEXT 1 234 0 "" }}}{EXCHG {PARA 204 "> " 0 "" 
+{MPLTEXT 1 234 31 "F8:=m->sum(P8(i),i=k0-m..k0+m):" }{MPLTEXT 1 234 0 
+"" }}}{EXCHG {PARA 204 "> " 0 "" {MPLTEXT 1 234 48 "for m from 0 while
+ F8(m) < Pc do m1:=m+1 end do:" }{MPLTEXT 1 234 0 "" }}}{EXCHG {PARA 
+204 "> " 0 "" {MPLTEXT 1 234 6 "m:=m1;" }{MPLTEXT 1 234 0 "" }}{PARA 
+205 "" 1 "" {XPPMATH 20 "6#>%\"mG\"#E" }{TEXT 235 0 "" }}}{EXCHG 
+{PARA 204 "> " 0 "" {MPLTEXT 1 234 31 "k01:=k0-m;k02:=k0+m;d:=k02-k01;
+" }{MPLTEXT 1 234 0 "" }}{PARA 205 "" 1 "" {XPPMATH 20 "6#>%$k01G\"$C
+\"" }{TEXT 235 0 "" }}{PARA 205 "" 1 "" {XPPMATH 20 "6#>%$k02G\"$w\"" 
+}{TEXT 235 0 "" }}{PARA 205 "" 1 "" {XPPMATH 20 "6#>%\"dG\"#_" }{TEXT 
+235 0 "" }}}{EXCHG {PARA 204 "> " 0 "" {MPLTEXT 1 234 0 "" }}}}}{SECT 
+0 {PARA 202 "" 0 "" {TEXT 232 9 "P\370\355klad 9" }{TEXT 232 0 "" }}
+{PARA 201 "" 0 "" {TEXT 231 128 "H\341z\355me opakovan\354 minc\355. O
+dhadn\354te, kolik mus\355me prov\351st hod\371, aby se relativn\355 \+
+\350etnost rub\371 li?ila od st\370edn\355 hodnoty nejv\375?e o " }
+{XPPEDIT 18 0 "epsilon;" "6#%(epsilonG" }{TEXT 231 27 " = 0,05 s pravd
+\354podobnost\355:" }{TEXT 231 0 "" }}{PARA 201 "" 0 "" {TEXT 231 35 "
+a)  P=0,8;  b)  P=0,9;  c)  P=0,99." }{TEXT 231 0 "" }}{PARA 201 "" 0 
+"" {TEXT 231 0 "" }}{SECT 0 {PARA 203 "" 0 "" {TEXT 233 11 " a)  Pa=0.
+8" }{TEXT 233 0 "" }}{PARA 201 "" 0 "" {TEXT 231 0 "" }}{EXCHG {PARA 
+204 "> " 0 "" {MPLTEXT 1 234 25 "eps:=0.05:Pa:=0.8:p:=0.5:" }{MPLTEXT 
+1 234 0 "" }}}{EXCHG {PARA 204 "> " 0 "" {MPLTEXT 1 234 26 "n:=p*(1-p)
+/(eps^2*(1-Pa)):" }{MPLTEXT 1 234 0 "" }}}{EXCHG {PARA 204 "> " 0 "" 
+{MPLTEXT 1 234 15 "n0:=trunc(n)+1;" }{MPLTEXT 1 234 0 "" }}{PARA 205 "
+" 1 "" {XPPMATH 20 "6#>%#n0G\"$,&" }{TEXT 235 0 "" }}}{EXCHG {PARA 
+204 "> " 0 "" {MPLTEXT 1 234 44 "k1:=trunc(n0*(p-eps));k2:=trunc(n0*(p
++eps));" }{MPLTEXT 1 234 0 "" }}{PARA 205 "" 1 "" {XPPMATH 20 "6#>%#k1
+G\"$E#" }{TEXT 235 0 "" }}{PARA 205 "" 1 "" {XPPMATH 20 "6#>%#k2G\"$v#
+" }{TEXT 235 0 "" }}}{EXCHG {PARA 204 "> " 0 "" {MPLTEXT 1 234 0 "" }}
+}}{SECT 0 {PARA 203 "" 0 "" {TEXT 233 11 " b)  Pb=0.9" }{TEXT 233 0 ""
+ }}{PARA 201 "" 0 "" {TEXT 231 0 "" }}{EXCHG {PARA 204 "> " 0 "" 
+{MPLTEXT 1 234 25 "eps:=0.05:Pb:=0.9:p:=0.5:" }{MPLTEXT 1 234 0 "" }}}
+{EXCHG {PARA 204 "> " 0 "" {MPLTEXT 1 234 26 "n:=p*(1-p)/(eps^2*(1-Pb)
+):" }{MPLTEXT 1 234 0 "" }}}{EXCHG {PARA 204 "> " 0 "" {MPLTEXT 1 234 
+15 "n0:=trunc(n)+1;" }{MPLTEXT 1 234 0 "" }}{PARA 205 "" 1 "" 
+{XPPMATH 20 "6#>%#n0G\"%,5" }{TEXT 235 0 "" }}}{EXCHG {PARA 204 "> " 0
+ "" {MPLTEXT 1 234 44 "k1:=trunc(n0*(p-eps));k2:=trunc(n0*(p+eps));" }
+{MPLTEXT 1 234 0 "" }}{PARA 205 "" 1 "" {XPPMATH 20 "6#>%#k1G\"$]%" }
+{TEXT 235 0 "" }}{PARA 205 "" 1 "" {XPPMATH 20 "6#>%#k2G\"$]&" }{TEXT 
+235 0 "" }}}}{SECT 0 {PARA 203 "" 0 "" {TEXT 233 13 " c)   Pc=0.99" }
+{TEXT 233 0 "" }}{PARA 201 "" 0 "" {TEXT 231 0 "" }}{EXCHG {PARA 204 "
+> " 0 "" {MPLTEXT 1 234 26 "eps:=0.05:Pc:=0.99:p:=0.5:" }{MPLTEXT 1 
+234 0 "" }}}{EXCHG {PARA 204 "> " 0 "" {MPLTEXT 1 234 26 "n:=p*(1-p)/(
+eps^2*(1-Pc)):" }{MPLTEXT 1 234 0 "" }}}{EXCHG {PARA 204 "> " 0 "" 
+{MPLTEXT 1 234 15 "n0:=trunc(n)+1;" }{MPLTEXT 1 234 0 "" }}{PARA 205 "
+" 1 "" {XPPMATH 20 "6#>%#n0G\"&,+\"" }{TEXT 235 0 "" }}}{EXCHG {PARA 
+204 "> " 0 "" {MPLTEXT 1 234 44 "k1:=trunc(n0*(p-eps));k2:=trunc(n0*(p
++eps));" }{MPLTEXT 1 234 0 "" }}{PARA 205 "" 1 "" {XPPMATH 20 "6#>%#k1
+G\"%+X" }{TEXT 235 0 "" }}{PARA 205 "" 1 "" {XPPMATH 20 "6#>%#k2G\"%+b
+" }{TEXT 235 0 "" }}}{EXCHG {PARA 204 "> " 0 "" {MPLTEXT 1 234 0 "" }}
+}}}{SECT 0 {PARA 202 "" 0 "" {TEXT 232 10 "P\370\355klad 10" }{TEXT 
+232 0 "" }}{PARA 201 "" 0 "" {TEXT 231 146 "Sd\354lovac\355 kan\341l m
+\341 chybovost p\370enosu 0,1%. Po?leme zpr\341vu o 2 000 slovech. Jak
+\341 je pravd\354podobnost dobr\351ho p\370enosu, pokud dovol\355me ne
+jv\375?e 5 chyb." }{TEXT 231 0 "" }}{SECT 0 {PARA 203 "" 0 "" {TEXT 
+233 32 " V\375po\350et pomoc\355 pravd\354podobnost\355" }{TEXT 233 0 
+"" }}{PARA 201 "" 0 "" {TEXT 231 0 "" }}{EXCHG {PARA 204 "> " 0 "" 
+{MPLTEXT 1 234 22 "p:=0.001:n:=2000:m:=5:" }{MPLTEXT 1 234 0 "" }}
+{PARA 204 "> " 0 "" {MPLTEXT 1 234 38 "P10:=k->binomial(n,k)*p^k*(1-p)
+^(n-k):" }{MPLTEXT 1 234 0 "" }}{PARA 204 "> " 0 "" {MPLTEXT 1 234 27 
+"F10:=k->sum(P10(i),i=0..k):" }{MPLTEXT 1 234 0 "" }}{PARA 204 "> " 0 
+"" {MPLTEXT 1 234 11 "Pa:=F10(5);" }{MPLTEXT 1 234 0 "" }}{PARA 205 ""
+ 1 "" {XPPMATH 20 "6#>%#PaG$\"+'>0\\$)*!#5" }{TEXT 235 0 "" }}}}{SECT 
+0 {PARA 203 "" 0 "" {TEXT 233 29 " Odhad pomoc\355 Poissonovy v\354ty"
+ }{TEXT 233 0 "" }}{PARA 201 "" 0 "" {TEXT 231 0 "" }}{EXCHG {PARA 
+204 "> " 0 "" {MPLTEXT 1 234 22 "p:=0.001:n:=2000:m:=5:" }{MPLTEXT 1 
+234 0 "" }}{PARA 204 "> " 0 "" {MPLTEXT 1 234 28 "Po:=k->exp(-n*p)*(n*
+p)^k/k!:" }{MPLTEXT 1 234 0 "" }}{PARA 204 "> " 0 "" {MPLTEXT 1 234 
+25 "Fo:=k->sum(Po(i),i=0..k):" }{MPLTEXT 1 234 0 "" }}{PARA 204 "> " 0
+ "" {MPLTEXT 1 234 11 "Pa0:=Fo(5);" }{MPLTEXT 1 234 0 "" }}{PARA 205 "
+" 1 "" {XPPMATH 20 "6#>%$Pa0G$\"+8ROM)*!#5" }{TEXT 235 0 "" }}}{EXCHG 
+{PARA 204 "> " 0 "" {MPLTEXT 1 234 0 "" }}}}}{SECT 0 {PARA 202 "" 0 ""
+ {TEXT 232 10 "P\370\355klad 11" }{TEXT 232 0 "" }}{PARA 201 "" 0 "" 
+{TEXT 231 127 "P\370i p\370enosu je chybovost 1%. Zpr\341va obsahuje 1
+50 slov. Kolik chyb sm\355 nejv\375?e obsahovat, je-li pravd\354podobn
+ost dobr\351ho p\370enosu " }{TEXT 238 1 "P" }{TEXT 231 6 "=0,95." }
+{TEXT 231 0 "" }}{SECT 0 {PARA 203 "" 0 "" {TEXT 233 31 "V\375po\350et
+ pomoc\355 pravd\354podobnost\355" }{TEXT 233 0 "" }}{PARA 201 "" 0 ""
+ {TEXT 231 0 "" }}{EXCHG {PARA 204 "> " 0 "" {MPLTEXT 1 234 8 "restart
+:" }{MPLTEXT 1 234 0 "" }}}{EXCHG {PARA 204 "> " 0 "" {MPLTEXT 1 234 
+24 "p:=0.01:n:=150:Pp:=0.95:" }{MPLTEXT 1 234 0 "" }}{PARA 204 "> " 0 
+"" {MPLTEXT 1 234 38 "P11:=k->binomial(n,k)*p^k*(1-p)^(n-k):" }
+{MPLTEXT 1 234 0 "" }}{PARA 205 "" 1 "" {XPPMATH 20 "6#$\"+sy^9A!#5" }
+{TEXT 235 0 "" }}{PARA 204 "> " 0 "" {MPLTEXT 1 234 27 "F11:=k->sum(P1
+1(i),i=0..k):" }{MPLTEXT 1 234 0 "" }}{PARA 204 "> " 0 "" {MPLTEXT 1 
+234 48 "for m from 0 while F11(m) <Pp do m1:=m+1 end do:" }{MPLTEXT 1 
+234 0 "" }}{PARA 204 "> " 0 "" {MPLTEXT 1 234 9 "n0:=m1-1;" }{MPLTEXT 
+1 234 0 "" }}{PARA 205 "" 1 "" {XPPMATH 20 "6#>%#n0G\"\"$" }{TEXT 235 
+0 "" }}}{EXCHG {PARA 204 "> " 0 "" {MPLTEXT 1 234 0 "" }}}{EXCHG 
+{PARA 204 "> " 0 "" {MPLTEXT 1 234 18 "F11(n0);F11(n0+1);" }{MPLTEXT 
+1 234 0 "" }}{PARA 205 "" 1 "" {XPPMATH 20 "6#$\"+ZJ0`$*!#5" }{TEXT 
+235 0 "" }}{PARA 205 "" 1 "" {XPPMATH 20 "6#$\"+b]7?)*!#5" }{TEXT 235 
+0 "" }}}}{SECT 0 {PARA 203 "" 0 "" {TEXT 233 43 "V\375po\350et pomoc\3
+55 aproximac\355 z Poissonovy v\354ty" }{TEXT 233 0 "" }}{PARA 201 "" 
+0 "" {TEXT 231 0 "" }}{EXCHG {PARA 204 "> " 0 "" {MPLTEXT 1 234 8 "res
+tart:" }{MPLTEXT 1 234 0 "" }}}{EXCHG {PARA 204 "> " 0 "" {MPLTEXT 1 
+234 24 "p:=0.01:n:=150:Pp:=0.95:" }{MPLTEXT 1 234 0 "" }}{PARA 204 "> \+
+" 0 "" {MPLTEXT 1 234 28 "Po:=k->exp(-n*p)*(n*p)^k/k!:" }{MPLTEXT 1 
+234 0 "" }}}{EXCHG {PARA 204 "> " 0 "" {MPLTEXT 1 234 25 "Fo:=k->sum(P
+o(i),i=0..k):" }{MPLTEXT 1 234 0 "" }}{PARA 204 "> " 0 "" {MPLTEXT 1 
+234 47 "for m from 0 while Fo(m) <Pp do m1:=m+1 end do:" }{MPLTEXT 1 
+234 0 "" }}{PARA 204 "> " 0 "" {MPLTEXT 1 234 9 "n0:=m1-1;" }{MPLTEXT 
+1 234 0 "" }}{PARA 205 "" 1 "" {XPPMATH 20 "6#>%#n0G\"\"$" }{TEXT 235 
+0 "" }}}{EXCHG {PARA 204 "> " 0 "" {MPLTEXT 1 234 16 "Fo(n0);Fo(n0+1);
+" }{MPLTEXT 1 234 0 "" }}{PARA 205 "" 1 "" {XPPMATH 20 "6#$\"+aadV$*!#
+5" }{TEXT 235 0 "" }}{PARA 205 "" 1 "" {XPPMATH 20 "6#$\"+O1C9)*!#5" }
+{TEXT 235 0 "" }}}{EXCHG {PARA 204 "> " 0 "" {MPLTEXT 1 234 0 "" }}}
+{PARA 201 "" 0 "" {TEXT 231 0 "" }}}}{SECT 0 {PARA 202 "" 0 "" {TEXT 
+232 10 "P\370\355klad 12" }{TEXT 232 0 "" }}{PARA 201 "" 0 "" {TEXT 
+231 97 "Chybovost p\370enosu je 0,3%. Jak\375 po\350et chyb m\341 p\37
+0i p\370enosu 2 000 symbol\371 nejv\354t?\355 pravd\354podobnost?" }
+{TEXT 231 0 "" }}{SECT 0 {PARA 203 "" 0 "" {TEXT 233 30 " a) V\375po\3
+50et z pravd\354podobnost\355" }{TEXT 233 0 "" }}{PARA 201 "" 0 "" 
+{TEXT 231 0 "" }}{EXCHG {PARA 204 "> " 0 "" {MPLTEXT 1 234 8 "restart:
+" }{MPLTEXT 1 234 0 "" }}}{EXCHG {PARA 204 "> " 0 "" {MPLTEXT 1 234 
+17 "p:=0.003:n:=2000:" }{MPLTEXT 1 234 0 "" }}{PARA 204 "> " 0 "" 
+{MPLTEXT 1 234 38 "P12:=k->binomial(n,k)*p^k*(1-p)^(n-k):" }{MPLTEXT 
+1 234 0 "" }}{PARA 204 "> " 0 "" {MPLTEXT 1 234 0 "" }}{PARA 204 "> " 
+0 "" {MPLTEXT 1 234 54 "for m from 0 while P12(m) <P12(m+1) do m1:=m+1
+ end do:" }{MPLTEXT 1 234 0 "" }}{PARA 204 "> " 0 "" {MPLTEXT 1 234 7 
+"n0:=m1;" }{MPLTEXT 1 234 0 "" }}{PARA 205 "" 1 "" {XPPMATH 20 "6#>%#n
+0G\"\"'" }{TEXT 235 0 "" }}}{EXCHG {PARA 204 "> " 0 "" {MPLTEXT 1 234 
+28 "P12(n0-1);P12(n0);P12(n0+1);" }{MPLTEXT 1 234 0 "" }}{PARA 205 "" 
+1 "" {XPPMATH 20 "6#$\"+_'Ryg\"!#5" }{TEXT 235 0 "" }}{PARA 205 "" 1 "
+" {XPPMATH 20 "6#$\"+\"*fk3;!#5" }{TEXT 235 0 "" }}{PARA 205 "" 1 "" 
+{XPPMATH 20 "6#$\"+?%R)y8!#5" }{TEXT 235 0 "" }}}{PARA 201 "" 0 "" 
+{TEXT 231 0 "" }}}{SECT 0 {PARA 203 "" 0 "" {TEXT 233 42 " b) V\375po
+\350et z aproximac\355 z Poissonovy v\354ty" }{TEXT 233 0 "" }}{PARA 
+201 "" 0 "" {TEXT 231 0 "" }}{EXCHG {PARA 204 "> " 0 "" {MPLTEXT 1 
+234 8 "restart:" }{MPLTEXT 1 234 0 "" }}}{EXCHG {PARA 204 "> " 0 "" 
+{MPLTEXT 1 234 17 "p:=0.003:n:=2000:" }{MPLTEXT 1 234 0 "" }}{PARA 
+204 "> " 0 "" {MPLTEXT 1 234 28 "Po:=k->exp(-n*p)*(n*p)^k/k!:" }
+{MPLTEXT 1 234 0 "" }}{PARA 204 "> " 0 "" {MPLTEXT 1 234 0 "" }}{PARA 
+204 "> " 0 "" {MPLTEXT 1 234 52 "for m from 0 while Po(m) <Po(m+1) do \+
+m1:=m+1 end do:" }{MPLTEXT 1 234 0 "" }}{PARA 204 "> " 0 "" {MPLTEXT 
+1 234 7 "n0:=m1;" }{MPLTEXT 1 234 0 "" }}{PARA 205 "" 1 "" {XPPMATH 
+20 "6#>%#n0G\"\"&" }{TEXT 235 0 "" }}}{EXCHG {PARA 204 "> " 0 "" 
+{MPLTEXT 1 234 34 "Po(n0-1);Po(n0);Po(n0+1);Po(n0+2);" }{MPLTEXT 1 
+234 0 "" }}{PARA 205 "" 1 "" {XPPMATH 20 "6#$\"+vh_Q8!#5" }{TEXT 235 
+0 "" }}{PARA 205 "" 1 "" {XPPMATH 20 "6#$\"+69B1;!#5" }{TEXT 235 0 "" 
+}}{PARA 205 "" 1 "" {XPPMATH 20 "6#$\"+69B1;!#5" }{TEXT 235 0 "" }}
+{PARA 205 "" 1 "" {XPPMATH 20 "6#$\"+\"ypnP\"!#5" }{TEXT 235 0 "" }}}
+{EXCHG {PARA 204 "> " 0 "" {MPLTEXT 1 234 0 "" }}}}}{SECT 0 {PARA 202 
+"" 0 "" {TEXT 232 10 "P\370\355klad 13" }{TEXT 232 0 "" }}{PARA 201 ""
+ 0 "" {TEXT 231 158 "P\370i p\370enosu se objevuje chyba s pravd\354po
+dobnost\355 a) pa=0,01;  b) pb=0,005. V jak\351m intervalu (k1,k2) se \+
+bude pohybovat po\350et chyb k,  jesli?e po?adujeme, aby " }{TEXT 231 
+0 "" }}{PARA 201 "" 0 "" {TEXT 231 17 "P(k<k1)=P(k>k2)= " }{XPPEDIT 
+18 0 "alpha;" "6#%&alphaG" }{TEXT 231 4 " /2." }{TEXT 231 0 "" }}
+{PARA 201 "" 0 "" {TEXT 231 0 "" }}{SECT 0 {PARA 203 "" 0 "" {TEXT 
+233 11 " a) pa=0.01" }{TEXT 233 0 "" }}{PARA 201 "" 0 "" {TEXT 231 0 "
+" }}{SECT 0 {PARA 208 "" 0 "" {TEXT 240 33 "  V\375po\350et pomoc\355 \+
+pravd\354podobnost\355" }{TEXT 240 0 "" }}{PARA 201 "" 0 "" {TEXT 231 
+0 "" }}{EXCHG {PARA 204 "> " 0 "" {MPLTEXT 1 234 8 "restart:" }
+{MPLTEXT 1 234 0 "" }}}{EXCHG {PARA 204 "> " 0 "" {MPLTEXT 1 234 26 "p
+:=0.01:n:=1000:alfa:=0.1:" }{MPLTEXT 1 234 0 "" }}{PARA 204 "> " 0 "" 
+{MPLTEXT 1 234 38 "P13:=k->binomial(n,k)*p^k*(1-p)^(n-k):" }{MPLTEXT 
+1 234 0 "" }}{PARA 204 "> " 0 "" {MPLTEXT 1 234 27 "F13:=k->sum(P13(i)
+,i=0..k):" }{MPLTEXT 1 234 0 "" }}{PARA 204 "> " 0 "" {MPLTEXT 1 234 
+53 "for m from 0 while F13(m) < alfa/2 do m1:=m+1 end do:" }{MPLTEXT 
+1 234 0 "" }}{PARA 204 "> " 0 "" {MPLTEXT 1 234 7 "n0:=m1;" }{MPLTEXT 
+1 234 0 "" }}{PARA 205 "" 1 "" {XPPMATH 20 "6#>%#n0G\"\"&" }{TEXT 235 
+0 "" }}}{EXCHG {PARA 204 "> " 0 "" {MPLTEXT 1 234 55 "for m from 0 whi
+le F13(m) < 1-alfa/2 do m2:=m+1 end do:" }{MPLTEXT 1 234 0 "" }}{PARA 
+204 "> " 0 "" {MPLTEXT 1 234 9 "n1:=m2-1;" }{MPLTEXT 1 234 0 "" }}
+{PARA 205 "" 1 "" {XPPMATH 20 "6#>%#n1G\"#9" }{TEXT 235 0 "" }}}
+{EXCHG {PARA 204 "> " 0 "" {MPLTEXT 1 234 36 "F13(n0-1);F13(n0);F13(n1
+);F13(n1+1);" }{MPLTEXT 1 234 0 "" }}{PARA 205 "" 1 "" {XPPMATH 20 "6#
+$\"+++koG!#6" }{TEXT 235 0 "" }}{PARA 205 "" 1 "" {XPPMATH 20 "6#$\"+h
+6&Rh'!#6" }{TEXT 235 0 "" }}{PARA 205 "" 1 "" {XPPMATH 20 "6#$\"+0o(e<
+*!#5" }{TEXT 235 0 "" }}{PARA 205 "" 1 "" {XPPMATH 20 "6#$\"+UTH@&*!#5
+" }{TEXT 235 0 "" }}}{PARA 201 "" 0 "" {TEXT 231 0 "" }}}{SECT 0 
+{PARA 208 "" 0 "" {TEXT 240 45 "  V\375po\350et pomoc\355 aproximac\35
+5 z Poissonovy v\354ty" }{TEXT 240 0 "" }}{PARA 201 "" 0 "" {TEXT 231 
+0 "" }}{EXCHG {PARA 204 "> " 0 "" {MPLTEXT 1 234 8 "restart:" }
+{MPLTEXT 1 234 0 "" }}}{EXCHG {PARA 204 "> " 0 "" {MPLTEXT 1 234 26 "p
+:=0.01:n:=1000:alfa:=0.1:" }{MPLTEXT 1 234 0 "" }}{PARA 204 "> " 0 "" 
+{MPLTEXT 1 234 28 "Po:=k->exp(-n*p)*(n*p)^k/k!:" }{MPLTEXT 1 234 0 "" 
+}}{PARA 204 "> " 0 "" {MPLTEXT 1 234 25 "Fo:=k->sum(Po(i),i=0..k):" }
+{MPLTEXT 1 234 0 "" }}{PARA 204 "> " 0 "" {MPLTEXT 1 234 52 "for m fro
+m 0 while Fo(m) < alfa/2 do m1:=m+1 end do:" }{MPLTEXT 1 234 0 "" }}
+{PARA 204 "> " 0 "" {MPLTEXT 1 234 7 "n0:=m1;" }{MPLTEXT 1 234 0 "" }}
+{PARA 205 "" 1 "" {XPPMATH 20 "6#>%#n0G\"\"&" }{TEXT 235 0 "" }}}
+{EXCHG {PARA 204 "> " 0 "" {MPLTEXT 1 234 54 "for m from 0 while Fo(m)
+ < 1-alfa/2 do m2:=m+1 end do:" }{MPLTEXT 1 234 0 "" }}{PARA 204 "> " 
+0 "" {MPLTEXT 1 234 9 "n1:=m2-1;" }{MPLTEXT 1 234 0 "" }}{PARA 205 "" 
+1 "" {XPPMATH 20 "6#>%#n1G\"#9" }{TEXT 235 0 "" }}}{EXCHG {PARA 204 ">
+ " 0 "" {MPLTEXT 1 234 32 "Fo(n0-1);Fo(n0);Fo(n1);Fo(n1+1);" }
+{MPLTEXT 1 234 0 "" }}{PARA 205 "" 1 "" {XPPMATH 20 "6#$\"+3)o_#H!#6" 
+}{TEXT 235 0 "" }}{PARA 205 "" 1 "" {XPPMATH 20 "6#$\"+)G'f3n!#6" }
+{TEXT 235 0 "" }}{PARA 205 "" 1 "" {XPPMATH 20 "6#$\"+q_Tl\"*!#5" }
+{TEXT 235 0 "" }}{PARA 205 "" 1 "" {XPPMATH 20 "6#$\"+mff7&*!#5" }
+{TEXT 235 0 "" }}}{EXCHG {PARA 204 "> " 0 "" {MPLTEXT 1 234 0 "" }}}}}
+{SECT 0 {PARA 203 "" 0 "" {TEXT 233 12 " b) pb=0.005" }{TEXT 233 0 "" 
+}}{PARA 201 "" 0 "" {TEXT 231 0 "" }}{SECT 0 {PARA 208 "" 0 "" {TEXT 
+240 31 "V\375po\350et pomoc\355 pravd\354podobnost\355" }{TEXT 240 0 "
+" }}{PARA 201 "" 0 "" {TEXT 231 0 "" }}{EXCHG {PARA 204 "> " 0 "" 
+{MPLTEXT 1 234 8 "restart:" }{MPLTEXT 1 234 0 "" }}}{EXCHG {PARA 204 "
+> " 0 "" {MPLTEXT 1 234 27 "p:=0.005:n:=1000:alfa:=0.1:" }{MPLTEXT 1 
+234 0 "" }}{PARA 204 "> " 0 "" {MPLTEXT 1 234 38 "P13:=k->binomial(n,k
+)*p^k*(1-p)^(n-k):" }{MPLTEXT 1 234 0 "" }}{PARA 204 "> " 0 "" 
+{MPLTEXT 1 234 27 "F13:=k->sum(P13(i),i=0..k):" }{MPLTEXT 1 234 0 "" }
+}{PARA 204 "> " 0 "" {MPLTEXT 1 234 53 "for m from 0 while F13(m) < al
+fa/2 do m1:=m+1 end do:" }{MPLTEXT 1 234 0 "" }}{PARA 204 "> " 0 "" 
+{MPLTEXT 1 234 7 "n0:=m1;" }{MPLTEXT 1 234 0 "" }}{PARA 205 "" 1 "" 
+{XPPMATH 20 "6#>%#n0G\"\"#" }{TEXT 235 0 "" }}}{EXCHG {PARA 204 "> " 0
+ "" {MPLTEXT 1 234 55 "for m from 0 while F13(m) < 1-alfa/2 do m2:=m+1
+ end do:" }{MPLTEXT 1 234 0 "" }}{PARA 204 "> " 0 "" {MPLTEXT 1 234 9 
+"n1:=m2-1;" }{MPLTEXT 1 234 0 "" }}{PARA 205 "" 1 "" {XPPMATH 20 "6#>%
+#n1G\"\")" }{TEXT 235 0 "" }}}{EXCHG {PARA 204 "> " 0 "" {MPLTEXT 1 
+234 36 "F13(n0-1);F13(n0);F13(n1);F13(n1+1);" }{MPLTEXT 1 234 0 "" }}
+{PARA 205 "" 1 "" {XPPMATH 20 "6#$\"+h'*44S!#6" }{TEXT 235 0 "" }}
+{PARA 205 "" 1 "" {XPPMATH 20 "6#$\"+sh>S7!#5" }{TEXT 235 0 "" }}
+{PARA 205 "" 1 "" {XPPMATH 20 "6#$\"+e-(RK*!#5" }{TEXT 235 0 "" }}
+{PARA 205 "" 1 "" {XPPMATH 20 "6#$\"+:wM&o*!#5" }{TEXT 235 0 "" }}}
+{PARA 201 "" 0 "" {TEXT 231 0 "" }}}{SECT 0 {PARA 208 "" 0 "" {TEXT 
+240 44 " V\375po\350et pomoc\355 aproximac\355 z Poissonovy v\354ty" }
+{TEXT 240 0 "" }}{PARA 201 "" 0 "" {TEXT 231 0 "" }}{EXCHG {PARA 204 "
+> " 0 "" {MPLTEXT 1 234 8 "restart:" }{MPLTEXT 1 234 0 "" }}}{EXCHG 
+{PARA 204 "> " 0 "" {MPLTEXT 1 234 27 "p:=0.005:n:=1000:alfa:=0.1:" }
+{MPLTEXT 1 234 0 "" }}{PARA 204 "> " 0 "" {MPLTEXT 1 234 28 "Po:=k->ex
+p(-n*p)*(n*p)^k/k!:" }{MPLTEXT 1 234 0 "" }}{PARA 204 "> " 0 "" 
+{MPLTEXT 1 234 25 "Fo:=k->sum(Po(i),i=0..k):" }{MPLTEXT 1 234 0 "" }}
+{PARA 204 "> " 0 "" {MPLTEXT 1 234 52 "for m from 0 while Fo(m) < alfa
+/2 do m1:=m+1 end do:" }{MPLTEXT 1 234 0 "" }}{PARA 204 "> " 0 "" 
+{MPLTEXT 1 234 7 "n0:=m1;" }{MPLTEXT 1 234 0 "" }}{PARA 205 "" 1 "" 
+{XPPMATH 20 "6#>%#n0G\"\"#" }{TEXT 235 0 "" }}}{EXCHG {PARA 204 "> " 0
+ "" {MPLTEXT 1 234 54 "for m from 0 while Fo(m) < 1-alfa/2 do m2:=m+1 \+
+end do:" }{MPLTEXT 1 234 0 "" }}{PARA 204 "> " 0 "" {MPLTEXT 1 234 9 "
+n1:=m2-1;" }{MPLTEXT 1 234 0 "" }}{PARA 205 "" 1 "" {XPPMATH 20 "6#>%#
+n1G\"\")" }{TEXT 235 0 "" }}}{EXCHG {PARA 204 "> " 0 "" {MPLTEXT 1 
+234 32 "Fo(n0-1);Fo(n0);Fo(n1);Fo(n1+1);" }{MPLTEXT 1 234 0 "" }}
+{PARA 205 "" 1 "" {XPPMATH 20 "6#$\"+*>oF/%!#6" }{TEXT 235 0 "" }}
+{PARA 205 "" 1 "" {XPPMATH 20 "6#$\"+&>?lC\"!#5" }{TEXT 235 0 "" }}
+{PARA 205 "" 1 "" {XPPMATH 20 "6#$\"+`O1>$*!#5" }{TEXT 235 0 "" }}
+{PARA 205 "" 1 "" {XPPMATH 20 "6#$\"+F%><o*!#5" }{TEXT 235 0 "" }}}
+{EXCHG {PARA 204 "> " 0 "" {MPLTEXT 1 234 0 "" }}}{PARA 201 "" 0 "" 
+{TEXT 231 0 "" }}}}}{PARA 210 "" 0 "" {TEXT -1 0 "" }}}{MARK "0 0 0" 
+0 }{VIEWOPTS 1 1 0 1 1 1803 1 1 1 1 }{PAGENUMBERS 0 1 2 33 1 1 }

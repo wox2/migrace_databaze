@@ -1,0 +1,211 @@
+<html>
+   <title>Tabulka hracu</title>
+   <body>
+      <table>
+         <tr>
+            <th>ID</th>
+            <th>Jmeno</th>
+            <th>Prezdivka</th>
+            <th>Pozice</th>
+         </tr>
+         <tr>
+            <td>A1</td>
+            <td>Jiri Paroubek</td>
+            <td>buldozer</td>
+            <td>
+               kapitan
+               
+            </td>
+         </tr>
+         <tr>
+            <td>A10</td>
+            <td>Vitezslav Jandak</td>
+            <td>kecal</td>
+            <td>
+               									hrac
+               								
+            </td>
+         </tr>
+         <tr>
+            <td>A11</td>
+            <td>Zdenek Skromach</td>
+            <td> Bez prezdivky </td>
+            <td>
+               									hrac
+               								
+            </td>
+         </tr>
+         <tr>
+            <td>A2</td>
+            <td>Milos Melcak</td>
+            <td>kecal</td>
+            <td>
+               									hrac
+               								
+            </td>
+         </tr>
+         <tr>
+            <td>A3</td>
+            <td>Milos Zeman</td>
+            <td> Bez prezdivky </td>
+            <td>
+               									hrac
+               								
+            </td>
+         </tr>
+         <tr>
+            <td>A4</td>
+            <td>Petra Buzkova</td>
+            <td> Bez prezdivky </td>
+            <td>
+               									hrac
+               								
+            </td>
+         </tr>
+         <tr>
+            <td>A5</td>
+            <td>Stanislav Gross</td>
+            <td> Bez prezdivky </td>
+            <td>
+               									hrac
+               								
+            </td>
+         </tr>
+         <tr>
+            <td>A6</td>
+            <td>Vladimir Spidla</td>
+            <td> Bez prezdivky </td>
+            <td>
+               									hrac
+               								
+            </td>
+         </tr>
+         <tr>
+            <td>A7</td>
+            <td>David Rath</td>
+            <td> Bez prezdivky </td>
+            <td>
+               									hrac
+               								
+            </td>
+         </tr>
+         <tr>
+            <td>A8</td>
+            <td>Michal Pohanka</td>
+            <td> Bez prezdivky </td>
+            <td>
+               									hrac
+               								
+            </td>
+         </tr>
+         <tr>
+            <td>A9</td>
+            <td>Bohuslav Sobotka</td>
+            <td> Bez prezdivky </td>
+            <td>
+               									hrac
+               								
+            </td>
+         </tr>
+         <tr>
+            <td>B1</td>
+            <td>Mirek Topolanek</td>
+            <td> Bez prezdivky </td>
+            <td>
+               kapitan
+               
+            </td>
+         </tr>
+         <tr>
+            <td>B10</td>
+            <td>Petr Bendl</td>
+            <td> Bez prezdivky </td>
+            <td>
+               									hrac
+               								
+            </td>
+         </tr>
+         <tr>
+            <td>B11</td>
+            <td>Miroslava Nemcova</td>
+            <td> Bez prezdivky </td>
+            <td>
+               									hrac
+               								
+            </td>
+         </tr>
+         <tr>
+            <td>B2</td>
+            <td>Vlastimil Tlusty</td>
+            <td> Bez prezdivky </td>
+            <td>
+               									hrac
+               								
+            </td>
+         </tr>
+         <tr>
+            <td>B3</td>
+            <td>Ivan Langer</td>
+            <td> Bez prezdivky </td>
+            <td>
+               									hrac
+               								
+            </td>
+         </tr>
+         <tr>
+            <td>B4</td>
+            <td>Pavel Bem</td>
+            <td> Bez prezdivky </td>
+            <td>
+               									hrac
+               								
+            </td>
+         </tr>
+         <tr>
+            <td>B5</td>
+            <td>Petr Necas</td>
+            <td> Bez prezdivky </td>
+            <td>
+               									hrac
+               								
+            </td>
+         </tr>
+         <tr>
+            <td>B6</td>
+            <td>Jan Zahradil</td>
+            <td> Bez prezdivky </td>
+            <td>
+               									hrac
+               								
+            </td>
+         </tr>
+         <tr>
+            <td>B7</td>
+            <td>Miroslav Macek</td>
+            <td> Bez prezdivky </td>
+            <td>
+               									hrac
+               								
+            </td>
+         </tr>
+         <tr>
+            <td>B8</td>
+            <td>Lucie Talmanova</td>
+            <td> Bez prezdivky </td>
+            <td>
+               									hrac
+               								
+            </td>
+         </tr>
+         <tr>
+            <td>B9</td>
+            <td>Petr Gandalovic</td>
+            <td> Bez prezdivky </td>
+            <td>
+               									hrac
+               								
+            </td>
+         </tr>
+      </table>
+   </body>
+</html>

@@ -1,0 +1,69 @@
+Dokumentace
+- trable s formatem jen v pripade pro zakaznika
+- Wiki - 
+- APACHE Forest - dobre pro vyhledavani v vice filech
+- textaky - snadno pro svn, git...
+- generovana dokumentace v kodu
+
+
+
+	 format pro specifikaci pozadavku
+- word nejlepe
+- dokumentace se pise prubezne
+- pred predanim se pisi manualy
+
+- kolik casu by melo byt na 6 mesicu, rozsah 200 MD, 10-20 %
+- automaticke testy - dokumentace jako kod
+
+
+
+
+	Uzivatelska dokumentace
+- kontextova napoveda
+- prirucka
+- jine - uziv dokumentace ze skoleni, slidy z prednasky, 
+	videonahravky
+- idealni, pokud dokumentaci pise nekdo z businessu ve 
+	spolupraci s vyvojari
+	-
+
+
+	Administratorska dokumentace
+- admini nejsou vyvojari, bacha na to,
+- zajimaji je:
+	- konfigurace
+	- chybove hlasky 
+- postup instalace
+
+
+
+	Vyvojarska dokumentace
+- slovnicek pojmu - jak rozumet zakaznikovi
+- dokumentace testu a postupu - dokumentace dodavky je dulezita, cas po 1,5 roce je neprijemny
+- kucharky - jak se co udela, mne je nanic, ale nasledovnikum hodne pomuze
+
+
+- co by melo byt soucasti javadocu tridy
+	- k cemu pouzit tridu
+	- jestli je threadsafe (pokud tam nic neni, tak na to nikdo neprijde)
+	- verze - svn id, autor - nebyva jeden ,jmeno -
+- jak dokumentovat getter a setter - pokud ma vedl. efekt
+- komentar metod z interface - vetsinou neni potreba
+- zajimava vec - komentovat bloky kodu
+
+
+
+
+		Projektova dokumentace
+- popis kdy se co udela, kdo to udela, okrajove podminky, je nutne koupit hw
+- milniky
+- 
+
+
+		Plan testu
+- jake se budou delat testy
+- na strankach
+
+
+		dokumentace - udrzba
+- diagramy - drahe, hur se aktualizuji - komponenty, jak komunikuji je fajn 

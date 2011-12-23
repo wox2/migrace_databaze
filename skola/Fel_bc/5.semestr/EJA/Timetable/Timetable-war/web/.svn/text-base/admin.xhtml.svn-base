@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html">
+
+    <body>
+        <h1>#{msgs.header}</h1>
+        <f:view>
+            <h:form>
+            </h:form>
+        </f:view>
+        <h:link outcome="links" value="Links" />
+        <br/>
+        <h:link outcome="linktypes" value="Link Types" />
+        <br/>
+        <h:link outcome="notes" value="Notes" />
+        <br/>
+        <h:link outcome="passangers" value="Passangers" />
+        <br/>
+        <h:link outcome="positions" value="Positions" />
+        <br/>
+        <h:link outcome="routes" value="Routes" />
+        <br/>
+        <h:link outcome="stations" value="Stations" />
+
+    </body>
+</html>

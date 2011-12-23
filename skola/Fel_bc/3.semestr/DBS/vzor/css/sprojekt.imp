@@ -1,0 +1,166 @@
+/* Tohle je hlavni CSS pro formatovani Semstralniho projektu,
+    pouziva se jako import do dalsich CSS stylu. */
+course, author, content {
+  display: block;
+}
+ 
+cname, code, semester {
+	display: block;
+	font-size: 1.1em;
+	text-align: right;
+}
+seminar {
+	display: block;
+	margin-left: 3ex;
+	font-size: 1.2em
+}
+
+code, semeinar {
+       color: navy;
+    font-weight: bold; 
+}
+
+aname,
+uname,
+email
+{
+    display: block;
+    text-align: center;
+    font-size: 1.3em;
+    color: #004080;
+    background-color: #CCFFFF;
+} 
+
+title
+{
+    display: block;
+    text-align: left;
+    font-size: 1.7em;
+    background-color: #CCFFFF;
+    color: #004080;
+    margin: 1.33ex 0;
+    font-weight: bold; 
+} 
+
+description, data_model, dm_picture, dm_discussion, scripts, queries, conclussions, references
+{
+    display: block;
+    text-align: left; 
+    font: normal normal 1em sans-serif;
+    color: black;
+    margin-left: 2ex;
+    margin-right: 0;
+    margin-top: 1.33ex;
+    margin-bottom: 1.33ex;
+}
+
+declaration
+ {
+    display: block;
+    font: normal normal 0.7em sans-serif;
+    margin: 1.33ex 0; 
+    background-color: #DDC5C5; 
+    padding: 2px; 
+}
+ 
+
+para {
+    display: block;
+    margin: 1.33ex 0; 
+}
+
+mediaobject imagedata {
+    display: block; 
+    margin: 0 auto;
+}
+
+imagedata {
+    display: inline;
+}
+
+imagedata {
+    content: gadget("com.xmlmind.xmleditapp.docbook.Graphic");
+}
+
+link{
+    color: navy;
+    text-decoration: underline;
+}
+
+
+dotazy {
+    display: block;
+    margin-left: 2ex; 
+    margin-top: 1.33ex; 
+    margin-bottom: 1.33ex; 
+    counter-reset: item; 
+}
+
+
+dotazy > dotaz {
+    display: block;
+    margin-left: 6ex;
+    counter-increment: item; 
+}
+
+dotazy > dotaz:before {
+    display: marker; 
+    content: counter(item, decimal) "."; 
+    font-weight: bold; 
+    color: #004080;
+}
+
+popis_dotazu {
+    display: block;
+}
+
+sql
+ {
+    display: block;
+    white-space: pre;
+    font-family: monospace;
+    margin: 1.33ex 0; 
+    background-color: #EEEEEE; 
+    border: thin solid gray; 
+    padding: 2px; 
+}
+
+relacni_algebra
+ {
+    display: block;
+    white-space: pre;
+    font-family: monospace;
+    margin: 1.33ex 0; 
+    background-color: #FFEEEE; 
+    border: thin solid gray; 
+    padding: 2px; 
+}
+
+pokryti_dotazu {
+    display: table;
+    border: 1 solid black;
+    padding: 2;
+    background-color: silver;
+}
+
+pokryti_dotazu:before{
+     display: table-row;
+     content:  row(cell("Kategorie", width, 5ex), 
+                            cell("Pokryto příkazy číslo"), 
+                             cell("Popis kategorie příkazu"),
+                 font-weight, bold, color, blue,
+                 padding-top, 2, padding-right, 2, 
+                 padding-bottom, 2, padding-left, 2, 
+                 border-width, 1, border-style, solid);
+}
+
+kategorie_dotazu {
+     display: table-row;
+}
+
+entry {
+    display: table-cell; 
+    border-style: solid;
+    border-width: 1;
+    padding: 2; 
+}

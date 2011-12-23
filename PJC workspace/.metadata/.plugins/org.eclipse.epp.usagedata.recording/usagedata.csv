@@ -1,0 +1,10 @@
+what,kind,bundleId,bundleVersion,description,time
+stopped,bundle,org.eclipse.xtext.purexbase,2.0.1.v201108020636,"org.eclipse.xtext.purexbase",1324406732740
+stopped,bundle,org.eclipse.emf.mwe2.language.ui,2.1.0.v201111010714,"org.eclipse.emf.mwe2.language.ui",1324406732740
+stopped,bundle,org.eclipse.xtext.ui.codetemplates.ui,2.0.1.v201108020636,"org.eclipse.xtext.ui.codetemplates.ui",1324406732741
+stopped,bundle,org.eclipse.xtext.ui.codetemplates,2.0.1.v201108020636,"org.eclipse.xtext.ui.codetemplates",1324406732742
+stopped,bundle,org.eclipse.xtext.xtend2.ui,2.0.1.v201108020636,"org.eclipse.xtext.xtend2.ui",1324406732744
+stopped,bundle,org.eclipse.xtext.xbase.ui,2.0.1.v201108020636,"org.eclipse.xtext.xbase.ui",1324406732745
+stopped,bundle,org.eclipse.xtext.xtend2,2.0.1.v201108020636,"org.eclipse.xtext.xtend2",1324406732745
+stopped,bundle,org.eclipse.xtext.xbase,2.0.1.v201108020636,"org.eclipse.xtext.xbase",1324406732747
+stopped,bundle,org.eclipse.jdt.debug.ui,3.6.1.v20110803_r371,"org.eclipse.jdt.debug.ui",1324406732748

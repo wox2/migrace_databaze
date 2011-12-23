@@ -1,0 +1,5 @@
+#BlueJ class context
+comment0.params=kreslitko
+comment0.target=void\ nakresli(Kreslitko)
+comment0.text=\nZa\ pomoci\ dodaneho\ kreslitka\ vykresli\ obraz\ sve\ instance\nna\ animacni\ platno.\n\n@param\ kreslitko\ \ \ Kreslitko,\ kterym\ se\ instance\ nakresli\ na\ platno.\ \ \ \ \ \n\n
+numComments=1

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <h:head>
+        <title>Spoj</title>
+    </h:head>
+    <h:body>
+        <ui:param name="pageTitle" value="Edit position" />
+            <h1><h:outputText value="Edit position" /></h1>
+            <h:form>
+                <h:panelGrid columns="3" columnClasses="dataLabel,,">
+                    <h:outputText value="čas pozice" />
+                    <h:inputText value="#{positions.position.timePosition}" id="un" label="čas pozice" required="true" requiredMessage="#{msgs.requiredMessage}"/>
+                    <h:message for="un" errorClass="errorRequired"/>
+                    <h:outputText value="km pozice" />
+                    <h:inputText value="#{positions.position.kmPosition}" id="km" label="km pozice" required="true" requiredMessage="#{msgs.requiredMessage}"/>
+                    <h:message for="km" errorClass="errorRequired"/>
+
+                    <h:outputText value="Stanice:" />
+                        <h:selectOneListbox id="st" value="#{positions.position.station}" label="Stanice" size="1" converter="stationConv" validatorMessage="error">
+                            <f:selectItems value="#{stations.allStations}" />
+                        </h:selectOneListbox>
+                        <h:message for="st" />
+
+                    <h:outputText value="Trasa:" />
+                        <h:selectOneListbox id="rt" value="#{positions.position.route}" label="Trasa" size="1" converter="routeConv" validatorMessage="error">
+                            <f:selectItems value="#{routes.allRoutes}" />
+                        </h:selectOneListbox>
+                        <h:message for="rt" />
+
+
+                </h:panelGrid>
+                <h:commandButton type="submit" value="#{msgs.save}" action="#{positions.savePosition}"/>
+                <h:commandLink action="positions" value="#{msgs.back}" immediate="true" />
+                <h:messages globalOnly="true"/>
+            </h:form>
+    </h:body>
+</html>

@@ -1,0 +1,2 @@
+tridy.Lepidlo
+tridy.Main

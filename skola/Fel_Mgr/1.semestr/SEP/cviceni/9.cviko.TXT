@@ -1,0 +1,71 @@
+Configuration management
+
+= zhruba sprava verzi
+
+
+- typicky 	- v produkci je B3
+		- v akceptaci je B4
+		- testuje se B5
+		- pracuje se na B6
+
+
+	verzovani
+-zdrojove kody - ano, -generovane ne
+- Data - db dumpy - ne
+- knihovny - diskutabilni, je lepsi to tam mit takove jako chces...
+		- v opensource - verzujte zdrojaky
+- dokumenty
+- cele dodavky - minimalne ta posledni - aby byl clovek schopen zjistit, co poslal zakaznikovi
+
+
+	CM nastroje
+- nejen verzovaci system, ale i sdilene disky (nicmene lepe verzovaci systemy)
+- Bugzilla nebo jinej bug tracker na dokumenty se da pouzit
+	- behem vyvoje - jede se nad trunkem + feature vetve
+	- behem udrzby - branche
+
+- dodavku nasazujeme samy
+- zakaznik si nasazuje sam - chce to presne napsany instalacni manual
+				- kryjte si zada
+				- bacha na detailni, je to zdlouhave, nebudou to chtit znovu cist a mohou preskocit nejake meny
+					... Je dobre napsat nekam, co se zmenilo
+				
+
+			Dodavky
+- lepe male dodavky, psychologicky efekt
+- po dodavce u zakaznika prijdou chyby, pripravte se na to
+- je dobre se vymezit vuci chybam, v akceptacnich testech je dobre retestovat znovu uz jen 
+- dopad dodavky na CVS - vetsinou to znamena vytvorit novou vetev v CVS
+
+
+
+			Vyvojove prostredi
+- nejenom IDE
+- vic fyzickych disku na vic mistech
+
+
+- zalohujte, obcas obnovujte(once a time)
+
+
+
+			Maintenance(Udrzba)
+- 20 /80 Paretovo pravidlo, 80 % funguje
+
+
+
+			Kvalitni navrh
+- myslet dobredu, obcas vypacit, co by zakaznik chtel v kratkodobem horizontu
+
+
+
+			Udrzba
+- zmenove rizeni = miniwaterfall, nejlepsi zp., male zmeny, proto neni nutny scrum ani nic jineho
+- rozumna rotace lidi - mensi zavislost na konkretnich lidech
+
+
+
+Chybovost
+- zacina rust chybovost vasich dodavek. Co s tim udelate? - najit duvod
+- zakaznik rozporuje vas odhad 5 MDs na zmenu kodu u jednoho produktu (kod se pouziva v DB jako primarni identifikator). Jak vysvetlit
+
+- specifikace, zeptat se na pracnost, - planovany rozvoj, spokojenost/nespokojenost, bugzilla je i u zakaznika

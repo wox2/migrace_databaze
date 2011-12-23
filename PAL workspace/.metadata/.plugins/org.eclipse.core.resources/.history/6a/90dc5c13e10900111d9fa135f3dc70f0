@@ -1,0 +1,34 @@
+
+public class Main {
+	public static void main(String [] args){
+		Edge edge = new Edge(0, 0, 1, 10);
+		Edge edge1 = new Edge(0, 1, 2, 10);
+		Edge edge2= new Edge(0, 2, 3, 10);
+		Edge edge3 = new Edge(0, 3, 4, 10);
+		Edge edge4 = new Edge(0, 4, 5, 10);
+		Edge edge5 = new Edge(0, 5, 6, 10);
+		Edge edge6 = new Edge(0, 6, 7, 10);
+		Edge edge7 = new Edge(0, 7, 8, 10);
+		Edge edge8 = new Edge(0, 8, 9, 10);
+		Edge edge9 = new Edge(0, 9, 10, 10);
+		
+		BinomialHeap heap = new BinomialHeap(edge);
+		
+		heap.insert(edge1);
+		heap.insert(edge2);
+		heap.insert(edge3);
+		heap.insert(edge4);
+		heap.insert(edge5);
+		heap.insert(edge6);
+		heap.insert(edge7);
+		heap.insert(edge8);
+		heap.insert(edge9);
+		
+		
+		for(int i = 0 ; i < 10; i++){
+			System.out.println(heap.accessMin());
+			heap.deleteMin();
+		}
+		System.out.println("ende");
+	}
+}

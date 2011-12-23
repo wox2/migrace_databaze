@@ -1,0 +1,182 @@
+Úkolem je realizovat sadu tríd pro popis vánocního stromecku. Vánocní stromecek bude realizován jako 3-ární strom. Na jednotlivé uzly (vnitrní i listy) stromecku bude možné vkládat vánocní ozdobu (jednu ci žádnou). Každá vánocní ozdoba má nekolik vlastností (hmotnost, hlucnost, spotrebu, horlavost a prítomnost plamene). Úkolem trídy vánocního stromku bude agregovat vlastnosti ozdob.
+
+Rozhraní jednotlivých tríd jsou uvedeny níže. V deklaracích je uveden pouze minimální požadovaný základ rozhraní, jeho presné doplnení je na Vás.
+
+Trída CTree - vánocní strom - má následující rozhraní:
+
+    * Implicitní konstruktor vytvorí prázdný stromek (koren = NULL).
+    * Destruktor provede uvolnení prostredku pro stromecek vcetne uvolnení prípadných pridaných ozdob.
+    * Kopírující konstruktor a pretížený operátor = nejsou potreba realizovat. Progtest neprovádí jejich kontrolu. Aby nedošlo k jejich vyvolání omylem, jsou deklarace kopírujícího konstruktoru a operátoru = private, tedy pokus o jejich použití mimo tridu CTree povede k chybe pri kompilaci.
+    * Metoda EasyToCatchFire zkontroluje, zda je stromecek náchylný ke vzplanutí. Stromek je náchylný ke vzplanutí, pokud se vedle sebe sejdou dve ozdoby, kde jedna je snadno vznítitelná (IsFlammable) a druhá má plamen (Blaze). Pod pojmem "vedle sebe" rozumíme umístení ozdob na stromku tak, že jsou ozdoby v uzlech ve vztahu rodic-potomek nebo ve vztahu bezprostrední sourozenec. Výpocet demonstrují stromy A3, A4 a A5 v ukázkovém použití.
+    * Metoda Loudness vypocte celkovou hlucnost stromecku v decibelech (dB).
+    * Metoda Consumption vypocte celkovou spotrebu elektrické energie ve watech, která je potreba pro stromecek.
+    * Metoda DecorationWeight vypocte celkovou hmotnost dekorací v kilogramech.
+    * Metoda Add slouží k vlastnímu vytvárení stromecku a umistování ozdob. Metoda má parametrem cestu Path, která udává umístení dekorace a druhý parametr Decoration, který ríká jakou ozdobu má umístit.
+
+      Cesta je retezcem, který ctený zleva doprava udává císla potomku, kterými se projde. Napr. "" udává koren, "0" znamená prvního potomka korene a "01" udává druhého potomka od prvního potomka korene.
+
+      Pokud metoda zjistí, že požadované umístení ve stromu neexistuje, vytvorí potrebné uzly a listy (vytvorené mezilehlé uzly ponechá metoda bez dekorací). Do zadaného cílového uzlu pak umístí požadovanou ozdobu. Pokud již v cílovém uzlu nejaká ozdoba existovala, pak puvodní ozdobu nahradí nove zadávanou. Metoda Add vrací true, pokud se operace podarila a false, pokud se nezdarila (špatná cesta, napr. "03" v ternárním strome).
+    * Konstanta MAX_CHILDS udává aritu stromu, zde se jedná o strom ternární.
+
+Vlastní dekorace jsou podtrídy predka - CDecoration. Trída CDecoration je již implementovaná v testovacím prostredí a její implementace je zahrnuta i v ukázce rozhraní níže. Implementaci využijete pro ladení Vašeho rešení. V odevzdávaném souboru tuto trídu ponechte v bloku podmíneného prekladu, aby nedošlo k duplicitním deklaracím a definicím. Trída CDecoration má následující rozhraní:
+
+    * Konstruktor s parametrem hmostnosti ozdoby v kg - udanou hmotnost uloží do clenské promené.
+    * Destruktor slouží k uvolnení prostredku. Zde je prázdný, v podtrídách by ale nemusel.
+    * Metoda Weight slouží k zjištení hmotnosti ozdoby (v kg).
+    * Abstraktní metoda Loudness slouží ke zjištení hlucnosti ozdoby (v dB).
+    * Metoda Consumption slouží k zjištení potreby el. energie (ve watech).
+    * Metoda IsFlammable slouží k testu, zda je ozdoba snadno zápalná.
+    * Metoda Blaze slouží k testu, zda je na ozdobe otevrený plamen.
+
+Vaším úkolem je realizovat trídu CTree realizující vánocní stromek a trídy pro ozdoby CCandle (svícka), CLantern (lucernicka), CBell (zvonecek) a CSparkler (prskavka). Realizované trídy ozdob jsou potomky CDecoration, jejich rozhraní je uvedeno níže. Požadavky na trídy ozdob:
+
+    * Svícka (CCandle) není hlucná (0 dB), nespotrebovává el. energii (0 W), není snadno zápalná (! IsFlammable), ale má otevrený ohen (Blaze).
+    * Zvonecek (CBell) má hlucnost danou parametrem konstruktoru (v dB), nespotrebovává el. energii (0 W), není snadno zápalný (! IsFlammable) a nemá otevrený ohen (! Blaze).
+    * El. lucernicka (CLantern) není hlucná (0 dB), spotrebovává el. energii (parametr konstruktoru ve W), není snadno zápalná (! IsFlammable) a nemá otevrený ohen (! Blaze).
+    * Prskavka (CSparkler) není hlucná (0 dB), nespotrebovává el. energii (0 W), je snadno zápalná (IsFlammable) a nemá otevrený ohen (! Blaze).
+
+Odevzdávejte soubor, který obsahuje pouze implementované trídy CTree, CCandle, CLantern, CBell a CSparkler. Pokud soubor obsahuje i trídu CDecoration, pak ji ponechte v bloku podmíneného prekladu. Trídy musí splnovat verejné rozhraní podle ukázky (a prípadne další rozhraní navíc) - pokud Vámi odevzdané rešení nebude obsahovat popsané rozhraní, dojde k chybe pri kompilaci. Do trídy si ale mužete doplnit další metody (verejné nebo i privátní) a clenské promenné. Odevzdávaný soubor musí obsahovat jak deklaraci trídy (popis rozhraní) tak i definice metod, konstruktoru a destruktoru. Je jedno, zda jsou metody implementované inline nebo oddelene. Odevzdávaný soubor nesmí krome implementace tríd obsahovat nic jiného, zejména ne funkci main. Pro usnadnení odevzdávání mužete využít toho, že ProgTest definuje promennou preprocesoru __PROGTEST__.
+
+Implementovaná trída nesmí používat datové struktury z STL (vector, list, ...). Jejich použití povede k chybe pri kompilaci. Trída je testovaná v omezeném prostredí, kde je limitovaná dostupná pamet (dostacuje k uložení stromu) a je omezena dobou behu (25s na testovacím pocítaci pro cca 30000 testovaných instancí ozdob, referencní rešení pro výpocet potrebuje cca 2.5 sec).
+
+V testovacím prostredí jsou ozdoby pridávány výhradne pomocí metody CTree::Add. Pokud tato metoda nefunguje správne, pak testy neposkytují smerodatné údaje (testují jinak vyplnenou instanci). Krome ctyr implementovaných ozdob jsou v testovacím prostredí používány i jiné ozdoby (jiné podtrídy CDecoration).
+Deklarace požadovaných tríd
+
+#ifndef __PROGTEST__
+class CDecoration   
+ {
+   public:
+                                      CDecoration      ( double Weight ) : m_Weight ( Weight ) { }
+    virtual                          ~CDecoration      ( void ) { }
+    virtual double                    Weight           ( void ) const { return m_Weight; }
+    virtual double                    Loudness         ( void ) const = 0;
+    virtual double                    Consumption      ( void ) const = 0;
+    virtual bool                      IsFlammable      ( void ) const = 0;
+    virtual bool                      Blaze            ( void ) const = 0;
+   protected:
+    double                            m_Weight;
+ };
+#endif /* __PROGTEST__ */
+class CCandle : public CDecoration
+ {
+   public:
+                                      CCandle          ( double Weight = 0.05 );
+    virtual double                    Loudness         ( void ) const;
+    virtual double                    Consumption      ( void ) const;
+    virtual bool                      IsFlammable      ( void ) const;
+    virtual bool                      Blaze            ( void ) const;
+ };
+   
+class CBell : public CDecoration
+ {
+   public:
+                                      CBell            ( double Loudness, double Weight = 0.01 );
+    virtual double                    Loudness         ( void ) const;
+    virtual double                    Consumption      ( void ) const;
+    virtual bool                      IsFlammable      ( void ) const;
+    virtual bool                      Blaze            ( void ) const;
+ };
+   
+   
+class CLantern : public CDecoration
+ {
+   public:
+                                      CLantern         ( double Power, double Weight = 0.02 );
+    virtual double                    Loudness         ( void ) const;
+    virtual double                    Consumption      ( void ) const;
+    virtual bool                      IsFlammable      ( void ) const;
+    virtual bool                      Blaze            ( void ) const;
+ };
+   
+class CSparkler : public CDecoration
+ {
+   public:
+                                      CSparkler        ( double Weight = 0.005 );
+    virtual double                    Loudness         ( void ) const;
+    virtual double                    Consumption      ( void ) const;
+    virtual bool                      IsFlammable      ( void ) const;
+    virtual bool                      Blaze            ( void ) const;
+ };
+   
+class CTree
+ {
+   public:
+                                      CTree            ( void );
+                                     ~CTree            ( void );
+     bool                             EasyToCatchFire  ( void ) const;
+     double                           Loudness         ( void ) const;
+     double                           Consumption      ( void ) const;
+     double                           DecorationWeight ( void ) const;
+     bool                             Add              ( const char * Path, CDecoration * d = NULL );
+
+   protected:
+     static const int MAX_CHILDS = 3;
+
+     // pripadne dalsi deklarace potrebne pro Vasi implementaci
+   private:
+                                      CTree            ( const CTree & src ) { }  // disabled
+     CTree                          & operator =       ( const CTree & src ) { return *this; } // disabled
+ };
+
+Ukázka použití realizovaných tríd:
+
+CTree  A1;
+A1 . Add ( "", new CBell ( 60.000000 ) );// true
+A1 . Add ( "002", new CSparkler ( ) );// true   
+A1 . Add ( "1", new CCandle () );// true
+A1 . Add ( "01", new CLantern ( 5.000000 ) );// true
+A1 . DecorationWeight (); // = 0.085000
+A1 . Consumption  (); // = 5.000000
+A1 . Loudness     (); // = 60.000013
+A1 . EasyToCatchFire (); // = false 
+
+CTree  A2;
+A2 . Add ( "01", new CBell ( 60.000000 ) );// true
+A2 . Add ( "02", new CBell ( 70.000000 ) );// true
+A2 . Add ( "00", new CBell ( 80.000000 ) );// true
+A2 . Add ( "01", new CBell ( 50.000000 ) );// true
+A2 . Add ( "0001", new CBell ( 80.000000 ) );// true
+A2 . DecorationWeight (); // = 0.040000
+A2 . Consumption  (); // = 0.000000
+A2 . Loudness     (); // = 83.224261
+A2 . EasyToCatchFire (); // = false 
+
+CTree  A3;
+A3 . Add ( "0", new CCandle () );// true
+A3 . Add ( "00", new CSparkler ( ) );// true
+A3 . Add ( "01", new CBell ( 80.000000 ) );// true
+A3 . Add ( "02", new CBell ( 50.000000 ) );// true
+A3 . DecorationWeight (); // = 0.075000
+A3 . Consumption  (); // = 0.000000
+A3 . Loudness     (); // = 80.004341
+A3 . EasyToCatchFire (); // = true, rodic-potomek
+
+CTree  A4;
+A4 . Add ( "0", new CBell ( 80.000000 ) );// true
+A4 . Add ( "00", new CSparkler ( ) );// true
+A4 . Add ( "01", new CCandle () );// true   
+A4 . Add ( "02", new CBell ( 50.000000 ) );// true
+A4 . DecorationWeight (); // = 0.075000
+A4 . Consumption  (); // = 0.000000
+A4 . Loudness     (); // = 80.004341
+A4 . EasyToCatchFire (); // = true, bezprostredni sourozenci
+
+CTree  A5;
+A5 . Add ( "0", new CBell ( 80.000000 ) );// true
+A5 . Add ( "00", new CSparkler ( ) );// true
+A5 . Add ( "01", new CBell ( 50.000000 ) );// true
+A5 . Add ( "02", new CCandle () );// true
+A5 . DecorationWeight (); // = 0.075000  
+A5 . Consumption  (); // = 0.000000
+A5 . Loudness     (); // = 80.004341
+A5 . EasyToCatchFire (); // = false, nejsou bezprostredni sourozenci
+
+Nápoveda:
+
+    * Pri výpoctu celkové hlasitosti pracujete s hodnotami v decibelech (dB). Jedná se o pomerné veliciny v logaritmickém merítku - nelze tedy scítat prímo decibely. Musíte si z hodnoty v decibelech vyjádrit výkon, výkony secíst a výkon pak prevést zpet na decibely.
+    * V prvním príkladu je výsledkem hlasitost 60.000013 decibelu, prestože na stomku je jediný zvonek o hlasitosti 60dB. Zde se nejedná o chybu, ostatní ozdoby mají hlasitost 0 dB, cili nenulový absolutní akustický výkon (byt velmi malý).
+    * Ve tríde CTree jde 3x o ten samý výpocet, kdy se:
+          o projde celý strom,
+          o vybere se urcitá hodnota (hmotnost, spotreba, hlasitost),
+          o hodnoty se pres celý strom poscítají (s prípadnou korekcí u decibelu).
+      Zrejme tedy pujde o podobný kód, který by se mohl opakovat až 3x. Pro realizaci se hodí využít ukazatele na metodu (->*). Použití je doporucené, ale ne závazné.

@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<predmety>
+  <predmet kod="Y36XML">
+    <nazev>Technologie XML</nazev>
+    <garant>Pokorny Jaroslav</garant>
+    <autor>Necasky Martin</autor>
+    <autor>Richta Karel</autor>
+    <katedra>13136</katedra>
+    <prerekvizita>Y36DBS</prerekvizita>
+    <prerekvizita>MN</prerekvizita>
+    <prerekvizita>Y36SIN</prerekvizita>
+  </predmet>
+  <predmet kod="MN">
+    <nazev>Martinuv predmet</nazev>
+    <autor>Necasky Martin</autor>
+    <katedra>13136</katedra>
+  </predmet>
+  <predmet kod="Y36TW1">
+    <nazev>Tvorba webovych aplikaci 1</nazev>
+    <garant>Svihla Martin</garant>
+    <autor>Jelinek Ivan</autor>
+    <autor>Klima Martin</autor>
+    <autor>Maly Ivo</autor>
+    <autor>Svihla Martin</autor>
+    <katedra>13136</katedra>
+  </predmet>
+  <predmet kod="Y33EBU">
+    <nazev>E-Business</nazev>
+    <garant>Lazansky Jiri</garant>
+    <autor>Lazansky Jiri</autor>
+    <katedra>13133</katedra>
+  </predmet>
+  <predmet kod="Y36SIN">
+    <nazev>Uvod do softwaroveho inzenyrstvi</nazev>
+    <garant>Richta Karel</garant>
+    <autor>Richta Karel</autor>
+    <katedra>13136</katedra>
+  </predmet>
+  <predmet kod="X33PUI">
+    <nazev>Programovani pro umelou inteligenci</nazev>
+    <garant>Pechoucek Michal</garant>
+    <autor>Stepankova Olga</autor>
+    <katedra>13133</katedra>
+  </predmet>
+  <predmet kod="X33MIS">
+    <nazev>Manazerske informacni systemy</nazev>
+    <garant>Kouba Zdenek</garant>
+    <autor>Aubrecht Petr</autor>
+    <katedra>13133</katedra>
+  </predmet>
+  <predmet kod="Y36DBS">
+    <nazev>Databazove systemy</nazev>
+    <garant>Halaska Ivan</garant>
+    <autor>Valenta Michal</autor>
+    <katedra>13136</katedra>
+    <prerekvizita>X33MIS</prerekvizita>
+    <prerekvizita>X33PUI</prerekvizita>
+  </predmet>
+</predmety>

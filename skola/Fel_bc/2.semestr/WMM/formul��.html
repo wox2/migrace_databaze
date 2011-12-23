@@ -1,0 +1,128 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>                       
+  <head>                                     
+    <meta http-equiv="content-type" content="text/html; charset=windows-1250">                                     
+    <meta name="generator" content="PSPad editor, www.pspad.com">                                     
+    <title>Formulář                                   
+    </title>                       
+  </head>                       
+  <body><h1>Objednávka Zboží</h1>                                
+    <form>                                  
+      <fieldset>                                                          
+        <legend>Jméno & příjmení                                                           
+        </legend>                                                                 
+        <label for="jmeno">         Jméno                                                           
+        </label>                                                                   
+        <input tabindex="1" accesskey="j" type="text" name="jmeno" id="jmeno">                                                                 
+        <label for="prijmeni"> Příjmení                                                            
+        </label>                                                                    
+        <input tabindex="2" acceskey="p" type="text" name="prijmeni" id="prijmeni">                                                                 
+        <label for="titul" > Titul                                                            
+        </label>                                                                     
+        <input tabindex="3" acceskey="t" type="text" name="titul" id="titul">                                     
+        <div>                                       
+          <label for=zena>žena                                     
+          </label>        
+          <input  type="radio" value="zena"  name="pohlavi" id="zena"tabindex="4" checked="checked"/>                 
+          <label for=muz>muž                  
+          </label>                                     
+          <input type="radio" name="pohlavi" tabindex="5" value=muz id="muz"/>        
+        </div>                                                                   
+        </fieldset>                                                     
+        <fieldset>                                                    
+          <legend>        Adresa                                                     
+          </legend>                                           
+          <div>                                                 
+            <label for="ulice">Ulice                                      
+            </label>                                          
+            <input tabindex ="6" acceskey="u" type="text" name="ulice" id="ulice">                                             
+          </div>                     
+          <div>                       
+            <label for="mesto">Město                        
+            </label>                       
+            <input tabindex ="7" acceskey="m" type="text" name="mesto" id="mesto">                           
+          </div>                                                                        
+          <div>                       
+            <label for="psc">PSČ                        
+            </label>                       
+            <input tabindex ="8" acceskey="p" type="text" name="psc" id="psc">                           
+          </div>                     
+          </fieldset>              
+          <fieldset>                  
+            <legend>   Způsob dopravy                 
+            </legend>            
+            <label for="expres">            Express             
+            </label>            
+            <input type="checkbox" acceskey="e" tabindex="9" name="expres" id="expres">            
+            <label for="dvr">            Do vlastních rukou             
+            </label>            
+            <input type="checkbox" acceskey="d" tabindex="10" name="dvr" id="dvr">              
+            <select name="doprava" tabindex="11" id="doprava">            
+              <optgroup label="Pozemní">            
+                <option value="101">Messanger
+                </option>            
+                <option value="102">Vlastní
+                </option>            
+                <option value=103" selected="selected">Pošta
+                </option>                         
+                </optgroup>            
+                <optgroup label="Letecky">                         
+                  <option value="201"> Letecká pošta
+                  </option>            
+                  <option value="202">DHL
+                  </option>            
+                  </optgroup>            
+                  <optgroup label="Vodní">            
+                    <option value="301">Lodní
+                    </option>            
+                    <option value="302"> Ponorkou
+                    </option>            
+                    </optgroup>            
+            </select>                          
+            </fieldset>
+            <fieldset>
+            <legend>
+            Zboží1
+            </legend>
+            <select name="zbozi1[]" tabindex="12" multiple="multiple" id="zbozi1">
+      <option value="1">Parní lokomotiva </option>
+      <option value="2">Ponorka </option>
+      <option value="3" disabled="disabled">Párátko </option>
+      <option value="4">Chléb Šumava </option>
+    </select>
+            </fieldset>
+   <fieldset>
+   <legend>
+   Zboží 2
+   </legend>
+   <label for="koberec"> Koberec
+   </label>
+   <input type="checkbox" acceskey="k" tabindex="13" name="koberec" id="koberec">
+   <label for="pneumatika"> Pneumatika
+   </label>
+   <input type="checkbox" acceskey="p" tabindex="14" name="pneumatika" id="pneumatika" checked="checked">
+   <label for="cepice"> Čepice
+   </label>
+   <input type="checkbox" acceskey="i" tabindex="15" name="cepice" id="cepice">
+   </fieldset>
+   
+   
+   <fieldset>
+   <legend>
+   Vzkaz
+   </legend>
+   <label for="vzkaz">
+   Váš vzkaz nám 
+   </label>
+   <textarea name="vzkaz" tabindex="16" acceskey="v" id="vzkaz" rows="5" cols ="15">Napište, co chcete.
+   </textarea>
+   
+   </fieldset>
+  <div>
+<input type="submit" tabindex="17" value="odeslat" name="odeslat" acceskey="k"/>
+  <input type="reset" tabindex="18" value="resetovat"/>
+  </div>         
+                                                            
+    </form>                                    
+  </body>
+</html>

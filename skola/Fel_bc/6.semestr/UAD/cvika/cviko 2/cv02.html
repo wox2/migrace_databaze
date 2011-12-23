@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="iso-8859-2" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="cz" dir="ltr">
+<head>
+<meta http-equiv="Content-type" content="text/html; charset=iso-8859-2" />
+<meta name="generator" content="Myself" />
+<meta name="keywords" content="UNIX administration" />
+<meta name="author" content="Jan Žďárek &lt;cz.cvut.fel_._zdarekj&gt;" />
+
+<title>Y36UAD -- Správa uživatelů</title>
+<link rel="stylesheet" type="text/css" href="./uad.css" />
+</head>
+<!-- Last 29.3.2008, 99, valid X -->
+
+<body> 
+<h1>Správa uživatelů</h1>
+<hr />
+<h2>Externí identita, uživatelé</h2>
+<p>
+Uživatelé systému jsou definováni v&nbsp;souboru <code>/etc/passwd</code>, 
+vždy jeden uživatel na každé řádce. Každá řádka ma celkem 7 sloupců oddělených 
+dvojtečkou. Zopakujte si jejich význam podle přednášky <em>Administrace 
+uživatelů</em>.
+</p>
+<h3>Úkol 1</h3>
+<p>
+Srovnejte údaje uvedené na přednášce s&nbsp;aktuální verzí dokumentace 
+systému o souboru <abbr title="Hint: passwd(5)"><code>passwd</code></abbr>.
+</p>
+<p>
+Hesla a parametry jejich platnosti jsou uložena v&nbsp;zašifrované podobě 
+v&nbsp;souboru <code>/etc/<abbr title="Hint: shadow(5)">shadow</abbr></code>, 
+který má velice podobnou strukturu. 
+</p>
+<h3>Úkol 2</h3>
+<p>
+Přesný význam jednotlivých položek souboru <code>/etc/shadow</code> 
+byl diskutován na přednášce, srovnejte tyto údaje s&nbsp;dokumentací systému.
+</p>
+<h2>Přidávání uživatelů &ndash; nástroje <code>user*</code></h2>
+<h3>Přehled vybraných parametrů nástrojů správy uživatelů</h3>
+<p>
+<tt>useradd</tt> i <tt>userdel</tt> lze použít zcela jednoduše, např.:<br />
+<tt>useradd loginname</tt><br />
+</p>
+<p>
+Chceme-li nastavit některé vlastnosti ručně, lze to pomocí volitelných 
+parametrů.
+</p>
+<table>
+<tr><td><tt>useradd</tt></td><td><code>-u UID</code></td><td>UID nového uživatele</td></tr>
+<tr><td><tt></tt></td><td><code>-g GID</code></td><td>primární GID</td></tr>
+<tr><td><tt></tt></td><td><code>-G GID1,GID2,...</code></td><td>sekundární GID</td></tr>
+<tr><td><tt></tt></td><td><code>-m</code></td><td>vytvořit domovský adresář</td></tr>
+<tr><td><tt></tt></td><td><code>-s shell</code></td><td>login shell</td></tr>
+<tr><td><tt>userdel</tt></td><td><code>-r</code></td><td>Smaže účet včetně domovského adresáře a souboru s došlou poštou.</td></tr>
+</table>
+<p>
+Vyzkoušejte si přidat a odebrat uživatele. Využijte příkazy 
+<abbr title="Hint: useradd(8)"><code>useradd</code></abbr>, <abbr title="Hint: userdel(8)"><code>userdel</code></abbr> a <code>usermod</code>. 
+Sledujte, jak se mění soubor <code>/etc/passwd</code> a <code>/etc/group</code>.
+Zkuste měnit také hesla a sledovat soubor <code>/etc/shadow</code>.
+</p>
+<p>
+Zajistí nástroje <code>user*</code> všechny operace, které jsou potřeba pro 
+úspěšné přidání uživatele?
+</p>
+<h3>Úkol 3</h3>
+<p>
+Ověřte si správnost své odpovědi na předchozí otázku tímto příkladem:
+</p>
+<ol>
+  <li>Založte nového uživatele příkazem <tt>useradd</tt>.</li>
+  <li>Přihlašte se na jeho účet a vytvořte soubor <tt>soubor</tt> v adresáři <tt>/tmp</tt>.</li>
+  <li>Odhlaste uživatele.</li>
+  <li>Zrušte uživatele příkazem <tt>userdel</tt>, resp. <tt>userdel -r</tt>.</li>
+</ol>
+<p>
+<b>Změnu identity v běžícím shellu provedeme příkazem <tt><abbr title="Hint: su(1)">su</abbr> - <i>loginname</i></tt>.</b>
+</p>
+<h2>Přidávání uživatelů &ndash; ručně</h2>
+<p>
+Nyní zkuste přidat uživatele ručně (podle postupu uvedeného na přednášce), 
+tj.&nbsp;vytvořit příslušné řádky 
+v&nbsp;<code>/etc/passwd</code>, <code>/etc/shadow</code> a případně 
+v&nbsp;<code>/etc/group</code> pomocí obyčejného textového editoru.
+Jako editor je nejlepší použít <code>vipw</code>, pomocí proměnné
+prostředí <code>EDITOR</code> si můžete nastavit jiný editor, než je 
+implicitní <code>vi</code>, jako například <code>joe</code> nebo <code>emacs</code>, 
+případně některý grafický editor pro X11 (<code>xedit</code>).
+</p>
+<h3>Úkol 4</h3>
+<p>
+Vyzkoušejte, co se stane při spuštění druhého a dalšího editoru <code>vipw</code>.
+Je takové chování užitečné? <!--(Pokud si nejste jisti, konsultujte svůj názor 
+s&nbsp;vaším cvičícím.)-->
+</p>
+<h2>Interní identita &ndash; UID/GID</h2>
+<p>
+Vlastník jednotlivých objektů v UNIXu (soubor, proces) 
+je identifikován vždy jen pomocí UID, to znamená, že je uloženo 
+(na disku, v&nbsp;paměti) jen UID a když chce kterýkoliv program vypsat 
+skutečného vlastníka, musí si ho dohledat v&nbsp;databázi uživatelů, 
+např.&nbsp;<code>/etc/passwd</code>. 
+</p>
+<h3>Úkol 5</h3>
+<ol>
+  <li>Přidejte nového uživatele <code>victim</code> a přihlašte se na jeho účet.</li>
+  <li>Vytvořte nějaké soubory, spusťte na pozadí několik procesů.</li>
+  <li>Odeberte řádky týkající se uživatele <code>victim</code> ze souborů
+      <code>/etc/passwd</code>, <code>/etc/shadow</code> a případně <code>/etc/group</code>.
+      Pozor, <code>userdel</code> by vám neměl z&nbsp;pochopitelných důvodů 
+      odebrání přihlášeného uživatele dovolit. Je nutné to provést ručně, nebo 
+      zadat příkazu <tt>userdel</tt> parametr <tt>-f</tt>.</li>
+  <li>Jak se nyní systém chová? Ověřte:
+  <ol style="list-style-type: lower-alpha;">
+    <li>přihlašování,</li>
+    <li>vlastnictví souborů, <code>ls(1)</code></li>
+    <li>vlastnictví procesů, <code>ps(1)</code></li>
+    <li>identitu přihlášeného uživatele. <code>id(1)</code></li>
+  </ol></li>
+</ol>
+<h3>Úkol 6</h3>
+<p>
+Vyzkoušejte a vysvětlete následující chování:
+</p>
+<ol>
+  <li>Založte nového uživatele <tt>sef</tt>.</li>
+  <li>Zkontrolujte, zda adresář <tt>/home/sef</tt> vlastní uživatel <tt>sef</tt>.</li>
+  <li>Zrušte uživatele <tt>sef</tt>, ale ponechte jeho domovský adresář.</li>
+  <li>Založte nového uživatele <tt>ucetni</tt>.</li>
+  <li>Podívejte se, kdo vlastní adresář <tt>/home/sef</tt>. Proč?</li>
+  <li>Zrušte uživatele <tt>ucetni</tt>.</li>
+  <li>Podívejte se, kdo vlastní adresář <tt>/home/sef</tt> nyní.</li>
+</ol>
+<h3>Úkol 7</h3>
+<p>
+Přidejte nového uživatele <tt>admin</tt>. Nastavte jeho UID na nulu.
+(<tt>useradd -o</tt>.)
+Přihlaste se jako uživatel <tt>admin</tt> a ověřte identitu nově vytvářených 
+souborů a procesů.
+</p>
+<h3>Bodované úlohy</h3>
+<p>
+Vyřešte bodované úlohy zadané cvičícím a předveďte mu jejich správná řešení.
+</p>
+<hr />
+<p><img src="../obr/ESFgrant.png" width="161" height="22" alt="Partially supported by ESF and City of Prague." /></p>
+</body>
+</html>

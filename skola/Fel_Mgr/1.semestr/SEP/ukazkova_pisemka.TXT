@@ -1,0 +1,47 @@
+identifikujte a strucne popiste cinnosti tvorici zivotni cyklus yvoje software... ktere dalsi cinnosti lze vramci softwaro
+
+- poptavka, vyberove rizeni, vyhra zakazky
+- 1) sber pozadavku
+- 2) analyza pozadavku
+- 3) design
+- 4) implementace, dokumentace, testovani
+- 5) predani, 
+- 6) akceptace
+- 7) udrzba
+
+
+dalsi projekty
+- zdroje
+
+
+kvalifikacni testovani = delam ja
+akceptacni testovani = dela zakaznik
+
+Continous integration - predpoklady - mit zdrojaky nekde (Hudson umi tahat )
+
+unit - s unitama
+integracni -
+regresni testy - aby se nic nerozbilo, gui testy
+
+TAG vs branch - branch neni staticky, branch - co je nasazeno, TAG
+
+
+
+babysitting - dohlizeni na projekt v nejake kratke dobe, pomoc zakaznikovi (adminum) po nasazeni
+
+
+
+historie projektu - porovnani, odhadovana pracnosti, tasky, odhadovane metriky,...
+
+
+
+
+NOTE: 	-"vyzadujeme od zakaznika pozadovanou soucinnost", "pozadujeme dodat ..."
+	-zalezi na smlouve
+
+
+
+
+integracni prostredi - u vetsich proj. sloucene unit 
+testovaci - 
+akceptacni - u zakaznika, ekvivalent testovaciho ("preprodukcni prostredi")

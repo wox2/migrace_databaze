@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list>
+	<prvek next="B" value="A" />
+	<prvek next="C" value="B" />
+	<prvek next="D" value="C" />
+	<prvek next="E" value="D" />
+	<prvek next="F" value="E" />
+	<prvek next="G" value="F" />
+	<prvek next="H" value="G" />
+	<prvek next="CH" value="H" />
+	<prvek next="I" value="CH" />
+	<prvek next="END" value="I" />
+</list>

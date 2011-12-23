@@ -1,0 +1,4 @@
+(: vybere muzstvo s atributem domaci rovnym 'ano' :)
+//muzstvo[@domaci='ano']
+
+

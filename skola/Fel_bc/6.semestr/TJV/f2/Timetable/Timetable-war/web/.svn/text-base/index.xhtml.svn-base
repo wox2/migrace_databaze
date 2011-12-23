@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html">
+
+    <body>
+        <h1>#{msgs.header}</h1>
+            <h:form>
+                <h:panelGrid columns="3" columnClasses="dataLabel,,">
+
+                    <h:outputText value="Výchozí stanice:" />
+                        <h:selectOneListbox id="dep" value="#{searching.departing}" label="Stanice" converter="stationConv">
+                            <f:selectItems value="#{stations.allStations}" />
+                        </h:selectOneListbox>
+                        <h:message for="dep" />
+
+                    <h:outputText value="Cílová stanice:" />
+                        <h:selectOneListbox id="arr" value="#{searching.arriving}" label="Stanice" converter="stationConv">
+                            <f:selectItems value="#{stations.allStations}" />
+                        </h:selectOneListbox>
+                        <h:message for="arr" />
+                    
+                    <h:outputText value="Čas odjezdu:" />
+                    <h:inputText value="#{searching.departureTime}" id="dt" label="odjezd" required="true" requiredMessage="#{msgs.requiredMessage}"/>
+                    <h:message for="dt" errorClass="errorRequired"/>
+
+
+                </h:panelGrid>
+                <h:commandButton value="Hledat" action="#{searching.findResults}"/>
+                <h:messages globalOnly="true"/>
+
+            </h:form>
+        <h:link outcome="admin" value="Admin" />
+
+    </body>
+</html>

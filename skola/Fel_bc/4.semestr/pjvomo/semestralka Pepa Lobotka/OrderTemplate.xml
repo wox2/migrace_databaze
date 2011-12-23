@@ -1,0 +1,611 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Určení defaultní měny pro všechny objednávky -->
+<orders currency="Kč">
+
+
+
+
+
+<!-- Cela objednavka objednávka -->
+<order>
+
+    <!-- Zakaznik -->
+    <customer>
+        <firstname>Josef</firstname>
+        <surename>Lobotka</surename>
+        <!-- Např. nick z AUKRA -->
+        <nick>NeoGenet1c</nick>
+        <address>
+            <street>Luční 474</street>
+            <city>Břidličná</city>
+            <postcode>79351</postcode>
+        </address>
+    </customer>
+
+    <!-- Info o poštovném -->
+    <shipping>
+        <type>Dobírka</type>
+        <cost>130</cost>
+    </shipping>
+
+    <!-- Specifikace produktu -->
+    <product>
+        <name>Brýle RayBan</name>
+        <price>600</price>                      <!-- Čistá cena produktu -->
+        <specification>Neprůhledné, šedá skla</specification>
+    </product>
+
+    <!-- Info o nákupce -->
+    <purchase>
+        <boughtdate>21.4.2009</boughtdate>      <!-- Datum zaplacení předmětu u dodavatele -->
+        <price>350</price>                      <!-- Nákupní cena -->
+        <deliverydate>26.4.2009</deliverydate>  <!-- Datum doručení -->
+        <provider>Ikflashi - Ebay</provider>    <!-- Jméno / nick dodavatele -->
+    </purchase>
+
+    <!-- Náklady spojené s vyřešením objednávky (např. cena obálky + poplatky aukce) -->
+    <costs>120</costs>
+
+    <!-- Den objednání / vytvoření objednávky -->
+    <orderdate>19.4.2009</orderdate>
+
+    <!-- Datum zaplacení (připsání peněz na účet) zákazníkem -->
+    <paiddate>21.4.2009</paiddate>
+
+    <!-- Datum odeslání zboží zákazníkovi -->
+    <sentdate>27.4.2009</sentdate>
+
+    <!-- Stav objednávky:
+         1 ~ nevyřízená
+         2 ~ vyřizuje se
+         3 ~ vyřízená
+    -->
+    <state>2</state>
+
+    <!-- Poznámka k objednávce -->
+    <notation>Brácha smrdí ;) a má mail lalala@seznam.cz</notation>
+
+</order>
+
+            <order>
+
+    <!-- Zakaznik -->
+    <customer>
+        <firstname>Klára</firstname>
+        <surename>Novotná</surename>
+        <!-- Např. nick z AUKRA -->
+        <nick>novotnak</nick>
+        <address>
+            <street>Doubravník 68</street>
+            <city>Doubravník</city>
+            <postcode>59261</postcode>
+        </address>
+    </customer>
+
+    <!-- Info o poštovném -->
+    <shipping>
+        <type>Doporučeně</type>
+        <cost>70</cost>
+    </shipping>
+
+    <!-- Specifikace produktu -->
+    <product>
+        <name>Aviator sunglasses</name>
+        <price>139</price>                      <!-- Čistá cena produktu -->
+        <specification>Zrcadlové brýle AVIATOR</specification>
+    </product>
+
+    <!-- Info o nákupce -->
+    <purchase>
+        <boughtdate>17.3.2010</boughtdate>      <!-- Datum zaplacení předmětu u dodavatele -->
+        <price>60</price>                      <!-- Nákupní cena -->
+        <deliverydate>25.3.2010</deliverydate>  <!-- Datum doručení -->
+        <provider>Číňan - Ebay</provider>    <!-- Jméno / nick dodavatele -->
+    </purchase>
+
+    <!-- Náklady spojené s vyřešením objednávky (např. cena obálky + poplatky aukce) -->
+    <costs>13</costs>
+
+    <!-- Den objednání / vytvoření objednávky -->
+    <orderdate>27.3.2010</orderdate>
+
+    <!-- Datum zaplacení (připsání peněz na účet) zákazníkem -->
+    <paiddate>29.3.2010</paiddate>
+
+    <!-- Datum odeslání zboží zákazníkovi -->
+    <sentdate>30.3.2010</sentdate>
+
+    <!-- Stav objednávky:
+         1 ~ nevyřízená
+         2 ~ vyřizuje se
+         3 ~ vyřízená
+    -->
+    <state>3</state>
+
+    <!-- Poznámka k objednávce -->
+    <notation>NeoGenet1c je homokláda</notation>
+
+</order>
+
+                      <order>
+
+    <!-- Zakaznik -->
+    <customer>
+        <firstname>Michal</firstname>
+        <surename>Faifer</surename>
+        <!-- Např. nick z AUKRA -->
+        <nick>faiferak</nick>
+        <address>
+            <street>Děkanská Vinice 817/8</street>
+            <city>Praha 4</city>
+            <postcode>14000</postcode>
+        </address>
+    </customer>
+
+    <!-- Info o poštovném -->
+    <shipping>
+        <type>Doporučeně</type>
+        <cost>70</cost>
+    </shipping>
+
+    <!-- Specifikace produktu -->
+    <product>
+        <name>Aviator sunglasses</name>
+        <price>139</price>                      <!-- Čistá cena produktu -->
+        <specification>Zrcadlové brýle AVIATOR</specification>
+    </product>
+
+    <!-- Info o nákupce -->
+    <purchase>
+        <boughtdate>17.3.2010</boughtdate>      <!-- Datum zaplacení předmětu u dodavatele -->
+        <price>60</price>                      <!-- Nákupní cena -->
+        <deliverydate>25.3.2010</deliverydate>  <!-- Datum doručení -->
+        <provider>Číňan - Ebay</provider>    <!-- Jméno / nick dodavatele -->
+    </purchase>
+
+    <!-- Náklady spojené s vyřešením objednávky (např. cena obálky + poplatky aukce) -->
+    <costs>13</costs>
+
+    <!-- Den objednání / vytvoření objednávky -->
+    <orderdate>26.3.2010</orderdate>
+
+    <!-- Datum zaplacení (připsání peněz na účet) zákazníkem -->
+    <paiddate>28.3.2010</paiddate>
+
+    <!-- Datum odeslání zboží zákazníkovi -->
+    <sentdate>29.3.2010</sentdate>
+
+    <!-- Stav objednávky:
+         1 ~ nevyřízená
+         2 ~ vyřizuje se
+         3 ~ vyřízená
+    -->
+    <state>2</state>
+
+    <!-- Poznámka k objednávce -->
+    <notation>NeoGenet1c je homokláda</notation>
+
+</order>
+
+            <order>
+
+    <!-- Zakaznik -->
+    <customer>
+        <firstname>Hana</firstname>
+        <surename>Adamíková</surename>
+        <!-- Např. nick z AUKRA -->
+        <nick>adamikovahana</nick>
+        <address>
+            <street>Kotlářská 15</street>
+            <city>Brno</city>
+            <postcode>60200</postcode>
+        </address>
+    </customer>
+
+    <!-- Info o poštovném -->
+    <shipping>
+        <type>Doporučeně</type>
+        <cost>45</cost>
+    </shipping>
+
+    <!-- Specifikace produktu -->
+    <product>
+        <name>Calvin klein - spodní prádlo</name>
+        <price>154</price>                      <!-- Čistá cena produktu -->
+        <specification>Calvin klein underwear</specification>
+    </product>
+
+    <!-- Info o nákupce -->
+    <purchase>
+        <boughtdate>17.3.2010</boughtdate>      <!-- Datum zaplacení předmětu u dodavatele -->
+        <price>60</price>                      <!-- Nákupní cena -->
+        <deliverydate>25.3.2010</deliverydate>  <!-- Datum doručení -->
+        <provider>Happaiteal.com</provider>    <!-- Jméno / nick dodavatele -->
+    </purchase>
+
+    <!-- Náklady spojené s vyřešením objednávky (např. cena obálky + poplatky aukce) -->
+    <costs>13</costs>
+
+    <!-- Den objednání / vytvoření objednávky -->
+    <orderdate>14.3.2010</orderdate>
+
+    <!-- Datum zaplacení (připsání peněz na účet) zákazníkem -->
+    <paiddate>16.3.2010</paiddate>
+
+    <!-- Datum odeslání zboží zákazníkovi -->
+    <sentdate>18.3.2010</sentdate>
+
+    <!-- Stav objednávky:
+         1 ~ nevyřízená
+         2 ~ vyřizuje se
+         3 ~ vyřízená
+    -->
+    <state>3</state>
+
+    <!-- Poznámka k objednávce -->
+    <notation>NeoGenet1c je homokláda</notation>
+
+</order>
+
+                 <order>
+
+    <!-- Zakaznik -->
+    <customer>
+        <firstname>Ivana</firstname>
+        <surename>Pižlová</surename>
+        <!-- Např. nick z AUKRA -->
+        <nick>pizlovka</nick>
+        <address>
+            <street>Ruprechtická 538/24</street>
+            <city>Liberec</city>
+            <postcode>46001</postcode>
+        </address>
+    </customer>
+
+    <!-- Info o poštovném -->
+    <shipping>
+        <type>Doporučeně</type>
+        <cost>45</cost>
+    </shipping>
+
+    <!-- Specifikace produktu -->
+    <product>
+        <name>Calvin klein - spodní prádlo</name>
+        <price>154</price>                      <!-- Čistá cena produktu -->
+        <specification>Calvin klein underwear</specification>
+    </product>
+
+    <!-- Info o nákupce -->
+    <purchase>
+        <boughtdate>17.3.2010</boughtdate>      <!-- Datum zaplacení předmětu u dodavatele -->
+        <price>60</price>                      <!-- Nákupní cena -->
+        <deliverydate>25.3.2010</deliverydate>  <!-- Datum doručení -->
+        <provider>Happaiteal.com</provider>    <!-- Jméno / nick dodavatele -->
+    </purchase>
+
+    <!-- Náklady spojené s vyřešením objednávky (např. cena obálky + poplatky aukce) -->
+    <costs>13</costs>
+
+    <!-- Den objednání / vytvoření objednávky -->
+    <orderdate>14.3.2010</orderdate>
+
+    <!-- Datum zaplacení (připsání peněz na účet) zákazníkem -->
+    <paiddate>16.3.2010</paiddate>
+
+    <!-- Datum odeslání zboží zákazníkovi -->
+    <sentdate>18.3.2010</sentdate>
+
+    <!-- Stav objednávky:
+         1 ~ nevyřízená
+         2 ~ vyřizuje se
+         3 ~ vyřízená
+    -->
+    <state>3</state>
+
+    <!-- Poznámka k objednávce -->
+    <notation>NeoGenet1c je homokláda</notation>
+
+</order>
+
+    <order>
+
+    <!-- Zakaznik -->
+    <customer>
+        <firstname>Daniel</firstname>
+        <surename>Černý</surename>
+        <!-- Např. nick z AUKRA -->
+        <nick>mr.black</nick>
+        <address>
+            <street>Hatě 87</street>
+            <city>Hatě</city>
+            <postcode>26727</postcode>
+        </address>
+    </customer>
+
+    <!-- Info o poštovném -->
+    <shipping>
+        <type>Doporučeně</type>
+        <cost>45</cost>
+    </shipping>
+
+    <!-- Specifikace produktu -->
+    <product>
+        <name>Calvin klein - spodní prádlo</name>
+        <price>154</price>                      <!-- Čistá cena produktu -->
+        <specification>Calvin klein underwear</specification>
+    </product>
+
+    <!-- Info o nákupce -->
+    <purchase>
+        <boughtdate>17.3.2010</boughtdate>      <!-- Datum zaplacení předmětu u dodavatele -->
+        <price>60</price>                      <!-- Nákupní cena -->
+        <deliverydate>25.3.2010</deliverydate>  <!-- Datum doručení -->
+        <provider>Happaiteal.com</provider>    <!-- Jméno / nick dodavatele -->
+    </purchase>
+
+    <!-- Náklady spojené s vyřešením objednávky (např. cena obálky + poplatky aukce) -->
+    <costs>13</costs>
+
+    <!-- Den objednání / vytvoření objednávky -->
+    <orderdate>14.3.2010</orderdate>
+
+    <!-- Datum zaplacení (připsání peněz na účet) zákazníkem -->
+    <paiddate>16.3.2010</paiddate>
+
+    <!-- Datum odeslání zboží zákazníkovi -->
+    <sentdate>18.3.2010</sentdate>
+
+    <!-- Stav objednávky:
+         1 ~ nevyřízená
+         2 ~ vyřizuje se
+         3 ~ vyřízená
+    -->
+    <state>1</state>
+
+    <!-- Poznámka k objednávce -->
+    <notation>NeoGenet1c je homokláda</notation>
+
+</order>
+
+    <order>
+
+    <!-- Zakaznik -->
+    <customer>
+        <firstname>Renata</firstname>
+        <surename>Machová</surename>
+        <!-- Např. nick z AUKRA -->
+        <nick>machule</nick>
+        <address>
+            <street>Na Borku 1614</street>
+            <city>Jirkov</city>
+            <postcode>43111</postcode>
+        </address>
+    </customer>
+
+    <!-- Info o poštovném -->
+    <shipping>
+        <type>Doporučeně</type>
+        <cost>45</cost>
+    </shipping>
+
+    <!-- Specifikace produktu -->
+    <product>
+        <name>Calvin klein - spodní prádlo</name>
+        <price>154</price>                      <!-- Čistá cena produktu -->
+        <specification>Calvin klein underwear</specification>
+    </product>
+
+    <!-- Info o nákupce -->
+    <purchase>
+        <boughtdate>17.3.2010</boughtdate>      <!-- Datum zaplacení předmětu u dodavatele -->
+        <price>60</price>                      <!-- Nákupní cena -->
+        <deliverydate>25.3.2010</deliverydate>  <!-- Datum doručení -->
+        <provider>Happaiteal.com</provider>    <!-- Jméno / nick dodavatele -->
+    </purchase>
+
+    <!-- Náklady spojené s vyřešením objednávky (např. cena obálky + poplatky aukce) -->
+    <costs>13</costs>
+
+    <!-- Den objednání / vytvoření objednávky -->
+    <orderdate>15.4.2010</orderdate>
+
+    <!-- Datum zaplacení (připsání peněz na účet) zákazníkem -->
+    <paiddate>17.4.2010</paiddate>
+
+    <!-- Datum odeslání zboží zákazníkovi -->
+    <sentdate>19.3.2010</sentdate>
+
+    <!-- Stav objednávky:
+         1 ~ nevyřízená
+         2 ~ vyřizuje se
+         3 ~ vyřízená
+    -->
+    <state>3</state>
+
+    <!-- Poznámka k objednávce -->
+    <notation>NeoGenet1c je homokláda</notation>
+
+</order>
+
+    <order>
+
+    <!-- Zakaznik -->
+    <customer>
+        <firstname>Jana</firstname>
+        <surename>Kolářová</surename>
+        <!-- Např. nick z AUKRA -->
+        <nick>kolarka</nick>
+        <address>
+            <street>Moravské náměstí 629/4</street>
+            <city>Brno</city>
+            <postcode>60200</postcode>
+        </address>
+    </customer>
+
+    <!-- Info o poštovném -->
+    <shipping>
+        <type>Doporučeně</type>
+        <cost>45</cost>
+    </shipping>
+
+    <!-- Specifikace produktu -->
+    <product>
+        <name>Calvin klein - spodní prádlo</name>
+        <price>154</price>                      <!-- Čistá cena produktu -->
+        <specification>Calvin klein underwear</specification>
+    </product>
+
+    <!-- Info o nákupce -->
+    <purchase>
+        <boughtdate>17.3.2010</boughtdate>      <!-- Datum zaplacení předmětu u dodavatele -->
+        <price>60</price>                      <!-- Nákupní cena -->
+        <deliverydate>25.3.2010</deliverydate>  <!-- Datum doručení -->
+        <provider>Happaiteal.com</provider>    <!-- Jméno / nick dodavatele -->
+    </purchase>
+
+    <!-- Náklady spojené s vyřešením objednávky (např. cena obálky + poplatky aukce) -->
+    <costs>13</costs>
+
+    <!-- Den objednání / vytvoření objednávky -->
+    <orderdate>16.4.2010</orderdate>
+
+    <!-- Datum zaplacení (připsání peněz na účet) zákazníkem -->
+    <paiddate>18.4.2010</paiddate>
+
+    <!-- Datum odeslání zboží zákazníkovi -->
+    <sentdate>20.3.2010</sentdate>
+
+    <!-- Stav objednávky:
+         1 ~ nevyřízená
+         2 ~ vyřizuje se
+         3 ~ vyřízená
+    -->
+    <state>2</state>
+
+    <!-- Poznámka k objednávce -->
+    <notation>NeoGenet1c je homokláda</notation>
+
+</order>
+
+    <order>
+
+    <!-- Zakaznik -->
+    <customer>
+        <firstname>Pavel</firstname>
+        <surename>Řehák</surename>
+        <!-- Např. nick z AUKRA -->
+        <nick>rehacisko</nick>
+        <address>
+            <street>SNP 17</street>
+            <city>Jablonec nad Nisou</city>
+            <postcode>46601</postcode>
+        </address>
+    </customer>
+
+    <!-- Info o poštovném -->
+    <shipping>
+        <type>Doporučeně</type>
+        <cost>45</cost>
+    </shipping>
+
+    <!-- Specifikace produktu -->
+    <product>
+        <name>Calvin klein - spodní prádlo</name>
+        <price>154</price>                      <!-- Čistá cena produktu -->
+        <specification>Calvin klein underwear</specification>
+    </product>
+
+    <!-- Info o nákupce -->
+    <purchase>
+        <boughtdate>17.3.2010</boughtdate>      <!-- Datum zaplacení předmětu u dodavatele -->
+        <price>60</price>                      <!-- Nákupní cena -->
+        <deliverydate>25.3.2010</deliverydate>  <!-- Datum doručení -->
+        <provider>Happaiteal.com</provider>    <!-- Jméno / nick dodavatele -->
+    </purchase>
+
+    <!-- Náklady spojené s vyřešením objednávky (např. cena obálky + poplatky aukce) -->
+    <costs>13</costs>
+
+    <!-- Den objednání / vytvoření objednávky -->
+    <orderdate>16.4.2010</orderdate>
+
+    <!-- Datum zaplacení (připsání peněz na účet) zákazníkem -->
+    <paiddate>18.4.2010</paiddate>
+
+    <!-- Datum odeslání zboží zákazníkovi -->
+    <sentdate>20.3.2010</sentdate>
+
+    <!-- Stav objednávky:
+         1 ~ nevyřízená
+         2 ~ vyřizuje se
+         3 ~ vyřízená
+    -->
+    <state>1</state>
+
+    <!-- Poznámka k objednávce -->
+    <notation>NeoGenet1c je homokláda</notation>
+
+</order>
+
+                                 <order>
+
+    <!-- Zakaznik -->
+    <customer>
+        <firstname>Jachym</firstname>
+        <surename>Macek</surename>
+        <!-- Např. nick z AUKRA -->
+        <nick>macule</nick>
+        <address>
+            <street>Na Vyšehradě 414</street>
+            <city>Předměřice nad Labem</city>
+            <postcode>50302</postcode>
+        </address>
+    </customer>
+
+    <!-- Info o poštovném -->
+    <shipping>
+        <type>Doporučeně</type>
+        <cost>70</cost>
+    </shipping>
+
+    <!-- Specifikace produktu -->
+    <product>
+        <name>Aviator sunglasses</name>
+        <price>139</price>                      <!-- Čistá cena produktu -->
+        <specification>Zrcadlové brýle AVIATOR</specification>
+    </product>
+
+    <!-- Info o nákupce -->
+    <purchase>
+        <boughtdate>17.3.2010</boughtdate>      <!-- Datum zaplacení předmětu u dodavatele -->
+        <price>60</price>                      <!-- Nákupní cena -->
+        <deliverydate>25.3.2010</deliverydate>  <!-- Datum doručení -->
+        <provider>Číňan - Ebay</provider>    <!-- Jméno / nick dodavatele -->
+    </purchase>
+
+    <!-- Náklady spojené s vyřešením objednávky (např. cena obálky + poplatky aukce) -->
+    <costs>13</costs>
+
+    <!-- Den objednání / vytvoření objednávky -->
+    <orderdate>27.4.2010</orderdate>
+
+    <!-- Datum zaplacení (připsání peněz na účet) zákazníkem -->
+    <paiddate>29.4.2010</paiddate>
+
+    <!-- Datum odeslání zboží zákazníkovi -->
+    <sentdate>30.4.2010</sentdate>
+
+    <!-- Stav objednávky:
+         1 ~ nevyřízená
+         2 ~ vyřizuje se
+         3 ~ vyřízená
+    -->
+    <state>2</state>
+
+    <!-- Poznámka k objednávce -->
+    <notation>NeoGenet1c je homokláda</notation>
+
+</order>
+
+</orders>

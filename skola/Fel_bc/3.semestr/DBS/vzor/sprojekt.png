@@ -1,0 +1,425 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<grammar xmlns="http://relaxng.org/ns/structure/1.0">
+  <define name="sproject">
+    <element name="sproject">
+      <ref name="attlist.sproject"/>
+      <ref name="course"/>
+      <ref name="author"/>
+      <ref name="content"/>
+    </element>
+  </define>
+  <define name="attlist.sproject" combine="interleave">
+    <empty/>
+  </define>
+  <define name="course">
+    <element name="course">
+      <ref name="attlist.course"/>
+      <ref name="cname"/>
+      <ref name="code"/>
+      <ref name="semester"/>
+      <ref name="seminar"/>
+    </element>
+  </define>
+  <define name="attlist.course" combine="interleave">
+    <empty/>
+  </define>
+  <define name="author">
+    <element name="author">
+      <ref name="attlist.author"/>
+      <ref name="aname"/>
+      <ref name="uname"/>
+      <ref name="email"/>
+    </element>
+  </define>
+  <define name="attlist.author" combine="interleave">
+    <empty/>
+  </define>
+  <define name="content">
+    <element name="content">
+      <ref name="attlist.content"/>
+      <ref name="declaration"/>
+      <ref name="title"/>
+      <ref name="description"/>
+      <ref name="data_model"/>
+      <ref name="queries"/>
+      <ref name="scripts"/>
+      <ref name="conclussions"/>
+      <ref name="references"/>
+    </element>
+  </define>
+  <define name="attlist.content" combine="interleave">
+    <empty/>
+  </define>
+  <define name="cname">
+    <element name="cname">
+      <ref name="attlist.cname"/>
+      <text/>
+    </element>
+  </define>
+  <define name="attlist.cname" combine="interleave">
+    <empty/>
+  </define>
+  <define name="code">
+    <element name="code">
+      <ref name="attlist.code"/>
+      <text/>
+    </element>
+  </define>
+  <define name="attlist.code" combine="interleave">
+    <empty/>
+  </define>
+  <define name="semester">
+    <element name="semester">
+      <ref name="attlist.semester"/>
+      <text/>
+    </element>
+  </define>
+  <define name="attlist.semester" combine="interleave">
+    <empty/>
+  </define>
+  <define name="seminar">
+    <element name="seminar">
+      <ref name="attlist.seminar"/>
+      <text/>
+    </element>
+  </define>
+  <define name="attlist.seminar" combine="interleave">
+    <empty/>
+  </define>
+  <define name="aname">
+    <element name="aname">
+      <ref name="attlist.aname"/>
+      <text/>
+    </element>
+  </define>
+  <define name="attlist.aname" combine="interleave">
+    <empty/>
+  </define>
+  <define name="uname">
+    <element name="uname">
+      <ref name="attlist.uname"/>
+      <text/>
+    </element>
+  </define>
+  <define name="attlist.uname" combine="interleave">
+    <empty/>
+  </define>
+  <define name="email">
+    <element name="email">
+      <ref name="attlist.email"/>
+      <text/>
+    </element>
+  </define>
+  <define name="attlist.email" combine="interleave">
+    <empty/>
+  </define>
+  <define name="title">
+    <element name="title">
+      <ref name="attlist.title"/>
+      <text/>
+    </element>
+  </define>
+  <define name="attlist.title" combine="interleave">
+    <empty/>
+  </define>
+  <define name="declaration">
+    <element name="declaration">
+      <ref name="attlist.declaration"/>
+      <text/>
+    </element>
+  </define>
+  <define name="attlist.declaration" combine="interleave">
+    <empty/>
+  </define>
+  <define name="description">
+    <element name="description">
+      <ref name="attlist.description"/>
+      <ref name="title"/>
+      <oneOrMore>
+        <ref name="para"/>
+        <optional>
+          <ref name="comment"/>
+        </optional>
+      </oneOrMore>
+    </element>
+  </define>
+  <define name="attlist.description" combine="interleave">
+    <empty/>
+  </define>
+  <define name="data_model">
+    <element name="data_model">
+      <ref name="attlist.data_model"/>
+      <ref name="title"/>
+      <ref name="dm_picture"/>
+      <optional>
+        <ref name="comment"/>
+      </optional>
+      <ref name="dm_discussion"/>
+    </element>
+  </define>
+  <define name="attlist.data_model" combine="interleave">
+    <empty/>
+  </define>
+  <define name="scripts">
+    <element name="scripts">
+      <ref name="attlist.scripts"/>
+      <ref name="title"/>
+      <oneOrMore>
+        <ref name="para"/>
+        <optional>
+          <ref name="comment"/>
+        </optional>
+      </oneOrMore>
+    </element>
+  </define>
+  <define name="attlist.scripts" combine="interleave">
+    <empty/>
+  </define>
+  <define name="queries">
+    <element name="queries">
+      <ref name="attlist.queries"/>
+      <ref name="title"/>
+      <ref name="dotazy"/>
+      <optional>
+        <ref name="comment"/>
+      </optional>
+      <ref name="pokryti_dotazu"/>
+      <optional>
+        <ref name="comment"/>
+      </optional>
+    </element>
+  </define>
+  <define name="attlist.queries" combine="interleave">
+    <empty/>
+  </define>
+  <define name="conclussions">
+    <element name="conclussions">
+      <ref name="attlist.conclussions"/>
+      <ref name="title"/>
+      <oneOrMore>
+        <ref name="para"/>
+        <optional>
+          <ref name="comment"/>
+        </optional>
+      </oneOrMore>
+    </element>
+  </define>
+  <define name="attlist.conclussions" combine="interleave">
+    <empty/>
+  </define>
+  <define name="references">
+    <element name="references">
+      <ref name="attlist.references"/>
+      <ref name="title"/>
+      <oneOrMore>
+        <ref name="para"/>
+        <optional>
+          <ref name="comment"/>
+        </optional>
+      </oneOrMore>
+    </element>
+  </define>
+  <define name="attlist.references" combine="interleave">
+    <empty/>
+  </define>
+  <!-- paragraph -->
+  <define name="para">
+    <element name="para">
+      <ref name="attlist.para"/>
+      <zeroOrMore>
+        <choice>
+          <text/>
+          <ref name="link"/>
+        </choice>
+      </zeroOrMore>
+    </element>
+  </define>
+  <define name="attlist.para" combine="interleave">
+    <empty/>
+  </define>
+  <!-- comment -->
+  <define name="comment">
+    <element name="comment">
+      <ref name="attlist.comment"/>
+      <zeroOrMore>
+        <ref name="para"/>
+      </zeroOrMore>
+    </element>
+  </define>
+  <define name="attlist.comment" combine="interleave">
+    <empty/>
+  </define>
+  <!-- dm_picture -->
+  <define name="dm_picture">
+    <element name="dm_picture">
+      <ref name="attlist.dm_picture"/>
+      <ref name="mediaobject"/>
+    </element>
+  </define>
+  <define name="attlist.dm_picture" combine="interleave">
+    <empty/>
+  </define>
+  <!-- dm_discussion -->
+  <define name="dm_discussion">
+    <element name="dm_discussion">
+      <ref name="attlist.dm_discussion"/>
+      <oneOrMore>
+        <ref name="para"/>
+        <optional>
+          <ref name="comment"/>
+        </optional>
+      </oneOrMore>
+    </element>
+  </define>
+  <define name="attlist.dm_discussion" combine="interleave">
+    <empty/>
+  </define>
+  <!-- table -->
+  <define name="pokryti_dotazu">
+    <element name="pokryti_dotazu">
+      <ref name="attlist.pokryti_dotazu"/>
+      <oneOrMore>
+        <ref name="kategorie_dotazu"/>
+      </oneOrMore>
+    </element>
+  </define>
+  <define name="attlist.pokryti_dotazu" combine="interleave">
+    <empty/>
+  </define>
+  <!-- kategorie dotazu -->
+  <define name="kategorie_dotazu">
+    <element name="kategorie_dotazu">
+      <ref name="attlist.kategorie_dotazu"/>
+      <oneOrMore>
+        <ref name="entry"/>
+      </oneOrMore>
+    </element>
+  </define>
+  <define name="attlist.kategorie_dotazu" combine="interleave">
+    <empty/>
+  </define>
+  <!-- entry -->
+  <define name="entry">
+    <element name="entry">
+      <ref name="attlist.entry"/>
+      <text/>
+    </element>
+  </define>
+  <define name="attlist.entry" combine="interleave">
+    <empty/>
+  </define>
+  <!-- link -->
+  <define name="link">
+    <element name="link">
+      <ref name="attlist.link"/>
+      <text/>
+    </element>
+  </define>
+  <define name="attlist.link" combine="interleave">
+    <attribute name="url"/>
+  </define>
+  <!-- dotazy -->
+  <define name="dotazy">
+    <element name="dotazy">
+      <ref name="attlist.dotazy"/>
+      <oneOrMore>
+        <ref name="dotaz"/>
+      </oneOrMore>
+    </element>
+  </define>
+  <define name="attlist.dotazy" combine="interleave">
+    <empty/>
+  </define>
+  <!-- dotaz -->
+  <define name="dotaz">
+    <element name="dotaz">
+      <ref name="attlist.dotaz"/>
+      <ref name="popis_dotazu"/>
+      <optional>
+        <ref name="comment"/>
+      </optional>
+      <optional>
+        <ref name="relacni_algebra"/>
+      </optional>
+      <optional>
+        <ref name="comment"/>
+      </optional>
+      <oneOrMore>
+        <ref name="sql"/>
+        <optional>
+          <ref name="comment"/>
+        </optional>
+      </oneOrMore>
+    </element>
+  </define>
+  <define name="attlist.dotaz" combine="interleave">
+    <empty/>
+  </define>
+  <!-- popis dotazu -->
+  <define name="popis_dotazu">
+    <element name="popis_dotazu">
+      <ref name="attlist.popis_dotazu"/>
+      <oneOrMore>
+        <ref name="para"/>
+      </oneOrMore>
+    </element>
+  </define>
+  <define name="attlist.popis_dotazu" combine="interleave">
+    <empty/>
+  </define>
+  <!-- relacni algebra -->
+  <define name="relacni_algebra">
+    <element name="relacni_algebra">
+      <ref name="attlist.relacni_algebra"/>
+      <text/>
+    </element>
+  </define>
+  <define name="attlist.relacni_algebra" combine="interleave">
+    <empty/>
+  </define>
+  <!-- sql -->
+  <define name="sql">
+    <element name="sql">
+      <ref name="attlist.sql"/>
+      <text/>
+    </element>
+  </define>
+  <define name="attlist.sql" combine="interleave">
+    <empty/>
+  </define>
+  <!-- mediaobject -->
+  <define name="mediaobject">
+    <element name="mediaobject">
+      <ref name="attlist.mediaobject"/>
+      <ref name="imageobject"/>
+    </element>
+  </define>
+  <define name="attlist.mediaobject" combine="interleave">
+    <empty/>
+  </define>
+  <!-- imageobject -->
+  <define name="imageobject">
+    <element name="imageobject">
+      <ref name="attlist.imageobject"/>
+      <ref name="imagedata"/>
+    </element>
+  </define>
+  <define name="attlist.imageobject" combine="interleave">
+    <empty/>
+  </define>
+  <!-- imagedata -->
+  <define name="imagedata">
+    <element name="imagedata">
+      <ref name="attlist.imagedata"/>
+      <empty/>
+    </element>
+  </define>
+  <define name="attlist.imagedata" combine="interleave">
+    <attribute name="fileref"/>
+  </define>
+  <start>
+    <choice>
+      <ref name="sproject"/>
+    </choice>
+  </start>
+</grammar>

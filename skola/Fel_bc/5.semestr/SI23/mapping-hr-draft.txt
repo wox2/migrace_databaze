@@ -1,0 +1,17 @@
+
+ - Každá entita/serializovaná třída (mimo tzv. embedded) se mapuje na vlastní tabulku.
+ 	- Primárním klíčem takové tabulky je technické ID objektu.  
+ - V hierarchii dědičnosti je ID entity obsaženo ve všech tabulkách a všechny třídy v hierarchii sdílí prostor hodnot ID.
+ 	- ID v tabulkách v hierarchii jsou provázány cizím klíčem z potomka na předka.  
+ - Primitivní/hodnotové atributy třídy se mapují na sloupce příslušné tabulky.
+ 
+ - Reference z entity na entitu se mapuje v závislosti na multiplicitě a navigabilitě:
+	- (Nenavigabilní refernce nedávají smysl.)
+	- Oboustranně navigabilní reference nebo reference, kde navigabilní konec má upper bound větší než 1 (kolekce) se mapují na vazební tabulku obsahující ID entit v asociaci.  
+	- Vazební tabulka nemá vlastní ID, primární klíč je složený, cizí klíče vedou na entity v asociaci a může obsahovat sloupec s číslem určujícím uspořádání kolekce.
+	- V ostatních případech se reference mapuje na sloupec tabulky obsahující ID referncované entity.
+ 
+ - Atributy třídy s vlastností "embedded" se mapují na sloupce "vlastnící" entity.
+	- Bez ID, do multiplicity 1, bez možnosti referencovat.
+ 
+ - Jména všech objektů jsou dané pravidly, ale "ručně" předefinovatelné.

@@ -1,0 +1,38 @@
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+package timetable.sb;
+
+import java.util.List;
+import javax.ejb.Local;
+import timetable.model.Link;
+import timetable.model.Passanger;
+import timetable.model.Ticket;
+
+/**
+ *
+ * @author janf
+ */
+@Local
+public interface PassangerSessionLocal {
+
+    void init(String username);
+
+    Passanger getCurrent();
+
+    List<Ticket> getBookedTickets();
+
+    void save (Passanger passanger);
+
+    void addTicket(Ticket ticket);
+
+    boolean removeTicket(Ticket ticket);
+
+    void discard();
+
+    void addLinkToTicket(Link link, Ticket ticket);
+
+    List<Link> getLinksByTicket(Ticket ticket);
+}

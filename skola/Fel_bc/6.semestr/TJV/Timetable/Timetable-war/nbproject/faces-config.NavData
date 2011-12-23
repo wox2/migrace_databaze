@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Scene Scope="Project" version="2">
+    <Scope Scope="Faces Configuration Only"/>
+    <Scope Scope="Project">
+        <Node id="admin/link.xhtml" x="400" y="300" zoom="true"/>
+        <Node id="admin/timetable.xhtml" x="650" y="150" zoom="true"/>
+        <Node id="admin/links.xhtml" x="900" y="450" zoom="true"/>
+        <Node id="failed.xhtml" x="400" y="900" zoom="true"/>
+        <Node id="admin/positions.xhtml" x="1400" y="150" zoom="true"/>
+        <Node id="resources/panel.xhtml" x="900" y="600" zoom="true"/>
+        <Node id="passanger/ordered.xhtml" x="150" y="1050" zoom="true"/>
+        <Node id="admin/passanger.xhtml" x="400" y="600" zoom="true"/>
+        <Node id="registered.xhtml" x="1900" y="150" zoom="true"/>
+        <Node id="passanger/tickets.xhtml" x="150" y="750" zoom="true"/>
+        <Node id="register.xhtml" x="150" y="150" zoom="true"/>
+        <Node id="link.xhtml" x="650" y="750" zoom="true"/>
+        <Node id="reduction.xhtml" x="1650" y="300" zoom="false"/>
+        <Node id="admin/position.xhtml" x="650" y="450" zoom="true"/>
+        <Node id="resources/composition.xhtml" x="650" y="300" zoom="true"/>
+        <Node id="admin/linktype.xhtml" x="1150" y="150" zoom="true"/>
+        <Node id="admin/linktypes.xhtml" x="900" y="150" zoom="true"/>
+        <Node id="admin/note.xhtml" x="150" y="600" zoom="true"/>
+        <Node id="admin/notes.xhtml" x="1150" y="300" zoom="true"/>
+        <Node id="admin/admin.xhtml" x="400" y="150" zoom="true"/>
+        <Node id="admin/station.xhtml" x="400" y="450" zoom="true"/>
+        <Node id="login.xhtml" x="1650" y="150" zoom="true"/>
+        <Node id="admin/stations.xhtml" x="900" y="300" zoom="true"/>
+        <Node id="*" x="150" y="300" zoom="true"/>
+        <Node id="admin/routes.xhtml" x="150" y="450" zoom="true"/>
+        <Node id="admin/passangers.xhtml" x="150" y="900" zoom="true"/>
+        <Node id="index.xhtml" x="400" y="750" zoom="true"/>
+        <Node id="passanger/order.xhtml" x="650" y="600" zoom="true"/>
+        <Node id="results.xhtml" x="1400" y="300" zoom="true"/>
+        <Node id="admin/route.xhtml" x="1150" y="450" zoom="true"/>
+    </Scope>
+    <Scope Scope="All Faces Configurations"/>
+</Scene>

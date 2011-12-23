@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<a:addons xmlns="http://www.w3.org/1999/xhtml"
+  xmlns:html="http://www.w3.org/1999/xhtml"
+  xmlns:a="http://www.xmlmind.com/xmleditor/schema/addon">
+
+<a:addon
+    location="sprojekt.zip">
+
+  <a:category>
+    <a:otherCategory name="Semestral Project Documentation" />
+  </a:category>
+
+  <a:name>DBS Semestrální práce</a:name>
+
+  <a:version>1.0.0</a:version>
+
+  <a:author>Michal Valenta</a:author>
+
+  <a:date>2007-09-14</a:date>
+
+  <a:xxeVersion>3.6.2+</a:xxeVersion>
+
+  <a:abstract>Sablona pro tvorbu semestralky z DBS na K336 FELK CVUT. Obsahuje
+  ukazkovou semestralku a sablonu, do ktere vyplnite udaje o svem
+  projektu.</a:abstract>
+
+</a:addon>
+</a:addons>

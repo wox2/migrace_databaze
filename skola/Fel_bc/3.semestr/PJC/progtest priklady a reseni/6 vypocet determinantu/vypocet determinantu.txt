@@ -1,0 +1,59 @@
+Úkolem je realizovat program, který nacte ze standardního vstupu matici a vypocte její determinant.
+
+Vstupem je posloupnost desetinných císel, která definují matici. Císla na jednom rádku vstupu predstavují jeden rádek matice. Zadávání matice koncí s koncem souboru (eof). Pro testování je vhodné si pripravit soubor, do nej uložit testovací matici a obsah souboru presmerovat na standardní vstup testovaného programu.
+
+Výstupem programu je jediný rádek - zobrazená hodnota determinantu. Na konci zobrazené rádky je znak odrádkování (endl).
+
+Program detekuje chybu, pokud nactená matice není ctvercová, pokud pocty sloupcu v jednotlivých rádcích nejsou stejné nebo pokud jsou na vstupu znaky, které netvorí desetinné císlo. V takovém prípade je výstupem programu chybová hláška podle vzoru níže. Chyba je oznámena v okamžiku, kdy je detekovaná. Chybová hláška je odrádkovaná (endl).
+
+Program nesmí používat trídy z STL (vector, list, ...). Program beží v omezeném prostredí, kde na dobu behu existuje limit (20s) a s limitem na pamet (pamet dostacuje na uložení matice v binární podobe). Rozsah testovaných vstupních dat je nastaven tak, aby pro implementaci vyhovel algoritmus s kubickou casovou složitostí (referencní rešení potrebuje pro výpocet cas ~8s).
+Ukázka práce programu:
+
+1 2
+2 1
+Determinant: -3.000000
+
+1 2 3
+5 4 6
+8 14 3
+Determinant: 108.000000
+
+2.5 4.5 8.0
+12 6 5
+0.25 0.75 0.34
+Determinant: 42.990000
+
+76 77 71 39
+61 61 7 58
+97 10 51 98
+13 6 27 37
+Determinant: -11977639.000000
+
+1 2
+3 4
+5 6
+Nespravny vstup.
+
+1 2
+2 3 4
+Nespravny vstup.
+
+2 3
+4 aa
+Nespravny vstup.
+
+1 2 3 4 5
+1 2
+Nespravny vstup.
+
+10 20 30
+10 0
+Nespravny vstup.
+
+Nápoveda:
+
+    * Pro nacítání využijte funkci getline() a trídu istringstream.
+    * Determinant vypoctete tak, že matici prevedete na horní trojúhelníkovou matici (pomocí Gaussovy eliminace) a pak vypoctete soucin prvku na diagonále. Výsledek korigujete podle operací, které jste provádeli behem eliminace.
+    * Úpravy pri Gaussove eliminaci a jejich vliv na determinant najdete napr. na Wikipedii, odkaz "matrix determinant", sekce "General definition and computation".
+
+Poznámka: Matici 1x1 považujte za triviální, ale korektní matici.

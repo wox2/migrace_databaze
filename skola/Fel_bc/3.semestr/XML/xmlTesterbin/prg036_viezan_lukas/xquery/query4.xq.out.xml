@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<zakaznik id="ID21577">
+   <jmeno>Lukáš Viezán</jmeno>
+   <email>viezaluk@fel.cvut.cz</email>
+   <telefon>123 456 789</telefon>
+   <adresa_bydliste>
+      <ulice>Nekonečná</ulice>
+      <popisne_cislo>1200</popisne_cislo>
+      <psc>12087</psc>
+      <mesto>Praha 10</mesto>
+   </adresa_bydliste>
+   <adresa_dorucovaci>
+      <ulice>Nekonečná</ulice>
+      <popisne_cislo>1200</popisne_cislo>
+      <psc>12087</psc>
+      <mesto>Praha 10</mesto>
+   </adresa_dorucovaci>
+</zakaznik>
+<zakaznik id="ID21577">
+   <jmeno>Lukáš Viezán</jmeno>
+   <email>viezaluk@fel.cvut.cz</email>
+   <telefon>123 456 789</telefon>
+   <adresa_bydliste>
+      <ulice>Nekonečná</ulice>
+      <popisne_cislo>1200</popisne_cislo>
+      <psc>12087</psc>
+      <mesto>Praha 10</mesto>
+   </adresa_bydliste>
+</zakaznik>

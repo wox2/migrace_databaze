@@ -1,0 +1,29 @@
+
+**** Build of configuration Debug for project general ****
+
+make all 
+Building file: ../main.cpp
+Invoking: Cygwin C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.d" -o "main.o" "../main.cpp"
+cygwin warning:
+  MS-DOS style path detected: D:\PJC workspace\general\Debug
+  Preferred POSIX equivalent is: /cygdrive/d/PJC workspace/general/Debug
+  CYGWIN environment variable option "nodosfilewarning" turns off this warning.
+  Consult the user's guide for more details about POSIX paths:
+    http://cygwin.com/cygwin-ug-net/using.html#using-pathnames
+Finished building: ../main.cpp
+ 
+Building target: general.exe
+Invoking: Cygwin C++ Linker
+g++  -o "general.exe"  ./main.o   
+Finished building target: general.exe
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project general ****
+
+make all 
+make: Nothing to be done for `all'.
+
+**** Build Finished ****

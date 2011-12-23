@@ -1,0 +1,90 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+    <h:head>
+        <title>Spoje</title>
+    </h:head>
+    <h:body>
+        <ui:composition template="../resources/composition.xhtml">
+            <ui:param name="pageTitle" value="#{msgs.order_header}" />
+            <ui:define name="content">
+                <h:form>
+                    <h1><h:outputText rendered="#{order.ticketReadOnly == false}" value="#{msgs.order_header}" />
+                        <h:outputText rendered="#{order.ticketReadOnly == true}" value="#{msgs.details} #{msgs.of_ticket} ##{order.ticket.id}" /></h1>
+                    <h:dataTable value="#{order.links}" var="item" styleClass="dataTable">
+
+
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{msgs.link}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.linkType.shortcut} #{item.linkNumber}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{msgs.departure}"/>
+                            </f:facet>
+                            <h:outputText value="#{order.departingByLink(item)}"/>
+
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value=""/>
+                            </f:facet>
+                        <h:outputText value="#{order.departureTimeByLink(item)}" converter="timeConv" />
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value=""/>
+                            </f:facet>
+                            <h:outputText value="–"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{msgs.arrival}"/>
+                            </f:facet>
+                            <h:outputText value="#{order.arrivingByLink(item)}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value=""/>
+                            </f:facet>
+                            <h:outputText value="#{order.arrivalTimeByLink(item)}" converter="timeConv" />
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{msgs.time} / #{msgs.distance}"/>
+                            </f:facet>
+                            <h:outputText value="#{order.time(item)}" converter="timeConv" />
+                            <h:outputText value=" / #{order.distance(item)} km"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value=""/>
+                            </f:facet>
+                        </h:column>
+                    </h:dataTable>
+                    <ul>
+                        <li><strong><h:outputText value="#{msgs.date}: "/></strong>
+                            <h:outputText value="#{order.ticket.dateOfValidity}" >
+                                <f:convertDateTime pattern="dd. mm. yyyy" />
+                            </h:outputText></li>
+                        <li><strong><h:outputText value="#{msgs.total_price}: "/></strong>
+                                <h:outputText value="#{order.cost} #{msgs.currency}"/></li>
+                        <li><strong><h:outputText value="#{msgs.total_time} / #{msgs.total_distance}: "/></strong>
+                                <h:outputText value="#{order.time}" converter="timeConv" />
+                                <h:outputText value=" / #{order.distance} km"/></li>
+                    </ul>
+                    <h:commandButton rendered="#{order.ticketReadOnly == false}" value="#{msgs.add_transfer}" action="addtransfer" />
+                    <h:commandButton rendered="#{order.ticketReadOnly == false}" value="#{msgs.order_submit}" action="#{order.submit}" />
+                    <h:commandButton rendered="#{order.ticketReadOnly == false}" value="#{msgs.cancel}" action="#{order.cancel}" />
+                    <h:link rendered="#{order.ticketReadOnly == true}" value="#{msgs.back}" outcome="tickets" />
+                </h:form>
+            </ui:define>
+        </ui:composition>
+    </h:body>
+</html>
+

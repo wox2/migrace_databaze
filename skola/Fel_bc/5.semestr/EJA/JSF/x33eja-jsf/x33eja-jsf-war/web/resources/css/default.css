@@ -1,0 +1,81 @@
+body {
+    background-color: #ffffff;
+    font-size: 12px;
+    font-family: Verdana, "Verdana CE",  Arial, "Arial CE", "Lucida Grande CE", lucida, "Helvetica CE", sans-serif;
+    color: #000000;  
+    margin: 10px;
+}
+
+h1 {
+    font-family: Arial, "Arial CE", "Lucida Grande CE", lucida, "Helvetica CE", sans-serif;
+    border-bottom: 1px solid #AFAFAF; 
+    font-size:  16px;
+    font-weight: bold;
+    margin: 0px 0px 15px 0px;
+    padding: 0px;
+    color: #D20005;
+}
+
+a:link, a:visited {
+  color: #045491;
+  text-decoration: underline;
+}
+
+a:link:hover, a:visited:hover  {
+  color: #D20005;
+}
+
+table {
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+table td {
+    vertical-align: top;
+}
+
+.dataTable {
+    background-color: #E9E9E9;
+    border-collapse: collapse;
+    border: 1px solid #036FAB;
+}
+
+.dataTable td {
+    padding: 2px 5px 2px 5px;
+    border: 1px solid #036FAB;
+}
+
+.dataTable th {
+    color: #045491;
+    padding: 2px 5px 2px 5px;
+    background-color: #f4f4f4;
+}
+
+.innerDataTable {
+    margin: 0px;
+}
+
+table caption {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-weight: bold;
+    color: #045491;
+    font-size: large;
+}
+.innerDataTable td {
+    border: 0px;
+}
+
+.dataLabel {
+    color: #045491;
+    font-weight: bold;
+    text-align: right;
+}
+
+select {
+    width: 230px;
+}
+
+.errorRequired {
+    color: #D20005;
+}

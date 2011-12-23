@@ -1,0 +1,109 @@
+#include <string>
+#include <string.h>
+#include <iostream>
+#include <stdlib.h>
+#include <fstream>
+#include <vector>
+using namespace std;
+
+struct Gen{
+	/** Sequence of distances on DNA END Position, -1 if not find*/
+	int * errorsInDNA;
+	/**Characters sequence of Gen	 */
+	string value;
+	/**Minimal error, could be helpful in minimalizing finding results */
+	int minimalError;
+	/** length of gen **/
+	int length;
+	vector<int> possibleGood;
+
+	Gen(){
+
+	}
+};
+
+/**
+ * List of used characters. Not needed during execution.
+ */
+string alphabet;
+string dna;
+Gen *gens;
+int genCount;
+int maxError;
+
+void readData(){
+	cin >> alphabet;
+	cin >> dna;
+	cin >> genCount;
+	gens = new Gen[genCount + 1];
+	for(int i = 1 ; i < genCount + 1; i++){
+		gens[i] = new Gen();
+		gens[i].errorsInDNA = new int [dna.length() + 1];
+		cin >> gens[i].value;
+		gens[i].minimalError = -1;
+		gens[i].length = gens[i].value.length();
+		for(int j = 0 ; j < gens[i].length ; j++){
+			gens[i].errorsInDNA[j]= -1;
+		}
+		gens[i].possibleGood = vector<int>();
+	}
+
+	cin >> maxError;
+}
+
+void findPositions(Gen & gen){
+		int currentStartPosition = 0;
+		int distance = 0;
+		while(currentStartPosition + gen.length < dna.length()){
+			for(int i = 0 ; i < gen.length ; i++){
+				if(dna[i + currentStartPosition] != gen.value[i]){
+					distance++;
+					if(distance > maxError){
+						break;
+					}
+				}
+			}
+			if(distance < maxError){
+				gen.errorsInDNA[currentStartPosition + gen.length ] = distance;
+				gen.possibleGood.push_back(currentStartPosition + gen.length);
+				if(distance < gen.minimalError){
+					gen.minimalError = distance;
+				}
+				if(gen.minimalError == -1 ){
+					gen.minimalError = distance;
+				}
+			}
+			currentStartPosition++;
+		}
+		if(gen.minimalError > 0){
+			maxError -= gen.minimalError;
+		}
+}
+
+void process(){
+	for(int i = 0 ; i < genCount ; i++ ){
+		findPositions(gens[i]);
+	}
+}
+
+
+void writeResults(){
+	for (int i = 1 ; i < genCount ; i++){
+		cout << gens[i].value << endl;
+		for(int j = 0 ; j < dna.length() ; j++){
+			cout << gens[i].errorsInDNA[j] << " ";
+		}
+		cout << gens[i].minimalError << endl;
+		for(unsigned int j = 0 ; j < gens[i].possibleGood.size(); j++){
+			cout << gens[i].possibleGood[j] << " ";
+		}
+	}
+
+}
+int main(){
+	readData();
+	process();
+	writeResults();
+}
+
+

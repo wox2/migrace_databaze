@@ -1,0 +1,38 @@
+D:\CTU_\4. semestr\VAN\Semestral\MoneyFlow\MoneyFlow\MoneyFlow\bin\Debug\MFlowDB.sdf
+D:\CTU_\4. semestr\VAN\Semestral\MoneyFlow\MoneyFlow\MoneyFlow\bin\Debug\MoneyFlow.exe
+D:\CTU_\4. semestr\VAN\Semestral\MoneyFlow\MoneyFlow\MoneyFlow\bin\Debug\MoneyFlow.pdb
+D:\CTU_\4. semestr\VAN\Semestral\MoneyFlow\MoneyFlow\MoneyFlow\bin\Debug\BLL.dll
+D:\CTU_\4. semestr\VAN\Semestral\MoneyFlow\MoneyFlow\MoneyFlow\bin\Debug\DAL.dll
+D:\CTU_\4. semestr\VAN\Semestral\MoneyFlow\MoneyFlow\MoneyFlow\bin\Debug\DAL.pdb
+D:\CTU_\4. semestr\VAN\Semestral\MoneyFlow\MoneyFlow\MoneyFlow\bin\Debug\BLL.pdb
+D:\CTU_\4. semestr\VAN\Semestral\MoneyFlow\MoneyFlow\MoneyFlow\obj\Debug\ResolveAssemblyReference.cache
+D:\CTU_\4. semestr\VAN\Semestral\MoneyFlow\MoneyFlow\MoneyFlow\obj\Debug\MoneyFlow.LoginForm.resources
+D:\CTU_\4. semestr\VAN\Semestral\MoneyFlow\MoneyFlow\MoneyFlow\obj\Debug\MoneyFlow.MFlowWin.resources
+D:\CTU_\4. semestr\VAN\Semestral\MoneyFlow\MoneyFlow\MoneyFlow\obj\Debug\MoneyFlow.Properties.Resources.resources
+D:\CTU_\4. semestr\VAN\Semestral\MoneyFlow\MoneyFlow\MoneyFlow\obj\Debug\MoneyFlow.csproj.GenerateResource.Cache
+D:\CTU_\4. semestr\VAN\Semestral\MoneyFlow\MoneyFlow\MoneyFlow\obj\Debug\MoneyFlow.exe
+D:\CTU_\4. semestr\VAN\Semestral\MoneyFlow\MoneyFlow\MoneyFlow\obj\Debug\MoneyFlow.pdb
+D:\CTU_\4. semestr\VAN\Semestral\MoneyFlow\MoneyFlow\MoneyFlow\obj\Debug\MoneyFlow.ProfileForm.resources
+D:\CTU_\4. semestr\VAN\Semestral\MoneyFlow\MoneyFlow\MoneyFlow\obj\Debug\MoneyFlow.CategoryForm.resources
+D:\CTU_\4. semestr\VAN\Semestral\MoneyFlow\MoneyFlow\MoneyFlow\obj\Debug\MoneyFlow.CashflowItemDialog.resources
+D:\CTU_\4. semestr\VAN\Semestral\MoneyFlow\MoneyFlow\MoneyFlow\obj\Debug\MoneyFlow.AboutForm.resources
+D:\~School\4. semestr\VAN\Semestral\MoneyFlow\MoneyFlow\MoneyFlow\obj\Debug\MoneyFlow.exe
+D:\~School\4. semestr\VAN\Semestral\MoneyFlow\MoneyFlow\MoneyFlow\obj\Debug\MoneyFlow.pdb
+E:\Fel\5.semestr\TSW\MoneyFlow\MoneyFlow\obj\Debug\MoneyFlow.exe
+E:\Fel\5.semestr\TSW\MoneyFlow\MoneyFlow\obj\Debug\MoneyFlow.pdb
+E:\Fel\5.semestr\TSW\MoneyFlow\MoneyFlow\bin\Debug\MFlowDB.sdf
+E:\Fel\5.semestr\TSW\MoneyFlow\MoneyFlow\bin\Debug\MoneyFlow.exe
+E:\Fel\5.semestr\TSW\MoneyFlow\MoneyFlow\bin\Debug\MoneyFlow.pdb
+E:\Fel\5.semestr\TSW\MoneyFlow\MoneyFlow\bin\Debug\BLL.dll
+E:\Fel\5.semestr\TSW\MoneyFlow\MoneyFlow\bin\Debug\DAL.dll
+E:\Fel\5.semestr\TSW\MoneyFlow\MoneyFlow\bin\Debug\DAL.pdb
+E:\Fel\5.semestr\TSW\MoneyFlow\MoneyFlow\bin\Debug\BLL.pdb
+E:\Fel\5.semestr\TSW\MoneyFlow\MoneyFlow\obj\Debug\ResolveAssemblyReference.cache
+E:\Fel\5.semestr\TSW\MoneyFlow\MoneyFlow\obj\Debug\MoneyFlow.AboutForm.resources
+E:\Fel\5.semestr\TSW\MoneyFlow\MoneyFlow\obj\Debug\MoneyFlow.CashflowItemDialog.resources
+E:\Fel\5.semestr\TSW\MoneyFlow\MoneyFlow\obj\Debug\MoneyFlow.CategoryForm.resources
+E:\Fel\5.semestr\TSW\MoneyFlow\MoneyFlow\obj\Debug\MoneyFlow.LoginForm.resources
+E:\Fel\5.semestr\TSW\MoneyFlow\MoneyFlow\obj\Debug\MoneyFlow.MFlowWin.resources
+E:\Fel\5.semestr\TSW\MoneyFlow\MoneyFlow\obj\Debug\MoneyFlow.ProfileForm.resources
+E:\Fel\5.semestr\TSW\MoneyFlow\MoneyFlow\obj\Debug\MoneyFlow.Properties.Resources.resources
+E:\Fel\5.semestr\TSW\MoneyFlow\MoneyFlow\obj\Debug\MoneyFlow.csproj.GenerateResource.Cache

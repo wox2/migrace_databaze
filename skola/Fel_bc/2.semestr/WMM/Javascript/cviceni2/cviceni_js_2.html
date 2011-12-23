@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+	    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	    <title>JavaScript II</title>
+		<link rel="stylesheet" href="style.css" type="text/css" />
+      <script type="text/javascript">
+         function menuClick() {
+            window.alert('menu');
+            event.stopPropagation();
+            }
+
+         function linkClick(event) {
+         var odkaz=event.target;
+            event.stopPropagation();
+            event.preventDefault();
+            window.alert('link');
+         }
+         function naves(){
+     window.alert('navesuji');    
+     document.getElementById('menu').addEventListener("click",MenuClick,fase);
+         
+     var linky=document.getElementById('menu').getElementsByTagName('a');
+     for(var i=0;i<linky.length;i++)
+     {
+     linky[i].addEventListener("click", linkClick, false)
+     
+     }    
+         }
+
+         function onloadFunkce() {
+            document.getElementById('menu').addEventListener("click", menuClick, false);
+            document.getElementById('link').addEventListener("click", linkClick, false);
+         }
+         //document.onload = onloadFunkce();
+      </script>
+	</head>
+
+	<body onload="onloadFunkce()">
+		<ul id="menu">
+			<li><a href="kapitola_1.html" id="link">Kapitola 1</a></li>
+			<li><a href="kapitola_2.html" linkclick="alert('kapitola 2');">Kapitola 2</a></li>
+			<li><a href="kapitola_3.html">Kapitola 3</a></li>
+		</ul>
+		
+		<div id="content"></div>
+	</body>
+</html>

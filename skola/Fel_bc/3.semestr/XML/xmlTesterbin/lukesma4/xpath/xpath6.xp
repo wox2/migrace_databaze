@@ -1,0 +1,3 @@
+(: vraci vsechny sestavy, ktere maji jedenact podelementu, vzhledem k faktu, :) 
+(:ze sestava muze mit jako podlelement, tak vraci sestavy s 11 hraci :)
+//muzstvo/sestava[count(expression)= 11]

@@ -1,0 +1,579 @@
+\documentclass[a4paper,12pt]{report}
+\usepackage[czech, english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{mnsymbol}
+\usepackage{fullpage}
+\begin{document}
+\begin{flushright}
+\begin{tabular}{ll}
+Jméno:&Martin Lukeš\\
+Cvičící:&Pavel Pták 
+\end{tabular}
+\end{flushright}
+\section*{\begin{center}Úloha 209.\end{center}}
+\begin{itemize}
+\renewcommand{\labelitemi}{$\filledtriangleright$}
+\item \textbf{Příklad 209.1}
+
+Nalezněte nejmenší nezáporné řešení soustavy:
+\begin{eqnarray*}
+x\equiv&57\,\bmod\,61\\
+x\equiv&2\,\bmod\,49\\
+x\equiv&39\,\bmod\,41\\
+x\equiv&8\,\bmod\,39\\
+x\equiv&24\,\bmod\,38\\
+\end{eqnarray*}
+Nalezené řešení uvažujte jako 10-ti místné a výsledek rozdělte na posloupnost dvouciferných čísel. Tato čísla označte po řadě \(c_0,\ldots,c_4\).
+\item \textbf{Řešení 209.1}
+
+Řešení příkladu je posloupnost \(c_0=8,c_1=33,c_2=3,c_3=28,c_4=32\)
+\item \textbf{Příklad 209.2}
+
+Pracujte v \( \textbf{Z}_{38}\) a dešifrujte zprávu
+\[(4,3,9,5,5)\]
+víte-li, že byla použita šifra s šifrovacím klíčem
+$$\left(\begin{array}{ccccc}
+23&37&c_0&20&37\\c_1&3&22&14&24\\30&22&16&37&c_2\\23&c_3&4&3&15\\5&20&35&c_4&19
+\end{array}\right)$$
+kde \(c_0,\ldots,c_4\) jsou hodnoty získané z předešlé úlohy. Dešifrovanou zprávu převeďte na text za použití kódování:
+$$\begin{array}{ccc}
+A\mapsto 01 & B\mapsto 02 & C\mapsto 03 \\
+&\vdots&\\
+\cdots & Z\mapsto 26 &
+\end{array}
+$$
+Dále dešifrujte zprávu
+\[(10,3,1,20,5)\]
+Zpráva byla zašifrována stejnou metodou jako v předchozím případě. Výslednou zprávu nepřevádějte na text, ale označte její hodnoty po řadě \(r_0,\ldots,r_4.\) Tyto hodnoty použijete v následující úloze.
+\item \textbf{Řešení 209.2}
+
+Dešifrovaná zpráva je \textbf{JITRO} a hledaná posloupnost je \(r_0=9,r_1=6,r_2=5,r_3=2,r_4=5\)
+\item \textbf{Příklad 209.3}
+
+Dešifrujte zprávu
+$$\left(\begin{array}{lr}
+\multicolumn{2}{l}{59895979813927177746967515458370703674904862688299943711385748532}\\
+\multicolumn{2}{l}{38579287523012364759505752650789801965240048793058502452323154189}\\
+\multicolumn{2}{l}{73577778512769049562550594164399695508441243715632879037873903869}\\
+40659&\bullet\\
+\end{array}\right)$$
+víte-li, že byla použita RSA šifra s šifrovacím klíčem
+$$(n,e) = \left(\begin{array}{lr}
+\multicolumn{2}{l}{846035240390623252{r_0}242597569586650483985160468942143109{r_1}710313678}\\
+\multicolumn{2}{l}{0423971170401758927{r_2}178644913706996503276072866527941075206523174}\\
+\multicolumn{2}{l}{124845017202947767074944{r_3}963507478095108{r_4}454295643692848636280219}\\
+55089&\bullet\\
+\multicolumn{2}{l}{16327919883770007484751746844379775323670973070162104248460495280}\\
+41115257776462404103021141134828851&\bullet\\
+\end{array}\right)$$
+kde  \(r_0,\ldots,r_4.\) jsou hodnoty získané z předešlé úlohy. Dešifrovanou zprávu převeďte na text. Bylo použito ASCII kódování.
+\item \textbf{Řešení 209.3}
+
+Dešifrovaná zpráva je \textbf{miss Dubedat? Yes, do bedad. And she did bedad. Huguenot name I expect} .
+\end{itemize}
+\newpage\subsection*{\begin{center}Podrobné řešení\end{center}}
+\begin{itemize}
+\renewcommand{\labelitemi}{$\filledtriangleright$}
+\item \textbf{Příklad 209.1}
+
+Řešení bude v \(\textbf{Z}_M\), kde \(M = 61\cdot49\cdot41\cdot39\cdot38 = 181617618\)
+$$x = 57\cdot(49\cdot 41\cdot 39\cdot 38\cdot a_0) + 2\cdot(61\cdot 41\cdot 39\cdot 38\cdot a_1) + 39\cdot(61\cdot 49\cdot 39\cdot 38\cdot a_2) + $$
+$$ + 8\cdot(61\cdot 49\cdot 41\cdot 38\cdot a_3) + 24\cdot(61\cdot 49\cdot 41\cdot 39\cdot a_4)$$
+$$a_0 = (49\cdot 41\cdot 39\cdot 38)^{-1} \bmod 61 = (50)^{-1} \bmod 61 = 11$$
+\begin{center}Výpočet \(50^{-1} \bmod 61\) rozšířeným euklidovým algoritmem
+
+\begin{tabular}{cc|cc}&61&1&0\\
+&50&0&1\\
+\hline
+1&11&1&-1\\
+4&6&-4&5\\
+1&5&5&-6\\
+1&1&-9&11\\
+5&0
+\end{tabular}
+
+\(1 = 11\cdot 50 + -9\cdot 61\)
+
+\(50^{-1} \bmod 61 = 11\)
+\end{center}
+$$a_1 = (61\cdot 41\cdot 39\cdot 38)^{-1} \bmod 49 = (24)^{-1} \bmod 49 = 47$$
+\begin{center}Výpočet \(24^{-1} \bmod 49\) rozšířeným euklidovým algoritmem
+
+\begin{tabular}{cc|cc}&49&1&0\\
+&24&0&1\\
+\hline
+2&1&1&-2\\
+24&0
+\end{tabular}
+
+\(1 = -2\cdot 24 + 1\cdot 49\)
+
+\(24^{-1} \bmod 49 = -2 = 47\)
+\end{center}
+$$a_2 = (61\cdot 49\cdot 39\cdot 38)^{-1} \bmod 41 = (17)^{-1} \bmod 41 = 29$$
+\begin{center}Výpočet \(17^{-1} \bmod 41\) rozšířeným euklidovým algoritmem
+
+\begin{tabular}{cc|cc}&41&1&0\\
+&17&0&1\\
+\hline
+2&7&1&-2\\
+2&3&-2&5\\
+2&1&5&-12\\
+3&0
+\end{tabular}
+
+\(1 = -12\cdot 17 + 5\cdot 41\)
+
+\(17^{-1} \bmod 41 = -12 = 29\)
+\end{center}
+$$a_3 = (61\cdot 49\cdot 41\cdot 38)^{-1} \bmod 39 = (28)^{-1} \bmod 39 = 7$$
+\begin{center}Výpočet \(28^{-1} \bmod 39\) rozšířeným euklidovým algoritmem
+
+\begin{tabular}{cc|cc}&39&1&0\\
+&28&0&1\\
+\hline
+1&11&1&-1\\
+2&6&-2&3\\
+1&5&3&-4\\
+1&1&-5&7\\
+5&0
+\end{tabular}
+
+\(1 = 7\cdot 28 + -5\cdot 39\)
+
+\(28^{-1} \bmod 39 = 7\)
+\end{center}
+$$a_4 = (61\cdot 49\cdot 41\cdot 39)^{-1} \bmod 38 = (37)^{-1} \bmod 38 = 37$$
+\begin{center}Výpočet \(37^{-1} \bmod 38\) rozšířeným euklidovým algoritmem
+
+\begin{tabular}{cc|cc}&38&1&0\\
+&37&0&1\\
+\hline
+1&1&1&-1\\
+37&0
+\end{tabular}
+
+\(1 = -1\cdot 37 + 1\cdot 38\)
+
+\(37^{-1} \bmod 38 = -1 = 37\)
+\end{center}
+$$x = 57\cdot(49\cdot 41\cdot 39\cdot 38\cdot 11) + 2\cdot(61\cdot 41\cdot 39\cdot 38\cdot 47) + 39\cdot(61\cdot 49\cdot 39\cdot 38\cdot 29) + $$
+$$ + 8\cdot(61\cdot 49\cdot 41\cdot 38\cdot 7) + 24\cdot(61\cdot 49\cdot 41\cdot 39\cdot 37)$$
+$$x = 11730089912 = 106562360 \bmod 181617618$$
+Hledá se 5. nejmenší řešení
+$$x_5 = 106562360 + 4\cdot 181617618 = 833032832$$
+Řešení příkladu je posloupnost \(c_0=8,c_1=33,c_2=3,c_3=28,c_4=32\)
+\item \textbf{Příklad 209.2}
+
+Šifrovací klíč:
+$$\left(\begin{array}{ccccc}
+23&37&8&20&37\\
+33&3&22&14&24\\
+30&22&16&37&3\\
+23&28&4&3&15\\
+5&20&35&32&19\\
+\end{array}\right)$$
+Rozšířím matici o jednotkovou směrem vpravo
+$$\left(\begin{array}{cccccccccc}
+23&37&8&20&37&1&0&0&0&0\\
+33&3&22&14&24&0&1&0&0&0\\
+30&22&16&37&3&0&0&1&0&0\\
+23&28&4&3&15&0&0&0&1&0\\
+5&20&35&32&19&0&0&0&0&1\\
+\end{array}\right)$$
+Upravuji na horní trojúhelníkovou matici.
+Násobím řádek 1 číslem 5
+$$\left(\begin{array}{cccccccccc}
+1&33&2&24&33&5&0&0&0&0\\
+33&3&22&14&24&0&1&0&0&0\\
+30&22&16&37&3&0&0&1&0&0\\
+23&28&4&3&15&0&0&0&1&0\\
+5&20&35&32&19&0&0&0&0&1\\
+\end{array}\right)$$
+Odečítám \(33\times\) řádek 1 od řádku 2
+$$\left(\begin{array}{cccccccccc}
+1&33&2&24&33&5&0&0&0&0\\
+0&16&32&20&37&25&1&0&0&0\\
+30&22&16&37&3&0&0&1&0&0\\
+23&28&4&3&15&0&0&0&1&0\\
+5&20&35&32&19&0&0&0&0&1\\
+\end{array}\right)$$
+Odečítám \(30\times\) řádek 1 od řádku 3
+$$\left(\begin{array}{cccccccccc}
+1&33&2&24&33&5&0&0&0&0\\
+0&16&32&20&37&25&1&0&0&0\\
+0&20&32&1&1&2&0&1&0&0\\
+23&28&4&3&15&0&0&0&1&0\\
+5&20&35&32&19&0&0&0&0&1\\
+\end{array}\right)$$
+Odečítám \(23\times\) řádek 1 od řádku 4
+$$\left(\begin{array}{cccccccccc}
+1&33&2&24&33&5&0&0&0&0\\
+0&16&32&20&37&25&1&0&0&0\\
+0&20&32&1&1&2&0&1&0&0\\
+0&29&34&21&16&37&0&0&1&0\\
+5&20&35&32&19&0&0&0&0&1\\
+\end{array}\right)$$
+Odečítám \(5\times\) řádek 1 od řádku 5
+$$\left(\begin{array}{cccccccccc}
+1&33&2&24&33&5&0&0&0&0\\
+0&16&32&20&37&25&1&0&0&0\\
+0&20&32&1&1&2&0&1&0&0\\
+0&29&34&21&16&37&0&0&1&0\\
+0&7&25&26&6&13&0&0&0&1\\
+\end{array}\right)$$
+Přičítám řádek 4 k řádku 2
+$$\left(\begin{array}{cccccccccc}
+1&33&2&24&33&5&0&0&0&0\\
+0&7&28&3&15&24&1&0&1&0\\
+0&20&32&1&1&2&0&1&0&0\\
+0&29&34&21&16&37&0&0&1&0\\
+0&7&25&26&6&13&0&0&0&1\\
+\end{array}\right)$$
+Násobím řádek 2 číslem 11
+$$\left(\begin{array}{cccccccccc}
+1&33&2&24&33&5&0&0&0&0\\
+0&1&4&33&13&36&11&0&11&0\\
+0&20&32&1&1&2&0&1&0&0\\
+0&29&34&21&16&37&0&0&1&0\\
+0&7&25&26&6&13&0&0&0&1\\
+\end{array}\right)$$
+Odečítám \(20\times\) řádek 2 od řádku 3
+$$\left(\begin{array}{cccccccccc}
+1&33&2&24&33&5&0&0&0&0\\
+0&1&4&33&13&36&11&0&11&0\\
+0&0&28&25&7&4&8&1&8&0\\
+0&29&34&21&16&37&0&0&1&0\\
+0&7&25&26&6&13&0&0&0&1\\
+\end{array}\right)$$
+Odečítám \(29\times\) řádek 2 od řádku 4
+$$\left(\begin{array}{cccccccccc}
+1&33&2&24&33&5&0&0&0&0\\
+0&1&4&33&13&36&11&0&11&0\\
+0&0&28&25&7&4&8&1&8&0\\
+0&0&32&14&19&19&23&0&24&0\\
+0&7&25&26&6&13&0&0&0&1\\
+\end{array}\right)$$
+Odečítám \(7\times\) řádek 2 od řádku 5
+$$\left(\begin{array}{cccccccccc}
+1&33&2&24&33&5&0&0&0&0\\
+0&1&4&33&13&36&11&0&11&0\\
+0&0&28&25&7&4&8&1&8&0\\
+0&0&32&14&19&19&23&0&24&0\\
+0&0&35&23&29&27&37&0&37&1\\
+\end{array}\right)$$
+Přičítám řádek 5 k řádku 3
+$$\left(\begin{array}{cccccccccc}
+1&33&2&24&33&5&0&0&0&0\\
+0&1&4&33&13&36&11&0&11&0\\
+0&0&25&10&36&31&7&1&7&1\\
+0&0&32&14&19&19&23&0&24&0\\
+0&0&35&23&29&27&37&0&37&1\\
+\end{array}\right)$$
+Násobím řádek 3 číslem 35
+$$\left(\begin{array}{cccccccccc}
+1&33&2&24&33&5&0&0&0&0\\
+0&1&4&33&13&36&11&0&11&0\\
+0&0&1&8&6&21&17&35&17&35\\
+0&0&32&14&19&19&23&0&24&0\\
+0&0&35&23&29&27&37&0&37&1\\
+\end{array}\right)$$
+Odečítám \(32\times\) řádek 3 od řádku 4
+$$\left(\begin{array}{cccccccccc}
+1&33&2&24&33&5&0&0&0&0\\
+0&1&4&33&13&36&11&0&11&0\\
+0&0&1&8&6&21&17&35&17&35\\
+0&0&0&24&17&31&11&20&12&20\\
+0&0&35&23&29&27&37&0&37&1\\
+\end{array}\right)$$
+Odečítám \(35\times\) řádek 3 od řádku 5
+$$\left(\begin{array}{cccccccccc}
+1&33&2&24&33&5&0&0&0&0\\
+0&1&4&33&13&36&11&0&11&0\\
+0&0&1&8&6&21&17&35&17&35\\
+0&0&0&24&17&31&11&20&12&20\\
+0&0&0&9&9&14&12&29&12&30\\
+\end{array}\right)$$
+Přičítám řádek 5 k řádku 4
+$$\left(\begin{array}{cccccccccc}
+1&33&2&24&33&5&0&0&0&0\\
+0&1&4&33&13&36&11&0&11&0\\
+0&0&1&8&6&21&17&35&17&35\\
+0&0&0&33&26&7&23&11&24&12\\
+0&0&0&9&9&14&12&29&12&30\\
+\end{array}\right)$$
+Násobím řádek 4 číslem 15
+$$\left(\begin{array}{cccccccccc}
+1&33&2&24&33&5&0&0&0&0\\
+0&1&4&33&13&36&11&0&11&0\\
+0&0&1&8&6&21&17&35&17&35\\
+0&0&0&1&10&29&3&13&18&28\\
+0&0&0&9&9&14&12&29&12&30\\
+\end{array}\right)$$
+Odečítám \(9\times\) řádek 4 od řádku 5
+$$\left(\begin{array}{cccccccccc}
+1&33&2&24&33&5&0&0&0&0\\
+0&1&4&33&13&36&11&0&11&0\\
+0&0&1&8&6&21&17&35&17&35\\
+0&0&0&1&10&29&3&13&18&28\\
+0&0&0&0&33&19&23&26&2&6\\
+\end{array}\right)$$
+Násobím řádek 5 číslem 15
+$$\left(\begin{array}{cccccccccc}
+1&33&2&24&33&5&0&0&0&0\\
+0&1&4&33&13&36&11&0&11&0\\
+0&0&1&8&6&21&17&35&17&35\\
+0&0&0&1&10&29&3&13&18&28\\
+0&0&0&0&1&19&3&10&30&14\\
+\end{array}\right)$$
+Provádím úpravu na jednotkovou matici.
+Odečítám \(10\times\) řádek 5 od řádku 4
+$$\left(\begin{array}{cccccccccc}
+1&33&2&24&33&5&0&0&0&0\\
+0&1&4&33&13&36&11&0&11&0\\
+0&0&1&8&6&21&17&35&17&35\\
+0&0&0&1&0&29&11&27&22&2\\
+0&0&0&0&1&19&3&10&30&14\\
+\end{array}\right)$$
+Odečítám \(6\times\) řádek 5 od řádku 3
+$$\left(\begin{array}{cccccccccc}
+1&33&2&24&33&5&0&0&0&0\\
+0&1&4&33&13&36&11&0&11&0\\
+0&0&1&8&0&21&37&13&27&27\\
+0&0&0&1&0&29&11&27&22&2\\
+0&0&0&0&1&19&3&10&30&14\\
+\end{array}\right)$$
+Odečítám \(13\times\) řádek 5 od řádku 2
+$$\left(\begin{array}{cccccccccc}
+1&33&2&24&33&5&0&0&0&0\\
+0&1&4&33&0&17&10&22&1&8\\
+0&0&1&8&0&21&37&13&27&27\\
+0&0&0&1&0&29&11&27&22&2\\
+0&0&0&0&1&19&3&10&30&14\\
+\end{array}\right)$$
+Odečítám \(33\times\) řádek 5 od řádku 1
+$$\left(\begin{array}{cccccccccc}
+1&33&2&24&0&24&15&12&36&32\\
+0&1&4&33&0&17&10&22&1&8\\
+0&0&1&8&0&21&37&13&27&27\\
+0&0&0&1&0&29&11&27&22&2\\
+0&0&0&0&1&19&3&10&30&14\\
+\end{array}\right)$$
+Odečítám \(8\times\) řádek 4 od řádku 3
+$$\left(\begin{array}{cccccccccc}
+1&33&2&24&0&24&15&12&36&32\\
+0&1&4&33&0&17&10&22&1&8\\
+0&0&1&0&0&17&25&25&3&11\\
+0&0&0&1&0&29&11&27&22&2\\
+0&0&0&0&1&19&3&10&30&14\\
+\end{array}\right)$$
+Odečítám \(33\times\) řádek 4 od řádku 2
+$$\left(\begin{array}{cccccccccc}
+1&33&2&24&0&24&15&12&36&32\\
+0&1&4&0&0&10&27&5&35&18\\
+0&0&1&0&0&17&25&25&3&11\\
+0&0&0&1&0&29&11&27&22&2\\
+0&0&0&0&1&19&3&10&30&14\\
+\end{array}\right)$$
+Odečítám \(24\times\) řádek 4 od řádku 1
+$$\left(\begin{array}{cccccccccc}
+1&33&2&0&0&12&17&10&2&22\\
+0&1&4&0&0&10&27&5&35&18\\
+0&0&1&0&0&17&25&25&3&11\\
+0&0&0&1&0&29&11&27&22&2\\
+0&0&0&0&1&19&3&10&30&14\\
+\end{array}\right)$$
+Odečítám \(4\times\) řádek 3 od řádku 2
+$$\left(\begin{array}{cccccccccc}
+1&33&2&0&0&12&17&10&2&22\\
+0&1&0&0&0&18&3&19&23&12\\
+0&0&1&0&0&17&25&25&3&11\\
+0&0&0&1&0&29&11&27&22&2\\
+0&0&0&0&1&19&3&10&30&14\\
+\end{array}\right)$$
+Odečítám \(2\times\) řádek 3 od řádku 1
+$$\left(\begin{array}{cccccccccc}
+1&33&0&0&0&16&5&36&34&0\\
+0&1&0&0&0&18&3&19&23&12\\
+0&0&1&0&0&17&25&25&3&11\\
+0&0&0&1&0&29&11&27&22&2\\
+0&0&0&0&1&19&3&10&30&14\\
+\end{array}\right)$$
+Odečítám \(33\times\) řádek 2 od řádku 1
+$$\left(\begin{array}{cccccccccc}
+1&0&0&0&0&30&20&17&35&22\\
+0&1&0&0&0&18&3&19&23&12\\
+0&0&1&0&0&17&25&25&3&11\\
+0&0&0&1&0&29&11&27&22&2\\
+0&0&0&0&1&19&3&10&30&14\\
+\end{array}\right)$$
+Inverzní matice je pravá část vedle jednotkové matice
+$$\left(\begin{array}{ccccc}
+30&20&17&35&22\\
+18&3&19&23&12\\
+17&25&25&3&11\\
+29&11&27&22&2\\
+19&3&10&30&14\\
+\end{array}\right)$$
+Výsledná inverzní matice je klíčem k dešifrování.
+Vynásobíme-li tuto matici zašifrovanou zprávou, získáme dešifrovanou zprávu.
+Násobíme zprávou:
+$$\left(\begin{array}{c}
+4\\
+3\\
+9\\
+5\\
+5\\
+\end{array}\right)$$
+Po vynásobení:
+$$\left(\begin{array}{c}
+10\\
+9\\
+20\\
+18\\
+15\\
+\end{array}\right)$$
+Po převedení na písmena získáme slovo 
+JITRO.
+Nyní stejným způsobem dešifrujeme druhou zprávu.
+Dešifrovacím klíčem násobíme zprávu
+$$\left(\begin{array}{c}
+10\\
+3\\
+1\\
+20\\
+5\\
+\end{array}\right)$$
+Po vynásobení:
+$$\left(\begin{array}{c}
+9\\
+6\\
+5\\
+2\\
+5\\
+\end{array}\right)$$
+Hledaná posloupnost je \(r_0=9,r_1=6,r_2=5,r_3=2,r_4=5\)
+\item \textbf{Příklad 209.3}
+$$t = \lceil \sqrt{n} \rceil = \left(\begin{array}{lr}\multicolumn{2}{l}{91980173971928496941}\\
+\multicolumn{2}{l}{38754448114526310137}\\
+\multicolumn{2}{l}{19647897400304541041}\\
+\multicolumn{2}{l}{96861407968222207441}\\
+56921994237453980183&\bullet\\
+\end{array}\right)$$
+$$x = t^2 - n $$
+$$x = 9163237527176357006569142903120797645120534758400$$
+$$s = \sqrt{x} = 3027083997377072621653280$$
+\(x\) je přesně druhá mocnina čísla \(s\)
+$$a = t + s = \left(\begin{array}{lr}\multicolumn{2}{l}{91980173971928496941}\\
+\multicolumn{2}{l}{38754448114526310137}\\
+\multicolumn{2}{l}{19647897400304541041}\\
+\multicolumn{2}{l}{96861407968222207441}\\
+56921994237453980183&\bullet\\
+\end{array}\right) + \left(\begin{array}{lr}\multicolumn{2}{l}{30270839973770726216}\\
+53280&\bullet\\
+\end{array}\right)$$
+$$a = \left(\begin{array}{lr}\multicolumn{2}{l}{91980173971928496941}\\
+\multicolumn{2}{l}{38754448114526310137}\\
+\multicolumn{2}{l}{19647897400304541041}\\
+\multicolumn{2}{l}{96861407968222237712}\\
+40919371310075633463&\bullet\\
+\end{array}\right)$$
+$$b = t - s = \left(\begin{array}{lr}\multicolumn{2}{l}{91980173971928496941}\\
+\multicolumn{2}{l}{38754448114526310137}\\
+\multicolumn{2}{l}{19647897400304541041}\\
+\multicolumn{2}{l}{96861407968222207441}\\
+56921994237453980183&\bullet\\
+\end{array}\right) - \left(\begin{array}{lr}\multicolumn{2}{l}{30270839973770726216}\\
+53280&\bullet\\
+\end{array}\right)$$
+$$b = \left(\begin{array}{lr}\multicolumn{2}{l}{91980173971928496941}\\
+\multicolumn{2}{l}{38754448114526310137}\\
+\multicolumn{2}{l}{19647897400304541041}\\
+\multicolumn{2}{l}{96861407968222177170}\\
+72924617164832326903&\bullet\\
+\end{array}\right)$$
+$$\phi = (a-1)\cdot(b-1) = \left(\begin{array}{lr}\multicolumn{2}{l}{91980173971928496941}\\
+\multicolumn{2}{l}{38754448114526310137}\\
+\multicolumn{2}{l}{19647897400304541041}\\
+\multicolumn{2}{l}{96861407968222237712}\\
+40919371310075633462&\bullet\\
+\end{array}\right)\cdot \left(\begin{array}{lr}\multicolumn{2}{l}{91980173971928496941}\\
+\multicolumn{2}{l}{38754448114526310137}\\
+\multicolumn{2}{l}{19647897400304541041}\\
+\multicolumn{2}{l}{96861407968222177170}\\
+72924617164832326902&\bullet\\
+\end{array}\right)$$
+$$\phi = \left(\begin{array}{lr}\multicolumn{2}{l}{84603524039062325292}\\
+\multicolumn{2}{l}{42597569586650483985}\\
+\multicolumn{2}{l}{16046894214310967103}\\
+\multicolumn{2}{l}{13678042397117040175}\\
+\multicolumn{2}{l}{89275178644913706994}\\
+\multicolumn{2}{l}{66367259342795800224}\\
+\multicolumn{2}{l}{74556335512195829897}\\
+\multicolumn{2}{l}{63651972274335214266}\\
+\multicolumn{2}{l}{81058135149009880760}\\
+55440875153113994724&\bullet\\
+\end{array}\right)$$
+$$D = E^{-1} \bmod \phi$$
+$$D = \left(\begin{array}{lr}\multicolumn{2}{l}{16327919883770007484}\\
+\multicolumn{2}{l}{75174684437977532367}\\
+\multicolumn{2}{l}{09730701621042484604}\\
+\multicolumn{2}{l}{95280411152577764624}\\
+04103021141134828851&\bullet\\
+\end{array}\right)^{-1} mod \left(\begin{array}{lr}\multicolumn{2}{l}{84603524039062325292}\\
+\multicolumn{2}{l}{42597569586650483985}\\
+\multicolumn{2}{l}{16046894214310967103}\\
+\multicolumn{2}{l}{13678042397117040175}\\
+\multicolumn{2}{l}{89275178644913706994}\\
+\multicolumn{2}{l}{66367259342795800224}\\
+\multicolumn{2}{l}{74556335512195829897}\\
+\multicolumn{2}{l}{63651972274335214266}\\
+\multicolumn{2}{l}{81058135149009880760}\\
+55440875153113994724&\bullet\\
+\end{array}\right)$$
+$$D = \left(\begin{array}{lr}\multicolumn{2}{l}{43038607273697049376}\\
+\multicolumn{2}{l}{64262499637183147316}\\
+\multicolumn{2}{l}{80197417838197702440}\\
+\multicolumn{2}{l}{36173382573276173422}\\
+\multicolumn{2}{l}{75849006698725766510}\\
+\multicolumn{2}{l}{40122563151868500163}\\
+\multicolumn{2}{l}{78291973902510792663}\\
+\multicolumn{2}{l}{37231900478820784596}\\
+\multicolumn{2}{l}{84638604624337099871}\\
+80165629531505368355&\bullet\\
+\end{array}\right)$$
+$$OT = ST^{D} \bmod n$$
+$$OT = \left(\begin{array}{lr}\multicolumn{2}{l}{59895979813927177746}\\
+\multicolumn{2}{l}{96751545837070367490}\\
+\multicolumn{2}{l}{48626882999437113857}\\
+\multicolumn{2}{l}{48532385792875230123}\\
+\multicolumn{2}{l}{64759505752650789801}\\
+\multicolumn{2}{l}{96524004879305850245}\\
+\multicolumn{2}{l}{23231541897357777851}\\
+\multicolumn{2}{l}{27690495625505941643}\\
+\multicolumn{2}{l}{99695508441243715632}\\
+87903787390386940659&\bullet\\
+\end{array}\right)^{\left(\begin{array}{lr}\multicolumn{2}{l}{43038607273697049376}\\
+\multicolumn{2}{l}{64262499637183147316}\\
+\multicolumn{2}{l}{80197417838197702440}\\
+\multicolumn{2}{l}{36173382573276173422}\\
+\multicolumn{2}{l}{75849006698725766510}\\
+\multicolumn{2}{l}{40122563151868500163}\\
+\multicolumn{2}{l}{78291973902510792663}\\
+\multicolumn{2}{l}{37231900478820784596}\\
+\multicolumn{2}{l}{84638604624337099871}\\
+80165629531505368355&\bullet\\
+\end{array}\right)} \bmod n$$
+$$OT = \left(\begin{array}{lr}\multicolumn{2}{l}{17158005656493515016}\\
+\multicolumn{2}{l}{10392672214768226748}\\
+\multicolumn{2}{l}{81544208109242696727}\\
+\multicolumn{2}{l}{93359731828861842284}\\
+\multicolumn{2}{l}{93852482531095526041}\\
+\multicolumn{2}{l}{34945886350970090225}\\
+\multicolumn{2}{l}{83409274146899504331}\\
+\multicolumn{2}{l}{49941147150059439527}\\
+528982893&\bullet\\
+\end{array}\right)$$
+Převedením na ASCII znaky získáme:\textbf{miss Dubedat? Yes, do bedad. And she did bedad. Huguenot name I expect}
+\end{itemize}
+\end{document}

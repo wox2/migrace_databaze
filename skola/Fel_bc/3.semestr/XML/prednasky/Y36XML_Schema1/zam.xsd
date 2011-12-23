@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="windows-1250"?>
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="zaměstnanci">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="osoba" minOccurs="1" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="osoba">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="jméno"/>
+        <xs:element ref="email"  minOccurs="0" maxOccurs="unbounded"/>    
+        <xs:element ref="vztahy" minOccurs="0" maxOccurs="1"/>
+      </xs:sequence>
+      <xs:attribute name="id"       type="xs:ID" use="required"/>
+      <xs:attribute name="poznámka" type="xs:string"/>
+      <xs:attribute name="dovolená" default="ne">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="ano"/>
+            <xs:enumeration value="ne"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>      
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="jméno">
+    <xs:complexType>
+      <xs:all>
+        <xs:element ref="křestní" minOccurs="0"/>
+        <xs:element ref="příjmení"/>
+      </xs:all>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="křestní" type="xs:string"/>
+
+  <xs:element name="příjmení" type="xs:string"/>
+
+  <xs:element name="email" type="xs:string"/>
+
+  <xs:element name="vztahy">
+    <xs:complexType>
+      <xs:attribute name="vedoucí" type="xs:IDREF"/>
+      <xs:attribute name="podřízení" type="xs:IDREFS"/>
+    </xs:complexType>
+  </xs:element>
+
+</xs:schema>

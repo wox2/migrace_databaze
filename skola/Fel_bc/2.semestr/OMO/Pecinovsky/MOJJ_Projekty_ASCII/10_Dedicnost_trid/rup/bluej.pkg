@@ -1,0 +1,15 @@
+#BlueJ package file
+package.editor.height=286
+package.editor.width=189
+package.editor.x=76
+package.editor.y=76
+package.numDependencies=0
+package.numTargets=1
+package.showExtends=true
+package.showUses=true
+target1.height=62
+target1.name=cesky
+target1.type=PackageTarget
+target1.width=80
+target1.x=60
+target1.y=100

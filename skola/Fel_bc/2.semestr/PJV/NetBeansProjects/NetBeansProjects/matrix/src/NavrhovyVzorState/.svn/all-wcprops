@@ -1,0 +1,77 @@
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/~lukesma4/svn/!svn/ver/2/Matrix/src/NavrhovyVzorState
+END
+ATranspose.java
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/~lukesma4/svn/!svn/ver/2/Matrix/src/NavrhovyVzorState/ATranspose.java
+END
+BTranspose.java
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/~lukesma4/svn/!svn/ver/2/Matrix/src/NavrhovyVzorState/BTranspose.java
+END
+AMultipleConstant.java
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/~lukesma4/svn/!svn/ver/2/Matrix/src/NavrhovyVzorState/AMultipleConstant.java
+END
+APlusB.java
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/~lukesma4/svn/!svn/ver/2/Matrix/src/NavrhovyVzorState/APlusB.java
+END
+BMultipleConstant.java
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/~lukesma4/svn/!svn/ver/2/Matrix/src/NavrhovyVzorState/BMultipleConstant.java
+END
+Choice.java
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/~lukesma4/svn/!svn/ver/2/Matrix/src/NavrhovyVzorState/Choice.java
+END
+AMinusB.java
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/~lukesma4/svn/!svn/ver/2/Matrix/src/NavrhovyVzorState/AMinusB.java
+END
+AMultipleB.java
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/~lukesma4/svn/!svn/ver/2/Matrix/src/NavrhovyVzorState/AMultipleB.java
+END
+AbstractChoice.java
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/~lukesma4/svn/!svn/ver/2/Matrix/src/NavrhovyVzorState/AbstractChoice.java
+END
+BMinusA.java
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/~lukesma4/svn/!svn/ver/2/Matrix/src/NavrhovyVzorState/BMinusA.java
+END
+BMultipleA.java
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/~lukesma4/svn/!svn/ver/2/Matrix/src/NavrhovyVzorState/BMultipleA.java
+END
+Command.java
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/~lukesma4/svn/!svn/ver/2/Matrix/src/NavrhovyVzorState/Command.java
+END

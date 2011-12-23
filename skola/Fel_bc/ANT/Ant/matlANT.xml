@@ -1,0 +1,65 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+<project name="matrix" default="compile">
+<target name="all">
+ 
+</target>
+ 
+
+<fileset id="fileSet" dir=".">
+<include name="**/*.java"/>
+</fileset>
+  20:36:57: <property name="docDir" location="doc"/>
+<property name="fileSetProp" refid="fileSet"/>
+<property name="reportDir" value="./report"/>
+<property name="buildDir" value="./report"/>
+<property name="junit" value="./lib/junit-4.6.jar"/>
+ 
+<target name="compile">
+<mkdir dir="${buildDir}"/>
+<javac destdir="${buildDir}" classpath="${junit}" encoding="UTF-8">
+<src path="src" />
+<src path="test" />
+</javac>
+</target>
+  20:37:07: <target name="create doc">
+<mkdir dir="${docDir}" />
+<javadoc sourcepath="src" destdir="${docDir}" windowtitle="Lodě" />
+<echo message="kompiluji"/>
+</target>
+ 
+<target name="build" depends="compile">
+<jar destfile="matrix.jar" >
+<fileset dir="${buildDir}" excludes="**/*Test*.class" />
+<manifest>
+<attribute name="Main-Class" value="Controller.Main" />
+</manifest>
+</jar>
+</target>
+ 
+<target name="run" depends="build">
+<java jar="matrix.jar" fork="true" />
+</target>
+  20:37:14: <target name="clean">
+<delete dir="${buildDir}"/>
+<delete file="matrix.jar"/>
+<delete dir="${reportDir}" />
+<delete dir="${docDir}" />
+</target>
+ 
+<target name="test" depends="compile">
+<mkdir dir="${reportDir}"/>
+<junit printsummary="yes" haltonfailure="yes">
+<formatter type="plain"/>
+<classpath>
+<pathelement location="${junit}" />
+<pathelement location="${buildDir}" />
+</classpath>
+<batchtest fork="yes" todir="${reportDir}">
+<fileset dir="${buildDir}">
+<include name="**/*Test.class"/>
+</fileset>
+</batchtest>
+</junit>
+</target>
+ 
+</project>

@@ -1,0 +1,3 @@
+(: vybere vsechny elementy cisla hracu s prezdivkou :)
+
+//hrac/cislo[prezdivka]

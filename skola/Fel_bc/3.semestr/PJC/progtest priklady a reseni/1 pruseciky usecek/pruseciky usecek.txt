@@ -1,0 +1,80 @@
+Úkolem je realizovat program, který urcí vzájemnou polohu úsecek v rovine.
+
+Vstupem programu jsou celá císla - zadání souradnic koncových bodu úsecek. Celkem je zadáno 8 císel: x1 y1 x2 y2 pro první úsecku a následne další ctyri císla se stejným významem pro druhou úsecku.
+
+Výstupem programu je rozhodnutí o vzálemné poloze úsecek, kterým muže být:
+
+    * Text Usecky jsou na sebe kolme.
+    * Text Usecky jsou ruznobezne.
+    * Text Usecky jsou rovnobezne.
+    * Text Usecky lezi na spolecne primce a prekryvaji se. Nastane, pokud úsecky mají alespon jeden spolecný bod.
+    * Text Usecky lezi na spolecne primce a neprekryvaji se. Nastane pokud úsecky nemají žádný spolecný bod.
+
+Ve variante odpovedi "kolmé" a "ruznobežné" program navíc zobrazí informaci o souradnici prusecíku, prípadne informaci, že prusecík neexistuje.
+
+Pokud program detekuje nesprávné hodnoty na vstupu (napr. necíselné hodnoty, body neudávají úsecku), pak zobrazí chybové hlášení a skoncí. Chybové hlášení a ukoncení programu nastane okamžite poté, co je chyba detekovaná. Chybové hlášení posílejte na standardní výstup (ne na standardní chybový výstup - ten testovací prostredí používá k jiným úcelum).
+
+Odevzdávaný program musí dodržet formátování výstupu, vcetne výzev k zadání vstupních hodnot. Pokud formát nedodržíte, bude Váš program odmítnut. Za každým rádkem zobrazeným na výstupu je odrádkování (endl). Odrádkování je i za posledním rádkem, i za prípadnou chybovou hláškou.
+
+Program je testován v omezeném prostredí, kde je omezen v množství dostupné pameti (zde není duvod pro alokaci jakékoliv pameti krome nekolika málo lokálních promenných) a je omezen dobou behu 1 sec (ale v tomto prípade je výpocet velmi rychlý, trvá nekolik milisekund). V testovacím prostredí nelze používat nekteré funkce (fork, exec, sítové funkce, thready, ...). Pokud používáte funkci system("pause"), aby se Vám nezavrelo okno po ukoncení testovaného programu, vložte ji do odevzdávaného programu následovne:
+
+#ifndef __PROGTEST__
+  system ( "pause" );
+#endif /* __PROGTEST__ */
+
+
+Ukázka behu programu:
+
+Zadejte souradnice koncovych bodu prvni usecky:
+0 0 4 4
+Zadejte souradnice koncovych bodu druhe usecky:
+1 3 3 1
+Usecky jsou na sebe kolme.
+Prusecik: 2, 2
+
+ 
+Zadejte souradnice koncovych bodu prvni usecky:
+4 7 12 8
+Zadejte souradnice koncovych bodu druhe usecky:
+5 11 40 -300
+Usecky jsou ruznobezne.
+Prusecik: 5.43004, 7.17876
+
+ 
+Zadejte souradnice koncovych bodu prvni usecky:
+2 5 10 28
+Zadejte souradnice koncovych bodu druhe usecky:
+18 15 22 45
+Usecky jsou ruznobezne.
+Prusecik neexistuje.   
+
+ 
+Zadejte souradnice koncovych bodu prvni usecky:
+3 8 10 20
+Zadejte souradnice koncovych bodu druhe usecky:
+8 -2 15 10
+Usecky jsou rovnobezne.
+
+ 
+Zadejte souradnice koncovych bodu prvni usecky:
+10 0 20 0
+Zadejte souradnice koncovych bodu druhe usecky:
+20 0 30 0
+Usecky lezi na spolecne primce a prekryvaji se.
+
+ 
+Zadejte souradnice koncovych bodu prvni usecky:
+11 5 11 10
+Zadejte souradnice koncovych bodu druhe usecky:
+11 15 11 20
+Usecky lezi na spolecne primce a neprekryvaji se.
+
+ 
+Zadejte souradnice koncovych bodu prvni usecky:
+2 3 4 abcd
+Nespravny vstup.
+
+Nápoveda:
+
+    * Pro urcení kolmosti použijte skalární soucin.
+    * Pro urcení rovnobežnosti použijte vektorový soucin.

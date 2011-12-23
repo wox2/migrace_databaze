@@ -1,0 +1,634 @@
+<html><head>
+ 
+  <link href="Java%201_soubory/styly.css" type="text/css" rel="stylesheet">
+  <meta http-equiv="Content-Type" content="text/html;" charset="windows-1250">
+  <meta content="časopis o programování, Internetu a počítačích" name="description">
+  <meta content="PHP,ASM,ASP,developer,forum,fórum,programator,programátor,SQL,Pascal,TP,Jan Sova,Sova,MySQL,C/C++,C++,JS,JavaScript,HW,
+   Visual Basic,Hardware,Software,Flash,Assembler,Asembler,Apache,Java,Python name=" keywords="">
+  <meta http-equiv="Author" content="Jan" sova,="" jansova@programator.cz=""><title>Programátor - Začínáme v Javě (1.): Začínáme - Aneb dáte si dobrou kávu?</title></head><body topmargin="5" leftmargin="5" bgcolor="#eff1f8" marginheight="0" marginwidth="0">
+
+<table style="border: 1px solid rgb(32, 32, 32);" align="center" bgcolor="black" border="0" cellspacing="1" width="770">
+  <tbody><tr>
+    <td align="center">
+     <span class="top">
+      <a title="Projekt pro všechny programátory" href="http://www.programator.cz/">ProgramatorCZ</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+      <a title="Diskuse na www.programator.cz" href="http://linux.programator.cz/forum">Diskusní
+      fórum</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+      <a title="Největší zdroj dokumentace o Assembleru v ČR" href="http://asm.programator.cz/">ASMDprojekt</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+      <a title="Vtipy nejen pro programátory" href="http://vtipy.programator.cz/">Vtipy</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+      <a title="Knihovna JavaScriptu" href="http://javascript.programator.cz/">JavaScript</a>
+   </span>
+  </td>
+ </tr>
+</tbody></table>
+
+<table style="border-left: 1px solid rgb(32, 32, 32); border-right: 1px solid rgb(32, 32, 32);" align="center" background="Java%201_soubory/logo.gif" border="0" cellpadding="0" cellspacing="0" width="770">
+  <tbody><tr>
+    <td align="right">
+<!-- BBSTART: ad2.billboard.cz kod 1.1 - SERVER: Časopis(8512), SEKCE: top(1), POZICE: (1), TYPBANNERU: Full Banner(1), OKRAJ: ne, POPIS: ne. -->
+<script language="JavaScript" type="text/javascript">
+<!--
+var bbs=screen,bbn=navigator,bbh;bbh='&ubl='+bbn.browserLanguage+'&ucc='+bbn.cpuClass+'&ucd='+bbs.colorDepth+'&uce='+bbn.cookieEnabled+'&udx='+bbs.deviceXDPI+'&udy='+bbs.deviceYDPI+'&usl='+bbn.systemLanguage+'&uje='+bbn.javaEnabled()+'&uah='+bbs.availHeight+'&uaw='+bbs.availWidth+'&ubd='+bbs.bufferDepth+'&uhe='+bbs.height+'&ulx='+bbs.logicalXDPI+'&uly='+bbs.logicalYDPI+'&use='+bbs.fontSmoothingEnabled+'&uto='+(new Date()).getTimezoneOffset()+'&uui='+bbs.updateInterval+'&uul='+bbn.userLanguage+'&uwi='+bbs.width;
+var bb9_bgcolor='C0C0C0';
+var bb9_text='000000';
+var bb9_link='0000FF';
+if(document.bgColor) { bb9_bgcolor=document.bgColor.substr(1); }
+if(document.fgColor) { bb9_text=document.fgColor.substr(1); }
+if(document.linkColor) { bb9_link=document.linkColor.substr(1); }
+document.write("<IFRAME WIDTH=468 HEIGHT=60 MARGINWIDTH=0 MARGINHEIGHT=0 FRAMEBORDER=0 HSPACE=0 VSPACE=0 SCROLLING=no BORDERCOLOR='#000000' SRC='http://ad2.billboard.cz/please/showit/8512/1/1/1/?typkodu=html&topmargin=0&leftmargin=0"+bbh+"&href="+escape(location.href)+"&popis=ne&okraj=ne&bgcolor="+bb9_bgcolor+"&text="+bb9_text+"&link="+bb9_link+"&bust="+Math.random()+"&target=_top'>");
+document.write("<scr"+"ipt language='JavaScript' type='text/javascript'>");
+document.write("document.write(\"<scr\"+\"ipt language='JavaScript' type='text/javascript' src='http://ad2.billboard.cz/please/showit/8512/1/1/1/?typkodu=js\"+bbh+\"&href=\"+escape(location.href)+\"&popis=ne&okraj=ne&bust=\"+Math.floor(10000000*Math.random())+\"&target=_top'><\/scr\"+\"ipt>\");");
+document.write("<\/scr"+"ipt>");
+document.write("<\/IFRAME>");
+/**///-->
+</script><iframe marginwidth="0" marginheight="0" hspace="0" vspace="0" bordercolor="#000000" src="Java%201_soubory/a.html" frameborder="0" height="60" scrolling="no" width="468">&lt;script
+language='JavaScript'
+type='text/javascript'&gt;document.write("&lt;scr"+"ipt
+language='JavaScript' type='text/javascript'
+src='http://ad2.billboard.cz/please/showit/8512/1/1/1/?typkodu=js"+bbh+"&amp;href="+escape(location.href)+"&amp;popis=ne&amp;okraj=ne&amp;bust="+Math.floor(10000000*Math.random())+"&amp;target=_top'&gt;&lt;/scr"+"ipt&gt;");&lt;/script&gt;</iframe>
+<noscript>
+<table border="0" cellpadding="0" cellspacing="0"><tr><td>
+<a href="http://ad2.billboard.cz/please/redir.bb/8512/1/1/1/"
+target="_top">
+<img
+src="http://ad2.billboard.cz/please/showit/8512/1/1/1/?typkodu=img"
+border="0" width="468" height="60" alt='Kliknete prosim!'></a>
+</td></tr></table>
+</noscript>
+<!-- BBEND: ad2.billboard.cz kod 1.1 -->
+  </td>
+ </tr>
+</tbody></table>
+
+
+<table style="border: 1px solid rgb(32, 32, 32);" align="center" bgcolor="#ccd1ef" cellspacing="1" width="770">
+ <tbody><tr>
+  <td align="left">
+   <span class="top2">
+    <i>Spolupracujeme</i>:&nbsp;&nbsp;
+    <a href="http://www.webguru.cz/">WebGuru</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+    <a href="http://www.komplikator.cz/">Komplikátor</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+    <a href="http://www.minasite.cz/">MinaSite</a>
+   </span>
+   </td>
+   <td align="right">
+    <span class="top2">
+      <a href="javascript:window.external.AddFavorite%20('http://casopis.programator.cz',%20'%C4%8Casopis%20Program%C3%A1tor-%20Internet,%20PHP,%20JavaScipt,%20Pascal,%20Delphi');">Přidat
+         k oblíbeným položkám</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+      <a href="http://casopis.programator.cz/" onclick="this.style.behavior='url(#default#homepage)';this.setHomePage('http://casopis.programator.cz');return(false);">Nastavit
+         jako výchozí stránku</a>
+    </span>
+   </td>
+ </tr>
+</tbody></table>
+
+
+<table align="center" border="0" cellpadding="0" cellspacing="0" width="770">
+  <tbody><tr>
+
+
+    <td cellspacing="0" cellpadding="0" valign="top" width="120">
+
+    <table style="border-left: 1px solid rgb(32, 32, 32); border-right: 1px solid rgb(32, 32, 32); border-bottom: 1px solid rgb(32, 32, 32);" bgcolor="#dce1ef" cellpadding="0" cellspacing="0">
+     <tbody><tr>
+      <td>
+       <img src="Java%201_soubory/icon.gif" border="0" height="0" width="1">
+
+
+
+
+      <table align="center" border="0" cellpadding="1" cellspacing="0" width="120">
+        <tbody><tr>
+         <td align="left" bgcolor="#0d3b8e">
+          <span class="supmenu">
+           <b><img src="Java%201_soubory/double_point.gif">Časopis</b>
+          </span>
+         </td>
+        </tr>
+        <tr>
+         <td>
+          <span class="mn">
+            <img src="Java%201_soubory/x.gif" width="1"><img src="Java%201_soubory/odrazka.gif">
+            <a href="http://casopis.programator.cz/index.php"> Hlavní stránka</a><br>
+                        <img src="Java%201_soubory/x.gif" width="1"><img src="Java%201_soubory/odrazka.gif">
+                 <a href="http://casopis.programator.cz/index.php?rubrika=9" title="I dnes se vyplatí vědět něco o ASM">                 Assembler            </a><br>
+                             <img src="Java%201_soubory/x.gif" width="1"><img src="Java%201_soubory/odrazka.gif">
+                 <a href="http://casopis.programator.cz/index.php?rubrika=8" title="Vše o C/C++">                 C,C++            </a><br>
+                             <img src="Java%201_soubory/x.gif" width="1"><img src="Java%201_soubory/odrazka.gif">
+                 <a href="http://casopis.programator.cz/index.php?rubrika=1" title="Programování v Delphi">                 Delphi            </a><br>
+                             <img src="Java%201_soubory/x.gif" width="1"><img src="Java%201_soubory/odrazka.gif">
+                 <a href="http://casopis.programator.cz/index.php?rubrika=15" title="Vše o Microsoft  .NET - nové platformě">                 DOTNET            </a><br>
+                             <img src="Java%201_soubory/x.gif" width="1"><img src="Java%201_soubory/odrazka.gif">
+                 <a href="http://casopis.programator.cz/index.php?rubrika=10" title="Velmi zajímavá technologie">                 Flash            </a><br>
+                             <img src="Java%201_soubory/x.gif" width="1"><img src="Java%201_soubory/odrazka.gif">
+                 <a href="http://casopis.programator.cz/index.php?rubrika=3" title="Stále důležitější jazyk">                 HTML            </a><br>
+                             <img src="Java%201_soubory/x.gif" width="1"><img src="Java%201_soubory/odrazka.gif">
+                 <a href="http://casopis.programator.cz/index.php?rubrika=16" title="Java">                 Java            </a><br>
+                             <img src="Java%201_soubory/x.gif" width="1"><img src="Java%201_soubory/odrazka.gif">
+                 <a href="http://casopis.programator.cz/index.php?rubrika=4" title="JavaScript">                 JavaScript            </a><br>
+                             <img src="Java%201_soubory/x.gif" width="1"><img src="Java%201_soubory/odrazka.gif">
+                 <a href="http://casopis.programator.cz/index.php?rubrika=12" title="Doporučená četba">                 Knihy            </a><br>
+                             <img src="Java%201_soubory/x.gif" width="1"><img src="Java%201_soubory/odrazka.gif">
+                 <a href="http://casopis.programator.cz/index.php?rubrika=13" title="Vše možné o Internetu">                 O Internetu            </a><br>
+                             <img src="Java%201_soubory/x.gif" width="1"><img src="Java%201_soubory/odrazka.gif">
+                 <a href="http://casopis.programator.cz/index.php?rubrika=2" title="Vše o programování hlavně v Turbo Pascalu">                 Pascal            </a><br>
+                             <img src="Java%201_soubory/x.gif" width="1"><img src="Java%201_soubory/odrazka.gif">
+                 <a href="http://casopis.programator.cz/index.php?rubrika=6" title="Vše o PHP">                 PHP            </a><br>
+                             <img src="Java%201_soubory/x.gif" width="1"><img src="Java%201_soubory/odrazka.gif">
+                 <a href="http://casopis.programator.cz/index.php?rubrika=5" title="Co je nového v projektu Programátor">                 Pro. programátor            </a><br>
+                             <img src="Java%201_soubory/x.gif" width="1"><img src="Java%201_soubory/odrazka.gif">
+                 <a href="http://casopis.programator.cz/index.php?rubrika=7" title="Programy z našeho projektu">                 Programy            </a><br>
+                             <img src="Java%201_soubory/x.gif" width="1"><img src="Java%201_soubory/odrazka.gif">
+                 <a href="http://casopis.programator.cz/index.php?rubrika=11" title="Zajímavý programovací jazyk">                 Python            </a><br>
+                             <img src="Java%201_soubory/x.gif" width="1"><img src="Java%201_soubory/odrazka.gif">
+                 <a href="http://casopis.programator.cz/index.php?rubrika=14" title="Externí zprávy">                 Tiskové zprávy            </a><br>
+                           </span>
+         </td>
+        </tr>
+      </tbody></table>
+      <p></p>
+
+              <table align="center" border="0" cellpadding="1" cellspacing="0" width="120">
+        <tbody><tr>
+         <td align="left" bgcolor="#0d3b8e">
+          <span class="supmenu">
+           <b><img src="Java%201_soubory/double_point.gif">Projekty</b>
+          </span>
+         </td>
+        </tr>
+        <tr>
+         <td>
+          <span class="mn">
+            <p>
+             <img src="Java%201_soubory/x.gif" width="1"><img src="Java%201_soubory/odrazka.gif">
+            <a href="http://casopis.programator.cz/index.php"> </a><a href="http://linux.programator.cz/projekty/javascript">JScript Planet</a><br>
+             <img src="Java%201_soubory/x.gif" width="1"><img src="Java%201_soubory/odrazka.gif">
+            <a href="http://casopis.programator.cz/index.php"> </a><a href="http://linux.programator.cz/forum">ProProjekty</a></p>
+          </span>
+         </td>
+        </tr>
+        </tbody></table>
+        <p></p>
+
+        <table align="center" border="0" cellpadding="1" cellspacing="0" width="120">
+        <tbody><tr>
+         <td align="left" bgcolor="#0d3b8e">
+          <span class="supmenu">
+           <b><img src="Java%201_soubory/double_point.gif">Služby</b>
+          </span>
+         </td>
+        </tr>
+        <tr>
+         <td>
+          <span class="mn">
+            <p>
+             <img src="Java%201_soubory/x.gif" width="1"><img src="Java%201_soubory/odrazka.gif">
+            <a href="http://casopis.programator.cz/index.php"> </a><a href="http://casopis.programator.cz/monitor.programator.cz">Monitoring</a><br>
+          </p></span>
+         </td>
+        </tr>
+        </tbody></table>
+        <p></p>
+
+       <table align="center" border="0" cellpadding="1" cellspacing="0" width="120">
+        <tbody><tr>
+         <td align="left" bgcolor="#0d3b8e">
+          <span class="supmenu">
+           <b><img src="Java%201_soubory/double_point.gif">Informace</b>
+          </span>
+         </td>
+        </tr>
+        <tr>
+         <td>
+          <span class="mn">
+            <img src="Java%201_soubory/x.gif" width="1"><img src="Java%201_soubory/odrazka.gif">
+            <a href="http://casopis.programator.cz/index.php"> </a><a href="http://casopis.programator.cz/r-users.php">Redakce</a><br>
+            <img src="Java%201_soubory/x.gif" width="1"><img src="Java%201_soubory/odrazka.gif">
+            <a href="http://casopis.programator.cz/index.php"> </a><a href="http://casopis.programator.cz/o.php">O časopisu</a><br>
+            <img src="Java%201_soubory/x.gif" width="1"><img src="Java%201_soubory/odrazka.gif">
+            <a href="http://casopis.programator.cz/index.php"> </a><a href="http://casopis.programator.cz/odkazy.php">Odkazy</a><br>
+            <img src="Java%201_soubory/x.gif" width="1"><img src="Java%201_soubory/odrazka.gif">
+            <a href="http://casopis.programator.cz/index.php"> </a><a href="http://casopis.programator.cz/newredaktor.php">Nový redaktor</a><br>
+          </span>
+         </td>
+       </tr>
+      </tbody></table>
+      <p></p>
+
+      <hr size="1" width="110">
+      <p align="center">ISSN 1213-7359
+      <br>
+      </p><p align="center"><font size="1">Šéfredaktor:</font>
+      <br>
+      <span class="mn"><a href="mailto:jansova@programator.cz"><b>Jan Sova</b></a></span>
+      <br>
+      <br>
+      <font size="1">Zástupci šéfredaktora</font>
+      <br>
+      <b>Frerenzy Dawid</b>
+      <br>
+      <b>Krásenský David</b>
+      <br>
+      <br>
+      <font size="1">Šéfredaktoři rubrik</font>
+      <br>
+      <b>Michal Chalupník</b><br>
+      <b>Formánek Jiří</b><br>
+      <b>Pavel Aleš</b><br>
+      <b>Sojka Zdeněk</b><br>
+      <b>Petr Rympler</b><br>
+      <br>
+      <font size="1">Administrátor</font><br>
+      <span class="mn"><a href="mailto:jansova@programator.cz"><b>Jan Sova</b></a></span>
+      <br>
+      <br>
+
+
+
+      </p><p align="center"><a href="http://casopis.programator.cz/"><img src="Java%201_soubory/icon.gif" alt="Naše ikonka" border="0"></a><br>
+      <a href="http://www.minasite.cz/"><img src="Java%201_soubory/minasite.gif" alt="MinaSite" border="0"></a><br>
+      <!-- Komplikátorovy stránky - Začátek -->
+       <a href="http://www.komplikator.cz/" target="_top">
+       <img src="Java%201_soubory/kikona.gif" alt="Komplikátorovy Stránky" border="0" height="31" width="88"></a><br>
+      <!-- Komplikátorovy stránky - Konec -->
+      <a href="http://www.toplist.cz/" target="_top"><img src="Java%201_soubory/count.gif" alt="TOPlist" border="0"></a><br>
+      <a href="http://www.galactica.cz/"><img src="Java%201_soubory/gal.gif" alt="GALACTICA" border="0"></a><br>
+
+
+      <br>
+
+      </p><p align="center"><font size="1">Časopis používá redakční systém Sova-Press.</font></p>
+        <br>
+       </td>
+      </tr>
+     </tbody></table>
+
+
+    <!-- vynechání prostoru mezi buňkami -->
+    </td><td width="4">
+    <img src="Java%201_soubory/x.gif" width="4"></td>
+      <!--
+          zde končí levá část stránky a začíná střed, musí začítt tm, že se
+          definuje velikost buňky pro střed
+      -->    
+    <td valign="top" width="522">
+    <br>
+         <p><span class="nadpis">Začínáme v Javě (1.): Začínáme - Aneb dáte si dobrou kávu?</span> v rubrice Java</p>
+
+        <p><b>Platforma Java si získává čím dál větši popularitu v prostředí Internetu. Ač se
+většina z nás s ní setkává v podobě Java Appletů, její možnosti a využití jsou
+opravdu všestranné. Tento seriál se bude věnovat výuce právě tohoto jazyka.
+
+</b></p>
+        <p></p><p>
+Vítejte u prvního dílu seriálu o jazyku Java. Tento díl by spíš mohl být nultým,
+protože se tu ještě nebudeme učit programovat, jen si řekneme něco o Javě a
+vysvětlíme si, proč ji máme rádi :-). A taky si povíme, kde najdeme vše potřebné.
+Tedy všechno důležité, abychom už mohli příště zasednout ke klávesnici a napsat
+si nějaké to "Ahoj světe".
+</p>
+<p><b>1.1 Historie Javy</b></p>
+<p>
+Jazyk Java [džava] (v americkém slangu to znamená kafe) je dílkem společnosti
+<b>Sun</b>, resp. její dceřiné společnosti <b>JavaSoft</b>, která jej neustále vyvíjí. Její
+kořeny sahají až do počátku 90. let 20. století, kdy se firma Sun rozhodla
+vyvinout jazyk pro výrobky spotřební elektroniky (měl se jmenovat Oak). Ale
+řízením osudu se tento jazyk dostal až do sféry počítačů a internetu. To se
+stalo někdy kolem roku 1994 - a už koncem roku 1995 přidala firma Netscape do
+svého prohlížeče podporu pro tento jazyk. Jak je tedy vidět, Java je poměrně
+mladý jazyk a jelikož se prakticky začínalo na zelené louce, není Java ztížena
+nějakou "kompatibilitou" a tedy vývojáři měli volnou ruku v tom, aby stvořili
+jazyk přesně podle svých představ. Od svého vzniku postupně její popularita
+rostla a správnost této myšlenky potvrdil nakonec i Microsoft, který přišel s
+technologií .NET a jazykem C#, které mají s Javou mnoho společného.
+</p>
+<p>
+V dnešní době je její nejnovější verze Java2 1.4.2. Ta přináší lepší podporu
+pro 64bitové procesory a spoustu dalších oprav a vylepšení (více na stránkách 
+<a href="http://java.sun.com/" target="_blank">java.sun.com</a>). 
+</p>
+<p><b>1.2 Jaká Java je?</b></p>
+<p>
+Dobře, ale o co jde? Nejdříve snad upozornění - Java NENÍ JavaScript. Přestože
+se v NN 2.0 objevili spolu - Java i JavaScript, kromě kousku jména a podobné
+(céčkovské) syntaxe nemají společného nic. Zatímco JavaScript je skriptovací
+jazyk pro vkládání skriptů do HTML (původně se jmenoval LiveScript, ale jméno
+Java začínalo slibovat úspěch) a je výtvorem firmy Netscape, Java je
+plnohodnotný programovací jazyk. A čím je tak zajímavá? Především <b>platformní
+nezávislostí</b>. V okamžiku, kdy napíšete nějaký program a zkompilujete, tak tento
+výsledný soubor budete moci spustit na libovolném počítači (na kterém je <b>Java
+Virtual Machine</b>), nebo dokonce i na jiných, speciálních zařízeních. Tento
+zkompilovaný soubor totiž neobsahuje instrukce pro konktrétní procesor, ale
+obsahuje tzv. <b>ByteCode</b> - neboli mezikód. A jeho interpretaci má na starosti
+právě JVM, jejíž nejnovější verzi získáme na stránkách <a href="http://java.sun.com/" target="_blank">java.sun.com</a>. Jak jistě
+tušíte, toto řešení má bohužel rovněž i velkou nevýhodu - běh aplikace napsané
+v Javě je výrazně pomalejší, než by to bylo u klasické nativní aplikace. To je
+způsobeno tím, že ByteCode se musí interpretovat. Toto zpomalení bylo ještě do
+poměrně nedávné doby velmi znatelné - některé zdroje mluvily o 20 až 40 krát
+rychlejším běhu stejného programu, ale napsaném v C. Tohoto si ovšem firma Sun
+všimla a vyvinula tzv. <b>Just In Time Compiler</b> (JIT), který urychluje běh aplikace
+tak, že mezikód překládá do strojového kódu procesoru. Tato technologie sice
+opravdu razantně urychluje běh aplikace (kromě drobného zpoždění při startu, kdy
+se část překládá, aplikace spouštěná pod verzí 1.3 běží zhruba 6x rychleji, ve
+verzi 1.4 je to asi 12x rychleji), zato klade větší nároky na paměť. Všechna
+tato čísla jsou ale velmi přibližná, protože velmi závisí i na platformě, kde
+Javu provozujete, stejně tak i na druhu aplikace. A po pravdě řečeno,
+ani ta nezávislost není úplně dokonalá, třeba se systémy MacOS (hlavně 9) moc 
+dobré zkušenosti nemám.
+</p>
+<p>
+Další zajímavou vlastností Javy je třeba její komplexnost a univerzálnost. Není
+problém v ní napsat opravdu cokoliv. Od drobných prográmků pro přík. řádek přes
+rozsáhlé plnohodnotné aplikace jako databázové aplikace, servery, distribuované
+aplikace či třeba i hry (nejen) pro mobilní telefony. Můžete psát programy jak
+pro příkazový řádek, tak i programy s grafickým rozhraním. Java umožňuje psát
+dynamicky generované stránky - podobně jako PHP, nebo naopak, přidávat funkce na
+straně klienta v podobě <b>Appletů</b> - plnohodnotných aplikací, které jsou však
+z důvodů bezpečnosti omezeny (např. nemohou pracovat s klientovými soubory, nemohou
+komunikovat s jiným než domovským webovým serverem, atd.) - tedy nejenom trapné 
+poskakující barevné texty a obrázky :-).
+</p>
+<p>
+Další kvalitou, kterou bych tu chtěl zmínit je fakt, že Java je plně <b>objektově
+orientovaná</b>. A pokud říkám plně, myslím to vážně :-), neboť objektem jsou dokonce 
+i výjimky. To sice může být ze začátku trošku na obtíž, zvláště pro člověka,
+který moc OOP nepřičichl, ale později snad každý tuto vlastnost bohatě ocení.
+Tato vlastnost, spolu s vybroušenou syntaxí dává zdrojovovým kódům jakousi
+lehkost a eleganci. I když, to je možná spíš subjektivní pocit.
+</p>
+<p>
+A co dál? Aritmetika je definována dle normy IEEE - tedy na všech systémech je
+zaručen stejný výsledek a navíc jsou definována další tři čísla - plus nekonečno,
+mínus nekonečno a NaN - výsledek výpočtu není číslo. V Javě rovněž nemůže
+existovat nekontrolovaný přístup do paměti - nepoužívají se zde ukazatele,
+nelze jít za hranice polí atd. To vše znamená, že aplikace v Javě jsou jak bezpečné,
+tak i stabilní.
+</p>
+<p><b>1.3 Využití Javy - příklady</b></p>
+<p>
+Pokud vás zajímá, co všechno běží na Javě, rád tu vyjmenuju několik příkladů.
+Pokud používáte ICQ, určitě znáte adresu <a href="http://go.icq.com/" target="_blank">
+go.icq.com</a>, která vám umožní používat
+ICQ i na počítači, na kterém naní nainstalované, jen prostřednictvím webu. A
+právě toto ICQ je napsané v Javě. Stejně jako herna na serveru <a href="http://www.centrum.cz/" target="_blank">
+centrum.cz</a>.
+Formulář pro formátování a zasílání diskusních příspěvků na serveru <a href="http://www.idnes.cz/" target="_blank">
+iDnes.cz</a> je
+rovněž Java Applet. Z dalších aplikací bych jmenoval např. program VisualRoute,
+se kterým se dá setkat i v podobě appletu či matematický program Maple, který
+rovněž Javu využívá. A samozřejmě i borlandí vývojové prostředí JBuilder. Jak je
+vidět, Java získává význam zejména v prostředí Webu. Technologii servletů a JSP
+(Java Server Pages) používá zase např. <a href="http://www.csas.cz/" target="_blank">
+Česká spořitelna</a>.
+</p>
+<p><b>1.4 Co je k tomu potřeba?</b></p>
+<p>
+Pro začátek budeme potřebovat <b>JDK</b> (<b>Java Developement Kit</b>), který obsahuje
+kompilátor, JVM, prohlížeč appletů, balíčky a vše podstatné pro naši činnost.
+Dobrá zpráva je ta, že toto vše je zdarma k dispozici na stránkách java.sun.com
+v sekci Download. JDK je k dispozici v mnoha verzích. Najdeme tu ke stažení
+různé balíky. <b>ME</b> - Micro Edition pro programování malých přístrojů jako mobilní
+telefony, <b>SE</b> - Standard Edition a <b>EE</b> - Enterprise Edition. Nás však bude
+momentálně zajímat JDK SE (Software Developement Kit - Standard Edition), který
+je v současné době ve verzi <b>Java2 JDK 1.4.2</b>. Tu sí můžete stáhnout na adrese
+<a href="http://java.sun.com/j2se/1.4.2/download.html">
+http://java.sun.com/j2se/1.4.2/download.html</a>. Upozorňuji, že my budeme
+potřebovat balík SDK. Balík JRE (Java Runtime Enviroment) slouží pouze ke
+spouštění aplikací a je již obsažen v SDK. Když už tu budete, stáhněte si i
+dokumentaci. Ta je k dispozici i on-line.
+</p>
+<p>
+Dále budeme potřebovat nějaký textový editor. To je další dobrá zpráva. Stačit
+nám bude obyčený textový editor (kupř. notepad). Přesto bude lepší používat
+nějaký lepší editor, který nám pomůže tím, že bude zvýrazňovat syntaxi, bude
+volat překladač (který bychom jinak volali z příkazové řádky) či nám správně
+nastaví cesty. Sám jsem si oblíbil editor <b>JCreator</b>, který je ve verzi Lite volně
+dostupný na stránkách <a href="http://www.jcreator.com/" target="_blank">
+http://www.jcreator.com</a>, který budu v příkladech zmiňovat.
+Pro začátek určitě zapomeneme na velká vývojová prostředí jako je <b>Borland JBuilder</b>,
+protože my budeme začínat od základů a tato prostředí by nám jednak docela zamotala
+hlavu a jednak by nám napsala spoustu kódu za nás, což nyní nepotřebujeme.
+</p>
+<p>
+Po instalaci SDK nainstalujte i JCreator s spusťe jej. Po zaregistrování přípon
+souborů a konfiguraci cesty k SDK je vše připraveno k práci. Pokud budete
+používat jiný editor, bude nutné nějak zajistit kompilaci a spouštění programu.
+To můžeme provádět z příkazové řádky. Dnes se však už nebudeme do ničeho pouštět
+a tak si do příště alespoň připravíme prstíky.
+</p>
+<p><b>1.5 Do budoucna...</b></p>
+<p>
+A co se bude dít příště? Jak jsem již slíbil, napíšeme si první program, povíme
+si jak to vůbec v Javě funguje a povíme si o principech OOP (objektově
+orientovaného programování). Celý seriál bude předpokládat alespoň minimální
+základy programování v nějakém strukturovaném jazyce (C, Pascal, ...), ale pokud
+by byly nějaké nejasnosti, klidně mi napište a já to vždy v příštím díle dovysvětlím.
+</p>
+<p>
+Pokud jde o budoucnost, určitě si tu probereme základní vlastnosti Javy a <b>OOP</b>
+(což se může hodit i v jiných jazycích), seznámíme se s principem <b>výjimek</b> a koukneme
+se na práci s <b>proudy</b> (standardní vstup, soubory či síť). Pak nejspíš
+naťukneme grafické rozhraní (<b>Swing</b>) abychom se dostali k užitečným <b>Appletům</b>,
+povíme si něco o paralelním programování s použitím vláken (<b>multithreading</b>) a třeba 
+někdy v budoucnu, pokud bude chuť, se dostaneme i k síťovým věcem (<b>klient/server</b> a možná i 
+distribuovaným - <b>RMI</b>), databázím (<b>JDBC</b>) či k serverovým věcem jako <b>JSP</b> a <b>servlety</b>. 
+Ale to už nejsou vůbec žádné základy a taky spousta toho je právem obsažena až v Enterprise Edition.
+</p>  <p></p>
+        <p>
+        Autor: <a href="http://casopis.programator.cz/r-users.php?id=50" title="informace o autorovi">Pavel Patz</a>
+        e-mail: <a href="http://casopis.programator.cz/index.php?autor=cdome@centrum.cz" title="e-mail autora" class="mn">cdome@centrum.cz</a>
+        web: <a href="http:///" title="Stránky autora" class="mn"></a>
+        </p>
+        <p align="right"><i></i></p>
+
+
+     <table style="border: 1px solid rgb(0, 0, 128);" align="center" bgcolor="#f0f0f0" cellspacing="1" width="495">
+      <tbody><tr>
+       <td>
+        <p><b>Příspěvky ke článku</b></p>
+       </td>
+      </tr>
+     </tbody></table>
+
+     <table align="center" width="495">
+      <tbody><tr>
+       <td>
+        <span class="mn">
+         <a href="http://casopis.programator.cz/forum.php?clanek=195">Java není plně OOP</a> 23.07.2003 10:51:38 Autor: František <br><a href="http://casopis.programator.cz/forum.php?clanek=195">re: Java není plně OOP</a> 24.07.2003 13:09:21 Autor: Pavel Patz <br><a href="http://casopis.programator.cz/forum.php?clanek=195">re: Java není plně OOP</a> 24.07.2003 13:11:42 Autor: Pavel Patz <br><a href="http://casopis.programator.cz/forum.php?clanek=195">re: Java není plně OOP</a> 18.09.2003 20:41:23 Autor: some_one <br><a href="http://casopis.programator.cz/forum.php?clanek=195">re: re: Java není plně OOP</a> 19.09.2003 17:12:17 Autor: Pavel Patz <br><a href="http://casopis.programator.cz/forum.php?clanek=195">Zvuk pro JavaSDK 2.0</a> 22.03.2004 07:19:50 Autor: spiderman <br>        </span>
+       </td>
+      </tr>
+      <tr>
+       <td align="center">
+        <span class="mn">
+         <a href="http://casopis.programator.cz/forum.php?clanek=195">Přidat komentář</a>
+        </span>
+       </td>
+      </tr>
+     </tbody></table>
+     <p></p>
+
+
+    <table style="border: 1px solid rgb(0, 0, 128);" align="center" bgcolor="#f0f0f0" cellspacing="1" width="495">
+     <tbody><tr>
+      <td>
+       <p><b>Poslední ze stejné rubriky</b></p>
+      </td>
+     </tr>
+    </tbody></table>
+
+
+    <table align="center" width="495">
+     <tbody><tr>
+      <td>
+       <span class="mn">
+        <img src="Java%201_soubory/odrazka.gif"> <a href="http://casopis.programator.cz/r-art.php?clanek=208">Začínáme v Javě (7.): Konstruktory a přetěžování metod</a><br><img src="Java%201_soubory/odrazka.gif"> <a href="http://casopis.programator.cz/r-art.php?clanek=205">Robocode - aneb Java (bojovou) hrou.</a><br><img src="Java%201_soubory/odrazka.gif"> <a href="http://casopis.programator.cz/r-art.php?clanek=204">Začínáme v Javě (6.): Třídy a objekty.</a><br><img src="Java%201_soubory/odrazka.gif"> <a href="http://casopis.programator.cz/r-art.php?clanek=203">Začínáme v Javě (5.): Podmínky, cykly a kolektiv.</a><br><img src="Java%201_soubory/odrazka.gif"> <a href="http://casopis.programator.cz/r-art.php?clanek=202">Začínáme v Javě (4.): Operace s operátory</a><br>       </span>
+      </td>
+     </tr>
+    </tbody></table>
+
+
+   </td>
+   <td width="4">
+    <img src="Java%201_soubory/x.gif" width="4">
+   </td>
+
+
+   <!-- tak tady začíná pravý sloupek -->
+   <td valign="top" width="120">
+   <br>
+
+    <table style="border: 1px solid rgb(32, 32, 32);" align="center" border="0" cellpadding="1" cellspacing="0" width="120">
+        <tbody><tr>
+         <td align="left" bgcolor="#0d3b8e">
+          <span class="supmenu">
+           <b><img src="Java%201_soubory/double_point.gif">Funkce ke článku</b>
+       </span>
+      </td>
+     </tr>
+     <tr>
+      <td>
+     <span class="mn">
+         <img src="Java%201_soubory/diskuse.gif"> <a href="http://casopis.programator.cz/forum.php?clanek=195">Přidat komentář</a>
+        </span>
+      </td>
+     </tr>
+    </tbody></table>
+    <br>
+        <table style="border: 1px solid rgb(32, 32, 32);" align="center" border="0" cellpadding="1" cellspacing="0" width="120">
+        <tbody><tr>
+         <td align="left" bgcolor="#0d3b8e">
+          <span class="supmenu">
+           <b><img src="Java%201_soubory/double_point.gif">Nejnovější články</b></span>
+<b>       </b></td>
+      </tr>
+      <tr>
+       <td>
+        <span class="mn">
+
+                 <img src="Java%201_soubory/x.gif" width="1"><img src="Java%201_soubory/odrazka.gif"> <a href="http://casopis.programator.cz/r-art.php?clanek=218">
+            Práce s událostmi v .NET Framework. </a>[13885]<br>         <img src="Java%201_soubory/x.gif" width="1"><img src="Java%201_soubory/odrazka.gif"> <a href="http://casopis.programator.cz/r-art.php?clanek=217">
+            Nová soutěž na 3D Contestu CZ </a>[10603]<br>         <img src="Java%201_soubory/x.gif" width="1"><img src="Java%201_soubory/odrazka.gif"> <a href="http://casopis.programator.cz/r-art.php?clanek=216">
+            Práce v .NET Framework - Zástupci </a>[12651]<br>         <img src="Java%201_soubory/x.gif" width="1"><img src="Java%201_soubory/odrazka.gif"> <a href="http://casopis.programator.cz/r-art.php?clanek=215">
+            Práce s XML v C# (5.) - ověřování dokumentu pomocí třídy XmlValidatingReader </a>[10510]<br>         <img src="Java%201_soubory/x.gif" width="1"><img src="Java%201_soubory/odrazka.gif"> <a href="http://casopis.programator.cz/r-art.php?clanek=214">
+            Práce s XML v C# (4.) - třídy XmlDocument a dotazy jazyka XPath </a>[11856]<br>         </span>
+       </td>
+      </tr>
+     </tbody></table>
+     <br>
+
+    <center>
+<!-- BBSTART: ad2.billboard.cz kod 1.1 - SERVER: Časopis(8512), SEKCE: 120*90(5), POZICE: (1), TYPBANNERU: Button 1(5), OKRAJ: ne, POPIS: ne. -->
+<script language="JavaScript" type="text/javascript">
+<!--
+var bbs=screen,bbn=navigator,bbh;bbh='&ubl='+bbn.browserLanguage+'&ucc='+bbn.cpuClass+'&ucd='+bbs.colorDepth+'&uce='+bbn.cookieEnabled+'&udx='+bbs.deviceXDPI+'&udy='+bbs.deviceYDPI+'&usl='+bbn.systemLanguage+'&uje='+bbn.javaEnabled()+'&uah='+bbs.availHeight+'&uaw='+bbs.availWidth+'&ubd='+bbs.bufferDepth+'&uhe='+bbs.height+'&ulx='+bbs.logicalXDPI+'&uly='+bbs.logicalYDPI+'&use='+bbs.fontSmoothingEnabled+'&uto='+(new Date()).getTimezoneOffset()+'&uui='+bbs.updateInterval+'&uul='+bbn.userLanguage+'&uwi='+bbs.width;
+var bb9_bgcolor='C0C0C0';
+var bb9_text='000000';
+var bb9_link='0000FF';
+if(document.bgColor) { bb9_bgcolor=document.bgColor.substr(1); }
+if(document.fgColor) { bb9_text=document.fgColor.substr(1); }
+if(document.linkColor) { bb9_link=document.linkColor.substr(1); }
+document.write("<IFRAME WIDTH=120 HEIGHT=90 MARGINWIDTH=0 MARGINHEIGHT=0 FRAMEBORDER=0 HSPACE=0 VSPACE=0 SCROLLING=no BORDERCOLOR='#000000' SRC='http://ad2.billboard.cz/please/showit/8512/5/1/5/?typkodu=html&topmargin=0&leftmargin=0"+bbh+"&href="+escape(location.href)+"&popis=ne&okraj=ne&bgcolor="+bb9_bgcolor+"&text="+bb9_text+"&link="+bb9_link+"&bust="+Math.random()+"&target=_top'>");
+document.write("<scr"+"ipt language='JavaScript' type='text/javascript'>");
+document.write("document.write(\"<scr\"+\"ipt language='JavaScript' type='text/javascript' src='http://ad2.billboard.cz/please/showit/8512/5/1/5/?typkodu=js\"+bbh+\"&href=\"+escape(location.href)+\"&popis=ne&okraj=ne&bust=\"+Math.floor(10000000*Math.random())+\"&target=_top'><\/scr\"+\"ipt>\");");
+document.write("<\/scr"+"ipt>");
+document.write("<\/IFRAME>");
+/**///-->
+</script><iframe marginwidth="0" marginheight="0" hspace="0" vspace="0" bordercolor="#000000" src="Java%201_soubory/a_002.html" frameborder="0" height="90" scrolling="no" width="120">&lt;script
+language='JavaScript'
+type='text/javascript'&gt;document.write("&lt;scr"+"ipt
+language='JavaScript' type='text/javascript'
+src='http://ad2.billboard.cz/please/showit/8512/5/1/5/?typkodu=js"+bbh+"&amp;href="+escape(location.href)+"&amp;popis=ne&amp;okraj=ne&amp;bust="+Math.floor(10000000*Math.random())+"&amp;target=_top'&gt;&lt;/scr"+"ipt&gt;");&lt;/script&gt;</iframe>
+<noscript>
+<table border="0" cellpadding="0" cellspacing="0"><tr><td>
+<a href="http://ad2.billboard.cz/please/redir.bb/8512/5/1/5/"
+target="_top">
+<img
+src="http://ad2.billboard.cz/please/showit/8512/5/1/5/?typkodu=img"
+border="0" width="120" height="90" alt='Kliknete prosim!'></a>
+</td></tr></table>
+</noscript>
+<!-- BBEND: ad2.billboard.cz kod 1.1 -->
+</center>
+<br>
+
+    <table style="border: 1px solid rgb(32, 32, 32);" align="center" border="0" cellpadding="1" cellspacing="0" width="120">
+        <tbody><tr>
+         <td align="left" bgcolor="#0d3b8e">
+          <span class="supmenu">
+           <b><img src="Java%201_soubory/double_point.gif">O článku</b>
+       </span>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       <span class="mn">
+         Datum: 22.07.2003<br>Rubrika: <a href="http://casopis.programator.cz/index.php?16">Java</a><br>Čtenářů: 19251<br>Autor: <a href="mailto:cdome@centrum.cz">Pavel Patz</a><br><p></p><p><b>Hodnocení článku:</b><br>Znamka: 3.09<br>Počet známek: 1708<br>[<a href="http://casopis.programator.cz/r-art.php?clanek=195&amp;znamka=1">1</a>] [<a href="http://casopis.programator.cz/r-art.php?clanek=195&amp;znamka=2">2</a>] [<a href="http://casopis.programator.cz/r-art.php?clanek=195&amp;znamka=3">3</a>] [<a href="http://casopis.programator.cz/r-art.php?clanek=195&amp;znamka=4">4</a>] [<a href="http://casopis.programator.cz/r-art.php?clanek=195&amp;znamka=5">5</a>]<br>
+ </p></span><p></p>       
+      </td>
+     </tr>
+    </tbody></table>
+
+       </td>
+  </tr>
+</tbody></table>
+<p>&nbsp;</p>
+<div align="center">
+
+<!-- BBSTART: ad2.billboard.cz kod 1.1 - SERVER: Časopis(8512), SEKCE: bottom(2), POZICE: (2), TYPBANNERU: Full Banner(1), OKRAJ: ne, POPIS: ne. -->
+<script language="JavaScript" type="text/javascript">
+<!--
+var bbs=screen,bbn=navigator,bbh;bbh='&ubl='+bbn.browserLanguage+'&ucc='+bbn.cpuClass+'&ucd='+bbs.colorDepth+'&uce='+bbn.cookieEnabled+'&udx='+bbs.deviceXDPI+'&udy='+bbs.deviceYDPI+'&usl='+bbn.systemLanguage+'&uje='+bbn.javaEnabled()+'&uah='+bbs.availHeight+'&uaw='+bbs.availWidth+'&ubd='+bbs.bufferDepth+'&uhe='+bbs.height+'&ulx='+bbs.logicalXDPI+'&uly='+bbs.logicalYDPI+'&use='+bbs.fontSmoothingEnabled+'&uto='+(new Date()).getTimezoneOffset()+'&uui='+bbs.updateInterval+'&uul='+bbn.userLanguage+'&uwi='+bbs.width;
+var bb9_bgcolor='C0C0C0';
+var bb9_text='000000';
+var bb9_link='0000FF';
+if(document.bgColor) { bb9_bgcolor=document.bgColor.substr(1); }
+if(document.fgColor) { bb9_text=document.fgColor.substr(1); }
+if(document.linkColor) { bb9_link=document.linkColor.substr(1); }
+document.write("<IFRAME WIDTH=468 HEIGHT=60 MARGINWIDTH=0 MARGINHEIGHT=0 FRAMEBORDER=0 HSPACE=0 VSPACE=0 SCROLLING=no BORDERCOLOR='#000000' SRC='http://ad2.billboard.cz/please/showit/8512/2/2/1/?typkodu=html&topmargin=0&leftmargin=0"+bbh+"&href="+escape(location.href)+"&popis=ne&okraj=ne&bgcolor="+bb9_bgcolor+"&text="+bb9_text+"&link="+bb9_link+"&bust="+Math.random()+"&target=_top'>");
+document.write("<scr"+"ipt language='JavaScript' type='text/javascript'>");
+document.write("document.write(\"<scr\"+\"ipt language='JavaScript' type='text/javascript' src='http://ad2.billboard.cz/please/showit/8512/2/2/1/?typkodu=js\"+bbh+\"&href=\"+escape(location.href)+\"&popis=ne&okraj=ne&bust=\"+Math.floor(10000000*Math.random())+\"&target=_top'><\/scr\"+\"ipt>\");");
+document.write("<\/scr"+"ipt>");
+document.write("<\/IFRAME>");
+/**///-->
+</script><iframe marginwidth="0" marginheight="0" hspace="0" vspace="0" bordercolor="#000000" src="Java%201_soubory/a_003.html" frameborder="0" height="60" scrolling="no" width="468">&lt;script
+language='JavaScript'
+type='text/javascript'&gt;document.write("&lt;scr"+"ipt
+language='JavaScript' type='text/javascript'
+src='http://ad2.billboard.cz/please/showit/8512/2/2/1/?typkodu=js"+bbh+"&amp;href="+escape(location.href)+"&amp;popis=ne&amp;okraj=ne&amp;bust="+Math.floor(10000000*Math.random())+"&amp;target=_top'&gt;&lt;/scr"+"ipt&gt;");&lt;/script&gt;</iframe>
+<noscript>
+<table border="0" cellpadding="0" cellspacing="0"><tr><td>
+<a href="http://ad2.billboard.cz/please/redir.bb/8512/2/2/1/"
+target="_top">
+<img
+src="http://ad2.billboard.cz/please/showit/8512/2/2/1/?typkodu=img"
+border="0" width="468" height="60" alt='Kliknete prosim!'></a>
+</td></tr></table>
+</noscript>
+<!-- BBEND: ad2.billboard.cz kod 1.1 -->
+</div><hr size="1" width="760">
+<p align="center"><span class="mn">(c) Systém Jan Sova, Design David Krásenský a Jan Sova<br>Se svými dotazy či problémy se obracejte na diskusní
+<a href="http://linux.prgramator.cz/forum">fórum.</a><br>
+Časopis je součástí projektu <a href="http://www.programator.cz/">Programator</a>
+</span></p>
+
+</body></html>

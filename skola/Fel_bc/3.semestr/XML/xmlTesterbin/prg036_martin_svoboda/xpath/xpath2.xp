@@ -1,0 +1,2 @@
+(: Vybere cestujici, kteri maji vyplnenou adresu :)
+//passenger[address]

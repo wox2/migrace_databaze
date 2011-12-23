@@ -1,0 +1,262 @@
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+package timetable.sb;
+
+import java.sql.Time;
+import java.util.Date;
+import java.util.Iterator;
+import java.util.LinkedList;
+import java.util.List;
+import javax.ejb.Stateless;
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+import timetable.model.*;
+
+/**
+ *
+ * @author janf
+ */
+@Stateless
+public class TimetableCenter implements TimetableCenterLocal {
+
+    @PersistenceContext
+    EntityManager em;
+
+    public List<Route> getRoutesConnectingStations(Station station1, Station station2) {
+        // TODO slo by pri moznostech syntaxe Querry nahradit jednim SQL dotazem?
+        // TODO osetrit, ze time_position[station1] < time_position[station2]
+        List<Route> list1 = (List<Route>) em.createQuery("SELECT r FROM Station s1 JOIN s1.positions p JOIN p.route r WHERE s1=:station1").setParameter("station1", station1).getResultList();
+        List<Route> list2 = (List<Route>) em.createQuery("SELECT r FROM Station s2 JOIN s2.positions p JOIN p.route r WHERE s2=:station2").setParameter("station2", station2).getResultList();
+        Route r = null;
+        List<Route> res = new LinkedList<Route>();
+        for (Iterator<Route> i = list1.iterator(); i.hasNext(); r = i.next()) {
+            // list1 intersect list2
+            if (list2.contains(r)) res.add(r);
+        }
+        return res;
+    }
+
+    public List<Link> getLinksByDepartureTime(Route route, Station station, Date time) {
+        return (List<Link>) em.createQuery("SELECT l FROM Route r JOIN r.links l JOIN r.positions p "
+                + "WHERE r=:route AND p.station=:station AND l.departureTime + p.timePosition >= :time ORDER BY l.departureTime").setParameter("route", route).setParameter("station", station).setParameter("time", time).getResultList();
+    }
+
+    public List<Link> getLinksForJourney(Station station1, Station station2, Date time) {
+        List<Route> routes = getRoutesConnectingStations(station1, station2);
+        List<Link> res = new LinkedList<Link>();
+        for (Route r : routes) {
+            res.addAll(getLinksByDepartureTime(r, station1, time));
+        }
+        return res;
+    }
+
+    public Position getPositionByRouteAndStation(Station station, Route route) {
+        return (Position) em.createQuery("SELECT p FROM Position p JOIN p.station s JOIN p.route r "
+                + "WHERE s=:station AND r=:route").setParameter("station", station).setParameter("route", route)
+                .getSingleResult();
+    }// expects that there is only one position for each route and station
+
+
+
+    public Time getTimeByLinkAndStation(Link link, Station station) {
+        // TODO kdyz link nestavi ve station
+        // link.departureTime + position[station, route[link]].time_position
+        return (Time) em.createQuery("SELECT p.timePosition FROM Link l JOIN l.route r JOIN r.positions p WHERE p.station=:station AND l=:link").setParameter("station", station).setParameter("link", link).getSingleResult();
+    }
+
+    public List<Note> getNotesByLink(Link link) {
+        return (List<Note>) em.createQuery("(SELECT n FROM Link l JOIN l.notes n WHERE l=:link)").setParameter("link", link).getResultList();
+     }
+
+    public LinkType getLinkTypeByLink(Link link) {
+        return (LinkType) em.createQuery("(SELECT lt FROM Link l JOIN l.linkType lt WHERE l=:link)").setParameter("link", link).getSingleResult();
+    }
+    public Route getRouteByPosition(Position position) {
+        return (Route) em.createQuery("(SELECT r FROM Position p JOIN p.route r WHERE p=:position)").setParameter("position", position).getSingleResult();
+    }
+
+    public List<Link> getLinksByRoute(Route route) {
+        return (List<Link>) em.createQuery("(SELECT l FROM Route r JOIN r.links l WHERE r=:route)").setParameter("route", route).getResultList();
+    }
+
+    public List<Position> getPositionsByRoute(Route route) {
+        return (List<Position>) em.createQuery("(SELECT p FROM Route r JOIN r.positions p WHERE r=:route)").setParameter("route", route).getResultList();
+    }
+
+    public Station getStationByPosition(Position position) {
+        return (Station) em.createQuery("(SELECT s FROM Position p JOIN p.station s WHERE p=:position)").setParameter("position", position).getSingleResult();
+    }
+
+    public List<Position> getPositionsByStation(Station station) {
+        return (List<Position>) em.createQuery("SELECT p FROM Station s JOIN s.positions p WHERE s=:station").setParameter("station", station).getResultList();
+    }
+
+    // role: admin
+    public List<Link> getLinksByTicket(Ticket ticket) {
+        return (List<Link>) em.createQuery("(SELECT l FROM Ticket t JOIN t.links l WHERE t=:ticket)").setParameter("ticket", ticket).getResultList();
+    }
+
+    public List<Station> getStationsByLink(Link link) {
+        return (List<Station>) em.createQuery("(SELECT s FROM Link l JOIN l.route r JOIN r.positions p JOIN p.station WHERE l=:link)").setParameter("link", link).getResultList();
+    }
+
+
+
+    public Link getLinkById(int id) {
+        Link link = em.find(Link.class, id);
+        return link;
+    }
+
+    public LinkType getLinkTypeById(int id) {
+        LinkType linkType = em.find(LinkType.class, id);
+        return linkType;
+    }
+
+    public Note getNoteById(int id) {
+        Note note = em.find(Note.class, id);
+        return note;
+    }
+
+    public Passanger getPassangerById(long id) {
+        Passanger Passanger = em.find(Passanger.class, id);
+        return Passanger;
+    }
+
+    public Position getPositionById(int id) {
+        Position position = em.find(Position.class, id);
+        return position;
+    }
+
+    public Route getRouteById(long id) {
+        Route route = em.find(Route.class, id);
+        return route;
+    }
+    public Station getStationById(int id) {
+        Station station = em.find(Station.class, id);
+        return station;
+    }
+
+    public void updateLink(Link link) {
+        em.merge(link);
+    }
+
+    public void updateLinkType(LinkType linkType) {
+        em.merge(linkType);
+    }
+
+    public void updateNote(Note note) {
+        em.merge(note);
+    }
+
+    public void updatePassanger(Passanger passanger) {
+        em.merge(passanger);
+    }
+
+    public void updatePosition(Position position) {
+        em.merge(position);
+    }
+
+    public void updateRoute(Route route) {
+        em.merge(route);
+    }
+
+    public void updateStation(Station station) {
+        em.merge(station);
+    }
+
+    public void removeLink(Link link) {
+        link = em.merge(link);
+        em.remove(link);
+    }
+
+    public void removeLinkType(LinkType linkType) {
+        linkType = em.merge(linkType);
+        em.remove(linkType);
+    }
+
+    public void removeNote(Note note) {
+        note = em.merge(note);
+        em.remove(note);
+    }
+
+    public void removePassanger(Passanger passanger) {
+        passanger = em.merge(passanger);
+        em.remove(passanger);
+    }
+
+    public void removePosition(Position position) {
+        position = em.merge(position);
+        em.remove(position);
+    }
+
+    public void removeRoute(Route route) {
+        route = em.merge(route);
+        em.remove(route);
+    }
+
+    public void removeStation(Station station) {
+        station = em.merge(station);
+        em.remove(station);
+    }
+
+    public List<Link> getAllLinks() {
+        return (List<Link>) em.createNamedQuery(Link.Q_GET_ALL_LINKS).getResultList();
+    }
+
+    public List<LinkType> getAllLinkTypes() {
+        return (List<LinkType>) em.createNamedQuery(LinkType.Q_GET_ALL_LINKTYPES).getResultList();
+    }
+
+    public List<Note> getAllNotes() {
+        return (List<Note>) em.createNamedQuery(Note.Q_GET_ALL_NOTES).getResultList();
+    }
+
+    public List<Passanger> getAllPassangers() {
+        return (List<Passanger>) em.createNamedQuery(Passanger.Q_GET_ALL_PASSENGERS).getResultList();
+    }
+    
+
+    @Override
+    public List<Position> getAllPositions() {
+        return (List<Position>) em.createNamedQuery(Position.Q_GET_ALL_POSITIONS).getResultList();
+    }
+
+    public List<Route> getAllRoutes() {
+        return (List<Route>) em.createNamedQuery(Route.Q_GET_ALL_ROUTES).getResultList();
+     }
+
+    public List<Station> getAllStations() {
+        return (List<Station>) em.createNamedQuery(Station.Q_GET_ALL_STATIONS).getResultList();
+    }
+
+    public List<Link> getLinksByDepartureTime(Integer departureTime) {
+        return (List<Link>) em.createNamedQuery(Link.Q_GET_BY_DEPARTURE_TIME).setParameter("departureTime", departureTime);
+    }
+
+    public List<Passanger> getPassangersByFirstName(String firstName) {
+        return (List<Passanger>) em.createNamedQuery(Passanger.Q_GET_BY_FIRST_NAME).setParameter("firstName", firstName);
+    }
+
+    public List<Passanger> getPassangersBySurname(String surname) {
+        return (List<Passanger>) em.createNamedQuery(Passanger.Q_GET_BY_SURNAME).setParameter("surname", surname);
+    }
+
+    public List<Passanger> getPassangerByUsername(String username) {
+        return (List<Passanger>) em.createNamedQuery(Passanger.Q_GET_BY_USERNAME).setParameter("username", username);
+    }
+
+    public List<Position> getPositionsByKmPosition(int kmPosition) {
+        return (List<Position>) em.createNamedQuery(Position.Q_GET_BY_KM_POSITION).setParameter("kmPosition", kmPosition);
+    }
+
+    public List<Position> getPositionsByTimePosition(Integer timePosition) {
+        return (List<Position>) em.createNamedQuery(Position.Q_GET_BY_TIME_POSITION).setParameter("timePosition", timePosition);
+    }
+
+    public List<Station> getStationsByName(String name) {
+        return (List<Station>) em.createNamedQuery(Station.Q_GET_BY_NAME).setParameter("name", name);
+    }
+}

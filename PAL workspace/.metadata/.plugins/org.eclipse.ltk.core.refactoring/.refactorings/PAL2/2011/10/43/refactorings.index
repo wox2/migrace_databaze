@@ -1,0 +1,10 @@
+1319661294192	Rename field 'min'
+1319661325333	Rename field 'nodes'
+1319664823143	Rename field 'binomialtrees'
+1319664847721	Rename local variable 'binomialHeap'
+1319873302569	Move compilation unit
+1319874821592	Rename field 'officesCount'
+1319915977743	Rename field 'usedEdges'
+1319915995196	Rename field 'usedEdgesCount'
+1319916196449	Rename local variable 'processed'
+1319918646599	Rename local variable 'iterateNode'

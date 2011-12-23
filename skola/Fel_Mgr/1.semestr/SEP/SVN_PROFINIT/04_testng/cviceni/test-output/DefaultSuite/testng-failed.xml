@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [DefaultSuite]">
+  <test name="Vse(failed)" preserve-order="true">
+    <groups>
+      <run>
+        <include name="want"/>
+        <exclude name="notWant"/>
+      </run>
+    </groups>
+    <classes>
+      <class name="cviceni.Ukol2Test">
+        <methods>
+          <include name="isBufferSafe"/>
+          <include name="isBuilderSafe"/>
+        </methods>
+      </class>
+    </classes>
+  </test>
+</suite>

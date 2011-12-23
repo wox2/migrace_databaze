@@ -1,0 +1,8 @@
+let nejnepredvykrystalizovavatelnejsiho 0x 23 0a 43 3e 5b cd 65 89 0f 90 55 7c e1
+let nejneobhospodarovavatelnejsiho 0x FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF
+
+begin
+print nejnepredvykrystalizovavatelnejsiho
+print nejneobhospodarovavatelnejsiho
+add 		   nejnepredvykrystalizovavatelnejsiho		nejneobhospodarovavatelnejsiho
+exit

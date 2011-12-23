@@ -1,0 +1,28 @@
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+package timetable.back;
+
+import javax.ejb.EJB;
+import javax.faces.bean.ManagedBean;
+import javax.faces.bean.RequestScoped;
+import timetable.sb.TimetableCenterLocal;
+
+/**
+ *
+ * @author janf
+ */
+@ManagedBean(name="timetable")
+@RequestScoped
+public class TimetableBean {
+
+    @EJB
+    private TimetableCenterLocal tc;
+
+    public TimetableBean() { }
+
+    
+
+}

@@ -1,0 +1,6 @@
+let bx 0x Ff Ff Ff Ff Ff Ff Ff Ff Ff Ff
+
+begin
+add bx bx
+print bx
+exit

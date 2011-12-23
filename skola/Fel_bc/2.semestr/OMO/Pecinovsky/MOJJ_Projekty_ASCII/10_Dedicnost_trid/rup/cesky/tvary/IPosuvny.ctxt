@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.target=Pozice\ getPozice()
+comment0.text=\nVrati\ aktualni\ pozici\ pposuvneho\ objektu\ (vetsinou\ pozici\ leveho\ horniho\nrohu\ opsaneho\ obdelniku)\ jako\ instanci\ tridy\ {@code\ Pozice}.\n\n@return\ Akutalni\ pozice\ objektu.\n\n
+comment1.params=pozice
+comment1.target=void\ setPozice(Pozice)
+comment1.text=\nPresune\ posuvny\ objekt\ do\ nove\ pozice.\n\n@param\ pozice\ \ Nova\ pozice\ objektu.\n\n
+comment2.params=x\ y
+comment2.target=void\ setPozice(int,\ int)
+comment2.text=\nNastavi\ novou\ pozici\ objektu.\n\n@param\ x\ \ \ Nova\ x-ova\ pozice\ objektu\n@param\ y\ \ \ Nova\ y-ova\ pozice\ objektu\n\n
+numComments=3

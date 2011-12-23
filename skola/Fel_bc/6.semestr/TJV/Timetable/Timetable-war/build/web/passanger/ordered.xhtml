@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+    <h:head>
+        <title>Spoje</title>
+    </h:head>
+    <h:body>
+        <ui:composition template="../resources/composition.xhtml">
+            <ui:param name="pageTitle" value="#{msgs.order_header}" />
+            <ui:define name="content">
+                <h1><h:outputText value="#{msgs.order_header}"/></h1>
+                <p>Děkujeme, Vaše objednávka byla vyřízena.</p>
+                <h:link outcome="index" value="Pokračovat" />
+            </ui:define>
+        </ui:composition>
+    </h:body>
+</html>
+

@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MoneyFlow", "MoneyFlow\MoneyFlow.csproj", "{4F3835E4-C9FE-413E-99C0-7A53703C6E2B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAL", "DAL\DAL.csproj", "{8B0EFBF0-1CF3-43CA-8566-132CE991BAB0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BLL", "BLL\BLL.csproj", "{ECF3B05A-5F9F-46FC-B43B-622B9FA0A69E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4F3835E4-C9FE-413E-99C0-7A53703C6E2B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4F3835E4-C9FE-413E-99C0-7A53703C6E2B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4F3835E4-C9FE-413E-99C0-7A53703C6E2B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4F3835E4-C9FE-413E-99C0-7A53703C6E2B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8B0EFBF0-1CF3-43CA-8566-132CE991BAB0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8B0EFBF0-1CF3-43CA-8566-132CE991BAB0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8B0EFBF0-1CF3-43CA-8566-132CE991BAB0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8B0EFBF0-1CF3-43CA-8566-132CE991BAB0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ECF3B05A-5F9F-46FC-B43B-622B9FA0A69E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ECF3B05A-5F9F-46FC-B43B-622B9FA0A69E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ECF3B05A-5F9F-46FC-B43B-622B9FA0A69E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ECF3B05A-5F9F-46FC-B43B-622B9FA0A69E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

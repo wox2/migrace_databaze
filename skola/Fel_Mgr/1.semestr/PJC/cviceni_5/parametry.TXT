@@ -1,0 +1,2 @@
+pocet parametru zvysen o 1, prvni parametr je jmeno programu
+int main(int argc, char*8 argv)

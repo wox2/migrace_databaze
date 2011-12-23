@@ -1,0 +1,52 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+    <h:head>
+        <title>#{links.link.linkType.shortcut} #{links.link.linkNumber}: detaily spoje</title>
+    </h:head>
+    <h:body>
+        <ui:composition template="./resources/composition.xhtml">
+            <ui:param name="pageTitle" value="#{links.link.linkType.shortcut} #{links.link.linkNumber}: detaily spoje" />
+            <ui:define name="content">
+                <h:form>
+                    <h1><h:outputText value="#{links.link.linkType.shortcut} #{links.link.linkNumber}: detaily spoje"/></h1>
+                    <h:dataTable value="#{links.positions}" var="item" styleClass="dataTable">
+
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="Stanice"/>
+                            </f:facet>
+                            <h:outputText value="#{item.station.name}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="Čas"/>
+                            </f:facet>
+                            <h:outputText value="#{links.departureTime(item.station)}" converter="timeConv" />
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="Vzdálenost"/>
+                            </f:facet>
+                            <h:outputText value="#{item.kmPosition} km"/>
+                        </h:column>
+                    </h:dataTable>
+                            <h:dataTable value="#{links.link.notes}" var="n" styleClass="notes"
+                                         rendered="#{links.hasNotes() == true}">
+                                <h:column>
+                                    <f:facet name="header">
+                                        <h:outputText value="Poznámky"/>
+                                    </f:facet>
+                                    <h:outputText value="#{n.explanation}" />
+                                </h:column>
+                            </h:dataTable>
+                <h:commandLink action="results" value="#{msgs.back}" immediate="true" />
+                </h:form>
+            </ui:define>
+        </ui:composition>
+    </h:body>
+</html>
+

@@ -1,0 +1,21 @@
+
+    h2{font-style:italic;}
+    #obrazek{
+        display:none;
+    }
+    .zarovnaniNavigace{
+        display:none;
+    }
+    .tridyVin{    
+    font-weight:bold;
+}
+    #levyOkraj{
+        display:none;
+    }
+    .privlastky{
+        font-weight:bold;
+    }
+    #polickaNaNic{
+        display:none;
+    }
+

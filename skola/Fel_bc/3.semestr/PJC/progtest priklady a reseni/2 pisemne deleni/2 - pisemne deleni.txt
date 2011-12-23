@@ -1,0 +1,61 @@
+Realizujte program, který provede celocíselné písemné delení tak, jak jsme se jej ucili na základní škole.
+
+Vstupem programu jsou dve kladná celá císla.
+
+Výstupem je zobrazený prubeh delení podle ukázek níže. Dodržte predepsaný formát výstupu vcetne odsazení mezerami.
+
+Realizovaný program musí detekovat chybu (a oznámit to chybovou hlášku podle ukázky), pokud je na vstupu necíselná hodnota nebo pokud je na vstupu záporné císlo nebo nula.
+
+Za každou rádkou výstupu (tedy i za poslední rádkou), i za prípadnou chybovou hláškou je odrádkování (endl).
+
+Zadejte dve kladna cisla:
+546 37
+ 546 : 37 = 14
+-37
+ 176
+-148
+  28 zbytek
+
+Zadejte dve kladna cisla:
+1234 73
+ 1234 : 73 = 16
+ -73
+  504
+ -438
+   66 zbytek
+
+Zadejte dve kladna cisla:
+123 456
+ 123 : 456 = 0
+   0
+ 123 zbytek
+
+Zadejte dve kladna cisla:
+1000 10
+ 1000 : 10 = 100
+-10
+   0
+   0
+    0
+    0
+    0 zbytek
+
+Zadejte dve kladna cisla:
+32808136 9875
+ 32808136 : 9875 = 3322
+-29625
+  31831
+ -29625
+   22063
+  -19750
+    23136
+   -19750
+     3386 zbytek
+
+Zadejte dve kladna cisla:
+45 -7
+Nespravny vstup.
+
+Zadejte dve kladna cisla:
+asdf 8
+Nespravny vstup.

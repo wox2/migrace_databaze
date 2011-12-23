@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<maloobchod>
+  <objednavka kod="OBJ0001" datum="19.9.2007">
+    <zakaznik>
+      <jmeno>John Black</jmeno>
+      <adresa>Prazska 1, Praha, 100 00</adresa>
+    </zakaznik>
+    <polozka>
+      <cislo>VYR001</cislo>
+      <cena>15</cena>
+      <kusu>1</kusu>
+    </polozka>
+    <polozka>
+      <cislo>VYR005</cislo>
+      <cena>20</cena>
+      <kusu>2</kusu>
+    </polozka>
+  </objednavka>
+  <objednavka kod="OBJ0002" datum="19.9.2007">
+    <zakaznik>
+      <jmeno>Bill White</jmeno>
+      <adresa>Brnenska 2, Brno, 200 00</adresa>
+    </zakaznik>
+    <polozka>
+      <cislo>VYR002</cislo>
+      <cena>10</cena>
+      <kusu>5</kusu>
+    </polozka>
+    <polozka>
+      <cislo>VYR003</cislo>
+      <cena>10</cena>
+      <kusu>1</kusu>
+    </polozka>
+  </objednavka>
+  <objednavka kod="OBJ0003" datum="20.9.2007">
+    <zakaznik>
+      <jmeno>John Black</jmeno>
+      <adresa>Prazska 1, Praha, 100 00</adresa>
+    </zakaznik>
+    <polozka>
+      <cislo>VYR001</cislo>
+      <cena>15</cena>
+      <kusu>5</kusu>
+    </polozka>
+    <polozka>
+      <cislo>VYR002</cislo>
+      <cena>10</cena>
+      <kusu>1</kusu>
+    </polozka>
+  </objednavka>
+</maloobchod>

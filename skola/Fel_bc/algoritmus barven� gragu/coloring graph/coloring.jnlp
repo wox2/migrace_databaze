@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jnlp codebase='http://www.mathcove.net/petersen/'>
+<information>
+<title>Coloring of Graphs</title>
+<vendor>Petersen Consultants</vendor>
+<icon href='images/ind5.gif'/>
+</information>
+<resources>
+<java version='1.6+'/>
+<jar href='PetersenWebStart.jar'/>
+</resources>
+<application-desc main-class='petersen.coloring.Coloring'/>
+</jnlp>

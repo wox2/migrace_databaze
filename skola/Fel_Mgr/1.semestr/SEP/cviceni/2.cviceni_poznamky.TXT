@@ -1,0 +1,13 @@
+poptavka
+statni firmy - horsi, nad 2 mega je nutno vypsat verejny 
+vyberovy rizeni(ver. zak.), pozadovane referencni projekty, certifikaty...
+
+velci zakaznici - seznam preferovanych odberatelu
+-zavazat se musite hned(penize na uctu jsou odeslany, prip pozastaveny bankou), soucast nabidky smlouva
+- odhad rozsahu/pracnosti - historie projektu, metriky, vyh. znalost zakaznika
+
+- zadav dokumentace - info o zadavateli, pravni kancl, cil vyberoveho rizeni, info o implementace, popis soucas stavu, pozad. stav, u statni zpravy je vypis licenci atp
+- obcas pozadavky na obsah, strukturu
+- problemy se daji realizovat pomoci subdodavatelu(sepisu smlouvu a ziskam napr. projekty, ktere realizoval)
+- statni zprava - sepsat lidi, kteri to budou realizovat, v prip zmeny ji zadavatel musi schvalit
+- z praxe - prestudy = placena konzultace, potom teprv vyberove rizeni

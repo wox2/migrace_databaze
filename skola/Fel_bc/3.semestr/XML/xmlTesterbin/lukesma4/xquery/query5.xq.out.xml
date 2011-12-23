@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<celebrity>
+   <politik>Jiri Paroubek</politik>
+   <politik>Milos Melcak</politik>
+   <politik>Milos Zeman</politik>
+   <politik>Petra Buzkova</politik>
+   <politik>Stanislav Gross</politik>
+   <politik>Vladimir Spidla</politik>
+   <politik>David Rath</politik>
+   <politik>Michal Pohanka</politik>
+   <politik>Bohuslav Sobotka</politik>
+   <politik>Vitezslav Jandak</politik>
+   <politik>Zdenek Skromach</politik>
+   <politik>Mirek Topolanek</politik>
+   <politik>Vlastimil Tlusty</politik>
+   <politik>Ivan Langer</politik>
+   <politik>Pavel Bem</politik>
+   <politik>Petr Necas</politik>
+   <politik>Jan Zahradil</politik>
+   <politik>Petr Bendl</politik>
+   <politik>Miroslava Nemcova</politik>
+   <politik>Vaclav Klaus</politik>
+   <fotbalista>
+        <jmeno>Pavel Nedved</jmeno>
+        <voli>ODS</voli>
+  </fotbalista>
+   <atlet>
+        <jmeno>Roman Sebrle</jmeno>
+        <voli>Ceska piratska strana</voli>
+  </atlet>
+   <atletka>
+        <jmeno>Barbora Spotakova</jmeno>
+        <voli>Zeleni</voli>
+  </atletka>
+</celebrity>

@@ -1,0 +1,52 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+    <h:head>
+        <title>Spoje</title>
+    </h:head>
+    <h:body>
+            <ui:param name="pageTitle" value="Positions" />
+                <h:form>
+                    <h1><h:outputText value="Positions"/></h1>
+                    <h:commandLink action="#{positions.newPosition}" value="Add position" />
+                    <h:dataTable value="#{positions.allPositions}" var="item" styleClass="dataTable">
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="Časová pozice"/>
+                            </f:facet>
+                            <h:outputText value="#{item.timePosition}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="Km pozice"/>
+                            </f:facet>
+                            <h:outputText value="#{item.kmPosition}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="Trasa"/>
+                            </f:facet>
+                            <h:outputText value="#{item.route}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="Stanice"/>
+                            </f:facet>
+                            <h:outputText value="#{item.station}"/>
+                        </h:column>
+                        <h:column>
+                            <h:commandButton value="Edit" action="#{positions.editPosition(item)}" />
+                        </h:column>
+                        <h:column>
+                            <h:commandButton value="Remove" action="#{positions.removePosition(item)}" />
+                        </h:column>
+                    </h:dataTable>
+                <h:commandLink action="admin" value="#{msgs.back}" immediate="true" />
+                    <h:messages />
+                </h:form>
+    </h:body>
+</html>
+

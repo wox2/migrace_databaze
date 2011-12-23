@@ -1,0 +1,857 @@
+{\rtf1\ansi\ansicpg1250\uc1\deff0\stshfdbch0\stshfloch0\stshfhich0\stshfbi0\deflang1029\deflangfe1029{\fonttbl{\f0\froman\fcharset238\fprq2{\*\panose 02020603050405020304}Times New Roman;}
+{\f1\fswiss\fcharset238\fprq2{\*\panose 020b0604020202020204}Arial;}{\f2\fmodern\fcharset238\fprq1{\*\panose 02070309020205020404}Courier New;}{\f3\froman\fcharset2\fprq2{\*\panose 05050102010706020507}Symbol;}
+{\f10\fnil\fcharset2\fprq2{\*\panose 05000000000000000000}Wingdings;}{\f35\fswiss\fcharset238\fprq2{\*\panose 020b0604030504040204}Tahoma;}{\f38\froman\fcharset0\fprq2 Times New Roman;}{\f37\froman\fcharset204\fprq2 Times New Roman Cyr;}
+{\f39\froman\fcharset161\fprq2 Times New Roman Greek;}{\f40\froman\fcharset162\fprq2 Times New Roman Tur;}{\f41\froman\fcharset177\fprq2 Times New Roman (Hebrew);}{\f42\froman\fcharset178\fprq2 Times New Roman (Arabic);}
+{\f43\froman\fcharset186\fprq2 Times New Roman Baltic;}{\f44\froman\fcharset163\fprq2 Times New Roman (Vietnamese);}{\f48\fswiss\fcharset0\fprq2 Arial;}{\f47\fswiss\fcharset204\fprq2 Arial Cyr;}{\f49\fswiss\fcharset161\fprq2 Arial Greek;}
+{\f50\fswiss\fcharset162\fprq2 Arial Tur;}{\f51\fswiss\fcharset177\fprq2 Arial (Hebrew);}{\f52\fswiss\fcharset178\fprq2 Arial (Arabic);}{\f53\fswiss\fcharset186\fprq2 Arial Baltic;}{\f54\fswiss\fcharset163\fprq2 Arial (Vietnamese);}
+{\f58\fmodern\fcharset0\fprq1 Courier New;}{\f57\fmodern\fcharset204\fprq1 Courier New Cyr;}{\f59\fmodern\fcharset161\fprq1 Courier New Greek;}{\f60\fmodern\fcharset162\fprq1 Courier New Tur;}{\f61\fmodern\fcharset177\fprq1 Courier New (Hebrew);}
+{\f62\fmodern\fcharset178\fprq1 Courier New (Arabic);}{\f63\fmodern\fcharset186\fprq1 Courier New Baltic;}{\f64\fmodern\fcharset163\fprq1 Courier New (Vietnamese);}{\f388\fswiss\fcharset0\fprq2 Tahoma;}{\f387\fswiss\fcharset204\fprq2 Tahoma Cyr;}
+{\f389\fswiss\fcharset161\fprq2 Tahoma Greek;}{\f390\fswiss\fcharset162\fprq2 Tahoma Tur;}{\f391\fswiss\fcharset177\fprq2 Tahoma (Hebrew);}{\f392\fswiss\fcharset178\fprq2 Tahoma (Arabic);}{\f393\fswiss\fcharset186\fprq2 Tahoma Baltic;}
+{\f394\fswiss\fcharset163\fprq2 Tahoma (Vietnamese);}{\f395\fswiss\fcharset222\fprq2 Tahoma (Thai);}}{\colortbl;\red0\green0\blue0;\red0\green0\blue255;\red0\green255\blue255;\red0\green255\blue0;\red255\green0\blue255;\red255\green0\blue0;
+\red255\green255\blue0;\red255\green255\blue255;\red0\green0\blue128;\red0\green128\blue128;\red0\green128\blue0;\red128\green0\blue128;\red128\green0\blue0;\red128\green128\blue0;\red128\green128\blue128;\red192\green192\blue192;}{\stylesheet{
+\ql \li0\ri0\sb120\sa120\widctlpar\aspalpha\aspnum\faauto\adjustright\rin0\lin0\itap0 \f1\fs22\lang1029\langfe1029\cgrid\langnp1029\langfenp1029 \snext0 \styrsid10842428 Normal;}{
+\s1\ql \li0\ri0\sb240\sa60\keepn\widctlpar\aspalpha\aspnum\faauto\outlinelevel0\adjustright\rin0\lin0\itap0 \b\f1\fs32\lang1029\langfe1029\kerning32\cgrid\langnp1029\langfenp1029 \sbasedon0 \snext0 \styrsid2512610 heading 1,MK_Nadpis 1;}{
+\s2\ql \li0\ri0\sb240\sa60\keepn\widctlpar\aspalpha\aspnum\faauto\outlinelevel1\adjustright\rin0\lin0\itap0 \b\i\f1\fs28\lang1029\langfe1029\cgrid\langnp1029\langfenp1029 \sbasedon0 \snext0 \styrsid11022480 heading 2,MK_Nadpis 2;}{
+\s3\ql \li0\ri0\sb240\sa60\keepn\widctlpar\aspalpha\aspnum\faauto\outlinelevel2\adjustright\rin0\lin0\itap0 \b\f1\fs26\lang1029\langfe1029\cgrid\langnp1029\langfenp1029 \sbasedon0 \snext0 \styrsid269852 heading 3,MK_Nadpis 3;}{\*\cs10 \additive 
+\ssemihidden Default Paragraph Font;}{\*\ts11\tsrowd\trftsWidthB3\trpaddl108\trpaddr108\trpaddfl3\trpaddft3\trpaddfb3\trpaddfr3\trcbpat1\trcfpat1\tscellwidthfts0\tsvertalt\tsbrdrt\tsbrdrl\tsbrdrb\tsbrdrr\tsbrdrdgl\tsbrdrdgr\tsbrdrh\tsbrdrv 
+\ql \li0\ri0\widctlpar\aspalpha\aspnum\faauto\adjustright\rin0\lin0\itap0 \fs20\lang1024\langfe1024\cgrid\langnp1024\langfenp1024 \snext11 \ssemihidden Normal Table;}{\s15\ql \li0\ri0\sb120\sa120\widctlpar
+\tqc\tx4536\tqr\tx9072\aspalpha\aspnum\faauto\adjustright\rin0\lin0\itap0 \f1\fs22\lang1029\langfe1029\cgrid\langnp1029\langfenp1029 \sbasedon0 \snext15 \styrsid15564779 header;}{\s16\ql \li0\ri0\sb120\sa120\widctlpar
+\tqc\tx4536\tqr\tx9072\aspalpha\aspnum\faauto\adjustright\rin0\lin0\itap0 \f1\fs22\lang1029\langfe1029\cgrid\langnp1029\langfenp1029 \sbasedon0 \snext16 \styrsid15564779 footer;}{\*\cs17 \additive \sbasedon10 \styrsid15564779 page number;}{
+\s18\ql \li0\ri0\sb120\sa120\widctlpar\aspalpha\aspnum\faauto\adjustright\rin0\lin0\itap0 \f1\fs22\lang1029\langfe1029\cgrid\langnp1029\langfenp1029 \sbasedon0 \snext18 \styrsid6360044 Body Text;}{
+\s20\ql \fi-3780\li3780\ri0\sb120\sa120\widctlpar\aspalpha\aspnum\faauto\adjustright\rin0\lin3780\itap0 \f1\fs22\lang1029\langfe1029\cgrid\langnp1029\langfenp1029 \sbasedon0 \snext20 \styrsid992527 MK_tabulka;}{\*\cs21 \additive \b 
+\sbasedon10 \styrsid992527 MK_nadpis tucne;}{\s22\ql \li0\ri0\sb120\sa120\widctlpar\aspalpha\aspnum\faauto\adjustright\rin0\lin0\itap0 \cbpat9 \f35\fs20\lang1029\langfe1029\cgrid\langnp1029\langfenp1029 \sbasedon0 \snext22 \ssemihidden \styrsid16389185 
+Document Map;}}{\*\latentstyles\lsdstimax156\lsdlockeddef0}{\*\listtable{\list\listtemplateid148648432{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace0\levelindent0{\leveltext\'01\u-3880 ?;}{\levelnumbers;}
+\f10\fs22\fbias0 \fi-360\li720\jclisttab\tx720\lin720 }{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\leveltext\'01o;}{\levelnumbers;}\f2\fbias0 \fi-360\li1440\jclisttab\tx1440\lin1440 }
+{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\leveltext\'01\u-3929 ?;}{\levelnumbers;}\f10\fbias0 \fi-360\li2160\jclisttab\tx2160\lin2160 }{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0
+\levelfollow0\levelstartat1\levelspace360\levelindent0{\leveltext\'01\u-3913 ?;}{\levelnumbers;}\f3\fbias0 \fi-360\li2880\jclisttab\tx2880\lin2880 }{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0
+{\leveltext\'01o;}{\levelnumbers;}\f2\fbias0 \fi-360\li3600\jclisttab\tx3600\lin3600 }{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\leveltext\'01\u-3929 ?;}{\levelnumbers;}\f10\fbias0 
+\fi-360\li4320\jclisttab\tx4320\lin4320 }{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\leveltext\'01\u-3913 ?;}{\levelnumbers;}\f3\fbias0 \fi-360\li5040\jclisttab\tx5040\lin5040 }{\listlevel
+\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\leveltext\'01o;}{\levelnumbers;}\f2\fbias0 \fi-360\li5760\jclisttab\tx5760\lin5760 }{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0
+\levelstartat1\levelspace360\levelindent0{\leveltext\'01\u-3929 ?;}{\levelnumbers;}\f10\fbias0 \fi-360\li6480\jclisttab\tx6480\lin6480 }{\listname ;}\listid39524274\liststyleid1784686606}{\list\listtemplateid148648432{\listlevel\levelnfc23\levelnfcn23
+\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace0\levelindent0{\leveltext\'01\u-3880 ?;}{\levelnumbers;}\f10\fs22\fbias0 \fi-360\li720\jclisttab\tx720\lin720 }{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1
+\levelspace360\levelindent0{\leveltext\'01o;}{\levelnumbers;}\f2\fbias0 \fi-360\li1440\jclisttab\tx1440\lin1440 }{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\leveltext
+\'01\u-3929 ?;}{\levelnumbers;}\f10\fbias0 \fi-360\li2160\jclisttab\tx2160\lin2160 }{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\leveltext\'01\u-3913 ?;}{\levelnumbers;}\f3\fbias0 
+\fi-360\li2880\jclisttab\tx2880\lin2880 }{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\leveltext\'01o;}{\levelnumbers;}\f2\fbias0 \fi-360\li3600\jclisttab\tx3600\lin3600 }{\listlevel
+\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\leveltext\'01\u-3929 ?;}{\levelnumbers;}\f10\fbias0 \fi-360\li4320\jclisttab\tx4320\lin4320 }{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0
+\levelfollow0\levelstartat1\levelspace360\levelindent0{\leveltext\'01\u-3913 ?;}{\levelnumbers;}\f3\fbias0 \fi-360\li5040\jclisttab\tx5040\lin5040 }{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0
+{\leveltext\'01o;}{\levelnumbers;}\f2\fbias0 \fi-360\li5760\jclisttab\tx5760\lin5760 }{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\leveltext\'01\u-3929 ?;}{\levelnumbers;}\f10\fbias0 
+\fi-360\li6480\jclisttab\tx6480\lin6480 }{\listname ;}\listid73284597\liststyleid1784686606}{\list\listtemplateid148648432{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace0\levelindent0{\leveltext
+\'01\u-3880 ?;}{\levelnumbers;}\f10\fs22\fbias0 \fi-360\li720\jclisttab\tx720\lin720 }{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\leveltext\'01o;}{\levelnumbers;}\f2\fbias0 \fi-360\li1440
+\jclisttab\tx1440\lin1440 }{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\leveltext\'01\u-3929 ?;}{\levelnumbers;}\f10\fbias0 \fi-360\li2160\jclisttab\tx2160\lin2160 }{\listlevel\levelnfc23
+\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\leveltext\'01\u-3913 ?;}{\levelnumbers;}\f3\fbias0 \fi-360\li2880\jclisttab\tx2880\lin2880 }{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0
+\levelstartat1\levelspace360\levelindent0{\leveltext\'01o;}{\levelnumbers;}\f2\fbias0 \fi-360\li3600\jclisttab\tx3600\lin3600 }{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\leveltext
+\'01\u-3929 ?;}{\levelnumbers;}\f10\fbias0 \fi-360\li4320\jclisttab\tx4320\lin4320 }{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\leveltext\'01\u-3913 ?;}{\levelnumbers;}\f3\fbias0 
+\fi-360\li5040\jclisttab\tx5040\lin5040 }{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\leveltext\'01o;}{\levelnumbers;}\f2\fbias0 \fi-360\li5760\jclisttab\tx5760\lin5760 }{\listlevel
+\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\leveltext\'01\u-3929 ?;}{\levelnumbers;}\f10\fbias0 \fi-360\li6480\jclisttab\tx6480\lin6480 }{\listname ;}\listid75978467\liststyleid1784686606}
+{\list\listtemplateid148648432{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace0\levelindent0{\leveltext\'01\u-3880 ?;}{\levelnumbers;}\f10\fs22\fbias0 \fi-360\li720\jclisttab\tx720\lin720 }{\listlevel\levelnfc23
+\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\leveltext\'01o;}{\levelnumbers;}\f2\fbias0 \fi-360\li1440\jclisttab\tx1440\lin1440 }{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1
+\levelspace360\levelindent0{\leveltext\'01\u-3929 ?;}{\levelnumbers;}\f10\fbias0 \fi-360\li2160\jclisttab\tx2160\lin2160 }{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\leveltext
+\'01\u-3913 ?;}{\levelnumbers;}\f3\fbias0 \fi-360\li2880\jclisttab\tx2880\lin2880 }{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\leveltext\'01o;}{\levelnumbers;}\f2\fbias0 \fi-360\li3600
+\jclisttab\tx3600\lin3600 }{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\leveltext\'01\u-3929 ?;}{\levelnumbers;}\f10\fbias0 \fi-360\li4320\jclisttab\tx4320\lin4320 }{\listlevel\levelnfc23
+\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\leveltext\'01\u-3913 ?;}{\levelnumbers;}\f3\fbias0 \fi-360\li5040\jclisttab\tx5040\lin5040 }{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0
+\levelstartat1\levelspace360\levelindent0{\leveltext\'01o;}{\levelnumbers;}\f2\fbias0 \fi-360\li5760\jclisttab\tx5760\lin5760 }{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\leveltext
+\'01\u-3929 ?;}{\levelnumbers;}\f10\fbias0 \fi-360\li6480\jclisttab\tx6480\lin6480 }{\listname ;}\listid171535618\liststyleid1784686606}{\list\listtemplateid148648432{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1
+\levelspace0\levelindent0{\leveltext\'01\u-3880 ?;}{\levelnumbers;}\f10\fs22\fbias0 \fi-360\li720\jclisttab\tx720\lin720 }{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\leveltext
+\'01o;}{\levelnumbers;}\f2\fbias0 \fi-360\li1440\jclisttab\tx1440\lin1440 }{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\leveltext\'01\u-3929 ?;}{\levelnumbers;}\f10\fbias0 \fi-360\li2160
+\jclisttab\tx2160\lin2160 }{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\leveltext\'01\u-3913 ?;}{\levelnumbers;}\f3\fbias0 \fi-360\li2880\jclisttab\tx2880\lin2880 }{\listlevel\levelnfc23
+\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\leveltext\'01o;}{\levelnumbers;}\f2\fbias0 \fi-360\li3600\jclisttab\tx3600\lin3600 }{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1
+\levelspace360\levelindent0{\leveltext\'01\u-3929 ?;}{\levelnumbers;}\f10\fbias0 \fi-360\li4320\jclisttab\tx4320\lin4320 }{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\leveltext
+\'01\u-3913 ?;}{\levelnumbers;}\f3\fbias0 \fi-360\li5040\jclisttab\tx5040\lin5040 }{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\leveltext\'01o;}{\levelnumbers;}\f2\fbias0 \fi-360\li5760
+\jclisttab\tx5760\lin5760 }{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\leveltext\'01\u-3929 ?;}{\levelnumbers;}\f10\fbias0 \fi-360\li6480\jclisttab\tx6480\lin6480 }{\listname 
+;}\listid219486676\liststyleid1784686606}{\list\listtemplateid1098837962\listhybrid{\listlevel\levelnfc0\levelnfcn0\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\leveltext\leveltemplateid-1129831318\'02\'00.;}{\levelnumbers
+\'01;}\b0\i0\loch\af0\hich\af0\dbch\af0 \fi-360\li720\jclisttab\tx720\lin720 }{\listlevel\levelnfc4\levelnfcn4\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\leveltext\leveltemplateid67436569\'02\'01.;}{\levelnumbers\'01;}
+\fi-360\li1440\jclisttab\tx1440\lin1440 }{\listlevel\levelnfc2\levelnfcn2\leveljc2\leveljcn2\levelfollow0\levelstartat1\levelspace360\levelindent0{\leveltext\leveltemplateid67436571\'02\'02.;}{\levelnumbers\'01;}\fi-180\li2160\jclisttab\tx2160\lin2160 }
+{\listlevel\levelnfc0\levelnfcn0\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\leveltext\leveltemplateid67436559\'02\'03.;}{\levelnumbers\'01;}\fi-360\li2880\jclisttab\tx2880\lin2880 }{\listlevel\levelnfc4\levelnfcn4\leveljc0
+\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\leveltext\leveltemplateid67436569\'02\'04.;}{\levelnumbers\'01;}\fi-360\li3600\jclisttab\tx3600\lin3600 }{\listlevel\levelnfc2\levelnfcn2\leveljc2\leveljcn2\levelfollow0\levelstartat1
+\levelspace360\levelindent0{\leveltext\leveltemplateid67436571\'02\'05.;}{\levelnumbers\'01;}\fi-180\li4320\jclisttab\tx4320\lin4320 }{\listlevel\levelnfc0\levelnfcn0\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\leveltext
+\leveltemplateid67436559\'02\'06.;}{\levelnumbers\'01;}\fi-360\li5040\jclisttab\tx5040\lin5040 }{\listlevel\levelnfc4\levelnfcn4\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\leveltext\leveltemplateid67436569
+\'02\'07.;}{\levelnumbers\'01;}\fi-360\li5760\jclisttab\tx5760\lin5760 }{\listlevel\levelnfc2\levelnfcn2\leveljc2\leveljcn2\levelfollow0\levelstartat1\levelspace360\levelindent0{\leveltext\leveltemplateid67436571\'02\'08.;}{\levelnumbers\'01;}
+\fi-180\li6480\jclisttab\tx6480\lin6480 }{\listname ;}\listid258417071}{\list\listtemplateid148648432{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace0\levelindent0{\leveltext\'01\u-3880 ?;}{\levelnumbers;}
+\f10\fs22\fbias0 \fi-360\li720\jclisttab\tx720\lin720 }{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\leveltext\'01o;}{\levelnumbers;}\f2\fbias0 \fi-360\li1440\jclisttab\tx1440\lin1440 }
+{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\leveltext\'01\u-3929 ?;}{\levelnumbers;}\f10\fbias0 \fi-360\li2160\jclisttab\tx2160\lin2160 }{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0
+\levelfollow0\levelstartat1\levelspace360\levelindent0{\leveltext\'01\u-3913 ?;}{\levelnumbers;}\f3\fbias0 \fi-360\li2880\jclisttab\tx2880\lin2880 }{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0
+{\leveltext\'01o;}{\levelnumbers;}\f2\fbias0 \fi-360\li3600\jclisttab\tx3600\lin3600 }{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\leveltext\'01\u-3929 ?;}{\levelnumbers;}\f10\fbias0 
+\fi-360\li4320\jclisttab\tx4320\lin4320 }{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\leveltext\'01\u-3913 ?;}{\levelnumbers;}\f3\fbias0 \fi-360\li5040\jclisttab\tx5040\lin5040 }{\listlevel
+\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\leveltext\'01o;}{\levelnumbers;}\f2\fbias0 \fi-360\li5760\jclisttab\tx5760\lin5760 }{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0
+\levelstartat1\levelspace360\levelindent0{\leveltext\'01\u-3929 ?;}{\levelnumbers;}\f10\fbias0 \fi-360\li6480\jclisttab\tx6480\lin6480 }{\listname ;}\listid423919551\liststyleid1784686606}{\list\listtemplateid682938680\listhybrid{\listlevel\levelnfc23
+\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\leveltext\leveltemplateid67436555\'01\u-3880 ?;}{\levelnumbers;}\f10\fbias0 \fi-360\li720\jclisttab\tx720\lin720 }{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0
+\levelfollow0\levelstartat1\levelspace360\levelindent0{\leveltext\leveltemplateid67436547\'01o;}{\levelnumbers;}\f2\fbias0 \fi-360\li1440\jclisttab\tx1440\lin1440 }{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1
+\levelspace360\levelindent0{\leveltext\leveltemplateid67436549\'01\u-3929 ?;}{\levelnumbers;}\f10\fbias0 \fi-360\li2160\jclisttab\tx2160\lin2160 }{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0
+{\leveltext\leveltemplateid67436545\'01\u-3913 ?;}{\levelnumbers;}\f3\fbias0 \fi-360\li2880\jclisttab\tx2880\lin2880 }{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\leveltext
+\leveltemplateid67436547\'01o;}{\levelnumbers;}\f2\fbias0 \fi-360\li3600\jclisttab\tx3600\lin3600 }{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\leveltext\leveltemplateid67436549
+\'01\u-3929 ?;}{\levelnumbers;}\f10\fbias0 \fi-360\li4320\jclisttab\tx4320\lin4320 }{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\leveltext\leveltemplateid67436545\'01\u-3913 ?;}{\levelnumbers
+;}\f3\fbias0 \fi-360\li5040\jclisttab\tx5040\lin5040 }{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\leveltext\leveltemplateid67436547\'01o;}{\levelnumbers;}\f2\fbias0 \fi-360\li5760
+\jclisttab\tx5760\lin5760 }{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\leveltext\leveltemplateid67436549\'01\u-3929 ?;}{\levelnumbers;}\f10\fbias0 \fi-360\li6480\jclisttab\tx6480\lin6480 }
+{\listname ;}\listid661472163}{\list\listtemplateid148648432{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace0\levelindent0{\leveltext\'01\u-3880 ?;}{\levelnumbers;}\f10\fs22\fbias0 \fi-360\li720
+\jclisttab\tx720\lin720 }{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\leveltext\'01o;}{\levelnumbers;}\f2\fbias0 \fi-360\li1440\jclisttab\tx1440\lin1440 }{\listlevel\levelnfc23\levelnfcn23
+\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\leveltext\'01\u-3929 ?;}{\levelnumbers;}\f10\fbias0 \fi-360\li2160\jclisttab\tx2160\lin2160 }{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1
+\levelspace360\levelindent0{\leveltext\'01\u-3913 ?;}{\levelnumbers;}\f3\fbias0 \fi-360\li2880\jclisttab\tx2880\lin2880 }{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\leveltext
+\'01o;}{\levelnumbers;}\f2\fbias0 \fi-360\li3600\jclisttab\tx3600\lin3600 }{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\leveltext\'01\u-3929 ?;}{\levelnumbers;}\f10\fbias0 \fi-360\li4320
+\jclisttab\tx4320\lin4320 }{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\leveltext\'01\u-3913 ?;}{\levelnumbers;}\f3\fbias0 \fi-360\li5040\jclisttab\tx5040\lin5040 }{\listlevel\levelnfc23
+\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\leveltext\'01o;}{\levelnumbers;}\f2\fbias0 \fi-360\li5760\jclisttab\tx5760\lin5760 }{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1
+\levelspace360\levelindent0{\leveltext\'01\u-3929 ?;}{\levelnumbers;}\f10\fbias0 \fi-360\li6480\jclisttab\tx6480\lin6480 }{\listname ;}\listid688457662\liststyleid1784686606}{\list\listtemplateid148648432{\listlevel\levelnfc23\levelnfcn23\leveljc0
+\leveljcn0\levelfollow0\levelstartat1\levelspace0\levelindent0{\leveltext\'01\u-3880 ?;}{\levelnumbers;}\f10\fs22\fbias0 \fi-360\li720\jclisttab\tx720\lin720 }{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360
+\levelindent0{\leveltext\'01o;}{\levelnumbers;}\f2\fbias0 \fi-360\li1440\jclisttab\tx1440\lin1440 }{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\leveltext\'01\u-3929 ?;}{\levelnumbers;}
+\f10\fbias0 \fi-360\li2160\jclisttab\tx2160\lin2160 }{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\leveltext\'01\u-3913 ?;}{\levelnumbers;}\f3\fbias0 \fi-360\li2880\jclisttab\tx2880\lin2880 }
+{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\leveltext\'01o;}{\levelnumbers;}\f2\fbias0 \fi-360\li3600\jclisttab\tx3600\lin3600 }{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0
+\levelfollow0\levelstartat1\levelspace360\levelindent0{\leveltext\'01\u-3929 ?;}{\levelnumbers;}\f10\fbias0 \fi-360\li4320\jclisttab\tx4320\lin4320 }{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360
+\levelindent0{\leveltext\'01\u-3913 ?;}{\levelnumbers;}\f3\fbias0 \fi-360\li5040\jclisttab\tx5040\lin5040 }{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\leveltext\'01o;}{\levelnumbers;}
+\f2\fbias0 \fi-360\li5760\jclisttab\tx5760\lin5760 }{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\leveltext\'01\u-3929 ?;}{\levelnumbers;}\f10\fbias0 \fi-360\li6480\jclisttab\tx6480\lin6480 }
+{\listname ;}\listid701587833\liststyleid1784686606}{\list\listtemplateid148648432{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace0\levelindent0{\leveltext\'01\u-3880 ?;}{\levelnumbers;}\f10\fs22\fbias0 
+\fi-360\li720\jclisttab\tx720\lin720 }{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\leveltext\'01o;}{\levelnumbers;}\f2\fbias0 \fi-360\li1440\jclisttab\tx1440\lin1440 }{\listlevel\levelnfc23
+\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\leveltext\'01\u-3929 ?;}{\levelnumbers;}\f10\fbias0 \fi-360\li2160\jclisttab\tx2160\lin2160 }{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0
+\levelstartat1\levelspace360\levelindent0{\leveltext\'01\u-3913 ?;}{\levelnumbers;}\f3\fbias0 \fi-360\li2880\jclisttab\tx2880\lin2880 }{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\leveltext
+\'01o;}{\levelnumbers;}\f2\fbias0 \fi-360\li3600\jclisttab\tx3600\lin3600 }{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\leveltext\'01\u-3929 ?;}{\levelnumbers;}\f10\fbias0 \fi-360\li4320
+\jclisttab\tx4320\lin4320 }{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\leveltext\'01\u-3913 ?;}{\levelnumbers;}\f3\fbias0 \fi-360\li5040\jclisttab\tx5040\lin5040 }{\listlevel\levelnfc23
+\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\leveltext\'01o;}{\levelnumbers;}\f2\fbias0 \fi-360\li5760\jclisttab\tx5760\lin5760 }{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1
+\levelspace360\levelindent0{\leveltext\'01\u-3929 ?;}{\levelnumbers;}\f10\fbias0 \fi-360\li6480\jclisttab\tx6480\lin6480 }{\listname ;}\listid870189850\liststyleid1784686606}{\list\listtemplateid148648432{\listlevel\levelnfc23\levelnfcn23\leveljc0
+\leveljcn0\levelfollow0\levelstartat1\levelspace0\levelindent0{\leveltext\'01\u-3880 ?;}{\levelnumbers;}\f10\fs22\fbias0 \fi-360\li720\jclisttab\tx720\lin720 }{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360
+\levelindent0{\leveltext\'01o;}{\levelnumbers;}\f2\fbias0 \fi-360\li1440\jclisttab\tx1440\lin1440 }{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\leveltext\'01\u-3929 ?;}{\levelnumbers;}
+\f10\fbias0 \fi-360\li2160\jclisttab\tx2160\lin2160 }{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\leveltext\'01\u-3913 ?;}{\levelnumbers;}\f3\fbias0 \fi-360\li2880\jclisttab\tx2880\lin2880 }
+{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\leveltext\'01o;}{\levelnumbers;}\f2\fbias0 \fi-360\li3600\jclisttab\tx3600\lin3600 }{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0
+\levelfollow0\levelstartat1\levelspace360\levelindent0{\leveltext\'01\u-3929 ?;}{\levelnumbers;}\f10\fbias0 \fi-360\li4320\jclisttab\tx4320\lin4320 }{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360
+\levelindent0{\leveltext\'01\u-3913 ?;}{\levelnumbers;}\f3\fbias0 \fi-360\li5040\jclisttab\tx5040\lin5040 }{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\leveltext\'01o;}{\levelnumbers;}
+\f2\fbias0 \fi-360\li5760\jclisttab\tx5760\lin5760 }{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\leveltext\'01\u-3929 ?;}{\levelnumbers;}\f10\fbias0 \fi-360\li6480\jclisttab\tx6480\lin6480 }
+{\listname ;}\listid1052584826\liststyleid1784686606}{\list\listtemplateid148648432{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace0\levelindent0{\leveltext\'01\u-3880 ?;}{\levelnumbers;}\f10\fs22\fbias0 
+\fi-360\li720\jclisttab\tx720\lin720 }{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\leveltext\'01o;}{\levelnumbers;}\f2\fbias0 \fi-360\li1440\jclisttab\tx1440\lin1440 }{\listlevel\levelnfc23
+\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\leveltext\'01\u-3929 ?;}{\levelnumbers;}\f10\fbias0 \fi-360\li2160\jclisttab\tx2160\lin2160 }{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0
+\levelstartat1\levelspace360\levelindent0{\leveltext\'01\u-3913 ?;}{\levelnumbers;}\f3\fbias0 \fi-360\li2880\jclisttab\tx2880\lin2880 }{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\leveltext
+\'01o;}{\levelnumbers;}\f2\fbias0 \fi-360\li3600\jclisttab\tx3600\lin3600 }{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\leveltext\'01\u-3929 ?;}{\levelnumbers;}\f10\fbias0 \fi-360\li4320
+\jclisttab\tx4320\lin4320 }{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\leveltext\'01\u-3913 ?;}{\levelnumbers;}\f3\fbias0 \fi-360\li5040\jclisttab\tx5040\lin5040 }{\listlevel\levelnfc23
+\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\leveltext\'01o;}{\levelnumbers;}\f2\fbias0 \fi-360\li5760\jclisttab\tx5760\lin5760 }{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1
+\levelspace360\levelindent0{\leveltext\'01\u-3929 ?;}{\levelnumbers;}\f10\fbias0 \fi-360\li6480\jclisttab\tx6480\lin6480 }{\listname ;}\listid1378891789\liststyleid1784686606}{\list\listtemplateid148648432{\listlevel\levelnfc23\levelnfcn23\leveljc0
+\leveljcn0\levelfollow0\levelstartat1\levelspace0\levelindent0{\leveltext\'01\u-3880 ?;}{\levelnumbers;}\f10\fs22\fbias0 \fi-360\li720\jclisttab\tx720\lin720 }{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360
+\levelindent0{\leveltext\'01o;}{\levelnumbers;}\f2\fbias0 \fi-360\li1440\jclisttab\tx1440\lin1440 }{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\leveltext\'01\u-3929 ?;}{\levelnumbers;}
+\f10\fbias0 \fi-360\li2160\jclisttab\tx2160\lin2160 }{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\leveltext\'01\u-3913 ?;}{\levelnumbers;}\f3\fbias0 \fi-360\li2880\jclisttab\tx2880\lin2880 }
+{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\leveltext\'01o;}{\levelnumbers;}\f2\fbias0 \fi-360\li3600\jclisttab\tx3600\lin3600 }{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0
+\levelfollow0\levelstartat1\levelspace360\levelindent0{\leveltext\'01\u-3929 ?;}{\levelnumbers;}\f10\fbias0 \fi-360\li4320\jclisttab\tx4320\lin4320 }{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360
+\levelindent0{\leveltext\'01\u-3913 ?;}{\levelnumbers;}\f3\fbias0 \fi-360\li5040\jclisttab\tx5040\lin5040 }{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\leveltext\'01o;}{\levelnumbers;}
+\f2\fbias0 \fi-360\li5760\jclisttab\tx5760\lin5760 }{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\leveltext\'01\u-3929 ?;}{\levelnumbers;}\f10\fbias0 \fi-360\li6480\jclisttab\tx6480\lin6480 }
+{\listname ;}\listid1508252479\liststyleid1784686606}{\list\listtemplateid-99858400\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\leveltext\leveltemplateid67436555
+\'01\u-3880 ?;}{\levelnumbers;}\f10\fbias0 \fi-360\li720\jclisttab\tx720\lin720 }{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\leveltext\leveltemplateid67436547\'01o;}{\levelnumbers;}
+\f2\fbias0 \fi-360\li1440\jclisttab\tx1440\lin1440 }{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\leveltext\leveltemplateid67436549\'01\u-3929 ?;}{\levelnumbers;}\f10\fbias0 \fi-360\li2160
+\jclisttab\tx2160\lin2160 }{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\leveltext\leveltemplateid67436545\'01\u-3913 ?;}{\levelnumbers;}\f3\fbias0 \fi-360\li2880\jclisttab\tx2880\lin2880 }
+{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\leveltext\leveltemplateid67436547\'01o;}{\levelnumbers;}\f2\fbias0 \fi-360\li3600\jclisttab\tx3600\lin3600 }{\listlevel\levelnfc23\levelnfcn23
+\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\leveltext\leveltemplateid67436549\'01\u-3929 ?;}{\levelnumbers;}\f10\fbias0 \fi-360\li4320\jclisttab\tx4320\lin4320 }{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0
+\levelfollow0\levelstartat1\levelspace360\levelindent0{\leveltext\leveltemplateid67436545\'01\u-3913 ?;}{\levelnumbers;}\f3\fbias0 \fi-360\li5040\jclisttab\tx5040\lin5040 }{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1
+\levelspace360\levelindent0{\leveltext\leveltemplateid67436547\'01o;}{\levelnumbers;}\f2\fbias0 \fi-360\li5760\jclisttab\tx5760\lin5760 }{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\leveltext
+\leveltemplateid67436549\'01\u-3929 ?;}{\levelnumbers;}\f10\fbias0 \fi-360\li6480\jclisttab\tx6480\lin6480 }{\listname ;}\listid1555895610}{\list\listtemplateid148648432{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1
+\levelspace0\levelindent0{\leveltext\'01o;}{\levelnumbers;}\f2\fs22\fbias0 \fi-360\li720\jclisttab\tx720\lin720 }{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\leveltext\'01o;}{\levelnumbers;}
+\f2\fbias0 \fi-360\li1440\jclisttab\tx1440\lin1440 }{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\leveltext\'01\u-3929 ?;}{\levelnumbers;}\f10\fbias0 \fi-360\li2160\jclisttab\tx2160\lin2160 }
+{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\leveltext\'01\u-3913 ?;}{\levelnumbers;}\f3\fbias0 \fi-360\li2880\jclisttab\tx2880\lin2880 }{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0
+\levelfollow0\levelstartat1\levelspace360\levelindent0{\leveltext\'01o;}{\levelnumbers;}\f2\fbias0 \fi-360\li3600\jclisttab\tx3600\lin3600 }{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0
+{\leveltext\'01\u-3929 ?;}{\levelnumbers;}\f10\fbias0 \fi-360\li4320\jclisttab\tx4320\lin4320 }{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\leveltext\'01\u-3913 ?;}{\levelnumbers;}\f3\fbias0 
+\fi-360\li5040\jclisttab\tx5040\lin5040 }{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\leveltext\'01o;}{\levelnumbers;}\f2\fbias0 \fi-360\li5760\jclisttab\tx5760\lin5760 }{\listlevel
+\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\leveltext\'01\u-3929 ?;}{\levelnumbers;}\f10\fbias0 \fi-360\li6480\jclisttab\tx6480\lin6480 }{\listname ;}\listid1784686606{\*\liststylename MK_menu;}}
+{\list\listtemplateid148648432\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\leveltext\leveltemplateid67436555\'01\u-3880 ?;}{\levelnumbers;}\f10\fbias0 \fi-360\li720
+\jclisttab\tx720\lin720 }{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\leveltext\leveltemplateid67436547\'01o;}{\levelnumbers;}\f2\fbias0 \fi-360\li1440\jclisttab\tx1440\lin1440 }{\listlevel
+\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\leveltext\leveltemplateid67436549\'01\u-3929 ?;}{\levelnumbers;}\f10\fbias0 \fi-360\li2160\jclisttab\tx2160\lin2160 }{\listlevel\levelnfc23\levelnfcn23
+\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\leveltext\leveltemplateid67436545\'01\u-3913 ?;}{\levelnumbers;}\f3\fbias0 \fi-360\li2880\jclisttab\tx2880\lin2880 }{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0
+\levelfollow0\levelstartat1\levelspace360\levelindent0{\leveltext\leveltemplateid67436547\'01o;}{\levelnumbers;}\f2\fbias0 \fi-360\li3600\jclisttab\tx3600\lin3600 }{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1
+\levelspace360\levelindent0{\leveltext\leveltemplateid67436549\'01\u-3929 ?;}{\levelnumbers;}\f10\fbias0 \fi-360\li4320\jclisttab\tx4320\lin4320 }{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0
+{\leveltext\leveltemplateid67436545\'01\u-3913 ?;}{\levelnumbers;}\f3\fbias0 \fi-360\li5040\jclisttab\tx5040\lin5040 }{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\leveltext
+\leveltemplateid67436547\'01o;}{\levelnumbers;}\f2\fbias0 \fi-360\li5760\jclisttab\tx5760\lin5760 }{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\leveltext\leveltemplateid67436549
+\'01\u-3929 ?;}{\levelnumbers;}\f10\fbias0 \fi-360\li6480\jclisttab\tx6480\lin6480 }{\listname ;}\listid1801413304}}{\*\listoverridetable{\listoverride\listid258417071\listoverridecount0\ls1}{\listoverride\listid1801413304\listoverridecount0\ls2}
+{\listoverride\listid1555895610\listoverridecount0\ls3}{\listoverride\listid661472163\listoverridecount0\ls4}{\listoverride\listid1784686606\listoverridecount0\ls5}{\listoverride\listid1378891789\listoverridecount0\ls6}{\listoverride\listid171535618
+\listoverridecount0\ls7}{\listoverride\listid688457662\listoverridecount0\ls8}{\listoverride\listid870189850\listoverridecount0\ls9}{\listoverride\listid73284597\listoverridecount0\ls10}{\listoverride\listid1508252479\listoverridecount0\ls11}
+{\listoverride\listid75978467\listoverridecount0\ls12}{\listoverride\listid219486676\listoverridecount0\ls13}{\listoverride\listid39524274\listoverridecount0\ls14}{\listoverride\listid1052584826\listoverridecount0\ls15}{\listoverride\listid701587833
+\listoverridecount0\ls16}{\listoverride\listid423919551\listoverridecount0\ls17}}{\*\rsidtbl \rsid269852\rsid529657\rsid882580\rsid992527\rsid1262220\rsid1395638\rsid1838179\rsid2493774\rsid2512610\rsid2701492\rsid3635773\rsid3806288\rsid4159329
+\rsid4481549\rsid4616041\rsid4731624\rsid4785286\rsid4810648\rsid5383996\rsid5783167\rsid5838265\rsid5864927\rsid5982365\rsid6360044\rsid6371225\rsid7235708\rsid7685707\rsid8024839\rsid8805220\rsid9332915\rsid9454022\rsid10630043\rsid10709146\rsid10842428
+\rsid11022480\rsid11284058\rsid11614655\rsid12142392\rsid12329353\rsid12397828\rsid12593824\rsid12649104\rsid12928176\rsid13057765\rsid13328065\rsid13960423\rsid14700611\rsid14972740\rsid14973427\rsid14974841\rsid15534284\rsid15558452\rsid15564779
+\rsid15885509\rsid16264174\rsid16389185}{\*\generator Microsoft Word 11.0.5604;}{\info{\title Datab\'e1zov\'fd syst\'e9m MySQL}{\author Martin Ku\'e8era}{\operator Martin Ku\'e8era}{\creatim\yr2008\mo5\dy10\hr7\min8}{\revtim\yr2008\mo5\dy10\hr7\min8}
+{\version2}{\edmins1}{\nofpages5}{\nofwords1245}{\nofchars7352}{\nofcharsws8580}{\vern24689}}\paperw11906\paperh16838\margl1417\margr1417\margt1417\margb1417 
+\deftab708\widowctrl\ftnbj\aenddoc\hyphhotz425\noxlattoyen\expshrtn\noultrlspc\dntblnsbdb\nospaceforul\formshade\horzdoc\dgmargin\dghspace180\dgvspace180\dghorigin1417\dgvorigin1417\dghshow1\dgvshow1
+\jexpand\viewkind1\viewscale100\pgbrdrhead\pgbrdrfoot\splytwnine\ftnlytwnine\htmautsp\nolnhtadjtbl\useltbaln\alntblind\lytcalctblwd\lyttblrtgr\lnbrkrule\nobrkwrptbl\snaptogridincell\allowfieldendsel\wrppunct
+\asianbrkrule\rsidroot2512610\newtblstyruls\nogrowautofit \fet0{\*\ftnsep \pard\plain \ql \li0\ri0\sb120\sa120\widctlpar\aspalpha\aspnum\faauto\adjustright\rin0\lin0\itap0 \f1\fs22\lang1029\langfe1029\cgrid\langnp1029\langfenp1029 {\insrsid12649104 
+\chftnsep 
+\par }}{\*\ftnsepc \pard\plain \ql \li0\ri0\sb120\sa120\widctlpar\aspalpha\aspnum\faauto\adjustright\rin0\lin0\itap0 \f1\fs22\lang1029\langfe1029\cgrid\langnp1029\langfenp1029 {\insrsid12649104 \chftnsepc 
+\par }}{\*\aftnsep \pard\plain \ql \li0\ri0\sb120\sa120\widctlpar\aspalpha\aspnum\faauto\adjustright\rin0\lin0\itap0 \f1\fs22\lang1029\langfe1029\cgrid\langnp1029\langfenp1029 {\insrsid12649104 \chftnsep 
+\par }}{\*\aftnsepc \pard\plain \ql \li0\ri0\sb120\sa120\widctlpar\aspalpha\aspnum\faauto\adjustright\rin0\lin0\itap0 \f1\fs22\lang1029\langfe1029\cgrid\langnp1029\langfenp1029 {\insrsid12649104 \chftnsepc 
+\par }}\sectd \linex0\headery708\footery708\colsx708\endnhere\sectlinegrid360\sectdefaultcl\sftnbj {\header \pard\plain \s15\ql \li0\ri0\sb120\sa120\widctlpar\tqc\tx4536\tqr\tx9072\aspalpha\aspnum\faauto\adjustright\rin0\lin0\itap0 
+\f1\fs22\lang1029\langfe1029\cgrid\langnp1029\langfenp1029 {\insrsid16389185 MO-19\tab I4E\tab Martin Ku\'e8era
+\par }}{\footer \pard\plain \s16\ql \li0\ri0\sb120\sa120\widctlpar\tqc\tx4536\tqr\tx9072\aspalpha\aspnum\faauto\adjustright\rin0\lin0\itap0 \f1\fs22\lang1029\langfe1029\cgrid\langnp1029\langfenp1029 {\insrsid16389185 \tab }{\field{\*\fldinst {
+\cs17\insrsid16389185  PAGE }}{\fldrslt {\cs17\lang1024\langfe1024\noproof\insrsid2493774 1}}}{\insrsid16389185 
+\par }}{\*\pnseclvl1\pnucrm\pnstart1\pnindent720\pnhang {\pntxta .}}{\*\pnseclvl2\pnucltr\pnstart1\pnindent720\pnhang {\pntxta .}}{\*\pnseclvl3\pndec\pnstart1\pnindent720\pnhang {\pntxta .}}{\*\pnseclvl4\pnlcltr\pnstart1\pnindent720\pnhang {\pntxta )}}
+{\*\pnseclvl5\pndec\pnstart1\pnindent720\pnhang {\pntxtb (}{\pntxta )}}{\*\pnseclvl6\pnlcltr\pnstart1\pnindent720\pnhang {\pntxtb (}{\pntxta )}}{\*\pnseclvl7\pnlcrm\pnstart1\pnindent720\pnhang {\pntxtb (}{\pntxta )}}{\*\pnseclvl8
+\pnlcltr\pnstart1\pnindent720\pnhang {\pntxtb (}{\pntxta )}}{\*\pnseclvl9\pnlcrm\pnstart1\pnindent720\pnhang {\pntxtb (}{\pntxta )}}\pard\plain 
+\s1\ql \li0\ri0\sb240\sa60\keepn\widctlpar\aspalpha\aspnum\faauto\outlinelevel0\adjustright\rin0\lin0\itap0\pararsid992527 \b\f1\fs32\lang1029\langfe1029\kerning32\cgrid\langnp1029\langfenp1029 {\insrsid2512610\charrsid992527 Datab\'e1zov\'fd syst\'e9
+m MySQL}{\insrsid8805220 \tab }{\insrsid5982365\charrsid992527 \tab {\*\shppict{\pict{\*\picprop\shplid1025{\sp{\sn shapeType}{\sv 75}}{\sp{\sn fFlipH}{\sv 0}}{\sp{\sn fFlipV}{\sv 0}}{\sp{\sn pibFlags}{\sv 2}}{\sp{\sn fLine}{\sv 0}}
+{\sp{\sn fLayoutInCell}{\sv 1}}}\picscalex100\picscaley100\piccropl0\piccropr0\piccropt0\piccropb0\picw5292\pich2725\picwgoal3000\pichgoal1545\pngblip\bliptag679486701{\*\blipuid 288024ed80434c075e0c23bcb5125984}
+89504e470d0a1a0a0000000d49484452000000c800000067080600000045120da500000006624b474400ff00ff00ffa0bda7930000000774494d4507d6081b0f
+36003d9b1885000019fa49444154789ced9d7b7c94d599f8bfcf99490224205eca5ac245ad5aadb488d6ddbabd58b5db9b3fddaa857a6312d0e2854585640242
+e94e5d2b909904c48a405592008b0b6abbadadae97cfb2ee56bb6cada2555b2f5c136c2b224a6ec0cc797e7fcce4febe9349329720eff7f3c9e733e7f29ee761
+98e7bce7f29ce7081e472781ea622476a5819311156b6517c8165a1ab7b0297428d7ea0d1624d70a78e480d2c879a2fa1430d2a1f423411fb698d5d496bf986d
+d5061b9e811c854849e5332017f7524d417fa93eade0a1b97fca8a628310cf408e3666acca93831f35017922545b74259891602f169512e08c6e4fb428fa4376
+362f6373289a038d738a6720471b81c5e3447c3b0134e63b8d7573deee525e5af96551b90bf84ab7275f51588e449fa5e68e1dd95136f7780672b4717df57112
+8dbd0fa06890da8a48cf4a2a94545d25680418edd0ca7bc04b02af5be40d88fe86da79af6554ef1ce119c851889484df024e053ed4a89dc0fab9f58e1527df57
+640a9b7fa0ca2c60582fcdfe59d05f58e17e6a2a5e4eb3ca39c3976b053c72c0a4affb04be090c11634e67eb531b1cebbdfeeb43faf2d3cf30f1c255e0df2982
+45198238ae7e15819c2bc84d32f1eb5f61d237dfe4e5a79c0def08c27b831c8d4cdee89361bb9e06bd104095a9d405d7a5fcfcf425c3b1be33b09c27a2170117
+01c73ad47c54d5771b75731ad2a378f6f10ce468e5da2563c46fb602c7017bd572166b837fed575bb3961770e0d025a23a1df8365d7f570754740135c19f80e8
+c015cf2e9e811ccd04c2978bf01880209b6c6df99434b4f939232c50984cd7dfd7531af397b26ef6bb039691453c0339ca3125e10714ae0750956f5357fe445a
+1a9e5a798188dc8330b153ee5e45afa5b6e2a9b4c8c80226d70a78e416ebb3b381dd0022ba8caf86fcae95672d2fa0a4f28b4c5f7a4aaf0dafadf82f1d32e23c
+11bd1b8825724f10e4d704c273418f88ced93390a39d87e61e50615e22753ae30ba7bad63dd83c44902724167dc79484efe9b5edd5371eb635150b14b908681b
+5af944586c4ac26b991cca1fb0fe19c633100fa829df00bc0c2030dfb5775f3def4315fe05406116a59527a6d47e6df973aabef380dfb5652972ad0c2d7c826b
+978f18a8fa99c433100f4054851589c4a90422ee8e8cf9239601bf0704ebfb64ca22eae634a8347d19f85987582e12ffc1cd04ee3ebe5f6a6701cf403ce234f9
+d601ef038870936bbdd5371ed698ef7bc01f881edad1271935a1566d1e3f59949f76ca9d2492f70c57474ee8bbd299e788982879640753120e2b94038735e61f
+9fb9255915531a89a832a7238bad3a247601abe77d981999fdc37b8378b463d5b4f5ec7998d8b4cc4912b535e5e582aeecc862a2b4fa1e1b6c1377cf403c3aa8
+2b7b13640b8008df2714cae0ef43d4d6066f11a1b6238b8bccd0c2073227b3ef7806e2d105555d9bf87412db8abe915969a2b669fcf5687c371f4085a99456ce
+caacdcd4f10cc4a32b87e561a00540d01b322e6fd394980e699a0afca12d4b542294547e31e3b253c033108fae6c28df2b4adcb357b88ceb96a6be94db5f5687
+9a55f40aa06d829e2f2aeb991a2eccb8ec5ef00cc4a307d6e80a4001bff145176645684dc55b8a0924e48230de184259919d046f99d7c31109841f45b80288aa
+722e75c157b221d7948657aa72632219559ff93c0f956dcd866c477d7225d86370a37e3b1f88027e11d63323d4db91dbb460f1cf03fd4b22e99798fd4936e4ba
+e1198887330fcdfd93c20f13a909a6b57065d2fae9a266f67ec59475caf91281c8b7b222db01cf403cdc39b96909f02424965fb3f543ad2d5f0ffa6c5b5244ef
+ca957bbc67201eee844256aded98a41bfd7cb644ab95059d92e75012be225bb23be3198847727c32b423a1d90bbeb036f8bf24de5e0082dc99d99d7d673c03f1
+e88db3db3fc5e43fb32958d1bb3a253fc38ec2819f99ef239e81782445542e4c7c7c85b5c1ed59155e5bf19b2e7311e58e6ccf453c03f1e88daf0008fc3217c2
+15dfa24ec9cf11085f924df99e8178b8735df5a9c0f10056e5c95e6a6786dab26781f67b4a445890a476daf10cc4c31d133d37f1691f2de35ec8951a0a951d29
+f9022555bddd6d92363c03f170c518f9dbc4c72d6c9a124b5a39939cdcf408d07e4d83a89d9f2dd19e8178b8a2969300a4932b7a4e0885ac2a1dd73408171108
+9f9f0dd19e8178b823fc0d80853fe65a155a7c75c09fdb92229295b78867201ec9f80400123f40955336cd695158de91a19710087f2ed3623d03f148c6100014
+f7bb0903e1f32989ccce8a36e2bf1f38d096323037d3223d03f148c64100448b1c4b03771f2fc223822ea1a4f25319d7a666f67e81556d4915a6645aae67201e
+49d05600838c732a3526ef4ee27718e619a4cca94ebab13ebb14389448fa8d483093f23c03f148467c52acf4eca5a78647a9d21e3b4ba19469777f22e31a3d34
+778fc083ed7295924c9e9bf70cc4c315415e0350f4ef7b16ca6540274f5f869a58fe9c1ef5328015bd13684a24871813cdd81cc833100f57ac68e22cb89c4260
+71976196887eb37b7d15bd856b1639dd55985e6a2afe2c4a75875c6ea6347c55d2bb4dfa8967201ec9f84dfb27f15fd9b54827757c961d890f234cbeffb68c6b
+05d8966195287f4a248b44d920e30adfa6245296ce2b153c03f170a7a6e22de0250041a7b7e7cf080d0339a92da9d8eb409f0650e5b6ac5c67b06966a3c214e0
+f5f63c61bca011f11fdc416978613a0cc533108fa428b23ef1710281f0d700681d3a81cebf1dc97b4dd53717b0c0482379ff9215e5ea82afe8cea6890ad3db62
+0a273856943bc57f703b81c82d03197a7971b13c9273edf211e23fb883f83de8bfd7939bce635bd174116d8b04ff9ed60647019892cafb15b90988aa65126b83
+d9f5e19a5e35d144ed4c15a6d2b6c919e7653566266bca9eef6b93de1bc42339eb6ffd48219c489d63b6152d13f4f24e35de6cfb60a343e6826e03fc626439d9
+e6a1b2adb62e38432de3550991b81008385bac7dce9456fe9819abf2fad2a467201ebd53302242e27e41159d85f0edb62251f9eff67aeb6ffd480d938166d00b
+290d5f95755d01d606ff4a5df0472afe5305ad221e8cdba72af3e5e0472f501a3923d5a6bc2196476a4cab1a2b36f62b90cfb6e7b9dd0a55527599601f033e50
+cb59ac0dfe35cbda7625b0789c11b35891ab88ffe69b15ada036b80244933dea198847eacc5a5ec087872e453803d1b7195ef033eebdf5a063dd92ca9b055901
+3ca2b5c1c9d955d48592aa8b057b3f701a80209b6c416329ab43cd6e8f7806e291394a2be789ca2215aea626f870aed5016072f550332cb640611ee0035ed498
+ff52b7fb183d03f1c8282610be53855b55e40bd494e7fee0551ba5917f10d58781e380b755631753376f57f76a9e8178649e40e43611bd510b62e70faa5b6c03
+e17f14e1e789d45b5a103bafbb7e69f75df1f0e8415df93d5a52f9811cf43da8e8e4de26c669e79a45c7e2cbfb5b44cf32a29f56e44ce02ce26f8f364e33adbe
+b085199d1ff5de201ed9237eefe0d9d456dc977159a5d59f35d65ea371a7cacfd1fb96c65e15bd939a8a7b3b677a06e2915da68647d13afefd4c86113225918d
+f1375552b68bc8166b750bf0022de31d431b79432c8fec92853d11151d45cf41dc1f45d964911738ccffb1a17c6f2ae33ccf403c3e76a8d588885cd029eb806a
+ec1beab04ad51b9eab89c7c78fba8ac74558d12967b8e07b8ed2cab35d9f7121b9814c0ee5f7b5c1b471cda26399be64349337fa72a683c7118b6d1a7fab88fc
+5b7b86305e545ea0a472665fae50e8a818583c0e3157097c11e40c601c7197e1bd285b14565317fcf734fe1b7a525a799a51fe59914b809189dc28f0bcc29388
+ef716ae6bc9a511db2c0fbcb19d17488b3054e17182e30dc2ac345683fe02342912a6d9ea742c7f7d14621d0b903f303c3016c8c2f8f9bcb9e5474796731c7e4
+fb3843603cc248558e15c33158468a3042133214f224bef3dcaa1095787caabf8af2170cbb44d93aba9c9da9c8dc5ec989f93e6e772ab39627c706d99c4a3bbd
+3279a3cf0cdb115264015d16a4f4e72a79d3a899bdbfb726e20f4d8d7c438cfe9cae3ef43d2bab3c645b1a6f6653e850b27afda2a4f24a41d6f5aa03acb1b5c1
+e9c9ea0c56f654724eccb050e0323238bc3551c68f9e87e3785b43f8f714f25d6bb84a94cf03c56914fd3ef06b35fceb98d9fc8788c35419d85dcd67c5e278ef
+bac21d63cb599c469d2050f9ff44642d5d3b99b7547c57f6d6e11a00115d422f3f4c00159d4e6161faa3d995547e4a90da947480699446fe21ed3a64100de1af
+8f506d0dff27f01d7234f7db59cd597b8a7859850da2fc23e9350e88df2532552c4f3454f17c7d1513d3dc7effa8ab785c253a09a1f308e834d1d8f3042abf97
+ec5143e0eee391d4ff21a2cc636a7854bf95756a13b987f89021250c3d236a0c567423befae13c02cc26878b22bbc24cf0599ed3f80e7236f8822acf3554d133
+64502ea8b96387d604bfa3a2dfa2e31c7b91886c2010710d346120ffcc3e8a1a6684f27e2bda9d40e44b409faed5521c02990d521a76717ba2b7ee2bfb810f80
+0f241ec06d5b92bf7788dfc2f422f0e241439721f0ef569167844d7475adc8380223acb26e7ba8f79141d6a8a9785277364d5495db81bd8088e832531a0e3955
+f783268b86d742d7e06040220ed1d5914a3694ef1da8be22baa8f75a3de83e611d94fc6e15791c205968cc1a843a15f6ca613e302dec1b1dc2f56c427f39b191
+ab8164a7e8de9778e4f41762966d9a179f3be4833dd44abbf39e4f31b1a11cd396ce8b916f6182085f57e57a1cde900227fb0bf916f0b3547415c5390e703ad9
+1c8a02f768e9d25aa3d1050a3355f96753123ec6d606bb04a1f3838cc0792e85c0830affe4505464f2ed6d16163a94a54e49d5c560bfd4e7e794cc07274b037f
+d3c42488dfb1e14063f1386e902964fee626e5bb494aa36ab870cc1c525d1d7cbf5bfa8fc023bbc3bc23e23cb9163897540d44c8deb27ecdecfd1682942eba4f
+f0af54e576531afed0d604436d550c6287b93d6fd5ae25fe1aea81223731b9bac7dba52f0831d709bf88de4da70b53ba91d5a142bf89716a92d277b2621c80c0
+79498aff676ceac6e1ca10cb0ae2617f9c14183dd0f6334a7c7ef24d1509a8328b92ca9bdb8a924f1a4d5e8ba02b5d4a4f60989dda6fa5a6559e03e2b61af586
+3da97921ee371b1d11432c24a933e807d95061773543154e742b5749cff56a9f98cb0160b7539930c80da48d9af2b51af34f1095afb5edbafb118e7119610160
+4d74b9d8bc321ce622820635147a8050c8b9e74882b1669eba085608110a5902e17d2e3f31e771ea8cd0301a0b0a7ae44b618cf5b77ed4571d1d290d078d6acf
+37839a7db6aefc8e2e62851149bedb26d792341213462675b8531ad2264ca84719df5344ea2b943967ddec7715ae6c0b36d7bbb3e29af9ef4920bc4e85ef3b94
+9ecab6c24b81beedb05f577daa12bbd2a5f4f5c4ada6487cd73665ccc1c288e67173cf92d657357e2660c0887299223de74da2bb80ae0602fbdcf457a14ff199
+fa4b3e8cec73efd55fdc7a3c3a26f6bd37919defa557e213f9d4d6e5ad4f96e1329317439f43cf1b13ab7093adc2b2febc91b248ca4b96127377f710e54c0d65
+7e5fc446930f474548db1158511a1d0bb40f5ee38aeb9c3817a4f61fb4a6fc75e071c732e5024aabbe90b2c4eb967e5285804be95e9a7ceb526e2b2768cf219c
+1bcdbc08ae17608e6d2864cdaecacceee9a88fac399caab82c3a98236888d58d942d5b856a512e752a336a675b48ba65df5ed717bb5dc1f14726e84add3427f7
+37aaa689d1219aebab5886761d7ab523048c10a88fb097f886df47c427ef8d2a3419a5d12afb8116115a113e10657fd4b0a7c8cfeee36fa5d77995cf12cbf9eb
+5807d146611f49fdd55713dc4c49f8256052f722852b082c1ee71436a50ba54b47aa4667b894b6da58de0a97b22396e2b12c6cd8c50470ee5c129c90f86b4734
+3ea695ce8b14893c9f859643d8fa08af2a3c3c2c9f15a9184b0e49fdad3bc8e8d31858854a9722bf11dfacde1b387c032e4bb4a2ac750bde35a850e9d39d1332
+8558712357007701e9f48236c04481452d8778abbe8ac111bdd099e19d137e9b64ff478ec439481b3b9a1e0117376ab881c9f7b9bb097c35e417c4cd8834b110
+903aa5a1dcbcb693ef6d383f12223aa69c8536c6c9aafc08e1f7c0e1346a350a65637d84fb540761200ea1b57352a32e937940b2b4ba972a7d3b93be3914d592
+c83241ab1d4a4752d8340db8d7a10cc6155e45fc10564f84a7120b01a9933fa400ba7ef1839dc421a61010fadd2af24e6ce464b59c2586516a1929867c81420b
+85a2e42bf8a5a3f72d06ce84a46e36b7d457f13cb03e499deca369ed0cb24adf8336340ffd29c39a17e2f01f252ab76a28749fd332ad08ae37a0aa3a1adc6025
+2dab429fbf91c3c4efd678b3b7ba6de8467c7b763259850770d97c33f1c0671d066269f6220ff49fbe7f759b66360aea16f8ab6de3b02ba5e1afe230b94ff012
+b5154ff5598fdc3120ffb3812053881507791858ea5647e19cce69eb731fce00a8256d175e426af307df109c23c2037690edbaf7ab6fb126ba1c97f57d919e67
+8d4571754a54a4aa3f3a383726ce9b5e2ab90b3e910994ff4c52da651e68938cf7817ecda992e0367fe8b2c2d6d8ea3e349641b651d8bfb8586be6bf27a5e135
+aadce250fa55a6559ec39a8adf03302df219ac7ec3a5a55dec6cfc3797b2f421b9ebf53382a13e99ff5c670a87d2d89264ed4c1c26f57b229c60850bbbe7ab25
+2a866dc563f9439f3c915dcea6bbd4cdba816cafe444bf7006d0f251132f9d15ea586decf7e8d4467d4b89471ce9815899df2ec0ea1db884385561699bcf4b86
+49672fe9b652e73a6c4837e670ea8b13bded8f88e9e9e93bba9cbd02e7a26cecfc27c263282f37ece4d5ddd55ce0d09cb3cf9576d5b7b5d5d5bb003475bfad81
+b2bd92131baa782ccfd020c2b322fcf69822dedd1de1b6b6d5c0fe4fdfd6cd795be03197d2cb991a9ec0f4259f56b8daa5ce7e9a863dd06ff90e58a3fb5c8a46
+0ff4ec4a275c0ef468d656d40e172479f32bef39e4ba7d2fa8728a537e7119f3107ee0f89070a6589eae8fd07dd3f7932e62bac84ff4d06e3a9d940d1fb5fabb
+393ecff0df6a996085ebcd21ced242c648fc10e09df555f1c35f0352c4aa710bcf628cd1f926667e80cb0f4a4457b06966f2f1715f51fd8b4b898fa2d8f96995
+95434c1477df37e979c84c946d499abb704fc8795833a68c1fa3ccc6d951350f58551f61d95bcb29d85dcda974f306e884533c5eb718bd45ef0ea3cf1110fb8a
+e6f323898f06661b658dcd678b34f10eca3e11ae1028afafe4ec81596a5dd94b08ffe1a800f2bd246f8f561bcdfbc980643b21ceb19600c4ea32a6864f1e50fb
+398cf2a88ad457717a7d98db455cf69a00a5e7012895f80db52e14c68a58bf6b89f3a1a6314196697ce9d86dce71dbd043bc2e965fb94a105eeb99c58b6ed5ad
+61434315976d5f9ab9837102572bdc6b12decc07a38c15d8acc28563ca7856e07fc4f0bd0107af566b7f2862be4ecf71beabf1093ca099702ba9096ea524f206
+f10db5ee523f2b86b72809bf22e81f810388448947084c0ddd59d097f3290d61fe4985d23e3cd29db6e889850d559c00f87a9b4d29d476cf13e551156e727b46
+e03be2e3d2fa087b70efd95b709f7f390ed312c4801e0b31567940846b709e1f9eaecabfe7c5a03ec28740335d574d1be98f2782e5863115bcfcde12861f84e3
+4479ad4d7a7e1ebf44390d89afb8aaf29a0ae3071eddbd6eee164ac3bf20f5d03607adfad21b39af1d5195aae9a2f629baf9ff24f001931489efc9a4f59e2387
+5b938462e2010bb28372ffb860cf377a7190671aaaf8992a972779da078c4dfca553a7c563cad9da3d7b6c90cd0d1196242ed34cc631f4e1c055328c891bf827
+e672a03e42a30aa7485b100acb4a15aa51ce07b6aae153a2bc9196c990e25b88db81fd6e083c44dd9cd48e799a7ef4123565bf556bff0ee17ffbfcecc0c8a537
+ed7e8199c5e5cc74ab60856b45f82969ee167a616571b97be49be272ee50b81df733331943845f00337dbeb82bfea118bf52f83170d39e08e78a72912a3f4fcf
+6a41cd9c570596a4a0d616ab87530f15a4fd8c11b576ee1b5a537ebea2df157818d84e169761b34813b032eae333c5e5ac708b850b30760e2dc565cc40f87b94
+5fe33ea7480fcaaa31e5dc9c4c2780b1e5dc13f5f129157e82fbf02eed18c30294118762dca5f0fd535a691a12a30678c4c22f8047c606d9ec271e5ac779c214
+4dddb26d6d703e81254f8b98d9c0d7e8e29221afa9d85534f91e60d3fcd4db14dd252aceba7d30bc97ff60516a79d4c2a3ed5953c385f8cd71a816a21462d58f
+301c5183b4bfc60b51938f60b07a0c80111d86480116a3e21a08aee732afb20fe9b482a41c44ba1abd0acda25d8cf73074d9fd8e8fb785662c4d0a07c4f017b5
+bc51308cd746cdec65a7bc1b63caf82d70c99fc38c8a0913ad72a6311c4b3c94d250d5c4c4582944dafdce3a4792f741bb7bca10dc229608a50d619e280ef61e
+afe0a4d9bc0bccd28ddcdeb09bf3148a25eea17c3cc2f18963b805245c5954c8178dbba408e4a71a14c2da8eefea93b3d9b1bb9a8bc5b216f86943118b88ff66
+87a0ac6e29881f25cf8c6bf4ace5057c78f0d34021bec36fb366bed3dafc11899484dfc7212e97209b6c6df9941ca894337423befaddac9278544527a20aa563
+cb07997771273484d9338cf311ceb042abc4f8af3173a96f2b1f7c6707063952126ec4a1c712b8dfd6069d5c6f3ed6a8227baa59a4eefe76569419c5411eccaa
+6269c27384ee0bf1e0148eaf73abf2a72c6b332810418bcb9897986c3b0d7b8d0aabea2394645bb774e019482a4cbeaf8840e44ba2d675830ea33d96328f26c6
+96730fc27710c713a73ee0c18688ebc6f1a0e5e375cb6d69e5d906b92a911a8976bf8bce7439e4a5aa3e3a5d7b8690475b7471a528e1595a04cd23493e1cade7
+a4a6e706fe0f38b21953c6e3db433ce32f64a218c689a54885bcc491db9698e2e60a3468f978cd414ac3d788667d42a8aa5c9ef1fb1b3d728237c41a18ef2a5c
+ea19c7c7978fd7102b7bd42b7a2f56ee636d302b41a83d72c3d166204afc6ab3ceb48276dabc94663a76dd0f80348ad084ea3e2bbc494c5f6277f36fb274d0cb23c7fc7fdb89bcb9d27d7db40000000049454e44ae426082}}{\nonshppict
+{\pict\picscalex100\picscaley100\piccropl0\piccropr0\piccropt0\piccropb0\picw5292\pich2725\picwgoal3000\pichgoal1545\wmetafile8\bliptag679486701{\*\blipuid 288024ed80434c075e0c23bcb5125984}
+0100090000035930000000005d2a000000000400000003010800050000000b0200000000050000000c026800c900030000001e00040000000701040008000000
+26060f000600544e50500601c7050000410b8600ee006700c800000000006700c8000000000028000000c8000000670000000100010000000000000000000000
+000000000000000000000000000000000000ffffff000000000000000fffffa80000000000000000000000000000000000000000000000000ffffffc00000000
+00000000000000000000000000000000000000000fffffff8000000000000000000000000000000000000000000000001fffffff800000000000000000000000
+0000000000000000000000000bbbffffc00000000000000002a000000000000000000000000000000000001fc0000000000000000fe000000000000000000000
+000000000000000fe0000000000000003fe0000000000000000000000000000000000007c0000000000000007f0000000000000000000000020000000000000f
+e000000000000000ff8000000000200000005c0007c0015c0000055fc1dd55540000555dfe0005555d40dc000000fe003ff800fc00ffffffe0ffffff800fffff
+fe003fffffe18e0000007e003ff001fc01ffffffc1ffffffc01fffffff007fffffe152000000fe003ff801fc07ffffffe0fffffff03fffffff80ffffffe2fa00
+00007e007ffc01fc0ffd555fc1ddddfff07ffdffff81ffddddc251000000fe00fffc00fc0fe0000fe000000ff87fc03fffc3fe000002da0000007e00fdfc01fc
+1fc0000fc0000003f07f007f1fc3f800000172000000fe01fefe01fc0fc0000fe0000003f87f80fe1fc3f8000001ae0000007e01fc7f01fc1fc0000fc0000003
+f87f01fc1fc3f80000007c000000fe03f8ff01fc0fc0000fe0000003f87f82a81fc3f8000000280000007e03f07f01fc1fc00007e0000003f87f00001fc3f000
+000000000000fe03f83f81fc1fc0000fe0000003f87f80001fc3f8000000000000007e07f01fc1fc1fc0000fe0000007f07f00001fc3f000000000000000fe0f
+e03fc0fc0fc0000fe000aefff8ff80001fc3f8000000000000007e07e01fc1fc1fc00007e007fffff07f00001fc3f000000000000000fe0fe00fe1fc0fc0000f
+e03fffffe07f80001fc3f8000000000000007e1fc00fe1fc1fc0000fc07fffff007f00001fc3f000000000000000fe3fc00fe0fc0fc0000fe0fffea800ff8000
+1fc3f8000000000000007e1f8007f1fc1fc00007e0ff0000007f00001fc3f000000000000000fe3f8003f9fc1fc0000fe0fe000000ff80001fc3f80000000000
+00007e7f0003f9fc1fc00007c0fc0000007f00001fc3f000000000000000feff0003f9fc0880000ee0fe000000ff80001fc3f8000000000000007e7f0001fdfc
+0000000001fc0000007f00001fc3f000000004000000fefe0001fffc0000000000fe0000007f80001f83f8000000080000007ffc0000fffc0000000000fe0000
+007f80001fc3f000000010000000fffc0000fffc0000000000fe8000003fe888ff83f8000000e00000007ffc00007ffc00000000007fff77503fffffff03f000
+0001c00000007ff800007ff800000000003ffffff83fffffff83f800000f800000007ff000003ff800000000001ffffff80ffffffc03f000001f000000003fe0
+00003ff800000000000ffffff803fffff803f800003e0000000017400000074000000000000115555000155500015000007c0000000000000000000000000000
+00000000000000000000000001f8000000000000000000000000000000000000000000000000000001c000000000000000000000000000000000000000000000
+0000000003c0000000000000000000000000000000000000000000000000000007f0000000000000000000000000000000000000000000000000000003ff8000
+00000000000000000000000000000000000000000000000001fff000000000000000000000000000000000000000000000300000002fe0000000000000000000
+000000000000000000000000000000000000c000000000000000000000000000000000000000000000e000000003e00000000000000000000000000000000000
+0000000001c0000000070000000000000000000000000000000000000000000a03800000000f0000000000000000000000000000000000000000001f03000000
+001c0000000000000000000000000000000000000000003f8600000000f8000100000000000000000000000000000000000000778c00000001f0000100000000
+000000000000000000000000000000f38e0000000fe0000000000000000000000000000000000000000000639c0000001f000000000000000000000000000000
+00000000000000e3b8000000fe00000000000000000000000000000000000000000000c1f0000001f000000000000000000000000000000000000000000000c3
+f8000003e000000000000000000000000000000000000000000001c1f0000003c00000000000000000000000000000000000000000000181e000000380000000
+00000000000000000000000000000000000001c1c0000007000000000000000000000000000000000000000000000180c000000f800000000000000000000000
+000000000000000000000180000000070000000000000000000000000000000000000000000001800000000e0000000000000000000000000000000000000000
+000001c00000001c0000000000000000000000000000000000000000000001800000003e0000000000000000000000000000000000000000000001c00000003c
+0000000000000000000000000000000000000000000000c0000000380000000000000000000000000000000000000000000000c0000000700000000000000000
+000000000000000000000000000000e0000000f80000000000000000000000000000000000000000000000400000007000000000000000000000000000000000
+00000000000000e0000000e0000000000000000000000000000000000000000000000060000001c00000000000000000000000000000000000000000000000e0
+000003e0000000000000000000000000000000000000000000000060000001c00000000000000000000000000000000000000000000000e00000038000000000
+00000000000000000000000000000000000001c00000078000000000000000000000000000000000000000000000038000000f80000000000000000000000000
+00000000000000000000030000000f0000000000000000000000000000000000000000000000030000003e000000000000000000000000000000000000000000
+0000070000001c00000000000000000000000000000000000000000000000e000000780000000000000000000000000000000000000000000000060000007000
+000000000000000000000000000000000000000000000e000000f000000000000000000000000000000000000000000000001c000001c0000000000000000000
+00000000000000000000000000001c020007c000000000001b060000000000000000000000000000000018060007000000000000000000000000000000000000
+000000000000380e001f000000000000000000000000000000000000000000000000700c001c0000000000000000000000000000000000000000000000007008
+00f8000000000037190600000000000000000000000000000000600001f000000000003a190600000000000000000000000000000000e00003e0000000000000
+000000000000000000000000000000000001c0001fc00000000000000000000000000000000000000000000000038002ff800000000000000000000000000000
+000000000000000000030017fc0000000000000000000000000000000000000000000000000700ffe00000000000003d19060000000000000000000000000000
+000701fd000000000000003d19060000000000000000000000000000000e0fe800000000000000000000000000000000000000000000000000071fc000000000
+00000000000000000000000000000000000000000007ff000000000000000000000000000000000000000000000000000003fc00000000000000000000000000
+0000000000000000000000000000e000000000000000004019065d2a0000410bc60088006700c800000000006700c8000000000028000000c800000067000000
+0100080000000000000000000000000000000000000000000000000000000000ffffff008b5f02008a6002008b5e00008b5f01008a5f02008a5f01008b600200
+8a5f0000885e00008a600000876000008b5e01008c5f01008c6000008e5e00008c5f02008b6000008b5e02008c5e00008d620000895d00008b5d00008d5f0000
+8a5e00008b5f00008c5e0200875a0000925b00008d6100008c5d00008c6002008b600100008ce300008ce400008de400008ce500008de500008de300008be200
+008ae2000087e100008fe100008be4008c5f000086610000008fe000008be500008be300008ce6008c6100000080d5000086e600865e00008a5d000000000000
+00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+00000000000000000000000000000000000000000000000000000000010101010101010101010101010101010101010101010101010101010101010101010101
+0101010101010101010101010101010105050505050505050505050505070707050505050e010201370101010101010101010101010101010101010101010101
+01010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101
+01010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101
+01010101010101010101010101010101010101010101010105050505050505050505050505050505050505050505050505050101010101010101010101010101
+01010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101
+01010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101
+0101010101010101010101010101010101010101010101010101010101010101050505050505050505050505050505050505050505050505050505051a010101
+01010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101
+01010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101
+01010101010101010101010101010101010101010101010101010101010101010101010101010112050505050505050505050505050505050505050505050505
+05050505050101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101
+01010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101
+01010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010108010806060106111101110d05050521
+05050d05050505050505050505050101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101
+01010101010101010101010101010101010124012301240101010101010101010101010101010101010101010101010101010101010101010101010101010101
+01010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101
+01010101010101010101010101010105050505050505010101010101010101010101010101010101010101010101010101010101010101010101010101010101
+01010101010101010101010101010101010101010101010124232323232323010101010101010101010101010101010101010101010101010101010101010101
+01010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101
+01010101010101010101010101010101010101010101010105050505050514010101010101010101010101010101010101010101010101010101010101010101
+01010101010101010101010101010101010101010101010101010101010122232323232323232301010101010101010101010101010101010101010101010101
+01010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101
+01010101010101010101010101010101010101010101010101010101010101010105050505050101010101010101010101010101010101010101010101010101
+01010101010101010101010101010101010101010101010101010101010101010101010101262323232323230101010101010101010101010101010101010101
+01010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010401010101010101010101010101
+01010101010101010101010101010101010101010101010101010101010101010101010101010101050505050505110101010101010101010101010101010101
+01010101010101010101010101010101010101010101010101010101010101010101010101010101010101012723232323232323220101010101010101010101
+010101010101010101010101010101010101010101010101010101010101300101010101010501050505010101010101010101010101010101050505050e0101
+01010101010101010101010b01050105050501010101010101010101010101010101010101010101012d0104010601130505050505050101010101302323012c
+2323012301230123012301230123012c012401010101010101010101010101010101010101260126012301230123012323230123232323232323230101010101
+01010101010101010127012301230123012701230123012323230123012301010101010123230123232c01010b05050505050501010101010101010101010205
+050505050505050e3601010101010101010101010505050505050101010101010101010102050505050505050505050505050505050505050505050505050501
+01010101232323232323232323232323232323232323232323232323230101010101010101010101242c23232323232323232323232323232323232323232323
+23232c010101010101010101010127232323232323232323232323232323232323232323232323010101012c2201010123232301010505050505050101010101
+01010101010105050505050505050505010101010101010101010108050505050505010101010101010101050505050505050505050505050505050505050505
+05050505050501010101012523232323232323232323232323232323232323232323232323230101010101010101012623232323232323232323232323232323
+2323232323232323232323230101010101010101012323232323232323232323232323232323232323232323232323010101012301230122010123010b050505
+05050501010101010101010101010505050505050505050505010101010101010101011305050505050501010101010101050505050505050505050505050505
+05050505050505050505050505050501010101012323232323232323232323232323232323232323232323232323232c01010101010126232323232323232323
+23232323232323232323232323232323232323232c01010101010101232323232323232323232323232323232323232323232323232323010101230132233123
+23012701010505050505050101010101010101010105050505050505050505050502010101010101010101130505050505050101010101010505050505050505
+05060108010801080108010801080102050505050505010101010130232301232323012323230123232301232323232323232323232323230101010101302323
+23232323232323232323012323232323232323232323232323232323230101010101012323232323232323232323012323230123232301232323012323230101
+0101230101230125010101220b050505050505010101010101010101210505050505050505050505050501010101010101010101050505050505010101010101
+05050505050507010101010101010101010101010101010105050505050507010101010101010101010101010101010101010101010101012c23232323232323
+22010101012323232323232323220101010101010101232323232323232323232323232323240101010125232323232323232601010101010101010101010101
+01010101010101010101230132230125230125010105050505050501010101010101010105050505050501020505050505050101010101010101011305050505
+05050101010101090505050505050101010101010101010101010101010101010505050505050101010101010101010101010101010101010101010101010101
+01012323232323230101010101302323232323230101010101010101012323232323232301010123232323232323010101012323232323232301010101010101
+010101010101010101010101010101010101012501232323010123010b0505050505050101010101010101020505050505051701050505050505050101010101
+01010113050505050505010101010101050505050505010101010101010101010101010101010101050505050505070101010101010101010101010101010101
+010101010101010101012323232323232c0101010123232323232323230101010101010123232323232323010101012323232323232301010101232323232323
+230101010101010101010101010101010101010101010101010101232c0135012522220101050505050505010101010101010105050505050505010101050505
+05050512010101010101011305050505050501010101011b05050505050501010101010101010101010101010101010105050505050501010101010101010101
+010101010101010101010101010101010101232323232323230101010123232323232323010101010101012323232323232c0101010101232323232323230101
+01012323232323232301010101010101010101010101010101010101010101010101010101232323232201010b05050505050501010101010101080505050505
+05010101330505050505050501010101010101130505050505050101010101010505050505050101010101010101010101010101010101010505050505050501
+01010101010101010101010101010101010101010101010101012323232323232301010101232323232323232c01010101012401240124012401010101010123
+23232323232401010101232323232323240101010101010101010101010101010101010101010101010101010101310134010101010505050505050101010101
+0101050505050505010101010105050505050505010101010101011305050505050501010101011b05050505050d010101010101010101010101010101010101
+01050505050505010101010101010101010101010101010101010101010101010101232323232323230101010123232323232323010101010101010101010101
+0101010101010123232323232323010101012323232323230101010101010101010101010101010101010101010101010101010101010101010101010b050505
+05050501010101010101050505050505040101010101050505050505050101010101011305050505050501010101010205050505050701010101010101010101
+01010101010101010505050505050501010101010101010101010101010101010101010101010101010123232323232323010101012323232323232331010101
+01010101010101010101010101010123232323232323010101012323232323232701010101010101010101010101010101010101010101010101010101010101
+01010101010505050505050101010101010505050505050501010101010101050505050505090101010101130505050505050101010101020505050505070101
+01010101010101010101010101010101050505050505050101010101010101010101010101010101010101010101010101232323232323230101010101232323
+23232323010101010101010101010101010101010101012323232323232301010101232323232323010101010101010101010101010101010101010101010101
+0101010101010101010101010b05050505050501010101012d050505050505010101010101010405050505050521010101010101050505050505010101010101
+05050505050701010101010101010101010101010101010105050505050505010101010101010101010101013101310126272301232323232323232323232323
+22010101322323232323232324010101010101010101010101010101010101232323232323230101010123232323232326010101010101010101010101010101
+01010101010101010101010101010101010101010105050505050501010101010105050505050501010101010101010505050505050501010101011305050505
+05050101010101020505050505070101010101010101010101010101010101010105050505050501010101010101010101242323232323232323232323232323
+23232323232323230101010101232323232323230101010101010101010101010101010101010123232323232324010101012323232323230101010101010101
+010101010101010101010101010101010101010101010101010101010b0505050505050101010101050505050505020101010101010101010505050505051301
+010101130505050505050101010101010505050505070101010101010101010101010101010101010d0505050505050101010101010123232323232323232323
+23232323232323232323232323232401010101010123232323232323240101010101010101010101010101010101012323232323232301010101232323232323
+23010101010101010101010101010101010101010101010101010101010101010101010101050505050505010101010505050505050501010101010101010101
+05050505050505010101011305050505050501010101010205050505050701010101010101010101010101010101010107050505050501010101010101232323
+23232323232323232323232323232323232323230101010101010101012323232323232301010101010101010101010101010101010101232323232323230101
+01012323232323230101010101010101010101010101010101010101010101010101010101010101010101010b05050505050501010112050505050505020101
+01010101010101011105050505050501010101010505050505050101010101010505050505070101010101010101010101010101010101010705050505050501
+01010101242323232323232323232323232327013101230125010101010101010101010132232323232323232401010101010101010101010101010101010123
+232323232323010101012323232323232c0101010101010101010101010101010101010101010101010101010101010101010101010505050505050101010105
+05050505050101010101010101010101010505050505050501010113050505050505010101010102050505050507010101010101010101010101010101010101
+010505050505050101010101232323232323232c0101010101010101010101010101010101010101010101010123232323232323010101010101010101010101
+0101010101010123232323232324010101012323232323230101010101010101010101010101010101010101010101010101010101010101010101010b050505
+05050501010105050505050521010101010101010101010101010505050505051201011305050505050501010101010205050505050701010101010101010101
+010101010101010105050505050505010101010123232323232323010101010101010101010101010101010101010101010101012c2323232323232324010101
+0101010101010101010101010101013023232323232c010101012323232323232c01010101010101010101010101010101010101010101010101010101010101
+01010101010505050505050101130505050505050101010101010101010101010101050505050505050101130505050505050101010101020505050505070101
+01010101010101010101010101010101010505050505010101010101232323232323010101010101010101010101010101010101010101010101010101232323
+23232323010101010101010101010101010101010101012323232323232301010101232323232323010101010101010101010101010101010101010101010101
+0101010101010101010101010b050505050505012e0505050505050501010101010101010101010101011105050505050501010d050505050505010101010101
+1c0101011c010101010101010101010101010101010101011206060106061b010101010123232323232323010101010101010101010101010101010101010101
+010101012f2323232323232322010101010101010101010101010101010101242323232323230101010123232323232325010101010101010101010101010101
+01010101010101010101010101010101010101010105050505050501010505050505052d01010101010101010101010101010105050505050505010505050505
+05050101010101010101010101010101010101010101010101010101010101010101010101010101010101222323232323230101010101010101010101010101
+01010101010101010101010101232323232323230101010101010101010101010101010101010123232323232325010101012323232323230101010101010101
+010101010101010101010101010101010101010101010101010d0101090505050505050105050505050505010101010101010101010101010101010705050505
+05050305050505050505010101010101010101010101010101010101010101010101010101010101010101010101010101010101232323232323230101010101
+01010101010101010101010101010101010101010125232323232323230101010101010101010101010101010101012323232323230101010101232323232323
+25010101010101010101010101010101010101010101010101010101010101010501010101050505050505020505050505050101010101010101010101010101
+01010101050505050505050505050505050501010101010101010101010101010101010101010101010101010101010101010101010101010101010123232323
+232323010101010101010101010101010101010101010101010101010123232323232323230101010101010101010101010101010101012323232323232c0101
+01012323232323230101010101010101010101010101010101010101010101010101010101010105010101010405050505050505050505050505010101010101
+01010101010101010101010105050505050505050505050505210101010101010101010101010101010101010101010101010101010101010101010101010101
+010101012323232323232301240101010101010101010101010101010101010101010101010123232323232323232501290101012a0101012b01010123262323
+232323232301010101012323232323232c0101010101010101010101010101010101010101010101010101010205050101010101010505050505050505050505
+05130101010101010101010101010101010101010105050505050505050505050521010101010101010101010101010101010101010101010101010101010101
+01010101010101010101010101232323232323232323232323232323012523230123232301230123010101010101232323232323232323232323232323232323
+23232323232323232323232301010101010123232323232301010101010101010101010101010101010101010101010101010105050501010101010101050505
+05050505050505050501010101010101010101010101010101010101010505050505050505050505050101010101010101010101010101010101010101010101
+01010101010101010101010101010101010101010101232323232323232323232323232323232323232323232323232323010101010128232323232323232323
+23232323232323232323232323232323232323222601010101012323232323232201010101010101010101010101010101010101010101010b05050505010101
+01010101010d05050505050505050505010101010101010101010101010101010101010101010505050505050505050505010101010101010101010101010101
+01010101010101010101010101010101010101010101010101010101010101232323232323232323232323232323232323232323232323232301010101010101
+25232323232323232323232323232323232323232323232323230101010101010101232323232323010101010101010101010101010101010101010101010121
+05050505010101010101010101010505050505050505050101010101010101010101010101010101010101010101090505050505050505050201010101010101
+01010101010101010101010101010101010101010101010101010101010101010101010101010101222323232323232323232323232323232323232323232323
+23010101010101010101272323232323232323232323232323232323232323232301010101010101010123232323232322010101010101010101010101010101
+01010101010105050505050101010101010101010101010901050505010d01010101010101010101010101010101010101010101010101010105050501050101
+01010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010122010101230123012301230123
+01230123012301230101010101010101010101010101012301240125012301230122012301010101010101010101010101010126012601260101010101010101
+01010101010101010101010101050505050701010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101
+01010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101
+01010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101
+01010101010101010101010101010101010101200505050509010101010101010101010101010101010101010101010101010101010101010101010101010101
+01010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101
+01010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101
+01010101010101010101010101010101010101010101010101010105050501010101010101010101010101010101010101010101010101010101010101010101
+01010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101
+01010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101
+01010101010101010101010101010101010101010101010101010101010101010101050505050101010101010101010101010101010101010101010101010101
+01010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101
+01010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101
+01010101010101010101010101010101010101010101010101010101010101010101010101010101012105050505051301010101010101010101010101010101
+01010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101
+01010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101
+01010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010505050505050505052004010101
+01010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101
+01010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101
+01010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101011b05050505
+050505050505050b0101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101
+01010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101
+01010101010101010101010101010101010101010101010101010101010101010101010101010905010101010101010101010101010101010101010101010101
+0101010101011f010605050505050501010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101
+01010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101
+01010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101
+01010101010101010101010101010101010101010505010101010101010101010101010101010101010101010101010101010101010101010101010101010101
+01010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101
+0101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010113050f010101010101010101
+01010101010101010101010101010101010101010101010101010f0505050a010101010101010101010101010101010101010101010101010101010101010101
+01010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101
+01010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010b05120101
+01010101010101010101010101010101010101010101010101010101010101010102050501010101010101010101010101010101010101010101010101010101
+01010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101
+01010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101011401120101010101
+01010905050101010101010101010101010101010101010101010101010101010101010101010101050505110101010101010101010101010101010101010101
+01010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101
+01010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010107
+0505050d010101010101050501010101010101010101010101010101010101010101010101010101010101010101010505050101010101010101010101010101
+01010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101
+01010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101
+0101010101010505050505051b010101010505010101010101010101010101010101010101010101010101010101010101010101060505050501010101010101
+01010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101
+01010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101
+010101010101010101010101011a0505010d05050501010107050101010101010101010101010101010101010101010101010101010101010101010505050503
+01010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101
+01010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101
+01010101010101010101010101010101010101011d05050501010505050101010505170101010101010101010101010101010101010101010101010101010101
+1305050505051e010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101
+01010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101
+01010101010101010101010101010101010101010101010101010101010505010101050505010105050201010101010101010101010101010101010101010101
+01010101010101050505050501010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101
+01010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101
+01010101010101010101010101010101010101010101010101010101010101010101010105050501010105050501070505010101010101010101010101010101
+01010101010101010101010105050505050512010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101
+01010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101
+01010101010101010101010101010101010101010101010101010101010101010101010101010101010101010505010101010105050e05050101010101010101
+010101010101010101010101010101010101010d0505050d01010101010101010101010101010101010101010101010101010101010101010101010101010101
+01010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101
+01010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101050501010101050505050505
+1c010101010101010101010101010101010101010101010101011305050512010101010101010101010101010101010101010101010101010101010101010101
+01010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101
+01010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010205070101
+010101050505051b0101010101010101010101010101010101010101010101010101050505130101010101010101010101010101010101010101010101010101
+01010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101
+01010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101
+01010107050101010101010505050501010101010101010101010101010101010101010101010101010105050501010101010101010101010101010101010101
+01010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101
+01010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101
+01010101010101010101010705080101010101080505010101010101010101010101010101010101010101010101010101050505010101010101010101010101
+01010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101
+01010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101
+01010101010101010101010101010101010101050501010101010101050501010101010101010101010101010101010101010101010101010205050509010101
+01010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101
+01010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101
+01010101010101010101010101010101010101010101010101010105050101010101010101010101010101010101010101010101010101010101010101010101
+01050513010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101
+01010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101
+01010101010101010101010101010101010101010101010101010101010101010101010505010101010101010101010101010101010101010101010101010101
+01010101010101010505050101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101
+01010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101
+0101010101010101010101010101010101010101010101010101010101010101010101010101010101010105051a010101010101010101010101010101010101
+01010101010101010101010101010105050501010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101
+01010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101
+0101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010d050101010101010101010101
+01010101010101010101010101010101010101010101040505050401010101010101010101010101010101010101010101010101010101010101010101010101
+01010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101
+01010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010805050101
+0101010101010101010101010101010101010101010101010101010101010505050d010101010101010101010101010101010101010101010101010101010101
+01010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101
+01010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101
+01010101050501010101010101010101010101010101010101010101010101010101010101010505050101010101010101010101010101010101010101010101
+01010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101
+01010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101
+01010101010101010101010105050101010101010101010101010101010101010101010101010101010101010105050501010101010101010101010101010101
+01010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101
+01010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101
+01010101010101010101010101010101010101010505020101010101010101010101010101010101010101010101010101010101180505051901010101010101
+01010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101
+01010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101
+01010101010101010101010101010101010101010101010101010101010501010101010101010101010101010101010101010101010101010101010101050505
+01010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101
+01010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101
+0101010101010101010101010101010101010101010101010101010101010101010101010b050501010101010101010101010101010101010101010101010101
+01010101050505010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101
+01010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101
+01010101010101010101010101010101010101010101010101010101010101010101010101010101010101010105050101010101010101010101010101010101
+01010101010101010101010505050101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101
+01010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101
+01010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101160505010101010101010101
+01010101010101010101010101010101010117050505090101010101010101010101010101010101010101010101010101010101010101010101010101010101
+01010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101
+01010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101050501
+01010101010101010101010101010101010101010101010101010105050501010101010101010101010101010101010101010101010101010101010101010101
+01010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101
+01010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101
+01010101050513010101010101010101010101010101010101010101010101010101050505010101010101010101010101010101010101010101010101010101
+01010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101
+01010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101
+01010101010101010101010505050101010101010101010101010101010101010101010101010101010705050501010101010101010101010101010101010101
+01010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101
+01010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101
+0101010101010101010101010101010101010d050501010101010101010101010101010101010101010101010101010108050505150101010101010101010101
+01010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101
+01010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101
+01010101010101010101010101010101010101010101010101010505010101010101010101010101010101010101010101010101010101010505050201010101
+01010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101
+01010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101
+01010101010101010101010101010101010101010101010101010101010101010101050501010101010101010101010101010101010101010101010101010b05
+05050d01010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101
+01010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101
+010101010101010101010101010101010101010101010101010101010101010101010101010101010105050d0101010101010101010101010101010101010101
+01010101010101050505010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101
+01010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101
+01010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010104050501010101010101010101010101
+010101010101010101010101010d0505050101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101
+01010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101
+010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101050e0101010101
+01010101010101010101010101010101010101010105050501010101010101010101010101010101010101010101010101010101010101010101010101010101
+01010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101
+01010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101
+050514010101010101010101010101010101010101010101010101010505050d0101010101010101010101010101010101010101010101010101010101010101
+01010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101
+01010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101
+01010101010101020505010101010101010101010101010101010101010101010101010505050101010101010101010101010101010101010101010101010101
+01010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101
+01010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101
+01010101010101010101010101010105050501010101010101010501010101010101010101010101011305050505010101010101010101010101010101010101
+01010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101
+01010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101
+01010101010101010101010101010101010101010101010505010101010101010105050101010101010101010101010101050505010101010101010101010101
+01010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101
+01010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101
+01010101010101010101010101010101010101010101010101010101010105050501010101010101120505010101010101010101010101050505050d01010101
+01010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101
+01010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101
+01010101010101010101010101010101010101010101010101010101010101010101010101120505010101010101010105050101010101010101010101010105
+05050101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101
+01010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101
+01010101010101010101010101010101010101010101010101010101010101010101010101010101010101010105050501010101010101010901010101010101
+01010101030505050501010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101
+01010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101
+01010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010505010101010101010101
+01010101010101010101010d05050505010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101
+01010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101
+01010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010105051101
+01010101010101010101010101010101010105050505050101010101010101010101010101010101010101010101010101010101010101010101010101010101
+01010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101
+01010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101
+01010105050501010101010101010101010101010101010505050505050b01010101010101010101010101010101010101010101010101010101010101010101
+01010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101
+01010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101
+010101010101010101010e0505010101010101010101010101010f01050505050505050510010101010101010101010101010101010101010101010101010101
+01010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101
+01010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101
+01010101010101010101010101010101010105050101010101010101010101050105050505050505050d01010101010101010101010101010101010101010101
+01010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101
+01010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101
+01010101010101010101010101010101010101010101010101050505010101010101010108050505050505050505050101010101010101010101010101010101
+01010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101
+01010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101
+01010101010101010101010101010101010101010101010101010101010101010105050901010101010101050505050505050102010101010101010101010101
+01010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101
+01010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101
+010101010101010101010101010101010101010101010101010101010101010101010101010101010a050501010101010b050505050505010c01010101010101
+01010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101
+01010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101
+01010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101050508010101050505050505090101
+01010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101
+01010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101
+01010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010107050505050505
+05050507010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101
+01010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101
+01010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101
+01010505050505050506010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101
+01010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101
+01010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101
+0101010101010101010101010203040101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010800000026060f000600544e50500701040000002701ffff030000000000}}}{
+\insrsid12329353\charrsid992527 
+\par }\pard\plain \s2\ql \li0\ri0\sb240\sa60\keepn\widctlpar\aspalpha\aspnum\faauto\outlinelevel1\adjustright\rin0\lin0\itap0\pararsid11022480 \b\i\f1\fs28\lang1029\langfe1029\cgrid\langnp1029\langfenp1029 {\insrsid11022480\charrsid11022480 MySQL}{
+\insrsid11022480 
+\par }\pard\plain \ql \li0\ri0\sb120\sa120\widctlpar\aspalpha\aspnum\faauto\adjustright\rin0\lin0\itap0\pararsid11022480 \f1\fs22\lang1029\langfe1029\cgrid\langnp1029\langfenp1029 {\insrsid11022480\charrsid11022480 MySQL je open source rela\'e8n\'ed datab\'e1
+zov\'fd syst\'e9m, v sou\'e8asnosti velmi popul\'e1rn\'ed krom\'ec sv\'e9 licen\'e8n\'ed politiky zejm\'e9na d\'edky sv\'e9 jednoduchosti a t\'edm, \'9ee nelp\'ed p\'f8\'edsn\'ec na pravidlech SQL. Od verze MySQL 4 ji\'9e nab\'edz\'ed plnohodnotn\'e9 pro
+st\'f8ed\'ed S\'d8BD se v\'9aemi podstatn\'fdmi mo\'9enostmi SQL.}{\insrsid4785286\charrsid4785286  Pro svou snadnou implementovatelnost (lze jej instalovat na Linux, MS Windows,}{\insrsid4785286  ale i dal\'9a\'ed opera\'e8n\'ed syst\'e9my) }{
+\insrsid4785286\charrsid4785286 m\'e1 vysok\'fd pod\'edl na v sou\'e8asn\'e9 dob\'ec pou\'9e\'edvan\'fdch datab\'e1z\'edch. Velmi obl\'edben\'e1 a \'e8asto nasazovan\'e1 je kombinace MySQL, PHP a Apache jako z\'e1kladn\'ed software webov\'e9ho serveru.}{
+\insrsid11022480\charrsid4785286 
+\par }\pard\plain \s2\ql \li0\ri0\sb240\sa60\keepn\widctlpar\aspalpha\aspnum\faauto\outlinelevel1\adjustright\rin0\lin0\itap0\pararsid11022480 \b\i\f1\fs28\lang1029\langfe1029\cgrid\langnp1029\langfenp1029 {\insrsid11022480\charrsid11733941 S\'d8BD}{
+\insrsid11022480 
+\par }\pard\plain \ql \li0\ri0\sb120\sa120\widctlpar\aspalpha\aspnum\faauto\adjustright\rin0\lin0\itap0\pararsid11022480 \f1\fs22\lang1029\langfe1029\cgrid\langnp1029\langfenp1029 {\insrsid11022480 Syst\'e9m \'f8\'edzen\'ed b\'e1
+ze dat, DBMS, RDMB, Database Management System, Relational Database Management System, RDBMS. S\'d8BD je aplikace zapouzd\'f8uj\'edc\'ed ukl\'e1d\'e1n\'ed dat a nab\'edzej\'edc\'ed rozhran\'ed pro dal\'9a\'ed aplikace, kter\'e9 tyto data mohou vyu\'9e\'ed
+vat. \'d8e\'9a\'ed zejm\'e9na ukl\'e1d\'e1n\'ed dat, hled\'e1n\'ed v datech, soub\'ec\'9en\'fd p\'f8\'edstup a }{\insrsid4731624 vz\'e1jemnou}{\insrsid11022480  prov\'e1zanost dat. 
+\par }\pard\plain \s2\ql \li0\ri0\sb240\sa60\keepn\widctlpar\aspalpha\aspnum\faauto\outlinelevel1\adjustright\rin0\lin0\itap0\pararsid4785286 \b\i\f1\fs28\lang1029\langfe1029\cgrid\langnp1029\langfenp1029 {\insrsid4785286 Komunikace
+\par }\pard\plain \ql \li0\ri0\sb120\sa120\widctlpar\aspalpha\aspnum\faauto\adjustright\rin0\lin0\itap0\pararsid11022480 \f1\fs22\lang1029\langfe1029\cgrid\langnp1029\langfenp1029 {\insrsid4785286\charrsid4785286 MySQL je multiplatformn\'ed datab\'e1
+ze. Komunikace s n\'ed prob\'edh\'e1 \endash  jak u\'9e n\'e1zev napov\'edd\'e1 \endash  pomoc\'ed jazyka SQL. Podobn\'ec jako u ostatn\'edch SQL datab\'e1z\'ed se jedn\'e1 o dialekt tohoto jazyka s n\'eckter\'fdmi roz\'9a\'ed\'f8en\'edmi.
+\par }\pard\plain \s2\ql \li0\ri0\sb240\sa60\keepn\widctlpar\aspalpha\aspnum\faauto\outlinelevel1\adjustright\rin0\lin0\itap0\pararsid4785286 \b\i\f1\fs28\lang1029\langfe1029\cgrid\langnp1029\langfenp1029 {\insrsid4785286 SQL jazyk}{\insrsid2512610 
+\par }\pard\plain \ql \li0\ri0\sb120\sa120\widctlpar\aspalpha\aspnum\faauto\adjustright\rin0\lin0\itap0\pararsid4785286 \f1\fs22\lang1029\langfe1029\cgrid\langnp1029\langfenp1029 {\insrsid4785286 J}{\insrsid4785286\charrsid4785286 e standardizovan\'fd
+ dotazovac\'ed jazyk pou\'9e\'edvan\'fd pro pr\'e1ci s daty v rela\'e8n\'edch datab\'e1z\'edch. SQL je zkratka anglick\'fdch slov Structured Query Language (strukturovan\'fd dotazovac\'ed jazyk).}{\insrsid2512610 
+\par }\pard\plain \s2\ql \li0\ri0\sb240\sa60\keepn\widctlpar\aspalpha\aspnum\faauto\outlinelevel1\adjustright\rin0\lin0\itap0\pararsid10630043 \b\i\f1\fs28\lang1029\langfe1029\cgrid\langnp1029\langfenp1029 {\insrsid10630043 R}{
+\insrsid10630043\charrsid11733941 ela\'e8n\'ed datab\'e1ze}{\insrsid4785286 
+\par }\pard\plain \ql \li0\ri0\sb120\sa120\widctlpar\aspalpha\aspnum\faauto\adjustright\rin0\lin0\itap0\pararsid10630043 \f1\fs22\lang1029\langfe1029\cgrid\langnp1029\langfenp1029 {\insrsid10630043\charrsid10630043 Data jsou uspo\'f8\'e1d\'e1
+na do tabulek (relac\'ed), nad kter\'fdmi jsou definov\'e1ny p\'f8\'edpustn\'e9 operace.}{\insrsid10630043  }{\insrsid10630043\charrsid10630043 Software pro \'f8\'edzen\'ed datab\'e1ze se obvykle naz\'fdv\'e1 Relational database management system, zkr\'e1
+cen\'ec RDBMS}{\insrsid14974841  }{\insrsid10630043 (viz S\'d8BD)}{\insrsid10630043\charrsid10630043 .}{\insrsid4785286 
+\par }{\insrsid10842428\charrsid10842428 Rela\'e8n\'ed datab\'e1ze ukl\'e1daj\'ed data m\'edsto do jednoho velk\'e9ho }{\insrsid4731624\charrsid10842428 \'falo\'9ei\'9at\'ec}{\insrsid10842428\charrsid10842428  sp\'ed\'9ae do odd\'eclen\'fdch tabulek. Zaji\'9a
+\'9duje to rychlost a flexibilitu. Tabulky v\'9edy popisuj\'ed n\'ecjakou \'e8\'e1st re\'e1ln\'e9ho sv\'ecta a stejn\'ec jako ve skute\'e8n\'e9m \'9eivot\'ec, i p\'f8edm\'ecty zachycovan\'e9 tabulkami mohou b\'fdt spolu v n\'ecjak\'e9m vztahu. (Nap\'f8. u
+\'e8itel\'e9 u\'e8\'ed t\'f8\'eddy student\'f9. U\'e8itel\'e9 jsou tedy v ur\'e8it\'e9m vztahu ke t\'f8\'edd\'e1m...) Jak na tabulky, tak na vztahy mezi nimi (mimochodem implementovan\'e9 op\'ect jako tabulky) se d\'e1 pohl\'ed\'9eet jako na matematick
+\'fd pojem relace.}{\insrsid10842428 
+\par }\pard\plain \s20\ql \fi-3780\li3780\ri0\sb120\sa120\widctlpar\aspalpha\aspnum\faauto\adjustright\rin0\lin3780\itap0\pararsid992527 \f1\fs22\lang1029\langfe1029\cgrid\langnp1029\langfenp1029 {\insrsid10842428 Tabulka U\'c8ITEL:\tab }{
+\insrsid10842428\charrsid10842428 Tabulka U\'c8\'cd:
+\par }{\insrsid10842428 +----+-------+----------+-----+\tab +----+-------+----------+-----+
+\par }{\insrsid4731624 | ID | j}{\insrsid9332915 meno | }{\insrsid4731624 p}{\insrsid9332915 r}{\insrsid10842428 \'edjmen}{\insrsid9332915 i}{\insrsid10842428  | ... |}{\insrsid9332915 \tab | ID_uc}{\insrsid9332915\charrsid9332915 itele | }{\insrsid4731624 
+predme}{\insrsid9332915 t }{\insrsid9332915\charrsid9332915 |}{\insrsid10842428\charrsid9332915 
+\par }\pard\plain \ql \li0\ri0\sb120\sa120\widctlpar\tx3780\aspalpha\aspnum\faauto\adjustright\rin0\lin0\itap0\pararsid9332915 \f1\fs22\lang1029\langfe1029\cgrid\langnp1029\langfenp1029 {\insrsid10842428 +----+-------+----------+-----+}{\insrsid9332915 \tab 
++----+-------+----------+-----+}{\insrsid10842428 
+\par }\pard\plain \s2\ql \li0\ri0\sb240\sa60\keepn\widctlpar\aspalpha\aspnum\faauto\outlinelevel1\adjustright\rin0\lin0\itap0\pararsid4159329 \b\i\f1\fs28\lang1029\langfe1029\cgrid\langnp1029\langfenp1029 {\insrsid4159329 Z}{\insrsid4159329\charrsid11733941 
+\'e1kladn\'ed operace rela\'e8n\'ed algebry}{\insrsid10842428 
+\par }\pard\plain \s3\ql \li0\ri0\sb240\sa60\keepn\widctlpar\aspalpha\aspnum\faauto\outlinelevel2\adjustright\rin0\lin0\itap0\pararsid269852 \b\f1\fs26\lang1029\langfe1029\cgrid\langnp1029\langfenp1029 {\insrsid269852 P}{\insrsid269852\charrsid11733941 rojekce
+}{\insrsid4159329 
+\par }\pard\plain \ql \li0\ri0\sb120\sa120\widctlpar\aspalpha\aspnum\faauto\adjustright\rin0\lin0\itap0\pararsid269852 \f1\fs22\lang1029\langfe1029\cgrid\langnp1029\langfenp1029 {\insrsid269852\charrsid269852 Projekce tabulky (relace) R s polo\'9ekami A na mno
+\'9einu polo\'9eek B}{\insrsid269852 . V}{\insrsid269852\charrsid269852 ytvo\'f8\'ed tabulku s polo\'9ekami B a z\'e1znamy, kter\'e9 vzniknou z p\'f9vodn\'ed tabulky R odstran\'ecn\'edm polo\'9eek A-B. Odstran\'ecny jsou i eventueln\'ec opakuj\'edc\'ed
+ se z\'e1znamy.}{\insrsid269852 
+\par }\pard\plain \s3\ql \li0\ri0\sb240\sa60\keepn\widctlpar\aspalpha\aspnum\faauto\outlinelevel2\adjustright\rin0\lin0\itap0\pararsid269852 \b\f1\fs26\lang1029\langfe1029\cgrid\langnp1029\langfenp1029 {\insrsid269852\charrsid269852 Selekce}{\insrsid269852 
+
+\par }\pard\plain \ql \li0\ri0\sb120\sa120\widctlpar\aspalpha\aspnum\faauto\adjustright\rin0\lin0\itap0\pararsid269852 \f1\fs22\lang1029\langfe1029\cgrid\langnp1029\langfenp1029 {\insrsid269852\charrsid269852 Selekce tabulky R s polo\'9ekami A podle logick\'e9
+ podm\'ednky F}{\insrsid269852 . }{\insrsid269852\charrsid269852 vytvo\'f8\'ed tabulku s t\'fdmi\'9e polo\'9ekami a ponech\'e1 ty z\'e1znamy z p\'f9vodn\'ed tabulky, kter\'e9 spl\'f2uj\'ed logickou podm\'ednku F. Podm\'ednka F je logick\'fd v\'fdraz}{
+\insrsid269852 .
+\par }\pard\plain \s3\ql \li0\ri0\sb240\sa60\keepn\widctlpar\aspalpha\aspnum\faauto\outlinelevel2\adjustright\rin0\lin0\itap0\pararsid12397828 \b\f1\fs26\lang1029\langfe1029\cgrid\langnp1029\langfenp1029 {\insrsid12397828\charrsid12397828 Spojen\'ed}{
+\insrsid12397828 
+\par }\pard\plain \ql \li0\ri0\sb120\sa120\widctlpar\aspalpha\aspnum\faauto\adjustright\rin0\lin0\itap0\pararsid14700611 \f1\fs22\lang1029\langfe1029\cgrid\langnp1029\langfenp1029 {\insrsid14700611\charrsid14700611 Spojen\'ed tabulek R a S s polo\'9ekami A a B
+}{\insrsid14700611 . U spojen\'ed pracujeme s n\'eckolika mo\'9en\'fdmi p\'f8\'edpady. Nej\'e8ast\'ecj\'9a\'ed je spojen\'ed p\'f8es rovnost (p\'f8irozen\'e9 spojen\'ed). V\'fdsledn\'e1 tabulka obsahuje jen ty z\'e1znamy z obou zdrojov\'fdch tabulek, kter
+\'e9 se shoduj\'ed v polo\'9ek\'e1ch, p\'f8es kter\'e9 se spojen\'ed prov\'e1d\'ed. Pokud n\'eckter\'fd z\'e1znam z jedn\'e9 tabulky nem\'e1 odpov\'eddaj\'edc\'ed z\'e1znam v tabulce druh\'e9, ve v\'fdsledn\'e9 tabulce se neobjev\'ed. 
+\par Takov\'fd postup se n\'e1m v\'9aak ve v\'9aech p\'f8\'edpadech nehod\'ed, proto je nutno pou\'9e\'edvat dal\'9a\'ed typy spojen\'ed, lev\'e9 -polospojen\'ed a prav\'e9 }{\insrsid4731624 \endash  }{\insrsid14700611 polospojen\'ed, kter\'e9 z ur\'e8en\'e9
+ tabulky (stoj\'edc\'ed v operaci jako lev\'fd \'e8i prav\'fd argument) p\'f8ipoj\'ed v\'9aechny z\'e1znamy, bez ohledu na to, zda maj\'ed odpov\'eddaj\'edc\'ed z\'e1znam v druh\'e9 zdrojov\'e9 tabulce. Pou\'9eit\'ed polospojen\'ed je d\'f9le\'9eit\'e9
+ tam, kde nen\'ed programov\'ec zaji\'9at\'ecna pln\'e1 integrita dat, p\'f8\'edpadn\'ec pokud nem\'e1me jistotu, \'9ee nem\'f9\'9ee b\'fdt poru\'9aena.}{\insrsid12397828 
+\par }\pard\plain \s2\ql \li0\ri0\sb240\sa60\keepn\widctlpar\aspalpha\aspnum\faauto\outlinelevel1\adjustright\rin0\lin0\itap0\pararsid6371225 \b\i\f1\fs28\lang1029\langfe1029\cgrid\langnp1029\langfenp1029 {\insrsid6371225\charrsid6371225 P\'f8ehled datov\'fd
+ch typ\'f9 v}{\insrsid6371225 \~}{\insrsid6371225\charrsid6371225 MySQL}{\insrsid14700611 
+\par }\pard\plain \s3\ql \li0\ri0\sb240\sa60\keepn\widctlpar\aspalpha\aspnum\faauto\outlinelevel2\adjustright\rin0\lin0\itap0\pararsid882580 \b\f1\fs26\lang1029\langfe1029\cgrid\langnp1029\langfenp1029 {\insrsid882580\charrsid882580 \'c8\'edseln\'e9 typy}{
+\insrsid6371225 
+\par }\pard\plain \ql \li0\ri0\sb120\sa120\widctlpar\aspalpha\aspnum\faauto\adjustright\rin0\lin0\itap0\pararsid882580 \f1\fs22\lang1029\langfe1029\cgrid\langnp1029\langfenp1029 {\cs21\b\insrsid882580\charrsid992527 INT
+\par }{\insrsid882580\charrsid882580 Pou\'9eit\'ed: b\'ec\'9en\'ec velk\'e1 cel\'e1 \'e8\'edsla}{\insrsid882580 
+\par }{\insrsid882580\charrsid882580 Rozsah \'e8\'edsel: \u8722\'2d2147483648 a\'9e 2147483647 nebo 0 a\'9e 4294967295 pro UNSIGNED}{\insrsid882580 
+\par }{\cs21\b\insrsid882580\charrsid992527 FLOAT
+\par }{\insrsid882580\charrsid882580 Pou\'9eit\'ed: \'e8\'edsla v pohybliv\'e9 \'f8\'e1dov\'e9 \'e8\'e1rce}{\insrsid882580 
+\par }{\insrsid882580\charrsid882580 Rozsah \'e8\'edsel: nejmen\'9a\'ed nenulov\'e9 hodnoty jsou \'b11,175494351E\u8722\'2d38; nejv\'ect\'9a\'ed nenulov\'e9 hodnoty jsou \u8722\'2d\'b13,402823466E+38. }{\insrsid882580 
+\par }{\cs21\b\insrsid882580\charrsid992527 Double
+\par }{\insrsid882580\charrsid882580 Pou\'9eit\'ed: velk\'e1 \'e8\'edsla v pohybliv\'e9 \'f8\'e1dov\'e9 \'e8\'e1rce}{\insrsid882580 
+\par }\pard\plain \s3\ql \li0\ri0\sb240\sa60\keepn\widctlpar\aspalpha\aspnum\faauto\outlinelevel2\adjustright\rin0\lin0\itap0\pararsid882580 \b\f1\fs26\lang1029\langfe1029\cgrid\langnp1029\langfenp1029 {\insrsid882580\charrsid882580 \'d8et\'eczcov\'e9 typy}{
+\insrsid882580 
+\par }\pard\plain \ql \li0\ri0\sb120\sa120\widctlpar\aspalpha\aspnum\faauto\adjustright\rin0\lin0\itap0\pararsid882580 \f1\fs22\lang1029\langfe1029\cgrid\langnp1029\langfenp1029 {\cs21\b\insrsid882580\charrsid992527 CHAR
+\par }{\insrsid882580\charrsid882580 Pou\'9eit\'ed: }{\insrsid882580 znak
+\par Povolen\'e1 d\'e9lka: 0 a\'9e 255}{\insrsid882580\charrsid882580  bajt\'f9}{\insrsid882580 
+\par }{\cs21\b\insrsid882580\charrsid992527 VARCHAR
+\par }{\insrsid882580\charrsid882580 Pou\'9eit\'ed: \'f8et\'eczec pevn\'ec dan\'e9 d\'e9lky}{\insrsid882580 
+\par Povolen\'e1 d\'e9lka: 0 a\'9e 255}{\insrsid882580\charrsid882580  bajt\'f9}{\insrsid992527 
+\par }{\cs21\b\insrsid882580\charrsid992527 TEXT
+\par }{\insrsid882580\charrsid882580 Pou\'9eit\'ed: norm\'e1ln\'ed hodnota TEXT}{\insrsid882580 
+\par }{\insrsid882580\charrsid882580 Povolen\'e1 d\'e9lka: 0 a\'9e 65535 bajt\'f9}{\insrsid882580 
+\par }{\cs21\b\insrsid7235708\charrsid992527 ENUM ('hodnota1', 'hodnota2',\'85)
+\par }{\insrsid882580\charrsid882580 Pou\'9eit\'ed: v\'fd\'e8et hodnot; hodnoty ze sloupce mohou m\'edt p\'f8i\'f8azeny pr\'e1v\'ec jednu hodnotu ze seznamu hodnot}{\insrsid882580 
+\par }{\cs21\b\insrsid7235708\charrsid992527 SET ('hodnota1', 'hodnota2',\'85)
+\par }{\insrsid882580\charrsid882580 Pou\'9eit\'ed: mno\'9eina; hodnot\'e1m ze sloupc\'f9 lze p\'f8i\'f8adit nula nebo v\'edce \'e8len\'f9 ze seznamu hodno}{\insrsid11284058 t}{\insrsid882580 
+\par }\pard\plain \s3\ql \li0\ri0\sb240\sa60\keepn\widctlpar\aspalpha\aspnum\faauto\outlinelevel2\adjustright\rin0\lin0\itap0\pararsid12142392 \b\f1\fs26\lang1029\langfe1029\cgrid\langnp1029\langfenp1029 {\insrsid12142392\charrsid12142392 Typy pro datum a \'e8
+as}{\insrsid882580 
+\par }\pard\plain \ql \li0\ri0\sb120\sa120\widctlpar\aspalpha\aspnum\faauto\adjustright\rin0\lin0\itap0\pararsid12142392 \f1\fs22\lang1029\langfe1029\cgrid\langnp1029\langfenp1029 {\cs21\b\insrsid1395638\charrsid992527 DATE}{
+\cs21\b\insrsid12142392\charrsid992527 
+\par }\pard \ql \li0\ri0\sb120\sa120\widctlpar\aspalpha\aspnum\faauto\adjustright\rin0\lin0\itap0\pararsid1395638 {\insrsid1395638\charrsid1395638 Pou\'9eit\'ed: datum ve form\'e1tu 'CCYY-MM-DD'}{\insrsid1395638 
+\par }{\cs21\b\insrsid1395638\charrsid992527 TIME
+\par }{\insrsid1395638\charrsid1395638 Pou\'9eit\'ed: \'e8as ve form\'e1tu 'hh:mm:ss'; pro z\'e1porn\'e9 hodnoty '-hh:mm:ss'; reprezentuje uplynul\'fd \'e8as, nebo se d\'e1 ch\'e1pat jako \'e8as dne}{\insrsid1395638 
+\par }{\cs21\b\insrsid1395638\charrsid992527 DATETIME
+\par }{\insrsid1395638\charrsid1395638 Pou\'9eit\'ed: datum a \'e8as ve form\'e1tu 'CCYY-MM-DD hh:mm:ss'}{\insrsid1395638 
+\par }\pard\plain \s2\ql \li0\ri0\sb240\sa60\keepn\widctlpar\aspalpha\aspnum\faauto\outlinelevel1\adjustright\rin0\lin0\itap0\pararsid3635773 \b\i\f1\fs28\lang1029\langfe1029\cgrid\langnp1029\langfenp1029 {\insrsid3635773 Dotazovac\'ed jazyky (QBE, SQL)}{
+\insrsid1395638 
+\par }\pard\plain \s3\ql \li0\ri0\sb240\sa60\keepn\widctlpar\aspalpha\aspnum\faauto\outlinelevel2\adjustright\rin0\lin0\itap0\pararsid4810648 \b\f1\fs26\lang1029\langfe1029\cgrid\langnp1029\langfenp1029 {\insrsid4810648\charrsid4810648 QBE - Query By Example}{
+\insrsid3635773 
+\par }\pard\plain \ql \li0\ri0\sb120\sa120\widctlpar\aspalpha\aspnum\faauto\adjustright\rin0\lin0\itap0\pararsid4810648 \f1\fs22\lang1029\langfe1029\cgrid\langnp1029\langfenp1029 {\insrsid4810648\charrsid4810648 Dotazy jsou }{\insrsid13328065\charrsid4810648 
+zad\'e1v\'e1ny}{\insrsid4810648\charrsid4810648  pomoci }{\insrsid13328065\charrsid4810648 grafick\'e9ho}{\insrsid4810648\charrsid4810648  }{\insrsid13328065\charrsid4810648 rozhran\'ed}{\insrsid4810648\charrsid4810648  (}{
+\insrsid13328065\charrsid4810648 formul\'e1\'f8e}{\insrsid4810648\charrsid4810648 ), kter}{\insrsid13328065 \'fd}{\insrsid4810648\charrsid4810648  }{\insrsid13328065\charrsid4810648 odpov\'edd\'e1}{\insrsid4810648\charrsid4810648  }{
+\insrsid13328065\charrsid4810648 struktu\'f8e}{\insrsid4810648\charrsid4810648  tabulky. P}{\insrsid13328065 \'f8\'ed}{\insrsid4810648\charrsid4810648 mo do sloupc}{\insrsid13328065 \'f9 je mo\'9e}{\insrsid4810648\charrsid4810648 n}{\insrsid13328065 \'e9}
+{\insrsid4810648\charrsid4810648  }{\insrsid13328065\charrsid4810648 zad\'e1vat}{\insrsid4810648\charrsid4810648  }{\insrsid13328065\charrsid4810648 podm\'ednky}{\insrsid4810648\charrsid4810648  (viz }{\insrsid13328065\charrsid4810648 p\'f8iklad}{
+\insrsid4810648\charrsid4810648  n}{\insrsid13328065 \'ed\'9e}{\insrsid4810648\charrsid4810648 e). }{\insrsid13328065\charrsid4810648 P\'f8\'edkaz}{\insrsid4810648\charrsid4810648  P.xxx }{\insrsid13328065\charrsid4810648 znamen\'e1}{
+\insrsid4810648\charrsid4810648  vytiskni xxx. }{\insrsid4731624\charrsid4810648 Ur\'e8itou}{\insrsid4810648\charrsid4810648  formu QBE }{\insrsid13328065\charrsid4810648 umo\'9e\'f2uji}{\insrsid4810648\charrsid4810648  i Oracle Forms v 'enter query' modu
+}{\insrsid4810648 .
+\par }\pard\plain \s3\ql \li0\ri0\sb240\sa60\keepn\widctlpar\aspalpha\aspnum\faauto\outlinelevel2\adjustright\rin0\lin0\itap0\pararsid4810648 \b\f1\fs26\lang1029\langfe1029\cgrid\langnp1029\langfenp1029 {\insrsid4810648\charrsid4810648 SQL}{\insrsid4810648 
+
+\par }\pard\plain \ql \li0\ri0\sb120\sa120\widctlpar\aspalpha\aspnum\faauto\adjustright\rin0\lin0\itap0\pararsid4810648 \f1\fs22\lang1029\langfe1029\cgrid\langnp1029\langfenp1029 {\cs21\b\insrsid3806288\charrsid992527 P\'f8\'edkazy pro manipulaci s\~daty}{
+\cs21\b\insrsid4810648\charrsid992527 
+\par {\listtext\pard\plain\f2\fs22\insrsid3806288 \hich\af2\dbch\af0\loch\f2 o\tab}}\pard \ql \fi-360\li720\ri0\sb120\sa120\widctlpar\jclisttab\tx720\aspalpha\aspnum\faauto\ls6\adjustright\rin0\lin720\itap0\pararsid4481549 {\insrsid3806288 SELECT \endash  vyb
+\'edr\'e1 data z datab\'e1ze, umo\'9e\'f2uje v\'fdb\'ecr podmno\'9einy a \'f8azen\'ed dat. \'dapln\'e1 varianta: select from where group by having order by. Lze pou\'9e\'edt mno\'9einov\'e9 predik\'e1ty in, any, some, all. Spojov\'e1n\'ed tabulek p\'f8
+es cross join, join on, natural join, right/left outer join, union, intersect, except (minus) 
+\par {\listtext\pard\plain\f2\fs22\insrsid3806288 \hich\af2\dbch\af0\loch\f2 o\tab}}\pard \ql \fi-360\li720\ri0\sb120\sa120\widctlpar\jclisttab\tx720\aspalpha\aspnum\faauto\ls7\adjustright\rin0\lin720\itap0\pararsid4481549 {\insrsid3806288 INSERT \endash  vkl
+\'e1d\'e1 do datab\'e1ze nov\'e1 data. 
+\par {\listtext\pard\plain\f2\fs22\insrsid3806288 \hich\af2\dbch\af0\loch\f2 o\tab}}\pard \ql \fi-360\li720\ri0\sb120\sa120\widctlpar\jclisttab\tx720\aspalpha\aspnum\faauto\ls8\adjustright\rin0\lin720\itap0\pararsid4481549 {\insrsid3806288 UPDATE \endash  m
+\'ecn\'ed data v datab\'e1zi (editace). 
+\par {\listtext\pard\plain\f2\fs22\insrsid3806288 \hich\af2\dbch\af0\loch\f2 o\tab}}\pard \ql \fi-360\li720\ri0\sb120\sa120\widctlpar\jclisttab\tx720\aspalpha\aspnum\faauto\ls9\adjustright\rin0\lin720\itap0\pararsid4481549 {\insrsid3806288 DELETE \endash 
+ odstra\'f2uje data (z\'e1znamy) z datab\'e1ze.
+\par }\pard \ql \li0\ri0\sb120\sa120\widctlpar\aspalpha\aspnum\faauto\adjustright\rin0\lin0\itap0\pararsid4810648 {\cs21\b\insrsid3806288\charrsid992527 P\'f8\'edkazy pro definici dat
+\par {\listtext\pard\plain\f2\fs22\insrsid3806288 \hich\af2\dbch\af0\loch\f2 o\tab}}\pard \ql \fi-360\li720\ri0\sb120\sa120\widctlpar\jclisttab\tx720\aspalpha\aspnum\faauto\ls10\adjustright\rin0\lin720\itap0\pararsid4481549 {\insrsid3806288 CREATE \endash 
+ vytv\'e1\'f8en\'ed nov\'fdch objekt\'f9. 
+\par {\listtext\pard\plain\f2\fs22\insrsid3806288 \hich\af2\dbch\af0\loch\f2 o\tab}}\pard \ql \fi-360\li720\ri0\sb120\sa120\widctlpar\jclisttab\tx720\aspalpha\aspnum\faauto\ls11\adjustright\rin0\lin720\itap0\pararsid4481549 {\insrsid3806288 ALTER \endash  zm
+\'ecny existuj\'edc\'edch objekt\'f9. 
+\par {\listtext\pard\plain\f2\fs22\insrsid3806288 \hich\af2\dbch\af0\loch\f2 o\tab}}\pard \ql \fi-360\li720\ri0\sb120\sa120\widctlpar\jclisttab\tx720\aspalpha\aspnum\faauto\ls12\adjustright\rin0\lin720\itap0\pararsid4481549 {\insrsid3806288 DROP \endash 
+ odstra\'f2ov\'e1n\'ed objekt\'f9.
+\par }\pard \ql \li0\ri0\sb120\sa120\widctlpar\aspalpha\aspnum\faauto\adjustright\rin0\lin0\itap0\pararsid4810648 {\cs21\b\insrsid3806288\charrsid992527 P\'f8\'edkazy pro \'f8\'edzen\'ed dat
+\par {\listtext\pard\plain\f2\fs22\insrsid3806288 \hich\af2\dbch\af0\loch\f2 o\tab}}\pard \ql \fi-360\li720\ri0\sb120\sa120\widctlpar\jclisttab\tx720\aspalpha\aspnum\faauto\ls13\adjustright\rin0\lin720\itap0\pararsid4481549 {\insrsid3806288 GRANT \endash  p
+\'f8\'edkaz pro p\'f8id\'eclen\'ed opr\'e1vn\'ecn\'ed u\'9eivateli k ur\'e8it\'fdm objekt\'f9m. 
+\par {\listtext\pard\plain\f2\fs22\insrsid3806288 \hich\af2\dbch\af0\loch\f2 o\tab}}\pard \ql \fi-360\li720\ri0\sb120\sa120\widctlpar\jclisttab\tx720\aspalpha\aspnum\faauto\ls14\adjustright\rin0\lin720\itap0\pararsid4481549 {\insrsid3806288 REVOKE \endash  p
+\'f8\'edkaz pro odn\'ect\'ed pr\'e1v u\'9eivateli. 
+\par {\listtext\pard\plain\f2\fs22\insrsid3806288 \hich\af2\dbch\af0\loch\f2 o\tab}}\pard \ql \fi-360\li720\ri0\sb120\sa120\widctlpar\jclisttab\tx720\aspalpha\aspnum\faauto\ls15\adjustright\rin0\lin720\itap0\pararsid4481549 {\insrsid3806288 BEGIN \endash  zah
+\'e1jen\'ed transakce. 
+\par {\listtext\pard\plain\f2\fs22\insrsid3806288 \hich\af2\dbch\af0\loch\f2 o\tab}}\pard \ql \fi-360\li720\ri0\sb120\sa120\widctlpar\jclisttab\tx720\aspalpha\aspnum\faauto\ls16\adjustright\rin0\lin720\itap0\pararsid4481549 {\insrsid3806288 COMMIT \endash 
+ potvrzen\'ed transakce. 
+\par {\listtext\pard\plain\f2\fs22\insrsid3806288 \hich\af2\dbch\af0\loch\f2 o\tab}}\pard \ql \fi-360\li720\ri0\sb120\sa120\widctlpar\jclisttab\tx720\aspalpha\aspnum\faauto\ls17\adjustright\rin0\lin720\itap0\pararsid2701492 {\insrsid3806288 ROLLBACK \endash 
+ zru\'9aen\'ed transakce, n\'e1vrat do p\'f9vodn\'edho stavu.}{\insrsid2701492 
+\par }\pard\plain \s2\ql \li0\ri0\sb240\sa60\keepn\widctlpar\aspalpha\aspnum\faauto\outlinelevel1\adjustright\rin0\lin0\itap0\pararsid529657 \b\i\f1\fs28\lang1029\langfe1029\cgrid\langnp1029\langfenp1029 {\insrsid529657 Funkce PHP pro pr\'e1ci s\~MySQL}{
+\insrsid882580 
+\par }\pard\plain \ql \li0\ri0\sb120\sa120\widctlpar\aspalpha\aspnum\faauto\adjustright\rin0\lin0\itap0\pararsid15558452 \f1\fs22\lang1029\langfe1029\cgrid\langnp1029\langfenp1029 {\fs16\insrsid15558452\charrsid12928176 mysql_affected_rows \emdash  Vr\'e1t\'ed
+ po\'e8et ovlivn\'ecn\'fdch (zm\'ecn\'ecn\'fdch) z\'e1znam\'f9 v MySQL po posledn\'edm dotazu
+\par mysql_change_user \emdash  Zm\'ecn\'ed p\'f8ihl\'e1\'9aen\'e9ho u\'9eivatele v sou\'e8asn\'e9m spojen\'ed 
+\par mysql_client_encoding \emdash  Vr\'e1t\'ed n\'e1zev znakov\'e9 sady
+\par }{\b\fs16\insrsid15558452\charrsid7685707 mysql_close \emdash  Ukon\'e8\'ed (zav\'f8e) MySQL spojen\'ed
+\par mysql_connect \emdash  Vytvo\'f8\'ed spojen\'ed s MySQL Serverem
+\par }{\fs16\insrsid15558452\charrsid12928176 mysql_create_db \emdash  Vytvo\'f8\'ed MySQL datab\'e1zi
+\par mysql_data_seek \emdash  P\'f8esune ukazatel na aktu\'e1ln\'ed z\'e1znam
+\par mysql_db_name \emdash  Vr\'e1t\'ed seznam v\'9aech datab\'e1z\'ed
+\par mysql_db_query \emdash  Po\'9ale MySQL dotaz
+\par mysql_drop_db \emdash  Vyma\'9ee (odstran\'ed) MySQL datab\'e1zi
+\par mysql_errno \emdash  Vr\'e1t\'ed \'e8\'edslenou hodnotu chybov\'e9 hl\'e1\'9aky p\'f8edchoz\'edho MySQL p\'f8\'edkazu. 
+\par mysql_error \emdash  Vr\'e1t\'ed text chybov\'e9 zpr\'e1vy p\'f8edchoz\'edho MySQL p\'f8\'edkazu. 
+\par mysql_escape_string \emdash  Uprav\'ed \'f8et\'eczec pro bezpe\'e8n\'e9 pou\'9eit\'ed v mysql_query. 
+\par }{\b\fs16\insrsid15558452\charrsid7685707 mysql_fetch_array \emdash  Na\'e8te v\'fdsledn\'fd \'f8\'e1dek do asociativn\'edho, \'e8\'edslen\'e9ho pole nebo oboj\'edho. 
+\par }{\fs16\insrsid15558452\charrsid12928176 mysql_fetch_assoc \emdash  Na\'e8te v\'fdsledn\'fd \'f8\'e1dek do asociativn\'edho pole 
+\par mysql_fetch_field \emdash  Na\'e8te informace o sloupci z v\'fdsledku do prom\'ecnn\'e9 objektu 
+\par mysql_fetch_lengths \emdash  Zjist\'ed d\'e9lku v\'9aech polo\'9eek aktu\'e1ln\'edho v\'fdstupu 
+\par mysql_fetch_object \emdash  Na\'e8te v\'fdsledn\'fd z\'e1znam do prom\'ecnn\'e9 objektu 
+\par }{\b\fs16\insrsid15558452\charrsid7685707 mysql_fetch_row \emdash  Na\'e8te v\'fdsledn\'fd z\'e1znam do pole
+\par }{\fs16\insrsid15558452\charrsid12928176 mysql_field_flags \emdash  Na\'e8te p\'f8\'edznaky sloupce tabulky 
+\par mysql_field_len \emdash  Vrac\'ed d\'e9lku sloupce tabulky 
+\par mysql_field_name \emdash  Na\'e8te n\'e1zev sloupce tabulky 
+\par mysql_field_seek \emdash  Nastav\'ed ukazatel na zadan\'fd sloupec 
+\par mysql_field_table \emdash  Zjist\'ed jm\'e9no tabulky, v n\'ed\'9e se nach\'e1z\'ed uveden\'fd sloupec 
+\par mysql_field_type \emdash  Vrac\'ed typ specifikovan\'e9ho sloupce. 
+\par mysql_free_result \emdash  Uvoln\'ed v\'fdsledek z pam\'ecti
+\par mysql_get_client_info \emdash  Na\'e8te verzi klientsk\'e9 knihovny MySQL
+\par mysql_get_host_info \emdash  Na\'e8te informaci o hostu
+\par mysql_get_proto_info \emdash  Na\'e8te informaci o protokolu MySQL
+\par mysql_get_server_info \emdash  Na\'e8te informace o serveru MySQL
+\par mysql_info \emdash  Vrac\'ed informace o posledn\'edm dotazu 
+\par mysql_insert_id \emdash  Vrac\'ed generovanou hodnotu id posledn\'edho p\'f8\'edkazu INSERT 
+\par mysql_list_dbs \emdash  Na\'e8te v\'9aechny dostupn\'e9 datab\'e1ze na MySQL serveru 
+\par mysql_list_fields \emdash  Na\'e8te v\'fdsledek s obsahem sloupce
+\par mysql_list_processes \emdash  List MySQL processes
+\par mysql_list_tables \emdash  Na\'e8te v\'9aechny tabulky v MySQL datab\'e1zi
+\par }{\b\fs16\insrsid15558452\charrsid7685707 mysql_num_fields \emdash  Vrac\'ed po\'e8et sloupc\'f9 ve v\'fdsledku
+\par mysql_num_rows \emdash  Vrac\'ed po\'e8et z\'e1znam\'f9 ve v\'fdsledku
+\par }{\fs16\insrsid15558452\charrsid12928176 mysql_pconnect \emdash  Otev\'f8e persistentn\'ed spojen\'ed s MySQL serverem 
+\par mysql_ping \emdash  Ov\'ec\'f8\'ed spojen\'ed se serverem, p\'f8\'edpadn\'ec, nen\'ed-li spojen\'ed dostupn\'e9, pokus\'ed se p\'f8ipojit znovu.
+\par }{\b\fs16\insrsid15558452\charrsid7685707 mysql_query \emdash  Po\'9ale MySQL dotaz
+\par }{\fs16\insrsid15558452\charrsid12928176 mysql_real_escape_string \emdash  Uprav\'ed \'f8et\'eczec pro bezpe\'e8n\'e9 pou\'9eit\'ed v mysql_query. 
+\par }{\b\fs16\insrsid15558452\charrsid7685707 mysql_result \emdash  Na\'e8te obsah jednoho sloupce tabulky
+\par mysql_select_db \emdash  Nastav\'ed MySQL datab\'e1zi
+\par }{\fs16\insrsid15558452\charrsid12928176 mysql_stat \emdash  Vrac\'ed aktu\'e1ln\'ed stav syst\'e9mu
+\par mysql_tablename \emdash  Na\'e8te jm\'e9no tabulky
+\par mysql_thread_id \emdash  Vrac\'ed id aktu\'e1ln\'edho vl\'e1kna
+\par mysql_unbuffered_query \emdash  Po\'9ale SQL dotaz bez na\'e8ten\'ed a bufferov\'e1n\'ed v\'fdsledn\'fdch z\'e1znam\'f9}{\fs16\insrsid9454022\charrsid12928176 
+\par }}

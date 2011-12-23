@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Bon Jovi</title>
+    <link href="styles/style_1.css" rel="Stylesheet" type="text/css" title="default" />
+    <script type="text/javascript" src="scripts/login.js"></script>
+</head>
+<body>
+
+<div class="prvniDiv">
+    <p class="uvod">Vítejte na neoficiálních stránkách kapely</p>
+    <br />
+    <h1 class="nadpis">Bon Jovi</h1>
+    <br />
+    <img class="home" alt="Fotka skupiny1" longdesc="images/imageTitles/fotkaSkupiny1.txt" src="images/bon_jovi_front.jpg" />
+    <br />
+    <img class="home" alt="Fotka skupiny2" longdesc="images/imageTitles/fotkaSkupiny2.txt" src="images/bon_jovi_front_1.jpg" />
+    <br />
+    <img class="home" alt="Fotka skupiny3" longdesc="images/imageTitles/fotkaSkupiny3.txt" src="images/bon_jovi_front_2.jpg" />
+    <ul class="seznam">
+        <li><a href="pages/about_band/about_band.htm">O skupině</a></li>
+        <li><a href="pages/discography/discography.htm">Diskografie</a></li>    
+        <li>
+            <ul >
+            <li><a href="pages/discography/discography.htm">Bon Jovi</a></li>
+            <li><a href="pages/discography/discography_jbj.htm">Jon Bon Jovi</a></li>
+            <li><a href="pages/discography/discography_samb.htm">Richie Sambora</a></li>
+            <li><a href="pages/discography/discography_bryan.htm">David Bryan</a></li>
+            </ul>
+        </li>
+        <li><a href="pages/membership/membership.htm">Membership</a></li>
+        <li><a href="pages/dates/dates.htm">Dates</a></li>
+        <li><a href="pages/gallery/gallery.htm">Galerie</a></li>
+        <li><a href="XML_DTD_XSL/mapaXML.xml">Mapa stránek (XML)</a></li>
+        <li><a href="pages/map/map.htm">Mapa stránek</a></li>
+    </ul>
+    
+    <form id="login" method="post" action="" >
+        <fieldset>
+        <legend>Login</legend>
+            <label id="nickLabel" for="loginValue1">Nick:</label><input id="loginValue1" type="text" name="loginValue1" />
+            <br />
+            <label id="hesloLabel" for="loginValue2">Heslo:</label><input id="loginValue2" type="password" name="loginValue1" />        
+            <br />
+            <input type="submit" name="submitLogin" id="submitLogin" value="Odeslat" onclick="return validace()" />
+            <input type="button" name="validaceLogin" id="validaceLogin" value="Kontrola" onclick="validace()" />
+    </fieldset>    
+    </form>    
+</div>
+
+</body>
+</html>

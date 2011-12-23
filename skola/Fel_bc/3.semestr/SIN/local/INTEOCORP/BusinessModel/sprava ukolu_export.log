@@ -1,0 +1,78 @@
+Exporting package to 'D:\Fel\3.semestr\SIN\local\INTEOCORP\BusinessModel\sprava ukolu.xml'
+Retrieving data for export: diagram elements
+Retrieving data for export: links
+Retrieving data for export: constraints
+Retrieving data for export: attribute tagged values
+Retrieving data for export: operation tagged values
+Retrieving data for export: operation parameter tagged values
+Retrieving data for export: connector tagged values
+Completed data retrieval
+Pre-processing export tree...
+Completed pre-processing
+Processing package: sprava ukolu
+Element:0: 
+Element:1: vyber projektu z nabidky
+Element:2: Zruseny
+Element:3: Ukoly
+Element:4: zakaznik Osoba
+Element:5: opusteni systemu
+Element:6: urceni potencialniho kandidata
+Element:7: prohlednuti seznamu ukolu
+Element:8: Novy
+Element:9: 
+Element:10: zohledneni kvalit zamestnancu
+Element:11: spravce projektu
+Element:12: InterruptibleActivityRegion1
+Element:13: 
+Element:14: zobrazeni zainteresovanych projektu
+Element:15: 
+Element:16: Event1
+Element:17: vytvoreni noveho ukolu
+Element:18: zakaznik osoba
+Element:19: zamestnanec
+Element:20: informovani zamestnance o ukolu
+Element:21: spravce projektu
+Element:22: 
+Element:23: 
+Element:24: 
+Element:25: zhodnoceni prace na projektu
+Element:26: rozpracovany
+Element:27: procteni komentaru zakaznika
+Element:28: ma ukol?
+Element:29: problemy s funkcnosti?
+Element:30: tlacici deadline?
+Element:31: prirazeni zamestnance k ukolu
+Element:32: reseni pro zakaznika?
+Element:33: prirazeni zamestnance k ukolu
+Element:34: 
+Element:35: 
+Element:36: odstraneni kandidata ze seznamu
+Element:37: 
+Element:38: prihlaseni do systemu
+Element:39: zamestnanec?
+Element:40: prirazeni id k ukolu
+Element:41: problem?
+Element:42: vyber projektu
+Element:43: zamestnanec
+Element:44: prihlaseni do systemu
+Element:45: zobrazeni informaci o projektu
+Element:46: reseni pro zakaznika?
+Element:47: urceni poradi vhodnosti zamestnancu
+Element:48: Hotovy
+Element:49: zjisteni id zamestnance
+Element:50: prijeti ukolu
+Element:51: vhodnost vuci ukolu?
+Element:52: 
+Element:53: spravce projektu?
+Element:54: 
+Element:55: komentovani ukolu
+Element:56: 
+Element:57: informovani zamestnance o ukolu
+Element:58: uplynuti lhuty k rozebrani ukolu?
+Diagram: StateMachine
+Diagram: sprava ukolu
+Diagram: vytvoreni komentare
+Diagram: vytvoreni noveho ukolu
+Diagram: prirazeni zamestnance k ukolu
+Formatting output XML...please wait
+XMI Document Export Complete!

@@ -1,0 +1,62 @@
+Úkolem je realizovat program, který bude zpracovávat intervaly císel. Program sjednotí zadané intervaly (prekrývající se intervaly spojí do jednoho delšího) a vzestupne serazené je zobrazí na svém výstupu.
+
+Interval je urcen svým pocátkem a koncem. Pocátek i konec jsou celá císla. Program dostává na svém vstupu informace o intervalech, na každém rádku má definovaný práve jeden interval. Zadávání intervalu koncí koncem souboru (eof). Interval musí být zadán tak, že pocátek je ostre menší než konec. V prípade chybne zadaného intervalu program okamžite oznamuje chybu.
+
+Na výstupu programu je seznam sjednocených a serazených intervalu, které vzniknou sloucením prekrývajících se intervalu na vstupu. Intervaly na výstupu jsou zobrazené v lomených závorkách, jeden na rádku. Za posledním rádkem je znak pro odrádkování (endl), odrádkování je i za prípadným chybovým hlášením.
+
+Realizovaný program nesmí používat datové struktury z STL (vector, list, ...). Musí pocítat s tím, že je spoušten v prostredí s omezenou pametí (pamet je dostatecne dimenzovaná na uložení binární podoby intervalu na vstupu) a pracuje pouze s omezeným casem (2 s na testovacím pocítaci).
+Príklad práce programu:
+
+Zadejte intervaly:
+10 20
+15 50
+100 200
+<10, 50>
+<100, 200>
+
+Zadejte intervaly:
+10 20
+25 50
+15 30
+<10, 50>
+
+Zadejte intervaly:
+10 20
+15 30
+25 40
+0 100
+<0, 100>
+
+Zadejte intervaly:
+10 20
+20 30
+50 60
+90 100
+<10, 30>
+<50, 60>
+<90, 100>
+
+Zadejte intervaly:
+20 40
+15
+Nespravny vstup.
+
+Zadejte intervaly:
+50 40
+Nespravny vstup.
+
+Zadejte intervaly:
+50 50
+Nespravny vstup.
+
+Zadejte intervaly:
+asdf 20
+Nespravny vstup.
+
+Nápoveda:
+
+    * Nacítejte vstup po rádcích, rádky zpracovávejte pomocí istringstream
+    * Na zacátku alokujte pole souradnic blok malé. Po jeho zaplnení alokujte pole vetší, do kterého nakopírujete již nactená data.
+    * Pole pro ukládání intervalu zvetšujte po blocích vetších než jeden interval. Rozumná velikost je zvetšovat v jednom kroku o rádove 1000. Nebo ješte lépe, zvetšujte pole geometrickou radou, kvocient zvolte ~1.5 až 2.
+    * Pri použití naivního algoritmu je potreba prekryvy intervalu testovat iterativne dokud dochází ke zmenám.
+    * Testovaný rozsah dat není príliš veliký, z hlediska casu vyhoví i naivní (kvadratický) algoritmus.

@@ -1,0 +1,264 @@
+{VERSION 6 0 "IBM INTEL NT" "6.0" }
+{USTYLETAB {CSTYLE "Maple Input" -1 0 "Courier" 0 1 255 0 0 1 0 1 0 0 
+1 0 0 0 0 1 }{CSTYLE "2D Math" -1 2 "Times" 0 1 0 0 0 0 0 0 2 0 0 0 0 
+0 0 1 }{CSTYLE "2D Comment" 2 18 "" 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 }
+{CSTYLE "2D Output" 2 20 "" 0 1 0 0 255 1 0 0 0 0 0 0 0 0 0 1 }
+{CSTYLE "" 0 21 "" 0 1 0 0 0 1 0 0 0 0 2 0 0 0 0 1 }{PSTYLE "Normal" 
+-1 0 1 {CSTYLE "" -1 -1 "Times" 1 12 0 0 0 1 2 2 2 2 2 2 1 1 1 1 }1 1 
+0 0 0 0 1 0 1 0 2 2 0 1 }{PSTYLE "Heading 1" -1 3 1 {CSTYLE "" -1 -1 "
+Times" 1 18 0 0 0 1 2 1 2 2 2 2 1 1 1 1 }1 1 0 0 8 4 1 0 1 0 2 2 0 1 }
+{PSTYLE "Heading 2" -1 4 1 {CSTYLE "" -1 -1 "Times" 1 14 0 0 0 1 2 1 
+2 2 2 2 1 1 1 1 }1 1 0 0 8 2 1 0 1 0 2 2 0 1 }{PSTYLE "Maple Output" 
+-1 11 1 {CSTYLE "" -1 -1 "Times" 1 12 0 0 0 1 2 2 2 2 2 2 1 1 1 1 }3 
+3 0 0 0 0 1 0 1 0 2 2 0 1 }}
+{SECT 0 {EXCHG {PARA 0 "" 0 "" {MPLTEXT 0 21 40 "Popisn\341 statistika
+ 3       describe3.mws" }}{PARA 0 "" 0 "" {TEXT -1 0 "" }}}{SECT 0 
+{PARA 3 "" 0 "" {TEXT -1 9 "  Momenty" }}{PARA 0 "" 0 "" {TEXT -1 0 "
+" }}{SECT 0 {PARA 4 "" 0 "" {TEXT -1 8 "  obecn\351" }}{PARA 0 "" 0 "
+" {TEXT -1 0 "" }}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 20 "restart:wi
+th(stats):" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 34 "dtm1:=[-1$3,0
+,2$4,3$2,5,7,-2,6,8];" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%%dtm1G71!\"
+\"F&F&\"\"!\"\"#F(F(F(\"\"$F)\"\"&\"\"(!\"#\"\"'\"\")" }}}{EXCHG 
+{PARA 0 "> " 0 "" {MPLTEXT 1 0 25 "n:=describe[count](dtm1);" }}{PARA 
+11 "" 1 "" {XPPMATH 20 "6#>%\"nG\"#:" }}}{EXCHG {PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 14 "# prvniho radu" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 
+1 0 29 "m1:describe[moment[1]](dtm1);" }}{PARA 11 "" 1 "" {XPPMATH 20 
+"6##\"\"(\"\"$" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 31 "m11:=desc
+ribe[sumdata](dtm1)/n;" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%$m11G#\"\"
+(\"\"$" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 26 "m12:=describe[mea
+n](dtm1);" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%$m12G#\"\"(\"\"$" }}}
+{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 14 "# druheho radu" }}}{EXCHG 
+{PARA 0 "> " 0 "" {MPLTEXT 1 0 30 "m2:=describe[moment[2]](dtm1);" }}
+{PARA 11 "" 1 "" {XPPMATH 20 "6#>%#m2G#\"#V\"\"$" }}}{EXCHG {PARA 0 ">
+ " 0 "" {MPLTEXT 1 0 9 "evalf(%);" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#$
+\"+LLLL9!\")" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 34 "m21:=descri
+be[sumdata[2]](dtm1)/n;" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%$m21G#\"#
+V\"\"$" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 0 "" }}}}{SECT 0 
+{PARA 4 "" 0 "" {TEXT -1 11 "  centr\341ln\355" }}{PARA 0 "" 0 "" 
+{TEXT -1 0 "" }}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 20 "restart:with
+(stats):" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 34 "dtm2:=[-1$3,0,2
+$4,3$2,5,7,-2,6,8];" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%%dtm2G71!\"\"
+F&F&\"\"!\"\"#F(F(F(\"\"$F)\"\"&\"\"(!\"#\"\"'\"\")" }}}{EXCHG {PARA 
+0 "> " 0 "" {MPLTEXT 1 0 26 "n1:=describe[count](dtm2);" }}{PARA 11 "
+" 1 "" {XPPMATH 20 "6#>%#n1G\"#:" }}}{EXCHG {PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 14 "# prvniho radu" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 
+1 0 36 "mc1:=describe[moment[1,mean]](dtm2);" }}{PARA 11 "" 1 "" 
+{XPPMATH 20 "6#>%$mc1G\"\"!" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 
+24 "a:=describe[mean](dtm2);" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%\"aG
+#\"\"(\"\"$" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 34 "mc11:=descri
+be[moment[1,a]](dtm2);" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%%mc11G\"\"
+!" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 15 "#  druheho radu" }}}
+{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 36 "mc2:=describe[moment[2,mean]
+](dtm2);" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%$mc2G#\"#!)\"\"*" }}}
+{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 9 "evalf(%);" }}{PARA 11 "" 1 "
+" {XPPMATH 20 "6#$\"+*)))))))))!\"*" }}}{EXCHG {PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 34 "mc21:=describe[moment[2,a]](dtm2);" }}{PARA 11 "" 1 "
+" {XPPMATH 20 "6#>%%mc21G#\"#!)\"\"*" }}}{EXCHG {PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 31 "mc22:=describe[variance](dtm2);" }}{PARA 11 "" 1 "" 
+{XPPMATH 20 "6#>%%mc22G#\"#!)\"\"*" }}}{EXCHG {PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 41 "mc23:=describe[sumdata[2,mean]](dtm2)/n1;" }}{PARA 
+11 "" 1 "" {XPPMATH 20 "6#>%%mc23G#\"#!)\"\"*" }}}{EXCHG {PARA 0 "> " 
+0 "" {MPLTEXT 1 0 18 "# upravene pro n-1" }}}{EXCHG {PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 37 "Mc:=describe[moment[2,mean,1]](dtm2);" }}{PARA 11 "" 
+1 "" {XPPMATH 20 "6#>%#McG#\"$+#\"#@" }}}{EXCHG {PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 33 "Mc1:=describe[variance[1]](dtm2);" }}{PARA 11 "" 1 "
+" {XPPMATH 20 "6#>%$Mc1G#\"$+#\"#@" }}}{EXCHG {PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 44 "Mc2:=describe[standarddeviation[1]](dtm2)^2;" }}
+{PARA 11 "" 1 "" {XPPMATH 20 "6#>%$Mc2G#\"$+#\"#@" }}}{EXCHG {PARA 0 "
+> " 0 "" {MPLTEXT 1 0 24 "a:=describe[mean](dtm2);" }}{PARA 11 "" 1 "
+" {XPPMATH 20 "6#>%\"aG#\"\"(\"\"$" }}}{EXCHG {PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 10 "f:=x->x-a;" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%\"fGj
++6#%\"xG6\"6$%)operatorG%&arrowGF(,&9$\"\"\"%\"aG!\"\"F(F(F(6#\"\"!" }
+}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 18 "dtm3:=map(f,dtm2);" }}
+{PARA 11 "" 1 "" {XPPMATH 20 "6#>%%dtm3G71#!#5\"\"$F&F&#!\"(F(#!\"\"F(
+F+F+F+#\"\"#F(F-#\"\")F(#\"#9F(#!#8F(#\"#6F(#\"#<F(" }}}{EXCHG {PARA 
+0 "> " 0 "" {MPLTEXT 1 0 39 "Mc3:=describe[sumdata[2]](dtm3)/(n1-1);" 
+}}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%$Mc3G#\"$+#\"#@" }}}{EXCHG {PARA 
+0 "> " 0 "" {MPLTEXT 1 0 35 "Mc4:=describe[moment[2,0,1]](dtm3);" }}
+{PARA 11 "" 1 "" {XPPMATH 20 "6#>%$Mc4G#\"$+#\"#@" }}}{EXCHG {PARA 0 "
+> " 0 "" {MPLTEXT 1 0 0 "" }}}}{SECT 0 {PARA 4 "" 0 "" {TEXT -1 11 "  \+
+libovoln\351" }}{PARA 0 "" 0 "" {TEXT -1 0 "" }}{EXCHG {PARA 0 "> " 0 
+"" {MPLTEXT 1 0 20 "restart:with(stats):" }}}{EXCHG {PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 34 "dtm4:=[-1$3,0,2$4,3$2,5,7,-2,6,8];" }}{PARA 11 "" 1 "
+" {XPPMATH 20 "6#>%%dtm4G71!\"\"F&F&\"\"!\"\"#F(F(F(\"\"$F)\"\"&\"\"(!
+\"#\"\"'\"\")" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 24 "a:=describ
+e[mean](dtm4);" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%\"aG#\"\"(\"\"$" }
+}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 25 "n:=describe[count](dtm4);
+" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%\"nG\"#:" }}}{EXCHG {PARA 0 "> \+
+" 0 "" {MPLTEXT 1 0 34 "M1:=describe[moment[1,0,0]](dtm4);" }}{PARA 
+11 "" 1 "" {XPPMATH 20 "6#>%#M1G#\"\"(\"\"$" }}}{EXCHG {PARA 0 "> " 0 
+"" {MPLTEXT 1 0 35 "M11:=describe[moment[1,0,1]](dtm4);" }}{PARA 11 "
+" 1 "" {XPPMATH 20 "6#>%$M11G#\"\"&\"\"#" }}}{EXCHG {PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 12 "M11*(n-1)/n;" }}{PARA 11 "" 1 "" {XPPMATH 20 "6##\"\"
+(\"\"$" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 37 "M2:=describe[mome
+nt[2,mean,0]](dtm4);" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%#M2G#\"#!)\"
+\"*" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 29 "M2:=describe[varianc
+e](dtm4);" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%#M2G#\"#!)\"\"*" }}}
+{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 38 "M21:=describe[moment[2,mean,
+1]](dtm4);" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%$M21G#\"$+#\"#@" }}}
+{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 33 "M22:=describe[variance[1]](d
+tm4);" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%$M22G#\"$+#\"#@" }}}{EXCHG 
+{PARA 0 "> " 0 "" {MPLTEXT 1 0 0 "" }}}}}{SECT 0 {PARA 3 "" 0 "" 
+{TEXT -1 27 "  V\375b\354rov\375 pr\371m\354r a rozptyl" }}{PARA 0 "" 
+0 "" {TEXT -1 0 "" }}{SECT 0 {PARA 4 "" 0 "" {TEXT -1 16 " V\375b\354r
+ov\375 pr\371m\354r" }}{PARA 0 "" 0 "" {TEXT -1 0 "" }}{EXCHG {PARA 0 
+"> " 0 "" {MPLTEXT 1 0 20 "restart:with(stats):" }}}{EXCHG {PARA 0 "> \+
+" 0 "" {MPLTEXT 1 0 26 "dtt1:=[-2,-1$3,0,2$3,4,8]:" }}}{EXCHG {PARA 0 
+"> " 0 "" {MPLTEXT 1 0 25 "n:=describe[count](dtt1);" }}{PARA 11 "" 1 
+"" {XPPMATH 20 "6#>%\"nG\"#5" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 
+0 25 "m1:=describe[mean](dtt1);" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%#
+m1G#\"#8\"#5" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 31 "m11:=descri
+be[moment[1]](dtt1);" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%$m11G#\"#8\"
+#5" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 35 "m12:=describe[moment[
+1,0,0]](dtt1);" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%$m12G#\"#8\"#5" }}
+}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 0 "" }}}}{SECT 0 {PARA 4 "" 0 "
+" {TEXT -1 17 " V\375b\354rov\375 rozptyl" }}{PARA 0 "" 0 "" {TEXT -1 
+0 "" }}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 20 "restart:with(stats):
+" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 26 "dtt2:=[-2,-1$3,0,2$3,4,
+8]:" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 37 "s1:=describe[moment[
+2,mean,0]](dtt2);" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%#s1G#\"$@)\"$+
+\"" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 29 "s2:=describe[variance
+](dtt2);" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%#s2G#\"$@)\"$+\"" }}}
+{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 40 "s2:=describe[standarddeviati
+on](dtt2)^2;" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%#s2G#\"$@)\"$+\"" }}
+}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 37 "S1:=describe[moment[2,mean,
+1]](dtt2);" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%#S1G#\"$@)\"#!*" }}}
+{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 32 "S2:=describe[variance[1]](dt
+t2);" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%#S2G#\"$@)\"#!*" }}}{EXCHG 
+{PARA 0 "> " 0 "" {MPLTEXT 1 0 43 "S3:=describe[standarddeviation[1]](
+dtt2)^2;" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%#S3G#\"$@)\"#!*" }}}
+{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 0 "" }}}}}{SECT 0 {PARA 3 "" 0 "
+" {TEXT -1 34 "  Koeficient \232ikmosti a \232pi\350atosti" }}{PARA 0 
+"" 0 "" {TEXT -1 0 "" }}{SECT 0 {PARA 4 "" 0 "" {TEXT -1 34 "  koefici
+ent \232ikmosti,  skewness  " }{XPPEDIT 18 0 "alpha;" "6#%&alphaG" }}
+{PARA 4 "" 0 "" {TEXT -1 0 "" }}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 
+20 "restart:with(stats):" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 39 
+"dt3:=[-2$2,-1,0$3,1$4,2$3,4$2,5$3,6,8];" }}{PARA 11 "" 1 "" {XPPMATH 
+20 "6#>%$dt3G76!\"#F&!\"\"\"\"!F(F(\"\"\"F)F)F)\"\"#F*F*\"\"%F+\"\"&F,
+F,\"\"'\"\")" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 24 "n:=describe
+[count](dt3);" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%\"nG\"#?" }}}
+{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 29 "al1:=describe[skewness](dt3)
+;" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%$al1G,$*(\"%Uv\"\"\"\"'hp^!\"\"
+\"$>(#F(\"\"#F(" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 9 "evalf(%);
+" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#$\"+v!\\>\"R!#5" }}}{EXCHG {PARA 
+0 "> " 0 "" {MPLTEXT 1 0 75 "al2:=describe[moment[3,mean,0]](dt3)/desc
+ribe[moment[2,mean,0]](dt3)^(3/2);" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#
+>%$al2G,$**\"%rP\"\"\"\"(0[e#!\"\"\"$>(#F(\"\"#\"$+\"F,F(" }}}{EXCHG 
+{PARA 0 "> " 0 "" {MPLTEXT 1 0 9 "evalf(%);" }}{PARA 11 "" 1 "" 
+{XPPMATH 20 "6#$\"+v!\\>\"R!#5" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 
+1 0 72 "al3:=describe[moment[3,mean,0]](dt3)/describe[standarddeviatio
+n](dt3)^3;" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%$al3G,$*(\"%Uv\"\"\"\"
+'hp^!\"\"\"$>(#F(\"\"#F(" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 9 "
+evalf(%);" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#$\"+v!\\>\"R!#5" }}}
+{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 138 "al4:=(describe[moment[3]](d
+t3)-3*describe[moment[2]](dt3)*describe[mean](dt3)+2*describe[mean](dt
+3)^3)/describe[standarddeviation](dt3)^3;" }}{PARA 11 "" 1 "" 
+{XPPMATH 20 "6#>%$al4G,$*(\"%Uv\"\"\"\"'hp^!\"\"\"$>(#F(\"\"#F(" }}}
+{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 9 "evalf(%);" }}{PARA 11 "" 1 "
+" {XPPMATH 20 "6#$\"+v!\\>\"R!#5" }}}{EXCHG {PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 0 "" }}}}{SECT 0 {PARA 4 "" 0 "" {TEXT -1 35 "  koeficien
+t \232pi\350atosti, kurtosis  " }{XPPEDIT 18 0 "epsilon;" "6#%(epsilon
+G" }}{PARA 4 "" 0 "" {TEXT -1 0 "" }}{EXCHG {PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 20 "restart:with(stats):" }}}{EXCHG {PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 39 "dt4:=[-2$2,-1,0$3,1$4,2$3,4$2,5$3,6,8];" }}{PARA 11 "
+" 1 "" {XPPMATH 20 "6#>%$dt4G76!\"#F&!\"\"\"\"!F(F(\"\"\"F)F)F)\"\"#F*
+F*\"\"%F+\"\"&F,F,\"\"'\"\")" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 
+0 30 "eps1:=describe[kurtosis](dt4);" }}{PARA 11 "" 1 "" {XPPMATH 20 "
+6#>%%eps1G#\"(<:?\"\"'hp^" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 9 
+"evalf(%);" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#$\"+MF>CB!\"*" }}}
+{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 72 "eps2:=describe[moment[4,mean
+,0]](dt4)/describe[moment[2,mean,0]](dt4)^2;" }}{PARA 11 "" 1 "" 
+{XPPMATH 20 "6#>%%eps2G#\"(<:?\"\"'hp^" }}}{EXCHG {PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 73 "eps3:=describe[moment[4,mean,0]](dt4)/describe[standa
+rddeviation](dt4)^4;" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%%eps3G#\"(<:
+?\"\"'hp^" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 188 "eps4:=(descri
+be[moment[4]](dt4)-4*describe[moment[3]](dt4)*describe[mean](dt4)+6*de
+scribe[moment[2]](dt4)*describe[mean](dt4)^2-3*describe[mean](dt4)^4)/
+describe[standarddeviation](dt4)^4;" }}{PARA 11 "" 1 "" {XPPMATH 20 "6
+#>%%eps4G#\"(<:?\"\"'hp^" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 0 "
+" }}}}}{SECT 0 {PARA 3 "" 0 "" {TEXT -1 10 "  Kvantily" }}{PARA 0 "" 
+0 "" {TEXT -1 0 "" }}{SECT 0 {PARA 4 "" 0 "" {TEXT -1 8 "  Medi\341n" 
+}}{PARA 0 "" 0 "" {TEXT -1 6 "median" }}{PARA 0 "" 0 "" {TEXT -1 0 "" 
+}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 20 "restart:with(stats):" }}}
+{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 34 "dtk1:=[-2$2,-1$3,0$5,2$2,3$1
+,5$2];" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%%dtk1G71!\"#F&!\"\"F'F'\"
+\"!F(F(F(F(\"\"#F)\"\"$\"\"&F+" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 
+1 0 23 "describe[median](dtk1);" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#\"
+\"!" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 0 "" }}}}{SECT 0 {PARA 
+4 "" 0 "" {TEXT -1 10 "  Kvartily" }}{PARA 0 "" 0 "" {TEXT -1 8 "quart
+ile" }}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 20 "restart:with(stats):
+" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 34 "dtk2:=[-2$2,-1$3,0$5,2$
+2,3$1,5$2];" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%%dtk2G71!\"#F&!\"\"F'
+F'\"\"!F(F(F(F(\"\"#F)\"\"$\"\"&F+" }}}{EXCHG {PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 32 "k2:=describe[quartile[2]](dtk2);" }}{PARA 11 "" 1 "" 
+{XPPMATH 20 "6#>%#k2G\"\"!" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 
+32 "k1:=describe[quartile[1]](dtk2);" }}{PARA 11 "" 1 "" {XPPMATH 20 "
+6#>%#k1G!\"\"" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 32 "k3:=descri
+be[quartile[3]](dtk2);" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%#k3G\"\"#
+" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 11 "IQR:=k3-k1;" }}{PARA 
+11 "" 1 "" {XPPMATH 20 "6#>%$IQRG\"\"$" }}}{EXCHG {PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 0 "" }}}}{SECT 0 {PARA 4 "" 0 "" {TEXT -1 29 "  P\354ti
+\350\355seln\341 charakteristika" }}{PARA 0 "" 0 "" {TEXT -1 0 "" }}
+{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 20 "restart:with(stats):" }}}
+{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 34 "dtk3:=[-2$2,-1$3,0$5,2$2,3$1
+,5$2];" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%%dtk3G71!\"#F&!\"\"F'F'\"
+\"!F(F(F(F(\"\"#F)\"\"$\"\"&F+" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 
+1 0 14 "x:=sort(dtk3);" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%\"xG71!\"#
+F&!\"\"F'F'\"\"!F(F(F(F(\"\"#F)\"\"$\"\"&F+" }}}{EXCHG {PARA 0 "> " 0 
+"" {MPLTEXT 1 0 19 "describe[count](x);" }}{PARA 11 "" 1 "" {XPPMATH 
+20 "6#\"#:" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 9 "k1:=x[1];" }}
+{PARA 11 "" 1 "" {XPPMATH 20 "6#>%#k1G!\"#" }}}{EXCHG {PARA 0 "> " 0 "
+" {MPLTEXT 1 0 32 "k2:=describe[quartile[1]](dtk3);" }}{PARA 11 "" 1 "
+" {XPPMATH 20 "6#>%#k2G!\"\"" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 
+0 27 "k3:=describe[median](dtk3);" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>
+%#k3G\"\"!" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 32 "k4:=describe[
+quartile[3]](dtk3);" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%#k4G\"\"#" }}
+}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 10 "k5:=x[15];" }}{PARA 11 "" 
+1 "" {XPPMATH 20 "6#>%#k5G\"\"&" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 
+1 0 20 "P:=[k1,k2,k3,k4,k5];" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%\"PG
+7'!\"#!\"\"\"\"!\"\"#\"\"&" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 
+0 "" }}}}{SECT 0 {PARA 4 "" 0 "" {TEXT -1 8 "  Decily" }}{PARA 0 "" 0 
+"" {TEXT -1 0 "" }}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 20 "restart:w
+ith(stats):" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 34 "dtk4:=[-2$2,
+-1$3,0$5,2$2,3$1,5$2];" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%%dtk4G71!
+\"#F&!\"\"F'F'\"\"!F(F(F(F(\"\"#F)\"\"$\"\"&F+" }}}{EXCHG {PARA 0 "> \+
+" 0 "" {MPLTEXT 1 0 26 "describe[decile[1]](dtk4);" }}{PARA 11 "" 1 "
+" {XPPMATH 20 "6#!\"#" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 43 "X:
+=[seq(describe[decile[i]](dtk4),i=1..9)];" }}{PARA 11 "" 1 "" 
+{XPPMATH 20 "6#>%\"XG7+!\"#!\"\"F'\"\"!F(F(\"\"\"\"\"#\"\"%" }}}
+{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 14 "DR:=X[9]-X[1];" }}{PARA 11 "
+" 1 "" {XPPMATH 20 "6#>%#DRG\"\"'" }}}{EXCHG {PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 0 "" }}}}{SECT 0 {PARA 4 "" 0 "" {TEXT -1 12 "  Percentil
+y" }}{PARA 0 "" 0 "" {TEXT -1 10 "percentile" }}{EXCHG {PARA 0 "> " 0 
+"" {MPLTEXT 1 0 20 "restart:with(stats):" }}}{EXCHG {PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 33 "dtp:=[-2$2,-1$3,0$5,2$2,3$1,5$2];" }}{PARA 11 "" 1 "
+" {XPPMATH 20 "6#>%$dtpG71!\"#F&!\"\"F'F'\"\"!F(F(F(F(\"\"#F)\"\"$\"\"
+&F+" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 35 "med:=describe[percen
+tile[50]](dtp);" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%$medG\"\"!" }}}
+{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 66 "for i from 1 to 9 do Y[i]:=d
+escribe[percentile[10*i]](dtp) end do;" }}{PARA 11 "" 1 "" {XPPMATH 
+20 "6#>&%\"YG6#\"\"\"!\"#" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>&%\"YG6#
+\"\"#!\"\"" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>&%\"YG6#\"\"$!\"\"" }}
+{PARA 11 "" 1 "" {XPPMATH 20 "6#>&%\"YG6#\"\"%\"\"!" }}{PARA 11 "" 1 "
+" {XPPMATH 20 "6#>&%\"YG6#\"\"&\"\"!" }}{PARA 11 "" 1 "" {XPPMATH 20 "
+6#>&%\"YG6#\"\"'\"\"!" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>&%\"YG6#\"\"
+(\"\"\"" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>&%\"YG6#\"\")\"\"#" }}
+{PARA 11 "" 1 "" {XPPMATH 20 "6#>&%\"YG6#\"\"*\"\"%" }}}{EXCHG {PARA 
+0 "> " 0 "" {MPLTEXT 1 0 49 "Z:=[seq(describe[percentile[10*i]](dtp),i
+=1..9)];" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%\"ZG7+!\"#!\"\"F'\"\"!F(
+F(\"\"\"\"\"#\"\"%" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 0 "" }}}}
+{SECT 0 {PARA 4 "" 0 "" {TEXT -1 0 "" }}}}{SECT 0 {PARA 3 "" 0 "" 
+{TEXT -1 7 "  Modus" }}{PARA 0 "" 0 "" {TEXT -1 4 "mode" }}{PARA 0 "" 
+0 "" {TEXT -1 0 "" }}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 20 "restart
+:with(stats):" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 33 "dtm:=[-2$2
+,-1$3,0$5,2$2,3$1,5$2];" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%$dtmG71!
+\"#F&!\"\"F'F'\"\"!F(F(F(F(\"\"#F)\"\"$\"\"&F+" }}}{EXCHG {PARA 0 "> \+
+" 0 "" {MPLTEXT 1 0 27 "modus:=describe[mode](dtm);" }}{PARA 11 "" 1 "
+" {XPPMATH 20 "6#>%&modusG\"\"!" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 
+1 0 34 "dtm1:=[-2$2,-1$3,0$5,2$5,3$1,5$2];" }}{PARA 11 "" 1 "" 
+{XPPMATH 20 "6#>%%dtm1G74!\"#F&!\"\"F'F'\"\"!F(F(F(F(\"\"#F)F)F)F)\"\"
+$\"\"&F+" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 21 "describe[mode](
+dtm1);" }}{PARA 11 "" 1 "" {XPPMATH 20 "6$\"\"!\"\"#" }}}{EXCHG {PARA 
+0 "> " 0 "" {MPLTEXT 1 0 0 "" }}}}{SECT 0 {PARA 3 "" 0 "" {TEXT -1 0 "
+" }}{PARA 0 "" 0 "" {TEXT -1 0 "" }}}}{MARK "6 1 0" 0 }{VIEWOPTS 1 1 
+0 1 1 1803 1 1 1 1 }{PAGENUMBERS 0 1 2 33 1 1 }

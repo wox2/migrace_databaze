@@ -1,0 +1,190 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html dir="ltr" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="cz"><head>
+
+
+
+<meta http-equiv="Content-type" content="text/html; charset=ISO-8859-2">
+<meta name="keywords" content="UNIX administration">
+
+<title>Y36UAD -- Konfigurace syslog</title>
+<link rel="stylesheet" type="text/css" href="cv05_soubory/uad.htm">
+<!-- Last 17.3.2010, 100, valid X -->
+
+</head><body> 
+<h1>Konfigurace <tt>syslog</tt></h1>
+<hr>
+<h2>Logování systémových událostí</h2>
+<p>
+Jádro a řada systémových programů (daemonů) produkuje různé zprávy: o chybách,
+varování o (ne-)očekávaných událostech, nebo jen informace o tom, že se úspěšně 
+spustily.
+</p>
+<p>
+Je velmi důležité mít tyto informace k&nbsp;dispozici i jindy než bezprostředně 
+po nahlášení dané události. Musí proto být zapsány do souboru.
+V&nbsp;dávných dobách se hlášení objevovala jen na systémové konsoli, případně 
+byla jednotlivými daemony zapisována do různých log-souborů. Nejednotnost 
+a obtížná konfigurace si vynutily vznik centrálního daemona pro zpracování a 
+logování zpráv.
+</p>
+<p>
+Pro tyto účely dnes existuje několik různých systémů na podobném principu, 
+lišících se většinou detaily a formátem konfiguračních souborů.
+</p>
+<h2><tt>syslog</tt></h2>
+<p>
+Tradiční a osvědčený UNIXový prostředek (pocházející samozřejmě z&nbsp;BSD:)
+se jmenuje <abbr title="/usr/sbin/syslogd; /sbin/sysklogd; /usr/sbin/rsyslogd; ..."><tt>syslog</tt></abbr>.
+Může být nakonfigurován tak, že bude třídit došlé zprávy do různých souborů, 
+podle druhu nebo zdroje zprávy.
+Například chybové zprávy jádra bývají umístěny do speciálního souboru, protože 
+se dá očekávat, že jejich důležitost je vyšší než u zpráv z&nbsp;jiných zdrojů.
+<tt>syslog</tt> navíc umí zapisovat zprávy také na terminály nebo dokonce 
+na jiné počítače.
+<tt>syslog</tt> je vhodné spouštět mezi prvními daemony při startupu systému.
+</p>
+<p>
+<tt>syslog</tt> se skládá ze tří částí:
+</p>
+<ol>
+  <li><tt>syslogd</tt> (<tt>rsyslogd</tt>(8)) &#8211; logovací daemon,</li>
+  <li><tt>openlog</tt>(3), <tt>syslog</tt>(2,3), <tt>closelog</tt>(3) &#8211; logovací knihovní funkce,</li>
+  <li><tt>logger</tt>(1) &#8211; logovací uživatelský příkaz.</li>
+</ol>
+<p>
+Programy podporující <tt>syslog</tt> zapisují prostřednicvím výše uvedených 
+funkcí zprávy do <a href="http://moon.felk.cvut.cz/%7Ezdarekj/UAD/cv04.html">speciálního souboru (soketu)</a> 
+<tt>/dev/log</tt>.
+<tt>syslog</tt> zprávy dostane a podle své konfigurace rozhodne, co s&nbsp;nimi.
+Speciální proces <tt>klogd</tt> vybírá zprávy z&nbsp;bufferu jádra a posílá 
+je soketem k&nbsp;dalšímu pracování v&nbsp;<tt>syslog</tt>.
+</p>
+<h3>Úkol 1</h3>
+<p>
+Prozkoumejte typ a práva souboru <tt>/dev/log</tt>.
+Najděte a zjistěte podrobnosti procesu <tt>klogd</tt>.
+Zjistěte podrobnosti o <tt>rsyslogd(8)</tt>, který 
+plní funkci <tt>syslog</tt> daemonu na počítačích v učebně.
+</p>
+<h2>Konfigurace <tt>syslog</tt></h2>
+<p>
+Konfigurace se provádí v&nbsp;souboru <tt>/etc/rsyslog.conf</tt>.
+Formát je velmi jednoduchý:<br>
+<tt><i>selektor[;...]</i></tt>&lt;tab&gt;<tt><i>akce</i></tt><br>
+Zprávy o přihlašování uživatelů necháme uložit do souboru <tt>/var/log/authlog</tt>
+třeba takto:<br>
+<tt>auth.notice	&nbsp;&nbsp;&nbsp;&nbsp;/var/log/authlog</tt>
+</p>
+<p>
+Selektor identifikuje službu, která posílá zprávu, a úroveň (závažnost) dané 
+zprávy, tedy 
+<tt><i>selektor</i>=<i>služba.úroveň</i></tt>.
+Jméno služby je omezeno na hodnoty: <tt>user, kern, mail, daemon, auth, lpr,
+news, uucp, cron, audit, authpriv, local0-7</tt>. Existuje také služba <tt>mark</tt> 
+pro interní použití daemonem <tt>syslog</tt>. Konkrétní názvy a přesný výčet 
+služeb závisí nikoliv na seznamu uvedeném na této stránce, ale na konkrétní
+implementaci knihovny <tt>libc</tt> na vašem systému.
+V každém případě je jejich počet dán a programy si tedy nemohou vymýšlet 
+svoje vlastní názvy, což by zkomplikovalo konfiguraci.
+</p>
+<p>
+Autoritativním zdrojem informací o dostupných službách a úrovních priority
+je hlavičkový soubor 
+<abbr title="/usr/include/syslog.h; /usr/include/sys/syslog.h; ..."><tt>syslog.h</tt></abbr>,
+jenž používají všechny programy se <tt>syslog</tt>em spolupracující.
+</p>
+<h3>Úkol 2</h3>
+<p>
+Zjistěte podrobnosti o způsobu logování přihlašování uživatelů na vašem systému.
+Vše závisí na programech přihlašování zajišťujících, potřebujeme zjistit
+jméno služby, případně i prioritu. Úkol snadno vyřešíte, uvážíte-li, že 
+takové logování už probíhá, a že souborů, do nichž se aktuálně loguje,
+je konečný počet. Alternativou je prostudovat <tt>syslog.h</tt> 
+a hypotézu si pak jen jednoduše ověřit.
+</p>
+<h3>Selektor</h3>
+<p>
+Úrovně závažnosti zprávy jsou v&nbsp;pořadí od nejvyšší: 
+<tt>emerg, alert, crit, err, warning, notice, info, debug</tt>, <tt>none</tt> 
+říká, že zprávy z daného zdroje se nemají danou akcí zpracovávat. Opakem 
+<tt>none</tt> je <tt>*</tt>, specifikující vše kromě <tt>mark</tt>. Např.:<br>
+<tt>*.debug;mail.none</tt><br>
+říká, že se bude zpracovávat vše kromě zpráv z&nbsp;e-mailového provozu. 
+Vidíme také, že specifikace nejnižní úrovně zpráv způsobuje přijetí nejen této 
+úrovně, ale všech vyšších ke zpracování, stanovuje <em>minimální prioritu</em>, 
+od které jsou pro nás zprávy zajímavé.
+Syntaxe je v&nbsp;GNU implementaci ještě bohatší, pomocí <tt>=</tt> si můžeme říci
+jen o danou úroveň (<tt>mail.=err</tt>), pomocí negace (<tt>!</tt>) si můžeme 
+říci jen o úrovně striktně menší než je uvedená. 
+<tt>mail.!notice</tt> tedy vybere jen <tt>info</tt> a <tt>debug</tt>.
+Oba operátory lze zkombinovat: <tt>mail.!=notice</tt> vybere všechny zprávy
+typu <tt>mail</tt> kromě úrovně <tt>notice</tt>.
+</p>
+<h3>Akce</h3>
+<ol>
+  <li><tt>/dir/soubor</tt> &#8211; zapsat do souboru.</li>
+  <li><tt>-/dir/soubor</tt> &#8211; zapsat do souboru bez volání <tt>sync()</tt>.</li>
+  <li><tt>|/dir/fifo</tt> &#8211; zapsat do pojmenované roury.</li>
+  <li><tt>username</tt> &#8211; zapsat na terminál uživatele <tt>username</tt>, 
+          pokud je přihlášen.</li>
+  <li><tt>*</tt> &#8211; zapsat na terminál všech přihlášených uživatelů.</li>
+  <li><tt>@ip-adresa</tt> &#8211; poslat UDP paket <tt>syslog</tt>u na počítač s&nbsp;danou IP adresou.</li>
+  <li><tt>@jmeno</tt> &#8211; poslat <tt>syslog</tt>u na počítač <tt>jmeno</tt>. Lépe je specifikovat IP adresu, DNS nemusí být dostupná.</li>
+  <li><tt>@@ip-adresa</tt> &#8211; některé <tt>syslog</tt> daemony umí též 
+      posílat <tt>syslog</tt>u na počítač s&nbsp;danou IP adresou zprávy protokolem TCP.</li>
+</ol>
+<p>
+Standardně umí <tt>syslog</tt> komunikovat po síti protokolem UDP na vyhrazený 
+port 514, konkrétní implementace (např. <tt>rsyslogd</tt>) však mohou podporovat
+i TCP na portu 514. (Čísla portů se dají nastavit dle potřeby.)
+</p>
+<h3>Ověření konfigurace</h3>
+<p>
+Ověření nového nastavení patří mezi základní úkony, které administrátor musí 
+zajistit. V&nbsp;našem případě to snadno provedeme příkazem <tt>/usr/bin/logger</tt>.
+Předtím ale musíme nechat proces <tt>rsyslogd</tt> znovu načíst jeho 
+konfigurační soubor, protože stejně jako jiné daemony i <tt>rsyslogd</tt> čte 
+konfiguraci pouze při startu, a pak se podle ní řídí. 
+Vedlejším efektem bude také uzavření a nové otevření všech souborů logů, 
+což se využívá při zálohování nebo smazání starých nebo příliš velkých 
+log-souborů.
+</p>
+<p>
+Žádost o znovunačtení konfigurace se 
+provede posláním signálu HUP procesu <tt>rsyslogd</tt>. Většina daemonů ukládá 
+PID běžícího procesu do textového souboru, čehož využijeme, abychom se 
+nezdržovali hledáním správného PID:<br>
+<tt># /bin/kill -HUP `/bin/cat /var/run/rsyslogd.pid`</tt>
+</p>
+<h3>Úkol 3</h3>
+<p>
+Ujistěte se, že zprávy typu <tt>mail</tt> jsou někam logovány a vyzkoušejte je:<br>
+<tt>logger -p mail.warning "Posta neni nakonfigurovana."</tt>
+</p>
+<h3>Úkol 4</h3>
+<p>
+Zprávy <tt>local6.crit</tt> a vyšší vypisujte na terminál uživatele <tt>user1</tt>,
+zprávy <tt>local6.emerg</tt> všem uživatelům.
+Ověřte správnost svého nastavení příkazem <tt>logger</tt>.
+</p>
+<h3>Úkol 5</h3>
+<p>
+Po dohodě se cvičícím vytvořte skupiny počítačů (typicky dva, detaily určí 
+cvičící) a společně nakonfigurujte a zprovozněte centrální síťový logovací 
+server vaší skupiny.<br>
+Vyberte si vhodný typ zpráv, který budete předávat, např.&nbsp;<tt>auth</tt>
+o přihlašování uživatelů, pokuste se tentokrát vyzkoušet nastavení bez použití 
+příkazu <tt>logger</tt>. Nezapomeňte, že z&nbsp;bezpečnostních důvodů 
+mívá <tt>rsyslogd</tt> zakázáno přijímat zprávy ze sítě, je potřeba zajistit 
+jeho nové spuštění s původními parametry a navíc s&nbsp;parametrem <tt>-r</tt>.
+(K prozkoumání činnosti a pochopení parametrů <tt>rsyslogd</tt> sloužil úkol 1,
+využijte jich.)
+</p>
+<p>
+Na strojích je aktivní firewall, případné problémy 
+diagnostikujte pomocí <tt>tcpdump</tt>(1), konsultujte 
+s&nbsp;<tt>iptables</tt>(8), případně se svým cvičícím.
+</p>
+<hr>
+<p><img src="cv05_soubory/ESFgrant.png" alt="Partially supported by ESF and City of Prague." width="161" height="22"></p>
+</body></html>

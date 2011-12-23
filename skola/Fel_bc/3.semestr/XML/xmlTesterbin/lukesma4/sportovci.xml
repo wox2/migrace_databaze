@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<seznam-sportovcu>
+  <hokejista>
+        <jmeno>Jaromir Jagr</jmeno>
+        <voli>KSC</voli>
+  </hokejista>
+  <fotbalista>
+        <jmeno>Pavel Nedved</jmeno>
+        <voli>ODS</voli>
+  </fotbalista>
+  <atlet>
+        <jmeno>Roman Sebrle</jmeno>
+        <voli>Ceska piratska strana</voli>
+  </atlet>
+  <atletka>
+        <jmeno>Barbora Spotakova</jmeno>
+        <voli>Zeleni</voli>
+  </atletka>
+  <rychlobruslarka>
+        <jmeno>Martina Sablikova</jmeno>
+        <voli>KSC</voli>
+  </rychlobruslarka>
+</seznam-sportovcu>

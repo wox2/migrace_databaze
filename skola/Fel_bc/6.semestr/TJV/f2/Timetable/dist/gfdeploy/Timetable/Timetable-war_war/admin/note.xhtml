@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <h:head>
+        <title>Cestující</title>
+    </h:head>
+    <h:body>
+        <ui:composition template="../resources/composition.xhtml">
+        <ui:param name="pageTitle" value="#{msgs.noteEditTitle}" />
+            <ui:define name="content">
+            <h1><h:outputText value="#{msgs.noteEditTitle}" /></h1>
+            <h:form>
+
+                <h:panelGrid columns="3" columnClasses="dataLabel,,">
+                    <h:outputText value="Vysvětlení:" />
+                    <h:inputText value="#{notes.note.explanation}" id="ex" label="Vysvětlení" required="true" requiredMessage="#{msgs.requiredMessage}">
+                        <f:validateLength minimum="2"/>
+                    </h:inputText>
+                    <h:message for="ex" errorClass="errorRequired"/>
+                </h:panelGrid>
+                <h:commandButton type="submit" value="#{msgs.save}" action="#{notes.saveNote}"/>
+                <h:commandLink action="notes" value="#{msgs.back}" immediate="true" />
+                <h:messages globalOnly="true"/>
+            </h:form>
+            </ui:define>
+        </ui:composition>
+    </h:body>
+</html>

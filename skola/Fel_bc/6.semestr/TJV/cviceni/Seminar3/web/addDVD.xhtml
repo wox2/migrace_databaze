@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets"
+                template="./template1.xhtml"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core">
+    
+    <ui:define name="content">
+        <h:form>
+            <h:panelGrid columns="3">
+                Title: <h:inputText id="title" value="#{addDVD.title}"
+                    validatorMessage="#{msg.invalidTitle}"/>
+                <h:message for="title"/>
+                Year: <h:inputText id="year" value="#{addDVD.year}"/>
+                <h:message for="year"/>
+                Genre: <h:selectOneMenu id="genre" value="#{addDVD.genre}">
+                    <f:selectItems value="#{app.genres}"/>
+                </h:selectOneMenu>
+                <h:message for="genre"/>
+                <h:commandButton value="add" action="#{addDVD.perform}"/>
+            </h:panelGrid>
+        </h:form>
+    </ui:define>
+
+</ui:composition>

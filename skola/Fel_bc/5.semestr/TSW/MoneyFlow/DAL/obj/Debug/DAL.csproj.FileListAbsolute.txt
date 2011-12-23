@@ -1,0 +1,17 @@
+D:\CTU_\4. semestr\VAN\Semestral\MoneyFlow\MoneyFlow\DAL\bin\Debug\MFlowDB.sdf
+D:\CTU_\4. semestr\VAN\Semestral\MoneyFlow\MoneyFlow\DAL\bin\Debug\DAL.dll
+D:\CTU_\4. semestr\VAN\Semestral\MoneyFlow\MoneyFlow\DAL\bin\Debug\DAL.pdb
+D:\CTU_\4. semestr\VAN\Semestral\MoneyFlow\MoneyFlow\DAL\bin\Debug\BLL.dll
+D:\CTU_\4. semestr\VAN\Semestral\MoneyFlow\MoneyFlow\DAL\bin\Debug\BLL.pdb
+D:\CTU_\4. semestr\VAN\Semestral\MoneyFlow\MoneyFlow\DAL\obj\Debug\ResolveAssemblyReference.cache
+D:\CTU_\4. semestr\VAN\Semestral\MoneyFlow\MoneyFlow\DAL\obj\Debug\DAL.dll
+D:\CTU_\4. semestr\VAN\Semestral\MoneyFlow\MoneyFlow\DAL\obj\Debug\DAL.pdb
+E:\Fel\5.semestr\TSW\MoneyFlow\DAL\bin\Debug\MFlowDB.sdf
+E:\Fel\5.semestr\TSW\MoneyFlow\DAL\bin\Debug\DAL.dll.config
+E:\Fel\5.semestr\TSW\MoneyFlow\DAL\bin\Debug\DAL.dll
+E:\Fel\5.semestr\TSW\MoneyFlow\DAL\bin\Debug\DAL.pdb
+E:\Fel\5.semestr\TSW\MoneyFlow\DAL\bin\Debug\BLL.dll
+E:\Fel\5.semestr\TSW\MoneyFlow\DAL\bin\Debug\BLL.pdb
+E:\Fel\5.semestr\TSW\MoneyFlow\DAL\obj\Debug\ResolveAssemblyReference.cache
+E:\Fel\5.semestr\TSW\MoneyFlow\DAL\obj\Debug\DAL.dll
+E:\Fel\5.semestr\TSW\MoneyFlow\DAL\obj\Debug\DAL.pdb

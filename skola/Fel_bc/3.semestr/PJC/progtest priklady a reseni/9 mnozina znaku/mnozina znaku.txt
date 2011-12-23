@@ -1,0 +1,130 @@
+Úkolem je realizovat trídu CSetWChar, do které pujde ukládat hodnotu UNICODE znaku v rozsahu 0 až 1023 vcetne (pokrývá znaky založené na latince a recké abecede).
+
+Trída musí implementovat rozhraní podle deklarace níže. Rozhraní zahrnuje:
+
+    * Implicitní konstruktor, který vytvorí prázdnou instanci (neobsahuje žádné prvky).
+    * Kopírující konstruktor (pokud jej implementace vyžaduje).
+    * Destruktor, který uvolní prostredky alokované instancí (pokud jej implementace vyžaduje).
+    * Metodu Insert, která vloží prvek (UNICODE znak) do množiny. Metoda vrací hodnotu true, pokud prvek úspešne vložila a hodnotu false, pokud vložení selhalo (prvek již byl obsažen, byl mimo meze).
+    * Metodu Delete, která odebere prvek (UNICODE znak) z množiny. Metoda vrací hodnotu true, pokud prvek úspešne odebrala a hodnotu false, pokud odebrání selhalo (prvek nebyl obsažen, hodnota mimo meze).
+    * Metodu IsSet, která testuje, zda je prvek (UNICODE znak) v množine obsažen. Metoda vrací hodnotu true, pokud je prvek obsažen a hodnotu false, pokud ne nebo pokud je hodnota mimo meze.
+    * Metodu Intersect, která vypocte novou množinu obsahující prunik množiny, nad kterou byla metoda vyvolána a množiny z parametru.
+    * Metodu Union, která vypocte novou množinu obsahující sjednocení množiny, nad kterou byla metoda vyvolána a množiny z parametru.
+    * Metodu IsSubsetOf(X), která urcí, zda instance, nad kterou byla metoda vyvolána, je podmnožinou množiny X. Pokud ano (je podmnožinou), vrací true, v opacném prípade false. Za pomnožinu považujeme i nevlastní podmnožinu.
+    * Metodu HasSubset(X), která urcí, zda instance, nad kterou byla metoda vyvolána, je obsahuje množinu X jako svoji podmnožinu. Pokud ano (X je podmnožinou), vrací true, v opacném prípade false. Za pomnožinu považujeme i nevlastní podmnožinu.
+    * Metodu Equals(X), která urcí, zda instance, nad kterou byla metoda vyvolána, je obsahove shodná s množinu X. Pokud ano, vrací true, v opacném prípade false.
+
+Odevzdávejte soubor, který obsahuje pouze implementovanou trídu CSetWChar. Trída musí splnovat verejné rozhraní podle ukázky - pokud Vámi odevzdané rešení nebude obsahovat popsané rozhraní, dojde k chybe pri kompilaci. Do trídy si ale mužete doplnit další metody (verejné nebo i privátní) a clenské promenné. Odevzdávaný soubor musí obsahovat jak deklaraci trídy (popis rozhraní) tak i definice metod, konstruktoru a destruktoru. Je jedno, zda jsou metody implementované inline nebo oddelene. Odevzdávaný soubor nesmí krome implementace trídy CSetWChar obsahovat nic jiného, zejména ne funkci main. Pro usnadnení odevzdávání mužete využít toho, že ProgTest definuje promennou preprocesoru __PROGTEST__.
+
+Implementovaná trída nesmí používat datové struktury z STL (vector, list, ...). Jejich použití povede k chybe pri kompilaci. Trída je testovaná v omezeném prostredí, kde je limitovaná dostupná pamet (instance musí být v prumeru menší než 150 bajtu) a je omezena dobou behu (25s na testovacím pocítaci pro cca 1000000 vkládaných/odebíraných prvku, referencní rešení pro výpocet potrebuje cca 2.5 sec).
+
+Pokud to vnitrní struktura trídy vyžaduje, musí trída implementovat destruktor, kopírující konstruktor a pretežovat operátor =.
+Požadované verejné rozhraní trídy:
+
+class CSetWChar
+ {
+   public:
+                   CSetWChar                               ( void );
+    bool           Insert                                  ( int X );
+    bool           Delete                                  ( int X );
+    bool           IsSet                                   ( int X ) const;
+    int            Size                                    ( void ) const;
+    // Kopirujici konstruktor, destruktor a pretizeny operator =, pokud   
+    // to implementace vyzaduje.
+   
+   
+    CSetWChar      Intersect                               ( const CSetWChar & x ) const;
+    CSetWChar      Union                                   ( const CSetWChar & x ) const;
+    bool           Equals                                  ( const CSetWChar & x ) const;
+    bool           IsSubsetOf                              ( const CSetWChar & x ) const;
+    bool           HasSubset                               ( const CSetWChar & x ) const;
+    // dalsi metody/clenske promenne, ktere trida potrebuje pro impelmentaci  
+ };
+
+Ukázka použití trídy:
+
+bool status;
+CSetWChar S1;
+status = S1 . Insert ( 10 );
+// status = true, S1 . Size () => 1
+status = S1 . Insert ( 20 );
+// status = true, S1 . Size () => 2
+status = S1 . Insert ( 30 );
+// status = true, S1 . Size () => 3
+status = S1 . Insert ( 20 );
+// status = false, S1 . Size () => 3
+status = S1 . IsSet  ( 20 );
+// status = true
+status = S1 . Delete ( 20 );
+// status = true, S1 . Size () => 2
+status = S1 . IsSet  ( 20 );
+// status = false
+// S1 = {10, 30} 
+
+CSetWChar S2;
+status = S2 . Insert ( 10 );
+// status = true, S2 . Size () => 1
+status = S2 . Insert ( 30 );
+// status = true, S2 . Size () => 2
+status = S2 . Delete ( 20 );
+// status = false, S2 . Size () => 2
+// S2 = {10, 30}
+
+CSetWChar S3;
+status = S3 . Insert ( 10 );
+// status = true, S3 . Size () => 1
+status = S3 . Insert ( 30 );
+// status = true, S3 . Size () => 2
+status = S3 . Insert ( 50 );
+// status = true, S3 . Size () => 3
+// S3 = {10, 30, 50}
+
+S2 . Intersect ( S2 );
+// {10, 30}
+S2 . Union ( S2 );
+// {10, 30}
+status = S2 . IsSubsetOf ( S2 );
+// status = true
+status = S2 . HasSubset ( S2 );
+// status = true
+status = S2 . Equals ( S2 );
+// status = true
+
+S2 . Intersect ( S3 );
+// {10, 30}
+S2 . Union ( S3 );
+// {10, 30, 50}   
+status = S2 . IsSubsetOf ( S3 );
+// status = true
+status = S2 . HasSubset ( S3 );
+// status = false
+status = S2 . Equals ( S3 );
+// status = false
+
+S3 . Intersect ( S2 );
+// {10, 30}
+S3 . Union ( S2 );
+// {10, 30, 50}   
+status = S3 . IsSubsetOf ( S2 );
+// status = false
+status = S3 . HasSubset ( S2 );
+// status = true
+status = S3 . Equals ( S2 );
+// status = false
+
+S3 . Intersect ( S3 );
+// {10, 30, 50}
+S3 . Union ( S3 );
+// {10, 30, 50}   
+status = S3 . IsSubsetOf ( S3 );
+// status = true
+status = S3 . HasSubset ( S3 );
+// status = true
+status = S3 . Equals ( S3 );
+// status = true
+
+Nápoveda:
+
+    * Navrhnete trídu tak, aby nevyžadovala dynamickou alokaci pameti pro své struktury.
+    * Protože je omezený rozsah vstupních symbolu, zvažte možnost využít pole bitových príznaku.
+    * Pole 1024 hotnot typu bool má príliš velké pametové nároky.

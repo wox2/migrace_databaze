@@ -1,0 +1,2 @@
+(: Najde všechny objednávky ve kterých je objednáno více než 5 druhů zboží :)
+//objednavka[count(zbozi/vyrobek) > 5]

@@ -1,0 +1,29 @@
+Úkolem je realizovat C++ funkce pro kompresi/dekompresi souboru metodou RLE. Funkce mají následující rozhraní:
+
+bool compressRLE   ( const char * inFileName, const char * outFileName );
+bool decompressRLE ( const char * inFileName, const char * outFileName );
+
+Funkce compressRLE dostane parametrem jméno vstupního a výstupního souboru. Funkce bude císt vstupní soubor, komprimovat ctená data a zapisovat je do výstupního souboru. Pokud všechny operace probehnou bez chyb, funkce vrátí hodnotu true, jinak vrací false.
+
+Funkce decompressRLE funguje analogicky s tím, že vstupem jsou opet jména souboru, zdrojový soubor byl uložen ve formátu RLE a úkolem funkce je data uložená v tomto souboru obnovit do výstupního souboru. Funkce opet signalizuje úspech hodnotou true a neúspech hodnotou false.
+
+Odevzdávejte zdrojový soubor, který obsahuje implementaci výše zmínených funkcí a prípadne implementaci Vámi realizovaných podpurných funkcí, které jsou volány z compressRLE ci decompressRLE. Odevzdávaný soubor nesmí obsahovat nic jiného, zejména nesmí obsahovat funkci main, vkládání hlavickových souboru a pod. (takový obsah nejspíše povede k chybe pri kompilaci).
+
+Metoda RLE komprimuje pouze za sebou opakující se bajty. Existují ruzné varianty této metody, Vaším úkolem je realizovat variantu, která se používá v souborovém formátu PCX. Metoda funguje tak, že behem komprimace je testováno, kolik po sobe jdoucích bajtu je stejných a místo jejich opakování se do výstupu umístí pouze príznak "opakuje se n-krát":
+
+    * Pokud se bajt opakuje pouze jednou ci dvakrát a jeho hodnota je menší než 192 (0xC0), pak je bajt pouze zkopírován ze vstupu na výstup.
+    *
+    * Pokud se bajt X o hodnote vetší rovné 192 opakuje jednou ci dvakrát, je zakódován jako posloupnost dvou bajtu 0xC1 X (pro jedno opakování), ci jako posloupnost dvou bajtu 0xC2 X (pro dve opakování).
+    * Pokud se libovolný bajt X opakuje více než dvakrát (napr. n krát), pak je zakódován jako posloupnost (0xC0 | n) X. Pokud je pocet opakování n vetší než 63, pak je potreba jej kódovat vetším poctem dvojic (0xC0 | n1) X (0xC0 | n2) X, ..,(0xC0 | nk) X tak, aby n = n1 + n2 + ... + nk a každé n1, n2, ... nk bylo menší nebo rovné 63.
+
+Dekomprese je ješte jednodušší:
+
+    * Pokud je bajt ctený ze vstupu X < 0xC0, pak je proste zkopírován na výstup.
+    * Pokud je bajt ctený ze vstupu X >= 0xC0, pak dekomprimátor odsekne z hodnoty X dva nejvyšší binární rády a výsledná hodnota udává, kolikrát se následující bajt zapíše na výstup.
+
+Príklad:
+
+Vstup  (zde 12 bajtu):  0x10 0x20 0x30 0x30 0x30 0x30 0x40 0xc0      0x50 0xc0 0xc0 0xc0
+Výstup (zde 10 bajtu):  0x10 0x20 0xc4 0x30           0x40 0xc1 0xc0 0x50 0xc3 0xc0 
+
+V ukázce se tedy posloupnost ctyr bajtu o hodnote 0x30 prekódovala na posloupnost dvou bajtu (zkrácení výstupu), ale naopak prekódování jednoho bajtu 0xc0 si vyžádalo bajt na výstupu navíc.

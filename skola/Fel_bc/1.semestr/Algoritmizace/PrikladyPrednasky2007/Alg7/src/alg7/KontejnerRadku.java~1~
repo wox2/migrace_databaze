@@ -1,0 +1,21 @@
+package alg7;
+
+import java.util.ArrayList;
+import sugar.Sys;
+
+
+public class KontejnerRadku {
+  public static void main(String[] args) {
+    ArrayList radky = new ArrayList();
+    Sys.pln("zadejte øádky zakonèené prázdným øádkem");
+    String radek = Sys.readLine();
+    while (!radek.equals("")) {
+      radky.add(radek);
+      radek = Sys.readLine();
+    }
+    Sys.pln("výpis øádkù v opaèném poøadí");
+    for (int i=radky.size()-1; i>=0; i--)
+      Sys.pln(radky.get(i));
+  //  String prvni = (String)radky.get(0);
+  }
+}

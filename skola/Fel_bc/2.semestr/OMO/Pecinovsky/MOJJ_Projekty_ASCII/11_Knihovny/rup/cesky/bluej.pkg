@@ -1,0 +1,21 @@
+#Soubor bluej.pkg prevedeny do ASCII
+#Sat Nov 29 12:36:30 CET 2008
+package.showUses=true
+target1.type=PackageTarget
+package.editor.height=288
+target2.type=PackageTarget
+package.editor.x=0
+target2.y=170
+target2.x=60
+package.showExtends=true
+target1.height=62
+target2.width=80
+package.editor.width=169
+target1.width=80
+package.numDependencies=0
+target1.y=90
+target1.x=60
+package.numTargets=2
+target1.name=utility
+target2.name=tvary
+target2.height=62

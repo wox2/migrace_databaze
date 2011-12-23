@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="Window UTF-8"?>
+<project name="matrix" default="compile">
+
+	<taskdef resource="emma_ant.properties"> <!-- nadefinuje task emma -->
+		<classpath> <!-- soubory s nastrojem emma -->
+			<pathelement location="lib/emma.jar" />
+			<pathelement location="lib/emma_ant.jar" />
+		</classpath>
+	</taskdef>
+
+	<target name="compile">
+		<mkdir dir="build"/> <!-- vytvori adresar build -->
+		<mkdir dir="build/classes"/>
+		<mkdir dir="build/test"/>
+		<javac destdir="build/classes" srcdir="src" debug="true" /> <!-- prelozi zdrojove kody -->
+		<javac destdir="build/test" srcdir="test"> <!-- prelozi testy -->
+			<classpath> <!-- pro prelozeni testu je potreba junit a prelozena aplikace -->
+				<pathelement location="lib/junit-4.5.jar" />
+				<pathelement location="build/classes" />
+			</classpath>
+		</javac>
+	</target>
+
+	<target name="build" depends="compile">
+		<jar destfile="matrix.jar" basedir="build/classes" /> <!-- zabali aplikaci do jaru -->
+	</target>
+
+	<target name="run" depends="compile">
+		<java classname="matrixReloaded.MatrixReloaded" classpath="build/classes"/> <!-- spusti aplikaci -->
+	</target>
+
+	<target name="instrument" depends="compile">
+		<mkdir dir="build/instrumented"/>
+		
+		<emma> <!-- vytvori tridy upravene pro sledovani coverage -->
+			<instr instrpath="build/classes" destdir="build/instrumented" metadatafile="build/metadata.emma" merge="true" />
+		</emma>
+	</target>
+
+	<target name="test" depends="instrument">
+		<mkdir dir="reports" />
+		<mkdir dir="reports/junit" />
+
+		<junit printsummary="yes" haltonfailure="yes" fork="true"> <!-- pusti JUnit testy -->
+			<classpath>
+				<pathelement location="build/test" />
+				<pathelement location="build/instrumented" />
+				<pathelement location="lib/emma.jar" />
+				<pathelement location="lib/emma_ant.jar" />
+			</classpath>
+
+			<formatter type="plain"/>
+
+			<batchtest fork="yes" todir="reports/junit"> <!-- reporty budou v adresari reports/junit -->
+				<fileset dir="test">
+      					<include name="**/*.java"/>
+				</fileset>
+			</batchtest>
+			<jvmarg value="-Demma.coverage.out.file=build/coverage.emma"/>
+			<jvmarg value="-Demma.coverage.out.merge=true" />
+		</junit>
+
+		<emma enabled="true"> <!-- vygeneruje report emmy -->
+			<report sourcepath="src">
+				<fileset dir="build">
+					<include name="*.emma" />
+				</fileset>
+				<html outfile="reports/coverage.html" />
+			</report>
+		</emma>
+	</target>
+
+	<target name="clean">
+		<delete dir="build"/> <!-- smaze adresar build -->
+		<delete dir="reports"/>
+		<delete file="matrix.jar"/>
+	</target>
+</project>
+
+

@@ -1,0 +1,207 @@
+Úkolem je realizovat funkci WordWrap, která dokáže zformátovat text podle zadaných parametru.
+
+Vstupem funkce jsou tri parametry: ASCIIZ (binární nulou ukoncený) retezec ke zformátování Src, šírka formátu (pocet znaku na rádku) Width a zpusob formátování WrapMethod. Formát nabývá hodnot WRAP_LEFT, WRAP_CENTER, WRAP_RIGHT nebo WRAP_BLOCK. Vstupní retezec Src je oznacen kvalifikátorem const, funkce jej tedy nesmí modifikovat. Vstupní retezec obsahuje slova oddelená bílými znaky (mezi slovy muže být i více než jeden bílý znak) a odstavce oddelené prázdnými rádky (odstavce mohou být oddelené více než jednou prázdnou rádkou).
+
+Výstupem funkce je ukazatel na dynamicky alokovanou pamet, která obsahuje zformátovaný vstupní text. Text je uložen v ASCIIZ formátu (binární nulou ukoncený). Funkce WordWrap alokuje operátorem new [] potrebnou pamet pro navracený retezec, volající (testovací prostredí) zajistí uvolnení pameti voláním delete [] na navracený ukazatel.
+
+Návratová hodnota je NULL pokud je behem formátování nalezeno slovo, které se nevejde na rádku nebo je behem formátování do bloku (WRAP_BLOCK) nalezena rádka, na kterou se vejde pouze jedno slovo.
+Pravidla formátování
+
+    * Zformátovaný text obsahuje slova oddelená vždy pouze jednou mezerou a odstavce oddelené vždy pouze jedním prázdným rádkem.
+    * Pokud na vstupu není žádné slovo, bude výstupem prázdný retezec (alokovaná pamet, ale obsahuje pouze ukoncující binární nulu).
+    * Za posledním slovem na rádku nejsou žádné mezery, pouze odrádkování. Odrádkování je i za posledním rádkem textu.
+    * Pri zarovnávání na stred (WRAP_CENTER) je text zleva doplnen mezerami tak, aby byl pokud možno vystreden. Pokud je k disopzici lichý pocet mezer, je vlevo o jednu mezeru méne.
+    * Pri zarovnávání do bloku jsou vkládány mezery rovnomerne mezi slova. Pokud mezery nelze rozdelit rovnomerne, pak funkce rozširuje mezery postupne zleva na rádku. Tedy pokud máme 5 slov (mezi kterými jsou 4 mezery) a je potreba mezi ne rozdelit 7 znaku mezera, pak mezery budou mít šírky 2-2-2-1..
+    *
+    * Pri zarovnávání do bloku se poslední rádka v odstavci neroztahuje (je zarovaná vlevo).
+
+Realizovaná funkce nesmí používat C++ datový typ string, datové typy z STL (vector, list, ...) ani regulární výrazy ze standardní knihovny. Použití techto prostredku povede k chybe pri kompilaci. Na vstupu mohou být dlouhé retezce (napr. milióny znaku). Funkce beží v testovacím prostredí, kde má omezené pametové možnosti (pamet dostacuje na vytvorení bloku pro navracený retezec) a omezenou dobu behu 15s (referencní rešení potrebuje méne než 1.5s).
+
+Odevzdávejte soubor, který obsahuje pouze realizovanou funkci WordWrap a prípadne další Vámi realizované funkce, které jsou z funkce WordWrap volané. Do odevzdávaného souboru nepatrí nic jiného, zejména ne funkce main. Pro usnadnení odevzdávání lze využít podmínený preklad - ProgTest definuje promennou preprocesoru __PROGTEST__.
+Hlavicka požadované funkce:
+
+const int WRAP_LEFT   = 0;
+const int WRAP_CENTER = 1;
+const int WRAP_RIGHT  = 2;
+const int WRAP_BLOCK  = 3;
+
+char * WordWrap      ( const char * Src, int Width, int WrapMethod );
+
+Príklad použití funkce:
+
+char * str =
+  "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Integer metus\n"
+  "pede, pretium vitae, rhoncus et, auctor sit amet, ligula. Integer volutpat\n"
+  "orci et elit. Nunc tempus, urna at sollicitudin rutrum, arcu libero rhoncus\n"
+  "lectus, vitae feugiat purus orci ultricies turpis. Pellentesque habitant\n"   
+  "morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nam\n"
+  "in pede. Etiam eu sem id urna ultricies congue. Vestibulum porttitor\n"
+  "ultrices neque. Mauris semper, mauris ut feugiat ultricies, augue purus\n"
+  "tincidunt  elit, eu interdum ante nisl ac ante. Pellentesque dui. Vestibulum\n"
+  "pretium, augue non cursus pretium, nibh dolor laoreet leo, sed pharetra pede\n"
+  "libero non diam. Proin est nisi, gravida ac, vulputate id, fringilla sit\n"
+  "amet, magna. Nam congue cursus magna. In malesuada, velit a gravida sodales,\n"
+  "dolor nisl vestibulum orci, sit amet sagittis mauris tellus nec purus. Nulla\n"
+  "eget risus. Quisque nec sapien blandit odio convallis ullamcorper. Lorem\n"
+  "ipsum dolor sit amet, consectetuer adipiscing elit. Pellentesque cursus.\n"
+  "Aliquam tempus neque vitae libero molestie ut auctor.\n"
+  "\n"
+  "In nec massa eu tortor vulputate suscipit. Nam tristique magna nec pede. Sed\n"
+  "a nisi. Nulla sed augue ut risus placerat porttitor. Ut aliquam. Nulla\n"
+  "facilisi. Nulla vehicula nibh ac sapien. Nunc facilisis dapibus ipsum. Donec\n"
+  "sed mauris. Nulla quam nisi, laoreet non, dignissim posuere, lacinia nec,\n"   
+  "turpis. Mauris malesuada nisi sed enim. In hac habitasse platea dictumst.\n"   
+  "Fusce    faucibus, turpis nec auctor posuere, nulla tellus scelerisque metus,\n"
+  "quis molestie mi dui id quam. Mauris vestibulum. Nam ullamcorper.\n";
+
+WordWrap ( Str, 50, WRAP_LEFT );
+// "Lorem ipsum dolor sit amet, consectetuer\n"
+// "adipiscing elit. Integer metus pede, pretium\n"
+// "vitae, rhoncus et, auctor sit amet, ligula.\n" 
+// "Integer volutpat orci et elit. Nunc tempus, urna\n"
+// "at sollicitudin rutrum, arcu libero rhoncus\n"
+// "lectus, vitae feugiat purus orci ultricies turpis.\n"
+// "Pellentesque habitant morbi tristique senectus et\n" 
+// "netus et malesuada fames ac turpis egestas. Nam in\n"
+// "pede. Etiam eu sem id urna ultricies congue.\n"
+// "Vestibulum porttitor ultrices neque. Mauris\n" 
+// "semper, mauris ut feugiat ultricies, augue purus\n"
+// "tincidunt elit, eu interdum ante nisl ac ante.\n"  
+// "Pellentesque dui. Vestibulum pretium, augue non\n" 
+// "cursus pretium, nibh dolor laoreet leo, sed\n"
+// "pharetra pede libero non diam. Proin est nisi,\n"
+// "gravida ac, vulputate id, fringilla sit amet,\n" 
+// "magna. Nam congue cursus magna. In malesuada,\n" 
+// "velit a gravida sodales, dolor nisl vestibulum\n"
+// "orci, sit amet sagittis mauris tellus nec purus.\n"
+// "Nulla eget risus. Quisque nec sapien blandit odio\n"
+// "convallis ullamcorper. Lorem ipsum dolor sit amet,\n"
+// "consectetuer adipiscing elit. Pellentesque cursus.\n"
+// "Aliquam tempus neque vitae libero molestie ut\n"
+// "auctor.\n"
+// "\n"
+// "In nec massa eu tortor vulputate suscipit. Nam\n"
+// "tristique magna nec pede. Sed a nisi. Nulla sed\n"
+// "augue ut risus placerat porttitor. Ut aliquam.\n" 
+// "Nulla facilisi. Nulla vehicula nibh ac sapien.\n" 
+// "Nunc facilisis dapibus ipsum. Donec sed mauris.\n"
+// "Nulla quam nisi, laoreet non, dignissim posuere,\n"
+// "lacinia nec, turpis. Mauris malesuada nisi sed\n"  
+// "enim. In hac habitasse platea dictumst. Fusce\n"   
+// "faucibus, turpis nec auctor posuere, nulla tellus\n"
+// "scelerisque metus, quis molestie mi dui id quam.\n" 
+// "Mauris vestibulum. Nam ullamcorper.\n"
+
+WordWrap ( Str, 50, WRAP_CENTER );
+// "     Lorem ipsum dolor sit amet, consectetuer\n"
+// "   adipiscing elit. Integer metus pede, pretium\n"
+// "   vitae, rhoncus et, auctor sit amet, ligula.\n" 
+// " Integer volutpat orci et elit. Nunc tempus, urna\n"
+// "   at sollicitudin rutrum, arcu libero rhoncus\n"   
+// "lectus, vitae feugiat purus orci ultricies turpis.\n"
+// "Pellentesque habitant morbi tristique senectus et\n" 
+// "netus et malesuada fames ac turpis egestas. Nam in\n"
+// "   pede. Etiam eu sem id urna ultricies congue.\n"   
+// "   Vestibulum porttitor ultrices neque. Mauris\n"    
+// " semper, mauris ut feugiat ultricies, augue purus\n" 
+// "  tincidunt elit, eu interdum ante nisl ac ante.\n"  
+// " Pellentesque dui. Vestibulum pretium, augue non\n"  
+// "   cursus pretium, nibh dolor laoreet leo, sed\n"    
+// "  pharetra pede libero non diam. Proin est nisi,\n"  
+// "  gravida ac, vulputate id, fringilla sit amet,\n"   
+// "  magna. Nam congue cursus magna. In malesuada,\n"   
+// "  velit a gravida sodales, dolor nisl vestibulum\n"  
+// " orci, sit amet sagittis mauris tellus nec purus.\n" 
+// "Nulla eget risus. Quisque nec sapien blandit odio\n" 
+// "convallis ullamcorper. Lorem ipsum dolor sit amet,\n"
+// "consectetuer adipiscing elit. Pellentesque cursus.\n"
+// "  Aliquam tempus neque vitae libero molestie ut\n"   
+// "                     auctor.\n"
+// "\n"
+// "  In nec massa eu tortor vulputate suscipit. Nam\n"
+// " tristique magna nec pede. Sed a nisi. Nulla sed\n"
+// "  augue ut risus placerat porttitor. Ut aliquam.\n"
+// "  Nulla facilisi. Nulla vehicula nibh ac sapien.\n"
+// " Nunc facilisis dapibus ipsum. Donec sed mauris.\n"
+// " Nulla quam nisi, laoreet non, dignissim posuere,\n"
+// "  lacinia nec, turpis. Mauris malesuada nisi sed\n" 
+// "  enim. In hac habitasse platea dictumst. Fusce\n"  
+// "faucibus, turpis nec auctor posuere, nulla tellus\n"
+// " scelerisque metus, quis molestie mi dui id quam.\n"
+// "       Mauris vestibulum. Nam ullamcorper.\n"
+
+WordWrap ( Str, 50, WRAP_RIGHT );
+// "          Lorem ipsum dolor sit amet, consectetuer\n"
+// "      adipiscing elit. Integer metus pede, pretium\n"
+// "       vitae, rhoncus et, auctor sit amet, ligula.\n"
+// "  Integer volutpat orci et elit. Nunc tempus, urna\n"
+// "       at sollicitudin rutrum, arcu libero rhoncus\n"
+// "lectus, vitae feugiat purus orci ultricies turpis.\n"
+// " Pellentesque habitant morbi tristique senectus et\n"
+// "netus et malesuada fames ac turpis egestas. Nam in\n"
+// "      pede. Etiam eu sem id urna ultricies congue.\n"
+// "       Vestibulum porttitor ultrices neque. Mauris\n"
+// "  semper, mauris ut feugiat ultricies, augue purus\n"
+// "    tincidunt elit, eu interdum ante nisl ac ante.\n"
+// "   Pellentesque dui. Vestibulum pretium, augue non\n"
+// "       cursus pretium, nibh dolor laoreet leo, sed\n"
+// "    pharetra pede libero non diam. Proin est nisi,\n"
+// "     gravida ac, vulputate id, fringilla sit amet,\n"
+// "     magna. Nam congue cursus magna. In malesuada,\n"
+// "    velit a gravida sodales, dolor nisl vestibulum\n"
+// "  orci, sit amet sagittis mauris tellus nec purus.\n"
+// " Nulla eget risus. Quisque nec sapien blandit odio\n"
+// "convallis ullamcorper. Lorem ipsum dolor sit amet,\n"
+// "consectetuer adipiscing elit. Pellentesque cursus.\n"
+// "     Aliquam tempus neque vitae libero molestie ut\n"
+// "                                           auctor.\n"
+// "\n"
+// "    In nec massa eu tortor vulputate suscipit. Nam\n"
+// "   tristique magna nec pede. Sed a nisi. Nulla sed\n"
+// "    augue ut risus placerat porttitor. Ut aliquam.\n"
+// "    Nulla facilisi. Nulla vehicula nibh ac sapien.\n"
+// "   Nunc facilisis dapibus ipsum. Donec sed mauris.\n"
+// "  Nulla quam nisi, laoreet non, dignissim posuere,\n"
+// "    lacinia nec, turpis. Mauris malesuada nisi sed\n"
+// "     enim. In hac habitasse platea dictumst. Fusce\n"
+// " faucibus, turpis nec auctor posuere, nulla tellus\n"
+// "  scelerisque metus, quis molestie mi dui id quam.\n"
+// "               Mauris vestibulum. Nam ullamcorper.\n"
+
+WordWrap ( Str, 50, WRAP_BLOCK );
+// "Lorem   ipsum   dolor   sit   amet,   consectetuer\n"
+// "adipiscing   elit.  Integer  metus  pede,  pretium\n"
+// "vitae,   rhoncus  et,  auctor  sit  amet,  ligula.\n"
+// "Integer  volutpat  orci et elit. Nunc tempus, urna\n"
+// "at   sollicitudin   rutrum,  arcu  libero  rhoncus\n"
+// "lectus, vitae feugiat purus orci ultricies turpis.\n"
+// "Pellentesque  habitant morbi tristique senectus et\n"
+// "netus et malesuada fames ac turpis egestas. Nam in\n"
+// "pede.  Etiam  eu  sem  id  urna  ultricies congue.\n"
+// "Vestibulum   porttitor   ultrices   neque.  Mauris\n"
+// "semper,  mauris  ut feugiat ultricies, augue purus\n"
+// "tincidunt  elit,  eu  interdum  ante nisl ac ante.\n"
+// "Pellentesque  dui.  Vestibulum  pretium, augue non\n"
+// "cursus   pretium,  nibh  dolor  laoreet  leo,  sed\n"
+// "pharetra  pede  libero  non  diam. Proin est nisi,\n"
+// "gravida  ac,  vulputate  id,  fringilla  sit amet,\n"
+// "magna.  Nam  congue  cursus  magna.  In malesuada,\n"
+// "velit  a  gravida  sodales,  dolor nisl vestibulum\n"
+// "orci,  sit  amet sagittis mauris tellus nec purus.\n"
+// "Nulla  eget risus. Quisque nec sapien blandit odio\n"
+// "convallis ullamcorper. Lorem ipsum dolor sit amet,\n"
+// "consectetuer adipiscing elit. Pellentesque cursus.\n"
+// "Aliquam  tempus  neque  vitae  libero  molestie ut\n"
+// "auctor.\n"
+// "\n"
+// "In  nec  massa  eu  tortor vulputate suscipit. Nam\n"
+// "tristique  magna  nec  pede. Sed a nisi. Nulla sed\n"
+// "augue  ut  risus  placerat  porttitor. Ut aliquam.\n"
+// "Nulla  facilisi.  Nulla  vehicula  nibh ac sapien.\n"
+// "Nunc  facilisis  dapibus  ipsum. Donec sed mauris.\n"
+// "Nulla  quam  nisi, laoreet non, dignissim posuere,\n"
+// "lacinia  nec,  turpis.  Mauris  malesuada nisi sed\n"
+// "enim.  In  hac  habitasse  platea  dictumst. Fusce\n"
+// "faucibus,  turpis nec auctor posuere, nulla tellus\n"
+// "scelerisque  metus,  quis molestie mi dui id quam.\n"
+// "Mauris vestibulum. Nam ullamcorper.\n"

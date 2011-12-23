@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="windows-1250"?><objednavky xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="data.xsd">
+  <obchod id_obchodu="ID32">
+    <objednavka stav="odeslána">
+      <datum>2006-05-13</datum>
+      <zbozi>
+      <!-- Výpis všech objednaných produktů -->
+        <vyrobek cena="6562" id="ID323321">Monitor<pocetKS>2</pocetKS></vyrobek>
+        <vyrobek cena="576" id="ID763276">Mys<pocetKS>3</pocetKS></vyrobek>
+        <vyrobek cena="786" id="ID872175">Klavesnice<pocetKS>3</pocetKS></vyrobek>
+        <vyrobek cena="18" id="ID135216">CD<pocetKS>120</pocetKS></vyrobek>
+        <vyrobek cena="2389" id="ID126712">Tiskarna<pocetKS>1</pocetKS></vyrobek>
+        <vyrobek cena="2798" id="ID317633">Scaner<pocetKS>1</pocetKS></vyrobek>
+        <vyrobek cena="12083" id="ID126671">Notebook<pocetKS>1</pocetKS></vyrobek>
+        <vyrobek cena="1297" id="ID561672">DVD Mechanika<pocetKS>2</pocetKS></vyrobek>
+        <vyrobek cena="2879" id="ID091923">RAM Pamet<pocetKS>3</pocetKS></vyrobek>
+        <vyrobek cena="1298" id="ID361286">Harddisk<pocetKS>1</pocetKS></vyrobek>
+      </zbozi>
+      <zakaznik id_zakaznika="ID215773">
+        <jmeno>Lukas Viezan</jmeno>
+        <email>viezaluk@fel.cvut.cz</email>
+        <telefon>123456789</telefon>
+        <adresa_bydliste>
+          <ulice>Nekonečná</ulice>
+          <popisne_cislo>1200</popisne_cislo>
+          <mesto>Praha 9</mesto>
+          <psc>12087</psc>
+        </adresa_bydliste>
+        <adresa_dorucovaci>
+          <ulice>Konecna</ulice>
+          <popisne_cislo>1200</popisne_cislo>
+          <mesto>Brno</mesto>
+          <psc>42087</psc>
+        </adresa_dorucovaci>
+      </zakaznik>
+      <poznamka>
+        Opovazte se rozbit muj drahoceny 
+        <odkaz naid="ID323321">Monitor</odkaz>
+      </poznamka>
+    </objednavka>
+  </obchod>
+  
+  <?php echo date; ?> 
+   
+</objednavky>

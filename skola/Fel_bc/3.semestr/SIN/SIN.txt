@@ -1,0 +1,6 @@
+Pozadavky - co ma system delat - jasne, presne. Slouzi k obchodnim zalezitostem.
+		- 1. funkcni
+		- 2. nekunkcni - pozadavky na jakost systemu (GUI, rychlost)
+use casy 	- kazdy oval - jedna funkce systemu - odvozeni z funkcnich pozadavku implementace n ku n
+		- rozmyslet uzivatelsky role.
+		- akteri jsou uz jsou def, nevymyslet novy

@@ -1,0 +1,13 @@
+#BlueJ class context
+comment0.params=sirka\ vyska
+comment0.target=Rozmer(int,\ int)
+comment0.text=\nVytvori\ instanci\ se\ zadanymi\ rozmery.\n\n@param\ sirka\ \ Sirka\ objektu.\n@param\ vyska\ \ Vyska\ objektu.\n\n
+comment1.target=int\ getSirka()
+comment1.text=\nVrati\ velikost\ sirky\ objektu.\n\n@return\ \ Sirka\ objektu.\n\n
+comment2.target=int\ getVyska()
+comment2.text=\nVrati\ velikost\ vysky\ objektu.\n\n@return\ \ Vyska\ objektu.\n\n
+comment3.params=o
+comment3.target=boolean\ equals(Object)
+comment4.target=int\ hashCode()
+comment5.target=String\ toString()
+numComments=6

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="tv_program">                      
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="vysilani" maxOccurs="unbounded" type="vysilani"/>
+                <xs:element name="porad" maxOccurs="unbounded"  type="porad"/>
+                <xs:element name="clovek" maxOccurs="unbounded" type="clovek"/>
+                <xs:element name="verze" maxOccurs="1" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>        
+    </xs:element>       
+    
+    <!-- vysilani -->
+    <xs:complexType name="vysilani">        
+        <xs:sequence>
+            <xs:element name="kanal" type="kanal"/>
+            <xs:element name="zacatek" type="xs:dateTime"/>            
+            <xs:element name="konec" type="xs:dateTime"/>            
+            <xs:element name="co" type="odkaz"/>            
+        </xs:sequence>
+    </xs:complexType>
+    
+    <xs:complexType name="odkaz">
+        <xs:attribute name="ref" type="xs:IDREF" use="required"/>
+    </xs:complexType>
+    
+    <!-- porad -->
+    <xs:complexType name="porad">            
+        <xs:sequence>
+            <xs:element name="nazev" type="xs:string"/>
+            <xs:element name="typ" type="typ"/>
+            <xs:element name="popis" type="xs:string"/>
+            <xs:element name="herci" minOccurs="0" maxOccurs="unbounded" type="odkaz"/>
+            <xs:element name="reziser" minOccurs="0" maxOccurs="1" type="odkaz"/>           
+            <xs:element name="delka" type="xs:positiveInteger"/>
+        </xs:sequence>
+        <xs:attribute name ="id_poradu" type="xs:ID" use="required"/>                        
+    </xs:complexType>    
+    
+    <!-- typ poradu - film/serial/dokument -->
+    <xs:simpleType name="typ">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="film"/>
+            <xs:enumeration value="serial"/>
+            <xs:enumeration value="publicistika"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <!-- televizni kanal -->
+    <xs:simpleType name="kanal">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="CT1"/>
+            <xs:enumeration value="CT2"/>
+            <xs:enumeration value="nova"/>
+        </xs:restriction>
+    </xs:simpleType> 
+    
+    <!-- lide -->
+    <xs:complexType name="clovek">
+        <xs:sequence>
+            <xs:element name="jmeno" type="xs:string"/>
+            <xs:element name="prijmeni" type="xs:string"/>            
+        </xs:sequence>
+        <xs:attribute name="id_cloveka"  type="xs:ID" use="required"/>        
+    </xs:complexType>      
+                
+</xs:schema>

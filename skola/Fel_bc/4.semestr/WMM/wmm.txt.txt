@@ -1,0 +1,20 @@
+pripojit prava, pokud to nahraju na webdev...
+
+acronym = zvl zkratka, ktera se sklonuje
+
+
+
+
+primarni graficka informace - jakou informaci grafika nese pro divaka, sdelenim je obsah obrazku
+sekundarni graficka informace  - oddelovac nebo graficky prvek
+
+object ma alternativni zpusob k zobrazeni - zobrazi se telo objectu
+
+zakladni dva formaty obrazku - rastrovy, vektorovy
+rastrovy obr - matice barevnych bodu
+vektorovy obr - matematicky model. popsano maticema
+
+RGB - scitani barvicek
+CMYK - pouziti u tiskaren, substraktivni, odecitaci
+
+nejvyznamejsi barva RGB - zelena

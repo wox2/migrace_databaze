@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+    <h:head>
+        <title>Menu</title>
+    </h:head>
+    <h:body>
+        <ui:composition>
+            <h:form>
+                <ul>
+                    <li><h:link rendered="#{searching.adminLoggedIn == true}" outcome="admin" value="#{msgs.admin}" />
+                        <h:link rendered="#{searching.passangerLoggedIn == true}" outcome="tickets" value="#{msgs.my_tickets}" /></li>
+                    <li><h:link rendered="#{searching.userName == null}" outcome="login" value="#{msgs.login_submit}" />
+                        <strong><h:outputText rendered="#{searching.userName != null}" value="#{msgs.logged_in}:" /></strong>
+                        <br/><h:outputText rendered="#{searching.userName != null}" value=" #{searching.userName}"/></li>
+                    <li><h:commandLink rendered="#{searching.userName == null}" action="#{passangers.newPassanger}" value="#{msgs.register}" />
+                        <h:commandLink  rendered="#{searching.userName != null}" action="#{searching.logout}" value="#{msgs.logout}" /></li>
+                    </ul>
+            </h:form>
+        </ui:composition>
+    </h:body>
+</html>
+

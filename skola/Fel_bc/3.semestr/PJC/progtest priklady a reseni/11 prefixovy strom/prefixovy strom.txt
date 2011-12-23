@@ -1,0 +1,120 @@
+Úkolem je realizovat trídu CTrie - prefixový strom. Do stromu pujde vkládat retezce DNA. DNA retezec je tvoren pismeny A, C, G, T, které oznacují 4 nukleové báze (Adenin, Cytosin, Guanin a Thymin).
+
+Prefixový strom je zde vlastne 4-ární strom. Slouží k rychlému vyhledávání v množine retezcu. Jeho výhodou je, že šetrí pamet sdílením spolecných predpon. Další výhodou je rychlost vyhledávání, která záleží pouze na délce vyhledávaného retezce a ne na poctu prohledávaných retezcu v množine.
+
+Pri vyhledávání se vychází z korene a od prvního znaku hledaného retezce. V každé iteraci se vezme znak retezce z a aktuální uzel u. V uzlu u se pro znak z urcí následující uzel ve stromu z pole odkazu. Do tohoto uzlu se presuneme pro další iteraci. Pokracujeme z takto urceného uzlu dalším znakem hledaného retezce, dokud bud nenarazíme na konec stromu - odkaz NULL (v tom prípade hledání skoncí neúspechem) nebo dokud nedojdeme na konec retezce. Pokud jsme došli na konec retezce a poslední navštívený uzel byl oznacen znackou "koenc retezce" (zde príznak term), pak vracíme úspech (nalezeno) jinak neúspech.
+
+Realizovaná trída bude mít rozhraní podle deklarace níže. Rozhraní obsahuje:
+
+    * Konstruktor který vytvorí novou prázdnou instanci
+    * Destruktor odstraní prostredky alokované instancí.
+    * Kopírující konstruktor vytvorí hlubokou kopii instance.
+    * Metoda Add pridá nový retezec do stromu. Metoda vrací false v prípade, že daný retezec již ve strome existuje. V opacném prípade, metoda vytvorí potrebné uzly ve strome, nastaví príznak term v príslušném uzlu a vrátí true.
+    * Metoda Del odstraní retezec ze stromu. V prípade, že retezec není ve strome obsažen, metoda vrátí false. V opacném prípade metoda odstraní retezec tím, že nastaví v príslušným uzlu príznak term na false a odstraní všechny zbytecné uzly.
+    * Pretížený operátor =
+    * Pretížený operátor [] vrací true v prípade, že daný retezec je ve strome obsažen. V opacném prípade vrací false.
+    * Pretížený operátor << vypíše dle abecedy setrídenou množinu retezcu obsažených ve strome. Je potreba dodržet formát podle ukázky. Pred otevírací a za zavírací složenou závorkou není žádný znak. Pokud je množina prázdná, bude výstupem { }, tedy mezera mezi složenými závorkami.
+
+Je jedno, zda jsou metody implementované inline nebo oddelene. Odevzdávaný soubor nesmí krome implementace trídy CTrie a podpurných deklarací obsahovat nic jiného, zejména ne funkci main. Pro usnadnení odevzdávání mužete využít toho, že ProgTest definuje promennou preprocesoru __PROGTEST__.
+
+Implementovaná trída nesmí používat datové struktury z STL (vector, list, ...). Jejich použití povede k chybe pri kompilaci. Trída je testovaná v omezeném prostredí, kde je limitovaná dostupná pamet (dostacuje k uložení stromu v binární podobe) a je omezena dobou behu (30s na testovacím pocítaci pro cca 1000 provedených testu, referencní rešení pro výpocet potrebuje cca 3 sec).
+Požadované verejné rozhraní trídy:
+
+class CTrie
+ {
+   public:
+                             CTrie       ( void );
+                            ~CTrie       ( void );
+                             CTrie       ( const CTrie & src );
+
+    CTrie                  & operator =  ( const CTrie & src );
+                            
+    bool                     Add         ( const char * str );
+    bool                     Del         ( const char * str );
+    bool                     operator [] ( const char * str ) const;
+    friend ostream         & operator << ( ostream & os, const CTrie & x );
+   protected:
+    struct TNode
+     {
+       bool                  term;   // priznak true - v tomto uzlu konci nejaky retezec
+       TNode               * Sym[4]; // odkazy na potomky: [0] pro A, [1] pro C, [2] pro G, [3] pro T
+     };
+    TNode                  * m_Root;
+ };
+
+Ukázka použití trídy:
+
+bool status;
+CTrie     A1;
+status = A1 . Add  ( "ACAGT" );
+// status = 1
+status = A1 . Add  ( "GAATTC" );
+// status = 1
+status = A1 . Add  ( "CAT" );
+// status = 1
+status = A1 . Add  ( "ACCCT" );
+// status = 1
+status = A1 . Add  ( "CAGCTG" );
+// status = 1
+status = A1 . Add  ( "GAGATC" );
+// status = 1
+status = A1 . Add  ( "GGGATC" );
+// status = 1
+status = A1 . Add  ( "GCGATC" );
+// status = 1
+status = A1 . Add  ( "GG" );
+// status = 1
+status = A1 . Add  ( "ACA" );
+// status = 1
+cout << A1;
+/* Vystup:
+{ "ACA", "ACAGT", "ACCCT", "CAGCTG", "CAT", "GAATTC", "GAGATC", "GCGATC", "GG", "GGGATC" }*/
+
+Ukázkové zadání
+
+
+
+CTrie     A2;
+status = A2 . Add  ( "ACG" );
+// status = 1
+status = A2 . Add  ( "ACG" );
+// status = 0
+status = A2 . Add  ( "ACGAC" );
+// status = 1
+status = A2 . Add  ( "AC" );
+// status = 1
+status = A2 . Add  ( "GGGGGT" );
+// status = 1
+status = A2 . Add  ( "CACG" );
+// status = 1
+status = A2 . Add  ( "AAAAAA" );
+// status = 1
+status = A2 . Add  ( "ATATAT" );
+// status = 1
+status = A2 . Add  ( "TATATA" );
+// status = 1
+status = A2["CAT"]; // status = false
+
+status = A2 . Del ( "CAT" );
+// status = 0
+status = A2 . Add  ( "CAT" );
+// status = 1
+status = A2["CAT"]; // status = true
+
+status = A2 . Del ( "CAT" );
+// status = 1
+status = A2 . Del ( "TTT" );
+// status = 0
+status = A2 . Del ( "ACG" );
+// status = 1
+cout << A2;
+/* Vystup:
+{ "AAAAAA", "AC", "ACGAC", "ATATAT", "CACG", "GGGGGT", "TATATA" }*/
+Ukázkové zadání
+
+Poznámky:
+
+    * Pokud je strom prázdný (po vytvorení, ješte neobsahuje žádný retezec, nebo pokud byly všechny vložené retezce vymazané), pak neobsahuje žádný uzel (m_Root je NULL).
+    * Pokud je vložen prázdný retezec (""), je vzhledem k zadání platný a projeví se tím, že koren bude mít nastavenou znacku term.
+    * Ve výpisu je prázdný retezec normálne uváden (pokud je prítomen), a to v podobe "".
+    * Testovací prostredí prochází vnitrní podobu stromu a porovnává ji s referencí. Pokud rozhraní trídy reaguje správne, ale Progtest hlásí chyby, bude pravdepodobne problém v tom, že Vaše rešení obsahuje nejaké uzly navíc (listy bez príznaku term, typicky m_Root není NULL pro prázdný CTrie).

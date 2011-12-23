@@ -1,0 +1,2 @@
+(: vypíše 3 položku výrobek na seznamu zboží, který je ve druhé objednávce :)
+//objednavka[2]/zbozi/vyrobek[3]

@@ -1,0 +1,387 @@
+{VERSION 6 0 "IBM INTEL NT" "6.0" }
+{USTYLETAB {CSTYLE "Maple Input" -1 0 "Courier" 0 1 255 0 0 1 0 1 0 0 
+1 0 0 0 0 1 }{CSTYLE "2D Math" -1 2 "Times" 0 1 0 0 0 0 0 0 2 0 0 0 0 
+0 0 1 }{CSTYLE "2D Comment" 2 18 "" 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 }
+{CSTYLE "2D Output" 2 20 "" 0 1 0 0 255 1 0 0 0 0 0 0 0 0 0 1 }
+{CSTYLE "" 0 21 "" 0 1 0 0 0 1 0 0 0 0 2 0 0 0 0 1 }{CSTYLE "" -1 256 
+"" 0 1 0 0 0 0 1 0 0 0 0 0 0 0 0 0 }{PSTYLE "Normal" -1 0 1 {CSTYLE "
+" -1 -1 "Times" 1 12 0 0 0 1 2 2 2 2 2 2 1 1 1 1 }1 1 0 0 0 0 1 0 1 0 
+2 2 0 1 }{PSTYLE "Heading 1" -1 3 1 {CSTYLE "" -1 -1 "Times" 1 18 0 0 
+0 1 2 1 2 2 2 2 1 1 1 1 }1 1 0 0 8 4 1 0 1 0 2 2 0 1 }{PSTYLE "Heading
+ 2" -1 4 1 {CSTYLE "" -1 -1 "Times" 1 14 0 0 0 1 2 1 2 2 2 2 1 1 1 1 }
+1 1 0 0 8 2 1 0 1 0 2 2 0 1 }{PSTYLE "Heading 3" -1 5 1 {CSTYLE "" -1 
+-1 "Times" 1 12 0 0 0 1 1 1 2 2 2 2 1 1 1 1 }1 1 0 0 0 0 1 0 1 0 2 2 
+0 1 }{PSTYLE "Maple Output" -1 11 1 {CSTYLE "" -1 -1 "Times" 1 12 0 0 
+0 1 2 2 2 2 2 2 1 1 1 1 }3 3 0 0 0 0 1 0 1 0 2 2 0 1 }{PSTYLE "Maple O
+utput" -1 12 1 {CSTYLE "" -1 -1 "Times" 1 12 0 0 0 1 2 2 2 2 2 2 1 1 
+1 1 }1 3 0 0 0 0 1 0 1 0 2 2 0 1 }}
+{SECT 0 {EXCHG {PARA 0 "" 0 "" {MPLTEXT 0 21 35 "Charakteristick\341 f
+unkce    mcv9.mws" }}}{SECT 1 {PARA 3 "" 0 "" {TEXT -1 42 "  P\370\355
+klad 1 rovnom\354rn\351 diskr\351tn\355 rozd\354len\355" }}{PARA 0 "" 
+0 "" {TEXT -1 0 "" }}{SECT 1 {PARA 4 "" 0 "" {TEXT -1 32 " Zad\341n
+\355 pravd\354podobnostn\355 funkce" }}{PARA 0 "" 0 "" {TEXT -1 0 "" }
+}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 8 "restart:" }}{PARA 0 "> " 0 "
+" {MPLTEXT 1 0 6 "M:=20:" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 10 
+"p:=k->1/M:" }}}}{SECT 1 {PARA 4 "" 0 "" {TEXT -1 26 " Charakteristick
+\341 funkce  " }{XPPEDIT 18 0 "psi(t);" "6#-%$psiG6#%\"tG" }}{PARA 0 "
+" 0 "" {TEXT -1 0 "" }}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 29 "ps1:=
+q->sum(p(k)*q^k,k=1..M):" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 6 "
+M:=20:" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 0 "" }}}{EXCHG {PARA 
+0 "> " 0 "" {MPLTEXT 1 0 22 "psi:=t->ps1(exp(I*t)):" }}}{EXCHG {PARA 
+11 "" 1 "" {XPPMATH 20 "6#\"\"\"" }}}{EXCHG {PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 0 "" }}}}{SECT 1 {PARA 4 "" 0 "" {TEXT -1 36 "  V\375po
+\350et st\370edn\355 hodnoty a rozptylu" }}{PARA 0 "" 0 "" {TEXT -1 0 
+"" }}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 24 "psi1:=t->diff(psi(t),t)
+:" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 25 "m1:=limit(psi1(t),t=0)
+/I;" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%#m1G#\"#@\"\"#" }}}{EXCHG 
+{PARA 0 "> " 0 "" {MPLTEXT 1 0 26 "psi2:=t->diff(psi(t),t$2):" }}}
+{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 28 "m2o:=limit(psi2(t),t=0)/I^2:
+" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 22 "m2:=m2o-m1^2;evalf(%);
+" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%#m2G#\"$L\"\"\"%" }}{PARA 11 "" 
+1 "" {XPPMATH 20 "6#$\"++++DL!\")" }}}{EXCHG {PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 23 "sig:=sqrt(m2):evalf(%);" }}{PARA 11 "" 1 "" {XPPMATH 
+20 "6#$\"+&H\"Gmd!\"*" }}}}{SECT 1 {PARA 4 "" 0 "" {TEXT -1 0 "" }}}}
+{SECT 1 {PARA 3 "" 0 "" {TEXT -1 31 "  P\370\355klad 2 binomick\351 ro
+zd\354len\355" }}{PARA 0 "" 0 "" {TEXT -1 0 "" }}{SECT 1 {PARA 4 "" 0 
+"" {TEXT -1 33 "  Zad\341n\355 pravd\354podobnostn\355 funkce" }}
+{PARA 0 "" 0 "" {TEXT -1 0 "" }}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 
+8 "restart:" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 13 "n:=10:p:=0.2
+:" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 36 "P:=k->binomial(n,k)*p^
+k*(1-p)^(n-k):" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 5 "P(0);" }}
+{PARA 11 "" 1 "" {XPPMATH 20 "6#$\"+C=ut5!#5" }}}{EXCHG {PARA 0 "> " 
+0 "" {MPLTEXT 1 0 0 "" }}}}{SECT 1 {PARA 4 "" 0 "" {TEXT -1 24 " Chara
+kteristick\341 funkce" }}{PARA 0 "" 0 "" {TEXT -1 0 "" }}{EXCHG {PARA 
+0 "> " 0 "" {MPLTEXT 1 0 36 "psi:=t->sum(exp(I*k*t)*P(k),k=0..n);" }}
+{PARA 11 "" 1 "" {XPPMATH 20 "6#>%$psiGj+6#%\"tG6\"6$%)operatorG%&arro
+wGF(-%$sumG6$*&-%$expG6#*(%\"kG\"\"\"9$F5^#F5F5F5-%\"PG6#F4F5/F4;\"\"!
+%\"nGF(F(F(6#F=" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 7 "psi(0);" 
+}}{PARA 11 "" 1 "" {XPPMATH 20 "6#$\"\"\"\"\"!" }}}{EXCHG {PARA 11 "" 
+1 "" {XPPMATH 20 "6#$\"\"\"\"\"!" }}}}{SECT 1 {PARA 4 "" 0 "" {TEXT 
+-1 35 " V\375po\350et st\370edn\355 hodnoty a rozptylu" }}{PARA 0 "" 
+0 "" {TEXT -1 0 "" }}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 24 "psi1:=t
+->diff(psi(t),t):" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 25 "m1:=li
+mit(psi1(t),t=0)/I;" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%#m1G$\"\"#\"
+\"!" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 26 "psi2:=t->diff(psi(t)
+,t$2):" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 28 "m2o:=limit(psi2(t
+),t=0)/I^2:" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 22 "m2:=m2o-m1^2
+;evalf(%);" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%#m2G$\"+++++;!\"*" }}
+{PARA 11 "" 1 "" {XPPMATH 20 "6#$\"+++++;!\"*" }}}{EXCHG {PARA 0 "> " 
+0 "" {MPLTEXT 1 0 23 "sig:=sqrt(m2):evalf(%);" }}{PARA 11 "" 1 "" 
+{XPPMATH 20 "6#$\"+k5\"\\E\"!\"*" }}}}}{SECT 0 {PARA 3 "" 0 "" {TEXT 
+-1 38 "  P\370\355klad 3  rozd\354len\355 zadan\351 tabulkou" }}{PARA 
+0 "" 0 "" {TEXT -1 91 "N\341hodn\341 veli\350ina m\341 d\341nu pravd
+\354podobnostn\355 funkci tabulkou. Ur\350ete charakteristickou funkci
+" }}{PARA 0 "" 0 "" {TEXT -1 0 "" }}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 
+1 0 8 "restart:" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 16 "x:=[-1,0
+,1,3,4]:" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 25 "p:=[0.2,0.2,0.1
+,0.3,0.2]:" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 39 "psi:=t->sum(p
+[i]*exp(x[i]*I*t),i=1..5):" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 
+24 "psi1:=t->diff(psi(t),t):" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 
+0 25 "m1:=limit(psi1(t),t=0)/I;" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%#
+m1G$\"+++++;!\"*" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 26 "psi2:=t
+->diff(psi(t),t$2):" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 28 "m2o:
+=limit(psi2(t),t=0)/I^2:" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 13 
+"m2:=m2o-m1^2;" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%#m2G$\"++++SO!\"*
+" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 23 "sig:=sqrt(m2):evalf(%);
+" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#$\"+.%yy!>!\"*" }}}}{SECT 0 {PARA 
+3 "" 0 "" {TEXT -1 32 "  P\370\355klad 4 Poissonovo rozd\354len\355" }
+}{PARA 0 "" 0 "" {TEXT -1 22 "Poissonovo rozd\354len\355  " }{TEXT 
+256 2 "Po" }{TEXT -1 2 "( " }{XPPEDIT 18 0 "lambda;" "6#%'lambdaG" }
+{TEXT -1 2 " )" }}{PARA 0 "" 0 "" {TEXT -1 0 "" }}{SECT 0 {PARA 4 "" 
+0 "" {TEXT -1 32 " Zad\341n\355 pravd\354podobnostn\355 funkce" }}
+{PARA 0 "" 0 "" {TEXT -1 0 "" }}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 
+8 "restart:" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 25 "P:=k->exp(-l
+am)*lam^k/k!:" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 9 "# lam:=3:" 
+}}}}{SECT 0 {PARA 4 "" 0 "" {TEXT -1 32 " V\375po\350et charakteristic
+k\351 funkce" }}{PARA 0 "" 0 "" {TEXT -1 0 "" }}{EXCHG {PARA 0 "> " 0 
+"" {MPLTEXT 1 0 43 "psi:=t->sum(P(k)*exp(k*I*t),k=0..infinity);" }}
+{PARA 11 "" 1 "" {XPPMATH 20 "6#>%$psiGj+6#%\"tG6\"6$%)operatorG%&arro
+wGF(-%$sumG6$*&-%\"PG6#%\"kG\"\"\"-%$expG6#*(F3F49$F4^#F4F4F4/F3;\"\"!
+%)infinityGF(F(F(6#F=" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 7 "psi
+(0);" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#\"\"\"" }}}}{SECT 0 {PARA 4 "
+" 0 "" {TEXT -1 36 "  V\375po\350et st\370edn\355 hodnoty a rozptylu" 
+}}{PARA 0 "" 0 "" {TEXT -1 0 "" }}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 
+0 24 "psi1:=t->diff(psi(t),t):" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 
+1 0 25 "m1:=limit(psi1(t),t=0)/I;" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>
+%#m1G%$lamG" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 26 "psi2:=t->dif
+f(psi(t),t$2):" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 28 "m2o:=limi
+t(psi2(t),t=0)/I^2:" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 22 "m2:=
+m2o-m1^2;evalf(%);" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%#m2G%$lamG" }}
+{PARA 11 "" 1 "" {XPPMATH 20 "6#%$lamG" }}}{EXCHG {PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 23 "sig:=sqrt(m2);evalf(%);" }}{PARA 11 "" 1 "" {XPPMATH 
+20 "6#>%$sigG*$%$lamG#\"\"\"\"\"#" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#*
+$%$lamG#\"\"\"\"\"#" }}}}}{SECT 0 {PARA 3 "" 0 "" {TEXT -1 34 "  P\370
+\355klad  5 geometrick\351 rozd\354len\355" }}{PARA 0 "" 0 "" {TEXT 
+-1 0 "" }}{SECT 0 {PARA 4 "" 0 "" {TEXT -1 33 "  Zad\341n\355 pravd
+\354podobnostn\355 funkce" }}{PARA 0 "" 0 "" {TEXT -1 0 "" }}{EXCHG 
+{PARA 0 "> " 0 "" {MPLTEXT 1 0 8 "restart:" }}}{EXCHG {PARA 0 "> " 0 "
+" {MPLTEXT 1 0 24 "P:=k->'p'*(1-'p')^(k-1);" }}{PARA 11 "" 1 "" 
+{XPPMATH 20 "6#>%\"PGj+6#%\"kG6\"6$%)operatorG%&arrowGF(*&.%\"pG\"\"\"
+),&F/F/F-!\"\",&9$F/F/F2F/F(F(F(6#\"\"!" }}}{EXCHG {PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 0 "" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 0 "" }}}}
+{SECT 0 {PARA 4 "" 0 "" {TEXT -1 33 "  V\375po\350et charakteristick
+\351 funkce" }}{PARA 0 "" 0 "" {TEXT -1 0 "" }}{EXCHG {PARA 0 "> " 0 "
+" {MPLTEXT 1 0 43 "psi:=t->sum(P(k)*exp(k*t*I),k=1..infinity);" }}
+{PARA 11 "" 1 "" {XPPMATH 20 "6#>%$psiGj+6#%\"tG6\"6$%)operatorG%&arro
+wGF(-%$sumG6$*&-%\"PG6#%\"kG\"\"\"-%$expG6#*(F3F49$F4^#F4F4F4/F3;F4%)i
+nfinityGF(F(F(6#\"\"!" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 7 "psi
+(0);" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#\"\"\"" }}}{EXCHG {PARA 0 "> \+
+" 0 "" {MPLTEXT 1 0 0 "" }}}}{SECT 0 {PARA 4 "" 0 "" {TEXT -1 36 "  V
+\375po\350et st\370edn\355 hodnoty a rozptylu" }}{PARA 0 "" 0 "" 
+{TEXT -1 0 "" }}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 24 "psi1:=t->dif
+f(psi(t),t):" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 25 "m1:=limit(p
+si1(t),t=0)/I;" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%#m1G*&\"\"\"F&%\"p
+G!\"\"" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 26 "psi2:=t->diff(psi
+(t),t$2):" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 28 "m2o:=limit(psi
+2(t),t=0)/I^2;" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%$m2oG,$*&%\"pG!\"#
+,&\"\"#!\"\"F'\"\"\"F,F+" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 25 
+"m2:=m2o-m1^2;simplify(%);" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%#m2G,&
+*&%\"pG!\"#,&\"\"#!\"\"F'\"\"\"F,F+*&F,F,*$)F'F*F,F+F+" }}{PARA 11 "" 
+1 "" {XPPMATH 20 "6#,$*&,&\"\"\"!\"\"%\"pGF&F&F(!\"#F'" }}}{EXCHG 
+{PARA 0 "> " 0 "" {MPLTEXT 1 0 14 "sig:=sqrt(m2);" }}{PARA 11 "" 1 "" 
+{XPPMATH 20 "6#>%$sigG*$,&*&%\"pG!\"#,&\"\"#!\"\"F(\"\"\"F-F,*&F-F-*$)
+F(F+F-F,F,#F-F+" }}}}{SECT 0 {PARA 4 "" 0 "" {TEXT -1 43 "  V\375po
+\350et koeficient\371 \232ikmosti a \232pi\350atosti" }}{PARA 0 "" 0 "
+" {TEXT -1 0 "" }}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 26 "psi3:=t->d
+iff(psi(t),t$3);" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%%psi3Gj+6#%\"tG6
+\"6$%)operatorG%&arrowGF(-%%diffG6$-%$psiG6#9$-%\"$G6$F2\"\"$F(F(F(6#
+\"\"!" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 28 "m3o:=limit(psi3(t)
+,t=0)/I^3;" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%$m3oG*(,(^#!\"'\"\"\"*
+&^#\"\"'F)%\"pGF)F)*&^#!\"\"F))F-\"\"#F)F)F)F-!\"$^#F)F)" }}}{EXCHG 
+{PARA 0 "> " 0 "" {MPLTEXT 1 0 35 "alpha:=(m3o-3*m2o*m1+2*m1^3)/sig^3;
+" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%&alphaG*&,(*(,(^#!\"'\"\"\"*&^#
+\"\"'F+%\"pGF+F+*&^#!\"\"F+)F/\"\"#F+F+F+F/!\"$^#F+F+F+*(\"\"$F+F/F5,&
+F4F2F/F+F+F+*&F4F+F/F5F+F+,&*&F/!\"#F9F+F2*&F+F+*$F3F+F2F2#F5F4" }}}
+{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 26 "psi4:=t->diff(psi(t),t$4);" 
+}}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%%psi4Gj+6#%\"tG6\"6$%)operatorG%&a
+rrowGF(-%%diffG6$-%$psiG6#9$-%\"$G6$F2\"\"%F(F(F(6#\"\"!" }}}{EXCHG 
+{PARA 0 "> " 0 "" {MPLTEXT 1 0 8 "psi4(t);" }}{PARA 12 "" 1 "" 
+{XPPMATH 20 "6#,:*,\"#C\"\"\",(-%$expG6#*&%\"tGF&^#F&F&!\"\"*&F(F&%\"p
+GF&F&F&F&!\"&F0F&F(F&,&*&^#F.F&F(F&F&*(F(F&F0F&F-F&F&\"\"%F&*.^#F%F&F'
+!\"$F0F&F(F&F2F&,&F(F&F/F.F&F&*.\"#OF&F'!\"%F0F&F(F&F2\"\"#F:F&F.*,^#!
+#CF&F'F=F0F&F(F&F2\"\"$F&*,\"#7F&F'F9F0F&F(F&F2F>F.*,^#F6F&F'!\"#F0F&F
+(F&F2F&F&*,^#F=F&F'FGF0F&F(F&,&*&F(F&F-F&F&*(F4F&F(F&F0F&F&F&F&*,\"\"'
+F&F'F9F0F&F(F&F:F>F&*.\"\")F&F'F9F0F&F(F&F2F&FJF&F&*,FNF&F'FGF0F&F(F&F
+:F&F&**F'FGF0F&F(F&,&F(F.F/F&F&F.*(F'F.F0F&F(F&F&" }}}{EXCHG {PARA 0 "
+> " 0 "" {MPLTEXT 1 0 28 "m4o:=limit(psi4(t),t=0)/I^4;" }}{PARA 11 "" 
+1 "" {XPPMATH 20 "6#>%$m4oG*&,*\"#C\"\"\"*&\"#OF(%\"pGF(!\"\"*&\"#9F()
+F+\"\"#F(F(*$)F+\"\"$F(F,F(F+!\"%" }}}{EXCHG {PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 46 "eps:=(m4o-4*m3o*m1+6*m2o*m1^2-3*m1^4)/sig^4-3;" }}
+{PARA 11 "" 1 "" {XPPMATH 20 "6#>%$epsG,&*&,**&,*\"#C\"\"\"*&\"#OF+%\"
+pGF+!\"\"*&\"#9F+)F.\"\"#F+F+*$)F.\"\"$F+F/F+F.!\"%F+*(^#F7F+,(^#!\"'F
++*&^#\"\"'F+F.F+F+*&^#F/F+F2F+F+F+F.F7F+*(F?F+F.F7,&F3F/F.F+F+F/*&F6F+
+F.F7F/F+,&*&F.!\"#FCF+F/*&F+F+*$F2F+F/F/FGF+F6F/" }}}{SECT 0 {PARA 5 "
+" 0 "" {TEXT -1 18 "  Vy\350\355slen\355 hodnot" }}{PARA 0 "" 0 "" 
+{TEXT -1 0 "" }}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 7 "p:=0.2;" }}
+{PARA 11 "" 1 "" {XPPMATH 20 "6#>%\"pG$\"\"#!\"\"" }}}{EXCHG {PARA 0 "
+> " 0 "" {MPLTEXT 1 0 7 "m1:=m1;" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%
+#m1G$\"+++++]!\"*" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 7 "m2:=m2;
+" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%#m2G$\"+++++?!\")" }}}{EXCHG 
+{PARA 0 "> " 0 "" {MPLTEXT 1 0 18 "sig:=sig:evalf(%);" }}{PARA 11 "" 
+1 "" {XPPMATH 20 "6#$\"+bf8sW!\"*" }}}{EXCHG {PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 13 "alpha:=alpha;" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%&a
+lphaG$\"+!=hC,#!\"*" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 9 "eps:=
+eps;" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%$epsG$\"++++]g!\"*" }}}}}}
+{SECT 0 {PARA 3 "" 0 "" {TEXT -1 40 "  P\370\355klad 6 rovnom\354rn
+\351 spojit\351 rozd\354len\355" }}{PARA 0 "" 0 "" {TEXT -1 20 "Rovnom
+\354rn\351 rozd\354len\355" }}{PARA 0 "" 0 "" {TEXT -1 0 "" }}{SECT 0 
+{PARA 4 "" 0 "" {TEXT -1 16 "  Zad\341n\355 hustoty" }}{PARA 0 "" 0 "
+" {TEXT -1 0 "" }}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 8 "restart:" }
+}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 15 "mu:=0.5:h:=0.5:" }}}
+{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 45 "f:=x->piecewise(x<mu-h,0,x<=
+mu+h,1,x>mu+h,0);" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%\"fGj+6#%\"xG6
+\"6$%)operatorG%&arrowGF(-%*piecewiseG6(29$,&%#muG\"\"\"%\"hG!\"\"\"\"
+!1F0,&F2F3F4F3F32F8F0F6F(F(F(6#F6" }}}{EXCHG {PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 0 "" }}}}{SECT 0 {PARA 4 "" 0 "" {TEXT -1 33 "  V\375po
+\350et charakteristick\351 funkce" }}{PARA 0 "" 0 "" {TEXT -1 0 "" }}
+{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 42 "psi:=t->int(f(x)*exp(I*t*x),
+x=mu-h..mu+h);" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%$psiGj+6#%\"tG6\"6
+$%)operatorG%&arrowGF(-%$intG6$*&-%\"fG6#%\"xG\"\"\"-%$expG6#*(9$F4F3F
+4^#F4F4F4/F3;,&%#muGF4%\"hG!\"\",&F>F4F?F4F(F(F(6#\"\"!" }}}{EXCHG 
+{PARA 0 "> " 0 "" {MPLTEXT 1 0 7 "psi(t);" }}{PARA 11 "" 1 "" 
+{XPPMATH 20 "6#*(^#$!\"\"\"\"!\"\"\",&$F(F'F&-%$expG6#*&^#$F(F'F(%\"tG
+F(F(F(F1F&" }}}}{SECT 0 {PARA 4 "" 0 "" {TEXT -1 35 " V\375po\350et st
+\370edn\355 hodnoty a rozptylu" }}{PARA 0 "" 0 "" {TEXT -1 0 "" }}
+{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 24 "psi1:=t->diff(psi(t),t);" }}
+{PARA 11 "" 1 "" {XPPMATH 20 "6#>%%psi1Gj+6#%\"tG6\"6$%)operatorG%&arr
+owGF(-%%diffG6$-%$psiG6#9$F2F(F(F(6#\"\"!" }}}{EXCHG {PARA 0 "> " 0 "
+" {MPLTEXT 1 0 25 "m1:=limit(psi1(t),t=0)/I;" }}{PARA 11 "" 1 "" 
+{XPPMATH 20 "6#>%#m1G$\"+++++]!#5" }}}{EXCHG {PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 8 "psi1(t);" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#,&*($\"\"
+\"\"\"!F&-%$expG6#*&^#F%F&%\"tGF&F&F-!\"\"F&*(F,F&,&$F&F'F.F(F&F&F-!\"
+#F&" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 26 "psi2:=t->diff(psi(t)
+,t$2);" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%%psi2Gj+6#%\"tG6\"6$%)oper
+atorG%&arrowGF(-%%diffG6$-%$psiG6#9$-%\"$G6$F2\"\"#F(F(F(6#\"\"!" }}}
+{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 8 "psi2(t);" }}{PARA 11 "" 1 "" 
+{XPPMATH 20 "6#,(*(^#$\"\"\"\"\"!F'-%$expG6#*&F%F'%\"tGF'F'F-!\"\"F'*(
+$\"\"#F(F'F)F'F-!\"#F.*(^#$F2F(F',&$F'F(F.F)F'F'F-!\"$F'" }}}{EXCHG 
+{PARA 0 "> " 0 "" {MPLTEXT 1 0 28 "m2o:=limit(psi2(t),t=0)/I^2;" }}
+{PARA 11 "" 1 "" {XPPMATH 20 "6#>%$m2oG$\"+LLLLL!#5" }}}{EXCHG {PARA 
+0 "> " 0 "" {MPLTEXT 1 0 13 "m2:=m2o-m1^2;" }}{PARA 11 "" 1 "" 
+{XPPMATH 20 "6#>%#m2G$\"*LLLL)!#5" }}}{EXCHG {PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 14 "sig:=sqrt(m2);" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%$
+sigG$\"+X8v')G!#5" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 0 "" }}}
+{PARA 0 "" 0 "" {TEXT -1 0 "" }}}{SECT 0 {PARA 4 "" 0 "" {TEXT -1 43 "
+  V\375po\350et koeficientu \232ikmosti a \232pi\350atosti" }}{PARA 0 
+"" 0 "" {TEXT -1 0 "" }}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 26 "psi3
+:=t->diff(psi(t),t$3);" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%%psi3Gj+6#
+%\"tG6\"6$%)operatorG%&arrowGF(-%%diffG6$-%$psiG6#9$-%\"$G6$F2\"\"$F(F
+(F(6#\"\"!" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 28 "m3o:=limit(ps
+i3(t),t=0)/I^3;" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%$m3oG$\"+++++D!#5
+" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 35 "alpha:=(m3o-3*m2o*m1+2*
+m1^3)/sig^3;" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%&alphaG$\"+&)Q%QJ)!#
+=" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 26 "psi4:=t->diff(psi(t),t
+$4);" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%%psi4Gj+6#%\"tG6\"6$%)operat
+orG%&arrowGF(-%%diffG6$-%$psiG6#9$-%\"$G6$F2\"\"%F(F(F(6#\"\"!" }}}
+{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 8 "psi4(t);" }}{PARA 11 "" 1 "" 
+{XPPMATH 20 "6#,,*(^#$!\"\"\"\"!\"\"\"-%$expG6#*&^#$F)F(F)%\"tGF)F)F0F
+'F)*($\"\"%F(F)F*F)F0!\"#F)*(^#$\"#7F(F)F*F)F0!\"$F)*($\"#CF(F)F*F)F0!
+\"%F'*(^#$!#CF(F),&$F)F(F'F*F)F)F0!\"&F)" }}}{EXCHG {PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 28 "m4o:=limit(psi4(t),t=0)/I^4;" }}{PARA 11 "" 1 "" 
+{XPPMATH 20 "6#>%$m4oG$\"+++++?!#5" }}}{EXCHG {PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 46 "eps:=(m4o-4*m3o*m1+6*m2o*m1^2-3*m1^4)/sig^4-3;" }}
+{PARA 11 "" 1 "" {XPPMATH 20 "6#>%$epsG$!+7+++7!\"*" }}}{EXCHG {PARA 
+0 "> " 0 "" {MPLTEXT 1 0 0 "" }}}}{SECT 0 {PARA 4 "" 0 "" {TEXT -1 0 "
+" }}}}{SECT 0 {PARA 3 "" 0 "" {TEXT -1 0 "" }}}{SECT 0 {PARA 3 "" 0 "
+" {TEXT -1 36 "  P\370\355klad 7  exponenci\341ln\355 rozd\354len\355
+" }}{PARA 0 "" 0 "" {TEXT -1 0 "" }}{SECT 0 {PARA 4 "" 0 "" {TEXT -1 
+15 " Zad\341n\355 hustoty" }}{PARA 0 "" 0 "" {TEXT -1 0 "" }}{EXCHG 
+{PARA 0 "> " 0 "" {MPLTEXT 1 0 8 "restart:" }}}{EXCHG {PARA 0 "> " 0 "
+" {MPLTEXT 1 0 10 "A:=0:d:=1:" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 
+0 40 "f5:=x->piecewise(x<A,0,exp(-(x-A)/d)/d):" }}}{EXCHG {PARA 0 "> \+
+" 0 "" {MPLTEXT 1 0 0 "" }}}}{SECT 0 {PARA 4 "" 0 "" {TEXT -1 32 " V
+\375po\350et charakteristick\351 funkce" }}{PARA 0 "" 0 "" {TEXT -1 0 
+"" }}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 44 "psi:=t->int(f5(x)*exp(x
+*t*I),x=A..infinity):" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 7 "psi
+(t);" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#,$*&\"\"\"F%,&*&%\"tGF%^#F%F%F
+%F%!\"\"F*F*" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 0 "" }}}}{SECT 
+0 {PARA 4 "" 0 "" {TEXT -1 36 "  V\375po\350et st\370edn\355 hodnoty a
+ rozptylu" }}{PARA 0 "" 0 "" {TEXT -1 0 "" }}{EXCHG {PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 24 "psi1:=t->diff(psi(t),t);" }}{PARA 11 "" 1 "" 
+{XPPMATH 20 "6#>%%psi1Gj+6#%\"tG6\"6$%)operatorG%&arrowGF(-%%diffG6$-%
+$psiG6#9$F2F(F(F(6#\"\"!" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 25 
+"m1:=limit(psi1(t),t=0)/I;" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%#m1G\"
+\"\"" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 26 "psi2:=t->diff(psi(t
+),t$2);" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%%psi2Gj+6#%\"tG6\"6$%)ope
+ratorG%&arrowGF(-%%diffG6$-%$psiG6#9$-%\"$G6$F2\"\"#F(F(F(6#\"\"!" }}}
+{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 28 "m2o:=limit(psi2(t),t=0)/I^2;
+" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%$m2oG\"\"#" }}}{EXCHG {PARA 0 ">
+ " 0 "" {MPLTEXT 1 0 13 "m2:=m2o-m1^2;" }}{PARA 11 "" 1 "" {XPPMATH 
+20 "6#>%#m2G\"\"\"" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 14 "sig:=
+sqrt(m2);" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%$sigG\"\"\"" }}}{EXCHG 
+{PARA 0 "> " 0 "" {MPLTEXT 1 0 0 "" }}}}{SECT 0 {PARA 4 "" 0 "" {TEXT 
+-1 42 " V\375po\350et koeficient\371 \232ikmosti a \232pi\350atosti" }
+}{PARA 0 "" 0 "" {TEXT -1 0 "" }}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 
+0 26 "psi3:=t->diff(psi(t),t$3);" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%
+%psi3Gj+6#%\"tG6\"6$%)operatorG%&arrowGF(-%%diffG6$-%$psiG6#9$-%\"$G6$
+F2\"\"$F(F(F(6#\"\"!" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 28 "m3o
+:=limit(psi3(t),t=0)/I^3;" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%$m3oG\"
+\"'" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 35 "alpha:=(m3o-3*m2o*m1
++2*m1^3)/sig^3;" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%&alphaG\"\"#" }}}
+{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 26 "psi4:=t->diff(psi(t),t$4);" 
+}}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%%psi4Gj+6#%\"tG6\"6$%)operatorG%&a
+rrowGF(-%%diffG6$-%$psiG6#9$-%\"$G6$F2\"\"%F(F(F(6#\"\"!" }}}{EXCHG 
+{PARA 0 "> " 0 "" {MPLTEXT 1 0 8 "psi4(t);" }}{PARA 11 "" 1 "" 
+{XPPMATH 20 "6#,$*&\"#C\"\"\",&*&%\"tGF&^#F&F&F&F&!\"\"!\"&F+" }}}
+{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 28 "m4o:=limit(psi4(t),t=0)/I^4;
+" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%$m4oG\"#C" }}}{EXCHG {PARA 0 "> \+
+" 0 "" {MPLTEXT 1 0 46 "eps:=(m4o-4*m3o*m1+6*m2o*m1^2-3*m1^4)/sig^4-3;
+" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%$epsG\"\"'" }}}{EXCHG {PARA 0 ">
+ " 0 "" {MPLTEXT 1 0 0 "" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 0 "
+" }}}{PARA 0 "" 0 "" {TEXT -1 0 "" }}}}{SECT 0 {PARA 3 "" 0 "" {TEXT 
+-1 34 "  P\370\355klad 8  Rayleighovo rozd\354len\355" }}{PARA 0 "" 0 
+"" {TEXT -1 0 "" }}{SECT 0 {PARA 4 "" 0 "" {TEXT -1 16 "  Zad\341n\355
+ hustoty" }}{PARA 0 "" 0 "" {TEXT -1 0 "" }}{EXCHG {PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 13 "restart:s:=1;" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%\"
+sG\"\"\"" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 50 "f:=x->piecewise
+(x<0,0,x>=0,x/s*exp(-x^2/(2*s^2)));" }}{PARA 11 "" 1 "" {XPPMATH 20 "6
+#>%\"fGj+6#%\"xG6\"6$%)operatorG%&arrowGF(-%*piecewiseG6&29$\"\"!F11F1
+F0*(F0\"\"\"%\"sG!\"\"-%$expG6#,$*&#F4\"\"#F4*&F0F=F5!\"#F4F6F4F(F(F(6
+#F1" }}}}{SECT 0 {PARA 4 "" 0 "" {TEXT -1 33 "  V\375po\350et charakte
+ristick\351 funkce" }}{PARA 0 "" 0 "" {TEXT -1 0 "" }}{EXCHG {PARA 0 "
+> " 0 "" {MPLTEXT 1 0 0 "" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 
+51 "psi:=t->int(f(x)*exp(x*t*I),x=-infinity..infinity);" }}{PARA 11 "
+" 1 "" {XPPMATH 20 "6#>%$psiGj+6#%\"tG6\"6$%)operatorG%&arrowGF(-%$int
+G6$*&-%\"fG6#%\"xG\"\"\"-%$expG6#*(F3F49$F4^#F4F4F4/F3;,$%)infinityG!
+\"\"F>F(F(F(6#\"\"!" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 7 "psi(0
+);" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#\"\"\"" }}}}{SECT 0 {PARA 4 "" 
+0 "" {TEXT -1 36 "  V\375po\350et st\370edn\355 hodnoty a rozptylu" }}
+{PARA 0 "" 0 "" {TEXT -1 0 "" }}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 
+24 "psi1:=t->diff(psi(t),t);" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%%psi
+1Gj+6#%\"tG6\"6$%)operatorG%&arrowGF(-%%diffG6$-%$psiG6#9$F2F(F(F(6#\"
+\"!" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 25 "m1:=limit(psi1(t),t=
+0)/I;" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%#m1G,$*(\"\"#!\"\"F'#\"\"\"
+F'%#PiGF)F*" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 26 "psi2:=t->dif
+f(psi(t),t$2);" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%%psi2Gj+6#%\"tG6\"
+6$%)operatorG%&arrowGF(-%%diffG6$-%$psiG6#9$-%\"$G6$F2\"\"#F(F(F(6#\"
+\"!" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 28 "m2o:=limit(psi2(t),t
+=0)/I^2;" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%$m2oG\"\"#" }}}{EXCHG 
+{PARA 0 "> " 0 "" {MPLTEXT 1 0 13 "m2:=m2o-m1^2;" }}{PARA 11 "" 1 "" 
+{XPPMATH 20 "6#>%#m2G,&\"\"#\"\"\"*&F&!\"\"%#PiGF'F)" }}}{EXCHG {PARA 
+0 "> " 0 "" {MPLTEXT 1 0 14 "sig:=sqrt(m2);" }}{PARA 11 "" 1 "" 
+{XPPMATH 20 "6#>%$sigG,$*&\"\"#!\"\",&\"\")\"\"\"*&F'F+%#PiGF+F(#F+F'F
++" }}}}{SECT 0 {PARA 4 "" 0 "" {TEXT -1 31 "  V\375po\350et \232ikmost
+i a \232pi\350atosti" }}{PARA 0 "" 0 "" {TEXT -1 0 "" }}{EXCHG {PARA 
+0 "> " 0 "" {MPLTEXT 1 0 26 "psi3:=t->diff(psi(t),t$3);" }}{PARA 11 "
+" 1 "" {XPPMATH 20 "6#>%%psi3Gj+6#%\"tG6\"6$%)operatorG%&arrowGF(-%%di
+ffG6$-%$psiG6#9$-%\"$G6$F2\"\"$F(F(F(6#\"\"!" }}}{EXCHG {PARA 0 "> " 
+0 "" {MPLTEXT 1 0 28 "m3o:=limit(psi3(t),t=0)/I^3;" }}{PARA 11 "" 1 "
+" {XPPMATH 20 "6#>%$m3oG,$**\"\"$\"\"\"\"\"#!\"\"F)#F(F)%#PiGF+F(" }}}
+{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 44 "alpha:=(m3o-3*m2o*m1+2*m1^3)
+/sig^3;evalf(%);" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%&alphaG,$*(\"\")
+\"\"\",&**\"\"$F(\"\"#!\"\"F,#F(F,%#PiGF.F-*(F,F-F,F.F/#F+F,F(F(,&F'F(
+*&F,F(F/F(F-#!\"$F,F(" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#$\"+*f16J'!#5
+" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 26 "psi4:=t->diff(psi(t),t$
+4);" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%%psi4Gj+6#%\"tG6\"6$%)operato
+rG%&arrowGF(-%%diffG6$-%$psiG6#9$-%\"$G6$F2\"\"%F(F(F(6#\"\"!" }}}
+{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 28 "m4o:=limit(psi4(t),t=0)/I^4;
+" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%$m4oG\"\")" }}}{EXCHG {PARA 0 ">
+ " 0 "" {MPLTEXT 1 0 54 "eps:=(m4o-4*m3o*m1+6*m2o*m1^2-3*m1^4)/m2^2-3;
+evalf(%);" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%$epsG,&*&,&\"\")\"\"\"*
+(\"\"$F)\"\"%!\"\"%#PiG\"\"#F-F),&F/F)*&F/F-F.F)F-!\"#F)F+F-" }}{PARA 
+11 "" 1 "" {XPPMATH 20 "6#$\"*#H*3X#!\"*" }}}{PARA 0 "" 0 "" {TEXT -1 
+0 "" }}}}{SECT 0 {PARA 3 "" 0 "" {TEXT -1 33 "  P\370\355klad 9  Lapla
+ceovo rozd\354len\355" }}{PARA 0 "" 0 "" {TEXT -1 0 "" }}{SECT 0 
+{PARA 4 "" 0 "" {TEXT -1 15 " Zad\341n\355 hustoty" }}{PARA 0 "" 0 "" 
+{TEXT -1 0 "" }}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 18 "restart:a:=1
+:b:=0:" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 27 "f:=x->exp(-abs(x-
+b)/a)/2/a;" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%\"fGj+6#%\"xG6\"6$%)op
+eratorG%&arrowGF(,$*&#\"\"\"\"\"#F/*&-%$expG6#,$*&-%$absG6#,&9$F/%\"bG
+!\"\"F/%\"aGF=F=F/F>F=F/F/F(F(F(6#\"\"!" }}}{EXCHG {PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 0 "" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 0 "" }}}}
+{SECT 0 {PARA 4 "" 0 "" {TEXT -1 33 "  V\375po\350et charakteristick
+\351 funkce" }}{PARA 0 "" 0 "" {TEXT -1 0 "" }}{EXCHG {PARA 0 "> " 0 "
+" {MPLTEXT 1 0 51 "psi:=t->int(f(x)*exp(x*t*I),x=-infinity..infinity):
+" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 7 "psi(0);" }}{PARA 11 "" 
+1 "" {XPPMATH 20 "6#\"\"\"" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 
+0 "" }}}}{SECT 0 {PARA 4 "" 0 "" {TEXT -1 25 "  V\375po\350et st\370ed
+n\355 hodnoty" }}{PARA 0 "" 0 "" {TEXT -1 0 "" }}{EXCHG {PARA 0 "> " 
+0 "" {MPLTEXT 1 0 24 "psi1:=t->diff(psi(t),t):" }}}{EXCHG {PARA 0 "> \+
+" 0 "" {MPLTEXT 1 0 34 "m1:=limit(psi1(t),t=0)/I;evalf(%);" }}{PARA 
+11 "" 1 "" {XPPMATH 20 "6#>%#m1G\"\"!" }}{PARA 11 "" 1 "" {XPPMATH 20 
+"6#$\"\"!F$" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 26 "psi2:=t->dif
+f(psi(t),t$2):" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 28 "m2o:=limi
+t(psi2(t),t=0)/I^2;" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%$m2oG\"\"#" }
+}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 13 "m2:=m2o-m1^2;" }}{PARA 11 
+"" 1 "" {XPPMATH 20 "6#>%#m2G\"\"#" }}}{EXCHG {PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 14 "sig:=sqrt(m2);" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%$
+sigG*$\"\"##\"\"\"F&" }}}}{SECT 0 {PARA 4 "" 0 "" {TEXT -1 31 "  v\375
+po\350et \232ikmosti a \232pi\350atosti" }}{PARA 0 "" 0 "" {TEXT -1 0 
+"" }}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 26 "psi3:=t->diff(psi(t),t$
+3);" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%%psi3Gj+6#%\"tG6\"6$%)operato
+rG%&arrowGF(-%%diffG6$-%$psiG6#9$-%\"$G6$F2\"\"$F(F(F(6#\"\"!" }}}
+{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 28 "m3o:=limit(psi3(t),t=0)/I^3;
+" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%$m3oG\"\"!" }}}{EXCHG {PARA 0 ">
+ " 0 "" {MPLTEXT 1 0 35 "alpha:=(m3o-3*m2o*m1+2*m1^3)/sig^3;" }}{PARA 
+11 "" 1 "" {XPPMATH 20 "6#>%&alphaG\"\"!" }}}{EXCHG {PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 26 "psi4:=t->diff(psi(t),t$4);" }}{PARA 11 "" 1 "" 
+{XPPMATH 20 "6#>%%psi4Gj+6#%\"tG6\"6$%)operatorG%&arrowGF(-%%diffG6$-%
+$psiG6#9$-%\"$G6$F2\"\"%F(F(F(6#\"\"!" }}}{EXCHG {PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 28 "m4o:=limit(psi4(t),t=0)/I^4;" }}{PARA 11 "" 1 "" 
+{XPPMATH 20 "6#>%$m4oG\"#C" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 
+45 "eps:=(m4o-4*m3o*m1+6*m2o*m1^2-3*m1^4)/m2^2-3;" }}{PARA 11 "" 1 "" 
+{XPPMATH 20 "6#>%$epsG\"\"$" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 
+0 "" }}}{PARA 0 "" 0 "" {TEXT -1 0 "" }}}}{SECT 0 {PARA 3 "" 0 "" 
+{TEXT -1 12 "  P\370\355klad 10" }}}{SECT 0 {PARA 3 "" 0 "" {TEXT -1 
+12 "  P\370\355klad 11" }}}}{MARK "2" 0 }{VIEWOPTS 1 1 0 1 1 1803 1 1 
+1 1 }{PAGENUMBERS 0 1 2 33 1 1 }

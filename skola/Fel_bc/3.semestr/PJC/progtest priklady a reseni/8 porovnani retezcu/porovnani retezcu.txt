@@ -1,0 +1,64 @@
+Úkolem je vytvorit funkci CZ_strcmp, která bude porovnávat znaky s respektováním diakritiky.
+
+Funkce bude mít rozhraní podle deklarace níže. Vstupem jsou dva retezce s1, s2 a príznak CaseSensitive. Oba vstupní retezce jsou uložené v kódování UTF-8 a ukoncené binární nulou. Jsou oznacené const, tedy jsou urcené pouze ke ctení. Príznak CaseSensitive je typu boolean, má hodnotu true, pokud se má uvažovat rozdíl mezi malými a velkými písmeny a hodnotu false pokud se malá a velká písmenka nerozlišují.
+
+Výstupem funkce je hodnota udávající vztah mezi retezci s1 a s2:
+
+    * 0 - pokud jsou retezce shodné (pri respektování pravidel níže),
+    * -1 - pokud je retezec s1 lexikograficky menší než retezec s2 (opet viz pravidla níže),
+    * +1 - pokud je retezec s1 lexikograficky vetší než retezec s2 (opet viz pravidla níže),
+    * -100 - pokud retezec s1 nebo s2 nešlo správne rozkódovat (a tudíž nešlo rozhodnout o porovnaní). To nastane pokud funkce narazí na špatný UTF-8 kód nebo pokud retezec obsahuje znaky mimo znaku mezera a písmenek v ceské abecede (a-ž, A-Ž). Pokud je retezec špatne kódován až v míste, které již funkce nemusí císt (dokáže porovnat retezce), pak se chyba nehlásí.
+
+Pri porovnávání poyžijte lexikografické usporádání (razení jako v telefonním seznamu). Platí:
+
+    * Bez rozlišení malá/velká: ' ' < 'A' = 'a' = 'á' = 'Á' < 'b' = 'B' < 'c' = 'C' < 'C' = 'c' < ... < 'e' = 'E' = 'É' = 'é' < 'E' = 'e' < ... < 'h' = 'H' < 'CH' = 'ch' = 'Ch' = 'cH' < ... < 'ž' = 'Ž'
+    * S rozlišením malá/velká: ' ' < 'A' = 'Á' < 'B' < 'C' < 'C' < ... < 'E' = 'É' < 'E' < ... < 'H' < 'CH' = 'Ch' < ... < 'Ž' < 'a' = 'á' < 'b' < 'c' < 'c' < ... < 'e' = 'é' < 'e' < ... < 'h' < 'ch' = 'cH' < ... < 'ž'
+
+Realizovaná funkce nesmí používat C++ datový typ string, datové typy z STL (vector, list, ...) ani regulární výrazy ze standardní knihovny. Použití techto prostredku povede k chybe pri kompilaci. Funkce beží v testovacím prostredí, kde má omezené pametové možnosti (ale samotná funkce nepotrebuje pro svuj beh dynamicky alokovat pamet) a omezenou dobu behu (5s na cca 10 000 000 testu na testovacím pocítaci, referencní rešení potrebuje méne než 0.2s).
+
+Odevzdávejte soubor, který obsahuje pouze realizovanou funkci CZ_strcmp, další Vámi realizované funkce, které jsou z funkce CZ_strcmp volané a prípadné Vámi zavedené datové typy a promenné, které jsou pro beh funkce potrebné. Odevzdávaný soubor nesmí obsahovat funkci main. Pro usnadnení odevzdávání lze využít podmínený preklad - ProgTest definuje promennou __PROGTEST__.
+Deklarace funkce:
+
+int CZ_strcmp ( const char * s1, const char * s2, bool CaseSensitive );
+
+Príklad použití funkce:
+
+CZ_strcmp ( "Vila", "v\xC3\xADla", 0 );
+ //  "Vila" "víla" -> 0
+CZ_strcmp ( "Vila", "v\xC3\xADla", 1 );
+ //  "Vila" "víla" -> -1
+CZ_strcmp ( "v\xC3\xADla", "\xC4\x8C""e\xC5\xA1tina", 0 );
+ //  "víla" "Ceština" -> 1
+CZ_strcmp ( "v\xC3\xADla", "\xC4\x8C""e\xC5\xA1tina", 1 );
+ //  "víla" "Ceština" -> 1
+CZ_strcmp ( "\xC4\x8C""e\xC5\xA1tina", "\xC4\x8C""esk\xC3\xBD jazyk", 0 );
+ //  "Ceština" "Ceský jazyk" -> 1
+CZ_strcmp ( "\xC4\x8C""e\xC5\xA1tina", "\xC4\x8C""esk\xC3\xBD jazyk", 1 );
+ //  "Ceština" "Ceský jazyk" -> 1
+CZ_strcmp ( "\xC4\x8C""esk\xC3\xBD jazyk", "poctivost", 0 );
+ //  "Ceský jazyk" "poctivost" -> -1
+CZ_strcmp ( "\xC4\x8C""esk\xC3\xBD jazyk", "poctivost", 1 );
+ //  "Ceský jazyk" "poctivost" -> -1
+CZ_strcmp ( "poctivost", "podez\xC5\x99""en\xC3\xAD", 0 );
+ //  "poctivost" "podezrení" -> -1
+CZ_strcmp ( "poctivost", "podez\xC5\x99""en\xC3\xAD", 1 );
+ //  "poctivost" "podezrení" -> -1
+CZ_strcmp ( "podez\xC5\x99""en\xC3\xAD", "poch\xC5\xAFzka", 0 );
+ //  "podezrení" "pochuzka" -> -1
+CZ_strcmp ( "podez\xC5\x99""en\xC3\xAD", "poch\xC5\xAFzka", 1 );
+ //  "podezrení" "pochuzka" -> -1
+CZ_strcmp ( "poch\xC5\xAFzka", "poh\xC3\xA1""dka", 0 );
+ //  "pochuzka" "pohádka" -> 1
+CZ_strcmp ( "poch\xC5\xAFzka", "poh\xC3\xA1""dka", 1 );
+ //  "pochuzka" "pohádka" -> 1
+CZ_strcmp ( "poh\xC3\xA1""dka", "pokuta", 0 );
+ //  "pohádka" "pokuta" -> -1
+CZ_strcmp ( "poh\xC3\xA1""dka", "pokuta", 1 );
+ //  "pohádka" "pokuta" -> -1
+
+Nápoveda:
+
+    * Funkce musí být napsaná relativne optimálne, musí být rychlá - testu se provádí mnoho.
+    * Pro realizaci je vhodné prekládat UNICODE kódy znaku na hodnotu podle usporádání v ceské abecede. Napr. pro variantu bez rozlišení malá/velká je vhodné preložit ' ' => 0, 'a' => 1, 'A' => > 'á' => 1, 'Á' => 1, 'b' => 2, 'B' => 2, ... 'H' => 11, 'h' => 11, 'ch' => 12, 'Ch' => 12, 'CH' => 12, 'cH' => 12, ...
+    * Na prekódování podle predchozího bodu se hodí staticky alokovaná tabulka, kde indexem je kód znaku a obsaženou hodnotou je poradí znaku v ceské abecede. Tabulky je vhodné mít dve, pro variantu s/bez rozlišení malých/velkých písmen.
+    * V usporádání znaku je nutné speciálne ošetrit dvojhlásku 'ch'.

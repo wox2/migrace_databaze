@@ -1,0 +1,2308 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ....................................................................... -->
+<!-- XHTML 1.1 DTD  ........................................................ -->
+<!-- file: xhtml11.dtd -->
+<!--
+  XHTML 1.1 DTD
+  
+  This is XHTML, a reformulation of HTML as a modular XML application.
+  
+  The Extensible HyperText Markup Language (XHTML)
+  Copyright 1998-2001 World Wide Web Consortium
+     (Massachusetts Institute of Technology, Institut National de
+      Recherche en Informatique et en Automatique, Keio University).
+      All Rights Reserved.
+  
+  Permission to use, copy, modify and distribute the XHTML DTD and its 
+  accompanying documentation for any purpose and without fee is hereby 
+  granted in perpetuity, provided that the above copyright notice and 
+  this paragraph appear in all copies.  The copyright holders make no 
+  representation about the suitability of the DTD for any purpose.
+  
+  It is provided "as is" without expressed or implied warranty.
+  
+     Author:     Murray M. Altheim <altheim@eng.sun.com>
+     Revision:   $Id: xhtml11.dtd,v 1.21 2001/05/29 16:37:01 ahby Exp $
+  
+-->
+<!--
+  This is the driver file for version 1.1 of the XHTML DTD.
+  
+  Please use this formal public identifier to identify it:
+  
+      "-//W3C//DTD XHTML 1.1//EN"
+-->
+<!--
+  Use this URI to identify the default namespace:
+  
+      "http://www.w3.org/1999/xhtml"
+  
+  See the Qualified Names module for information
+  on the use of namespace prefixes in the DTD.
+-->
+<!-- Reserved for use with the XLink namespace: -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" 
+targetNamespace="http://www.w3.org/1999/xhtml" 
+>
+  <xs:element name="br">
+    <xs:complexType>
+      <xs:attributeGroup ref="Core.attrib"/>
+    </xs:complexType>
+  </xs:element>
+  <!-- end of br.element -->
+  <!-- end of br.attlist -->
+  <!-- span: generic inline container .................... -->
+  <xs:complexType name="span.content" mixed="true">
+    <xs:group minOccurs="0" maxOccurs="unbounded" ref="Inline.mix"/>
+  </xs:complexType>
+  <xs:element name="span">
+    <xs:complexType>
+      <xs:complexContent>
+        <xs:extension base="span.content">
+          <xs:attributeGroup ref="Common.attrib"/>
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+
+
+  <xs:complexType name="abbr.content" mixed="true">
+    <xs:group minOccurs="0" maxOccurs="unbounded" ref="Inline.mix"/>
+  </xs:complexType>
+  <xs:element name="abbr">
+    <xs:complexType>
+      <xs:complexContent>
+        <xs:extension base="abbr.content">
+          <xs:attributeGroup ref="Common.attrib"/>
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+  <!-- end of abbr.element -->
+  <!-- end of abbr.attlist -->
+  <xs:complexType name="acronym.content" mixed="true">
+    <xs:group minOccurs="0" maxOccurs="unbounded" ref="Inline.mix"/>
+  </xs:complexType>
+  <xs:element name="acronym">
+    <xs:complexType>
+      <xs:complexContent>
+        <xs:extension base="acronym.content">
+          <xs:attributeGroup ref="Common.attrib"/>
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+  <!-- end of acronym.element -->
+  <!-- end of acronym.attlist -->
+  <xs:complexType name="cite.content" mixed="true">
+    <xs:group minOccurs="0" maxOccurs="unbounded" ref="Inline.mix"/>
+  </xs:complexType>
+  <xs:element name="cite">
+    <xs:complexType>
+      <xs:complexContent>
+        <xs:extension base="cite.content">
+          <xs:attributeGroup ref="Common.attrib"/>
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+  <!-- end of cite.element -->
+  <!-- end of cite.attlist -->
+  <xs:complexType name="code.content" mixed="true">
+    <xs:group minOccurs="0" maxOccurs="unbounded" ref="Inline.mix"/>
+  </xs:complexType>
+  <xs:element name="code">
+    <xs:complexType>
+      <xs:complexContent>
+        <xs:extension base="code.content">
+          <xs:attributeGroup ref="Common.attrib"/>
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+  <!-- end of code.element -->
+  <!-- end of code.attlist -->
+  <xs:complexType name="dfn.content" mixed="true">
+    <xs:group minOccurs="0" maxOccurs="unbounded" ref="Inline.mix"/>
+  </xs:complexType>
+  <xs:element name="dfn">
+    <xs:complexType>
+      <xs:complexContent>
+        <xs:extension base="dfn.content">
+          <xs:attributeGroup ref="Common.attrib"/>
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+  <!-- end of dfn.element -->
+  <!-- end of dfn.attlist -->
+  <xs:complexType name="em.content" mixed="true">
+    <xs:group minOccurs="0" maxOccurs="unbounded" ref="Inline.mix"/>
+  </xs:complexType>
+  <xs:element name="em">
+    <xs:complexType>
+      <xs:complexContent>
+        <xs:extension base="em.content">
+          <xs:attributeGroup ref="Common.attrib"/>
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+  <!-- end of em.element -->
+  <!-- end of em.attlist -->
+  <xs:complexType name="kbd.content" mixed="true">
+    <xs:group minOccurs="0" maxOccurs="unbounded" ref="Inline.mix"/>
+  </xs:complexType>
+  <xs:element name="kbd">
+    <xs:complexType>
+      <xs:complexContent>
+        <xs:extension base="kbd.content">
+          <xs:attributeGroup ref="Common.attrib"/>
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+  <!-- end of kbd.element -->
+  <!-- end of kbd.attlist -->
+  <xs:complexType name="q.content" mixed="true">
+    <xs:group minOccurs="0" maxOccurs="unbounded" ref="Inline.mix"/>
+  </xs:complexType>
+  <xs:element name="q">
+    <xs:complexType>
+      <xs:complexContent>
+        <xs:extension base="q.content">
+          <xs:attributeGroup ref="Common.attrib"/>
+          <xs:attribute name="cite" type="URI.datatype"/>
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+  <!-- end of q.element -->
+  <!-- end of q.attlist -->
+  <xs:complexType name="samp.content" mixed="true">
+    <xs:group minOccurs="0" maxOccurs="unbounded" ref="Inline.mix"/>
+  </xs:complexType>
+  <xs:element name="samp">
+    <xs:complexType>
+      <xs:complexContent>
+        <xs:extension base="samp.content">
+          <xs:attributeGroup ref="Common.attrib"/>
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+  <!-- end of samp.element -->
+  <!-- end of samp.attlist -->
+  <xs:complexType name="strong.content" mixed="true">
+    <xs:group minOccurs="0" maxOccurs="unbounded" ref="Inline.mix"/>
+  </xs:complexType>
+  <xs:element name="strong">
+    <xs:complexType>
+      <xs:complexContent>
+        <xs:extension base="strong.content">
+          <xs:attributeGroup ref="Common.attrib"/>
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+  <!-- end of strong.element -->
+  <!-- end of strong.attlist -->
+  <xs:complexType name="var.content" mixed="true">
+    <xs:group minOccurs="0" maxOccurs="unbounded" ref="Inline.mix"/>
+  </xs:complexType>
+  <xs:element name="var">
+    <xs:complexType>
+      <xs:complexContent>
+        <xs:extension base="var.content">
+          <xs:attributeGroup ref="Common.attrib"/>
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+
+
+  <xs:complexType name="div.content" mixed="true">
+    <xs:group minOccurs="0" maxOccurs="unbounded" ref="Flow.mix"/>
+  </xs:complexType>
+  <xs:element name="div">
+    <xs:complexType>
+      <xs:complexContent>
+        <xs:extension base="div.content">
+          <xs:attributeGroup ref="Common.attrib"/>
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+  <!-- end of div.element -->
+  <!-- end of div.attlist -->
+  <xs:complexType name="p.content" mixed="true">
+    <xs:group minOccurs="0" maxOccurs="unbounded" ref="Inline.mix"/>
+  </xs:complexType>
+  <xs:element name="p">
+    <xs:complexType>
+      <xs:complexContent>
+        <xs:extension base="p.content">
+          <xs:attributeGroup ref="Common.attrib"/>
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+
+
+  <xs:group name="HeadOpts.mix">
+    <xs:sequence>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element ref="script"/>
+        <xs:element ref="style"/>
+        <xs:element ref="meta"/>
+        <xs:element ref="link"/>
+        <xs:element ref="object"/>
+      </xs:choice>
+    </xs:sequence>
+  </xs:group>
+  <!-- .................  Miscellaneous Elements  .................. -->
+  <!-- ins and del are used to denote editing changes -->
+  <!--
+    script and noscript are used to contain scripts
+    and alternative content
+  -->
+  <xs:group name="Script.class">
+    <xs:choice>
+      <xs:element ref="script"/>
+      <xs:element ref="noscript"/>
+    </xs:choice>
+  </xs:group>
+  <!--
+    These elements are neither block nor inline, and can
+    essentially be used anywhere in the document body.
+  -->
+  <!-- ....................  Inline Elements  ...................... -->
+  <xs:group name="InlStruct.class">
+    <xs:choice>
+      <xs:element ref="br"/>
+      <xs:element ref="span"/>
+    </xs:choice>
+  </xs:group>
+  <xs:group name="InlPhras.class">
+    <xs:choice>
+      <xs:element ref="em"/>
+      <xs:element ref="strong"/>
+      <xs:element ref="dfn"/>
+      <xs:element ref="code"/>
+      <xs:element ref="samp"/>
+      <xs:element ref="kbd"/>
+      <xs:element ref="var"/>
+      <xs:element ref="cite"/>
+      <xs:element ref="abbr"/>
+      <xs:element ref="acronym"/>
+      <xs:element ref="q"/>
+    </xs:choice>
+  </xs:group>
+  <xs:group name="InlPres.class">
+    <xs:choice>
+      <xs:element ref="tt"/>
+      <xs:element ref="i"/>
+      <xs:element ref="b"/>
+      <xs:element ref="big"/>
+      <xs:element ref="small"/>
+      <xs:element ref="sub"/>
+      <xs:element ref="sup"/>
+    </xs:choice>
+  </xs:group>
+  <xs:group name="InlSpecial.class">
+    <xs:choice>
+      <xs:element ref="img"/>
+      <xs:element ref="map"/>
+      <xs:element ref="object"/>
+    </xs:choice>
+  </xs:group>
+  <xs:group name="InlForm.class">
+    <xs:choice>
+      <xs:element ref="input"/>
+      <xs:element ref="select"/>
+      <xs:element ref="textarea"/>
+      <xs:element ref="label"/>
+      <xs:element ref="button"/>
+    </xs:choice>
+  </xs:group>
+  <!--
+    %Inline.class; includes all inline elements,
+    used as a component in mixes
+  -->
+  <!--
+    %InlNoRuby.class; includes all inline elements
+    except ruby, used as a component in mixes
+  -->
+  <xs:group name="InlNoRuby.class">
+    <xs:choice>
+      <xs:group ref="InlStruct.class"/>
+      <xs:group ref="InlPhras.class"/>
+      <xs:group ref="InlPres.class"/>
+      <xs:element ref="I18n.class"/>
+      <xs:element ref="Anchor.class"/>
+      <xs:group ref="InlSpecial.class"/>
+      <xs:group ref="InlForm.class"/>
+      <xs:group ref="Inline.extra"/>
+    </xs:choice>
+  </xs:group>
+  <!-- %NoRuby.content; includes all inlines except ruby -->
+  <xs:complexType name="NoRuby.content" mixed="true">
+    <xs:choice minOccurs="0" maxOccurs="unbounded">
+      <xs:group ref="InlNoRuby.class"/>
+      <xs:group ref="Misc.class"/>
+    </xs:choice>
+  </xs:complexType>
+  <!--
+    %InlNoAnchor.class; includes all non-anchor inlines,
+    used as a component in mixes
+  -->
+  <xs:group name="InlNoAnchor.class">
+    <xs:choice>
+      <xs:group ref="InlStruct.class"/>
+      <xs:group ref="InlPhras.class"/>
+      <xs:group ref="InlPres.class"/>
+      <xs:element ref="I18n.class"/>
+      <xs:group ref="InlSpecial.class"/>
+      <xs:group ref="InlForm.class"/>
+      <xs:element ref="Ruby.class"/>
+      <xs:group ref="Inline.extra"/>
+    </xs:choice>
+  </xs:group>
+  <!-- %InlNoAnchor.mix; includes all non-anchor inlines -->
+  <xs:group name="InlNoAnchor.mix">
+    <xs:choice>
+      <xs:group ref="InlNoAnchor.class"/>
+      <xs:group ref="Misc.class"/>
+    </xs:choice>
+  </xs:group>
+  <!-- %Inline.mix; includes all inline elements, including %Misc.class; -->
+  <!-- .....................  Block Elements  ...................... -->
+  <!--
+    In the HTML 4.0 DTD, heading and list elements were included
+    in the %block; parameter entity. The %Heading.class; and
+    %List.class; parameter entities must now be included explicitly
+    on element declarations where desired.
+  -->
+  <xs:group name="Table.class">
+    <xs:sequence>
+      <xs:element ref="table"/>
+    </xs:sequence>
+  </xs:group>
+  <xs:group name="Form.class">
+    <xs:sequence>
+      <xs:element ref="form"/>
+    </xs:sequence>
+  </xs:group>
+  <xs:group name="Fieldset.class">
+    <xs:sequence>
+      <xs:element ref="fieldset"/>
+    </xs:sequence>
+  </xs:group>
+  <xs:group name="BlkStruct.class">
+    <xs:choice>
+      <xs:element ref="p"/>
+      <xs:element ref="div"/>
+    </xs:choice>
+  </xs:group>
+  <xs:group name="BlkPhras.class">
+    <xs:choice>
+      <xs:element ref="pre"/>
+      <xs:element ref="blockquote"/>
+      <xs:element ref="address"/>
+    </xs:choice>
+  </xs:group>
+  <xs:group name="BlkPres.class">
+    <xs:sequence>
+      <xs:element ref="hr"/>
+    </xs:sequence>
+  </xs:group>
+  <xs:group name="BlkSpecial.class">
+    <xs:choice>
+      <xs:group ref="Table.class"/>
+      <xs:group ref="Form.class"/>
+      <xs:group ref="Fieldset.class"/>
+    </xs:choice>
+  </xs:group>
+  <!--
+    %Block.class; includes all block elements,
+    used as an component in mixes
+  -->
+  <!-- %Block.mix; includes all block elements plus %Misc.class; -->
+  <!-- ................  All Content Elements  .................. -->
+  <!-- %Flow.mix; includes all text content, block and inline -->
+  <!-- end of xhtml11-model-1.mod -->
+  <xs:complexType name="address.content" mixed="true">
+    <xs:group minOccurs="0" maxOccurs="unbounded" ref="Inline.mix"/>
+  </xs:complexType>
+  <xs:element name="address">
+    <xs:complexType>
+      <xs:complexContent>
+        <xs:extension base="address.content">
+          <xs:attributeGroup ref="Common.attrib"/>
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+  <!-- end of address.element -->
+  <!-- end of address.attlist -->
+  <xs:complexType name="blockquote.content">
+    <xs:group maxOccurs="unbounded" ref="Block.mix"/>
+  </xs:complexType>
+  <xs:element name="blockquote">
+    <xs:complexType>
+      <xs:complexContent>
+        <xs:extension base="blockquote.content">
+          <xs:attributeGroup ref="Common.attrib"/>
+          <xs:attribute name="cite" type="URI.datatype"/>
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+  <!-- end of blockquote.element -->
+  <!-- end of blockquote.attlist -->
+  <xs:complexType name="pre.content" mixed="true">
+    <xs:choice minOccurs="0" maxOccurs="unbounded">
+      <xs:group ref="InlStruct.class"/>
+      <xs:group ref="InlPhras.class"/>
+      <xs:element ref="tt"/>
+      <xs:element ref="i"/>
+      <xs:element ref="b"/>
+      <xs:element ref="I18n.class"/>
+      <xs:element ref="Anchor.class"/>
+      <xs:element ref="script"/>
+      <xs:element ref="map"/>
+      <xs:group ref="Inline.extra"/>
+    </xs:choice>
+  </xs:complexType>
+  <xs:element name="pre">
+    <xs:complexType>
+      <xs:complexContent>
+        <xs:extension base="pre.content">
+          <xs:attributeGroup ref="Common.attrib"/>
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+  <!-- end of pre.element -->
+  <!-- end of pre.attlist -->
+  <!-- ...................  Heading Elements  ................... -->
+  <xs:complexType name="Heading.content" mixed="true">
+    <xs:group minOccurs="0" maxOccurs="unbounded" ref="Inline.mix"/>
+  </xs:complexType>
+  <xs:element name="h1" substitutionGroup="Heading.class"/>
+  <!-- end of h1.element -->
+  <!-- end of h1.attlist -->
+  <xs:element name="h2" substitutionGroup="Heading.class"/>
+  <!-- end of h2.element -->
+  <!-- end of h2.attlist -->
+  <xs:element name="h3" substitutionGroup="Heading.class"/>
+  <!-- end of h3.element -->
+  <!-- end of h3.attlist -->
+  <xs:element name="h4" substitutionGroup="Heading.class"/>
+  <!-- end of h4.element -->
+  <!-- end of h4.attlist -->
+  <xs:element name="h5" substitutionGroup="Heading.class"/>
+  <!-- end of h5.element -->
+  <!-- end of h5.attlist -->
+  <xs:element name="h6" substitutionGroup="Heading.class"/>
+
+
+  <xs:complexType name="a.content" mixed="true">
+    <xs:group minOccurs="0" maxOccurs="unbounded" ref="InlNoAnchor.mix"/>
+  </xs:complexType>
+  <xs:element name="a" substitutionGroup="Anchor.class"/>
+
+  <xs:complexType name="dl.content">
+    <xs:choice maxOccurs="unbounded">
+      <xs:element ref="dt"/>
+      <xs:element ref="dd"/>
+    </xs:choice>
+  </xs:complexType>
+  <xs:element name="dl" substitutionGroup="List.class">
+    <xs:complexType>
+      <xs:complexContent>
+        <xs:extension base="dl.content">
+          <xs:attributeGroup ref="Common.attrib"/>
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+  <!-- end of dl.element -->
+  <!-- end of dl.attlist -->
+  <!-- dt: Definition Term ............................... -->
+  <xs:complexType name="dt.content" mixed="true">
+    <xs:group minOccurs="0" maxOccurs="unbounded" ref="Inline.mix"/>
+  </xs:complexType>
+  <xs:element name="dt">
+    <xs:complexType>
+      <xs:complexContent>
+        <xs:extension base="dt.content">
+          <xs:attributeGroup ref="Common.attrib"/>
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+  <!-- end of dt.element -->
+  <!-- end of dt.attlist -->
+  <!-- dd: Definition Description ........................ -->
+  <xs:complexType name="dd.content" mixed="true">
+    <xs:group minOccurs="0" maxOccurs="unbounded" ref="Flow.mix"/>
+  </xs:complexType>
+  <xs:element name="dd">
+    <xs:complexType>
+      <xs:complexContent>
+        <xs:extension base="dd.content">
+          <xs:attributeGroup ref="Common.attrib"/>
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+  <!-- end of dd.element -->
+  <!-- end of dd.attlist -->
+  <!-- ol: Ordered List (numbered styles) ................ -->
+  <xs:complexType name="ol.content">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" ref="li"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ol" substitutionGroup="List.class">
+    <xs:complexType>
+      <xs:complexContent>
+        <xs:extension base="ol.content">
+          <xs:attributeGroup ref="Common.attrib"/>
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+  <!-- end of ol.element -->
+  <!-- end of ol.attlist -->
+  <!-- ul: Unordered List (bullet styles) ................ -->
+  <xs:complexType name="ul.content">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" ref="li"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ul" substitutionGroup="List.class">
+    <xs:complexType>
+      <xs:complexContent>
+        <xs:extension base="ul.content">
+          <xs:attributeGroup ref="Common.attrib"/>
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+  <!-- end of ul.element -->
+  <!-- end of ul.attlist -->
+  <!-- li: List Item ..................................... -->
+  <xs:complexType name="li.content" mixed="true">
+    <xs:group minOccurs="0" maxOccurs="unbounded" ref="Flow.mix"/>
+  </xs:complexType>
+  <xs:element name="li">
+    <xs:complexType>
+      <xs:complexContent>
+        <xs:extension base="li.content">
+          <xs:attributeGroup ref="Common.attrib"/>
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+
+
+  <xs:complexType name="ins.content" mixed="true">
+    <xs:group minOccurs="0" maxOccurs="unbounded" ref="Flow.mix"/>
+  </xs:complexType>
+  <xs:element name="ins" substitutionGroup="Edit.class">
+    <xs:complexType>
+      <xs:complexContent>
+        <xs:extension base="ins.content">
+          <xs:attributeGroup ref="Common.attrib"/>
+          <xs:attribute name="cite" type="URI.datatype"/>
+          <xs:attribute name="datetime" type="Datetime.datatype"/>
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+  <!-- end of ins.element -->
+  <!-- end of ins.attlist -->
+  <!-- del: Deleted Text  ................................ -->
+  <xs:complexType name="del.content" mixed="true">
+    <xs:group minOccurs="0" maxOccurs="unbounded" ref="Flow.mix"/>
+  </xs:complexType>
+  <xs:element name="del" substitutionGroup="Edit.class">
+    <xs:complexType>
+      <xs:complexContent>
+        <xs:extension base="del.content">
+          <xs:attributeGroup ref="Common.attrib"/>
+          <xs:attribute name="cite" type="URI.datatype"/>
+          <xs:attribute name="datetime" type="Datetime.datatype"/>
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+
+
+  <xs:complexType name="bdo.content" mixed="true">
+    <xs:group minOccurs="0" maxOccurs="unbounded" ref="Inline.mix"/>
+  </xs:complexType>
+  <xs:element name="bdo" substitutionGroup="I18n.class"/>
+
+
+  <xs:group name="Ruby.content.simple">
+    <xs:sequence>
+      <xs:element ref="rb"/>
+      <xs:choice>
+        <xs:element ref="rt"/>
+        <xs:sequence>
+          <xs:element ref="rp"/>
+          <xs:element ref="rt"/>
+          <xs:element ref="rp"/>
+        </xs:sequence>
+      </xs:choice>
+    </xs:sequence>
+  </xs:group>
+  <xs:group name="Ruby.content.complex">
+    <xs:sequence>
+      <xs:element ref="rbc"/>
+      <xs:element ref="rtc"/>
+      <xs:element minOccurs="0" ref="rtc"/>
+    </xs:sequence>
+  </xs:group>
+  <!--
+    Content models of the rb and the rt elements are intended to
+    allow other inline-level elements of its parent markup language,
+    but it should not include ruby descendent elements. The following
+    parameter entity %NoRuby.content; can be used to redefine
+    those content models with minimum effort.  It's defined as
+    '( #PCDATA )' by default.
+  -->
+  <!-- one or more digits (NUMBER) -->
+  <!-- ruby element ...................................... -->
+  <xs:complexType name="ruby.content">
+    <xs:choice>
+      <xs:group ref="Ruby.content.simple"/>
+      <xs:group ref="Ruby.content.complex"/>
+    </xs:choice>
+  </xs:complexType>
+  <xs:element name="ruby" substitutionGroup="Ruby.class"/>
+  <!-- end of ruby.element -->
+  <!-- rbc (ruby base component) element ................. -->
+  <xs:complexType name="rbc.content">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" ref="rb"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="rbc">
+    <xs:complexType>
+      <xs:complexContent>
+        <xs:extension base="rbc.content">
+          <xs:attributeGroup ref="Ruby.common.attrib"/>
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+  <!-- end of rbc.element -->
+  <!-- rtc (ruby text component) element ................. -->
+  <xs:complexType name="rtc.content">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" ref="rt"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="rtc">
+    <xs:complexType>
+      <xs:complexContent>
+        <xs:extension base="rtc.content">
+          <xs:attributeGroup ref="Ruby.common.attrib"/>
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+  <!-- end of rtc.element -->
+  <!-- rb (ruby base) element ............................ -->
+  <!--
+    %rb.content; uses %NoRuby.content; as its content model,
+    which is '( #PCDATA )' by default. It may be overridden
+    by other modules to allow other inline-level elements
+    of its parent markup language, but it should not include
+    ruby descendent elements.
+  -->
+  <xs:complexType name="rb.content">
+    <xs:complexContent>
+      <xs:extension base="NoRuby.content"/>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="rb">
+    <xs:complexType>
+      <xs:complexContent>
+        <xs:extension base="rb.content">
+          <xs:attributeGroup ref="Ruby.common.attrib"/>
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+  <!-- end of rb.element -->
+  <!-- rt (ruby text) element ............................ -->
+  <!--
+    %rt.content; uses %NoRuby.content; as its content model,
+    which is '( #PCDATA )' by default. It may be overridden
+    by other modules to allow other inline-level elements
+    of its parent markup language, but it should not include
+    ruby descendent elements.
+  -->
+  <xs:complexType name="rt.content">
+    <xs:complexContent>
+      <xs:extension base="NoRuby.content"/>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="rt">
+    <xs:complexType>
+      <xs:complexContent>
+        <xs:extension base="rt.content">
+          <xs:attribute name="rbspan" default="1" type="Number.datatype"/>
+          <xs:attributeGroup ref="Ruby.common.attrib"/>
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+  <!-- end of rt.element -->
+  <!-- rbspan attribute is used for complex ruby only ...... -->
+  <!-- end of rt.attlist -->
+  <!-- rp (ruby parenthesis) element ..................... -->
+  <xs:element name="rp">
+    <xs:complexType mixed="true">
+      <xs:attributeGroup ref="Ruby.common.attrib"/>
+    </xs:complexType>
+  </xs:element>
+
+
+  <xs:complexType name="b.content" mixed="true">
+    <xs:group minOccurs="0" maxOccurs="unbounded" ref="Inline.mix"/>
+  </xs:complexType>
+  <xs:element name="b">
+    <xs:complexType>
+      <xs:complexContent>
+        <xs:extension base="b.content">
+          <xs:attributeGroup ref="Common.attrib"/>
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+  <!-- end of b.element -->
+  <!-- end of b.attlist -->
+  <xs:complexType name="big.content" mixed="true">
+    <xs:group minOccurs="0" maxOccurs="unbounded" ref="Inline.mix"/>
+  </xs:complexType>
+  <xs:element name="big">
+    <xs:complexType>
+      <xs:complexContent>
+        <xs:extension base="big.content">
+          <xs:attributeGroup ref="Common.attrib"/>
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+  <!-- end of big.element -->
+  <!-- end of big.attlist -->
+  <xs:complexType name="i.content" mixed="true">
+    <xs:group minOccurs="0" maxOccurs="unbounded" ref="Inline.mix"/>
+  </xs:complexType>
+  <xs:element name="i">
+    <xs:complexType>
+      <xs:complexContent>
+        <xs:extension base="i.content">
+          <xs:attributeGroup ref="Common.attrib"/>
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+  <!-- end of i.element -->
+  <!-- end of i.attlist -->
+  <xs:complexType name="small.content" mixed="true">
+    <xs:group minOccurs="0" maxOccurs="unbounded" ref="Inline.mix"/>
+  </xs:complexType>
+  <xs:element name="small">
+    <xs:complexType>
+      <xs:complexContent>
+        <xs:extension base="small.content">
+          <xs:attributeGroup ref="Common.attrib"/>
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+  <!-- end of small.element -->
+  <!-- end of small.attlist -->
+  <xs:complexType name="sub.content" mixed="true">
+    <xs:group minOccurs="0" maxOccurs="unbounded" ref="Inline.mix"/>
+  </xs:complexType>
+  <xs:element name="sub">
+    <xs:complexType>
+      <xs:complexContent>
+        <xs:extension base="sub.content">
+          <xs:attributeGroup ref="Common.attrib"/>
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+  <!-- end of sub.element -->
+  <!-- end of sub.attlist -->
+  <xs:complexType name="sup.content" mixed="true">
+    <xs:group minOccurs="0" maxOccurs="unbounded" ref="Inline.mix"/>
+  </xs:complexType>
+  <xs:element name="sup">
+    <xs:complexType>
+      <xs:complexContent>
+        <xs:extension base="sup.content">
+          <xs:attributeGroup ref="Common.attrib"/>
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+  <!-- end of sup.element -->
+  <!-- end of sup.attlist -->
+  <xs:complexType name="tt.content" mixed="true">
+    <xs:group minOccurs="0" maxOccurs="unbounded" ref="Inline.mix"/>
+  </xs:complexType>
+  <xs:element name="tt">
+    <xs:complexType>
+      <xs:complexContent>
+        <xs:extension base="tt.content">
+          <xs:attributeGroup ref="Common.attrib"/>
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+
+
+  <xs:element name="hr">
+    <xs:complexType>
+      <xs:attributeGroup ref="Common.attrib"/>
+    </xs:complexType>
+  </xs:element>
+
+
+  <xs:element name="link">
+    <xs:complexType>
+      <xs:attributeGroup ref="Common.attrib"/>
+      <xs:attribute name="charset" type="Charset.datatype"/>
+      <xs:attribute name="href" type="URI.datatype"/>
+      <xs:attribute name="hreflang" type="LanguageCode.datatype"/>
+      <xs:attribute name="type" type="ContentType.datatype"/>
+      <xs:attribute name="rel" type="LinkTypes.datatype"/>
+      <xs:attribute name="rev" type="LinkTypes.datatype"/>
+      <xs:attribute name="media" type="MediaDesc.datatype"/>
+    </xs:complexType>
+  </xs:element>
+
+
+  <xs:element name="meta">
+    <xs:complexType>
+      <xs:attributeGroup ref="I18n.attrib"/>
+      <xs:attribute name="http-equiv" type="xs:NMTOKEN"/>
+      <xs:attribute name="name" type="xs:NMTOKEN"/>
+      <xs:attribute name="content" use="required"/>
+      <xs:attribute name="scheme"/>
+    </xs:complexType>
+  </xs:element>
+
+
+  <xs:element name="base">
+    <xs:complexType>
+      <xs:attribute name="href" use="required" type="URI.datatype"/>
+    </xs:complexType>
+  </xs:element>
+  <!-- end of base.element -->
+  <!-- end of base.attlist -->
+  <xs:complexType name="head.content">
+    <xs:sequence>
+      <xs:group ref="HeadOpts.mix"/>
+      <xs:choice>
+        <xs:sequence>
+          <xs:element ref="title"/>
+          <xs:group ref="HeadOpts.mix"/>
+          <xs:sequence minOccurs="0">
+            <xs:element ref="base"/>
+            <xs:group ref="HeadOpts.mix"/>
+          </xs:sequence>
+        </xs:sequence>
+        <xs:sequence>
+          <xs:element ref="base"/>
+          <xs:group ref="HeadOpts.mix"/>
+          <xs:sequence>
+            <xs:element ref="title"/>
+            <xs:group ref="HeadOpts.mix"/>
+          </xs:sequence>
+        </xs:sequence>
+      </xs:choice>
+    </xs:sequence>
+  </xs:complexType>
+
+
+  <xs:element name="script">
+    <xs:complexType mixed="true">
+      <xs:attributeGroup ref="id.attrib"/>
+      <xs:attribute name="charset" type="Charset.datatype"/>
+      <xs:attribute name="type" use="required" type="ContentType.datatype"/>
+      <xs:attribute name="src" type="URI.datatype"/>
+      <xs:attribute name="defer">
+        <xs:simpleType>
+          <xs:restriction base="xs:token">
+            <xs:enumeration value="defer"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+    </xs:complexType>
+  </xs:element>
+  <!-- end of script.element -->
+  <!-- end of script.attlist -->
+  <!-- noscript: No-Script Alternate Content ............. -->
+  <xs:complexType name="noscript.content">
+    <xs:group maxOccurs="unbounded" ref="Block.mix"/>
+  </xs:complexType>
+  <xs:element name="noscript">
+    <xs:complexType>
+      <xs:complexContent>
+        <xs:extension base="noscript.content">
+          <xs:attributeGroup ref="Common.attrib"/>
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+
+
+  <xs:element name="style">
+    <xs:complexType mixed="true">
+      <xs:attributeGroup ref="id.attrib"/>
+      <xs:attributeGroup ref="title.attrib"/>
+      <xs:attributeGroup ref="I18n.attrib"/>
+      <xs:attribute name="type" use="required" type="ContentType.datatype"/>
+      <xs:attribute name="media" type="MediaDesc.datatype"/>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="img">
+    <xs:complexType>
+      <xs:attributeGroup ref="Common.attrib"/>
+      <xs:attribute name="src" use="required" type="URI.datatype"/>
+      <xs:attribute name="alt" use="required" type="Text.datatype"/>
+      <xs:attribute name="longdesc" type="URI.datatype"/>
+      <xs:attribute name="height" type="Length.datatype"/>
+      <xs:attribute name="width" type="Length.datatype"/>
+      <xs:attribute name="usemap" type="xs:IDREF"/>
+      <xs:attribute name="ismap">
+        <xs:simpleType>
+          <xs:restriction base="xs:token">
+            <xs:enumeration value="ismap"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+    </xs:complexType>
+  </xs:element>
+
+
+  <xs:element name="area">
+    <xs:complexType>
+      <xs:attribute name="onfocus" type="Script.datatype"/>
+      <xs:attribute name="onblur" type="Script.datatype"/>
+      <xs:attributeGroup ref="Common.attrib"/>
+      <xs:attribute name="href" type="URI.datatype"/>
+      <xs:attribute name="shape" default="rect" type="Shape.datatype"/>
+      <xs:attribute name="coords" type="Coords.datatype"/>
+      <xs:attribute name="nohref">
+        <xs:simpleType>
+          <xs:restriction base="xs:token">
+            <xs:enumeration value="nohref"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="alt" use="required" type="Text.datatype"/>
+      <xs:attribute name="tabindex" type="Number.datatype"/>
+      <xs:attribute name="accesskey" type="Character.datatype"/>
+    </xs:complexType>
+  </xs:element>
+  <!-- end of area.element -->
+  <xs:simpleType name="Shape.datatype">
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="rect"/>
+      <xs:enumeration value="circle"/>
+      <xs:enumeration value="poly"/>
+      <xs:enumeration value="default"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="Coords.datatype">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <!-- end of area.attlist -->
+  <!--
+    modify anchor attribute definition list
+    to allow for client-side image maps
+  -->
+  <!--
+    modify img attribute definition list
+    to allow for client-side image maps
+  -->
+  <!--
+    modify form input attribute definition list
+    to allow for client-side image maps
+  -->
+  <!--
+    modify object attribute definition list
+    to allow for client-side image maps
+  -->
+  <!--
+    'usemap' points to the 'id' attribute of a <map> element,
+    which must be in the same document; support for external
+    document maps was not widely supported in HTML and is
+    eliminated in XHTML.
+    
+    It is considered an error for the element pointed to by
+    a usemap IDREF to occur in anything but a <map> element.
+  -->
+  <xs:complexType name="map.content">
+    <xs:choice maxOccurs="unbounded">
+      <xs:group ref="Block.mix"/>
+      <xs:element ref="area"/>
+    </xs:choice>
+  </xs:complexType>
+  <xs:element name="map">
+    <xs:complexType>
+      <xs:complexContent>
+        <xs:extension base="map.content">
+          <xs:attribute name="id" use="required" type="xs:ID"/>
+          <xs:attributeGroup ref="class.attrib"/>
+          <xs:attributeGroup ref="title.attrib"/>
+          <xs:attributeGroup ref="Core.extra.attrib"/>
+          <xs:attributeGroup ref="I18n.attrib"/>
+          <xs:attributeGroup ref="Events.attrib"/>
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+
+
+  <xs:element name="param">
+    <xs:complexType>
+      <xs:attributeGroup ref="id.attrib"/>
+      <xs:attribute name="name" use="required"/>
+      <xs:attribute name="value"/>
+      <xs:attribute name="valuetype" default="data">
+        <xs:simpleType>
+          <xs:restriction base="xs:token">
+            <xs:enumeration value="data"/>
+            <xs:enumeration value="ref"/>
+            <xs:enumeration value="object"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="type" type="ContentType.datatype"/>
+    </xs:complexType>
+  </xs:element>
+
+
+  <xs:complexType name="object.content" mixed="true">
+    <xs:choice minOccurs="0" maxOccurs="unbounded">
+      <xs:group ref="Flow.mix"/>
+      <xs:element ref="param"/>
+    </xs:choice>
+  </xs:complexType>
+  <xs:element name="object">
+    <xs:complexType>
+      <xs:complexContent>
+        <xs:extension base="object.content">
+          <xs:attribute name="usemap" type="xs:IDREF"/>
+          <xs:attributeGroup ref="Common.attrib"/>
+          <xs:attribute name="declare">
+            <xs:simpleType>
+              <xs:restriction base="xs:token">
+                <xs:enumeration value="declare"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:attribute>
+          <xs:attribute name="classid" type="URI.datatype"/>
+          <xs:attribute name="codebase" type="URI.datatype"/>
+          <xs:attribute name="data" type="URI.datatype"/>
+          <xs:attribute name="type" type="ContentType.datatype"/>
+          <xs:attribute name="codetype" type="ContentType.datatype"/>
+          <xs:attribute name="archive" type="URIs.datatype"/>
+          <xs:attribute name="standby" type="Text.datatype"/>
+          <xs:attribute name="height" type="Length.datatype"/>
+          <xs:attribute name="width" type="Length.datatype"/>
+          <xs:attribute name="name"/>
+          <xs:attribute name="tabindex" type="Number.datatype"/>
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:attributeGroup name="frame.attrib">
+    <xs:attribute name="frame">
+      <xs:simpleType>
+        <xs:restriction base="xs:token">
+          <xs:enumeration value="void"/>
+          <xs:enumeration value="above"/>
+          <xs:enumeration value="below"/>
+          <xs:enumeration value="hsides"/>
+          <xs:enumeration value="lhs"/>
+          <xs:enumeration value="rhs"/>
+          <xs:enumeration value="vsides"/>
+          <xs:enumeration value="box"/>
+          <xs:enumeration value="border"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:attribute>
+  </xs:attributeGroup>
+  <!--
+    The rules attribute defines which rules to draw between cells:
+    
+    If rules is absent then assume:
+    
+      "none" if border is absent or border="0" otherwise "all"
+  -->
+  <xs:attributeGroup name="rules.attrib">
+    <xs:attribute name="rules">
+      <xs:simpleType>
+        <xs:restriction base="xs:token">
+          <xs:enumeration value="none"/>
+          <xs:enumeration value="groups"/>
+          <xs:enumeration value="rows"/>
+          <xs:enumeration value="cols"/>
+          <xs:enumeration value="all"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:attribute>
+  </xs:attributeGroup>
+  <!-- horizontal alignment attributes for cell contents -->
+  <xs:attributeGroup name="CellHAlign.attrib">
+    <xs:attribute name="align">
+      <xs:simpleType>
+        <xs:restriction base="xs:token">
+          <xs:enumeration value="left"/>
+          <xs:enumeration value="center"/>
+          <xs:enumeration value="right"/>
+          <xs:enumeration value="justify"/>
+          <xs:enumeration value="char"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:attribute>
+    <xs:attribute name="char" type="Character.datatype"/>
+    <xs:attribute name="charoff" type="Length.datatype"/>
+  </xs:attributeGroup>
+  <!-- vertical alignment attribute for cell contents -->
+  <xs:attributeGroup name="CellVAlign.attrib">
+    <xs:attribute name="valign">
+      <xs:simpleType>
+        <xs:restriction base="xs:token">
+          <xs:enumeration value="top"/>
+          <xs:enumeration value="middle"/>
+          <xs:enumeration value="bottom"/>
+          <xs:enumeration value="baseline"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:attribute>
+  </xs:attributeGroup>
+  <!-- scope is simpler than axes attribute for common tables -->
+  <xs:attributeGroup name="scope.attrib">
+    <xs:attribute name="scope">
+      <xs:simpleType>
+        <xs:restriction base="xs:token">
+          <xs:enumeration value="row"/>
+          <xs:enumeration value="col"/>
+          <xs:enumeration value="rowgroup"/>
+          <xs:enumeration value="colgroup"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:attribute>
+  </xs:attributeGroup>
+  <!-- table: Table Element .............................. -->
+  <xs:complexType name="table.content">
+    <xs:sequence>
+      <xs:element minOccurs="0" ref="caption"/>
+      <xs:choice>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="col"/>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="colgroup"/>
+      </xs:choice>
+      <xs:choice>
+        <xs:sequence>
+          <xs:element minOccurs="0" ref="thead"/>
+          <xs:element minOccurs="0" ref="tfoot"/>
+          <xs:element maxOccurs="unbounded" ref="tbody"/>
+        </xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="tr"/>
+      </xs:choice>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="table">
+    <xs:complexType>
+      <xs:complexContent>
+        <xs:extension base="table.content">
+          <xs:attributeGroup ref="Common.attrib"/>
+          <xs:attribute name="summary" type="Text.datatype"/>
+          <xs:attribute name="width" type="Length.datatype"/>
+          <xs:attribute name="border" type="Pixels.datatype"/>
+          <xs:attributeGroup ref="frame.attrib"/>
+          <xs:attributeGroup ref="rules.attrib"/>
+          <xs:attribute name="cellspacing" type="Length.datatype"/>
+          <xs:attribute name="cellpadding" type="Length.datatype"/>
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+  <!-- end of table.element -->
+  <!-- end of table.attlist -->
+  <!-- caption: Table Caption ............................ -->
+  <xs:complexType name="caption.content" mixed="true">
+    <xs:group minOccurs="0" maxOccurs="unbounded" ref="Inline.mix"/>
+  </xs:complexType>
+  <xs:element name="caption">
+    <xs:complexType>
+      <xs:complexContent>
+        <xs:extension base="caption.content">
+          <xs:attributeGroup ref="Common.attrib"/>
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+  <!-- end of caption.element -->
+  <!-- end of caption.attlist -->
+  <!-- thead: Table Header ............................... -->
+  <!--
+    Use thead to duplicate headers when breaking table
+    across page boundaries, or for static headers when
+    tbody sections are rendered in scrolling panel.
+  -->
+  <xs:complexType name="thead.content">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" ref="tr"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="thead">
+    <xs:complexType>
+      <xs:complexContent>
+        <xs:extension base="thead.content">
+          <xs:attributeGroup ref="Common.attrib"/>
+          <xs:attributeGroup ref="CellHAlign.attrib"/>
+          <xs:attributeGroup ref="CellVAlign.attrib"/>
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+  <!-- end of thead.element -->
+  <!-- end of thead.attlist -->
+  <!-- tfoot: Table Footer ............................... -->
+  <!--
+    Use tfoot to duplicate footers when breaking table
+    across page boundaries, or for static footers when
+    tbody sections are rendered in scrolling panel.
+  -->
+  <xs:complexType name="tfoot.content">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" ref="tr"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="tfoot">
+    <xs:complexType>
+      <xs:complexContent>
+        <xs:extension base="tfoot.content">
+          <xs:attributeGroup ref="Common.attrib"/>
+          <xs:attributeGroup ref="CellHAlign.attrib"/>
+          <xs:attributeGroup ref="CellVAlign.attrib"/>
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+  <!-- end of tfoot.element -->
+  <!-- end of tfoot.attlist -->
+  <!-- tbody: Table Body ................................. -->
+  <!--
+    Use multiple tbody sections when rules are needed
+    between groups of table rows.
+  -->
+  <xs:complexType name="tbody.content">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" ref="tr"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="tbody">
+    <xs:complexType>
+      <xs:complexContent>
+        <xs:extension base="tbody.content">
+          <xs:attributeGroup ref="Common.attrib"/>
+          <xs:attributeGroup ref="CellHAlign.attrib"/>
+          <xs:attributeGroup ref="CellVAlign.attrib"/>
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+  <!-- end of tbody.element -->
+  <!-- end of tbody.attlist -->
+  <!-- colgroup: Table Column Group ...................... -->
+  <!--
+    colgroup groups a set of col elements. It allows you
+    to group several semantically-related columns together.
+  -->
+  <xs:complexType name="colgroup.content">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" ref="col"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="colgroup">
+    <xs:complexType>
+      <xs:complexContent>
+        <xs:extension base="colgroup.content">
+          <xs:attributeGroup ref="Common.attrib"/>
+          <xs:attribute name="span" default="1" type="Number.datatype"/>
+          <xs:attribute name="width" type="MultiLength.datatype"/>
+          <xs:attributeGroup ref="CellHAlign.attrib"/>
+          <xs:attributeGroup ref="CellVAlign.attrib"/>
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+  <!-- end of colgroup.element -->
+  <!-- end of colgroup.attlist -->
+  <!-- col: Table Column ................................. -->
+  <!--
+    col elements define the alignment properties for
+    cells in one or more columns.
+    
+    The width attribute specifies the width of the
+    columns, e.g.
+    
+      width="64"        width in screen pixels
+      width="0.5*"      relative width of 0.5
+    
+    The span attribute causes the attributes of one
+    col element to apply to more than one column.
+  -->
+  <xs:element name="col">
+    <xs:complexType>
+      <xs:attributeGroup ref="Common.attrib"/>
+      <xs:attribute name="span" default="1" type="Number.datatype"/>
+      <xs:attribute name="width" type="MultiLength.datatype"/>
+      <xs:attributeGroup ref="CellHAlign.attrib"/>
+      <xs:attributeGroup ref="CellVAlign.attrib"/>
+    </xs:complexType>
+  </xs:element>
+  <!-- end of col.element -->
+  <!-- end of col.attlist -->
+  <!-- tr: Table Row ..................................... -->
+  <xs:complexType name="tr.content">
+    <xs:choice maxOccurs="unbounded">
+      <xs:element ref="th"/>
+      <xs:element ref="td"/>
+    </xs:choice>
+  </xs:complexType>
+  <xs:element name="tr">
+    <xs:complexType>
+      <xs:complexContent>
+        <xs:extension base="tr.content">
+          <xs:attributeGroup ref="Common.attrib"/>
+          <xs:attributeGroup ref="CellHAlign.attrib"/>
+          <xs:attributeGroup ref="CellVAlign.attrib"/>
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+  <!-- end of tr.element -->
+  <!-- end of tr.attlist -->
+  <!-- th: Table Header Cell ............................. -->
+  <!--
+    th is for header cells, td for data,
+    but for cells acting as both use td
+  -->
+  <xs:complexType name="th.content" mixed="true">
+    <xs:group minOccurs="0" maxOccurs="unbounded" ref="Flow.mix"/>
+  </xs:complexType>
+  <xs:element name="th">
+    <xs:complexType>
+      <xs:complexContent>
+        <xs:extension base="th.content">
+          <xs:attributeGroup ref="Common.attrib"/>
+          <xs:attribute name="abbr" type="Text.datatype"/>
+          <xs:attribute name="axis"/>
+          <xs:attribute name="headers" type="xs:IDREFS"/>
+          <xs:attributeGroup ref="scope.attrib"/>
+          <xs:attribute name="rowspan" default="1" type="Number.datatype"/>
+          <xs:attribute name="colspan" default="1" type="Number.datatype"/>
+          <xs:attributeGroup ref="CellHAlign.attrib"/>
+          <xs:attributeGroup ref="CellVAlign.attrib"/>
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+  <!-- end of th.element -->
+  <!-- end of th.attlist -->
+  <!-- td: Table Data Cell ............................... -->
+  <xs:complexType name="td.content" mixed="true">
+    <xs:group minOccurs="0" maxOccurs="unbounded" ref="Flow.mix"/>
+  </xs:complexType>
+  <xs:element name="td">
+    <xs:complexType>
+      <xs:complexContent>
+        <xs:extension base="td.content">
+          <xs:attributeGroup ref="Common.attrib"/>
+          <xs:attribute name="abbr" type="Text.datatype"/>
+          <xs:attribute name="axis"/>
+          <xs:attribute name="headers" type="xs:IDREFS"/>
+          <xs:attributeGroup ref="scope.attrib"/>
+          <xs:attribute name="rowspan" default="1" type="Number.datatype"/>
+          <xs:attribute name="colspan" default="1" type="Number.datatype"/>
+          <xs:attributeGroup ref="CellHAlign.attrib"/>
+          <xs:attributeGroup ref="CellVAlign.attrib"/>
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:group name="BlkNoForm.mix">
+    <xs:choice>
+      <xs:element ref="Heading.class"/>
+      <xs:element ref="List.class"/>
+      <xs:group ref="BlkStruct.class"/>
+      <xs:group ref="BlkPhras.class"/>
+      <xs:group ref="BlkPres.class"/>
+      <xs:group ref="Table.class"/>
+      <xs:group ref="Block.extra"/>
+      <xs:group ref="Misc.class"/>
+    </xs:choice>
+  </xs:group>
+  <!-- form: Form Element ................................ -->
+  <xs:complexType name="form.content">
+    <xs:choice maxOccurs="unbounded">
+      <xs:group ref="BlkNoForm.mix"/>
+      <xs:element ref="fieldset"/>
+    </xs:choice>
+  </xs:complexType>
+  <xs:element name="form">
+    <xs:complexType>
+      <xs:complexContent>
+        <xs:extension base="form.content">
+          <xs:attribute name="onsubmit" type="Script.datatype"/>
+          <xs:attribute name="onreset" type="Script.datatype"/>
+          <xs:attributeGroup ref="Common.attrib"/>
+          <xs:attribute name="action" use="required" type="URI.datatype"/>
+          <xs:attribute name="method" default="get">
+            <xs:simpleType>
+              <xs:restriction base="xs:token">
+                <xs:enumeration value="get"/>
+                <xs:enumeration value="post"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:attribute>
+          <xs:attribute name="enctype" default="application/x-www-form-urlencoded" type="ContentType.datatype"/>
+          <xs:attribute name="accept-charset" type="Charsets.datatype"/>
+          <xs:attribute name="accept" type="ContentTypes.datatype"/>
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+  <!-- end of form.element -->
+  <!-- end of form.attlist -->
+  <!-- label: Form Field Label Text ...................... -->
+  <!-- Each label must not contain more than ONE field -->
+  <xs:complexType name="label.content" mixed="true">
+    <xs:choice minOccurs="0" maxOccurs="unbounded">
+      <xs:element ref="input"/>
+      <xs:element ref="select"/>
+      <xs:element ref="textarea"/>
+      <xs:element ref="button"/>
+      <xs:group ref="InlStruct.class"/>
+      <xs:group ref="InlPhras.class"/>
+      <xs:element ref="I18n.class"/>
+      <xs:group ref="InlPres.class"/>
+      <xs:element ref="Anchor.class"/>
+      <xs:group ref="InlSpecial.class"/>
+      <xs:group ref="Inline.extra"/>
+      <xs:group ref="Misc.class"/>
+    </xs:choice>
+  </xs:complexType>
+  <xs:element name="label">
+    <xs:complexType>
+      <xs:complexContent>
+        <xs:extension base="label.content">
+          <xs:attribute name="onfocus" type="Script.datatype"/>
+          <xs:attribute name="onblur" type="Script.datatype"/>
+          <xs:attributeGroup ref="Common.attrib"/>
+          <xs:attribute name="for" type="xs:IDREF"/>
+          <xs:attribute name="accesskey" type="Character.datatype"/>
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+  <!-- end of label.element -->
+  <!-- end of label.attlist -->
+  <!-- input: Form Control ............................... -->
+  <xs:element name="input">
+    <xs:complexType>
+      <xs:attribute name="onfocus" type="Script.datatype"/>
+      <xs:attribute name="onblur" type="Script.datatype"/>
+      <xs:attribute name="onselect" type="Script.datatype"/>
+      <xs:attribute name="onchange" type="Script.datatype"/>
+      <xs:attribute name="usemap" type="xs:IDREF"/>
+      <xs:attribute name="ismap">
+        <xs:simpleType>
+          <xs:restriction base="xs:token">
+            <xs:enumeration value="ismap"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+      <xs:attributeGroup ref="Common.attrib"/>
+      <xs:attribute name="type" default="text" type="InputType.class"/>
+      <xs:attribute name="name"/>
+      <xs:attribute name="value"/>
+      <xs:attribute name="checked">
+        <xs:simpleType>
+          <xs:restriction base="xs:token">
+            <xs:enumeration value="checked"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="disabled">
+        <xs:simpleType>
+          <xs:restriction base="xs:token">
+            <xs:enumeration value="disabled"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="readonly">
+        <xs:simpleType>
+          <xs:restriction base="xs:token">
+            <xs:enumeration value="readonly"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="size" type="Number.datatype"/>
+      <xs:attribute name="maxlength" type="Number.datatype"/>
+      <xs:attribute name="src" type="URI.datatype"/>
+      <xs:attribute name="alt" type="Text.datatype"/>
+      <xs:attribute name="tabindex" type="Number.datatype"/>
+      <xs:attribute name="accesskey" type="Character.datatype"/>
+      <xs:attribute name="accept" type="ContentTypes.datatype"/>
+    </xs:complexType>
+  </xs:element>
+  <!-- end of input.element -->
+  <xs:simpleType name="InputType.class">
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="text"/>
+      <xs:enumeration value="password"/>
+      <xs:enumeration value="checkbox"/>
+      <xs:enumeration value="radio"/>
+      <xs:enumeration value="submit"/>
+      <xs:enumeration value="reset"/>
+      <xs:enumeration value="file"/>
+      <xs:enumeration value="hidden"/>
+      <xs:enumeration value="image"/>
+      <xs:enumeration value="button"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <!-- attribute 'name' required for all but submit & reset -->
+  <!-- end of input.attlist -->
+  <!-- select: Option Selector ........................... -->
+  <xs:complexType name="select.content">
+    <xs:choice maxOccurs="unbounded">
+      <xs:element ref="optgroup"/>
+      <xs:element ref="option"/>
+    </xs:choice>
+  </xs:complexType>
+  <xs:element name="select">
+    <xs:complexType>
+      <xs:complexContent>
+        <xs:extension base="select.content">
+          <xs:attribute name="onfocus" type="Script.datatype"/>
+          <xs:attribute name="onblur" type="Script.datatype"/>
+          <xs:attribute name="onchange" type="Script.datatype"/>
+          <xs:attributeGroup ref="Common.attrib"/>
+          <xs:attribute name="name"/>
+          <xs:attribute name="size" type="Number.datatype"/>
+          <xs:attribute name="multiple">
+            <xs:simpleType>
+              <xs:restriction base="xs:token">
+                <xs:enumeration value="multiple"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:attribute>
+          <xs:attribute name="disabled">
+            <xs:simpleType>
+              <xs:restriction base="xs:token">
+                <xs:enumeration value="disabled"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:attribute>
+          <xs:attribute name="tabindex" type="Number.datatype"/>
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+  <!-- end of select.element -->
+  <!-- end of select.attlist -->
+  <!-- optgroup: Option Group ............................ -->
+  <xs:complexType name="optgroup.content">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" ref="option"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="optgroup">
+    <xs:complexType>
+      <xs:complexContent>
+        <xs:extension base="optgroup.content">
+          <xs:attributeGroup ref="Common.attrib"/>
+          <xs:attribute name="disabled">
+            <xs:simpleType>
+              <xs:restriction base="xs:token">
+                <xs:enumeration value="disabled"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:attribute>
+          <xs:attribute name="label" use="required" type="Text.datatype"/>
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+  <!-- end of optgroup.element -->
+  <!-- end of optgroup.attlist -->
+  <!-- option: Selectable Choice ......................... -->
+  <xs:element name="option">
+    <xs:complexType mixed="true">
+      <xs:attributeGroup ref="Common.attrib"/>
+      <xs:attribute name="selected">
+        <xs:simpleType>
+          <xs:restriction base="xs:token">
+            <xs:enumeration value="selected"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="disabled">
+        <xs:simpleType>
+          <xs:restriction base="xs:token">
+            <xs:enumeration value="disabled"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="label" type="Text.datatype"/>
+      <xs:attribute name="value"/>
+    </xs:complexType>
+  </xs:element>
+  <!-- end of option.element -->
+  <!-- end of option.attlist -->
+  <!-- textarea: Multi-Line Text Field ................... -->
+  <xs:element name="textarea">
+    <xs:complexType mixed="true">
+      <xs:attribute name="onfocus" type="Script.datatype"/>
+      <xs:attribute name="onblur" type="Script.datatype"/>
+      <xs:attribute name="onselect" type="Script.datatype"/>
+      <xs:attribute name="onchange" type="Script.datatype"/>
+      <xs:attributeGroup ref="Common.attrib"/>
+      <xs:attribute name="name"/>
+      <xs:attribute name="rows" use="required" type="Number.datatype"/>
+      <xs:attribute name="cols" use="required" type="Number.datatype"/>
+      <xs:attribute name="disabled">
+        <xs:simpleType>
+          <xs:restriction base="xs:token">
+            <xs:enumeration value="disabled"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="readonly">
+        <xs:simpleType>
+          <xs:restriction base="xs:token">
+            <xs:enumeration value="readonly"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="tabindex" type="Number.datatype"/>
+      <xs:attribute name="accesskey" type="Character.datatype"/>
+    </xs:complexType>
+  </xs:element>
+  <!-- end of textarea.element -->
+  <!-- end of textarea.attlist -->
+  <!-- fieldset: Form Control Group ...................... -->
+  <!--
+    #PCDATA is to solve the mixed content problem,
+    per specification only whitespace is allowed
+  -->
+  <xs:complexType name="fieldset.content" mixed="true">
+    <xs:choice minOccurs="0" maxOccurs="unbounded">
+      <xs:element ref="legend"/>
+      <xs:group ref="Flow.mix"/>
+    </xs:choice>
+  </xs:complexType>
+  <xs:element name="fieldset">
+    <xs:complexType>
+      <xs:complexContent>
+        <xs:extension base="fieldset.content">
+          <xs:attributeGroup ref="Common.attrib"/>
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+  <!-- end of fieldset.element -->
+  <!-- end of fieldset.attlist -->
+  <!-- legend: Fieldset Legend ........................... -->
+  <xs:complexType name="legend.content" mixed="true">
+    <xs:group minOccurs="0" maxOccurs="unbounded" ref="Inline.mix"/>
+  </xs:complexType>
+  <xs:element name="legend">
+    <xs:complexType>
+      <xs:complexContent>
+        <xs:extension base="legend.content">
+          <xs:attributeGroup ref="Common.attrib"/>
+          <xs:attribute name="accesskey" type="Character.datatype"/>
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+  <!-- end of legend.element -->
+  <!-- end of legend.attlist -->
+  <!-- button: Push Button ............................... -->
+  <xs:complexType name="button.content" mixed="true">
+    <xs:choice minOccurs="0" maxOccurs="unbounded">
+      <xs:group ref="BlkNoForm.mix"/>
+      <xs:group ref="InlStruct.class"/>
+      <xs:group ref="InlPhras.class"/>
+      <xs:group ref="InlPres.class"/>
+      <xs:element ref="I18n.class"/>
+      <xs:group ref="InlSpecial.class"/>
+      <xs:group ref="Inline.extra"/>
+    </xs:choice>
+  </xs:complexType>
+  <xs:element name="button">
+    <xs:complexType>
+      <xs:complexContent>
+        <xs:extension base="button.content">
+          <xs:attribute name="onfocus" type="Script.datatype"/>
+          <xs:attribute name="onblur" type="Script.datatype"/>
+          <xs:attributeGroup ref="Common.attrib"/>
+          <xs:attribute name="name"/>
+          <xs:attribute name="value"/>
+          <xs:attribute name="type" default="submit">
+            <xs:simpleType>
+              <xs:restriction base="xs:token">
+                <xs:enumeration value="button"/>
+                <xs:enumeration value="submit"/>
+                <xs:enumeration value="reset"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:attribute>
+          <xs:attribute name="disabled">
+            <xs:simpleType>
+              <xs:restriction base="xs:token">
+                <xs:enumeration value="disabled"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:attribute>
+          <xs:attribute name="tabindex" type="Number.datatype"/>
+          <xs:attribute name="accesskey" type="Character.datatype"/>
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="title">
+    <xs:complexType mixed="true">
+      <xs:attributeGroup ref="I18n.attrib"/>
+    </xs:complexType>
+  </xs:element>
+  <!-- end of title.element -->
+  <!-- end of title.attlist -->
+  <!-- head: Document Head ............................... -->
+  <xs:element name="head">
+    <xs:complexType>
+      <xs:complexContent>
+        <xs:extension base="head.content">
+          <xs:attributeGroup ref="I18n.attrib"/>
+          <xs:attributeGroup ref="profile.attrib"/>
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+  <!-- end of head.element -->
+  <!-- reserved for future use with document profiles -->
+  <xs:attributeGroup name="profile.attrib">
+    <xs:attribute name="profile" default="" type="URI.datatype"/>
+  </xs:attributeGroup>
+  <!-- end of head.attlist -->
+  <!-- body: Document Body ............................... -->
+  <xs:complexType name="body.content">
+    <xs:group minOccurs="0" maxOccurs="unbounded" ref="Block.mix"/>
+  </xs:complexType>
+  <xs:element name="body">
+    <xs:complexType>
+      <xs:complexContent>
+        <xs:extension base="body.content">
+          <xs:attribute name="onload" type="Script.datatype"/>
+          <xs:attribute name="onunload" type="Script.datatype"/>
+          <xs:attributeGroup ref="Common.attrib"/>
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+  <!-- end of body.element -->
+  <!-- end of body.attlist -->
+  <!-- html: XHTML Document Element ...................... -->
+  <xs:complexType name="html.content">
+    <xs:sequence>
+      <xs:element ref="head"/>
+      <xs:element ref="body"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="html">
+    <xs:complexType>
+      <xs:complexContent>
+        <xs:extension base="html.content">
+          <xs:attributeGroup ref="XSI.schemaLocation.attrib"/>
+          <xs:attributeGroup ref="XHTML.version.attrib"/>
+          <xs:attributeGroup ref="I18n.attrib"/>
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+  <!-- end of html.element -->
+  <!-- define a parameter for the XSI schemaLocation attribute -->
+  <xs:attributeGroup name="XSI.schemaLocation.attrib">
+    <xs:attribute ref="xsi:schemaLocation"/>
+  </xs:attributeGroup>
+  <!-- version attribute value defined in driver -->
+  <xs:attributeGroup name="XHTML.version.attrib">
+    <xs:attribute name="version" default="-//W3C//DTD XHTML 1.1//EN">
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="-//W3C//DTD XHTML 1.1//EN"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:attribute>
+  </xs:attributeGroup>
+
+
+  <xs:attributeGroup name="style.attrib">
+    <xs:attribute name="style"/>
+  </xs:attributeGroup>
+  <xs:attributeGroup name="Core.extra.attrib">
+    <xs:attributeGroup ref="style.attrib"/>
+  </xs:attributeGroup>
+
+  <xs:simpleType name="Length.datatype">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <!-- space-separated list of link types -->
+  <xs:simpleType name="LinkTypes.datatype">
+    <xs:restriction base="xs:NMTOKENS"/>
+  </xs:simpleType>
+  <!-- single or comma-separated list of media descriptors -->
+  <xs:simpleType name="MediaDesc.datatype">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <!-- pixel, percentage, or relative -->
+  <xs:simpleType name="MultiLength.datatype">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <!-- one or more digits (NUMBER) -->
+  <xs:simpleType name="Number.datatype">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <!-- integer representing length in pixels -->
+  <xs:simpleType name="Pixels.datatype">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <!-- script expression -->
+  <xs:simpleType name="Script.datatype">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <!-- textual content -->
+  <xs:simpleType name="Text.datatype">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <!-- Imported Datatypes ................................ -->
+  <!-- a single character from [ISO10646] -->
+  <xs:simpleType name="Character.datatype">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <!-- a character encoding, as per [RFC2045] -->
+  <xs:simpleType name="Charset.datatype">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <!-- a space separated list of character encodings, as per [RFC2045] -->
+  <xs:simpleType name="Charsets.datatype">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <!-- Color specification using color name or sRGB (#RRGGBB) values -->
+  <!-- media type, as per [RFC2045] -->
+  <xs:simpleType name="ContentType.datatype">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <!-- comma-separated list of media types, as per [RFC2045] -->
+  <xs:simpleType name="ContentTypes.datatype">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <!-- date and time information. ISO date format -->
+  <xs:simpleType name="Datetime.datatype">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <!-- formal public identifier, as per [ISO8879] -->
+  <xs:simpleType name="FPI.datatype">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <!-- a language code, as per [RFC3066] or its successor -->
+  <xs:simpleType name="LanguageCode.datatype">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <!-- a Uniform Resource Identifier, see [URI] -->
+  <xs:simpleType name="URI.datatype">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+  <!-- a space-separated list of Uniform Resource Identifiers, see [URI] -->
+  <xs:simpleType name="URIs.datatype">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
+
+
+  <xs:attributeGroup name="Events.attrib">
+    <xs:attribute name="onclick" type="Script.datatype"/>
+    <xs:attribute name="ondblclick" type="Script.datatype"/>
+    <xs:attribute name="onmousedown" type="Script.datatype"/>
+    <xs:attribute name="onmouseup" type="Script.datatype"/>
+    <xs:attribute name="onmouseover" type="Script.datatype"/>
+    <xs:attribute name="onmousemove" type="Script.datatype"/>
+    <xs:attribute name="onmouseout" type="Script.datatype"/>
+    <xs:attribute name="onkeypress" type="Script.datatype"/>
+    <xs:attribute name="onkeydown" type="Script.datatype"/>
+    <xs:attribute name="onkeyup" type="Script.datatype"/>
+  </xs:attributeGroup>
+
+  <xs:attributeGroup name="id.attrib">
+    <xs:attribute name="id" type="xs:ID"/>
+  </xs:attributeGroup>
+  <xs:attributeGroup name="class.attrib">
+    <xs:attribute name="class" type="xs:NMTOKENS"/>
+  </xs:attributeGroup>
+  <xs:attributeGroup name="title.attrib">
+    <xs:attribute name="title" type="Text.datatype"/>
+  </xs:attributeGroup>
+  <xs:attributeGroup name="Core.attrib">
+    <xs:attributeGroup ref="id.attrib"/>
+    <xs:attributeGroup ref="class.attrib"/>
+    <xs:attributeGroup ref="title.attrib"/>
+    <xs:attribute ref="xml:space" default="preserve"/>
+    <xs:attributeGroup ref="Core.extra.attrib"/>
+  </xs:attributeGroup>
+  <xs:attributeGroup name="lang.attrib">
+    <xs:attribute ref="xml:lang"/>
+  </xs:attributeGroup>
+  <xs:attributeGroup name="dir.attrib">
+    <xs:attribute name="dir">
+      <xs:simpleType>
+        <xs:restriction base="xs:token">
+          <xs:enumeration value="ltr"/>
+          <xs:enumeration value="rtl"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:attribute>
+  </xs:attributeGroup>
+  <xs:attributeGroup name="I18n.attrib">
+    <xs:attributeGroup ref="dir.attrib"/>
+    <xs:attributeGroup ref="lang.attrib"/>
+  </xs:attributeGroup>
+  <!-- intrinsic event attributes declared previously -->
+  <xs:attributeGroup name="Common.attrib">
+    <xs:attributeGroup ref="Core.attrib"/>
+    <xs:attributeGroup ref="I18n.attrib"/>
+    <xs:attributeGroup ref="Events.attrib"/>
+  </xs:attributeGroup>
+
+
+  <xs:element name="Edit.class" abstract="true"/>
+  <!--
+    script and noscript are used to contain scripts
+    and alternative content
+  -->
+  <xs:group name="Misc.extra">
+    <xs:choice>
+      <xs:element ref="script"/>
+      <xs:element ref="noscript"/>
+    </xs:choice>
+  </xs:group>
+  <!--
+    These elements are neither block nor inline, and can
+    essentially be used anywhere in the document body.
+  -->
+  <xs:group name="Misc.class">
+    <xs:choice>
+      <xs:element ref="Edit.class"/>
+      <xs:group ref="Misc.extra"/>
+    </xs:choice>
+  </xs:group>
+  <!-- ....................  Inline Elements  ...................... -->
+  <xs:group name="Inlstruct.class">
+    <xs:choice>
+      <xs:element ref="br"/>
+      <xs:element ref="span"/>
+    </xs:choice>
+  </xs:group>
+  <xs:group name="Inlphras.class">
+    <xs:choice>
+      <xs:element ref="em"/>
+      <xs:element ref="strong"/>
+      <xs:element ref="dfn"/>
+      <xs:element ref="code"/>
+      <xs:element ref="samp"/>
+      <xs:element ref="kbd"/>
+      <xs:element ref="var"/>
+      <xs:element ref="cite"/>
+      <xs:element ref="abbr"/>
+      <xs:element ref="acronym"/>
+      <xs:element ref="q"/>
+    </xs:choice>
+  </xs:group>
+  <xs:group name="Inlpres.class">
+    <xs:choice>
+      <xs:element ref="tt"/>
+      <xs:element ref="i"/>
+      <xs:element ref="b"/>
+      <xs:element ref="big"/>
+      <xs:element ref="small"/>
+      <xs:element ref="sub"/>
+      <xs:element ref="sup"/>
+    </xs:choice>
+  </xs:group>
+  <xs:element name="I18n.class" abstract="true">
+    <xs:complexType>
+      <xs:complexContent>
+        <xs:extension base="bdo.content">
+          <xs:attributeGroup ref="Core.attrib"/>
+          <xs:attribute ref="xml:lang"/>
+          <xs:attribute name="dir" use="required">
+            <xs:simpleType>
+              <xs:restriction base="xs:token">
+                <xs:enumeration value="ltr"/>
+                <xs:enumeration value="rtl"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:attribute>
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Anchor.class" abstract="true">
+    <xs:complexType>
+      <xs:complexContent>
+        <xs:extension base="a.content">
+          <xs:attribute name="onfocus" type="Script.datatype"/>
+          <xs:attribute name="onblur" type="Script.datatype"/>
+          <xs:attributeGroup ref="Common.attrib"/>
+          <xs:attribute name="href" type="URI.datatype"/>
+          <xs:attribute name="charset" type="Charset.datatype"/>
+          <xs:attribute name="type" type="ContentType.datatype"/>
+          <xs:attribute name="hreflang" type="LanguageCode.datatype"/>
+          <xs:attribute name="rel" type="LinkTypes.datatype"/>
+          <xs:attribute name="rev" type="LinkTypes.datatype"/>
+          <xs:attribute name="accesskey" type="Character.datatype"/>
+          <xs:attribute name="tabindex" type="Number.datatype"/>
+          <xs:attribute name="shape" default="rect" type="Shape.datatype"/>
+          <xs:attribute name="coords" type="Coords.datatype"/>
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:group name="Inlspecial.class">
+    <xs:choice>
+      <xs:element ref="img"/>
+      <xs:element ref="map"/>
+    </xs:choice>
+  </xs:group>
+  <xs:group name="Inline.extra">
+    <xs:choice>
+      <xs:element ref="input"/>
+      <xs:element ref="select"/>
+      <xs:element ref="textarea"/>
+      <xs:element ref="label"/>
+      <xs:element ref="button"/>
+    </xs:choice>
+  </xs:group>
+  <xs:element name="Ruby.class" abstract="true">
+    <xs:complexType>
+      <xs:complexContent>
+        <xs:extension base="ruby.content">
+          <xs:attributeGroup ref="Ruby.common.attrib"/>
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+  <!--
+    %Inline.class; includes all inline elements,
+    used as a component in mixes
+  -->
+  <xs:group name="Inline.class">
+    <xs:choice>
+      <xs:group ref="Inlstruct.class"/>
+      <xs:group ref="Inlphras.class"/>
+      <xs:group ref="Inlpres.class"/>
+      <xs:element ref="I18n.class"/>
+      <xs:element ref="Anchor.class"/>
+      <xs:group ref="Inlspecial.class"/>
+      <xs:element ref="Ruby.class"/>
+      <xs:group ref="Inline.extra"/>
+    </xs:choice>
+  </xs:group>
+  <!--
+    %Inline-noruby.class; includes all inline elements 
+    except ruby, used as a component in mixes
+  -->
+  <!-- %Noruby.content; includes all inlines except ruby -->
+  <!--
+    %Inline-noa.class; includes all non-anchor inlines,
+    used as a component in mixes
+  -->
+  <!-- %Inline-noa.mix; includes all non-anchor inlines -->
+  <!-- %Inline.mix; includes all inline elements, including %Misc.class; -->
+  <xs:group name="Inline.mix">
+    <xs:choice>
+      <xs:group ref="Inline.class"/>
+      <xs:group ref="Misc.class"/>
+    </xs:choice>
+  </xs:group>
+  <!-- .....................  Block Elements  ...................... -->
+  <!--
+    In the HTML 4.0 DTD, heading and list elements were included
+    in the % block; parameter entity. The % Heading.class; and
+    % List.class; parameter entities must now be included explicitly
+    on element declarations where desired.
+  -->
+  <xs:element name="Heading.class" abstract="true">
+    <xs:complexType>
+      <xs:complexContent>
+        <xs:extension base="Heading.content">
+          <xs:attributeGroup ref="Common.attrib"/>
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="List.class" abstract="true"/>
+  <xs:group name="Blkstruct.class">
+    <xs:choice>
+      <xs:element ref="p"/>
+      <xs:element ref="div"/>
+    </xs:choice>
+  </xs:group>
+  <xs:group name="Blkphras.class">
+    <xs:choice>
+      <xs:element ref="pre"/>
+      <xs:element ref="blockquote"/>
+      <xs:element ref="address"/>
+    </xs:choice>
+  </xs:group>
+  <xs:group name="Blkpres.class">
+    <xs:sequence>
+      <xs:element ref="hr"/>
+    </xs:sequence>
+  </xs:group>
+  <xs:group name="Block.extra">
+    <xs:choice>
+      <xs:element ref="table"/>
+      <xs:element ref="form"/>
+      <xs:element ref="fieldset"/>
+    </xs:choice>
+  </xs:group>
+  <!--
+    %Block.class; includes all block elements,
+    used as an component in mixes
+  -->
+  <xs:group name="Block.class">
+    <xs:choice>
+      <xs:group ref="Blkstruct.class"/>
+      <xs:group ref="Blkphras.class"/>
+      <xs:group ref="Blkpres.class"/>
+      <xs:group ref="Block.extra"/>
+    </xs:choice>
+  </xs:group>
+  <!-- %Block.mix; includes all block elements plus %Misc.class; -->
+  <xs:group name="Block.mix">
+    <xs:choice>
+      <xs:element ref="Heading.class"/>
+      <xs:element ref="List.class"/>
+      <xs:group ref="Block.class"/>
+      <xs:group ref="Misc.class"/>
+    </xs:choice>
+  </xs:group>
+  <!-- ................  All Content Elements  .................. -->
+  <!-- %Flow.mix; includes all text content, block and inline -->
+  <xs:group name="Flow.mix">
+    <xs:choice>
+      <xs:element ref="Heading.class"/>
+      <xs:element ref="List.class"/>
+      <xs:group ref="Block.class"/>
+      <xs:group ref="Inline.class"/>
+      <xs:group ref="Misc.class"/>
+    </xs:choice>
+  </xs:group>
+
+  <xs:attribute name="xsi:schemaLocation" type="URIs.datatype"/>
+
+  <xs:attribute name="xml:space">
+    <xs:simpleType>
+      <xs:restriction base="xs:token">
+        <xs:enumeration value="preserve"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:attribute>
+  <xs:attribute name="xml:lang" type="LanguageCode.datatype"/>
+
+  <!--
+    For example, if you are using XHTML 1.1 directly, use the FPI
+    in the DOCTYPE declaration, with the xmlns attribute on the
+    document element to identify the default namespace:
+    
+      <?xml version="1.0"?>
+      <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "xhtml11.dtd">
+      <html xmlns="http://www.w3.org/1999/xhtml"
+            xml:lang="en">
+      ...
+      </html>
+    
+    Revisions:
+    (none)
+  -->
+  <!-- reserved for future use with document profiles -->
+  <!--
+    Bidirectional Text features
+    This feature-test entity is used to declare elements
+    and attributes used for bidirectional text support.
+  -->
+  <!-- ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: -->
+  <!-- Pre-Framework Redeclaration placeholder  .................... -->
+  <!--
+    this serves as a location to insert markup declarations
+    into the DTD prior to the framework declarations.
+  -->
+  <!-- Inline Style Module  ........................................ -->
+  <!-- declare Document Model module instantiated in framework -->
+  <!-- Modular Framework Module (required) ......................... -->
+  <!-- Post-Framework Redeclaration placeholder  ................... -->
+  <!--
+    this serves as a location to insert markup declarations
+    into the DTD following the framework declarations.
+  -->
+  <!-- Text Module (Required)  ..................................... -->
+  <!-- Hypertext Module (required) ................................. -->
+  <!-- Lists Module (required)  .................................... -->
+  <!-- ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: -->
+  <!-- Edit Module  ................................................ -->
+  <!-- BIDI Override Module  ....................................... -->
+  <!-- Ruby Module  ................................................ -->
+  <xs:attributeGroup name="Ruby.common.attrib">
+    <xs:attributeGroup ref="Common.attrib"/>
+  </xs:attributeGroup>
+  <!-- Presentation Module  ........................................ -->
+  <!-- Link Element Module  ........................................ -->
+  <!-- Document Metainformation Module  ............................ -->
+  <!-- Base Element Module  ........................................ -->
+  <!-- Scripting Module  ........................................... -->
+  <!-- Style Sheets Module  ......................................... -->
+  <!-- Image Module  ............................................... -->
+  <!-- Client-side Image Map Module  ............................... -->
+  <!-- Server-side Image Map Module  ............................... -->
+  <!-- Param Element Module  ....................................... -->
+  <!-- Embedded Object Module  ..................................... -->
+  <!-- Tables Module ............................................... -->
+  <!-- Forms Module  ............................................... -->
+  <!-- Legacy Markup ............................................... -->
+  <!-- Document Structure Module (required)  ....................... -->
+</xs:schema>
+<!-- end of XHTML 1.1 DTD  ................................................. -->
+<!-- ....................................................................... -->

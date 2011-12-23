@@ -1,0 +1,47 @@
+mathematica
+
+podle fermatovy vety  najdem nejake a^(p-1)= = =  1  mod p (je kongruentni)
+50% pravdepodobnost na jeden pokus, cislo, ktere projde n pokusy ma 1 - 2^(-n)
+
+
+x^2 === 1 (mod p)
+x^2 - 1 === 0 mod p
+(x+1) (x-1) === 0 mod p
+a ^(p-1) - 1 === 0 mod p
+p - 1 = 2 ^(s) *d   , s nalezi Z
+(a ^ (2 ^(s) *d)  - 1) (a ^ ( 2 ^(s) *d ) + 1)
+||
+||
+ V
+ etc
+ 
+ 
+ |a ^d|p =1
+ |a ^(2*d)|p =|-1|p = p-1
+ ...
+ ...
+ ...
+ ...
+
+pro dve a je to 1- (0,25^2) ... 
+ 
+ 
+ 
+ 
+ Carmichaelova cisla - daji se odhalit jenom pro a, ktere deli p
+ 
+ 
+ DES
+ Data Encryption standard - 1974, NSA
+ 64 bitu - 8 pomocnych, 56 kodovacich
+
+
+Certifikaty
+A====E=======B
+E komunikuje s obouma 
+
+A ma verejny klic B, B ma verejny klic A
+certifikacni autorita ma svuj privatni klic a podepisuje jim verejne klice A a B 
+
+Chaining certification  
+    

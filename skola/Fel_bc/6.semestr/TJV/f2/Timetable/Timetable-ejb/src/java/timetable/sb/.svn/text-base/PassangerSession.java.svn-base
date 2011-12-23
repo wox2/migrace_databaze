@@ -1,0 +1,158 @@
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+package timetable.sb;
+
+import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.annotation.Resource;
+import javax.ejb.Stateful;
+import javax.persistence.EntityManager;
+import javax.persistence.NoResultException;
+import javax.persistence.NonUniqueResultException;
+import javax.persistence.PersistenceContext;
+import javax.persistence.RollbackException;
+import javax.resource.NotSupportedException;
+import javax.transaction.HeuristicMixedException;
+import javax.transaction.HeuristicRollbackException;
+import javax.transaction.Status;
+import javax.transaction.SystemException;
+import javax.transaction.UserTransaction;
+import timetable.model.Link;
+import timetable.model.Passanger;
+import timetable.model.Ticket;
+
+/**
+ *
+ * @author janf
+ */
+@Stateful
+public class PassangerSession implements PassangerSessionLocal {
+
+    private Passanger current;
+
+    @PersistenceContext
+    private EntityManager em;
+
+    @Resource
+    private UserTransaction utx;
+
+    @Override
+    public void init(String username) {
+        try {
+            if (utx.getStatus() == Status.STATUS_NO_TRANSACTION) {
+                utx.begin();
+            }
+            if (username == null) {
+                current = new Passanger();
+            } else {
+                current = (Passanger) em.find(Passanger.class, username);
+                /* TODO if (current == null) {
+                    throw new NullPointerException();
+                }*/
+            }
+        } catch (javax.transaction.NotSupportedException ex) {
+            Logger.getLogger(PassangerSession.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SystemException ex) {
+            Logger.getLogger(PassangerSession.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    @Override
+    public Passanger getCurrent() {
+        return current;
+    }
+
+    @Override
+    public List<Ticket> getBookedTickets() {
+        return current.getTickets();
+    }
+
+    @Override
+    public void save(Passanger passanger) {
+        try {
+            // TODO toask
+            if (!em.contains(current)) {
+                if (!current.getUsername().equals(passanger.getUsername())) {
+                    current.setUsername(passanger.getUsername());
+                    em.persist(current);
+                } else {
+                    current = em.merge(current);
+                    em.persist(current);
+                }
+            } else if (!passanger.getUsername().equals(current.getUsername())) {
+                utx.rollback();
+                throw new IllegalArgumentException("Invalid argument: current username is " + current.getUsername() + ", but " + passanger.getUsername() + "got.");
+            }
+
+            current.setFirstName(passanger.getFirstName());
+            current.setSurname(passanger.getSurname());
+
+            utx.commit();
+
+            utx.begin();
+        } catch (javax.transaction.NotSupportedException ex) {
+            Logger.getLogger(PassangerSession.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (javax.transaction.RollbackException ex) {
+            Logger.getLogger(PassangerSession.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (HeuristicMixedException ex) {
+            Logger.getLogger(PassangerSession.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (HeuristicRollbackException ex) {
+            Logger.getLogger(PassangerSession.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SecurityException ex) {
+            Logger.getLogger(PassangerSession.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IllegalStateException ex) {
+            Logger.getLogger(PassangerSession.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SystemException ex) {
+            Logger.getLogger(PassangerSession.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IllegalArgumentException ex) {
+            Logger.getLogger(PassangerSession.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    @Override
+    public void addTicket(Ticket ticket) {
+        ticket = em.merge(ticket);
+        current.getTickets().add(ticket);
+    }
+
+    @Override
+    public boolean removeTicket(Ticket ticket) {
+        return current.getTickets().remove(ticket);
+    }
+
+    @Override
+    public void discard() {
+        try {
+            utx.rollback();
+        } catch (IllegalStateException ex) {
+            Logger.getLogger(PassangerSession.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SecurityException ex) {
+            Logger.getLogger(PassangerSession.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SystemException ex) {
+            Logger.getLogger(PassangerSession.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    @Override
+    public void addLinkToTicket(Link link, Ticket ticket) {
+        if (!em.contains(ticket)) {
+            addTicket(ticket);
+        }
+        ticket = em.find(Ticket.class, ticket.getId());
+        link.getTickets().add(ticket);
+        ticket.getLinks().add(link);
+        em.merge(link);
+        em.merge(ticket);
+        // TODO persist?
+    }
+
+    @Override
+    public List<Link> getLinksByTicket(Ticket ticket) {
+        if(!current.getTickets().contains(ticket)) return null;
+        else return (List<Link>) em.createQuery("(SELECT l FROM Ticket t JOIN t.links l WHERE t=:ticket)").setParameter("ticket", ticket).getResultList();
+    }
+}

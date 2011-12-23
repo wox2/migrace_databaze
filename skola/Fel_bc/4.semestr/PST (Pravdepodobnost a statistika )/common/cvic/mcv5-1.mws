@@ -1,0 +1,380 @@
+{VERSION 6 1 "SunOS" "6.1" }
+{USTYLETAB {PSTYLE "_pstyle10" -1 200 1 {CSTYLE "" -1 -1 "Courier" 1 
+12 0 0 0 1 2 1 2 2 2 2 0 0 0 1 }1 1 0 0 0 0 2 0 2 0 2 2 -1 1 }{PSTYLE 
+"Dash Item" -1 16 1 {CSTYLE "" -1 -1 "Times" 1 12 0 0 0 1 2 2 2 2 2 2 
+0 0 0 1 }1 1 0 0 3 3 2 0 2 0 2 2 -1 3 }{PSTYLE "Warning" -1 7 1 
+{CSTYLE "" -1 -1 "Courier" 1 10 0 0 255 1 0 0 0 2 2 1 0 0 0 1 }1 0 0 
+-1 -1 -1 2 0 2 0 2 2 -1 1 }{PSTYLE "_pstyle9" -1 201 1 {CSTYLE "" -1 
+-1 "" 0 1 0 0 0 0 0 0 0 2 2 2 0 0 0 1 }0 0 0 -1 -1 -1 2 0 2 0 2 2 -1 
+1 }{PSTYLE "Bullet Item" -1 15 1 {CSTYLE "" -1 -1 "Times" 1 12 0 0 0 
+1 2 2 2 2 2 2 0 0 0 1 }1 1 0 0 3 3 2 0 2 0 2 2 -1 2 }{PSTYLE "_pstyle8
+" -1 202 1 {CSTYLE "" -1 -1 "Times" 1 12 0 0 0 1 1 1 2 2 2 2 0 0 0 1 }
+1 1 0 0 0 0 2 0 2 0 2 2 -1 1 }{PSTYLE "_pstyle7" -1 203 1 {CSTYLE "" 
+-1 -1 "" 0 1 0 0 0 0 0 0 0 2 2 2 0 0 0 1 }3 1 0 0 0 0 2 0 2 0 2 2 -1 
+1 }{PSTYLE "_pstyle6" -1 204 1 {CSTYLE "" -1 -1 "Times" 0 1 0 0 255 1 
+0 0 2 2 2 2 0 0 0 1 }3 3 0 0 0 0 2 0 2 0 2 2 -1 1 }{PSTYLE "_pstyle5" 
+-1 205 1 {CSTYLE "" -1 -1 "Courier" 0 1 255 0 0 1 0 1 0 2 1 2 0 0 0 1 
+}1 1 0 0 0 0 2 0 2 0 2 2 -1 1 }{PSTYLE "_pstyle4" -1 206 1 {CSTYLE "" 
+-1 -1 "Times" 1 14 0 0 0 1 2 1 2 2 2 2 0 0 0 1 }1 1 0 0 8 2 2 0 2 0 2 
+2 -1 1 }{PSTYLE "_pstyle3" -1 207 1 {CSTYLE "" -1 -1 "Times" 1 12 0 0 
+0 1 2 2 2 2 2 2 0 0 0 1 }1 1 0 0 0 0 2 0 2 0 2 2 -1 1 }{PSTYLE "_pstyl
+e2" -1 208 1 {CSTYLE "" -1 -1 "Times" 1 18 0 0 0 1 2 1 2 2 2 2 0 0 0 
+1 }1 1 0 0 8 4 2 0 2 0 2 2 -1 1 }{PSTYLE "_pstyle1" -1 209 1 {CSTYLE "
+" -1 -1 "Courier" 0 1 0 0 0 1 0 1 0 2 2 2 0 0 0 1 }1 1 0 0 0 0 2 0 2 
+0 2 2 -1 1 }{PSTYLE "Line Printed Output" -1 6 1 {CSTYLE "" -1 -1 "Cou
+rier" 1 10 0 0 255 1 0 0 0 2 2 1 0 0 0 1 }1 0 0 -1 -1 -1 2 0 2 0 2 2 
+-1 1 }{PSTYLE "Heading 4" -1 20 1 {CSTYLE "" -1 -1 "Times" 1 10 0 0 0 
+1 1 1 2 2 2 2 0 0 0 1 }1 1 0 0 0 0 2 0 2 0 2 2 -1 1 }{PSTYLE "Heading \+
+3" -1 5 1 {CSTYLE "" -1 -1 "Times" 1 12 0 0 0 1 1 1 2 2 2 2 0 0 0 1 }
+1 1 0 0 0 0 2 0 2 0 2 2 -1 1 }{PSTYLE "Heading 2" -1 4 1 {CSTYLE "" 
+-1 -1 "Times" 1 14 0 0 0 1 2 1 2 2 2 2 0 0 0 1 }1 1 0 0 8 2 2 0 2 0 2 
+2 -1 1 }{PSTYLE "Maple Output" -1 11 1 {CSTYLE "" -1 -1 "Times" 1 12 
+0 0 0 1 2 2 2 2 2 2 0 0 0 1 }3 3 0 0 0 0 2 0 2 0 2 2 -1 1 }{PSTYLE "He
+ading 1" -1 3 1 {CSTYLE "" -1 -1 "Times" 1 18 0 0 0 1 2 1 2 2 2 2 0 0 
+0 1 }1 1 0 0 8 4 2 0 2 0 2 2 -1 1 }{PSTYLE "_pstyle22" -1 210 1 
+{CSTYLE "" -1 -1 "" 0 1 0 0 0 0 0 0 0 2 2 2 0 0 0 1 }0 0 0 -1 -1 -1 2 
+0 2 0 2 2 -1 1 }{PSTYLE "_pstyle21" -1 211 1 {CSTYLE "" -1 -1 "" 0 1 
+0 0 0 0 0 0 0 2 2 2 0 0 0 1 }0 0 0 -1 -1 -1 2 0 2 0 2 2 -1 1 }{PSTYLE 
+"_pstyle20" -1 212 1 {CSTYLE "" -1 -1 "Times" 1 12 0 0 0 1 1 1 2 2 2 
+2 0 0 0 1 }1 1 0 0 0 0 2 0 2 0 2 2 -1 1 }{PSTYLE "Author" -1 19 1 
+{CSTYLE "" -1 -1 "Times" 1 12 0 0 0 1 2 2 2 2 2 2 0 0 0 1 }3 1 0 0 8 
+8 2 0 2 0 2 2 -1 1 }{PSTYLE "Maple Plot" -1 13 1 {CSTYLE "" -1 -1 "Tim
+es" 1 12 0 0 0 1 2 2 2 2 2 2 0 0 0 1 }3 1 0 0 0 0 2 0 2 0 2 2 -1 1 }
+{PSTYLE "Help" -1 10 1 {CSTYLE "" -1 -1 "Courier" 1 9 0 0 255 1 0 0 0 
+2 2 1 0 0 0 1 }1 0 0 -1 -1 -1 2 0 2 0 2 2 -1 1 }{PSTYLE "Left Justifie
+d Maple Output" -1 12 1 {CSTYLE "" -1 -1 "Times" 1 12 0 0 0 1 2 2 2 2 
+2 2 0 0 0 1 }1 3 0 0 0 0 2 0 2 0 2 2 -1 1 }{PSTYLE "Fixed Width" -1 
+17 1 {CSTYLE "" -1 -1 "Courier" 1 10 0 0 0 1 2 2 2 2 2 2 0 0 0 1 }3 1 
+0 0 0 0 2 0 2 0 2 2 -1 1 }{PSTYLE "Text Output" -1 2 1 {CSTYLE "" -1 
+-1 "Courier" 1 10 0 0 255 1 0 0 0 2 2 1 0 0 0 1 }1 0 0 -1 -1 -1 2 0 2 
+0 2 2 -1 1 }{PSTYLE "List Item" -1 14 1 {CSTYLE "" -1 -1 "Times" 1 12 
+0 0 0 1 2 2 2 2 2 2 0 0 0 1 }1 1 0 0 3 3 2 0 2 0 2 2 -1 5 }{PSTYLE "Er
+ror" -1 8 1 {CSTYLE "" -1 -1 "Courier" 1 10 255 0 255 1 0 0 0 2 2 1 0 
+0 0 1 }1 0 0 -1 -1 -1 2 0 2 0 2 2 -1 1 }{PSTYLE "Diagnostic" -1 9 1 
+{CSTYLE "" -1 -1 "Courier" 1 10 64 128 64 1 0 0 0 2 2 1 0 0 0 1 }1 0 
+0 -1 -1 -1 2 0 2 0 2 2 -1 1 }{PSTYLE "Title" -1 18 1 {CSTYLE "" -1 -1 
+"Times" 1 18 0 0 0 1 2 1 1 2 2 2 0 0 0 1 }3 1 0 0 12 12 2 0 2 0 2 2 
+-1 1 }{PSTYLE "Normal" -1 0 1 {CSTYLE "" -1 -1 "Times" 1 12 0 0 0 1 2 
+2 2 2 2 2 0 0 0 1 }1 1 0 0 0 0 2 0 2 0 2 2 -1 1 }{PSTYLE "_pstyle19" 
+-1 213 1 {CSTYLE "" -1 -1 "Times" 0 1 0 0 255 1 0 0 2 2 2 2 0 0 0 1 }
+3 3 0 0 0 0 2 0 2 0 2 2 -1 1 }{PSTYLE "_pstyle18" -1 214 1 {CSTYLE "" 
+-1 -1 "" 0 1 0 0 0 0 0 0 0 2 2 2 0 0 0 1 }3 1 0 0 0 0 2 0 2 0 2 2 -1 
+1 }{PSTYLE "_pstyle17" -1 215 1 {CSTYLE "" -1 -1 "" 0 1 0 0 0 0 0 0 0 
+2 2 2 0 0 0 1 }3 1 0 0 0 0 2 0 2 0 2 2 -1 1 }{PSTYLE "_pstyle16" -1 
+216 1 {CSTYLE "" -1 -1 "Courier" 0 1 255 0 0 1 0 1 0 2 1 2 0 0 0 1 }1 
+1 0 0 0 0 2 0 2 0 2 2 -1 1 }{PSTYLE "_pstyle15" -1 217 1 {CSTYLE "" 
+-1 -1 "Times" 0 1 0 0 255 1 0 0 2 2 2 2 0 0 0 1 }3 3 0 0 0 0 2 0 2 0 
+2 2 -1 1 }{PSTYLE "_pstyle14" -1 218 1 {CSTYLE "" -1 -1 "Courier" 1 
+12 255 0 0 1 2 1 2 2 1 2 0 0 0 1 }1 1 0 0 0 0 2 0 2 0 2 2 -1 1 }
+{PSTYLE "_pstyle13" -1 219 1 {CSTYLE "" -1 -1 "Times" 1 14 0 0 0 1 2 
+1 2 2 2 2 0 0 0 1 }1 1 0 0 8 2 2 0 2 0 2 2 -1 1 }{PSTYLE "_pstyle12" 
+-1 220 1 {CSTYLE "" -1 -1 "Times" 1 12 0 0 0 1 2 2 2 2 2 2 0 0 0 1 }1 
+1 0 0 0 0 2 0 2 0 2 2 -1 1 }{PSTYLE "_pstyle11" -1 221 1 {CSTYLE "" 
+-1 -1 "Times" 1 18 0 0 0 1 2 1 2 2 2 2 0 0 0 1 }1 1 0 0 8 4 2 0 2 0 2 
+2 -1 1 }{CSTYLE "2D Math Bold Small" -1 10 "Times" 0 1 0 0 0 0 0 1 2 
+2 2 2 0 0 0 1 }{CSTYLE "Dictionary Hyperlink" -1 45 "" 0 1 147 0 15 1 
+2 0 1 2 2 2 0 0 0 1 }{CSTYLE "Output Labels" -1 29 "Times" 1 8 0 0 0 
+1 0 0 0 2 2 2 0 0 0 1 }{CSTYLE "2D Math" -1 2 "Times" 0 1 0 0 0 0 0 0 
+2 2 2 2 0 0 0 1 }{CSTYLE "Help Notes" -1 37 "" 0 1 0 0 0 1 0 1 0 2 2 
+2 0 0 0 1 }{CSTYLE "LaTeX" -1 32 "" 0 1 0 0 0 0 0 0 0 2 2 2 0 0 0 1 }
+{CSTYLE "2D Comment" -1 18 "Times" 0 1 0 0 0 0 0 0 2 2 2 2 0 0 0 1 }
+{CSTYLE "Prompt" -1 1 "Courier" 0 1 0 0 0 1 0 0 0 2 2 2 0 0 0 1 }
+{CSTYLE "Help Italic" -1 42 "Times" 1 12 0 0 0 0 1 0 0 2 2 2 0 0 0 1 }
+{CSTYLE "Page Number" -1 33 "Times" 0 1 0 0 0 0 0 0 2 2 2 2 0 0 0 1 }
+{CSTYLE "Maple Input" -1 0 "Courier" 0 1 255 0 0 1 0 1 0 2 1 2 0 0 0 
+1 }{CSTYLE "Help Bold" -1 39 "Times" 1 12 0 0 0 0 0 1 0 2 2 2 0 0 0 1 
+}{CSTYLE "Help Underlined Bold" -1 41 "Times" 1 12 0 0 0 0 0 1 1 2 2 
+2 0 0 0 1 }{CSTYLE "Help Fixed" -1 23 "Courier" 1 10 0 0 0 0 0 0 0 2 
+2 2 0 0 0 1 }{CSTYLE "Copyright" -1 34 "Times" 1 10 0 0 0 0 2 2 2 2 2 
+2 0 0 0 1 }{CSTYLE "2D Math Small" -1 7 "Times" 0 1 0 0 0 0 0 0 2 2 2 
+2 0 0 0 1 }{CSTYLE "Popup" -1 31 "" 0 1 0 128 128 1 1 0 1 2 2 2 0 0 0 
+1 }{CSTYLE "2D Math Symbol 2" -1 16 "Times" 0 1 0 0 0 0 2 2 2 2 2 2 0 
+0 0 1 }{CSTYLE "Plot Text" -1 28 "" 1 8 0 0 0 0 0 0 0 2 2 2 0 0 0 1 }
+{CSTYLE "Hyperlink" -1 17 "" 0 1 0 128 128 1 2 0 1 2 2 2 0 0 0 1 }
+{CSTYLE "Help Underlined Italic" -1 43 "Times" 1 12 0 0 0 0 1 0 1 2 2 
+2 0 0 0 1 }{CSTYLE "2D Math Italic Small" -1 200 "Times" 0 1 0 0 0 0 
+1 0 2 2 2 2 0 0 0 1 }{CSTYLE "2D Math Italic" -1 3 "Times" 0 1 0 0 0 
+0 1 0 2 2 2 2 0 0 0 1 }{CSTYLE "Maple Comment" -1 21 "Courier" 0 1 0 
+0 0 1 0 0 0 2 2 2 0 0 0 1 }{CSTYLE "2D Math Bold" -1 5 "Times" 0 1 0 
+0 0 0 0 1 2 2 2 2 0 0 0 1 }{CSTYLE "_cstyle9" -1 201 "Times" 1 12 0 0 
+0 1 1 1 2 2 2 2 0 0 0 1 }{CSTYLE "_cstyle8" -1 202 "Times" 0 1 0 0 0 
+0 0 0 0 2 2 2 0 0 0 1 }{CSTYLE "_cstyle7" -1 203 "Courier" 0 1 255 0 
+0 1 0 1 0 2 1 2 0 0 0 1 }{CSTYLE "Plot Title" -1 27 "" 1 10 0 0 0 0 0 
+1 0 2 2 2 0 0 0 1 }{CSTYLE "_cstyle6" -1 204 "Times" 0 1 0 0 255 1 0 
+0 2 2 2 2 0 0 0 1 }{CSTYLE "_cstyle5" -1 205 "Courier" 1 12 255 0 0 1 
+2 1 2 2 1 2 0 0 0 1 }{CSTYLE "_cstyle4" -1 206 "Times" 1 14 0 0 0 1 2 
+1 2 2 2 2 0 0 0 1 }{CSTYLE "Help Heading" -1 26 "" 1 14 0 0 0 0 0 1 0 
+2 2 2 0 0 0 1 }{CSTYLE "_cstyle3" -1 207 "Times" 1 12 0 0 0 1 2 2 2 2 
+2 2 0 0 0 1 }{CSTYLE "_cstyle2" -1 208 "Times" 1 18 0 0 0 1 2 1 2 2 2 
+2 0 0 0 1 }{CSTYLE "_cstyle1" -1 209 "Courier" 1 12 0 0 0 1 2 1 2 2 2 
+2 0 0 0 1 }{CSTYLE "Help Italic Bold" -1 40 "Times" 1 12 0 0 0 0 1 1 
+0 2 2 2 0 0 0 1 }{CSTYLE "2D Input" -1 19 "Times" 0 1 255 0 0 1 0 0 2 
+2 1 2 0 0 0 1 }{CSTYLE "Maple Input Placeholder" -1 210 "Courier" 1 
+12 200 0 200 1 0 1 0 2 1 2 0 0 0 1 }{CSTYLE "Help Normal" -1 30 "Times
+" 1 12 0 0 0 0 0 0 0 2 2 2 0 0 0 1 }{CSTYLE "2D Output" -1 20 "Times" 
+0 1 0 0 255 1 0 0 2 2 2 2 0 0 0 1 }{CSTYLE "Help Menus" -1 36 "" 0 1 
+0 0 0 1 0 1 0 2 2 2 0 0 0 1 }{CSTYLE "_cstyle22" -1 211 "Times" 0 1 0 
+0 0 0 0 0 0 2 2 2 0 0 0 1 }{CSTYLE "_cstyle21" -1 212 "Courier" 0 1 0 
+0 0 1 0 1 0 2 2 2 0 0 0 1 }{CSTYLE "_cstyle20" -1 213 "Times" 1 12 0 
+0 0 1 1 1 2 2 2 2 0 0 0 1 }{CSTYLE "Help Underlined" -1 44 "Times" 1 
+12 0 0 0 0 0 0 1 2 2 2 0 0 0 1 }{CSTYLE "_cstyle19" -1 214 "Times" 0 
+1 0 0 255 1 0 0 2 2 2 2 0 0 0 1 }{CSTYLE "_cstyle18" -1 215 "Times" 0 
+1 0 0 0 0 0 0 0 2 2 2 0 0 0 1 }{CSTYLE "_cstyle17" -1 216 "Times" 0 1 
+0 0 0 0 0 0 0 2 2 2 0 0 0 1 }{CSTYLE "_cstyle16" -1 217 "Courier" 0 1 
+255 0 0 1 0 1 0 2 1 2 0 0 0 1 }{CSTYLE "_cstyle15" -1 218 "Courier" 1 
+12 255 0 0 1 2 1 2 2 1 2 0 0 0 1 }{CSTYLE "Text" -1 219 "Times" 1 12 
+0 0 0 1 2 2 2 2 2 2 0 0 0 1 }{CSTYLE "_cstyle14" -1 220 "Times" 1 14 
+0 0 0 1 2 1 2 2 2 2 0 0 0 1 }{CSTYLE "_cstyle13" -1 221 "Times" 1 12 
+0 0 0 1 2 2 2 2 2 2 0 0 0 1 }{CSTYLE "_cstyle12" -1 222 "Times" 1 18 
+0 0 0 1 2 1 2 2 2 2 0 0 0 1 }{CSTYLE "_cstyle11" -1 223 "Courier" 1 
+12 0 0 0 1 2 1 2 2 2 2 0 0 0 1 }{CSTYLE "_cstyle10" -1 224 "Times" 1 
+12 0 0 255 1 2 2 2 2 2 2 0 0 0 1 }{CSTYLE "Default" -1 38 "" 0 1 0 0 
+0 0 0 0 0 2 2 2 0 0 0 1 }{CSTYLE "Help Variable" -1 25 "Courier" 0 1 
+0 0 0 1 2 2 0 2 2 2 0 0 0 1 }{CSTYLE "Help Emphasized" -1 225 "" 0 1 
+0 0 0 0 1 2 0 2 2 2 0 0 0 1 }{CSTYLE "Help Maple Name" -1 35 "" 0 1 
+104 64 92 1 0 1 0 2 2 2 0 0 0 1 }{CSTYLE "Help Nonterminal" -1 24 "Cou
+rier" 0 1 0 0 0 1 0 1 0 2 2 2 0 0 0 1 }{PSTYLE "_pstyle23" -1 222 1 
+{CSTYLE "" -1 -1 "Courier" 1 12 0 0 0 1 2 1 2 2 2 2 1 0 0 1 }1 1 0 0 
+0 0 2 0 2 0 2 2 -1 1 }{CSTYLE "_cstyle23" -1 226 "Courier" 1 12 0 0 0 
+1 2 1 2 2 2 2 0 0 0 1 }{PSTYLE "_pstyle24" -1 223 1 {CSTYLE "" -1 -1 "
+Times" 1 18 0 0 0 1 2 1 2 2 2 2 1 0 0 1 }1 1 0 0 8 4 2 0 2 0 2 2 -1 1 
+}{CSTYLE "_cstyle24" -1 227 "Times" 1 18 0 0 0 1 2 1 2 2 2 2 0 0 0 1 }
+{PSTYLE "_pstyle25" -1 224 1 {CSTYLE "" -1 -1 "Times" 1 12 0 0 0 1 2 
+2 2 2 2 2 1 0 0 1 }1 1 0 0 0 0 2 0 2 0 2 2 -1 1 }{CSTYLE "_cstyle25" 
+-1 228 "Times" 1 12 0 0 0 1 2 2 2 2 2 2 0 0 0 1 }{PSTYLE "_pstyle26" 
+-1 225 1 {CSTYLE "" -1 -1 "Times" 1 14 0 0 0 1 2 1 2 2 2 2 1 0 0 1 }1 
+1 0 0 8 2 2 0 2 0 2 2 -1 1 }{CSTYLE "_cstyle26" -1 229 "Times" 1 14 0 
+0 0 1 2 1 2 2 2 2 0 0 0 1 }{PSTYLE "_pstyle27" -1 226 1 {CSTYLE "" -1 
+-1 "Courier" 1 12 255 0 0 1 2 1 2 2 1 2 1 0 0 1 }1 1 0 0 0 0 2 0 2 0 
+2 2 -1 1 }{CSTYLE "_cstyle27" -1 230 "Courier" 1 12 255 0 0 1 2 1 2 2 
+1 2 0 0 0 1 }{PSTYLE "_pstyle28" -1 227 1 {CSTYLE "" -1 -1 "Times" 0 
+1 0 0 255 1 0 0 2 2 2 2 0 0 0 1 }3 3 0 0 0 0 2 0 2 0 2 2 -1 1 }
+{PSTYLE "_pstyle29" -1 228 1 {CSTYLE "" -1 -1 "Courier" 0 1 255 0 0 1 
+0 1 0 2 1 2 1 0 0 1 }1 1 0 0 0 0 2 0 2 0 2 2 -1 1 }{CSTYLE "_cstyle28"
+ -1 231 "Courier" 0 1 255 0 0 1 0 1 0 2 1 2 0 0 0 1 }{PSTYLE "_pstyle3
+0" -1 229 1 {CSTYLE "" -1 -1 "" 0 1 0 0 0 0 0 0 0 2 2 2 0 0 0 1 }3 1 
+0 0 0 0 2 0 2 0 2 2 -1 1 }{CSTYLE "_cstyle29" -1 232 "Times" 0 1 0 0 
+0 0 0 0 0 2 2 2 0 0 0 1 }{PSTYLE "_pstyle31" -1 230 1 {CSTYLE "" -1 
+-1 "Times" 1 12 0 0 0 1 1 1 2 2 2 2 1 0 0 1 }1 1 0 0 0 0 2 0 2 0 2 2 
+-1 1 }{CSTYLE "_cstyle30" -1 233 "Times" 1 12 0 0 0 1 1 1 2 2 2 2 0 0 
+0 1 }{PSTYLE "_pstyle32" -1 231 1 {CSTYLE "" -1 -1 "Courier" 0 1 255 
+0 0 1 0 1 0 2 1 2 0 0 0 1 }1 1 0 0 0 0 2 0 2 0 2 2 -1 1 }{PSTYLE "_pst
+yle33" -1 232 1 {CSTYLE "" -1 -1 "Times" 0 1 0 0 0 0 0 0 0 2 2 2 0 0 
+0 1 }0 0 0 -1 -1 -1 2 0 2 0 2 2 -1 1 }{PSTYLE "_pstyle34" -1 233 1 
+{CSTYLE "" -1 -1 "" 0 1 0 0 0 0 0 0 0 2 2 2 0 0 0 1 }0 0 0 -1 -1 -1 2 
+0 2 0 2 2 -1 1 }{CSTYLE "_cstyle31" -1 234 "Times" 0 1 0 0 0 0 0 0 0 
+2 2 2 0 0 0 1 }{PSTYLE "_pstyle35" -1 234 1 {CSTYLE "" -1 -1 "" 0 1 0 
+0 0 0 0 0 0 2 2 2 0 0 0 1 }0 0 0 -1 -1 -1 1 0 1 0 2 2 -1 1 }}
+{SECT 0 {EXCHG {PARA 222 "" 0 "" {TEXT 226 38 "N\341hodn\341 veli\350i
+na - dodatek  mcv5-1.mws" }{TEXT 226 0 "" }}}{SECT 0 {PARA 223 "" 0 ""
+ {TEXT 227 10 "  P\370\355klad " }{TEXT 227 0 "" }}{PARA 224 "" 0 "" 
+{TEXT 228 53 "Hodnoty pravd\354podobnostn\355 funkce jsou zad\341ny ta
+bulkou" }{TEXT 228 0 "" }}{SECT 1 {PARA 225 "" 0 "" {TEXT 229 33 "  Za
+d\341n\355 pravd\354podobnostn\355 funkce" }{TEXT 229 0 "" }}{PARA 
+224 "" 0 "" {TEXT 228 0 "" }}{EXCHG {PARA 226 "> " 0 "" {MPLTEXT 1 
+230 20 "restart:with(stats):" }{MPLTEXT 1 230 0 "" }}}{EXCHG {PARA 
+226 "> " 0 "" {MPLTEXT 1 230 21 "x:=[-1,0,1,2,4,7,10]:" }{MPLTEXT 1 
+230 0 "" }}}{EXCHG {PARA 226 "> " 0 "" {MPLTEXT 1 230 37 "p:=[0.05,0.1
+5,0.2,0.25,0.15,0.1,0.1]:" }{MPLTEXT 1 230 0 "" }}}{EXCHG {PARA 226 ">
+ " 0 "" {MPLTEXT 1 230 0 "" }}}}{SECT 1 {PARA 225 "" 0 "" {TEXT 229 
+28 "  V\375po\350et distribu\350n\355 funkce" }{TEXT 229 0 "" }}{PARA 
+224 "" 0 "" {TEXT 228 0 "" }}{EXCHG {PARA 226 "> " 0 "" {MPLTEXT 1 
+230 22 "n:=describe[count](x);" }{MPLTEXT 1 230 0 "" }}{PARA 227 "" 1 
+"" {XPPMATH 20 "6#>I\"nG6\"\"\"(" }{TEXT 20 0 "" }}}{EXCHG {PARA 226 "
+> " 0 "" {MPLTEXT 1 230 0 "" }}}{EXCHG {PARA 226 "> " 0 "" {MPLTEXT 1 
+230 0 "" }}}{EXCHG {PARA 228 "> " 0 "" {MPLTEXT 1 231 0 "" }}}{EXCHG 
+{PARA 228 "> " 0 "" {MPLTEXT 1 231 7 "F:=t->s" }{MPLTEXT 1 231 33 "um(
+p[m]*Heaviside(t-x[m]),m=1..n)" }{MPLTEXT 1 231 1 ";" }{MPLTEXT 1 231 
+0 "" }}{PARA 227 "" 1 "" {XPPMATH 20 "6#>I\"FG6\"f*6#I\"tGF%F%6$I)oper
+atorGF%I&arrowGF%F%-I$sumGF%6$*&&I\"pGF%6#I\"mGF%\"\"\"-I*HeavisideGF%
+6#,&9$F4&I\"xGF%F2!\"\"F4/F3;F4I\"nGF%F%F%F%" }{TEXT 20 0 "" }}}
+{EXCHG {PARA 226 "> " 0 "" {MPLTEXT 1 230 78 "H1:=plot(F(t),t=x[1]-2..
+x[n]+2,discont=true,thickness=2):plots[display](\{H1\});" }{MPLTEXT 1 
+230 0 "" }{MPLTEXT 1 230 1 "\n" }}{PARA 229 "" 1 "" {GLPLOT2D 378 168 
+168 {PLOTDATA 2 "6%-%'CURVESG6,7S7$$!\"$\"\"!$F*F*7$$!3r\\uz\"p0k&H!#<
+F+7$$!3j4zK<XZ=HF/F+7$$!3l:#RX%p\"e(GF/F+7$$!3mO!o'4m(G$GF/F+7$$!3A7Hr
+i.9!z#F/F+7$$!3V6^;\"R=0v#F/F+7$$!3sB:iM@\\4FF/F+7$$!3]yaT@F1nEF/F+7$$
+!3#>pv)z$pZi#F/F+7$$!3nO&*ezaE\"e#F/F+7$$!3=Dy`?s%Ha#F/F+7$$!3Qq0]O*4)
+*\\#F/F+7$$!3H80jEb\\cCF/F+7$$!3nPdvmSv9CF/F+7$$!3#*>hGA)[oP#F/F+7$$!3
+!f+Q.#exJBF/F+7$$!3)Rb_a2$f$H#F/F+7$$!3rnC+mu<\\AF/F+7$$!3=ZPqD@')4AF/
+F+7$$!3'*=)\\i'psm@F/F+7$$!3mVI(Q4_c7#F/F+7$$!3z[\\etZz#3#F/F+7$$!30=I
+&\\PQM/#F/F+7$$!3'[qj@=()4+#F/F+7$$!3j*)faBB*o&>F/F+7$$!3BxW\\>w]=>F/F
++7$$!3I8b`(3^q(=F/F+7$$!3rKt\\LCAM=F/F+7$$!3?JI7^HK#z\"F/F+7$$!3v]Y\\Z
+Iy^<F/F+7$$!3v)ozjRqnq\"F/F+7$$!3')fVLFXKm;F/F+7$$!39!eI\"H*RJi\"F/F+7
+$$!3$=kkYE3Se\"F/F+7$$!3!*=jP>qAT:F/F+7$$!3\"QT!e,K(4]\"F/F+7$$!3u5LPj
+j*)e9F/F+7$$!3wd+3j&exT\"F/F+7$$!3'o#fi)4\"pu8F/F+7$$!3^Iqm6?@L8F/F+7$
+$!3s&G%HaOz!H\"F/F+7$$!3j`rLUls[7F/F+7$$!3A'yp`Br+@\"F/F+7$$!3kHgL\"*y
+wl6F/F+7$$!3GR#)G_C9E6F/F+7$$!3a>$)\\pM*Q3\"F/F+7$$!3^K'>@!eXV5F/F+7$$
+!30+++1+++5F/F+7S7$$!2%******z********F/$\"3G+++++++]!#>7$$!3D>_?R%G?y
+*!#=F[u7$$!3)f<ZqcsBf*FauF[u7$$!3R%*pJ.Z3z$*FauF[u7$$!30,e<HIQk\"*FauF
+[u7$$!3&*eQh%z,2&*)FauF[u7$$!3XlH2P>f_()FauF[u7$$!3Cd,ca1YZ&)FauF[u7$$
+!3<y?u)e8`L)FauF[u7$$!3j6YD\")o%Q7)FauF[u7$$!3$pNT+QFj!zFauF[u7$$!3X)Q
+u\\3OZr(FauF[u7$$!3w+Q+l'\\!*\\(FauF[u7$$!3z)3qehxCG(FauF[u7$$!3==\\q;
+.xtqFauF[u7$$!3wcja%4WU)oFauF[u7$$!3n\\6.&3z)emFauF[u7$$!350[zg`'zY'Fa
+uF[u7$$!3c]kw8t)eC'FauF[u7$$!3-C%pCh5$\\gFauF[u7$$!3ZgaT:[jLeFauF[u7$$
+!3Qdpt`/EGcFauF[u7$$!3dq2^_Q(RT&FauF[u7$$!3K)*yaf=><_FauF[u7$$!3A*e8e*
+e$\\+&FauF[u7$$!3s'[XHghWy%FauF[u7$$!3'y%)zG3QDf%FauF[u7$$!3K6BHBaD&Q%
+FauF[u7$$!3^^bJ`@6rTFauF[u7$$!3wSNlTZhhRFauF[u7$$!3hQVrB_\"*ePFauF[u7$
+$!3#>fk$o>&Q`$FauF[u7$$!3*o<SLiA;L$FauF[u7$$!31,s`K'*p:JFauF[u7$$!3hoJ
+S58/?HFauF[u7$$!3Xfa<%3Nhq#FauF[u7$$!3+.sR&*f'[]#FauF[u7$$!3us?d/=[%H#
+FauF[u7$$!3^&\\6L!Gz)3#FauF[u7$$!3xyhD\"[bM(=FauF[u7$$!3C#4pm/ggm\"Fau
+F[u7$$!3rfu,g#oRX\"FauF[u7$$!3[N@W+FjV7FauF[u7$$!3$\\d)zlhN]5FauF[u7$$
+!3*>38&eWR)G)F]uF[u7$$!3VX[53D72jF]uF[u7$$!3U-8sqLn%>%F]uF[u7$$!3DL)3Q
++!zs@F]uF[u7$$!37+++++++?!#EF[u7S7$$\"37+++++++?F_^l$\"35+++++++?Fau7$
+$\"3s/y%zg:(z@F]uFd^l7$$\"3_O#G&HVFwSF]uFd^l7$$\"3Lb+$o'H:4iF]uFd^l7$$
+\"32))>C3(phN)F]uFd^l7$$\"3\\ShQ0#)H\\5FauFd^l7$$\"3EMq#H13uC\"FauFd^l
+7$$\"3ZU)RaMRDX\"FauFd^l7$$\"3*4#zD6kok;FauFd^l7$$\"3`(QX(=J:w=FauFd^l
+7$$\"3yU'e*>En$4#FauFd^l7$$\"3*4hD]\"RE&G#FauFd^l7$$\"3o)>'*\\L]4]#Fau
+Fd^l7$$\"355*HTQAvr#FauFd^l7$$\"3E\"3&H$oHi#HFauFd^l7$$\"3nUOX0fv:JFau
+Fd^l7$$\"3y\\)o\\\"47TLFauFd^l7$$\"3*[>0#RY.KNFauFd^l7$$\"3))[NB'o7Tv$
+FauFd^l7$$\"3Tv0`(Q*o]RFauFd^l7$$\"3_RXe%=lj;%FauFd^l7$$\"31UIEY&R<P%F
+auFd^l7$$\"3')G#*[Zh-'e%FauFd^l7$$\"3d+@XS\"3Gy%FauFd^l7$$\"3m4k=/T1&*
+\\FauFd^l7$$\"3G8X0(RQb@&FauFd^l7$$\"37_,7<>Y2aFauFd^l7$$\"3n)o2ndWZh&
+FauFd^l7$$\"3[[WoYy))GeFauFd^l7$$\"3AfkMe_QQgFauFd^l7$$\"3QhcGwZ3TiFau
+Fd^l7$$\"323ajJ![hY'FauFd^l7$$\"35B)fmPx$omFauFd^l7$$\"3$*)ziuO+V)oFau
+Fd^l7$$\"3QJof*oe*zqFauFd^l7$$\"3cSX#e\"\\'QH(FauFd^l7$$\"3+(z-Y+M^\\(
+FauFd^l7$$\"3EFzU&>=bq(FauFd^l7$$\"3Z/&)o'>27\"zFauFd^l7$$\"3A@Qu=XaE
+\")FauFd^l7$$\"3w24L`*RRL)FauFd^l7$$\"3GSD)*R<.Y&)FauFd^l7$$\"3_kyb*Hn
+jv)FauFd^l7$$\"31D9?MQk\\*)FauFd^l7$$\"3!=p[Tbg6<*FauFd^l7$$\"3X:&*=
+\\xGp$*FauFd^l7$$\"3vpy#HmK0e*FauFd^l7$$\"3o;\">'**4s#y*FauFd^l7$$\"2%
+******z********F/Fd^l7S7$$\"36+++/+++5F/$\"3A+++++++SFau7$$\"3a*G#*z:(
+z@5F/Fjgl7$$\"3WJA8XFwS5F/Fjgl7$$\"3iM*>9`\"4i5F/Fjgl7$$\"34t\"[()phN3
+\"F/Fjgl7$$\"3z%*)=@#)H\\5\"F/Fjgl7$$\"3USPz23uC6F/Fjgl7$$\"3aoH'f$RDX
+6F/Fjgl7$$\"3a<*fCkok;\"F/Fjgl7$$\"3jxS78`h(=\"F/Fjgl7$$\"3Q&ReJEn$47F
+/Fjgl7$$\"3_b%)e#RE&G7F/Fjgl7$$\"3')R#*\\M]4]7F/Fjgl7$$\"38#)fKRAvr7F/
+Fjgl7$$\"3I;!f\"pHi#H\"F/Fjgl7$$\"34i!*H\"fv:J\"F/Fjgl7$$\"3eO/;#47TL
+\"F/Fjgl7$$\"3y0x]kM?`8F/Fjgl7$$\"3'*4<7p7Tv8F/Fjgl7$$\"3u\"ys\"R*o]R
+\"F/Fjgl7$$\"3)y!>z=lj;9F/Fjgl7$$\"3M3w([&R<P9F/Fjgl7$$\"3P7X\"\\h-'e9
+F/Fjgl7$$\"3!p3KT\"3Gy9F/Fjgl7$$\"3]:1U5k]*\\\"F/Fjgl7$$\"3&eB>'RQb@:F
+/Fjgl7$$\"3OI!\\:>Y2a\"F/Fjgl7$$\"3*3([UdWZh:F/Fjgl7$$\"3t*)oL%y))Ge\"
+F/Fjgl7$$\"3t\"H>a_QQg\"F/Fjgl7$$\"39K@8x%3Ti\"F/Fjgl7$$\"3[\"3xD![hY;
+F/Fjgl7$$\"3NJ')*ptPom\"F/Fjgl7$$\"3ofD*f.I%)o\"F/Fjgl7$$\"3m*pF\"oe*z
+q\"F/Fjgl7$$\"373\\m!\\'QH<F/Fjgl7$$\"3%eAi%*R8&\\<F/Fjgl7$$\"3H&eg%==
+bq<F/Fjgl7$$\"3QnV]=27\"z\"F/Fjgl7$$\"3HkPi]Wl7=F/Fjgl7$$\"3u9&**R*RRL
+=F/Fjgl7$$\"33T)zD<.Y&=F/Fjgl7$$\"3eRKXGnjv=F/Fjgl7$$\"3-&GS=Qk\\*=F/F
+jgl7$$\"3q/ku`g6<>F/Fjgl7$$\"3MO7<t(Gp$>F/Fjgl7$$\"3#RdgWE`!e>F/Fjgl7$
+$\"34B)[!)4s#y>F/Fjgl7$$\"3))*****f*******>F/Fjgl7S7$$\"3A+++3+++?F/$
+\"3A+++++++lFau7$$\"33zX)fJ%fV?F/F`am7$$\"3(GYk-\\D:3#F/F`am7$$\"3Cp)R
+G1$=C@F/F`am7$$\"3=Yj\\(RBr;#F/F`am7$$\"3e*yPUkf)4AF/F`am7$$\"3$3[(e:;
+[\\AF/F`am7$$\"33Pf#>(y]!H#F/F`am7$$\"34N)>\\GPHL#F/F`am7$$\"3Gb\"[iiI
+_P#F/F`am7$$\"3v!z;j_M(=CF/F`am7$$\"306p<&y_qX#F/F`am7$$\"3tz%)**o+>+D
+F/F`am7$$\"3Fk>lyW]VDF/F`am7$$\"3iK!=$QfC&e#F/F`am7$$\"3=C\")f#=^Ji#F/
+F`am7$$\"3:t3K%=C#oEF/F`am7$$\"3e6a,HpS1FF/F`am7$$\"3$*>MCQD#3v#F/F`am
+7$$\"3[jbMyy8!z#F/F`am7$$\"3w:QePIFLGF/F`am7$$\"3p;_v4zMuGF/F`am7$$\"3
+uC!H)H_?<HF/F`am7$$\"3ztTEG;ccHF/F`am7$$\"3+J7%3#G,**HF/F`am7$$\"3qr%Q
+#zw5VIF/F`am7$$\"3sg!)4$Q#\\\"3$F/F`am7$$\"3!=u\\[\"*[H7$F/F`am7$$\"3X
+zPnovxlJF/F`am7$$\"3X$eQ30xw?$F/F`am7$$\"3FkUEap@[KF/F`am7$$\"3'H;a^gH
+KH$F/F`am7$$\"3ris*RZvOL$F/F`am7$$\"3R>^)>2goP$F/F`am7$$\"3J*Rbit\"*fT
+$F/F`am7$$\"3D;)H8)HxeMF/F`am7$$\"3o^W#*)zE!*\\$F/F`am7$$\"3eq6#pj.6a$
+F/F`am7$$\"3wM(3qVTAe$F/F`am7$$\"3eGvC,*3`i$F/F`am7$$\"3\\H!**z)zymOF/
+F`am7$$\"3<#of^M1#4PF/F`am7$$\"3<zk!pXt7v$F/F`am7$$\"32q0oj(G**y$F/F`a
+m7$$\"3S4G\\2@BMQF/F`am7$$\"3psCMYv&Q(QF/F`am7$$\"3&y9@*Gl5;RF/F`am7$$
+\"3=Yw4'>Wl&RF/F`am7$$\"3y*****>*******RF/F`am7S7$$\"3F+++9+++SF/$\"3U
++++++++!)Fau7$$\"3kz'*)eZ\"RlSF/Ffjm7$$\"3dVOBP#)GATF/Ffjm7$$\"3eP9,'f
+ui=%F/Ffjm7$$\"3gs-\"z4&o]UF/Ffjm7$$\"3%\\'p$zY*y9VF/Ffjm7$$\"3(yD#)[U
+AUP%F/Ffjm7$$\"3K!*yI4=wNWF/Ffjm7$$\"3cyQrGfS*\\%F/Ffjm7$$\"3%=x@1%f%G
+c%F/Ffjm7$$\"35<xj!z,\"GYF/Ffjm7$$\"3^h7&)y\"zbo%F/Ffjm7$$\"3aRt\\/^G]
+ZF/Ffjm7$$\"3lP4*)=nD:[F/Ffjm7$$\"3RdlI3*oy([F/Ffjm7$$\"3Q$)3lunsM\\F/
+Ffjm7$$\"3Sh[9xiL-]F/Ffjm7$$\"3x-.6%R5'f]F/Ffjm7$$\"3f%[jy!QBE^F/Ffjm7
+$$\"38q!Qz\"o?&=&F/Ffjm7$$\"39x\"4nb4*\\_F/Ffjm7$$\"3eHT)['=_6`F/Ffjm7
+$$\"3mE\"4\\%y!eP&F/Ffjm7$$\"3'p8$[UC%[V&F/Ffjm7$$\"3[?QEJ#>&)\\&F/Ffj
+m7$$\"3^#\\r(=:mkbF/Ffjm7$$\"3!o5%[u&QAi&F/Ffjm7$$\"3;:(G?PBWo&F/Ffjm7
+$$\"3_8\"zENm'[dF/Ffjm7$$\"3@@D%ed::\"eF/Ffjm7$$\"3$G'***3VDB(eF/Ffjm7
+$$\"3M&yWrSW)RfF/Ffjm7$$\"3zU&G.@80+'F/Ffjm7$$\"3neRA2,HlgF/Ffjm7$$\"3
+Q:6b.w)R7'F/Ffjm7$$\"3*y<x5Zf\")='F/Ffjm7$$\"3wC')Q(>S&[iF/Ffjm7$$\"35
+\\&*Haal6jF/Ffjm7$$\"3S>'[V:iLP'F/Ffjm7$$\"3[v1i]L'zV'F/Ffjm7$$\"3Wn
+\\m!)>=+lF/Ffjm7$$\"3?66K;&4Qc'F/Ffjm7$$\"3yrr&Q=5pi'F/Ffjm7$$\"3k'*4%
+R9$*[o'F/Ffjm7$$\"3j\\2df\"[8v'F/Ffjm7$$\"3I$*fw<jy5oF/Ffjm7$$\"3G3&
+\\:zfT(oF/Ffjm7$$\"3D!QLAH;[$pF/Ffjm7$$\"3s*****f)******pF/Ffjm7S7$$\"
+3))******>+++qF/$\"3A+++++++!*Fau7$$\"3O8\"G;[\"RlqF/F\\dn7$$\"3Y!\\WF
+C)GArF/F\\dn7$$\"3)*QjE,YF'=(F/F\\dn7$$\"35Kv!H5&o]sF/F\\dn7$$\"3K2yns
+%*y9tF/F\\dn7$$\"3vn`QHCAutF/F\\dn7$$\"3WU[c8=wNuF/F\\dn7$$\"3)QD;F$fS
+*\\(F/F\\dn7$$\"3[(QqV%f%Gc(F/F\\dn7$$\"3`4`7%z,\"GwF/F\\dn7$$\"3_W*3@
+=zbo(F/F\\dn7$$\"3[)>'\\2^G]xF/F\\dn7$$\"3D5*H;sc_\"yF/F\\dn7$$\"3W\"3
+&z5*oy(yF/F\\dn7$$\"3.w>\"pxEZ$zF/F\\dn7$$\"3:;b8ziL-!)F/F\\dn7$$\"3yg
+=(eR5'f!)F/F\\dn7$$\"36\\&e$4QBE\")F/F\\dn7$$\"3YUs>>o?&=)F/F\\dn7$$\"
+3gR&4xb4*\\#)F/F\\dn7$$\"32U!Qc'=_6$)F/F\\dn7$$\"3i%*eSXy!eP)F/F\\dn7$
+$\"3[oPuUC%[V)F/F\\dn7$$\"3%Gup7B>&)\\)F/F\\dn7$$\"32YG^=:mk&)F/F\\dn7
+$$\"3.`^*RdQAi)F/F\\dn7$$\"3q@5HrLU%o)F/F\\dn7$$\"3t[Wo^jm[()F/F\\dn7$
+$\"3Hfkfub^6))F/F\\dn7$$\"3qh1THaKs))F/F\\dn7$$\"3!yS&Q0W%)R*)F/F\\dn7
+$$\"3/!\\E$3K^+!*F/F\\dn7$$\"3_)zi\\5!Hl!*F/F\\dn7$$\"3:m^0,w)R7*F/F
+\\dn7$$\"3mSXKo%f\")=*F/F\\dn7$$\"3SjWR%>S&[#*F/F\\dn7$$\"3OGH0^al6$*F
+/F\\dn7$$\"35s^&3:iLP*F/F\\dn7$$\"3a@)ooMjzV*F/F\\dn7$$\"3eSUmw>=+&*F/
+F\\dn7$$\"3Ete17&4Qc*F/F\\dn7$$\"3IJ&\\$z,\"pi*F/F\\dn7$$\"3NC9?RJ*[o*
+F/F\\dn7$$\"3(zNlX:[8v*F/F\\dn7$$\"3s[G_7jy5)*F/F\\dn7$$\"3epG0'yfT()*
+F/F\\dn7$$\"3=:T\\'G;[$**F/F\\dn7$$\"2-+++)********!#;F\\dn7S7$$\"3)**
+****>++++\"F^]o$\"\"\"F*7$$\"3)*Q(*yK%fV+\"F^]oFc]o7$$\"3@T,@]D:35F^]o
+Fc]o7$$\"3J]\"fuI=C,\"F^]oFc]o7$$\"3**4i\"4M7n,\"F^]oFc]o7$$\"3*p!=elf
+)4-\"F^]oFc]o7$$\"3u^)3F;[\\-\"F^]oFc]o7$$\"31#\\M$)y]!H5F^]oFc]o7$$\"
+37'RD'HPHL5F^]oFc]o7$$\"3Sp(\\P1Bv.\"F^]oFc]o7$$\"3@Kzu`M(=/\"F^]oFc]o
+7$$\"3f!GE'z_qX5F^]oFc]o7$$\"3()4)**z+>+0\"F^]oFc]o7$$\"3h&\\c*[/Na5F^
+]oFc]o7$$\"3:aZ\"\\fC&e5F^]oFc]o7$$\"3<#=N$>^Ji5F^]oFc]o7$$\"3aU%)\\>C
+#o1\"F^]oFc]o7$$\"3yf-'RpS12\"F^]oFc]o7$$\"3]xT([D#3v5F^]oFc]o7$$\"3')
+Gl())y8!z5F^]oFc]o7$$\"3.F<z/tK$3\"F^]oFc]o7$$\"35_1+#zMu3\"F^]oFc]o7$
+$\"3ah%**R_?<4\"F^]oFc]o7$$\"350^$Q;cc4\"F^]oFc]o7$$\"3W?V3$G,**4\"F^]
+oFc]o7$$\"3iD_\"*o2J/6F^]oFc]o7$$\"3b2NHR#\\\"36F^]oFc]o7$$\"3L%QgC*[H
+76F^]oFc]o7$$\"3UAU$yvxl6\"F^]oFc]o7$$\"3%HKUgqn27\"F^]oFc]o7$$\"36$yw
+jp@[7\"F^]oFc]o7$$\"3OqnXhHKH6F^]oFc]o7$$\"3D\"*HL[vOL6F^]oFc]o7$$\"3#
+*RJ73goP6F^]oFc]o7$$\"3aTBau\"*fT6F^]oFc]o7$$\"36F7/*Hxe9\"F^]oFc]o7$$
+\"3%)REz!o-*\\6F^]oFc]o7$$\"3U'*Qek.6a6F^]oFc]o7$$\"3?DWeWTAe6F^]oFc]o
+7$$\"3.\"p**4*3`i6F^]oFc]o7$$\"3NXlm*zym;\"F^]oFc]o7$$\"3#p7u`j?4<\"F^
+]oFc]o7$$\"3<$RSlMF^<\"F^]oFc]o7$$\"3?r+@xG**y6F^]oFc]o7$$\"3eMCe6KU$=
+\"F^]oFc]o7$$\"3(eZfav&Q(=\"F^]oFc]o7$$\"3W$*)3Pl5;>\"F^]oFc]o7$$\"3#e
+X=/Uac>\"F^]oFc]o7$$\"#7F*Fc]o-%&COLORG6&%$RGBG$\"#5!\"\"$F*F[goF\\go-
+%*THICKNESSG6#\"\"#-%+AXESLABELSG6$Q\"t6\"Q!Fego-%%VIEWG6$;$!#IF[go$\"
+2-++++++?\"!#:;$!\"#Fbho$\"$-\"Fbho" 1 2 2 0 10 1 2 6 1 4 2 1.0 45.0 
+45.0 1 0 "Curve 1" }}{TEXT 232 0 "" }}}{EXCHG {PARA 227 "" 1 "" 
+{XPPMATH 20 "6#-I\"gG6\"6#\"\"\"" }{TEXT 20 0 "" }}}{EXCHG {PARA 227 "
+" 1 "" {XPPMATH 20 "6#\"\"\"" }{TEXT 20 0 "" }}}}{SECT 1 {PARA 225 "" 
+0 "" {TEXT 229 26 "  V\375po\350et pravd\354podobnost\355" }{TEXT 229 
+0 "" }}{PARA 224 "" 0 "" {TEXT 228 26 "Vypo\350t\354te pravd\354podobn
+osti" }{TEXT 228 0 "" }}{PARA 224 "" 0 "" {TEXT 228 48 "a) P( X<= 3); \+
+ b)  P( X >4 );  c) P( 0 < X < 6)." }{TEXT 228 0 "" }}{PARA 224 "" 0 "
+" {TEXT 228 0 "" }}{SECT 1 {PARA 230 "" 0 "" {TEXT 233 3 " a)" }{TEXT 
+233 0 "" }}{PARA 224 "" 0 "" {TEXT 228 0 "" }}{EXCHG {PARA 226 "> " 0 
+"" {MPLTEXT 1 230 18 "P1:=F(3):evalf(%);" }{MPLTEXT 1 230 0 "" }}
+{PARA 227 "" 1 "" {XPPMATH 20 "6#$\"#l!\"#" }{TEXT 20 0 "" }}}{EXCHG 
+{PARA 226 "> " 0 "" {MPLTEXT 1 230 0 "" }}}}{SECT 1 {PARA 230 "" 0 "" 
+{TEXT 233 3 " b)" }{TEXT 233 0 "" }}{PARA 224 "" 0 "" {TEXT 228 0 "" }
+}{EXCHG {PARA 226 "> " 0 "" {MPLTEXT 1 230 37 "P2:=1-limit(F(t),t=4,ri
+ght):evalf(%);" }{MPLTEXT 1 230 0 "" }}{PARA 227 "" 1 "" {XPPMATH 20 "
+6#$\"+++++?!#5" }{TEXT 20 0 "" }}}{EXCHG {PARA 226 "> " 0 "" {MPLTEXT 
+1 230 0 "" }}}}{SECT 1 {PARA 230 "" 0 "" {TEXT 233 2 "c)" }{TEXT 233 
+0 "" }}{PARA 224 "" 0 "" {TEXT 228 0 "" }}{EXCHG {PARA 226 "> " 0 "" 
+{MPLTEXT 1 230 56 "P3:=limit(F(t),t=6,right)-limit(F(t),t=0,left):eval
+f(%);" }{MPLTEXT 1 230 0 "" }}{PARA 227 "" 1 "" {XPPMATH 20 "6#$\"++++
++v!#5" }{TEXT 20 0 "" }}}{EXCHG {PARA 226 "> " 0 "" {MPLTEXT 1 230 0 "
+" }}}}}{SECT 1 {PARA 225 "" 0 "" {TEXT 229 36 "  V\375po\350et st\370e
+dn\355 hodnoty a rozptylu" }{TEXT 229 0 "" }}{PARA 224 "" 0 "" {TEXT 
+228 0 "" }}{EXCHG {PARA 226 "> " 0 "" {MPLTEXT 1 230 7 "i:='i';" }
+{MPLTEXT 1 230 0 "" }}{PARA 227 "" 1 "" {XPPMATH 20 "6#>I\"iG6\"F$" }
+{TEXT 20 0 "" }}}{EXCHG {PARA 226 "> " 0 "" {MPLTEXT 1 230 26 "m1:=sum
+(x[i]*p[i],i=1..n);" }{MPLTEXT 1 230 0 "" }}{PARA 227 "" 1 "" 
+{XPPMATH 20 "6#>I#m1G6\"$\"$&H!\"#" }{TEXT 20 0 "" }}}{EXCHG {PARA 
+226 "> " 0 "" {MPLTEXT 1 230 53 "m2o:=sum((x[i])^2*p[i],i=1..n):m2:=m2
+o-m1^2:evalf(%);" }{MPLTEXT 1 230 0 "" }}{PARA 227 "" 1 "" {XPPMATH 
+20 "6#$\"&v%)*!\"%" }{TEXT 20 0 "" }}}{EXCHG {PARA 226 "> " 0 "" 
+{MPLTEXT 1 230 14 "sig:=sqrt(m2);" }{MPLTEXT 1 230 0 "" }}{PARA 227 ""
+ 1 "" {XPPMATH 20 "6#>I$sigG6\"$\"+dE2QJ!\"*" }{TEXT 20 0 "" }}}
+{EXCHG {PARA 226 "> " 0 "" {MPLTEXT 1 230 0 "" }}}}{SECT 1 {PARA 225 "
+" 0 "" {TEXT 229 43 "  V\375po\350et koeficientu ?ikmosti a ?pi\350ato
+sti" }{TEXT 229 0 "" }}{PARA 224 "" 0 "" {TEXT 228 0 "" }}{EXCHG 
+{PARA 226 "> " 0 "" {MPLTEXT 1 230 7 "k:='k';" }{MPLTEXT 1 230 0 "" }}
+{PARA 227 "" 1 "" {XPPMATH 20 "6#>I\"kG6\"F$" }{TEXT 20 0 "" }}}
+{EXCHG {PARA 226 "> " 0 "" {MPLTEXT 1 230 80 "m3o:=sum((x[k])^3*p[k],k
+=1..n):m3:=m3o-3*m2o*m1+2*m1^3:alpha:=m3/sig^3;evalf(%);" }{MPLTEXT 1 
+230 0 "" }}{PARA 226 "> " 0 "" {MPLTEXT 1 230 0 "" }}{PARA 227 "" 1 ""
+ {XPPMATH 20 "6#>I&alphaG6\"$\"+2+Cv5!\"*" }{TEXT 20 0 "" }}{PARA 227 
+"" 1 "" {XPPMATH 20 "6#$\"+2+Cv5!\"*" }{TEXT 20 0 "" }}}{EXCHG {PARA 
+226 "> " 0 "" {MPLTEXT 1 230 91 "m4o:=sum((x[k])^4*p[k],k=1..n):m4:=m4
+o-4*m3o*m1+6*m2o*m1^2-3*m1^4:eps:=m4/sig^4-3;evalf(%);" }{MPLTEXT 1 
+230 0 "" }}{PARA 227 "" 1 "" {XPPMATH 20 "6#>I$epsG6\"$\"*UrM,\"!\"*" 
+}{TEXT 20 0 "" }}{PARA 227 "" 1 "" {XPPMATH 20 "6#$\"*UrM,\"!\"*" }
+{TEXT 20 0 "" }}}{EXCHG {PARA 226 "> " 0 "" {MPLTEXT 1 230 0 "" }}}
+{EXCHG {PARA 231 "> " 0 "" {MPLTEXT 1 0 0 "" }}}}{SECT 1 {PARA 225 "" 
+0 "" {TEXT 229 16 "V\375po\350et kvantilu" }{TEXT 229 0 "" }}}}{SECT 
+0 {PARA 223 "" 0 "" {TEXT 227 9 "  P\370\355klad" }{TEXT 227 0 "" }}}
+{SECT 0 {PARA 223 "" 0 "" {TEXT 227 9 "  P\370\355klad" }{TEXT 227 0 "
+" }}}{PARA 232 "" 0 "" {TEXT 211 0 "" }}{PARA 233 "" 0 "" {TEXT 234 0 
+"" }}{PARA 234 "" 0 "" {TEXT -1 0 "" }}}{MARK "0 0 0" 0 }{VIEWOPTS 1 
+1 0 1 1 1803 1 1 1 1 }{PAGENUMBERS 0 1 2 33 1 1 }

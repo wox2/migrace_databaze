@@ -1,0 +1,35 @@
+#include <string>
+#include <string.h>
+#include <iostream>
+#include <stdlib.h>
+#include <fstream>
+#include <vector>
+using namespace std;
+
+struct Gen{
+	int * errorsInDNA;
+	string value;
+};
+
+/**
+ * List of used characters. Not needed during execution.
+ */
+string alphabet;
+string dna;
+Gen *gens;
+int genCount;
+
+void readData(){
+	cin >> alphabet;
+	cin >> dna;
+	cin >> genCount;
+}
+//void process();
+//void writeResults();
+int main(){
+	readData();
+//	process();
+//	writeResults();
+}
+
+

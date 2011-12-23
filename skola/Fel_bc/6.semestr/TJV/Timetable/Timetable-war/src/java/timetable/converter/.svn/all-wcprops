@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svnroot/e-timetable/!svn/ver/21/e-timetable/Timetable-war/src/java/timetable/converter
+END
+RouteConverter.java
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svnroot/e-timetable/!svn/ver/20/e-timetable/Timetable-war/src/java/timetable/converter/RouteConverter.java
+END
+LinkTypeConverter.java
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svnroot/e-timetable/!svn/ver/21/e-timetable/Timetable-war/src/java/timetable/converter/LinkTypeConverter.java
+END
+StationConverter.java
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svnroot/e-timetable/!svn/ver/20/e-timetable/Timetable-war/src/java/timetable/converter/StationConverter.java
+END
+NoteConverter.java
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svnroot/e-timetable/!svn/ver/20/e-timetable/Timetable-war/src/java/timetable/converter/NoteConverter.java
+END

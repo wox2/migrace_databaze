@@ -1,0 +1,132 @@
+{VERSION 6 0 "IBM INTEL NT" "6.0" }
+{USTYLETAB {CSTYLE "Maple Input" -1 0 "Courier" 0 1 255 0 0 1 0 1 0 0 
+1 0 0 0 0 1 }{CSTYLE "2D Math" -1 2 "Times" 0 1 0 0 0 0 0 0 2 0 0 0 0 
+0 0 1 }{CSTYLE "2D Output" 2 20 "" 0 1 0 0 255 1 0 0 0 0 0 0 0 0 0 1 }
+{CSTYLE "" 0 21 "" 0 1 0 0 0 1 0 0 0 0 2 0 0 0 0 1 }{PSTYLE "Normal" 
+-1 0 1 {CSTYLE "" -1 -1 "Times" 1 12 0 0 0 1 2 2 2 2 2 2 1 1 1 1 }1 1 
+0 0 0 0 1 0 1 0 2 2 0 1 }{PSTYLE "Heading 1" -1 3 1 {CSTYLE "" -1 -1 "
+Times" 1 18 0 0 0 1 2 1 2 2 2 2 1 1 1 1 }1 1 0 0 8 4 1 0 1 0 2 2 0 1 }
+{PSTYLE "Maple Output" -1 11 1 {CSTYLE "" -1 -1 "Times" 1 12 0 0 0 1 
+2 2 2 2 2 2 1 1 1 1 }3 3 0 0 0 0 1 0 1 0 2 2 0 1 }}
+{SECT 0 {EXCHG {PARA 0 "" 0 "" {MPLTEXT 0 21 50 "Popisn\341 statistika
+ 1                 describe1.mws" }}}{SECT 0 {PARA 3 "" 0 "" {TEXT -1 
+12 "  Zad\341n\355 dat" }}{PARA 0 "" 0 "" {TEXT -1 0 "" }}{EXCHG 
+{PARA 0 "> " 0 "" {MPLTEXT 1 0 20 "restart:with(stats);" }}{PARA 11 "
+" 1 "" {XPPMATH 20 "6#7*%&anovaG%)describeG%$fitG%+importdataG%'random
+G%*statevalfG%*statplotsG%*transformG" }}}{EXCHG {PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 29 "data1:=[-1,3,4,6,6,7,8,9]; #1" }}{PARA 11 "" 1 "" 
+{XPPMATH 20 "6#>%&data1G7*!\"\"\"\"$\"\"%\"\"'F)\"\"(\"\")\"\"*" }}}
+{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 0 "" }}}{EXCHG {PARA 0 "> " 0 "
+" {MPLTEXT 1 0 27 "data1[1];data1[4];data1[5];" }}{PARA 11 "" 1 "" 
+{XPPMATH 20 "6#!\"\"" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#\"\"'" }}
+{PARA 11 "" 1 "" {XPPMATH 20 "6#\"\"'" }}}{EXCHG {PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 34 "data2:=[-1,2,4,missing,6,7,8,9];#2" }}{PARA 11 "" 1 "
+" {XPPMATH 20 "6#>%&data2G7*!\"\"\"\"#\"\"%%(missingG\"\"'\"\"(\"\")\"
+\"*" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 18 "data2[4];data2[5];" 
+}}{PARA 11 "" 1 "" {XPPMATH 20 "6#%(missingG" }}{PARA 11 "" 1 "" 
+{XPPMATH 20 "6#\"\"'" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 36 "dat
+a3:=[-1,2,4,Weight(6,2),7,8,9];#3" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>
+%&data3G7)!\"\"\"\"#\"\"%-%'WeightG6$\"\"'F'\"\"(\"\")\"\"*" }}}
+{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 18 "data3[4];data3[5];" }}{PARA 
+11 "" 1 "" {XPPMATH 20 "6#-%'WeightG6$\"\"'\"\"#" }}{PARA 11 "" 1 "" 
+{XPPMATH 20 "6#\"\"(" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 28 "dt3
+:=[-1,2,4,6$2,7,8,9];#3 1" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%$dt3G7*
+!\"\"\"\"#\"\"%\"\"'F)\"\"(\"\")\"\"*" }}}{EXCHG {PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 14 "dt3[4];dt3[5];" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#\"
+\"'" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#\"\"'" }}}{EXCHG {PARA 0 "> " 
+0 "" {MPLTEXT 1 0 45 "data4:=[-1,2,4,Weight(6,2),Weight(7..9,3)];#4" }
+}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%&data4G7'!\"\"\"\"#\"\"%-%'WeightG6
+$\"\"'F'-F*6$;\"\"(\"\"*\"\"$" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 
+0 18 "data4[3];data4[4];" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#\"\"%" }}
+{PARA 11 "" 1 "" {XPPMATH 20 "6#-%'WeightG6$\"\"'\"\"#" }}}{EXCHG 
+{PARA 0 "> " 0 "" {MPLTEXT 1 0 0 "" }}}{EXCHG {PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 0 "" }}}}{SECT 0 {PARA 3 "" 0 "" {TEXT -1 26 " Po\350\355
+t\341n\355 polo\236ek (ove\350ek)" }}{PARA 0 "" 0 "" {TEXT -1 23 "Pomo
+c\355 describe[count];" }}{PARA 0 "" 0 "" {TEXT -1 0 "" }}{EXCHG 
+{PARA 0 "> " 0 "" {MPLTEXT 1 0 23 "describe[count](data1);" }}{PARA 
+11 "" 1 "" {XPPMATH 20 "6#\"\")" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 
+1 0 23 "describe[count](data2);" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#\"
+\"(" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 23 "describe[count](data
+3);" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#\"\")" }}}{EXCHG {PARA 0 "> " 
+0 "" {MPLTEXT 1 0 21 "describe[count](dt3);" }}{PARA 11 "" 1 "" 
+{XPPMATH 20 "6#\"\")" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 23 "des
+cribe[count](data4);" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#\"\")" }}}
+{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 0 "" }}}}{SECT 0 {PARA 3 "" 0 "
+" {TEXT -1 15 " Uspo\370\341d\341n\355 dat" }}{PARA 0 "" 0 "" {TEXT 
+-1 11 "Pomoc\355 sort" }}{PARA 0 "" 0 "" {TEXT -1 0 "" }}{EXCHG {PARA 
+0 "> " 0 "" {MPLTEXT 1 0 20 "restart:with(stats):" }}}{EXCHG {PARA 0 "
+> " 0 "" {MPLTEXT 1 0 24 "data5:=[3,4,-1,9,6,7,8];" }}{PARA 11 "" 1 "
+" {XPPMATH 20 "6#>%&data5G7)\"\"$\"\"%!\"\"\"\"*\"\"'\"\"(\"\")" }}}
+{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 12 "sort(data5);" }}{PARA 11 "" 
+1 "" {XPPMATH 20 "6#7)!\"\"\"\"$\"\"%\"\"'\"\"(\"\")\"\"*" }}}{EXCHG 
+{PARA 0 "> " 0 "" {MPLTEXT 1 0 33 "data6:=[-2,4,missing,6,7,-1,8,9];" 
+}}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%&data6G7*!\"#\"\"%%(missingG\"\"'
+\"\"(!\"\"\"\")\"\"*" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 12 "sor
+t(data6);" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#7*\"\"%\"\"'\"\"(\"\")\"
+\"*%(missingG!\"#!\"\"" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 34 "d
+ata7:=[2,-1,4,Weight(6,2),7,9,8];" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>
+%&data7G7)\"\"#!\"\"\"\"%-%'WeightG6$\"\"'F&\"\"(\"\"*\"\")" }}}
+{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 12 "sort(data7);" }}{PARA 11 "" 
+1 "" {XPPMATH 20 "6#7)\"\"#\"\"%\"\"(\"\")\"\"*-%'WeightG6$\"\"'F$!\"
+\"" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 24 "dt7:=[2,-1,4,6$2,7,8,
+9];" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%$dt7G7*\"\"#!\"\"\"\"%\"\"'F)
+\"\"(\"\")\"\"*" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 10 "sort(dt7
+);" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#7*!\"\"\"\"#\"\"%\"\"'F'\"\"(\"
+\")\"\"*" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 43 "data8:=[4,2,-1,
+Weight(7..9,3),Weight(6,2)];" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%&dat
+a8G7'\"\"%\"\"#!\"\"-%'WeightG6$;\"\"(\"\"*\"\"$-F*6$\"\"'F'" }}}
+{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 12 "sort(data8);" }}{PARA 11 "" 
+1 "" {XPPMATH 20 "6#7'\"\"#\"\"%-%'WeightG6$\"\"'F$-F'6$;\"\"(\"\"*\"
+\"$!\"\"" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 0 "" }}}}{SECT 0 
+{PARA 3 "" 0 "" {TEXT -1 18 "  Transformace dat" }}{PARA 0 "" 0 "" 
+{TEXT -1 10 "Pomoc\355 map" }}{PARA 0 "" 0 "" {TEXT -1 0 "" }}{EXCHG 
+{PARA 0 "> " 0 "" {MPLTEXT 1 0 20 "restart:with(stats):" }}}{EXCHG 
+{PARA 0 "> " 0 "" {MPLTEXT 1 0 10 "f:=x->x^2:" }}}{EXCHG {PARA 0 "> " 
+0 "" {MPLTEXT 1 0 22 "data9:=[-1,1,0,3,5,6];" }}{PARA 11 "" 1 "" 
+{XPPMATH 20 "6#>%&data9G7(!\"\"\"\"\"\"\"!\"\"$\"\"&\"\"'" }}}{EXCHG 
+{PARA 0 "> " 0 "" {MPLTEXT 1 0 21 "data10:=map(f,data9);" }}{PARA 11 "
+" 1 "" {XPPMATH 20 "6#>%'data10G7(\"\"\"F&\"\"!\"\"*\"#D\"#O" }}}
+{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 13 "sort(data10);" }}{PARA 11 "
+" 1 "" {XPPMATH 20 "6#7(\"\"!\"\"\"F%\"\"*\"#D\"#O" }}}{EXCHG {PARA 0 
+"> " 0 "" {MPLTEXT 1 0 41 "data11:=[1,0,Weight(4,2),Weight(5..8,4)];" 
+}}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%'data11G7&\"\"\"\"\"!-%'WeightG6$
+\"\"%\"\"#-F)6$;\"\"&\"\")F+" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 
+0 22 "data12:=map(f,data11);" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%'dat
+a12G7&\"\"\"\"\"!*$)-%'WeightG6$\"\"%\"\"#F.F&*$)-F+6$;\"\"&\"\")F-F.F
+&" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 24 "dt11:=[1,0,4$2,5,6,7,8
+];" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%%dt11G7*\"\"\"\"\"!\"\"%F(\"\"
+&\"\"'\"\"(\"\")" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 18 "dt12:=m
+ap(f,dt11);" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%%dt12G7*\"\"\"\"\"!\"
+#;F(\"#D\"#O\"#\\\"#k" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 10 "da
+ta12[2];" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#\"\"!" }}}{EXCHG {PARA 0 "
+> " 0 "" {MPLTEXT 1 0 10 "data12[3];" }}{PARA 11 "" 1 "" {XPPMATH 20 "
+6#*$)-%'WeightG6$\"\"%\"\"#F)\"\"\"" }}}{EXCHG {PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 0 "" }}}}{SECT 0 {PARA 3 "" 0 "" {TEXT -1 18 " Konverze t
+ypu dat" }}{PARA 0 "" 0 "" {TEXT -1 14 "Pomoc\355 convert" }}{PARA 0 "
+" 0 "" {TEXT -1 0 "" }}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 8 "restar
+t:" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 26 "dt1:=[-1,0,0,1,2,3,4,
+4,5];" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%$dt1G7+!\"\"\"\"!F'\"\"\"\"
+\"#\"\"$\"\"%F+\"\"&" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 22 "dt2
+:=convert(dt1,set);" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%$dt2G<)!\"\"
+\"\"!\"\"\"\"\"#\"\"$\"\"%\"\"&" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 
+1 0 23 "dt3:=convert(dt2,list);" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%$
+dt3G7)!\"\"\"\"!\"\"\"\"\"#\"\"$\"\"%\"\"&" }}}{EXCHG {PARA 0 "> " 0 "
+" {MPLTEXT 1 0 18 "dt4:=[-1,3,3,5,7];" }}{PARA 11 "" 1 "" {XPPMATH 20 
+"6#>%$dt4G7'!\"\"\"\"$F'\"\"&\"\"(" }}}{EXCHG {PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 22 "dt5:=convert(dt4,set);" }}{PARA 11 "" 1 "" {XPPMATH 
+20 "6#>%$dt5G<&!\"\"\"\"$\"\"&\"\"(" }}}{EXCHG {PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 19 "dt6:=dt2 union dt5;" }}{PARA 11 "" 1 "" {XPPMATH 20 "
+6#>%$dt6G<*!\"\"\"\"!\"\"\"\"\"#\"\"$\"\"%\"\"&\"\"(" }}}{EXCHG {PARA 
+0 "> " 0 "" {MPLTEXT 1 0 23 "dt7:=convert(dt6,list);" }}{PARA 11 "" 1 
+"" {XPPMATH 20 "6#>%$dt7G7*!\"\"\"\"!\"\"\"\"\"#\"\"$\"\"%\"\"&\"\"(" 
+}}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 7 "dt7[2];" }}{PARA 11 "" 1 "
+" {XPPMATH 20 "6#\"\"!" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 19 "d
+t8:=[1,2,3$4,5,6];" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%$dt8G7*\"\"\"
+\"\"#\"\"$F(F(F(\"\"&\"\"'" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 
+22 "dt9:=convert(dt8,set);" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%$dt9G<
+'\"\"\"\"\"#\"\"$\"\"&\"\"'" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 
+24 "dt10:=convert(dt9,list);" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%%dt1
+0G7'\"\"\"\"\"#\"\"$\"\"&\"\"'" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 
+1 0 0 "" }}}}{SECT 0 {PARA 3 "" 0 "" {TEXT -1 0 "" }}}{SECT 0 {PARA 3 
+"" 0 "" {TEXT -1 0 "" }}}}{MARK "5 15 0 0" 0 }{VIEWOPTS 1 1 0 1 1 
+1803 1 1 1 1 }{PAGENUMBERS 0 1 2 33 1 1 }

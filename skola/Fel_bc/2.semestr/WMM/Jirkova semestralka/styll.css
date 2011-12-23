@@ -1,0 +1,192 @@
+body {
+	font-family: Calibri, Verdana, Arial; /*pro Operu nezobrazuje hacky a carky */
+	margin-left: 2ex;
+        background-color: orange;
+}
+
+h2 {
+	font-family: Cambria, Helvetica, Verdana;
+	font-size: 5ex;	
+        text-align:center;
+        color: white;
+        
+}
+
+fieldset {
+    background-color:grey;
+}
+
+.kosik {
+    color:blue;
+       
+}
+
+a {    
+    color: black;
+}
+
+.nic{
+    font-size: 3.1ex;
+    color:blue;
+    margin-left:10%;
+}
+
+.jmena {
+    color: red;
+    font-weight:900;
+    
+}
+
+#mapka {
+    margin-left: 30%;
+    border:none;
+}
+
+ #titul{
+    margin-top:-10%;
+    
+ }
+
+.zarovnaniNavigace{    
+   text-align:center;
+   font-size:110%;
+   background-color:gray;
+   padding:10px;
+}
+body a + a{
+    margin-left:3%;    
+}
+#formular{
+   background-color:silver;   
+   margin-left:22%;
+   margin-right:22%;
+}
+.vybraneZdozi{   
+    border-style:solid; 
+    border-color:grey;
+    padding:10px; 
+    margin-right:14%;
+    margin-left:14%;
+}
+.porovnat{
+    text-decoration:none;
+}
+
+#vinaRozdeleni{
+    position:absolute;
+    top:200px;
+    font-size:110%;
+}
+#vsechnyVina{
+    position:absolute;
+    top:230px;
+    left:240px;
+    right:10px;
+}
+.vinice3{
+    background-position:top center;   
+}
+.hlavickaVin{
+    font-size:125%;
+    font:bold;
+    color:red;
+}
+div#bilaVina div div{
+    display:inline-table;
+}
+div#cervenaVina div div{
+    display:inline-table;
+}
+div#ruzovaVina div div{
+    display:inline-table;
+}
+div#specialniVina div div{
+    display:inline-table;
+}
+div#sumivaVina div div{
+    display:inline-table;
+}
+.prvek{
+    margin:6px;
+    background-color:gray;
+    height:300px;
+    width:48%;
+}
+.obrazekVina{  
+    height:150px;
+    width:50px;
+    border:none;
+}
+.bunkaSObrazkem{
+    padding-left:25px;
+    
+}
+.tabulka{
+    padding:10px;
+}
+.prvniSloupec{
+    width:140px;
+}
+.druhySloupec{
+    width:240px;
+}
+.tretiSloupec{
+    width:140px;
+}
+.ctvrtySloupec{
+    width:120px;
+}
+#zajinavosti{
+    position:absolute;
+    left:15%;
+    right:30%;
+    top:300px;
+}
+#poradaneAkce{
+    float:right;
+}
+.nabidkaVNavigaci{
+    margin-left:3%;    
+}
+#tabulkaFormular{    
+    font-size:110%;
+    padding:5px;
+    margin-left:28%;
+    margin-right:28%;
+}
+.prvniSloupecFormular{
+    width:170px;
+}
+.druhySloupecFormular{
+    width:170px;
+}
+.tabulkaVinaStacena1{
+    width:300px;
+}
+.tabulkaVinaStacena2{
+    width:120px;
+}
+.tabulkaStacenaVina{
+   margin-left:17%;
+   font-size:110%;
+}
+.tabulkaStacenaVina thead{
+    background-color:olive;
+    font-size:113%;
+}
+#fotogalerie{
+    background-color:silver;
+    margin-left:20%;
+    margin-right:20%;
+}
+.titulekFotogalerie{
+    font-size:150%;
+    text-align:center;    
+    color:brown;
+}
+.tabulkaFotogalerie{
+   padding:10px; 
+text-align:center;        
+}
+
+

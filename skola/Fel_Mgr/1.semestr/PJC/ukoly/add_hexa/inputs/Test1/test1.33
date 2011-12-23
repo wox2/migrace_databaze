@@ -1,0 +1,5 @@
+let ax 0x 23 0a 43 3e 5b cd 65 ha ha ha 55 7c e1
+let bx 0x FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF
+
+begin
+exit

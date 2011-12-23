@@ -1,0 +1,2 @@
+(: Vypíše veškeré zákazníky, které nemají element adresa_dorucovaci :)
+//zakaznik[not(adresa_dorucovaci)]

@@ -1,0 +1,6 @@
+umely id (kdyztak id ne stringy), ciselniky, spravne pouziti kardinalit, rodne cislo ne jako int - varchar
+varchar - zabira min nez char, povinnost atributu dava zadavatel
+
+slovni zadani problemu - nema byt v reci modelu.
+
+

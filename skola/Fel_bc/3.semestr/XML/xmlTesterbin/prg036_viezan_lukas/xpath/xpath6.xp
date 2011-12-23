@@ -1,0 +1,2 @@
+(: najde výrobek na který je odkaz v komentáři :)
+//vyrobek[@id=ancestor::*[2]/poznamka/odkaz/@naid]

@@ -1,0 +1,92 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<!--
+    TODO define vocabulary identification
+    PUBLIC ID: -//vendor//vocabulary//EN
+    SYSTEM ID: http://server/path/New1.dtd
+
+-->
+
+<!--
+    An example how to use this DTD from your XML document:
+
+    <?xml version="1.0"?>
+
+    <!DOCTYPE objednavka SYSTEM "New1.dtd">
+
+    <objednavka>
+    ...
+    </objednavka>
+-->
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT objednavka (notes|seznam|adresa|jmeno|id|stav|datum)*>
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT datum (#PCDATA)>
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT stav (#PCDATA)>
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT id (#PCDATA)>
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT jmeno (telefon|email|prijmeni|krestni)*>
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT krestni (#PCDATA)>
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT prijmeni (#PCDATA)>
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT email (#PCDATA)>
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT telefon (#PCDATA)>
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT adresa (CP|PSC|mesto|ulice)*>
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT ulice (#PCDATA)>
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT mesto (#PCDATA)>
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT PSC (#PCDATA)>
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT CP (#PCDATA)>
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT seznam (polozka)*>
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT polozka (pocet|cena|nazev|cislo)*>
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT cislo (#PCDATA)>
+<!ATTLIST cislo
+    id CDATA #IMPLIED
+  >
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT nazev (#PCDATA)>
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT cena (#PCDATA)>
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT pocet (#PCDATA)>
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT notes (#PCDATA|vyrobek)*>
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT vyrobek (#PCDATA)>
+<!ATTLIST vyrobek
+    IDREF CDATA #IMPLIED
+  >

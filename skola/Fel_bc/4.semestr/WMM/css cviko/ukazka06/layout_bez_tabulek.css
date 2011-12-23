@@ -1,0 +1,24 @@
+body { margin: 0px;}
+
+div.sekce {
+/*  border: 1px solid black;
+  padding: 10px;
+  margin:10px 10px 50px 10px;
+*/
+  margin: 9px;
+  background-color: lightgrey;
+  border: 1px solid transparent;
+  padding: 10px;
+}
+
+div#navigace {
+  float: left;
+  width: 300px;
+  margin-top: 0px;
+  padding-left: 0px;
+}
+
+div#hlavni_text {
+  /* padding-left: 300px; vyzkousejte padding misto margin */
+  margin-left: 329px;
+}

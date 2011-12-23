@@ -1,0 +1,11 @@
+import java.util.PriorityQueue;
+import java.util.concurrent.PriorityBlockingQueue;
+
+
+public class m2 {
+	public static void main(String args[]){
+			PriorityBlockingQueue<Integer> pq;
+			PriorityQueue<Integer> queue;
+			
+	}
+}

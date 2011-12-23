@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename local variable &apos;b&apos; in &apos;dsdsds.add(...)&apos; to &apos;druhyScitanec&apos;&#x0D;&#x0A;- Original project: &apos;java2&apos;&#x0D;&#x0A;- Original element: &apos;dsdsds.add(int, int).b&apos;&#x0D;&#x0A;- Renamed element: &apos;b&apos;&#x0D;&#x0A;- Update references to refactored element" description="Rename local variable &apos;b&apos;" id="org.eclipse.jdt.ui.rename.local.variable" input="/src&lt;{dsdsds.java[dsdsds~add~I~I@b!485!489!489!489!I!0!true" name="druhyScitanec" references="true" stamp="1321186469139" version="1.0"/>
+</session>

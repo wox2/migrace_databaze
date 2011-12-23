@@ -1,0 +1,12 @@
+#BlueJ class context
+comment0.params=x\ y
+comment0.target=Pozice(int,\ int)
+comment0.text=\nVytvori\ instanci\ se\ zadanymi\ souradnicemi.\n\n@param\ x\ \ Vodorovna\ souradnice.\n@param\ y\ \ Svisla\ souradnice.\n\n
+comment1.target=int\ getX()
+comment1.text=\nVrati\ hodnotu\ vodorovne\ souradnice\ dane\ pozice.\n\n@return\ \ Pozadovana\ souradnice.\n\n
+comment2.target=int\ getY()
+comment2.text=\nVrati\ hodnotu\ svisle\ souradnice\ dane\ pozice.\n\n@return\ \ Pozadovana\ souradnice.\n\n
+comment3.params=o
+comment3.target=boolean\ equals(Object)
+comment4.target=String\ toString()
+numComments=5

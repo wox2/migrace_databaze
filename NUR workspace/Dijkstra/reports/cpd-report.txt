@@ -1,0 +1,1919 @@
+Found a 9 line (43 tokens) duplication in the following files: 
+Starting at line 69 of D:\ant\ant\bin\src\Core\Examples.java
+Starting at line 147 of D:\ant\ant\bin\src\Core\Examples.java
+
+        f.addEdge(g, 11);
+
+        graph.addNode(a);
+        graph.addNode(b);
+        graph.addNode(c);
+        graph.addNode(d);
+        graph.addNode(e);
+        graph.addNode(f);
+        graph.addNode(g);
+=====================================================================
+Found a 7 line (31 tokens) duplication in the following files: 
+Starting at line 69 of D:\ant\ant\bin\src\Core\Examples.java
+Starting at line 107 of D:\ant\ant\bin\src\Core\Examples.java
+
+        e.addEdge(c, 8);
+
+        graph.addNode(a);
+        graph.addNode(b);
+        graph.addNode(c);
+        graph.addNode(d);
+        graph.addNode(e);
+=====================================================================
+Found a 6 line (28 tokens) duplication in the following files: 
+Starting at line 53 of D:\ant\ant\bin\src\Core\Node.java
+Starting at line 66 of D:\ant\ant\bin\src\Core\Node.java
+
+    public Node(String name, int x, int y) {
+        this.distance = Integer.MAX_VALUE;
+        predecessor = null;
+        this.name = name;
+        edges = new ArrayList<Edge>();
+        dimension = new Dimension(x, y);
+=====================================================================
+Found a 4 line (22 tokens) duplication in the following files: 
+Starting at line 68 of D:\ant\ant\bin\src\Core\Node.java
+Starting at line 83 of D:\ant\ant\bin\src\Core\Node.java
+
+        predecessor = null;
+        this.name = name;
+        edges = new ArrayList<Edge>();
+        dimension = new Dimension();
+=====================================================================
+Found a 3 line (22 tokens) duplication in the following files: 
+Starting at line 178 of D:\ant\ant\bin\src\view\Painter.java
+Starting at line 183 of D:\ant\ant\bin\src\view\Painter.java
+
+        int y2Arrow = (int) (Math.sin(alphaMinus10) * ARROW_LENGTH);
+        graphics.setColor(color);
+        graphics.drawLine(xPreEnd, yPreEnd, xPreEnd-xNeg*x2Arrow, yPreEnd-yNeg*y2Arrow);
+=====================================================================
+Found a 4 line (19 tokens) duplication in the following files: 
+Starting at line 55 of D:\ant\ant\bin\src\Core\Node.java
+Starting at line 83 of D:\ant\ant\bin\src\Core\Node.java
+
+        predecessor = null;
+        this.name = name;
+        edges = new ArrayList<Edge>();
+        dimension = new Dimension();
+=====================================================================
+Found a 4 line (18 tokens) duplication in the following files: 
+Starting at line 73 of D:\ant\ant\bin\src\view\ProgramWin.java
+Starting at line 98 of D:\ant\ant\bin\src\view\ProgramWin.java
+
+        restoreButton.addActionListener(new ActionListener() {
+
+            public void actionPerformed(ActionEvent e) {
+                controller.setAlgorithm(new DijkstraAlgorithm(graph, graph.getNode("a")));
+=====================================================================
+Found a 3 line (17 tokens) duplication in the following files: 
+Starting at line 43 of D:\ant\ant\bin\src\view\ProgramWin.java
+Starting at line 88 of D:\ant\ant\bin\src\view\ProgramWin.java
+
+                    graph = Examples.getExample(str);
+                    Steppable algorithm = new DijkstraAlgorithm(graph,graph.getNode("a"));
+                    controller.setAlgorithm(algorithm);
+=====================================================================
+Found a 3 line (16 tokens) duplication in the following files: 
+Starting at line 88 of D:\ant\ant\bin\src\Core\Examples.java
+Starting at line 125 of D:\ant\ant\bin\src\Core\Examples.java
+
+        }
+        Graph graph = new Graph();
+        Node a = new Node("a", 270, 110);
+=====================================================================
+Found a 3 line (16 tokens) duplication in the following files: 
+Starting at line 73 of D:\ant\ant\bin\src\view\ProgramWin.java
+Starting at line 109 of D:\ant\ant\bin\src\view\ProgramWin.java
+
+        runButton.addActionListener(new ActionListener() {
+
+            public void actionPerformed(ActionEvent e) {
+=====================================================================
+Found a 3 line (14 tokens) duplication in the following files: 
+Starting at line 34 of D:\ant\ant\bin\src\Aplication\Controller.java
+Starting at line 81 of D:\ant\ant\bin\src\Aplication\Controller.java
+
+    public final void setAlgorithm(final Steppable algorithm) {
+        this.algorithm = algorithm;
+        finished = false;
+=====================================================================
+Found a 2 line (14 tokens) duplication in the following files: 
+Starting at line 230 of D:\ant\ant\bin\src\view\Painter.java
+Starting at line 82 of D:\ant\ant\bin\src\Core\DijkstraAlgorithm.java
+
+            } catch (PriorityQueueEmptyException ex1) {
+                for (Node node : graph.getNodes()) {
+=====================================================================
+Found a 2 line (14 tokens) duplication in the following files: 
+Starting at line 171 of D:\ant\ant\bin\src\view\Painter.java
+Starting at line 179 of D:\ant\ant\bin\src\view\Painter.java
+
+        graphics.setColor(color);
+        graphics.drawLine(xPreEnd, yPreEnd, xPreEnd-xNeg*x1Arrow, yPreEnd-yNeg*y1Arrow);
+=====================================================================
+Found a 3 line (13 tokens) duplication in the following files: 
+Starting at line 37 of D:\ant\ant\bin\src\Core\Graph.java
+Starting at line 46 of D:\ant\ant\bin\src\Core\Graph.java
+
+    public void setNullPrecedessors() {
+        for (Node node : nodes) {
+            node.setPredecessor(null);
+=====================================================================
+Found a 1 line (12 tokens) duplication in the following files: 
+Starting at line 231 of D:\ant\ant\bin\src\view\Painter.java
+Starting at line 236 of D:\ant\ant\bin\src\view\Painter.java
+Starting at line 248 of D:\ant\ant\bin\src\view\Painter.java
+
+        for (Node node : graph.getNodes()) {
+=====================================================================
+Found a 1 line (12 tokens) duplication in the following files: 
+Starting at line 44 of D:\ant\ant\bin\src\view\ProgramWin.java
+Starting at line 101 of D:\ant\ant\bin\src\view\ProgramWin.java
+
+                controller.setAlgorithm(new DijkstraAlgorithm(graph, graph.getNode("a")));
+=====================================================================
+Found a 3 line (11 tokens) duplication in the following files: 
+Starting at line 63 of D:\ant\ant\bin\src\Core\Examples.java
+Starting at line 101 of D:\ant\ant\bin\src\Core\Examples.java
+
+        b.addEdge(e, 4);
+
+        d.addEdge(e, 1);
+=====================================================================
+Found a 2 line (10 tokens) duplication in the following files: 
+Starting at line 29 of D:\ant\ant\bin\src\Core\DijkstraEdgeIterator.java
+Starting at line 39 of D:\ant\ant\bin\src\Core\DijkstraEdgeIterator.java
+
+        edgeList = node.getEdges();
+        actualEdge = 0;
+=====================================================================
+Found a 1 line (10 tokens) duplication in the following files: 
+Starting at line 140 of D:\ant\ant\bin\src\Core\PriorityQueue.java
+Starting at line 81 of D:\ant\ant\bin\src\Core\Graph.java
+
+            if (node.getName().equals(name)) {
+=====================================================================
+Found a 2 line (10 tokens) duplication in the following files: 
+Starting at line 105 of D:\ant\ant\bin\src\Core\PriorityQueue.java
+Starting at line 114 of D:\ant\ant\bin\src\Core\PriorityQueue.java
+
+    private static int getRightChildPosition(int position) {
+        return 2 * position + 2;
+=====================================================================
+Found a 4 line (9 tokens) duplication in the following files: 
+Starting at line 62 of D:\ant\ant\bin\src\Core\DijkstraAlgorithm.java
+Starting at line 101 of D:\ant\ant\bin\src\Aplication\Controller.java
+
+                    System.out.println("Error");
+                    System.exit(1);
+                }
+            }
+=====================================================================
+Found a 2 line (9 tokens) duplication in the following files: 
+Starting at line 98 of D:\ant\ant\bin\src\Core\Edge.java
+Starting at line 106 of D:\ant\ant\bin\src\Core\Edge.java
+
+    public int getStartY() {
+        return (int) dimensionFrom.getHeight();
+=====================================================================
+Found a 2 line (9 tokens) duplication in the following files: 
+Starting at line 82 of D:\ant\ant\bin\src\Core\Edge.java
+Starting at line 90 of D:\ant\ant\bin\src\Core\Edge.java
+
+    public int getEndY() {
+        return (int) dimensionTo.getHeight();
+=====================================================================
+Found a 2 line (9 tokens) duplication in the following files: 
+Starting at line 93 of D:\ant\ant\bin\src\Core\Examples.java
+Starting at line 130 of D:\ant\ant\bin\src\Core\Examples.java
+
+        Node d = new Node("d", 540, 210);
+        Node e = new Node("e", 67, 310);
+=====================================================================
+Found a 2 line (9 tokens) duplication in the following files: 
+Starting at line 92 of D:\ant\ant\bin\src\Core\Examples.java
+Starting at line 129 of D:\ant\ant\bin\src\Core\Examples.java
+
+        Node c = new Node("c", 250, 380);
+        Node d = new Node("d", 540, 210);
+=====================================================================
+Found a 2 line (9 tokens) duplication in the following files: 
+Starting at line 91 of D:\ant\ant\bin\src\Core\Examples.java
+Starting at line 128 of D:\ant\ant\bin\src\Core\Examples.java
+
+        Node b = new Node("b", 360, 390);
+        Node c = new Node("c", 250, 380);
+=====================================================================
+Found a 2 line (9 tokens) duplication in the following files: 
+Starting at line 90 of D:\ant\ant\bin\src\Core\Examples.java
+Starting at line 127 of D:\ant\ant\bin\src\Core\Examples.java
+
+        Node a = new Node("a", 270, 110);
+        Node b = new Node("b", 360, 390);
+=====================================================================
+Found a 2 line (9 tokens) duplication in the following files: 
+Starting at line 64 of D:\ant\ant\bin\src\Core\Examples.java
+Starting at line 146 of D:\ant\ant\bin\src\Core\Examples.java
+
+        f.addEdge(d, 1);
+        f.addEdge(g, 11);
+=====================================================================
+Found a 2 line (9 tokens) duplication in the following files: 
+Starting at line 56 of D:\ant\ant\bin\src\Core\Examples.java
+Starting at line 99 of D:\ant\ant\bin\src\Core\Examples.java
+
+        b.addEdge(c, 1);
+        b.addEdge(d, 2);
+=====================================================================
+Found a 2 line (9 tokens) duplication in the following files: 
+Starting at line 54 of D:\ant\ant\bin\src\Core\Examples.java
+Starting at line 96 of D:\ant\ant\bin\src\Core\Examples.java
+
+        a.addEdge(c, 5);
+        a.addEdge(b, 3);
+=====================================================================
+Found a 2 line (9 tokens) duplication in the following files: 
+Starting at line 50 of D:\ant\ant\bin\src\Core\Examples.java
+Starting at line 132 of D:\ant\ant\bin\src\Core\Examples.java
+
+        Node f = new Node("f", 50, 130);
+        Node g = new Node("g", 150, 180);
+=====================================================================
+Found a 2 line (9 tokens) duplication in the following files: 
+Starting at line 49 of D:\ant\ant\bin\src\Core\Examples.java
+Starting at line 131 of D:\ant\ant\bin\src\Core\Examples.java
+
+        Node e = new Node("e", 67, 310);
+        Node f = new Node("f", 50, 130);
+=====================================================================
+Found a 2 line (9 tokens) duplication in the following files: 
+Starting at line 48 of D:\ant\ant\bin\src\Core\Examples.java
+Starting at line 93 of D:\ant\ant\bin\src\Core\Examples.java
+
+        Node d = new Node("d", 480, 250);
+        Node e = new Node("e", 80, 270);
+=====================================================================
+Found a 2 line (9 tokens) duplication in the following files: 
+Starting at line 47 of D:\ant\ant\bin\src\Core\Examples.java
+Starting at line 92 of D:\ant\ant\bin\src\Core\Examples.java
+
+        Node c = new Node("c", 350, 140);
+        Node d = new Node("d", 480, 250);
+=====================================================================
+Found a 2 line (9 tokens) duplication in the following files: 
+Starting at line 46 of D:\ant\ant\bin\src\Core\Examples.java
+Starting at line 91 of D:\ant\ant\bin\src\Core\Examples.java
+
+        Node b = new Node("b", 250, 420);
+        Node c = new Node("c", 350, 140);
+=====================================================================
+Found a 2 line (9 tokens) duplication in the following files: 
+Starting at line 45 of D:\ant\ant\bin\src\Core\Examples.java
+Starting at line 90 of D:\ant\ant\bin\src\Core\Examples.java
+
+        Node a = new Node("a", 80, 100);
+        Node b = new Node("b", 250, 420);
+=====================================================================
+Found a 3 line (9 tokens) duplication in the following files: 
+Starting at line 25 of D:\ant\ant\bin\src\Core\Examples.java
+Starting at line 28 of D:\ant\ant\bin\src\Core\Examples.java
+
+            return getExample2();
+        }
+        if (example.equals("priklad3")) {
+=====================================================================
+Found a 2 line (9 tokens) duplication in the following files: 
+Starting at line 147 of D:\ant\ant\bin\src\Core\Node.java
+Starting at line 155 of D:\ant\ant\bin\src\Core\Node.java
+
+    public int getY() {
+        return (int) dimension.getHeight();
+=====================================================================
+Found a 2 line (9 tokens) duplication in the following files: 
+Starting at line 56 of D:\ant\ant\bin\src\Core\PriorityQueue.java
+Starting at line 61 of D:\ant\ant\bin\src\Core\PriorityQueue.java
+
+        if (right <= afterLast - 1 && queue[right].getDistance() < queue[max].getDistance()) {
+            max = right;
+=====================================================================
+Found a 2 line (9 tokens) duplication in the following files: 
+Starting at line 42 of D:\ant\ant\bin\src\Core\PriorityQueue.java
+Starting at line 147 of D:\ant\ant\bin\src\Core\PriorityQueue.java
+
+            if (queue[position].getDistance() < queue[getParent(position)].getDistance()) {
+                switchNodes(position, getParent(position));
+=====================================================================
+Found a 2 line (9 tokens) duplication in the following files: 
+Starting at line 17 of D:\ant\ant\bin\src\Exceptions\PriorityQueueEmptyException.java
+Starting at line 14 of D:\ant\ant\bin\src\Exceptions\AlgorithmFinishedException.java
+
+    public AlgorithmFinishedException() {
+        System.out.println("Algoritmus skoncil");
+=====================================================================
+Found a 2 line (9 tokens) duplication in the following files: 
+Starting at line 214 of D:\ant\ant\bin\src\view\Painter.java
+Starting at line 222 of D:\ant\ant\bin\src\view\Painter.java
+
+    public void paintEdge(Edge edge) {
+        paintEdge(edge, EDGE_COLOR);
+=====================================================================
+Found a 1 line (9 tokens) duplication in the following files: 
+Starting at line 178 of D:\ant\ant\bin\src\view\Painter.java
+Starting at line 183 of D:\ant\ant\bin\src\view\Painter.java
+
+        int y2Arrow = (int) (Math.sin(alphaMinus10) * ARROW_LENGTH);
+=====================================================================
+Found a 1 line (9 tokens) duplication in the following files: 
+Starting at line 177 of D:\ant\ant\bin\src\view\Painter.java
+Starting at line 182 of D:\ant\ant\bin\src\view\Painter.java
+
+        int x2Arrow =  (int) (Math.cos(alphaMinus10) * ARROW_LENGTH);
+=====================================================================
+Found a 1 line (9 tokens) duplication in the following files: 
+Starting at line 158 of D:\ant\ant\bin\src\view\Painter.java
+Starting at line 178 of D:\ant\ant\bin\src\view\Painter.java
+
+        int y1Arrow = (int) (Math.sin(alphaPlus10) * ARROW_LENGTH);
+=====================================================================
+Found a 1 line (9 tokens) duplication in the following files: 
+Starting at line 157 of D:\ant\ant\bin\src\view\Painter.java
+Starting at line 177 of D:\ant\ant\bin\src\view\Painter.java
+
+        int x1Arrow =  (int) (Math.cos(alphaPlus10) * ARROW_LENGTH);
+=====================================================================
+Found a 2 line (9 tokens) duplication in the following files: 
+Starting at line 108 of D:\ant\ant\bin\src\view\Painter.java
+Starting at line 87 of D:\ant\ant\bin\src\Core\DijkstraAlgorithm.java
+
+                        res = "" + node.getDistance();
+                    } else {
+=====================================================================
+Found a 4 line (9 tokens) duplication in the following files: 
+Starting at line 90 of D:\ant\ant\bin\src\view\ProgramWin.java
+Starting at line 101 of D:\ant\ant\bin\src\view\ProgramWin.java
+
+                controller.setAlgorithm(new DijkstraAlgorithm(graph, graph.getNode("a")));
+                controller.setGraph(graph);
+
+                controller.drawGraph();
+=====================================================================
+Found a 2 line (9 tokens) duplication in the following files: 
+Starting at line 45 of D:\ant\ant\bin\src\view\ProgramWin.java
+Starting at line 90 of D:\ant\ant\bin\src\view\ProgramWin.java
+
+                    controller.setAlgorithm(algorithm);
+                    controller.setGraph(graph);
+=====================================================================
+Found a 3 line (8 tokens) duplication in the following files: 
+Starting at line 55 of D:\ant\ant\bin\src\Aplication\Controller.java
+Starting at line 73 of D:\ant\ant\bin\src\Aplication\Controller.java
+
+        System.out.println("kresl"+graph);
+        painter.repaintGraph(graph);
+    }
+=====================================================================
+Found a 2 line (8 tokens) duplication in the following files: 
+Starting at line 136 of D:\ant\ant\bin\src\Core\DijkstraAlgorithm.java
+Starting at line 100 of D:\ant\ant\bin\src\Aplication\Controller.java
+
+                } catch (InterruptedException ex) {
+                    System.out.println("Error");
+=====================================================================
+Found a 2 line (8 tokens) duplication in the following files: 
+Starting at line 59 of D:\ant\ant\bin\src\Core\DijkstraAlgorithm.java
+Starting at line 80 of D:\ant\ant\bin\src\Core\DijkstraAlgorithm.java
+
+                actualNode = priorityFreshQueue.dequeue();
+                iterator.setActualNode(actualNode);
+=====================================================================
+Found a 9 line (8 tokens) duplication in the following files: 
+Starting at line 77 of D:\ant\ant\bin\src\Core\Examples.java
+Starting at line 114 of D:\ant\ant\bin\src\Core\Examples.java
+
+        EXAMPLE2 = graph;
+        return graph;
+    }
+
+    /**
+     * Metoda vrati EXAMPLE3
+     * @return ukazkovy priklad EXAMPLE3
+     */
+    public static Graph getExample3() {
+=====================================================================
+Found a 1 line (8 tokens) duplication in the following files: 
+Starting at line 45 of D:\ant\ant\bin\src\Core\Examples.java
+Starting at line 90 of D:\ant\ant\bin\src\Core\Examples.java
+
+        Node a = new Node("a", 80, 100);
+=====================================================================
+Found a 1 line (8 tokens) duplication in the following files: 
+Starting at line 38 of D:\ant\ant\bin\src\Core\Graph.java
+Starting at line 56 of D:\ant\ant\bin\src\Core\DijkstraAlgorithm.java
+
+            for (Node node : nodes) {
+=====================================================================
+Found a 18 line (8 tokens) duplication in the following files: 
+Starting at line 187 of D:\ant\ant\bin\src\Core\Node.java
+Starting at line 98 of D:\ant\ant\bin\src\Core\Graph.java
+
+    public Graph clone() {
+        /*   Graph graph = new Graph();
+        for(Node node:this.nodes){
+        Node newNode = new Node(node.getName(),node.getX(),node.getY());
+        graph.addNode(newNode);
+        }
+
+        for(Node node:this.nodes){
+        for(Edge edge:node.getEdges()){
+        for(Node newNode:graph.nodes){
+        if( newNode.getName().equals(null)){}
+        }
+        }
+        }
+         */
+        return this;
+    }
+}
+=====================================================================
+Found a 10 line (8 tokens) duplication in the following files: 
+Starting at line 60 of D:\ant\ant\bin\src\Core\Node.java
+Starting at line 72 of D:\ant\ant\bin\src\Core\Node.java
+
+    }
+
+    /**
+     * Konstruktor vytvori Node s zadanym name, hodnotou distance a predchudcem null.
+     * Tento konstruktor je pouzit jen pri testovani prioritni fronty.
+     * @param name jmeno vytvareneho Nodu
+     * @param distance vzdalenost do vytvareneho Nodu.
+     * @deprecated
+     */
+    public Node(String name, int distance) {
+=====================================================================
+Found a 1 line (8 tokens) duplication in the following files: 
+Starting at line 139 of D:\ant\ant\bin\src\Core\PriorityQueue.java
+Starting at line 79 of D:\ant\ant\bin\src\Core\Graph.java
+
+        for (int i = 0; i < numberOfNodes; i++) {
+=====================================================================
+Found a 1 line (8 tokens) duplication in the following files: 
+Starting at line 56 of D:\ant\ant\bin\src\Core\PriorityQueue.java
+Starting at line 61 of D:\ant\ant\bin\src\Core\PriorityQueue.java
+Starting at line 147 of D:\ant\ant\bin\src\Core\PriorityQueue.java
+
+            if (queue[position].getDistance() < queue[getParent(position)].getDistance()) {
+=====================================================================
+Found a 2 line (8 tokens) duplication in the following files: 
+Starting at line 17 of D:\ant\ant\bin\src\Exceptions\PriorityQueueEmptyException.java
+Starting at line 16 of D:\ant\ant\bin\src\Exceptions\NodeNotFoundException.java
+Starting at line 136 of D:\ant\ant\bin\src\Core\DijkstraAlgorithm.java
+
+    private void print(String string) {
+        System.out.println(string);
+=====================================================================
+Found a 1 line (8 tokens) duplication in the following files: 
+Starting at line 157 of D:\ant\ant\bin\src\view\Painter.java
+Starting at line 158 of D:\ant\ant\bin\src\view\Painter.java
+
+            yInSquareTriangle = (int) (Math.sin(alpha) * VELIKOST_NODU/2);
+=====================================================================
+Found a 5 line (8 tokens) duplication in the following files: 
+Starting at line 49 of D:\ant\ant\bin\src\view\Painter.java
+Starting at line 61 of D:\ant\ant\bin\src\view\Painter.java
+
+    private static final Color DISTANCE_COLOR = Color.BLACK;
+    /**
+     *  Konstanta barvy, kterou se budou zobrazovat popisek delky
+     */
+    private static final Color NODE_LABEL_COLOR = Color.WHITE;
+=====================================================================
+Found a 5 line (8 tokens) duplication in the following files: 
+Starting at line 92 of D:\ant\ant\bin\src\view\ProgramWin.java
+Starting at line 102 of D:\ant\ant\bin\src\view\ProgramWin.java
+
+                controller.setGraph(graph);
+
+                controller.drawGraph();
+            }
+        });
+=====================================================================
+Found a 8 line (7 tokens) duplication in the following files: 
+Starting at line 68 of D:\ant\ant\bin\src\Aplication\Controller.java
+Starting at line 74 of D:\ant\ant\bin\src\Aplication\Controller.java
+
+        painter.repaintGraph(graph);
+    }
+
+    /**
+     * Nastavi algoritmus, ktery se ma provadet.
+     * @param algorithm algoritmus k provadeni
+     */
+    public final void setAlgorithm(final Steppable algorithm) {
+=====================================================================
+Found a 2 line (7 tokens) duplication in the following files: 
+Starting at line 60 of D:\ant\ant\bin\src\Core\DijkstraAlgorithm.java
+Starting at line 81 of D:\ant\ant\bin\src\Core\DijkstraAlgorithm.java
+
+                iterator.setActualNode(actualNode);
+            } catch (PriorityQueueEmptyException ex1) {
+=====================================================================
+Found a 2 line (7 tokens) duplication in the following files: 
+Starting at line 90 of D:\ant\ant\bin\src\Core\Edge.java
+Starting at line 98 of D:\ant\ant\bin\src\Core\Edge.java
+
+    public int getStartX() {
+        return (int) dimensionFrom.getWidth();
+=====================================================================
+Found a 8 line (7 tokens) duplication in the following files: 
+Starting at line 83 of D:\ant\ant\bin\src\Core\Edge.java
+Starting at line 99 of D:\ant\ant\bin\src\Core\Edge.java
+
+        return (int) dimensionFrom.getWidth();
+    }
+
+    /**
+     * Metoda navraci y-ovou pozici pocatecniho Nodu
+     * @return X pozice pocatecniho Nodu
+     */
+    public int getStartY() {
+=====================================================================
+Found a 2 line (7 tokens) duplication in the following files: 
+Starting at line 82 of D:\ant\ant\bin\src\Core\Edge.java
+Starting at line 98 of D:\ant\ant\bin\src\Core\Edge.java
+
+    public int getStartX() {
+        return (int) dimensionFrom.getWidth();
+=====================================================================
+Found a 3 line (7 tokens) duplication in the following files: 
+Starting at line 101 of D:\ant\ant\bin\src\Core\Examples.java
+Starting at line 140 of D:\ant\ant\bin\src\Core\Examples.java
+
+        c.addEdge(f, 3);
+
+        d.addEdge(e, 8);
+=====================================================================
+Found a 3 line (7 tokens) duplication in the following files: 
+Starting at line 100 of D:\ant\ant\bin\src\Core\Examples.java
+Starting at line 135 of D:\ant\ant\bin\src\Core\Examples.java
+
+        a.addEdge(b, 2);
+
+        b.addEdge(c, 6);
+=====================================================================
+Found a 2 line (7 tokens) duplication in the following files: 
+Starting at line 99 of D:\ant\ant\bin\src\Core\Examples.java
+Starting at line 137 of D:\ant\ant\bin\src\Core\Examples.java
+
+        b.addEdge(c, 6);
+        b.addEdge(d, 7);
+=====================================================================
+Found a 3 line (7 tokens) duplication in the following files: 
+Starting at line 97 of D:\ant\ant\bin\src\Core\Examples.java
+Starting at line 135 of D:\ant\ant\bin\src\Core\Examples.java
+
+        a.addEdge(b, 2);
+
+        b.addEdge(c, 6);
+=====================================================================
+Found a 3 line (7 tokens) duplication in the following files: 
+Starting at line 96 of D:\ant\ant\bin\src\Core\Examples.java
+Starting at line 133 of D:\ant\ant\bin\src\Core\Examples.java
+
+        Node g = new Node("g", 150, 180);
+
+        a.addEdge(b, 2);
+=====================================================================
+Found a 1 line (7 tokens) duplication in the following files: 
+Starting at line 69 of D:\ant\ant\bin\src\Core\Examples.java
+Starting at line 89 of D:\ant\ant\bin\src\Core\Examples.java
+
+        Graph graph = new Graph();
+=====================================================================
+Found a 1 line (7 tokens) duplication in the following files: 
+Starting at line 67 of D:\ant\ant\bin\src\Core\Examples.java
+Starting at line 103 of D:\ant\ant\bin\src\Core\Examples.java
+
+        d.addEdge(e, 1);
+=====================================================================
+Found a 3 line (7 tokens) duplication in the following files: 
+Starting at line 61 of D:\ant\ant\bin\src\Core\Examples.java
+Starting at line 140 of D:\ant\ant\bin\src\Core\Examples.java
+
+        c.addEdge(f, 3);
+
+        d.addEdge(e, 8);
+=====================================================================
+Found a 2 line (7 tokens) duplication in the following files: 
+Starting at line 56 of D:\ant\ant\bin\src\Core\Examples.java
+Starting at line 137 of D:\ant\ant\bin\src\Core\Examples.java
+
+        b.addEdge(c, 6);
+        b.addEdge(d, 7);
+=====================================================================
+Found a 3 line (7 tokens) duplication in the following files: 
+Starting at line 54 of D:\ant\ant\bin\src\Core\Examples.java
+Starting at line 133 of D:\ant\ant\bin\src\Core\Examples.java
+
+        Node g = new Node("g", 150, 180);
+
+        a.addEdge(b, 2);
+=====================================================================
+Found a 1 line (7 tokens) duplication in the following files: 
+Starting at line 54 of D:\ant\ant\bin\src\Core\Examples.java
+Starting at line 99 of D:\ant\ant\bin\src\Core\Examples.java
+
+        b.addEdge(c, 1);
+=====================================================================
+Found a 3 line (7 tokens) duplication in the following files: 
+Starting at line 51 of D:\ant\ant\bin\src\Core\Examples.java
+Starting at line 94 of D:\ant\ant\bin\src\Core\Examples.java
+
+        Node e = new Node("e", 80, 270);
+
+        a.addEdge(c, 5);
+=====================================================================
+Found a 2 line (7 tokens) duplication in the following files: 
+Starting at line 37 of D:\ant\ant\bin\src\Core\Graph.java
+Starting at line 82 of D:\ant\ant\bin\src\Core\DijkstraAlgorithm.java
+
+            } catch (PriorityQueueEmptyException ex1) {
+                for (Node node : graph.getNodes()) {
+=====================================================================
+Found a 2 line (7 tokens) duplication in the following files: 
+Starting at line 155 of D:\ant\ant\bin\src\Core\Node.java
+Starting at line 82 of D:\ant\ant\bin\src\Core\Edge.java
+
+    public int getEndX() {
+        return (int) dimensionTo.getWidth();
+=====================================================================
+Found a 8 line (7 tokens) duplication in the following files: 
+Starting at line 148 of D:\ant\ant\bin\src\Core\Node.java
+Starting at line 83 of D:\ant\ant\bin\src\Core\Edge.java
+
+        return (int) dimensionTo.getWidth();
+    }
+
+    /**
+     * Metoda navraci y-ovou pozici koncoveho Nodu
+     * @return Y pozice koncoveho Nodu
+     */
+    public int getEndY() {
+=====================================================================
+Found a 2 line (7 tokens) duplication in the following files: 
+Starting at line 147 of D:\ant\ant\bin\src\Core\Node.java
+Starting at line 82 of D:\ant\ant\bin\src\Core\Edge.java
+
+    public int getEndX() {
+        return (int) dimensionTo.getWidth();
+=====================================================================
+Found a 1 line (7 tokens) duplication in the following files: 
+Starting at line 56 of D:\ant\ant\bin\src\Core\PriorityQueue.java
+Starting at line 147 of D:\ant\ant\bin\src\Core\PriorityQueue.java
+
+            if (queue[position].getDistance() < queue[getParent(position)].getDistance()) {
+=====================================================================
+Found a 1 line (7 tokens) duplication in the following files: 
+Starting at line 56 of D:\ant\ant\bin\src\Core\PriorityQueue.java
+Starting at line 61 of D:\ant\ant\bin\src\Core\PriorityQueue.java
+
+        if (right <= afterLast - 1 && queue[right].getDistance() < queue[max].getDistance()) {
+=====================================================================
+Found a 1 line (7 tokens) duplication in the following files: 
+Starting at line 42 of D:\ant\ant\bin\src\Core\PriorityQueue.java
+Starting at line 56 of D:\ant\ant\bin\src\Core\PriorityQueue.java
+
+        if (left <= afterLast - 1 && queue[left].getDistance() < queue[position].getDistance()) {
+=====================================================================
+Found a 1 line (7 tokens) duplication in the following files: 
+Starting at line 249 of D:\ant\ant\bin\src\view\Painter.java
+Starting at line 91 of D:\ant\ant\bin\src\Core\DijkstraAlgorithm.java
+
+                    if (node.getPredecessor() == null) {
+=====================================================================
+Found a 2 line (7 tokens) duplication in the following files: 
+Starting at line 245 of D:\ant\ant\bin\src\view\Painter.java
+Starting at line 66 of D:\ant\ant\bin\src\Aplication\Controller.java
+
+    public final void drawGraph(final Graph graph) {
+        clear();
+=====================================================================
+Found a 1 line (7 tokens) duplication in the following files: 
+Starting at line 245 of D:\ant\ant\bin\src\view\Painter.java
+Starting at line 47 of D:\ant\ant\bin\src\view\IPainter.java
+
+    public void repaintGraph(Graph graph);
+=====================================================================
+Found a 2 line (7 tokens) duplication in the following files: 
+Starting at line 231 of D:\ant\ant\bin\src\view\Painter.java
+Starting at line 173 of D:\ant\ant\bin\src\Core\Node.java
+
+    public Edge getEdgeFromPredecessor() {
+        for (Edge edge : predecessor.edges) {
+=====================================================================
+Found a 2 line (7 tokens) duplication in the following files: 
+Starting at line 230 of D:\ant\ant\bin\src\view\Painter.java
+Starting at line 37 of D:\ant\ant\bin\src\Core\Graph.java
+
+    public void setInfinityDistances() {
+        for (Node node : nodes) {
+=====================================================================
+Found a 1 line (7 tokens) duplication in the following files: 
+Starting at line 230 of D:\ant\ant\bin\src\view\Painter.java
+Starting at line 41 of D:\ant\ant\bin\src\view\IPainter.java
+
+    public void paintGraph(Graph graph);
+=====================================================================
+Found a 1 line (7 tokens) duplication in the following files: 
+Starting at line 222 of D:\ant\ant\bin\src\view\Painter.java
+Starting at line 26 of D:\ant\ant\bin\src\view\IPainter.java
+
+    public void paintEdge(Edge edge);
+=====================================================================
+Found a 1 line (7 tokens) duplication in the following files: 
+Starting at line 214 of D:\ant\ant\bin\src\view\Painter.java
+Starting at line 31 of D:\ant\ant\bin\src\view\IPainter.java
+
+    public void paintRelaxedEdge(Edge edge);
+=====================================================================
+Found a 1 line (7 tokens) duplication in the following files: 
+Starting at line 203 of D:\ant\ant\bin\src\view\Painter.java
+Starting at line 204 of D:\ant\ant\bin\src\view\Painter.java
+Starting at line 205 of D:\ant\ant\bin\src\view\Painter.java
+Starting at line 206 of D:\ant\ant\bin\src\view\Painter.java
+
+        int y = programWin.getBounds().y;
+=====================================================================
+Found a 1 line (7 tokens) duplication in the following files: 
+Starting at line 157 of D:\ant\ant\bin\src\view\Painter.java
+Starting at line 158 of D:\ant\ant\bin\src\view\Painter.java
+
+            yInSquareTriangle = (int) (Math.sin(alpha) * VELIKOST_NODU/2);
+=====================================================================
+Found a 1 line (7 tokens) duplication in the following files: 
+Starting at line 105 of D:\ant\ant\bin\src\view\Painter.java
+Starting at line 86 of D:\ant\ant\bin\src\Core\DijkstraAlgorithm.java
+
+                    if (node.getDistance() != Integer.MAX_VALUE) {
+=====================================================================
+Found a 1 line (7 tokens) duplication in the following files: 
+Starting at line 98 of D:\ant\ant\bin\src\view\Painter.java
+Starting at line 21 of D:\ant\ant\bin\src\view\IPainter.java
+
+    public void paintNode(Node node);
+=====================================================================
+Found a 3 line (7 tokens) duplication in the following files: 
+Starting at line 92 of D:\ant\ant\bin\src\view\ProgramWin.java
+Starting at line 144 of D:\ant\ant\bin\src\view\ProgramWin.java
+
+        paintComponents(gr);
+        controller.drawGraph();
+        } catch(NullPointerException ex){
+=====================================================================
+Found a 2 line (7 tokens) duplication in the following files: 
+Starting at line 45 of D:\ant\ant\bin\src\view\ProgramWin.java
+Starting at line 101 of D:\ant\ant\bin\src\view\ProgramWin.java
+
+                controller.setAlgorithm(new DijkstraAlgorithm(graph, graph.getNode("a")));
+                controller.setGraph(graph);
+=====================================================================
+Found a 1 line (6 tokens) duplication in the following files: 
+Starting at line 73 of D:\ant\ant\bin\src\Aplication\Controller.java
+Starting at line 101 of D:\ant\ant\bin\src\Aplication\Controller.java
+
+                    System.out.println("Error");
+=====================================================================
+Found a 1 line (6 tokens) duplication in the following files: 
+Starting at line 66 of D:\ant\ant\bin\src\Aplication\Controller.java
+Starting at line 113 of D:\ant\ant\bin\src\Aplication\Controller.java
+
+    public final void setGraph(final Graph graph){
+=====================================================================
+Found a 3 line (6 tokens) duplication in the following files: 
+Starting at line 61 of D:\ant\ant\bin\src\Aplication\Controller.java
+Starting at line 69 of D:\ant\ant\bin\src\Aplication\Controller.java
+
+    }
+
+    public final void drawGraph(){
+=====================================================================
+Found a 1 line (6 tokens) duplication in the following files: 
+Starting at line 137 of D:\ant\ant\bin\src\Core\DijkstraAlgorithm.java
+Starting at line 73 of D:\ant\ant\bin\src\Aplication\Controller.java
+
+        System.out.println("kresl"+graph);
+=====================================================================
+Found a 1 line (6 tokens) duplication in the following files: 
+Starting at line 96 of D:\ant\ant\bin\src\Core\DijkstraAlgorithm.java
+Starting at line 118 of D:\ant\ant\bin\src\Core\DijkstraAlgorithm.java
+
+            print("zavreny uzel:               " + node.getName());
+=====================================================================
+Found a 1 line (6 tokens) duplication in the following files: 
+Starting at line 94 of D:\ant\ant\bin\src\Core\DijkstraAlgorithm.java
+Starting at line 116 of D:\ant\ant\bin\src\Core\DijkstraAlgorithm.java
+
+        print("Relaxuju hranu z            " + actualNode.getName() + "           do          " + edge.getEnd().getName());
+=====================================================================
+Found a 1 line (6 tokens) duplication in the following files: 
+Starting at line 78 of D:\ant\ant\bin\src\Core\DijkstraAlgorithm.java
+Starting at line 116 of D:\ant\ant\bin\src\Core\DijkstraAlgorithm.java
+
+        print("Relaxuju hranu z            " + actualNode.getName() + "           do          " + edge.getEnd().getName());
+=====================================================================
+Found a 2 line (6 tokens) duplication in the following files: 
+Starting at line 55 of D:\ant\ant\bin\src\Core\DijkstraAlgorithm.java
+Starting at line 116 of D:\ant\ant\bin\src\Core\DijkstraAlgorithm.java
+
+        print("Relaxuju hranu z            " + actualNode.getName() + "           do          " + edge.getEnd().getName());
+        for (Node node : setClosedNodes) {
+=====================================================================
+Found a 3 line (6 tokens) duplication in the following files: 
+Starting at line 46 of D:\ant\ant\bin\src\Core\DijkstraAlgorithm.java
+Starting at line 53 of D:\ant\ant\bin\src\Aplication\Controller.java
+
+    public final void doStep() {
+        try {
+            graph = algorithm.doStep();
+=====================================================================
+Found a 1 line (6 tokens) duplication in the following files: 
+Starting at line 24 of D:\ant\ant\bin\src\Core\Examples.java
+Starting at line 27 of D:\ant\ant\bin\src\Core\Examples.java
+
+        if (example.equals("priklad2")) {
+=====================================================================
+Found a 1 line (6 tokens) duplication in the following files: 
+Starting at line 32 of D:\ant\ant\bin\src\Core\MyIterator.java
+Starting at line 37 of D:\ant\ant\bin\src\Core\DijkstraEdgeIterator.java
+
+    public void setActualNode(Node node){
+=====================================================================
+Found a 1 line (6 tokens) duplication in the following files: 
+Starting at line 175 of D:\ant\ant\bin\src\Core\Node.java
+Starting at line 116 of D:\ant\ant\bin\src\Core\DijkstraAlgorithm.java
+
+        print("Relaxuju hranu z            " + actualNode.getName() + "           do          " + edge.getEnd().getName());
+=====================================================================
+Found a 8 line (6 tokens) duplication in the following files: 
+Starting at line 156 of D:\ant\ant\bin\src\Core\Node.java
+Starting at line 91 of D:\ant\ant\bin\src\Core\Edge.java
+
+        return (int) dimensionTo.getHeight();
+    }
+
+    /**
+     * Metoda navraci x-ovou pozici pocatecniho Nodu
+     * @return X pozice pocatecniho Nodu
+     */
+    public int getStartX() {
+=====================================================================
+Found a 2 line (6 tokens) duplication in the following files: 
+Starting at line 53 of D:\ant\ant\bin\src\Core\Node.java
+Starting at line 81 of D:\ant\ant\bin\src\Core\Node.java
+
+    public Node(String name, int distance) {
+        this.distance = distance;
+=====================================================================
+Found a 4 line (6 tokens) duplication in the following files: 
+Starting at line 135 of D:\ant\ant\bin\src\Core\PriorityQueue.java
+Starting at line 120 of D:\ant\ant\bin\src\Core\DijkstraAlgorithm.java
+
+        if (setClosedNodes.contains(endNode)) {
+            return;
+        }
+        int distance = edge.getLength() + actualNode.getDistance();
+=====================================================================
+Found a 2 line (6 tokens) duplication in the following files: 
+Starting at line 134 of D:\ant\ant\bin\src\Core\PriorityQueue.java
+Starting at line 139 of D:\ant\ant\bin\src\Core\PriorityQueue.java
+
+        for (int i = 0; i < afterLast; i++) {
+            if (node.getName().equals(queue[i].getName())) {
+=====================================================================
+Found a 2 line (6 tokens) duplication in the following files: 
+Starting at line 64 of D:\ant\ant\bin\src\Core\PriorityQueue.java
+Starting at line 147 of D:\ant\ant\bin\src\Core\PriorityQueue.java
+
+            if (queue[position].getDistance() < queue[getParent(position)].getDistance()) {
+                switchNodes(position, getParent(position));
+=====================================================================
+Found a 1 line (6 tokens) duplication in the following files: 
+Starting at line 22 of D:\ant\ant\bin\src\Core\Steppable.java
+Starting at line 72 of D:\ant\ant\bin\src\Core\DijkstraAlgorithm.java
+
+    public Graph doStep() throws AlgorithmFinishedException {
+=====================================================================
+Found a 1 line (6 tokens) duplication in the following files: 
+Starting at line 18 of D:\ant\ant\bin\src\Exceptions\PriorityQueueEmptyException.java
+Starting at line 73 of D:\ant\ant\bin\src\Aplication\Controller.java
+
+        System.out.println("kresl"+graph);
+=====================================================================
+Found a 5 line (6 tokens) duplication in the following files: 
+Starting at line 26 of D:\ant\ant\bin\src\view\IPainter.java
+Starting at line 31 of D:\ant\ant\bin\src\view\IPainter.java
+
+    public void paintRelaxedEdge(Edge edge);
+    /**
+     * Vymaze okno, kde probiha algoritmus.
+     */
+    public void clear();
+=====================================================================
+Found a 2 line (6 tokens) duplication in the following files: 
+Starting at line 248 of D:\ant\ant\bin\src\view\Painter.java
+Starting at line 134 of D:\ant\ant\bin\src\Core\PriorityQueue.java
+
+    public void actualize(Node node) {
+        if (node.equals(null)) {
+=====================================================================
+Found a 2 line (6 tokens) duplication in the following files: 
+Starting at line 247 of D:\ant\ant\bin\src\view\Painter.java
+Starting at line 55 of D:\ant\ant\bin\src\Core\DijkstraAlgorithm.java
+
+            List<Node> nodes = graph.getNodes();
+            for (Node node : nodes) {
+=====================================================================
+Found a 1 line (6 tokens) duplication in the following files: 
+Starting at line 177 of D:\ant\ant\bin\src\view\Painter.java
+Starting at line 178 of D:\ant\ant\bin\src\view\Painter.java
+
+        int y1Arrow = (int) (Math.sin(alphaPlus10) * ARROW_LENGTH);
+=====================================================================
+Found a 1 line (6 tokens) duplication in the following files: 
+Starting at line 119 of D:\ant\ant\bin\src\view\Painter.java
+Starting at line 81 of D:\ant\ant\bin\src\Core\Graph.java
+
+            if (node.getName().equals(name)) {
+=====================================================================
+Found a 1 line (6 tokens) duplication in the following files: 
+Starting at line 100 of D:\ant\ant\bin\src\view\Painter.java
+Starting at line 115 of D:\ant\ant\bin\src\view\Painter.java
+
+        graphics.setColor(Painter.DISTANCE_COLOR);
+=====================================================================
+Found a 2 line (6 tokens) duplication in the following files: 
+Starting at line 88 of D:\ant\ant\bin\src\view\Painter.java
+Starting at line 44 of D:\ant\ant\bin\src\Aplication\Controller.java
+
+    public final void addView(final ProgramWin view) {
+        this.programWin = view;
+=====================================================================
+Found a 2 line (6 tokens) duplication in the following files: 
+Starting at line 93 of D:\ant\ant\bin\src\view\ProgramWin.java
+Starting at line 135 of D:\ant\ant\bin\src\view\ProgramWin.java
+
+        controller.drawGraph();
+    }
+=====================================================================
+Found a 4 line (5 tokens) duplication in the following files: 
+Starting at line 68 of D:\ant\ant\bin\src\Aplication\Controller.java
+Starting at line 90 of D:\ant\ant\bin\src\Aplication\Controller.java
+
+        painter.clear();
+    }
+
+    public final void run() {
+=====================================================================
+Found a 2 line (5 tokens) duplication in the following files: 
+Starting at line 66 of D:\ant\ant\bin\src\Aplication\Controller.java
+Starting at line 71 of D:\ant\ant\bin\src\Aplication\Controller.java
+
+    public final void drawGraph(){
+        clear();
+=====================================================================
+Found a 8 line (5 tokens) duplication in the following files: 
+Starting at line 60 of D:\ant\ant\bin\src\Aplication\Controller.java
+Starting at line 106 of D:\ant\ant\bin\src\Aplication\Controller.java
+
+        }
+
+    }
+    /**
+     * Nastavi graf sobe, je nutne pred prvnim pouzitim.
+     * @param graph
+     */
+    public final void setGraph(final Graph graph){
+=====================================================================
+Found a 4 line (5 tokens) duplication in the following files: 
+Starting at line 46 of D:\ant\ant\bin\src\Aplication\Controller.java
+Starting at line 68 of D:\ant\ant\bin\src\Aplication\Controller.java
+
+        painter.paintGraph(graph);
+    }
+
+    public final void drawGraph(){
+=====================================================================
+Found a 1 line (5 tokens) duplication in the following files: 
+Starting at line 94 of D:\ant\ant\bin\src\Core\DijkstraAlgorithm.java
+Starting at line 96 of D:\ant\ant\bin\src\Core\DijkstraAlgorithm.java
+Starting at line 116 of D:\ant\ant\bin\src\Core\DijkstraAlgorithm.java
+
+        print("Relaxuju hranu z            " + actualNode.getName() + "           do          " + edge.getEnd().getName());
+=====================================================================
+Found a 1 line (5 tokens) duplication in the following files: 
+Starting at line 91 of D:\ant\ant\bin\src\Core\DijkstraAlgorithm.java
+Starting at line 94 of D:\ant\ant\bin\src\Core\DijkstraAlgorithm.java
+
+                        predchudce = "\"" + node.getPredecessor().getName() + "\"";
+=====================================================================
+Found a 1 line (5 tokens) duplication in the following files: 
+Starting at line 86 of D:\ant\ant\bin\src\Core\DijkstraAlgorithm.java
+Starting at line 87 of D:\ant\ant\bin\src\Core\DijkstraAlgorithm.java
+
+                        res = "" + node.getDistance();
+=====================================================================
+Found a 1 line (5 tokens) duplication in the following files: 
+Starting at line 83 of D:\ant\ant\bin\src\Core\DijkstraAlgorithm.java
+Starting at line 117 of D:\ant\ant\bin\src\Core\DijkstraAlgorithm.java
+
+        for (Node node : setClosedNodes) {
+=====================================================================
+Found a 1 line (5 tokens) duplication in the following files: 
+Starting at line 78 of D:\ant\ant\bin\src\Core\DijkstraAlgorithm.java
+Starting at line 116 of D:\ant\ant\bin\src\Core\DijkstraAlgorithm.java
+
+        print("Relaxuju hranu z            " + actualNode.getName() + "           do          " + edge.getEnd().getName());
+=====================================================================
+Found a 1 line (5 tokens) duplication in the following files: 
+Starting at line 56 of D:\ant\ant\bin\src\Core\DijkstraAlgorithm.java
+Starting at line 83 of D:\ant\ant\bin\src\Core\DijkstraAlgorithm.java
+
+                for (Node node : graph.getNodes()) {
+=====================================================================
+Found a 1 line (5 tokens) duplication in the following files: 
+Starting at line 55 of D:\ant\ant\bin\src\Core\DijkstraAlgorithm.java
+Starting at line 83 of D:\ant\ant\bin\src\Core\DijkstraAlgorithm.java
+
+                for (Node node : graph.getNodes()) {
+=====================================================================
+Found a 1 line (5 tokens) duplication in the following files: 
+Starting at line 53 of D:\ant\ant\bin\src\Core\DijkstraAlgorithm.java
+Starting at line 78 of D:\ant\ant\bin\src\Core\DijkstraAlgorithm.java
+
+                print("pridavam tento node do closed:                 " + actualNode.getName());
+=====================================================================
+Found a 1 line (5 tokens) duplication in the following files: 
+Starting at line 28 of D:\ant\ant\bin\src\Core\DijkstraEdgeIterator.java
+Starting at line 37 of D:\ant\ant\bin\src\Core\DijkstraEdgeIterator.java
+
+    public void setActualNode(Node node){
+=====================================================================
+Found a 2 line (5 tokens) duplication in the following files: 
+Starting at line 91 of D:\ant\ant\bin\src\Core\Edge.java
+Starting at line 107 of D:\ant\ant\bin\src\Core\Edge.java
+
+        return (int) dimensionFrom.getHeight();
+    }
+=====================================================================
+Found a 8 line (5 tokens) duplication in the following files: 
+Starting at line 43 of D:\ant\ant\bin\src\Core\Edge.java
+Starting at line 83 of D:\ant\ant\bin\src\Core\Edge.java
+Starting at line 91 of D:\ant\ant\bin\src\Core\Edge.java
+
+        return (int) dimensionTo.getHeight();
+    }
+
+    /**
+     * Metoda navraci x-ovou pozici pocatecniho Nodu
+     * @return X pozice pocatecniho Nodu
+     */
+    public int getStartX() {
+=====================================================================
+Found a 2 line (5 tokens) duplication in the following files: 
+Starting at line 147 of D:\ant\ant\bin\src\Core\Examples.java
+Starting at line 149 of D:\ant\ant\bin\src\Core\Examples.java
+Starting at line 150 of D:\ant\ant\bin\src\Core\Examples.java
+Starting at line 151 of D:\ant\ant\bin\src\Core\Examples.java
+Starting at line 152 of D:\ant\ant\bin\src\Core\Examples.java
+Starting at line 153 of D:\ant\ant\bin\src\Core\Examples.java
+Starting at line 154 of D:\ant\ant\bin\src\Core\Examples.java
+
+        graph.addNode(f);
+        graph.addNode(g);
+=====================================================================
+Found a 2 line (5 tokens) duplication in the following files: 
+Starting at line 144 of D:\ant\ant\bin\src\Core\Examples.java
+Starting at line 146 of D:\ant\ant\bin\src\Core\Examples.java
+
+        f.addEdge(d, 1);
+        f.addEdge(g, 11);
+=====================================================================
+Found a 1 line (5 tokens) duplication in the following files: 
+Starting at line 140 of D:\ant\ant\bin\src\Core\Examples.java
+Starting at line 144 of D:\ant\ant\bin\src\Core\Examples.java
+
+        e.addEdge(f, 5);
+=====================================================================
+Found a 1 line (5 tokens) duplication in the following files: 
+Starting at line 138 of D:\ant\ant\bin\src\Core\Examples.java
+Starting at line 146 of D:\ant\ant\bin\src\Core\Examples.java
+
+        f.addEdge(d, 1);
+=====================================================================
+Found a 2 line (5 tokens) duplication in the following files: 
+Starting at line 135 of D:\ant\ant\bin\src\Core\Examples.java
+Starting at line 137 of D:\ant\ant\bin\src\Core\Examples.java
+
+        b.addEdge(c, 6);
+        b.addEdge(d, 7);
+=====================================================================
+Found a 2 line (5 tokens) duplication in the following files: 
+Starting at line 122 of D:\ant\ant\bin\src\Core\Examples.java
+Starting at line 48 of D:\ant\ant\bin\src\Core\DijkstraEdgeIterator.java
+
+    public boolean hasNext() {
+        if(actualEdge>edgeList.size()) return false;
+=====================================================================
+Found a 3 line (5 tokens) duplication in the following files: 
+Starting at line 114 of D:\ant\ant\bin\src\Core\Examples.java
+Starting at line 157 of D:\ant\ant\bin\src\Core\Examples.java
+
+        EXAMPLE3 = graph;
+        return graph;
+    }
+=====================================================================
+Found a 2 line (5 tokens) duplication in the following files: 
+Starting at line 107 of D:\ant\ant\bin\src\Core\Examples.java
+Starting at line 109 of D:\ant\ant\bin\src\Core\Examples.java
+Starting at line 110 of D:\ant\ant\bin\src\Core\Examples.java
+Starting at line 111 of D:\ant\ant\bin\src\Core\Examples.java
+Starting at line 112 of D:\ant\ant\bin\src\Core\Examples.java
+Starting at line 153 of D:\ant\ant\bin\src\Core\Examples.java
+
+        graph.addNode(e);
+        graph.addNode(f);
+=====================================================================
+Found a 1 line (5 tokens) duplication in the following files: 
+Starting at line 107 of D:\ant\ant\bin\src\Core\Examples.java
+Starting at line 137 of D:\ant\ant\bin\src\Core\Examples.java
+
+        b.addEdge(c, 6);
+=====================================================================
+Found a 3 line (5 tokens) duplication in the following files: 
+Starting at line 104 of D:\ant\ant\bin\src\Core\Examples.java
+Starting at line 106 of D:\ant\ant\bin\src\Core\Examples.java
+Starting at line 142 of D:\ant\ant\bin\src\Core\Examples.java
+
+        d.addEdge(e, 8);
+
+        e.addEdge(f, 5);
+=====================================================================
+Found a 1 line (5 tokens) duplication in the following files: 
+Starting at line 104 of D:\ant\ant\bin\src\Core\Examples.java
+Starting at line 137 of D:\ant\ant\bin\src\Core\Examples.java
+
+        b.addEdge(c, 6);
+=====================================================================
+Found a 2 line (5 tokens) duplication in the following files: 
+Starting at line 101 of D:\ant\ant\bin\src\Core\Examples.java
+Starting at line 103 of D:\ant\ant\bin\src\Core\Examples.java
+
+        d.addEdge(e, 1);
+        d.addEdge(c, 9);
+=====================================================================
+Found a 1 line (5 tokens) duplication in the following files: 
+Starting at line 101 of D:\ant\ant\bin\src\Core\Examples.java
+Starting at line 103 of D:\ant\ant\bin\src\Core\Examples.java
+
+        d.addEdge(e, 1);
+=====================================================================
+Found a 2 line (5 tokens) duplication in the following files: 
+Starting at line 100 of D:\ant\ant\bin\src\Core\Examples.java
+Starting at line 137 of D:\ant\ant\bin\src\Core\Examples.java
+
+        b.addEdge(c, 6);
+        b.addEdge(d, 7);
+=====================================================================
+Found a 1 line (5 tokens) duplication in the following files: 
+Starting at line 100 of D:\ant\ant\bin\src\Core\Examples.java
+Starting at line 146 of D:\ant\ant\bin\src\Core\Examples.java
+
+        f.addEdge(d, 1);
+=====================================================================
+Found a 2 line (5 tokens) duplication in the following files: 
+Starting at line 97 of D:\ant\ant\bin\src\Core\Examples.java
+Starting at line 99 of D:\ant\ant\bin\src\Core\Examples.java
+Starting at line 100 of D:\ant\ant\bin\src\Core\Examples.java
+
+        b.addEdge(d, 2);
+        b.addEdge(e, 4);
+=====================================================================
+Found a 1 line (5 tokens) duplication in the following files: 
+Starting at line 96 of D:\ant\ant\bin\src\Core\Examples.java
+Starting at line 99 of D:\ant\ant\bin\src\Core\Examples.java
+
+        b.addEdge(c, 1);
+=====================================================================
+Found a 2 line (5 tokens) duplication in the following files: 
+Starting at line 94 of D:\ant\ant\bin\src\Core\Examples.java
+Starting at line 96 of D:\ant\ant\bin\src\Core\Examples.java
+
+        a.addEdge(c, 5);
+        a.addEdge(b, 3);
+=====================================================================
+Found a 2 line (5 tokens) duplication in the following files: 
+Starting at line 86 of D:\ant\ant\bin\src\Core\Examples.java
+Starting at line 123 of D:\ant\ant\bin\src\Core\Examples.java
+
+        if (EXAMPLE3 != null) {
+            return EXAMPLE3;
+=====================================================================
+Found a 2 line (5 tokens) duplication in the following files: 
+Starting at line 85 of D:\ant\ant\bin\src\Core\Examples.java
+Starting at line 122 of D:\ant\ant\bin\src\Core\Examples.java
+
+    public static Graph getExample3() {
+        if (EXAMPLE3 != null) {
+=====================================================================
+Found a 3 line (5 tokens) duplication in the following files: 
+Starting at line 77 of D:\ant\ant\bin\src\Core\Examples.java
+Starting at line 157 of D:\ant\ant\bin\src\Core\Examples.java
+
+        EXAMPLE3 = graph;
+        return graph;
+    }
+=====================================================================
+Found a 2 line (5 tokens) duplication in the following files: 
+Starting at line 69 of D:\ant\ant\bin\src\Core\Examples.java
+Starting at line 70 of D:\ant\ant\bin\src\Core\Examples.java
+Starting at line 71 of D:\ant\ant\bin\src\Core\Examples.java
+Starting at line 72 of D:\ant\ant\bin\src\Core\Examples.java
+Starting at line 73 of D:\ant\ant\bin\src\Core\Examples.java
+Starting at line 74 of D:\ant\ant\bin\src\Core\Examples.java
+Starting at line 75 of D:\ant\ant\bin\src\Core\Examples.java
+
+        graph.addNode(f);
+        graph.addNode(g);
+=====================================================================
+Found a 1 line (5 tokens) duplication in the following files: 
+Starting at line 67 of D:\ant\ant\bin\src\Core\Examples.java
+Starting at line 101 of D:\ant\ant\bin\src\Core\Examples.java
+
+        b.addEdge(e, 4);
+=====================================================================
+Found a 3 line (5 tokens) duplication in the following files: 
+Starting at line 64 of D:\ant\ant\bin\src\Core\Examples.java
+Starting at line 66 of D:\ant\ant\bin\src\Core\Examples.java
+Starting at line 144 of D:\ant\ant\bin\src\Core\Examples.java
+
+        e.addEdge(f, 5);
+
+        f.addEdge(d, 1);
+=====================================================================
+Found a 1 line (5 tokens) duplication in the following files: 
+Starting at line 64 of D:\ant\ant\bin\src\Core\Examples.java
+Starting at line 140 of D:\ant\ant\bin\src\Core\Examples.java
+
+        c.addEdge(f, 3);
+=====================================================================
+Found a 2 line (5 tokens) duplication in the following files: 
+Starting at line 63 of D:\ant\ant\bin\src\Core\Examples.java
+Starting at line 103 of D:\ant\ant\bin\src\Core\Examples.java
+
+        d.addEdge(e, 1);
+        d.addEdge(c, 9);
+=====================================================================
+Found a 1 line (5 tokens) duplication in the following files: 
+Starting at line 63 of D:\ant\ant\bin\src\Core\Examples.java
+Starting at line 67 of D:\ant\ant\bin\src\Core\Examples.java
+
+        f.addEdge(e, 1);
+=====================================================================
+Found a 2 line (5 tokens) duplication in the following files: 
+Starting at line 61 of D:\ant\ant\bin\src\Core\Examples.java
+Starting at line 63 of D:\ant\ant\bin\src\Core\Examples.java
+
+        d.addEdge(e, 4);
+        d.addEdge(f, 1);
+=====================================================================
+Found a 2 line (5 tokens) duplication in the following files: 
+Starting at line 58 of D:\ant\ant\bin\src\Core\Examples.java
+Starting at line 60 of D:\ant\ant\bin\src\Core\Examples.java
+
+        c.addEdge(d, 5);
+        c.addEdge(b, 1);
+=====================================================================
+Found a 1 line (5 tokens) duplication in the following files: 
+Starting at line 58 of D:\ant\ant\bin\src\Core\Examples.java
+Starting at line 60 of D:\ant\ant\bin\src\Core\Examples.java
+
+        c.addEdge(d, 5);
+=====================================================================
+Found a 3 line (5 tokens) duplication in the following files: 
+Starting at line 56 of D:\ant\ant\bin\src\Core\Examples.java
+Starting at line 135 of D:\ant\ant\bin\src\Core\Examples.java
+
+        a.addEdge(b, 2);
+
+        b.addEdge(c, 6);
+=====================================================================
+Found a 1 line (5 tokens) duplication in the following files: 
+Starting at line 56 of D:\ant\ant\bin\src\Core\Examples.java
+Starting at line 63 of D:\ant\ant\bin\src\Core\Examples.java
+
+        d.addEdge(e, 4);
+=====================================================================
+Found a 3 line (5 tokens) duplication in the following files: 
+Starting at line 55 of D:\ant\ant\bin\src\Core\Examples.java
+Starting at line 94 of D:\ant\ant\bin\src\Core\Examples.java
+
+        Node e = new Node("e", 80, 270);
+
+        a.addEdge(c, 5);
+=====================================================================
+Found a 1 line (5 tokens) duplication in the following files: 
+Starting at line 55 of D:\ant\ant\bin\src\Core\Examples.java
+Starting at line 61 of D:\ant\ant\bin\src\Core\Examples.java
+
+        c.addEdge(b, 1);
+=====================================================================
+Found a 2 line (5 tokens) duplication in the following files: 
+Starting at line 51 of D:\ant\ant\bin\src\Core\Examples.java
+Starting at line 54 of D:\ant\ant\bin\src\Core\Examples.java
+Starting at line 55 of D:\ant\ant\bin\src\Core\Examples.java
+
+        a.addEdge(b, 3);
+        a.addEdge(e, 9);
+=====================================================================
+Found a 2 line (5 tokens) duplication in the following files: 
+Starting at line 42 of D:\ant\ant\bin\src\Core\Examples.java
+Starting at line 86 of D:\ant\ant\bin\src\Core\Examples.java
+
+        if (EXAMPLE2 != null) {
+            return EXAMPLE2;
+=====================================================================
+Found a 2 line (5 tokens) duplication in the following files: 
+Starting at line 41 of D:\ant\ant\bin\src\Core\Examples.java
+Starting at line 85 of D:\ant\ant\bin\src\Core\Examples.java
+
+    public static Graph getExample2() {
+        if (EXAMPLE2 != null) {
+=====================================================================
+Found a 10 line (5 tokens) duplication in the following files: 
+Starting at line 84 of D:\ant\ant\bin\src\Core\Graph.java
+Starting at line 32 of D:\ant\ant\bin\src\Core\Examples.java
+
+        }
+
+        return null;
+    }
+
+    /**
+     *  Metoda vrati EXAMPLE1
+     * @return ukazkovy priklad EXAMPLE1
+     */
+    public static Graph getExample1() {
+=====================================================================
+Found a 1 line (5 tokens) duplication in the following files: 
+Starting at line 81 of D:\ant\ant\bin\src\Core\Graph.java
+Starting at line 96 of D:\ant\ant\bin\src\Core\DijkstraAlgorithm.java
+
+                    print("Node \"" + node.getName() + "\" skoncil s predchudcem            "
+=====================================================================
+Found a 1 line (5 tokens) duplication in the following files: 
+Starting at line 56 of D:\ant\ant\bin\src\Core\Graph.java
+Starting at line 28 of D:\ant\ant\bin\src\Core\DijkstraEdgeIterator.java
+
+    public DijkstraEdgeIterator(Node node) {
+=====================================================================
+Found a 1 line (5 tokens) duplication in the following files: 
+Starting at line 47 of D:\ant\ant\bin\src\Core\Graph.java
+Starting at line 117 of D:\ant\ant\bin\src\Core\DijkstraAlgorithm.java
+
+        for (Node node : setClosedNodes) {
+=====================================================================
+Found a 9 line (5 tokens) duplication in the following files: 
+Starting at line 39 of D:\ant\ant\bin\src\Core\Graph.java
+Starting at line 48 of D:\ant\ant\bin\src\Core\Graph.java
+
+            node.setPredecessor(null);
+        }
+    }
+
+    /**
+     * Metoda pridava uzel do grafu.
+     * @param node Node, ktery ma byt pridan do Grafu
+     */
+    public void addNode(Node node) {
+=====================================================================
+Found a 1 line (5 tokens) duplication in the following files: 
+Starting at line 38 of D:\ant\ant\bin\src\Core\Graph.java
+Starting at line 117 of D:\ant\ant\bin\src\Core\DijkstraAlgorithm.java
+
+        for (Node node : setClosedNodes) {
+=====================================================================
+Found a 1 line (5 tokens) duplication in the following files: 
+Starting at line 30 of D:\ant\ant\bin\src\Core\Graph.java
+Starting at line 49 of D:\ant\ant\bin\src\Core\DijkstraAlgorithm.java
+
+            setClosedNodes = new HashSet<Node>();
+=====================================================================
+Found a 1 line (5 tokens) duplication in the following files: 
+Starting at line 19 of D:\ant\ant\bin\src\Core\Graph.java
+Starting at line 55 of D:\ant\ant\bin\src\Core\DijkstraAlgorithm.java
+
+            List<Node> nodes = graph.getNodes();
+=====================================================================
+Found a 1 line (5 tokens) duplication in the following files: 
+Starting at line 26 of D:\ant\ant\bin\src\Core\MyIterator.java
+Starting at line 58 of D:\ant\ant\bin\src\Core\DijkstraEdgeIterator.java
+
+    public Edge next() throws HasNoNextException{
+=====================================================================
+Found a 5 line (5 tokens) duplication in the following files: 
+Starting at line 177 of D:\ant\ant\bin\src\Core\Node.java
+Starting at line 83 of D:\ant\ant\bin\src\Core\Graph.java
+
+            }
+        }
+        return null;
+        // throw new NodeNotFoundException("Node "+ name +" not found");
+    }
+=====================================================================
+Found a 1 line (5 tokens) duplication in the following files: 
+Starting at line 175 of D:\ant\ant\bin\src\Core\Node.java
+Starting at line 81 of D:\ant\ant\bin\src\Core\Graph.java
+
+            if (node.getName().equals(name)) {
+=====================================================================
+Found a 1 line (5 tokens) duplication in the following files: 
+Starting at line 175 of D:\ant\ant\bin\src\Core\Node.java
+Starting at line 115 of D:\ant\ant\bin\src\Core\DijkstraAlgorithm.java
+
+        Node endNode = edge.getEnd();
+=====================================================================
+Found a 2 line (5 tokens) duplication in the following files: 
+Starting at line 173 of D:\ant\ant\bin\src\Core\Node.java
+Starting at line 37 of D:\ant\ant\bin\src\Core\Graph.java
+
+    public void setInfinityDistances() {
+        for (Node node : nodes) {
+=====================================================================
+Found a 2 line (5 tokens) duplication in the following files: 
+Starting at line 156 of D:\ant\ant\bin\src\Core\Node.java
+Starting at line 107 of D:\ant\ant\bin\src\Core\Edge.java
+
+        return (int) dimensionFrom.getHeight();
+    }
+=====================================================================
+Found a 8 line (5 tokens) duplication in the following files: 
+Starting at line 86 of D:\ant\ant\bin\src\Core\Node.java
+Starting at line 148 of D:\ant\ant\bin\src\Core\Node.java
+Starting at line 43 of D:\ant\ant\bin\src\Core\Edge.java
+
+        dimensionTo = endNode.getDimension();
+    }
+
+    /**
+     * Metoda navracici delku hrany.
+     * @return delku hrany
+     */
+    public int getLength() {
+=====================================================================
+Found a 1 line (5 tokens) duplication in the following files: 
+Starting at line 53 of D:\ant\ant\bin\src\Core\Node.java
+Starting at line 76 of D:\ant\ant\bin\src\Core\Graph.java
+
+    public Node getNode(String name) {
+=====================================================================
+Found a 1 line (5 tokens) duplication in the following files: 
+Starting at line 53 of D:\ant\ant\bin\src\Core\Node.java
+Starting at line 66 of D:\ant\ant\bin\src\Core\Node.java
+
+    public Node(String name, int x, int y) {
+=====================================================================
+Found a 10 line (5 tokens) duplication in the following files: 
+Starting at line 150 of D:\ant\ant\bin\src\Core\PriorityQueue.java
+Starting at line 127 of D:\ant\ant\bin\src\Core\DijkstraAlgorithm.java
+
+            priorityFreshQueue.actualize(endNode);
+        }
+    }
+
+    /**
+     * Pomocna metoda slouzici k vytisknuti textove reprezentace daneho kroku. 
+     * Tato metoda je urcena k kontrole funkcnosti algoritmu.
+     * @param string Zprava, ktera se ma vytisknout
+     */
+    private void print(String string) {
+=====================================================================
+Found a 1 line (5 tokens) duplication in the following files: 
+Starting at line 147 of D:\ant\ant\bin\src\Core\PriorityQueue.java
+Starting at line 147 of D:\ant\ant\bin\src\Core\PriorityQueue.java
+
+            if (queue[position].getDistance() < queue[getParent(position)].getDistance()) {
+=====================================================================
+Found a 1 line (5 tokens) duplication in the following files: 
+Starting at line 140 of D:\ant\ant\bin\src\Core\PriorityQueue.java
+Starting at line 53 of D:\ant\ant\bin\src\Core\DijkstraAlgorithm.java
+
+            actualNode = graph.getNode(sourceNode.getName());
+=====================================================================
+Found a 1 line (5 tokens) duplication in the following files: 
+Starting at line 140 of D:\ant\ant\bin\src\Core\PriorityQueue.java
+Starting at line 175 of D:\ant\ant\bin\src\Core\Node.java
+
+            if (edge.getEnd().equals(this)) {
+=====================================================================
+Found a 1 line (5 tokens) duplication in the following files: 
+Starting at line 140 of D:\ant\ant\bin\src\Core\PriorityQueue.java
+Starting at line 96 of D:\ant\ant\bin\src\Core\DijkstraAlgorithm.java
+
+                    print("Node \"" + node.getName() + "\" skoncil s predchudcem            "
+=====================================================================
+Found a 1 line (5 tokens) duplication in the following files: 
+Starting at line 134 of D:\ant\ant\bin\src\Core\PriorityQueue.java
+Starting at line 56 of D:\ant\ant\bin\src\Core\Graph.java
+
+    public void addNode(Node node) {
+=====================================================================
+Found a 2 line (5 tokens) duplication in the following files: 
+Starting at line 122 of D:\ant\ant\bin\src\Core\PriorityQueue.java
+Starting at line 41 of D:\ant\ant\bin\src\Core\Examples.java
+
+    public static Graph getExample1() {
+        if (EXAMPLE1 != null) {
+=====================================================================
+Found a 2 line (5 tokens) duplication in the following files: 
+Starting at line 94 of D:\ant\ant\bin\src\Core\PriorityQueue.java
+Starting at line 123 of D:\ant\ant\bin\src\Core\PriorityQueue.java
+
+        if (afterLast == 0) {
+            return true;
+=====================================================================
+Found a 1 line (5 tokens) duplication in the following files: 
+Starting at line 93 of D:\ant\ant\bin\src\Core\PriorityQueue.java
+Starting at line 105 of D:\ant\ant\bin\src\Core\PriorityQueue.java
+
+    private static int getLeftChildPosition(int position) {
+=====================================================================
+Found a 1 line (5 tokens) duplication in the following files: 
+Starting at line 56 of D:\ant\ant\bin\src\Core\PriorityQueue.java
+Starting at line 56 of D:\ant\ant\bin\src\Core\PriorityQueue.java
+
+        if (left <= afterLast - 1 && queue[left].getDistance() < queue[position].getDistance()) {
+=====================================================================
+Found a 1 line (5 tokens) duplication in the following files: 
+Starting at line 52 of D:\ant\ant\bin\src\Core\PriorityQueue.java
+Starting at line 93 of D:\ant\ant\bin\src\Core\PriorityQueue.java
+
+    private static int getParent(int position) {
+=====================================================================
+Found a 11 line (5 tokens) duplication in the following files: 
+Starting at line 44 of D:\ant\ant\bin\src\Core\PriorityQueue.java
+Starting at line 150 of D:\ant\ant\bin\src\Core\PriorityQueue.java
+
+            position = getParent(position);
+
+        }
+    }
+
+    /**
+     * Pomocna metoda, zamenujici jeden prvek za druhy. Pozice prvku dostava jako parametry.
+     * @param position1 pozice prvniho Nodu
+     * @param position2 pozice druheho Nodu
+     */
+    private void switchNodes(int position1, int position2) {
+=====================================================================
+Found a 1 line (5 tokens) duplication in the following files: 
+Starting at line 42 of D:\ant\ant\bin\src\Core\PriorityQueue.java
+Starting at line 56 of D:\ant\ant\bin\src\Core\PriorityQueue.java
+
+        if (left <= afterLast - 1 && queue[left].getDistance() < queue[position].getDistance()) {
+=====================================================================
+Found a 1 line (5 tokens) duplication in the following files: 
+Starting at line 42 of D:\ant\ant\bin\src\Core\PriorityQueue.java
+Starting at line 140 of D:\ant\ant\bin\src\Core\PriorityQueue.java
+
+            if (node.getName().equals(queue[i].getName())) {
+=====================================================================
+Found a 1 line (5 tokens) duplication in the following files: 
+Starting at line 42 of D:\ant\ant\bin\src\Core\PriorityQueue.java
+Starting at line 124 of D:\ant\ant\bin\src\Core\DijkstraAlgorithm.java
+
+        if (endNode.getDistance() > distance) {
+=====================================================================
+Found a 1 line (5 tokens) duplication in the following files: 
+Starting at line 42 of D:\ant\ant\bin\src\Core\PriorityQueue.java
+Starting at line 42 of D:\ant\ant\bin\src\Core\PriorityQueue.java
+
+        while (i > 0 && queue[getParent(i)].getDistance() > queue[i].getDistance()) {
+=====================================================================
+Found a 1 line (5 tokens) duplication in the following files: 
+Starting at line 38 of D:\ant\ant\bin\src\Core\PriorityQueue.java
+Starting at line 134 of D:\ant\ant\bin\src\Core\PriorityQueue.java
+
+    public void actualize(Node node) {
+=====================================================================
+Found a 7 line (5 tokens) duplication in the following files: 
+Starting at line 31 of D:\ant\ant\bin\src\Core\PriorityQueue.java
+Starting at line 31 of D:\ant\ant\bin\src\Core\Graph.java
+
+        numberOfNodes = 0;
+    }
+
+    /**
+     * Metoda nastavuje vsem uzlum grafum nekonecne vzdalenosti.
+     */
+    public void setInfinityDistances() {
+=====================================================================
+Found a 7 line (5 tokens) duplication in the following files: 
+Starting at line 250 of D:\ant\ant\bin\src\view\Painter.java
+Starting at line 102 of D:\ant\ant\bin\src\Aplication\Controller.java
+
+                    System.exit(1);
+                }
+            }
+
+        }
+
+    }
+=====================================================================
+Found a 1 line (5 tokens) duplication in the following files: 
+Starting at line 249 of D:\ant\ant\bin\src\view\Painter.java
+Starting at line 94 of D:\ant\ant\bin\src\Core\DijkstraAlgorithm.java
+
+                        predchudce = "\"" + node.getPredecessor().getName() + "\"";
+=====================================================================
+Found a 1 line (5 tokens) duplication in the following files: 
+Starting at line 248 of D:\ant\ant\bin\src\view\Painter.java
+Starting at line 55 of D:\ant\ant\bin\src\Core\DijkstraAlgorithm.java
+
+            List<Node> nodes = graph.getNodes();
+=====================================================================
+Found a 1 line (5 tokens) duplication in the following files: 
+Starting at line 248 of D:\ant\ant\bin\src\view\Painter.java
+Starting at line 38 of D:\ant\ant\bin\src\Core\Graph.java
+
+        for (Node node : nodes) {
+=====================================================================
+Found a 2 line (5 tokens) duplication in the following files: 
+Starting at line 245 of D:\ant\ant\bin\src\view\Painter.java
+Starting at line 71 of D:\ant\ant\bin\src\Aplication\Controller.java
+
+    public final void drawGraph(){
+        clear();
+=====================================================================
+Found a 8 line (5 tokens) duplication in the following files: 
+Starting at line 237 of D:\ant\ant\bin\src\view\Painter.java
+Starting at line 39 of D:\ant\ant\bin\src\Core\Graph.java
+
+            node.setDistance(Integer.MAX_VALUE);
+        }
+    }
+
+    /**
+     * Metoda nastavuje vsem uzlum predchudce jako null.
+     */
+    public void setNullPrecedessors() {
+=====================================================================
+Found a 1 line (5 tokens) duplication in the following files: 
+Starting at line 236 of D:\ant\ant\bin\src\view\Painter.java
+Starting at line 55 of D:\ant\ant\bin\src\Core\DijkstraAlgorithm.java
+
+            List<Node> nodes = graph.getNodes();
+=====================================================================
+Found a 1 line (5 tokens) duplication in the following files: 
+Starting at line 236 of D:\ant\ant\bin\src\view\Painter.java
+Starting at line 38 of D:\ant\ant\bin\src\Core\Graph.java
+
+        for (Node node : nodes) {
+=====================================================================
+Found a 1 line (5 tokens) duplication in the following files: 
+Starting at line 232 of D:\ant\ant\bin\src\view\Painter.java
+Starting at line 29 of D:\ant\ant\bin\src\Core\DijkstraEdgeIterator.java
+
+        edgeList = node.getEdges();
+=====================================================================
+Found a 1 line (5 tokens) duplication in the following files: 
+Starting at line 231 of D:\ant\ant\bin\src\view\Painter.java
+Starting at line 55 of D:\ant\ant\bin\src\Core\DijkstraAlgorithm.java
+
+            List<Node> nodes = graph.getNodes();
+=====================================================================
+Found a 1 line (5 tokens) duplication in the following files: 
+Starting at line 230 of D:\ant\ant\bin\src\view\Painter.java
+Starting at line 245 of D:\ant\ant\bin\src\view\Painter.java
+
+    public void repaintGraph(Graph graph) {
+=====================================================================
+Found a 2 line (5 tokens) duplication in the following files: 
+Starting at line 222 of D:\ant\ant\bin\src\view\Painter.java
+Starting at line 232 of D:\ant\ant\bin\src\view\Painter.java
+
+            for (Edge edge : node.getEdges()) {
+                paintEdge(edge);
+=====================================================================
+Found a 1 line (5 tokens) duplication in the following files: 
+Starting at line 222 of D:\ant\ant\bin\src\view\Painter.java
+Starting at line 114 of D:\ant\ant\bin\src\Core\DijkstraAlgorithm.java
+
+    private void relax(Edge edge) {
+=====================================================================
+Found a 2 line (5 tokens) duplication in the following files: 
+Starting at line 214 of D:\ant\ant\bin\src\view\Painter.java
+Starting at line 232 of D:\ant\ant\bin\src\view\Painter.java
+
+            for (Edge edge : node.getEdges()) {
+                paintEdge(edge);
+=====================================================================
+Found a 1 line (5 tokens) duplication in the following files: 
+Starting at line 214 of D:\ant\ant\bin\src\view\Painter.java
+Starting at line 114 of D:\ant\ant\bin\src\Core\DijkstraAlgorithm.java
+
+    private void relax(Edge edge) {
+=====================================================================
+Found a 1 line (5 tokens) duplication in the following files: 
+Starting at line 202 of D:\ant\ant\bin\src\view\Painter.java
+Starting at line 89 of D:\ant\ant\bin\src\Aplication\Controller.java
+
+    public final void clear() {
+=====================================================================
+Found a 1 line (5 tokens) duplication in the following files: 
+Starting at line 202 of D:\ant\ant\bin\src\view\Painter.java
+Starting at line 35 of D:\ant\ant\bin\src\view\IPainter.java
+
+    public void clear();
+=====================================================================
+Found a 1 line (5 tokens) duplication in the following files: 
+Starting at line 196 of D:\ant\ant\bin\src\view\Painter.java
+Starting at line 123 of D:\ant\ant\bin\src\Core\DijkstraAlgorithm.java
+
+        int distance = edge.getLength() + actualNode.getDistance();
+=====================================================================
+Found a 1 line (5 tokens) duplication in the following files: 
+Starting at line 193 of D:\ant\ant\bin\src\view\Painter.java
+Starting at line 194 of D:\ant\ant\bin\src\view\Painter.java
+
+        int centerLineY = (yEnd + yStart + CENTER_EDGE_X_AND_Y) / 2;
+=====================================================================
+Found a 4 line (5 tokens) duplication in the following files: 
+Starting at line 183 of D:\ant\ant\bin\src\view\Painter.java
+Starting at line 185 of D:\ant\ant\bin\src\view\Painter.java
+
+        graphics.drawLine(xPreEnd, yPreEnd, xPreEnd-xNeg*x2Arrow, yPreEnd-yNeg*y2Arrow);
+
+
+        graphics.setColor(EDGE_COLOR);
+=====================================================================
+Found a 1 line (5 tokens) duplication in the following files: 
+Starting at line 180 of D:\ant\ant\bin\src\view\Painter.java
+Starting at line 185 of D:\ant\ant\bin\src\view\Painter.java
+
+        graphics.drawLine(xPreEnd, yPreEnd, xPreEnd-xNeg*x2Arrow, yPreEnd-yNeg*y2Arrow);
+=====================================================================
+Found a 4 line (5 tokens) duplication in the following files: 
+Starting at line 178 of D:\ant\ant\bin\src\view\Painter.java
+Starting at line 185 of D:\ant\ant\bin\src\view\Painter.java
+
+        graphics.drawLine(xPreEnd, yPreEnd, xPreEnd-xNeg*x2Arrow, yPreEnd-yNeg*y2Arrow);
+
+
+        graphics.setColor(EDGE_COLOR);
+=====================================================================
+Found a 2 line (5 tokens) duplication in the following files: 
+Starting at line 177 of D:\ant\ant\bin\src\view\Painter.java
+Starting at line 182 of D:\ant\ant\bin\src\view\Painter.java
+
+        int x2Arrow =  (int) (Math.cos(alphaMinus10) * ARROW_LENGTH);
+        int y2Arrow = (int) (Math.sin(alphaMinus10) * ARROW_LENGTH);
+=====================================================================
+Found a 1 line (5 tokens) duplication in the following files: 
+Starting at line 127 of D:\ant\ant\bin\src\view\Painter.java
+Starting at line 222 of D:\ant\ant\bin\src\view\Painter.java
+
+    public void paintEdge(Edge edge) {
+=====================================================================
+Found a 1 line (5 tokens) duplication in the following files: 
+Starting at line 119 of D:\ant\ant\bin\src\view\Painter.java
+Starting at line 96 of D:\ant\ant\bin\src\Core\DijkstraAlgorithm.java
+
+                    print("Node \"" + node.getName() + "\" skoncil s predchudcem            "
+=====================================================================
+Found a 4 line (5 tokens) duplication in the following files: 
+Starting at line 116 of D:\ant\ant\bin\src\view\Painter.java
+Starting at line 185 of D:\ant\ant\bin\src\view\Painter.java
+
+        graphics.drawLine(xPreEnd, yPreEnd, xPreEnd-xNeg*x2Arrow, yPreEnd-yNeg*y2Arrow);
+
+
+        graphics.setColor(EDGE_COLOR);
+=====================================================================
+Found a 2 line (5 tokens) duplication in the following files: 
+Starting at line 115 of D:\ant\ant\bin\src\view\Painter.java
+Starting at line 118 of D:\ant\ant\bin\src\view\Painter.java
+
+        graphics.setColor(NODE_LABEL_COLOR);
+        graphics.drawString(node.getName(), x + VELIKOST_NODU / 2 - 2, y + VELIKOST_NODU / 2 + 2);
+=====================================================================
+Found a 3 line (5 tokens) duplication in the following files: 
+Starting at line 113 of D:\ant\ant\bin\src\view\Painter.java
+Starting at line 116 of D:\ant\ant\bin\src\view\Painter.java
+
+        graphics.drawString(str, x, y);
+
+        graphics.setColor(NODE_LABEL_COLOR);
+=====================================================================
+Found a 1 line (5 tokens) duplication in the following files: 
+Starting at line 113 of D:\ant\ant\bin\src\view\Painter.java
+Starting at line 207 of D:\ant\ant\bin\src\view\Painter.java
+
+        graphics.clearRect(x, y + 60, width, height);
+=====================================================================
+Found a 1 line (5 tokens) duplication in the following files: 
+Starting at line 105 of D:\ant\ant\bin\src\view\Painter.java
+Starting at line 86 of D:\ant\ant\bin\src\Core\DijkstraAlgorithm.java
+
+                    if (node.getDistance() != Integer.MAX_VALUE) {
+=====================================================================
+Found a 1 line (5 tokens) duplication in the following files: 
+Starting at line 105 of D:\ant\ant\bin\src\view\Painter.java
+Starting at line 108 of D:\ant\ant\bin\src\view\Painter.java
+
+            str = "" + node.getDistance();
+=====================================================================
+Found a 1 line (5 tokens) duplication in the following files: 
+Starting at line 98 of D:\ant\ant\bin\src\view\Painter.java
+Starting at line 38 of D:\ant\ant\bin\src\Core\PriorityQueue.java
+
+    public void enqueue(Node node) {
+=====================================================================
+Found a 5 line (5 tokens) duplication in the following files: 
+Starting at line 29 of D:\ant\ant\bin\src\view\Painter.java
+Starting at line 37 of D:\ant\ant\bin\src\view\Painter.java
+
+    private static final int RUBBER_TEXT_HEIGHT = 12;
+    /**
+     * Polomer kreslenych Nodu.
+     */
+    private static final int VELIKOST_NODU = Node.velikostNodu;
+=====================================================================
+Found a 2 line (5 tokens) duplication in the following files: 
+Starting at line 145 of D:\ant\ant\bin\src\view\ProgramWin.java
+Starting at line 99 of D:\ant\ant\bin\src\Aplication\Controller.java
+
+                    doStep();
+                } catch (InterruptedException ex) {
+=====================================================================
+Found a 2 line (5 tokens) duplication in the following files: 
+Starting at line 126 of D:\ant\ant\bin\src\view\ProgramWin.java
+Starting at line 21 of D:\ant\ant\bin\src\Aplication\Main.java
+
+    pwin.draw();
+    }
+=====================================================================
+Found a 2 line (5 tokens) duplication in the following files: 
+Starting at line 122 of D:\ant\ant\bin\src\view\ProgramWin.java
+Starting at line 122 of D:\ant\ant\bin\src\Core\PriorityQueue.java
+
+    public boolean isEmpty() {
+        if (afterLast == 0) {
+=====================================================================
+Found a 3 line (5 tokens) duplication in the following files: 
+Starting at line 104 of D:\ant\ant\bin\src\view\ProgramWin.java
+Starting at line 113 of D:\ant\ant\bin\src\view\ProgramWin.java
+
+              th.start();
+            }
+        });
+=====================================================================
+Found a 1 line (5 tokens) duplication in the following files: 
+Starting at line 92 of D:\ant\ant\bin\src\view\ProgramWin.java
+Starting at line 143 of D:\ant\ant\bin\src\view\ProgramWin.java
+
+        controller.clear();
+=====================================================================
+Found a 2 line (5 tokens) duplication in the following files: 
+Starting at line 86 of D:\ant\ant\bin\src\view\ProgramWin.java
+Starting at line 83 of D:\ant\ant\bin\src\Core\DijkstraAlgorithm.java
+
+                for (Node node : graph.getNodes()) {
+                    String res;
+=====================================================================
+Found a 3 line (5 tokens) duplication in the following files: 
+Starting at line 83 of D:\ant\ant\bin\src\view\ProgramWin.java
+Starting at line 98 of D:\ant\ant\bin\src\view\ProgramWin.java
+
+        restoreButton.addActionListener(new ActionListener() {
+
+            public void actionPerformed(ActionEvent e) {
+=====================================================================
+Found a 3 line (5 tokens) duplication in the following files: 
+Starting at line 76 of D:\ant\ant\bin\src\view\ProgramWin.java
+Starting at line 104 of D:\ant\ant\bin\src\view\ProgramWin.java
+
+                controller.drawGraph();
+            }
+        });
+=====================================================================
+Found a 3 line (5 tokens) duplication in the following files: 
+Starting at line 73 of D:\ant\ant\bin\src\view\ProgramWin.java
+Starting at line 83 of D:\ant\ant\bin\src\view\ProgramWin.java
+
+        exampleChoiceButton.addItemListener(new ItemListener() {
+
+            public void itemStateChanged(ItemEvent e) {

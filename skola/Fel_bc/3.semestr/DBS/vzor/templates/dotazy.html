@@ -1,0 +1,4037 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="generator" content="SQL*Plus 10.2.0">
+<title>X36DBS - Čtvrtek 7.30 - Zbyněk Lstibůrek - Výstup SQL příkazů </title> <style type ='text/css'><!--body {background: #ffffc6} --></style>
+</head>
+<body <h2>X36DBS - Čtvrtek 7.30 - Zbyněk Lstibůrek - Výstup SQL příkazů</h2>>
+SQL&gt; 
+<br>
+SQL&gt; 
+<br>
+SQL&gt;  -- Seznam koncertů, na nichž bylo více než 100 diváků
+<br>
+SQL&gt; 
+<br>
+SQL&gt; SELECT *
+<br>
+  2  FROM Koncert
+<br>
+  3  WHERE divaku &gt; 100;
+<br>
+<p>
+<table border='1' width='90%' align='center' summary='Script output'>
+<tr>
+<th scope="col">
+MISTO
+</th>
+<th scope="col">
+CAS
+</th>
+<th scope="col">
+VSTUPNE
+</th>
+<th scope="col">
+DIVAKU
+</th>
+</tr>
+<tr>
+<td>
+Kostel sv. Antonína, Strossmayerovo nám.
+</td>
+<td>
+02.02.2005
+</td>
+<td align="right">
+        80
+</td>
+<td align="right">
+       102
+</td>
+</tr>
+</table>
+<p>
+
+SQL&gt; 
+<br>
+SQL&gt; 
+<br>
+SQL&gt;  -- Seznam zpěváků, jejichž vedoucím je Alena Havlíková.
+<br>
+SQL&gt; 
+<br>
+SQL&gt; 
+<br>
+SQL&gt; SELECT Zpevak.*
+<br>
+  2  FROM Zpevak JOIN (
+<br>
+  3  	      SELECT zkratka FROM Vedeni NATURAL JOIN Zpevak
+<br>
+  4  	      WHERE jmeno='Alena' AND prijmeni='Havlíková'
+<br>
+  5  	      ) ON hlas=zkratka;
+<br>
+<p>
+<table border='1' width='90%' align='center' summary='Script output'>
+<tr>
+<th scope="col">
+RC
+</th>
+<th scope="col">
+JMENO
+</th>
+<th scope="col">
+PRIJMENI
+</th>
+<th scope="col">
+ADRESA
+</th>
+<th scope="col">
+TELEFON
+</th>
+<th scope="col">
+EMAIL
+</th>
+<th scope="col">
+HLAS
+</th>
+</tr>
+<tr>
+<td align="right">
+5953014321
+</td>
+<td>
+Alena
+</td>
+<td>
+Havlíková
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+S
+</td>
+</tr>
+<tr>
+<td align="right">
+7263225148
+</td>
+<td>
+Jana
+</td>
+<td>
+Rinkeová
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+S
+</td>
+</tr>
+<tr>
+<td align="right">
+7061135522
+</td>
+<td>
+Pavla
+</td>
+<td>
+Kohlová
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+S
+</td>
+</tr>
+<tr>
+<td align="right">
+6457021234
+</td>
+<td>
+Lenka
+</td>
+<td>
+Pašková
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+S
+</td>
+</tr>
+</table>
+<p>
+
+SQL&gt; 
+<br>
+SQL&gt; 
+<br>
+SQL&gt;  -- Stejné zadání jako předchozí, nyní s poddotazem v klauzuli WHERE.
+<br>
+SQL&gt; 
+<br>
+SQL&gt; SELECT *
+<br>
+  2  FROM Zpevak
+<br>
+  3  WHERE hlas = (
+<br>
+  4  	 SELECT zkratka FROM Vedeni NATURAL JOIN Zpevak
+<br>
+  5  	 WHERE jmeno='Alena' AND prijmeni='Havlíková'
+<br>
+  6  	 );
+<br>
+<p>
+<table border='1' width='90%' align='center' summary='Script output'>
+<tr>
+<th scope="col">
+RC
+</th>
+<th scope="col">
+JMENO
+</th>
+<th scope="col">
+PRIJMENI
+</th>
+<th scope="col">
+ADRESA
+</th>
+<th scope="col">
+TELEFON
+</th>
+<th scope="col">
+EMAIL
+</th>
+<th scope="col">
+HLAS
+</th>
+</tr>
+<tr>
+<td align="right">
+5953014321
+</td>
+<td>
+Alena
+</td>
+<td>
+Havlíková
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+S
+</td>
+</tr>
+<tr>
+<td align="right">
+7263225148
+</td>
+<td>
+Jana
+</td>
+<td>
+Rinkeová
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+S
+</td>
+</tr>
+<tr>
+<td align="right">
+7061135522
+</td>
+<td>
+Pavla
+</td>
+<td>
+Kohlová
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+S
+</td>
+</tr>
+<tr>
+<td align="right">
+6457021234
+</td>
+<td>
+Lenka
+</td>
+<td>
+Pašková
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+S
+</td>
+</tr>
+</table>
+<p>
+
+SQL&gt; 
+<br>
+SQL&gt; 
+<br>
+SQL&gt;  -- Názvy všech skladeb A. Dvořáka v repertoiru.
+<br>
+SQL&gt; 
+<br>
+SQL&gt; SELECT nazev
+<br>
+  2  FROM Skladba NATURAL JOIN Autorstvi NATURAL JOIN Skladatel
+<br>
+  3  WHERE jmeno='Antonín' AND prijmeni='Dvořák';
+<br>
+<p>
+<table border='1' width='90%' align='center' summary='Script output'>
+<tr>
+<th scope="col">
+NAZEV
+</th>
+</tr>
+<tr>
+<td>
+Mše D dur
+</td>
+</tr>
+<tr>
+<td>
+Napadly písně
+</td>
+</tr>
+<tr>
+<td>
+Hymnus
+</td>
+</tr>
+</table>
+<p>
+
+SQL&gt; 
+<br>
+SQL&gt; 
+<br>
+SQL&gt;  -- Seznam zpěváků, kteří nemají zapůjčeny šaty.
+<br>
+SQL&gt; 
+<br>
+SQL&gt; SELECT * FROM Zpevak
+<br>
+  2  MINUS
+<br>
+  3  SELECT Zpevak.*
+<br>
+  4  	 FROM Zpevak JOIN Zapujcka_satu
+<br>
+  5  	      ON Zpevak.RC = Zapujcka_satu.RC;
+<br>
+<p>
+<table border='1' width='90%' align='center' summary='Script output'>
+<tr>
+<th scope="col">
+RC
+</th>
+<th scope="col">
+JMENO
+</th>
+<th scope="col">
+PRIJMENI
+</th>
+<th scope="col">
+ADRESA
+</th>
+<th scope="col">
+TELEFON
+</th>
+<th scope="col">
+EMAIL
+</th>
+<th scope="col">
+HLAS
+</th>
+</tr>
+<tr>
+<td align="right">
+4951032446
+</td>
+<td>
+Jiřina
+</td>
+<td>
+Zámostná
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+A
+</td>
+</tr>
+<tr>
+<td align="right">
+5901012681
+</td>
+<td>
+Jan
+</td>
+<td>
+Havlík
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+B
+</td>
+</tr>
+<tr>
+<td align="right">
+7061135522
+</td>
+<td>
+Pavla
+</td>
+<td>
+Kohlová
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+S
+</td>
+</tr>
+</table>
+<p>
+
+SQL&gt; 
+<br>
+SQL&gt; 
+<br>
+SQL&gt;  -- Stejné zadání jako předchozí, řešení pomocí poddotazu.
+<br>
+SQL&gt; 
+<br>
+SQL&gt; SELECT *
+<br>
+  2  FROM Zpevak
+<br>
+  3  WHERE RC NOT IN (SELECT RC FROM Zapujcka_satu);
+<br>
+<p>
+<table border='1' width='90%' align='center' summary='Script output'>
+<tr>
+<th scope="col">
+RC
+</th>
+<th scope="col">
+JMENO
+</th>
+<th scope="col">
+PRIJMENI
+</th>
+<th scope="col">
+ADRESA
+</th>
+<th scope="col">
+TELEFON
+</th>
+<th scope="col">
+EMAIL
+</th>
+<th scope="col">
+HLAS
+</th>
+</tr>
+<tr>
+<td align="right">
+7061135522
+</td>
+<td>
+Pavla
+</td>
+<td>
+Kohlová
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+S
+</td>
+</tr>
+<tr>
+<td align="right">
+4951032446
+</td>
+<td>
+Jiřina
+</td>
+<td>
+Zámostná
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+A
+</td>
+</tr>
+<tr>
+<td align="right">
+5901012681
+</td>
+<td>
+Jan
+</td>
+<td>
+Havlík
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+B
+</td>
+</tr>
+</table>
+<p>
+
+SQL&gt; 
+<br>
+SQL&gt; 
+<br>
+SQL&gt;  -- Seznam dosud neprovedených skladeb (nebyly na programu žádného koncertu), včetně autorů.
+<br>
+SQL&gt; 
+<br>
+SQL&gt; SELECT jmeno, prijmeni, nazev
+<br>
+  2  FROM (
+<br>
+  3  	     SELECT id, nazev FROM Skladba
+<br>
+  4  	     MINUS
+<br>
+  5  	     SELECT id, nazev FROM Skladba
+<br>
+  6  	     NATURAL JOIN Cast_programu NATURAL JOIN Koncert
+<br>
+  7  	    ) LEFT JOIN Autorstvi USING (id)
+<br>
+  8  	      LEFT JOIN Skladatel USING(jmeno, prijmeni);
+<br>
+<p>
+<table border='1' width='90%' align='center' summary='Script output'>
+<tr>
+<th scope="col">
+JMENO
+</th>
+<th scope="col">
+PRIJMENI
+</th>
+<th scope="col">
+NAZEV
+</th>
+</tr>
+<tr>
+<td>
+Antonín
+</td>
+<td>
+Dvořák
+</td>
+<td>
+Napadly písně
+</td>
+</tr>
+<tr>
+<td>
+Antonín
+</td>
+<td>
+Dvořák
+</td>
+<td>
+Hymnus
+</td>
+</tr>
+<tr>
+<td>
+Johann Sebastian
+</td>
+<td>
+Bach
+</td>
+<td>
+Chorál
+</td>
+</tr>
+<tr>
+<td>
+Wolfgang Amadeus
+</td>
+<td>
+Mozart
+</td>
+<td>
+Ave verum corpus
+</td>
+</tr>
+<tr>
+<td>
+Franz Xaver
+</td>
+<td>
+Gruber
+</td>
+<td>
+Tichá noc
+</td>
+</tr>
+<tr>
+<td>
+Martin
+</td>
+<td>
+Grobár
+</td>
+<td>
+Tichá noc
+</td>
+</tr>
+<tr>
+<td>
+Jakub Jan
+</td>
+<td>
+Ryba
+</td>
+<td>
+Spi, spi, neviňátko
+</td>
+</tr>
+<tr>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+Steel Away
+</td>
+</tr>
+<tr>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+Nobody knows
+</td>
+</tr>
+<tr>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+Ride the Chariot
+</td>
+</tr>
+<tr>
+<td>
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+Soon Ah Will Be Done
+</td>
+</tr>
+</table>
+<p>
+
+11 rows selected.<br>
+<br>
+
+
+SQL&gt; 
+<br>
+SQL&gt; 
+<br>
+SQL&gt; 
+<br>
+SQL&gt;  -- Seznam vícedílných skladeb.
+<br>
+SQL&gt; 
+<br>
+SQL&gt; SELECT jmeno, prijmeni, nazev
+<br>
+  2  FROM (SELECT * FROM Skladba WHERE id IN (SELECT id FROM Cast_skladby)
+<br>
+  3  	   )LEFT JOIN Autorstvi USING (id)
+<br>
+  4  	    LEFT JOIN Skladatel USING(jmeno, prijmeni);
+<br>
+<p>
+<table border='1' width='90%' align='center' summary='Script output'>
+<tr>
+<th scope="col">
+JMENO
+</th>
+<th scope="col">
+PRIJMENI
+</th>
+<th scope="col">
+NAZEV
+</th>
+</tr>
+<tr>
+<td>
+Antonín
+</td>
+<td>
+Dvořák
+</td>
+<td>
+Mše D dur
+</td>
+</tr>
+<tr>
+<td>
+Bohuslav
+</td>
+<td>
+Martinů
+</td>
+<td>
+Čtyři písně o Marii
+</td>
+</tr>
+<tr>
+<td>
+Jakub Jan
+</td>
+<td>
+Ryba
+</td>
+<td>
+Česká mše vánoční
+</td>
+</tr>
+<tr>
+<td>
+Jan
+</td>
+<td>
+Hanuš
+</td>
+<td>
+Flos florum
+</td>
+</tr>
+<tr>
+<td>
+Claude
+</td>
+<td>
+Debussy
+</td>
+<td>
+Trois chansons
+</td>
+</tr>
+</table>
+<p>
+
+SQL&gt; 
+<br>
+SQL&gt; 
+<br>
+SQL&gt;  -- Program koncertu 18. 1. 2005.
+<br>
+SQL&gt; 
+<br>
+SQL&gt; ALTER Session SET NLS_DATE_FORMAT='DD.MM.YYYY';
+<br>
+
+Session altered.<br>
+<br>
+
+
+SQL&gt; SELECT jmeno, prijmeni, nazev
+<br>
+  2  FROM Skladatel
+<br>
+  3  	  JOIN Autorstvi using (jmeno, prijmeni)
+<br>
+  4  	  JOIN Skladba using (id)
+<br>
+  5  	  JOIN Cast_programu using (id)
+<br>
+  6  	  JOIN Koncert using (misto, cas)
+<br>
+  7  WHERE TRUNC(cas)=TRUNC(TO_DATE('18.01.2005'));
+<br>
+<p>
+<table border='1' width='90%' align='center' summary='Script output'>
+<tr>
+<th scope="col">
+JMENO
+</th>
+<th scope="col">
+PRIJMENI
+</th>
+<th scope="col">
+NAZEV
+</th>
+</tr>
+<tr>
+<td>
+Bohuslav
+</td>
+<td>
+Martinů
+</td>
+<td>
+Čtyři písně o Marii
+</td>
+</tr>
+<tr>
+<td>
+Zdeněk
+</td>
+<td>
+Lukáš
+</td>
+<td>
+Už vedou Martina
+</td>
+</tr>
+<tr>
+<td>
+Zdeněk
+</td>
+<td>
+Lukáš
+</td>
+<td>
+Na horách
+</td>
+</tr>
+<tr>
+<td>
+Zdeněk
+</td>
+<td>
+Lukáš
+</td>
+<td>
+Pater noster
+</td>
+</tr>
+<tr>
+<td>
+Bohuslav
+</td>
+<td>
+Martinů
+</td>
+<td>
+Čarování a pomluvy
+</td>
+</tr>
+<tr>
+<td>
+Bohuslav
+</td>
+<td>
+Martinů
+</td>
+<td>
+Chceme my se chceme
+</td>
+</tr>
+<tr>
+<td>
+Claude
+</td>
+<td>
+Debussy
+</td>
+<td>
+Trois chansons
+</td>
+</tr>
+</table>
+<p>
+
+7 rows selected.<br>
+<br>
+
+
+SQL&gt; 
+<br>
+SQL&gt; 
+<br>
+SQL&gt; 
+<br>
+SQL&gt;  -- Seznam zpěváků se 100% docházkou.
+<br>
+SQL&gt; 
+<br>
+SQL&gt; SELECT Zpevak.*
+<br>
+  2  FROM Zpevak JOIN (
+<br>
+  3  	      SELECT DISTINCT RC FROM Ucast
+<br>
+  4  	      MINUS
+<br>
+  5  	      SELECT DISTINCT RC FROM Ucast WHERE pritomen=0
+<br>
+  6  	       ) Vzorni ON Zpevak.RC=Vzorni.RC;
+<br>
+<p>
+<table border='1' width='90%' align='center' summary='Script output'>
+<tr>
+<th scope="col">
+RC
+</th>
+<th scope="col">
+JMENO
+</th>
+<th scope="col">
+PRIJMENI
+</th>
+<th scope="col">
+ADRESA
+</th>
+<th scope="col">
+TELEFON
+</th>
+<th scope="col">
+EMAIL
+</th>
+<th scope="col">
+HLAS
+</th>
+</tr>
+<tr>
+<td align="right">
+5561032947
+</td>
+<td>
+Eva
+</td>
+<td>
+Janoušková
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+A
+</td>
+</tr>
+<tr>
+<td align="right">
+6508283452
+</td>
+<td>
+Josef
+</td>
+<td>
+Prknař
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+B
+</td>
+</tr>
+<tr>
+<td align="right">
+6903034321
+</td>
+<td>
+Oldřich
+</td>
+<td>
+Hrubý
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+B
+</td>
+</tr>
+<tr>
+<td align="right">
+7622263841
+</td>
+<td>
+Michal
+</td>
+<td>
+Hospr
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+T
+</td>
+</tr>
+</table>
+<p>
+
+SQL&gt; 
+<br>
+SQL&gt; 
+<br>
+SQL&gt;  -- Stejný dotaz jako předchozí, tentokrát řešený poddotazem.
+<br>
+SQL&gt; 
+<br>
+SQL&gt; SELECT *
+<br>
+  2  FROM Zpevak
+<br>
+  3  WHERE RC NOT IN (
+<br>
+  4  	  SELECT RC FROM Ucast WHERE pritomen=0
+<br>
+  5  	   );
+<br>
+<p>
+<table border='1' width='90%' align='center' summary='Script output'>
+<tr>
+<th scope="col">
+RC
+</th>
+<th scope="col">
+JMENO
+</th>
+<th scope="col">
+PRIJMENI
+</th>
+<th scope="col">
+ADRESA
+</th>
+<th scope="col">
+TELEFON
+</th>
+<th scope="col">
+EMAIL
+</th>
+<th scope="col">
+HLAS
+</th>
+</tr>
+<tr>
+<td align="right">
+7622263841
+</td>
+<td>
+Michal
+</td>
+<td>
+Hospr
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+T
+</td>
+</tr>
+<tr>
+<td align="right">
+6903034321
+</td>
+<td>
+Oldřich
+</td>
+<td>
+Hrubý
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+B
+</td>
+</tr>
+<tr>
+<td align="right">
+5561032947
+</td>
+<td>
+Eva
+</td>
+<td>
+Janoušková
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+A
+</td>
+</tr>
+<tr>
+<td align="right">
+6508283452
+</td>
+<td>
+Josef
+</td>
+<td>
+Prknař
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+B
+</td>
+</tr>
+</table>
+<p>
+
+SQL&gt; 
+<br>
+SQL&gt; 
+<br>
+SQL&gt;  -- Opět stejný dotaz řešený vztaženým poddotazem.
+<br>
+SQL&gt; 
+<br>
+SQL&gt; SELECT *
+<br>
+  2  FROM Zpevak
+<br>
+  3  WHERE NOT EXISTS (
+<br>
+  4  	     SELECT * FROM Ucast WHERE pritomen=0 AND Ucast.RC=Zpevak.RC
+<br>
+  5  	      );
+<br>
+<p>
+<table border='1' width='90%' align='center' summary='Script output'>
+<tr>
+<th scope="col">
+RC
+</th>
+<th scope="col">
+JMENO
+</th>
+<th scope="col">
+PRIJMENI
+</th>
+<th scope="col">
+ADRESA
+</th>
+<th scope="col">
+TELEFON
+</th>
+<th scope="col">
+EMAIL
+</th>
+<th scope="col">
+HLAS
+</th>
+</tr>
+<tr>
+<td align="right">
+7622263841
+</td>
+<td>
+Michal
+</td>
+<td>
+Hospr
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+T
+</td>
+</tr>
+<tr>
+<td align="right">
+6903034321
+</td>
+<td>
+Oldřich
+</td>
+<td>
+Hrubý
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+B
+</td>
+</tr>
+<tr>
+<td align="right">
+5561032947
+</td>
+<td>
+Eva
+</td>
+<td>
+Janoušková
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+A
+</td>
+</tr>
+<tr>
+<td align="right">
+6508283452
+</td>
+<td>
+Josef
+</td>
+<td>
+Prknař
+</td>
+<td>
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td>
+&nbsp;
+</td>
+<td>
+B
+</td>
+</tr>
+</table>
+<p>
+
+SQL&gt; 
+<br>
+SQL&gt; 
+<br>
+SQL&gt;  -- Seznam zpěváků, kteří nemají noty na Čtyři písně o Marii.
+<br>
+SQL&gt; 
+<br>
+SQL&gt; SELECT jmeno, prijmeni FROM Zpevak
+<br>
+  2   MINUS
+<br>
+  3  SELECT jmeno, prijmeni FROM Zpevak
+<br>
+  4  	  JOIN Zapujcka_not using (RC)
+<br>
+  5  	  JOIN Publikace using (kat_cislo)
+<br>
+  6  	  JOIN Zarazeni using (kat_cislo)
+<br>
+  7  	  JOIN Skladba using (id)
+<br>
+  8  WHERE nazev='Čtyři písně o Marii';
+<br>
+<p>
+<table border='1' width='90%' align='center' summary='Script output'>
+<tr>
+<th scope="col">
+JMENO
+</th>
+<th scope="col">
+PRIJMENI
+</th>
+</tr>
+<tr>
+<td>
+Jana
+</td>
+<td>
+Rinkeová
+</td>
+</tr>
+<tr>
+<td>
+Karel
+</td>
+<td>
+Valtr
+</td>
+</tr>
+<tr>
+<td>
+Stanislav
+</td>
+<td>
+Pulec
+</td>
+</tr>
+</table>
+<p>
+
+SQL&gt; 
+<br>
+SQL&gt; 
+<br>
+SQL&gt;  -- Skladatelé, kteří jsou autorem nějaké skladby a zároveň upravovatelem nějaké skladby.
+<br>
+SQL&gt; 
+<br>
+SQL&gt; SELECT jmeno, prijmeni FROM Skladatel JOIN Autorstvi using (jmeno, prijmeni) WHERE je_uprava=0
+<br>
+  2   INTERSECT
+<br>
+  3  SELECT jmeno, prijmeni FROM Skladatel JOIN Autorstvi using (jmeno, prijmeni) WHERE je_uprava&lt;&gt;0;
+<br>
+<p>
+<table border='1' width='90%' align='center' summary='Script output'>
+<tr>
+<th scope="col">
+JMENO
+</th>
+<th scope="col">
+PRIJMENI
+</th>
+</tr>
+<tr>
+<td>
+Zdeněk
+</td>
+<td>
+Lukáš
+</td>
+</tr>
+</table>
+<p>
+
+SQL&gt; 
+<br>
+SQL&gt; 
+<br>
+SQL&gt; 
+<br>
+SQL&gt;  -- Seznam publikací, od kterých je v inventáři méně než pět exemplářů. První realizaci můžeme zjednodušit tak, vybereme ty publikace, kde existují jen exempláře s pořadovými čísly &lt; 5.
+<br>
+SQL&gt; 
+<br>
+SQL&gt; SELECT *
+<br>
+  2  FROM Publikace A
+<br>
+  3  WHERE NOT EXISTS (
+<br>
+  4  	   SELECT * FROM Vytisk
+<br>
+  5  	   WHERE A.kat_cislo=Vytisk.kat_cislo AND cislo_exemplare &gt;= 5);
+<br>
+<p>
+<table border='1' width='90%' align='center' summary='Script output'>
+<tr>
+<th scope="col">
+KAT_CISLO
+</th>
+<th scope="col">
+NAZEV_P
+</th>
+<th scope="col">
+VARIANTA
+</th>
+<th scope="col">
+POCET_STRAN
+</th>
+</tr>
+<tr>
+<td align="right">
+         7
+</td>
+<td>
+Napadly písně
+</td>
+<td>
+B
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td align="right">
+         6
+</td>
+<td>
+Napadly písně
+</td>
+<td>
+T
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+</table>
+<p>
+
+SQL&gt; 
+<br>
+SQL&gt; 
+<br>
+SQL&gt;  -- Stejný dotaz s použitím agregace, navíc bez výše použitého zjednodušeni.
+<br>
+SQL&gt; 
+<br>
+SQL&gt; SELECT *
+<br>
+  2  FROM Publikace
+<br>
+  3  WHERE 5 &gt; (SELECT COUNT(*) FROM Vytisk
+<br>
+  4  		 WHERE Publikace.kat_cislo=Vytisk.kat_cislo);
+<br>
+<p>
+<table border='1' width='90%' align='center' summary='Script output'>
+<tr>
+<th scope="col">
+KAT_CISLO
+</th>
+<th scope="col">
+NAZEV_P
+</th>
+<th scope="col">
+VARIANTA
+</th>
+<th scope="col">
+POCET_STRAN
+</th>
+</tr>
+<tr>
+<td align="right">
+         6
+</td>
+<td>
+Napadly písně
+</td>
+<td>
+T
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td align="right">
+         7
+</td>
+<td>
+Napadly písně
+</td>
+<td>
+B
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+</table>
+<p>
+
+SQL&gt; 
+<br>
+SQL&gt; 
+<br>
+SQL&gt;  -- Seznam publikací, které obsahují více než jednu skladbu.
+<br>
+SQL&gt; 
+<br>
+SQL&gt; SELECT *
+<br>
+  2  FROM Publikace NATURAL JOIN (
+<br>
+  3  	   SELECT DISTINCT A.kat_cislo
+<br>
+  4  	   FROM Zarazeni A JOIN Zarazeni B
+<br>
+  5  		ON A.kat_cislo=B.kat_cislo AND A.id &lt; B.id
+<br>
+  6  );
+<br>
+<p>
+<table border='1' width='90%' align='center' summary='Script output'>
+<tr>
+<th scope="col">
+KAT_CISLO
+</th>
+<th scope="col">
+NAZEV_P
+</th>
+<th scope="col">
+VARIANTA
+</th>
+<th scope="col">
+POCET_STRAN
+</th>
+</tr>
+<tr>
+<td align="right">
+         1
+</td>
+<td>
+České lidové písně
+</td>
+<td>
+SATB
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td align="right">
+         2
+</td>
+<td>
+Four Negro Spirituals
+</td>
+<td>
+SATB
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td align="right">
+        14
+</td>
+<td>
+Sborová tvorba B. Martinů
+</td>
+<td>
+SATB
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+</table>
+<p>
+
+SQL&gt; 
+<br>
+SQL&gt; 
+<br>
+SQL&gt;  -- Stejný dotaz přehledněji s agregací.
+<br>
+SQL&gt; 
+<br>
+SQL&gt; SELECT *
+<br>
+  2  FROM Publikace
+<br>
+  3  WHERE 1 &lt; (
+<br>
+  4  		 SELECT COUNT(*) FROM Zarazeni
+<br>
+  5  		 WHERE Zarazeni.kat_cislo=Publikace.kat_cislo
+<br>
+  6  	   );
+<br>
+<p>
+<table border='1' width='90%' align='center' summary='Script output'>
+<tr>
+<th scope="col">
+KAT_CISLO
+</th>
+<th scope="col">
+NAZEV_P
+</th>
+<th scope="col">
+VARIANTA
+</th>
+<th scope="col">
+POCET_STRAN
+</th>
+</tr>
+<tr>
+<td align="right">
+         1
+</td>
+<td>
+České lidové písně
+</td>
+<td>
+SATB
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td align="right">
+         2
+</td>
+<td>
+Four Negro Spirituals
+</td>
+<td>
+SATB
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td align="right">
+        14
+</td>
+<td>
+Sborová tvorba B. Martinů
+</td>
+<td>
+SATB
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+</table>
+<p>
+
+SQL&gt; 
+<br>
+SQL&gt; 
+<br>
+SQL&gt;  -- Seznam zpěváků, kteří nikdy nezpívali žádnou skladbu Jana Hanuše.
+<br>
+SQL&gt; 
+<br>
+SQL&gt; SELECT jmeno, prijmeni
+<br>
+  2  FROM Zpevak
+<br>
+  3  WHERE RC NOT IN (
+<br>
+  4  	   SELECT RC FROM Ucast
+<br>
+  5  	   WHERE (misto, cas) IN (
+<br>
+  6  	      SELECT misto, cas
+<br>
+  7  	      FROM Skladatel
+<br>
+  8  		   JOIN Autorstvi using (jmeno, prijmeni)
+<br>
+  9  		   JOIN Skladba using (id)
+<br>
+ 10  		   JOIN Cast_programu using (id)
+<br>
+ 11  		   JOIN Udalost using (misto, cas)
+<br>
+ 12  	      WHERE jmeno='Jan' AND prijmeni LIKE 'Hanuš'
+<br>
+ 13  	      )
+<br>
+ 14  	   AND pritomen &lt;&gt; 0
+<br>
+ 15  	   );
+<br>
+<p>
+<table border='1' width='90%' align='center' summary='Script output'>
+<tr>
+<th scope="col">
+JMENO
+</th>
+<th scope="col">
+PRIJMENI
+</th>
+</tr>
+<tr>
+<td>
+Stanislav
+</td>
+<td>
+Pulec
+</td>
+</tr>
+</table>
+<p>
+
+SQL&gt; 
+<br>
+SQL&gt; 
+<br>
+SQL&gt;  -- Seznam všech koncertů a generálek.
+<br>
+SQL&gt; 
+<br>
+SQL&gt; SELECT cas, misto, 'Koncert' AS druh FROM Koncert
+<br>
+  2   UNION
+<br>
+  3  SELECT cas, misto, 'Generálka' AS druh FROM Zkouska WHERE je_generalka&lt;&gt;0
+<br>
+  4  ORDER BY cas;
+<br>
+<p>
+<table border='1' width='90%' align='center' summary='Script output'>
+<tr>
+<th scope="col">
+CAS
+</th>
+<th scope="col">
+MISTO
+</th>
+<th scope="col">
+DRUH
+</th>
+</tr>
+<tr>
+<td>
+30.09.2004
+</td>
+<td>
+Velká zkušebna
+</td>
+<td>
+Generálka
+</td>
+</tr>
+<tr>
+<td>
+01.10.2004
+</td>
+<td>
+Kostel sv. Antonína, Strossmayerovo nám.
+</td>
+<td>
+Koncert
+</td>
+</tr>
+<tr>
+<td>
+02.10.2004
+</td>
+<td>
+Sál Martinů, Malostranské nám.
+</td>
+<td>
+Koncert
+</td>
+</tr>
+<tr>
+<td>
+21.10.2004
+</td>
+<td>
+Velká zkušebna
+</td>
+<td>
+Generálka
+</td>
+</tr>
+<tr>
+<td>
+22.10.2004
+</td>
+<td>
+Kulturní dům Modřany
+</td>
+<td>
+Koncert
+</td>
+</tr>
+<tr>
+<td>
+01.12.2004
+</td>
+<td>
+Kostel sv. Mikuláše, Malostranské nám.
+</td>
+<td>
+Koncert
+</td>
+</tr>
+<tr>
+<td>
+18.12.2004
+</td>
+<td>
+Staroměstské náměstí
+</td>
+<td>
+Koncert
+</td>
+</tr>
+<tr>
+<td>
+22.12.2004
+</td>
+<td>
+Kostel sv. Martina ve zdi
+</td>
+<td>
+Koncert
+</td>
+</tr>
+<tr>
+<td>
+17.01.2005
+</td>
+<td>
+Velká zkušebna
+</td>
+<td>
+Generálka
+</td>
+</tr>
+<tr>
+<td>
+18.01.2005
+</td>
+<td>
+Městská knihovna, Mariánské náměstí
+</td>
+<td>
+Koncert
+</td>
+</tr>
+<tr>
+<td>
+02.02.2005
+</td>
+<td>
+Kostel sv. Antonína, Strossmayerovo nám.
+</td>
+<td>
+Koncert
+</td>
+</tr>
+</table>
+<p>
+
+11 rows selected.<br>
+<br>
+
+
+SQL&gt; 
+<br>
+SQL&gt; 
+<br>
+SQL&gt;  -- Seznam koncertů, na nichž byly provedeny všechny skladby B. Martinů na repertoáru.
+<br>
+SQL&gt; 
+<br>
+SQL&gt; SELECT misto, cas FROM Koncert
+<br>
+  2   MINUS
+<br>
+  3  SELECT misto, cas
+<br>
+  4  FROM (SELECT id FROM Skladatel
+<br>
+  5  		JOIN Autorstvi using (jmeno, prijmeni)
+<br>
+  6  		JOIN Skladba using (id)
+<br>
+  7  	   WHERE jmeno='Bohuslav' AND prijmeni='Martinů'
+<br>
+  8  	   ) CROSS JOIN Koncert
+<br>
+  9  WHERE (id, misto, cas) NOT IN (SELECT id, misto, cas
+<br>
+ 10  				    FROM Cast_programu);
+<br>
+<p>
+<table border='1' width='90%' align='center' summary='Script output'>
+<tr>
+<th scope="col">
+MISTO
+</th>
+<th scope="col">
+CAS
+</th>
+</tr>
+<tr>
+<td>
+Kostel sv. Antonína, Strossmayerovo nám.
+</td>
+<td>
+02.02.2005
+</td>
+</tr>
+<tr>
+<td>
+Městská knihovna, Mariánské náměstí
+</td>
+<td>
+18.01.2005
+</td>
+</tr>
+</table>
+<p>
+
+SQL&gt; 
+<br>
+SQL&gt; 
+<br>
+SQL&gt;  -- Který zpěvák má největší z půjčených šatů?
+<br>
+SQL&gt; 
+<br>
+SQL&gt; SELECT jmeno, prijmeni, velikost
+<br>
+  2  FROM Zpevak
+<br>
+  3  	  JOIN Zapujcka_satu using (RC)
+<br>
+  4  	  JOIN Saty using (inv_cislo)
+<br>
+  5  WHERE velikost=(SELECT MAX(velikost) FROM Saty NATURAL JOIN Zapujcka_satu);
+<br>
+<p>
+<table border='1' width='90%' align='center' summary='Script output'>
+<tr>
+<th scope="col">
+JMENO
+</th>
+<th scope="col">
+PRIJMENI
+</th>
+<th scope="col">
+VELIKOST
+</th>
+</tr>
+<tr>
+<td>
+Jindřich
+</td>
+<td>
+Hojer
+</td>
+<td align="right">
+        57
+</td>
+</tr>
+</table>
+<p>
+
+SQL&gt; 
+<br>
+SQL&gt; 
+<br>
+SQL&gt;  -- Přehled účasti na zkouškách (v procentech).
+<br>
+SQL&gt; 
+<br>
+SQL&gt; SELECT jmeno, prijmeni,
+<br>
+  2  	CAST((SELECT COUNT(*) FROM Ucast NATURAL JOIN Zkouska
+<br>
+  3  	      WHERE Zpevak.RC=Ucast.RC AND pritomen&lt;&gt;0)
+<br>
+  4  	      AS REAL)
+<br>
+  5  	     /(SELECT COUNT(*) FROM Ucast NATURAL JOIN Zkouska
+<br>
+  6  	       WHERE Zpevak.RC=Ucast.RC
+<br>
+  7  	     )*100 || ' %' AS dochazka
+<br>
+  8  FROM Zpevak ORDER BY prijmeni;
+<br>
+<p>
+<table border='1' width='90%' align='center' summary='Script output'>
+<tr>
+<th scope="col">
+JMENO
+</th>
+<th scope="col">
+PRIJMENI
+</th>
+<th scope="col">
+DOCHAZKA
+</th>
+</tr>
+<tr>
+<td>
+Jaroslav
+</td>
+<td>
+Doubek
+</td>
+<td>
+90 %
+</td>
+</tr>
+<tr>
+<td>
+Jan
+</td>
+<td>
+Havlík
+</td>
+<td>
+95 %
+</td>
+</tr>
+<tr>
+<td>
+Alena
+</td>
+<td>
+Havlíková
+</td>
+<td>
+90 %
+</td>
+</tr>
+<tr>
+<td>
+Jindřich
+</td>
+<td>
+Hojer
+</td>
+<td>
+95 %
+</td>
+</tr>
+<tr>
+<td>
+Irena
+</td>
+<td>
+Horová
+</td>
+<td>
+95 %
+</td>
+</tr>
+<tr>
+<td>
+Michal
+</td>
+<td>
+Hospr
+</td>
+<td>
+100 %
+</td>
+</tr>
+<tr>
+<td>
+Oldřich
+</td>
+<td>
+Hrubý
+</td>
+<td>
+100 %
+</td>
+</tr>
+<tr>
+<td>
+Eva
+</td>
+<td>
+Janoušková
+</td>
+<td>
+100 %
+</td>
+</tr>
+<tr>
+<td>
+Pavla
+</td>
+<td>
+Kohlová
+</td>
+<td>
+95 %
+</td>
+</tr>
+<tr>
+<td>
+Kateřina
+</td>
+<td>
+Orlová
+</td>
+<td>
+90 %
+</td>
+</tr>
+<tr>
+<td>
+Lenka
+</td>
+<td>
+Pašková
+</td>
+<td>
+95 %
+</td>
+</tr>
+<tr>
+<td>
+Josef
+</td>
+<td>
+Prknař
+</td>
+<td>
+100 %
+</td>
+</tr>
+<tr>
+<td>
+Stanislav
+</td>
+<td>
+Pulec
+</td>
+<td>
+70 %
+</td>
+</tr>
+<tr>
+<td>
+Jana
+</td>
+<td>
+Rinkeová
+</td>
+<td>
+90 %
+</td>
+</tr>
+<tr>
+<td>
+Karel
+</td>
+<td>
+Valtr
+</td>
+<td>
+85 %
+</td>
+</tr>
+<tr>
+<td>
+Jiřina
+</td>
+<td>
+Zámostná
+</td>
+<td>
+95 %
+</td>
+</tr>
+</table>
+<p>
+
+16 rows selected.<br>
+<br>
+
+
+SQL&gt; 
+<br>
+SQL&gt; 
+<br>
+SQL&gt;  -- Seznam hlasových skupin: název, počet členů, jméno vedoucího.
+<br>
+SQL&gt; 
+<br>
+SQL&gt; SELECT  nazev_h,
+<br>
+  2    poc_clenu,
+<br>
+  3    jmeno || ' ' || prijmeni AS vedouci
+<br>
+  4  FROM (
+<br>
+  5  	   SELECT zkratka, nazev_h, COUNT(RC) AS poc_clenu
+<br>
+  6  	   FROM Hlas LEFT JOIN Zpevak ON Hlas.zkratka=Zpevak.hlas
+<br>
+  7  	   GROUP BY zkratka, nazev_h
+<br>
+  8  	  )
+<br>
+  9  	  LEFT JOIN Vedeni USING(zkratka) LEFT JOIN Zpevak USING(RC);
+<br>
+<p>
+<table border='1' width='90%' align='center' summary='Script output'>
+<tr>
+<th scope="col">
+NAZEV_H
+</th>
+<th scope="col">
+POC_CLENU
+</th>
+<th scope="col">
+VEDOUCI
+</th>
+</tr>
+<tr>
+<td>
+Kontratenor
+</td>
+<td align="right">
+         0
+</td>
+<td>
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+Tenor
+</td>
+<td align="right">
+         4
+</td>
+<td>
+Jaroslav Doubek
+</td>
+</tr>
+<tr>
+<td>
+Bas
+</td>
+<td align="right">
+         4
+</td>
+<td>
+Oldřich Hrubý
+</td>
+</tr>
+<tr>
+<td>
+Soprán
+</td>
+<td align="right">
+         4
+</td>
+<td>
+Alena Havlíková
+</td>
+</tr>
+<tr>
+<td>
+Alt
+</td>
+<td align="right">
+         4
+</td>
+<td>
+Kateřina Orlová
+</td>
+</tr>
+</table>
+<p>
+
+SQL&gt; 
+<br>
+SQL&gt; 
+<br>
+SQL&gt;  -- Seznam míst, na kterých se koncertovalo vícekrát a vždy bylo přítomno více než 50 diváků.
+<br>
+SQL&gt; 
+<br>
+SQL&gt; SELECT misto, count(misto) AS pocet_koncertu, AVG(divaku) AS prum_divaku
+<br>
+  2  FROM Koncert
+<br>
+  3  WHERE divaku &gt; 50
+<br>
+  4  GROUP BY misto
+<br>
+  5  HAVING count(misto) &gt; 1;
+<br>
+<p>
+<table border='1' width='90%' align='center' summary='Script output'>
+<tr>
+<th scope="col">
+MISTO
+</th>
+<th scope="col">
+POCET_KONCERTU
+</th>
+<th scope="col">
+PRUM_DIVAKU
+</th>
+</tr>
+<tr>
+<td>
+Kostel sv. Antonína, Strossmayerovo nám.
+</td>
+<td align="right">
+         2
+</td>
+<td align="right">
+        83
+</td>
+</tr>
+</table>
+<p>
+
+SQL&gt; 
+<br>
+SQL&gt; 
+<br>
+SQL&gt;  -- Skladatel nejvíce zastoupený na koncertech co do počtu skladeb.
+<br>
+SQL&gt; 
+<br>
+SQL&gt; --Využívám pohled rating_skladatelu:
+<br>
+SQL&gt; SELECT jmeno, prijmeni, pocet
+<br>
+  2  FROM Rating_skladatelu
+<br>
+  3  WHERE pocet = (SELECT MAX(pocet) FROM Rating_skladatelu);
+<br>
+<p>
+<table border='1' width='90%' align='center' summary='Script output'>
+<tr>
+<th scope="col">
+JMENO
+</th>
+<th scope="col">
+PRIJMENI
+</th>
+<th scope="col">
+POCET
+</th>
+</tr>
+<tr>
+<td>
+Bohuslav
+</td>
+<td>
+Martinů
+</td>
+<td align="right">
+         6
+</td>
+</tr>
+</table>
+<p>
+
+SQL&gt; 
+<br>
+SQL&gt; 
+<br>
+SQL&gt;  -- Pro divácky nejúspěšnější koncert určit rozdíl ceny vstupného od průměru.
+<br>
+SQL&gt; 
+<br>
+SQL&gt;  SELECT (
+<br>
+  2  	     SELECT vstupne FROM Koncert
+<br>
+  3  		 WHERE divaku = (
+<br>
+  4  				 SELECT max(divaku) FROM Koncert
+<br>
+  5  				)
+<br>
+  6  	    ) - (
+<br>
+  7  	     SELECT AVG(vstupne) FROM Koncert
+<br>
+  8  	    )
+<br>
+  9  AS odchylka FROM Dual;
+<br>
+<p>
+<table border='1' width='90%' align='center' summary='Script output'>
+<tr>
+<th scope="col">
+ODCHYLKA
+</th>
+</tr>
+<tr>
+<td align="right">
+        10
+</td>
+</tr>
+</table>
+<p>
+
+SQL&gt; 
+<br>
+SQL&gt; 
+<br>
+SQL&gt; 
+<br>
+SQL&gt;  -- Skladatelé, kteří se mohli během života setkat s Bohuslavem Martinů.
+<br>
+SQL&gt; 
+<br>
+SQL&gt; SELECT * FROM skladatel
+<br>
+  2   WHERE rok_narozeni &lt; (SELECT rok_umrti FROM skladatel
+<br>
+  3  			    WHERE jmeno='Bohuslav' AND prijmeni='Martinů')
+<br>
+  4  	    AND rok_umrti &gt; (SELECT rok_narozeni FROM skladatel
+<br>
+  5  			     WHERE jmeno='Bohuslav' AND prijmeni='Martinů');
+<br>
+<p>
+<table border='1' width='90%' align='center' summary='Script output'>
+<tr>
+<th scope="col">
+JMENO
+</th>
+<th scope="col">
+PRIJMENI
+</th>
+<th scope="col">
+ROK_NAROZENI
+</th>
+<th scope="col">
+ROK_UMRTI
+</th>
+</tr>
+<tr>
+<td>
+Antonín
+</td>
+<td>
+Dvořák
+</td>
+<td align="right">
+      1841
+</td>
+<td align="right">
+      1904
+</td>
+</tr>
+<tr>
+<td>
+Bohuslav
+</td>
+<td>
+Martinů
+</td>
+<td align="right">
+      1890
+</td>
+<td align="right">
+      1959
+</td>
+</tr>
+<tr>
+<td>
+Jan
+</td>
+<td>
+Hanuš
+</td>
+<td align="right">
+      1905
+</td>
+<td align="right">
+      2004
+</td>
+</tr>
+<tr>
+<td>
+Claude
+</td>
+<td>
+Debussy
+</td>
+<td align="right">
+      1862
+</td>
+<td align="right">
+      1918
+</td>
+</tr>
+</table>
+<p>
+
+SQL&gt; 
+<br>
+SQL&gt; 
+<br>
+SQL&gt;  -- Seznam skladatelů, jejichž skladby byly na programu koncertů s nadprůměrnou návštěvou.
+<br>
+SQL&gt; 
+<br>
+SQL&gt; SELECT DISTINCT jmeno, prijmeni
+<br>
+  2  FROM skladatel
+<br>
+  3  	JOIN autorstvi using (jmeno, prijmeni)
+<br>
+  4  	JOIN skladba using (id)
+<br>
+  5  	JOIN cast_programu using (id)
+<br>
+  6  	JOIN koncert using (misto, cas)
+<br>
+  7  WHERE divaku &gt; (SELECT AVG(divaku) FROM koncert);
+<br>
+<p>
+<table border='1' width='90%' align='center' summary='Script output'>
+<tr>
+<th scope="col">
+JMENO
+</th>
+<th scope="col">
+PRIJMENI
+</th>
+</tr>
+<tr>
+<td>
+Jan
+</td>
+<td>
+Hanuš
+</td>
+</tr>
+<tr>
+<td>
+Antonín
+</td>
+<td>
+Dvořák
+</td>
+</tr>
+<tr>
+<td>
+Bohuslav
+</td>
+<td>
+Martinů
+</td>
+</tr>
+</table>
+<p>
+
+SQL&gt; 
+<br>
+SQL&gt; 
+<br>
+SQL&gt;  -- Koncert, na němž bylo uvedeno nejvíce různých skladeb.
+<br>
+SQL&gt; 
+<br>
+SQL&gt; SELECT *
+<br>
+  2  FROM (
+<br>
+  3  	SELECT misto, cas, COUNT(*) AS pocet
+<br>
+  4  	FROM cast_programu NATURAL JOIN koncert
+<br>
+  5  	GROUP BY misto, cas
+<br>
+  6  	   ) WHERE pocet = (
+<br>
+  7  	       SELECT MAX(pocet) FROM (
+<br>
+  8  		    SELECT COUNT(*) AS pocet
+<br>
+  9  		    FROM cast_programu NATURAL JOIN koncert
+<br>
+ 10  		    GROUP BY misto, cas
+<br>
+ 11  		   )
+<br>
+ 12  	  );
+<br>
+<p>
+<table border='1' width='90%' align='center' summary='Script output'>
+<tr>
+<th scope="col">
+MISTO
+</th>
+<th scope="col">
+CAS
+</th>
+<th scope="col">
+POCET
+</th>
+</tr>
+<tr>
+<td>
+Městská knihovna, Mariánské náměstí
+</td>
+<td>
+18.01.2005
+</td>
+<td align="right">
+         7
+</td>
+</tr>
+</table>
+<p>
+
+SQL&gt; 
+<br>
+SQL&gt; 
+<br>
+SQL&gt;  -- Přehled ošacení - všichni zpěváci a jejich šaty, zároveň všechny šaty a jejich držitelé.
+<br>
+SQL&gt; 
+<br>
+SQL&gt; SELECT
+<br>
+  2  	 COALESCE(prijmeni, 'VOLNÉ') AS drzitel,
+<br>
+  3  	 inv_cislo, velikost
+<br>
+  4  FROM Zpevak LEFT JOIN Zapujcka_satu USING(RC)
+<br>
+  5  	  FULL JOIN Saty USING(inv_cislo);
+<br>
+<p>
+<table border='1' width='90%' align='center' summary='Script output'>
+<tr>
+<th scope="col">
+DRZITEL
+</th>
+<th scope="col">
+INV_CISLO
+</th>
+<th scope="col">
+VELIKOST
+</th>
+</tr>
+<tr>
+<td>
+Doubek
+</td>
+<td align="right">
+         1
+</td>
+<td align="right">
+        55
+</td>
+</tr>
+<tr>
+<td>
+Hospr
+</td>
+<td align="right">
+         2
+</td>
+<td align="right">
+        55
+</td>
+</tr>
+<tr>
+<td>
+Hojer
+</td>
+<td align="right">
+         5
+</td>
+<td align="right">
+        57
+</td>
+</tr>
+<tr>
+<td>
+Havlíková
+</td>
+<td align="right">
+         6
+</td>
+<td align="right">
+        42
+</td>
+</tr>
+<tr>
+<td>
+Rinkeová
+</td>
+<td align="right">
+         7
+</td>
+<td align="right">
+        43
+</td>
+</tr>
+<tr>
+<td>
+Pašková
+</td>
+<td align="right">
+         8
+</td>
+<td align="right">
+        46
+</td>
+</tr>
+<tr>
+<td>
+Orlová
+</td>
+<td align="right">
+         9
+</td>
+<td align="right">
+        46
+</td>
+</tr>
+<tr>
+<td>
+Horová
+</td>
+<td align="right">
+        10
+</td>
+<td align="right">
+        48
+</td>
+</tr>
+<tr>
+<td>
+Valtr
+</td>
+<td align="right">
+        11
+</td>
+<td align="right">
+        52
+</td>
+</tr>
+<tr>
+<td>
+Hrubý
+</td>
+<td align="right">
+        12
+</td>
+<td align="right">
+        52
+</td>
+</tr>
+<tr>
+<td>
+Prknař
+</td>
+<td align="right">
+        14
+</td>
+<td align="right">
+        56
+</td>
+</tr>
+<tr>
+<td>
+Janoušková
+</td>
+<td align="right">
+        15
+</td>
+<td align="right">
+        44
+</td>
+</tr>
+<tr>
+<td>
+Pulec
+</td>
+<td align="right">
+        17
+</td>
+<td align="right">
+        56
+</td>
+</tr>
+<tr>
+<td>
+Kohlová
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+Zámostná
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+Havlík
+</td>
+<td align="right">
+&nbsp;
+</td>
+<td align="right">
+&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+VOLNÉ
+</td>
+<td align="right">
+         3
+</td>
+<td align="right">
+        55
+</td>
+</tr>
+<tr>
+<td>
+VOLNÉ
+</td>
+<td align="right">
+        18
+</td>
+<td align="right">
+        50
+</td>
+</tr>
+<tr>
+<td>
+VOLNÉ
+</td>
+<td align="right">
+         4
+</td>
+<td align="right">
+        57
+</td>
+</tr>
+<tr>
+<td>
+VOLNÉ
+</td>
+<td align="right">
+        16
+</td>
+<td align="right">
+        49
+</td>
+</tr>
+<tr>
+<td>
+VOLNÉ
+</td>
+<td align="right">
+        13
+</td>
+<td align="right">
+        50
+</td>
+</tr>
+</table>
+<p>
+
+21 rows selected.<br>
+<br>
+
+
+SQL&gt; 
+<br>
+SQL&gt; 
+<br>
+SQL&gt;  -- Skladatelé a počet uvedení jejich skladeb
+<br>
+SQL&gt; 
+<br>
+SQL&gt; CREATE OR REPLACE VIEW rating_skladatelu AS
+<br>
+  2  SELECT jmeno, prijmeni, count(*) AS pocet
+<br>
+  3  FROM Skladatel
+<br>
+  4  	   JOIN Autorstvi using (jmeno, prijmeni)
+<br>
+  5  	   JOIN Skladba using (id)
+<br>
+  6  	   JOIN Cast_programu using (id)
+<br>
+  7  	   JOIN Koncert using (misto, cas)
+<br>
+  8  GROUP BY jmeno, prijmeni;
+<br>
+
+View created.<br>
+<br>
+
+
+SQL&gt; 
+<br>
+SQL&gt; select * from rating_skladatelu;
+<br>
+<p>
+<table border='1' width='90%' align='center' summary='Script output'>
+<tr>
+<th scope="col">
+JMENO
+</th>
+<th scope="col">
+PRIJMENI
+</th>
+<th scope="col">
+POCET
+</th>
+</tr>
+<tr>
+<td>
+Jan
+</td>
+<td>
+Hanuš
+</td>
+<td align="right">
+         2
+</td>
+</tr>
+<tr>
+<td>
+Claude
+</td>
+<td>
+Debussy
+</td>
+<td align="right">
+         1
+</td>
+</tr>
+<tr>
+<td>
+Zdeněk
+</td>
+<td>
+Lukáš
+</td>
+<td align="right">
+         3
+</td>
+</tr>
+<tr>
+<td>
+Antonín
+</td>
+<td>
+Dvořák
+</td>
+<td align="right">
+         2
+</td>
+</tr>
+<tr>
+<td>
+Bohuslav
+</td>
+<td>
+Martinů
+</td>
+<td align="right">
+         6
+</td>
+</tr>
+<tr>
+<td>
+Jakub Jan
+</td>
+<td>
+Ryba
+</td>
+<td align="right">
+         2
+</td>
+</tr>
+</table>
+<p>
+
+6 rows selected.<br>
+<br>
+
+
+SQL&gt; 
+<br>
+SQL&gt; 
+<br>
+SQL&gt;  -- Vytvoříme redundantní tabulku ucasti_zpeváků, kde budou předpočítané hodnoty). Tuto tabulku naplníme daty. Atribut koef vyjadruje koeficient (ponechme stranou, co to znamená).
+<br>
+SQL&gt; 
+<br>
+SQL&gt; drop table ucasti_zpevaku;
+<br>
+
+Table dropped.<br>
+<br>
+
+
+SQL&gt; 
+<br>
+SQL&gt; create table ucasti_zpevaku (
+<br>
+  2    rc number(10),
+<br>
+  3    jmeno varchar2(30),
+<br>
+  4    prijmeni varchar2(30),
+<br>
+  5    zkousek number(4),
+<br>
+  6    koncertu number(4),
+<br>
+  7    koef number(1));
+<br>
+
+Table created.<br>
+<br>
+
+
+SQL&gt; 
+<br>
+SQL&gt; 
+<br>
+SQL&gt; insert into ucasti_zpevaku
+<br>
+  2    SELECT rc, jmeno, prijmeni,
+<br>
+  3  	  (SELECT COUNT(*) FROM Ucast NATURAL JOIN Zkouska
+<br>
+  4  		WHERE Zpevak.RC=Ucast.RC AND pritomen&lt;&gt;0)
+<br>
+  5  		 as zkousek,
+<br>
+  6  	  (SELECT COUNT(*) FROM Ucast NATURAL JOIN Koncert
+<br>
+  7  		 WHERE Zpevak.RC=Ucast.RC AND pritomen&lt;&gt;0)
+<br>
+  8  		 as koncertu,
+<br>
+  9  	   0 as koef
+<br>
+ 10    FROM Zpevak ORDER BY prijmeni;
+<br>
+
+16 rows created.<br>
+<br>
+
+
+SQL&gt; 
+<br>
+SQL&gt; commit;
+<br>
+
+Commit complete.<br>
+<br>
+
+
+SQL&gt; 
+<br>
+SQL&gt; select * from ucasti_zpevaku;
+<br>
+<p>
+<table border='1' width='90%' align='center' summary='Script output'>
+<tr>
+<th scope="col">
+RC
+</th>
+<th scope="col">
+JMENO
+</th>
+<th scope="col">
+PRIJMENI
+</th>
+<th scope="col">
+ZKOUSEK
+</th>
+<th scope="col">
+KONCERTU
+</th>
+<th scope="col">
+KOEF
+</th>
+</tr>
+<tr>
+<td align="right">
+6706062648
+</td>
+<td>
+Jaroslav
+</td>
+<td>
+Doubek
+</td>
+<td align="right">
+        18
+</td>
+<td align="right">
+         8
+</td>
+<td align="right">
+         0
+</td>
+</tr>
+<tr>
+<td align="right">
+5901012681
+</td>
+<td>
+Jan
+</td>
+<td>
+Havlík
+</td>
+<td align="right">
+        19
+</td>
+<td align="right">
+         8
+</td>
+<td align="right">
+         0
+</td>
+</tr>
+<tr>
+<td align="right">
+5953014321
+</td>
+<td>
+Alena
+</td>
+<td>
+Havlíková
+</td>
+<td align="right">
+        18
+</td>
+<td align="right">
+         7
+</td>
+<td align="right">
+         0
+</td>
+</tr>
+<tr>
+<td align="right">
+5402022234
+</td>
+<td>
+Jindřich
+</td>
+<td>
+Hojer
+</td>
+<td align="right">
+        19
+</td>
+<td align="right">
+         8
+</td>
+<td align="right">
+         0
+</td>
+</tr>
+<tr>
+<td align="right">
+6958216542
+</td>
+<td>
+Irena
+</td>
+<td>
+Horová
+</td>
+<td align="right">
+        19
+</td>
+<td align="right">
+         8
+</td>
+<td align="right">
+         0
+</td>
+</tr>
+<tr>
+<td align="right">
+7622263841
+</td>
+<td>
+Michal
+</td>
+<td>
+Hospr
+</td>
+<td align="right">
+        20
+</td>
+<td align="right">
+         8
+</td>
+<td align="right">
+         0
+</td>
+</tr>
+<tr>
+<td align="right">
+6903034321
+</td>
+<td>
+Oldřich
+</td>
+<td>
+Hrubý
+</td>
+<td align="right">
+        20
+</td>
+<td align="right">
+         8
+</td>
+<td align="right">
+         0
+</td>
+</tr>
+<tr>
+<td align="right">
+5561032947
+</td>
+<td>
+Eva
+</td>
+<td>
+Janoušková
+</td>
+<td align="right">
+        17
+</td>
+<td align="right">
+         8
+</td>
+<td align="right">
+         0
+</td>
+</tr>
+<tr>
+<td align="right">
+7061135522
+</td>
+<td>
+Pavla
+</td>
+<td>
+Kohlová
+</td>
+<td align="right">
+        19
+</td>
+<td align="right">
+         8
+</td>
+<td align="right">
+         0
+</td>
+</tr>
+<tr>
+<td align="right">
+6555151278
+</td>
+<td>
+Kateřina
+</td>
+<td>
+Orlová
+</td>
+<td align="right">
+        18
+</td>
+<td align="right">
+         8
+</td>
+<td align="right">
+         0
+</td>
+</tr>
+<tr>
+<td align="right">
+6457021234
+</td>
+<td>
+Lenka
+</td>
+<td>
+Pašková
+</td>
+<td align="right">
+        19
+</td>
+<td align="right">
+         7
+</td>
+<td align="right">
+         0
+</td>
+</tr>
+<tr>
+<td align="right">
+6508283452
+</td>
+<td>
+Josef
+</td>
+<td>
+Prknař
+</td>
+<td align="right">
+         8
+</td>
+<td align="right">
+         4
+</td>
+<td align="right">
+         0
+</td>
+</tr>
+<tr>
+<td align="right">
+7711124554
+</td>
+<td>
+Stanislav
+</td>
+<td>
+Pulec
+</td>
+<td align="right">
+        14
+</td>
+<td align="right">
+         6
+</td>
+<td align="right">
+         0
+</td>
+</tr>
+<tr>
+<td align="right">
+7263225148
+</td>
+<td>
+Jana
+</td>
+<td>
+Rinkeová
+</td>
+<td align="right">
+        18
+</td>
+<td align="right">
+         8
+</td>
+<td align="right">
+         0
+</td>
+</tr>
+<tr>
+<td align="right">
+7007073737
+</td>
+<td>
+Karel
+</td>
+<td>
+Valtr
+</td>
+<td align="right">
+        17
+</td>
+<td align="right">
+         8
+</td>
+<td align="right">
+         0
+</td>
+</tr>
+<tr>
+<td align="right">
+4951032446
+</td>
+<td>
+Jiřina
+</td>
+<td>
+Zámostná
+</td>
+<td align="right">
+        19
+</td>
+<td align="right">
+         8
+</td>
+<td align="right">
+         0
+</td>
+</tr>
+</table>
+<p>
+
+16 rows selected.<br>
+<br>
+
+
+SQL&gt; 
+<br>
+SQL&gt; 
+<br>
+SQL&gt; drop table ucasti_zpevaku;
+<br>
+
+Table dropped.<br>
+<br>
+
+
+SQL&gt; 
+<br>
+SQL&gt; create table UCASTI_ZPEVAKU as
+<br>
+  2    SELECT rc, jmeno, prijmeni,
+<br>
+  3  	  (SELECT COUNT(*) FROM Ucast NATURAL JOIN Zkouska
+<br>
+  4  		WHERE Zpevak.RC=Ucast.RC AND pritomen&lt;&gt;0)
+<br>
+  5  		 as zkousek,
+<br>
+  6  	  (SELECT COUNT(*) FROM Ucast NATURAL JOIN Koncert
+<br>
+  7  		 WHERE Zpevak.RC=Ucast.RC AND pritomen&lt;&gt;0)
+<br>
+  8  		 as koncertu,
+<br>
+  9  	   0 as koef
+<br>
+ 10  	FROM Zpevak ORDER BY prijmeni;
+<br>
+
+Table created.<br>
+<br>
+
+
+SQL&gt; 
+<br>
+SQL&gt; select * from ucasti_zpevaku;
+<br>
+<p>
+<table border='1' width='90%' align='center' summary='Script output'>
+<tr>
+<th scope="col">
+RC
+</th>
+<th scope="col">
+JMENO
+</th>
+<th scope="col">
+PRIJMENI
+</th>
+<th scope="col">
+ZKOUSEK
+</th>
+<th scope="col">
+KONCERTU
+</th>
+<th scope="col">
+KOEF
+</th>
+</tr>
+<tr>
+<td align="right">
+6706062648
+</td>
+<td>
+Jaroslav
+</td>
+<td>
+Doubek
+</td>
+<td align="right">
+        18
+</td>
+<td align="right">
+         8
+</td>
+<td align="right">
+         0
+</td>
+</tr>
+<tr>
+<td align="right">
+5901012681
+</td>
+<td>
+Jan
+</td>
+<td>
+Havlík
+</td>
+<td align="right">
+        19
+</td>
+<td align="right">
+         8
+</td>
+<td align="right">
+         0
+</td>
+</tr>
+<tr>
+<td align="right">
+5953014321
+</td>
+<td>
+Alena
+</td>
+<td>
+Havlíková
+</td>
+<td align="right">
+        18
+</td>
+<td align="right">
+         7
+</td>
+<td align="right">
+         0
+</td>
+</tr>
+<tr>
+<td align="right">
+5402022234
+</td>
+<td>
+Jindřich
+</td>
+<td>
+Hojer
+</td>
+<td align="right">
+        19
+</td>
+<td align="right">
+         8
+</td>
+<td align="right">
+         0
+</td>
+</tr>
+<tr>
+<td align="right">
+6958216542
+</td>
+<td>
+Irena
+</td>
+<td>
+Horová
+</td>
+<td align="right">
+        19
+</td>
+<td align="right">
+         8
+</td>
+<td align="right">
+         0
+</td>
+</tr>
+<tr>
+<td align="right">
+7622263841
+</td>
+<td>
+Michal
+</td>
+<td>
+Hospr
+</td>
+<td align="right">
+        20
+</td>
+<td align="right">
+         8
+</td>
+<td align="right">
+         0
+</td>
+</tr>
+<tr>
+<td align="right">
+6903034321
+</td>
+<td>
+Oldřich
+</td>
+<td>
+Hrubý
+</td>
+<td align="right">
+        20
+</td>
+<td align="right">
+         8
+</td>
+<td align="right">
+         0
+</td>
+</tr>
+<tr>
+<td align="right">
+5561032947
+</td>
+<td>
+Eva
+</td>
+<td>
+Janoušková
+</td>
+<td align="right">
+        17
+</td>
+<td align="right">
+         8
+</td>
+<td align="right">
+         0
+</td>
+</tr>
+<tr>
+<td align="right">
+7061135522
+</td>
+<td>
+Pavla
+</td>
+<td>
+Kohlová
+</td>
+<td align="right">
+        19
+</td>
+<td align="right">
+         8
+</td>
+<td align="right">
+         0
+</td>
+</tr>
+<tr>
+<td align="right">
+6555151278
+</td>
+<td>
+Kateřina
+</td>
+<td>
+Orlová
+</td>
+<td align="right">
+        18
+</td>
+<td align="right">
+         8
+</td>
+<td align="right">
+         0
+</td>
+</tr>
+<tr>
+<td align="right">
+6457021234
+</td>
+<td>
+Lenka
+</td>
+<td>
+Pašková
+</td>
+<td align="right">
+        19
+</td>
+<td align="right">
+         7
+</td>
+<td align="right">
+         0
+</td>
+</tr>
+<tr>
+<td align="right">
+6508283452
+</td>
+<td>
+Josef
+</td>
+<td>
+Prknař
+</td>
+<td align="right">
+         8
+</td>
+<td align="right">
+         4
+</td>
+<td align="right">
+         0
+</td>
+</tr>
+<tr>
+<td align="right">
+7711124554
+</td>
+<td>
+Stanislav
+</td>
+<td>
+Pulec
+</td>
+<td align="right">
+        14
+</td>
+<td align="right">
+         6
+</td>
+<td align="right">
+         0
+</td>
+</tr>
+<tr>
+<td align="right">
+7263225148
+</td>
+<td>
+Jana
+</td>
+<td>
+Rinkeová
+</td>
+<td align="right">
+        18
+</td>
+<td align="right">
+         8
+</td>
+<td align="right">
+         0
+</td>
+</tr>
+<tr>
+<td align="right">
+7007073737
+</td>
+<td>
+Karel
+</td>
+<td>
+Valtr
+</td>
+<td align="right">
+        17
+</td>
+<td align="right">
+         8
+</td>
+<td align="right">
+         0
+</td>
+</tr>
+<tr>
+<td align="right">
+4951032446
+</td>
+<td>
+Jiřina
+</td>
+<td>
+Zámostná
+</td>
+<td align="right">
+        19
+</td>
+<td align="right">
+         8
+</td>
+<td align="right">
+         0
+</td>
+</tr>
+</table>
+<p>
+
+16 rows selected.<br>
+<br>
+
+
+SQL&gt; 
+<br>
+SQL&gt; 
+<br>
+SQL&gt;  -- Zpěvákům, kteří zpívají alt nastavíme v relaci ucasti_zpevaku hodnotu atributu koef tak, že vyjadřuje počet jimi zapůjčených výtisků not.
+<br>
+SQL&gt; 
+<br>
+SQL&gt; update ucasti_zpevaku u
+<br>
+  2  set koef =
+<br>
+  3  	 (select count(*)
+<br>
+  4  	  from zapujcka_not z
+<br>
+  5  	  where u.rc = z.rc)
+<br>
+  6  where u.rc in (select rc from zpevak where hlas = 'A');
+<br>
+
+4 rows updated.<br>
+<br>
+
+
+SQL&gt; 
+<br>
+SQL&gt; commit;
+<br>
+
+Commit complete.<br>
+<br>
+
+
+SQL&gt; 
+<br>
+SQL&gt; 
+<br>
+SQL&gt;  -- Z tabulky ucasti_zpevaku vymažeme ty zpěváky, kteří zpívají basy.
+<br>
+SQL&gt; 
+<br>
+SQL&gt; delete from ucasti_zpevaku
+<br>
+  2  where rc in (select rc from zpevak where hlas = 'B');
+<br>
+
+4 rows deleted.<br>
+<br>
+
+
+SQL&gt; 
+<br>
+SQL&gt; commit;
+<br>
+
+Commit complete.<br>
+<br>
+
+
+SQL&gt; 
+<br>
+SQL&gt; 
+<br>
+SQL&gt; set markup html off
+<br>
+SQL> spool off
+</body>
+</html>

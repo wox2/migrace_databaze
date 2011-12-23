@@ -1,0 +1,76 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+  
+   <head>
+    <link href="style.css" rel="stylesheet" type="text/css" title="default">
+    <link href="style1.css" rel="alternate stylesheet" type="text/css" title="alternative">
+    <script type="text/javascript" src="styleswitcher.js"></script>
+    <title>Dinosauøi</title>
+    <script type="text/javascript">
+    function vymreni(){
+      window.location.href = "vymreni.html";                
+    }
+    function uvod(){
+      window.location.href = "main.html";                
+    }
+     function rekordy(){
+      window.location.href = "tabulka.html";                
+    }
+     function formular(){
+      window.location.href = "formular.html";                
+    }
+    function obrazky(){
+      window.location.href = "obrazky.html";                
+    }
+    function mapa(){
+      window.location.href = "mapa.html";  
+    }
+    </script>
+  </head>
+  
+  <body>
+    <div id="hornimenu">
+       <h1> Dinosauøi</h1>
+       Skin: 
+       <a href="#" onclick="setActiveStyleSheet('default'); return false;">Základní</a>
+       <a href="#" onclick="setActiveStyleSheet('alternative'); return false;">Alternativní</a>        
+    </div>
+    <div id="levemenu">
+            <div class="tlacitko"  onclick="uvod()">
+             <a href="main.html">Úvod</a> 
+            </div>
+            <div class="tlacitko" onclick="vymreni()">
+              <a href="vymreni.html">Vymøení </a>  
+            </div>       
+            <div class="tlacitko" onclick="obrazky()">
+              <a href="obrazky.html">Obrázky </a>
+            </div>
+            <div class="tlacitko" onclick="rekordy()">
+              <a href="tabulka.html">Rekordy </a>
+            </div>            
+            <div class="tlacitko" onclick="formular()" >
+              <a href="formular.html">Formuláø</a>
+            </div> 
+            <div class="tlacitko" onclick="mapa()">
+              <a href="mapa.html">Mapa stránek</a>
+            </div>
+    </div>
+    <div id="clanek">
+      <table id="table"  frame="border" rules="all" summary="Tabulka rekordù">
+      <caption id="kotva" style="text-align: center, top">Tabulka 1 Rekordy dinosaurù</caption>
+        <thead>
+          <tr><th scope="col" abbr="rekord"> Rekord </th><th scope="col" abbr="jméno"> Dinosaurus </th><th scope="col" abbr="hodnota"> Hodnota </th></tr>
+        </thead>
+        
+        
+        <tbody>
+          <tr><td scope="col"> Nejdelší </td><td> Seismosaurus Halli </td><td> 54 m</td></tr>
+          <tr><td scope="col"> Nejvyšší </td><td> Ultrasaurus Macintoshi </td><td> 21 m</td></tr>
+          <tr><td scope="col"> Nejtìžší </td><td> Ultrasaurus Macintoshi </td><td>136 tun</td></tr>
+          <tr><td scope="col"> Nejrychlejší </td><td> Ornithomimidae </td><td>65 km/h</td></tr>
+        </tbody>
+        
+      </table>
+    </div>
+  </body>
+</html>

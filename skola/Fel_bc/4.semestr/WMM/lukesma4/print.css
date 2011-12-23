@@ -1,0 +1,29 @@
+ #skin{
+     display:none;
+ }
+ #right{
+     display:none;
+ }
+ #left{
+     display:none;
+ }
+ #bottom{
+     display:none;
+ }
+
+ #html{
+     color:"black"; 
+ }
+ 
+ #center{
+      position: absolute; top: 18ex; 
+			width: 100%;
+ }
+
+ #top 	{	
+			position: absolute; top:2ex; 
+			width:96%;
+			height:11ex;
+			text-align:center;
+			}
+	

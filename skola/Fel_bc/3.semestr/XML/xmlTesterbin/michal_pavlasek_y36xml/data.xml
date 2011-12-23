@@ -1,0 +1,523 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><?xml-stylesheet type="text/xsl" href="data2html.xsl"?>
+<tv_program xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="data.xsd">
+
+ <!-- <!DOCTYPE tv_program SYSTEM "data.dtd">
+<tv_program> --> 
+    
+    <!-- vysilani - cas a odkaz na porad -->
+    <vysilani>
+        <kanal>CT1</kanal>
+        <zacatek>2007-12-24T10:00:00</zacatek>
+        <konec>2007-12-24T11:10:00</konec>
+        <co ref="obusku"/>
+    </vysilani>
+    
+    <vysilani>
+        <kanal>CT1</kanal>
+        <zacatek>2007-12-24T11:10:00</zacatek>
+        <konec>2007-12-24T12:00:00</konec>
+        <co ref="p0001"/>
+    </vysilani>        
+    
+    <vysilani>
+        <kanal>CT1</kanal>
+        <zacatek>2007-12-24T12:00:00</zacatek>
+        <konec>2007-12-24T13:00:00</konec>
+        <co ref="p0002"/>
+    </vysilani>
+    
+    <vysilani>
+        <kanal>CT1</kanal>
+        <zacatek>2007-12-24T15:25:00</zacatek>
+        <konec>2007-12-24T17:15:00</konec>
+        <co ref="byljednou"/>
+    </vysilani>
+    
+    <vysilani>
+        <kanal>CT1</kanal>
+        <zacatek>2007-12-24T19:00:00</zacatek>
+        <konec>2007-12-24T20:20:00</konec>
+        <co ref="zivoty"/>
+    </vysilani>
+    
+    <vysilani>
+        <kanal>CT1</kanal>
+        <zacatek>2007-12-24T21:05:00</zacatek>
+        <konec>2007-12-24T22:05:00</konec>
+        <co ref="hrab17"/>
+    </vysilani>
+    
+    <vysilani>
+        <kanal>CT2</kanal>
+        <zacatek>2007-12-24T13:25:00</zacatek>
+        <konec>2007-12-24T15:05:00</konec>
+        <co ref="afr_kralovna"/>
+    </vysilani>
+    
+    <vysilani>
+        <kanal>CT2</kanal>
+        <zacatek>2007-12-24T16:45:00</zacatek>
+        <konec>2007-12-24T17:45:00</konec>
+        <co ref="vanpribeh"/>
+    </vysilani>
+    
+    <vysilani>
+        <kanal>nova</kanal>
+        <zacatek>2007-12-24T11:15:00</zacatek>
+        <konec>2007-12-24T12:45:00</konec>
+        <co ref="pysna"/>
+    </vysilani>
+    
+    <vysilani>
+        <kanal>nova</kanal>
+        <zacatek>2007-12-24T12:45:00</zacatek>
+        <konec>2007-12-24T14:10:00</konec>
+        <co ref="lyznici"/>
+    </vysilani>
+    
+    <vysilani>
+        <kanal>nova</kanal>
+        <zacatek>2007-12-24T15:55:00</zacatek>
+        <konec>2007-12-24T17:30:00</konec>
+        <co ref="princezny"/>
+    </vysilani>
+    
+    <vysilani>
+        <kanal>nova</kanal>
+        <zacatek>2007-12-24T17:40:00</zacatek>
+        <konec>2007-12-24T18:35:00</konec>
+        <co ref="ulice694"/>
+    </vysilani>
+    
+    <vysilani>
+        <kanal>nova</kanal>
+        <zacatek>2007-12-24T18:35:00</zacatek>
+        <konec>2007-12-24T20:00:00</konec>
+        <co ref="popelka"/>
+    </vysilani>
+    
+    <vysilani>
+        <kanal>nova</kanal>
+        <zacatek>2007-12-24T20:00:00</zacatek>
+        <konec>2007-12-24T20:30:00</konec>
+        <co ref="shrek"/>
+    </vysilani>
+    
+    <vysilani>
+        <kanal>nova</kanal>
+        <zacatek>2007-12-24T20:30:00</zacatek>
+        <konec>2007-12-24T22:15:00</konec>
+        <co ref="prosit"/>
+    </vysilani>
+    
+    <vysilani>
+        <kanal>CT1</kanal>
+        <zacatek>2007-12-25T10:00:00</zacatek>
+        <konec>2007-12-25T11:30:00</konec>
+        <co ref="rumpl"/>
+    </vysilani>
+    
+    <vysilani>
+        <kanal>CT1</kanal>
+        <zacatek>2007-12-25T13:00:00</zacatek>
+        <konec>2007-12-25T14:00:00</konec>
+        <co ref="chleba"/>
+    </vysilani>
+    
+    <vysilani>
+        <kanal>CT1</kanal>
+        <zacatek>2007-12-25T15:25:00</zacatek>
+        <konec>2007-12-25T16:55:00</konec>
+        <co ref="prednosta"/>
+    </vysilani>
+    
+    <vysilani>
+        <kanal>CT1</kanal>
+        <zacatek>2007-12-25T18:05:00</zacatek>
+        <konec>2007-12-25T18:45:00</konec>
+        <co ref="honza"/>
+    </vysilani>
+    
+    <vysilani>
+        <kanal>CT1</kanal>
+        <zacatek>2007-12-25T20:00:00</zacatek>
+        <konec>2007-12-25T21:15:00</konec>
+        <co ref="srdce"/>
+    </vysilani>
+    
+    <vysilani>
+        <kanal>CT2</kanal>
+        <zacatek>2007-12-25T10:00:00</zacatek>
+        <konec>2007-12-25T11:00:00</konec>
+        <co ref="sluzba"/>
+    </vysilani>
+    
+    <vysilani>
+        <kanal>nova</kanal>
+        <zacatek>2007-12-25T10:45:00</zacatek>
+        <konec>2007-12-25T12:10:00</konec>
+        <co ref="kovar"/>
+    </vysilani>
+    
+    <vysilani>
+        <kanal>nova</kanal>
+        <zacatek>2007-12-25T12:10:00</zacatek>
+        <konec>2007-12-25T13:40:00</konec>
+        <co ref="eva"/>
+    </vysilani>
+    
+    <vysilani>
+        <kanal>nova</kanal>
+        <zacatek>2007-12-25T13:40:00</zacatek>
+        <konec>2007-12-25T15:15:00</konec>
+        <co ref="kovboj"/>
+    </vysilani>
+    
+    <vysilani>
+        <kanal>nova</kanal>
+        <zacatek>2007-12-25T15:15:00</zacatek>
+        <konec>2007-12-25T17:05:00</konec>
+        <co ref="samdoma"/>
+    </vysilani>
+    
+    <vysilani>
+        <kanal>nova</kanal>
+        <zacatek>2007-12-25T17:05:00</zacatek>
+        <konec>2007-12-25T18:35:00</konec>
+        <co ref="jasnenka"/>
+    </vysilani>                
+        
+    <!-- porady -->    
+    <porad id_poradu="obusku">
+        <nazev>Obusku z pytle ven</nazev>
+        <typ>film</typ>        
+        <popis>pohadka 1955</popis>
+        
+        <reziser ref="pleskot"/>
+        <delka>70</delka>
+    </porad>           
+    
+    <porad id_poradu="p0001">
+        <nazev>Na Vanoce</nazev>
+        <typ>publicistika</typ>
+        <popis>nejaka vanocni ptakovina</popis>
+        <delka>50</delka>
+    </porad>   
+    
+    <porad id_poradu="p0002">
+        <nazev>Jednou v roce na vanoce</nazev>
+        <typ>publicistika</typ>
+        <popis>nejaka vanocni blbost</popis>
+        <delka>60</delka>
+    </porad>
+    
+    <porad id_poradu="byljednou">
+        <nazev>Byl jednou jeden kral</nazev>
+        <typ>film</typ>
+        <popis>pohadka 1954</popis>
+        <herci ref="werich"/>
+        <herci ref="burian"/>
+        <reziser ref="zemanb"/>
+        <delka>110</delka>
+    </porad>
+    
+    <porad id_poradu="zivoty">
+        <nazev>Tri zivoty</nazev>
+        <typ>film</typ>
+        <popis>pohadka 2007</popis>
+        <herci ref="molnarl"/>
+        <herci ref="molnarp"/>
+        <reziser ref="strach"/>
+        <delka>80</delka>
+    </porad>
+    
+    <porad id_poradu="hrab17">
+        <nazev>Hrabenky 17/17</nazev>
+        <typ>serial</typ>
+        <popis>dementni serial pro nase maminky</popis>
+        <herci ref="langmajer"/>
+        <reziser ref="brabec"/>
+        <delka>60</delka>
+    </porad>
+    
+    <porad id_poradu="afr_kralovna">
+        <nazev>Africka Kralovna</nazev>
+        <typ>film</typ>
+        <popis>usmevny pribeh</popis>
+        <herci ref="hepburn"/>
+        <herci ref="bogart"/>
+        <reziser ref="huston"/>        
+        <delka>90</delka>
+    </porad>
+    
+    <porad id_poradu="lyznici">
+        <nazev>Krakonos a lyznici</nazev>
+        <typ>film</typ>
+        <popis>rodinny film 1980</popis>
+        <delka>85</delka>
+    </porad>
+    
+    <porad id_poradu="princezny">
+        <nazev>Jak se budi princezny</nazev>
+        <typ>film</typ>
+        <popis>pohadka 1977</popis>
+        <herci ref="hruska"/>
+        <herci ref="dvorska"/>
+        <herci ref="mensik"/>
+        <reziser ref="vorel"/>
+        <delka>95</delka>
+    </porad>
+            
+   <porad id_poradu="pysna">
+        <nazev>Pysna princezna</nazev>
+        <typ>film</typ>
+        <popis>pohadka 1952</popis>
+       <herci ref="vraz"/>
+       <herci ref="vrana"/>
+       <reziser ref="zemanb"/>       
+        <delka>90</delka>
+    </porad>
+        
+    <porad id_poradu="vanpribeh">
+        <nazev>Vanocni pribeh</nazev>
+        <typ>film</typ>
+        <popis>film 2007</popis>
+        <delka>60</delka>
+    </porad>            
+    
+    <porad id_poradu="ulice694">
+        <nazev>Ulice 694</nazev>
+        <typ>serial</typ>
+        <popis>dementni serial tv nova</popis>
+        <delka>55</delka>
+    </porad>
+    
+    <porad id_poradu="popelka">
+        <nazev>Tri orisky pro popelku</nazev>
+        <typ>film</typ>
+        <popis>pohadka 1973</popis>
+        <herci ref="safr"/>
+        <herci ref="travn"/>
+        <reziser ref="vorel"/>
+        <delka>85</delka>
+    </porad>
+    
+    <porad id_poradu="shrek">
+        <nazev>Shrekoleda</nazev>
+        <typ>film</typ>
+        <popis>Animovana pohadka 2007</popis>
+        <delka>30</delka>
+    </porad>
+    
+    <porad id_poradu="prosit">
+        <nazev>Smim prosit?</nazev>
+        <typ>film</typ>
+        <popis>romanticka komedie 2004</popis>
+        <reziser ref="gere"/>
+        <delka>105</delka>
+    </porad>
+    
+    <porad id_poradu="rumpl">
+        <nazev>RumplCimprCampr</nazev>
+        <typ>film</typ>
+        <popis>pohadka 1997</popis>
+        <herci ref="werich"/>
+        <herci ref="potm"/>
+        <reziser ref="werich"/>
+        <delka>90</delka>
+    </porad>
+    
+    <porad id_poradu="chleba">
+        <nazev>O divce, ktera slapla na chleb</nazev>
+        <typ>film</typ>
+        <popis>pohadka 2007</popis>
+        <reziser ref="strach"/>
+        <delka>60</delka>
+    </porad>
+    
+    <porad id_poradu="prednosta">
+        <nazev>Prednosta stanice</nazev>
+        <typ>film</typ>
+        <popis>1941</popis>
+        <herci ref="burian"/>
+        <delka>90</delka>
+    </porad>
+    
+    <porad id_poradu="honza">
+        <nazev>O linem Honzovi</nazev>
+        <typ>film</typ>
+        <popis>pohadka 1977</popis>
+        <herci ref="eben"/>
+        <delka>40</delka>
+    </porad>
+    
+    <porad id_poradu="srdce">
+        <nazev>Tri srdce</nazev>
+        <typ>film</typ>
+        <popis>pohadka 2007</popis>
+        <herci ref="potm"/>
+        <delka>75</delka>
+    </porad>
+    
+    <porad id_poradu="sluzba">
+        <nazev>Vanocni bohosluzba</nazev>
+        <typ>publicistika</typ>
+        <popis>primy prenos</popis>
+        <delka>60</delka>
+    </porad>
+    
+    <porad id_poradu="kovar">
+        <nazev>O statecnem kovari</nazev>
+        <typ>film</typ>
+        <popis>pohadka 1983</popis>
+        <delka>95</delka>
+    </porad>
+    
+    <porad id_poradu="eva">
+        <nazev>Eva tropi hlouposti</nazev>
+        <typ>film</typ>
+        <popis>1939</popis>
+        <delka>90</delka>
+    </porad>
+    
+    <porad id_poradu="kovboj">
+        <nazev>Leto s kovbojem</nazev>
+        <typ>film</typ>
+        <popis>romanticka komedie 1976</popis>
+        <delka>95</delka>
+    </porad>
+    
+    <porad id_poradu="samdoma">
+        <nazev>Sam doma</nazev>
+        <typ>film</typ>
+        <popis>rodinna komedie 1990</popis>
+        <delka>110</delka>
+    </porad>
+    
+    <porad id_poradu="jasnenka">
+        <nazev>O princezne Jasnence</nazev>
+        <typ>film</typ>
+        <popis>pohadka 1987</popis>
+        <herci ref="potm"/>
+        <delka>90</delka>
+    </porad>                
+    
+    <!-- lide -->
+    <clovek id_cloveka="mensik">
+        <jmeno>Vladimir</jmeno>
+        <prijmeni>Mensik</prijmeni>
+    </clovek>
+    
+    <clovek id_cloveka="dvorska">
+        <jmeno>Milena</jmeno>
+        <prijmeni>Dvorska</prijmeni>
+    </clovek>
+        
+    <clovek id_cloveka="hruska">
+        <jmeno>Jan</jmeno>
+        <prijmeni>Hrusinsky</prijmeni>
+    </clovek>
+    
+    <clovek id_cloveka="eben">
+        <jmeno>Marek</jmeno>
+        <prijmeni>Eben</prijmeni>
+    </clovek>    
+        
+    <clovek id_cloveka="vorel">
+        <jmeno>Miroslav</jmeno>
+        <prijmeni>Vorlicek</prijmeni>
+    </clovek>
+    
+    <clovek id_cloveka="pleskot">
+        <jmeno>Jaromir</jmeno>
+        <prijmeni>Pleskot</prijmeni>
+    </clovek>
+    
+    <clovek id_cloveka="vraz">
+        <jmeno>V.</jmeno>
+        <prijmeni>Raz</prijmeni>
+    </clovek>
+    
+    <clovek id_cloveka="vrana">
+        <jmeno>A.</jmeno>
+        <prijmeni>Vranova</prijmeni>
+    </clovek>
+    
+    <clovek id_cloveka="potm">
+        <jmeno>J.</jmeno>
+        <prijmeni>Potmesil</prijmeni>
+    </clovek>
+        
+    <clovek id_cloveka="gere">
+        <jmeno>Richard</jmeno>
+        <prijmeni>Gere</prijmeni>
+    </clovek>    
+    
+    <clovek id_cloveka="travn">
+        <jmeno>Pavel</jmeno>
+        <prijmeni>Travnicek</prijmeni>
+    </clovek>    
+    
+    <clovek id_cloveka="safr">
+        <jmeno>Libuse</jmeno>
+        <prijmeni>Safrankova</prijmeni>
+    </clovek>
+               
+    <clovek id_cloveka="strach">
+        <jmeno>Jiri</jmeno>
+        <prijmeni>Strach</prijmeni>
+    </clovek>
+    
+    <clovek id_cloveka="molnarl">
+        <jmeno>L.</jmeno>
+        <prijmeni>Molnarova</prijmeni>
+    </clovek>        
+    
+    <clovek id_cloveka="molnarp">
+        <jmeno>P.</jmeno>
+        <prijmeni>Molnarova</prijmeni>
+    </clovek>
+    
+    <clovek id_cloveka="burian">
+        <jmeno>Vlasta</jmeno>
+        <prijmeni>Burian</prijmeni>
+    </clovek>
+    
+    <clovek id_cloveka="werich">
+        <jmeno>Jan</jmeno>
+        <prijmeni>Werich</prijmeni>
+    </clovek>
+    
+    <clovek id_cloveka="zemanb">
+        <jmeno>Borivoj</jmeno>
+        <prijmeni>Zeman</prijmeni>
+    </clovek>
+    
+    <clovek id_cloveka="langmajer">
+        <jmeno>Jiri</jmeno>
+        <prijmeni>Langmajer</prijmeni>
+    </clovek>
+        
+    <clovek id_cloveka="brabec">
+        <jmeno>Jan</jmeno>
+        <prijmeni>Brabec</prijmeni>
+    </clovek>
+    
+    <clovek id_cloveka="huston">
+        <jmeno>John</jmeno>
+        <prijmeni>Huston</prijmeni>
+    </clovek>
+    
+    <clovek id_cloveka="hepburn">
+        <jmeno>Katarine</jmeno>
+        <prijmeni>Hepburn</prijmeni>
+    </clovek>
+    
+    <clovek id_cloveka="bogart">
+        <jmeno>Humphrey</jmeno>
+        <prijmeni>Bogart</prijmeni>
+    </clovek>
+    
+    <verze>01.01.08 22:12:57</verze>
+    
+</tv_program>

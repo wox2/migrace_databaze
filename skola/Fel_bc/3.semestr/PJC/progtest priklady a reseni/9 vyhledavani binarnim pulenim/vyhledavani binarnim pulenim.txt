@@ -1,0 +1,65 @@
+Úkolem je realizovat trídu CSetInt, která bude implementovat mnoinu celıch císel a rozrhraní, které umoní základní mnoinové operace. Interne bude mnoina realizovaná polem setrízenıch hodnot typu int.
+
+Verejné rozhraní mnoiny je popsáno níe. Obsahuje následující:
+
+    * Konstruktor bez parametru. Tento konstruktor inicializuje instanci trídy tak, e vzniklá instance je zatím prázdná (neobsahuje ádná císla).
+    * Destruktor. Uvolnuje prostredky, které instance alokovala.
+    * Metoda Insert (int X) pridá do existujícího objektu další prvek - celé císlo X. Metoda vrací hodnotu true, pokud byl do mnoiny prvek pridán, nebo hodnotu false pokud prvek pridán nebyl (protoe ji v mnoine existoval).
+    * Metoda Delete (int X) odstraní prvek X z mnoiny. Pokud byl prvek odstranen, vrátí metoda hodnotu true. Pokud prvek neodstraní (protoe v mnoine nebyl obsaen), vrátí metoda hodnotu false.
+    * Metoda IsSet (int X) zjistí, zda je prvek X obsen v mnoine. Vrací true, pokud ano, false, pokud ne.
+    * Metoda Size zjistí pocet prvku v mnoine.
+
+Odevzdávejte soubor, kterı obsahuje pouze implementovanou trídu CSetInt. Trída musí splnovat verejné rozhraní podle ukázky - pokud Vámi odevzdané rešení nebude obsahovat popsané rozhraní, dojde k chybe pri kompilaci. Do trídy si ale muete doplnit další metody (verejné nebo i privátní) a clenské promenné. Odevzdávanı soubor musí obsahovat jak deklaraci trídy (popis rozhraní) tak i definice metod, konstruktoru a destruktoru. Je jedno, zda jsou metody implementované inline nebo oddelene. Odevzdávanı soubor nesmí krome implementace trídy CSetInt obsahovat nic jiného, zejména ne funkci main. Pro usnadnení odevzdávání muete vyuít toho, e ProgTest definuje promennou preprocesoru __PROGTEST__.
+
+Implementovaná trída nesmí pouívat datové struktury z STL (vector, list, ...). Jejich pouití povede k chybe pri kompilaci. Trída je testovaná v omezeném prostredí, kde je limitovaná dostupná pamet (dostacuje k uloení prvku mnoiny v binární podobe) a je omezena dobou behu (25s na testovacím pocítaci pro cca 1000000 vkládanıch/odebíranıch prvku, referencní rešení pro vıpocet potrebuje cca 2.5 sec).
+
+Implementovaná trída se nemusí zabıvat kopítujícím konstruktorem ani preteováním operátoru =. V této úloze ProgTest neprovadí testy této funkcnosti.
+
+Implementace trídy musí bıt efektivní z hlediska nároku na cas i nároku na pamet. Jednoduché lineární rešení nestací (pro testovací data vyaduje cas cca 4 minuty, limit je 25s). Pri testech jsou operace dotazu cca 10x castejší ne vkládání a mazání, proto vyhovuje rešení s polem setrízenıch hodnot, kde vyhledávání probíhá binárním pulením s logaritmickou sloitostí a méne casté operace vkládání a vımaz pak s lineární sloitostí.
+Poadované verejné rozhraní trídy:
+
+class CSetInt
+ {
+   public:
+                             CSetInt                       ( void );
+                            ~CSetInt                       ( void );
+    bool                     Insert                        ( int X );
+    bool                     Delete                        ( int X );
+    bool                     IsSet                         ( int X ) const;
+    int                      Size                          ( void ) const; 
+
+   // dalsi metody a clenske promenne potrebne pro impelemntaci
+ };
+
+Ukázka pouití trídy:
+
+bool status;
+CSetInt  S1;
+status = S1 . Insert ( 10 );
+// status = true, S1 . Size () => 1
+status = S1 . Insert ( 20 );
+// status = true, S1 . Size () => 2
+status = S1 . Insert ( 30 );
+// status = true, S1 . Size () => 3
+status = S1 . IsSet  ( 20 );
+// status = true
+
+CSetInt  S2;
+status = S2 . Insert ( 10 );
+// status = true, S2 . Size () => 1
+status = S2 . Insert ( 20 );
+// status = true, S2 . Size () => 2
+status = S2 . Insert ( 30 );
+// status = true, S2 . Size () => 3
+status = S2 . IsSet  ( 30 );
+// status = true
+status = S2 . Delete ( 30 );
+// status = true, S2 . Size () => 2
+status = S2 . IsSet  ( 30 );
+// status = false
+status = S2 . Delete ( 30 );
+// status = false, S2 . Size () => 2
+status = S2 . Insert ( 30 );
+// status = true, S2 . Size () => 3
+status = S2 . IsSet  ( 30 );
+// status = true

@@ -1,0 +1,2 @@
+editace profilu - Funguje divne editace - zobrazuje se spatna ikona, pri editaci jen popisku nebo typu nefunguje save changes 
+problem s kategorii - funkce edit - neulozi se pri zmene popisku - pry uz existuje

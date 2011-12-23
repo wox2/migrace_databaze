@@ -1,0 +1,18 @@
+/* AUTOMATICALLY GENERATED ON Wed Jan 30 19:19:15 CET 2008*/
+/* DO NOT EDIT */
+
+grant {
+  permission java.io.FilePermission "-", "read, write";
+  permission java.util.PropertyPermission "user.dir", "read, write";
+
+/*
+  permission java.util.PropertyPermission "java.endorsed.dirs", "read";
+  permission java.util.PropertyPermission "sun.boot.class.path", "read";
+  permission java.util.PropertyPermission "java.ext.dirs", "read";
+  permission java.io.FilePermission "C:/Program Files/Java/jre1.6.0_03/-", "read";
+  permission java.io.FilePermission "C:/Windows/Sun/Java/lib/-", "read";
+  permission java.util.PropertyPermission "env.class.path", "read";
+  permission java.util.PropertyPermission "application.home", "read";
+  permission java.util.PropertyPermission "java.class.path", "read";
+*/
+};

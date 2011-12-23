@@ -1,0 +1,118 @@
+body
+{
+	font-family: Calibri, Verdana, Arial; /*pro Operu nezobrazuje hacky a carky */
+	margin-left: 2ex;
+}
+
+h1
+{
+	font-family: Cambria, Helvetica, Verdana;
+	font-size: 2.5ex;
+	color: rgb(54,95,145);
+	margin-bottom: 4ex;
+}
+
+h2
+{
+	font-family: Cambria, Helvetica, Verdana;
+	font-size: 2.2ex;
+	color: rgb(79,129,189);
+	margin-bottom: 0ex;
+}
+p
+{
+	margin-top: 0ex;
+		margin-bottom: 0ex;
+}
+
+address
+{
+	font-style: normal;
+}
+
+a:link
+{
+	color: #33F;
+}
+a:hover
+{
+	color: rgb(3,139,220);
+}
+
+.prosazuji
+{
+	margin-top: 0ex;
+	margin-left: 5%; /*--pri zvetsovani textu se nezvetsuje odsazeni */
+}
+
+.co_delam
+{
+	margin-top: 0ex;
+	margin-left: 5%;
+}
+
+/* IE bohuzel zarovnava i bloky */
+.centrovani
+{
+	text-align: center;
+}
+
+/* ">" nefunguje v IE */
+html > body .centrovani
+{
+	margin: 0px auto;
+	width: 50%;
+}
+html > body .centrovani table
+{
+	text-align: left;
+}
+html > body .centrovani table th
+{
+	text-align: center;
+}
+
+.hlavicka
+{
+	text-align: center;
+	background-color: #FFCC99;
+}
+
+.tabulka
+{
+	border-collapse: collapse;
+	border-color: black;
+	table-layout: fixed;
+	text-align: left;
+	caption-side:bottom;
+	width: 70%;
+}
+
+.tabulka td,
+.tabulka th{
+  border: thin solid black;
+}
+
+.tabulka tfoot th{
+  text-align: left !important;
+}
+
+.poziceObrazek
+{
+	float: right;
+	margin-right: 10%;
+	margin-top: -10%;
+	width: 25%;
+	right: 10%;
+	top: 5%;
+	min-width: 138px;
+	min-height: 300px;
+	text-align: center; /* v IE nefunguje obtekani */
+}
+
+.obrazek
+{
+	max-width: 138px;
+	max-height: 300px;
+	display:block;
+}

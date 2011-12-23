@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<katedry>
+  <katedra kod="13136">
+    <nazev>Katedra pocitacu</nazev>
+    <clen>Richta Karel</clen>
+    <clen>Pokorny Jaroslav</clen>
+    <externista>Necasky Martin</externista>
+    <clen>Svihla Martin</clen>
+    <clen>Jelinek Ivan</clen>
+    <clen>Klima Martin</clen>
+    <clen>Maly Ivo</clen>
+    <clen>Halaska Ivan</clen>
+    <clen>Valenta Michal</clen>
+  </katedra>
+  <katedra kod="13133">
+    <nazev>Katedra kybernetiky</nazev>
+    <clen>Lazansky Jiri</clen>
+    <clen>Pechoucek Michal</clen>
+    <clen>Stepankova Olga</clen>
+    <clen>Kouba Zdenek</clen>
+    <clen>Aubrecht Petr</clen>
+  </katedra>
+  <katedra kod="13115">
+    <nazev>Katedra elektroenergetiky</nazev>
+    <clen>Tlusty Josef</clen>
+  </katedra>
+</katedry>

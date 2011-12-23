@@ -1,0 +1,39 @@
+<html>
+   <title>Tabulka zÄ‚Ë‡kaznÄ‚Â­kÄ¹Å»</title>
+   <body>
+      <table>
+         <tr>
+            <th>ID</th>
+            <th>JmÄ‚Â©no</th>
+            <th>Email</th>
+            <th>Telefon</th>
+            <th>Adresa</th>
+            <th>Typ adresy</th>
+         </tr>
+         <tr>
+            <td>ID21577</td>
+            <td>Lukáš Viezán</td>
+            <td>viezaluk@fel.cvut.cz</td>
+            <td>123 456 789</td>
+            <td>Nekonečná, 1200, Brno, 12087</td>
+            <td> Dorucovaci </td>
+         </tr>
+         <tr>
+            <td>ID21577</td>
+            <td>Lukáš Viezán</td>
+            <td>viezaluk@fel.cvut.cz</td>
+            <td>123 456 789</td>
+            <td>Nekonečná, 1200, Praha 10, 12087</td>
+            <td> Dorucovaci </td>
+         </tr>
+         <tr>
+            <td>ID21577</td>
+            <td>Lukáš Viezán</td>
+            <td>viezaluk@fel.cvut.cz</td>
+            <td>123 456 789</td>
+            <td>Nekonečná, 1200, Praha 10, 12087</td>
+            <td> Bydliste </td>
+         </tr>
+      </table>
+   </body>
+</html>

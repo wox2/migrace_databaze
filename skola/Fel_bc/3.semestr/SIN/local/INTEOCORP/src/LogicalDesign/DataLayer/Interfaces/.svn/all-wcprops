@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/courses/36sin/INTEOCORP/!svn/ver/420/src/LogicalDesign/DataLayer/Interfaces
+END
+IZastupceZakaznikaDAO.java
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/courses/36sin/INTEOCORP/!svn/ver/420/src/LogicalDesign/DataLayer/Interfaces/IZastupceZakaznikaDAO.java
+END
+IPozadavekDAO.java
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/courses/36sin/INTEOCORP/!svn/ver/420/src/LogicalDesign/DataLayer/Interfaces/IPozadavekDAO.java
+END
+IKomentarPozadavkuDAO.java
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/courses/36sin/INTEOCORP/!svn/ver/420/src/LogicalDesign/DataLayer/Interfaces/IKomentarPozadavkuDAO.java
+END
+IZamestnanecDAO.java
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/courses/36sin/INTEOCORP/!svn/ver/420/src/LogicalDesign/DataLayer/Interfaces/IZamestnanecDAO.java
+END
+IUkolDAO.java
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/courses/36sin/INTEOCORP/!svn/ver/420/src/LogicalDesign/DataLayer/Interfaces/IUkolDAO.java
+END
+IKomentarUkolu.java
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/courses/36sin/INTEOCORP/!svn/ver/420/src/LogicalDesign/DataLayer/Interfaces/IKomentarUkolu.java
+END
+IProjektDAO.java
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/courses/36sin/INTEOCORP/!svn/ver/420/src/LogicalDesign/DataLayer/Interfaces/IProjektDAO.java
+END

@@ -1,0 +1,302 @@
+
+Importing Model from XMI
+Root Package: Model
+Add Classifier Role: PackageModel
+Add Classifier Role: RequirmentsModel
+Add Classifier Role: BusinessProcessModel
+Add Classifier Role: DeploymentModel
+Add Classifier Role: BusinessObjectModel
+Append Package: BusinessObjectModel
+Add Classifier: StavPozadavku
+Add Classifier: KomentarPozadavku
+Add Classifier: Ukol
+Add Classifier: StavUkolu
+Add Classifier: TypUkolu
+Add Classifier: PrioritaUkolu
+Add Classifier: Komentar
+Add Classifier: Zamestnanec
+Add Classifier: Uzivatel
+Add Classifier: Pozadavek
+Add Classifier: Zakaznik
+Add Classifier: KomentarUkolu
+Add Classifier: Projekt
+Add Classifier: ZastupceZakaznika
+Add Classifier: Opravneni
+Add State: Rozpracovany
+Add State: 
+Add State: Hotovy
+Add State: Otevreny
+Add State: Novy
+Add State: Uzavreny
+Add State: 
+Add State: 
+Add State: 
+Append Package: BusinessProcessModel
+Add Classifier: Nutnost vypracovat ukol
+Add Classifier: Info ostatnim komentujicim a pridelenemu zamestnanci
+Add Classifier: 
+Add Classifier: Informace o ukolu
+Add Classifier: Event2
+Add Classifier: Informovani zakaznika a spravce projektu
+Add Classifier: informovani zamestnance
+Add Classifier: 
+Add Classifier Role: 
+Add Classifier Role: 
+Add Classifier Role: 
+Add Classifier Role: UC01 - Vytvorit Projekt
+Add Classifier Role: 
+Add Classifier Role: 
+Add Classifier Role: 
+Add Classifier Role: Issue1
+Add Classifier Role: 
+Add Classifier Role: UC13 - Vytvorit Zakaznika
+Add Classifier Role: UC10 - Komentovat ukol
+Add Classifier Role: UC06 - Komentovat pozadavek
+Add Classifier Role: 
+Add Classifier Role: 
+Add Classifier Role: UC06 - Komentovat pozadavek
+Add Classifier Role: 
+Add Classifier Role: 
+Add Classifier Role: UC04 - Vytvorit ukol
+Add Classifier Role: 
+Add Classifier Role: UC05 - Vytvorit pozadavek
+Add Classifier Role: UC16 - Uprava zakaznika
+Add Classifier Role: UC09 - Oznacit ukol za hotovy
+Add Classifier Role: 
+Add Classifier Role: 
+Add Classifier Role: UC07 - Uzavrit pozadavek
+Add Classifier Role: UC08 - Pridelit zamestnance k úkolu
+Add Classifier Role: UC02-Upravit Projekt
+Add Classifier Role: 
+Add State: 
+Add State: 
+Add State: Oznaci ukol za hotovy
+Add State: ZakaznikOsoba
+Add State: 
+Add State: Zhodnoti pozadavek
+Add State: vytvoreni ukolu
+Add State: Spravce projektu
+Add State: vytvoreni ukolu
+Add State: vyber prvniho kandidata ze seznamu
+Add State: Oznaceni ukolu za hotovy
+Add State: Ma opravneni?
+Add State: Je potreba ujasnit zadani?
+Add State: Je vytvorena spolecnost (zakaznik)?
+Add State: admin
+Add State: Je nutne pridat komentar?
+Add State: 
+Add State: 
+Add State: Je pozadavek realny?
+Add State: Vyhledat ukol
+Add State: Vytvoreni zakaznika
+Add State: 
+Add State: 
+Add State: Odpovi zakaznikovi
+Add State: Uzavre pozadavek
+Add State: Vytvoreni zakaznika
+Add State: 
+Add State: Je pozadavek realny
+Add State: 
+Add State: Sprava projektu
+Add State: Zakaznik
+Add State: Vytvorit novou osobu
+Add State: 
+Add State: 
+Add State: Osoba
+Add State: Sprava uzivatelu
+Add State: 
+Add State: vytvoreni poradi zamestnancu podle vhodnosti
+Add State: Upresnovani zadani ukolu
+Add State: prirazeni ukolu zamestnanci
+Add State: 
+Add State: 
+Add State: Potrebuje vyresit problem
+Add State: 
+Add State: Nastavit nazev
+Add State: 
+Add State: zhodnoceni zamestnanosti kandidata
+Add State: Priradit projekt Spravci
+Add State: ma moc ukolu?
+Add State: Vytvoreni popisu
+Add State: Admin
+Add State: Pojmenovat projekt
+Add State: Zapsat komentar
+Add State: Pridat komentar
+Add State: Zalozit projekt
+Add State: Vytvoreni pozadavku
+Add State: Pracuje na ukolu
+Add State: 
+Add State: Vytvoreni zakaznika
+Add State: Komentuje ukol
+Add State: Existuje zakaznik se stejnym nazvem?
+Add State: Je potreba komentovat ukol?
+Add State: urceni vhodnosti zamestnancu
+Add State: otevreni projektu
+Add State: prideleni ukolu zamestnanci
+Add State: 
+Add State: Zamestnanec prideleny k ukolu
+Add State: Sprava zakazniku
+Add State: Priradit spolecnost (zakaznik) k projektu
+Add State: Activity1
+Add State: Komentuje ukol
+Add State: Priradit osobu k spolecnosti (zakaznik)
+Add State: Pridat komentar
+Add State: Admin
+Add State: Vyhledat projekt
+Add State: Vytvoreni ukolu
+Add State: Splni ukol
+Add State: 
+Add State: Pridat komentar
+Add State: 
+Add State: Sprava ukolu
+Add State: odstraneni kandidata ze seznamu
+Add State: Odesle emailem pozadavek na vytvoreni ukolu spravci projektu
+Add State: 
+Add State: Zakaznik prida pozadavek a jeho popis (prvni komentar)
+Add State: Vytvareni osob (zakaznik)
+Add State: 
+Add State: Vytvoreni projektu
+Add State: 
+Add State: Komentovani ukolu
+Add State: Zpracovani ukolu
+Add State: 
+Add State: vyhledani projektu
+Add State: admin
+Add State: 
+Add State: Spravce projektu
+Append Package: RequirmentsModel
+Add Classifier Role: NonFunctionalRequiments
+Add Classifier Role: Use Case Model
+Add Classifier Role: FunctionalRequiments
+Append Package: FunctionalRequiments
+Add Classifier Role: RQ19:Smazani zakaznika
+Add Classifier Role: RQ10: vyhledat ukol podle kriteria
+Add Classifier Role: RQ04: Oznaceni pozadavku za uzavreny
+Add Classifier Role: RQ01: Evidence pozadavku
+Add Classifier Role: RQ17:Evidence zakazniku
+Add Classifier Role: RQ23: Editace uzivatele
+Add Classifier Role: RQ09: Prideleni ukolu zamestnanci
+Add Classifier Role: RQ14:Prirazeni zakaznika k projektu
+Add Classifier Role: RQ07: Pridani komentare k ukolu
+Add Classifier Role: RQ22: Smazani uzivatele
+Add Classifier Role: RQ05: Vyhledani pozadavku podle kriterii
+Add Classifier Role: RQ02: Vytvoreni pozadavku
+Add Classifier Role: RQ03: Vytvoreni komentare k pozadavku
+Add Classifier Role: RQ15: Prirazeni vedouciho projektu
+Add Classifier Role: RQ20: Evidence uzivatelu
+Add Classifier Role: RQ11: Vytvoreni ukolu
+Add Classifier Role: RQ06: Evidence Ukolu
+Add Classifier Role: RQ12:Evidence projektu
+Add Classifier Role: RQ13:Vytvoreni projektu
+Add Classifier Role: RQ21: Vytvoreni noveho uzivatele
+Add Classifier Role: RQ18:Vytvoreni zakaznika
+Add Classifier Role: RQ08: Oznaceni ukolu za hotovy
+Add Classifier Role: RQ16:Uprava projektu
+Append Package: NonFunctionalRequiments
+Add Classifier Role: RQ25:System bude ovladat pomoci GUI
+Add Classifier Role: RQ24:System musi byt jednoduse ovladatelny
+Add Classifier Role: RQ27:System musi bezet na vsech platformach
+Add Classifier Role: RQ26:System musi bezet jako webova aplikace
+Add Classifier Role: RQ29:System musi zvladat velky pocet prihlasenych uzivatelu
+Add Classifier Role: RQ33: GUI musi umet vice jazyku
+Add Classifier Role: RQ32:Spojeni se serverem musi byt bezpecne
+Add Classifier Role: RQ31:Uzavrene projekty budou zalohovany
+Add Classifier Role: RQ28:System musi byt nenarocny na HW prostredi
+Add Classifier Role: RQ30:System musi byt odolny vuci naruseni
+Append Package: Use Case Model
+Add Classifier Role: Primary Use Cases
+Add Classifier Role: Actors
+Append Package: Actors
+Add Classifier: Uživatel
+Add Classifier: Spravce Projektu
+Add Classifier: Zakaznik osoba
+Add Classifier: Zamestnanec prideleny k ukolu
+Add Classifier: Admin
+Add Classifier: Zamestnanec
+Append Package: Primary Use Cases
+Add Classifier Role: Ukoly a pozadavky
+Add Classifier Role: Sprava Uzivatelu
+Add Classifier Role: Sprava Projektu
+Add Classifier Role: Sprava Zakaznikov
+Append Package: Sprava Projektu
+Add Classifier: UC13 - Vyhladat Projekt
+Add Classifier: UC02 - Upravit projekt
+Add Classifier: UC01 - Vytvorit projekt
+Add Classifier: UC03 - Ukoncit projekt
+Add Classifier Role: System
+Append Package: Sprava Uzivatelu
+Add Classifier: UC 16: Vytvoreni uzivatele
+Add Classifier: UC 15: Editace uzivatele
+Add Classifier: UC 17: Smazani uzivatele
+Add Classifier: UC 18: Vyhledani uzivatele
+Add Classifier Role: System
+Append Package: Sprava Zakaznikov
+Add Classifier: UC14 - Vyhladat Zakaznika
+Add Classifier: UC12 - Zmazat Zakaznika
+Add Classifier: UC13 - Vytvorit Zakaznika
+Add Classifier: UC16 - Uprava Zakaznika
+Add Classifier Role: System
+Append Package: Ukoly a pozadavky
+Add Classifier: UC04 - Vytvorit ukol
+Add Classifier: UC09 - Oznacit ukol za hotovy
+Add Classifier: UC07 - Uzavrit pozadavek
+Add Classifier: UC06 - Komentovat pozadavek
+Add Classifier: UC08 - Pridelit zamestnance k úkolu
+Add Classifier: UC10 - Komentovat ukol
+Add Classifier: UC05 - Vytvorit pozadavek
+Add Classifier Role: System
+Append Package: PackageModel
+Add Classifier Role: entity
+Add Classifier Role: presentation
+Add Classifier Role: bussiness
+Add Classifier Role: data
+Add Classifier Role: dao
+Append Package: bussiness
+Append Package: dao
+Append Package: data
+Append Package: entity
+Append Package: presentation
+Add Classifier Role: controller
+Add Classifier Role: view
+Append Package: controller
+Append Package: view
+Append Package: DeploymentModel
+Add Classifier: DB server
+Add Classifier: ExecutionEnvironment1
+Add Classifier: Tenky klient
+Add Classifier: Webovy server
+Resolving Classifiers
+Resolving Owners
+Resolve Package Links
+Add Extensions
+Add Diagrams
+Adding Diagram : BusinessObjectModel
+Adding Diagram : BusinessObjectModel
+Adding Diagram : StateMachine
+Adding Diagram : BusinessProcessModel
+Adding Diagram : Pridani komentare
+Adding Diagram : Vytvoreni ukolu
+Adding Diagram : Prideleni ukolu zamestnanci
+Adding Diagram : Vytvoreni projektu
+Adding Diagram : Reseni ukolu
+Adding Diagram : Vytvoreni zakaznika
+Adding Diagram : Vytvoreni ukolu
+Adding Diagram : RequirmentsModel
+Adding Diagram : FunctionalRequirments
+Adding Diagram : NonFunctionalRequirments
+Adding Diagram : Use Case Model
+Adding Diagram : Actors
+Adding Diagram : Primary Use Cases
+Adding Diagram : Sprava Projektu
+Adding Diagram : Sprava Uzivatelu
+Adding Diagram : Sprava Zakaznikov
+Adding Diagram : Ukoly a pozadavky
+Adding Diagram : Package Diagram
+Adding Diagram : Deployment Model
+Resolving DiagramIDs
+Resolving Association Classes
+Resolving Parameter Types
+Resolving Attribute Types
+Resolving Note links
+Fixup external references
+Import Complete!

@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/courses/36sin/INTEOCORP/!svn/ver/420/src/LogicalDesign/PresentationLayer
+END
+Main.java
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/courses/36sin/INTEOCORP/!svn/ver/420/src/LogicalDesign/PresentationLayer/Main.java
+END
+AbstractController.java
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/courses/36sin/INTEOCORP/!svn/ver/420/src/LogicalDesign/PresentationLayer/AbstractController.java
+END
+AbstractForm.java
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/courses/36sin/INTEOCORP/!svn/ver/420/src/LogicalDesign/PresentationLayer/AbstractForm.java
+END
+FormListener.java
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/courses/36sin/INTEOCORP/!svn/ver/420/src/LogicalDesign/PresentationLayer/FormListener.java
+END

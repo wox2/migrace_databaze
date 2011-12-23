@@ -1,0 +1,79 @@
+<?xml version='1.0' encoding='windows-1252'?>
+
+<!-- DTD k cviceni z predmetu XML, fotbalovy_zapas -->
+
+<!ELEMENT fotbalovy_zapas (karty|fauly|goly|skore|rozhodci|muzstvo|zaznam)*>
+<!ATTLIST fotbalovy_zapas
+    jmeno_turnaje CDATA #FIXED "fotbalovy turnaj pseudohvezd">
+<!ELEMENT muzstvo (sestava)?>
+<!ATTLIST muzstvo
+    domaci CDATA #REQUIRED
+    id ID #REQUIRED
+    hoste (ano|ne) "ano"
+>
+
+<!ELEMENT sestava (hrac+)*>
+
+<!ELEMENT hrac (kapitan?|cislo)*>
+
+<!ELEMENT cislo (#PCDATA|prezdivka|jmeno|faul)*>
+<!ATTLIST cislo
+    id ID  #REQUIRED
+  >
+
+  <!ELEMENT faul (faul_s_zlutou_kartou|faul_s_cervenou_kartou)*>
+  <!ELEMENT faul_s_zlutou_kartou EMPTY>
+  <!ATTLIST faul_s_zlutou_kartou id ID #REQUIRED
+  faulovany_hrac CDATA #IMPLIED
+  >
+
+  <!ELEMENT faul_s_cervenou_kartou EMPTY>
+  <!ATTLIST faul_s_cervenou_kartou
+            id ID #REQUIRED
+            faulovany_hrac CDATA #IMPLIED
+  >
+
+<!ELEMENT jmeno (#PCDATA)>
+
+<!ELEMENT prezdivka (#PCDATA)>
+
+<!ELEMENT kapitan (#PCDATA)>
+
+<!ELEMENT rozhodci (vedlejsi|hlavni)*>
+
+<!ELEMENT hlavni (prezdivka|jmeno)*>
+
+<!ELEMENT vedlejsi EMPTY>
+
+<!ELEMENT skore (vysledne|polocas)*>
+
+<!ELEMENT polocas (#PCDATA)>
+
+<!ELEMENT vysledne ANY>
+
+<!ELEMENT goly (#PCDATA|skorujici_hrac)*>
+
+<!ELEMENT skorujici_hrac EMPTY>
+
+<!ATTLIST skorujici_hrac id_ref IDREF #REQUIRED>
+
+<!ELEMENT fauly ANY>
+ 
+<!ELEMENT karty (cervene|zlute)*>
+
+<!ELEMENT zlute (#PCDATA|faulujici_zluty_hrac)*>
+<!ELEMENT faulujici_zluty_hrac EMPTY>
+<!ATTLIST faulujici_zluty_hrac id_ref IDREF #REQUIRED>
+
+
+<!ELEMENT cervene (#PCDATA|faulujici_cerveny_hrac)*>
+
+<!ELEMENT faulujici_cerveny_hrac EMPTY>
+<!ATTLIST faulujici_cerveny_hrac id_ref IDREF #REQUIRED>
+<!ELEMENT zaznam ANY>
+
+<!-- Etity copyright a zadani zpusobuji problemy pri prohlizeni XML dokumentu v Mozzilla Firefox 
+a Google Chrome, v IE a pri prohlizeni stranky v PSPadu ( Page Viewer ) funguje vse dobre-->
+<!ENTITY copyright "Copyright: Martin Lukes, 30.9. 2009">
+<!ENTITY zadani SYSTEM "zadani.xml">
+<!ELEMENT zadani ANY>

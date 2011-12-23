@@ -1,0 +1,10 @@
+git add .
+git status
+git pull
+git push
+git commit -am "message"
+
+
+//odstraneni commitu - radsi nedelat
+git reset --hard HEAD~1
+git push origin HEAD --force

@@ -1,0 +1,47 @@
+Úkolem je realizovat program, který provede extrakci tagu z XML souboru. Vstupem programu je soubor formátovaný podle XML pravidel na standardním vstupu (cin). Soubor muže obsahovat otevírací tagy, uzavírací tagy, kombinované otevírací/uzavírací tagy (singleton) a volný text mezi tagy. Je garantováno, že XML na vstupu je platný (tagy párují, jsou správne vnorované, XML neobsahuje syntaktcké chyby). Dále je garantováno, že soubor neobsahuje komentáre, processing information (<? ?>), direktivy (<! ) ani sekce CDATA. Realizovaný program nemusí žádnou z techto podmínek testovat, není to jeho úkolem.
+
+Vstupní XML soubor je predán programu na standardní vstup (cin).
+
+Výstupem programu je seznam tagu, které se v programu vyskytly. Program zobrazí tagy, ze kterých oreže atributy. Tagy budou zobrazené odsazene, na každou úroven vnorení tagu o dve mezery.
+Ukázka práce programu pro vstup:
+
+<html>
+<head>
+<title> toto je jmeno </title>
+<singleton />
+
+</head>
+<body>
+ text mimo tagy
+ <open with="attr" >
+  <singleton with="attr" />
+ </open>
+ text
+</body>
+</html>
+
+<html>
+  <head>
+    <title>
+    </title>
+    <singleton />
+  </head>
+  <body>
+    <open>
+      <singleton />
+    </open>
+  </body>
+</html>
+
+Nápoveda:
+
+    * Vstup koncí po dozažení konce souboru (cin . eof ()).
+    *
+    * Ignorujte text mimo tagy (PCDATA).
+    * Využijte metodu cin . ignore (), abyste preskocili PCDATA na vstupu. Využijte toho, že metoda má druhý nepovinný parametr, který udává oddelovac. Oddelovacem je standardne konec rádky, ale lze jej nastavit dle vlastní volby.
+    * Analogicky (napr. pro nactení obsahu tagu vcetne atributu) lze použít volání istream & getline ( istream &, string &, int delim ), kde nastavíte oddelovac delim (poslední parametr) na vetšítko (konec tagu).
+    * Realizujte funkci, která po zavolání nacte další tag ze vstupu a vrátí jeho typ (otevírací, zavírací, singleton) a jeho jméno.
+    * Za každou (i poslední) rádkou výpisu je odrádkování (endl).
+    *
+    * U tagu typu singleton je pred lomítkem mezera.
+    * Úloha není složitá. Díky tomu, že není nutné kontrolovat správnost XML na vstupu se dá realiovat na cca 70 rádek kódu.

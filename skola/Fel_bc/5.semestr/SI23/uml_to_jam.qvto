@@ -1,0 +1,590 @@
+import stereotypes;
+import debugging;
+import extensions;
+import postprocess_all;
+
+modeltype uml uses "http://www.eclipse.org/uml2/2.0.0/UML";
+modeltype jam uses "http://www.collectionspro.eu/jam/mm";
+
+/*
+The transformation takes an UML model 'inModel' and transfroms it to JAM model 'outModel'.
+
+Jam model 'inBaseModel' is used as a minimum output model, so it is copied to 'outModel'
+at the beginning. The key reason for the base model is that it contains predefined primitive
+classes and collection classes. UML primitives are translated to these Jam primitive classes
+and instances of UML MultiplicityElement are translated to Jam collection generic classes with
+approprite type argument.
+*/
+transformation uml_to_jam(in inModel : uml, in inBaseModel : jam, out outModel : jam);
+
+configuration property copyBaseModel : Boolean;
+configuration property postprocessModel : Boolean;
+
+// Qulified names of predefined collection classes from model 'inBaseModel'.
+// These classes are used to translate UML::MultiplicityElement to Jam environment.
+property c_Collection_OrderedSet : String = "collections.OrderedSet";
+property c_Collection_Sequence : String = "collections.Sequence";
+property c_Collection_Set : String = "collections.Set";
+property c_Collection_Bag : String = "collections.Bag";
+
+// Names of UML stereotypes describing special fetures of UML model elements which are necessary
+// to fully describe features supported by Jam metamodel
+property c_Stereotype_Parameter : String = "JAMProfile::Param";
+property c_Stereotype_SAOperation : String = "JAMProfile::SA";
+property c_Stereotype_SAClass : String = "JAMProfile::SAClass";
+property c_Stereotype_Operator : String = "JAMProfile::Operator";
+property c_Stereotype_NativeClass : String = "JAMProfile::NativeClass";
+property c_Stereotype_PrimitiveClass : String = "JAMProfile::PrimitiveClass";
+
+main() {
+	// Initial structural checks
+	assert(inModel.rootObjects()[uml::Model]->size() = 1);
+	assert(inModel.objectsOfType(uml::Model)->size() = 1);
+	assert(inBaseModel.rootObjects()->size() = 1);
+	assert(inBaseModel.rootObjects()![true].oclIsKindOf(jam::utils::Model));
+
+	Info(">>> Start");
+	if (this.copyBaseModel) then {
+		// Copy the whole input jam model 'inBaseModel' (containing at least predefined jam
+		// primitives and collections classes).
+		// Target model is outModel implicitly - it is the only model with 'out' direction specification
+		inBaseModel.rootObjects().deepclone();
+	} endif;
+
+	// Transform/map UML model to jam model - raw structure at first iteration
+	inModel.objectsOfType(uml::Model).xmap toModel();
+
+	// Resoleve references to concrete classes
+	outModel.objects()->select(a | a.oclIsKindOf(jam::kernel::ConcreteTypeSpecification))
+			.oclAsType(jam::kernel::ConcreteTypeSpecification)
+			->reject(getConcreteClass() != null).xmap resolveConcreteClass();
+
+
+	// Postprocess the output model
+	if(postprocessModel) then {
+		new postprocess_all(outModel).transform();
+	} endif;
+}
+
+helper getReferencingModel() : jam {
+	if (this.copyBaseModel) then
+		return outModel
+	endif;
+
+	return inBaseModel;
+}
+
+mapping uml::Model::toModel() : jam::utils::Model {
+	init {
+		if (this.copyBaseModel) then
+			result := outModel.objectsOfType(jam::utils::Model)->asSequence()->first()
+		endif;
+	}
+	//result.toplevelElements += .oclAsType(jam::utils::ToplevelModelElement);
+	result.rootElements += self.subobjectsOfKind(Package).oclAsType(Package)
+		->xmap toPackage();
+}
+
+//abstract mapping uml::NamedElement::toJam() : jam::kernel::PackageableElement;
+
+/*query String::firstToLower() : String {
+	return self.substring(1,1).toLower()+self.substring(2,self.length())
+}*/
+
+mapping uml::Package::toPackage() : jam::kernel::Package
+inherits uml::PackageableElement::toPackageableElement
+when {self.name <> 'UML Standard Profile'}
+{
+	init {
+		Info("--------------------------------------------");
+		Info("Package: " + self.name);
+	}
+
+	result.name := self.name.toLower();
+	result.ownedElements += self.subobjectsOfType(Package).oclAsType(Package)->xmap toPackage();
+	result.ownedElements += self.subobjectsOfType(Class).oclAsType(Class)->xmap toClass();
+	result.ownedElements += self.subobjectsOfType(DataType).oclAsType(DataType)->xmap toClass();
+	result.ownedElements += self.subobjectsOfType(Enumeration).oclAsType(Enumeration)->toEnumeration();
+}
+
+mapping uml::Class::toClass() : jam::kernel::Class
+disjuncts uml::Class::toSAClass, uml::Class::toNormalClass
+{
+	ERR("not reachable: uml::Class::toClass");
+}
+
+mapping uml::DataType::toClass() : jam::kernel::Class
+inherits uml::Classifier::toClass
+{
+	init {
+		Info("DataType: " + self.name);
+	}
+	//TODO ??
+}
+
+mapping uml::Enumeration::toEnumeration() : jam::kernel::Enumeration
+inherits uml::Classifier::toClass
+{
+	init {
+		Info("Enumeration: " + self.name);
+	}
+	assert(self.parents()->isEmpty());
+	assert(self.ownedTemplateSignature->isEmpty());
+	assert(self.member = self.ownedLiteral);
+
+	result.name := self.name;
+	result.ownedLiterals := self.ownedLiteral->xmap toEnumerationLiteral();
+}
+
+mapping uml::EnumerationLiteral::toEnumerationLiteral() : jam::kernel::EnumerationLiteral
+{
+	Info("	EnumerationLiteral: " + self.name);
+	result.name := self.name;
+	// TODO: ??
+}
+
+helper uml::Classifier::newClassImpl(isPrimitive : Boolean, stereotype : Stereotype) : jam::kernel::ClassImplementation
+{
+	var impl : jam::kernel::ClassImplementation;
+	return object impl : jam::kernel::ClassImplementation {
+			impl.isPrimitive := isPrimitive;
+			impl.implementationClass := stereotype.getString(self,"implementationClass",null);
+			if (not isPrimitive) then
+				impl.implementationInterface := stereotype.getString(self,"implementationInterface",null)
+			endif;
+			// TODO: Its not yet in the stereotype
+			impl.typeArguments := null;
+		}
+}
+
+mapping uml::Classifier::toClass() : jam::kernel::Class
+inherits uml::PackageableElement::toPackageableElement
+{
+	result.name := self.name;
+	result.isAbstract := self.isAbstract;
+	result.isFinal := self.isLeaf;
+	result.parentTypes := self.generalization
+		->collect(x | x.general.map toConcreteTypeSpecification(self.templateBinding, x.repr()));
+
+	result.ownedOperations += self.feature[uml::Operation]->xmap toOperation();
+	result.ownedProperties += self.attribute->xmap toProperty();
+	result.ownedParameters := self.attribute
+			->select(a | a.hasAppliedStereotype(c_Stereotype_Parameter))->xmap toProperty();
+
+	result.ownedOperators := self.feature[uml::Operation]
+			->select(a | a.hasAppliedStereotype(c_Stereotype_Operator))->xmap toOperators()
+			->flatten()	;
+
+	var stereotype : Stereotype := self.getAppliedStereotype(c_Stereotype_NativeClass);
+	if (stereotype != null) then {
+		result.implementation := self.newClassImpl(false,stereotype);
+	} endif;
+	stereotype := self.getAppliedStereotype(c_Stereotype_PrimitiveClass);
+	if (stereotype != null) then {
+		result.implementation := self.newClassImpl(true,stereotype);
+	} endif;
+
+	result.constraints += self.ownedRule.xmap toCondition(self);
+
+	result.classOwnedExtensions := self.xmap toClassExtensions();
+}
+
+mapping uml::Class::toClassCommon() : jam::kernel::Class
+inherits uml::Classifier::toClass,
+		 uml::TemplateableElement::toTemplateableElement
+{
+	init {
+		Info("Class: " + self.name);
+	}
+}
+
+mapping uml::Class::toSAClass() : jam::saclasses::SAClass
+inherits uml::Class::toClassCommon
+	when {self.hasAppliedStereotype(c_Stereotype_SAClass)}
+{
+	init {
+		Info("SAClass: " + self.name);
+	}
+	var saclass : Stereotype = self.getAppliedStereotype(c_Stereotype_SAClass);
+
+	// We do NOT specify StateMachineInitiator, this it is defined in DSL later in the process
+	result.machineInitiator := null;
+
+	result.ownedStateAwareOperations := self.ownedOperation
+			->select(a | a.hasAppliedStereotype(c_Stereotype_SAOperation))->xmap toOperation();
+}
+
+mapping uml::Class::toNormalClass() : jam::kernel::Class
+inherits uml::Class::toClassCommon
+	when {not self.hasAppliedStereotype(c_Stereotype_SAClass)}
+{
+}
+
+mapping uml::Class::toTypeParameter() : jam::kernel::TypeParameter {
+	Info("		TypeParameter: " + self.name);
+	result.name := self.name;
+	// TODO
+	result.upperBound := null;//self;
+}
+
+abstract mapping uml::ParameterableElement::toTypeParameter() : jam::kernel::TypeParameter;
+
+abstract mapping uml::TemplateableElement::toTemplateableElement() : jam::kernel::TemplateableElement {
+	Info("	+ toTemplateableElement");
+	result.typeParameters := self.ownedTemplateSignature.parameter.parameteredElement->xmap toTypeParameter();
+}
+
+mapping uml::Operation::toOperators() : Set(jam::kernel::Operator)
+when {self.hasAppliedStereotype(c_Stereotype_Operator)}
+{
+/*	assert(self.owner.oclIsKindOf(uml::Class));
+
+	var op : Stereotype = self.getAppliedStereotype(c_Stereotype_Operator);
+	var owner : uml::Class = self.owner.oclAsType(uml::Class);
+
+	owner.ownedOperation;
+
+	var ops := self.getValue(op,"opertions").oclAsType(Set(uml::Operation));
+	var res : Set(jam::kernel::Operator) := Set{};
+
+	ops->forEach(x) {
+		res := res->including(object jam::kernel::Operator {
+		});
+	};
+	result := res;
+*/
+}
+
+mapping uml::Operation::toOperation() : jam::kernel::Operation
+inherits uml::TemplateableElement::toTemplateableElement,
+		 uml::Element::toTypedElement
+when {not self.hasAppliedStereotype(c_Stereotype_Operator)}
+{
+	init {
+		Info("	Operation: " + self.name);
+	}
+
+	result.name := self.name;
+
+	result.parameters += self.ownedParameter->select(p | p.direction != ParameterDirectionKind::_return).xmap toParameter();
+	result.isStatic := self.isStatic;
+	result.isQuery := self.isQuery;
+	result.isAbstract := self.isAbstract;
+	result.isFinal := self.isLeaf;
+	// TODO:
+	result.isNative := false;
+
+	// self.ownedParameterSet ???
+
+	// TODO: binding!
+	result.type := self.type.xmap toTypeSpecificationME(Set{},self.getReturnResult(),self.repr());
+	// TODO:
+	result.redefinedOperation;
+	if self.redefinedOperation->notEmpty() then
+		self.redefinedOperation->forEach(o) {
+			log(o.repr());
+		}
+	endif;
+
+}
+
+abstract mapping uml::PackageableElement::toPackageableElement() : jam::kernel::PackageableElement
+{
+	result.packageableElementOwnedExtensions := self.xmap toPackageableElementExtensions();
+}
+
+abstract mapping uml::Element::toTypedElement() : jam::kernel::TypedElement
+{
+	result.typedElementOwnedExtensions := self.xmap toTypedElementExtensions();
+}
+
+mapping uml::Property::toProperty() : jam::kernel::Property
+inherits uml::Element::toTypedElement
+when {self.isNavigable()}
+{
+	init {
+		Info("	Property: " + self.name);
+	}
+
+	result.name := self.name;
+	result.isSettable := (self.visibility = uml::VisibilityKind::public and not self.isReadOnly);
+	result.isReadable := (self.visibility = uml::VisibilityKind::public or self.visibility = uml::VisibilityKind::protected);
+	// ??
+	result.isContainment := self.isComposite;
+	result.isOptional := self.lowerBound() = 0;
+
+	if (self.opposite <> null) then {
+		result.opposite := self.opposite.xmap toProperty();
+		Info("		opposite: " + self.opposite.qualifiedName);
+	} endif;
+
+	//TODO: binding : Set(uml::TemplateBinding),
+	result.type := self.type.xmap toTypeSpecificationME(Set{},self,self.repr());
+
+	if (result.type.isConcrete()) then {
+		var concrete : jam::kernel::Class = result.type.getConcreteClass();
+		if concrete.isContainer then {
+			if (self.lowerBound() > 0) then {
+				//result.constraints += newCollSizeConstraint(self.name,'>=',self.lowerBound())
+				Warning("Constraint on lower bound omitted: "+ self.qualifiedName);
+			} endif;
+			if (self.upperBound() >= 0) then
+				result.constraints += newCollSizeConstraint(self.name,'<=',self.upperBound())
+			endif
+		} endif;
+	} endif;
+
+
+	if (self._default != null) then
+		result.initialValue := object jam::expressions::OpaqueExpression {
+				 expression := self._default;
+			}
+	endif;
+
+	assert(self.owner.oclIsKindOf(uml::Namespace));
+	// Select all contraints defined on owner which are constraining this property
+	var constraints : Set(uml::Constraint) := self.owner.oclAsType(uml::Namespace).ownedRule
+				->select(c : uml::Constraint | c.constrainedElement->includes(self));
+
+	result.constraints += constraints->xmap toCondition(self);
+
+	result.propertyOwnedExtensions := self.xmap toPropertyExtensions();
+}
+
+//TODO: implement
+// 	For now, it is implemented in code generator template
+/*
+helper newHasOpositeConstraint(prop1 : jam::kernel::Property) : jam::expressions::Condition {
+	var res : jam::expressions::Condition = object jam::expressions::Condition {};
+	res.condition := object jam::expressions::Operation {
+		??
+	};
+	return res;
+}
+*/
+
+helper newCollSizeConstraint(collname : String, operatorStr : String, size : Integer) : jam::expressions::Condition {
+	var res : jam::expressions::Condition = object jam::expressions::Condition {};
+
+	res.condition := object jam::expressions::Operation {
+		left := object jam::expressions::PropertyAccessChain {
+			left := object jam::expressions::SimpleName {
+				name := collname;
+			};
+			right := object jam::expressions::PropertyAccess {
+				operator := '.';
+				name := object jam::expressions::SimpleName {
+					name := 'size';
+				};
+				args := object jam::expressions::ArgumentList {
+				};
+			}
+		};
+		operator := operatorStr;
+		right := object jam::expressions::IntegerLiteral {
+			value := size;
+		}
+	};
+	return res;
+}
+
+// The parameter is necessary for creating more instances
+mapping uml::Constraint::toCondition(target : uml::Element) : jam::expressions::Condition
+//test false instead of assertion
+	when {true}
+{
+	assert(self.specification.oclIsKindOf(uml::OpaqueExpression));
+	result.condition := object jam::expressions::OpaqueExpression {
+		expression := self.specification.oclAsType(uml::OpaqueExpression)._body
+						->iterate(item : String; res : String = '' | res.concat(item.concat('\n')))
+						.trim();
+		Info("	Constraint: " + expression);
+	}
+
+}
+
+mapping uml::Parameter::toParameter() : jam::kernel::Parameter
+inherits uml::Element::toTypedElement
+{
+	init {
+		Info("		Parameter: " + self.name);
+	}
+
+	result.name := self.name;
+	//TODO: binding : Set(uml::TemplateBinding),
+	result.type := self.type.xmap toTypeSpecificationME(Set{}, self,self.repr());
+}
+
+helper translatePrimitive(name : String) : String {
+	if (name = "Integer") then
+		return "Int"
+	endif;
+	if (name = "double") then
+		return "Double"
+	endif;
+	if (name = "float") then
+		return "Real"
+	endif;
+	return name;
+}
+
+helper getCollectionClass(mul : uml::MultiplicityElement) : jam::kernel::Class {
+	var qName : String;
+
+	assert(mul.isMultivalued());
+
+	if (mul.isOrdered) then {
+		if (mul._isUnique) then
+			qName := c_Collection_OrderedSet
+		else
+			qName := c_Collection_Sequence
+		endif
+	} else {
+		if (mul._isUnique) then
+			qName := c_Collection_Set
+		else
+			qName := c_Collection_Bag
+		endif
+	} endif;
+	var clss := getReferencingModel().objectsOfType(jam::kernel::Class)->select(c | c.qualifiedName = qName)->asOrderedSet();
+	assert(clss->size() = 1);
+
+	return clss->first();
+}
+
+
+mapping uml::Type::toTypeSpecification(binding : Set(uml::TemplateBinding), source : String) : jam::kernel::TypeSpecification
+disjuncts uml::Type::toTypeParameterReference, uml::Type::toConcreteTypeSpecification
+{
+	ERR("not reachable: uml::Type::toTypeSpecification");
+}
+
+mapping uml::Type::toTypeSpecificationME(binding : Set(uml::TemplateBinding), mul : uml::MultiplicityElement, source : String) : jam::kernel::TypeSpecification
+disjuncts uml::Type::toTypeSpecificationCollectionME, uml::Type::toTypeParameterReferenceME, uml::Type::toConcreteTypeSpecificationME
+{
+	ERR("not reachable: uml::Type::toTypeSpecificationME");
+}
+
+mapping uml::Type::toTypeSpecificationCollectionME(binding : Set(uml::TemplateBinding), mul : uml::MultiplicityElement, source : String) : jam::kernel::TypeSpecification
+	when {mul.isMultivalued()}
+{
+	init {
+		Info("	+ toTypeSpecificationCollectionME "+ self.name);
+
+		var res := object jam::kernel::ConcreteTypeSpecification {
+		};
+		res._concreteClass := getCollectionClass(mul);
+		var x : jam::kernel::SpecifiedTypeArgument;
+		res.typeArguments += object x : jam::kernel::SpecifiedTypeArgument {
+			x.type := self.xmap toTypeSpecification(binding, source.repr());
+		};
+		result := res;
+	}
+}
+
+mapping uml::Type::toTypeParameterReference(binding : Set(uml::TemplateBinding), source : String) : jam::kernel::TypeParameterReference
+	when {self.isTemplateParameter()}
+{
+	Info("	+ toTypeParameterReference "+ self.name);
+	result.referencedTypeParameter := self.templateParameter.parameteredElement.map toTypeParameter();
+}
+
+mapping uml::Type::toTypeParameterReferenceME(binding : Set(uml::TemplateBinding), mul : uml::MultiplicityElement, source : String) : jam::kernel::TypeParameterReference
+	when {self.isTemplateParameter()}
+{
+	Info("	+ toTypeParameterReferenceME "+ self.name);
+
+	assert(not mul.isMultivalued());
+	result.referencedTypeParameter := self.templateParameter.parameteredElement.map toTypeParameter();
+}
+
+mapping uml::TemplateParameterSubstitution::toSpecifiedTypeArgument() : jam::kernel::SpecifiedTypeArgument
+{
+	Info("	toSpecifiedTypeArgument");
+
+	assert(self.actual.oclIsKindOf(uml::Class));
+	//TODO: binding : Set(uml::TemplateBinding),
+	result.type := self.actual.oclAsType(uml::Class).map toTypeSpecification(Set{}, self.repr());
+}
+
+mapping uml::Class::toConcreteTypeSpecification(binding : Set(uml::TemplateBinding), source : String) : jam::kernel::ConcreteTypeSpecification
+	when {not self.isTemplateParameter()}
+{
+	Info("	+ toConcreteTypeSpecification(Class) "+ self.name);
+	result._concreteClass := null;
+
+	if (self.ownedTemplateSignature->notEmpty()) then {
+		assert(binding->size() <= 1);
+
+		assert(binding.parameterSubstitution->size() = 0 or
+			  binding.parameterSubstitution->size() = self.ownedTemplateSignature.parameter->size());
+
+		var tb : TemplateBinding := binding->selectOne(true);
+		if(tb->notEmpty()) then {
+			result.typeArguments += binding.parameterSubstitution->xmap toSpecifiedTypeArgument();
+		} else {
+			result.typeArguments += self.ownedTemplateSignature.parameter->collect(object jam::kernel::Wildcard{dummy:="dummy"});
+		} endif;
+
+	} else {
+		if (binding->size() != 0) then {
+			assert(false);
+			log(self.qualifiedName + " src:" +source);
+		} endif;
+	} endif;
+}
+
+mapping uml::Type::toConcreteTypeSpecificationME(binding : Set(uml::TemplateBinding), mul : uml::MultiplicityElement, source : String) : jam::kernel::ConcreteTypeSpecification
+	when {not self.isTemplateParameter() and not mul.isMultivalued()}
+{
+	init {
+		Info("	+ toConcreteTypeSpecificationME "+ self.name);
+			if (self.oclIsKindOf(uml::Class)) then {
+			// it is not multivalued - from preconditions - if it is, collection mapping is invoked instead
+			result := self.oclAsType(uml::Class).xmap toConcreteTypeSpecification(binding, source);
+		} endif;
+	}
+}
+
+mapping uml::Type::toConcreteTypeSpecification(binding : Set(uml::TemplateBinding), source : String) : jam::kernel::ConcreteTypeSpecification
+	when {not self.isTemplateParameter()}
+{
+	init {
+		Info("	+ toConcreteTypeSpecification "+ self.name);
+			if (self.oclIsKindOf(uml::Class)) then {
+			result := self.oclAsType(uml::Class).xmap toConcreteTypeSpecification(binding, source);
+		} endif;
+	}
+}
+
+mapping inout jam::kernel::ConcreteTypeSpecification::resolveConcreteClass() {
+
+	var sourceType : uml::Type = self.invresolveone(uml::Type);
+	if(sourceType = null) then {
+		ERR("resolveConcreteClass(): sourceType not found");
+	} endif;
+	Info("Resolving: "+ sourceType.name);
+	if(sourceType.oclIsKindOf(uml::PrimitiveType))then {
+		var res : Set(jam::kernel::Class) :=
+			getReferencingModel().objectsOfType(jam::kernel::Class)
+				->select(c | c.name = translatePrimitive(sourceType.name) and c.qualifiedPath = 'primitives.');
+
+		if(res->isEmpty()) then {
+			ERR("resolveConcreteClass(): cannot find primitive class for "+ sourceType.name);
+		} else if (res->size() > 1) then {
+			ERR("resolveConcreteClass(): more then one candidate to primitive class for "+ sourceType.name);
+		} else {
+			Info("	primitive type resolved");
+			self._concreteClass := res->asOrderedSet()->first();
+		} endif endif;
+	} else {
+		self._concreteClass := sourceType.resolveone(jam::kernel::Class);
+
+		if(self._concreteClass = null) then {
+			//log(sourceType.oclAsType(uml::DataType).);
+			ERR("resolveConcreteClass(): Cannot resolve concreteClass");
+		} else {
+			Info("	Class resolved");
+		} endif;
+	} endif;
+}

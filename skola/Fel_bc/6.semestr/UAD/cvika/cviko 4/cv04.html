@@ -1,0 +1,421 @@
+<?xml version="1.0" encoding="iso-8859-2" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="cz" dir="ltr">
+<head>
+<meta http-equiv="Content-type" content="text/html; charset=iso-8859-2" />
+<meta name="generator" content="Myself" />
+<meta name="keywords" content="UNIX administration" />
+<meta name="author" content="Jan Žďárek &lt;cz.cvut.fel_._zdarekj&gt;" />
+
+<title>Y36UAD -- Vytváření, připojování a oprava souborového systému</title>
+<link rel="stylesheet" type="text/css" href="./uad.css" />
+</head>
+<!-- Last 9.3.2011, 79, valid X -->
+
+<body> 
+<h1>Vytváření, připojování a oprava souborového systému. Speciální soubory.</h1>
+<hr />
+
+<h2>Speciální soubory</h2>
+<p>
+O práci se souborovými systémy není možné začít hovořit bez seznámení se 
+s&nbsp;UNIXovými speciální soubory.
+Jsou to objekty v systému souborů, které nejsou ani adresářem ani souborem 
+obsahujícím data. Na disku nezabírají žádné datové bloky, pouze právě jeden 
+i-node. Při čtení/zápisu dat z/do těchto speciálních souborů jsou jednotlivé 
+požadavky na čtení/zápis dat delegovány příslušnému ovladači v jádře, 
+popř. jinému spuštěnému procesu.
+</p>
+<p>
+Zopakujme si, že UNIX rozeznává tyto typy objektů (položek) v systému souborů:
+</p>
+<table>
+<tr><td>znak výpisu<br />ls</td><td>název</td><td>účel</td></tr>
+<tr><td> &ndash; </td>
+    <td> file<br />(soubor) </td>
+    <td> Obyčejný soubor &ndash; jediný skutečně umožňuje uchovávat data.</td>
+    </tr>
+<tr><td> d </td>
+    <td> directory<br />(adresář) </td>
+    <td> Podadresář aktuálního adresáře. Obsahuje další (vnořené) objekty,
+         díky tomu může mít systém adresářů stromovou strukturu.</td>
+    </tr>
+<tr><td> l </td>
+    <td> link<br />(symbolický link) </td>
+    <td> Odkaz na jiný objekt v systému souborů. </td>
+    </tr>
+<tr><td> b </td>
+    <td> block&nbsp;device<br />(blokové&nbsp;zařízení)</td>
+    <td rowspan="2"> <tt>read</tt>/<tt>write</tt> operace s blokovým či 
+        znakovým zařízením jsou delegovány určitému ovladači v jádře, který 
+	s daty naloží tak, jak uzná za vhodné. Každé blokové či znakové 
+	zařízení obsahuje čísla MAJOR a MINOR (hlavní a vedlejší), které určují 
+	příslušný ovladač jádra. 
+	Blokové zařízení se od znakového liší tím, že v něm lze provádět operaci
+	<tt>seek</tt> (nastavení offsetu) a (obvykle) používá buffer (cache) 
+	pro přístup k datům.</td>
+    </tr>
+<tr><td> c </td>
+    <td> character&nbsp;device<br />(znakové&nbsp;zařízení) </td>
+    </tr>
+<tr><td> p </td>
+    <td> named pipe (fifo)<br />(pojmenovaná&nbsp;roura) </td>
+    <td> Slouží k předávání dat mezi dvěma běžícími procesy. Funguje jako
+         roura obyčejná s tím rozdílem, že ji smí otevřít i proces, 
+         který ji nezaložil. 
+         </td>
+    </tr>
+<tr><td> s </td>
+    <td> socket<br />(soket) </td>
+    <td> Síťové spojení procesů (UNIX domain, <tt>AF_UNIX</tt>), komunikace 
+         je jen lokální v rámci jednoho počítače. Podobné pojmenované rouře. 
+	 <!--Soket umí zjistit a ověřit PID, UID a GID protějšího procesu a předat 
+	 otevřené file descriptory.--></td>
+    </tr>
+</table>
+<h3>Vlastnosti souborů</h3>
+<p>
+Všechny tyto typy objektů (položek adresáře) systému souborů mají některé
+shodné vlastnosti. Tím je dána možnost použít pro práci s nimi stejná nebo
+podobná systémová volání, konstanty a metody práce. Společné vlastnosti jsou
+uloženy v i-node příslušného objektu:
+</p>
+<ul>
+  <li>Každý objekt má své jednoznačné jméno v systému souborů, lze ho tak
+      identifikovat a odkazovat.</li>
+  <li>Každý objekt má vlastníka a skupinu (nutné pro řízení přístupu).</li>
+  <li>Každý objekt má stanovena přístupová práva (<tt>rwx</tt>) zvlášť pro 
+      vlastníka, skupinu a ostatní.</li>
+  <li>Každý objekt nese jistá časová razítka (čas a datum vytvoření, modifikace,
+      posledního přístupu, atd.)</li>
+  <li>Každý objekt může mít více jmen &ndash; tzv.&nbsp;hard linků. To znamená, 
+      že na týž i-node se může odkazovat více položek adresáře či adresářů.</li>
+</ul>
+<p>
+UNIX používá konvenci pro pojmenování blokových a znakových zařízení. Jména
+však pro funkci nejsou určující, klíčem jsou MAJOR a MINOR čísla. Obě čísla
+se zobrazují při výpisu <tt>ls -l /dev/*</tt>. 
+</p>
+<h3>Vytváření speciálních souborů</h3>
+<p>
+Na většině distribucí s&nbsp;jádrem řady 2.6 není obvykle nutné vytvářet 
+speciální soubory zařízení, stará se o to daemon <tt>udevd</tt>, který 
+spolupracuje s&nbsp;jádrem a při požadavku na přístup na některé 
+z&nbsp;podporovaných a nakonfigurovaných zařízení jej vytvoří.
+Konfigurace tohoto daemonu je dosti komplexní a bývá uložena 
+v&nbsp;adresáři <tt>/etc/udev.d</tt>.
+</p>
+<p>
+Bloková a znaková zařízení ale můžeme vytvářet i ručně příkazem 
+<tt>mknod(1)</tt>, například v&nbsp;případě, že <tt>udevd</tt> neběží, 
+nebo nefunguje správně.
+(Stejně tak lze vytvořit i pojmenované roury příkazem <tt>mkfifo(1)</tt>.)
+</p>
+<p>
+Před vytvořením blokového či znakového zařízení je nutné znát
+příslušná MAJOR a MINOR čísla příslušného ovladače v jádře. Někteří výrobci
+UNIXu tato čísla příliš nepublikují, pro Linux je kompletní seznam uveden 
+v&nbsp;distribučním balíku každého jádra v souboru
+<tt>/usr/src/linux/Documentation/devices.txt</tt>. 
+</p>
+<table> 
+<tr><td>soubor</td><td>MAJOR</td><td>MINOR</td><td>význam</td></tr>
+<tr><td colspan="4">Příklady konvence pojmenování <b>blokových</b> zařízení</td></tr>
+<tr><td>/dev/hda</td><td>3</td><td>0</td>
+    <td>První pevný disk &ndash; IDE primary master. Přístup sektor po sektoru.</td>  
+    </tr>
+<tr><td>/dev/hda1</td><td>3</td><td>1</td>
+    <td>První partition prvního IDE disku.</td>
+    </tr>
+<tr><td>/dev/hdb</td><td>3</td><td>64</td>
+    <td>Druhý pevný disk &ndash; IDE primary slave.</td>
+    </tr>
+<tr><td>/dev/fd0</td><td>2</td><td>0</td>
+    <td>První disketová mechanika.</td>
+    </tr>
+<tr><td>/dev/sda</td><td>8</td><td>0</td>
+    <td>První SCSI disk.</td>
+    </tr>
+<tr><td>/dev/sda1</td><td>8</td><td>1</td>
+    <td>První partition prvního SCSI disku.</td>
+    </tr>
+<tr><td colspan="4">Příklady konvence pojmenování <b>znakových</b> zařízení</td></tr>
+<tr><td>/dev/null</td><td>1</td><td>3</td>
+    <td>Skartovací zařízení. Může se do něj psát bez omezení, vše bude ihned 
+        zapomenuto. Při čtení se chová jako soubor nulové délky.</td>
+    </tr>
+<tr><td>/dev/zero</td><td>1</td><td>5</td>
+    <td>Zdroj binárních nul. Při čtení produkuje neustále znaky binární
+        0. Tváří se jako nekonečně dlouhý soubor obsahující jen binární 0.</td>
+    </tr>
+<tr><td>/dev/tty1</td><td>4</td><td>1</td>
+    <td>První virtuální textový terminál.</td>
+    </tr>
+<tr><td>/dev/ttyS0</td><td>4</td><td>64</td>
+    <td>První sériová linka - v DOSu zvaná COM1.</td>
+    </tr>
+</table>
+
+<h2>Systémy souborů</h2>
+<p>
+Každý disk, na který se ukládají soubory, musí obsahovat nějaký systém souborů 
+(<em>filesystem</em>, <em>FS</em>). Každý systém souborů má vlastní strukturu 
+dat na disku a vlastní způsob jejich managementu.
+</p>
+<p>
+Většina OS podporuje jen svůj nativní FS a iso9660, případně ještě jeden či dva 
+jiné. Systémy GNU/Linux podporují velké množství různých FS, de facto všechny, 
+pro které již někdo byl schopen napsat funkční ovladač do jádra.
+</p>
+<table>
+<tr><td>Operační systém</td><td>Jméno FS</td><td>Pozn.</td></tr>
+<tr><td>UNIX (obecně)</td>
+    <td>ufs</td>
+    <td>Prvotní ufs zavedl pojmy i-node a datový blok. Dnes se používají
+        různé vylepšené varianty ufs.</td>
+    </tr>
+<tr><td>Minix</td>
+    <td>minix</td>
+    <td>Jednoduchý FS, omezení délky jmen (16 znaků), velikost disku do 64 MB,
+        dnes vhodný pro diskety či ramdisk.</td>
+    </tr>
+<tr><td>Linux</td>
+    <td>ext2</td>
+    <td>FS odvozený od FS minix, délka jména souboru do 256 znaků, 
+        soubory do 4 GB, disk do 17 TB.</td>
+    </tr>
+<tr><td>Solaris 10</td>
+    <td>zfs</td>
+    <td>Propracovaný objektově-orientovaný FS zaměřený na vysoký výkon na
+        zatížených serverech. Jeho architektura usnadňuje řadu 
+	administrativních úkonů.
+        </td>
+    </tr>
+<tr><td>MS-DOS</td>
+    <td>dos (FAT 12, FAT 16)</td>
+    <td>Velmi omezený FS &ndash; jména 8 znaků + 3 znaky přípona, disk do 8 GB, 
+        jen 32-64k alokačních jednotek &ndash; velké plýtvání místem.</td>
+    </tr>
+<tr><td><!--rowspan="2"-->Windows 95</td>
+    <td>vfat (FAT 32)</td>
+    <td>Rozšíření dos FS o dlouhá jména, zpětně kompatabilní s FAT.
+        Vnitřní struktury jsou nyní 32-bitové. Velké zvýšení
+        hranic velikosti souboru a disku, snížení plýtvání místem při
+        alokaci, nevýhody systému FAT zůstávají.</td>
+    </tr>
+<tr><td>Windows NT</td>
+    <td>ntfs</td>
+    <td>32-bitový FS pro Windows NT odvozený z hpfs.</td>
+    </tr>
+<tr><td>CD-ROM</td>
+    <td>iso9660</td>
+    <td>Normalizovaný CD-ROM/DVD formát.</td>
+    </tr>
+<tr><td>OS/2</td>
+    <td>hpfs</td>
+    <td>32-bitový FS vyvinutý pro OS/2.</td>
+    </tr>
+</table>
+<p>
+Další skupinou jsou tzv. <b>virtuální FS</b>, které neslouží k ukládání souborů.
+Příkladem je <i>proc</i> FS, který zobrazuje informace z jádra OS a umožňuje
+některé parametry měnit zápisem do příslušných souborů. Soubory v&nbsp;proc FS
+neexistují, jádro je vždy vygeneruje dynamicky pro každý přístup. 
+Solaris používá tmp FS pro adresář <tt>/tmp</tt>. Je implementován
+tak, že využívá k uložení primárně volnou paměť a tím zrychluje přístup 
+k dočasným souborům v <tt>/tmp</tt>. Stejnou věc můžeme nakonfigurovat 
+i pro GNU/Linux.
+</p>
+<h2>Spolupráce FS</h2>
+<p>
+OS UNIX nepoužívá zvláštní adresářový strom pro každý používaný disk (jako
+např. DOS nebo Windows používají označení disku A: B: C: atd.), ale všechny
+používané FS spojuje do jediného stromu. Při takzvaném připojení disku (FS)
+do nějakého adresáře se namapuje celý adresářový strom dotyčného disku jako
+podstrom daného adresáře.
+</p>
+<h3>Úkol 1</h3>
+<p>
+Příkaz <tt>mount</tt> bez parametru vypíše seznam aktuálně připojených FS. 
+Vypište aktuální stav na vašem počítači a pokuste se odvodit, co všechno 
+je připojeno a proč.
+</p>
+<h2>Vytvoření FS</h2>
+<p>
+Vytvoření FS se provádí příkazem <tt>mkfs</tt> resp.&nbsp;<tt>newfs</tt> 
+na Solarisu a HPUX. 
+Příkaz <tt>mkfs</tt> má parametr <tt>-t</tt> specifikující typ FS a další 
+argument je speciální zařízení určující hostitelský disk (resp. partition). 
+Vytvoření FS se někdy zaměňuje s pojmem formátování disku. Formátování je 
+proces vyznačení jednotlivých sektorů na disku či disketě, je nutné zapsat 
+celý disk, ale po naformátování je disk stále nepoužitelný pro ukládání souborů, 
+protože neobsahuje FS.
+Vytvoření FS znamená inicializovat na disku struktury FS &ndash; tabulky
+popisující soubory v kořenovém adresáři a volné bloky - tedy jen několik
+málo sektorů. Formátování je činnost zdlouhavá, kterou však moderní pevné disky
+nevyžadují a diskety již jsou většinou naformátované. Naopak vytvořit FS je 
+nutné vždy po přerozdělení disku na jednotlivé partitions (logické disky). 
+</p>
+<h3>Úkol 2</h3>
+<p>
+Na primárním disku (<b><tt>/dev/sda</tt></b>) vytvoříme novou diskovou 
+partition se souborovým systémem ext2 a připojíme ji do systému.
+</p>
+<h3>Úkol 2 a)</h3>
+<ol>
+  <li>Příkazem <tt>/sbin/fdisk</tt> vytvoříme novou partition.
+  Volíme: n (new), p (primary), 3 (3. partition) a velikost zvolíme dle uvážení,
+  např. +100M pohodlně vyrobí velikost 100 MB, aniž bychom museli přepočítávat 
+  interní jednotky <tt>fdisk</tt>u na MB. 
+  Typ partition (0x83) není potřeba měnit, <tt>fdisk</tt> implicitně zvolí 
+  linuxový.
+  <br />
+  Až do této chvíle se na disku nic nezměnilo. Pokud ale chceme pokračovat, 
+  musíme navržené změny zapsat fyzicky na disk. Použijeme příkaz w (write) a
+  <tt>fdisk</tt> ukončíme.<br />
+  Jádro nás upozorní, že až do restartu systému bude používat starou tabulku
+  rozdělení disku, nepomůže ani ruční vytvoření souboru zařízení pomocí 
+  <tt>mknod</tt>. Vyzkoušejte! (Proč je vracená chyba ENODEV a nikoliv ENOENT,
+  jak bychom možná čekali?)
+  <li>
+  Příkazem <tt>partprobe</tt> vynuťte znovunačtení tabulky rozdělení disku a
+  přesvědčte se, že <tt>udevd</tt> vytvořil na jejím základě příslušné další 
+  speciální soubory.
+  </li>
+  <li>Vytvořte nový FS: Jako místo uložení
+  použijte svoji novou partition <tt>/dev/sda3</tt>.
+  Systém souborů ext2 vytvoříte buď<br />
+  <tt>mkfs -t ext2 /dev/sda3</tt><br />
+  nebo<br />
+  <tt>mke2fs /dev/sda3</tt><br />
+  Program <tt>mkfs</tt> je jen nadstavba nad programy <tt>mkfs.ext2</tt>, 
+  <tt>mkfs.msdos</tt>, <tt>mkfs.minix</tt> apod., které vytvářejí příslušné FS. 
+  </li>
+</ol>
+<h2>Připojení FS</h2>
+<p>
+Připojení FS se provádí příkazem:<br />
+<tt>mount -t <i>typ zařízení adresář</i></tt><br />
+Parametr <tt>-t</tt> určuje typ FS. Většina FS je automaticky detekována, 
+takže není nutné ho používat. Zařízení je blokové zařízení identifikující 
+nosič dat (partition disku, disketa, CD-ROM...), adresář určuje místo, kam 
+se má připojit adresářový strom na zařízení obsažený.
+</p>
+<h3>Úkol 2 b)</h3>
+<p>
+Připojte svoji novou partition do adresářového stromu a vyzkoušejte její 
+vlastnosti.
+</p>
+<h2>Odpojení FS</h2>
+<p>
+Na přednášce bylo předvedeno, že souborový systém se nepodaří odpojit, pokud je
+používán.
+Souborový systém je používán vždy, když je z&nbsp;něho otevřen libovolný soubor,
+je z&nbsp;něho spuštěn nějaký program, nebo na něm nějaký program má nastavený 
+jeho podadresář jako aktuální. Proto se <em>nikdy nepodaří</em> odpojit 
+kořenový FS. Ani <tt>/usr</tt> se nám nepodaří odpojit, pokud je připojen 
+z&nbsp;vlastní partition, dokud nepozabíjíme všechny procesy, které ho
+používají.
+PID procesů a druh jejich přístupu k&nbsp;FS, které brání odpojení FS zjistíme 
+příkazem <tt>fuser -c <i>adresář-mountpoint</i></tt>&nbsp;.
+</p>
+<!--h3>Úkol x</h3>
+<p>
+Ověřte, že souborový systém <tt>/usr</tt> se nepodaří odpojit, dokud bude 
+používán. Prozkoumejte, jaké procesy odpojení brání a co přesně na FS dělají.
+Ukončete všechny procesy, které jste nalezli, podaří se tímto způsobem 
+úspěšně uvolnit a následně odpojit <tt>/usr</tt>?
+</p-->
+<h2>Trvalé připojení FS</h2>
+<p>
+Trvalé připojení FS znamená změnu konfigurace tak, aby se FS
+připojoval automaticky vždy po startu systému.
+To zajistíme přidáním řádky do souboru <tt>/etc/fstab</tt>. 
+Každý řádek obsahuje zařízení, adresář k&nbsp;připojení, typ FS, atributy 
+připojení, příznak pro zálohování programem <tt>dump</tt> a pořadí provádění
+automatické kontroly.
+</p>
+<h3>Úkol 3</h3>
+<p>
+Upravte <tt>/etc/fstab</tt> tak, aby se partition <tt>/dev/sda3</tt>, 
+kterou jste inicializovali v&nbsp;rámci předchozího úkolu, 
+automaticky připojovala do adresáře <tt>/tmp</tt>.<br />
+Tím vlastně vznikne vyhrazený diskový prostor pro dočasné soubory, který 
+můžeme pravidelně a snadno mazat (<tt>mkfs</tt>).
+</p>
+<h2>Kontrola FS</h2>
+<p>
+Kontrola FS se provádí příkazem <tt>fsck</tt>. Parametrem je blokové
+zařízení. Program <tt>fsck</tt> je opět nadstavba nad programy
+<tt>fsck.ext2</tt>, <tt>fsck.minix</tt>, <tt>fsck.msdos</tt>, atd.
+</p>
+<p>
+Kontrolovat lze jen FS, které zrovna nejsou připojeny. V případě nouze lze 
+kontrolovat FS připojené s atributem <em>read-only</em>, což nám pomůže 
+např.&nbsp;při kontrole kořenového FS (<tt>/</tt>), pokud nelze nastartovat 
+OS z&nbsp;jiné partition.
+</p>
+<h3>Úkol 4</h3>
+<p>
+Zkontrolujte nyní FS na vašem testovacím disku <tt>/dev/sda3</tt>.
+Disk odpojte pomocí <tt>umount</tt> a zkontrolujte pomocí
+<tt>fsck</tt> nebo <tt>fsck.ext2</tt>, pokud jste použili <em>ext2</em> jako 
+typ partition. 
+V&nbsp;případě, že disk nejde odpojit, 
+<!--vraťte se nejprve k&nbsp;úkolu 2, kde jste si vyzkoušeli použití -->
+pokuste se příkazem <tt>fuser</tt> zjistit, které procesy tomu brání 
+a ukončete je.
+</p>
+<p>
+Program fsck vypíše hlášení, že FS je <em>clean</em>, ale fyzickou kontrolu 
+<b>neprovede</b>! FS byl totiž správně odpojen a je tedy považován za konzistentní.
+Skutečnou kontrolu <tt>fsck</tt> provede, pokud počet připojení/odpojení
+FS od poslední kontroly překročil určitou mez, nebo uběhla stanovená
+maximální doba od poslední kontroly, nebo kontrolu explicitně vyžádáme
+přepínačem <tt>-f</tt>. 
+</p>
+<h3>Úkol 5</h3>
+<p>
+Proveďte skutečnou kontrolu příkazem: <tt>fsck -f /dev/sda3</tt>
+</p>
+<h2>Kontrola kořenového adresáře (úkol 6)</h2>
+<p>
+Jak bylo řečeno, odpojit kořenový adresář za účelem kontroly není možné.
+Přesto jsou situace, kdy jej zkontrolovat potřebujeme. Využijeme pro to
+administrátorský singleuser mód a přepnutí partition kořenového adresáře 
+do <em>read-only</em> režimu.
+</p>
+<ol>
+  <li>Nejprve počítač převedeme do singleuser módu 
+  (<tt><a href="./cv03.htm">telinit</a></tt>).<br />
+  (Případně předáním parametru jádra <tt>S</tt> nebo <tt>single</tt> 
+  zavaděčem OS.)</li>
+  <li>Pomocí <tt>ps -e</tt> ověříme, že běží jen nejnutnější procesy.</li>
+  <li>Změníme mód připojení <tt>/</tt> na <em>read-only</em>:<br />
+      <tt>mount -o remount,ro -n /</tt><br />
+      Parametr <tt>-o remount,ro</tt> znamená, že FS je již připojen, 
+      požadujeme změnu na read-only režim. Přepínač <tt>-n</tt> říká, 
+      aby program <tt>mount</tt> nezapisoval aktuální stav připojení do souboru 
+      <tt>/etc/mtab</tt>. (FS již v&nbsp;tu dobu bude read-only a zápis 
+      by se nepodařil. Nenechte se zmást tím, že některé verze příkazu
+      <tt>mount</tt> jsou na tuto základní chybu uživatele připraveny 
+      a skrývají ji.)
+  </li>
+  <li>Skutečnost, zda je FS v&nbsp;read-only režimu můžeme ověřit vytvořením 
+  souboru nebo adresáře, což by se nemělo podařit ani uživateli <tt>root</tt>. 
+  </li>
+  <li>Nyní lze zkontrolovat popř.&nbsp;opravit kořenový FS programem 
+  <tt>fsck</tt> jako v&nbsp;předchozích cvičeních.</li>
+  <li>Pokud se vyskytly chyby, je v případě kořenového FS vhodné restartovat 
+      po opravě počítač.</li>
+  <li>Pokud žádné chyby nebyly, změníme připojení na read-write:<br />
+      <tt>mount -o remount,rw -n /</tt>
+  </li>
+  <li>Po případné kontrole ostatních FS se přepneme zpět do normálního 
+  runlevelu.</li>
+</ol>
+<hr />
+<p><img src="../obr/ESFgrant.png" width="161" height="22" alt="Partially supported by ESF and City of Prague." /></p>
+</body>
+</html>

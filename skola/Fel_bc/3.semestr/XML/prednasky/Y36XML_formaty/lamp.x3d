@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.0//EN" "http://www.web3d.org/specifications/x3d-3.0.dtd">
+
+<X3D profile="Immersive" version="2.0">
+  <Scene>
+    <Transform>
+      <Shape>
+        <Appearance>
+          <Material diffuseColor="0 1 0"/>
+        </Appearance>
+        <Cylinder height="0.1" radius="0.5"/>
+      </Shape>
+    </Transform>
+    <Transform translation="0 1 0">
+      <Shape>
+        <Appearance>
+          <Material diffuseColor="0 1 0"/>
+        </Appearance>
+        <Cylinder radius="0.1"/>
+      </Shape>
+    </Transform>
+    <Transform translation="0 2.125 0">
+      <Shape>
+        <Appearance>
+          <Material diffuseColor="0 1 0"/>
+        </Appearance>
+        <Cylinder height="0.25" radius="0.15"/>
+      </Shape>
+    </Transform>
+    <Transform translation="0 2.75 0">
+      <Shape>
+        <Appearance>
+          <Material diffuseColor="0 1 0"/>
+        </Appearance>
+        <Cone bottomRadius="0.5" height="0.25"/>
+      </Shape>
+    </Transform>
+    <Transform translation="0 2.8 0">
+      <Shape>
+        <Appearance>
+          <Material diffuseColor="0 1 0"/>
+        </Appearance>
+        <Cylinder height="0.1" radius="0.2"/>
+      </Shape>
+    </Transform>
+    <Transform rotation="0 0 1 3.14159" translation="0 2.4 0">
+      <Shape>
+        <Appearance>
+          <Material diffuseColor="1 1 1" transparency="0.2"/>
+        </Appearance>
+        <Cone bottomRadius="0.4" height="0.5"/>
+      </Shape>
+    </Transform>
+    <Transform translation="0 2.375 0">
+      <Shape>
+        <Appearance>
+          <Material diffuseColor="1 1 0.502"/>
+        </Appearance>
+        <Sphere radius="0.1"/>
+      </Shape>
+    </Transform>
+  </Scene>
+</X3D>

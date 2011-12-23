@@ -1,0 +1,50 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+    <h:head>
+        <title>Spoje</title>
+    </h:head>
+    <h:body>
+        <ui:composition template="../resources/composition.xhtml">
+            <ui:param name="pageTitle" value="Mé jízdenky" />
+            <ui:define name="content">
+                <h:form>
+                    <h1><h:outputText value="#{order.passangerUsername}: Mé jízdenky"/></h1>
+                    <h:dataTable value="#{order.passangersTickets}" var="item" styleClass="dataTable">
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="Číslo jízdenky"/>
+                            </f:facet>
+                            <h:outputText value="\##{item.id}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="Ze stanice – do stanice"/>
+                            </f:facet>
+                            <h:outputText value="#{item.fromStation} – #{item.toStation}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="Datum"/>
+                            </f:facet>
+                            <h:outputText value="#{item.dateOfValidity}">
+                                <f:convertDateTime pattern="dd. mm. yyyy" />
+                            </h:outputText>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value=""/>
+                            </f:facet>
+                            <h:commandButton value="#{msgs.details}" action="#{order.openForRead(item)}" />
+                        </h:column>
+                    </h:dataTable>
+                    <h:link value="Na hlavní stranu" outcome="index"/>
+                </h:form>
+            </ui:define>
+        </ui:composition>
+    </h:body>
+</html>
+

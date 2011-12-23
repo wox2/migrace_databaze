@@ -1,0 +1,406 @@
+//#include <iostream>
+//using namespace std;
+
+//struct inflatible{
+//	int i;
+//	int k;
+//};
+
+//int main (){
+//
+//	inflatible pal;
+//	pal.i = 1;
+//
+//	cout << pal.i<< " " << pal.k <<" " << endl;
+//
+//	return 0;
+//}
+
+//-------------------------------------------------------------//
+
+//#include <cstdlib>
+//#include <iostream>
+//
+//using namespace std;
+//
+///*
+// *
+// */
+//enum Points{
+//        point2d = 2, point2w , point2e = 2, point3e
+//};
+//int main(int argc, char** argv) {
+//
+//
+//      cout << (point3e == point2e) << endl;
+//		return 0;
+//}
+
+//-------------------------------------------------------------//
+
+//#include <iostream>
+//
+//using namespace std;
+//
+//int main (){
+//	int i = 10;
+//
+//	const int * c;
+//	c = & i;
+//
+//	//*c+=10;
+//	int k = 209;
+//	c = & k;
+//	cout << *c << endl;
+//	return 0;
+//}
+
+//-------------------------------------------------------------//
+
+//#include <iostream>
+//#include <string>
+//
+//using namespace std;
+//
+//int main(){
+//	string str("123");
+//	string str2("1");
+//	str2.append("23");
+//
+//	cout << (str == str2) << endl;
+//	return 0;
+//}
+
+//-------------------------------------------------------------//
+
+//#include <iostream>
+//
+//using namespace std;
+//
+//class A{
+//	int * p;
+//public:
+//	A(){
+//		int * p = new int[10]();
+//	}
+//
+//	void print(){
+//		for(int i = 0 ; i < 10 ; i++){
+//						cout << p[i] << " ";
+//		}
+//		cout << endl;
+//	}
+//};
+//
+//int main(){
+//	A a;
+//	a.print();
+//	return 0;
+//}
+
+//-------------------------------------------------------------//
+
+//#include <iostream>
+//
+//using namespace std;
+//
+//class A{
+//private:
+//	int k;
+//public:
+//	A(int val){
+//		k = val;
+//	}
+//
+//	void print(){
+//		cout << k << endl;
+//	}
+//};
+//
+//void f(A & a){
+//	a = A(2);
+//}
+//
+//int main(){
+//	A a(235);
+//	a.print();  // vypise 235
+//	f(a);
+//	a.print(); // vypise 2
+//}
+
+//-------------------------------------------------------------//
+
+//#include <cstdlib>
+//#include <iostream>
+//
+//using namespace std;
+//int *reset(int *);
+//double *reset(double *);
+///*
+// *
+// */
+//int main(int argc, char** argv) {
+//	int i = 2;
+//	void * ptr = reset(&i);
+//	cout << *((int *)ptr) << "  " << *((double *)ptr) << endl;
+//}
+//
+//int *reset(int * i){return new int(1);};    // pointery jsou rozeznatelne
+//double *reset(double * i){return new double(0);};
+
+//-------------------------------------------------------------//
+//#include <cstdlib>
+//#include <iostream>
+//
+//using namespace std;
+//int *reset(int );
+//double *reset(double );
+//
+//int main(int argc, char ** argv){
+//	cout << *(reset(2.0)) << endl;  // typy jsou rozeznatelne
+//	cout << *(reset(2)) << endl;
+//}
+//
+//int *reset(int i){return new int(1);};    // pointery jsou rozeznatelne
+//double *reset(double i){return new double(0);};
+
+
+//-------------------------------------------------------------//
+//#include <cstdlib>
+//#include <iostream>
+//
+//using namespace std;
+//int *reset(const int );
+//double *reset(int);
+//
+//int main(int argc, char ** argv){
+//	cout << *(reset(2)) << endl; // const a neconst nerozeznatelne,
+//	//rekne error pri prirazeni, jinak zarve na ambigious call...
+//}
+//
+//int *reset(const int i){return new int(1);};    // pointery jsou rozeznatelne
+//double *reset(int i){return new double(0);};
+
+//-------------------------------------------------------------//
+//#include <cstdlib>
+//#include <cstddef>
+//#include <iostream>
+//#include <string>
+//
+//using namespace std;
+//string sa[10];
+//	int ia[10];
+//	int main() {
+//		string sa2[10];
+//		int ia2[10];
+//		for(int i = 0 ; i < 10 ; i++){
+//			cout << sa[i] << " sa[i]" << endl;  // funny, ze nevypisuje pro oboji nic;
+//			cout << ia[i] << " ia[i]" << endl;	// vypise plevel pro ia2, pro ia 0
+//			cout << NULL;
+//			cout << "vypisuju NULL" << endl; //husty, vypisuje 0
+//		}
+//		return 0;
+//	}
+
+//-------------------------------------------------------------//
+//#include <iostream>
+//using namespace std;
+//
+//class Person{
+//public:
+//	int age;
+//	void print(){
+//		cout << "age" << endl;
+//	}
+//};
+//
+//
+//int main(){
+//
+//	Person *martin;
+////	kl->age = 2;
+//
+//martin->print();
+////	cout << martin->age << endl;
+//}
+
+//-------------------------------------------------------------//
+///* memset example */
+//#include <stdio.h>
+//#include <string.h>
+//using namespace std;
+//
+//int main ()
+//{
+//  char str[] = "almost every programmer should know memset!";
+//  memset (str,1 ,6);
+//  puts (str);
+//  return 0;
+//}
+
+//-------------------------------------------------------------//
+//#include <iostream>
+//#include <string>
+//using namespace std;
+//
+//int main(){
+//	string str = "fuuu";
+//	string comparedString ="fnuu";
+//	for(int i = 0 ; i < str.length() && i < comparedString.length() ; i++){
+//		if(str[i] != comparedString[i]){
+//			cout << str[i] << " " << comparedString[i] << endl;
+//		} else{
+//			cout << "OK" << endl;
+//		}
+//	}
+//
+//	return 0;
+//}
+
+//-------------------------------------------------------------//
+//#include <vector>
+//#include <iostream>
+//using namespace std;
+//
+//int main(){
+//	vector<int> v;
+//	for (int i = 110 ; i >= 0 ; i--){
+//		v.push_back(i);
+//	}
+//
+//	for(unsigned int i = 0 ; i < v.size() ; i++){
+//		cout << v[i] << " ";
+//	}
+//}
+//
+
+//-------------------------------------------------------------//
+//#include <deque>
+//#include <vector>
+//#include <iostream>
+//using namespace std;
+////otestovani funkcnosti double ended queue
+//int main(){
+//	deque<int> d;
+//	d.push_back(2);
+//	d.push_front(1);
+//	d.push_back(3);
+//	for(int i = 0 ; i < d.size() ; i++){
+//		int k = d.back();
+//		d.pop_back();
+//		cout << k;
+//		cout << " ";
+//	}
+//
+//	vector<int> v;
+//	v.push_back(1);
+//	v.pointer;
+//
+//}
+
+//-------------------------------------------------------------//
+//#include <queue>
+//#include <iostream>
+//using namespace std;
+//
+//struct Node{
+//	int position;
+//	int gen;
+//};
+//
+//struct MyComparator {
+//  bool operator()( const Node & a, const Node& b ) const{
+//	  if(a.position > b.position || (a.position == b.position && a.gen > b.gen)){
+//  			return true;
+//	  }
+//	  return false;
+//  }
+//};
+//
+//int main(){
+//	priority_queue<Node, vector<Node>, MyComparator>  p_queu;
+//	for(int i = 0 ; i < 10 ; i++){
+//		for (int j = 0 ; j < 10 ; j++){
+//			Node node;
+//			node.gen = i;
+//			node.position = j;
+//			p_queu.push(node);
+//		}
+//	}
+//
+//	while(!p_queu.empty()){
+//		cout << p_queu.top().gen << " ";
+//		cout << p_queu.top().position << endl;
+//		p_queu.pop();
+//	}
+//}
+//
+
+//-------------------------------------------------------------//
+//#include <iostream>
+//using namespace std;
+//
+//class A{
+//public: A(){
+//		cout<< "volam konstruktor" << endl;
+//	}
+//
+//A(const A & orig){
+//	cout << "volam kopirovaci konstruktor" << endl;
+//}
+//};
+//
+//int main(){
+//	A a;
+//	A *b = new A();
+//	A &c = a;
+//	A pole [5]={a, *b, c};
+//	//A pole [5]={&a, b}; //error, pointer na A neni A, oba pripady
+//
+//
+//}
+/* VYSTUP:
+volam konstruktor
+volam konstruktor
+volam kopirovaci konstruktor
+volam kopirovaci konstruktor
+volam kopirovaci konstruktor
+volam konstruktor
+volam konstruktor
+*/
+
+//#include <iostream>
+//using namespace std;
+//
+//class A{
+//	public: A(){
+//			cout<< "volam konstruktor" << endl;
+//		}
+//
+//	A(int val){
+//		cout << "volam konstruktor uzivatelske konverze" << endl;
+//	}
+//
+//	A(const A & orig){
+//		cout << "volam kopirovaci konstruktor" << endl;
+//	}
+//};
+//
+//void print(A a){
+//	cout << "print" << endl;
+//}
+//
+//
+//int main(){
+//	 A a;
+//	print(a); //ok
+//	print(10); // konstruktor uzivatelske konverze
+//	A c = A(10);
+//	//print(&a);//neexistuje print(A*a) !
+//}
+/*VYSTUP
+volam konstruktor
+volam kopirovaci konstruktor
+print
+*/
+

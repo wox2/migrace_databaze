@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/courses/36sin/INTEOCORP/!svn/ver/420/src/LogicalDesign/PresentationLayer/SpravaZakazniku
+END
+VyhladaZakaznikaController.java
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/svn/courses/36sin/INTEOCORP/!svn/ver/420/src/LogicalDesign/PresentationLayer/SpravaZakazniku/VyhladaZakaznikaController.java
+END
+VytvoritZakaznikaControler.java
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/svn/courses/36sin/INTEOCORP/!svn/ver/420/src/LogicalDesign/PresentationLayer/SpravaZakazniku/VytvoritZakaznikaControler.java
+END
+ZmazatZakaznikaControler.java
+K 25
+svn:wc:ra_dav:version-url
+V 123
+/svn/courses/36sin/INTEOCORP/!svn/ver/420/src/LogicalDesign/PresentationLayer/SpravaZakazniku/ZmazatZakaznikaControler.java
+END
+VyhladatZakaznikaForm.java
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svn/courses/36sin/INTEOCORP/!svn/ver/420/src/LogicalDesign/PresentationLayer/SpravaZakazniku/VyhladatZakaznikaForm.java
+END
+UpravaZakaznikaForm.java
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/courses/36sin/INTEOCORP/!svn/ver/420/src/LogicalDesign/PresentationLayer/SpravaZakazniku/UpravaZakaznikaForm.java
+END
+UpravZakaznikaControler.java
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/svn/courses/36sin/INTEOCORP/!svn/ver/420/src/LogicalDesign/PresentationLayer/SpravaZakazniku/UpravZakaznikaControler.java
+END
+VytvoritZakaznikaForm.java
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svn/courses/36sin/INTEOCORP/!svn/ver/420/src/LogicalDesign/PresentationLayer/SpravaZakazniku/VytvoritZakaznikaForm.java
+END
+ZmazatZakaznikaForm.java
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/courses/36sin/INTEOCORP/!svn/ver/420/src/LogicalDesign/PresentationLayer/SpravaZakazniku/ZmazatZakaznikaForm.java
+END

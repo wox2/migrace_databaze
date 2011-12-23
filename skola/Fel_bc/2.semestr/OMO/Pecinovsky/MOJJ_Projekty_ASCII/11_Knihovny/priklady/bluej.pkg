@@ -1,0 +1,16 @@
+#Soubor bluej.pkg prevedeny do ASCII
+#Sat Nov 29 12:36:30 CET 2008
+package.editor.x=0
+package.showExtends=true
+target1.type=ClassTarget
+target1.height=50
+target1.width=80
+package.editor.width=180
+target1.y=90
+target1.x=10
+package.numDependencies=0
+target1.name=Molekuly
+target1.showInterface=false
+package.showUses=true
+package.editor.height=286
+package.numTargets=1

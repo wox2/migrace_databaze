@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+    <h:head>
+        <title>Link Types</title>
+    </h:head>
+    <h:body>
+            <ui:param name="pageTitle" value="#{msgs.linktypes}" />
+                <h:form>
+                    <h1><h:outputText value="Link Types"/></h1>
+                    <h:outputText value="#{linktypes.cnt}"/>
+                    <h:commandLink action="#{linktypes.newLinkType}" value="Add" />
+                    <h:dataTable value="#{linktypes.allLinkTypes}" var="item" styleClass="dataTable">
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="Name"/>
+                            </f:facet>
+                            <h:outputText value="#{item.name}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="Cost per km"/>
+                            </f:facet>
+                            <h:outputText value="#{item.costPerKM}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="Shortcut"/>
+                            </f:facet>
+                            <h:outputText value="#{item.shortcut}"/>
+                        </h:column>
+                        <h:column>
+                            <h:commandButton value="Edit" action="#{linktypes.editLinkType(item)}" />
+                        </h:column>
+                        <h:column>
+                            <h:commandButton value="Remove" action="#{linktypes.removeLinkType(item)}" />
+                        </h:column>
+                    </h:dataTable>
+                <h:commandLink action="admin" value="#{msgs.back}" immediate="true" />
+                    <h:messages />
+                </h:form>
+    </h:body>
+</html>
+

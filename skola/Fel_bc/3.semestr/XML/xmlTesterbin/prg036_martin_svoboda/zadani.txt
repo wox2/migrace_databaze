@@ -1,0 +1,2 @@
+
+Seznam cestujicich pro letistni predodletovou kontrolu. Pro kazdy let obsahuje seznam cestujicich a jejich osobni udaje. 

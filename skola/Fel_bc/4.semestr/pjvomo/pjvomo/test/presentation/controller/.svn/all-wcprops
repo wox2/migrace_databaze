@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/~svobom41/svn/!svn/ver/37/javomo/trunk/test/presentation/controller
+END
+SelectDirectoryActionTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/~svobom41/svn/!svn/ver/30/javomo/trunk/test/presentation/controller/SelectDirectoryActionTest.java
+END
+StartStopServerActionTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/~svobom41/svn/!svn/ver/37/javomo/trunk/test/presentation/controller/StartStopServerActionTest.java
+END
+TextAreaLoggerHandlerTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/~svobom41/svn/!svn/ver/28/javomo/trunk/test/presentation/controller/TextAreaLoggerHandlerTest.java
+END

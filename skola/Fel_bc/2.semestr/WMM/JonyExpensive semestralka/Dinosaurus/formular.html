@@ -1,0 +1,192 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+  
+   <head>
+    <link href="style.css" rel="stylesheet" type="text/css" title="default">
+    <link href="style1.css" rel="alternate stylesheet" type="text/css" title="alternative">
+    <script type="text/javascript" src="styleswitcher.js"></script>
+    <title>Dinosauøi</title>
+    <script type="text/javascript">
+    function vymreni(){
+      window.location.href = "vymreni.html";                
+    }
+    function uvod(){
+      window.location.href = "main.html";                
+    }
+     function rekordy(){
+      window.location.href = "tabulka.html";                
+    }
+     function formular(){
+      window.location.href = "formular.html";                
+    }
+    function obrazky(){
+      window.location.href = "obrazky.html";                
+    }
+    function mapa(){
+      window.location.href = "mapa.html";  
+    }
+     function validuj(){
+     alert("Kontrola provedena.");
+      if ((document.getElementById("jmeno").value.length==0)||
+          (document.getElementById("prijmeni").value.length==0)||
+          (document.getElementById("email").value.indexOf("@")==-1))
+          {
+          alert("Nejsou vyplneny vsechny pozadavky");
+          return false;
+          
+          } 
+          return true;        
+     }
+     function kontrolaTextJmeno(){
+          
+          if (document.getElementById("jmeno").value.length==0){
+          document.getElementById("pointJmeno").style.visibility="visible";
+          }
+          else{
+          document.getElementById("pointJmeno").style.visibility="hidden";
+          }
+     }
+     
+     
+     function zobraz(){
+          document.getElementById("skola").style.visibility="visible";
+     }
+     function skryj(){
+          document.getElementById("skola").style.visibility="hidden";
+     }
+     function kontrolaTextPrijmeni(){
+          if (document.getElementById("prijmeni").value.length==0){
+            document.getElementById("pointPrijmeni").style.visibility="visible";
+          }
+          else{
+            document.getElementById("pointPrijmeni").style.visibility="hidden";
+          }
+     }
+     function kontrolaTextEmail(){
+          if (document.getElementById("email").value.indexOf("@")==-1){
+            document.getElementById("pointEmail").style.visibility="visible";
+          }
+          else{
+            document.getElementById("pointEmail").style.visibility="hidden";
+          }
+     }
+    </script>
+  </head>
+  
+  <body>
+    <div id="hornimenu">
+       <h1> Dinosauøi</h1>
+       Skin: 
+       <a href="#" onclick="setActiveStyleSheet('default'); return false;">Základní</a>
+       <a href="#" onclick="setActiveStyleSheet('alternative'); return false;">Alternativní</a>        
+    </div>
+    <div id="levemenu">
+            <div class="tlacitko"  onclick="uvod()">
+             <a href="main.html">Úvod</a> 
+            </div>
+            <div class="tlacitko" onclick="vymreni()">
+              <a href="vymreni.html">Vymøení </a>  
+            </div>       
+            <div class="tlacitko" onclick="obrazky()">
+              <a href="obrazky.html">Obrázky </a>
+            </div>
+            <div class="tlacitko" onclick="rekordy()">
+              <a href="tabulka.html">Rekordy </a>
+            </div>            
+            <div class="tlacitko" onclick="formular()" >
+              <a href="formular.html">Formuláø</a>
+            </div> 
+            <div class="tlacitko" onclick="mapa()">
+              <a href="mapa.html">Mapa stránek</a>
+            </div>
+    </div>
+    <div id="clanek">
+    
+      <h2>Dotazník </h2>
+      <form action="http://amun.felk.cvut.cz/vypis_form.php" method="POST" id="form" onreset="return confirm('Opravdu vymazat obsah formuláøe?')" onsubmit="return validuj()">
+      <fieldset>
+        <legend>Jméno a pøíjmení</legend>
+        <div>
+          <label for="jmeno">Jméno</label> <input tabindex="1" accesskey="j" type="text" name="jmeno" id="jmeno" onChange="kontrolaTextJmeno()">         
+          <img src="point.GIF" alt="point.GIF, 938B" title="point" width="13" height="17" id="pointJmeno" />
+          
+        </div>
+        <div>
+          <label for="prijmeni">Pøíjmení</label> <input tabindex="2" accesskey="p" type="text" name="prijmeni" id= "prijmeni" onChange="kontrolaTextPrijmeni()"> 
+          <img src="point.GIF" alt="point.GIF, 938B" title="point" width="13" height="17" id="pointPrijmeni" />  
+        </div>
+        <div>
+          <label for="muz">Muž</label><input type="radio" name= "pohlavi" value="muz" tabindex="3" id="muz" checked= "checked" >
+          <label for="zena">Žena</label><input type="radio" name="pohlavi" value="zena" tabindex="4" id="zena">
+        </div>
+      </fieldset>
+      <fieldset>
+        <legend>Email</legend>
+        <div>
+          <label for="email">Email</label> <input tabindex="5" accesskey="e" type="text" name="email" id="email" onChange="kontrolaTextEmail()">
+          <img src="point.GIF" alt="point.GIF, 938B" title="point" width="13" height="17" id="pointEmail" />                
+        </div>
+        <div>
+          <label for="denne">Doruèit novinky  dennì</label><input name="denne" value="denne" id="denne" accesskey="d" tabindex="6" type="checkbox"/>
+          <label for="tydne">týdnì</label><input name="tydne" value="tydne" id="tydne" accesskey="t" tabindex="7" type="checkbox"/>                                     
+          <label for="mesicne">mìsíènì</label><input name="mesicne" value="mesicne" id="mesicne" accesskey="m" tabindex="8" type="checkbox"/>
+        </div>
+      </fieldset>
+      <fieldset>
+        <legend>Povolání</legend>
+
+        <div>
+          <label for="povolani">Povolání</label> <select name="povolani" tabindex="9" id="povolani">
+            <optgroup label="student">
+            
+              <option value="101" selected="selected" onclick="skryj()">
+                Základní škola
+              </option>
+              <option value="102"  onclick="skryj()">
+                Støední škola
+              </option>
+              <option value="103" onclick="zobraz()">
+                Vysoká škola
+              </option>
+            </optgroup>
+
+            <optgroup label="Práce" >
+              <option value="201" onclick="skryj()" >
+                Školství
+              </option>
+              <option value="202" onclick="skryj()" >
+                Zdravotnictví
+              </option>
+            </optgroup>
+            
+          </select>
+        </div>
+        <select name="skola[]" tabindex="10" multiple="multiple" id="skola" >
+        
+          <option value="1">
+            MFF UK
+          </option>
+          <option value="2">
+            ÈVUT
+          </option>
+          <option value="3">
+            VŠE
+          </option>
+          <option value="4">
+            Jiná
+          </option>
+        </select>
+      </fieldset>
+      <fieldset>
+        <legend>Vzkaz</legend> <label for="vzkaz">Váš vzkaz </label>         
+        <textarea name="vzkaz" tabindex="11" accesskey="t" rows="3" cols="15" id="vzkaz">Zde napište Váš vzkaz</textarea>
+      </fieldset>
+      <div>
+        <input accesskey="r" type="submit" value="Odeslat" name="odeslat">
+        <input type="reset" value="Resetovat" name="reset">
+        
+      </div>
+      </form>
+    </div>
+  </body>
+</html>

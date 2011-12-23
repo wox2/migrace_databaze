@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <h:head>
+        <title>Spoj</title>
+    </h:head>
+    <h:body>
+        <ui:param name="pageTitle" value="Edit spoj" />
+            <h1><h:outputText value="Edit spoj" /></h1>
+            <h:form>
+                <h:panelGrid columns="3" columnClasses="dataLabel,,">
+                    <h:outputText value="čas odjezdu:" />
+                    <h:inputText value="#{links.link.departureTime}" id="un" label="odjezd" required="true" requiredMessage="#{msgs.requiredMessage}"/>
+                    <h:message for="un" errorClass="errorRequired"/>
+
+                    <h:outputText value="číslo:" />
+                    <h:inputText value="#{links.link.linkNumber}" id="ln" label="číslo" required="true" requiredMessage="#{msgs.requiredMessage}"/>
+                    <h:message for="ln" errorClass="errorRequired"/>
+
+                    <h:outputText value="Trasa:" />
+                        <h:selectOneListbox id="rt" value="#{links.link.route}" label="Trasa" size="1" converter="routeConv" validatorMessage="error">
+                            <f:selectItems value="#{routes.allRoutes}" />
+                        </h:selectOneListbox>
+                        <h:message for="rt" />
+
+
+                    <h:outputText value="Druh:" />
+                        <h:selectOneListbox id="lt" value="#{links.link.linkType}" label="Druh" size="1" converter="linkTypeConv" validatorMessage="error">
+                            <f:selectItems value="#{linktypes.allLinkTypes}" />
+                        </h:selectOneListbox>
+                        <h:message for="lt" />
+
+                    <h:outputText value="Poznámky:" />
+                        <h:selectManyListbox id="nt" value="#{links.link.notes}" label="Poznámky" converter="noteConv">
+                            <f:selectItems value="#{notes.allNotes}" />
+                        </h:selectManyListbox>
+                    <h:message for="nt" errorClass="errorRequired"/>
+
+
+                </h:panelGrid>
+                <h:commandButton type="submit" value="#{msgs.save}" action="#{links.saveLink}"/>
+                <h:commandLink action="links" value="#{msgs.back}" immediate="true" />
+                <h:messages globalOnly="true"/>
+            </h:form>
+    </h:body>
+</html>

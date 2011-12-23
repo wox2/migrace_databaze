@@ -1,0 +1,29 @@
+
+**********************************************************
+* Testovaci Makefile pro spusteni testu domaciho ukolu 1 *
+**********************************************************
+
+Pred spustenim testu vlozte testovany zdrojovy kod do 
+tohoto adresare a pojmenujte jej DU2.cpp (dodrzujte mala a
+velka pismenka). 
+
+Test lze spustit na trech platformach - Solaris, Linux 32bit,
+a Linux 64bit.
+
+Pro solaris zadejte do prikazove radky:
+
+make test_solaris
+
+Pro linux 32bit:
+
+make test_linux_32
+
+Pro linux 64bit:
+
+make test_linux_64
+
+Pro MacOS:
+
+make test_macos
+
+

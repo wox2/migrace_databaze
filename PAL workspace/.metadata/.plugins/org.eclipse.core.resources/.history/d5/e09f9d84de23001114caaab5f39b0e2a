@@ -1,0 +1,32 @@
+#include <string>
+#include <string.h>
+#include <iostream>
+#include <stdlib.h>
+#include <fstream>
+#include <vector>
+using namespace std;
+
+struct Gen{
+
+};
+
+string alphabet;
+string dna;
+vector* gens;
+int genCount;
+
+void readData();
+void process();
+void writeResults();
+int void main(){
+	readData();
+	process();
+	writeResults();
+}
+
+void ReaData(){
+	cin >> alphabet;
+	cin >> dna;
+	cin >> genCount;
+
+}

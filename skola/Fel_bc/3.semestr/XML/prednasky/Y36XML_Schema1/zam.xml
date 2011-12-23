@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="windows-1250"?>
+
+<!DOCTYPE zaměstnanci SYSTEM "zam.dtd">
+
+<zaměstnanci>
+  <osoba id="náčelník" poznámka="Německý Čech" dovolená="ano">
+    <jméno>
+      <křestní>Karel</křestní>
+      <příjmení>Němec</příjmení>
+    </jméno>
+    <email>karel.nemec@cimr.cz</email>
+    <vztahy podřízení="lekárník učitel nosič"/>
+  </osoba>
+  
+  <osoba id="lekárník" poznámka="Domů! Do Prahy! Do Podolí!">
+    <jméno>      
+      <křestní>Vojtěch</křestní>      
+      <příjmení>Šofr</příjmení>    
+    </jméno>   
+    <email>vojtech.sofr@cimr.cz</email>    
+    <vztahy nadřízený="náčelník"/>  
+  </osoba> 
+  
+  <osoba id="učitel">    
+    <jméno>      
+      <křestní>Václav</křestní>      
+      <příjmení>Poustka</příjmení>    
+    </jméno>    
+    <email>vaclav.poustka@cimr.cz</email>    
+    <vztahy nadřízený="náčelník"/>  
+  </osoba>  
+  
+  <osoba id="nosič" poznámka="Já bych sněd' i Kratochvíla...">    
+    <jméno>      
+      <příjmení>Frištenský</příjmení>      
+      <křestní>Varel</křestní>    
+    </jméno>    
+    <vztahy nadřízený="náčelník"/>  
+  </osoba>
+</zaměstnanci>

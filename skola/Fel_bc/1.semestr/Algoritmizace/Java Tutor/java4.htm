@@ -1,0 +1,850 @@
+<html><head>
+ 
+  <link href="java4_soubory/styly.css" type="text/css" rel="stylesheet">
+  <meta http-equiv="Content-Type" content="text/html;" charset="windows-1250">
+  <meta content="časopis o programování, Internetu a počítačích" name="description">
+  <meta content="PHP,ASM,ASP,developer,forum,fórum,programator,programátor,SQL,Pascal,TP,Jan Sova,Sova,MySQL,C/C++,C++,JS,JavaScript,HW,
+   Visual Basic,Hardware,Software,Flash,Assembler,Asembler,Apache,Java,Python name=" keywords="">
+  <meta http-equiv="Author" content="Jan" sova,="" jansova@programator.cz=""><title>Programátor - Začínáme v Javě (4.): Operace s operátory</title>
+  
+ <style>
+<!--
+.codekwd { color: #0000FF }
+.codecom { color: #008000 }
+.poznamka    { font-size: x-small; }
+.codestr { color: #800080 }
+-->
+</style></head><body topmargin="5" leftmargin="5" bgcolor="#eff1f8" marginheight="0" marginwidth="0">
+
+<table style="border: 1px solid rgb(32, 32, 32);" align="center" bgcolor="black" border="0" cellspacing="1" width="770">
+  <tbody><tr>
+    <td align="center">
+     <span class="top">
+      <a title="Projekt pro všechny programátory" href="http://www.programator.cz/">ProgramatorCZ</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+      <a title="Diskuse na www.programator.cz" href="http://linux.programator.cz/forum">Diskusní
+      fórum</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+      <a title="Největší zdroj dokumentace o Assembleru v ČR" href="http://asm.programator.cz/">ASMDprojekt</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+      <a title="Vtipy nejen pro programátory" href="http://vtipy.programator.cz/">Vtipy</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+      <a title="Knihovna JavaScriptu" href="http://javascript.programator.cz/">JavaScript</a>
+   </span>
+  </td>
+ </tr>
+</tbody></table>
+
+<table style="border-left: 1px solid rgb(32, 32, 32); border-right: 1px solid rgb(32, 32, 32);" align="center" background="java4_soubory/logo.gif" border="0" cellpadding="0" cellspacing="0" width="770">
+  <tbody><tr>
+    <td align="right">
+<!-- BBSTART: ad2.billboard.cz kod 1.1 - SERVER: Časopis(8512), SEKCE: top(1), POZICE: (1), TYPBANNERU: Full Banner(1), OKRAJ: ne, POPIS: ne. -->
+<script language="JavaScript" type="text/javascript">
+<!--
+var bbs=screen,bbn=navigator,bbh;bbh='&ubl='+bbn.browserLanguage+'&ucc='+bbn.cpuClass+'&ucd='+bbs.colorDepth+'&uce='+bbn.cookieEnabled+'&udx='+bbs.deviceXDPI+'&udy='+bbs.deviceYDPI+'&usl='+bbn.systemLanguage+'&uje='+bbn.javaEnabled()+'&uah='+bbs.availHeight+'&uaw='+bbs.availWidth+'&ubd='+bbs.bufferDepth+'&uhe='+bbs.height+'&ulx='+bbs.logicalXDPI+'&uly='+bbs.logicalYDPI+'&use='+bbs.fontSmoothingEnabled+'&uto='+(new Date()).getTimezoneOffset()+'&uui='+bbs.updateInterval+'&uul='+bbn.userLanguage+'&uwi='+bbs.width;
+var bb9_bgcolor='C0C0C0';
+var bb9_text='000000';
+var bb9_link='0000FF';
+if(document.bgColor) { bb9_bgcolor=document.bgColor.substr(1); }
+if(document.fgColor) { bb9_text=document.fgColor.substr(1); }
+if(document.linkColor) { bb9_link=document.linkColor.substr(1); }
+document.write("<IFRAME WIDTH=468 HEIGHT=60 MARGINWIDTH=0 MARGINHEIGHT=0 FRAMEBORDER=0 HSPACE=0 VSPACE=0 SCROLLING=no BORDERCOLOR='#000000' SRC='http://ad2.billboard.cz/please/showit/8512/1/1/1/?typkodu=html&topmargin=0&leftmargin=0"+bbh+"&href="+escape(location.href)+"&popis=ne&okraj=ne&bgcolor="+bb9_bgcolor+"&text="+bb9_text+"&link="+bb9_link+"&bust="+Math.random()+"&target=_top'>");
+document.write("<scr"+"ipt language='JavaScript' type='text/javascript'>");
+document.write("document.write(\"<scr\"+\"ipt language='JavaScript' type='text/javascript' src='http://ad2.billboard.cz/please/showit/8512/1/1/1/?typkodu=js\"+bbh+\"&href=\"+escape(location.href)+\"&popis=ne&okraj=ne&bust=\"+Math.floor(10000000*Math.random())+\"&target=_top'><\/scr\"+\"ipt>\");");
+document.write("<\/scr"+"ipt>");
+document.write("<\/IFRAME>");
+/**///-->
+</script><iframe marginwidth="0" marginheight="0" hspace="0" vspace="0" bordercolor="#000000" src="java4_soubory/a.html" frameborder="0" height="60" scrolling="no" width="468">&lt;script
+language='JavaScript'
+type='text/javascript'&gt;document.write("&lt;scr"+"ipt
+language='JavaScript' type='text/javascript'
+src='http://ad2.billboard.cz/please/showit/8512/1/1/1/?typkodu=js"+bbh+"&amp;href="+escape(location.href)+"&amp;popis=ne&amp;okraj=ne&amp;bust="+Math.floor(10000000*Math.random())+"&amp;target=_top'&gt;&lt;/scr"+"ipt&gt;");&lt;/script&gt;</iframe>
+<noscript>
+<table border="0" cellpadding="0" cellspacing="0"><tr><td>
+<a href="http://ad2.billboard.cz/please/redir.bb/8512/1/1/1/"
+target="_top">
+<img
+src="http://ad2.billboard.cz/please/showit/8512/1/1/1/?typkodu=img"
+border="0" width="468" height="60" alt='Kliknete prosim!'></a>
+</td></tr></table>
+</noscript>
+<!-- BBEND: ad2.billboard.cz kod 1.1 -->
+  </td>
+ </tr>
+</tbody></table>
+
+
+<table style="border: 1px solid rgb(32, 32, 32);" align="center" bgcolor="#ccd1ef" cellspacing="1" width="770">
+ <tbody><tr>
+  <td align="left">
+   <span class="top2">
+    <i>Spolupracujeme</i>:&nbsp;&nbsp;
+    <a href="http://www.webguru.cz/">WebGuru</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+    <a href="http://www.komplikator.cz/">Komplikátor</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+    <a href="http://www.minasite.cz/">MinaSite</a>
+   </span>
+   </td>
+   <td align="right">
+    <span class="top2">
+      <a href="javascript:window.external.AddFavorite%20('http://casopis.programator.cz',%20'%C4%8Casopis%20Program%C3%A1tor-%20Internet,%20PHP,%20JavaScipt,%20Pascal,%20Delphi');">Přidat
+         k oblíbeným položkám</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+      <a href="http://casopis.programator.cz/" onclick="this.style.behavior='url(#default#homepage)';this.setHomePage('http://casopis.programator.cz');return(false);">Nastavit
+         jako výchozí stránku</a>
+    </span>
+   </td>
+ </tr>
+</tbody></table>
+
+
+<table align="center" border="0" cellpadding="0" cellspacing="0" width="770">
+  <tbody><tr>
+
+
+    <td cellspacing="0" cellpadding="0" valign="top" width="120">
+
+    <table style="border-left: 1px solid rgb(32, 32, 32); border-right: 1px solid rgb(32, 32, 32); border-bottom: 1px solid rgb(32, 32, 32);" bgcolor="#dce1ef" cellpadding="0" cellspacing="0">
+     <tbody><tr>
+      <td>
+       <img src="java4_soubory/icon.gif" border="0" height="0" width="1">
+
+
+
+
+      <table align="center" border="0" cellpadding="1" cellspacing="0" width="120">
+        <tbody><tr>
+         <td align="left" bgcolor="#0d3b8e">
+          <span class="supmenu">
+           <b><img src="java4_soubory/double_point.gif">Časopis</b>
+          </span>
+         </td>
+        </tr>
+        <tr>
+         <td>
+          <span class="mn">
+            <img src="java4_soubory/x.gif" width="1"><img src="java4_soubory/odrazka.gif">
+            <a href="http://casopis.programator.cz/index.php"> Hlavní stránka</a><br>
+                        <img src="java4_soubory/x.gif" width="1"><img src="java4_soubory/odrazka.gif">
+                 <a href="http://casopis.programator.cz/index.php?rubrika=9" title="I dnes se vyplatí vědět něco o ASM">                 Assembler            </a><br>
+                             <img src="java4_soubory/x.gif" width="1"><img src="java4_soubory/odrazka.gif">
+                 <a href="http://casopis.programator.cz/index.php?rubrika=8" title="Vše o C/C++">                 C,C++            </a><br>
+                             <img src="java4_soubory/x.gif" width="1"><img src="java4_soubory/odrazka.gif">
+                 <a href="http://casopis.programator.cz/index.php?rubrika=1" title="Programování v Delphi">                 Delphi            </a><br>
+                             <img src="java4_soubory/x.gif" width="1"><img src="java4_soubory/odrazka.gif">
+                 <a href="http://casopis.programator.cz/index.php?rubrika=15" title="Vše o Microsoft  .NET - nové platformě">                 DOTNET            </a><br>
+                             <img src="java4_soubory/x.gif" width="1"><img src="java4_soubory/odrazka.gif">
+                 <a href="http://casopis.programator.cz/index.php?rubrika=10" title="Velmi zajímavá technologie">                 Flash            </a><br>
+                             <img src="java4_soubory/x.gif" width="1"><img src="java4_soubory/odrazka.gif">
+                 <a href="http://casopis.programator.cz/index.php?rubrika=3" title="Stále důležitější jazyk">                 HTML            </a><br>
+                             <img src="java4_soubory/x.gif" width="1"><img src="java4_soubory/odrazka.gif">
+                 <a href="http://casopis.programator.cz/index.php?rubrika=16" title="Java">                 Java            </a><br>
+                             <img src="java4_soubory/x.gif" width="1"><img src="java4_soubory/odrazka.gif">
+                 <a href="http://casopis.programator.cz/index.php?rubrika=4" title="JavaScript">                 JavaScript            </a><br>
+                             <img src="java4_soubory/x.gif" width="1"><img src="java4_soubory/odrazka.gif">
+                 <a href="http://casopis.programator.cz/index.php?rubrika=12" title="Doporučená četba">                 Knihy            </a><br>
+                             <img src="java4_soubory/x.gif" width="1"><img src="java4_soubory/odrazka.gif">
+                 <a href="http://casopis.programator.cz/index.php?rubrika=13" title="Vše možné o Internetu">                 O Internetu            </a><br>
+                             <img src="java4_soubory/x.gif" width="1"><img src="java4_soubory/odrazka.gif">
+                 <a href="http://casopis.programator.cz/index.php?rubrika=2" title="Vše o programování hlavně v Turbo Pascalu">                 Pascal            </a><br>
+                             <img src="java4_soubory/x.gif" width="1"><img src="java4_soubory/odrazka.gif">
+                 <a href="http://casopis.programator.cz/index.php?rubrika=6" title="Vše o PHP">                 PHP            </a><br>
+                             <img src="java4_soubory/x.gif" width="1"><img src="java4_soubory/odrazka.gif">
+                 <a href="http://casopis.programator.cz/index.php?rubrika=5" title="Co je nového v projektu Programátor">                 Pro. programátor            </a><br>
+                             <img src="java4_soubory/x.gif" width="1"><img src="java4_soubory/odrazka.gif">
+                 <a href="http://casopis.programator.cz/index.php?rubrika=7" title="Programy z našeho projektu">                 Programy            </a><br>
+                             <img src="java4_soubory/x.gif" width="1"><img src="java4_soubory/odrazka.gif">
+                 <a href="http://casopis.programator.cz/index.php?rubrika=11" title="Zajímavý programovací jazyk">                 Python            </a><br>
+                             <img src="java4_soubory/x.gif" width="1"><img src="java4_soubory/odrazka.gif">
+                 <a href="http://casopis.programator.cz/index.php?rubrika=14" title="Externí zprávy">                 Tiskové zprávy            </a><br>
+                           </span>
+         </td>
+        </tr>
+      </tbody></table>
+      <p></p>
+
+              <table align="center" border="0" cellpadding="1" cellspacing="0" width="120">
+        <tbody><tr>
+         <td align="left" bgcolor="#0d3b8e">
+          <span class="supmenu">
+           <b><img src="java4_soubory/double_point.gif">Projekty</b>
+          </span>
+         </td>
+        </tr>
+        <tr>
+         <td>
+          <span class="mn">
+            <p>
+             <img src="java4_soubory/x.gif" width="1"><img src="java4_soubory/odrazka.gif">
+            <a href="http://casopis.programator.cz/index.php"> </a><a href="http://linux.programator.cz/projekty/javascript">JScript Planet</a><br>
+             <img src="java4_soubory/x.gif" width="1"><img src="java4_soubory/odrazka.gif">
+            <a href="http://casopis.programator.cz/index.php"> </a><a href="http://linux.programator.cz/forum">ProProjekty</a></p>
+          </span>
+         </td>
+        </tr>
+        </tbody></table>
+        <p></p>
+
+        <table align="center" border="0" cellpadding="1" cellspacing="0" width="120">
+        <tbody><tr>
+         <td align="left" bgcolor="#0d3b8e">
+          <span class="supmenu">
+           <b><img src="java4_soubory/double_point.gif">Služby</b>
+          </span>
+         </td>
+        </tr>
+        <tr>
+         <td>
+          <span class="mn">
+            <p>
+             <img src="java4_soubory/x.gif" width="1"><img src="java4_soubory/odrazka.gif">
+            <a href="http://casopis.programator.cz/index.php"> </a><a href="http://casopis.programator.cz/monitor.programator.cz">Monitoring</a><br>
+          </p></span>
+         </td>
+        </tr>
+        </tbody></table>
+        <p></p>
+
+       <table align="center" border="0" cellpadding="1" cellspacing="0" width="120">
+        <tbody><tr>
+         <td align="left" bgcolor="#0d3b8e">
+          <span class="supmenu">
+           <b><img src="java4_soubory/double_point.gif">Informace</b>
+          </span>
+         </td>
+        </tr>
+        <tr>
+         <td>
+          <span class="mn">
+            <img src="java4_soubory/x.gif" width="1"><img src="java4_soubory/odrazka.gif">
+            <a href="http://casopis.programator.cz/index.php"> </a><a href="http://casopis.programator.cz/r-users.php">Redakce</a><br>
+            <img src="java4_soubory/x.gif" width="1"><img src="java4_soubory/odrazka.gif">
+            <a href="http://casopis.programator.cz/index.php"> </a><a href="http://casopis.programator.cz/o.php">O časopisu</a><br>
+            <img src="java4_soubory/x.gif" width="1"><img src="java4_soubory/odrazka.gif">
+            <a href="http://casopis.programator.cz/index.php"> </a><a href="http://casopis.programator.cz/odkazy.php">Odkazy</a><br>
+            <img src="java4_soubory/x.gif" width="1"><img src="java4_soubory/odrazka.gif">
+            <a href="http://casopis.programator.cz/index.php"> </a><a href="http://casopis.programator.cz/newredaktor.php">Nový redaktor</a><br>
+          </span>
+         </td>
+       </tr>
+      </tbody></table>
+      <p></p>
+
+      <hr size="1" width="110">
+      <p align="center">ISSN 1213-7359
+      <br>
+      </p><p align="center"><font size="1">Šéfredaktor:</font>
+      <br>
+      <span class="mn"><a href="mailto:jansova@programator.cz"><b>Jan Sova</b></a></span>
+      <br>
+      <br>
+      <font size="1">Zástupci šéfredaktora</font>
+      <br>
+      <b>Frerenzy Dawid</b>
+      <br>
+      <b>Krásenský David</b>
+      <br>
+      <br>
+      <font size="1">Šéfredaktoři rubrik</font>
+      <br>
+      <b>Michal Chalupník</b><br>
+      <b>Formánek Jiří</b><br>
+      <b>Pavel Aleš</b><br>
+      <b>Sojka Zdeněk</b><br>
+      <b>Petr Rympler</b><br>
+      <br>
+      <font size="1">Administrátor</font><br>
+      <span class="mn"><a href="mailto:jansova@programator.cz"><b>Jan Sova</b></a></span>
+      <br>
+      <br>
+
+
+
+      </p><p align="center"><a href="http://casopis.programator.cz/"><img src="java4_soubory/icon.gif" alt="Naše ikonka" border="0"></a><br>
+      <a href="http://www.minasite.cz/"><img src="java4_soubory/minasite.gif" alt="MinaSite" border="0"></a><br>
+      <!-- Komplikátorovy stránky - Začátek -->
+       <a href="http://www.komplikator.cz/" target="_top">
+       <img src="java4_soubory/kikona.gif" alt="Komplikátorovy Stránky" border="0" height="31" width="88"></a><br>
+      <!-- Komplikátorovy stránky - Konec -->
+      <a href="http://www.toplist.cz/" target="_top"><img src="java4_soubory/count.gif" alt="TOPlist" border="0"></a><br>
+      <a href="http://www.galactica.cz/"><img src="java4_soubory/gal.gif" alt="GALACTICA" border="0"></a><br>
+
+
+      <br>
+
+      </p><p align="center"><font size="1">Časopis používá redakční systém Sova-Press.</font></p>
+        <br>
+       </td>
+      </tr>
+     </tbody></table>
+
+
+    <!-- vynechání prostoru mezi buňkami -->
+    </td><td width="4">
+    <img src="java4_soubory/x.gif" width="4"></td>
+      <!--
+          zde končí levá část stránky a začíná střed, musí začítt tm, že se
+          definuje velikost buňky pro střed
+      -->    
+    <td valign="top" width="522">
+    <br>
+         <p><span class="nadpis">Začínáme v Javě (4.): Operace s operátory</span> v rubrice Java</p>
+
+        <p><b>Dnes budeme pokračovat v minule započatém a důkladně si probereme operátory a 
+povíme si i o přetypování.</b></p>
+        <p>
+</p><h4>3.3. Operátory</h4>
+<p>Operátory mohou mít jeden, dva nebo tři (pouze v jednom případě) operandy a 
+dávají nějakou hodnotu, v závislosti na druhu operátorů.</p>
+<p><b>Operátor přiřazení</b> (<b><code>=</code></b>) se dá použít pro všechny datové 
+typy a třídy. Vezme hodnotu výrazu na pravé straně a zkopíruje ji do proměnné na 
+levé straně. Na levé straně může být pouze proměnná:</p>
+<p><code><span class="codekwd">int</span> a;<br>
+a = 1;<br>
+<span class="codecom">// nelze vsak napsat 1 = a;</span></code></p>
+<p>V Javě je možno vícenásobné přiřazení (stejně jako v C/C++):</p>
+<p><code><span class="codekwd">int</span> a, b, c;<br>
+a = b = c = 5;</code></p>
+<p>Rovněž můžeme při inicializaci použít již existujících proměnných a metod:</p>
+<p><code><span class="codekwd">int</span> a = 15, b = a*a, c = f(a);</code></p>
+<p class="poznamka"><b>Poznámka:</b> metoda <code>f()</code> samozřejmě musí 
+někde v naší třídě existovat, brát celočíselný argument a vracet rovněž celé 
+číslo...</p>
+<p><b>Matematických operátorů</b> je 5: sčítání (<b><code>+</code></b>), odčítání (<b><code>-</code></b>), 
+násobení (<b><code>*</code></b>), dělení (<b><code>/</code></b>) a dělení modulo (<b><code>%</code></b>) 
+- ten poslední vrací zbytek po dělení:</p>
+<p><code><span class="codekwd">int</span> i;<br>
+i = 5 % 2;<br>
+System.out.println(i); <span class="codecom">// vypise cislo 1</span></code></p>
+<p>Operátory <b> <code>+</code></b> a <b> <code>-</code></b> se dají použít i jako unární, pak 
+se používají jako <b>znaménko</b> čísla:</p>
+<p><code><span class="codekwd">int</span> i = -5;</code></p>
+<p>Dále se v Javě vyskytují ještě unární operátory <b>inkremetu</b> a <b>
+dekrementu</b>:<b><code>++</code></b> a <b> <code>--</code></b>. Tyto operátory jsou unární a 
+zvyšují (snižují) hodnotu proměnné o 1. Takže místo zápisu:</p>
+<p><code>i = i+1;</code></p>
+<p>můžeme napsat:</p>
+<p><code>i++;</code></p>
+<p>Tento operátor však vrací i hodnotu. Ta závisí na straně, kde je operátor 
+použit. Pokud se nachází na levé straně proměnné (prefix), zvýší (příp. sníží) 
+její hodnotu a tuto upravenou hodnotu vrátí. Pokud je však napravo (postfix), 
+vrátí hodnotu proměnné a až po té její hodnotu upraví. Lépe to bude vidět na 
+příkladu:</p>
+<p><code><span class="codekwd">int</span> i = 10;<br>
+System.out.println(++i); <span class="codecom">// vypise 11</span><br>
+System.out.println(i--); <span class="codecom">// vypise 11</span><br>
+System.out.println(i); <span class="codecom">// vypise 10</span></code></p>
+<p>V prvním výpisu je operátor nalevo, proto napřed dojde ke zvýšení hodnoty 
+proměnné a teprve pak se s ní pracuje. Zato na druhém řádku se napřed použije 
+proměnná - proto je výpis stejný - a až po té se její hodnota sníží. A to se 
+projeví až na třetím řádku.</p>
+<p>V Javě (jako v C/C++) existují i <b>zkrácené formy přiřazování</b> některých 
+výrazů. Místo:</p>
+<p><code>i = i + 3;</code></p>
+<p>můžeme napsat:</p>
+<p><code>i += 3;</code></p>
+<p>Operátor <b> <code>+=</code></b> znamená, že se k hodnotě z levé strany přičte 
+hodnota z pravé strany a uloží do proměnné nalevo. Tento zkrácený zápis lze 
+použít i pro ostatní operátory: <b> <code>-=</code></b>, <b> <code>*=</code></b>,<code>
+<b>/=</b></code>,<b>
+<code>%=</code></b>. U operací odčítání, dělení a dělení modulo pozor na pořadí 
+operátorů!</p>
+<p>Protože různé operátory mají různou prioritu (celá tabulka bude na konci této 
+části), používá se uzávorkování (samozřejmě i pro jiné než aritmetické 
+operátory), které zvyšuje prioritu:</p>
+<p><code>f1 = 15 + 12 / 6 - 3; <span class="codecom">// ma hodnotu 14</span><br>
+f2 = (15 + 12) / (6 - 3); <span class="codecom">// ma hodnotu 9</span></code></p>
+<p>Každopádně, tam kde si nejsme jisti, závorky navíc nic nezkazí a navíc ještě 
+zpřehledňují kód, protože je priorita okamžitě jasná.</p>
+<p>Matematické operátory lze použít pouze na číselné primitivní datové typy, 
+které rovněž vracejí.</p>
+<p>Operátor <b> <code>+</code></b> má ještě další význam.Používá se při <b>skládání 
+řetězců</b>:</p>
+<p><code>String a = <span class="codestr">"Ahoj"</span>;<br>
+String b = a + <span class="codestr">", jak se vede?"</span>;
+<span class="codecom">// retezec b bude tedy obsahovat "Ahoj, jak se vede?"</span></code></p>
+<p>Pozor na jednu možnou zradu:</p>
+<p><code><span class="codekwd">int</span> i = 1, j = 2;<br>
+<br>
+System.out.println(<span class="codestr">"1+2="</span> + i + j);<br>
+System.out.println(i + j + <span class="codestr">"=1+2"</span>);</code></p>
+<p>První výpis <b> <code>println()</code></b> vypíše: <b><code>1+2=12</code></b>, 
+zatímco druhý: <b><code>3=1+2</code></b>. Jak to? Jednoduše operátor <code>+</code> 
+začne "skládat řetězce" až tehdy, když bude jedním z jeho operátorů řetězec. 
+Jinak bude prostě sčítat čísla. Takže v prvním výpisu je nalevo řetězec, takže i 
+pravou stranu převede na řetězec a tento výsledek (<b>"<code>1+2=1</code>"</b>) použije 
+na další <b> <code>+</code></b>, jehož druhý operand opět převede na řetězec a je to. Na 
+druhém řádku však má první <b> <code>+</code></b> po obou stranách čísla - takže je 
+sečte a teprve tento výsledek je konfrontován s řetězcem. Pokud byste chtěli 
+dosáhnout správného výsledku i v prvním případě, jednoduše uzavřete výraz <b> <code>
+i+j</code></b> do závorek:</p>
+<p><code>System.out.println(<span class="codestr">"1+2="</span> + (i + j));</code></p>
+<p>Této skutečnosti, kdy jeden operátor má více funkcí (v závislosti na 
+kontextu) se říká <b>přetěžování operátorů</b>. Nás to však nemusí trápit, 
+protože Java programátorům přetěžovat operátory nedovoluje (bohužel).</p>
+<p><b>Relační operátory</b> jsou tyto: rovnost (<b><code>==</code></b>), nerovnost (<b><code>!=</code></b>), 
+větší než (<b><code>&gt;</code></b>), menší než (<b><code>&lt;</code></b>), větší nebo rovno (<b><code>&gt;=</code></b>) 
+menší nebo rovno (<b><code>&lt;=</code></b>). Operátory lze použít na prim. datové typy 
+(kromě <b><code>boolean</code></b>). Rovnost a nerovnost lze navíc 
+použít i na objekty. V tomto případě se ale chovají poněkud podivně. V budoucnu 
+se tomu budeme věnovat podrobněji. Všechny tyto operátory vrací hodnoty typu <b>
+<code>boolean</code></b> (pozor, tedy žádné céčkovské orgie s <b><code>int</code></b>y...)</p>
+<p>Je ještě jeden zvláštní relační operátor: <b><code>instanceof</code></b> 
+a zjišťuje zda je nějaký objekt instancí nějaké třídy. Používá se takto:</p>
+<p><code>String s = <span class="codestr">"bla bla bla"</span>;<br>
+<span class="codekwd">boolean</span> b1 = s <span class="codekwd">instanceof</span> 
+String; <br>
+<span class="codekwd">boolean</span> b2 = s <span class="codekwd">instanceof</span> 
+Object;</code></p>
+<p>Obě proměnné <code><b>b1</b></code> i <code><b>b2</b></code> budou obsahovat
+<b><code>true</code></b>. Objekt <code>s</code> je určitě instancí 
+třídy <code><b>String</b></code> - tak jsme si jej vytvořili. Rovněž je i objektem 
+třídy <code><b>Object</b></code>, o které jsme si minule řekli že stojí úplně na 
+vrcholu hierarchie tříd. A jelikož každý objekt je i instancí rodičovské třídy 
+(a pořád nahoru), tak každý objekt je i instancí třídy <code><b>Object</b></code>. 
+Tomuto operátoru se budeme více věnovat až se budeme bavit o <b>RTTI</b> (run-time 
+type identification).</p>
+<p><b>Logické operátory</b> jsou: logické AND (<code><b>&amp;&amp;</b></code>), logické OR (<code><b>||</b></code>) 
+a NOT (<code><b>!</b></code>). Tyto operátory pracují s hodnotami typu <b><code>boolean</code></b>, který i vracejí (opět na rozdíl od C/C++, 
+kde to byl <b><code>int</code></b>). První dva jsou binární, NOT je 
+unární (prefixový). Ukažme si je na příkladu:</p>
+<p><code><span class="codekwd">int</span> i = 5;<br>
+<span class="codekwd">boolean</span> maleKladneNeboLiche = ((i&lt;10) &amp;&amp; (i&gt;0)) || 
+((i%2)==1);<br>
+System.out.println(maleKladneNeboLiche);</code></p>
+<p>Tento výraz je poněkud složitější, ale ukazuje použití relačních a logických 
+operátorů pohromadě. Do proměnné <code><b>maleKladneNeboLiche</b></code> (typu
+<b><code>boolean</code></b>) uloží informaci, zde číslo <code><b>i</b></code> 
+je malé kladné (tedy menší jak 10, ale zároveň větší než 0) nebo alespoň zda je 
+liché (tedy zbytek po dělení dvěma je roven 1).</p>
+<p class="poznamka"><b>Poznámka:</b> Předchozí příklad slouží i jako 
+odstrašující, pokud jde o délku identifikátorů...</p>
+<p>Logické AND je <b><code>true</code></b> pokud jsou oba jeho 
+parametry <b><code>true</code></b>, jinak vrátí <b><code>false</code></b>. Logické OR vrátí
+<b><code>true</code></b> pokud je 
+alespoň jeden z jeho parametrů <b><code>true</code></b> (nebo i oba 
+dva), pokud jsou oba <b><code>false</code></b>, vrátí <b><code>false</code></b>. Operátor NOT je unární a obrací hodnotu 
+výrazu, tedy, pokud je <b><code>false</code></b>, vrátí <b><code>true</code></b> a naopak. Tedy proměnná b:</p>
+<p><code><span class="codekwd">boolean</span> b = !(i&lt;0);</code></p>
+<p>bude mít hodnotu <b><code>false</code></b> pokud <code><b>i</b></code> bude 
+menší jako 0, jinak bude <b><code>true</code></b>. Více o použití 
+logických a relačních operátorů si povíme příště, v části o podmínce <b><code>if</code></b>.</p>
+<p>Déle máme v Javě <b>bitové operátory</b> jsou: operátor AND (<code><b>&amp;</b></code>), 
+OR (<code><b>|</b></code>), XOR (<code><b>^</b></code>) a NOT (<code><b>~</b></code>). AND, OR a XOR 
+(výlučný OR) jsou binární, NOT je unární. Pracují s celými čísly, která rovněž 
+vracejí. Porovnávají vždy jednotlivé bity z binární reprezentace operandů a ve 
+výsledku je nastavují takto:</p>
+<table border="1" cellpadding="2" cellspacing="2">
+  <tbody><tr>
+    <td><b>První operátor</b></td>
+    <td><b>Druhý operátor</b></td>
+    <td><b>AND</b></td>
+    <td><b>OR</b></td>
+    <td><b>XOR</b></td>
+  </tr>
+  <tr>
+    <td align="center">0</td>
+    <td align="center">0</td>
+    <td align="center">0</td>
+    <td align="center">0</td>
+    <td align="center">0</td>
+  </tr>
+  <tr>
+    <td align="center">0</td>
+    <td align="center">1</td>
+    <td align="center">0</td>
+    <td align="center">1</td>
+    <td align="center">1</td>
+  </tr>
+  <tr>
+    <td align="center">1</td>
+    <td align="center">0</td>
+    <td align="center">0</td>
+    <td align="center">1</td>
+    <td align="center">1</td>
+  </tr>
+  <tr>
+    <td align="center">1</td>
+    <td align="center">1</td>
+    <td align="center">1</td>
+    <td align="center">1</td>
+    <td align="center">0</td>
+  </tr>
+</tbody></table>
+<p>NOT převrací bity. Takže např. 5 &amp; 3 = 1 (0101 AND 0011 = 0001), 5 | 3 = 7 
+(0101 OR 0011 = 0111) a 5 ^ 3 = 6 (0101 XOR 0011 = 0110). Operaci NOT si tu 
+ukazovat nebudeme. Je důležité si uvědomit, že všechny operace pracují se všemi 
+bity - tedy pokud by bylo typu byte, změnilo by všech 8 bitů (což má význam, 
+pokud pracujeme se zápornými čísly) - my jsme si tu předvedli na ukázku jen 
+nejnižší čtyři bity.</p>
+<p class="poznamka"><b>Poznámka: </b>Bitové operátory s výjimkou NOT pracují i s 
+hodnotami <b><code>boolean</code></b>. Chovají se stejně jako logické 
+operátory, avšak nepraktikují&nbsp; zkrácené vyhodnocování (viz příště...).</p>
+<p>Další skupinou jsou <b>operátory bitového posunu</b>: levý posun (<code><b>&lt;&lt;</b></code>), 
+pravý znaménkový posun (<code><b>&gt;&gt;</b></code>) a pravý neznaménkový posun (<code><b>&gt;&gt;&gt;</b></code>). 
+Všechny tyto operátory pracují s celými čísly. Vracejí hodnotu levého operandu u 
+kterého byly posunuty bity o hodnotu pravého operandu. Levý posun je jednoduchý 
+a po posunutí se "volná místa" vyplní nulami. Pravý znaménkový posun zaplní 
+mezeru buď nulami (pokud je levý operand kladný) nebo jedničkami (pokud je levý 
+operand záporný). Pravý neznaménkový posun (který v Céčku neexistuje) nehledí na 
+znaménko a díru zaplní vždy nulami.<br>
+Tyto operátory si uvádíme spíš pro úplnost, protože se s nimi moc často 
+nesetkáme.</p>
+<p>Jediným <b>ternárním operátorem</b> je operátor <b><code>? :</code></b>. Je 
+jakousi obdobou podmínky <code><b>if</b></code> (příště). Používá se 
+takto:</p>
+<p><code>boolean-vyraz ? vyraz1 : vyraz2;</code></p>
+<p>Pokud je <code><b>boolean-vyraz</b></code> <code><b>true</b></code>, vrátí 
+tento operátor hodnotu výrazu <code><b>vyraz1</b></code> jinak hodnotu <code><b>vyraz2</b></code>. 
+Např:</p>
+<p><code><span class="codekwd">int</span> max = (x&gt;y) ? x : y;</code></p>
+<p>Tento výraz do proměnné <code><b>max</b></code> vloží větší z čísel <code><b>x</b></code> a
+<code><b>y</b></code>. Různé výrazy můžeme skládat a řetězit dle potřeby, musí pouze 
+vyhovovat "návratové" hodnoty, takže takhle můžeme např. vyřešit funkci signum 
+(vracející -1 pokud je číslo záporné, 0 pokud je 0 a +1 pokud je číslo kladné), 
+jejíž hodnotu vypíšeme:</p>
+<p><code><span class="codekwd">int</span> sgn = (x&lt;0) ? -1 : ((x==0) ? 0 : +1);<br>
+System.out.println(sgn);</code></p>
+<p>Všimněte si, že, ač jsme si minule říkali, že metoda <code><b>System.out.println()</b></code> 
+pracuje s řetězci, umí i vypisovat jiné typy. Číslům dá jejich číselnou podobu, 
+hodnoty <code><b>boolean</b></code> vypíše jako <code><b>true</b></code> nebo
+<code><b>false</b></code>.</p>
+<p>Poslední "skupinou" je operátor <b>přetypování</b>. Přetypování je změna 
+hodnoty jednoho typu na druhý. Například, pokud budeme ukládat celé číslo do 
+proměnné reálného typu (třeba <code><b>int</b></code> do <code><b>float</b></code>), provede se přetypování automaticky. 
+Přetypovávat však můžete i explicitně, často v místech, kde by normálně nebylo 
+možné. To se stává třeba když by při přetypování došlo ke ztrátě informace - 
+např. z typu <code><b>float</b></code> na <code><b>int</b></code> 
+by došlo ke ztrátě desetinné části a proto musíte dát jasně najevo, že to 
+chcete. Přetypujete tak, že před hodnotu nebo výraz dáte do závorek typ na který 
+se má převést:</p>
+<p><code><span class="codekwd">double</span> cislo = 25.6;<br>
+<br>
+<span class="codekwd">int</span> i = (<span class="codekwd">int</span>)cislo;</code></p>
+<p>A co se stane s tou desetinnou částí? Prostě se ztratí. Takže v proměnné i 
+bude nyní hodnota 25.</p>
+<p>Přetypování se dá rozdělit do dvou skupin. <b>Rozšiřující</b>, kdy nedochází 
+ke ztrátě informace a <b>zužující</b>, kdy ke ztrátě může dojít (pokud by v 
+předešlém případě bylo <code><b>cislo=25.0</b></code>, tak ke ztrátě nedojde).</p>
+<p>Rozšiřující přetypování jsou tato:</p>
+<p><code><b>byte</b></code> na <code><b>short</b></code>,<code><b>int</b></code>,
+<code><b>long</b></code>, <code><b>float</b></code> a <code><b>double</b></code><br>
+<code><b>char</b></code> a <code><b>short</b></code> na <code><b>int</b></code>,
+<code><b>long</b></code>,<code><b>float</b></code> 
+a <code><b>double</b></code><br>
+<code><b>int</b></code> na <code><b>long</b></code>, <code><b>float</b></code> a
+<code><b>double</b></code><br>
+<code><b>long</b></code> na <code><b>float</b></code> a <code><b>double</b></code><br>
+<code><b>float</b></code> na <code><b>double</b></code></p>
+<p>Bohužel i při tomto rozšiřujícím přetypování (pokud je to <code><b>int</b></code> a
+<code><b>long</b></code> na <code><b>float</b></code> a <code><b>long</b></code> na
+<code><b>double</b></code>), které se provádí implicitně může za 
+určitých okolností dojít ke ztrátě informace:</p>
+<p><code><span class="codekwd">int</span> i = 1234567890;<br>
+<span class="codekwd">float</span> f = i; <br>
+System.out.println(i - (<span class="codekwd">int</span>)f);</code></p>
+<p>Výsledkem bude výpis "rozdílu" -46. Přestože je v proměnné <code>f</code> 
+uloženo celé číslo a proto by ji přetypování na <code><b>int</b></code> 
+ve výpisu nemělo rozházet, stane se tak. Pokud ji však nepřetypujete, nic se 
+nestane, protože výpočet bude probíhat v reálných číslech (tedy dojde i 
+implicitnímu přetypování proměnné <code>i</code>). Tento problém se týká 
+především velkých čísel.</p>
+<p class="poznamka"><b>Poznámka:</b> Pokud jsou oba operandy nějakého 
+matematického operátoru celá čísla, výpočet bude probíhat v celých číslech a 
+výsledek bude opět celé číslo: kupř. zápis 1/2 má hodnotu 0 (!!), zatímco výraz 
+1.0/2.0 má hodnotu 0.5, stejně tak to platí pro celočíselné, resp. reálné 
+proměnné. Pro to, aby byl výpočet v reálných číslech stačí, aby pouze jeden z 
+operandů byl reálný: 1.0/2.</p>
+<p>Přetypování je možné i u referencí (ovladačů). Takovým příkladem může být ona 
+finta s třídami Tvar a dalšími v minulém díle. Při vstupu do funkce <code>
+<b>udelejNeco()</b></code> došlo k implicitnímu přetypování na <code>Tvar</code>.</p>
+<p>A na závěr slíbená úplná tabulka priorit operátorů:</p>
+<table border="1" cellpadding="2" cellspacing="2">
+  <tbody><tr>
+    <td><b>Pořadí</b></td>
+    <td><b>Skupina</b></td>
+    <td><b>Operátory</b></td>
+  </tr>
+  <tr>
+    <td>1</td>
+    <td>postfixové</td>
+    <td><code><b>[] . (</b><i>parametry</i><b>)</b> <i>op</i><b>++</b> <i>op</i><b>--</b></code></td>
+  </tr>
+  <tr>
+    <td>2</td>
+    <td>unární</td>
+    <td><code><b>++</b><i>op</i> <b>--</b><i>op</i> <b>+</b><i>op</i> <b>-</b><i>op</i>
+    <b>~ !</b></code></td>
+  </tr>
+  <tr>
+    <td>3</td>
+    <td>vytváření a přetypování</td>
+    <td><code class="codekwd">new</code><code> <b>(</b><i>typ</i><b>)</b></code></td>
+  </tr>
+  <tr>
+    <td>4</td>
+    <td>multiplikativní</td>
+    <td><b><code>* / %</code></b></td>
+  </tr>
+  <tr>
+    <td>5</td>
+    <td>aditivní</td>
+    <td><b><code>+ -</code></b></td>
+  </tr>
+  <tr>
+    <td>6</td>
+    <td>binární posuny</td>
+    <td><b><code>&lt;&lt; &gt;&gt; &gt;&gt;&gt;</code></b></td>
+  </tr>
+  <tr>
+    <td>7</td>
+    <td>relační</td>
+    <td><code><b>&gt; &gt;= &lt;= &lt;</b> </code><code class="codekwd">instanceof</code></td>
+  </tr>
+  <tr>
+    <td>8</td>
+    <td>ekvivalence / nonekvivalence</td>
+    <td><b><code>== !=</code></b></td>
+  </tr>
+  <tr>
+    <td>9</td>
+    <td>bitové AND</td>
+    <td><b><code>&amp;</code></b></td>
+  </tr>
+  <tr>
+    <td>10</td>
+    <td>bitové XOR</td>
+    <td><b><code>^</code></b></td>
+  </tr>
+  <tr>
+    <td>11</td>
+    <td>bitové OR</td>
+    <td><b><code>|</code></b></td>
+  </tr>
+  <tr>
+    <td>12</td>
+    <td>logické AND</td>
+    <td><b><code>&amp;&amp;</code></b></td>
+  </tr>
+  <tr>
+    <td>13</td>
+    <td>logické OR</td>
+    <td><b><code>||</code></b></td>
+  </tr>
+  <tr>
+    <td>14</td>
+    <td>ternární</td>
+    <td><b><code>?:</code></b></td>
+  </tr>
+  <tr>
+    <td>15</td>
+    <td>přiřazení</td>
+    <td><b><code>= += -= *= /= %= ^= &amp;= |= &lt;&lt;= &gt;&gt;= &gt;&gt;&gt;=</code></b></td>
+  </tr>
+</tbody></table>
+<p>V tabulce se mluví i o operátoru vytváření (<code><b>new</b></code>). 
+Pomocí něj se vytvářejí nové instance tříd. Jemu se budeme věnovat až někdy 
+příště, až si povíme jak vůbec třídy vytvářet. Operátor <code><b>[]</b></code> slouží 
+pro práci s poli a také se mu budeme věnovat někdy v budoucnu. Na posledním 
+řádku je vidět více operátorů přiřazení, než jsme o kterých jsme mluvili. Není 
+to nic zvláštního, prostě bitové operace a operace pro bit. posun mají rovněž 
+svůj zkrácený zápis. Priorita je nejvyšší na prvním řádku a cestou dolů klesá.</p>
+<p>Tímto pro dnes skončíme. Snažil jsem se aby výpis byl co nejvíc kompletní 
+(přesto se k několika drobnostem ještě v budoucnu vrátíme), aby všechno bylo 
+přehledně na jednom místě. Příště dokončíme část o základních kamíncích popisem 
+cyklů a podmínek. Taky se připravíme na povídání o vytváření tříd a práci s nimi 
+tím, že si dopředu vysvětlíme pojem balíčků a přístupová práva. Tím už budeme 
+mít všechno pohromadě pro to, abychom mohli vytvářet smysluplné a funkční třídy, 
+čemuž se budeme věnovat přespříště.</p>  <p></p>
+        <p>
+        Autor: <a href="http://casopis.programator.cz/r-users.php?id=50" title="informace o autorovi">Pavel Patz</a>
+        e-mail: <a href="http://casopis.programator.cz/index.php?autor=cdome@centrum.cz" title="e-mail autora" class="mn">cdome@centrum.cz</a>
+        web: <a href="http:///" title="Stránky autora" class="mn"></a>
+        </p>
+        <p align="right"><i></i></p>
+
+
+     <table style="border: 1px solid rgb(0, 0, 128);" align="center" bgcolor="#f0f0f0" cellspacing="1" width="495">
+      <tbody><tr>
+       <td>
+        <p><b>Příspěvky ke článku</b></p>
+       </td>
+      </tr>
+     </tbody></table>
+
+     <table align="center" width="495">
+      <tbody><tr>
+       <td>
+        <span class="mn">
+         Ke článku nejsou komentáře<br>        </span>
+       </td>
+      </tr>
+      <tr>
+       <td align="center">
+        <span class="mn">
+         <a href="http://casopis.programator.cz/forum.php?clanek=202">Přidat komentář</a>
+        </span>
+       </td>
+      </tr>
+     </tbody></table>
+     <p></p>
+
+
+    <table style="border: 1px solid rgb(0, 0, 128);" align="center" bgcolor="#f0f0f0" cellspacing="1" width="495">
+     <tbody><tr>
+      <td>
+       <p><b>Poslední ze stejné rubriky</b></p>
+      </td>
+     </tr>
+    </tbody></table>
+
+
+    <table align="center" width="495">
+     <tbody><tr>
+      <td>
+       <span class="mn">
+        <img src="java4_soubory/odrazka.gif"> <a href="http://casopis.programator.cz/r-art.php?clanek=208">Začínáme v Javě (7.): Konstruktory a přetěžování metod</a><br><img src="java4_soubory/odrazka.gif"> <a href="http://casopis.programator.cz/r-art.php?clanek=205">Robocode - aneb Java (bojovou) hrou.</a><br><img src="java4_soubory/odrazka.gif"> <a href="http://casopis.programator.cz/r-art.php?clanek=204">Začínáme v Javě (6.): Třídy a objekty.</a><br><img src="java4_soubory/odrazka.gif"> <a href="http://casopis.programator.cz/r-art.php?clanek=203">Začínáme v Javě (5.): Podmínky, cykly a kolektiv.</a><br><img src="java4_soubory/odrazka.gif"> <a href="http://casopis.programator.cz/r-art.php?clanek=201">Java a její layout managery</a><br>       </span>
+      </td>
+     </tr>
+    </tbody></table>
+
+
+   </td>
+   <td width="4">
+    <img src="java4_soubory/x.gif" width="4">
+   </td>
+
+
+   <!-- tak tady začíná pravý sloupek -->
+   <td valign="top" width="120">
+   <br>
+
+    <table style="border: 1px solid rgb(32, 32, 32);" align="center" border="0" cellpadding="1" cellspacing="0" width="120">
+        <tbody><tr>
+         <td align="left" bgcolor="#0d3b8e">
+          <span class="supmenu">
+           <b><img src="java4_soubory/double_point.gif">Funkce ke článku</b>
+       </span>
+      </td>
+     </tr>
+     <tr>
+      <td>
+     <span class="mn">
+         <img src="java4_soubory/diskuse.gif"> <a href="http://casopis.programator.cz/forum.php?clanek=202">Přidat komentář</a>
+        </span>
+      </td>
+     </tr>
+    </tbody></table>
+    <br>
+        <table style="border: 1px solid rgb(32, 32, 32);" align="center" border="0" cellpadding="1" cellspacing="0" width="120">
+        <tbody><tr>
+         <td align="left" bgcolor="#0d3b8e">
+          <span class="supmenu">
+           <b><img src="java4_soubory/double_point.gif">Nejnovější články</b></span>
+<b>       </b></td>
+      </tr>
+      <tr>
+       <td>
+        <span class="mn">
+
+                 <img src="java4_soubory/x.gif" width="1"><img src="java4_soubory/odrazka.gif"> <a href="http://casopis.programator.cz/r-art.php?clanek=218">
+            Práce s událostmi v .NET Framework. </a>[13886]<br>         <img src="java4_soubory/x.gif" width="1"><img src="java4_soubory/odrazka.gif"> <a href="http://casopis.programator.cz/r-art.php?clanek=217">
+            Nová soutěž na 3D Contestu CZ </a>[10603]<br>         <img src="java4_soubory/x.gif" width="1"><img src="java4_soubory/odrazka.gif"> <a href="http://casopis.programator.cz/r-art.php?clanek=216">
+            Práce v .NET Framework - Zástupci </a>[12651]<br>         <img src="java4_soubory/x.gif" width="1"><img src="java4_soubory/odrazka.gif"> <a href="http://casopis.programator.cz/r-art.php?clanek=215">
+            Práce s XML v C# (5.) - ověřování dokumentu pomocí třídy XmlValidatingReader </a>[10510]<br>         <img src="java4_soubory/x.gif" width="1"><img src="java4_soubory/odrazka.gif"> <a href="http://casopis.programator.cz/r-art.php?clanek=214">
+            Práce s XML v C# (4.) - třídy XmlDocument a dotazy jazyka XPath </a>[11856]<br>         </span>
+       </td>
+      </tr>
+     </tbody></table>
+     <br>
+
+    <center>
+<!-- BBSTART: ad2.billboard.cz kod 1.1 - SERVER: Časopis(8512), SEKCE: 120*90(5), POZICE: (1), TYPBANNERU: Button 1(5), OKRAJ: ne, POPIS: ne. -->
+<script language="JavaScript" type="text/javascript">
+<!--
+var bbs=screen,bbn=navigator,bbh;bbh='&ubl='+bbn.browserLanguage+'&ucc='+bbn.cpuClass+'&ucd='+bbs.colorDepth+'&uce='+bbn.cookieEnabled+'&udx='+bbs.deviceXDPI+'&udy='+bbs.deviceYDPI+'&usl='+bbn.systemLanguage+'&uje='+bbn.javaEnabled()+'&uah='+bbs.availHeight+'&uaw='+bbs.availWidth+'&ubd='+bbs.bufferDepth+'&uhe='+bbs.height+'&ulx='+bbs.logicalXDPI+'&uly='+bbs.logicalYDPI+'&use='+bbs.fontSmoothingEnabled+'&uto='+(new Date()).getTimezoneOffset()+'&uui='+bbs.updateInterval+'&uul='+bbn.userLanguage+'&uwi='+bbs.width;
+var bb9_bgcolor='C0C0C0';
+var bb9_text='000000';
+var bb9_link='0000FF';
+if(document.bgColor) { bb9_bgcolor=document.bgColor.substr(1); }
+if(document.fgColor) { bb9_text=document.fgColor.substr(1); }
+if(document.linkColor) { bb9_link=document.linkColor.substr(1); }
+document.write("<IFRAME WIDTH=120 HEIGHT=90 MARGINWIDTH=0 MARGINHEIGHT=0 FRAMEBORDER=0 HSPACE=0 VSPACE=0 SCROLLING=no BORDERCOLOR='#000000' SRC='http://ad2.billboard.cz/please/showit/8512/5/1/5/?typkodu=html&topmargin=0&leftmargin=0"+bbh+"&href="+escape(location.href)+"&popis=ne&okraj=ne&bgcolor="+bb9_bgcolor+"&text="+bb9_text+"&link="+bb9_link+"&bust="+Math.random()+"&target=_top'>");
+document.write("<scr"+"ipt language='JavaScript' type='text/javascript'>");
+document.write("document.write(\"<scr\"+\"ipt language='JavaScript' type='text/javascript' src='http://ad2.billboard.cz/please/showit/8512/5/1/5/?typkodu=js\"+bbh+\"&href=\"+escape(location.href)+\"&popis=ne&okraj=ne&bust=\"+Math.floor(10000000*Math.random())+\"&target=_top'><\/scr\"+\"ipt>\");");
+document.write("<\/scr"+"ipt>");
+document.write("<\/IFRAME>");
+/**///-->
+</script><iframe marginwidth="0" marginheight="0" hspace="0" vspace="0" bordercolor="#000000" src="java4_soubory/a_002.html" frameborder="0" height="90" scrolling="no" width="120">&lt;script
+language='JavaScript'
+type='text/javascript'&gt;document.write("&lt;scr"+"ipt
+language='JavaScript' type='text/javascript'
+src='http://ad2.billboard.cz/please/showit/8512/5/1/5/?typkodu=js"+bbh+"&amp;href="+escape(location.href)+"&amp;popis=ne&amp;okraj=ne&amp;bust="+Math.floor(10000000*Math.random())+"&amp;target=_top'&gt;&lt;/scr"+"ipt&gt;");&lt;/script&gt;</iframe>
+<noscript>
+<table border="0" cellpadding="0" cellspacing="0"><tr><td>
+<a href="http://ad2.billboard.cz/please/redir.bb/8512/5/1/5/"
+target="_top">
+<img
+src="http://ad2.billboard.cz/please/showit/8512/5/1/5/?typkodu=img"
+border="0" width="120" height="90" alt='Kliknete prosim!'></a>
+</td></tr></table>
+</noscript>
+<!-- BBEND: ad2.billboard.cz kod 1.1 -->
+</center>
+<br>
+
+    <table style="border: 1px solid rgb(32, 32, 32);" align="center" border="0" cellpadding="1" cellspacing="0" width="120">
+        <tbody><tr>
+         <td align="left" bgcolor="#0d3b8e">
+          <span class="supmenu">
+           <b><img src="java4_soubory/double_point.gif">O článku</b>
+       </span>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       <span class="mn">
+         Datum: 09.09.2003<br>Rubrika: <a href="http://casopis.programator.cz/index.php?16">Java</a><br>Čtenářů: 11993<br>Autor: <a href="mailto:cdome@centrum.cz">Pavel Patz</a><br><p></p><p><b>Hodnocení článku:</b><br>Znamka: 2.64<br>Počet známek: 1510<br>[<a href="http://casopis.programator.cz/r-art.php?clanek=202&amp;znamka=1">1</a>] [<a href="http://casopis.programator.cz/r-art.php?clanek=202&amp;znamka=2">2</a>] [<a href="http://casopis.programator.cz/r-art.php?clanek=202&amp;znamka=3">3</a>] [<a href="http://casopis.programator.cz/r-art.php?clanek=202&amp;znamka=4">4</a>] [<a href="http://casopis.programator.cz/r-art.php?clanek=202&amp;znamka=5">5</a>]<br>
+ </p></span><p></p>       
+      </td>
+     </tr>
+    </tbody></table>
+
+       </td>
+  </tr>
+</tbody></table>
+<p>&nbsp;</p>
+<div align="center">
+
+<!-- BBSTART: ad2.billboard.cz kod 1.1 - SERVER: Časopis(8512), SEKCE: bottom(2), POZICE: (2), TYPBANNERU: Full Banner(1), OKRAJ: ne, POPIS: ne. -->
+<script language="JavaScript" type="text/javascript">
+<!--
+var bbs=screen,bbn=navigator,bbh;bbh='&ubl='+bbn.browserLanguage+'&ucc='+bbn.cpuClass+'&ucd='+bbs.colorDepth+'&uce='+bbn.cookieEnabled+'&udx='+bbs.deviceXDPI+'&udy='+bbs.deviceYDPI+'&usl='+bbn.systemLanguage+'&uje='+bbn.javaEnabled()+'&uah='+bbs.availHeight+'&uaw='+bbs.availWidth+'&ubd='+bbs.bufferDepth+'&uhe='+bbs.height+'&ulx='+bbs.logicalXDPI+'&uly='+bbs.logicalYDPI+'&use='+bbs.fontSmoothingEnabled+'&uto='+(new Date()).getTimezoneOffset()+'&uui='+bbs.updateInterval+'&uul='+bbn.userLanguage+'&uwi='+bbs.width;
+var bb9_bgcolor='C0C0C0';
+var bb9_text='000000';
+var bb9_link='0000FF';
+if(document.bgColor) { bb9_bgcolor=document.bgColor.substr(1); }
+if(document.fgColor) { bb9_text=document.fgColor.substr(1); }
+if(document.linkColor) { bb9_link=document.linkColor.substr(1); }
+document.write("<IFRAME WIDTH=468 HEIGHT=60 MARGINWIDTH=0 MARGINHEIGHT=0 FRAMEBORDER=0 HSPACE=0 VSPACE=0 SCROLLING=no BORDERCOLOR='#000000' SRC='http://ad2.billboard.cz/please/showit/8512/2/2/1/?typkodu=html&topmargin=0&leftmargin=0"+bbh+"&href="+escape(location.href)+"&popis=ne&okraj=ne&bgcolor="+bb9_bgcolor+"&text="+bb9_text+"&link="+bb9_link+"&bust="+Math.random()+"&target=_top'>");
+document.write("<scr"+"ipt language='JavaScript' type='text/javascript'>");
+document.write("document.write(\"<scr\"+\"ipt language='JavaScript' type='text/javascript' src='http://ad2.billboard.cz/please/showit/8512/2/2/1/?typkodu=js\"+bbh+\"&href=\"+escape(location.href)+\"&popis=ne&okraj=ne&bust=\"+Math.floor(10000000*Math.random())+\"&target=_top'><\/scr\"+\"ipt>\");");
+document.write("<\/scr"+"ipt>");
+document.write("<\/IFRAME>");
+/**///-->
+</script><iframe marginwidth="0" marginheight="0" hspace="0" vspace="0" bordercolor="#000000" src="java4_soubory/a_003.html" frameborder="0" height="60" scrolling="no" width="468">&lt;script
+language='JavaScript'
+type='text/javascript'&gt;document.write("&lt;scr"+"ipt
+language='JavaScript' type='text/javascript'
+src='http://ad2.billboard.cz/please/showit/8512/2/2/1/?typkodu=js"+bbh+"&amp;href="+escape(location.href)+"&amp;popis=ne&amp;okraj=ne&amp;bust="+Math.floor(10000000*Math.random())+"&amp;target=_top'&gt;&lt;/scr"+"ipt&gt;");&lt;/script&gt;</iframe>
+<noscript>
+<table border="0" cellpadding="0" cellspacing="0"><tr><td>
+<a href="http://ad2.billboard.cz/please/redir.bb/8512/2/2/1/"
+target="_top">
+<img
+src="http://ad2.billboard.cz/please/showit/8512/2/2/1/?typkodu=img"
+border="0" width="468" height="60" alt='Kliknete prosim!'></a>
+</td></tr></table>
+</noscript>
+<!-- BBEND: ad2.billboard.cz kod 1.1 -->
+</div><hr size="1" width="760">
+<p align="center"><span class="mn">(c) Systém Jan Sova, Design David Krásenský a Jan Sova<br>Se svými dotazy či problémy se obracejte na diskusní
+<a href="http://linux.prgramator.cz/forum">fórum.</a><br>
+Časopis je součástí projektu <a href="http://www.programator.cz/">Programator</a>
+</span></p>
+
+</body></html>

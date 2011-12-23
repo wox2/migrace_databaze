@@ -1,0 +1,75 @@
+Úkolem je realizovat program, který na svém výstupu zobrazí pletivo jako je ukázáno níže. Vstupem programu jsou dve celá kladná císla. První udává pocet ok pletiva (pocet ok v horizontálním a vertikálním smeru je stejný), druhé udává velikost oka (pocet mezer mezi dvema prusecíky). Pri realizaci dejte pozor na to, že program bude mít odlišný výstup pro sudou a lichou velikost oka.
+
+Nekolik ukázek práce programu je uvedeno níže. Ukázky zachycují, jak bude vypadat obsah konzole po spuštení programu. Program se zeptá na vstupní parametry (zobrazí výzvu), císelné hodnoty vkládá uživatel, program je znovu nevypisuje. Automatické vyhodnocení kontroluje presný tvar výpisu, dodržte jej vcetne zápisu výzev k zadání vstupu a chybových hlášení. Za posledním rádkem musí být odrádkování (endl) a to i v prípade zobrazení chybové hlášky.
+
+Prípadné chyby (necíselný vstup, mimo meze) detekujte a ošetrujte ihned, jakmile ji lze detekovat (ihned po ctení). Tedy po ctení poctu bunek ošetrete nactenou hodnotu a teprve pokud test projde, vyzvete uživatele k zadání velikosti bunky.
+
+Zadejte pocet bunek:
+4
+Zadejte vnitrni velikost bunky:
+5
++-------------------------+
+|X     X     X     X     X|
+| \   / \   / \   / \   / |
+|  \ /   \ /   \ /   \ /  |
+|   X     X     X     X   |
+|  / \   / \   / \   / \  |
+| /   \ /   \ /   \ /   \ |
+|X     X     X     X     X|
+| \   / \   / \   / \   / |
+|  \ /   \ /   \ /   \ /  |
+|   X     X     X     X   |
+|  / \   / \   / \   / \  |
+| /   \ /   \ /   \ /   \ |
+|X     X     X     X     X|
+| \   / \   / \   / \   / |
+|  \ /   \ /   \ /   \ /  |
+|   X     X     X     X   |
+|  / \   / \   / \   / \  |
+| /   \ /   \ /   \ /   \ |
+|X     X     X     X     X|
+| \   / \   / \   / \   / |
+|  \ /   \ /   \ /   \ /  |
+|   X     X     X     X   |
+|  / \   / \   / \   / \  |
+| /   \ /   \ /   \ /   \ |
+|X     X     X     X     X|
++-------------------------+
+
+Zadejte pocet bunek:
+2
+Zadejte vnitrni velikost bunky:
+8
++-------------------+
+|X        X        X|
+| \      / \      / |
+|  \    /   \    /  |
+|   \  /     \  /   |
+|    \/       \/    |
+|    /\       /\    |
+|   /  \     /  \   |
+|  /    \   /    \  |
+| /      \ /      \ |
+|X        X        X|
+| \      / \      / |
+|  \    /   \    /  |
+|   \  /     \  /   |
+|    \/       \/    |
+|    /\       /\    |
+|   /  \     /  \   |
+|  /    \   /    \  |
+| /      \ /      \ |
+|X        X        X|
++-------------------+
+
+Zadejte pocet bunek:
+4
+Zadejte vnitrni velikost bunky:
+0
+Nespravny vstup.
+
+Zadejte pocet bunek:
+4
+Zadejte vnitrni velikost bunky:
+sdfgsdfg
+Nespravny vstup.

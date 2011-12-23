@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svnroot/e-timetable/!svn/ver/22/e-timetable/Timetable-war/src/java/timetable/back
+END
+LinksBean.java
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svnroot/e-timetable/!svn/ver/20/e-timetable/Timetable-war/src/java/timetable/back/LinksBean.java
+END
+RoutesBean.java
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svnroot/e-timetable/!svn/ver/20/e-timetable/Timetable-war/src/java/timetable/back/RoutesBean.java
+END
+LinkTypesBean.java
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svnroot/e-timetable/!svn/ver/20/e-timetable/Timetable-war/src/java/timetable/back/LinkTypesBean.java
+END
+PassangerBean.java
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svnroot/e-timetable/!svn/ver/20/e-timetable/Timetable-war/src/java/timetable/back/PassangerBean.java
+END
+SearchingBean.java
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svnroot/e-timetable/!svn/ver/22/e-timetable/Timetable-war/src/java/timetable/back/SearchingBean.java
+END
+StationsBean.java
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svnroot/e-timetable/!svn/ver/20/e-timetable/Timetable-war/src/java/timetable/back/StationsBean.java
+END
+TimetableBean.java
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svnroot/e-timetable/!svn/ver/20/e-timetable/Timetable-war/src/java/timetable/back/TimetableBean.java
+END
+PositionsBean.java
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svnroot/e-timetable/!svn/ver/20/e-timetable/Timetable-war/src/java/timetable/back/PositionsBean.java
+END
+NotesBean.java
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svnroot/e-timetable/!svn/ver/20/e-timetable/Timetable-war/src/java/timetable/back/NotesBean.java
+END

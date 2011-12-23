@@ -1,0 +1,21 @@
+Predpokládejme, že promenné d m a y (psané malými písmeny) obsahují den, mesíc a rok. Úkolem je napsat jediný výraz, který rozhodne, zda datum zadané hodnotami techto promenných je platné nebo ne. Hodnota výrazu bude pravda (nenula) pokud datum je platné a nepravda (nula) pokud datum platné není.
+
+Toto je ukázka výrazu (nejakou takovou formu bude mít správná odpoved):
+
+d + 4 == y ^ 85 ? ~m : d * (y-2)
+
+Toto je ukázka nesprávných odpovedí (nejsou to výrazy):
+
+if ( log ( d ) == 1752 ) m = 1;
+
+nebo:
+
+for ( i = 0; i < 32; i ++ ) m = m / 2;
+
+Odevzávejte soubor, ve kterém bude obsažen práve a pouze jeden požadovaný výraz, bez stredníku na konci. Neodevzdávejte príkazy ci celý program - taková odpoved bude vyhodnocena jako syntakticky nesprávná.
+Nápoveda:
+
+    * Do 2.9.1752 platil Juliánský kalendár, po tomto datu platí Gregoriánský kalendár.
+    * V Juliánském kalendári je prestupný každý rok, který je delitelný 4.
+    * V Gregoriánském kalendári je prestupný každý rok, který je delitelný 4, ale není beze zbytku delitelný 100. Roky delitelné 400 tvorí další výjimku, nebot prestupné opet jsou. Tedy roky napr. 1800, 1801, 1802, 1803, 1805, 1806, ....,1899, 1900, 1901, ... ,2100, ..., 2200 prestupné nejsou, naopak roky napr. 1896, 1904, 1908, ..., 1996, 2000, 2004, ..., 2396,..., 2396, 2400, ... prestupné jsou.
+    * V zárí 1752 došlo k ubrání nekolika dní, kdy po 2.9.1752 následoval den 14.9.1752. Tedy data 3.9.1752, 4.9.1752, ..., 13.9.1752 platná nejsou.

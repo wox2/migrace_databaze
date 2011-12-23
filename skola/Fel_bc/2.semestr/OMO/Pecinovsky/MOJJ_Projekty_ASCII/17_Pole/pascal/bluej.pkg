@@ -1,0 +1,30 @@
+#Soubor bluej.pkg prevedeny do ASCII
+#Sat Nov 29 12:36:30 CET 2008
+package.showUses=true
+target1.type=ClassTarget
+package.editor.height=287
+target3.name=Pascal_17c
+target2.type=ClassTarget
+package.editor.x=0
+target3.type=ClassTarget
+target2.y=90
+target2.x=120
+package.showExtends=true
+target3.height=50
+target1.height=50
+target2.width=90
+package.editor.width=242
+target1.width=90
+package.numDependencies=0
+target1.y=90
+target1.x=10
+package.numTargets=3
+target1.name=Pascal_17a
+target3.y=160
+target3.x=70
+target1.showInterface=false
+target2.showInterface=false
+target3.width=90
+target2.name=Pascal_17b
+target3.showInterface=false
+target2.height=50

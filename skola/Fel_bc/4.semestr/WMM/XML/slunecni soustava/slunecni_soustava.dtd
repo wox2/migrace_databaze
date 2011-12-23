@@ -1,0 +1,86 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<!--
+    TODO define vocabulary identification
+    PUBLIC ID: -//vendor//vocabulary//EN
+    SYSTEM ID: http://server/path/slunecni_soustava.dtd
+
+-->
+
+<!--
+    An example how to use this DTD from your XML document:
+
+    <?xml version="1.0"?>
+
+    <!DOCTYPE slunecni_soustava SYSTEM "slunecni_soustava.dtd">
+
+    <slunecni_soustava>
+    ...
+    </slunecni_soustava>
+-->
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT slunecni_soustava (planeta)*>
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT planeta (#PCDATA|(satelity,skupenstvi,doba_obehu,vzdalenost_od_slunce,hustota,polomer,jmeno)?)*>
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT jmeno (#PCDATA)>
+<!ATTLIST jmeno
+    jazyk CDATA #REQUIRED
+  >
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT polomer (#PCDATA)>
+<!ATTLIST polomer
+    jednotka CDATA #REQUIRED
+  >
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT hustota (#PCDATA)>
+<!ATTLIST hustota
+    jednotka CDATA #REQUIRED
+  >
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT vzdalenost_od_slunce (afelium|perihelium)*>
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT perihelium (#PCDATA)>
+<!ATTLIST perihelium
+    jednotka CDATA #IMPLIED
+  >
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT afelium (#PCDATA)>
+<!ATTLIST afelium
+    jednotka CDATA #REQUIRED
+  >
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT doba_obehu (kolem_osy|kolem_slunce)*>
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT kolem_slunce (#PCDATA)>
+<!ATTLIST kolem_slunce
+    jednotka CDATA #REQUIRED
+  >
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT kolem_osy (#PCDATA)>
+<!ATTLIST kolem_osy
+    jednotka CDATA #REQUIRED
+  >
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT skupenstvi (#PCDATA)>
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT satelity (mesic)*>
+<!ATTLIST satelity
+    pocet CDATA #REQUIRED
+  >
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT mesic (polomer)*>

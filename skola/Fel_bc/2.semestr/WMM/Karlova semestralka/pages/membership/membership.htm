@@ -1,0 +1,121 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Membership</title>
+    <link href="../../styles/style_1.css" rel="Stylesheet" type="text/css" title="default" />
+    <script type="text/javascript" src="../../scripts/membership.js"></script>
+    </head>
+<body>
+
+<div class="prvniDiv">
+    <h1 class="nadpis_historie">Membership</h1>
+    <p class="uvod">Staňte se členem a využívejte mnoha výhod členství klubu Bon Jovi</p>    
+    <form id="form" action="" method="post" enctype="multipart/form-data" onsubmit="return validuj()">
+        
+        <fieldset id="info">
+        <legend>Zadejte osobní informace</legend>
+            <label id="labelJmeno" for="jmeno">Jméno: </label>
+            <input type="text" name="jmeno" size="20" id="jmeno" onblur="return isEmpty('jmeno', 'labelJmeno')" />
+            <br />
+            <label id="labelPrijmeni" for="prijmeni">Příjmení: </label>
+            <input type="text" name="prijmeni" size="20" id="prijmeni" onblur="return isEmpty('prijmeni', 'labelPrijmeni')" />
+            <br />
+            <label id="labelMail" for="email">E-mail: </label>            
+            <input type="text" name="email" size="20" id="email" onblur="return kontrolaMail('email', 'labelMail')" />
+        </fieldset>
+        
+        <fieldset id="clen">
+        <legend id="labelClen">Jakého člena Bon Jovi máte nejraději?</legend>
+            <input type="radio" name="clen" id="Jon" value="Jon" />Jon Bon Jovi
+            <br />
+            <input type="radio" name="clen" id="Richie" value="Richie" />Richie Sambora
+            <br />
+            <input type="radio" name="clen" id="David" value="David" />David Bryan
+            <br />
+            <input type="radio" name="clen" id="Tico" value="Tico" />Tico Torres
+        </fieldset>           
+        
+        <fieldset id="cdLabel">
+        <legend>Názvy CD</legend>
+            <label>Zde vyberte jaká CD vlastníte</label>
+            <br />
+            <select name="vlastnene_desky" multiple="multiple" size="5">
+                <optgroup label="Bon Jovi">
+                    <option>Bon Jovi</option>
+                    <option>7800° Fahrenheit</option>
+                    <option>Slippery when wet</option>
+                    <option>New Jersey</option>
+                    <option>Keep the faith</option>
+                    <option>Crossroad</option>
+                    <option>These days</option>
+                    <option>Crush</option>
+                    <option>One wild night</option>
+                    <option>Bounce</option>
+                    <option>This left feels right</option>
+                    <option>100,000,000 Fans can't be wrong</option>
+                    <option>Have a nice day</option>
+                    <option>Lost highway</option>
+                    <option>Demo singles</option>
+                    </optgroup>
+                <optgroup label="Jon Bon Jovi">
+                    <option>Blaze of glory</option>
+                    <option>Destination anywhere</option>
+                    <option>Power station years 1980-1983</option>
+                    <option>More songs from power station years</option>
+                    </optgroup>
+                <optgroup label="Richie Sambora">
+                    <option>Stranger in this town</option>
+                    <option>Undiscovered soul</option>
+                    </optgroup>
+                <optgroup label="David Bryan">
+                    <option>On a full moon</option>
+                    <option>Lunar eclipse</option>
+                    </optgroup>                     
+            </select> 
+        </fieldset>
+    
+        <fieldset id="message">
+        <legend id="labelTextArea" >Vzkaz</legend>
+            <textarea name="textArea" rows="3" cols="30" id="textArea" onblur="return isEmptyTextArea('textArea', 'labelTextArea')"></textarea>
+        </fieldset>
+    
+        <fieldset id="fieldCheck">
+        <legend>Jaká CD máte nejraději?</legend>
+            <input class="checkbox" type="checkbox" name="check" id="check1" value="lost_highway"  /><label for="check1">Lost highway</label> 
+            <br />
+            <input class="checkbox" type="checkbox" name="check" id="check2" value="have_a_nice_day"  /><label for="check2">Have a nice day</label> 
+            <br />
+            <input class="checkbox" type="checkbox" name="check" id="check3" value="bounce"  /><label for="check3">Bounce</label> 
+            <br />
+            <input class="checkbox" type="checkbox" name="check" id="check4" value="crush"  /><label for="check4">Crush</label> 
+            <br />
+            <input class="checkbox" type="checkbox" name="check" id="check5" value="this_left_feels_right"  /><label for="check5">This left feels right</label> 
+            <br />
+            <input class="checkbox" type="checkbox" name="check" id="check6" value="crossroad"  /><label for="check6">Crossroad</label> 
+            <br />
+            <input class="checkbox" type="checkbox" name="check" id="check7" value="new_jersey"  /><label for="check7">New Jersey</label> 
+            <br />
+            <input class="checkbox" type="checkbox" name="check" id="check8" value="bon_jovi"  /><label for="check8">Bon Jovi</label> 
+            <br />
+            <input class="checkbox" type="checkbox" name="check" id="check9" value="slippery_when_wet"  /><label for="check9">Slippery when wet</label> 
+            <br />
+            <input class="checkbox" type="checkbox" name="check" id="check10" value="these_day"  /><label for="check10">These days</label> 
+            <br />
+            <input class="checkbox" type="checkbox" name="check" id="check11" value="one_wild_night"  /><label for="check11">One wild night</label> 
+        </fieldset>
+    
+        <fieldset id="submitArea">
+        <legend>Potvrzení formuláře</legend>
+            <input type="submit" value="Odeslat" />
+            <input type="reset" value="Reset" />
+        </fieldset>       
+        
+    </form>
+    
+    <a id="main_membership" href="../../index.htm">Hlavní stránka</a>
+    
+</div>
+
+</body>
+</html>

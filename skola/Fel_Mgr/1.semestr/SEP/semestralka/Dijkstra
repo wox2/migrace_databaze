@@ -1,0 +1,45 @@
+       Software Requirements
+                         Specification
+                                       pro
+                  Systém pro vizualizaci Dijkstrova algoritmu
+Verze 1.0
+Autor: Martin Lukeš
+1.12.2011
+
+
+
+1. Úvod
+1.1 Účel dokumentu
+      Tento dokument slouží jako specifikace požadavků na aplikaci „Systém pro vizualizaci Dijkstrova algoritmu“ (dále jen SVDA). Podrobně stanovuje rozsah projektu a funkční i nefunkční
+požadavky.
+1.2 Úvod do problematiky
+	V rámci výuky předmětů na vysokých školách se studenti IT oborů seznamují se základními datovými strukturami a následně i s algoritmy, které jsou používané k efektivnímu řešení problémů v praxi.
+	V rámci cvičení je průběh algoritmů zobrazován na nevyhovujícím médiu - tabuli a v rámci této ukázky dochází kvůli nedostatku času k nedostatečnému pochopení algoritmu či chybné pořadí aplikace kroků.  
+	Dalším problémem je opakovaný průchod algoritmem mimo školní prostředí. 
+ 
+      V rámci výuky předmětů na vysokých školách je často řešen problém umlouvání
+rozvrhů. Principiálně se jedná o umístění předmětu do rozvrhu v době, která vyhovuje
+nejvíce potencionálním posluchačům daného předmětu. Úmluvy tradičně probíhají
+hlasováním, při kterém je vyžadována osobní prezence zájemců, což může způsobovat
+komplikace.
+      Druhým nastiňovaným problémem je koordinace schůzek pracovních skupin
+studentů. Studenti pracující na stejném projektu zpravidla nemají možnost sdílet
+dlouhodobě pracovní prostředí, takže práce probíhají samostatně s občasnými synchroni-
+začními schůzkami. Zde opět vyvstává problém koordinace časového rozvrhu.
+      Oba tyto problémy by měla řešit aplikace SŘÚ, která nabídne možnost pohodlné
+domluvy zúčastněných lidí prostřednictvím Internetu.
+2. Celkový popis
+2.1 Popis aplikace
+      Aplikace bude umožňovat vypisování úmluv na zvolené rozvrhové sloty (tzn.
+obecně na daný čas v týdnu), případně na konkrétní data a časy. K vypsané úmluvě si
+ostatní uživatelé budou moci nastavit své preference. Tyto preference se zobrazí autorovi
+úmluvy, který následně vybere jeden z nabízených termínů, označí jej za umluvený a tato
+informace se zobrazí ostatním uživatelům.
+      Přístup do aplikace budou mít pouze registrovaní uživatelé, kteří se při vstupu
+prokáží platnou kombinací přihlašovacího jména a hesla. Aplikace bude také rozlišovat
+uživatelské role, na základě kterých bude povolovat jednotlivé akce.
+
+
+
+
+

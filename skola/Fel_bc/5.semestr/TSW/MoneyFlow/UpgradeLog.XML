@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
+<Properties><Property Name="Solution" Value="MoneyFlow">
+</Property><Property Name="Solution File" Value="E:\Fel\5.semestr\TSW\MoneyFlow\MoneyFlow.sln">
+</Property><Property Name="User Options File" Value="E:\Fel\5.semestr\TSW\MoneyFlow\MoneyFlow.suo">
+</Property><Property Name="Date" Value="18. listopadu 2010">
+</Property><Property Name="Time" Value="10:38">
+</Property></Properties><Event ErrorLevel="0" Project="" Source="MoneyFlow.sln" Description="File successfully backed up as E:\Fel\5.semestr\TSW\MoneyFlow\Backup\MoneyFlow.sln">
+</Event><Event ErrorLevel="0" Project="" Source="MoneyFlow.suo" Description="File successfully backed up as E:\Fel\5.semestr\TSW\MoneyFlow\Backup\MoneyFlow.suo">
+</Event><Event ErrorLevel="0" Project="MoneyFlow" Source="MoneyFlow\MoneyFlow.csproj" Description="Project file successfully backed up as E:\Fel\5.semestr\TSW\MoneyFlow\Backup\MoneyFlow\MoneyFlow.csproj">
+</Event><Event ErrorLevel="0" Project="MoneyFlow" Source="MoneyFlow\MoneyFlow.csproj.user" Description="Project user file successfully backed up as E:\Fel\5.semestr\TSW\MoneyFlow\Backup\MoneyFlow\MoneyFlow.csproj.user">
+</Event><Event ErrorLevel="0" Project="MoneyFlow" Source="MoneyFlow\AboutForm.cs" Description="File successfully backed up as E:\Fel\5.semestr\TSW\MoneyFlow\Backup\MoneyFlow\AboutForm.cs">
+</Event><Event ErrorLevel="0" Project="MoneyFlow" Source="MoneyFlow\AboutForm.Designer.cs" Description="File successfully backed up as E:\Fel\5.semestr\TSW\MoneyFlow\Backup\MoneyFlow\AboutForm.Designer.cs">
+</Event><Event ErrorLevel="0" Project="MoneyFlow" Source="MoneyFlow\Buttons\ButtonDelete.cs" Description="File successfully backed up as E:\Fel\5.semestr\TSW\MoneyFlow\Backup\MoneyFlow\Buttons\ButtonDelete.cs">
+</Event><Event ErrorLevel="0" Project="MoneyFlow" Source="MoneyFlow\Buttons\ButtonDelete.Designer.cs" Description="File successfully backed up as E:\Fel\5.semestr\TSW\MoneyFlow\Backup\MoneyFlow\Buttons\ButtonDelete.Designer.cs">
+</Event><Event ErrorLevel="0" Project="MoneyFlow" Source="MoneyFlow\Buttons\ButtonDeleteMini.cs" Description="File successfully backed up as E:\Fel\5.semestr\TSW\MoneyFlow\Backup\MoneyFlow\Buttons\ButtonDeleteMini.cs">
+</Event><Event ErrorLevel="0" Project="MoneyFlow" Source="MoneyFlow\Buttons\ButtonDeleteMini.Designer.cs" Description="File successfully backed up as E:\Fel\5.semestr\TSW\MoneyFlow\Backup\MoneyFlow\Buttons\ButtonDeleteMini.Designer.cs">
+</Event><Event ErrorLevel="0" Project="MoneyFlow" Source="MoneyFlow\Buttons\ButtonEdit.cs" Description="File successfully backed up as E:\Fel\5.semestr\TSW\MoneyFlow\Backup\MoneyFlow\Buttons\ButtonEdit.cs">
+</Event><Event ErrorLevel="0" Project="MoneyFlow" Source="MoneyFlow\Buttons\ButtonEdit.Designer.cs" Description="File successfully backed up as E:\Fel\5.semestr\TSW\MoneyFlow\Backup\MoneyFlow\Buttons\ButtonEdit.Designer.cs">
+</Event><Event ErrorLevel="0" Project="MoneyFlow" Source="MoneyFlow\Buttons\ButtonEditMini.cs" Description="File successfully backed up as E:\Fel\5.semestr\TSW\MoneyFlow\Backup\MoneyFlow\Buttons\ButtonEditMini.cs">
+</Event><Event ErrorLevel="0" Project="MoneyFlow" Source="MoneyFlow\Buttons\ButtonEditMini.Designer.cs" Description="File successfully backed up as E:\Fel\5.semestr\TSW\MoneyFlow\Backup\MoneyFlow\Buttons\ButtonEditMini.Designer.cs">
+</Event><Event ErrorLevel="0" Project="MoneyFlow" Source="MoneyFlow\Buttons\ButtonReturn.cs" Description="File successfully backed up as E:\Fel\5.semestr\TSW\MoneyFlow\Backup\MoneyFlow\Buttons\ButtonReturn.cs">
+</Event><Event ErrorLevel="0" Project="MoneyFlow" Source="MoneyFlow\Buttons\ButtonReturn.Designer.cs" Description="File successfully backed up as E:\Fel\5.semestr\TSW\MoneyFlow\Backup\MoneyFlow\Buttons\ButtonReturn.Designer.cs">
+</Event><Event ErrorLevel="0" Project="MoneyFlow" Source="MoneyFlow\CashflowItemDialog.cs" Description="File successfully backed up as E:\Fel\5.semestr\TSW\MoneyFlow\Backup\MoneyFlow\CashflowItemDialog.cs">
+</Event><Event ErrorLevel="0" Project="MoneyFlow" Source="MoneyFlow\CashflowItemDialog.Designer.cs" Description="File successfully backed up as E:\Fel\5.semestr\TSW\MoneyFlow\Backup\MoneyFlow\CashflowItemDialog.Designer.cs">
+</Event><Event ErrorLevel="0" Project="MoneyFlow" Source="MoneyFlow\CategoryForm.cs" Description="File successfully backed up as E:\Fel\5.semestr\TSW\MoneyFlow\Backup\MoneyFlow\CategoryForm.cs">
+</Event><Event ErrorLevel="0" Project="MoneyFlow" Source="MoneyFlow\CategoryForm.Designer.cs" Description="File successfully backed up as E:\Fel\5.semestr\TSW\MoneyFlow\Backup\MoneyFlow\CategoryForm.Designer.cs">
+</Event><Event ErrorLevel="0" Project="MoneyFlow" Source="MoneyFlow\Labels\LabelCashflowCategory.cs" Description="File successfully backed up as E:\Fel\5.semestr\TSW\MoneyFlow\Backup\MoneyFlow\Labels\LabelCashflowCategory.cs">
+</Event><Event ErrorLevel="0" Project="MoneyFlow" Source="MoneyFlow\Labels\LabelCashflowCategory.Designer.cs" Description="File successfully backed up as E:\Fel\5.semestr\TSW\MoneyFlow\Backup\MoneyFlow\Labels\LabelCashflowCategory.Designer.cs">
+</Event><Event ErrorLevel="0" Project="MoneyFlow" Source="MoneyFlow\Labels\LabelCashflowDate.cs" Description="File successfully backed up as E:\Fel\5.semestr\TSW\MoneyFlow\Backup\MoneyFlow\Labels\LabelCashflowDate.cs">
+</Event><Event ErrorLevel="0" Project="MoneyFlow" Source="MoneyFlow\Labels\LabelCashflowDate.Designer.cs" Description="File successfully backed up as E:\Fel\5.semestr\TSW\MoneyFlow\Backup\MoneyFlow\Labels\LabelCashflowDate.Designer.cs">
+</Event><Event ErrorLevel="0" Project="MoneyFlow" Source="MoneyFlow\Labels\LabelCashflowDetail.cs" Description="File successfully backed up as E:\Fel\5.semestr\TSW\MoneyFlow\Backup\MoneyFlow\Labels\LabelCashflowDetail.cs">
+</Event><Event ErrorLevel="0" Project="MoneyFlow" Source="MoneyFlow\Labels\LabelCashflowDetail.Designer.cs" Description="File successfully backed up as E:\Fel\5.semestr\TSW\MoneyFlow\Backup\MoneyFlow\Labels\LabelCashflowDetail.Designer.cs">
+</Event><Event ErrorLevel="0" Project="MoneyFlow" Source="MoneyFlow\Labels\LabelCashflowType.cs" Description="File successfully backed up as E:\Fel\5.semestr\TSW\MoneyFlow\Backup\MoneyFlow\Labels\LabelCashflowType.cs">
+</Event><Event ErrorLevel="0" Project="MoneyFlow" Source="MoneyFlow\Labels\LabelCashflowType.Designer.cs" Description="File successfully backed up as E:\Fel\5.semestr\TSW\MoneyFlow\Backup\MoneyFlow\Labels\LabelCashflowType.Designer.cs">
+</Event><Event ErrorLevel="0" Project="MoneyFlow" Source="MoneyFlow\Labels\LabelCashflowValue.cs" Description="File successfully backed up as E:\Fel\5.semestr\TSW\MoneyFlow\Backup\MoneyFlow\Labels\LabelCashflowValue.cs">
+</Event><Event ErrorLevel="0" Project="MoneyFlow" Source="MoneyFlow\Labels\LabelCashflowValue.Designer.cs" Description="File successfully backed up as E:\Fel\5.semestr\TSW\MoneyFlow\Backup\MoneyFlow\Labels\LabelCashflowValue.Designer.cs">
+</Event><Event ErrorLevel="0" Project="MoneyFlow" Source="MoneyFlow\Labels\LabelStopperCritical.cs" Description="File successfully backed up as E:\Fel\5.semestr\TSW\MoneyFlow\Backup\MoneyFlow\Labels\LabelStopperCritical.cs">
+</Event><Event ErrorLevel="0" Project="MoneyFlow" Source="MoneyFlow\Labels\LabelStopperCritical.Designer.cs" Description="File successfully backed up as E:\Fel\5.semestr\TSW\MoneyFlow\Backup\MoneyFlow\Labels\LabelStopperCritical.Designer.cs">
+</Event><Event ErrorLevel="0" Project="MoneyFlow" Source="MoneyFlow\Labels\LabelStopperStateCaution.cs" Description="File successfully backed up as E:\Fel\5.semestr\TSW\MoneyFlow\Backup\MoneyFlow\Labels\LabelStopperStateCaution.cs">
+</Event><Event ErrorLevel="0" Project="MoneyFlow" Source="MoneyFlow\Labels\LabelStopperStateCaution.Designer.cs" Description="File successfully backed up as E:\Fel\5.semestr\TSW\MoneyFlow\Backup\MoneyFlow\Labels\LabelStopperStateCaution.Designer.cs">
+</Event><Event ErrorLevel="0" Project="MoneyFlow" Source="MoneyFlow\Labels\LabelStopperStateCritical.cs" Description="File successfully backed up as E:\Fel\5.semestr\TSW\MoneyFlow\Backup\MoneyFlow\Labels\LabelStopperStateCritical.cs">
+</Event><Event ErrorLevel="0" Project="MoneyFlow" Source="MoneyFlow\Labels\LabelStopperStateCritical.Designer.cs" Description="File successfully backed up as E:\Fel\5.semestr\TSW\MoneyFlow\Backup\MoneyFlow\Labels\LabelStopperStateCritical.Designer.cs">
+</Event><Event ErrorLevel="0" Project="MoneyFlow" Source="MoneyFlow\Labels\LabelStopperStateWarning.cs" Description="File successfully backed up as E:\Fel\5.semestr\TSW\MoneyFlow\Backup\MoneyFlow\Labels\LabelStopperStateWarning.cs">
+</Event><Event ErrorLevel="0" Project="MoneyFlow" Source="MoneyFlow\Labels\LabelStopperStateWarning.Designer.cs" Description="File successfully backed up as E:\Fel\5.semestr\TSW\MoneyFlow\Backup\MoneyFlow\Labels\LabelStopperStateWarning.Designer.cs">
+</Event><Event ErrorLevel="0" Project="MoneyFlow" Source="MoneyFlow\Labels\LabelStopperWarning.cs" Description="File successfully backed up as E:\Fel\5.semestr\TSW\MoneyFlow\Backup\MoneyFlow\Labels\LabelStopperWarning.cs">
+</Event><Event ErrorLevel="0" Project="MoneyFlow" Source="MoneyFlow\Labels\LabelStopperWarning.Designer.cs" Description="File successfully backed up as E:\Fel\5.semestr\TSW\MoneyFlow\Backup\MoneyFlow\Labels\LabelStopperWarning.Designer.cs">
+</Event><Event ErrorLevel="0" Project="MoneyFlow" Source="MoneyFlow\LoginForm.cs" Description="File successfully backed up as E:\Fel\5.semestr\TSW\MoneyFlow\Backup\MoneyFlow\LoginForm.cs">
+</Event><Event ErrorLevel="0" Project="MoneyFlow" Source="MoneyFlow\LoginForm.Designer.cs" Description="File successfully backed up as E:\Fel\5.semestr\TSW\MoneyFlow\Backup\MoneyFlow\LoginForm.Designer.cs">
+</Event><Event ErrorLevel="0" Project="MoneyFlow" Source="MoneyFlow\MFlowWin.cs" Description="File successfully backed up as E:\Fel\5.semestr\TSW\MoneyFlow\Backup\MoneyFlow\MFlowWin.cs">
+</Event><Event ErrorLevel="0" Project="MoneyFlow" Source="MoneyFlow\MFlowWin.Designer.cs" Description="File successfully backed up as E:\Fel\5.semestr\TSW\MoneyFlow\Backup\MoneyFlow\MFlowWin.Designer.cs">
+</Event><Event ErrorLevel="0" Project="MoneyFlow" Source="MoneyFlow\ProfileForm.cs" Description="File successfully backed up as E:\Fel\5.semestr\TSW\MoneyFlow\Backup\MoneyFlow\ProfileForm.cs">
+</Event><Event ErrorLevel="0" Project="MoneyFlow" Source="MoneyFlow\ProfileForm.Designer.cs" Description="File successfully backed up as E:\Fel\5.semestr\TSW\MoneyFlow\Backup\MoneyFlow\ProfileForm.Designer.cs">
+</Event><Event ErrorLevel="0" Project="MoneyFlow" Source="MoneyFlow\Program.cs" Description="File successfully backed up as E:\Fel\5.semestr\TSW\MoneyFlow\Backup\MoneyFlow\Program.cs">
+</Event><Event ErrorLevel="0" Project="MoneyFlow" Source="MoneyFlow\Properties\AssemblyInfo.cs" Description="File successfully backed up as E:\Fel\5.semestr\TSW\MoneyFlow\Backup\MoneyFlow\Properties\AssemblyInfo.cs">
+</Event><Event ErrorLevel="0" Project="MoneyFlow" Source="MoneyFlow\Properties\Resources.Designer.cs" Description="File successfully backed up as E:\Fel\5.semestr\TSW\MoneyFlow\Backup\MoneyFlow\Properties\Resources.Designer.cs">
+</Event><Event ErrorLevel="0" Project="MoneyFlow" Source="MoneyFlow\Properties\Settings.Designer.cs" Description="File successfully backed up as E:\Fel\5.semestr\TSW\MoneyFlow\Backup\MoneyFlow\Properties\Settings.Designer.cs">
+</Event><Event ErrorLevel="0" Project="MoneyFlow" Source="MoneyFlow\Labels\LabelStopperCaution.cs" Description="File successfully backed up as E:\Fel\5.semestr\TSW\MoneyFlow\Backup\MoneyFlow\Labels\LabelStopperCaution.cs">
+</Event><Event ErrorLevel="0" Project="MoneyFlow" Source="MoneyFlow\Labels\LabelStopperCaution.Designer.cs" Description="File successfully backed up as E:\Fel\5.semestr\TSW\MoneyFlow\Backup\MoneyFlow\Labels\LabelStopperCaution.Designer.cs">
+</Event><Event ErrorLevel="0" Project="MoneyFlow" Source="MoneyFlow\DoubleBuffered\TabControlDoubleBuffer.cs" Description="File successfully backed up as E:\Fel\5.semestr\TSW\MoneyFlow\Backup\MoneyFlow\DoubleBuffered\TabControlDoubleBuffer.cs">
+</Event><Event ErrorLevel="0" Project="MoneyFlow" Source="MoneyFlow\DoubleBuffered\TabControlDoubleBuffer.Designer.cs" Description="File successfully backed up as E:\Fel\5.semestr\TSW\MoneyFlow\Backup\MoneyFlow\DoubleBuffered\TabControlDoubleBuffer.Designer.cs">
+</Event><Event ErrorLevel="0" Project="MoneyFlow" Source="MoneyFlow\DoubleBuffered\TableDoubleBuffer.cs" Description="File successfully backed up as E:\Fel\5.semestr\TSW\MoneyFlow\Backup\MoneyFlow\DoubleBuffered\TableDoubleBuffer.cs">
+</Event><Event ErrorLevel="0" Project="MoneyFlow" Source="MoneyFlow\DoubleBuffered\TableDoubleBuffer.Designer.cs" Description="File successfully backed up as E:\Fel\5.semestr\TSW\MoneyFlow\Backup\MoneyFlow\DoubleBuffered\TableDoubleBuffer.Designer.cs">
+</Event><Event ErrorLevel="0" Project="MoneyFlow" Source="MoneyFlow\Properties\Settings.settings" Description="File successfully backed up as E:\Fel\5.semestr\TSW\MoneyFlow\Backup\MoneyFlow\Properties\Settings.settings">
+</Event><Event ErrorLevel="0" Project="MoneyFlow" Source="MoneyFlow\Resources\error.png" Description="File successfully backed up as E:\Fel\5.semestr\TSW\MoneyFlow\Backup\MoneyFlow\Resources\error.png">
+</Event><Event ErrorLevel="0" Project="MoneyFlow" Source="MoneyFlow\Resources\Keys.png" Description="File successfully backed up as E:\Fel\5.semestr\TSW\MoneyFlow\Backup\MoneyFlow\Resources\Keys.png">
+</Event><Event ErrorLevel="0" Project="MoneyFlow" Source="MoneyFlow\Resources\ok.png" Description="File successfully backed up as E:\Fel\5.semestr\TSW\MoneyFlow\Backup\MoneyFlow\Resources\ok.png">
+</Event><Event ErrorLevel="0" Project="MoneyFlow" Source="MoneyFlow\Resources\info.png" Description="File successfully backed up as E:\Fel\5.semestr\TSW\MoneyFlow\Backup\MoneyFlow\Resources\info.png">
+</Event><Event ErrorLevel="0" Project="MoneyFlow" Source="MoneyFlow\Resources\eventlogError.ico" Description="File successfully backed up as E:\Fel\5.semestr\TSW\MoneyFlow\Backup\MoneyFlow\Resources\eventlogError.ico">
+</Event><Event ErrorLevel="0" Project="MoneyFlow" Source="MoneyFlow\ClassDiagram2.cd" Description="File successfully backed up as E:\Fel\5.semestr\TSW\MoneyFlow\Backup\MoneyFlow\ClassDiagram2.cd">
+</Event><Event ErrorLevel="0" Project="MoneyFlow" Source="MoneyFlow\Resources\page_white_error.png" Description="File successfully backed up as E:\Fel\5.semestr\TSW\MoneyFlow\Backup\MoneyFlow\Resources\page_white_error.png">
+</Event><Event ErrorLevel="0" Project="MoneyFlow" Source="MoneyFlow\Resources\page_edit.png" Description="File successfully backed up as E:\Fel\5.semestr\TSW\MoneyFlow\Backup\MoneyFlow\Resources\page_edit.png">
+</Event><Event ErrorLevel="0" Project="MoneyFlow" Source="MoneyFlow\Resources\page_white_add.png" Description="File successfully backed up as E:\Fel\5.semestr\TSW\MoneyFlow\Backup\MoneyFlow\Resources\page_white_add.png">
+</Event><Event ErrorLevel="0" Project="MoneyFlow" Source="MoneyFlow\Resources\page_white_put.png" Description="File successfully backed up as E:\Fel\5.semestr\TSW\MoneyFlow\Backup\MoneyFlow\Resources\page_white_put.png">
+</Event><Event ErrorLevel="0" Project="MoneyFlow" Source="MoneyFlow\Resources\status_online.png" Description="File successfully backed up as E:\Fel\5.semestr\TSW\MoneyFlow\Backup\MoneyFlow\Resources\status_online.png">
+</Event><Event ErrorLevel="0" Project="MoneyFlow" Source="MoneyFlow\Resources\vcard.png" Description="File successfully backed up as E:\Fel\5.semestr\TSW\MoneyFlow\Backup\MoneyFlow\Resources\vcard.png">
+</Event><Event ErrorLevel="0" Project="MoneyFlow" Source="MoneyFlow\Resources\table_multiple.png" Description="File successfully backed up as E:\Fel\5.semestr\TSW\MoneyFlow\Backup\MoneyFlow\Resources\table_multiple.png">
+</Event><Event ErrorLevel="0" Project="MoneyFlow" Source="MoneyFlow\Resources\arrow_right.png" Description="File successfully backed up as E:\Fel\5.semestr\TSW\MoneyFlow\Backup\MoneyFlow\Resources\arrow_right.png">
+</Event><Event ErrorLevel="0" Project="MoneyFlow" Source="MoneyFlow\Resources\arrow_left.png" Description="File successfully backed up as E:\Fel\5.semestr\TSW\MoneyFlow\Backup\MoneyFlow\Resources\arrow_left.png">
+</Event><Event ErrorLevel="0" Project="MoneyFlow" Source="MoneyFlow\Resources\package1.png" Description="File successfully backed up as E:\Fel\5.semestr\TSW\MoneyFlow\Backup\MoneyFlow\Resources\package1.png">
+</Event><Event ErrorLevel="0" Project="MoneyFlow" Source="MoneyFlow\Resources\comments.png" Description="File successfully backed up as E:\Fel\5.semestr\TSW\MoneyFlow\Backup\MoneyFlow\Resources\comments.png">
+</Event><Event ErrorLevel="0" Project="MoneyFlow" Source="MoneyFlow\Resources\money_dollar1.png" Description="File successfully backed up as E:\Fel\5.semestr\TSW\MoneyFlow\Backup\MoneyFlow\Resources\money_dollar1.png">
+</Event><Event ErrorLevel="0" Project="MoneyFlow" Source="MoneyFlow\Resources\money.png" Description="File successfully backed up as E:\Fel\5.semestr\TSW\MoneyFlow\Backup\MoneyFlow\Resources\money.png">
+</Event><Event ErrorLevel="0" Project="MoneyFlow" Source="MoneyFlow\Resources\time.png" Description="File successfully backed up as E:\Fel\5.semestr\TSW\MoneyFlow\Backup\MoneyFlow\Resources\time.png">
+</Event><Event ErrorLevel="0" Project="MoneyFlow" Source="MoneyFlow\Resources\lightbulb.png" Description="File successfully backed up as E:\Fel\5.semestr\TSW\MoneyFlow\Backup\MoneyFlow\Resources\lightbulb.png">
+</Event><Event ErrorLevel="0" Project="MoneyFlow" Source="MoneyFlow\Resources\coins.png" Description="File successfully backed up as E:\Fel\5.semestr\TSW\MoneyFlow\Backup\MoneyFlow\Resources\coins.png">
+</Event><Event ErrorLevel="0" Project="MoneyFlow" Source="MoneyFlow\Resources\table_go.png" Description="File successfully backed up as E:\Fel\5.semestr\TSW\MoneyFlow\Backup\MoneyFlow\Resources\table_go.png">
+</Event><Event ErrorLevel="0" Project="MoneyFlow" Source="MoneyFlow\Resources\folder_edit.png" Description="File successfully backed up as E:\Fel\5.semestr\TSW\MoneyFlow\Backup\MoneyFlow\Resources\folder_edit.png">
+</Event><Event ErrorLevel="0" Project="MoneyFlow" Source="MoneyFlow\Resources\package_add.png" Description="File successfully backed up as E:\Fel\5.semestr\TSW\MoneyFlow\Backup\MoneyFlow\Resources\package_add.png">
+</Event><Event ErrorLevel="0" Project="MoneyFlow" Source="MoneyFlow\Resources\arrow_up.png" Description="File successfully backed up as E:\Fel\5.semestr\TSW\MoneyFlow\Backup\MoneyFlow\Resources\arrow_up.png">
+</Event><Event ErrorLevel="0" Project="MoneyFlow" Source="MoneyFlow\Resources\arrow_down.png" Description="File successfully backed up as E:\Fel\5.semestr\TSW\MoneyFlow\Backup\MoneyFlow\Resources\arrow_down.png">
+</Event><Event ErrorLevel="0" Project="MoneyFlow" Source="MoneyFlow\Resources\layout_edit.png" Description="File successfully backed up as E:\Fel\5.semestr\TSW\MoneyFlow\Backup\MoneyFlow\Resources\layout_edit.png">
+</Event><Event ErrorLevel="0" Project="MoneyFlow" Source="MoneyFlow\Resources\layout_add.png" Description="File successfully backed up as E:\Fel\5.semestr\TSW\MoneyFlow\Backup\MoneyFlow\Resources\layout_add.png">
+</Event><Event ErrorLevel="0" Project="MoneyFlow" Source="MoneyFlow\Resources\cancel.png" Description="File successfully backed up as E:\Fel\5.semestr\TSW\MoneyFlow\Backup\MoneyFlow\Resources\cancel.png">
+</Event><Event ErrorLevel="0" Project="MoneyFlow" Source="MoneyFlow\Resources\delete.png" Description="File successfully backed up as E:\Fel\5.semestr\TSW\MoneyFlow\Backup\MoneyFlow\Resources\delete.png">
+</Event><Event ErrorLevel="0" Project="MoneyFlow" Source="MoneyFlow\Resources\pencil.png" Description="File successfully backed up as E:\Fel\5.semestr\TSW\MoneyFlow\Backup\MoneyFlow\Resources\pencil.png">
+</Event><Event ErrorLevel="0" Project="MoneyFlow" Source="MoneyFlow\Resources\door_out.png" Description="File successfully backed up as E:\Fel\5.semestr\TSW\MoneyFlow\Backup\MoneyFlow\Resources\door_out.png">
+</Event><Event ErrorLevel="0" Project="MoneyFlow" Source="MoneyFlow\Resources\layout_content.png" Description="File successfully backed up as E:\Fel\5.semestr\TSW\MoneyFlow\Backup\MoneyFlow\Resources\layout_content.png">
+</Event><Event ErrorLevel="0" Project="MoneyFlow" Source="MoneyFlow\Resources\accept.png" Description="File successfully backed up as E:\Fel\5.semestr\TSW\MoneyFlow\Backup\MoneyFlow\Resources\accept.png">
+</Event><Event ErrorLevel="0" Project="MoneyFlow" Source="MoneyFlow\Resources\exclamation1.png" Description="File successfully backed up as E:\Fel\5.semestr\TSW\MoneyFlow\Backup\MoneyFlow\Resources\exclamation1.png">
+</Event><Event ErrorLevel="0" Project="MoneyFlow" Source="MoneyFlow\Resources\lightning.png" Description="File successfully backed up as E:\Fel\5.semestr\TSW\MoneyFlow\Backup\MoneyFlow\Resources\lightning.png">
+</Event><Event ErrorLevel="0" Project="MoneyFlow" Source="MoneyFlow\Resources\lightning_go.png" Description="File successfully backed up as E:\Fel\5.semestr\TSW\MoneyFlow\Backup\MoneyFlow\Resources\lightning_go.png">
+</Event><Event ErrorLevel="0" Project="MoneyFlow" Source="MoneyFlow\Resources\information.png" Description="File successfully backed up as E:\Fel\5.semestr\TSW\MoneyFlow\Backup\MoneyFlow\Resources\information.png">
+</Event><Event ErrorLevel="0" Project="MoneyFlow" Source="MoneyFlow\Resources\page_go.png" Description="File successfully backed up as E:\Fel\5.semestr\TSW\MoneyFlow\Backup\MoneyFlow\Resources\page_go.png">
+</Event><Event ErrorLevel="0" Project="MoneyFlow" Source="MoneyFlow\Resources\chart_curve.png" Description="File successfully backed up as E:\Fel\5.semestr\TSW\MoneyFlow\Backup\MoneyFlow\Resources\chart_curve.png">
+</Event><Event ErrorLevel="0" Project="MoneyFlow" Source="MoneyFlow\Resources\package_green.png" Description="File successfully backed up as E:\Fel\5.semestr\TSW\MoneyFlow\Backup\MoneyFlow\Resources\package_green.png">
+</Event><Event ErrorLevel="0" Project="MoneyFlow" Source="MoneyFlow\Resources\package.png" Description="File successfully backed up as E:\Fel\5.semestr\TSW\MoneyFlow\Backup\MoneyFlow\Resources\package.png">
+</Event><Event ErrorLevel="0" Project="MoneyFlow" Source="MoneyFlow\Resources\money_dollar.png" Description="File successfully backed up as E:\Fel\5.semestr\TSW\MoneyFlow\Backup\MoneyFlow\Resources\money_dollar.png">
+</Event><Event ErrorLevel="0" Project="MoneyFlow" Source="MoneyFlow\Resources\money_delete.png" Description="File successfully backed up as E:\Fel\5.semestr\TSW\MoneyFlow\Backup\MoneyFlow\Resources\money_delete.png">
+</Event><Event ErrorLevel="0" Project="MoneyFlow" Source="MoneyFlow\Resources\money_add.png" Description="File successfully backed up as E:\Fel\5.semestr\TSW\MoneyFlow\Backup\MoneyFlow\Resources\money_add.png">
+</Event><Event ErrorLevel="0" Project="MoneyFlow" Source="MoneyFlow\Resources\flag_blue.png" Description="File successfully backed up as E:\Fel\5.semestr\TSW\MoneyFlow\Backup\MoneyFlow\Resources\flag_blue.png">
+</Event><Event ErrorLevel="0" Project="MoneyFlow" Source="MoneyFlow\Resources\error1.png" Description="File successfully backed up as E:\Fel\5.semestr\TSW\MoneyFlow\Backup\MoneyFlow\Resources\error1.png">
+</Event><Event ErrorLevel="0" Project="MoneyFlow" Source="MoneyFlow\Resources\exclamation.png" Description="File successfully backed up as E:\Fel\5.semestr\TSW\MoneyFlow\Backup\MoneyFlow\Resources\exclamation.png">
+</Event><Event ErrorLevel="0" Project="MoneyFlow" Source="MoneyFlow\Resources\coins_delete.png" Description="File successfully backed up as E:\Fel\5.semestr\TSW\MoneyFlow\Backup\MoneyFlow\Resources\coins_delete.png">
+</Event><Event ErrorLevel="0" Project="MoneyFlow" Source="MoneyFlow\Resources\coins_add.png" Description="File successfully backed up as E:\Fel\5.semestr\TSW\MoneyFlow\Backup\MoneyFlow\Resources\coins_add.png">
+</Event><Event ErrorLevel="0" Project="MoneyFlow" Source="MoneyFlow\Resources\Color_fillHL.bmp" Description="File successfully backed up as E:\Fel\5.semestr\TSW\MoneyFlow\Backup\MoneyFlow\Resources\Color_fillHL.bmp">
+</Event><Event ErrorLevel="0" Project="MoneyFlow" Source="MoneyFlow\Resources\EditCodeHS.png" Description="File successfully backed up as E:\Fel\5.semestr\TSW\MoneyFlow\Backup\MoneyFlow\Resources\EditCodeHS.png">
+</Event><Event ErrorLevel="0" Project="MoneyFlow" Source="MoneyFlow\Resources\Book_StackOfReportsHS.png" Description="File successfully backed up as E:\Fel\5.semestr\TSW\MoneyFlow\Backup\MoneyFlow\Resources\Book_StackOfReportsHS.png">
+</Event><Event ErrorLevel="0" Project="MoneyFlow" Source="MoneyFlow\Resources\book_reportHS.png" Description="File successfully backed up as E:\Fel\5.semestr\TSW\MoneyFlow\Backup\MoneyFlow\Resources\book_reportHS.png">
+</Event><Event ErrorLevel="0" Project="MoneyFlow" Source="MoneyFlow\Resources\graphhs.png" Description="File successfully backed up as E:\Fel\5.semestr\TSW\MoneyFlow\Backup\MoneyFlow\Resources\graphhs.png">
+</Event><Event ErrorLevel="0" Project="MoneyFlow" Source="MoneyFlow\Resources\Flag_redHS.png" Description="File successfully backed up as E:\Fel\5.semestr\TSW\MoneyFlow\Backup\MoneyFlow\Resources\Flag_redHS.png">
+</Event><Event ErrorLevel="0" Project="MoneyFlow" Source="MoneyFlow\Resources\Flag_greenHS.png" Description="File successfully backed up as E:\Fel\5.semestr\TSW\MoneyFlow\Backup\MoneyFlow\Resources\Flag_greenHS.png">
+</Event><Event ErrorLevel="0" Project="MoneyFlow" Source="MoneyFlow\Resources\WarningHS.png" Description="File successfully backed up as E:\Fel\5.semestr\TSW\MoneyFlow\Backup\MoneyFlow\Resources\WarningHS.png">
+</Event><Event ErrorLevel="0" Project="MoneyFlow" Source="MoneyFlow\Resources\Flag_blueHS.png" Description="File successfully backed up as E:\Fel\5.semestr\TSW\MoneyFlow\Backup\MoneyFlow\Resources\Flag_blueHS.png">
+</Event><Event ErrorLevel="0" Project="MoneyFlow" Source="MoneyFlow\Resources\ExpirationHS.png" Description="File successfully backed up as E:\Fel\5.semestr\TSW\MoneyFlow\Backup\MoneyFlow\Resources\ExpirationHS.png">
+</Event><Event ErrorLevel="0" Project="MoneyFlow" Source="MoneyFlow\Resources\Flag_blueHS.bmp" Description="File successfully backed up as E:\Fel\5.semestr\TSW\MoneyFlow\Backup\MoneyFlow\Resources\Flag_blueHS.bmp">
+</Event><Event ErrorLevel="0" Project="MoneyFlow" Source="MoneyFlow\Coins.ico" Description="File successfully backed up as E:\Fel\5.semestr\TSW\MoneyFlow\Backup\MoneyFlow\Coins.ico">
+</Event><Event ErrorLevel="0" Project="MoneyFlow" Source="MoneyFlow\AboutForm.resx" Description="File successfully backed up as E:\Fel\5.semestr\TSW\MoneyFlow\Backup\MoneyFlow\AboutForm.resx">
+</Event><Event ErrorLevel="0" Project="MoneyFlow" Source="MoneyFlow\CashflowItemDialog.resx" Description="File successfully backed up as E:\Fel\5.semestr\TSW\MoneyFlow\Backup\MoneyFlow\CashflowItemDialog.resx">
+</Event><Event ErrorLevel="0" Project="MoneyFlow" Source="MoneyFlow\CategoryForm.resx" Description="File successfully backed up as E:\Fel\5.semestr\TSW\MoneyFlow\Backup\MoneyFlow\CategoryForm.resx">
+</Event><Event ErrorLevel="0" Project="MoneyFlow" Source="MoneyFlow\LoginForm.resx" Description="File successfully backed up as E:\Fel\5.semestr\TSW\MoneyFlow\Backup\MoneyFlow\LoginForm.resx">
+</Event><Event ErrorLevel="0" Project="MoneyFlow" Source="MoneyFlow\MFlowWin.resx" Description="File successfully backed up as E:\Fel\5.semestr\TSW\MoneyFlow\Backup\MoneyFlow\MFlowWin.resx">
+</Event><Event ErrorLevel="0" Project="MoneyFlow" Source="MoneyFlow\ProfileForm.resx" Description="File successfully backed up as E:\Fel\5.semestr\TSW\MoneyFlow\Backup\MoneyFlow\ProfileForm.resx">
+</Event><Event ErrorLevel="0" Project="MoneyFlow" Source="MoneyFlow\Properties\Resources.resx" Description="File successfully backed up as E:\Fel\5.semestr\TSW\MoneyFlow\Backup\MoneyFlow\Properties\Resources.resx">
+</Event><Event ErrorLevel="0" Project="MoneyFlow" Source="MoneyFlow\MoneyFlow.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="MoneyFlow" Source="MoneyFlow\MoneyFlow.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="DAL" Source="DAL\DAL.csproj" Description="Project file successfully backed up as E:\Fel\5.semestr\TSW\MoneyFlow\Backup\DAL\DAL.csproj">
+</Event><Event ErrorLevel="0" Project="DAL" Source="DAL\DAL.csproj.user" Description="Project user file successfully backed up as E:\Fel\5.semestr\TSW\MoneyFlow\Backup\DAL\DAL.csproj.user">
+</Event><Event ErrorLevel="0" Project="DAL" Source="DAL\AccountDAO.cs" Description="File successfully backed up as E:\Fel\5.semestr\TSW\MoneyFlow\Backup\DAL\AccountDAO.cs">
+</Event><Event ErrorLevel="0" Project="DAL" Source="DAL\CashedDAO.cs" Description="File successfully backed up as E:\Fel\5.semestr\TSW\MoneyFlow\Backup\DAL\CashedDAO.cs">
+</Event><Event ErrorLevel="0" Project="DAL" Source="DAL\CategoryDAO.cs" Description="File successfully backed up as E:\Fel\5.semestr\TSW\MoneyFlow\Backup\DAL\CategoryDAO.cs">
+</Event><Event ErrorLevel="0" Project="DAL" Source="DAL\ItemDAO.cs" Description="File successfully backed up as E:\Fel\5.semestr\TSW\MoneyFlow\Backup\DAL\ItemDAO.cs">
+</Event><Event ErrorLevel="0" Project="DAL" Source="DAL\LinqUtil.cs" Description="File successfully backed up as E:\Fel\5.semestr\TSW\MoneyFlow\Backup\DAL\LinqUtil.cs">
+</Event><Event ErrorLevel="0" Project="DAL" Source="DAL\MonitoringDAO.cs" Description="File successfully backed up as E:\Fel\5.semestr\TSW\MoneyFlow\Backup\DAL\MonitoringDAO.cs">
+</Event><Event ErrorLevel="0" Project="DAL" Source="DAL\ProfileDAO.cs" Description="File successfully backed up as E:\Fel\5.semestr\TSW\MoneyFlow\Backup\DAL\ProfileDAO.cs">
+</Event><Event ErrorLevel="0" Project="DAL" Source="DAL\Properties\Settings.Designer.cs" Description="File successfully backed up as E:\Fel\5.semestr\TSW\MoneyFlow\Backup\DAL\Properties\Settings.Designer.cs">
+</Event><Event ErrorLevel="0" Project="DAL" Source="DAL\app.config" Description="File successfully backed up as E:\Fel\5.semestr\TSW\MoneyFlow\Backup\DAL\app.config">
+</Event><Event ErrorLevel="0" Project="DAL" Source="DAL\ClassDiagram1.cd" Description="File successfully backed up as E:\Fel\5.semestr\TSW\MoneyFlow\Backup\DAL\ClassDiagram1.cd">
+</Event><Event ErrorLevel="0" Project="DAL" Source="DAL\Properties\Settings.settings" Description="File successfully backed up as E:\Fel\5.semestr\TSW\MoneyFlow\Backup\DAL\Properties\Settings.settings">
+</Event><Event ErrorLevel="0" Project="DAL" Source="DAL\MFlowDB.sdf" Description="File successfully backed up as E:\Fel\5.semestr\TSW\MoneyFlow\Backup\DAL\MFlowDB.sdf">
+</Event><Event ErrorLevel="0" Project="DAL" Source="DAL\DAL.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="DAL" Source="DAL\DAL.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="BLL" Source="BLL\BLL.csproj" Description="Project file successfully backed up as E:\Fel\5.semestr\TSW\MoneyFlow\Backup\BLL\BLL.csproj">
+</Event><Event ErrorLevel="0" Project="BLL" Source="BLL\BLL.csproj.user" Description="Project user file successfully backed up as E:\Fel\5.semestr\TSW\MoneyFlow\Backup\BLL\BLL.csproj.user">
+</Event><Event ErrorLevel="0" Project="BLL" Source="BLL\Account.cs" Description="File successfully backed up as E:\Fel\5.semestr\TSW\MoneyFlow\Backup\BLL\Account.cs">
+</Event><Event ErrorLevel="0" Project="BLL" Source="BLL\Cashed.cs" Description="File successfully backed up as E:\Fel\5.semestr\TSW\MoneyFlow\Backup\BLL\Cashed.cs">
+</Event><Event ErrorLevel="0" Project="BLL" Source="BLL\Category.cs" Description="File successfully backed up as E:\Fel\5.semestr\TSW\MoneyFlow\Backup\BLL\Category.cs">
+</Event><Event ErrorLevel="0" Project="BLL" Source="BLL\GenericSorter.cs" Description="File successfully backed up as E:\Fel\5.semestr\TSW\MoneyFlow\Backup\BLL\GenericSorter.cs">
+</Event><Event ErrorLevel="0" Project="BLL" Source="BLL\Item.cs" Description="File successfully backed up as E:\Fel\5.semestr\TSW\MoneyFlow\Backup\BLL\Item.cs">
+</Event><Event ErrorLevel="0" Project="BLL" Source="BLL\MFlowDBDataContext.cs" Description="File successfully backed up as E:\Fel\5.semestr\TSW\MoneyFlow\Backup\BLL\MFlowDBDataContext.cs">
+</Event><Event ErrorLevel="0" Project="BLL" Source="BLL\MFlowDBDataContext.designer.cs" Description="File successfully backed up as E:\Fel\5.semestr\TSW\MoneyFlow\Backup\BLL\MFlowDBDataContext.designer.cs">
+</Event><Event ErrorLevel="0" Project="BLL" Source="BLL\Profile.cs" Description="File successfully backed up as E:\Fel\5.semestr\TSW\MoneyFlow\Backup\BLL\Profile.cs">
+</Event><Event ErrorLevel="0" Project="BLL" Source="BLL\MFlowDBDataContext.dbml" Description="File successfully backed up as E:\Fel\5.semestr\TSW\MoneyFlow\Backup\BLL\MFlowDBDataContext.dbml">
+</Event><Event ErrorLevel="0" Project="BLL" Source="BLL\ClassDiagram1.cd" Description="File successfully backed up as E:\Fel\5.semestr\TSW\MoneyFlow\Backup\BLL\ClassDiagram1.cd">
+</Event><Event ErrorLevel="0" Project="BLL" Source="BLL\MFlowDBDataContext.dbml.layout" Description="File successfully backed up as E:\Fel\5.semestr\TSW\MoneyFlow\Backup\BLL\MFlowDBDataContext.dbml.layout">
+</Event><Event ErrorLevel="0" Project="BLL" Source="BLL\BLL.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="BLL" Source="BLL\BLL.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="" Source="MoneyFlow.sln" Description="Solution converted successfully">
+</Event><Event ErrorLevel="3" Project="" Source="MoneyFlow.sln" Description="Converted">
+</Event><Event ErrorLevel="0" Project="MoneyFlow" Source="MoneyFlow\MoneyFlow.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event><Event ErrorLevel="0" Project="DAL" Source="DAL\DAL.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event><Event ErrorLevel="0" Project="BLL" Source="BLL\BLL.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event></UpgradeLog>

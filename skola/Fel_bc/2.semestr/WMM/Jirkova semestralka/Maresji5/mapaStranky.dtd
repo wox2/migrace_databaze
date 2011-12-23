@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+    Document   : mapaStranky.dtd
+    Created on : 1. červen 2009, 9:50
+    Author     : mary
+    Description:
+        Purpose of the document follows.
+
+    TODO define vocabulary identification data
+    PUBLIC ID  : -//vendor//vocabulary//EN
+    SYSTEM ID  : http://server/path/mapaStranky.dtd
+-->
+
+<!-- TODO define your own vocabulary/syntax. Example follows:  -->
+<!ELEMENT rozdeleni ANY>
+<!ATTLIST rozdeleni version CDATA #REQUIRED>
+
+<!ELEMENT rozdeleni (hlavniStranka, nabidkaVin, potkat, kontakt)>
+<!ELEMENT hlavniStranka (#PCDATA)>
+
+<!ELEMENT nabodkaVin (nabV, (druhVin)+)> 
+<!ELEMENT potkat (#PCDATA)>
+<!ELEMENT kontekt (#PCDATA)>
+<!ELEMENT nabV (#PCDATA)>
+
+<!ELEMENT druhVin (nazev, stranka*)>
+<!ELEMENT nazev (#PCDATA)>
+<!ELEMENT stranka (#PCDATA)>

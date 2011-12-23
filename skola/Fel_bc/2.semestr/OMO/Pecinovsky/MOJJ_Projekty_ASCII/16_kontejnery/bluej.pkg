@@ -1,0 +1,27 @@
+#Soubor bluej.pkg prevedeny do ASCII
+#Sat Nov 29 12:36:30 CET 2008
+package.showUses=true
+target1.type=PackageTarget
+package.editor.height=289
+target3.name=molekuly
+target2.type=PackageTarget
+package.editor.x=0
+target3.type=PackageTarget
+target2.y=10
+target2.x=60
+package.showExtends=true
+target3.height=62
+target1.height=62
+target2.width=60
+package.editor.width=180
+target1.width=90
+package.numDependencies=0
+target1.y=90
+target1.x=20
+package.numTargets=3
+target1.name=mnohotvar
+target3.y=180
+target3.x=20
+target3.width=90
+target2.name=priklady
+target2.height=62

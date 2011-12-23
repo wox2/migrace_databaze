@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="windows-1250"?>
+
+<objednavka>
+  <datum>1.3.2009</datum>
+  <stav>zalozena</stav>
+  <id>1234</id>
+  <jmeno>
+    <krestni>Martin</krestni>
+     <prijmeni>Usiansky</prijmeni>
+     <email>grr@seznam.cz</email>
+     <telefon>603 456 567</telefon>
+  </jmeno>
+   
+  <adresa>
+    <ulice>
+     Technicka
+     </ulice>
+     <mesto>
+       Praha
+     </mesto>
+     <PSC>
+        14200
+     </PSC>
+     <CP>
+       2
+     </CP>
+  </adresa> 
+  <seznam>
+     <polozka>
+        <cislo id ="pol1">
+          123
+        </cislo>
+        <nazev>
+          kartacek na zuby
+        </nazev>
+        <cena>
+         10 Kc
+        </cena>
+        <pocet>
+          10 ks
+        </pocet>
+     </polozka> 
+  </seznam>
+  <notes>Prosim o potvrzeni dostupnosti <vyrobek IDREF="pol1">vyrobku na </vyrobek> </notes>
+</objednavka>

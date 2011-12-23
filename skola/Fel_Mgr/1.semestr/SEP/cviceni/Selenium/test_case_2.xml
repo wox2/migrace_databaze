@@ -1,0 +1,344 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://skidenik.cz/" />
+<title>New Test</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">New Test</td></tr>
+</thead><tbody>
+
+</tbody></table>
+</body>
+</html>
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://skidenik.cz/" />
+<title>New Test</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">New Test</td></tr>
+</thead><tbody>
+<tr>
+	<td>open</td>
+	<td>/swf-booking-faces/spring/intro</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=Login</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>f</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name=j_username</td>
+	<td>lukes</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name=j_password</td>
+	<td>lukes</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>name=submit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Welcome, lukes</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=mainForm:findHotels</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Hotel Results</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>70 Park Avenue</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>//tr[td[normalize-space()='70 Park Avenue Hotel']]/td[last()]/a</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>View Hotel</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>70 Park Avenue Hotel</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=hotel:book</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Book Hotel</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=bookingForm:checkinDate</td>
+	<td>2013-12-17</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=bookingForm:checkoutDate</td>
+	<td>2013-12-26</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=bookingForm:smoking:1</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=bookingForm:creditCard</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=bookingForm:creditCard</td>
+	<td>0123456789123456</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=bookingForm:creditCardName</td>
+	<td>Mastercard</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=bookingForm:creditCardExpiryMonth</td>
+	<td>label=Apr</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=bookingForm:creditCardExpiryYear</td>
+	<td>label=2010</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=bookingForm:proceed</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>70 Park Avenue Hotel</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>0123456789123456</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>17.12.13</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>26.12.13</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=confirm:confirm</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>70 Park Avenue Hotel</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>16.12.13</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>25.12.13</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=mainForm:findHotels</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Hotel Results</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>70 Park Avenue</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>//tr[td[normalize-space()='70 Park Avenue Hotel']]/td[last()]/a</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>View Hotel</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>70 Park Avenue Hotel</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=hotel:book</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>Book Hotel</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=bookingForm:checkinDate</td>
+	<td>2014-12-17</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=bookingForm:checkoutDate</td>
+	<td>2014-12-26</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=bookingForm:smoking:1</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=bookingForm:creditCard</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=bookingForm:creditCard</td>
+	<td>0123456789123456</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=bookingForm:creditCardName</td>
+	<td>Mastercard</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=bookingForm:creditCardExpiryMonth</td>
+	<td>label=Apr</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=bookingForm:creditCardExpiryYear</td>
+	<td>label=2010</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=bookingForm:proceed</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>70 Park Avenue Hotel</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>0123456789123456</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>17.12.14</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>26.12.14</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=confirm:confirm</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>70 Park Avenue Hotel</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>16.12.14</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>25.12.14</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//tr[td[normalize-space()='25.12.13']]/td[last()]/a</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementNotPresent</td>
+	<td>25.12.13</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextNotPresent</td>
+	<td>25.12.13</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Logout</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertTextPresent</td>
+	<td>You have successfully logged out.</td>
+	<td></td>
+</tr>
+</tbody></table>
+</body>
+</html>
+

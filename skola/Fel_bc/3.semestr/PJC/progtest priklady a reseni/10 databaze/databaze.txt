@@ -1,0 +1,195 @@
+Úkolem je realizovat trídu CDatabase - vyhledávací tabulku. Do tabulky pujde vkládat záznamy typu CCompany. Nad tabulkou budou realizované základní operace vkládání, mazání a vyhledávání. Pri vyhledávání a mazání v tabulce budou použíté algoritmy s asymptotickou složitostí lepší než lineární (binární pulení pro císla, hashování pro retezce).
+
+Realizovaná trída bude mít rozhraní podle deklarace níže. Rozhraní obsahuje:
+
+    * Konstruktor s parametrem. Konstruktor vytvorí novou prázdnou instanci. Parametr udává velikost rozptylovací tabulky m_PoolDIC a m_PoolName. Hodnota parametru bude uložena v clenské promenné m_PoolMax.
+    * Kopírující konstruktor bude ve tríde realizovnán, pokud to její implementace vyžaduje.
+    * Destruktor odstraní prostredky alokované instancí. Bude realizován, pokud to implementace bude vyžadovat.
+    * Pretížený operátor = provede hlubokou kopii instance pri prirazení. Bude ve tríde realizován, pokud to její realizace vyžaduje.
+    * Metoda Add pridá nový záznam do tabulky. Pridání selže, pokud by pridáním prvku došlo k duplicite v ICO, DIC nebo Name. Pokud pridání selže, metoda vrací false. Pokud je pridání úspešné, metoda vrací true a záznam je pridán do hash tabulek m_PoolDIC a m_PoolName a do setrízeného pole m_ICO. Záznam je do tabulky pridán pouze v jedné instanci, hash tabulky i setrízené pole m_ICO se na záznam pouze odkazjí.
+    * Metody DelByICO, DelByName a DelByDIC odstraní záznam z tabulky. Metody se liší kritériem pro odstranení záznamu. Protože jak ICO tak Name i DIC jsou unikátní, výberu muže vyhovovat nejvýše jeden záznam. Pokud záznam v tabulce existuje, metoda jej odstraní a vrací true. V opacném prípade metoda vrací false.
+    * Metody GetByICO, GetByName a GetByDIC vyhledají záznam v tabulce podle zadaného kritéria (ICO, Name, DIC). Pokud záznam v tabulce existoval, metody vrací ukazatel na tento záznam. V opacném prípade metody vracejí hodnotu NULL.
+    * Metoda Size vrací pocet záznamu v tabulce.
+    * Trídní metoda hash bude použita pro výpocet hodnot hash kódu z retezce. Její imlpementace je dodána jako soucást zadání. Pro správné vyhodnocení je potreba, abyste ji použili tak, jak je (nesmí být menena).
+    * Clenská promenná m_PoolMax bude obsahovat velikost rozptylovacího prostoru (tj. velikosti polí m_PoolDIC a m_PoolName). Bude obsahovat hodnotu zadanou pri volání konstruktoru.
+    * Clenské promenné m_ICO, m_ICONr a m_ICOMax slouží pro realizaci vyhledávání podle parametru ICO. Pole m_ICO obsahuje odkazy na vložené záznamy, záznamy jsou uložené serazené vzestupne podle hodnoty ICO. Pole má alokovanou velikost m_ICOMax (mení se podle potreby) a obsahuje celkem m_ICONr prvku. Pole je využíváno pro vyhledávání podle ICO, vyhledává se v nem bnárním pulením.
+    * Clenská promenná m_PoolDIC realizuje hash tabulku pro vyhledávání podle parametru DIC. Pro ukládání prvku je zvoleno vnejší zretezení. m_PoolDIC odkazuje na pole obsahující m_PoolMax ukazatelu na prvky TItem - pocátky spojových seznamu, které obsahují záznamy se stejnou hodnotou hash kódu DIC. Záznam s nastavenou hodnotou DIC bude uložen ve spojovém seznamu, který zacíná na adrese m_PoolDIC[ hash ( DIC ) % m_PoolMax ], kde hash je predepsaná trídní metoda pro výpocet hash kódu.
+    * Clenská promenná m_PoolName je využita stejne jako m_PoolDIC s tím rozdílem, že se používá pro vyhledávání podle jména Name.
+    * Ukládané záznamy jsou vkládány do prvku TItem. Krome vlastního datového obsahu prvek TItem obsahuje celkem 4 ukazatele. Ukazatele NextDIC a PrevDIC slouží pro realizaci dvojsmerne zretezeného spojového seznamu pro hashování dle DIC, analogicky NextName a PrevName slouží pro implementaci vnejšího zretezení pro hashování dle Name. Seznamy jsou orientované tak, že zacneme-li seznam procházet z odkazu v tabulce m_PoolDIC ci m_PoolName, pak použitím odkazu NextDIC resp. NextName projdeme celý spojový seznam od pocátku do konce. Odkazy PrevDIC a PrevName jsou orientované opacne. První prvek v seznamu má hodnotu PrevXXXX nastavenou na NULL a analogicky poslední prvek v seznamu má NextXXX rovnež nastavené na NULL.
+
+Odevzdávejte soubor, který obsahuje pouze implementovanou trídu CDatabase a vnitríní trídu CDatabase::TItem. Neodevzdávejte implementaci trídy CCompany - ta je již implementovaná v testovacím prostredí. Trída musí splnovat verejné rozhraní podle ukázky - pokud Vámi odevzdané rešení nebude obsahovat popsané rozhraní, dojde k chybe pri kompilaci. Do trídy si ale mužete doplnit další metody (verejné nebo i privátní) a clenské promenné. Odevzdávaný soubor musí obsahovat jak deklaraci trídy (popis rozhraní) tak i definice metod, konstruktoru a destruktoru. Je jedno, zda jsou metody implementované inline nebo oddelene. Pro usnadnení odevzdávání mužete využít toho, že ProgTest definuje promennou preprocesoru __PROGTEST__.
+
+Implementovaná trída nesmí používat datové struktury z STL (vector, list, ...) a C++ datový typ string. Jejich použití povede k chybe pri kompilaci. Trída je testovaná v omezeném prostredí, kde je limitovaná dostupná pamet (postacuej pro uložení zadávaných záznamu v binární podobe a režii pro spojové seznamy) a je omezena dobou behu (30s na testovacím pocítaci pro cca 5000 vkládaných/odebíraných prvku, referencní rešení pro výpocet potrebuje cca 3sec).
+
+Pokud to vnitrní struktura trídy vyžaduje, musí trída implementovat destruktor, kopírující konstruktor a pretežovat operátor =.
+Požadované verejné rozhraní trídy:
+
+#ifndef __PROGTEST__
+class CCompany
+ {
+   public:
+
+                   CCompany    ( int          ICO,
+                                 const char * DIC,
+                                 const char * Name,
+                                 const char * Text );
+
+    int   m_ICO;
+    char  m_DIC     [20];
+    char  m_Name    [100];
+    char  m_Text    [4096];
+ };
+
+                    CCompany::CCompany ( int          ICO,
+                                         const char * DIC,
+                                         const char * Name,
+                                         const char * Text )
+ {
+   m_ICO = ICO;
+   strncpy ( m_DIC, DIC, sizeof ( m_DIC ) );
+   strncpy ( m_Name, Name, sizeof ( m_Name ) );
+   strncpy ( m_Text, Text, sizeof ( m_Text ) );
+ }
+#endif /* __PROGTEST__ */
+
+class CDatabase
+ {
+   public:
+                       CDatabase  ( int PoolMax );
+
+// je-li potreba
+//                       CDatabase  ( const CDatabase & X );
+//                      ~CDatabase  ( void );
+//    CDatabase        & operator = ( const CDatabase & X );
+
+    bool               Add        ( const CCompany * X );
+
+    bool               DelByName  ( const char * Name );
+    bool               DelByDIC   ( const char * DIC ); 
+    bool               DelByICO   ( int ICO );
+
+    const CCompany   * GetByName  ( const char * Name ) const;
+    const CCompany   * GetByDIC   ( const char * DIC ) const; 
+    const CCompany   * GetByICO   ( int ICO ) const;
+
+    int                Size       ( void ) const;
+
+   protected:
+    static int          hash     ( const char * Str );
+
+    struct TItem
+     {
+                       TItem      ( const CCompany * comp );
+       CCompany        Company;
+       TItem         * NextName;
+       TItem         * PrevName;
+       TItem         * NextDIC; 
+       TItem         * PrevDIC; 
+     };
+       
+    TItem           ** m_PoolDIC;
+    TItem           ** m_PoolName;
+    int                m_PoolMax; 
+
+    TItem           ** m_ICO;
+    int                m_ICONr;
+    int                m_ICOMax;
+
+   // dalsi metody a clenske promenne potrebne pro Vasi implementaci
+ };
+//-------------------------------------------------------------------------------------------------
+int                CDatabase::hash                  ( const char      * Str )
+ {
+   int res = 0, i;
+
+   for ( i = 0; *Str && i < 6; i ++ )
+    res ^= (unsigned char)*(Str++) << 2*i;
+   return ( res );
+ }
+//-------------------------------------------------------------------------------------------------
+                   CDatabase::TItem::TItem   ( const CCompany * comp ) : Company ( *comp )
+ {
+   NextName = PrevName = NULL;
+   NextDIC  = PrevDIC  = NULL;
+ }                   
+//-------------------------------------------------------------------------------------------------
+
+Ukázka použití trídy:
+
+bool              status;
+const CCompany  * Res
+CCompany          Tmp ( 0, "", "", "" );
+CCompany          C1 ( 10, "CZ-10", "Prvni databazova s.r.o.", "Poznamka 1");
+CCompany          C2 ( 20, "CZ-8010", "Druha pocitacova a.s.", "Poznamka 2");
+CCompany          C3 ( 30, "CZ-96", "Super brookers Ltd.", "A note.");
+CCompany          C4 ( 40, "CZ-962", "Super brookers Ltd.", "Tehoz jmena.");
+CCompany          C5 ( 40, "89232", "Tunelari v.o.s.", "Bez poznamek");
+
+CDatabase D1 ( 100 );
+status = D1 . Add ( &C1 );
+// status = true, D1 . Size () => 1
+status = D1 . Add ( &C2 );
+// status = true, D1 . Size () => 2
+status = D1 . Add ( &C3 );
+// status = true, D1 . Size () => 3
+Res = S1 . GetByICO  ( 20 );
+ // Res = ( 20, "CZ-8010", "Druha pocitacova a.s.", "Poznamka 2")
+Res = S1 . GetByDIC ( "CZ-10" );
+ // Res = ( 10, "CZ-10", "Prvni databazova s.r.o.", "Poznamka 1")
+Res = S1 . GetByName  ( "Super brookers Ltd." );
+ // Res = ( 30, "CZ-96", "Super brookers Ltd.", "A note.")
+
+CDatabase D2 ( 100 );
+status = D2 . Add ( &C1 );
+// status = true, D2 . Size () => 1
+status = D2 . Add ( &C2 );
+// status = true, D2 . Size () => 2
+status = D2 . Add ( &C3 );
+// status = true, D2 . Size () => 3
+status = D2 . DelByICO ( 20 );
+// status = true, S2 . Size () => 2
+Res = S2 . GetByICO  ( 20 );
+ // Res = NULL
+Res = S2 . GetByName  ( "Druha pocitacova a.s." );
+ // Res = NULL
+Res = S2 . GetByDIC ( "CZ-8010" );
+ // Res = NULL
+
+CDatabase D3 ( 100 );
+status = D3 . Add ( &C4 );
+// status = true, D3 . Size () => 1
+status = D3 . Add ( &C3 );
+// status = false, D3 . Size () => 1
+status = D3 . Add ( &C5 );
+// status = false, D3 . Size () => 1
+status = D3 . DelByICO ( 40 );
+// status = true, S3 . Size () => 0
+status = D3 . Add ( &C5 );
+// status = true, D3 . Size () => 1
+Res = S3 . GetByName  ( "Tunelari v.o.s." );
+ // Res = ( 40, "89232", "Tunelari v.o.s.", "Bez poznamek")
+
+CDatabase D4 ( 100 );
+Tmp = C1;
+status = D4 . Add ( &Tmp );
+// status = true, D4 . Size () => 1
+Tmp = C2;
+status = D4 . Add ( &Tmp );
+// status = true, D4 . Size () => 2
+Tmp = C3;
+status = D4 . Add ( &Tmp );
+// status = true, D4 . Size () => 3
+Res = S4 . GetByICO  ( 10 );
+ // Res = ( 10, "CZ-10", "Prvni databazova s.r.o.", "Poznamka 1")
+Res = S4 . GetByName  ( "Druha pocitacova a.s." );
+ // Res = ( 20, "CZ-8010", "Druha pocitacova a.s.", "Poznamka 2")
+Res = S4 . GetByDIC ( "CZ-96" );
+ // Res = ( 30, "CZ-96", "Super brookers Ltd.", "A note.")
+
+Nápoveda
+
+    * Tato úloha vypadá složite, ale nechá se snadno sestavit z predešlých úloh (množina realizovaná binárním pulením a množina realizovaná hashováním).
+    * Celkový kód referencního rešení má 350 rádek a cca 10 KB (vcetne dodaných deklarací).
+    * realizujte si pomocné metody, které naleznou odkaz na TItem podle ICO, DIC a Name. Na techto metodach postavte vyhledávání, výmaz (díky dvojsmerne zretezenému seznamu lze snadno v konstantním case kdekoliv v seznamu) a vkládání (kontrola duplicit).
+    * Nevytvárejte tri kopie vkládaného záznamu. Vytvorte pouze jednu kopii a na tu se 3x odkazujte.
+    * Kopírující konstruktor a operátor = vyrešte tak, že projdete v cyklu seznam m_ICO ve zdrojovém objektu a jeden záznam po druhém pridáte do vytvárené kopie pomoci metody Add.

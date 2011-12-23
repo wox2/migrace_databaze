@@ -1,0 +1,185 @@
+Úkolem je realizovat trídy, které umožní popsat rybicky ("mobili"). Rybickami se rozumí dekorativní doplnek, který se zavešuje na strop a který je tvoren rameny, na kterých jsou zavešené rybicky nebo prípadne další ramena. Celý systém je v klidu vyvážený, jeho vychýlením z rovnovážného stavu se rozpohybuje a rybicky "plavou".
+
+Rybicky v pocítacovém pojetí budou reprezentované trídou CMobili. Tato trída bude kontajnerem (zabalovací trídou) pro vlastní reprezentaci rybicek. Rybicky vlastne tvorí binární strom tvorený uzly (abstraktní predek CNode), který má dve konkrétních potrídy - CFish reprezentující vlastní rybicku (list) a CArm, která predstavuje rameno (vnitrní uzel).
+
+Deklarace tríd je uvedena níže, její presné rozhraní musíte doplnit na základe následujícího textového popisu:
+Rozhraní trídy CMobili obsahuje:
+
+    * Implicitní konstruktor, který vytvorí prázdnou instanci rybicek (m_Root je NULL).
+    * Destruktor pro uvolnení alokovaných prostredku (pokud to implementace vyžaduje).
+    * Kopírující konstruktor pro vytvorení hluboké kopie instance rybicek (pokud to implementace vyžaduje).
+    * Pretížený operátor = (pokud to implementace vyžaduje).
+    * Pretížený operátor << pro zobrazení do výstupního proudu. Formát zobrazení je uveden níže. Je potreba, aby realizace presne dodržela predepsaný formát (vcetne mezer). Mezery na zacátku rádku udávají hloubku zanorení, tedy mají význam pro popis struktury rybicek. Formát císel ponechte výchozí (nepoužívejte manipulátory setw, setprecision a podobné). Každý rádek (i poslední) je ukoncen odrádkováním (endl).
+    * Pretížený operátor >> pro prectení ze vstupního proudu. Formát na vstupu je shodný jako formát na výstupu. Pri nacítání ignorujte bílé znaky, s výjimkou mezer na pocátku rádku, které jsou rozhodující pro správné sestavení struktury stromu. Pri nacítání kontrolujte správnost formátu vstupních dat. Pokud vstupní data obsahují chyby, nastavte ve vstupním streamu fail bit (is . setstate ( ios :: failbit )).
+    * Metoda Weight vypocte hmotnost celého stromu "rybicek" (všechny zavešené rybicky a ramena). Hmotnost je desetinné císlo, bude vypoctena a vrácena jako návratová hodnota metody.
+    * Metoda Balanced zjistí, zda jsou rybicky vyvážené. Vrací návratovou hodnotu typu bool (true pro vyváženo). Za vyvážené považujeme rybicky, pokud je na všech ramenech rozdíl momentu menší než MOMENTUS_THRESHOLD - konstanta definovaná v tríde CNode.
+
+Pomocné trídy:
+
+    * Trída CNode je spolecným predkem, který reprezentuje spolecné vlastnosti pro uzly stromu rybicek. Níže je popsán základ rozhraní, deklarace polymorfních metod není uvedena (presná realizace je na Vás).
+    * Trída CFish je potomkem trídy CNode. Reprezentuje jednu rybicku, která je zavešena ve stromu (list stromu). Rybicka je charakterizována svojí hmotností (desetinné císlo vetší než 0), která je uložená ve zdedené clenské promenné m_OwnWeight. Trída podle potreby prekrývá polymorfní metody pro výpocet vyvážení a hmostnosti.
+    * Trída CArm je také potomkem trídy CNode. Reprezentuje záves (rameno), na kterém jsou zavešená další ramena nebo další rybicky. Záves je reprezentován svojí vlastní hmotností (hmotnost drátku - zdedená clenská promená m_OwnWeight, vetší rovna nule) a délkami obou ramen (vetší než 0). Všechna tri císla popisující záves (hmotnost, délky ramen) jsou císla desetinná. Dále záves obsahuje odkazy na popis zavešených cástí rybicek (m_L a m_R). Trída podle potreby prekrývá polymorfní metody pro výpocet vyvážení a hmostnosti.
+    * Trída CTesterClass je pomocná trída realizovaná v testovacím prostredí. Trída je používána pri vyhodnocování správnosti odevzdaných tríd (cte clenské promenné). Je potreba, aby Vaše trídy CNode, CFish, CArm a CMobili umožnily pro trídu CTesterClass prístup ke svým clenským promenným. Proto je trída CTesterClass uvedena jako friend. Prosím, zachovejte tuto friend deklaraci. Pokud ji zrušíte, dostanete chybu pri kompilaci. Pro vlastní ladení trídu CTesterClass nepotrebujete, stací Vám dodaná dopredná deklarace (class CTesterClass;).
+
+Odevzdávejte soubor, který obsahuje pouze implementované trídy CNode, CFish, CArm a CMobili. Trídy musí splnovat verejné rozhraní podle ukázky (a prípadne další rozhraní navíc) - pokud Vámi odevzdané rešení nebude obsahovat popsané rozhraní, dojde k chybe pri kompilaci. Do trídy si ale mužete doplnit další metody (verejné nebo i privátní) a clenské promenné. Odevzdávaný soubor musí obsahovat jak deklaraci trídy (popis rozhraní) tak i definice metod, konstruktoru a destruktoru. Je jedno, zda jsou metody implementované inline nebo oddelene. Odevzdávaný soubor nesmí krome implementace tríd a prípadných funkcí pro pretížení operátoru obsahovat nic jiného, zejména ne funkci main. Pro usnadnení odevzdávání mužete využít toho, že ProgTest definuje promennou preprocesoru __PROGTEST__.
+
+Implementovaná trída nesmí používat datové struktury z STL (vector, list, ...). Jejich použití povede k chybe pri kompilaci. Trída je testovaná v omezeném prostredí, kde je limitovaná dostupná pamet (dostacuje k uložení stromu) a je omezena dobou behu (25s na testovacím pocítaci pro cca 1000 testovaných instancí rybicek, referencní rešení pro výpocet potrebuje cca 2.5 sec).
+
+V testovacím prostredí jsou instance rybicek nastavovány pomocí operátoru >>. Pokud tento operátor nepracuje správne, pak další testy (vstup, výstup, vyvážení, ...) neposkytují smerodatné údaje (testují jinak vyplnenou instanci).
+Deklarace odevzdávaných tríd (základ tríd):
+
+class CTesterClass;
+// dopredna deklarace tridy CTesterClass. Trida je impelmentovana
+// v testovacim prostredi, ma za ukol testovat odevzdane tridy   
+// Zachovejte friend deklarace pro tuto tridu.
+
+class CNode
+ {
+   public:
+    static const double      MOMENTUS_THRESHOLD;
+
+                             CNode      ( double OwnWeight );
+    // dalsi vlastni potrebne deklarace
+   protected:
+    double                   m_OwnWeight;
+    friend class CTesterClass;
+ };
+   
+   
+class CFish : public CNode
+ {
+   public:
+                             CFish      ( double OwnWeight );
+    // dalsi vlastni potrebne deklarace
+    friend class CTesterClass;
+ };
+   
+class CArm : public CNode
+ {
+   public:
+                             CArm       ( double OwnWeight, double LenL, CNode * L, double LenR, CNode * R );
+
+    // dalsi vlastno potrebne deklarace
+   protected:
+    double                   m_LenL;  // delka leveho (prvniho) ramene
+    double                   m_LenR;  // delka praveho (druheho) ramene
+    CNode                  * m_L;     // odkaz na leve (prvni) zavesene rameno
+    CNode                  * m_R;     // odkaz na prave (druhe) zavesene rameno
+    friend class CTesterClass;
+ };
+
+class CMobili
+ {
+   public:
+                             CMobili    ( void );
+// kopirujici konstruktor - pokud automaticky generovany nevyhovuje
+// destruktor - pokud automaticky generovany nevyhovuje
+// operator = - pokud automaticky generovany nevyhovuje
+
+    double                   Weight     ( void ) const; // vraci soucet hmotnosti
+    bool                     Balanced   ( void ) const; // vraci informaci o vyvazeni
+
+   protected:
+    CNode                  * m_Root; // odkaz na vlastni popis rybicek
+
+    friend ostream         & operator << ( ostream & os, const CMobili & x );
+    friend istream         & operator >> ( istream & is, CMobili & x );
+    friend class CTesterClass;
+ };
+   
+const double CNode::MOMENTUS_THRESHOLD = 1e-4; // povolena neshoda pri porovnani vyvazeni,
+                                               // primo v jednotkach [hmotnost . delka]
+
+Ukázka použítí trídy
+
+bool          balance;
+double        weight; 
+istringstream is;
+ostringstream os;
+
+CMobili  A1;
+is . clear ();
+is . str (    
+  "Arm ( 0, 10, 20 )\n"
+  " Arm ( 0, 10, 10 )\n"
+  "  Fish ( 20 )\n"
+  "  Fish ( 20 )\n"
+  " Fish ( 20 )\n" 
+ );
+is >> A1; // is . fail () => false
+weight  = A1 . Weight (); // weight=60.000000
+balance = A1 . Balanced (); // balance = true
+os . str ( "" );
+os << A1; 
+//  os . str () ==
+//  "Arm ( 0, 10, 20 )\n"
+//  " Arm ( 0, 10, 10 )\n"
+//  "  Fish ( 20 )\n"
+//  "  Fish ( 20 )\n"
+//  " Fish ( 20 )\n" 
+
+CMobili  A2;
+is . clear ();
+is . str (    
+  "Arm ( 0, 1, 1 )\n"
+  " Arm ( 0, 1, 1 )\n"
+  "  Fish ( 10 )\n"   
+  "  Fish ( 20 )\n"   
+  " Fish ( 30 )\n"    
+ );
+is >> A2; // is . fail () => false
+weight  = A2 . Weight (); // weight=60.000000
+balance = A2 . Balanced (); // balance = false
+os . str ( "" );
+os << A2; 
+//  os . str () ==
+//  "Arm ( 0, 1, 1 )\n"
+//  " Arm ( 0, 1, 1 )\n"
+//  "  Fish ( 10 )\n"   
+//  "  Fish ( 20 )\n"   
+//  " Fish ( 30 )\n"    
+
+CMobili  A3;
+is . clear ();
+is . str (    
+  "Arm ( 20, 3, 7 )\n"
+  " Fish ( 18 )\n"
+  " Fish ( 2 )\n" 
+ );
+is >> A3; // is . fail () => false
+weight  = A3 . Weight (); // weight=40.000000
+balance = A3 . Balanced (); // balance = true
+os . str ( "" );
+os << A3; 
+//  os . str () ==
+//  "Arm ( 20, 3, 7 )\n"
+//  " Fish ( 18 )\n"
+//  " Fish ( 2 )\n" 
+
+CMobili  A4;
+is . clear ();
+is . str (    
+  "Arm ( 10, 5.7,       1 )\n"
+  " Fish ( 1 )\n"
+  " Fish ( 5 )\n"
+ );
+is >> A4; // is . fail () => false
+weight  = A4 . Weight (); // weight=16.000000
+balance = A4 . Balanced (); // balance = false
+os . str ( "" );
+os << A4; 
+//  os . str () ==
+//  "Arm ( 10, 5.7, 1 )\n"
+//  " Fish ( 1 )\n"
+//  " Fish ( 5 )\n"
+
+CMobili  A5;
+is . clear ();
+is . str (    
+  "Arm ( 0, 5, 1 )\n"
+  " Arm ( 0, 2, 2 )\n"
+  "  Fish ( 10 )\n"   
+  "  Fish ( 10 )\n"   
+  "  Fish ( 20 )\n"   
+ );
+is >> A5; // is . fail ()  => true

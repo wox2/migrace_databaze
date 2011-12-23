@@ -1,0 +1,8 @@
+hdnt- hral_deck_na turnaji a deck
+hr1 - hrac1
+hr2 - hrac2
+karta - MTG_karta
+form - format
+vysl - vysledek
+rozh - rozhodci
+hlroz - hlavni rozhodci

@@ -1,0 +1,502 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="cs"
+ lang="cs" dir="ltr">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>
+    Domácí úkol 3 - množina s binárním stromem    [A7B36PJC Programování v jazyce C++]
+  </title>
+
+  <meta name="generator" content="DokuWiki snapshot? unknown" />
+<meta name="robots" content="noindex,nofollow" />
+<meta name="date" content="2011-11-30T23:35:04+0100" />
+<meta name="keywords" content="homeworks,2011zs,03" />
+<link rel="search" type="application/opensearchdescription+xml" href="/courses/A7B36PJC/lib/exe/opensearch.php" title="A7B36PJC Programování v jazyce C++" />
+<link rel="start" href="/courses/A7B36PJC/" />
+<link rel="contents" href="/courses/A7B36PJC/homeworks/2011zs/03?do=index" title="Index" />
+<link rel="alternate" type="application/rss+xml" title="Recent Changes" href="/courses/A7B36PJC/feed.php" />
+<link rel="alternate" type="application/rss+xml" title="Current Namespace" href="/courses/A7B36PJC/feed.php?mode=list&amp;ns=homeworks:2011zs" />
+<link rel="alternate" type="text/html" title="Plain HTML" href="/courses/A7B36PJC/_export/xhtml/homeworks/2011zs/03" />
+<link rel="canonical" href="https://edux.feld.cvut.cz/courses/A7B36PJC/homeworks/2011zs/03" />
+<link rel="stylesheet" media="all" type="text/css" href="/courses/A7B36PJC/lib/exe/css.php?s=all&amp;t=edux&amp;tseed=1316609442" />
+<link rel="stylesheet" media="screen" type="text/css" href="/courses/A7B36PJC/lib/exe/css.php?t=edux&amp;tseed=1316609442" />
+<link rel="stylesheet" media="print" type="text/css" href="/courses/A7B36PJC/lib/exe/css.php?s=print&amp;t=edux&amp;tseed=1316609442" />
+<script type="text/javascript" charset="utf-8" ><!--//--><![CDATA[//><!--
+var NS='homeworks:2011zs';var SIG=' --- //[[lukesma4@fel.cvut.cz|Martin Lukes student]] 2011/12/01 08:26//';var JSINFO = {"id":"homeworks:2011zs:03","namespace":"homeworks:2011zs"};
+//--><!]]></script>
+<script type="text/javascript" charset="utf-8" src="/courses/A7B36PJC/lib/exe/js.php?tseed=1316609442" ></script>
+<script type="text/javascript" charset="utf-8" src="/courses/A7B36PJC/lib/plugins/harmonogram/harmonogram.js" ></script>
+<script type="text/javascript" charset="utf-8" src="/courses/A7B36PJC/lib/plugins/indexmenu/jsmenu/usrmenu.js" ></script>
+<script type="text/javascript" charset="utf-8" src="/courses/A7B36PJC/lib/plugins/indexmenu/indexmenu.js" ></script>
+<script type="text/javascript" charset="utf-8" ><!--//--><![CDATA[//><!--
+var indexmenu_ID='homeworks/2011zs/03'
+//--><!]]></script>
+<script type="text/javascript" charset="utf-8" ><!--//--><![CDATA[//><!--
+jQuery.noConflict();
+
+//--><!]]></script>
+
+  <link rel="shortcut icon" href="/courses/A7B36PJC/lib/tpl/edux/images/favicon-cvut.ico" />
+
+    <script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+	var pageTracker = _gat._getTracker("UA-10844012-2");
+	pageTracker._trackPageview();
+} catch(err) {}
+</script></head>
+
+<body>
+<div class="dokuwiki">
+  
+  <div class="stylehead">
+
+    <div class="header">
+      <div class="logo">
+        <a href="/courses/A7B36PJC/"  name="dokuwiki__top" id="dokuwiki__top"  accesskey="h" title="[ALT+H]">A7B36PJC Programování v jazyce C++</a>      </div>
+      <div class="tagline">
+               </div>
+      <div class="pagename">
+        [[<a href="/courses/A7B36PJC/homeworks/2011zs/03?do=backlink" >homeworks:2011zs:03</a>]]
+      </div>
+
+      <div class="clearer"></div>
+    </div>
+
+    
+    <div class="bar" id="bar__top">
+      <div class="bar-left" id="bar__topleft">
+                <form class="button btn_revs" method="get" action="/courses/A7B36PJC/homeworks/2011zs/03"><div class="no"><input type="hidden" name="do" value="revisions" /><input type="submit" value="Starší verze" class="button" accesskey="o" title="Starší verze [O]" /></div></form>      </div>
+
+      <div class="bar-right" id="bar__topright">
+        <form class="button btn_recent" method="get" action="/courses/A7B36PJC/homeworks/2011zs/03"><div class="no"><input type="hidden" name="do" value="recent" /><input type="submit" value="Poslední úpravy" class="button" accesskey="r" title="Poslední úpravy [R]" /></div></form>        <form action="/courses/A7B36PJC/" accept-charset="utf-8" class="search" id="dw__search"><div class="no"><input type="hidden" name="do" value="search" /><input type="text" id="qsearch__in" accesskey="f" name="id" class="edit" title="[F]" /><input type="submit" value="Hledat" class="button" title="Hledat" /><div id="qsearch__out" class="ajax_qsearch JSpopup"></div></div></form>&nbsp;
+        <form class="button btn_logout" method="get" action="/courses/A7B36PJC/homeworks/2011zs/03"><div class="no"><input type="hidden" name="do" value="logout" /><input type="hidden" name="sectok" value="855c0542839f8e844373dd3804ee5d5c" /><input type="submit" value="Odhlásit se" class="button" title="Odhlásit se" /></div></form>      </div>
+
+      <div class="clearer"></div>
+    </div>
+
+        <div class="breadcrumbs">
+      <span class="bchead">Historie:</span> <span class="bcsep">&raquo;</span> <a href="/courses/A7B36PJC/start"  class="breadcrumbs" title="start">Programování v jazyce C++</a> <span class="bcsep">&raquo;</span> <a href="/courses/A7B36PJC/homeworks/start"  class="breadcrumbs" title="homeworks:start">Domácí úkoly</a> <span class="bcsep">&raquo;</span> <span class="curid"><a href="/courses/A7B36PJC/homeworks/2011zs/03"  class="breadcrumbs" title="homeworks:2011zs:03">Domácí úkol 3 - množina s binárním stromem</a></span>          </div>
+    
+        <div class="breadcrumbs">
+      <span class="bchead">Umístění: </span><a href="/courses/A7B36PJC/start"  title="start">Programování v jazyce C++</a> &raquo; <a href="/courses/A7B36PJC/homeworks/start"  title="homeworks:start">Domácí úkoly</a> &raquo; <a href="/courses/A7B36PJC/homeworks/2011zs"  title="homeworks:2011zs">Domácí úkoly - zimní semestr 2011</a> &raquo; <a href="/courses/A7B36PJC/homeworks/2011zs/03"  title="homeworks:2011zs:03">Domácí úkol 3 - množina s binárním stromem</a>    </div>
+    
+  </div>
+  
+  
+  <div id='sidebar'>
+
+
+<h2><a name="a7b36pjc" id="a7b36pjc">A7B36PJC</a></h2>
+<div class="level2">
+<ul>
+<li class="level1"><a href="/courses/A7B36PJC/classification/student/lukesma4/start" class="wikilink1" title="classification:student:lukesma4:start">Studijní výsledky</a></li>
+<li class="level1"><a href="/courses/A7B36PJC/student/lukesma4/start" class="wikilink2" title="student:lukesma4:start" rel="nofollow">Osobní namespace</a></li>
+</ul>
+
+</div>
+<!-- SECTION "A7B36PJC" [13-59] -->
+<h2><a name="obsah" id="obsah">Obsah</a></h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li">
+ <a href="/courses/A7B36PJC/start" class="wikilink1" title="start">Hlavní stránka</a>
+</div></li>
+</ul>
+
+
+<div>
+
+<ul class="idx">
+<li class="closed"><div class="li"><a href="/courses/A7B36PJC/annotation/start" class="indexmenu_idx_head">Anotace</a></div></li>
+<li class="open"><div class="li"><a href="/courses/A7B36PJC/classification/start" class="indexmenu_idx_head">Hodnocení</a></div>
+<ul class="idx">
+<li class="closed"><div class="li"><a href="/courses/A7B36PJC/classification/archive?idx=classification:archive" class="indexmenu_idx">archive</a></div></li>
+<li class="closed"><div class="li"><a href="/courses/A7B36PJC/classification/semestralka?idx=classification:semestralka" class="indexmenu_idx">semestralka</a></div></li>
+</ul>
+</li>
+<li class="closed"><div class="li"><a href="/courses/A7B36PJC/homeworks/start" class="indexmenu_idx_head">Domácí úkoly</a></div></li>
+<li class="closed"><div class="li"><a href="/courses/A7B36PJC/lectures/start" class="indexmenu_idx_head">Přednášky</a></div></li>
+<li class="closed"><div class="li"><a href="/courses/A7B36PJC/proseminars/start" class="indexmenu_idx_head">Cvičení</a></div></li>
+<li class="closed"><div class="li"><a href="/courses/A7B36PJC/semestralka/start" class="indexmenu_idx_head">Semestrální práce</a></div></li>
+<li class="closed"><div class="li"><a href="/courses/A7B36PJC/sources/start" class="indexmenu_idx_head">Externí zdroje</a></div></li>
+<li class="closed"><div class="li"><a href="/courses/A7B36PJC/teacher/start" class="indexmenu_idx_head">Učitelé</a></div></li>
+<li class="closed"><div class="li"><a href="/courses/A7B36PJC/team/start" class="indexmenu_idx_head">Týmy</a></div></li>
+<li class="closed"><div class="li"><a href="/courses/A7B36PJC/tutorials?idx=tutorials" class="indexmenu_idx">tutorials</a></div></li></ul>
+</div>
+
+</div>
+<!-- SECTION "Obsah" [60-] --></div>    <div class="page_with_sidebar">
+  
+<div class="plugin_translation"><span>Překlady této stránky:</span> <ul>  <li><div class="li"><a href="/courses/A7B36PJC//homeworks/2011zs/03" class="wikilink1" title="česky">cs</a></div></li>  <li><div class="li"><a href="/courses/A7B36PJC//en/homeworks/2011zs/03" class="wikilink2" title="English">en</a></div></li></ul></div>
+    <!-- wikipage start -->
+    <!-- TOC START -->
+<div class="toc">
+<div class="tocheader toctoggle" id="toc__header">Obsah</div>
+<div id="toc__inside">
+
+<ul class="toc">
+<li class="level1"><div class="li"><span class="li"><a href="#domaci_ukol_3_-_mnozina_s_binarnim_stromem" class="toc">Domácí úkol 3 - množina s binárním stromem</a></span></div>
+<ul class="toc">
+<li class="level2"><div class="li"><span class="li"><a href="#zadani" class="toc">Zadání</a></span></div>
+<ul class="toc">
+<li class="level3"><div class="li"><span class="li"><a href="#detailni_popis_bstset" class="toc">Detailní popis BSTSET</a></span></div></li>
+<li class="level3"><div class="li"><span class="li"><a href="#soubor_du3cpp_a_bstseth" class="toc">Soubor DU3.cpp a BSTSET.h</a></span></div></li>
+</ul>
+</li>
+<li class="level2"><div class="li"><span class="li"><a href="#testovani" class="toc">Testování</a></span></div>
+<ul class="toc">
+<li class="level3"><div class="li"><span class="li"><a href="#testovani_na_os_windows" class="toc">Testování na OS Windows</a></span></div></li>
+<li class="level3"><div class="li"><span class="li"><a href="#vzdaleny_pristup_z_os_windows" class="toc">Vzdálený přístup z OS Windows</a></span></div></li>
+<li class="level3"><div class="li"><span class="li"><a href="#vzdaleny_pristup_z_os_linux_nebo_mac_os" class="toc">Vzdálený přístup z OS Linux nebo Mac OS</a></span></div></li>
+<li class="level3"><div class="li"><span class="li"><a href="#doporuceni_pro_testovani" class="toc">Doporučení pro testování</a></span></div></li>
+</ul>
+</li>
+<li class="level2"><div class="li"><span class="li"><a href="#novinky_v_testovani" class="toc">Novinky v testování</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#odevzdani" class="toc">Odevzdání</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#download" class="toc">Download</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#tipy" class="toc">Tipy</a></span></div></li></ul>
+</li></ul>
+</div>
+</div>
+<!-- TOC END -->
+
+
+
+<h1><a name="domaci_ukol_3_-_mnozina_s_binarnim_stromem" id="domaci_ukol_3_-_mnozina_s_binarnim_stromem">Domácí úkol 3 - množina s binárním stromem</a></h1>
+<div class="level1">
+
+</div>
+
+<h2><a name="zadani" id="zadani">Zadání</a></h2>
+<div class="level2">
+
+<p>
+
+Vytvořte za pomoci binárního vyhledávacího stromu třídu BSTSET (= Binary Search Tree SET), která bude reprezentovat datový typ množina.
+</p>
+
+</div>
+
+<h3><a name="detailni_popis_bstset" id="detailni_popis_bstset">Detailní popis BSTSET</a></h3>
+<div class="level3">
+
+<p>
+
+Množina je datová struktura, do které lze ukládat datové prvky. Do standardní množiny lze uložit stejný prvek jen jednou. U naší množiny BSTSET to platí také, ale navíc si dokáže u každé vložené hodnoty zapamatovat, kolikrát byla vložena. Každá množina se vnitřně implementuje tak, že jsou prvky seřazeny a tím je usnadněno vyhledávání a tím tedy i rozhodování, zda se v množině hodnota již nachází nebo ne. V naší množině je řazení realizováno pomocí binárního vyhledavácího stromu (BST). BST má dva typy uzlů - vnitřní a okrajové. Okrajové uzly obsahují uloženou hodnotu a počet, kolikrát byla vložena. Vnitřní obsahují pouze odkazy na levý a pravý podstrom, přičemž platí, že všechny hodnoty v levém podstromu jsou menší než všechny hodnoty v pravém podstromu. Činnost BST pro vložení prvků 5, 8, 3, 6, 9 naznačuje následující obrázek:
+</p>
+
+<p>
+<a href="/courses/A7B36PJC/_detail/homeworks/2011zs/bstset.jpg?id=homeworks%3A2011zs%3A03" class="media" title="homeworks:2011zs:bstset.jpg"><img src="/courses/A7B36PJC/_media/homeworks/2011zs/bstset.jpg" class="media" alt="" /></a>
+</p>
+
+<p>
+Implementace BTSET obsahuje:
+
+</p>
+<ul>
+<li class="level1"><div class="li">
+ Přetížený operátor « pro vkládání hodnot.
+</div></li>
+<li class="level1"><div class="li">
+ Přetížený operátor [] pro získání informace o tom, jak hluboko je v binárním vyhledávacím stromu prvek uložen. Pokud se hodnota ve stromu nenachází, vrací -1.
+</div></li>
+<li class="level1"><div class="li">
+ Přetížený operátor () pro ziskání informace o tom, kolikrát je hodnota do množiny již vložena. Pokud se hodnota ve stromu nenachází, vrací -1.
+</div></li>
+<li class="level1"><div class="li">
+ Přetížený operátor « tak, aby šel objekt BSTSET předat objektu cout. Mělo by to vypsat všechny uložené hodnoty od nejmenší k největší.
+</div></li>
+</ul>
+
+
+<p>
+
+Více by měl napovědět soubor DU3.cpp.
+</p>
+
+</div>
+
+<h3><a name="soubor_du3cpp_a_bstseth" id="soubor_du3cpp_a_bstseth">Soubor DU3.cpp a BSTSET.h</a></h3>
+<div class="level3">
+
+<p>
+
+K dispozici máte již hotový zdrojový kód DU3.cpp, který je součástí testování. DU3.cpp je k nalezení v adresáři testeru a <strong>nesmí být editován</strong> (protože odevzdáváte pouze soubor BSTSET.h, takže změny by se při ostrém testování neprojevily)! Dále pak vkládá zdrojový kód BSTSET.h, který by měl obsahovat vaši implementaci množiny BSTSET. DU3.cpp použije vaši třídu a naplní ji daty na základě příkazového souboru, který dostává přes argument. Před koncem chodu vytiskne všechny prvky množiny BSTSET (viz řádek 52 v DU3.cpp). Více v sekci testování.
+</p>
+
+</div>
+
+<h2><a name="testovani" id="testovani">Testování</a></h2>
+<div class="level2">
+
+<p>
+
+V sekci download jsou k dispozici testovací software (tester) a referenční řešení v binární podobě pro základní platformy. Tester přeloží předložený kód s parametry: -pedantic -pedantic-errors -Wall -Werror. Tyto volby způsobí, že překladač hlídá všechny detaily a pokud se při překladu objeví warning, je automaticky považován za chybu a překlad skončí. Pokud se podaří kód úspěšně přeložit, je pak porovnáván výstup aplikace s výstupem referenčního řešení. Jakákoliv odchylka, třeba i jedna mezera navíc, způsobí neplatnost testu! Během testování máte k dispozici všechny vstupy i informaci, kde došlo k nesrovnalostem. Pro domácí testování je ke stažení k dispozici i sada testovacích vstupů. Zde je třeba upozornit na rozdílnost platforem. V aplikace se používají floating point čísla, takže přesnost se může na různých platformách lišit. Výstupní hodnotu z testované a referenční aplikace se doporučuje porovnávat pouze v rámci jedné platformy!
+</p>
+
+<p>
+Tester po skončení běhu napíše procentuální úspěšnost. Doporučuje se testovat na Solarisu, ale stejně tak by měl tester fungovat v jakémkoliv linuxu s nainstalovaným pythonem verze 2.4.6 a vyšším. K úspěšnému chodu je zapotřebí i nainstalovaný překladač g++. Po odevzdání bude váš kód testován stejným testerem, takže každý by měl předem vědět, jaký počet bodů dosáhl.
+</p>
+
+<p>
+Pro spuštění testu stačí stáhnout a rozbalit adresář s testerem DU3-tester.tar. Poté v rozbaleném adresáři zavolejte příkaz make (na solarisu gmake) a řiďte se pokyny. V následujícím odstavci je popis testování, kdyby příkaz make (gmake) z nejakého důvodu nefungoval. 
+</p>
+
+<p>
+Tester vyžaduje dva parametry z příkazové řádky. Prvním je cesta k referenční aplikaci. Druhým parametrem je přímo testovaný zdrojový kód, v tomto případě to bude vždy DU3.cpp. Jako referenční aplikaci použijte tu správnou pro danou platformu. Pro solaris je to například refApp.solaris, pro 32 bitové linuxy refApp.linux_32 atd. Testování lze spustit příkazem:
+</p>
+<pre class="code">python DU3-tester.py refApp.XXX DU3.cpp</pre>
+
+<p>
+Místo XXX si samozřejmě doplňte příslušnou platformu.
+</p>
+
+</div>
+
+<h3><a name="testovani_na_os_windows" id="testovani_na_os_windows">Testování na OS Windows</a></h3>
+<div class="level3">
+
+<p>
+
+Pro testování přímo ve Windowsech je nutné nainstalovat <a href="http://cygwin.com/setup.exe" class="urlextern" target="_blank" title="http://cygwin.com/setup.exe"  rel="nofollow">cygwin</a> se správnými součástmi. Po spuštění instalátoru vyberte nějaký mirror a nastavte dle instrukcí potřebné adresáře. (Pokud to lze, ponechte defaultní hodnoty.) Postupne byste se měli dostat na okno s výběrem instalačních součástí. Do vyhledávání zadejte postupně hesla g++, make, python. Pro instalaci vyberte balíčky tak, jak to je vídět na následujících obrázcích:
+</p>
+
+<p>
+<a href="/courses/A7B36PJC/_detail/homeworks/2011zs/g_1.jpg?id=homeworks%3A2011zs%3A03" class="media" title="homeworks:2011zs:g_1.jpg"><img src="/courses/A7B36PJC/_media/homeworks/2011zs/g_1.jpg" class="media" alt="" /></a>
+</p>
+
+<p>
+<a href="/courses/A7B36PJC/_detail/homeworks/2011zs/make1.jpg?id=homeworks%3A2011zs%3A03" class="media" title="homeworks:2011zs:make1.jpg"><img src="/courses/A7B36PJC/_media/homeworks/2011zs/make1.jpg" class="media" alt="" /></a>
+</p>
+
+<p>
+<a href="/courses/A7B36PJC/_detail/homeworks/2011zs/python1.jpg?id=homeworks%3A2011zs%3A03" class="media" title="homeworks:2011zs:python1.jpg"><img src="/courses/A7B36PJC/_media/homeworks/2011zs/python1.jpg" class="media" alt="" /></a>
+</p>
+
+<p>
+Po instalaci zkopírujte rozbalený <em>DU2-tester</em> do složky <em>home/Vase_systemove_uzivatelske_jmeno</em>, která se nachází v adresáři s nainstalovaným cygwinem. Poté spusťte cygwin a napište příkaz:
+
+</p>
+<pre class="code">cd DU3-tester</pre>
+
+<p>
+
+Pak zkopírujte zdrojový kód domácího úkolu do složky testeru (do toho v adresáří <em>home</em>) a pojmenujte jej DU3.cpp. Pak stačí spustit test příkazem
+
+</p>
+<pre class="code">make test_win</pre>
+
+<p>
+
+<strong>Pro záruku, že Váš kód bude při odevzdání přijat, otestujte jej také na solarisu, viz další sekce.</strong>
+</p>
+
+</div>
+
+<h3><a name="vzdaleny_pristup_z_os_windows" id="vzdaleny_pristup_z_os_windows">Vzdálený přístup z OS Windows</a></h3>
+<div class="level3">
+
+<p>
+Vzdálené testování na serveru z <acronym title="Operating System">OS</acronym> Windows lze pomocí kombinace programů putty a WinSCP. Přes WinSCP lze na Solaris zkopírovat data a přes putty získáte vzdálený terminálový přístup. Jako adresu zadávejte např. sunray1.felk.cvut.cz, nebo sunray3.felk.cvut.cz. Uživatelské jméno a heslo byste měli znát.
+</p>
+
+</div>
+
+<h3><a name="vzdaleny_pristup_z_os_linux_nebo_mac_os" id="vzdaleny_pristup_z_os_linux_nebo_mac_os">Vzdálený přístup z OS Linux nebo Mac OS</a></h3>
+<div class="level3">
+
+<p>
+
+Nejsnažší je použít příkazovou řádku a kombinaci příkazů ssh a scp. ssh slouží pro vzdálený přístup a scp pro kopírování. Přesuňte se do adresáře, kde máte uložen  adresář DU1-tester. Pak zadejte příkaz
+</p>
+<pre class="code">scp -r DU2-tester username@sunray1.felk.cvut.cz:</pre>
+
+<p>
+a po vyzvání buď potvrďte dotaz nebo rovnou zadejte heslo. Tímto byste měli mít celý adresář DU1-tester ve vašem domovském adresáři na Solarisu. Pro vzdálený přístup pak zavolejte příkaz
+</p>
+<pre class="code">ssh username@sunray1.felk.cvut.cz</pre>
+
+<p>
+a opět zadejte heslo. Pro ukončení vzdáleného přístupu zadejte příkaz exit.
+</p>
+
+</div>
+
+<h3><a name="doporuceni_pro_testovani" id="doporuceni_pro_testovani">Doporučení pro testování</a></h3>
+<div class="level3">
+
+<p>
+
+* Na solarisu používejte primárně příkkaz gmake. Příkaz gmake vypíše instrukce pro testování. Pokud tento postup selže, neprodleně to sdělte na adresu cernyvi@fel.cvut.cz. Můžete testovat i ručně viz předchozí sekce, ale předtím pro jistotu nastavte referenční řešení jako spustitelné (místo XXX si doplňte příslušnou platformu):
+
+</p>
+<pre class="code">chmod +x refApp.XXX</pre>
+<ul>
+<li class="level1"><div class="li">
+ Vývoj a testování domácího úkolu lze značně zjednodušit. Stačí si vytvořit zástupce nebo symbolický link na zdrojový kód, který může být umístěn například v projektovém adresáři vývojového prostředí. Tohoto zástupce nebo link umístěte do adresáře testeru a přejmenujte jej na DU2.cpp. Poté lze kód vyvíjet a testovat zároveň, aniž byste jej museli po každé změně kopírovat.
+</div></li>
+<li class="level1"><div class="li">
+ 
+</div></li>
+</ul>
+
+
+</div>
+
+<h2><a name="novinky_v_testovani" id="novinky_v_testovani">Novinky v testování</a></h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li">
+ <strong>Editován je pouze soubor BSTSET.h, který také potom odevzdáváte!</strong> 
+</div></li>
+<li class="level1"><div class="li">
+ Pro tento úkol jsou tři testy:
+</div><ul>
+<li class="level2"><div class="li">
+ Test 1 - vstupní hodnoty odpovídají ukázkovému vstupu jako na ilustračním obrázku.
+</div></li>
+<li class="level2"><div class="li">
+ Test 2 - vstupní hodnoty jsou sadou náhodně generovaných čísel.
+</div></li>
+<li class="level2"><div class="li">
+ Test 3 - test je defaultně vypnutý a slouží ke kontrole práce s pamětí. Funguje pouze na linuxu nebo MacOSX s nainstalovaným valgrindem (viz sekce Download) a kontroluje memory leaky. Spouští se příkazem:
+</div></li>
+</ul>
+</li>
+</ul>
+
+<pre class="code">python DU3-tester.py refApp.XXX DU3.cpp -valgrind</pre>
+<ul>
+<li class="level1"><div class="li">
+ Pokud nemáte k dispozici linux můžete zkusit použít na kontrolu Vašeho kódu obdobný nástroj pro systém Windows - Dr. Memory (viz sekce Download), ale je to bez záruky.
+</div></li>
+</ul>
+
+
+</div>
+
+<h2><a name="odevzdani" id="odevzdani">Odevzdání</a></h2>
+<div class="level2">
+
+<p>
+
+Tentokrát odesílejte soubor BSTSET.h přejmenovaný na vase_uzivatelske_jmeno.h na mail cernyvi2@fel.cvut.cz s předmětem PJC_DU3. Kód před odesláním otestujte testerem alespoň na první dvě testovací sady! Pokud nemáte možnost testovat valgrindem, tak využijte rezervní možnost pomoci Dr. Memory. Kód s memory leaky bude vrácen k opravě nebo penalizován ztrátou bodů!
+</p>
+
+<p>
+Termín odevzdání je 23:59 13. 12. 2011.
+</p>
+
+</div>
+
+<h2><a name="download" id="download">Download</a></h2>
+<div class="level2">
+
+<p>
+
+Tester: <a href="/courses/A7B36PJC/_media/homeworks/2011zs/du3-tester.zip" class="media mediafile mf_zip" title="homeworks:2011zs:du3-tester.zip">du3-tester.zip</a>
+</p>
+
+<p>
+Domovská stránka valgrindu: <a href="http://valgrind.org/" class="urlextern" target="_blank" title="http://valgrind.org/"  rel="nofollow">http://valgrind.org/</a>
+</p>
+
+<p>
+Domovská stránka Dr. Memory: <a href="http://code.google.com/p/drmemory/" class="urlextern" target="_blank" title="http://code.google.com/p/drmemory/"  rel="nofollow">http://code.google.com/p/drmemory/</a>
+</p>
+
+</div>
+
+<h2><a name="tipy" id="tipy">Tipy</a></h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li">
+ Pro implementaci stromu je vhodné využít dědičnost. 
+</div></li>
+</ul>
+
+
+</div>
+
+    <!-- wikipage stop -->
+  </div>
+
+  <div class="clearer">&nbsp;</div>
+
+  
+  <div class="stylefoot">
+
+    <div class="meta">
+      <div class="user">
+        Přihlášen(a) jako: Martin Lukes student (lukesma4)      </div>
+      <div class="doc">
+        /mnt/www/courses/A7B36PJC/data/pages/homeworks/2011zs/03.txt &middot; Poslední úprava: 2011/11/30 23:35 autor: cernyvi2      </div>
+    </div>
+
+   
+    <div class="bar" id="bar__bottom">
+      <div class="bar-left" id="bar__bottomleft">
+                <form class="button btn_revs" method="get" action="/courses/A7B36PJC/homeworks/2011zs/03"><div class="no"><input type="hidden" name="do" value="revisions" /><input type="submit" value="Starší verze" class="button" accesskey="o" title="Starší verze [O]" /></div></form>      </div>
+      <div class="bar-right" id="bar__bottomright">
+                        <form class="button btn_profile" method="get" action="/courses/A7B36PJC/homeworks/2011zs/03"><div class="no"><input type="hidden" name="do" value="profile" /><input type="submit" value="Upravit profil" class="button" title="Upravit profil" /></div></form>        <form class="button btn_logout" method="get" action="/courses/A7B36PJC/homeworks/2011zs/03"><div class="no"><input type="hidden" name="do" value="logout" /><input type="hidden" name="sectok" value="855c0542839f8e844373dd3804ee5d5c" /><input type="submit" value="Odhlásit se" class="button" title="Odhlásit se" /></div></form>        <form class="button btn_index" method="get" action="/courses/A7B36PJC/homeworks/2011zs/03"><div class="no"><input type="hidden" name="do" value="index" /><input type="submit" value="Index" class="button" accesskey="x" title="Index [X]" /></div></form>        <a class="nolink" href="#dokuwiki__top"><input type="button" class="button" value="Nahoru" onclick="window.scrollTo(0, 0)" title="Nahoru" /></a>&nbsp;
+      </div>
+      <div class="clearer"></div>
+    </div>
+
+  </div>
+
+</div>
+
+<div class="footerinc">
+
+  <a target="_blank" href="/courses/A7B36PJC/feed.php" title="Recent changes RSS feed"><img src="/courses/A7B36PJC/lib/tpl/edux/images/button-rss.png" width="80" height="15" alt="Recent changes RSS feed" /></a>
+
+  <!-- <a target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/2.0/" rel="license" title="Creative Commons License"><img src="/courses/A7B36PJC/lib/tpl/edux/images/button-cc.gif" width="80" height="15" alt="Creative Commons License" /></a> -->
+
+  <!-- <a target="_blank" href="https://www.paypal.com/xclick/business=andi%40splitbrain.org&amp;item_name=DokuWiki+Donation&amp;no_shipping=1&amp;no_note=1&amp;tax=0&amp;currency_code=EUR&amp;lc=US" title="Donate"><img src="/courses/A7B36PJC/lib/tpl/edux/images/button-donate.gif" alt="Donate" width="80" height="15" /></a>-->
+
+  <a target="_blank" href="http://www.php.net" title="Powered by PHP"><img src="/courses/A7B36PJC/lib/tpl/edux/images/button-php.gif" width="80" height="15" alt="Powered by PHP" /></a>
+
+  <a target="_blank" href="http://validator.w3.org/check/referer" title="Valid XHTML 1.0"><img src="/courses/A7B36PJC/lib/tpl/edux/images/button-xhtml.png" width="80" height="15" alt="Valid XHTML 1.0" /></a>
+
+  <a target="_blank" href="http://jigsaw.w3.org/css-validator/check/referer" title="Valid CSS"><img src="/courses/A7B36PJC/lib/tpl/edux/images/button-css.png" width="80" height="15" alt="Valid CSS" /></a>
+
+  <a target="_blank" href="http://wiki.splitbrain.org/wiki:dokuwiki" title="Driven by DokuWiki"><img src="/courses/A7B36PJC/lib/tpl/edux/images/button-dw.png" width="80" height="15" alt="Driven by DokuWiki" /></a>
+
+
+
+<!--
+
+<rdf:RDF xmlns="http://web.resource.org/cc/"
+    xmlns:dc="http://purl.org/dc/elements/1.1/"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+<Work rdf:about="">
+   <dc:type rdf:resource="http://purl.org/dc/dcmitype/Text" />
+   <license rdf:resource="http://creativecommons.org/licenses/by-nc-sa/2.0/" />
+</Work>
+
+<License rdf:about="http://creativecommons.org/licenses/by-nc-sa/2.0/">
+   <permits rdf:resource="http://web.resource.org/cc/Reproduction" />
+   <permits rdf:resource="http://web.resource.org/cc/Distribution" />
+   <requires rdf:resource="http://web.resource.org/cc/Notice" />
+   <requires rdf:resource="http://web.resource.org/cc/Attribution" />
+   <prohibits rdf:resource="http://web.resource.org/cc/CommercialUse" />
+   <permits rdf:resource="http://web.resource.org/cc/DerivativeWorks" />
+   <requires rdf:resource="http://web.resource.org/cc/ShareAlike" />
+</License>
+
+</rdf:RDF>
+
+-->
+
+
+</div>
+
+<div class="no"><img src="/courses/A7B36PJC/lib/exe/indexer.php?id=homeworks%3A2011zs%3A03&amp;1322724384" width="1" height="1" alt=""  /></div>
+</body>
+</html>

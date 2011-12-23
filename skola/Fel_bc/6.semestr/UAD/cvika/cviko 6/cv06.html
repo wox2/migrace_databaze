@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="iso-8859-2" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="cz" dir="ltr">
+<head>
+<meta http-equiv="Content-type" content="text/html; charset=iso-8859-2" />
+<meta name="generator" content="Myself" />
+<meta name="keywords" content="UNIX administration" />
+<meta name="author" content="Jan Žďárek &lt;cz.cvut.fel_._zdarekj&gt;" />
+
+<title>Y36UAD -- Konfigurace a překlad jádra, konfigurace bootování</title>
+<link rel="stylesheet" type="text/css" href="./uad.css" />
+</head>
+<!-- Last 9.4.2008, 100, valid X -->
+
+<body> 
+<h1>Konfigurace a překlad jádra Linux</h1>
+<hr />
+<h2>Jádro Linux</h2>
+<p>
+Na přednášce jste se seznámili se základními rysy jader OS a se specifickými
+vlastnostmi jádra Linux.
+Cílem cvičení bude vyzkoušet si konfiguraci, překlad a instalaci přeloženého 
+jádra a jeho součástí do systému.
+</p>
+<h2>Konfigurace jádra</h2>
+<p>
+Jádro Linux volně dostupné přes ftp na adrese <tt>ftp.eu.kernel.org/pub</tt>.
+Pro účely dnešního cvičení ale není nutné ztrácet čas s jeho stahováním, 
+archiv <tt>linux-2.6.24.4.tar.bz2</tt> s aktuální stabilní verzí kompletního
+zdrojového kódu jádra je již připraven na standardním místě 
+pro něj vyhrazeném, tj. v adresáři <tt>/usr/src/</tt>.
+</p>
+<p>Zdrojový kód jádra je sám o sobě rozsáhlý a velikost první partition na 
+disku je omezená, bude nutné si nejprve připravit volnou partition o velikosti 
+alespoň 3 GB. (Rozbalit zdrojové kódy by se nám mělo povést i do <tt>/usr/src</tt>,
+ale přeložený kód se již nevejde.)
+</p>
+<h3>Úkol 1</h3>
+<p>
+Přidejte novou partition, zformátujte ji, připojte a rozbalte na ni archiv
+<tt>linux-2.6.24.4.tar.bz2</tt>.<br />
+Přesuňte se do hlavního adresáře nově rozbalené adresářové struktury.
+</p>
+<h3>Úkol 2</h3>
+<p>
+Seznamte se se strukturou a obsahem rozbaleného archivu.<br />
+Vyzkoušejte příkaz <tt>make help</tt>.
+</p>
+<p>
+Konfigurace jádra je vlastně velmi jednoduchá, existují na to pomůcky 
+(<tt>make menuconfig</tt>, <tt>make xconfig</tt>). Složité je správně 
+porozumět struktuře a závislostem mezi komponentami, z nichž se skládá 
+tak komplexní jádro jako je Linux. <!-- Konfigurační nástroje ale <i>některé</i>
+volby hlídají a nedovolí navolit apriori nesmyslnou kombinaci, u jiných ale 
+nechávají administrátorovi plnou volnost. -->
+Další komplikací je správná identifikace komponent systému a nalezení 
+odpovídajících ovladačů v jádře.
+</p>
+<p>
+S výhodou využijeme faktu, že máme k dispozici běžící systém s jádrem 
+stejné řady, jako chceme nakonfigurovat. Využijeme-li standardní nástroje 
+pro prozkoumání systému, tj. adresář <tt>/proc</tt>; <tt>/sbin/lspci</tt>, 
+<tt>/sbin/lsmod</tt>, budeme schopni velmi rozumně odhadnout řadu potřebných 
+ovladačů.
+</p>
+<h3>Úkol 3</h3>
+<p>
+Nakonfigurujte jádro. Pro konfiguraci využijte standardní nástroje pro 
+prozkoumání systému.<br />
+Doporučení:
+</p>
+<ol>
+  <li>Pokuste se pokud možno dekonfigurovat (odnastavit) co možná největší 
+  počet nepotřebných konfiguračních voleb (ovladačů). Překlad podle 
+  standardního nenakonfigurovaného <tt>.config</tt> trvá více než 30 minut!
+  </li>
+  <li>Nalezněte a nakonfigurujte klíčové komponenty pro boot jádra: řadič 
+  disku (SATA Driver, <tt>libata</tt>, Marvell PATA <tt></tt>, 
+  čipset (Intel ESB/PIIX3/4), souborové systémy, případně podporu initrd 
+  (startovací RAM disk)).
+  </li>
+</ol>
+<p>
+Máme-li jádro nakonfigurované, musíme jej přeložit, připravit případné moduly 
+k použití a upravit konfiguraci boot-manageru.
+</p>
+<p>
+Překlad se pro řadu jader 2.6 provede velmi jednoduše spuštění příkazu <tt>make</tt>.
+</p>
+<p>
+Instalace modulů do <tt>/lib/modules</tt> a spočítání závislostí je taktéž 
+automatizovaná. Máme-li předchozím krokem vše řádně přeloženo, stačí zavolat 
+<tt>make modules_install</tt>.<br />
+(Pozn.: Moduly se v řadě jader 2.6 automaticky překládají spolu se staticky 
+linkovanými částmi jádra a není nutné je překládat zvlášť.)
+</p>
+<h3>Initial RAMdisk</h3>
+<p>
+Obsah startovacího RAM disku můžeme vytvořit ručně, na některých distribucích, 
+které se velmi spoléhají na modulární jádra, existuje nástroj pomáhající 
+s jeho vytvořením (<tt>/sbin/mkinitrd</tt>). Tento program 
+se pokusí detekovat dostupný HW, najde pro něj moduly (musí být zkompilované 
+a nainstalované v <tt>/lib/modules</tt>), a nakonec vytvoří obsah přizpůsobený 
+danému stroji.<br />
+Máme-li některé moduly požadované autodetekovaným HW zakompilované 
+staticky do jádra, vyjmenujeme je na příkazové řádce volbou 
+<tt>mkinitrd --builtin=<i>jméno_modulu</i></tt>&nbsp;.
+</p>
+<p>
+Máme-li jádro, moduly a případně initialRAMdisk připravený, nakopírujeme 
+soubory <tt>.config</tt>, <tt>System.map</tt>, <tt>arch/x86/boot/bzImage</tt>, 
+případně <tt>initrd-2.6.24.4.img</tt> pod vhodnými názvy do adresáře 
+<tt>/boot</tt>. Inspirujte se již existujícími soubory v něm.
+</p>
+<p>
+Úprava boot-konfigurace záleží na používaném boot-manageru, je-li to GRUB jako
+v našem případě, využijeme znalostí z přednášky a přidáme další položku 
+do <tt>/boot/grub/grub.conf</tt>.<br />
+Doporučení:
+Při ladění nového jádra si ponechejte možnost nabootovat alespoň jedno funkční 
+jádro, abyste v případě nefukčnosti měli možnost snadno přebootovat do funkční
+konfigurace.
+</p>
+<p>
+Alternativou k ruční konfiguraci je použití <tt>make install</tt>, který se 
+pokusí jádro nainstalovat a doplnit do boot-konfigurace. Při tomto postupu 
+ale nemůžeme přímo ovlivnit, co/jak/kam a kde se stane.
+</p>
+<h3>Úkol 4</h3>
+<p>
+Ověřte funkčnost své konfigurace rebootováním stroje a použitím nové 
+konfigurační volby.
+</p>
+<hr />
+<p><img src="../obr/ESFgrant.png" width="161" height="22" alt="Partially supported by ESF and City of Prague." /></p>
+</body>
+</html>

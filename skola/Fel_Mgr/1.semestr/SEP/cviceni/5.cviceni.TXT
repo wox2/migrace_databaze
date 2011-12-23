@@ -1,0 +1,10 @@
+suite - sada testu
+class - 
+
+
+hard dependency - v pripade, ze se server nespusti se metoda dosomethingWithServer nespusti
+soft dependency - metoda se spusti vzdy...
+
+@Test(threadPoolSize = 3,
+invocationCount = 10)   -- testuje, jestli jsou metody thread safe
+

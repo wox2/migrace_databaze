@@ -1,0 +1,49 @@
+
+Importing Model from XMI
+Root Package: SablonaProStudenty
+Unknown Version Control configuration: 12345
+Add Classifier Role: Návrhový model
+Add Classifier Role: Model prípadu užití
+Add Classifier Role: Model požadavku
+Add Classifier Role: Business model
+Add Classifier Role: Doménový model
+Add Classifier Role: Model nasazení
+Add Classifier Role: Model architektury
+Append Package: Business model
+Append Package: Doménový model
+Append Package: Model požadavku
+Add Classifier Role: Funkcní požadavky
+Add Classifier Role: Nefunkcní požadavky
+Append Package: Funkcní požadavky
+Append Package: Nefunkcní požadavky
+Append Package: Model prípadu užití
+Add Classifier Role: Prípady užití
+Add Classifier Role: Úcastníci
+Append Package: Úcastníci
+Append Package: Prípady užití
+Append Package: Návrhový model
+Append Package: Model architektury
+Append Package: Model nasazení
+Resolving Classifiers
+Resolving Owners
+Resolve Package Links
+Add Extensions
+Add Diagrams
+Adding Diagram : Business model
+Adding Diagram : Doménový model
+Adding Diagram :  Požadavky
+Adding Diagram : Funkcní požadavky
+Adding Diagram : Nefunkcní požadavky
+Adding Diagram : Model prípadu užití
+Adding Diagram : Úcastníci
+Adding Diagram : Prípady užití
+Adding Diagram : Návrhový model
+Adding Diagram : Model architektury
+Adding Diagram : Model nasazení
+Resolving DiagramIDs
+Resolving Association Classes
+Resolving Parameter Types
+Resolving Attribute Types
+Resolving Note links
+Fixup external references
+Import Complete!

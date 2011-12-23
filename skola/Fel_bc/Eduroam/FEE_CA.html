@@ -1,0 +1,254 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="cs"><head>
+
+
+<title>ČVUT FEL - Certifikační autorita a služby PKI</title>
+<meta name="author" content="Vychozi vzhled: Antonín Parma">
+<meta name="copyright" content="2003 (c) ČVUT FEL">
+<meta http-equiv="Content-Language" content="cs">
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-2">
+<link rel="stylesheet" type="text/css" href="FEE_CA_soubory/base.css">
+<style type="text/css">
+<!--
+@import "/styl.css";
+-->
+</style>
+<link rel="stylesheet" type="text/css" href="FEE_CA_soubory/print.css" media="print">
+<link rel="shortcut icon" href="http://www.feld.cvut.cz/favicon.ico" type="image/x-icon">
+<link rel="alternate stylesheet" title="Alternativa 1024" type="text/css" href="FEE_CA_soubory/test.css">
+<script language="JavaScript" src="FEE_CA_soubory/menu.js" type="text/javascript"></script>
+
+</head><body>
+<div id="stranka">
+<div id="vnitrek">
+ <div id="kde">
+   Právě se nacházíte: <a href="http://www.cvut.cz/"><span class="cvut">ČVUT</span></a> / <a href="http://www.feld.cvut.cz/"><span class="fel">Fakulta elektrotechnická</span></a> / <a href="http://www.feld.cvut.cz/user-info/"><span class="fel">Počítačová síť</span></a>
+
+ </div>
+  <div id="hlavnimenu">
+  <h1>Fakulta elektrotechnická</h1>
+ </div>
+ <div id="motiv">
+ </div>
+ <div id="linka">
+  <div class="pravemenu">
+   <a href="http://www.feld.cvut.cz/misc/search.html">vyhledávání</a> | <a href="http://www.feld.cvut.cz/misc/kontakty.html">kontakt</a>
+  </div>
+  <div class="motto">
+   MOTTO: SCIENTIA EST POTENTIA
+  </div>
+       
+ </div>
+
+ <div id="telo">
+
+<!-- Telo - zacatek -->
+
+
+    <h1>Certifikační autorita a služby PKI</h1>
+
+    <p class="tdfelaktual">
+WWW prohlížeče používají pro zabezpečení komunikace se servery protokol
+SSL. SSL zajistí šifování všech dat přenášených mezi prohlížečem
+a&nbsp;serverem. Aby měl prohlížeč a&nbsp;jeho uživatel jistotu, že
+opravdu komunikuje s&nbsp;"pravým" serverem a&nbsp;neposílá citlivá
+data podstrčeným stránkám, je server vybaven tzv. certifikátem.
+Certifikát je ekvivalentem elektronického podpisu, který server
+předkládá prohlížeči při navazování SSL spojení.
+Certifikát&nbsp;-&nbsp;podpis je vydáván tzv. certifikační autoritou.
+Aby mohl klient ověřit pravost certifikátu, musí mít k&nbsp;dispozici
+certifikát certifikační autority. </p>
+								    
+<p>Co z&nbsp;toho plyne:</p>
+
+<ol type="a">
+<li><b>pro uživatele</b> (uživatelem je každý, kdo má v&nbsp;plánu přistupovat k&nbsp;síťovým službám provozovaným FEL)
+
+<p>- je potřeba nainstalovat kořenový certifikát <i>CESNET CA</i>.</p>
+
+<p>Postupujte následovně:</p>
+<ol type="1">
+<li>Otevřete stránku <a href="http://www.cesnet.cz/pki/crt.html">http://www.cesnet.cz/pki/crt.html</a>.</li>
+<li>Klikněte na odkaz "binary" na první řádce textu.</li>
+<li>Váš prohlížeč by vám měl nabídnout možnost instalovat certifikát.
+Pokud instalujete certifikát kvůli síti Eduroam, použijte ve windows
+Internet Explorer nebo certifikát uložte a&nbsp;instalujte ho ručně
+(tím se uloží do systémového úložiště). Ve Windows Vista je navíc nutné
+při instalaci ručně vybrat jako úložiště "Důvěryhodné kořenové
+certifikační úřady".</li>
+<li>Během instalace by Vám měl prohlížeč nabídnout možnost zobrazit informace o&nbsp;certifikátu. Jednou z&nbsp;nich je 
+Fingerprint (= Otisk, Miniatura,...). Obvykle se používají Fingerprinty dvou typů: MD5 nebo SHA1. Hodnoty obou 
+typů jsou uvedeny na stránce, kterou jste otevřeli v&nbsp;kroku&nbsp;1).</li>
+<li>Porovnejte hodnoty fingerprintů ze stránky s&nbsp;hodnotami, které zobrazuje prohlížeč v&nbsp;informacích o&nbsp;certifikátu. 
+Jsou-li shodné, nechte prohlížeč, aby certifikát nainstaloval.</li>
+<li>Jesliže se fingerprinty liší, nebo jestliže jste narazili na nějaký jiný problém, nebo jestli nemáte čas, 
+požádejte prosím správce svého operačního systému, aby Vám kořenový certifikát podle tohoto návodu nainstaloval.</li>
+</ol>
+<br></li>
+
+<li><b>pro správce serverů a služeb, které potřebují serverové certifikáty</b>
+
+<p>Osoba žádající o&nbsp;serverový certifikát musí disponovat osobním
+certifikátem. Bližší informace o&nbsp;možnostech získání serverových
+certifikátů pro domény <i>fel.cvut.cz, feld.cvut.cz a&nbsp;felk.cvut.cz</i> se dozvíte na emailové adrese <a href="mailto:ca@fel.cvut.cz">ca@fel.cvut.cz</a>.</p></li>
+</ol>
+
+
+<!-- Telo - konec -->
+
+ </div>
+
+<script type="text/javascript"><!--
+        var section_ids = "1;2;3;4;5;6;7;8";
+// -->
+</script>
+
+<div id="menu">
+<h2>Navigace</h2>
+<ul>
+ <li id="menu-l1-1"><a href="http://www.feld.cvut.cz/glance/index.html" onmouseover="section_on(1)" onmouseout="section_off()" onfocus="section_on_now(1)" onblur="section_off()"><span>Stručně o&nbsp;fakultě</span></a>
+ <div id="menu-1">
+  <ul onmouseout="menu_off()" onmouseover="menu_on()">
+   <li><a class="menu-item" href="http://www.feld.cvut.cz/glance/history.html">Historie a poslání</a></li>
+   <li><a class="menu-item" href="http://www.feld.cvut.cz/glance/structure.html">Organizační struktura</a></li>
+   <li><a class="menu-item" href="http://www.feld.cvut.cz/senat/index.html">Akademický senát</a></li>
+   <li><a class="menu-item" href="http://www.feld.cvut.cz/glance/position.html">Kde nás najdete</a></li>
+   <li><a class="menu-item" href="http://www.feld.cvut.cz/deska/index.html">Úřední deska</a></li>
+   <li><a class="menu-item" href="http://www.feld.cvut.cz/rozvoj/predpisy.html">Předpisy</a></li>
+   <li><a class="menu-item" href="http://www.feld.cvut.cz/rozvoj/zpravy.html">Výroční zpráva</a></li>
+   <li><a class="menu-item" href="http://www.feld.cvut.cz/rozvoj/rozvoj.html">Rozvoj</a></li>
+   <li><a class="menu-item" href="http://www.feld.cvut.cz/rozvoj/zamer.html">Dlouhodobý záměr</a></li>
+   <li><a class="menu-item" href="http://www.feld.cvut.cz/akreditace/index.html">Akreditace</a></li>
+  </ul>
+ </div>
+ </li>
+ <li id="menu-l1-2"><a href="http://www.feld.cvut.cz/departments/index.html" onmouseover="section_on(2)" onmouseout="section_off()" onfocus="section_on_now(2)" onblur="section_off()"><span>Pracoviště a&nbsp;lidé</span></a>
+ <div id="menu-2">
+  <ul onmouseout="menu_off()" onmouseover="menu_on()">
+   <li><a class="menu-item" href="http://www.feld.cvut.cz/departments/departments.html">Seznam pracovišť</a></li>
+   <li><a class="menu-item" href="https://udb.feld.cvut.cz/">Studenti</a></li>
+   <li><a class="menu-item" href="https://udb.feld.cvut.cz/">Zaměstnanci</a></li>
+   <li><a class="menu-item" href="http://www.feld.cvut.cz/elektra/">Absolventi</a></li>
+  </ul>
+ </div>
+ </li>
+ <li id="menu-l1-3"><a href="http://www.feld.cvut.cz/events/index.html" onmouseover="section_on(3)" onmouseout="section_off()" onfocus="section_on_now(3)" onblur="section_off()"><span>Pro média</span></a>
+ <div id="menu-3">
+  <ul onmouseout="menu_off()" onmouseover="menu_on()">
+   <li><a class="menu-item" href="http://www.feld.cvut.cz/vz/media/kontakty.html">PR oddělení</a></li>
+<!--   <li><a class="menu-item" href="">Tiskové zprávy</a></li> -->
+   <li><a class="menu-item" href="http://www.feld.cvut.cz/vz/media/">Fakulta v&nbsp;médiích</a></li>
+   <li><a class="menu-item" href="http://www.cvut.cz/informace-pro-media/graficky-manual">Grafický manuál</a></li>
+   <li><a class="menu-item" href="http://www.feld.cvut.cz/gallery/index.html">Foto Video galerie</a></li>
+   <li><a class="menu-item" href="http://www.feld.cvut.cz/vz/propagace/">Propagační předměty</a></li>
+   <li><a class="menu-item" href="http://www.feld.cvut.cz/vz/propagace/materialy.html">Propagační materiály</a></li>
+   <li><a class="menu-item" href="http://www.feld.cvut.cz/vz/spoluprace.html">Partnerství a sponzoři</a></li>
+   <li><a class="menu-item" href="http://www.feld.cvut.cz/events/akce.html">Pořádané akce</a></li>
+   <li><a class="menu-item" href="http://www.feld.cvut.cz/aktuality/index.html">Archiv aktualit</a></li>
+  </ul>
+ </div>
+ </li>
+ <li id="menu-l1-4"><a href="http://www.feld.cvut.cz/vz/firmy/index.html" onmouseover="section_on(4)" onmouseout="section_off()" onfocus="section_on_now(4)" onblur="section_off()"><span>Pro firmy</span></a>
+ <div id="menu-4">
+  <ul onmouseout="menu_off()" onmouseover="menu_on()">
+   <li><a class="menu-item" href="http://www.feld.cvut.cz/vz/firmy/csp.html">Centrum spolupráce s&nbsp;průmyslem</a></li>
+   <li><a class="menu-item" href="http://www.feld.cvut.cz/vz/firmy/cpv.html">Centrum podpory vzdělávání</a></li>
+   <li><a class="menu-item" href="http://www.feld.cvut.cz/vz/media/kontakty.html">PR oddělení</a></li>
+   <li><a class="menu-item" href="http://www.feld.cvut.cz/vv/tymy/index.html">Vědecké týmy a&nbsp;projekty</a></li>
+   <li><a class="menu-item" href="http://www.feld.cvut.cz/vz/firmy/certifikace.html">Certifikace Prometric a&nbsp;Pearson VUE</a></li>
+   <li><a class="menu-item" href="http://www.feld.cvut.cz/vz/firmy/zkusebny.html">Zkušebny a&nbsp;laboratoře</a></li>
+   <li><a class="menu-item" href="http://www.feld.cvut.cz/vz/firmy/poradenske-centrum.html">Poradenské centrum</a></li>
+   <li><a class="menu-item" href="http://www.feld.cvut.cz/vz/spoluprace.html">Partnerství a sponzoři</a></li>
+  </ul>
+ </div>
+ </li>
+ <li id="menu-l1-5"><a href="http://www.feld.cvut.cz/prestudent/index.html" onmouseover="section_on(5)" onmouseout="section_off()" onfocus="section_on_now(5)" onblur="section_off()"><span>Pro zájemce o&nbsp;studium</span></a>
+ <div id="menu-5">
+  <ul onmouseout="menu_off()" onmouseover="menu_on()">
+   <li><a class="menu-item" href="https://prihlaska.cvut.cz/apps/kos/prihlaska/">Elektronická přihláška</a></li>
+   <li><a class="menu-item" href="http://www.feld.cvut.cz/prestudent/prijriz.html">Přijímací řízení</a></li>
+   <li><a class="menu-item" href="http://www.feld.cvut.cz/prestudent/obory.html">Studijní programy</a></li>
+   <li><a class="menu-item" href="http://www.feld.cvut.cz/education/kombinovane-studium.html">Kombinovaná forma studia</a></li>
+   <li><a class="menu-item" href="http://www.feld.cvut.cz/prestudent/dod.html">Den otevřených dveří</a></li>
+   <li><a class="menu-item" href="http://www.feld.cvut.cz/prestudent/sezimovo-usti.html">1.&nbsp;ročník v Sezimově Ústí</a></li>
+   <li><a class="menu-item" href="http://www.feld.cvut.cz/prestudent/sumperk.html">1.&nbsp;ročník v Šumperku</a></li>
+   <li><a class="menu-item" href="http://www.feld.cvut.cz/prestudent/trutnov.html">1.&nbsp;ročník v Trutnově</a></li>
+   <li><a class="menu-item" href="http://www.feld.cvut.cz/prestudent/vysledky.html">Výsledky přijímacích řízení</a></li>
+   <li><a class="menu-item" href="http://www.feld.cvut.cz/vv/studium.html">Doktorské studium</a></li>
+   <li><a class="menu-item" href="http://www.feld.cvut.cz/prestudent/CZV.html">Celoživotní vzdělávání</a></li>
+   <li><a class="menu-item" href="http://www.feld.cvut.cz/psps/pracovniprilezitosti.html">Uplatnění absolventů</a></li>
+   <li><a class="menu-item" href="https://forum.feld.cvut.cz/">Diskusní fórum</a></li>
+   <li><a class="menu-item" href="http://www.feld.cvut.cz/prestudent/faq.html">FAQ</a></li>
+   <li><a class="menu-item" href="http://www.feld.cvut.cz/prestudent/kontakty.html">Kontakty</a></li>
+   <li><a class="menu-item" href="http://www.budit.cz/">budIT.cz</a></li>
+  </ul>
+ </div>
+ </li>
+ <li id="menu-l1-6"><a href="http://www.feld.cvut.cz/education/index.html" onmouseover="section_on(6)" onmouseout="section_off()" onfocus="section_on_now(6)" onblur="section_off()"><span>Pro studenty</span></a>
+ <div id="menu-6">
+  <ul onmouseout="menu_off()" onmouseover="menu_on()">
+   <li><a class="menu-item" href="http://www.feld.cvut.cz/education/index.html">Souhrnné informace</a></li>
+   <li><a class="menu-item" href="http://www.feld.cvut.cz/education/kontakty.html">Pedagogické oddělení</a></li>
+   <li><a class="menu-item" href="http://www.feld.cvut.cz/education/forms/">Formuláře PEO</a></li>
+   <li><a class="menu-item" href="http://www.feld.cvut.cz/education/announce/">Sdělení PeO</a></li>
+   <li><a class="menu-item" href="http://www.feld.cvut.cz/rozvoj/predpisy.html">Studijní předpisy</a></li>
+   <li><a class="menu-item" href="http://www.feld.cvut.cz/education/bk/prehled.html">Studijní plány</a></li>
+   <li><a class="menu-item" href="http://www.feld.cvut.cz/education/harmonogram.html">Harmonogram šk.&nbsp;roku</a></li>
+   <li><a class="menu-item" href="http://www.feld.cvut.cz/education/rozvrhy.html">Rozvrhy</a></li>
+   <li><a class="menu-item" href="http://www.feld.cvut.cz/vv/studium.html">Doktorské studium</a></li>
+   <li><a class="menu-item" href="http://www.feld.cvut.cz/psps/">Poradenské středisko</a></li>
+   <li><a class="menu-item" href="http://www.feld.cvut.cz/user-info/index.html">Počítačová síť</a></li>
+   <li><a class="menu-item" href="http://knihovny.cvut.cz/">Knihovny</a></li>
+   <li><a class="menu-item" href="https://anketa.feld.cvut.cz/">Anketa hodnocení výuky</a></li>
+   <li><a class="menu-item" href="https://forum.feld.cvut.cz/">Diskusní fórum</a></li>
+   <li><a class="menu-item" href="http://www.feld.cvut.cz/education/activities.html">Studentské aktivity</a></li>
+   <li><a class="menu-item" href="http://www.feld.cvut.cz/psps/pracovniprilezitosti.html">Pracovní příležitosti</a></li>
+  </ul>
+ </div>
+ </li>
+ <li id="menu-l1-7"><a href="http://www.feld.cvut.cz/vv/index.html" onmouseover="section_on(7)" onmouseout="section_off()" onfocus="section_on_now(7)" onblur="section_off()"><span>Věda a&nbsp;výzkum</span></a>
+ <div id="menu-7">
+  <ul onmouseout="menu_off()" onmouseover="menu_on()">
+   <li><a class="menu-item" href="http://www.feld.cvut.cz/vv/index.html">Souhrnné informace</a></li>
+   <li><a class="menu-item" href="http://www.feld.cvut.cz/vv/habilitace.html">Habilitace a jmenovací řízení</a></li>
+   <li><a class="menu-item" href="http://www.feld.cvut.cz/vv/tymy/">Vědecké týmy a projekty</a></li>
+   <li><a class="menu-item" href="http://www.feld.cvut.cz/vv/studium.html">Doktorské studium</a></li>
+   <li><a class="menu-item" href="http://www.feld.cvut.cz/vv/ostatni/hodiny.html">Úřední hodiny</a></li>
+   <li><a class="menu-item" href="http://www.feld.cvut.cz/vv/terminy.html">Kalendář termínů</a></li>
+   <li><a class="menu-item" href="http://www.feld.cvut.cz/vv/index.html#granty">Grantová činnost</a></li>
+   <li><a class="menu-item" href="http://www.feld.cvut.cz/research/publication.html">Publikace</a></li>
+   <li><a class="menu-item" href="http://www.feld.cvut.cz/vv/vvvs/index.html">Komponenta VVVS</a></li>
+   <li><a class="menu-item" href="http://www.feld.cvut.cz/vv/contact.html">Kontakt</a></li>
+  </ul>
+ </div>
+ </li>
+ <li id="menu-l1-8"><a href="http://www.feld.cvut.cz/staff/index.html" onmouseover="section_on(8)" onmouseout="section_off()" onfocus="section_on_now(8)" onblur="section_off()"><span>Pro zaměstnance</span></a>
+ <div id="menu-8">
+  <ul onmouseout="menu_off()" onmouseover="menu_on()">
+   <li><a class="menu-item" href="http://www.feld.cvut.cz/education/rozvrhy.html">Rozvrhy</a></li>
+   <li><a class="menu-item" href="https://felnet.feld.cvut.cz/infodek/">INFODEK</a></li>
+   <li><a class="menu-item" href="http://www.feld.cvut.cz/user-info/index.html">Počítačová síť</a></li>
+   <li><a class="menu-item" href="https://forum.feld.cvut.cz/">Diskusní fórum</a></li>
+   <li><a class="menu-item" href="http://www.feld.cvut.cz/vz/cesty.html">Zahraniční styky</a></li>
+   <li><a class="menu-item" href="https://anketa.feld.cvut.cz/">Anketa hodnocení výuky</a></li>
+   <li><a class="menu-item" href="http://knihovny.cvut.cz/">Knihovny</a></li>
+   <li><a class="menu-item" href="http://centrum.feld.cvut.cz/">Přístrojové centrum</a></li>
+   <li><a class="menu-item" href="http://www.feld.cvut.cz/bul/">Bulletin FEL</a></li>
+   <li><a class="menu-item" href="http://www.feld.cvut.cz/staff/info.html">Profesní a jiné organizace</a></li>
+  </ul>
+ </div>
+ </li>
+</ul>
+</div>
+
+<div id="linka2">
+ <div class="levemenu">
+  Za obsah zodpovídá: <a href="mailto:webmaster@fel.cvut.cz">Webmaster</a>
+ </div>
+ <div class="pravemenu">
+  Poslední&nbsp;změna: 07. 10. 2008
+ </div>
+</div>
+</div>
+</div>
+</body></html>

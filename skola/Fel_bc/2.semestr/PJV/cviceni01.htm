@@ -1,0 +1,812 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" xml:lang="cs" xmlns="http://www.w3.org/1999/xhtml" lang="cs"><head>
+
+
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>
+    01 - Opakování z Algoritmizace, konvence pro psaní kódu    [Y36PJV - Programování v jazyku Java]
+  </title>
+
+  <meta name="generator" content="DokuWiki Release 2008-05-05">
+<meta name="robots" content="index,follow">
+<meta name="date" content="2009-03-02T11:26:22+0100">
+<meta name="keywords" content="cviceni,cviceni01">
+<link rel="search" type="application/opensearchdescription+xml" href="https://webdev.felk.cvut.cz/courses/Y36PJV/lib/exe/opensearch.php" title="Y36PJV - Programování v jazyku Java">
+<link rel="start" href="https://webdev.felk.cvut.cz/courses/Y36PJV/">
+<link rel="contents" href="https://webdev.felk.cvut.cz/courses/Y36PJV/cviceni/cviceni01?do=index" title="Index">
+<link rel="alternate" type="application/rss+xml" title="Recent Changes" href="https://webdev.felk.cvut.cz/courses/Y36PJV/feed.php">
+<link rel="alternate" type="application/rss+xml" title="Current Namespace" href="https://webdev.felk.cvut.cz/courses/Y36PJV/feed.php?mode=list&amp;ns=cviceni">
+<link rel="alternate" type="text/html" title="Plain HTML" href="https://webdev.felk.cvut.cz/courses/Y36PJV/_export/xhtml/cviceni/cviceni01">
+<link rel="stylesheet" media="all" type="text/css" href="cviceni01_soubory/css.css">
+<link rel="stylesheet" media="screen" type="text/css" href="cviceni01_soubory/css_003.css">
+<link rel="stylesheet" media="print" type="text/css" href="cviceni01_soubory/css_002.css">
+<script type="text/javascript" charset="utf-8" src="cviceni01_soubory/js.php"></script>
+<script type="text/javascript" charset="utf-8" src="cviceni01_soubory/usrmenu.js"></script>
+<script type="text/javascript" charset="utf-8" src="cviceni01_soubory/indexmenu.js"></script>
+<script type="text/javascript" charset="utf-8"><!--//--><![CDATA[//><!--
+var indexmenu_ID='cviceni/cviceni01'
+//--><!]]></script>
+
+  <link rel="shortcut icon" href="https://webdev.felk.cvut.cz/courses/Y36PJV/lib/tpl/sidebar/images/favicon.ico">
+
+  </head><body>
+<div class="dokuwiki">
+  
+  <div class="stylehead">
+
+    <div class="header">
+      <div class="logo">
+        <a href="https://webdev.felk.cvut.cz/courses/Y36PJV/" name="dokuwiki__top" id="dokuwiki__top" accesskey="h" title="[ALT+H]">Y36PJV - Programování v jazyku Java</a>      </div>
+      <div class="tagline">
+               </div>
+      <div class="pagename">
+        [[<a href="https://webdev.felk.cvut.cz/courses/Y36PJV/cviceni/cviceni01?do=backlink">cviceni:cviceni01</a>]]
+      </div>
+
+      <div class="clearer"></div>
+    </div>
+
+    
+    <div class="bar" id="bar__top">
+      <div class="bar-left" id="bar__topleft">
+                <form class="button btn_revs" method="get" action="/courses/Y36PJV/cviceni/cviceni01"><div class="no"><input name="do" value="revisions" type="hidden"><input value="Starší verze" class="button" accesskey="o" title="Starší verze [ALT+O]" type="submit"></div></form>      </div>
+
+      <div class="bar-right" id="bar__topright">
+        <form class="button btn_recent" method="get" action="/courses/Y36PJV/"><div class="no"><input name="do" value="recent" type="hidden"><input value="Poslední úpravy" class="button" accesskey="r" title="Poslední úpravy [ALT+R]" type="submit"></div></form>        <form action="/courses/Y36PJV/" accept-charset="utf-8" class="search" id="dw__search"><div class="no"><input name="do" value="search" type="hidden"><input id="qsearch__in" accesskey="f" name="id" class="edit" title="[ALT+F]" type="text"><input value="Hledat" class="button" title="Hledat" type="submit"><div style="display: none;" id="qsearch__out" class="ajax_qsearch JSpopup"></div></div></form>&nbsp;
+      </div>
+
+      <div class="clearer"></div>
+    </div>
+
+        <div class="breadcrumbs">
+      <span class="bchead">Historie:</span> <span class="bcsep">»</span> <a href="https://webdev.felk.cvut.cz/courses/Y36PJV/klasifikace/minitesty" class="breadcrumbs" title="klasifikace:minitesty">Minitesty</a> <span class="bcsep">»</span> <span class="curid"><a href="https://webdev.felk.cvut.cz/courses/Y36PJV/cviceni/cviceni01" class="breadcrumbs" title="cviceni:cviceni01">01 - Opakování z Algoritmizace, konvence pro psaní kódu</a></span>          </div>
+    
+        <div class="breadcrumbs">
+      <span class="bchead">Umístění: </span><a href="https://webdev.felk.cvut.cz/courses/Y36PJV/start" title="start">Y36PJV - Programování v jazyku Java</a> » <a href="https://webdev.felk.cvut.cz/courses/Y36PJV/cviceni/start" title="cviceni:start">Cvičení</a> » <a href="https://webdev.felk.cvut.cz/courses/Y36PJV/cviceni/cviceni01" title="cviceni:cviceni01">01 - Opakování z Algoritmizace, konvence pro psaní kódu</a>    </div>
+    
+  </div>
+  
+  
+  <div id="sidebar">
+
+
+<h2><a name="y36pjv" id="y36pjv">Y36PJV</a></h2>
+<div class="level2">
+
+<div>
+
+<ul class="idx">
+<li class="closed"><div class="li"><a href="https://webdev.felk.cvut.cz/courses/Y36PJV/klasifikace/start" class="indexmenu_idx_head">Hodnocení</a></div></li>
+<li class="open"><div class="li"><a href="https://webdev.felk.cvut.cz/courses/Y36PJV/prednasky/start" class="indexmenu_idx_head">Přednášky</a></div>
+<ul class="idx">
+<li class="level2"><div class="li"><a href="https://webdev.felk.cvut.cz/courses/Y36PJV/prednasky/prednaska01" class="wikilink1" title="prednasky:prednaska01">1. Primitiva, základy OOP</a></div></li>
+<li class="level2"><div class="li"><a href="https://webdev.felk.cvut.cz/courses/Y36PJV/prednasky/prednaska02" class="wikilink1" title="prednasky:prednaska02">2. Objekty, konstruktory</a></div></li>
+<li class="level2"><div class="li"><a href="https://webdev.felk.cvut.cz/courses/Y36PJV/prednasky/prednaska03" class="wikilink1" title="prednasky:prednaska03">3. Výjimky  a polymorfismus</a></div></li>
+<li class="level2"><div class="li"><a href="https://webdev.felk.cvut.cz/courses/Y36PJV/prednasky/prednaska04" class="wikilink1" title="prednasky:prednaska04">4. Pole a kolekce a utility</a></div></li>
+<li class="level2"><div class="li"><a href="https://webdev.felk.cvut.cz/courses/Y36PJV/prednasky/prednaska05" class="wikilink1" title="prednasky:prednaska05">5. Vstup, výstup</a></div></li>
+<li class="level2"><div class="li"><a href="https://webdev.felk.cvut.cz/courses/Y36PJV/prednasky/prednaska06" class="wikilink1" title="prednasky:prednaska06">6. Vlákna</a></div></li>
+<li class="level2"><div class="li"><a href="https://webdev.felk.cvut.cz/courses/Y36PJV/prednasky/prednaska07" class="wikilink1" title="prednasky:prednaska07">7. Síť a java.net</a></div></li>
+<li class="level2"><div class="li"><a href="https://webdev.felk.cvut.cz/courses/Y36PJV/prednasky/prednaska08" class="wikilink1" title="prednasky:prednaska08">8. AWT, události</a></div></li>
+<li class="level2"><div class="li"><a href="https://webdev.felk.cvut.cz/courses/Y36PJV/prednasky/prednaska09" class="wikilink1" title="prednasky:prednaska09">9. Swing, aplety a obrázky</a></div></li>
+<li class="level2"><div class="li"><a href="https://webdev.felk.cvut.cz/courses/Y36PJV/prednasky/prednaska10" class="wikilink1" title="prednasky:prednaska10">10. Databáze</a></div></li>
+<li class="level2"><div class="li"><a href="https://webdev.felk.cvut.cz/courses/Y36PJV/prednasky/prednaska11" class="wikilink1" title="prednasky:prednaska11">11. RMI, vnitřní a vnořené třídy</a></div></li>
+<li class="level2"><div class="li"><a href="https://webdev.felk.cvut.cz/courses/Y36PJV/prednasky/prednaska12" class="wikilink1" title="prednasky:prednaska12">12. Java 5, Enum, generika</a></div></li>
+<li class="level2"><div class="li"><a href="https://webdev.felk.cvut.cz/courses/Y36PJV/prednasky/prednaska13" class="wikilink1" title="prednasky:prednaska13">13. JAR, javadoc, Log, Regex</a></div></li>
+<li class="closed"><div class="li"><a href="https://webdev.felk.cvut.cz/courses/Y36PJV/prednasky/zaloha?idx=prednasky:zaloha" class="indexmenu_idx">zaloha</a></div></li>
+</ul>
+</li>
+<li class="closed"><div class="li"><a href="https://webdev.felk.cvut.cz/courses/Y36PJV/zdroje/start" class="indexmenu_idx_head">Zdroje</a></div></li>
+<li class="level1"><div class="li"><a href="https://webdev.felk.cvut.cz/courses/Y36PJV/proseminare" class="wikilink1" title="proseminare">Prosemináře</a></div></li>
+<li class="open"><div class="li"><a href="https://webdev.felk.cvut.cz/courses/Y36PJV/cviceni/start" class="indexmenu_idx_head">Cvičení</a></div>
+<ul class="idx">
+<li class="level2"><div class="li"><span class="curid"><a href="https://webdev.felk.cvut.cz/courses/Y36PJV/cviceni/cviceni01" class="wikilink1" title="cviceni:cviceni01">01 - Opakování z Algoritmizace, konvence pro psaní kódu</a></span></div></li>
+<li class="level2"><div class="li"><a href="https://webdev.felk.cvut.cz/courses/Y36PJV/cviceni/cviceni02" class="wikilink1" title="cviceni:cviceni02">02 - OOP</a></div></li>
+<li class="level2"><div class="li"><a href="https://webdev.felk.cvut.cz/courses/Y36PJV/cviceni/cviceni03" class="wikilink1" title="cviceni:cviceni03">03 - Výjimky, kolekce</a></div></li>
+<li class="level2"><div class="li"><a href="https://webdev.felk.cvut.cz/courses/Y36PJV/cviceni/cviceni04" class="wikilink1" title="cviceni:cviceni04">04 - Soubory a vlákna</a></div></li>
+<li class="level2"><div class="li"><a href="https://webdev.felk.cvut.cz/courses/Y36PJV/cviceni/cviceni05" class="wikilink1" title="cviceni:cviceni05">05  - Grafické uživatelské rozhraní</a></div></li>
+<li class="level2"><div class="li"><a href="https://webdev.felk.cvut.cz/courses/Y36PJV/cviceni/cviceni06" class="wikilink1" title="cviceni:cviceni06">06 - JDBC, Síťová komunikace</a></div></li>
+<li class="level2"><div class="li"><a href="https://webdev.felk.cvut.cz/courses/Y36PJV/cviceni/galerie" class="wikilink1" title="cviceni:galerie">Galerie semestrálních prací</a></div></li>
+<li class="level2"><div class="li"><a href="https://webdev.felk.cvut.cz/courses/Y36PJV/cviceni/pozadavky_hodnoceni" class="wikilink1" title="cviceni:pozadavky_hodnoceni">Požadavky a hodnocení</a></div></li>
+<li class="level2"><div class="li"><a href="https://webdev.felk.cvut.cz/courses/Y36PJV/cviceni/zadani" class="wikilink1" title="cviceni:zadani">Zadání semestrálních prací</a></div></li>
+</ul>
+</li>
+<li class="closed"><div class="li"><a href="https://webdev.felk.cvut.cz/courses/Y36PJV/ucitele/start" class="indexmenu_idx_head">Učitelé</a></div></li>
+<li class="closed"><div class="li"><a href="https://webdev.felk.cvut.cz/courses/Y36PJV/wiki?idx=wiki" class="indexmenu_idx">wiki</a></div></li></ul>
+</div>
+
+</div>
+
+<!-- cachefile /webdev/www/courses/Y36PJV/data/cache/9/92350f576a70e466f379a5086ce2b431.xhtml used -->
+</div>    <div class="page_with_sidebar">
+  
+<div class="plugin_translation"><span>Translations of this page:</span> <ul>  <li><div class="li"><span class="curid"><a href="https://webdev.felk.cvut.cz/courses/Y36PJV/cviceni/cviceni01" class="wikilink1" title="cviceni:cviceni01">cs</a></span></div></li></ul></div>
+    <!-- wikipage start -->
+    <!-- TOC START -->
+<div class="toc">
+<div style="cursor: pointer;" class="tocheader toctoggle" id="toc__header"><span style="cursor: pointer;" class="toc_close" id="toc__toggle"><span>−</span></span>Obsah</div>
+<div id="toc__inside">
+
+<ul class="toc">
+<li class="level1"><div class="li"><span class="li"><a href="#opakovani_z_algoritmizace_konvence_pro_psani_kodu" class="toc">01 - Opakování z Algoritmizace, konvence pro psaní kódu</a></span></div>
+<ul class="toc">
+<li class="level2"><div class="li"><span class="li"><a href="#konvence_pro_psani_kodu" class="toc">Konvence pro psaní kódu</a></span></div>
+<ul class="toc">
+<li class="level3"><div class="li"><span class="li"><a href="#pojmenovavani_trid_promennych_metod" class="toc">Pojmenovávání tříd, proměnných, metod, ...</a></span></div></li>
+<li class="level3"><div class="li"><span class="li"><a href="#formatovani" class="toc">Formátování</a></span></div></li>
+<li class="level3"><div class="li"><span class="li"><a href="#dokumentace_komentare" class="toc">Dokumentace, komentáře</a></span></div></li>
+</ul>
+</li>
+<li class="level2"><div class="li"><span class="li"><a href="#opakovani_z_algoritmizace" class="toc">Opakování z Algoritmizace</a></span></div>
+<ul class="toc">
+<li class="level3"><div class="li"><span class="li"><a href="#hlavni_program_komentare" class="toc">Hlavní program, komentáře</a></span></div></li>
+<li class="level3"><div class="li"><span class="li"><a href="#datove_typy" class="toc">Datové typy</a></span></div></li>
+<li class="level3"><div class="li"><span class="li"><a href="#deklarace_promennych_konstant" class="toc">Deklarace proměnných, konstant</a></span></div></li>
+<li class="level3"><div class="li"><span class="li"><a href="#operatory" class="toc">Operátory</a></span></div></li>
+<li class="level3"><div class="li"><span class="li"><a href="#ridici_struktury" class="toc">Řídící struktury</a></span></div></li>
+<li class="level3"><div class="li"><span class="li"><a href="#podprogramy_metody" class="toc">Podprogramy = METODY</a></span></div></li>
+<li class="level3"><div class="li"><span class="li"><a href="#pole" class="toc">Pole</a></span></div></li>
+</ul>
+</li>
+<li class="level2"><div class="li"><span class="li"><a href="#priklady_na_procviceni" class="toc">Příklady na procvičení</a></span></div>
+<ul class="toc">
+<li class="level3"><div class="li"><span class="li"><a href="#parametry_programu_spusteni_z_konzole" class="toc">Parametry programu, spuštění z konzole</a></span></div></li>
+<li class="level3"><div class="li"><span class="li"><a href="#rekurze_standardni_vstup" class="toc">Rekurze, standardní vstup</a></span></div></li>
+<li class="level3"><div class="li"><span class="li"><a href="#tabulka_nasobeni" class="toc">Tabulka násobení</a></span></div></li></ul>
+</li></ul>
+</li></ul>
+</div>
+</div>
+<!-- TOC END -->
+
+
+
+<h1><a name="opakovani_z_algoritmizace_konvence_pro_psani_kodu" id="opakovani_z_algoritmizace_konvence_pro_psani_kodu">01 - Opakování z Algoritmizace, konvence pro psaní kódu</a></h1>
+<div class="level1">
+
+</div>
+
+<h2><a name="konvence_pro_psani_kodu" id="konvence_pro_psani_kodu">Konvence pro psaní kódu</a></h2>
+<div class="level2">
+
+<p>
+
+Převzato z <a href="http://java.vse.cz/" class="urlextern" target="_blank" title="http://java.vse.cz" rel="nofollow">http://java.vse.cz</a> a poté upraveno.
+</p>
+
+</div>
+
+<h3><a name="pojmenovavani_trid_promennych_metod" id="pojmenovavani_trid_promennych_metod">Pojmenovávání tříd, proměnných, metod, ...</a></h3>
+<div class="level3">
+
+<p>
+Pro označování tříd, konstant, proměnných, atributů, a metod se v Javě
+používají identifikátory. Pravidla pro jejich výběr se dělí na povinná
+a doporučená. </p>
+
+</div>
+
+<h4><a name="povinna_pravidla" id="povinna_pravidla">Povinná pravidla</a></h4>
+<div class="level4">
+
+<p>
+Povinná pravidla určují, jak můžeme identifikátory vytvářet, tedy, co
+všechno nám „zbaští“ překladač. Přípustný identifikátor (stejná
+pravidla pro třídy, atributy i metody, proměnné a konstanty) je ten,
+který začíná Unicode znakem (a, b, c,… ,A,B,C, …, ě, š, č, …, Ě, Š, …)
+nebo znakem _ či $. Dále může následovat posloupnost těchto znaků a
+číslic. Mezi těmito identifikátory nesmí být klíčová a rezervovaná
+slova jazyka Java (např. if, true, goto).
+</p>
+
+</div>
+
+<h4><a name="doporuceni" id="doporuceni">Doporučení</a></h4>
+<div class="level4">
+
+<p>
+Doporučení pro pojmenování ulehčují čitelnost kódu a jejich dodržování je nutné, aby Váš kód přijal cvičící.
+
+</p>
+<ul>
+<li class="level1"><div class="li">
+ Nepoužívejte akcentované znaky, znaky <code>_</code> a <code>$</code> pouze odůvodnitelně.
+</div></li>
+<li class="level1"><div class="li"> Pro identifikátory (tříd, metod,
+proměnných, …) používejte jména popisující jejich význam. Vyhýbejte se
+zkratkám. Jména by neměla být krátká (minimálně 3 znaky) ani příliš
+dlouhá (více než 30 znaků).
+</div></li>
+<li class="level1"><div class="li"> Jména tříd, rozhraní a výčtových
+typů (class, interface, enum) začínají velkým písmenem. Pokud se
+použije více slov, všechna začínají velkým písmenem. Pro označení třídy
+se obvykle používá podstatné jména v jednotném čísle, které bývá
+doplněno o přívlastky, např. třídy <code>Student</code>, <code>SeznamStudentu</code>. Pro rozhraní používejte přídavné jméno, např. <code>Runnable</code>, <code>Serializable</code>, <code>Vyplnitelny</code>.
+</div></li>
+<li class="level1"><div class="li"> Jména metod, proměnných, formálních
+parametrů metod začínají malým písmenem. Pokud jméno obsahuje více
+slov, druhé a další začínají velkým písmenem.
+</div></li>
+<li class="level1"><div class="li">
+ Názvy konstant se píší celé velkými písmeny, v případě více slov se jednotlivá slova oddělují znakem podtržení, např. <code>MAXIMALNI_POCET</code>.
+</div></li>
+</ul>
+
+
+</div>
+
+<h3><a name="formatovani" id="formatovani">Formátování</a></h3>
+<div class="level3">
+<ul>
+<li class="level1"><div class="li">
+ Na jednom řádku by měl být jeden příkaz, deklarace (případně i definice) jedné proměnné, např. <code>int i = 7;</code>
+</div></li>
+<li class="level1"><div class="li">
+ Obsah bloku odsaďte vždy o jeden tabulátor (např. 4 mezery). V rámci jednoho bloku by měly být všechny příkazy odsazeny stejně.
+</div></li>
+<li class="level1"><div class="li"> Otevírací závorka bloku je obvykle
+na konci řádku, uzavírací pište samostatnou na řádku a to pod
+identifikátor, kterým začíná řádek s otvírací závorkou.
+</div></li>
+</ul>
+
+<pre class="code java"><span class="kw2">public</span> <span class="kw2">static</span> <span class="kw4">void</span> main<span class="br0">(</span><a target="_blank" href="http://www.google.com/search?hl=en&amp;q=allinurl%3AString+java.sun.com&amp;btnI=I%27m%20Feeling%20Lucky"><span class="kw3">String</span></a><span class="br0">[</span><span class="br0">]</span> args<span class="br0">)</span> <span class="br0">{</span>
+    <span class="kw4">int</span> scitanec1 = <span class="nu0">5</span><span class="sy0">;</span>
+    <span class="kw4">int</span> scitanec2 = <span class="nu0">2</span><span class="sy0">;</span>
+    <a target="_blank" href="http://www.google.com/search?hl=en&amp;q=allinurl%3ASystem+java.sun.com&amp;btnI=I%27m%20Feeling%20Lucky"><span class="kw3">System</span></a>.<span class="me1">out</span>.<span class="me1">println</span><span class="br0">(</span><span class="st0">"Soucet je: "</span> + <span class="br0">(</span>scitanec1 + scitanec2<span class="br0">)</span><span class="br0">)</span><span class="sy0">;</span>
+<span class="br0">}</span></pre><ul>
+<li class="level1"><div class="li">
+ V řídících strukturách vždy používejte složené závorky pro bloky a to i v případě, že v bloku je pouze jeden příkaz.
+</div></li>
+</ul>
+
+<pre class="code java"><span class="kw1">while</span> <span class="br0">(</span><span class="st0">''</span>podmínka<span class="st0">''</span><span class="br0">)</span> <span class="br0">{</span>
+    <span class="st0">''</span>příkaz<span class="br0">(</span>y<span class="br0">)</span>
+<span class="br0">}</span>
+<span class="kw1">if</span> <span class="br0">(</span><span class="st0">''</span>podmínka<span class="st0">''</span><span class="br0">)</span> <span class="br0">{</span>
+    příkazy<span class="br0">(</span>y<span class="br0">)</span>
+<span class="br0">}</span><span class="kw1">else</span> <span class="br0">{</span>
+    příkaz<span class="br0">(</span>y<span class="br0">)</span>
+<span class="br0">}</span></pre><ul>
+<li class="level1"><div class="li">
+ Používejte mezeru před otevírací závorkou a okolo operátorů.
+</div></li>
+<li class="level1"><div class="li">
+ V <acronym title="Integrated Development Environment">IDE</acronym> (jako je např. NetBeans) lze v editačním okně přes kontextové menu (pravé myšítko) vybrat <strong>Format</strong>
+a nechat si kód zformátovat. Mnohdy se tím odhalí chyby (např. pokud
+bude jedna odsazena více než předchozí, pravděpodobně jste tu
+ppředchozí neuzavřeli).
+</div></li>
+</ul>
+
+
+</div>
+
+<h3><a name="dokumentace_komentare" id="dokumentace_komentare">Dokumentace, komentáře</a></h3>
+<div class="level3">
+<ul>
+<li class="level1"><div class="li">
+ Na začátku každé třídy uveďte:
+</div><ul>
+<li class="level2"><div class="li">
+ stručný popis třídy,
+</div></li>
+<li class="level2"><div class="li">
+ autora či autory,
+</div></li>
+<li class="level2"><div class="li">
+ označení verze (pořadové číslo či datum poslední změny).
+</div></li>
+</ul>
+</li>
+</ul>
+
+<pre class="code java"><span class="coMULTI">/**
+  * Třída SeznamAkci - obsahuje seznam přípustných příkazů adventury.
+  * Používá se pro rozpoznávání jednotlivých příkazů.
+  *
+  * Tato třída je součástí jednoduché textové hry.
+  *
+  * @author Michael Kolling, Lubos Pavlicek, Jarmila Pavlickova
+  * @version 4.0
+  *@created září 2006
+  */</span></pre><ul>
+<li class="level1"><div class="li">
+ Před každou metodou by měl být její popis doplněný o popis významu jednotlivých parametrů a návratových hodnot. 
+</div></li>
+</ul>
+
+<pre class="code java">  <span class="coMULTI">/**
+   * Metoda hledá nejvyšší hodnotu (maximum) v poli celých čísel.
+   *
+   * @param pole Pole celých čísel, které se bude prohledávat
+   * @return Vrací celé číslo s nejvyšší hodnotou
+   */</span></pre><ul>
+<li class="level1"><div class="li">
+ Popisy tříd a metod by měly být ve formátu vhodném pro javadoc.
+</div></li>
+<li class="level1"><div class="li">
+ Vlastní kód doplňte o komentář pouze v nezbytných případech. Předpokládejte, že čtenář zdrojového textu zná Javu.
+</div></li>
+</ul>
+
+
+</div>
+
+<h2><a name="opakovani_z_algoritmizace" id="opakovani_z_algoritmizace">Opakování z Algoritmizace</a></h2>
+<div class="level2">
+
+</div>
+
+<h3><a name="hlavni_program_komentare" id="hlavni_program_komentare">Hlavní program, komentáře</a></h3>
+<div class="level3">
+<ul>
+<li class="level1"><div class="li">
+ Abychom mohli program spustit, nějaká třída musí obsahovat metodu <code>public static void main(String[] args)</code>. Jméno souboru musí být shodné se jménem třídy obsahující metodu <code>main()</code>. Pozor, hlavička metody <code>main()</code> je závazná! 
+</div></li>
+</ul>
+
+<pre class="code java"><span class="kw2">public</span> <span class="kw2">class</span> Trida <span class="br0">{</span>
+    <span class="kw2">public</span> <span class="kw2">static</span> <span class="kw4">void</span> main<span class="br0">(</span><a target="_blank" href="http://www.google.com/search?hl=en&amp;q=allinurl%3AString+java.sun.com&amp;btnI=I%27m%20Feeling%20Lucky"><span class="kw3">String</span></a><span class="br0">[</span><span class="br0">]</span> args<span class="br0">)</span> <span class="br0">{</span>
+        prikazy<span class="sy0">;</span>
+<span class="br0">}</span></pre><ul>
+<li class="level1"><div class="li">
+ Překlad a spuštění z konzole: 
+</div></li>
+</ul>
+
+
+<p>
+
+<code>javac Trida.java</code> 
+</p>
+
+<p>
+<code>java Trida</code>
+
+</p>
+<ul>
+<li class="level1"><div class="li">
+ Metoda <code>main()</code> může být ve více třídách - vhodné pro testování.
+</div></li>
+<li class="level1"><div class="li">
+ Komentáře 
+</div></li>
+</ul>
+
+<pre class="code java"><span class="co1">// koncořádkový komentář, od dvou lomítek do konce řádku</span>
+&nbsp;
+<span class="coMULTI">/* blokový komentář
+   muze obsahovat více řádků */</span>
+&nbsp;
+<span class="coMULTI">/**
+ * javadoc komentář, slouží k vytváření HTML dokumentace, &lt;b&gt;lze&lt;/b&gt; v něm používat
+ * HTML tagy, podporuje direktivy jako
+ * @autor
+ * @version
+ * @param
+ */</span></pre>
+</div>
+
+<h3><a name="datove_typy" id="datove_typy">Datové typy</a></h3>
+<div class="level3">
+
+</div>
+
+<h4><a name="primitivni_datove_typy" id="primitivni_datove_typy">Primitivní datové typy</a></h4>
+<div class="level4">
+<ul>
+<li class="level1"><div class="li">
+ celočíselné: <code>byte</code> (8b), <code>short</code> (16b), <code>int</code> (32b), <code>long</code> (64b),
+</div></li>
+<li class="level1"><div class="li">
+ reálné: <code>float</code> (32b), <code>double</code> (64b),
+</div></li>
+<li class="level1"><div class="li">
+ znakový: <code>char</code> (16b), používá se UCS2, viz. Unicode,
+</div></li>
+<li class="level1"><div class="li">
+ logický: <code>boolean</code>, není převoditelný na číselné typy a naopak.
+</div></li>
+</ul>
+
+
+</div>
+
+<h4><a name="referencni_datove_typy" id="referencni_datove_typy">Referenční datové typy</a></h4>
+<div class="level4">
+<ul>
+<li class="level1"><div class="li">
+ objekty, patří sem například řetězce reprezentované třídou <code>String</code> nebo pole.
+</div></li>
+</ul>
+
+
+</div>
+
+<h3><a name="deklarace_promennych_konstant" id="deklarace_promennych_konstant">Deklarace proměnných, konstant</a></h3>
+<div class="level3">
+<ul>
+<li class="level1"><div class="li">
+ Vyhrazení paměti, potřeba pro silnou typovou kontrolu.
+</div></li>
+<li class="level1"><div class="li">
+ Nelokální proměnné = proměnné tříd a instancí. Lokální proměnné - uvnitř těl metod.
+</div></li>
+<li class="level1"><div class="li">
+ Neexistují globální proměnné! Pouze statické proměnné.
+</div></li>
+<li class="level1"><div class="li">
+ Nelokální proměnné jsou automaticky inicializovány (např. 0, false), platí i pro prvky pole (můžete se na to spolehnout).
+</div></li>
+<li class="level1"><div class="li">
+ Deklarace <code>modifikátory datovy_typ nazev_promenne</code>
+</div></li>
+<li class="level1"><div class="li">
+ Konstanta - deklarace pomocí klíčového slova <code>final</code>. Např. <code>final int MAX = 10; final int MIN; MIN = 0;</code> - lze do ní jen jednou přiřadit
+</div></li>
+</ul>
+
+
+</div>
+
+<h3><a name="operatory" id="operatory">Operátory</a></h3>
+<div class="level3">
+<ul>
+<li class="level1"><div class="li">
+ Přiřazení: =, operace=, l-hodnota (něco, co má adresu v paměti → proměnná),
+</div></li>
+<li class="level1"><div class="li">
+ Přetypování: implicitní - pouze rozšiřující! Zužující a ostatní explicitní, operátor (dat_typ),
+</div></li>
+<li class="level1"><div class="li">
+ Unární: znaménka plus a minus, inkrement, dekrement,
+</div></li>
+<li class="level1"><div class="li">
+ Binární: +, -, /, *, % …,
+</div></li>
+<li class="level1"><div class="li">
+ Relační: ==, !=, &lt;, &gt;, ⇐, &gt;=, !, &amp;&amp;, || (short-circuit), &amp;, | (plne vyhodnoceni),
+</div></li>
+<li class="level1"><div class="li">
+ Bitové: &amp;, |, !, «, » …,
+</div></li>
+<li class="level1"><div class="li">
+ Pozor na priority, raději závorkovat!
+</div></li>
+</ul>
+
+
+</div>
+
+<h3><a name="ridici_struktury" id="ridici_struktury">Řídící struktury</a></h3>
+<div class="level3">
+<ul>
+<li class="level1"><div class="li">
+ Větvení: úplná a neúplná podmínka 
+</div></li>
+</ul>
+
+<pre class="code java"><span class="kw1">if</span><span class="br0">(</span>podminka<span class="br0">)</span> <span class="br0">{</span>
+    prikazy
+<span class="br0">}</span><span class="kw1">else</span> <span class="kw1">if</span> <span class="br0">(</span>podminka2<span class="br0">)</span> <span class="br0">{</span>
+    prikazy <span class="br0">}</span>
+<span class="kw1">else</span> <span class="br0">{</span>
+    prikazy <span class="br0">}</span></pre><ul>
+<li class="level1"><div class="li"> přepínač, vyraz musí být typu int
+nebo typu, který lze na něj přetypovat - char, byte, short, int. Od
+Javy verze 1.5. je přípustný i výčtový typ = Enum. </div></li>
+</ul>
+
+<pre class="code java"><span class="kw1">switch</span> <span class="br0">(</span>vyraz<span class="br0">)</span> <span class="br0">{</span>
+    <span class="kw1">case</span> nejaka_hodnota:
+        prikazy
+        <span class="kw2">break</span><span class="sy0">;</span>
+    ...
+    <span class="kw2">default</span>:
+        prikazy
+        <span class="kw2">break</span><span class="sy0">;</span>
+<span class="br0">}</span></pre><ul>
+<li class="level1"><div class="li">
+ ternární operátor, pozor na přehlednost! Pozor na asociativitu, je pravá. 
+</div></li>
+</ul>
+
+<pre class="code java"><span class="br0">(</span>podminka <span class="sy0">?</span> prikazy_splneno : prikazy_nesplneno<span class="br0">)</span><span class="sy0">;</span></pre><ul>
+<li class="level1"><div class="li"> návěstí identifikator_navesti:,
+slouží jen pro návraty při break navesti, continue navesti v cyklech!
+Identifikátor návěstí může být uveden pouze před příkazem cyklu nebo
+začátkem bloku!
+</div></li>
+</ul>
+
+<ul>
+<li class="level1"><div class="li">
+ Cykly: Známý počet opakování 
+</div></li>
+</ul>
+
+<pre class="code java"><span class="kw1">for</span> <span class="br0">(</span>vyraz_start<span class="sy0">;</span> vyraz_stop<span class="sy0">;</span> vyraz_iterace<span class="br0">)</span> <span class="br0">{</span>
+    prikazy <span class="br0">}</span></pre><ul>
+<li class="level1"><div class="li">
+ Opakování, dokud je podmínka splněna 
+</div></li>
+</ul>
+
+<pre class="code java"><span class="kw1">while</span> <span class="br0">(</span>podminka<span class="br0">)</span> <span class="br0">{</span>
+    prikazy
+<span class="br0">}</span></pre><ul>
+<li class="level1"><div class="li">
+ Opakování, dokud je podminka splněna, proběhne alespoň jedenkrát (podmínka se vyhodnotí až na konci) 
+</div></li>
+</ul>
+
+<pre class="code java"><span class="kw1">do</span> <span class="br0">{</span>
+    prikazy
+<span class="br0">}</span> <span class="kw1">while</span> <span class="br0">(</span>podminka<span class="br0">)</span><span class="sy0">;</span></pre><ul>
+<li class="level1"><div class="li">
+ Návrat z podprogramu <code>return</code> + návratový typ. Pokud je vyhodnocen <code>return</code> již se neprovádí žádné příkazy uvedené v bloku metody odkud je <code>return</code> volán. 
+</div></li>
+</ul>
+
+
+</div>
+
+<h3><a name="podprogramy_metody" id="podprogramy_metody">Podprogramy = METODY</a></h3>
+<div class="level3">
+<ul>
+<li class="level1"><div class="li">
+ Metody třídy (uvedené modifikátorem <code>static</code>) mohou využívat pouze třídních metod a třídních proměnných (a to všechny i <code>private</code> té samé třídy). Ze všech ostatních tříd mohou využívat pouze statické členy (člen = metodu + atributy), které jsou <code>public</code>. Ze tříd ve stejném balíčku navíc členy bez modifikátoru přístupu, tzv. <em>default</em> a z rodičovských tříd (a rozhraní) navíc mohou používat vše <code>protected</code>.
+</div></li>
+<li class="level1"><div class="li">
+ Metody instance - mohou využívat jak instanční (své) proměnné a metody, tak třídní proměnné a metody.
+</div></li>
+<li class="level1"><div class="li">
+ Deklarace = hlavička + tělo, může být umístěno libovolně v rámci třídy 
+</div></li>
+</ul>
+
+<pre class="code java">specifikatory navratovyTyp jmenoMetody<span class="br0">(</span>formalniParametry<span class="br0">)</span> <span class="br0">{</span>
+  telo metody <span class="br0">(</span>prikazy<span class="br0">)</span>
+<span class="br0">}</span></pre><ul>
+<li class="level1"><div class="li">
+ Metody nic nevracející -  <code>void</code>. Někdy je označujeme pojmem „procedury“.
+</div></li>
+<li class="level1"><div class="li">
+ Java umožňuje pouze předání parametrů hodnotou!
+</div></li>
+<li class="level1"><div class="li"> Přetížené metody - liší se v počtu,
+pořadí, typu formálních parametrů. Metody nelze přetížit pouze na
+základě změny návratového typu! </div></li>
+</ul>
+
+<pre class="code java"><span class="coMULTI">/*
+ * mame bitový vektor, chceme vyresetovat (nastavit na 0)
+ * celý vektor
+ */</span>
+<span class="kw2">public</span> <span class="kw4">void</span> reset<span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span>...<span class="br0">}</span>
+<span class="coMULTI">/*
+ * mame bitový vektor, chceme vyresetovat (nastavit na 0)
+ * pouze bit
+ * @param pořadí bitu, který má být resetován
+ */</span>
+<span class="kw2">public</span> <span class="kw4">void</span> reset<span class="br0">(</span><span class="kw4">int</span> bit<span class="br0">)</span> <span class="br0">{</span>...<span class="br0">}</span></pre><ul>
+<li class="level1"><div class="li"> Java samozřejmě umí rekurzi.
+Používat často, kdykoli to zprůhlední kód. Pozor, někdy může být
+neefektivní (viz Fibonacci rekurzivně vs. iterativně v Algoritmizaci).
+</div></li>
+<li class="level1"><div class="li"> Proměnné metod - lokální proměnné -
+jsou deklarované uvnitř metod a rozsah jejich platnosti je do konce
+bloku (blok je ohraničen párem složených závorek)!
+</div></li>
+<li class="level1"><div class="li">
+ Lokální proměnné mohou zastínit nelokální - přístup pomocí plně kvalifikovaného jména (<code>this.sirka</code>).
+</div></li>
+</ul>
+
+
+</div>
+
+<h3><a name="pole" id="pole">Pole</a></h3>
+<div class="level3">
+<ul>
+<li class="level1"><div class="li">
+ Referenční datový typ: referenční proměnná je typovaná na netriviální datové typy (pole je objekt).
+</div></li>
+<li class="level1"><div class="li">
+ Referenční datový typ není adresa, nelze pointerovou aritmetiku, tak jako v C/C++!
+</div></li>
+<li class="level1"><div class="li">
+ Po deklaraci referenční proměnná nereprezentuje žádná data - v Javě pole i objekty vznikají dynamicky pomocí operátoru <code>new</code> a zanikají, pokud na ně neexistuje žádná reference, zajistí <code>garbage collector</code>.
+</div></li>
+</ul>
+
+<ul>
+<li class="level1"><div class="li">
+ Deklarace a inicializace jednorozměrného pole (lze spojit)
+</div></li>
+</ul>
+
+<pre class="code java"><span class="kw4">int</span><span class="br0">[</span><span class="br0">]</span> pole<span class="sy0">;</span> <span class="co1">// deklarace</span>
+pole = <span class="kw2">new</span> <span class="kw4">int</span><span class="br0">[</span><span class="nu0">1000</span><span class="br0">]</span><span class="sy0">;</span> <span class="co1">//inicializace</span>
+<span class="kw4">int</span> delkaPole = pole.<span class="me1">length</span><span class="sy0">;</span>
+<span class="co1">// počet prvků pole si každé pole pamatuje,</span>
+<span class="co1">// nemusíte jej předávat do metod pracujících s polem jako další parametr</span></pre><ul>
+<li class="level1"><div class="li">
+ Prvky pole jsou automaticky inicalizovány,
+</div></li>
+<li class="level1"><div class="li">
+ práce s polem pomocí indexace, indexuje se od 0 
+</div></li>
+</ul>
+
+<pre class="code java"><span class="kw1">for</span> <span class="br0">(</span><span class="kw4">int</span> i = <span class="nu0">0</span><span class="sy0">;</span> i <span class="sy0">&lt;</span> pole.<span class="me1">length</span><span class="sy0">;</span> i++<span class="br0">)</span>
+    pole<span class="br0">[</span>i<span class="br0">]</span> = <span class="nu0">2</span><span class="sy0">*</span>i<span class="sy0">;</span> <span class="co1">// přiřazení hodnoty</span></pre><ul>
+<li class="level1"><div class="li">
+ Překročení mezí polí je striktně kontrolováno - výjimka,
+</div></li>
+<li class="level1"><div class="li">
+ inicializované pole 
+</div></li>
+</ul>
+
+<pre class="code java">    <span class="kw4">int</span><span class="br0">[</span><span class="br0">]</span> pole = <span class="br0">{</span><span class="nu0">0</span>, <span class="nu0">1</span>, <span class="nu0">1</span>, <span class="nu0">2</span>, <span class="nu0">3</span>, <span class="nu0">5</span><span class="br0">}</span><span class="sy0">;</span>
+    <a target="_blank" href="http://www.google.com/search?hl=en&amp;q=allinurl%3ASystem+java.sun.com&amp;btnI=I%27m%20Feeling%20Lucky"><span class="kw3">System</span></a>.<span class="me1">out</span>.<span class="me1">println</span> <span class="br0">(</span>pole.<span class="me1">length</span><span class="br0">)</span><span class="sy0">;</span> <span class="co1">// vypíše 6</span></pre><ul>
+<li class="level1"><div class="li">
+ Vícerozměrná pole: jsou to pole polí, lze mít různě dlouhá vnitřní pole, inicializace lze i postupně. 
+</div></li>
+</ul>
+
+
+<p>
+Příklad zubatého pole:
+
+</p>
+<pre class="code java"><span class="kw4">int</span><span class="br0">[</span><span class="br0">]</span><span class="br0">[</span><span class="br0">]</span> matice = <span class="kw2">new</span> <span class="kw4">int</span><span class="br0">[</span><span class="nu0">5</span><span class="br0">]</span><span class="br0">[</span><span class="br0">]</span><span class="sy0">;</span>
+<span class="kw1">for</span> <span class="br0">(</span><span class="kw4">int</span> i = <span class="nu0">0</span><span class="sy0">;</span> i <span class="sy0">&lt;</span> matice<span class="br0">[</span>i<span class="br0">]</span>.<span class="me1">length</span><span class="sy0">;</span> i++<span class="br0">)</span>
+    matice<span class="br0">[</span>i<span class="br0">]</span><span class="br0">[</span><span class="br0">]</span> = <span class="kw2">new</span> <span class="kw4">int</span><span class="br0">[</span>i<span class="br0">]</span><span class="sy0">;</span></pre><ul>
+<li class="level1"><div class="li">
+ Inicializované pole vzniká obdobně jako jednorozměrné, opět navíc možnost různě dlouhých vnořených polí.
+</div></li>
+</ul>
+
+
+</div>
+
+<h2><a name="priklady_na_procviceni" id="priklady_na_procviceni">Příklady na procvičení</a></h2>
+<div class="level2">
+
+</div>
+
+<h3><a name="parametry_programu_spusteni_z_konzole" id="parametry_programu_spusteni_z_konzole">Parametry programu, spuštění z konzole</a></h3>
+<div class="level3">
+
+<p>
+
+Napište program obsahující jedinou třídu <code>CatalanArg</code>, jejíž statická metoda <code>catalanNumber</code> vypočte <em>n</em>-té <a href="http://en.wikipedia.org/wiki/Catalan_number" class="urlextern" target="_blank" title="http://en.wikipedia.org/wiki/Catalan_number" rel="nofollow">Katalánovo číslo</a> <em>rekurzivně</em>. Získejte <em>n</em> jako argument programu (předpokládejte, že argument bude vždy jeden a vždy to bude číslo). V případě, že <em>n</em>&lt;0, vypište na chybový výstup vhodnou hlášku, jinak vypočtené číslo vypište na standardní výstup.
+</p>
+
+<p>
+Program přeložte a spusťte bez použití vývojového prostředí - pouze z konzole.
+</p>
+
+</div>
+
+<h3><a name="rekurze_standardni_vstup" id="rekurze_standardni_vstup">Rekurze, standardní vstup</a></h3>
+<div class="level3">
+
+<p>
+
+Modifikujte předchozí program tak, aby <em>n</em> získal ze standardního vstupu (předpokládejte, že na vstupu bude právě jedno číslo). V případě, že <em>n</em>&lt;0, vypište na chybový výstup vhodnou hlášku.
+</p>
+
+</div>
+
+<h3><a name="tabulka_nasobeni" id="tabulka_nasobeni">Tabulka násobení</a></h3>
+<div class="level3">
+
+<p>
+
+Napište třídu <code>Tabulka</code>, která ve svých metodách implementuje následující operace:
+</p>
+<ul>
+<li class="level1"><div class="li">
+ každá tabulka bude mít svůj rozsah, např. malá násobilka od 1 do 9 a soustavu - desítkovou, dvojkovou,
+</div></li>
+<li class="level1"><div class="li">
+ vytvořte konstruktor bez parametrů (default - malá násobilka),
+</div></li>
+<li class="level1"><div class="li">
+ výpis tabulky (metoda <code>vypis</code>, použijte příkaz <code>printf</code>),
+</div></li>
+<li class="level1"><div class="li">
+ výpis tabulky bez popisů (metoda <code>vypis</code>),
+</div></li>
+<li class="level1"><div class="li">
+ přidejte konstruktor s parametrem rozsah,
+</div></li>
+<li class="level1"><div class="li">
+ přidejte konstruktor s parametrem rozsah a radix (číselná soustava),
+</div></li>
+<li class="level1"><div class="li">
+ dolaďte výpis.
+</div></li>
+</ul>
+
+
+</div>
+
+    <!-- wikipage stop -->
+  </div>
+
+  <div class="clearer">&nbsp;</div>
+
+  
+  <div class="stylefoot">
+
+    <div class="meta">
+      <div class="user">
+        Přihlášen(a) jako: Martin Lukes student      </div>
+      <div class="doc">
+        /webdev/www/courses/Y36PJV/data/pages/cviceni/cviceni01.txt · Poslední úprava: 2009/03/02 11:26 autor: gutho1      </div>
+    </div>
+
+   
+    <div class="bar" id="bar__bottom">
+      <div class="bar-left" id="bar__bottomleft">
+                <form class="button btn_revs" method="get" action="/courses/Y36PJV/cviceni/cviceni01"><div class="no"><input name="do" value="revisions" type="hidden"><input value="Starší verze" class="button" accesskey="o" title="Starší verze [ALT+O]" type="submit"></div></form>      </div>
+      <div class="bar-right" id="bar__bottomright">
+                                <form class="button btn_logout" method="get" action="/courses/Y36PJV/cviceni/cviceni01"><div class="no"><input name="do" value="logout" type="hidden"><input name="sectok" value="81ba216ee9679739aa9364af606f46bf" type="hidden"><input value="Odhlásit se" class="button" title="Odhlásit se" type="submit"></div></form>        <form class="button btn_index" method="get" action="/courses/Y36PJV/cviceni/cviceni01"><div class="no"><input name="do" value="index" type="hidden"><input value="Index" class="button" accesskey="x" title="Index [ALT+X]" type="submit"></div></form>        <a class="nolink" href="#dokuwiki__top"><input class="button" value="Nahoru" onclick="window.scrollTo(0, 0)" title="Nahoru" type="button"></a>&nbsp;
+      </div>
+      <div class="clearer"></div>
+    </div>
+
+  </div>
+
+</div>
+
+<div class="footerinc">
+  <a target="_blank" href="https://webdev.felk.cvut.cz/courses/Y36PJV/feed.php" title="Recent changes RSS feed"><img src="cviceni01_soubory/button-rss.png" alt="Recent changes RSS feed" width="80" height="15"></a>
+
+  <a target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/2.0/" rel="license" title="Creative Commons License"><img src="cviceni01_soubory/button-cc.gif" alt="Creative Commons License" width="80" height="15"></a>
+
+  <a target="_blank" href="https://www.paypal.com/xclick/business=andi%40splitbrain.org&amp;item_name=DokuWiki+Donation&amp;no_shipping=1&amp;no_note=1&amp;tax=0&amp;currency_code=EUR&amp;lc=US" title="Donate"><img src="cviceni01_soubory/button-donate.gif" alt="Donate" width="80" height="15"></a>
+
+  <a target="_blank" href="http://www.php.net/" title="Powered by PHP"><img src="cviceni01_soubory/button-php.gif" alt="Powered by PHP" width="80" height="15"></a>
+
+  <a target="_blank" href="http://validator.w3.org/check/referer" title="Valid XHTML 1.0"><img src="cviceni01_soubory/button-xhtml.png" alt="Valid XHTML 1.0" width="80" height="15"></a>
+
+  <a target="_blank" href="http://jigsaw.w3.org/css-validator/check/referer" title="Valid CSS"><img src="cviceni01_soubory/button-css.png" alt="Valid CSS" width="80" height="15"></a>
+
+  <a target="_blank" href="http://wiki.splitbrain.org/wiki:dokuwiki" title="Driven by DokuWiki"><img src="cviceni01_soubory/button-dw.png" alt="Driven by DokuWiki" width="80" height="15"></a>
+
+
+
+<!--
+
+<rdf:RDF xmlns="http://web.resource.org/cc/"
+    xmlns:dc="http://purl.org/dc/elements/1.1/"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+<Work rdf:about="">
+   <dc:type rdf:resource="http://purl.org/dc/dcmitype/Text" />
+   <license rdf:resource="http://creativecommons.org/licenses/by-nc-sa/2.0/" />
+</Work>
+
+<License rdf:about="http://creativecommons.org/licenses/by-nc-sa/2.0/">
+   <permits rdf:resource="http://web.resource.org/cc/Reproduction" />
+   <permits rdf:resource="http://web.resource.org/cc/Distribution" />
+   <requires rdf:resource="http://web.resource.org/cc/Notice" />
+   <requires rdf:resource="http://web.resource.org/cc/Attribution" />
+   <prohibits rdf:resource="http://web.resource.org/cc/CommercialUse" />
+   <permits rdf:resource="http://web.resource.org/cc/DerivativeWorks" />
+   <requires rdf:resource="http://web.resource.org/cc/ShareAlike" />
+</License>
+
+</rdf:RDF>
+
+-->
+
+
+</div>
+
+<div class="no"><img src="cviceni01_soubory/indexer.gif" alt="" width="1" height="1"></div>
+<div style="display: none; position: fixed; top: 0px; left: 0px; z-index: 50; width: 100%; height: 100%;" id="gallery__overlay"><img style="position: relative; cursor: pointer;" src="cviceni01_soubory/loading.gif" id="gallery__loadingImage"></div><div style="display: none; position: absolute; z-index: 60;" id="gallery__lightbox"><img style="cursor: pointer;" id="gallery__lightboxImage"><img src="cviceni01_soubory/expand.gif" style="display: none; position: absolute; top: 15px; left: 15px; z-index: 70; cursor: pointer;" id="gallery__actionImage"><img src="cviceni01_soubory/close.gif" style="display: inline; position: absolute; right: 10px; top: 10px; z-index: 80; cursor: pointer;" id="gallery__closeButton"><img src="cviceni01_soubory/next.gif" style="display: inline; position: absolute; right: 10px; bottom: 10px; z-index: 80; cursor: pointer;" id="gallery__nextButton"><img src="cviceni01_soubory/prev.gif" style="display: inline; position: absolute; left: 10px; bottom: 10px; z-index: 80; cursor: pointer;" id="gallery__prevButton"><span style="display: none; position: absolute; z-index: 80;" id="gallery__lightboxCaption"></span></div></body></html>

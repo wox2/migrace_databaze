@@ -1,0 +1,237 @@
+<html><head> 
+
+ 
+  <title>Programování v jazyku C/C++</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <link href="Programov%C3%A1n%C3%AD%20v%20jazyku%20C_C++_soubory/css.css" rel="stylesheet" type="text/css">
+ </head><body>
+ 
+ <table cellspacing="0" width="100%">
+  <col width="200">
+  <col>
+  <tbody>
+   <tr><td colspan="2" class="ac"><br><h1>Y36PJC - Programování v jazyku C/C++</h1><br></td></tr>
+   <tr>
+    <td class="layout1" valign="top">
+     <table cellpadding="0" width="100%">
+ <col>
+ <col width="50">
+ <col width="50">
+ <col width="50">
+<tbody><tr><td colspan="4" class="menuSel box"><a href="http://moon.felk.cvut.cz/%7Exvagner/Y36PJC/?Sec=1">Harmonogram</a></td></tr>
+<tr><td colspan="4" class="menuSel box"><a href="http://moon.felk.cvut.cz/%7Exvagner/Y36PJC/?Sec=2">Přednášky</a></td></tr>
+<tr><td colspan="4" class="menuSel boxSel"><a href="http://moon.felk.cvut.cz/%7Exvagner/Y36PJC/?Sec=3">Prosemináře</a></td></tr>
+<tr><td>&nbsp;</td><td class="menuSel box ac"><a href="http://moon.felk.cvut.cz/%7Exvagner/Y36PJC/?Sec=301">1</a></td>
+<td class="menuSel box ac"><a href="http://moon.felk.cvut.cz/%7Exvagner/Y36PJC/?Sec=302">2</a></td>
+<td class="menuSel boxSel ac">3</td>
+</tr><tr><td>&nbsp;</td><td class="menuSel box ac"><a href="http://moon.felk.cvut.cz/%7Exvagner/Y36PJC/?Sec=304">4</a></td>
+<td class="menuSel box ac"><a href="http://moon.felk.cvut.cz/%7Exvagner/Y36PJC/?Sec=305">5</a></td>
+<td class="menuSel box ac"><a href="http://moon.felk.cvut.cz/%7Exvagner/Y36PJC/?Sec=306">6</a></td>
+</tr><tr><td>&nbsp;</td><td class="menuSel box ac"><a href="http://moon.felk.cvut.cz/%7Exvagner/Y36PJC/?Sec=307">7</a></td>
+<td>&nbsp;</td><td>&nbsp;</td></tr><tr><td colspan="4" class="menuSel box"><a href="http://moon.felk.cvut.cz/%7Exvagner/Y36PJC/?Sec=4">Semináře</a></td></tr>
+<tr><td colspan="4" class="menuSel box"><a href="http://moon.felk.cvut.cz/%7Exvagner/Y36PJC/?Sec=5">Literatura</a></td></tr>
+<tr><td colspan="4" class="menuSel box"><a href="http://moon.felk.cvut.cz/%7Exvagner/Y36PJC/?Sec=6">Kompilátory</a></td></tr>
+<tr><td colspan="4" class="menuSel box"><a href="http://moon.felk.cvut.cz/%7Exvagner/Y36PJC/?Sec=7">Hodnocení</a></td></tr>
+<tr><td colspan="4" class="menuSel box"><a href="http://moon.felk.cvut.cz/%7Exvagner/Y36PJC/?Sec=9">Sem. práce</a></td></tr>
+</tbody></table>    </td><td valign="top">
+      <h2>Eratosthenovo síto</h2><br>
+ 
+ <p>Sestrojte v C/C++ program, který metodou Eratosthenova síta určí prvočísla 
+ menší nebo rovná zadané mezi. Program realizujte jednak v jednodušší verzi (co 
+ číslo, to prvek pole) a dále i v optimalizované verzi (co číslo, to bit v poli).</p>
+
+ <br>
+ 
+ <h3>Příklad:</h3><br>
+ <pre>  Zadej limit
+  3000
+   2 3 5 7 11 13 17 19 23 29 31 37 41 43 47 53 59 61 67 71 73 79 83 89 97 101 103
+  107 109 113 127 131 137 139 149 151 157 163 167 173 179 181 191 193 197 199 211
+  223 227 229 233 239 241 251 257 263 269 271 277 281 283 293 307 311 313 317 331
+  337 347 349 353 359 367 373 379 383 389 397 401 409 419 421 431 433 439 443 449
+  457 461 463 467 479 487 491 499 503 509 521 523 541 547 557 563 569 571 577 587
+  593 599 601 607 613 617 619 631 641 643 647 653 659 661 673 677 683 691 701 709
+  719 727 733 739 743 751 757 761 769 773 787 797 809 811 821 823 827 829 839 853
+  857 859 863 877 881 883 887 907 911 919 929 937 941 947 953 967 971 977 983 991
+  997 1009 1013 1019 1021 1031 1033 1039 1049 1051 1061 1063 1069 1087 1091 1093 
+  1097 1103 1109 1117 1123 1129 1151 1153 1163 1171 1181 1187 1193 1201 1213 1217 
+  1223 1229 1231 1237 1249 1259 1277 1279 1283 1289 1291 1297 1301 1303 1307 1319 
+  1321 1327 1361 1367 1373 1381 1399 1409 1423 1427 1429 1433 1439 1447 1451 1453 
+  1459 1471 1481 1483 1487 1489 1493 1499 1511 1523 1531 1543 1549 1553 1559 1567 
+  1571 1579 1583 1597 1601 1607 1609 1613 1619 1621 1627 1637 1657 1663 1667 1669 
+  1693 1697 1699 1709 1721 1723 1733 1741 1747 1753 1759 1777 1783 1787 1789 1801 
+  1811 1823 1831 1847 1861 1867 1871 1873 1877 1879 1889 1901 1907 1913 1931 1933 
+  1949 1951 1973 1979 1987 1993 1997 1999 2003 2011 2017 2027 2029 2039 2053 2063 
+  2069 2081 2083 2087 2089 2099 2111 2113 2129 2131 2137 2141 2143 2153 2161 2179 
+  2203 2207 2213 2221 2237 2239 2243 2251 2267 2269 2273 2281 2287 2293 2297 2309 
+  2311 2333 2339 2341 2347 2351 2357 2371 2377 2381 2383 2389 2393 2399 2411 2417 
+  2423 2437 2441 2447 2459 2467 2473 2477 2503 2521 2531 2539 2543 2549 2551 2557 
+  2579 2591 2593 2609 2617 2621 2633 2647 2657 2659 2663 2671 2677 2683 2687 2689 
+  2693 2699 2707 2711 2713 2719 2729 2731 2741 2749 2753 2767 2777 2789 2791 2797 
+  2801 2803 2819 2833 2837 2843 2851 2857 2861 2879 2887 2897 2903 2909 2917 2927 
+  2939 2953 2957 2963 2969 2971 2999
+ </pre>
+
+ <br>
+ 
+ <br>
+<a href="http://moon.felk.cvut.cz/%7Exvagner/Y36PJC/file.php?Sec=303&amp;F=0">Vzorové řešení</a><br>
+<hr>
+ <h2>Zpracování formátu</h2><br>
+ 
+ <p>Napište funkci, která převede čas v zápisu "Hodina:Minuta:Sekunda" ve formě 
+  řetězce na číselné údaje hodina, minuta a sekunda. Funkce bude mít vstupní 
+  parametr řetězec (<tt>const char *</tt>) a tři výstupní parametry pro hodinu, 
+  minutu a vteřinu. Návratovou hodnotou funkce bude nenula (pravda), pokud se 
+  převod zdaří, a nula (nepravda), pokud se převod nepodaří (protože vstupní 
+  řetězec byl v nesprávném tvaru). Doplňte program o funkci <tt>main</tt>, která 
+  otestuje funkcionalitu realizované převodní funkce (zeptá se na vstup, zobrazí 
+  výstup).</p>
+  
+  <h3>Příklad:</h3><br>
+  <pre>   Zadej cas h:m:s
+   12:45:56
+   Format ok, h = 12, m = 45, s = 56
+   
+   Zadej cas h:m:s
+   2:00000000000000000000005:00032
+   Format ok, h = 2, m = 5, s = 32
+   
+   Zadej cas h:m:s
+   12:34
+   Chyba formatu
+   
+   Zadej cas h:m:s
+   12:34:21:42
+   Chyba formatu
+   
+   Zadej cas h:m:s
+   12:ab:32
+   Chyba formatu
+   
+   Zadej cas h:m:s
+   12:72:20
+   Chyba formatu
+  </pre>
+
+ <br>
+ 
+ 
+ <br>
+<a href="http://moon.felk.cvut.cz/%7Exvagner/Y36PJC/file.php?Sec=303&amp;F=1">Vzorové řešení</a><br>
+<hr>
+  <h2>Generování závorek</h2><br>
+ 
+  <p>Napište program, který ze vstupu přečte celé číslo <tt>n</tt>. Poté 
+  vygeneruje všechny řetězce, které jsou tvořené <tt>n</tt> páry závorek, které 
+  jsou do sebe správně vnořené. Dále vypočte i kolik takových závorkových 
+  řetězců existuje.</p>
+  
+  <h3>Příklad:</h3><br>
+  <pre>   Zadej n
+   3
+   ((()))
+   (()())
+   (())()
+   ()(())
+   ()()()
+   Celkem: 5
+   
+   Zadej n 
+   10
+   (((((((((())))))))))
+   ((((((((()()))))))))
+   ((((((((())())))))))
+   ((((((((()))()))))))
+   ((((((((())))())))))
+   ((((((((()))))()))))
+   ((((((((())))))())))
+   ((((((((()))))))()))
+   ((((((((())))))))())
+   ((((((((()))))))))()
+   (((((((()(()))))))))
+   (((((((()()())))))))
+   (((((((()())()))))))
+   (((((((()()))())))))
+   ....................
+   ()()()()()()((()))()
+   ()()()()()()(()(()))
+   ()()()()()()(()()())
+   ()()()()()()(()())()
+   ()()()()()()(())(())
+   ()()()()()()(())()()
+   ()()()()()()()((()))
+   ()()()()()()()(()())
+   ()()()()()()()(())()
+   ()()()()()()()()(())
+   ()()()()()()()()()()
+   Celkem: 16796
+  </pre>
+
+ <br>
+  <br>
+<a href="http://moon.felk.cvut.cz/%7Exvagner/Y36PJC/file.php?Sec=303&amp;F=2">Vzorové řešení</a><br>
+<hr>
+  <h2>Vyhodnocení výrazu</h2><br>
+ 
+  <p>Napište program, který ze vstupu přečte řetězec, který tvoří aritmetický výraz 
+  tvořený celými čísly a operátory +, -, * a /. Program tento řetězec zkontroluje a 
+  pokud je řetězec správně, vypočte hodnotu výrazu.</p>
+  
+  <h3>Příklad:</h3><br>
+  <pre>   Zadej vyraz
+   2 + 6 * 8 * 3 - 5
+   vysledek: 141
+   
+   Zadej vyraz
+   2 * 5 +
+   chyba v zapisu
+  </pre>
+
+ <br>
+  <br>
+<a href="http://moon.felk.cvut.cz/%7Exvagner/Y36PJC/file.php?Sec=303&amp;F=3">Vzorové řešení</a><br>
+<hr>
+  <h2>Numerická integrace</h2><br>
+ 
+  <p>Napište program, který provede numerickou integraci zadané funkce v zadaném intervalu a se zadaným krokem.
+  Vlastní integrace bude provedena obdélníkovou, lichoběžníkovou a .. metodou. Funkce, která bude provádět vlastní 
+  numerickou integraci bude mít parametrem ukazatel na funkci, kterou integruje.</p>
+  
+  <h3>Příklad:</h3><br>
+  <pre>   Zadej interval a pocet iteraci: a b n
+   1 5 100
+
+   Funkce x^2
+   Analyticke reseni:     41.3333
+   Obdelnikova metoda:    41.3328 (0.00129032) %
+   Lichobeznikova metoda: 41.3344 (0.00258065) %
+   Simpsonova metoda:     41.3333 (0) %
+
+   Funkce e^x
+   Analyticke reseni:     145.695
+   Obdelnikova metoda:    145.685 (0.00666636) %
+   Lichobeznikova metoda: 145.714 (0.013333) %
+   Simpsonova metoda:     145.695 (8.88847e-008) %
+
+   Funkce sin (x)
+   Analyticke reseni:     0.25664
+   Obdelnikova metoda:    0.256657 (0.00666698) %
+   Lichobeznikova metoda: 0.256606 (0.0133337) %
+   Simpsonova metoda:     0.25664 (8.8893e-008) %
+
+   Funkce ln (x)
+   Analyticke reseni:     4.04719
+   Obdelnikova metoda:    4.04724 (0.00131763) %
+   Lichobeznikova metoda: 4.04708 (0.0026354) %
+   Simpsonova metoda:     4.04719 (4.35498e-008) %
+  </pre>
+
+ <br>
+  <br>
+<a href="http://moon.felk.cvut.cz/%7Exvagner/Y36PJC/file.php?Sec=303&amp;F=4">Vzorové řešení</a><br>
+    </td>
+   </tr>
+  </tbody>
+ </table>
+ </body></html>

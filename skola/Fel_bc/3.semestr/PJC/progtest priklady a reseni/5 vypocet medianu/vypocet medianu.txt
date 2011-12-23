@@ -1,0 +1,28 @@
+Úkolem je realizovat program, který ze standardního vstupu cte celá císla a vypocte jejich medián. Pokud je zadaných císel sudý pocet, je výsledkem programu chybové hlášení.
+
+Císla na vstupu jsou zadávána postupne, zadávání císel je signalizováno koncem vstupu (eof). Výstupem programu je rádek obsahující informaci o nalezeném mediánu. Program detekuje chybu, pokud nejsou zadaná žádná císla, je zadán sudý pocet císel nebo jsou zadaná císla ve špatném formátu. V takovém prípade vypíše chybové hlášení. V obou prípadech (nalezený medián, detekovaná chyba) je za rádkem výpisu odrádkování (endl)
+
+Pri realizaci programu je zakázáno používat STL. Program beží v omezeném prostredí s casovým limitem 5s, a s omezením volné pameti, které stací k uložení binární reprezentace císel na vstupu. Vstup programu muže být rozsáhlý (rádove stovky tisíc císel), pokud se rozhodnete císla na vstupu radit, nepoužívejte kvadratický algoritmus (mužete využít napr. knihovní qsort).
+Ukázka práce programu:
+
+Zadejte cisla:
+1 2 3 4 5 6 7
+Median: 4
+
+Zadejte cisla:
+1 2 3 1 3 1 3
+Median: 2
+
+Zadejte cisla:
+1 100 2 
+500 3 
+400 -30
+Median: 3
+
+Zadejte cisla:
+error
+Nespravny vstup.
+
+Zadejte cisla:
+10 20 rrr
+Nespravny vstup.

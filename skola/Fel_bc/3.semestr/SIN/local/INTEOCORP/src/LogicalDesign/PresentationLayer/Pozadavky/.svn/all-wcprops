@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/courses/36sin/INTEOCORP/!svn/ver/420/src/LogicalDesign/PresentationLayer/Pozadavky
+END
+VytvoritPozadavekController.java
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svn/courses/36sin/INTEOCORP/!svn/ver/420/src/LogicalDesign/PresentationLayer/Pozadavky/VytvoritPozadavekController.java
+END
+VytvoritPozadavekForm.java
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/courses/36sin/INTEOCORP/!svn/ver/420/src/LogicalDesign/PresentationLayer/Pozadavky/VytvoritPozadavekForm.java
+END
+KomentovatPozadavekController.java
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/svn/courses/36sin/INTEOCORP/!svn/ver/420/src/LogicalDesign/PresentationLayer/Pozadavky/KomentovatPozadavekController.java
+END
+KomentovatPozadavekForm.java
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/courses/36sin/INTEOCORP/!svn/ver/420/src/LogicalDesign/PresentationLayer/Pozadavky/KomentovatPozadavekForm.java
+END
+UzavritPozadavekController.java
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/svn/courses/36sin/INTEOCORP/!svn/ver/420/src/LogicalDesign/PresentationLayer/Pozadavky/UzavritPozadavekController.java
+END
+UzavritPozadavekForm.java
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/courses/36sin/INTEOCORP/!svn/ver/420/src/LogicalDesign/PresentationLayer/Pozadavky/UzavritPozadavekForm.java
+END

@@ -1,0 +1,21 @@
+#Soubor bluej.pkg prevedeny do ASCII
+#Sat Nov 29 12:36:30 CET 2008
+package.showUses=true
+target1.type=PackageTarget
+package.editor.height=286
+target2.type=PackageTarget
+package.editor.x=0
+target2.y=120
+target2.x=60
+package.showExtends=true
+target1.height=62
+target2.width=80
+package.editor.width=207
+target1.width=80
+package.numDependencies=0
+target1.y=10
+target1.x=60
+package.numTargets=2
+target1.name=balon
+target2.name=priklady
+target2.height=62

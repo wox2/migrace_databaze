@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- objednavky = korenovy element -->
+<!ELEMENT objednavky (obchod)>
+  <!ELEMENT obchod (objednavka)>
+    <!ELEMENT objednavka (datum, zbozi, zakaznik, poznamka?)>
+      <!ELEMENT datum (#PCDATA)>  
+      <!ELEMENT zbozi (vyrobek+, podtrzeni)>
+        <!ELEMENT vyrobek (#PCDATA)>
+        <!ELEMENT podtrzeni EMPTY>
+      <!ELEMENT zakaznik (jmeno, email, telefon?, adresa_bydliste, adresa_dorucovaci?)>
+        <!ELEMENT jmeno (#PCDATA)>
+        <!ELEMENT email (#PCDATA)>
+        <!ELEMENT telefon (#PCDATA)>
+        <!ELEMENT adresa_bydliste (ulice, popisne_cislo, psc, mesto)>
+          <!ELEMENT ulice (#PCDATA)>
+          <!ELEMENT popisne_cislo (#PCDATA)>
+          <!ELEMENT psc (#PCDATA)>
+          <!ELEMENT mesto (#PCDATA)>
+        <!ELEMENT adresa_dorucovaci (ulice, popisne_cislo, psc, mesto)>
+        <!ELEMENT poznamka (#PCDATA|odkaz)*>
+          <!ELEMENT odkaz (#PCDATA)>
+
+<!ATTLIST obchod id_obchodu ID #REQUIRED>
+<!ATTLIST objednavka stav (odeslána|doručena|nevyřízena) #REQUIRED>
+<!ATTLIST vyrobek id ID #REQUIRED>
+<!ATTLIST vyrobek cena CDATA #REQUIRED>
+<!ATTLIST vyrobek ks CDATA #REQUIRED>
+<!ATTLIST zakaznik id ID #REQUIRED>
+<!ATTLIST odkaz naid IDREF #IMPLIED>
+
+<!ENTITY autor "Vytvořil: Lukáš Viezán">

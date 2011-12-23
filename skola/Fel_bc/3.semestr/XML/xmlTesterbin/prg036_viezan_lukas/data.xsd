@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="windows-1250"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+    <xs:element name="objednavky">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="obchod" minOccurs="1" maxOccurs="unbounded" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="obchod">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="objednavka" minOccurs="1" maxOccurs="unbounded" />
+            </xs:sequence>
+            <xs:attribute ref="id_obchodu" />
+        </xs:complexType>
+        
+    </xs:element>
+
+    <xs:element name="objednavka">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="datum" minOccurs="1" maxOccurs="1" type="xs:date"/>
+                <xs:element ref="zbozi" minOccurs="1" maxOccurs="1" />
+                <xs:element ref="zakaznik" minOccurs="1" maxOccurs="1" />
+                <xs:element ref="poznamka" minOccurs="0" maxOccurs="1" />
+            </xs:sequence>
+            <xs:attribute ref="stav" use="required" />
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:element name="zbozi">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="vyrobek" minOccurs="1" maxOccurs="unbounded" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:element name="vyrobek">
+        <xs:complexType>
+            <xs:simpleContent>
+                <xs:extension base="xs:string">
+                    <xs:attribute ref="id" />
+                    <xs:attribute name="cena" type="xs:positiveInteger" use="required" />
+                    <xs:attribute name="ks" type="xs:positiveInteger" use="required" />
+                </xs:extension >    
+            </xs:simpleContent>
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:element name="zakaznik">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="jmeno" minOccurs="1" maxOccurs="1" type="xs:string" />
+                <xs:element name="email" minOccurs="0" maxOccurs="1" type="xs:string" />
+                <xs:element name="telefon" minOccurs="0" maxOccurs="1" type="xs:positiveInteger" />
+                <xs:element ref="adresa_bydliste" minOccurs="1" maxOccurs="1" />
+                <xs:element ref="adresa_dorucovaci" minOccurs="0" maxOccurs="1" />
+            </xs:sequence>
+            <xs:attribute ref="id_zakaznika" />
+        </xs:complexType>
+    </xs:element>    
+
+    <xs:element name="adresa_bydliste">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="ulice" minOccurs="1" maxOccurs="1" type="xs:string" />
+                <xs:element name="popisne_cislo" minOccurs="1" maxOccurs="1" type="xs:positiveInteger" />
+                <xs:element name="mesto" minOccurs="1" maxOccurs="1" type="xs:string" />
+                <xs:element ref="psc" minOccurs="1" maxOccurs="1" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="adresa_dorucovaci">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="ulice" minOccurs="1" maxOccurs="1" type="xs:string" />
+                <xs:element name="popisne_cislo" minOccurs="1" maxOccurs="1" type="xs:positiveInteger" />
+                <xs:element name="mesto" minOccurs="1" maxOccurs="1" type="xs:string" />
+                <xs:element ref="psc" minOccurs="1" maxOccurs="1" />            
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="psc" >
+        <xs:simpleType>
+            <xs:restriction base="xs:positiveInteger">
+                <xs:minInclusive value="10000" />
+                <xs:maxInclusive value="99999" />
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+
+    <xs:element name="poznamka">
+        <xs:complexType mixed="true">
+            <xs:sequence>
+                <xs:element ref="odkaz" minOccurs="0" maxOccurs="unbounded" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="odkaz">
+        <xs:complexType>
+            <xs:simpleContent>
+                <xs:extension base="xs:string">
+                    <xs:attribute ref="naid" />
+                </xs:extension >
+            </xs:simpleContent>
+        </xs:complexType>
+        
+      <xs:key name="vyrobekKey">
+       <xs:selector xpath="vyrobek"/>
+       <xs:field xpath="@id"/>
+      </xs:key>
+      
+      <xs:keyref name="vyrobekKeyRef" refer="vyrobekKey">
+       <xs:selector xpath="odkaz"/>
+       <xs:field xpath="@naid"/>
+      </xs:keyref>
+
+    </xs:element>
+    
+    <xs:attribute name="id_obchodu" >
+        <xs:simpleType>
+            <xs:restriction base="xs:ID">
+                <xs:minLength value="4" />
+                <xs:maxLength value="8" />
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:attribute>
+    
+    <xs:attribute name="stav" >
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="odeslána" />
+            <xs:enumeration value="doručena" />
+            <xs:enumeration value="nevyřízena" />
+          </xs:restriction>
+        </xs:simpleType>
+    </xs:attribute>
+    
+    <xs:attribute name="id" >
+        <xs:simpleType>
+            <xs:restriction base="xs:ID">
+                <xs:minLength value="8" />
+                <xs:maxLength value="12" />
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:attribute>
+
+    <xs:attribute name="id_zakaznika" >
+        <xs:simpleType>
+            <xs:restriction base="xs:ID">
+                <xs:minLength value="8" />
+                <xs:maxLength value="12" />
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:attribute>
+
+    <xs:attribute name="naid" >
+        <xs:simpleType>
+            <xs:restriction base="xs:IDREF">
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:attribute>
+    
+</xs:schema>

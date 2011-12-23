@@ -1,0 +1,2 @@
+(: ze seznamu cestujicich vybere vsechny zeny :)
+//passenger[@gender="MRS"]

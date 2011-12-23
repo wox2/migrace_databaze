@@ -1,0 +1,14 @@
+#BlueJ class context
+comment0.target=void\ setUp()
+comment1.target=void\ tearDown()
+comment2.target=void\ testParametrickeKonstruktory()
+comment2.text=\nOtestuje\ parametricke\ verze\ konstruktoru\ vsech\ tri\ testovanych\ trid\na\ demonstruje\ na\ nich,\ jak\ dceriny\ konstrukto\ zavola\ pre\ zacatkem\ \nsve\ prace\ konstruktor\ rodicovskeho\ podobjektu.\n\n
+comment3.target=void\ testMatkaDceraVnucka()
+comment3.text=\nSpusti\ pro\ kazdou\ instanci\ metodu,\ ktera\ se\ jmenuje\ stejne\ jako\nvlastni\ trida\ teto\ instance\ a\ je\ v\ teto\ tride\ definovana.\ \nVystup\ je\ urcen\ pro\ srovnani\ s\ vystupem\ testu\ MatkaMatkaMatka.\n\n
+comment4.target=void\ testMatkaMatkaMatka()
+comment4.text=\nSpusti\ pro\ kazdou\ instanci\ metodu\ matka()\ definovanou\ ve\ tride\ Matka.\nPro\ dceru\ a\ vnucku\ se\ tak\ spusti\ zdedena\ metoda\ se\ vsemi\ dusledky.\ \ \ \ \ \nVystup\ je\ urcen\ pro\ srovnani\ s\ vystupem\ testu\ MatkaDceraVnucka.\nKe\ svemu\ spusteni\ jiz\ vyzaduje\ zavedeni\ dedickych\ vazeb.\ \ \ \ \ \n\n
+comment5.target=void\ testSuper()
+comment5.text=\nDemonstruje\ vliv\ volani\ rodicovskych\ verzi\ prekrytych\ metod\nna\ zpusob\ jejich\ provedeni.\ \ \ \ \ \nKe\ svemu\ spusteni\ jiz\ vyzaduje\ zavedeni\ dedickych\ vazeb.\ \ \ \ \ \n\n
+comment6.target=void\ testZpravy()
+comment6.text=\nDemonstruje\ nezavislost\ statickych\ metod\ na\ definici\ stejnojmenne\nstaticke\ metody\ v\ dcerine\ tride.\n\n
+numComments=7

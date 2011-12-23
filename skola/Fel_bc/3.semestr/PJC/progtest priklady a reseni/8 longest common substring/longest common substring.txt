@@ -1,0 +1,39 @@
+Úkolem je vytvorit funkci LCS, která bude nacházet všechny nejdelší spolecné podretezce dvou vstupních retezcu.
+
+Funkce bude mít hlavicku podle deklarace níže. Vstupem jsou dva retezce v ASCIIZ formátu (binární nulou ukoncené). Retezce jsou oznacené const, tedy jsou urcené pouze ke ctení.
+
+Pokud byl nalezen alespon jeden neprázdný spolecný podretezec, je výsledkem funkce pole odkazu (ukazatelu) na všechny ruzné nalezené spolecné podretezce v ASCIIZ formátu (nulou ukoncené). Pole odkazu je ukoncené hodnotou NULL. Pole nesmí obsahovat duplicitní výskyty podretezcu, ale poradí podretezcu v poli odkazu není omezeno. Funkce LCS alokuje potrebnou pamet operátorem new [], volající (testovací prostredí) zajistí voláním delete [] uvolnení navráceného pole a retezcu v nem odkazovaných. Pokud funkce alokuje nejakou další pamet pro své výpocty, musí ji uvolnit sama.
+
+V prípade, že vstupní retezce nemají žádný spolecný poretezec (presneji, nejdelším spolecným podretezcem je prázdný retezec), funkce vrátí hodnotu NULL.
+
+Algoritmus nalezení nejdelších spolecných retezcu je popsán napr. ve Wikipedii (Longest Common Substring problem). Na rozdíl od popsaného algoritmu, který používá matici nxm (n je délka prvního a m délka druhého vstupního retezce), budete muset problém vyrešit s použitím pouze jednoho rádku (pole), které bude mít délku kratšího vstupního retezce. Pametový limit je nastaven tak, aby nedovolil alokování více rádek matice.
+
+Realizovaná funkce nesmí používat C++ datový typ string, datové typy z STL (vector, list, ...) ani regulární výrazy ze standardní knihovny. Použití techto prostredku povede k chybe pri kompilaci. Funkce beží v testovacím prostredí, kde má omezené pametové možnosti a omezenou dobu behu (20s na testovacím pocítaci, referencní rešení potrebuje méne než 1s).
+
+Odevzdávejte soubor, který obsahuje pouze realizovanou funkci LCS a prípadne další Vámi vytvorené funkce, které se z funkce LCS volají. Odevzdávaný soubor nesmí obsahovat žádné jiné funkce, zejména nesmí obsahovat funkci main. Pro usnadnení odevzdávání lze využít podmínený preklad - ProgTest definuje promennou preprocesoru __PROGTEST__.
+Hlavicka požadované funkce:
+
+char ** LCS ( const char * s1, const char * s2);
+
+Príklad použití funkce:
+
+char ** x;
+
+x = LCS ( "abab", "baba" );
+// x[0] = "bab", x[1] = "aba", x[2] = NULL
+
+x = LCS ( "Hello", "Aloha" );
+// x[0] = "lo", x[1] = NULL  
+
+x = LCS ( "Nejdelsim spolecnym retezcem neni pouze slovo 'nejdelsi'", "Problem nejdelsiho spolecneho retezce" );
+// x[0] = " spolecn", x[1] = " retezce", x[2] = "nejdelsi", x[3] = NULL
+
+x = LCS ( "aaaaaaabbbbbbbcccccddddddeeeeefffff", "abcdef" );
+// x[0] = "ab", x[1] = "bc", x[2] = "cd", x[3] = "de", x[4] = "ef", x[5] = NULL
+
+x = LCS ( "aaaaaaaaaa", "bbb" );
+// x = NULL
+
+x = LCS ( "ab ab ab", "abcabcabc" );
+// x[0] = "ab", x[1] = NULL
+

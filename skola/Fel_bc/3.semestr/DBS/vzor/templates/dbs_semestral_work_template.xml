@@ -1,0 +1,323 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="http://service.felk.cvut.cz/courses/X36DBS/xml/sprojekt_html.xsl"?>
+<!DOCTYPE sproject PUBLIC "-//XMLmind//DTD Sprojekt//EN"
+"http://service.felk.cvut.cz/courses/X36DBS/xml/sprojekt/sprojekt.dtd">
+<sproject>
+  <course>
+    <cname>Databázové systémy</cname>
+
+    <code>XneboY36DBS</code>
+
+    <semester>zimní semestr 2007, lichý|sudý tyden</semester>
+
+    <seminar>den a čas vašeho cvičení</seminar>
+  </course>
+
+  <author>
+    <aname>vaše jméno</aname>
+
+    <uname>vaše uživatelské jméno</uname>
+
+    <email>váš email</email>
+  </author>
+
+  <content>
+    <declaration>Prohlašuji, že jsem svou semestrální práci vypracoval
+    samostatně. Všechny zdroje, ze kterých jsem čerpal, jsou uvedeny v části
+    Odkazy.</declaration>
+
+    <title>Název vaší semestrální práce</title>
+
+    <description>
+      <title>Popis</title>
+
+      <para>Popis musí mít alespoň jeden odstavec.</para>
+    </description>
+
+    <data_model>
+      <title>Datový model</title>
+
+      <dm_picture>
+        <mediaobject>
+          <imageobject>
+            <imagedata fileref="pevecky_sbor.png" />
+          </imageobject>
+        </mediaobject>
+      </dm_picture>
+
+      <dm_discussion>
+        <para>Obrázek je povinný, musí mít alespoň jeden odstavec
+        popisu.</para>
+      </dm_discussion>
+    </data_model>
+
+    <queries>
+      <title>Dotazy</title>
+
+      <dotazy>
+        <dotaz>
+          <popis_dotazu>
+            <para>Popis dotazu - co to má dělat.</para>
+          </popis_dotazu>
+
+          <relacni_algebra>Formulace v relační algebře (není povinná pro všechny dotazy)</relacni_algebra>
+
+          <sql>formulace v SQL;
+může to být několik SQL příkazů;
+nezapomeňte je oddělit středníkem;</sql>
+        </dotaz>
+      </dotazy>
+
+      <pokryti_dotazu>
+        <kategorie_dotazu>
+          <entry>A</entry>
+
+          <entry></entry>
+
+          <entry>jednoduché dotazy (SELECT ... FROM ... WHERE)</entry>
+        </kategorie_dotazu>
+
+        <kategorie_dotazu>
+          <entry>B</entry>
+
+          <entry></entry>
+
+          <entry>Vyber všechny, pro něž platí, že...</entry>
+        </kategorie_dotazu>
+
+        <kategorie_dotazu>
+          <entry>C</entry>
+
+          <entry></entry>
+
+          <entry>Vyber všechny, pro něž NEplatí, že...</entry>
+        </kategorie_dotazu>
+
+        <kategorie_dotazu>
+          <entry>D</entry>
+
+          <entry></entry>
+
+          <entry>Vyber ty, pro něž všechny...</entry>
+        </kategorie_dotazu>
+
+        <kategorie_dotazu>
+          <entry>E</entry>
+
+          <entry></entry>
+
+          <entry>Vyber ty, pro něž žádné...</entry>
+        </kategorie_dotazu>
+
+        <kategorie_dotazu>
+          <entry>F1</entry>
+
+          <entry></entry>
+
+          <entry>spojení - JOIN ON</entry>
+        </kategorie_dotazu>
+
+        <kategorie_dotazu>
+          <entry>F2</entry>
+
+          <entry></entry>
+
+          <entry>spojení - NATURAL JOIN | JOIN USING</entry>
+        </kategorie_dotazu>
+
+        <kategorie_dotazu>
+          <entry>F3</entry>
+
+          <entry></entry>
+
+          <entry>spojení - CROSS JOIN</entry>
+        </kategorie_dotazu>
+
+        <kategorie_dotazu>
+          <entry>F4</entry>
+
+          <entry></entry>
+
+          <entry>polospojení (vnější) - LEFT | RIGHT OUTER JOIN</entry>
+        </kategorie_dotazu>
+
+        <kategorie_dotazu>
+          <entry>F5</entry>
+
+          <entry></entry>
+
+          <entry>plné (vnější) spojení - FULL (OUTER) JOIN</entry>
+        </kategorie_dotazu>
+
+        <kategorie_dotazu>
+          <entry>G1</entry>
+
+          <entry></entry>
+
+          <entry>vnořený dotaz v klauzuli WHERE</entry>
+        </kategorie_dotazu>
+
+        <kategorie_dotazu>
+          <entry>G2</entry>
+
+          <entry></entry>
+
+          <entry>vnořený dotaz v klauzuli FROM</entry>
+        </kategorie_dotazu>
+
+        <kategorie_dotazu>
+          <entry>G3</entry>
+
+          <entry></entry>
+
+          <entry>vnořený dotaz v klauzuli SELECT</entry>
+        </kategorie_dotazu>
+
+        <kategorie_dotazu>
+          <entry>G4</entry>
+
+          <entry></entry>
+
+          <entry>vztažený vnořený dotaz (EXISTS | NOT EXISTS)</entry>
+        </kategorie_dotazu>
+
+        <kategorie_dotazu>
+          <entry>H1</entry>
+
+          <entry></entry>
+
+          <entry>množinové sjednocení - UNION</entry>
+        </kategorie_dotazu>
+
+        <kategorie_dotazu>
+          <entry>H2</entry>
+
+          <entry></entry>
+
+          <entry>množinový rozdíl - MINUS (v Oracle)</entry>
+        </kategorie_dotazu>
+
+        <kategorie_dotazu>
+          <entry>H3</entry>
+
+          <entry></entry>
+
+          <entry>množinový průnik - INTERSECT</entry>
+        </kategorie_dotazu>
+
+        <kategorie_dotazu>
+          <entry>I1</entry>
+
+          <entry></entry>
+
+          <entry>agregační funkce (count | sum | min | max| avg)</entry>
+        </kategorie_dotazu>
+
+        <kategorie_dotazu>
+          <entry>I2</entry>
+
+          <entry></entry>
+
+          <entry>agregační funkce nad seskupenými řádky - GROUP BY
+          (HAVING)</entry>
+        </kategorie_dotazu>
+
+        <kategorie_dotazu>
+          <entry>J</entry>
+
+          <entry></entry>
+
+          <entry>stejný dotaz ve třech různých formulacích SQL</entry>
+        </kategorie_dotazu>
+
+        <kategorie_dotazu>
+          <entry>K</entry>
+
+          <entry></entry>
+
+          <entry>všechny klauzule - SELECT FROM WHERE GROUP BY HAVING ORDER
+          BY</entry>
+        </kategorie_dotazu>
+
+        <kategorie_dotazu>
+          <entry>L</entry>
+
+          <entry></entry>
+
+          <entry>pohled VIEW</entry>
+        </kategorie_dotazu>
+
+        <kategorie_dotazu>
+          <entry>M</entry>
+
+          <entry></entry>
+
+          <entry>dotaz nad pohledem</entry>
+        </kategorie_dotazu>
+
+        <kategorie_dotazu>
+          <entry>L</entry>
+
+          <entry></entry>
+
+          <entry>INSERT .... SELECT příkaz</entry>
+        </kategorie_dotazu>
+
+        <kategorie_dotazu>
+          <entry>M</entry>
+
+          <entry></entry>
+
+          <entry>UPDATE s vnořeným SELECT příkazem</entry>
+        </kategorie_dotazu>
+
+        <kategorie_dotazu>
+          <entry>N</entry>
+
+          <entry></entry>
+
+          <entry>DELETE s vnořeným SELECT příkazem</entry>
+        </kategorie_dotazu>
+      </pokryti_dotazu>
+
+      <comment>
+        <para>V semestrálce se požaduje alespoň 25 SQL příkazů a alespoň 10 dotazů v relační algebře. 
+SQL příkazů samozřejmě můžete mít více (jako v této semestrálce), je ale podstatné, abyste 
+jimi pokryli všechny kategorie ve výše uvedené tabulce. 
+Samozřejmě tedy jeden dotaz může pokrýt více kategorií.</para>
+      </comment>
+    </queries>
+
+    <scripts>
+      <title>Skripty</title>
+
+      <para>Zdroj pro ER-modelář - <link
+      url="pevecky_sbor.xml">ermodel.xml</link></para>
+
+      <para>Skript pro vytvoření databáze - <link
+      url="create.sql">create.sql</link> .</para>
+
+      <para>Skript pro vložení dat do databáze - <link
+      url="data.sql">data.sql</link></para>
+
+      <para>Skript s SQL dotazy, který je možné přímo spustit - <link
+      url="dotazy.sql">dotazy.sql</link></para>
+
+      <para>Výstup předchozího skriptu - <link
+      url="dotazy.html">dotazy.html</link>.</para>
+    </scripts>
+
+    <conclussions>
+      <title>Závěr</title>
+
+      <para>Alespoň jeden odstavec, kde zhodnotíte nabitou zkušenost.</para>
+    </conclussions>
+
+    <references>
+      <title>Odkazy</title>
+
+      <para>[1] Stránky předmětu DBS - <link
+      url="http://service.felk.cvut.cz/courses/X36DBS">http://service.felk.cvut.cz/courses/X36DBS</link></para>
+    </references>
+  </content>
+</sproject>

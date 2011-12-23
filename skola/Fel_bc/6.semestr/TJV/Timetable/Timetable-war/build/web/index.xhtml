@@ -1,0 +1,55 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+
+    <h:head>
+        <title>#{msgs.header}</title>
+    </h:head>
+    <h:body>
+        <ui:composition template="./resources/composition.xhtml">
+            <ui:param name="pageTitle" value="#{msgs.search}" />
+            <ui:define name="content">
+
+        <h1><h:outputText rendered="#{order.ticketEditable == false}" value="#{msgs.search}"  />
+        <h:outputText rendered="#{order.ticketEditable == true}" value="#{msgs.editTicket}" /></h1>
+            <h:form>
+                <h:panelGrid columns="3" columnClasses="dataLabel,,">
+
+                    <h:outputText value="#{msgs.departing}:" />
+                    <h:outputText rendered="#{order.ticketEditable == true}" value="#{order.arriving}" />
+                    <h:selectOneMenu rendered="#{order.ticketEditable == false}" id="dep" value="#{searching.departing}" label="#{msgs.departing}" converter="stationConv" required="true" requiredMessage="#{msgs.requiredMessage}" >
+                            <f:selectItems value="#{stations.allStations}" />
+                        </h:selectOneMenu>
+                        <h:message for="dep" />
+
+                    <h:outputText value="#{msgs.arriving}:" />
+                        <h:selectOneMenu id="arr" value="#{searching.arriving}" label="#{msgs.arriving}" converter="stationConv" required="true" requiredMessage="#{msgs.requiredMessage}" >
+                            <f:selectItems value="#{stations.allStations}" />
+                        </h:selectOneMenu>
+                        <h:message for="arr" />
+                    
+                    <h:outputText value="#{msgs.departure_time}:" />
+                    <h:inputText disabled="#{order.ticketEditable == true}" value="#{searching.departureTime}" id="dt" label="#{msgs.departure_time}" required="true" requiredMessage="#{msgs.requiredMessage}" converter="timeConv" />
+                    <h:message for="dt" errorClass="errorRequired"/>
+
+                    <h:outputText value="#{msgs.date}:" />
+                    <h:inputText disabled="#{order.ticketEditable == true}" value="#{searching.date}" id="da" label="#{msgs.departure_time}" required="true" requiredMessage="#{msgs.requiredMessage}">
+                        <f:convertDateTime pattern="dd. mm. yyyy" />
+                    </h:inputText>
+                    <h:message for="da" errorClass="errorRequired"/>
+
+
+                </h:panelGrid>
+                <h:commandButton value="#{msgs.search_submit}" action="#{searching.findResults}"/>
+                <h:commandButton rendered="#{order.ticketEditable == true}" value="#{msgs.return_to_ticket}" action="order"/>
+                <h:messages globalOnly="true"/>
+
+            </h:form>
+
+            </ui:define>
+        </ui:composition>
+    </h:body>
+</html>

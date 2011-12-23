@@ -1,0 +1,4 @@
+<!ELEMENT Pages (title, stranka*)>
+<!ELEMENT stranka (title, subStranka*)>
+<!ELEMENT subStranka (title)>
+<!ELEMENT title (#PCDATA)>

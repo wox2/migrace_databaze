@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE definice SYSTEM "definice.dtd">
+<definice>
+	<termin>World Wide Web</termin>
+	<vyznam>
+		 (<viz>WWW</viz>, také pouze zkráceně <viz>web</viz>),
+		 ve volném překladu „celosvětová pavučina“,
+		 je označení pro aplikace internetového protokolu <viz>HTTP</viz>.
+		 Je tím myšlena soustava propojených hypertextových dokumentů.
+	</vyznam>
+	<viz>Internet</viz>
+	<zdroj>http://cs.wikipedia.org/wiki/Www</zdroj>
+</definice>

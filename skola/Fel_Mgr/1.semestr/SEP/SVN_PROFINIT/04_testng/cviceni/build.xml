@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project basedir="." default="test" name="CviceniTestNG">
+	<property environment="env"/>
+	<property name="debuglevel" value="source,lines,vars"/>
+	<property name="target" value="1.6"/>
+	<property name="source" value="1.6"/>
+	<path id="CviceniTestNG.classpath">
+		<pathelement location="bin"/>
+		<pathelement location="lib/testng-6.2.jar"/>
+	</path>
+	<target name="init">
+		<mkdir dir="bin"/>
+		<copy includeemptydirs="false" todir="bin">
+			<fileset dir="src">
+				<exclude name="**/*.launch"/>
+				<exclude name="**/*.java"/>
+			</fileset>
+		</copy>
+		<copy includeemptydirs="false" todir="bin">
+			<fileset dir="lib">
+				<exclude name="**/*.launch"/>
+				<exclude name="**/*.java"/>
+			</fileset>
+		</copy>
+		<copy includeemptydirs="false" todir="bin">
+			<fileset dir="test">
+				<exclude name="**/*.launch"/>
+				<exclude name="**/*.java"/>
+			</fileset>
+		</copy>
+	</target>
+	<target name="clean">
+		<delete dir="bin"/>
+	</target>
+	<target depends="clean" name="cleanall"/>
+	<target depends="init" name="build">
+		<echo message="${ant.project.name}: ${ant.file}"/>
+		<javac debug="true" debuglevel="${debuglevel}" destdir="bin" source="${source}" target="${target}">
+			<src path="src"/>
+			<classpath refid="CviceniTestNG.classpath"/>
+		</javac>
+		<javac debug="true" debuglevel="${debuglevel}" destdir="bin" source="${source}" target="${target}">
+			<src path="lib"/>
+			<classpath refid="CviceniTestNG.classpath"/>
+		</javac>
+		<javac debug="true" debuglevel="${debuglevel}" destdir="bin" source="${source}" target="${target}">
+			<src path="test"/>
+			<classpath refid="CviceniTestNG.classpath"/>
+		</javac>
+	</target>
+
+	<!-- Spusti testy nakonfigurované v souboru ngconfig.xml -->
+	<target name="test" depends="build" description="Run TestNG tests">
+		<taskdef name="testng" classname="org.testng.TestNGAntTask" classpathref="CviceniTestNG.classpath"/>
+
+		<testng outputDir="testResults"
+	                haltOnfailure="true"
+	                failureproperty="tests.failed"
+	                timeout="1200000"
+	                verbose="2"
+	                workingdir="bin">
+
+			<jvmarg value="-Xmx512m" />
+			<xmlfileset dir="test" includes="ngconfig.xml" />
+			<classpath refid="CviceniTestNG.classpath"/>
+		</testng>
+
+		<fail if="tests.failed">Some tests failed; see details above.</fail>
+	</target>
+</project>

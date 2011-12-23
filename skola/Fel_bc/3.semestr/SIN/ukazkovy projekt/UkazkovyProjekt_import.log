@@ -1,0 +1,312 @@
+
+Importing Model from XMI
+Root Package: VzorovyProjekt
+Add Classifier Role: Analýza
+Add Classifier Role: Dokumentace
+Add Classifier Role: Design
+Append Package: Analýza
+Add Classifier Role: Model požadavku
+Add Classifier Role: Model prípadu užití
+Add Classifier Role: Doménový model
+Add Classifier Role: Procesy v knihovne
+Append Package: Procesy v knihovne
+Add Classifier Role: 1. Výpujcení knihy
+Add State: Výpujcení knihy
+Append Package: 1. Výpujcení knihy
+Add Classifier Role: 1.1 Vyhledání výtisku
+Add Classifier Role: 1.2 Výpujcení výtisku
+Add Classifier Role: 1.3 Vrácení výtisku
+Add State: 
+Add State: Vyhledání výtisku
+Add State: 
+Add State: Vrácení výtisku
+Add State: 
+Add State: Knihovnik
+Add State: Ctenar
+Add State: Odnesení vypujcených výtisku
+Add State: Výpujcení výtisku
+Add State: 
+Add State: Odnesení vypujcených výtisku
+Append Package: 1.1 Vyhledání výtisku
+Add Classifier Role: ObjectNode2
+Add Classifier Role: ObjectNode1
+Add State: 
+Add State: Vyhledání výtisku v regálu
+Add State: 
+Add State: Vyhledávání v katalogu názvu knih
+Add State: 
+Add State: Vyhledávání v katalogu autoru
+Add State: Predání knih knihovníkovi
+Add State: Knihovník
+Add State: 
+Append Package: 1.2 Výpujcení výtisku
+Add State: 
+Add State: 
+Add State: Kontrola stavu knihy
+Add State: 
+Add State: 
+Add State: Opsání umístení knihy
+Add State: Odnesení knih domu
+Add State: Odložení knihy - odmítnutí výpujcky
+Add State: Zaznamenání výpujcky knihy
+Add State: 
+Add State: Prevzetí knih od ctenáre
+Add State: 
+Add State: 
+Add State: Ctenár
+Append Package: 1.3 Vrácení výtisku
+Add State: Zapsání data vrácení knihy
+Add State: Vypocítání pokuty
+Add State: 
+Add State: 
+Add State: 
+Add State: 
+Add State: 
+Add State: Zápis data vrácení
+Add State: Predání prukazky a knih urcených pro vrácení
+Add State: Odoložení knihy, informování ctenáre o vrácení požadované knihy
+Add State: Vrácení knihy do regálu
+Add State: Uhrazení pokuty
+Add State: Vyhledání stránky v knize výpujcek
+Append Package: Doménový model
+Add Classifier: 
+Add Classifier: Rezervace
+Add Classifier: Autor
+Add Classifier: 
+Add Classifier: Zanr
+Add Classifier: Regal
+Add Classifier: Kniha
+Add Classifier: Pokuta
+Add Classifier: KatalogovaKarta
+Add Classifier: Mistnost
+Add Classifier: Nakladatelstvi
+Add Classifier: Ctenar
+Add Classifier: Vypujcka
+Add Classifier: Vytisk
+Add State: Vyrazeny
+Add State: Ztraceny
+Add State: Vypujceny
+Add State: Volný
+Add State: 
+Append Package: Model požadavku
+Add Classifier Role: Nefunkcní požadavky
+Add Classifier Role: Funkcní požadavky
+Append Package: Funkcní požadavky
+Add Classifier Role: Evidence rezervací
+Add Classifier Role: Vyhledávání knih
+Add Classifier Role: Evidence knih
+Add Classifier Role: Evidence výpujcek
+Append Package: Nefunkcní požadavky
+Add Classifier Role: Provoz na osobním pocítaci
+Add Classifier Role: Grafické uživatelské rozhraní
+Append Package: Model prípadu užití
+Add Classifier Role: Úcastníci
+Add Classifier Role: Prípady užití
+Append Package: Úcastníci
+Add Classifier: Ctenár
+Add Classifier: Knihovník
+Append Package: Prípady užití
+Add Classifier Role: Správa výpujcek
+Add Classifier Role: Evidence ctenáru
+Add Classifier Role: Evidence knih
+Append Package: Evidence ctenáru
+Add Classifier: Zmenit údaje ctenáre
+Add Classifier: Zaregistrovat ctenáre
+Add Classifier Role: IS knihovny
+Append Package: Evidence knih
+Add Classifier: Pridat výtisk
+Add Classifier: Upravit výtisk
+Add Classifier: Vložit žánr
+Add Classifier: Vyradit výtisk
+Add Classifier: Upravit žánr
+Add Classifier: Vložit knihu
+Add Classifier Role: IS knihovny
+Append Package: Správa výpujcek
+Add Classifier: Výpujcit/vrátit knihu
+Add Classifier: Vyhledat knihu
+Add Classifier: Zrušit rezervaci
+Add Classifier: Vložit rezervaci
+Add Classifier Role: IS knihovny
+Append Package: Design
+Add Classifier Role: Relacní datový model
+Add Classifier Role: Model architektury
+Add Classifier Role: Model nasazení
+Add Classifier Role: Návrhový model
+Add Classifier Role: Model komunikace
+Append Package: Model architektury
+Add Classifier: Datová vrstva
+Add Classifier: Prezentacní vrstva
+Add Classifier: Bussines vrstva (Doménová vrstva)
+Add Classifier Role: 
+Add Classifier Role: 
+Append Package: Návrhový model
+Add Classifier Role: knihovna
+Append Package: knihovna
+Add Classifier: 
+Add Classifier: 
+Add Classifier: 
+Add Classifier: 
+Add Classifier Role: dl
+Add Classifier Role: bl
+Add Classifier Role: pl
+Append Package: pl
+Add Classifier Role: view
+Add Classifier Role: controller
+Append Package: controller
+Add Classifier: VypujckaController
+Append Package: view
+Add Classifier: KnihovnaGUI
+Append Package: bl
+Add Classifier Role: vypujcky
+Append Package: vypujcky
+Add Classifier: 
+Add Classifier: ViewVypujckyController
+Add Classifier: SpravceCtenaru
+Add Classifier: VytiskDTO
+Add Classifier: IPohled
+Add Classifier: IZpracovaniVypujckyController
+Add Classifier: 
+Add Classifier: KnihaVypujcek
+Add Classifier: 
+Add Classifier: 
+Add Classifier: StavVolny
+Add Classifier: 
+Add Classifier: StavVypujcen
+Add Classifier: Stav
+Add Classifier: SpravceVytisku
+Add Classifier: ZpracovaniVypujckyController
+Add Classifier: IViewVypujckyController
+Add Classifier: 
+Append Package: dl
+Add Classifier Role: dao
+Add Classifier Role: entity
+Append Package: dao
+Add Classifier: 
+Add Classifier: IVypujckaDAO
+Add Classifier: IVytiskDAO
+Add Classifier: ICtenarDAO
+Add Classifier Role: hibernate
+Append Package: hibernate
+Add Classifier: VytiskDAO
+Add Classifier: CtenarDAO
+Add Classifier: VypujckaDAO
+Append Package: entity
+Add Classifier: Vypujcka
+Add Classifier: Ctenar
+Add Classifier: Kniha
+Add Classifier: Vytisk
+Append Package: Model komunikace
+Add Classifier Role: Vypujcky
+Append Package: Vypujcky
+Add Classifier Role: 
+Add Classifier Role: knihaVypujcek
+Add Classifier Role: vypujcky[i]
+Add Classifier Role: vypujcka
+Add Classifier Role: 
+Add Classifier Role: 
+Add Classifier Role: 
+Add Classifier Role: vytisk
+Add Classifier Role: 
+Add Classifier Role: vytisk
+Add Classifier Role: 
+Add Classifier Role: 
+Add Classifier Role: 
+Add Classifier Role: 
+Append Package: Relacní datový model
+Add Classifier Role: Evidence vypujcek
+Add Classifier Role: Evidence knih
+Append Package: Evidence knih
+Add Classifier: Nakladatelstvi
+Add Classifier: Zanr
+Add Classifier: Kniha
+Add Classifier: zarazenaDo
+Add Classifier: jeNapsana
+Add Classifier: Regal
+Add Classifier: Autor
+Append Package: Evidence vypujcek
+Add Classifier: Pokuta
+Add Classifier: Vypujcka
+Add Classifier: jeRezervovana
+Add Classifier: Rezervace
+Add Classifier: Vytisk
+Add Classifier: Ctenar
+Append Package: Model nasazení
+Add Classifier: PC
+Add Classifier: createTable
+Add Classifier: MySQL 5.0
+Add Classifier: insertData
+Add Classifier: AplikaceKnihovna
+Add Classifier Role: Spuštení aplikace
+Add Classifier Role: JDBC
+Add Classifier Role: RequiredInterface1
+Add Classifier Role: Instalace databáze
+Add Classifier Role: Konfigurace pripojení
+Append Package: Instalace databáze
+Append Package: Konfigurace pripojení
+Append Package: Spuštení aplikace
+Append Package: Dokumentace
+Add Classifier Role: Analytická dokumentace
+Add Classifier Role: Návrhová dokumentace
+Append Package: Analytická dokumentace
+Add Classifier: Vize
+Add Classifier: Pozadavky
+Add Classifier: Model prípadu užití
+Add Classifier: Business model
+Add Classifier: Doménový model
+Append Package: Návrhová dokumentace
+Add Classifier: Relacní datový  model
+Add Classifier: Nasazení
+Add Classifier: Model tríd
+Add Classifier: Model komunikace
+Add Classifier: Architektura
+Resolving Classifiers
+Resolving Owners
+Resolve Package Links
+Add Extensions
+Add Diagrams
+Adding Diagram : Výpujcení knihy
+Adding Diagram : 1.1 Vyhledání výtisku
+Adding Diagram : 1.2 Výpujcení výtisku
+Adding Diagram : 1.3 Vrácení výtisku
+Adding Diagram : Doménový model
+Adding Diagram : Vytisk
+Adding Diagram : Model požadavku
+Adding Diagram : Funkcní požadavky
+Adding Diagram : Nefunkcní požadavky
+Adding Diagram : Model prípadu užití
+Adding Diagram : Úcastníci
+Adding Diagram : Prípady užití
+Adding Diagram : Evidence ctenáru
+Adding Diagram : Evidence knih
+Adding Diagram : Správa výpujcek
+Adding Diagram : Model architektury
+Adding Diagram : Návrhový model tríd
+Adding Diagram : knihovna
+Adding Diagram : pl
+Adding Diagram : controller
+Adding Diagram : view
+Adding Diagram : bl
+Adding Diagram : Výpujcky
+Adding Diagram : Napojení na ostatní vrstvy
+Adding Diagram : dl
+Adding Diagram : InterfaceDAO
+Adding Diagram : dao
+Adding Diagram : entity
+Adding Diagram : Model komunikace
+Adding Diagram : ZpracovaniVypujcky
+Adding Diagram : VypujceniVytisku
+Adding Diagram : VraceniVytisku
+Adding Diagram : Relacní datový model
+Adding Diagram : Evidence knih
+Adding Diagram : Evidence vypujcek
+Adding Diagram : Model nasazeni
+Adding Diagram : Dokumentace
+Adding Diagram : Analytická dokumentace
+Adding Diagram : Návrhová dokumentace
+Resolving DiagramIDs
+Resolving Association Classes
+Resolving Parameter Types
+Resolving Attribute Types
+Resolving Note links
+Fixup external references
+Import Complete!

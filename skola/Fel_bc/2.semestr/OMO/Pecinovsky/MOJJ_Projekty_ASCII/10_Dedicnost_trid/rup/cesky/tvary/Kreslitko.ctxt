@@ -1,0 +1,35 @@
+#BlueJ class context
+comment0.params=g
+comment0.target=Kreslitko(Graphics2D)
+comment0.text=\nInicializuje\ atribut\ adaptovanym\ objkektem.\n@param\ g\n\n
+comment1.params=font
+comment1.target=void\ setFont(Font)
+comment1.text=\nNastavi\ font,\ kterym\ se\ budou\ sazet\ vypisovane\ texty.\n\n@param\ font\ Nastavovany\ font\n\n
+comment10.params=text\ x\ y\ barva
+comment10.target=void\ kresliText(String,\ int,\ int,\ Barva)
+comment10.text=\nVypise\ zadanou\ barvou\ zadany\ text\ na\ zadanych\ souradnicich.\n\n@param\ text\ \ \ \ Vypisovany\ text\n@param\ x\ \ \ \ \ \ \ x-ova\ souradnice\ instance,\ x\=0\ ma\ levy\ okraj\ platna\n@param\ y\ \ \ \ \ \ \ y-ova\ souradnice\ instance,\ y\=0\ ma\ horni\ okraj\ platna\n@param\ barva\ \ \ Barva\ kresleneho\ obdelniku\n\n
+comment2.params=barva
+comment2.target=void\ setPozadi(Barva)
+comment2.text=\nNastavi\ barvu\ pozadi\ kreslenych\ objektu\n\n@param\ barva\ Nastavovana\ barva\ pozadi\n\n
+comment3.params=x\ y\ sirka\ vyska\ barva
+comment3.target=void\ kresliOval(int,\ int,\ int,\ int,\ Barva)
+comment3.text=\nVykresli\ zadanou\ barvou\ na\ zadanych\ souradnicich\ nevyplneny\ oval\nzadaneho\ rozmeru.\n\n@param\ x\ \ \ \ \ \ \ x-ova\ souradnice\ instance,\ x\=0\ ma\ levy\ okraj\ platna\n@param\ y\ \ \ \ \ \ \ y-ova\ souradnice\ instance,\ y\=0\ ma\ horni\ okraj\ platna\n@param\ sirka\ \ \ Sirka\ kresleneho\ ovalu\n@param\ vyska\ \ \ Vyska\ kresleneho\ ovalu\n@param\ barva\ \ \ Barva\ kresleneho\ ovalu\n\n
+comment4.params=x\ y\ sirka\ vyska\ barva
+comment4.target=void\ vyplnOval(int,\ int,\ int,\ int,\ Barva)
+comment4.text=\nVykresli\ zadanou\ barvou\ na\ zadanych\ souradnicich\ vyplneny\ oval\nzadaneho\ rozmeru.\n\n@param\ x\ \ \ \ \ \ \ x-ova\ souradnice\ instance,\ x\=0\ ma\ levy\ okraj\ platna\n@param\ y\ \ \ \ \ \ \ y-ova\ souradnice\ instance,\ y\=0\ ma\ horni\ okraj\ platna\n@param\ sirka\ \ \ Sirka\ kresleneho\ ovalu\n@param\ vyska\ \ \ Vyska\ kresleneho\ ovalu\n@param\ barva\ \ \ Barva\ kresleneho\ ovalu\n\n
+comment5.params=x\ y\ sirka\ vyska\ barva
+comment5.target=void\ kresliRam(int,\ int,\ int,\ int,\ Barva)
+comment5.text=\nVykresli\ zadanou\ barvou\ na\ zadanych\ souradnicich\ nevyplneny\ obdelnik\nzadaneho\ rozmeru.\n\n@param\ x\ \ \ \ \ \ \ x-ova\ souradnice\ instance,\ x\=0\ ma\ levy\ okraj\ platna\n@param\ y\ \ \ \ \ \ \ y-ova\ souradnice\ instance,\ y\=0\ ma\ horni\ okraj\ platna\n@param\ sirka\ \ \ Sirka\ kresleneho\ obdelniku\n@param\ vyska\ \ \ Vyska\ kresleneho\ obdelniku\n@param\ barva\ \ \ Barva\ kresleneho\ obdelniku\n\n
+comment6.params=x\ y\ sirka\ vyska\ barva
+comment6.target=void\ vyplnRam(int,\ int,\ int,\ int,\ Barva)
+comment6.text=\nVykresli\ zadanou\ barvou\ na\ zadanych\ souradnicich\ vyplneny\ obdelnik\nzadaneho\ rozmeru.\n\n@param\ x\ \ \ \ \ \ \ x-ova\ souradnice\ instance,\ x\=0\ ma\ levy\ okraj\ platna\n@param\ y\ \ \ \ \ \ \ y-ova\ souradnice\ instance,\ y\=0\ ma\ horni\ okraj\ platna\n@param\ sirka\ \ \ Sirka\ kresleneho\ obdelniku\n@param\ vyska\ \ \ Vyska\ kresleneho\ obdelniku\n@param\ barva\ \ \ Barva\ kresleneho\ obdelniku\n\n
+comment7.params=x\ y\ barva
+comment7.target=void\ kresliPolygon(int[],\ int[],\ Barva)
+comment7.text=\nVykresli\ zadanou\ barvou\ nevyplneny\ mnohouhelnik\ se\ zadnymi\ vrcholy.\n\n@param\ x\ \ \ \ \ \ \ Pole\ x-ovych\ souradnic\ vrcholu\n@param\ y\ \ \ \ \ \ \ Pole\ y-ovych\ souradnic\ vrcholu\n@param\ barva\ \ \ Barva\ kresleneho\ obdelniku\n\n
+comment8.params=x\ y\ barva
+comment8.target=void\ vyplnPolygon(int[],\ int[],\ Barva)
+comment8.text=\nVykresli\ zadanou\ barvou\ vyplneny\ mnohouhelnik\ se\ zadnymi\ vrcholy.\n\n@param\ x\ \ \ \ \ \ \ Pole\ x-ovych\ souradnic\ vrcholu\n@param\ y\ \ \ \ \ \ \ Pole\ y-ovych\ souradnic\ vrcholu\n@param\ barva\ \ \ Barva\ kresleneho\ obdelniku\n\n
+comment9.params=x1\ y1\ x2\ y2\ barva
+comment9.target=void\ kresliCaru(int,\ int,\ int,\ int,\ Barva)
+comment9.text=\nVykresli\ zadanou\ barvou\ caru\ se\ zadanymi\ vrcholy.\n\n@param\ x1\ \ \ \ \ \ x-ova\ souradnice\ instance,\ x\=0\ ma\ levy\ okraj\ platna\n@param\ y1\ \ \ \ \ \ y-ova\ souradnice\ instance,\ y\=0\ ma\ horni\ okraj\ platna\n@param\ x2\ \ \ \ \ \ x-ova\ souradnice\ konce\n@param\ y2\ \ \ \ \ \ y-ova\ souradnice\ konce\n@param\ barva\ \ \ Barva\ kresleneho\ obdelniku\n\n
+numComments=11

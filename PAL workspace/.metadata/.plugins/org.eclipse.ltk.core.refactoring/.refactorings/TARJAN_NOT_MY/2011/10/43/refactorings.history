@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename compilation unit &apos;Main.java&apos; to &apos;EdmondsAlgorithm.java&apos;&#x0D;&#x0A;- Original project: &apos;TARJAN_NOT_MY&apos;&#x0D;&#x0A;- Original element: &apos;Main.java&apos;&#x0D;&#x0A;- Renamed element: &apos;EdmondsAlgorithm.java&apos;" description="Rename compilation unit &apos;Main.java&apos;" flags="2" id="org.eclipse.jdt.ui.rename.compilationunit" input="/src&lt;{Main.java" name="EdmondsAlgorithm.java" references="false" stamp="1319955944617" version="1.0"/>
+</session>

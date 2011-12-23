@@ -1,0 +1,40 @@
+Úkolem je realizovat funkci UTF8_strlen, která vypocte pocet znaku v retezci kódovaném pomocí UTF-8.
+
+Funkce má rozhraní podle ukázky níže. Má jediný vstupní parametr - ukazatel na pocátek pametového bloku, kde se nachází zpracovávaný reteze. Retezec je v pameti uložen podle pravidel kódování UTF-8 a je ukoncen binární nulou.
+
+Výstupem funkce je návratová hodnota, která udává pocet znaku v retezci. Pokud funkce zjistí, že v retezci je chyba (prohrešek proti kódování UTF-8), pak vrátí hodnotu -1.
+
+Pravidla kódování UTF-8 jsou verejne dostupná - napr. Wikipedie, anglická verze, clánek 'utf-8'. Testovací prostredí zkouší chování dusledne, tj. po realizované funkci je požadované, aby správne vrátila chybu pro retezce, které mají chybu v kódování nebo které jsou sice správne zakódované, ale uložené kódy znaku neodpovídají platným kódovým pozicím UNICODE. Nedovolené hodnoty jsou:
+
+    * hodnoty vetší než 0x10ffff,
+    * hodnoty mezi 0xd800 až 0xdfff vcetne,
+    * hodnoty mezi 0xfdd0 až 0xfdef vcetne,
+    * BOM hodnoty 0xfffe a 0xffff.
+
+Pri realizaci funkce je zakázáno používat C++ datový typ string a datové struktury z STL (vector, list, ...). Použití techto prostredku povede k chybe pri prekladu. Realizovaná funkce musí pocítat s tím, že bude testovaná v omezeném prostredí, kde je omezena na pameti (pro realizaci funkce ale není potreba alokovat žádnou pamet, dostacuje nekolik málo lokálních promenných) a je omezena dobou behu (2 sec pro cca 1000 testu, referencní rešení pracuje v case menším než 0.1 sec).
+
+Odevzdávejte soubopr, který obsahuje pouze realizovanou funkci UTF8_strlen a prípadne další Vámi vytvorené funkce, které se z funkce UTF8_strlen volají. Odevzdávaný soubor nesmí obsahovat žádné jiné funkce, zejména nesmí obsahovat funkci main. Pro usnadnení odevzdávání lze využít podmínený preklad - ProgTest definuje promennou preprocesoru __PROGTEST__.
+Hlavicka požadované funkce:
+
+int UTF8_strlen ( const char * str )
+
+Príklad použití funkce:
+
+UTF8_strlen ( "Quick brown fox jumps over a lazy dog." )
+// vrati 38
+
+UTF8_strlen ( "P\xc5\x99\xc3\xadli\xc5\xa1 \xc5\xbelu\xc5\xa5ou\xc4\x8dk\xc3\xbd k\xc5\xaf\x
+c5\x88 p\xc4\x9bl \xc4\x8f\xc3\xa1""belsk\xc3\xa9 \xc3\xb3""dy." )
+// vrati 38
+
+UTF8_strlen ( "ASCII text." )
+// vrati 11
+
+UTF8_strlen ( "\xc3\x8c""esk\xc3\xa9 znaky." )
+// vrati 12
+
+UTF8_strlen ( "\xe4\xb8\xad\xe5\x9b\xbd\xe6\x96\x87\xe6\x9c\xac" )
+// vrati 4
+
+UTF8_strlen ( "neplatny\xc3retezec" )
+// vrati -1

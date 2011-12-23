@@ -1,0 +1,101 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+    <h:head>
+        <title>#{msgs.header}: #{msgs.search_results}</title>
+    </h:head>
+    <h:body>
+        <ui:composition template="./resources/composition.xhtml">
+            <ui:param name="pageTitle" value="#{msgs.search_results}" />
+            <ui:define name="content">
+                <h:form>
+                    <h1><h:outputText value="#{msgs.search_results}"/></h1>
+                    <ul>
+                        <li>
+                            <strong><h:outputText value="#{msgs.for_route}: "/></strong>
+                            <h:outputText value=" #{searching.departing} – #{searching.arriving}"/></li>
+                        <li>
+                            <strong><h:outputText value="#{msgs.departure_time}: "/></strong>
+                            <h:outputText value="#{searching.departureTime}" converter="timeConv" />,
+                            <h:outputText value="#{searching.date}" >
+                                <f:convertDateTime pattern="dd. mm. yyyy" />
+                            </h:outputText>
+                        </li>
+                    </ul>
+                    <h:outputText rendered="#{searching.resultCount == 0}" value="#{msgs.no_links}"/>
+                    <h:dataTable rendered="#{searching.resultCount != 0}"
+                                 value="#{searching.results}" var="item" styleClass="dataTable">
+
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{msgs.link}" />
+                            </f:facet>
+                            <h:commandLink value="#{item.linkType.shortcut} #{item.linkNumber}" action="#{links.openLink(item)}" />
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{msgs.departure}"/>
+                            </f:facet>
+                            <h:outputText value="#{searching.departing}"/>
+
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value=""/>
+                            </f:facet>
+                        <h:outputText value="#{searching.departureTime(item)}" converter="timeConv" />
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value=""/>
+                            </f:facet>
+                            <h:outputText value="–"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{msgs.arrival}"/>
+                            </f:facet>
+                            <h:outputText value="#{searching.arriving}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value=""/>
+                            </f:facet>
+                            <h:outputText value="#{searching.arrivalTime(item)}" converter="timeConv" />
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{msgs.time} / #{msgs.distance}"/>
+                            </f:facet>
+                            <h:outputText value="#{searching.journeyTime(item)}" converter="timeConv" />
+                            <h:outputText value=" / #{searching.distance(item)} km"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value=""/>
+                            </f:facet>
+                            <h:commandButton  rendered="#{searching.canBeOrdered() == true}" value="#{msgs.order_submit}" action="#{order.addToTicket(item, searching.departing, searching.arriving, searching.date)}" />
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value=""/>
+                            </f:facet>
+                            <h:dataTable value="#{item.notes}" var="n" styleClass="notes">
+                                <h:column>
+                                    <h:outputText value="#{n.explanation}" />
+                                </h:column>
+                            </h:dataTable>
+                        </h:column>
+                    </h:dataTable>
+                    <br/>
+                <h:commandLink action="index" value="#{msgs.back}" immediate="true" />
+                    <h:messages />
+                </h:form>
+            </ui:define>
+        </ui:composition>
+    </h:body>
+</html>
+

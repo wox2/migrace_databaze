@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="windows-1252"?>
+
+<zadani>
+     Podmínky pro splnení DÚ:
+
+    * Odevzdaná úloha smysluplne modeluje zvolenou realitu.
+    * XML dokument musí být validní vuci DTD.
+    * DTD musí obsahovat všechny konstrukty probírané na prednášce, tj.
+          o elementy (prázdné, textové, s modelem obsahu),
+          o atributy,
+          o datové typy (textové, výctové),
+          o klíce a reference na ne,
+          o operátory,
+          o omezení výskytu pro elementy i atributy.
+    * XML dokument musí být dostatecne složitý, tj. splnovat následující požadavky:
+          o Využití elementu, atributu, klícu a referencí na ne, textového i smíšeného obsahu.
+          o Maximální hloubka dokumentu bude min. 5.
+          o Fan-out (pocet podelementu) alespon jednoho z elementu bude min. 10.
+    * DTD nebo XML dokument musí obsahovat:
+          o entity,
+          o instrukce pro zpracování,
+          o sekce CDATA,
+          o komentáre.
+</zadani>

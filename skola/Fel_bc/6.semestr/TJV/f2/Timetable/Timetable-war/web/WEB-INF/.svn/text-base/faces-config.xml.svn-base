@@ -1,0 +1,106 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<!-- =========== FULL CONFIGURATION FILE ================================== -->
+
+<faces-config version="2.0"
+    xmlns="http://java.sun.com/xml/ns/javaee" 
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-facesconfig_2_0.xsd">
+
+    <application>
+        <locale-config>
+            <default-locale>cs</default-locale>
+            <supported-locale>cs</supported-locale>
+        </locale-config>
+        <resource-bundle>
+            <base-name>timetable.translations.translation</base-name>
+            <var>msgs</var>
+        </resource-bundle>
+    </application>
+    <navigation-rule>
+        <from-view-id>/*</from-view-id>
+        <navigation-case>
+            <from-outcome>index</from-outcome>
+            <to-view-id>/index.xhtml</to-view-id>
+            <redirect />
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>admin</from-outcome>
+            <to-view-id>/admin.xhtml</to-view-id>
+            <redirect />
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>passangers</from-outcome>
+            <to-view-id>/passangers.xhtml</to-view-id>
+            <redirect />
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>routes</from-outcome>
+            <to-view-id>/routes.xhtml</to-view-id>
+            <redirect />
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>linktypes</from-outcome>
+            <to-view-id>/linktypes.xhtml</to-view-id>
+            <redirect />
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>links</from-outcome>
+            <to-view-id>/links.xhtml</to-view-id>
+            <redirect />
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>positions</from-outcome>
+            <to-view-id>/positions.xhtml</to-view-id>
+            <redirect />
+        </navigation-case>
+    </navigation-rule>
+    <navigation-rule>
+        <from-view-id>/passangers.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>passanger</from-outcome>
+            <to-view-id>/passanger.xhtml</to-view-id>
+            <redirect />
+        </navigation-case>
+    </navigation-rule>
+    <navigation-rule>
+        <from-view-id>/routes.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>route</from-outcome>
+            <to-view-id>/route.xhtml</to-view-id>
+            <redirect />
+        </navigation-case>
+    </navigation-rule>
+    <navigation-rule>
+        <from-view-id>/linktypes.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>linktype</from-outcome>
+            <to-view-id>/linktype.xhtml</to-view-id>
+            <redirect />
+        </navigation-case>
+    </navigation-rule>
+    <navigation-rule>
+        <from-view-id>/links.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>link</from-outcome>
+            <to-view-id>/link.xhtml</to-view-id>
+            <redirect />
+        </navigation-case>
+    </navigation-rule>
+    <navigation-rule>
+        <from-view-id>/positions.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>position</from-outcome>
+            <to-view-id>/position.xhtml</to-view-id>
+            <redirect />
+        </navigation-case>
+    </navigation-rule>
+    <navigation-rule>
+        <from-view-id>/index.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>results</from-outcome>
+            <to-view-id>/results.xhtml</to-view-id>
+            <redirect />
+        </navigation-case>
+    </navigation-rule>
+</faces-config>

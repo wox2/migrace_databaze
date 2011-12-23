@@ -1,0 +1,132 @@
+Úkolem je realizovat trídu CList, která bude reprezentovat datovou strukturu - seznam retezcu. Trída bude umet provádet základní operace nad seznamem jako je vkládání, odebírání a dotazování. Vnitrne bude trída realizována pomocí dvojsmerne zretezeného spojového seznamu.
+
+Trída bude mít rozhraní podle deklarace níže:
+
+    * Konstruktor bez parametru inicializuje novou prázdnou instanci seznamu.
+    * Kopírující konstruktor bude ve tríde realizovnán, pokud to její implementace vyžaduje.
+    * Destruktor odstraní prostredky alokované instancí. Bude realizován, pokud to implementace bude vyžadovat.
+    * Pretížený operátor = provede hlubokou kopii seznamu. Bude realizován, pokud to implementace bude vyžadovat.
+    * Metoda InsStart vloží nový prvek do seznamu na první pozici (pred stávající první prvek). Úspech operace je signalizován vracením hodnoty true (k neúspechu by nemelo dojít).
+    * Metoda InsEnd vloží nový prvek na konec seznamu (za poslední stávající prvek). Úspech operace je signalizován vracením hodnoty true (k neúspechu by nemelo dojít).
+    * Metoda InsBefore vloží pred stávající prvek seznamu na pozici pos nový prvek. Metoda vrací úspech (true), pokud se vložení zdarilo a neúspech (false), pokud se vložení nezdarilo. Neúspechem operace skoncí napr. pokud je zadán index neexistujícího prvku.
+    * Metoda InsAfter vloží za stávající prvek seznamu na pozici pos nový prvek. Metoda vrací úspech (true), pokud se vložení zdarilo a neúspech (false), pokud se vložení nezdarilo. Neúspechem operace skoncí napr. pokud je zadán index neexistujícího prvku.
+    * Metoda Delete smaže prvek seznamu na pozici pos. Po úspšném provedení operace vrací hodnotu true, pri neúspechu (neexistující prvek) vrací false.
+    * Metoda Read nacte retezec z prvku seznamu na pozici pos a uloží jej do pametového prostoru dst o velikosti dstMax. Alokace pametového prostoru dst je na volajícím. Pokud metoda zjistí, že pametový prostor není dostatecne velký pro uložení retezce, vrací metoda signalizaci neúspechu false. Stejne tak je za neúspech považováno, pokud je požadované nactení neexistujícího prvku (nesprávná hodnota pos). V takovém prípade metoda rovnež vrací false. Úspešné provedení operace ctení je signalizováno návratovou hodnotou true.
+    * Metoda Size zjistí pocet prvku v seznamu.
+    * Clenská promenná m_First oznacuje pocátek spojového seznamu. Zacneme-li prvkem z m_First a postupujeme-li spojovým seznamem ve smeru ukazatelu Next, pak projdeme celý spojový seznam od zacátku do konce. Poslední prvek spojového seznamu má ukazatel Next nastaven na hodnotu NULL. Pokud je spojový seznam prázdný, je m_First nastaven na NULL.
+    * Clenská promenná m_Last oznacuje poslední prvek spojového seznamu. Zacneme-li prvkem z m_Last a postupujeme-li spojovým seznamem ve smeru ukazatelu Prev, pak projdeme celý spojový seznam od konce do zacátku. První prvek spojového seznamu má ukazatel Prev nastaven na hodnotu NULL. Pokud je spojový seznam prázdný, je m_Last nastaven na NULL.
+
+Odevzdávejte soubor, který obsahuje pouze implementovanou trídu CList. Trída musí splnovat verejné rozhraní podle ukázky - pokud Vámi odevzdané rešení nebude obsahovat popsané rozhraní, dojde k chybe pri kompilaci. Do trídy si ale mužete doplnit další metody (verejné nebo i privátní) a clenské promenné. Odevzdávaný soubor musí obsahovat jak deklaraci trídy (popis rozhraní) tak i definice metod, konstruktoru a destruktoru. Je jedno, zda jsou metody implementované inline nebo oddelene. Odevzdávaný soubor nesmí krome implementace trídy CList obsahovat nic jiného, zejména ne funkci main. Pro usnadnení odevzdávání mužete využít toho, že ProgTest definuje promennou preprocesoru __PROGTEST__.
+
+Implementovaná trída nesmí používat datové struktury z STL (vector, list, ...) a C++ datový typ string. Jejich použití povede k chybe pri kompilaci. Trída je testovaná v omezeném prostredí, kde je limitovaná dostupná pamet (postacuej pro uožení zadávaných retezcu v ASCIIZ formátu a režii pro spojové seznamy) a je omezena dobou behu (30s na testovacím pocítaci pro cca 10000 vkládaných/odebíraných prvku, referencní rešení pro výpocet potrebuje cca 3sec).
+
+Pokud to vnitrní struktura trídy vyžaduje, musí trída implementovat destruktor, kopírující konstruktor a pretežovat operátor =.
+Požadované verejné rozhraní trídy:
+
+class CList
+ {
+   public:
+                             CList            ( void );
+
+// pokud je potreba:
+//                             CList            ( const CList & x );
+//                            ~CList            ( void );
+//    CList                  & operator =       ( const CList & x );
+
+    int                      Size             ( void ) const;
+    bool                     InsBefore        ( int pos, const char * Str );
+    bool                     InsAfter         ( int pos, const char * Str );
+    bool                     InsStart         ( const char * Str );
+    bool                     InsEnd           ( const char * Str );
+    bool                     Read             ( int pos, char * dst, int dstMax ) const;
+    bool                     Delete           ( int pos );
+
+   protected:
+    struct TItem
+     {
+       TItem   * Next;
+       TItem   * Prev;
+       char    * String;
+     };
+
+    TItem      * m_First;
+    TItem      * m_Last;
+
+    // dalsi metody a clenske promenne potrebne pro Vasi implementaci
+ };
+
+Ukázka použití trídy:
+
+bool status;
+char temp[100];
+
+CList  S1;
+status = S1 . InsEnd ( "Retezec" );
+// status = true, S1 . Size () => 1
+// ("Retezec")
+status = S1 . InsEnd ( "pokus" );
+// status = true, S1 . Size () => 2
+// ("Retezec", "pokus")
+status = S1 . InsEnd ( "PJC" );
+// status = true, S1 . Size () => 3
+// ("Retezec", "pokus", "PJC")
+status = S1 . Read  ( 0, temp, sizeof ( temp ) );
+// status = true, temp="Retezec"
+status = S1 . Read  ( 1, temp, sizeof ( temp ) );
+// status = true, temp="pokus"
+status = S1 . Read  ( 2, temp, sizeof ( temp ) );
+// status = true, temp="PJC"
+
+CList  S2;
+status = S2 . InsStart ( "first" );
+// status = true, S2 . Size () => 1
+// ("first")
+status = S2 . InsAfter ( 0, "second" );
+// status = true, S2 . Size () => 2
+// ("first", "second")
+status = S2 . InsEnd ( "fourth" );
+// status = true, S2 . Size () => 3
+// ("first", "second", "fourth")
+status = S2 . InsBefore ( 2, "third" );
+// status = true, S2 . Size () => 4
+// ("first", "second", "third", "fourth")
+status = S2 . Read  ( 0, temp, sizeof ( temp ) );
+// status = true, temp="first"
+status = S2 . Read  ( 1, temp, sizeof ( temp ) );
+// status = true, temp="second"
+status = S2 . Read  ( 2, temp, sizeof ( temp ) );
+// status = true, temp="third"
+status = S2 . Read  ( 3, temp, sizeof ( temp ) );
+// status = true, temp="fourth"
+
+CList  S3;
+strncpy ( temp, "first", sizeof ( temp ) );
+status = S3 . InsEnd ( temp );
+// status = true, S3 . Size () => 1
+// ("first")
+strncpy ( temp, "second", sizeof ( temp ) );
+status = S3 . InsEnd ( temp );
+// status = true, S3 . Size () => 2
+// ("first", "second")
+strncpy ( temp, "druhy", sizeof ( temp ) );
+status = S3 . InsEnd ( temp );
+// status = true, S3 . Size () => 3
+// ("first", "second", "druhy")
+strncpy ( temp, "third", sizeof ( temp ) );
+status = S3 . InsEnd ( temp );
+// status = true, S3 . Size () => 4
+// ("first", "second", "druhy", "third")
+status = S3 . Delete ( 2 );
+// status = true, S3 . Size () => 3
+// ("first", "second", "third")
+status = S3 . InsBefore ( 2, "2.5" );
+// status = true, S3 . Size () => 4  
+// ("first", "second", "2.5", "third")
+status = S3 . Read  ( 3, temp, sizeof ( temp ) );
+// status = true, temp="third"
+status = S3 . InsBefore ( 4, "fail" );
+// status = false, S3 . Size () => 4  
+// ("first", "second", "2.5", "third")
+status = S3 . InsAfter ( 3, "ok" );   
+// status = true, S3 . Size () => 5   
+// ("first", "second", "2.5", "third", "ok")

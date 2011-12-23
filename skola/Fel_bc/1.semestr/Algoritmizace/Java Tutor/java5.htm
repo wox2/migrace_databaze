@@ -1,0 +1,828 @@
+<html><head>
+ 
+  <link href="java5_soubory/styly.css" type="text/css" rel="stylesheet">
+  <meta http-equiv="Content-Type" content="text/html;" charset="windows-1250">
+  <meta content="časopis o programování, Internetu a počítačích" name="description">
+  <meta content="PHP,ASM,ASP,developer,forum,fórum,programator,programátor,SQL,Pascal,TP,Jan Sova,Sova,MySQL,C/C++,C++,JS,JavaScript,HW,
+   Visual Basic,Hardware,Software,Flash,Assembler,Asembler,Apache,Java,Python name=" keywords="">
+  <meta http-equiv="Author" content="Jan" sova,="" jansova@programator.cz=""><title>Programátor - Začínáme v Javě (5.): Podmínky, cykly a kolektiv.</title>
+  
+ <style>
+<!--
+.poznamka    { font-size: x-small; }
+.tabklicsl   { font-family: Courier; color:#0000FF }
+.codestr { color: #800080 }
+.codekwd { color: #0000FF }
+.codecom { color: #008000 }
+-->
+</style></head><body topmargin="5" leftmargin="5" bgcolor="#eff1f8" marginheight="0" marginwidth="0">
+
+<table style="border: 1px solid rgb(32, 32, 32);" align="center" bgcolor="black" border="0" cellspacing="1" width="770">
+  <tbody><tr>
+    <td align="center">
+     <span class="top">
+      <a title="Projekt pro všechny programátory" href="http://www.programator.cz/">ProgramatorCZ</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+      <a title="Diskuse na www.programator.cz" href="http://linux.programator.cz/forum">Diskusní
+      fórum</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+      <a title="Největší zdroj dokumentace o Assembleru v ČR" href="http://asm.programator.cz/">ASMDprojekt</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+      <a title="Vtipy nejen pro programátory" href="http://vtipy.programator.cz/">Vtipy</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+      <a title="Knihovna JavaScriptu" href="http://javascript.programator.cz/">JavaScript</a>
+   </span>
+  </td>
+ </tr>
+</tbody></table>
+
+<table style="border-left: 1px solid rgb(32, 32, 32); border-right: 1px solid rgb(32, 32, 32);" align="center" background="java5_soubory/logo.gif" border="0" cellpadding="0" cellspacing="0" width="770">
+  <tbody><tr>
+    <td align="right">
+<!-- BBSTART: ad2.billboard.cz kod 1.1 - SERVER: Časopis(8512), SEKCE: top(1), POZICE: (1), TYPBANNERU: Full Banner(1), OKRAJ: ne, POPIS: ne. -->
+<script language="JavaScript" type="text/javascript">
+<!--
+var bbs=screen,bbn=navigator,bbh;bbh='&ubl='+bbn.browserLanguage+'&ucc='+bbn.cpuClass+'&ucd='+bbs.colorDepth+'&uce='+bbn.cookieEnabled+'&udx='+bbs.deviceXDPI+'&udy='+bbs.deviceYDPI+'&usl='+bbn.systemLanguage+'&uje='+bbn.javaEnabled()+'&uah='+bbs.availHeight+'&uaw='+bbs.availWidth+'&ubd='+bbs.bufferDepth+'&uhe='+bbs.height+'&ulx='+bbs.logicalXDPI+'&uly='+bbs.logicalYDPI+'&use='+bbs.fontSmoothingEnabled+'&uto='+(new Date()).getTimezoneOffset()+'&uui='+bbs.updateInterval+'&uul='+bbn.userLanguage+'&uwi='+bbs.width;
+var bb9_bgcolor='C0C0C0';
+var bb9_text='000000';
+var bb9_link='0000FF';
+if(document.bgColor) { bb9_bgcolor=document.bgColor.substr(1); }
+if(document.fgColor) { bb9_text=document.fgColor.substr(1); }
+if(document.linkColor) { bb9_link=document.linkColor.substr(1); }
+document.write("<IFRAME WIDTH=468 HEIGHT=60 MARGINWIDTH=0 MARGINHEIGHT=0 FRAMEBORDER=0 HSPACE=0 VSPACE=0 SCROLLING=no BORDERCOLOR='#000000' SRC='http://ad2.billboard.cz/please/showit/8512/1/1/1/?typkodu=html&topmargin=0&leftmargin=0"+bbh+"&href="+escape(location.href)+"&popis=ne&okraj=ne&bgcolor="+bb9_bgcolor+"&text="+bb9_text+"&link="+bb9_link+"&bust="+Math.random()+"&target=_top'>");
+document.write("<scr"+"ipt language='JavaScript' type='text/javascript'>");
+document.write("document.write(\"<scr\"+\"ipt language='JavaScript' type='text/javascript' src='http://ad2.billboard.cz/please/showit/8512/1/1/1/?typkodu=js\"+bbh+\"&href=\"+escape(location.href)+\"&popis=ne&okraj=ne&bust=\"+Math.floor(10000000*Math.random())+\"&target=_top'><\/scr\"+\"ipt>\");");
+document.write("<\/scr"+"ipt>");
+document.write("<\/IFRAME>");
+/**///-->
+</script><iframe marginwidth="0" marginheight="0" hspace="0" vspace="0" bordercolor="#000000" src="java5_soubory/a.html" frameborder="0" height="60" scrolling="no" width="468">&lt;script
+language='JavaScript'
+type='text/javascript'&gt;document.write("&lt;scr"+"ipt
+language='JavaScript' type='text/javascript'
+src='http://ad2.billboard.cz/please/showit/8512/1/1/1/?typkodu=js"+bbh+"&amp;href="+escape(location.href)+"&amp;popis=ne&amp;okraj=ne&amp;bust="+Math.floor(10000000*Math.random())+"&amp;target=_top'&gt;&lt;/scr"+"ipt&gt;");&lt;/script&gt;</iframe>
+<noscript>
+<table border="0" cellpadding="0" cellspacing="0"><tr><td>
+<a href="http://ad2.billboard.cz/please/redir.bb/8512/1/1/1/"
+target="_top">
+<img
+src="http://ad2.billboard.cz/please/showit/8512/1/1/1/?typkodu=img"
+border="0" width="468" height="60" alt='Kliknete prosim!'></a>
+</td></tr></table>
+</noscript>
+<!-- BBEND: ad2.billboard.cz kod 1.1 -->
+  </td>
+ </tr>
+</tbody></table>
+
+
+<table style="border: 1px solid rgb(32, 32, 32);" align="center" bgcolor="#ccd1ef" cellspacing="1" width="770">
+ <tbody><tr>
+  <td align="left">
+   <span class="top2">
+    <i>Spolupracujeme</i>:&nbsp;&nbsp;
+    <a href="http://www.webguru.cz/">WebGuru</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+    <a href="http://www.komplikator.cz/">Komplikátor</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+    <a href="http://www.minasite.cz/">MinaSite</a>
+   </span>
+   </td>
+   <td align="right">
+    <span class="top2">
+      <a href="javascript:window.external.AddFavorite%20('http://casopis.programator.cz',%20'%C4%8Casopis%20Program%C3%A1tor-%20Internet,%20PHP,%20JavaScipt,%20Pascal,%20Delphi');">Přidat
+         k oblíbeným položkám</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+      <a href="http://casopis.programator.cz/" onclick="this.style.behavior='url(#default#homepage)';this.setHomePage('http://casopis.programator.cz');return(false);">Nastavit
+         jako výchozí stránku</a>
+    </span>
+   </td>
+ </tr>
+</tbody></table>
+
+
+<table align="center" border="0" cellpadding="0" cellspacing="0" width="770">
+  <tbody><tr>
+
+
+    <td cellspacing="0" cellpadding="0" valign="top" width="120">
+
+    <table style="border-left: 1px solid rgb(32, 32, 32); border-right: 1px solid rgb(32, 32, 32); border-bottom: 1px solid rgb(32, 32, 32);" bgcolor="#dce1ef" cellpadding="0" cellspacing="0">
+     <tbody><tr>
+      <td>
+       <img src="java5_soubory/icon.gif" border="0" height="0" width="1">
+
+
+
+
+      <table align="center" border="0" cellpadding="1" cellspacing="0" width="120">
+        <tbody><tr>
+         <td align="left" bgcolor="#0d3b8e">
+          <span class="supmenu">
+           <b><img src="java5_soubory/double_point.gif">Časopis</b>
+          </span>
+         </td>
+        </tr>
+        <tr>
+         <td>
+          <span class="mn">
+            <img src="java5_soubory/x.gif" width="1"><img src="java5_soubory/odrazka.gif">
+            <a href="http://casopis.programator.cz/index.php"> Hlavní stránka</a><br>
+                        <img src="java5_soubory/x.gif" width="1"><img src="java5_soubory/odrazka.gif">
+                 <a href="http://casopis.programator.cz/index.php?rubrika=9" title="I dnes se vyplatí vědět něco o ASM">                 Assembler            </a><br>
+                             <img src="java5_soubory/x.gif" width="1"><img src="java5_soubory/odrazka.gif">
+                 <a href="http://casopis.programator.cz/index.php?rubrika=8" title="Vše o C/C++">                 C,C++            </a><br>
+                             <img src="java5_soubory/x.gif" width="1"><img src="java5_soubory/odrazka.gif">
+                 <a href="http://casopis.programator.cz/index.php?rubrika=1" title="Programování v Delphi">                 Delphi            </a><br>
+                             <img src="java5_soubory/x.gif" width="1"><img src="java5_soubory/odrazka.gif">
+                 <a href="http://casopis.programator.cz/index.php?rubrika=15" title="Vše o Microsoft  .NET - nové platformě">                 DOTNET            </a><br>
+                             <img src="java5_soubory/x.gif" width="1"><img src="java5_soubory/odrazka.gif">
+                 <a href="http://casopis.programator.cz/index.php?rubrika=10" title="Velmi zajímavá technologie">                 Flash            </a><br>
+                             <img src="java5_soubory/x.gif" width="1"><img src="java5_soubory/odrazka.gif">
+                 <a href="http://casopis.programator.cz/index.php?rubrika=3" title="Stále důležitější jazyk">                 HTML            </a><br>
+                             <img src="java5_soubory/x.gif" width="1"><img src="java5_soubory/odrazka.gif">
+                 <a href="http://casopis.programator.cz/index.php?rubrika=16" title="Java">                 Java            </a><br>
+                             <img src="java5_soubory/x.gif" width="1"><img src="java5_soubory/odrazka.gif">
+                 <a href="http://casopis.programator.cz/index.php?rubrika=4" title="JavaScript">                 JavaScript            </a><br>
+                             <img src="java5_soubory/x.gif" width="1"><img src="java5_soubory/odrazka.gif">
+                 <a href="http://casopis.programator.cz/index.php?rubrika=12" title="Doporučená četba">                 Knihy            </a><br>
+                             <img src="java5_soubory/x.gif" width="1"><img src="java5_soubory/odrazka.gif">
+                 <a href="http://casopis.programator.cz/index.php?rubrika=13" title="Vše možné o Internetu">                 O Internetu            </a><br>
+                             <img src="java5_soubory/x.gif" width="1"><img src="java5_soubory/odrazka.gif">
+                 <a href="http://casopis.programator.cz/index.php?rubrika=2" title="Vše o programování hlavně v Turbo Pascalu">                 Pascal            </a><br>
+                             <img src="java5_soubory/x.gif" width="1"><img src="java5_soubory/odrazka.gif">
+                 <a href="http://casopis.programator.cz/index.php?rubrika=6" title="Vše o PHP">                 PHP            </a><br>
+                             <img src="java5_soubory/x.gif" width="1"><img src="java5_soubory/odrazka.gif">
+                 <a href="http://casopis.programator.cz/index.php?rubrika=5" title="Co je nového v projektu Programátor">                 Pro. programátor            </a><br>
+                             <img src="java5_soubory/x.gif" width="1"><img src="java5_soubory/odrazka.gif">
+                 <a href="http://casopis.programator.cz/index.php?rubrika=7" title="Programy z našeho projektu">                 Programy            </a><br>
+                             <img src="java5_soubory/x.gif" width="1"><img src="java5_soubory/odrazka.gif">
+                 <a href="http://casopis.programator.cz/index.php?rubrika=11" title="Zajímavý programovací jazyk">                 Python            </a><br>
+                             <img src="java5_soubory/x.gif" width="1"><img src="java5_soubory/odrazka.gif">
+                 <a href="http://casopis.programator.cz/index.php?rubrika=14" title="Externí zprávy">                 Tiskové zprávy            </a><br>
+                           </span>
+         </td>
+        </tr>
+      </tbody></table>
+      <p></p>
+
+              <table align="center" border="0" cellpadding="1" cellspacing="0" width="120">
+        <tbody><tr>
+         <td align="left" bgcolor="#0d3b8e">
+          <span class="supmenu">
+           <b><img src="java5_soubory/double_point.gif">Projekty</b>
+          </span>
+         </td>
+        </tr>
+        <tr>
+         <td>
+          <span class="mn">
+            <p>
+             <img src="java5_soubory/x.gif" width="1"><img src="java5_soubory/odrazka.gif">
+            <a href="http://casopis.programator.cz/index.php"> </a><a href="http://linux.programator.cz/projekty/javascript">JScript Planet</a><br>
+             <img src="java5_soubory/x.gif" width="1"><img src="java5_soubory/odrazka.gif">
+            <a href="http://casopis.programator.cz/index.php"> </a><a href="http://linux.programator.cz/forum">ProProjekty</a></p>
+          </span>
+         </td>
+        </tr>
+        </tbody></table>
+        <p></p>
+
+        <table align="center" border="0" cellpadding="1" cellspacing="0" width="120">
+        <tbody><tr>
+         <td align="left" bgcolor="#0d3b8e">
+          <span class="supmenu">
+           <b><img src="java5_soubory/double_point.gif">Služby</b>
+          </span>
+         </td>
+        </tr>
+        <tr>
+         <td>
+          <span class="mn">
+            <p>
+             <img src="java5_soubory/x.gif" width="1"><img src="java5_soubory/odrazka.gif">
+            <a href="http://casopis.programator.cz/index.php"> </a><a href="http://casopis.programator.cz/monitor.programator.cz">Monitoring</a><br>
+          </p></span>
+         </td>
+        </tr>
+        </tbody></table>
+        <p></p>
+
+       <table align="center" border="0" cellpadding="1" cellspacing="0" width="120">
+        <tbody><tr>
+         <td align="left" bgcolor="#0d3b8e">
+          <span class="supmenu">
+           <b><img src="java5_soubory/double_point.gif">Informace</b>
+          </span>
+         </td>
+        </tr>
+        <tr>
+         <td>
+          <span class="mn">
+            <img src="java5_soubory/x.gif" width="1"><img src="java5_soubory/odrazka.gif">
+            <a href="http://casopis.programator.cz/index.php"> </a><a href="http://casopis.programator.cz/r-users.php">Redakce</a><br>
+            <img src="java5_soubory/x.gif" width="1"><img src="java5_soubory/odrazka.gif">
+            <a href="http://casopis.programator.cz/index.php"> </a><a href="http://casopis.programator.cz/o.php">O časopisu</a><br>
+            <img src="java5_soubory/x.gif" width="1"><img src="java5_soubory/odrazka.gif">
+            <a href="http://casopis.programator.cz/index.php"> </a><a href="http://casopis.programator.cz/odkazy.php">Odkazy</a><br>
+            <img src="java5_soubory/x.gif" width="1"><img src="java5_soubory/odrazka.gif">
+            <a href="http://casopis.programator.cz/index.php"> </a><a href="http://casopis.programator.cz/newredaktor.php">Nový redaktor</a><br>
+          </span>
+         </td>
+       </tr>
+      </tbody></table>
+      <p></p>
+
+      <hr size="1" width="110">
+      <p align="center">ISSN 1213-7359
+      <br>
+      </p><p align="center"><font size="1">Šéfredaktor:</font>
+      <br>
+      <span class="mn"><a href="mailto:jansova@programator.cz"><b>Jan Sova</b></a></span>
+      <br>
+      <br>
+      <font size="1">Zástupci šéfredaktora</font>
+      <br>
+      <b>Frerenzy Dawid</b>
+      <br>
+      <b>Krásenský David</b>
+      <br>
+      <br>
+      <font size="1">Šéfredaktoři rubrik</font>
+      <br>
+      <b>Michal Chalupník</b><br>
+      <b>Formánek Jiří</b><br>
+      <b>Pavel Aleš</b><br>
+      <b>Sojka Zdeněk</b><br>
+      <b>Petr Rympler</b><br>
+      <br>
+      <font size="1">Administrátor</font><br>
+      <span class="mn"><a href="mailto:jansova@programator.cz"><b>Jan Sova</b></a></span>
+      <br>
+      <br>
+
+
+
+      </p><p align="center"><a href="http://casopis.programator.cz/"><img src="java5_soubory/icon.gif" alt="Naše ikonka" border="0"></a><br>
+      <a href="http://www.minasite.cz/"><img src="java5_soubory/minasite.gif" alt="MinaSite" border="0"></a><br>
+      <!-- Komplikátorovy stránky - Začátek -->
+       <a href="http://www.komplikator.cz/" target="_top">
+       <img src="java5_soubory/kikona.gif" alt="Komplikátorovy Stránky" border="0" height="31" width="88"></a><br>
+      <!-- Komplikátorovy stránky - Konec -->
+      <a href="http://www.toplist.cz/" target="_top"><img src="java5_soubory/count.gif" alt="TOPlist" border="0"></a><br>
+      <a href="http://www.galactica.cz/"><img src="java5_soubory/gal.gif" alt="GALACTICA" border="0"></a><br>
+
+
+      <br>
+
+      </p><p align="center"><font size="1">Časopis používá redakční systém Sova-Press.</font></p>
+        <br>
+       </td>
+      </tr>
+     </tbody></table>
+
+
+    <!-- vynechání prostoru mezi buňkami -->
+    </td><td width="4">
+    <img src="java5_soubory/x.gif" width="4"></td>
+      <!--
+          zde končí levá část stránky a začíná střed, musí začítt tm, že se
+          definuje velikost buňky pro střed
+      -->    
+    <td valign="top" width="522">
+    <br>
+         <p><span class="nadpis">Začínáme v Javě (5.): Podmínky, cykly a kolektiv.</span> v rubrice Java</p>
+
+        <p><b>V tomto díle dokončíme povídání o základních kamenech - řekneme si o 
+podmínkách, cyklech a balíčcích.</b></p>
+        <p>
+</p><p>Než si však začneme povídat o těchto věcech, musíme vyřešit jeden problém. 
+Totiž, většina příkladů dnes vyžaduje pro svoje smysluplné fungování nějaký 
+vstup. Problém je, že vstup z klávesnice nepatří v Javě zrovna mezi ty 
+nejzákladnější věci (je třeba alespoň trošku znát problematiku proudů či 
+výjimek). Řešení jsou víceméně tři. Asi nejhorší je hodnoty napevno "zadrátovat" 
+už při deklaraci. Zbývající dvě lepší varianty jsou: buď "vstup" simulovat 
+náhodnými hodnotami a nebo použít již hotové metody aniž bychom věděli co znamenají. 
+V dnešních příkladech budu používat první možnost - náhodná čísla.</p>
+
+<p>Pro práci s náhodnými čísly slouží třída <b> <code>java.util.Random</code></b>. Níže 
+najdete podrobněji, co znamená ono <b> <code>java.util</code></b>, ale pro nás to bude 
+momentálně znamenat to, že na začátku každého souboru musí být tento řádek:</p>
+
+<p><code><span class="codekwd">import</span> java.util.Random;</code></p>
+
+<p><b><code>Random</code></b> je pak název samotné třídy. V této třídě je metoda
+<b> <code>
+nextInt()</code></b>, která vrátí nějaké náhodné číslo. Bere jeden celočíselný 
+parametr a vrací náhodné číslo v rozsahu 0 (včetně) až hodnota onoho parametru. 
+Použití je takovéto:</p>
+
+<p><code>Random cislo = <span class="codekwd">new</span> Random();<br>
+<span class="codekwd">int</span> i = cislo.nextInt(10); <span class="codecom">// vrati nahodne cislo v 
+rozsahu 0 az 9</span></code></p>
+
+<p>Nejprve je nutné vytvořit nějaký objekt této třídy - to uděláme na prvním 
+řádku pomocí klíč. slova <b><code>new</code></b>. Od toho okamžiku bude náš 
+objekt generátoru náhodných čísel dostupný pod identifikátorem <b><code>cislo</code></b>. Takže na druhém řádku už můžeme 
+vygenerovat nové náhodné číslo a vložit ho do proměnné <b><code>i</code></b>. 
+Více si o vytváření objektů povíme příště.</p>
+
+<p>Všechny příklady které si tu ukážeme budou "bez omáčky" - tedy budou to jen 
+konkrétní zlomky kódu, které je nutno vložit do nějaké metody. A jelikož zatím 
+umíme pracovat jen s metodou <b><code>main()</code></b>, tak to bude ona. Na 
+konci dílu najdete odkaz na zip soubor s dnešními příklady, které budou komplet, 
+se vším co tam má být. Jak jsem již minule avizoval, všechny třídy jsou na 
+ukázku (velmi jednoduše) komentovány pro nástroj <b><code>javadoc</code></b>. 
+Vytvoření dokumentace se pak provede příkazem na příkazové řádce <b><code>
+javadoc *.java</code></b> (za předpokladu, že je cesta k <b><code>
+javadoc</code></b> v systémové proměnné <code>PATH</code>, a že jej spouštíte z 
+adresáře, kde jsou ony komentované soubory...).</p>
+
+<h4>3.4. Podmínky, cykly a kolektiv.</h4>
+
+<p>Jak jsem se zmínil, Java se hodně nechala inspirovat jazykem 
+C/C++. Neplatí to jen o syntaxi a operátorech, ale i o základních konstrukcích 
+jako jsou podmínky a cykly.</p>
+<p>Často bývá potřeba, aby se program za běhu rozhodl, kterou cestou z několika 
+se má vydat. K tomu slouží <b>podmínky</b> <b> <code>if</code></b> a <b><code>if</code></b>-<b><code>else</code></b>. Fungují tak, že program 
+vyhodnotí zadanou podmínku, a pokud je splněna, provede se určitý kus kódu, pokud 
+splněna není, můžeme určit jiný kód který se v takovém případě provede.</p>
+<p>Vypadá to takto:</p>
+<p><code><span class="codekwd">if</span> (<i>boolean-vyraz</i>) <br>
+<span class="codecom">&nbsp; // prikaz provedeny pri splneni podminky</span></code></p>
+<p>Pokud chceme přidat i kód, který se provede pokud podmínka platná není, 
+napíšeme:</p>
+<p><code><span class="codekwd">if</span> (<i>boolean-vyraz</i>) <br>
+&nbsp;
+<span class="codecom">// prikaz provedeny pri splneni podminky</span><br>
+<span class="codekwd">else</span> <br>
+&nbsp;
+<span class="codecom">// prikaz provedeny pri nesplneni podminky</span></code></p>
+<p>Pokud chceme v některé části vykonat víc, než jeden příkaz, uzavřeme tuto 
+větev do bloku:</p>
+<p><code><span class="codekwd">if</span> (<i>boolean-vyraz</i>) {<br>
+&nbsp;
+prikaz1;<br>
+&nbsp;
+prikaz2;<br>
+&nbsp;
+<span class="codecom">// ...</span><br>
+}</code></p>
+<p>V podmínce může být libovolný výraz, který vrací logické hodnoty - <b><code>boolean</code></b> 
+(což je rozdíl oproti C/C++, kde se používá návratových hodnot <b><code>int</code></b>). Např.:</p>
+<p><code>
+<span class="codekwd">if</span> (i == j) <br>
+&nbsp;
+System.out.println(<span class="codestr">"Cisla se rovnaji"</span>);<br>
+<span class="codekwd">else</span> <br>
+&nbsp;
+System.out.println(<span class="codestr">"Cisla se nerovnaji"</span>);</code></p>
+<p class="poznamka"><b>Poznámka:</b> V tomto a dalších příkladech budeme 
+předpokládat, že proměnné <b><code>i</code></b> a <b><code>j</code></b> jsou 
+celočíselné a už "někde" dostaly konkrétní hodnotu.</p>
+<p>Pokud chceme spojit více podmínek dohromady, můžeme použít logických 
+operátorů <code><b>&amp;&amp;</b></code> (and - logické a),
+<code><b>||</b></code> (or - logické nebo) nebo <b>
+<code>!</code></b> (not - logický 
+zápor), o kterých jsme si už minule řekli. Např:</p>
+<p><code><span class="codekwd">if</span> ((i &lt;
+100) &amp;&amp; (jePrvocislo(i)))<br>
+&nbsp;
+System.out.println(<span class="codestr">"Cislo i je 
+prvocislo mensi jak 100"</span>);</code></p>
+<p class="poznamka"><b>Poznámka:</b> Předpokládejme, 
+že máme někde ve třídě metodu <code><b>jePrvocislo()</b></code>, která vrací <b>
+<code>true</code></b>, pokud je parametr prvočíslem, jinak vrací <b><code>false</code></b>.</p>
+<p>V Javě (stejně jako v C/C++) dochází k tzv. zkrácenému vyhodnocování 
+podmínek. To znamená, že pokud je program schopen rozhodnout o pravdivosti 
+podmínky i když ji ještě nevyhodnotil celou, zbytek už nevyhodnocuje (neboť je 
+to zbytečné). Takže v našem příkladě, pokud bychom měli <code>i</code> větší než (nebo rovno) 
+sto, už by se nezjišťovalo, zda je prvočíslem, protože by bylo jasné, že 
+podmínka bude tak jako tak <code><b>false</b></code>. Tato vlastnost se 
+dá dobře využít především ve dvou situacích. Jednak vhodným pořadím se dá 
+zabránit zbytečným "časovým ztrátám" - jako v tomto případě, protože proces 
+zjišťování prvočísel nepatří mezi nejrychlejší, a jednak se takto dá zabránit 
+běhovým chybám: </p>
+<p><code><span class="codekwd">if</span> ((i%j) == 1)<br>
+&nbsp; System.out.println(<span class="codestr">"Cislo i je delitelne cislem j"</span>);</code></p>
+<p>Náš příklad zjišťuje, zda je číslo <code><b>i</b></code> dělitelné číslem
+<code><b>j</b></code>. Všechno funguje dobře až do 
+okamžiku, kdy <code><b>j</b></code> bude nula. V tomto případě by došlo k chybě (lépe řečeno 
+výjimce, ještě lépe řečeno <code><b>RuntimeException</b></code> a nejlépe 
+řečeno <code><b>ArithmeticException</b></code> :-) ) což by znamenalo 
+problémy (v tomto místě by došlo k ukončení provádění metody bez ohledu na to co 
+by v ní dále ještě následovalo - výjimkám se taky budeme věnovat...). Místo toho můžeme využít fintu se 
+zkráceným vyhodnocováním:</p>
+<p><code><span class="codekwd">if</span> ((j!=0) &amp;&amp; ((i%j) == 1))<br>
+&nbsp; System.out.println(<span class="codestr">"Cislo i je delitelne cislem 
+j"</span>);</code></p>
+<p>Pouhým přidáním výrazu <code>j!=0</code> zajistíme, že nedojde k této chybě, protože pokud 
+by <code>j</code> bylo nula, dělení už neproběhne.</p>
+<p class="poznamka"><b>Poznámka:</b> Pozor, kdyby vyhodnocování podmínek nebylo 
+zkrácené (nebo kdybychom použili operátor bitového AND - <code>&amp;</code>), tak 
+nám kontrola na nulu nepomůže (klidně si to zkuste :-) ).</p>
+<p class="poznamka"><b>Poznámka:</b> Možná se ptáte, proč je dělení nulou chyba, když jsme si říkali, že 
+by to mělo být nekonečno. Problém je, že nekonečna jsou definována pro reálná 
+čísla a my provádíme celočíselné dělení - na po obou stranách operátoru jsou 
+celá čísla. Pokud by alespoň jedno z nich bylo reálné, dělení by bylo rovněž v 
+reálných číslech a k chybě by nedošlo.</p>
+<p>Dalším způsobem jak větvit programy je tzv. <b>přepínač</b> - <code><b>switch</b></code>. Používá se 
+takto:</p>
+<p><code><span class="codekwd">switch </span>(<i>celociselny-vyraz</i>) {<br>
+&nbsp; <span class="codekwd">case</span> <i>hodnota1</i>: prikaz1; <span class="codekwd">break</span>;<br>
+&nbsp; <span class="codekwd">case</span> <i>hodnota2</i>: prikaz2; <span class="codekwd">break</span>;<br>
+&nbsp;
+<span class="codecom">// ...</span><br>
+<span class="codekwd">&nbsp;
+default</span>: prikaz;<br>
+}</code></p>
+<p>Jako <code><i>celociselny-vyraz</i></code> lze použít cokoliv co vrací celočíselnou hodnotu (<code><b>byte</b></code> 
+až <code><b>long</b></code> a <code><b>char</b></code>). Nyní se hodnota tohoto výrazu porovná s hodnotami v 
+jednotlivých větvích <code><b>case</b></code>, a pokud tato hodnota vyhovuje, provede se patřičný 
+příkaz (můžeme použít i blok). Každou větev je nutno ukončit příkazem <code><b>break</b></code>, 
+protože jinak by se automaticky provedly i zbývající větve bez ohledu na to zda 
+by hodnota odpovídala nebo ne až do ukončení pomocí <code><b>break</b></code>. Pokud žádná hodnota 
+nevyhovuje, provede se větev <code><b>default</b></code> (která není povinná). Příklad:</p>
+<p><code>Random rand =  <span class="codekwd">new</span> Random();<span class="codekwd"><br>
+int</span> den = rand.nextInt(7) + 1;<span class="codekwd"><br>
+<br>
+switch</span>(den) {<br>
+&nbsp; <span class="codekwd">case</span> 1: System.out.println(<span class="codestr">"Pondeli"</span>); <span class="codekwd">break</span>;<br>
+&nbsp; <span class="codekwd">case</span> 2: System.out.println(<span class="codestr">"Utery"</span>); <span class="codekwd">break</span>;<br>
+&nbsp; <span class="codekwd">case</span> 3: System.out.println(<span class="codestr">"Streda"</span>); <span class="codekwd">break</span>;<br>
+&nbsp; <span class="codekwd">case</span> 4: System.out.println(<span class="codestr">"Ctvrtek"</span>); <span class="codekwd">break</span>;<br>
+&nbsp; <span class="codekwd">case</span> 5: System.out.println(<span class="codestr">"Patek"</span>); <span class="codekwd">break</span>;<br>
+<span class="codekwd">&nbsp; case</span> 6: System.out.println(<span class="codestr">"Sobota"</span>); <span class="codekwd">
+break</span>;<br>
+&nbsp; <span class="codekwd">case</span> 7: System.out.println(<span class="codestr">"Nedele"</span>); <span class="codekwd">
+break</span>;<br>
+}</code></p>
+<p>Za větví default už <code><b>break</b></code> není nutný. Příklad s vhodným vynecháním ukončením větví pomocí
+<code><b>break</b></code> 
+a <code><b>default</b></code>:</p>
+<p><code>Random rand =  <span class="codekwd">new</span> Random();<span class="codekwd"><br>
+char</span> znak = (<span class="codekwd">char</span>)(rand.nextInt(26) + 97);<br>
+<br>
+<span class="codekwd">switch </span>(znak) {<br>
+&nbsp; <span class="codekwd">case</span> <span class="codestr">'a'</span>:<br>
+&nbsp; <span class="codekwd">case</span> <span class="codestr">'e'</span>:<br>
+&nbsp; <span class="codekwd">case</span> <span class="codestr">'i'</span>:<br>
+&nbsp; <span class="codekwd">case</span> <span class="codestr">'o'</span>:<br>
+&nbsp; <span class="codekwd">case</span> <span class="codestr">'u'</span>:<br>
+&nbsp; <span class="codekwd">case</span> <span class="codestr">'y'</span>: System.out.println(<span class="codestr">"Samohlaska 
+- "</span>+znak); <span class="codekwd">break</span>;<br>
+&nbsp; <span class="codekwd">default</span>: System.out.println(<span class="codestr">"Souhlaska 
+- "</span>+znak);<br>
+}</code></p>
+<p class="poznamka"><b>Poznámka:</b> Při  generování náhodného znaku je 
+vidět, že jsme použili přetypování, protože výsledek naší operace s náhodným 
+číslem je typu <code><b>int</b></code>, a my potřebujeme typ <code><b>char</b></code>. 
+A jelikož typ <code><b>int</b></code> je "širší", mohlo by dojít ke ztrátě 
+přesnosti a proto to nelze nechat na automatickém přetypování. A pokud jde o 
+přičítání 97 k náhodnému číslu - začátek Unicode je stejný jako dolní část 
+tabulky ASCII - proto má 'a' hodnotu 97.</p>
+<p>Další skupinou programových konstrukcí jsou <b>cykly</b>. Ty umožňují opakování 
+nějaké části kódu. Existují tři druhy cyklů: <code><b>while</b></code>, <code>
+<b>do</b></code>-<code><b>while</b></code> a <code><b>for</b></code>. Cyklus
+<code><b>while</b></code> 
+vypadá takto:</p>
+<p><code><span class="codekwd">while</span> (<i>boolean-vyraz</i>)<br>
+&nbsp;
+prikaz;</code></p>
+<p>Opakován může být jak jeden příkaz, tak i celý blok. Jeho vykonávání se 
+opakuje tak dlouho, doku je výraz v podmínce platný (<code><b>true</b></code>).</p>
+<p>Jako příklad si uveďme program, který bude vypisovat náhodná čísla tak 
+dlouho, dokud nenarazí na nulu (kterou již nevypíše):</p>
+<p><code>Random rand = <span class="codekwd">new</span> Random();<br>
+<span class="codekwd">int</span> i;<br>
+<br>
+<span class="codekwd">while</span> ((i = rand.nextInt(10)) != 0) <br>
+&nbsp; System.out.println(<span class="codestr">"Cislo: "</span>+i);</code></p>
+<p class="poznamka"><b>Poznámka:</b> Jak vidno, není problém provést v podmínce 
+generování nového čísla - výraz <code><b>i = rand.nextInt(10)</b></code> (který 
+musí být v závorce) vrací hodnotu (je to stejné jako když provádíme vícenásobné 
+přiřazení) - v tomto případě proměnné <code><b>i</b></code>, kterou můžeme 
+porovnat s nulou...</p>
+<p>Cyklus <code><b>do</b></code>-<code><b>while</b></code> je podobný:</p>
+<p><code> <span class="codekwd">do</span><br>
+&nbsp;
+prikaz;<br>
+<span class="codekwd">while</span> (<i>boolean-vyraz</i>);</code></p>
+<p>V tomto příkladě vypíšeme první větu z nějakého řetězce. Věta je ukončena 
+tečkou a zobrazí se celá - tedy včetně tečky:</p>
+<p><code>String s = <span class="codestr">"Dnes je velice krasne. Slunicko 
+sviti, ptacci zpivaji a ja sedim a pisi clanek."</span>;<br>
+<span class="codekwd">int</span> i = -1;<br>
+<br>
+<span class="codekwd">do</span> {<br>
+&nbsp; i++;<br>
+&nbsp; System.out.print(s.charAt(i));<br>
+} <span class="codekwd">while</span> (s.charAt(i) != <span class="codestr">'.'</span>);</code></p>
+<p>Třída <code><b>String</b></code> obsahuje metodu <code><b>charAt()</b></code>, 
+která vrací znak na pozici, která se udává v parametru. Číslování začíná na 0. 
+Metoda <code><b>System.out.print()</b></code> pracuje podobně jako její 
+kolegyně, jen nedělá konce řádku. Samozřejmě, příklad by šel vylepšit. Jednak 
+inkremetaci bychom mohli dát do výpisu znaku (resp. do prvního použití proměnné
+<code><b>i</b></code> ve tvaru <code><b>++i</b></code>) a jednak by bylo vhodné 
+přidat podmínku, zda proměnná <code><b>i</b></code> "nejde" za hranice řetězce - 
+musela by být menší než délka řetězce (a ta se zjišťuje pomocí metody <code><b>
+String.length()</b></code> - takže v našem případě <code><b>s.length()</b></code>) 
+- v případě našeho řetězce to není potřeba, ale pokud by to měl být obecný 
+algoritmus bylo by to nutné (jinak by při překročení přes hranice řetězce 
+znamenalo chybu (výjimku)).</p>
+<p>Kód se opět opakuje tak dlouho, dokud je podmínka platná (na rozdíl od 
+Pascalu!). Rozdíl oproti cyklu <code><b>while</b></code> spočívá v tom, že cyklus
+<code><b>do</b></code>-<code><b>while</b></code> se vždy 
+provede alespoň jednou (protože podmínka se testuje až na konci), zatímco cyklus
+<code><b>while</b></code> se nemusí provést ani jednou (pokud je hned podmínka
+<code><b>false</b></code>).</p>
+<p>Cyklus <code><b>for</b></code> je o něco složitější a vypadá takto:</p>
+<p><code> <span class="codekwd">for</span> (<i>inicializace</i>; <i>podminka</i>; 
+<i>krok</i>)<br>
+&nbsp;
+prikaz;</code></p>
+<p>V cyklu <code><b>for</b></code> přímo určíme, kolikrát se má jeho tělo opakovat. K tomu jak přesně 
+funguje bude nejlepší si to ukázat. Následující cyklus vypíše čísla od 0 do 9:</p>
+<p><code> <span class="codekwd">for</span> (<span class="codekwd">int</span> i = 0 ; i &lt; 10 ; i++)<br>
+&nbsp;
+System.out.println(i);</code></p>
+<p>Tedy, v první části jsme inicializovali proměnnou, která bude sloužit k 
+počítání průchodů, dále jsme zadali kolikrát se má cyklus provést - tedy tak 
+dlouho, dokud bude i menší jako deset - tedy desetkrát (začínáme na 0!) a 
+nakonec "nastavíme" krok - proměnná <code><b>i</b></code> se bude zvyšovat o jedničku.</p>
+<p>Tělo cyklu může být opět celý blok. Cyklus for má několik zvláštností. Jednou 
+z nich je to, že jakákoliv složka v hlavičce (inicializace, podmínka či krok) 
+mohou být vynechány. Např.:</p>
+<p><code> <span class="codekwd">for</span> ( ; i &lt; 10 ; )</code></p>
+<p>Samozřejmě je nutné, aby proměnná <code><b>i</b></code> byla deklarována a inicializována už dříve a 
+její hodnotu měnili v těle cyklu. Dokonce můžeme vynechat všechny tři složky:</p>
+<p><code> <span class="codekwd">for</span> ( ; ; )</code></p>
+<p>Potom tento cyklus bude běžet do nekonečna. Občas se to může hodit a o tom, jak 
+jej zastavit si řekneme někdy příště. Dále v hlavičce může být několik inicializací a 
+kroků:</p>
+<p><code> <span class="codekwd">for</span> (<span class="codekwd">int</span> i=0, j=100; i &lt; j; i++, j -= (2*i))</code></p>
+<p>V tomto případě budou k průběhu použity dvě proměnné. Cyklus bude probíhat tak 
+dlouho, dokud bude <code><b>i</b></code> menší než <code><b>j</b></code>. Hodnota 
+<code><b>i</b></code> se každým průběhem zvýší o 1, <code><b>j</b></code> se 
+zmenší o dvojnásobek <code><b>i</b></code>.</p>
+<h4>3.5. Balíčky (packages)</h4>
+<p>Různé datové typy a funkce se v jazyce Pascal nacházely v Unitách. V C/C++ k 
+přístupu k těmto typům a funkcím (a třídám) používáme hlavičkové soubory. A jak 
+je to v Javě? Zde se jednotlivé třídy nacházejí v tzv. <b>balíčcích</b>. Na první 
+pohled je to úplně stejné - <b>importujeme</b>
+balíček a můžeme používat třídy v něm. Uvnitř ale to funguje trošku
+jinak. V každém balíčku se nachází řada tříd, obvykle patří "tematicky"
+k sobě. Balíčky jsou však organizovány hierarchicky. Balíček může kromě
+svých tříd obsahovat i další balíčky. Na disku jsou balíčky uspořádány
+v adresářové struktuře. A jak se k jednotlivých balíčkům a třídám
+přistupuje? Buď můžete přistupovat k jednotlivým třídám v balíčcích
+pomocí jména třídy včetně určení balíčku. Tak například v balíčku <code><b>java.util</b></code> se nachází třída
+<code><b>Date</b></code> pro práci s datem. Takže ji můžeme použít takto: <code>
+<b>java.util.Date</b></code>. Tečky v 
+balíčcích znamenají procházení strukturou (a proto si je neplést s přístupem k 
+metodám a proměnným). Takovéto použití je však až moc těžkopádné:</p>
+<p><code>java.util.Date datum;</code></p>
+<p>a proto můžete dát najevo, že chcete pracovat s touto třídou a na úplném začátku 
+souboru uvést řádek</p>
+<p><code> <span class="codekwd">import</span> java.util.Date;</code></p>
+<p>Nyní už můžete použít tuto třídu přímo, aniž byste museli pokaždé určit její 
+umístění:</p>
+<p><code>Date datum;</code></p>
+<p>Balíček <code><b>java.util</b></code> však obsahuje řadu dalších tříd - např. 
+naši <code><b>Random</b></code> a abychom nemuseli takto 
+importovat každou zvlášť, můžeme je importovat všechny pomocí znaku <code><b>*</b></code>:</p>
+<p><code> <span class="codekwd">import</span> java.util.*;</code></p>
+<p>Teď budou dostupné všechny třídy z tohoto balíčku. Ale jen z něj, nikoliv z 
+vnořených. Takže, abychom mohli použít třídu <code><b>java.util.zip.ZipFile</b></code> (slouží pro 
+práci s archivy .zip), musíme přidat další import:</p>
+<p><code> <span class="codekwd">import</span> java.util.zip.ZipFile;</code></p>
+<p>resp. obecně</p>
+<p><code> <span class="codekwd">import</span> java.util.zip.*;</code></p>
+<p>Teď se možná ptáte: "A co ty třídy, se kterými jsme se doposud setkali? 
+<code><b>System</b></code>, 
+<code><b>String</b></code>, <code><b>Integer</b></code>, <code><b>Boolean</b></code>,
+<code><b>Object</b></code>, 
+<code><b>Double</b></code>...". I tyto třídy mají svůj "domov". Nacházejí 
+se v balíčku <code><b>java.lang</b></code>, který se importuje implicitně.</p>
+<p>Více o obsahu balíčků naleznete v dokumentaci API. Ta se nachází v adresáři s 
+dokumentací (tu musíte stáhnou samostatně, není obsažena v JDK nebo ji naleznete 
+on-line na <a href="http://java.sun.com/">java.sun.com</a>), v podadresáři <code>api</code>. V levém horním rohu je seznam 
+dostupných balíčků, v levém dolním rohu je všechno co tyto balíčky obsahují. 
+Pokud na nějakou třídu kliknete, v hlavní části se vám zobrazí seznam a popis 
+třídy, členských proměnných, použitelných metod a další věci.
+Toto je jen takový základ pro použití, jinak se samozřejmě budeme k 
+balíčkům průběžně vracet.</p>
+<h4>3.6. A něco na konec...</h4>
+<p>A pokud se nemůžete dočkat dalšího dílu, připravil jsem několik málo 
+příkladů, které si můžete za "domácí úkol" udělat :-):</p>
+<ul>
+  <li>Napište program, ve kterém bude deklarován a inicializován nějaký řetězec 
+  (třeba <code><b>String s = "Ahoj svete";</b></code>) a pak tento řetězec vypište obráceně (tedy, v 
+  našem případě <code><b>"etevs johA"</b></code>).</li>
+  <li>Stejný řetězec jako v předešlém příkladu vypište "zakódováný" - každý znak 
+  posuňte o tři znaky (tedy, v našem případě <code><b>"Dkrm#vyhwh"</b></code>).</li>
+  <li>Upravte příklad s <code><b>do</b></code>-<code><b>while</b></code> jak 
+  bylo pod ním doporučeno.</li>
+  <li>Napište program, který vygeneruje deset náhodných čísel a vypíše největší 
+  a nejmenší z nich a jejich průměr.</li>
+  <li>Napište program, který vygeneruje nějaké náhodné datum a zobrazí jej ve 
+  tvaru např.: 15. března 2003. Není třeba se nějak zabývat třídou <code><b>java.util.Date</b></code> 
+  - stačí nám vygenerovat 3 náhodná čísla. Pokuste se ošetřit počty dnů 
+  jednotlivých měsíců.</li>
+</ul>
+
+<p><a href="http://casopis.programator.cz/img/cdome/5/priklady.zip">Zde</a> najdete dnešní příklady, jak jsem slíbil na začátku a <a href="http://casopis.programator.cz/img/cdome/5/reseni.zip">zde</a> řešení 
+příkladů.</p>
+<p>Příště se konečně vrátíme k OOP a povíme si o přístupových právech, o tom jak 
+vytvářet třídy a jak vytvářet objekty a taky, jak jsem minule slíbil, povíme si 
+o zvláštnostech ovladačů.</p>  <p></p>
+        <p>
+        Autor: <a href="http://casopis.programator.cz/r-users.php?id=50" title="informace o autorovi">Pavel Patz</a>
+        e-mail: <a href="http://casopis.programator.cz/index.php?autor=cdome@centrum.cz" title="e-mail autora" class="mn">cdome@centrum.cz</a>
+        web: <a href="http:///" title="Stránky autora" class="mn"></a>
+        </p>
+        <p align="right"><i></i></p>
+
+
+     <table style="border: 1px solid rgb(0, 0, 128);" align="center" bgcolor="#f0f0f0" cellspacing="1" width="495">
+      <tbody><tr>
+       <td>
+        <p><b>Příspěvky ke článku</b></p>
+       </td>
+      </tr>
+     </tbody></table>
+
+     <table align="center" width="495">
+      <tbody><tr>
+       <td>
+        <span class="mn">
+         <a href="http://casopis.programator.cz/forum.php?clanek=203">chybicka se vloudila...</a> 15.09.2003 15:03:44 Autor: Autor <br><a href="http://casopis.programator.cz/forum.php?clanek=203">party poker</a> 09.07.2006 00:58:46 Autor: party poker <br><a href="http://casopis.programator.cz/forum.php?clanek=203">7 card stud</a> 09.07.2006 01:02:41 Autor: 7 card stud <br><a href="http://casopis.programator.cz/forum.php?clanek=203">play poker</a> 09.07.2006 01:04:40 Autor: play poker <br><a href="http://casopis.programator.cz/forum.php?clanek=203">blackjack</a> 09.07.2006 01:08:13 Autor: blackjack <br><a href="http://casopis.programator.cz/forum.php?clanek=203">online roulette</a> 09.07.2006 01:11:40 Autor: online roulette <br><a href="http://casopis.programator.cz/forum.php?clanek=203">online casino bonus</a> 09.07.2006 01:13:14 Autor: online casino bonus <br><a href="http://casopis.programator.cz/forum.php?clanek=203">buy phentermine</a> 09.07.2006 01:23:12 Autor: buy phentermine <br><a href="http://casopis.programator.cz/forum.php?clanek=203">buy phentermine</a> 09.07.2006 01:23:13 Autor: buy phentermine <br><a href="http://casopis.programator.cz/forum.php?clanek=203">credit card</a> 09.07.2006 01:23:34 Autor: credit card <br><a href="http://casopis.programator.cz/forum.php?clanek=203">credit card</a> 09.07.2006 01:24:09 Autor: credit card <br><a href="http://casopis.programator.cz/forum.php?clanek=203">commercial mortgage</a> 09.07.2006 01:46:06 Autor: commercial mortgage <br><a href="http://casopis.programator.cz/forum.php?clanek=203">mortgage refinancing</a> 09.07.2006 01:46:12 Autor: mortgage refinancing <br><a href="http://casopis.programator.cz/forum.php?clanek=203">party poker</a> 09.07.2006 01:47:43 Autor: party poker <br><a href="http://casopis.programator.cz/forum.php?clanek=203">party poker</a> 09.07.2006 01:47:56 Autor: party poker <br><a href="http://casopis.programator.cz/forum.php?clanek=203">online poker</a> 09.07.2006 02:03:16 Autor: online poker <br><a href="http://casopis.programator.cz/forum.php?clanek=203">online poker</a> 09.07.2006 02:03:41 Autor: online poker <br><a href="http://casopis.programator.cz/forum.php?clanek=203">slots</a> 09.07.2006 02:18:44 Autor: slots <br><a href="http://casopis.programator.cz/forum.php?clanek=203">free backgammon</a> 09.07.2006 02:55:53 Autor: free backgammon <br><a href="http://casopis.programator.cz/forum.php?clanek=203">7 card stud online</a> 09.07.2006 02:56:14 Autor: 7 card stud online <br><a href="http://casopis.programator.cz/forum.php?clanek=203">party poker bonus code</a> 09.07.2006 02:57:26 Autor: party poker bonus code <br><a href="http://casopis.programator.cz/forum.php?clanek=203">poker</a> 09.07.2006 02:58:29 Autor: poker <br><a href="http://casopis.programator.cz/forum.php?clanek=203">poker</a> 09.07.2006 02:58:56 Autor: poker <br><a href="http://casopis.programator.cz/forum.php?clanek=203">roulette</a> 09.07.2006 03:08:32 Autor: roulette <br><a href="http://casopis.programator.cz/forum.php?clanek=203">online texas hold em</a> 09.07.2006 03:14:25 Autor: online texas hold em <br><a href="http://casopis.programator.cz/forum.php?clanek=203">free roulette</a> 09.07.2006 03:53:15 Autor: free roulette <br><a href="http://casopis.programator.cz/forum.php?clanek=203">play backgammon online</a> 09.07.2006 03:53:28 Autor: play backgammon online <br><a href="http://casopis.programator.cz/forum.php?clanek=203">play bingo online</a> 09.07.2006 03:54:38 Autor: play bingo online <br><a href="http://casopis.programator.cz/forum.php?clanek=203">casino game</a> 09.07.2006 04:05:50 Autor: casino game <br><a href="http://casopis.programator.cz/forum.php?clanek=203">casino game</a> 09.07.2006 04:08:16 Autor: casino game <br><a href="http://casopis.programator.cz/forum.php?clanek=203">party poker bonus</a> 09.07.2006 04:18:19 Autor: party poker bonus <br><a href="http://casopis.programator.cz/forum.php?clanek=203">keno</a> 09.07.2006 04:18:20 Autor: keno <br><a href="http://casopis.programator.cz/forum.php?clanek=203">omaha poker online</a> 09.07.2006 04:18:27 Autor: omaha poker online <br><a href="http://casopis.programator.cz/forum.php?clanek=203">pacific poker</a> 09.07.2006 04:22:04 Autor: pacific poker <br><a href="http://casopis.programator.cz/forum.php?clanek=203">pacific poker</a> 09.07.2006 04:22:27 Autor: pacific poker <br><a href="http://casopis.programator.cz/forum.php?clanek=203">party poker</a> 09.07.2006 04:39:35 Autor: party poker <br><a href="http://casopis.programator.cz/forum.php?clanek=203">7 card stud online</a> 09.07.2006 04:40:48 Autor: 7 card stud online <br><a href="http://casopis.programator.cz/forum.php?clanek=203">omaha hi lo</a> 09.07.2006 04:40:54 Autor: omaha hi lo <br><a href="http://casopis.programator.cz/forum.php?clanek=203">free texas hold em</a> 09.07.2006 04:41:17 Autor: free texas hold em <br><a href="http://casopis.programator.cz/forum.php?clanek=203">poker party</a> 09.07.2006 04:41:56 Autor: poker party <br><a href="http://casopis.programator.cz/forum.php?clanek=203">poker game</a> 09.07.2006 04:48:21 Autor: poker game <br><a href="http://casopis.programator.cz/forum.php?clanek=203">harrahs casino</a> 09.07.2006 04:51:55 Autor: harrahs casino <br><a href="http://casopis.programator.cz/forum.php?clanek=203">blackjack</a> 09.07.2006 04:57:50 Autor: blackjack <br><a href="http://casopis.programator.cz/forum.php?clanek=203">credit card debt</a> 09.07.2006 04:58:25 Autor: credit card debt <br><a href="http://casopis.programator.cz/forum.php?clanek=203">blackjack</a> 09.07.2006 05:02:12 Autor: blackjack <br><a href="http://casopis.programator.cz/forum.php?clanek=203">faxless payday loan</a> 09.07.2006 05:04:59 Autor: faxless payday loan <br><a href="http://casopis.programator.cz/forum.php?clanek=203">instant approval credit card</a> 09.07.2006 05:04:59 Autor: instant approval credit card <br><a href="http://casopis.programator.cz/forum.php?clanek=203">mortgage lead</a> 09.07.2006 05:05:57 Autor: mortgage lead <br><a href="http://casopis.programator.cz/forum.php?clanek=203">play video poker online</a> 09.07.2006 05:15:37 Autor: play video poker online <br><a href="http://casopis.programator.cz/forum.php?clanek=203">texas holdem rule</a> 09.07.2006 05:18:42 Autor: texas holdem rule <br><a href="http://casopis.programator.cz/forum.php?clanek=203">play poker online</a> 09.07.2006 05:21:56 Autor: play poker online <br><a href="http://casopis.programator.cz/forum.php?clanek=203">pacific poker</a> 09.07.2006 05:24:16 Autor: pacific poker <br><a href="http://casopis.programator.cz/forum.php?clanek=203">poker site</a> 09.07.2006 05:28:57 Autor: poker site <br><a href="http://casopis.programator.cz/forum.php?clanek=203">absolute poker</a> 09.07.2006 05:29:12 Autor: absolute poker <br><a href="http://casopis.programator.cz/forum.php?clanek=203">party poker</a> 09.07.2006 05:30:27 Autor: party poker <br><a href="http://casopis.programator.cz/forum.php?clanek=203">play online poker</a> 09.07.2006 05:30:37 Autor: play online poker <br><a href="http://casopis.programator.cz/forum.php?clanek=203">pacific poker</a> 09.07.2006 05:34:03 Autor: pacific poker <br><a href="http://casopis.programator.cz/forum.php?clanek=203">pacific poker</a> 09.07.2006 05:34:15 Autor: pacific poker <br><a href="http://casopis.programator.cz/forum.php?clanek=203">online craps</a> 09.07.2006 05:40:06 Autor: online craps <br><a href="http://casopis.programator.cz/forum.php?clanek=203">texas hold em</a> 09.07.2006 05:45:56 Autor: texas hold em <br><a href="http://casopis.programator.cz/forum.php?clanek=203">world series of poker</a> 09.07.2006 05:51:09 Autor: world series of poker <br><a href="http://casopis.programator.cz/forum.php?clanek=203">casino slots</a> 09.07.2006 05:51:18 Autor: casino slots <br><a href="http://casopis.programator.cz/forum.php?clanek=203">chase.com credit card</a> 09.07.2006 05:52:11 Autor: chase.com credit card <br><a href="http://casopis.programator.cz/forum.php?clanek=203">video poker</a> 09.07.2006 06:01:00 Autor: video poker <br><a href="http://casopis.programator.cz/forum.php?clanek=203">jack black</a> 09.07.2006 06:01:47 Autor: jack black <br><a href="http://casopis.programator.cz/forum.php?clanek=203">lowest mortgage rate</a> 09.07.2006 06:01:49 Autor: lowest mortgage rate <br><a href="http://casopis.programator.cz/forum.php?clanek=203">casino directory</a> 09.07.2006 06:02:33 Autor: casino directory <br><a href="http://casopis.programator.cz/forum.php?clanek=203">texas hold em poker</a> 09.07.2006 06:02:59 Autor: texas hold em poker <br><a href="http://casopis.programator.cz/forum.php?clanek=203">texas hold em poker</a> 09.07.2006 06:03:05 Autor: texas hold em poker <br><a href="http://casopis.programator.cz/forum.php?clanek=203">pacific poker</a> 09.07.2006 06:11:47 Autor: pacific poker <br><a href="http://casopis.programator.cz/forum.php?clanek=203">mortgage rate</a> 09.07.2006 06:17:30 Autor: mortgage rate <br><a href="http://casopis.programator.cz/forum.php?clanek=203">casino gambling</a> 09.07.2006 06:17:57 Autor: casino gambling <br><a href="http://casopis.programator.cz/forum.php?clanek=203">partypoker</a> 09.07.2006 06:29:40 Autor: partypoker <br><a href="http://casopis.programator.cz/forum.php?clanek=203">casino gamble</a> 09.07.2006 06:33:01 Autor: casino gamble <br><a href="http://casopis.programator.cz/forum.php?clanek=203">gambling poker</a> 09.07.2006 06:36:40 Autor: gambling poker <br><a href="http://casopis.programator.cz/forum.php?clanek=203">payday loan</a> 09.07.2006 06:46:24 Autor: payday loan <br><a href="http://casopis.programator.cz/forum.php?clanek=203">poker odds</a> 09.07.2006 06:46:36 Autor: poker odds <br><a href="http://casopis.programator.cz/forum.php?clanek=203">osco drug</a> 09.07.2006 06:47:46 Autor: osco drug <br><a href="http://casopis.programator.cz/forum.php?clanek=203">playtech casino bonus</a> 09.07.2006 06:47:57 Autor: playtech casino bonus <br><a href="http://casopis.programator.cz/forum.php?clanek=203">play poker</a> 09.07.2006 06:52:55 Autor: play poker <br><a href="http://casopis.programator.cz/forum.php?clanek=203">pacific poker</a> 09.07.2006 06:58:54 Autor: pacific poker <br><a href="http://casopis.programator.cz/forum.php?clanek=203">empire poker</a> 09.07.2006 07:16:59 Autor: empire poker <br><a href="http://casopis.programator.cz/forum.php?clanek=203">texas holdem</a> 09.07.2006 07:18:00 Autor: texas holdem <br><a href="http://casopis.programator.cz/forum.php?clanek=203">texas holdem</a> 09.07.2006 07:18:05 Autor: texas holdem <br><a href="http://casopis.programator.cz/forum.php?clanek=203">free online poker</a> 09.07.2006 07:18:14 Autor: free online poker <br><a href="http://casopis.programator.cz/forum.php?clanek=203">internet poker</a> 09.07.2006 07:19:04 Autor: internet poker <br><a href="http://casopis.programator.cz/forum.php?clanek=203">texas hold em</a> 09.07.2006 07:30:53 Autor: texas hold em <br><a href="http://casopis.programator.cz/forum.php?clanek=203">las vegas casino</a> 09.07.2006 07:30:58 Autor: las vegas casino <br><a href="http://casopis.programator.cz/forum.php?clanek=203">book online roulette win</a> 09.07.2006 07:41:25 Autor: book online roulette win <br><a href="http://casopis.programator.cz/forum.php?clanek=203">online credit card approval</a> 09.07.2006 07:41:37 Autor: online credit card approval <br><a href="http://casopis.programator.cz/forum.php?clanek=203">adipex online</a> 09.07.2006 07:41:45 Autor: adipex online <br><a href="http://casopis.programator.cz/forum.php?clanek=203">mortgage advice</a> 09.07.2006 07:42:11 Autor: mortgage advice <br><a href="http://casopis.programator.cz/forum.php?clanek=203">strip poker</a> 09.07.2006 07:44:47 Autor: strip poker <br><a href="http://casopis.programator.cz/forum.php?clanek=203">poker</a> 09.07.2006 07:51:18 Autor: poker <br><a href="http://casopis.programator.cz/forum.php?clanek=203">free slots machine</a> 09.07.2006 07:54:30 Autor: free slots machine <br><a href="http://casopis.programator.cz/forum.php?clanek=203">pokerpacific</a> 09.07.2006 08:00:39 Autor: pokerpacific <br><a href="http://casopis.programator.cz/forum.php?clanek=203">harrahs casino</a> 09.07.2006 08:16:48 Autor: harrahs casino <br><a href="http://casopis.programator.cz/forum.php?clanek=203">viagra pill</a> 09.07.2006 08:17:36 Autor: viagra pill <br><a href="http://casopis.programator.cz/forum.php?clanek=203">internet mortgage lead</a> 09.07.2006 08:19:10 Autor: internet mortgage lead <br><a href="http://casopis.programator.cz/forum.php?clanek=203">chase mortgage</a> 09.07.2006 08:20:16 Autor: chase mortgage <br><a href="http://casopis.programator.cz/forum.php?clanek=203">internet casino</a> 09.07.2006 08:20:26 Autor: internet casino <br><a href="http://casopis.programator.cz/forum.php?clanek=203">poker strategy</a> 09.07.2006 08:24:58 Autor: poker strategy <br><a href="http://casopis.programator.cz/forum.php?clanek=203">online poker rooms</a> 09.07.2006 08:50:00 Autor: online poker rooms <br><a href="http://casopis.programator.cz/forum.php?clanek=203">mortgage company</a> 09.07.2006 08:50:14 Autor: mortgage company <br><a href="http://casopis.programator.cz/forum.php?clanek=203">roulette</a> 09.07.2006 08:50:35 Autor: roulette <br><a href="http://casopis.programator.cz/forum.php?clanek=203">no deposit casino</a> 09.07.2006 08:53:59 Autor: no deposit casino <br><a href="http://casopis.programator.cz/forum.php?clanek=203">turning stone casino</a> 09.07.2006 09:00:54 Autor: turning stone casino <br><a href="http://casopis.programator.cz/forum.php?clanek=203">top online casino</a> 09.07.2006 09:08:37 Autor: top online casino <br><a href="http://casopis.programator.cz/forum.php?clanek=203">online casino game</a> 09.07.2006 09:22:57 Autor: online casino game <br><a href="http://casopis.programator.cz/forum.php?clanek=203">apply for a credit card</a> 09.07.2006 09:29:54 Autor: apply for a credit card <br><a href="http://casopis.programator.cz/forum.php?clanek=203">online mortgage</a> 09.07.2006 09:30:04 Autor: online mortgage <br><a href="http://casopis.programator.cz/forum.php?clanek=203">backgammon</a> 09.07.2006 10:08:15 Autor: backgammon <br><a href="http://casopis.programator.cz/forum.php?clanek=203">business credit card</a> 09.07.2006 10:10:20 Autor: business credit card <br><a href="http://casopis.programator.cz/forum.php?clanek=203">poker room</a> 09.07.2006 10:21:31 Autor: poker room <br><a href="http://casopis.programator.cz/forum.php?clanek=203">poker</a> 09.07.2006 10:31:34 Autor: poker <br><a href="http://casopis.programator.cz/forum.php?clanek=203">vicodin</a> 09.07.2006 11:11:11 Autor: vicodin <br><a href="http://casopis.programator.cz/forum.php?clanek=203">poker</a> 09.07.2006 11:17:21 Autor: poker <br><a href="http://casopis.programator.cz/forum.php?clanek=203">roulette</a> 09.07.2006 11:20:17 Autor: roulette <br><a href="http://casopis.programator.cz/forum.php?clanek=203">drug information</a> 09.07.2006 11:23:39 Autor: drug information <br><a href="http://casopis.programator.cz/forum.php?clanek=203">drug information</a> 09.07.2006 11:24:11 Autor: drug information <br><a href="http://casopis.programator.cz/forum.php?clanek=203">drug</a> 09.07.2006 11:28:16 Autor: drug <br><a href="http://casopis.programator.cz/forum.php?clanek=203">drug</a> 09.07.2006 11:28:55 Autor: drug <br><a href="http://casopis.programator.cz/forum.php?clanek=203">pacific poker</a> 09.07.2006 11:42:51 Autor: pacific poker <br><a href="http://casopis.programator.cz/forum.php?clanek=203">buy hydrocodone online</a> 09.07.2006 11:55:01 Autor: buy hydrocodone online <br><a href="http://casopis.programator.cz/forum.php?clanek=203">buy hydrocodone online</a> 09.07.2006 11:55:19 Autor: buy hydrocodone online <br><a href="http://casopis.programator.cz/forum.php?clanek=203">drug store</a> 09.07.2006 12:11:13 Autor: drug store <br><a href="http://casopis.programator.cz/forum.php?clanek=203">drug store</a> 09.07.2006 12:11:15 Autor: drug store <br><a href="http://casopis.programator.cz/forum.php?clanek=203">online video poker</a> 09.07.2006 12:42:34 Autor: online video poker <br><a href="http://casopis.programator.cz/forum.php?clanek=203">pechanga casino</a> 09.07.2006 12:50:13 Autor: pechanga casino <br><a href="http://casopis.programator.cz/forum.php?clanek=203">phentermine adipex</a> 09.07.2006 12:50:41 Autor: phentermine adipex <br><a href="http://casopis.programator.cz/forum.php?clanek=203">jack black</a> 09.07.2006 13:12:48 Autor: jack black <br><a href="http://casopis.programator.cz/forum.php?clanek=203">book online roulette win</a> 09.07.2006 13:19:29 Autor: book online roulette win <br><a href="http://casopis.programator.cz/forum.php?clanek=203">celebrex</a> 09.07.2006 13:33:27 Autor: celebrex <br><a href="http://casopis.programator.cz/forum.php?clanek=203">celebrex</a> 09.07.2006 13:33:38 Autor: celebrex <br><a href="http://casopis.programator.cz/forum.php?clanek=203">poker hands</a> 09.07.2006 13:43:11 Autor: poker hands <br><a href="http://casopis.programator.cz/forum.php?clanek=203">free casino</a> 09.07.2006 13:57:09 Autor: free casino <br><a href="http://casopis.programator.cz/forum.php?clanek=203">casino download</a> 09.07.2006 14:28:20 Autor: casino download <br><a href="http://casopis.programator.cz/forum.php?clanek=203">casino download</a> 09.07.2006 14:29:00 Autor: casino download <br><a href="http://casopis.programator.cz/forum.php?clanek=203">casino directory</a> 09.07.2006 14:31:17 Autor: casino directory <br><a href="http://casopis.programator.cz/forum.php?clanek=203">free credit report online</a> 09.07.2006 14:36:15 Autor: free credit report online <br><a href="http://casopis.programator.cz/forum.php?clanek=203">texas holdem tournament</a> 09.07.2006 15:03:26 Autor: texas holdem tournament <br><a href="http://casopis.programator.cz/forum.php?clanek=203">free texas holdem</a> 09.07.2006 15:17:54 Autor: free texas holdem <br><a href="http://casopis.programator.cz/forum.php?clanek=203">pacific poker</a> 09.07.2006 15:22:27 Autor: pacific poker <br><a href="http://casopis.programator.cz/forum.php?clanek=203">pacific poker</a> 09.07.2006 15:22:46 Autor: pacific poker <br><a href="http://casopis.programator.cz/forum.php?clanek=203">pacific poker</a> 09.07.2006 15:23:01 Autor: pacific poker <br><a href="http://casopis.programator.cz/forum.php?clanek=203">texas holdem</a> 09.07.2006 15:28:44 Autor: texas holdem <br><a href="http://casopis.programator.cz/forum.php?clanek=203">free texas holdem</a> 09.07.2006 15:29:56 Autor: free texas holdem <br><a href="http://casopis.programator.cz/forum.php?clanek=203">casino on the net</a> 09.07.2006 15:38:00 Autor: casino on the net <br><a href="http://casopis.programator.cz/forum.php?clanek=203">poker</a> 09.07.2006 15:39:10 Autor: poker <br><a href="http://casopis.programator.cz/forum.php?clanek=203">casino on the net</a> 09.07.2006 15:39:36 Autor: casino on the net <br><a href="http://casopis.programator.cz/forum.php?clanek=203">poker</a> 09.07.2006 15:39:47 Autor: poker <br><a href="http://casopis.programator.cz/forum.php?clanek=203">free credit report online</a> 09.07.2006 15:57:40 Autor: free credit report online <br><a href="http://casopis.programator.cz/forum.php?clanek=203">las vegas hotel casino</a> 09.07.2006 16:00:07 Autor: las vegas hotel casino <br><a href="http://casopis.programator.cz/forum.php?clanek=203">texas holdem poker</a> 09.07.2006 16:02:39 Autor: texas holdem poker <br><a href="http://casopis.programator.cz/forum.php?clanek=203">top texas holdem rooms</a> 09.07.2006 16:23:57 Autor: top texas holdem rooms <br><a href="http://casopis.programator.cz/forum.php?clanek=203">poker online</a> 09.07.2006 17:14:19 Autor: poker online <br><a href="http://casopis.programator.cz/forum.php?clanek=203">debt consolidation</a> 09.07.2006 17:33:57 Autor: debt consolidation <br><a href="http://casopis.programator.cz/forum.php?clanek=203">online poker</a> 09.07.2006 18:09:47 Autor: online poker <br><a href="http://casopis.programator.cz/forum.php?clanek=203">free poker</a> 09.07.2006 19:25:40 Autor: free poker <br><a href="http://casopis.programator.cz/forum.php?clanek=203">live poker</a> 09.07.2006 20:03:19 Autor: live poker <br><a href="http://casopis.programator.cz/forum.php?clanek=203">poker website</a> 09.07.2006 20:08:57 Autor: poker website <br><a href="http://casopis.programator.cz/forum.php?clanek=203">poker website</a> 09.07.2006 20:08:59 Autor: poker website <br><a href="http://casopis.programator.cz/forum.php?clanek=203">free online casino</a> 10.07.2006 00:21:46 Autor: free online casino <br><a href="http://casopis.programator.cz/forum.php?clanek=203">free roulette</a> 10.07.2006 02:26:31 Autor: free roulette <br><a href="http://casopis.programator.cz/forum.php?clanek=203">free texas holdem downloads</a> 10.07.2006 02:41:07 Autor: free texas holdem downloads <br><a href="http://casopis.programator.cz/forum.php?clanek=203">texas holdem poker hands</a> 10.07.2006 03:06:15 Autor: texas holdem poker hands <br><a href="http://casopis.programator.cz/forum.php?clanek=203">play roulette</a> 10.07.2006 03:17:59 Autor: play roulette <br><a href="http://casopis.programator.cz/forum.php?clanek=203">play roulette</a> 10.07.2006 03:18:43 Autor: play roulette <br><a href="http://casopis.programator.cz/forum.php?clanek=203">play roulette</a> 10.07.2006 03:18:53 Autor: play roulette <br><a href="http://casopis.programator.cz/forum.php?clanek=203">free slots game</a> 10.07.2006 04:00:45 Autor: free slots game <br><a href="http://casopis.programator.cz/forum.php?clanek=203">texas hold em electronic game</a> 10.07.2006 04:00:50 Autor: texas hold em electronic game <br><a href="http://casopis.programator.cz/forum.php?clanek=203">texas holdem rule</a> 10.07.2006 04:10:18 Autor: texas holdem rule <br><a href="http://casopis.programator.cz/forum.php?clanek=203">casino chips</a> 10.07.2006 04:15:47 Autor: casino chips <br><a href="http://casopis.programator.cz/forum.php?clanek=203">texas hold em poker set</a> 10.07.2006 04:33:53 Autor: texas hold em poker set <br><a href="http://casopis.programator.cz/forum.php?clanek=203">texas hold em poker set</a> 10.07.2006 04:34:43 Autor: texas hold em poker set <br><a href="http://casopis.programator.cz/forum.php?clanek=203">internet texas hold em</a> 10.07.2006 04:39:40 Autor: internet texas hold em <br><a href="http://casopis.programator.cz/forum.php?clanek=203">play poker</a> 10.07.2006 05:12:02 Autor: play poker <br><a href="http://casopis.programator.cz/forum.php?clanek=203">play poker</a> 10.07.2006 05:12:58 Autor: play poker <br><a href="http://casopis.programator.cz/forum.php?clanek=203">poker table</a> 10.07.2006 05:21:52 Autor: poker table <br><a href="http://casopis.programator.cz/forum.php?clanek=203">poker table</a> 10.07.2006 05:22:51 Autor: poker table <br><a href="http://casopis.programator.cz/forum.php?clanek=203">poker table</a> 10.07.2006 05:50:05 Autor: poker table <br><a href="http://casopis.programator.cz/forum.php?clanek=203">poker table</a> 10.07.2006 05:51:42 Autor: poker table <br><a href="http://casopis.programator.cz/forum.php?clanek=203">world series of poker</a> 10.07.2006 06:25:48 Autor: world series of poker <br><a href="http://casopis.programator.cz/forum.php?clanek=203">party poker</a> 10.07.2006 06:26:32 Autor: party poker <br><a href="http://casopis.programator.cz/forum.php?clanek=203">play poker</a> 10.07.2006 06:38:18 Autor: play poker <br><a href="http://casopis.programator.cz/forum.php?clanek=203">free poker play</a> 10.07.2006 06:53:17 Autor: free poker play <br><a href="http://casopis.programator.cz/forum.php?clanek=203">poker tournament</a> 10.07.2006 06:55:19 Autor: poker tournament <br><a href="http://casopis.programator.cz/forum.php?clanek=203">online poker</a> 10.07.2006 07:28:28 Autor: online poker <br><a href="http://casopis.programator.cz/forum.php?clanek=203">online casino</a> 10.07.2006 07:50:33 Autor: online casino <br><a href="http://casopis.programator.cz/forum.php?clanek=203">poker variations</a> 10.07.2006 08:02:54 Autor: poker variations <br><a href="http://casopis.programator.cz/forum.php?clanek=203">strip poker</a> 10.07.2006 08:03:59 Autor: strip poker <br><a href="http://casopis.programator.cz/forum.php?clanek=203">3 card poker</a> 10.07.2006 08:05:20 Autor: 3 card poker <br><a href="http://casopis.programator.cz/forum.php?clanek=203">internet poker game</a> 10.07.2006 08:08:20 Autor: internet poker game <br><a href="http://casopis.programator.cz/forum.php?clanek=203">online poker</a> 10.07.2006 08:08:52 Autor: online poker <br><a href="http://casopis.programator.cz/forum.php?clanek=203">strip poker</a> 10.07.2006 08:11:04 Autor: strip poker <br><a href="http://casopis.programator.cz/forum.php?clanek=203">pacificpoker</a> 10.07.2006 08:16:55 Autor: pacificpoker <br><a href="http://casopis.programator.cz/forum.php?clanek=203">casino online</a> 10.07.2006 08:52:39 Autor: casino online <br><a href="http://casopis.programator.cz/forum.php?clanek=203">home poker game</a> 10.07.2006 09:15:31 Autor: home poker game <br><a href="http://casopis.programator.cz/forum.php?clanek=203">freeroll poker</a> 10.07.2006 09:47:52 Autor: freeroll poker <br><a href="http://casopis.programator.cz/forum.php?clanek=203">on line poker game</a> 10.07.2006 10:02:55 Autor: on line poker game <br><a href="http://casopis.programator.cz/forum.php?clanek=203">on line poker game</a> 10.07.2006 10:03:27 Autor: on line poker game <br><a href="http://casopis.programator.cz/forum.php?clanek=203">empirepoker</a> 10.07.2006 10:12:01 Autor: empirepoker <br><a href="http://casopis.programator.cz/forum.php?clanek=203">free casinos</a> 10.07.2006 10:15:00 Autor: free casinos <br><a href="http://casopis.programator.cz/forum.php?clanek=203">online seven card stud</a> 10.07.2006 10:54:52 Autor: online seven card stud <br><a href="http://casopis.programator.cz/forum.php?clanek=203">empire poker bonus code</a> 10.07.2006 11:06:02 Autor: empire poker bonus code <br><a href="http://casopis.programator.cz/forum.php?clanek=203">online texas holdem</a> 10.07.2006 11:07:51 Autor: online texas holdem <br><a href="http://casopis.programator.cz/forum.php?clanek=203">computer poker game</a> 10.07.2006 11:44:42 Autor: computer poker game <br><a href="http://casopis.programator.cz/forum.php?clanek=203">pacific poker bonus</a> 10.07.2006 11:55:31 Autor: pacific poker bonus <br><a href="http://casopis.programator.cz/forum.php?clanek=203">online poker game</a> 10.07.2006 11:59:33 Autor: online poker game <br><a href="http://casopis.programator.cz/forum.php?clanek=203">888</a> 10.07.2006 12:13:06 Autor: 888 <br><a href="http://casopis.programator.cz/forum.php?clanek=203">free bingo</a> 10.07.2006 12:15:25 Autor: free bingo <br><a href="http://casopis.programator.cz/forum.php?clanek=203">backgammon</a> 10.07.2006 12:55:07 Autor: backgammon <br><a href="http://casopis.programator.cz/forum.php?clanek=203">texas holdem poker</a> 10.07.2006 13:15:15 Autor: texas holdem poker <br><a href="http://casopis.programator.cz/forum.php?clanek=203">poker hands</a> 10.07.2006 13:25:55 Autor: poker hands <br><a href="http://casopis.programator.cz/forum.php?clanek=203">free casino game</a> 10.07.2006 13:29:55 Autor: free casino game <br><a href="http://casopis.programator.cz/forum.php?clanek=203">baccarat</a> 10.07.2006 13:50:30 Autor: baccarat <br><a href="http://casopis.programator.cz/forum.php?clanek=203">online video poker</a> 10.07.2006 13:52:27 Autor: online video poker <br><a href="http://casopis.programator.cz/forum.php?clanek=203">texas holdem software</a> 10.07.2006 13:53:03 Autor: texas holdem software <br><a href="http://casopis.programator.cz/forum.php?clanek=203">hold em poker</a> 10.07.2006 14:10:53 Autor: hold em poker <br><a href="http://casopis.programator.cz/forum.php?clanek=203">texas holdem</a> 10.07.2006 14:16:38 Autor: texas holdem <br><a href="http://casopis.programator.cz/forum.php?clanek=203">omaha hi lo</a> 10.07.2006 14:44:48 Autor: omaha hi lo <br><a href="http://casopis.programator.cz/forum.php?clanek=203">play poker online</a> 10.07.2006 15:18:44 Autor: play poker online <br><a href="http://casopis.programator.cz/forum.php?clanek=203">pacific poker</a> 10.07.2006 15:21:50 Autor: pacific poker <br><a href="http://casopis.programator.cz/forum.php?clanek=203">online casinos</a> 10.07.2006 15:48:42 Autor: online casinos <br><a href="http://casopis.programator.cz/forum.php?clanek=203">888 pacific poker</a> 10.07.2006 15:49:13 Autor: 888 pacific poker <br><a href="http://casopis.programator.cz/forum.php?clanek=203">poker</a> 10.07.2006 15:50:13 Autor: poker <br><a href="http://casopis.programator.cz/forum.php?clanek=203">world series of poker</a> 10.07.2006 16:14:13 Autor: world series of poker <br><a href="http://casopis.programator.cz/forum.php?clanek=203">slots</a> 10.07.2006 17:12:39 Autor: slots <br><a href="http://casopis.programator.cz/forum.php?clanek=203">2005 world series of poker</a> 10.07.2006 17:45:53 Autor: 2005 world series of poker <br><a href="http://casopis.programator.cz/forum.php?clanek=203">texas holdem</a> 10.07.2006 18:18:45 Autor: texas holdem <br><a href="http://casopis.programator.cz/forum.php?clanek=203">texas holdem</a> 10.07.2006 18:22:40 Autor: texas holdem <br><a href="http://casopis.programator.cz/forum.php?clanek=203">free online poker game</a> 10.07.2006 18:51:10 Autor: free online poker game <br><a href="http://casopis.programator.cz/forum.php?clanek=203">texas holdem</a> 10.07.2006 19:25:11 Autor: texas holdem <br><a href="http://casopis.programator.cz/forum.php?clanek=203">texas holdem</a> 10.07.2006 19:25:58 Autor: texas holdem <br><a href="http://casopis.programator.cz/forum.php?clanek=203">full tilt poker</a> 10.07.2006 19:27:52 Autor: full tilt poker <br><a href="http://casopis.programator.cz/forum.php?clanek=203">slots car</a> 11.07.2006 01:45:24 Autor: slots car <br><a href="http://casopis.programator.cz/forum.php?clanek=203">online craps</a> 11.07.2006 03:11:00 Autor: online craps <br><a href="http://casopis.programator.cz/forum.php?clanek=203">party poker</a> 11.07.2006 03:45:33 Autor: party poker <br><a href="http://casopis.programator.cz/forum.php?clanek=203">party poker</a> 11.07.2006 03:46:33 Autor: party poker <br><a href="http://casopis.programator.cz/forum.php?clanek=203">7 card stud</a> 11.07.2006 04:06:04 Autor: 7 card stud <br><a href="http://casopis.programator.cz/forum.php?clanek=203">free poker downloads</a> 11.07.2006 04:34:30 Autor: free poker downloads <br><a href="http://casopis.programator.cz/forum.php?clanek=203">texas holdem poker online</a> 11.07.2006 05:36:53 Autor: texas holdem poker online <br><a href="http://casopis.programator.cz/forum.php?clanek=203">omaha hi lo</a> 11.07.2006 06:51:42 Autor: omaha hi lo <br><a href="http://casopis.programator.cz/forum.php?clanek=203">pc poker game poker felt</a> 11.07.2006 07:24:05 Autor: pc poker game poker felt <br><a href="http://casopis.programator.cz/forum.php?clanek=203">free poker sites</a> 11.07.2006 08:32:53 Autor: free poker sites <br><a href="http://casopis.programator.cz/forum.php?clanek=203">freeroll poker</a> 11.07.2006 08:54:57 Autor: freeroll poker <br><a href="http://casopis.programator.cz/forum.php?clanek=203">online poker rooms</a> 11.07.2006 09:47:03 Autor: online poker rooms <br><a href="http://casopis.programator.cz/forum.php?clanek=203">online poker</a> 11.07.2006 09:49:26 Autor: online poker <br><a href="http://casopis.programator.cz/forum.php?clanek=203">online poker room</a> 11.07.2006 09:49:34 Autor: online poker room <br><a href="http://casopis.programator.cz/forum.php?clanek=203">home poker games</a> 11.07.2006 10:07:19 Autor: home poker games <br><a href="http://casopis.programator.cz/forum.php?clanek=203">poker rooms</a> 11.07.2006 10:35:15 Autor: poker rooms <br><a href="http://casopis.programator.cz/forum.php?clanek=203">blackjack</a> 11.07.2006 10:55:56 Autor: blackjack <br><a href="http://casopis.programator.cz/forum.php?clanek=203">texas holdem</a> 11.07.2006 11:40:43 Autor: texas holdem <br><a href="http://casopis.programator.cz/forum.php?clanek=203">holdem poker</a> 11.07.2006 12:07:46 Autor: holdem poker <br><a href="http://casopis.programator.cz/forum.php?clanek=203">holdem</a> 11.07.2006 12:26:58 Autor: holdem <br><a href="http://casopis.programator.cz/forum.php?clanek=203">poker stars.net</a> 11.07.2006 12:27:18 Autor: poker stars.net <br><a href="http://casopis.programator.cz/forum.php?clanek=203">free slots</a> 11.07.2006 12:55:47 Autor: free slots <br><a href="http://casopis.programator.cz/forum.php?clanek=203">casino bonus</a> 11.07.2006 13:39:38 Autor: casino bonus <br><a href="http://casopis.programator.cz/forum.php?clanek=203">online poker games</a> 11.07.2006 14:03:39 Autor: online poker games <br><a href="http://casopis.programator.cz/forum.php?clanek=203">internet casino</a> 11.07.2006 14:13:20 Autor: internet casino <br><a href="http://casopis.programator.cz/forum.php?clanek=203">internet casino</a> 11.07.2006 14:13:28 Autor: internet casino <br><a href="http://casopis.programator.cz/forum.php?clanek=203">empire poker</a> 11.07.2006 14:32:21 Autor: empire poker <br><a href="http://casopis.programator.cz/forum.php?clanek=203">online poker tournament</a> 11.07.2006 15:39:08 Autor: online poker tournament <br><a href="http://casopis.programator.cz/forum.php?clanek=203">bad credit credit card</a> 11.07.2006 16:13:21 Autor: bad credit credit card <br><a href="http://casopis.programator.cz/forum.php?clanek=203">free poker software</a> 11.07.2006 16:13:47 Autor: free poker software <br><a href="http://casopis.programator.cz/forum.php?clanek=203">second mortgage</a> 11.07.2006 18:31:09 Autor: second mortgage <br><a href="http://casopis.programator.cz/forum.php?clanek=203">poker card game</a> 11.07.2006 18:36:59 Autor: poker card game <br><a href="http://casopis.programator.cz/forum.php?clanek=203">poker odds</a> 11.07.2006 18:43:27 Autor: poker odds <br><a href="http://casopis.programator.cz/forum.php?clanek=203">casino bonus</a> 11.07.2006 23:14:28 Autor: casino bonus <br><a href="http://casopis.programator.cz/forum.php?clanek=203">slots</a> 12.07.2006 03:23:49 Autor: slots <br><a href="http://casopis.programator.cz/forum.php?clanek=203">poker</a> 12.07.2006 09:41:45 Autor: poker <br><a href="http://casopis.programator.cz/forum.php?clanek=203">adjustable rate mortgage</a> 12.07.2006 11:37:41 Autor: adjustable rate mortgage <br><a href="http://casopis.programator.cz/forum.php?clanek=203">online poker site</a> 12.07.2006 13:28:56 Autor: online poker site <br><a href="http://casopis.programator.cz/forum.php?clanek=203">online poker site</a> 12.07.2006 13:29:31 Autor: online poker site <br><a href="http://casopis.programator.cz/forum.php?clanek=203">online omaha high low</a> 13.07.2006 01:24:44 Autor: online omaha high low <br><a href="http://casopis.programator.cz/forum.php?clanek=203">888</a> 13.07.2006 03:35:47 Autor: 888 <br><a href="http://casopis.programator.cz/forum.php?clanek=203">free party poker</a> 13.07.2006 03:38:22 Autor: free party poker <br><a href="http://casopis.programator.cz/forum.php?clanek=203">888</a> 13.07.2006 03:46:56 Autor: 888 <br><a href="http://casopis.programator.cz/forum.php?clanek=203">online casino</a> 13.07.2006 06:29:05 Autor: online casino <br><a href="http://casopis.programator.cz/forum.php?clanek=203">pacific poker bonus code</a> 13.07.2006 08:02:55 Autor: pacific poker bonus code <br><a href="http://casopis.programator.cz/forum.php?clanek=203">free online poker</a> 13.07.2006 08:27:47 Autor: free online poker <br><a href="http://casopis.programator.cz/forum.php?clanek=203">party poker bonus code</a> 13.07.2006 08:44:59 Autor: party poker bonus code <br><a href="http://casopis.programator.cz/forum.php?clanek=203">party poker bonus code</a> 13.07.2006 08:46:44 Autor: party poker bonus code <br><a href="http://casopis.programator.cz/forum.php?clanek=203">internet blackjack</a> 13.07.2006 09:01:36 Autor: internet blackjack <br><a href="http://casopis.programator.cz/forum.php?clanek=203">pacific poker</a> 13.07.2006 11:06:26 Autor: pacific poker <br><a href="http://casopis.programator.cz/forum.php?clanek=203">craps online</a> 13.07.2006 11:16:02 Autor: craps online <br><a href="http://casopis.programator.cz/forum.php?clanek=203">party poker</a> 13.07.2006 11:21:33 Autor: party poker <br><a href="http://casopis.programator.cz/forum.php?clanek=203">free blackjack</a> 13.07.2006 12:06:48 Autor: free blackjack <br><a href="http://casopis.programator.cz/forum.php?clanek=203">poker</a> 13.07.2006 16:27:14 Autor: poker <br><a href="http://casopis.programator.cz/forum.php?clanek=203">online casino games</a> 13.07.2006 17:15:07 Autor: online casino games <br><a href="http://casopis.programator.cz/forum.php?clanek=203">craps</a> 13.07.2006 20:22:27 Autor: craps <br><a href="http://casopis.programator.cz/forum.php?clanek=203">poker</a> 13.07.2006 20:23:17 Autor: poker <br><a href="http://casopis.programator.cz/forum.php?clanek=203">video poker</a> 13.07.2006 22:11:09 Autor: video poker <br><a href="http://casopis.programator.cz/forum.php?clanek=203">None</a> 13.07.2006 23:28:47 Autor: None <br><a href="http://casopis.programator.cz/forum.php?clanek=203">poker star</a> 13.07.2006 23:38:13 Autor: poker star <br><a href="http://casopis.programator.cz/forum.php?clanek=203">seven card stud</a> 14.07.2006 04:38:30 Autor: seven card stud <br><a href="http://casopis.programator.cz/forum.php?clanek=203">omaha high low</a> 14.07.2006 08:33:23 Autor: omaha high low <br><a href="http://casopis.programator.cz/forum.php?clanek=203">keno</a> 14.07.2006 10:13:31 Autor: keno <br><a href="http://casopis.programator.cz/forum.php?clanek=203">play backgammon online</a> 14.07.2006 11:15:13 Autor: play backgammon online <br><a href="http://casopis.programator.cz/forum.php?clanek=203">omaha poker online</a> 14.07.2006 12:27:42 Autor: omaha poker online <br><a href="http://casopis.programator.cz/forum.php?clanek=203">None</a> 14.07.2006 13:45:30 Autor: None <br><a href="http://casopis.programator.cz/forum.php?clanek=203">texas holdem tip</a> 14.07.2006 16:34:33 Autor: texas holdem tip <br><a href="http://casopis.programator.cz/forum.php?clanek=203">7 card stud online</a> 14.07.2006 17:07:13 Autor: 7 card stud online <br><a href="http://casopis.programator.cz/forum.php?clanek=203">online poker</a> 14.07.2006 18:08:24 Autor: online poker <br><a href="http://casopis.programator.cz/forum.php?clanek=203">casino games</a> 14.07.2006 18:57:24 Autor: casino games <br><a href="http://casopis.programator.cz/forum.php?clanek=203">roulette</a> 14.07.2006 19:07:51 Autor: roulette <br><a href="http://casopis.programator.cz/forum.php?clanek=203">party poker bonus code</a> 14.07.2006 19:41:01 Autor: party poker bonus code <br><a href="http://casopis.programator.cz/forum.php?clanek=203">free texas holdem poker</a> 15.07.2006 00:15:35 Autor: free texas holdem poker <br><a href="http://casopis.programator.cz/forum.php?clanek=203">poker</a> 15.07.2006 00:55:27 Autor: poker <br><a href="http://casopis.programator.cz/forum.php?clanek=203">poker room</a> 15.07.2006 01:14:50 Autor: poker room <br><a href="http://casopis.programator.cz/forum.php?clanek=203">texas holdem poker</a> 15.07.2006 01:52:36 Autor: texas holdem poker <br><a href="http://casopis.programator.cz/forum.php?clanek=203">texas holdem poker</a> 15.07.2006 01:54:05 Autor: texas holdem poker <br><a href="http://casopis.programator.cz/forum.php?clanek=203">casino on line</a> 15.07.2006 04:04:13 Autor: casino on line <br><a href="http://casopis.programator.cz/forum.php?clanek=203">free blackjack</a> 15.07.2006 04:20:21 Autor: free blackjack <br><a href="http://casopis.programator.cz/forum.php?clanek=203">no deposit casino bonus</a> 15.07.2006 04:53:29 Autor: no deposit casino bonus <br><a href="http://casopis.programator.cz/forum.php?clanek=203">play blackjack</a> 15.07.2006 06:28:36 Autor: play blackjack <br><a href="http://casopis.programator.cz/forum.php?clanek=203">texas holdem tip</a> 15.07.2006 07:44:02 Autor: texas holdem tip <br><a href="http://casopis.programator.cz/forum.php?clanek=203">texas holdem tip</a> 15.07.2006 07:44:06 Autor: texas holdem tip <br><a href="http://casopis.programator.cz/forum.php?clanek=203">omaha hi lo</a> 15.07.2006 08:31:16 Autor: omaha hi lo <br><a href="http://casopis.programator.cz/forum.php?clanek=203">how to play texas hold em</a> 15.07.2006 09:31:43 Autor: how to play texas hold em <br><a href="http://casopis.programator.cz/forum.php?clanek=203">texas hold em poker tip</a> 15.07.2006 12:39:15 Autor: texas hold em poker tip <br><a href="http://casopis.programator.cz/forum.php?clanek=203">hold em</a> 15.07.2006 13:41:19 Autor: hold em <br><a href="http://casopis.programator.cz/forum.php?clanek=203">resort casino</a> 15.07.2006 17:38:48 Autor: resort casino <br><a href="http://casopis.programator.cz/forum.php?clanek=203">resort casino</a> 15.07.2006 17:39:21 Autor: resort casino <br><a href="http://casopis.programator.cz/forum.php?clanek=203">slots</a> 15.07.2006 20:34:12 Autor: slots <br><a href="http://casopis.programator.cz/forum.php?clanek=203">craps online</a> 16.07.2006 02:08:30 Autor: craps online <br><a href="http://casopis.programator.cz/forum.php?clanek=203">play blackjack</a> 16.07.2006 10:28:44 Autor: play blackjack <br><a href="http://casopis.programator.cz/forum.php?clanek=203">poker game download</a> 16.07.2006 14:52:28 Autor: poker game download <br><a href="http://casopis.programator.cz/forum.php?clanek=203">online roulette game</a> 16.07.2006 16:28:40 Autor: online roulette game <br><a href="http://casopis.programator.cz/forum.php?clanek=203">hyladljr</a> 22.07.2006 12:13:34 Autor: hyladljr <br><a href="http://casopis.programator.cz/forum.php?clanek=203">sesbluns</a> 22.07.2006 12:18:34 Autor: sesbluns <br><a href="http://casopis.programator.cz/forum.php?clanek=203">cciqmiuy</a> 22.07.2006 12:23:05 Autor: cciqmiuy <br><a href="http://casopis.programator.cz/forum.php?clanek=203">xkyckhil</a> 22.07.2006 14:10:19 Autor: xkyckhil <br><a href="http://casopis.programator.cz/forum.php?clanek=203">cyexiyab</a> 22.07.2006 14:15:14 Autor: cyexiyab <br><a href="http://casopis.programator.cz/forum.php?clanek=203">vxadcfcj</a> 22.07.2006 14:25:43 Autor: vxadcfcj <br><a href="http://casopis.programator.cz/forum.php?clanek=203">pwefvwfj</a> 22.07.2006 14:30:39 Autor: pwefvwfj <br><a href="http://casopis.programator.cz/forum.php?clanek=203">tfmkerai</a> 22.07.2006 15:04:05 Autor: tfmkerai <br><a href="http://casopis.programator.cz/forum.php?clanek=203">qmhsqyvy</a> 22.07.2006 15:12:02 Autor: qmhsqyvy <br><a href="http://casopis.programator.cz/forum.php?clanek=203">hqtvgooy</a> 22.07.2006 15:21:40 Autor: hqtvgooy <br><a href="http://casopis.programator.cz/forum.php?clanek=203">tqrvcsed</a> 22.07.2006 15:25:51 Autor: tqrvcsed <br><a href="http://casopis.programator.cz/forum.php?clanek=203">oeemaxuh</a> 22.07.2006 15:30:43 Autor: oeemaxuh <br><a href="http://casopis.programator.cz/forum.php?clanek=203">czupjsyv</a> 22.07.2006 16:38:51 Autor: czupjsyv <br><a href="http://casopis.programator.cz/forum.php?clanek=203">ozrjvmfk</a> 22.07.2006 16:43:53 Autor: ozrjvmfk <br><a href="http://casopis.programator.cz/forum.php?clanek=203">uqqthckw</a> 22.07.2006 16:49:23 Autor: uqqthckw <br><a href="http://casopis.programator.cz/forum.php?clanek=203">ynkpgyqc</a> 22.07.2006 17:10:23 Autor: ynkpgyqc <br><a href="http://casopis.programator.cz/forum.php?clanek=203">sikapljd</a> 22.07.2006 17:14:36 Autor: sikapljd <br><a href="http://casopis.programator.cz/forum.php?clanek=203">vyqnaery</a> 22.07.2006 17:20:18 Autor: vyqnaery <br><a href="http://casopis.programator.cz/forum.php?clanek=203">oamfldjc</a> 22.07.2006 17:25:10 Autor: oamfldjc <br><a href="http://casopis.programator.cz/forum.php?clanek=203">dkfqgvsb</a> 22.07.2006 17:29:49 Autor: dkfqgvsb <br><a href="http://casopis.programator.cz/forum.php?clanek=203">edcjqbes</a> 22.07.2006 18:18:57 Autor: edcjqbes <br><a href="http://casopis.programator.cz/forum.php?clanek=203">wzoueokg</a> 22.07.2006 18:26:32 Autor: wzoueokg <br><a href="http://casopis.programator.cz/forum.php?clanek=203">pxgyyafw</a> 22.07.2006 19:39:56 Autor: pxgyyafw <br><a href="http://casopis.programator.cz/forum.php?clanek=203">piwgfien</a> 22.07.2006 19:45:12 Autor: piwgfien <br><a href="http://casopis.programator.cz/forum.php?clanek=203">dmyjihgj</a> 22.07.2006 19:50:42 Autor: dmyjihgj <br><a href="http://casopis.programator.cz/forum.php?clanek=203">goggpzkq</a> 22.07.2006 20:59:30 Autor: goggpzkq <br><a href="http://casopis.programator.cz/forum.php?clanek=203">gnplpquj</a> 22.07.2006 21:03:05 Autor: gnplpquj <br><a href="http://casopis.programator.cz/forum.php?clanek=203">sbvtztha</a> 22.07.2006 21:11:00 Autor: sbvtztha <br><a href="http://casopis.programator.cz/forum.php?clanek=203">orxpwyes vbxucal</a> 24.07.2006 23:42:50 Autor: orxpwyes vbxucal <br><a href="http://casopis.programator.cz/forum.php?clanek=203">bfljqkdxg kneqjwfmx</a> 24.07.2006 23:43:02 Autor: bfljqkdxg kneqjwfmx <br><a href="http://casopis.programator.cz/forum.php?clanek=203">bfljqkdxg kneqjwfmx</a> 24.07.2006 23:43:06 Autor: bfljqkdxg kneqjwfmx <br><a href="http://casopis.programator.cz/forum.php?clanek=203">hnmi irdxlyes</a> 24.07.2006 23:43:16 Autor: hnmi irdxlyes <br><a href="http://casopis.programator.cz/forum.php?clanek=203">None</a> 29.07.2006 16:34:14 Autor: None <br><a href="http://casopis.programator.cz/forum.php?clanek=203">hoodia gordoni diet pills</a> 29.07.2006 23:50:26 Autor: hoodia gordoni diet pills <br><a href="http://casopis.programator.cz/forum.php?clanek=203">empire poker bonus code</a> 30.07.2006 03:30:59 Autor: empire poker bonus code <br><a href="http://casopis.programator.cz/forum.php?clanek=203">party poker</a> 30.07.2006 08:42:18 Autor: party poker <br><a href="http://casopis.programator.cz/forum.php?clanek=203">seven card stud</a> 30.07.2006 08:42:29 Autor: seven card stud <br><a href="http://casopis.programator.cz/forum.php?clanek=203">bingo</a> 30.07.2006 12:06:06 Autor: bingo <br><a href="http://casopis.programator.cz/forum.php?clanek=203">online slots</a> 30.07.2006 14:06:31 Autor: online slots <br><a href="http://casopis.programator.cz/forum.php?clanek=203">play online slots</a> 30.07.2006 16:46:31 Autor: play online slots <br><a href="http://casopis.programator.cz/forum.php?clanek=203">craps</a> 30.07.2006 17:35:14 Autor: craps <br><a href="http://casopis.programator.cz/forum.php?clanek=203">online blackjack</a> 30.07.2006 18:02:07 Autor: online blackjack <br><a href="http://casopis.programator.cz/forum.php?clanek=203">play blackjack online</a> 30.07.2006 18:25:41 Autor: play blackjack online <br><a href="http://casopis.programator.cz/forum.php?clanek=203">play blackjack online</a> 30.07.2006 18:26:21 Autor: play blackjack online <br><a href="http://casopis.programator.cz/forum.php?clanek=203">free roulette</a> 30.07.2006 19:10:21 Autor: free roulette <br><a href="http://casopis.programator.cz/forum.php?clanek=203">online texas hold em</a> 30.07.2006 21:06:39 Autor: online texas hold em <br><a href="http://casopis.programator.cz/forum.php?clanek=203">play blackjack online</a> 30.07.2006 21:10:27 Autor: play blackjack online <br><a href="http://casopis.programator.cz/forum.php?clanek=203">play blackjack online</a> 30.07.2006 21:16:05 Autor: play blackjack online <br><a href="http://casopis.programator.cz/forum.php?clanek=203">slots</a> 30.07.2006 21:43:59 Autor: slots <br><a href="http://casopis.programator.cz/forum.php?clanek=203">slots</a> 30.07.2006 21:46:33 Autor: slots <br><a href="http://casopis.programator.cz/forum.php?clanek=203">slots</a> 30.07.2006 21:47:38 Autor: slots <br><a href="http://casopis.programator.cz/forum.php?clanek=203">play video poker online</a> 31.07.2006 00:10:50 Autor: play video poker online <br><a href="http://casopis.programator.cz/forum.php?clanek=203">bingo</a> 31.07.2006 00:18:23 Autor: bingo <br><a href="http://casopis.programator.cz/forum.php?clanek=203">bingo</a> 31.07.2006 00:19:57 Autor: bingo <br><a href="http://casopis.programator.cz/forum.php?clanek=203">online craps</a> 31.07.2006 00:45:41 Autor: online craps <br><a href="http://casopis.programator.cz/forum.php?clanek=203">free texas holdem</a> 31.07.2006 01:35:06 Autor: free texas holdem <br><a href="http://casopis.programator.cz/forum.php?clanek=203">online keno</a> 31.07.2006 03:23:26 Autor: online keno <br><a href="http://casopis.programator.cz/forum.php?clanek=203">baccarat</a> 31.07.2006 03:52:38 Autor: baccarat <br><a href="http://casopis.programator.cz/forum.php?clanek=203">888 pacific poker</a> 31.07.2006 05:38:10 Autor: 888 pacific poker <br><a href="http://casopis.programator.cz/forum.php?clanek=203">online texas holdem</a> 31.07.2006 07:12:41 Autor: online texas holdem <br><a href="http://casopis.programator.cz/forum.php?clanek=203">video poker</a> 31.07.2006 10:25:43 Autor: video poker <br><a href="http://casopis.programator.cz/forum.php?clanek=203">omaha poker online</a> 31.07.2006 11:13:55 Autor: omaha poker online <br><a href="http://casopis.programator.cz/forum.php?clanek=203">7 card stud</a> 31.07.2006 11:42:19 Autor: 7 card stud <br><a href="http://casopis.programator.cz/forum.php?clanek=203">texas holdem poker</a> 31.07.2006 12:29:29 Autor: texas holdem poker <br><a href="http://casopis.programator.cz/forum.php?clanek=203">texas holdem poker</a> 31.07.2006 12:30:49 Autor: texas holdem poker <br><a href="http://casopis.programator.cz/forum.php?clanek=203">empire poker bonus</a> 31.07.2006 14:06:02 Autor: empire poker bonus <br><a href="http://casopis.programator.cz/forum.php?clanek=203">play blackjack online</a> 31.07.2006 14:46:37 Autor: play blackjack online <br><a href="http://casopis.programator.cz/forum.php?clanek=203">free 7 card stud</a> 31.07.2006 18:08:55 Autor: free 7 card stud <br><a href="http://casopis.programator.cz/forum.php?clanek=203">seven card stud poker</a> 31.07.2006 18:48:33 Autor: seven card stud poker <br><a href="http://casopis.programator.cz/forum.php?clanek=203">free keno</a> 31.07.2006 20:01:06 Autor: free keno <br><a href="http://casopis.programator.cz/forum.php?clanek=203">online poker</a> 31.07.2006 20:43:47 Autor: online poker <br><a href="http://casopis.programator.cz/forum.php?clanek=203">online video poker</a> 31.07.2006 22:18:05 Autor: online video poker <br><a href="http://casopis.programator.cz/forum.php?clanek=203">None</a> 01.08.2006 00:07:38 Autor: None <br><a href="http://casopis.programator.cz/forum.php?clanek=203">online poker tournament</a> 01.08.2006 04:33:32 Autor: online poker tournament <br><a href="http://casopis.programator.cz/forum.php?clanek=203">888</a> 01.08.2006 04:58:41 Autor: 888 <br><a href="http://casopis.programator.cz/forum.php?clanek=203">tribal dragon tattoo</a> 01.08.2006 05:15:51 Autor: tribal dragon tattoo <br><a href="http://casopis.programator.cz/forum.php?clanek=203">play baccarat online</a> 01.08.2006 05:24:20 Autor: play baccarat online <br><a href="http://casopis.programator.cz/forum.php?clanek=203">Amantadine</a> 01.08.2006 05:41:42 Autor: Amantadine <br><a href="http://casopis.programator.cz/forum.php?clanek=203">craps</a> 01.08.2006 05:55:52 Autor: craps <br><a href="http://casopis.programator.cz/forum.php?clanek=203">online bingo</a> 01.08.2006 06:19:28 Autor: online bingo <br><a href="http://casopis.programator.cz/forum.php?clanek=203">online bingo</a> 01.08.2006 06:19:28 Autor: online bingo <br><a href="http://casopis.programator.cz/forum.php?clanek=203">online backgammon</a> 01.08.2006 06:58:47 Autor: online backgammon <br><a href="http://casopis.programator.cz/forum.php?clanek=203">online blackjack</a> 01.08.2006 07:25:32 Autor: online blackjack <br><a href="http://casopis.programator.cz/forum.php?clanek=203">omaha hi lo poker</a> 01.08.2006 07:29:54 Autor: omaha hi lo poker <br><a href="http://casopis.programator.cz/forum.php?clanek=203">pacific poker bonus</a> 01.08.2006 07:30:12 Autor: pacific poker bonus <br><a href="http://casopis.programator.cz/forum.php?clanek=203">texas holdem poker</a> 01.08.2006 07:57:00 Autor: texas holdem poker <br><a href="http://casopis.programator.cz/forum.php?clanek=203">online texas hold em</a> 01.08.2006 08:04:49 Autor: online texas hold em <br><a href="http://casopis.programator.cz/forum.php?clanek=203">backgammon</a> 01.08.2006 08:32:18 Autor: backgammon <br><a href="http://casopis.programator.cz/forum.php?clanek=203">7 card stud online</a> 01.08.2006 09:48:17 Autor: 7 card stud online <br><a href="http://casopis.programator.cz/forum.php?clanek=203">online seven card stud</a> 01.08.2006 09:48:23 Autor: online seven card stud <br><a href="http://casopis.programator.cz/forum.php?clanek=203">pacific poker bonus code</a> 01.08.2006 11:29:42 Autor: pacific poker bonus code <br><a href="http://casopis.programator.cz/forum.php?clanek=203">888 casino</a> 01.08.2006 12:35:21 Autor: 888 casino <br><a href="http://casopis.programator.cz/forum.php?clanek=203">texas hold em poker</a> 01.08.2006 12:36:55 Autor: texas hold em poker <br><a href="http://casopis.programator.cz/forum.php?clanek=203">online keno</a> 01.08.2006 12:59:34 Autor: online keno <br><a href="http://casopis.programator.cz/forum.php?clanek=203">sjyuobxt</a> 01.08.2006 13:08:19 Autor: sjyuobxt <br><a href="http://casopis.programator.cz/forum.php?clanek=203">eyjvdghz</a> 01.08.2006 13:28:07 Autor: eyjvdghz <br><a href="http://casopis.programator.cz/forum.php?clanek=203">play keno online</a> 01.08.2006 13:53:42 Autor: play keno online <br><a href="http://casopis.programator.cz/forum.php?clanek=203">online blackjack</a> 01.08.2006 14:20:39 Autor: online blackjack <br><a href="http://casopis.programator.cz/forum.php?clanek=203">texas hold em</a> 01.08.2006 14:34:29 Autor: texas hold em <br><a href="http://casopis.programator.cz/forum.php?clanek=203">online casino review</a> 01.08.2006 14:35:24 Autor: online casino review <br><a href="http://casopis.programator.cz/forum.php?clanek=203">online casino game</a> 01.08.2006 14:46:51 Autor: online casino game <br><a href="http://casopis.programator.cz/forum.php?clanek=203">baccarat online</a> 01.08.2006 14:51:05 Autor: baccarat online <br><a href="http://casopis.programator.cz/forum.php?clanek=203">baccarat</a> 01.08.2006 15:14:00 Autor: baccarat <br><a href="http://casopis.programator.cz/forum.php?clanek=203">slots</a> 01.08.2006 15:23:57 Autor: slots <br><a href="http://casopis.programator.cz/forum.php?clanek=203">pacific poker</a> 01.08.2006 16:18:07 Autor: pacific poker <br><a href="http://casopis.programator.cz/forum.php?clanek=203">empire poker bonus code</a> 01.08.2006 16:56:51 Autor: empire poker bonus code <br><a href="http://casopis.programator.cz/forum.php?clanek=203">play online slots</a> 01.08.2006 18:47:04 Autor: play online slots <br><a href="http://casopis.programator.cz/forum.php?clanek=203">online video poker</a> 01.08.2006 19:20:42 Autor: online video poker <br><a href="http://casopis.programator.cz/forum.php?clanek=203">seven card stud</a> 01.08.2006 19:53:10 Autor: seven card stud <br><a href="http://casopis.programator.cz/forum.php?clanek=203">online slots</a> 01.08.2006 20:44:36 Autor: online slots <br><a href="http://casopis.programator.cz/forum.php?clanek=203">roulette</a> 01.08.2006 20:48:44 Autor: roulette <br><a href="http://casopis.programator.cz/forum.php?clanek=203">play roulette online</a> 01.08.2006 21:19:43 Autor: play roulette online <br><a href="http://casopis.programator.cz/forum.php?clanek=203">7 card stud</a> 01.08.2006 22:01:30 Autor: 7 card stud <br><a href="http://casopis.programator.cz/forum.php?clanek=203">online craps</a> 01.08.2006 23:02:00 Autor: online craps <br><a href="http://casopis.programator.cz/forum.php?clanek=203">seven card stud poker</a> 01.08.2006 23:04:01 Autor: seven card stud poker <br><a href="http://casopis.programator.cz/forum.php?clanek=203">online casino game</a> 01.08.2006 23:04:58 Autor: online casino game <br><a href="http://casopis.programator.cz/forum.php?clanek=203">pacific poker</a> 01.08.2006 23:29:26 Autor: pacific poker <br><a href="http://casopis.programator.cz/forum.php?clanek=203">tribal band tattoo</a> 01.08.2006 23:43:23 Autor: tribal band tattoo <br><a href="http://casopis.programator.cz/forum.php?clanek=203">tribal band tattoo</a> 01.08.2006 23:44:01 Autor: tribal band tattoo <br><a href="http://casopis.programator.cz/forum.php?clanek=203">free video poker</a> 02.08.2006 00:31:28 Autor: free video poker <br><a href="http://casopis.programator.cz/forum.php?clanek=203">online keno</a> 02.08.2006 01:46:45 Autor: online keno <br><a href="http://casopis.programator.cz/forum.php?clanek=203">play bingo online</a> 02.08.2006 01:58:22 Autor: play bingo online <br><a href="http://casopis.programator.cz/forum.php?clanek=203">blackjack</a> 02.08.2006 01:59:23 Autor: blackjack <br><a href="http://casopis.programator.cz/forum.php?clanek=203">7 card stud poker</a> 02.08.2006 02:24:48 Autor: 7 card stud poker <br><a href="http://casopis.programator.cz/forum.php?clanek=203">keno</a> 02.08.2006 02:34:20 Autor: keno <br><a href="http://casopis.programator.cz/forum.php?clanek=203">online casino</a> 02.08.2006 02:36:28 Autor: online casino <br><a href="http://casopis.programator.cz/forum.php?clanek=203">online poker tournament</a> 02.08.2006 03:16:36 Autor: online poker tournament <br><a href="http://casopis.programator.cz/forum.php?clanek=203">pacific poker</a> 02.08.2006 04:16:13 Autor: pacific poker <br><a href="http://casopis.programator.cz/forum.php?clanek=203">seven card stud poker</a> 02.08.2006 04:30:03 Autor: seven card stud poker <br><a href="http://casopis.programator.cz/forum.php?clanek=203">7 card stud</a> 02.08.2006 04:31:27 Autor: 7 card stud <br><a href="http://casopis.programator.cz/forum.php?clanek=203">texas hold em</a> 02.08.2006 04:49:43 Autor: texas hold em <br><a href="http://casopis.programator.cz/forum.php?clanek=203">free bingo</a> 02.08.2006 05:03:27 Autor: free bingo <br><a href="http://casopis.programator.cz/forum.php?clanek=203">Azulfidine</a> 02.08.2006 05:14:31 Autor: Azulfidine <br><a href="http://casopis.programator.cz/forum.php?clanek=203">None</a> 02.08.2006 06:48:02 Autor: None <br><a href="http://casopis.programator.cz/forum.php?clanek=203"><default></default></a> 02.08.2006 06:48:10 Autor: <default> <br><a href="http://casopis.programator.cz/forum.php?clanek=203">free casino game</a> 02.08.2006 08:02:48 Autor: free casino game <br><a href="http://casopis.programator.cz/forum.php?clanek=203">slots</a> 02.08.2006 08:02:52 Autor: slots <br><a href="http://casopis.programator.cz/forum.php?clanek=203">texas holdem</a> 02.08.2006 08:47:05 Autor: texas holdem <br><a href="http://casopis.programator.cz/forum.php?clanek=203">play poker online</a> 02.08.2006 08:48:17 Autor: play poker online <br><a href="http://casopis.programator.cz/forum.php?clanek=203">online poker</a> 02.08.2006 09:02:53 Autor: online poker <br><a href="http://casopis.programator.cz/forum.php?clanek=203">zolpidem</a> 02.08.2006 09:12:17 Autor: zolpidem <br><a href="http://casopis.programator.cz/forum.php?clanek=203">omaha poker online</a> 02.08.2006 10:16:13 Autor: omaha poker online <br><a href="http://casopis.programator.cz/forum.php?clanek=203">benicar hct side effects</a> 02.08.2006 10:41:54 Autor: benicar hct side effects <br><a href="http://casopis.programator.cz/forum.php?clanek=203">blackjack</a> 02.08.2006 11:54:49 Autor: blackjack <br><a href="http://casopis.programator.cz/forum.php?clanek=203">pacific poker bonus</a> 02.08.2006 12:35:22 Autor: pacific poker bonus <br><a href="http://casopis.programator.cz/forum.php?clanek=203">free seven card stud</a> 02.08.2006 13:03:47 Autor: free seven card stud <br><a href="http://casopis.programator.cz/forum.php?clanek=203">hoodia cactus</a> 02.08.2006 13:07:50 Autor: hoodia cactus <br><a href="http://casopis.programator.cz/forum.php?clanek=203">degree law online program</a> 02.08.2006 13:12:12 Autor: degree law online program <br><a href="http://casopis.programator.cz/forum.php?clanek=203">chevrolet detroit</a> 02.08.2006 13:23:50 Autor: chevrolet detroit <br><a href="http://casopis.programator.cz/forum.php?clanek=203">patio umbrellas</a> 02.08.2006 13:29:08 Autor: patio umbrellas <br><a href="http://casopis.programator.cz/forum.php?clanek=203">dog snoop</a> 02.08.2006 13:44:32 Autor: dog snoop <br><a href="http://casopis.programator.cz/forum.php?clanek=203">free casino money</a> 02.08.2006 13:44:35 Autor: free casino money <br><a href="http://casopis.programator.cz/forum.php?clanek=203">pacific poker bonus code</a> 02.08.2006 13:46:21 Autor: pacific poker bonus code <br><a href="http://casopis.programator.cz/forum.php?clanek=203">blue book</a> 02.08.2006 14:00:43 Autor: blue book <br><a href="http://casopis.programator.cz/forum.php?clanek=203">omaha hi lo</a> 02.08.2006 14:44:24 Autor: omaha hi lo <br><a href="http://casopis.programator.cz/forum.php?clanek=203">party poker com</a> 02.08.2006 15:31:05 Autor: party poker com <br><a href="http://casopis.programator.cz/forum.php?clanek=203">benicar medication</a> 02.08.2006 16:23:20 Autor: benicar medication <br><a href="http://casopis.programator.cz/forum.php?clanek=203">hoodia xpf</a> 02.08.2006 17:36:37 Autor: hoodia xpf <br><a href="http://casopis.programator.cz/forum.php?clanek=203">Advair</a> 02.08.2006 17:51:20 Autor: Advair <br><a href="http://casopis.programator.cz/forum.php?clanek=203">catheter masturbation</a> 02.08.2006 18:30:00 Autor: catheter masturbation <br><a href="http://casopis.programator.cz/forum.php?clanek=203">dog training</a> 02.08.2006 19:00:16 Autor: dog training <br><a href="http://casopis.programator.cz/forum.php?clanek=203">injury lawyer miami personal</a> 02.08.2006 19:21:03 Autor: injury lawyer miami personal <br><a href="http://casopis.programator.cz/forum.php?clanek=203">blankson book samuel</a> 02.08.2006 19:21:26 Autor: blankson book samuel <br><a href="http://casopis.programator.cz/forum.php?clanek=203">book worm</a> 02.08.2006 19:31:14 Autor: book worm <br><a href="http://casopis.programator.cz/forum.php?clanek=203">riverside chevrolet</a> 02.08.2006 19:52:10 Autor: riverside chevrolet <br><a href="http://casopis.programator.cz/forum.php?clanek=203">None</a> 02.08.2006 19:54:05 Autor: None <br><a href="http://casopis.programator.cz/forum.php?clanek=203">degree law master online</a> 02.08.2006 20:04:04 Autor: degree law master online <br><a href="http://casopis.programator.cz/forum.php?clanek=203">diseases heart</a> 02.08.2006 20:27:48 Autor: diseases heart <br><a href="http://casopis.programator.cz/forum.php?clanek=203">chevrolet los angeles</a> 02.08.2006 20:44:00 Autor: chevrolet los angeles <br><a href="http://casopis.programator.cz/forum.php?clanek=203">None</a> 03.08.2006 02:47:48 Autor: None <br><a href="http://casopis.programator.cz/forum.php?clanek=203">None</a> 03.08.2006 07:55:06 Autor: None <br><a href="http://casopis.programator.cz/forum.php?clanek=203">tattoo designs</a> 03.08.2006 10:08:44 Autor: tattoo designs <br><a href="http://casopis.programator.cz/forum.php?clanek=203">klonopin and weight gain</a> 03.08.2006 11:16:59 Autor: klonopin and weight gain <br><a href="http://casopis.programator.cz/forum.php?clanek=203">Ida</a> 03.08.2006 16:06:06 Autor: Ida <br><a href="http://casopis.programator.cz/forum.php?clanek=203">Andy</a> 03.08.2006 16:17:05 Autor: Andy <br><a href="http://casopis.programator.cz/forum.php?clanek=203">None</a> 03.08.2006 18:52:09 Autor: None <br><a href="http://casopis.programator.cz/forum.php?clanek=203">None</a> 03.08.2006 18:52:58 Autor: None <br><a href="http://casopis.programator.cz/forum.php?clanek=203">argosy casino</a> 04.08.2006 05:15:43 Autor: argosy casino <br><a href="http://casopis.programator.cz/forum.php?clanek=203">None</a> 04.08.2006 07:19:05 Autor: None <br><a href="http://casopis.programator.cz/forum.php?clanek=203"><default></default></a> 04.08.2006 07:19:11 Autor: <default> <br>        </default></default></span>
+       </td>
+      </tr>
+      <tr>
+       <td align="center">
+        <span class="mn">
+         <a href="http://casopis.programator.cz/forum.php?clanek=203">Přidat komentář</a>
+        </span>
+       </td>
+      </tr>
+     </tbody></table>
+     <p></p>
+
+
+    <table style="border: 1px solid rgb(0, 0, 128);" align="center" bgcolor="#f0f0f0" cellspacing="1" width="495">
+     <tbody><tr>
+      <td>
+       <p><b>Poslední ze stejné rubriky</b></p>
+      </td>
+     </tr>
+    </tbody></table>
+
+
+    <table align="center" width="495">
+     <tbody><tr>
+      <td>
+       <span class="mn">
+        <img src="java5_soubory/odrazka.gif"> <a href="http://casopis.programator.cz/r-art.php?clanek=208">Začínáme v Javě (7.): Konstruktory a přetěžování metod</a><br><img src="java5_soubory/odrazka.gif"> <a href="http://casopis.programator.cz/r-art.php?clanek=205">Robocode - aneb Java (bojovou) hrou.</a><br><img src="java5_soubory/odrazka.gif"> <a href="http://casopis.programator.cz/r-art.php?clanek=204">Začínáme v Javě (6.): Třídy a objekty.</a><br><img src="java5_soubory/odrazka.gif"> <a href="http://casopis.programator.cz/r-art.php?clanek=202">Začínáme v Javě (4.): Operace s operátory</a><br><img src="java5_soubory/odrazka.gif"> <a href="http://casopis.programator.cz/r-art.php?clanek=201">Java a její layout managery</a><br>       </span>
+      </td>
+     </tr>
+    </tbody></table>
+
+
+   </td>
+   <td width="4">
+    <img src="java5_soubory/x.gif" width="4">
+   </td>
+
+
+   <!-- tak tady začíná pravý sloupek -->
+   <td valign="top" width="120">
+   <br>
+
+    <table style="border: 1px solid rgb(32, 32, 32);" align="center" border="0" cellpadding="1" cellspacing="0" width="120">
+        <tbody><tr>
+         <td align="left" bgcolor="#0d3b8e">
+          <span class="supmenu">
+           <b><img src="java5_soubory/double_point.gif">Funkce ke článku</b>
+       </span>
+      </td>
+     </tr>
+     <tr>
+      <td>
+     <span class="mn">
+         <img src="java5_soubory/diskuse.gif"> <a href="http://casopis.programator.cz/forum.php?clanek=203">Přidat komentář</a>
+        </span>
+      </td>
+     </tr>
+    </tbody></table>
+    <br>
+        <table style="border: 1px solid rgb(32, 32, 32);" align="center" border="0" cellpadding="1" cellspacing="0" width="120">
+        <tbody><tr>
+         <td align="left" bgcolor="#0d3b8e">
+          <span class="supmenu">
+           <b><img src="java5_soubory/double_point.gif">Nejnovější články</b></span>
+<b>       </b></td>
+      </tr>
+      <tr>
+       <td>
+        <span class="mn">
+
+                 <img src="java5_soubory/x.gif" width="1"><img src="java5_soubory/odrazka.gif"> <a href="http://casopis.programator.cz/r-art.php?clanek=218">
+            Práce s událostmi v .NET Framework. </a>[13886]<br>         <img src="java5_soubory/x.gif" width="1"><img src="java5_soubory/odrazka.gif"> <a href="http://casopis.programator.cz/r-art.php?clanek=217">
+            Nová soutěž na 3D Contestu CZ </a>[10603]<br>         <img src="java5_soubory/x.gif" width="1"><img src="java5_soubory/odrazka.gif"> <a href="http://casopis.programator.cz/r-art.php?clanek=216">
+            Práce v .NET Framework - Zástupci </a>[12651]<br>         <img src="java5_soubory/x.gif" width="1"><img src="java5_soubory/odrazka.gif"> <a href="http://casopis.programator.cz/r-art.php?clanek=215">
+            Práce s XML v C# (5.) - ověřování dokumentu pomocí třídy XmlValidatingReader </a>[10510]<br>         <img src="java5_soubory/x.gif" width="1"><img src="java5_soubory/odrazka.gif"> <a href="http://casopis.programator.cz/r-art.php?clanek=214">
+            Práce s XML v C# (4.) - třídy XmlDocument a dotazy jazyka XPath </a>[11856]<br>         </span>
+       </td>
+      </tr>
+     </tbody></table>
+     <br>
+
+    <center>
+<!-- BBSTART: ad2.billboard.cz kod 1.1 - SERVER: Časopis(8512), SEKCE: 120*90(5), POZICE: (1), TYPBANNERU: Button 1(5), OKRAJ: ne, POPIS: ne. -->
+<script language="JavaScript" type="text/javascript">
+<!--
+var bbs=screen,bbn=navigator,bbh;bbh='&ubl='+bbn.browserLanguage+'&ucc='+bbn.cpuClass+'&ucd='+bbs.colorDepth+'&uce='+bbn.cookieEnabled+'&udx='+bbs.deviceXDPI+'&udy='+bbs.deviceYDPI+'&usl='+bbn.systemLanguage+'&uje='+bbn.javaEnabled()+'&uah='+bbs.availHeight+'&uaw='+bbs.availWidth+'&ubd='+bbs.bufferDepth+'&uhe='+bbs.height+'&ulx='+bbs.logicalXDPI+'&uly='+bbs.logicalYDPI+'&use='+bbs.fontSmoothingEnabled+'&uto='+(new Date()).getTimezoneOffset()+'&uui='+bbs.updateInterval+'&uul='+bbn.userLanguage+'&uwi='+bbs.width;
+var bb9_bgcolor='C0C0C0';
+var bb9_text='000000';
+var bb9_link='0000FF';
+if(document.bgColor) { bb9_bgcolor=document.bgColor.substr(1); }
+if(document.fgColor) { bb9_text=document.fgColor.substr(1); }
+if(document.linkColor) { bb9_link=document.linkColor.substr(1); }
+document.write("<IFRAME WIDTH=120 HEIGHT=90 MARGINWIDTH=0 MARGINHEIGHT=0 FRAMEBORDER=0 HSPACE=0 VSPACE=0 SCROLLING=no BORDERCOLOR='#000000' SRC='http://ad2.billboard.cz/please/showit/8512/5/1/5/?typkodu=html&topmargin=0&leftmargin=0"+bbh+"&href="+escape(location.href)+"&popis=ne&okraj=ne&bgcolor="+bb9_bgcolor+"&text="+bb9_text+"&link="+bb9_link+"&bust="+Math.random()+"&target=_top'>");
+document.write("<scr"+"ipt language='JavaScript' type='text/javascript'>");
+document.write("document.write(\"<scr\"+\"ipt language='JavaScript' type='text/javascript' src='http://ad2.billboard.cz/please/showit/8512/5/1/5/?typkodu=js\"+bbh+\"&href=\"+escape(location.href)+\"&popis=ne&okraj=ne&bust=\"+Math.floor(10000000*Math.random())+\"&target=_top'><\/scr\"+\"ipt>\");");
+document.write("<\/scr"+"ipt>");
+document.write("<\/IFRAME>");
+/**///-->
+</script><iframe marginwidth="0" marginheight="0" hspace="0" vspace="0" bordercolor="#000000" src="java5_soubory/a_002.html" frameborder="0" height="90" scrolling="no" width="120">&lt;script
+language='JavaScript'
+type='text/javascript'&gt;document.write("&lt;scr"+"ipt
+language='JavaScript' type='text/javascript'
+src='http://ad2.billboard.cz/please/showit/8512/5/1/5/?typkodu=js"+bbh+"&amp;href="+escape(location.href)+"&amp;popis=ne&amp;okraj=ne&amp;bust="+Math.floor(10000000*Math.random())+"&amp;target=_top'&gt;&lt;/scr"+"ipt&gt;");&lt;/script&gt;</iframe>
+<noscript>
+<table border="0" cellpadding="0" cellspacing="0"><tr><td>
+<a href="http://ad2.billboard.cz/please/redir.bb/8512/5/1/5/"
+target="_top">
+<img
+src="http://ad2.billboard.cz/please/showit/8512/5/1/5/?typkodu=img"
+border="0" width="120" height="90" alt='Kliknete prosim!'></a>
+</td></tr></table>
+</noscript>
+<!-- BBEND: ad2.billboard.cz kod 1.1 -->
+</center>
+<br>
+
+    <table style="border: 1px solid rgb(32, 32, 32);" align="center" border="0" cellpadding="1" cellspacing="0" width="120">
+        <tbody><tr>
+         <td align="left" bgcolor="#0d3b8e">
+          <span class="supmenu">
+           <b><img src="java5_soubory/double_point.gif">O článku</b>
+       </span>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       <span class="mn">
+         Datum: 17.09.2003<br>Rubrika: <a href="http://casopis.programator.cz/index.php?16">Java</a><br>Čtenářů: 11300<br>Autor: <a href="mailto:cdome@centrum.cz">Pavel Patz</a><br><p></p><p><b>Hodnocení článku:</b><br>Znamka: 2.71<br>Počet známek: 1526<br>[<a href="http://casopis.programator.cz/r-art.php?clanek=203&amp;znamka=1">1</a>] [<a href="http://casopis.programator.cz/r-art.php?clanek=203&amp;znamka=2">2</a>] [<a href="http://casopis.programator.cz/r-art.php?clanek=203&amp;znamka=3">3</a>] [<a href="http://casopis.programator.cz/r-art.php?clanek=203&amp;znamka=4">4</a>] [<a href="http://casopis.programator.cz/r-art.php?clanek=203&amp;znamka=5">5</a>]<br>
+ </p></span><p></p>       
+      </td>
+     </tr>
+    </tbody></table>
+
+       </td>
+  </tr>
+</tbody></table>
+<p>&nbsp;</p>
+<div align="center">
+
+<!-- BBSTART: ad2.billboard.cz kod 1.1 - SERVER: Časopis(8512), SEKCE: bottom(2), POZICE: (2), TYPBANNERU: Full Banner(1), OKRAJ: ne, POPIS: ne. -->
+<script language="JavaScript" type="text/javascript">
+<!--
+var bbs=screen,bbn=navigator,bbh;bbh='&ubl='+bbn.browserLanguage+'&ucc='+bbn.cpuClass+'&ucd='+bbs.colorDepth+'&uce='+bbn.cookieEnabled+'&udx='+bbs.deviceXDPI+'&udy='+bbs.deviceYDPI+'&usl='+bbn.systemLanguage+'&uje='+bbn.javaEnabled()+'&uah='+bbs.availHeight+'&uaw='+bbs.availWidth+'&ubd='+bbs.bufferDepth+'&uhe='+bbs.height+'&ulx='+bbs.logicalXDPI+'&uly='+bbs.logicalYDPI+'&use='+bbs.fontSmoothingEnabled+'&uto='+(new Date()).getTimezoneOffset()+'&uui='+bbs.updateInterval+'&uul='+bbn.userLanguage+'&uwi='+bbs.width;
+var bb9_bgcolor='C0C0C0';
+var bb9_text='000000';
+var bb9_link='0000FF';
+if(document.bgColor) { bb9_bgcolor=document.bgColor.substr(1); }
+if(document.fgColor) { bb9_text=document.fgColor.substr(1); }
+if(document.linkColor) { bb9_link=document.linkColor.substr(1); }
+document.write("<IFRAME WIDTH=468 HEIGHT=60 MARGINWIDTH=0 MARGINHEIGHT=0 FRAMEBORDER=0 HSPACE=0 VSPACE=0 SCROLLING=no BORDERCOLOR='#000000' SRC='http://ad2.billboard.cz/please/showit/8512/2/2/1/?typkodu=html&topmargin=0&leftmargin=0"+bbh+"&href="+escape(location.href)+"&popis=ne&okraj=ne&bgcolor="+bb9_bgcolor+"&text="+bb9_text+"&link="+bb9_link+"&bust="+Math.random()+"&target=_top'>");
+document.write("<scr"+"ipt language='JavaScript' type='text/javascript'>");
+document.write("document.write(\"<scr\"+\"ipt language='JavaScript' type='text/javascript' src='http://ad2.billboard.cz/please/showit/8512/2/2/1/?typkodu=js\"+bbh+\"&href=\"+escape(location.href)+\"&popis=ne&okraj=ne&bust=\"+Math.floor(10000000*Math.random())+\"&target=_top'><\/scr\"+\"ipt>\");");
+document.write("<\/scr"+"ipt>");
+document.write("<\/IFRAME>");
+/**///-->
+</script><iframe marginwidth="0" marginheight="0" hspace="0" vspace="0" bordercolor="#000000" src="java5_soubory/a_003.html" frameborder="0" height="60" scrolling="no" width="468">&lt;script
+language='JavaScript'
+type='text/javascript'&gt;document.write("&lt;scr"+"ipt
+language='JavaScript' type='text/javascript'
+src='http://ad2.billboard.cz/please/showit/8512/2/2/1/?typkodu=js"+bbh+"&amp;href="+escape(location.href)+"&amp;popis=ne&amp;okraj=ne&amp;bust="+Math.floor(10000000*Math.random())+"&amp;target=_top'&gt;&lt;/scr"+"ipt&gt;");&lt;/script&gt;</iframe>
+<noscript>
+<table border="0" cellpadding="0" cellspacing="0"><tr><td>
+<a href="http://ad2.billboard.cz/please/redir.bb/8512/2/2/1/"
+target="_top">
+<img
+src="http://ad2.billboard.cz/please/showit/8512/2/2/1/?typkodu=img"
+border="0" width="468" height="60" alt='Kliknete prosim!'></a>
+</td></tr></table>
+</noscript>
+<!-- BBEND: ad2.billboard.cz kod 1.1 -->
+</div><hr size="1" width="760">
+<p align="center"><span class="mn">(c) Systém Jan Sova, Design David Krásenský a Jan Sova<br>Se svými dotazy či problémy se obracejte na diskusní
+<a href="http://linux.prgramator.cz/forum">fórum.</a><br>
+Časopis je součástí projektu <a href="http://www.programator.cz/">Programator</a>
+</span></p>
+
+</body></html>

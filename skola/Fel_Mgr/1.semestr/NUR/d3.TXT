@@ -1,0 +1,7 @@
+prototype creation - elektronicky nebo papirovy
+
+evaluation - overeni CAD, test s koncovym uzivym uzivatelem
+
+test execution - dok, jak byl test provaden
+	- davam ukol podobny tasku
+

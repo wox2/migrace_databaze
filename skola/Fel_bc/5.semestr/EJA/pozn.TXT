@@ -1,0 +1,13 @@
+        EJA
+Frantisek Valek
+K227
+JSF
+glassfish
+UML (EA)
+webservice
+
+Servlet
+-
+                        
+Message/backing bean                        
+                        

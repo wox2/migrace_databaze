@@ -1,0 +1,619 @@
+{VERSION 6 1 "SunOS" "6.1" }
+{USTYLETAB {PSTYLE "Left Justified Maple Output" -1 12 1 {CSTYLE "" 
+-1 -1 "Times" 1 12 0 0 0 1 2 2 2 2 2 2 0 0 0 1 }1 3 0 0 0 0 2 0 2 0 2 
+2 -1 1 }{PSTYLE "Warning" -1 7 1 {CSTYLE "" -1 -1 "Courier" 1 10 0 0 
+255 1 0 0 0 2 2 1 0 0 0 1 }1 0 0 -1 -1 -1 1 0 1 0 2 2 -1 1 }{PSTYLE "D
+ash Item" -1 16 1 {CSTYLE "" -1 -1 "Times" 1 12 0 0 0 1 2 2 2 2 2 2 0 
+0 0 1 }1 1 0 0 3 3 2 0 2 0 2 2 -1 3 }{PSTYLE "Heading 4" -1 20 1 
+{CSTYLE "" -1 -1 "Times" 1 10 0 0 0 1 1 1 2 2 2 2 0 0 0 1 }1 1 0 0 0 
+0 2 0 2 0 2 2 -1 1 }{PSTYLE "Heading 3" -1 5 1 {CSTYLE "" -1 -1 "Times
+" 1 12 0 0 0 1 1 1 2 2 2 2 0 0 0 1 }1 1 0 0 0 0 2 0 2 0 2 2 -1 1 }
+{PSTYLE "Error" -1 8 1 {CSTYLE "" -1 -1 "Courier" 1 10 255 0 255 1 0 
+0 0 2 2 1 0 0 0 1 }1 0 0 -1 -1 -1 1 0 1 0 2 2 -1 1 }{PSTYLE "Author" 
+-1 19 1 {CSTYLE "" -1 -1 "Times" 1 12 0 0 0 1 2 2 2 2 2 2 0 0 0 1 }3 
+1 0 0 8 8 2 0 2 0 2 2 -1 1 }{PSTYLE "Heading 2" -1 4 1 {CSTYLE "" -1 
+-1 "Times" 1 14 0 0 0 1 2 1 2 2 2 2 0 0 0 1 }1 1 0 0 8 2 2 0 2 0 2 2 
+-1 1 }{PSTYLE "Help" -1 10 1 {CSTYLE "" -1 -1 "Courier" 1 9 0 0 255 1 
+0 0 0 2 2 1 0 0 0 1 }1 0 0 -1 -1 -1 1 0 1 0 2 2 -1 1 }{PSTYLE "Text Ou
+tput" -1 2 1 {CSTYLE "" -1 -1 "Courier" 1 10 0 0 255 1 0 0 0 2 2 1 0 
+0 0 1 }1 0 0 -1 -1 -1 1 0 1 0 2 2 -1 1 }{PSTYLE "Heading 1" -1 3 1 
+{CSTYLE "" -1 -1 "Times" 1 18 0 0 0 1 2 1 2 2 2 2 0 0 0 1 }1 1 0 0 8 
+4 2 0 2 0 2 2 -1 1 }{PSTYLE "Normal" -1 0 1 {CSTYLE "" -1 -1 "Times" 
+1 12 0 0 0 1 2 2 2 2 2 2 0 0 0 1 }1 1 0 0 0 0 2 0 2 0 2 2 -1 1 }
+{PSTYLE "Maple Plot" -1 13 1 {CSTYLE "" -1 -1 "Times" 1 12 0 0 0 1 2 
+2 2 2 2 2 0 0 0 1 }3 1 0 0 0 0 2 0 2 0 2 2 -1 1 }{PSTYLE "Line Printed
+ Output" -1 6 1 {CSTYLE "" -1 -1 "Courier" 1 10 0 0 255 1 0 0 0 2 2 1 
+0 0 0 1 }1 0 0 -1 -1 -1 1 0 1 0 2 2 -1 1 }{PSTYLE "Title" -1 18 1 
+{CSTYLE "" -1 -1 "Times" 1 18 0 0 0 1 2 1 1 2 2 2 0 0 0 1 }3 1 0 0 12 
+12 2 0 2 0 2 2 -1 1 }{PSTYLE "Diagnostic" -1 9 1 {CSTYLE "" -1 -1 "Cou
+rier" 1 10 64 128 64 1 0 0 0 2 2 1 0 0 0 1 }1 0 0 -1 -1 -1 1 0 1 0 2 
+2 -1 1 }{PSTYLE "Maple Output" -1 11 1 {CSTYLE "" -1 -1 "Times" 1 12 
+0 0 0 1 2 2 2 2 2 2 0 0 0 1 }3 3 0 0 0 0 2 0 2 0 2 2 -1 1 }{PSTYLE "Li
+st Item" -1 14 1 {CSTYLE "" -1 -1 "Times" 1 12 0 0 0 1 2 2 2 2 2 2 0 
+0 0 1 }1 1 0 0 3 3 2 0 2 0 2 2 -1 5 }{PSTYLE "Bullet Item" -1 15 1 
+{CSTYLE "" -1 -1 "Times" 1 12 0 0 0 1 2 2 2 2 2 2 0 0 0 1 }1 1 0 0 3 
+3 2 0 2 0 2 2 -1 2 }{PSTYLE "Fixed Width" -1 17 1 {CSTYLE "" -1 -1 "Co
+urier" 1 10 0 0 0 1 2 2 2 2 2 2 0 0 0 1 }3 1 0 0 0 0 2 0 2 0 2 2 -1 1 
+}{CSTYLE "LaTeX" -1 32 "" 0 1 0 0 0 0 0 0 0 2 2 2 0 0 0 1 }{CSTYLE "Ma
+ple Comment" -1 21 "Courier" 0 1 0 0 0 1 0 0 0 2 2 2 0 0 0 1 }{CSTYLE 
+"2D Math Bold" -1 5 "Times" 0 1 0 0 0 0 0 1 2 2 2 2 0 0 0 1 }{CSTYLE "
+Help Underlined" -1 44 "Times" 1 12 0 0 0 0 0 0 1 2 2 2 0 0 0 1 }
+{CSTYLE "Output Labels" -1 29 "Times" 1 8 0 0 0 1 0 0 0 2 2 2 0 0 0 1 
+}{CSTYLE "Maple Input" -1 0 "Courier" 0 1 255 0 0 1 0 1 0 2 1 2 0 0 0 
+1 }{CSTYLE "Page Number" -1 33 "Times" 0 1 0 0 0 0 0 0 2 2 2 2 0 0 0 
+1 }{CSTYLE "_cstyle280" -1 200 "" 0 1 0 0 0 0 1 0 0 2 2 2 0 0 0 1 }
+{CSTYLE "Maple Input Placeholder" -1 201 "Courier" 1 12 200 0 200 1 0 
+1 0 2 1 2 0 0 0 1 }{CSTYLE "Text" -1 202 "Times" 1 12 0 0 0 1 2 2 2 2 
+2 2 0 0 0 1 }{CSTYLE "2D Math Italic Small" -1 203 "Times" 0 1 0 0 0 
+0 1 0 2 2 2 2 0 0 0 1 }{CSTYLE "Help Heading" -1 26 "" 1 14 0 0 0 0 0 
+1 0 2 2 2 0 0 0 1 }{CSTYLE "Help Italic Bold" -1 40 "Times" 1 12 0 0 
+0 0 1 1 0 2 2 2 0 0 0 1 }{CSTYLE "Help Normal" -1 30 "Times" 1 12 0 0 
+0 0 0 0 0 2 2 2 0 0 0 1 }{CSTYLE "Help Nonterminal" -1 24 "Courier" 0 
+1 0 0 0 1 0 1 0 2 2 2 0 0 0 1 }{CSTYLE "_cstyle279" -1 204 "" 0 1 0 0 
+0 0 1 0 0 2 2 2 0 0 0 1 }{CSTYLE "2D Math Small" -1 7 "Times" 0 1 0 0 
+0 0 0 0 2 2 2 2 0 0 0 1 }{CSTYLE "_cstyle278" -1 205 "" 0 1 0 0 0 0 1 
+0 0 2 2 2 0 0 0 1 }{CSTYLE "_cstyle277" -1 206 "" 0 1 0 0 0 0 1 0 0 2 
+2 2 0 0 0 1 }{CSTYLE "_cstyle276" -1 207 "" 0 1 0 0 0 0 1 0 0 2 2 2 0 
+0 0 1 }{CSTYLE "_cstyle275" -1 208 "" 0 1 0 0 0 0 1 0 0 2 2 2 0 0 0 1 
+}{CSTYLE "_cstyle274" -1 209 "" 0 1 0 0 0 0 1 0 0 2 2 2 0 0 0 1 }
+{CSTYLE "_cstyle273" -1 210 "" 0 1 0 0 0 0 1 0 0 2 2 2 0 0 0 1 }
+{CSTYLE "_cstyle272" -1 211 "" 0 1 0 0 0 0 1 0 0 2 2 2 0 0 0 1 }
+{CSTYLE "_cstyle271" -1 212 "" 0 1 0 0 0 0 1 0 0 2 2 2 0 0 0 1 }
+{CSTYLE "Help Underlined Italic" -1 43 "Times" 1 12 0 0 0 0 1 0 1 2 2 
+2 0 0 0 1 }{CSTYLE "_cstyle270" -1 213 "" 0 1 0 0 0 0 1 0 0 2 2 2 0 0 
+0 1 }{CSTYLE "2D Math" -1 2 "Times" 0 1 0 0 0 0 0 0 2 2 2 2 0 0 0 1 }
+{CSTYLE "Copyright" -1 34 "Times" 1 10 0 0 0 0 2 2 2 2 2 2 0 0 0 1 }
+{CSTYLE "Hyperlink" -1 17 "" 0 1 0 128 128 1 2 0 1 2 2 2 0 0 0 1 }
+{CSTYLE "Plot Title" -1 27 "" 1 10 0 0 0 0 0 1 0 2 2 2 0 0 0 1 }
+{CSTYLE "2D Input" -1 19 "Times" 0 1 255 0 0 1 0 0 2 2 1 2 0 0 0 1 }
+{CSTYLE "_cstyle21" -1 214 "Courier" 0 1 0 0 0 1 0 1 0 2 2 2 0 0 0 1 }
+{CSTYLE "Help Maple Name" -1 35 "" 0 1 104 64 92 1 0 1 0 2 2 2 0 0 0 
+1 }{CSTYLE "Help Italic" -1 42 "Times" 1 12 0 0 0 0 1 0 0 2 2 2 0 0 0 
+1 }{CSTYLE "Help Underlined Bold" -1 41 "Times" 1 12 0 0 0 0 0 1 1 2 
+2 2 0 0 0 1 }{CSTYLE "_cstyle269" -1 215 "" 0 1 0 0 0 0 1 0 0 2 2 2 0 
+0 0 1 }{CSTYLE "_cstyle268" -1 216 "" 0 1 0 0 0 0 1 0 0 2 2 2 0 0 0 1 
+}{CSTYLE "_cstyle267" -1 217 "" 0 1 0 0 0 0 1 0 0 2 2 2 0 0 0 1 }
+{CSTYLE "Default" -1 38 "" 0 1 0 0 0 0 0 0 0 2 2 2 0 0 0 1 }{CSTYLE "H
+elp Fixed" -1 23 "Courier" 1 10 0 0 0 0 0 0 0 2 2 2 0 0 0 1 }{CSTYLE "
+_cstyle266" -1 218 "" 0 1 0 0 0 0 1 0 0 2 2 2 0 0 0 1 }{CSTYLE "_cstyl
+e265" -1 219 "" 0 1 0 0 0 0 1 0 0 2 2 2 0 0 0 1 }{CSTYLE "_cstyle264" 
+-1 220 "" 0 1 0 0 0 0 1 0 0 2 2 2 0 0 0 1 }{CSTYLE "_cstyle263" -1 
+221 "" 0 1 0 0 0 0 1 0 0 2 2 2 0 0 0 1 }{CSTYLE "_cstyle262" -1 222 ""
+ 0 1 0 0 0 0 1 0 0 2 2 2 0 0 0 1 }{CSTYLE "Dictionary Hyperlink" -1 
+45 "" 0 1 147 0 15 1 2 0 1 2 2 2 0 0 0 1 }{CSTYLE "_cstyle261" -1 223 
+"" 0 1 0 0 0 0 1 0 0 2 2 2 0 0 0 1 }{CSTYLE "2D Output" -1 20 "Times" 
+0 1 0 0 255 1 0 0 2 2 2 2 0 0 0 1 }{CSTYLE "_cstyle260" -1 224 "" 0 1 
+0 0 0 0 1 0 0 2 2 2 0 0 0 1 }{CSTYLE "2D Math Italic" -1 3 "Times" 0 
+1 0 0 0 0 1 0 2 2 2 2 0 0 0 1 }{CSTYLE "Popup" -1 31 "" 0 1 0 128 128 
+1 1 0 1 2 2 2 0 0 0 1 }{CSTYLE "2D Math Symbol 2" -1 16 "Times" 0 1 0 
+0 0 0 2 2 2 2 2 2 0 0 0 1 }{CSTYLE "Plot Text" -1 28 "" 1 8 0 0 0 0 0 
+0 0 2 2 2 0 0 0 1 }{CSTYLE "Help Notes" -1 37 "" 0 1 0 0 0 1 0 1 0 2 
+2 2 0 0 0 1 }{CSTYLE "Help Bold" -1 39 "Times" 1 12 0 0 0 0 0 1 0 2 2 
+2 0 0 0 1 }{CSTYLE "Help Menus" -1 36 "" 0 1 0 0 0 1 0 1 0 2 2 2 0 0 
+0 1 }{CSTYLE "_cstyle259" -1 225 "" 0 1 0 0 0 0 1 0 0 2 2 2 0 0 0 1 }
+{CSTYLE "_cstyle258" -1 226 "" 0 1 0 0 0 0 1 0 0 2 2 2 0 0 0 1 }
+{CSTYLE "_cstyle257" -1 227 "" 0 1 0 0 0 0 1 0 0 2 2 2 0 0 0 1 }
+{CSTYLE "_cstyle256" -1 228 "" 0 1 0 0 0 0 1 0 0 2 2 2 0 0 0 1 }
+{CSTYLE "2D Comment" -1 18 "Times" 0 1 0 0 0 0 0 0 2 2 2 2 0 0 0 1 }
+{CSTYLE "Help Variable" -1 25 "Courier" 0 1 0 0 0 1 2 2 0 2 2 2 0 0 0 
+1 }{CSTYLE "2D Math Bold Small" -1 10 "Times" 0 1 0 0 0 0 0 1 2 2 2 2 
+0 0 0 1 }{CSTYLE "Help Emphasized" -1 229 "" 0 1 0 0 0 0 1 2 0 2 2 2 
+0 0 0 1 }{CSTYLE "Prompt" -1 1 "Courier" 0 1 0 0 0 1 0 0 0 2 2 2 0 0 
+0 1 }{PSTYLE "_pstyle1" -1 200 1 {CSTYLE "" -1 -1 "Courier" 0 1 0 0 0 
+1 0 1 0 2 2 2 1 0 0 1 }1 1 0 0 0 0 2 0 2 0 2 2 -1 1 }{CSTYLE "_cstyle1
+" -1 230 "Courier" 1 12 0 0 0 1 2 1 2 2 2 2 0 0 0 1 }{PSTYLE "_pstyle2
+" -1 201 1 {CSTYLE "" -1 -1 "Times" 1 12 0 0 0 1 2 2 2 2 2 2 1 0 0 1 }
+1 1 0 0 0 0 2 0 2 0 2 2 -1 1 }{CSTYLE "_cstyle2" -1 231 "Times" 1 12 
+0 0 0 1 2 2 2 2 2 2 0 0 0 1 }{PSTYLE "_pstyle3" -1 202 1 {CSTYLE "" 
+-1 -1 "Times" 1 18 0 0 0 1 2 1 2 2 2 2 1 0 0 1 }1 1 0 0 8 4 2 0 2 0 2 
+2 -1 1 }{CSTYLE "_cstyle3" -1 232 "Times" 1 18 0 0 0 1 2 1 2 2 2 2 0 
+0 0 1 }{PSTYLE "_pstyle4" -1 203 1 {CSTYLE "" -1 -1 "Times" 1 14 0 0 
+0 1 2 1 2 2 2 2 1 0 0 1 }1 1 0 0 8 2 2 0 2 0 2 2 -1 1 }{CSTYLE "_cstyl
+e4" -1 233 "Times" 1 14 0 0 0 1 2 1 2 2 2 2 0 0 0 1 }{PSTYLE "_pstyle5
+" -1 204 1 {CSTYLE "" -1 -1 "Courier" 0 1 255 0 0 1 0 1 0 2 1 2 1 0 0 
+1 }1 1 0 0 0 0 2 0 2 0 2 2 -1 1 }{CSTYLE "_cstyle5" -1 234 "Courier" 
+1 12 255 0 0 1 2 1 2 2 1 2 0 0 0 1 }{PSTYLE "_pstyle6" -1 205 1 
+{CSTYLE "" -1 -1 "Times" 1 12 0 0 0 1 2 2 2 2 2 2 1 0 0 1 }3 1 0 0 0 
+0 2 0 2 0 2 2 -1 1 }{CSTYLE "_cstyle6" -1 235 "Times" 1 12 0 0 0 1 2 
+2 2 2 2 2 0 0 0 1 }{PSTYLE "_pstyle7" -1 206 1 {CSTYLE "" -1 -1 "" 0 
+1 0 0 0 0 0 0 0 2 2 2 1 0 0 1 }3 1 0 0 0 0 2 0 2 0 2 2 -1 1 }{CSTYLE "
+_cstyle7" -1 236 "Times" 0 1 0 0 0 0 0 0 0 2 2 2 0 0 0 1 }{PSTYLE "_ps
+tyle8" -1 207 1 {CSTYLE "" -1 -1 "Times" 0 1 0 0 255 1 0 0 2 2 2 2 1 
+0 0 1 }3 3 0 0 0 0 2 0 2 0 2 2 -1 1 }{CSTYLE "_cstyle8" -1 237 "Times"
+ 1 12 0 0 255 1 2 2 2 2 2 2 0 0 0 1 }{CSTYLE "_cstyle9" -1 238 "Times"
+ 1 12 0 0 0 1 1 2 2 2 2 2 0 0 0 1 }{PSTYLE "_pstyle9" -1 208 1 
+{CSTYLE "" -1 -1 "Times" 1 12 0 0 0 1 1 1 2 2 2 2 1 0 0 1 }1 1 0 0 0 
+0 2 0 2 0 2 2 -1 1 }{CSTYLE "_cstyle10" -1 239 "Times" 1 12 0 0 0 1 1 
+1 2 2 2 2 0 0 0 1 }{PSTYLE "_pstyle10" -1 209 1 {CSTYLE "" -1 -1 "" 0 
+1 0 0 0 0 0 0 0 2 2 2 0 0 0 1 }0 0 0 -1 -1 -1 1 0 1 0 2 2 -1 1 }}
+{SECT 0 {EXCHG {PARA 200 "" 0 "" {TEXT 230 32 "Norm\341ln\355 rozd\354
+len\355      mcv8.mws" }{TEXT 230 0 "" }}{PARA 201 "" 0 "" {TEXT 231 
+0 "" }}}{SECT 0 {PARA 202 "" 0 "" {TEXT 232 11 "  P\370\355klad 1" }
+{TEXT 232 0 "" }}{PARA 201 "" 0 "" {TEXT 231 65 "Ur\350ete distribu\35
+0n\355 funkci normovan\351ho norm\341ln\355ho rozd\354len\355 N(0,1)" 
+}{TEXT 231 0 "" }}{PARA 201 "" 0 "" {TEXT 231 29 "a) pomoc\355 integro
+v\341n\355 hustoty" }{TEXT 231 0 "" }}{PARA 201 "" 0 "" {TEXT 231 20 "
+b) pomoc\355 funkce erf" }{TEXT 231 0 "" }}{PARA 201 "" 0 "" {TEXT 
+231 28 "c) pomoc\355 programu statevalf" }{TEXT 231 0 "" }}{PARA 201 "
+" 0 "" {TEXT 231 0 "" }}{SECT 0 {PARA 203 "" 0 "" {TEXT 233 2 "a)" }
+{TEXT 233 0 "" }}{PARA 201 "" 0 "" {TEXT 231 0 "" }}{EXCHG {PARA 204 "
+> " 0 "" {MPLTEXT 1 234 8 "restart:" }{MPLTEXT 1 234 0 "" }}}{EXCHG 
+{PARA 204 "> " 0 "" {MPLTEXT 1 234 33 "phi:=x->1/sqrt(2*Pi)*exp(-x^2/2
+):" }{MPLTEXT 1 234 0 "" }}}{EXCHG {PARA 204 "> " 0 "" {MPLTEXT 1 234 
+36 "Phi1:=x->int(phi(t),t=-infinity..x):" }{MPLTEXT 1 234 0 "" }}}
+{EXCHG {PARA 204 "> " 0 "" {MPLTEXT 1 234 65 "A1:=plot(Phi1(x),x=-3.5.
+.3.5,thickness=2,color=red,discont=true):" }{MPLTEXT 1 234 0 "" }}
+{PARA 204 "> " 0 "" {MPLTEXT 1 234 21 "plots[display](\{A1\});" }
+{MPLTEXT 1 234 0 "" }}{PARA 205 "" 1 "" {GLPLOT2D 496 214 214 
+{PLOTDATA 2 "6)-%'CURVESG6%7S7$$!3++++++++N!#<$\"3)3Sb.z!HEB!#@7$$!3]L
+L$3#*>uM$F*$\"3S.<c1vPySF-7$$!3Ym;z43m9KF*$\"3WxTs`q$*HlF-7$$!3;LLe/$f
+`1$F*$\"3/X=5-K/(3\"!#?7$$!3PLL3K\"o]\"HF*$\"3Y7=R+X0y<F=7$$!3]m;Hn7
+\\lFF*$\"3^?.mUj&=%GF=7$$!3WL$ekO9oi#F*$\"3)o$\\#p$pT4VF=7$$!3q**\\7oC
+A$[#F*$\"3KV.//t)*4lF=7$$!3<L$e9_>ZL#F*$\"3o846*))Q!z(*F=7$$!3A+]iDGp'
+=#F*$\"3H8RN&yZ#Q9!#>7$$!3Cmm;u\"HW.#F*$\"3]GVPVrT&4#Ffn7$$!3?LL3n_J+>
+F*$\"3#*y[U]zepGFfn7$$!3q****\\sZL\\<F*$\"3ecU_K%e;,%Ffn7$$!3#*****\\P
+Vt(f\"F*$\"3B*4!frc50bFfn7$$!3')****\\F#R;X\"F*$\"3^oQeqs4ItFfn7$$!3DL
+$e9(3(*=8F*$\"3IE'*3QD%*e$*Ffn7$$!3[mm;k`@h6F*$\"3`0.kS;xF7!#=7$$!3Mmm
+mcddF5F*$\"3)G;7\\;Z2_\"Fjp7$$!3(*)**\\7B67s)Fjp$\"3yFK/>:r:>Fjp7$$!3?
+nmm;V<XtFjp$\"3L_:[+s;8BFjp7$$!3F'**\\7tVa$eFjp$\"3!fQ5UZMwz#Fjp7$$!3_
+%**\\P>ByR%Fjp$\"3<dw#=(QZ+LFjp7$$!3-jm;zp\"y*GFjp$\"3QoSr^i\"*fQFjp7$
+$!3ojm\"H-V._\"Fjp$\"3OS(=SS*z&R%Fjp7$$!3-)RLL3F^X$F=$\"3y,#[Y1;i)\\Fj
+p7$$\"3fnmT&yo(3:Fjp$\"3u'4#Q+ej*f&Fjp7$$\"3'>+]7VLA&GFjp$\"3\"[@.@\"[
+jAhFjp7$$\"3jpm;a?@.VFjp$\"3/4]8\")**=lmFjp7$$\"3w******\\\\@-eFjp$\"3
+G+\\v*pt6>(Fjp7$$\"3%Q++v$oposFjp$\"3wdxy[5ZjwFjp7$$\"3g0+voMf(o)Fjp$
+\"3yUp1Mh5v!)Fjp7$$\"3#)***\\ii.j-\"F*$\"3/$RssbdiZ)Fjp7$$\"3%GLL$oT'y
+;\"F*$\"3'*o.O-Ap&y)Fjp7$$\"3'3++DE5!>8F*$\"3EN_2#frT1*Fjp7$$\"3Mm;a)3
+rfX\"F*$\"3%H41'Rp*HF*Fjp7$$\"3*4++vW0dg\"F*$\"3#Q984y1$e%*Fjp7$$\"3;L
+$3-\"QfY<F*$\"3%=Tf;*3Y'f*Fjp7$$\"3C+]PWF'Q*=F*$\"3&)y*yk%Qy3(*Fjp7$$
+\"3[LL$e/Xy.#F*$\"3C/QwSG<#z*Fjp7$$\"3m**\\(=<\"e)=#F*$\"3IEsJAN'o&)*F
+jp7$$\"3%ymmm(zvLBF*$\"3(f'y13!e>!**Fjp7$$\"3-nm\"zAAA[#F*$\"3#Ro\"=!4
+<Z$**Fjp7$$\"3LM$3-7d%HEF*$\"31%Ht<MRs&**Fjp7$$\"3#4++]p]Zw#F*$\"3'zv
+\"[Uo^r**Fjp7$$\"3$QL$e*R7)>HF*$\"3?\"[=A*y[#)**Fjp7$$\"3'pmmmV,&eIF*$
+\"3A,=P\\w()))**Fjp7$$\"3<+](o(GP1KF*$\"3%)p/(e,zK***Fjp7$$\"3g+]78Z!z
+M$F*$\"3yaw))\\(Gf***Fjp7$$\"3++++++++NF*$\"3gW'4#4Pn(***Fjp-%*THICKNE
+SSG6#\"\"#-%&COLORG6&%$RGBG$\"#5!\"\"$\"\"!Fe[lFf[l-%+AXESLABELSG6$Q\"
+x6\"Q!F\\\\l-%+PROJECTIONG6#Fc[l-%*LINESTYLEG6#Fg[l-F`[l6#%%NONEG-%%VI
+EWG6$;$!#NFe[l$\"#NFe[l;$!1/.yvl!e(>F*$\"2K!yvl!e(>5!#;-%*GRIDSTYLEG6#
+%,RECTANGULARG" 1 2 2 0 10 1 2 9 1 4 2 1.0 45.0 45.0 1 0 "Curve 1" }}
+{TEXT 235 0 "" }}}{EXCHG {PARA 204 "> " 0 "" {MPLTEXT 1 234 0 "" }}}}
+{SECT 0 {PARA 203 "" 0 "" {TEXT 233 3 " b)" }{TEXT 233 0 "" }}{PARA 
+201 "" 0 "" {TEXT 231 0 "" }}{EXCHG {PARA 204 "> " 0 "" {MPLTEXT 1 
+234 9 "#restart:" }{MPLTEXT 1 234 0 "" }}}{EXCHG {PARA 204 "> " 0 "" 
+{MPLTEXT 1 234 32 "Phi2:=x->1/2*(1+erf(x/sqrt(2))):" }{MPLTEXT 1 234 
+0 "" }}}{EXCHG {PARA 204 "> " 0 "" {MPLTEXT 1 234 66 "A2:=plot(Phi2(x)
+,x=-3.5..3.5,thickness=2,color=blue,discont=true):" }{MPLTEXT 1 234 0 
+"" }}{PARA 204 "> " 0 "" {MPLTEXT 1 234 21 "plots[display](\{A2\});" }
+{MPLTEXT 1 234 0 "" }}{PARA 205 "" 1 "" {GLPLOT2D 562 226 226 
+{PLOTDATA 2 "6)-%'CURVESG6%7S7$$!3++++++++N!#<$\"3)3Sb.z!HEB!#@7$$!3]L
+L$3#*>uM$F*$\"3S.<c1vPySF-7$$!3Ym;z43m9KF*$\"3WxTs`q$*HlF-7$$!3;LLe/$f
+`1$F*$\"3/X=5-K/(3\"!#?7$$!3PLL3K\"o]\"HF*$\"3Y7=R+X0y<F=7$$!3]m;Hn7
+\\lFF*$\"3^?.mUj&=%GF=7$$!3WL$ekO9oi#F*$\"3)o$\\#p$pT4VF=7$$!3q**\\7oC
+A$[#F*$\"3KV.//t)*4lF=7$$!3<L$e9_>ZL#F*$\"3o846*))Q!z(*F=7$$!3A+]iDGp'
+=#F*$\"3H8RN&yZ#Q9!#>7$$!3Cmm;u\"HW.#F*$\"3]GVPVrT&4#Ffn7$$!3?LL3n_J+>
+F*$\"3#*y[U]zepGFfn7$$!3q****\\sZL\\<F*$\"3ecU_K%e;,%Ffn7$$!3#*****\\P
+Vt(f\"F*$\"3B*4!frc50bFfn7$$!3')****\\F#R;X\"F*$\"3^oQeqs4ItFfn7$$!3DL
+$e9(3(*=8F*$\"3IE'*3QD%*e$*Ffn7$$!3[mm;k`@h6F*$\"3`0.kS;xF7!#=7$$!3Mmm
+mcddF5F*$\"3)G;7\\;Z2_\"Fjp7$$!3(*)**\\7B67s)Fjp$\"3yFK/>:r:>Fjp7$$!3?
+nmm;V<XtFjp$\"3L_:[+s;8BFjp7$$!3F'**\\7tVa$eFjp$\"3!fQ5UZMwz#Fjp7$$!3_
+%**\\P>ByR%Fjp$\"3<dw#=(QZ+LFjp7$$!3-jm;zp\"y*GFjp$\"3QoSr^i\"*fQFjp7$
+$!3ojm\"H-V._\"Fjp$\"3OS(=SS*z&R%Fjp7$$!3-)RLL3F^X$F=$\"3y,#[Y1;i)\\Fj
+p7$$\"3fnmT&yo(3:Fjp$\"3u'4#Q+ej*f&Fjp7$$\"3'>+]7VLA&GFjp$\"3\"[@.@\"[
+jAhFjp7$$\"3jpm;a?@.VFjp$\"3/4]8\")**=lmFjp7$$\"3w******\\\\@-eFjp$\"3
+G+\\v*pt6>(Fjp7$$\"3%Q++v$oposFjp$\"3wdxy[5ZjwFjp7$$\"3g0+voMf(o)Fjp$
+\"3yUp1Mh5v!)Fjp7$$\"3#)***\\ii.j-\"F*$\"3/$RssbdiZ)Fjp7$$\"3%GLL$oT'y
+;\"F*$\"3'*o.O-Ap&y)Fjp7$$\"3'3++DE5!>8F*$\"3EN_2#frT1*Fjp7$$\"3Mm;a)3
+rfX\"F*$\"3%H41'Rp*HF*Fjp7$$\"3*4++vW0dg\"F*$\"3#Q984y1$e%*Fjp7$$\"3;L
+$3-\"QfY<F*$\"3%=Tf;*3Y'f*Fjp7$$\"3C+]PWF'Q*=F*$\"3&)y*yk%Qy3(*Fjp7$$
+\"3[LL$e/Xy.#F*$\"3C/QwSG<#z*Fjp7$$\"3m**\\(=<\"e)=#F*$\"3IEsJAN'o&)*F
+jp7$$\"3%ymmm(zvLBF*$\"3(f'y13!e>!**Fjp7$$\"3-nm\"zAAA[#F*$\"3#Ro\"=!4
+<Z$**Fjp7$$\"3LM$3-7d%HEF*$\"31%Ht<MRs&**Fjp7$$\"3#4++]p]Zw#F*$\"3'zv
+\"[Uo^r**Fjp7$$\"3$QL$e*R7)>HF*$\"3?\"[=A*y[#)**Fjp7$$\"3'pmmmV,&eIF*$
+\"3A,=P\\w()))**Fjp7$$\"3<+](o(GP1KF*$\"3%)p/(e,zK***Fjp7$$\"3g+]78Z!z
+M$F*$\"3yaw))\\(Gf***Fjp7$$\"3++++++++NF*$\"3gW'4#4Pn(***Fjp-%*THICKNE
+SSG6#\"\"#-%&COLORG6&%$RGBG$\"\"!!\"\"Fc[l$\"#5Fe[l-%+AXESLABELSG6$Q\"
+x6\"Q!F\\\\l-%+PROJECTIONG6#Ff[l-%*LINESTYLEG6#Fd[l-F`[l6#%%NONEG-%%VI
+EWG6$;$!#NFe[l$\"#NFe[l;$!1/.yvl!e(>F*$\"2K!yvl!e(>5!#;-%*GRIDSTYLEG6#
+%,RECTANGULARG" 1 2 2 0 10 1 2 9 1 4 2 1.0 45.0 45.0 1 0 "Curve 1" }}
+{TEXT 235 0 "" }}}{EXCHG {PARA 204 "> " 0 "" {MPLTEXT 1 234 0 "" }}}}
+{SECT 0 {PARA 203 "" 0 "" {TEXT 233 2 "c)" }{TEXT 233 0 "" }}{PARA 
+201 "" 0 "" {TEXT 231 0 "" }}{EXCHG {PARA 204 "> " 0 "" {MPLTEXT 1 
+234 8 "restart:" }{MPLTEXT 1 234 0 "" }}}{EXCHG {PARA 204 "> " 0 "" 
+{MPLTEXT 1 234 12 "with(stats):" }{MPLTEXT 1 234 0 "" }}}{EXCHG {PARA 
+204 "> " 0 "" {MPLTEXT 1 234 50 "#statevalf[pdf,normald](1.0): hustota
+ v bod\354 (1.0)" }{MPLTEXT 1 234 0 "" }}}{EXCHG {PARA 204 "> " 0 "" 
+{MPLTEXT 1 234 47 "#statevalf[cdf,normald](1.0):distribu\350n\355 funk
+ce" }{MPLTEXT 1 234 0 "" }}}{EXCHG {PARA 204 "> " 0 "" {MPLTEXT 1 234 
+47 "#statevalf[icdf,normald](1.0):kvantilov\341 funkce" }{MPLTEXT 1 
+234 0 "" }}}{EXCHG {PARA 204 "> " 0 "" {MPLTEXT 1 234 75 "A3:=plot(sta
+tevalf[cdf,normald[0,1]], -3.5..3.5, colour=black,thickness=2):" }
+{MPLTEXT 1 234 0 "" }}}{EXCHG {PARA 204 "> " 0 "" {MPLTEXT 1 234 21 "p
+lots[display](\{A3\});" }{MPLTEXT 1 234 0 "" }}{PARA 206 "" 1 "" 
+{GLPLOT2D 455 214 214 {PLOTDATA 2 "6%-%'CURVESG6%7S7$$\"\"\"!\"\"$!+m:
+b\"G\"!\"*7$$\"+LsPu6!#5$!+3L*y=\"F-7$$\"+K>5E8F1$!+tq896F-7$$\"+BAt'
+\\\"F1$!+Lf$y.\"F-7$$\"+kN\\o;F1$!+'H1pm*F17$$\"+_&Q%R=F1$!+<0P/!*F17$
+$\"+Qk#z*>F1$!+K7iB%)F17$$\"+l9.i@F1$!+[j!3&yF17$$\"+>\"\\<L#F1$!+)[4V
+G(F17$$\"+&[A4]#F1$!+][*>u'F17$$\"+(3Q\\n#F1$!+[T5/iF17$$\"+C6@GGF1$!+
+8>\"[u&F17$$\"+g-w+IF1$!+m'==C&F17$$\"++z,uJF1$!+6qw\\ZF17$$\"+SP)4M$F
+1$!+r<C'G%F17$$\"+>Zg#\\$F1$!+w!yJ(QF17$$\"+Fn*Gn$F1$!+ULS!R$F17$$\"+2
+xiDQF1$!+j*ov)HF17$$\"+Y,H.SF1$!+7e&\\_#F17$$\"+2:bgTF1$!+B\"e*>@F17$$
+\"+Y@4LVF1$!+*>`&z;F17$$\"+O;R(\\%F1$!+nP?j7F17$$\"+<4#)oYF1$!+0j)4J)!
+#67$$\"+7lCE[F1$!+E>tcVFgr7$$\"+%G^g*\\F1$!+!zkz*)*!#87$$\"+>2Vs^F1$\"
++\"yVNK%Fgr7$$\"+O&pfK&F1$\"+cw&*z\")Fgr7$$\"+kcz\"\\&F1$\"+>z)eB\"F17
+$$\"+\"G5Jm&F1$\"+j'**)p;F17$$\"+6#32$eF1$\"+,pb(4#F17$$\"+Ey'G*fF1$\"
++%e9]^#F17$$\"+J%=H<'F1$\"+o&eP)HF17$$\"+3>qMjF1$\"+*)Re5MF17$$\"+,.W2
+lF1$\"+:(*HtQF17$$\"+fp'Rm'F1$\"+O#\\)*H%F17$$\"+T>4NoF1$\"+rUMvZF17$$
+\"+8s5'*pF1$\"+^B\"GB&F17$$\"+mXTkrF1$\"+]X-BdF17$$\"+od'*GtF1$\"+E2(f
+@'F17$$\"+EcB,vF1$\"+gjy[nF17$$\"+v>:nwF1$\"+&\\=2G(F17$$\"+0a#o$yF1$
+\"+.t!p%yF17$$\"+`Q40!)F1$\"+)4@WV)F17$$\"+\"3:(f\")F1$\"+5*)=,!*F17$$
+\"+e%GpL)F1$\"+oZh)o*F17$$\"+:-V&\\)F1$\"+JaZM5F-7$$\"+ZhUk')F1$\"+S9t
+46F-7$$\"+<o<E))F1$\"+zX<)=\"F-7$$\"\"*F*$\"+m:b\"G\"F--%*THICKNESSG6#
+\"\"#-%&COLORG6&%$RGBG$\"\"!F*Fc[lFc[l-%+AXESLABELSG6$Q!6\"Fh[l-%%VIEW
+G6$;$\"#5!\"#$\"#!*F`\\l;$!-kGO\"GL\"Fgr$\"-kGO\"GL\"Fgr" 1 2 2 0 10 
+1 2 6 1 4 2 1.0 45.0 45.0 1 0 "Curve 1" }}{TEXT 236 0 "" }}}{EXCHG 
+{PARA 204 "> " 0 "" {MPLTEXT 1 234 0 "" }}}}{SECT 0 {PARA 203 "" 0 "" 
+{TEXT 233 34 " d) Porovn\341n\355 distribu\350n\355ch funkc\355" }
+{TEXT 233 0 "" }}{PARA 201 "" 0 "" {TEXT 231 0 "" }}{EXCHG {PARA 204 "
+> " 0 "" {MPLTEXT 1 234 9 "#restart:" }{MPLTEXT 1 234 0 "" }}}{EXCHG 
+{PARA 204 "> " 0 "" {MPLTEXT 1 234 27 "plots[display](\{A1,A2,A3\});" 
+}{MPLTEXT 1 234 0 "" }}{PARA 205 "" 1 "" {GLPLOT2D 443 211 211 
+{PLOTDATA 2 "6+-%'CURVESG6%7S7$$!#N!\"\"$\"+!z!HEB!#87$$!+@*>uM$!\"*$
+\"+/vPySF-7$$!+53m9KF1$\"+\\q$*HlF-7$$!+0$f`1$F1$\"+,K/(3\"!#77$$!+K\"
+o]\"HF1$\"+,X0y<F>7$$!+o7\\lFF1$\"+Pj&=%GF>7$$!+nV\"oi#F1$\"+IpT4VF>7$
+$!+oCA$[#F1$\"+1t)*4lF>7$$!+A&>ZL#F1$\"+v)Q!z(*F>7$$!+EGp'=#F1$\"+%yZ#
+Q9!#67$$!+v\"HW.#F1$\"+RrT&4#Fgn7$$!+n_J+>F1$\"+^zepGFgn7$$!+tZL\\<F1$
+\"+G%e;,%Fgn7$$!+QVt(f\"F1$\"+mc50bFgn7$$!+G#R;X\"F1$\"+ks4ItFgn7$$!+s
+3(*=8F1$\"+HD%*e$*Fgn7$$!+l`@h6F1$\"+R;xF7!#57$$!+dddF5F1$\"+kru?:F[q7
+$$!*C67s)F1$\"+<:r:>F[q7$$!*Ku^M(F1$\"+*>nJJ#F[q7$$!*uVa$eF1$\"+rWj(z#
+F[q7$$!*?ByR%F1$\"+qQZ+LF[q7$$!**p\"y*GF1$\"+[i\"*fQF[q7$$!*.V._\"F1$
+\"+,%*z&R%F[q7$$!(G^X$F1$\"+hg@')\\F[q7$$\"*yo(3:F1$\"+)zN'*f&F[q7$$\"
+*ULA&GF1$\"+3[jAhF[q7$$\"*07KI%F1$\"+!)**=lmF[q7$$\"*%\\@-eF1$\"+'pt6>
+(F[q7$$\"*$oposF1$\"+Y5ZjwF[q7$$\"*Y$f(o)F1$\"+Kh5v!)F[q7$$\"+DOIE5F1$
+\"+avDw%)F[q7$$\"+nT'y;\"F1$\"++Ap&y)F[q7$$\"+h-,>8F1$\"+!frT1*F[q7$$
+\"+(3rfX\"F1$\"+Pp*HF*F[q7$$\"+Yaq0;F1$\"+znIe%*F[q7$$\"+4QfY<F1$\"+\"
+*3Y'f*F[q7$$\"+VF'Q*=F1$\"+YQy3(*F[q7$$\"+X]%y.#F1$\"+SG<#z*F[q7$$\"+r
+6e)=#F1$\"+AN'o&)*F[q7$$\"+vzvLBF1$\"+3!e>!**F[q7$$\"+FAA#[#F1$\"+!4<Z
+$**F[q7$$\"+>rXHEF1$\"+U$Rs&**F[q7$$\"+%p]Zw#F1$\"+Uo^r**F[q7$$\"+)R7)
+>HF1$\"+#*y[#)**F[q7$$\"+N9]eIF1$\"+\\w()))**F[q7$$\"+vGP1KF1$\"+;!zK*
+**F[q7$$\"+7Z!zM$F1$\"+](Gf***F[q7$$\"#NF*$\"+4Pn(***F[q-%*THICKNESSG6
+#\"\"#-%&COLORG6&%$RGBG$\"\"!F*Fd[lFd[l-F$6%7S7$$!3++++++++N!#<$\"3)3S
+b.z!HEB!#@7$$!3]LL$3#*>uM$F\\\\l$\"3S.<c1vPySF_\\l7$$!3Ym;z43m9KF\\\\l
+$\"3WxTs`q$*HlF_\\l7$$!3;LLe/$f`1$F\\\\l$\"3/X=5-K/(3\"!#?7$$!3PLL3K\"
+o]\"HF\\\\l$\"3Y7=R+X0y<F_]l7$$!3]m;Hn7\\lFF\\\\l$\"3^?.mUj&=%GF_]l7$$
+!3WL$ekO9oi#F\\\\l$\"3)o$\\#p$pT4VF_]l7$$!3q**\\7oCA$[#F\\\\l$\"3KV.//
+t)*4lF_]l7$$!3<L$e9_>ZL#F\\\\l$\"3o846*))Q!z(*F_]l7$$!3A+]iDGp'=#F
+\\\\l$\"3H8RN&yZ#Q9!#>7$$!3Cmm;u\"HW.#F\\\\l$\"3]GVPVrT&4#F^_l7$$!3?LL
+3n_J+>F\\\\l$\"3#*y[U]zepGF^_l7$$!3q****\\sZL\\<F\\\\l$\"3ecU_K%e;,%F^
+_l7$$!3#*****\\PVt(f\"F\\\\l$\"3B*4!frc50bF^_l7$$!3')****\\F#R;X\"F
+\\\\l$\"3^oQeqs4ItF^_l7$$!3DL$e9(3(*=8F\\\\l$\"3IE'*3QD%*e$*F^_l7$$!3[
+mm;k`@h6F\\\\l$\"3`0.kS;xF7!#=7$$!3MmmmcddF5F\\\\l$\"3)G;7\\;Z2_\"Fbal
+7$$!3(*)**\\7B67s)Fbal$\"3yFK/>:r:>Fbal7$$!3?nmm;V<XtFbal$\"3L_:[+s;8B
+Fbal7$$!3F'**\\7tVa$eFbal$\"3!fQ5UZMwz#Fbal7$$!3_%**\\P>ByR%Fbal$\"3<d
+w#=(QZ+LFbal7$$!3-jm;zp\"y*GFbal$\"3QoSr^i\"*fQFbal7$$!3ojm\"H-V._\"Fb
+al$\"3OS(=SS*z&R%Fbal7$$!3-)RLL3F^X$F_]l$\"3y,#[Y1;i)\\Fbal7$$\"3fnmT&
+yo(3:Fbal$\"3u'4#Q+ej*f&Fbal7$$\"3'>+]7VLA&GFbal$\"3\"[@.@\"[jAhFbal7$
+$\"3jpm;a?@.VFbal$\"3/4]8\")**=lmFbal7$$\"3w******\\\\@-eFbal$\"3G+\\v
+*pt6>(Fbal7$$\"3%Q++v$oposFbal$\"3wdxy[5ZjwFbal7$$\"3g0+voMf(o)Fbal$\"
+3yUp1Mh5v!)Fbal7$$\"3#)***\\ii.j-\"F\\\\l$\"3/$RssbdiZ)Fbal7$$\"3%GLL$
+oT'y;\"F\\\\l$\"3'*o.O-Ap&y)Fbal7$$\"3'3++DE5!>8F\\\\l$\"3EN_2#frT1*Fb
+al7$$\"3Mm;a)3rfX\"F\\\\l$\"3%H41'Rp*HF*Fbal7$$\"3*4++vW0dg\"F\\\\l$\"
+3#Q984y1$e%*Fbal7$$\"3;L$3-\"QfY<F\\\\l$\"3%=Tf;*3Y'f*Fbal7$$\"3C+]PWF
+'Q*=F\\\\l$\"3&)y*yk%Qy3(*Fbal7$$\"3[LL$e/Xy.#F\\\\l$\"3C/QwSG<#z*Fbal
+7$$\"3m**\\(=<\"e)=#F\\\\l$\"3IEsJAN'o&)*Fbal7$$\"3%ymmm(zvLBF\\\\l$\"
+3(f'y13!e>!**Fbal7$$\"3-nm\"zAAA[#F\\\\l$\"3#Ro\"=!4<Z$**Fbal7$$\"3LM$
+3-7d%HEF\\\\l$\"31%Ht<MRs&**Fbal7$$\"3#4++]p]Zw#F\\\\l$\"3'zv\"[Uo^r**
+Fbal7$$\"3$QL$e*R7)>HF\\\\l$\"3?\"[=A*y[#)**Fbal7$$\"3'pmmmV,&eIF\\\\l
+$\"3A,=P\\w()))**Fbal7$$\"3<+](o(GP1KF\\\\l$\"3%)p/(e,zK***Fbal7$$\"3g
++]78Z!zM$F\\\\l$\"3yaw))\\(Gf***Fbal7$$\"3++++++++NF\\\\l$\"3gW'4#4Pn(
+***FbalF\\[l-Fa[l6&Fc[l$\"#5F*Fd[lFd[l-F$6%Fh[lF\\[l-Fa[l6&Fc[lFd[lFd[
+lFe[m-%+AXESLABELSG6'Q!6\"F^\\m-%%FONTG6$%*HELVETICAGFf[m%+HORIZONTALG
+Fd\\m-%+PROJECTIONG6#Fe[m-%*LINESTYLEG6#Fe[l-Fa[l6#%%NONEG-%%VIEWG6$;F
+(Fhz;$!2#HRyvl!e(>Fbal$\"2Q!yvl!e(>5!#;-%*GRIDSTYLEG6#%,RECTANGULARG" 
+1 2 2 0 10 1 2 9 1 4 2 1.0 45.0 45.0 1 0 "Curve 1" "Curve 2" "Curve 3"
+ }}{TEXT 235 0 "" }}}{EXCHG {PARA 204 "> " 0 "" {MPLTEXT 1 234 0 "" }}
+}}}{SECT 0 {PARA 202 "" 0 "" {TEXT 232 11 "  P\370\355klad 2" }{TEXT 
+232 0 "" }}{PARA 201 "" 0 "" {TEXT 231 65 "N\341hodn\341 veli\350ina U
+ m\341 normovan\351 norm\341ln\355 rozd\354len\355 N(0,1). Ur\350ete" 
+}{TEXT 231 0 "" }}{PARA 201 "" 0 "" {TEXT 231 69 "a) pravd\354podobnos
+ti P(U< 1.425), P(U>-0.423) a P((-1,135 < U < 2.23);" }{TEXT 231 0 "" 
+}}{PARA 201 "" 0 "" {TEXT 231 48 "b) pravd\354podobnosti  P(U^2 > 2) a
+ P(U^2 <3*U+2);" }{TEXT 231 0 "" }}{PARA 201 "" 0 "" {TEXT 231 10 "c) \+
+\350\355slo  " }{XPPEDIT 18 0 "epsilon;" "6#%(epsilonG" }{TEXT 231 19 
+"  tak, ?e  P(|U| < " }{XPPEDIT 18 0 "epsilon;" "6#%(epsilonG" }{TEXT 
+231 9 " )=0.95. " }{TEXT 231 0 "" }}{PARA 201 "" 0 "" {TEXT 231 0 "" }
+}{SECT 0 {PARA 203 "" 0 "" {TEXT 233 2 "a)" }{TEXT 233 0 "" }}{PARA 
+201 "" 0 "" {TEXT 231 0 "" }}{EXCHG {PARA 204 "> " 0 "" {MPLTEXT 1 
+234 8 "restart:" }{MPLTEXT 1 234 0 "" }}}{EXCHG {PARA 204 "> " 0 "" 
+{MPLTEXT 1 234 12 "with(stats):" }{MPLTEXT 1 234 0 "" }}}{EXCHG {PARA 
+204 "> " 0 "" {MPLTEXT 1 234 33 "phi:=x->1/sqrt(2*Pi)*exp(-x^2/2):" }
+{MPLTEXT 1 234 0 "" }}}{EXCHG {PARA 204 "> " 0 "" {MPLTEXT 1 234 36 "P
+hi1:=x->int(phi(t),t=-infinity..x):" }{MPLTEXT 1 234 0 "" }}}{EXCHG 
+{PARA 204 "> " 0 "" {MPLTEXT 1 234 32 "Phi2:=x->1/2*(1+erf(x/sqrt(2)))
+:" }{MPLTEXT 1 234 0 "" }}}{EXCHG {PARA 204 "> " 0 "" {MPLTEXT 1 234 
+26 "P11:=Phi1(1.425):evalf(%);" }{MPLTEXT 1 234 0 "" }}{PARA 207 "" 1 
+"" {XPPMATH 20 "6#$\"+%*R@H#*!#5" }{TEXT 237 0 "" }}}{EXCHG {PARA 204 
+"> " 0 "" {MPLTEXT 1 234 26 "P21:=Phi2(1.425):evalf(%);" }{MPLTEXT 1 
+234 0 "" }}{PARA 207 "" 1 "" {XPPMATH 20 "6#$\"+%*R@H#*!#5" }{TEXT 
+237 0 "" }}}{EXCHG {PARA 204 "> " 0 "" {MPLTEXT 1 234 40 "P31:=stateva
+lf[cdf,normald[0,1]](1.425);" }{MPLTEXT 1 234 0 "" }}{PARA 207 "" 1 ""
+ {XPPMATH 20 "6#>%#P3G$\"+%*R@H#*!#5" }{TEXT 237 0 "" }}}{EXCHG {PARA 
+204 "> " 0 "" {MPLTEXT 1 234 43 "P32:=1-statevalf[cdf,normald[0,1]](-0
+.423);" }{MPLTEXT 1 234 0 "" }}{PARA 207 "" 1 "" {XPPMATH 20 "6#>%$Pb3
+G$\"+&pB&Qm!#5" }{TEXT 237 0 "" }}}{EXCHG {PARA 204 "> " 0 "" 
+{MPLTEXT 1 234 75 "P33:=statevalf[cdf,normald[0,1]](2.23)-statevalf[cd
+f,normald[0,1]](-1.135);" }{MPLTEXT 1 234 0 "" }}{PARA 207 "" 1 "" 
+{XPPMATH 20 "6#>%$Pc3G$\"+%>'Q*e)!#5" }{TEXT 237 0 "" }}}{EXCHG {PARA 
+204 "> " 0 "" {MPLTEXT 1 234 0 "" }}}}{SECT 0 {PARA 203 "" 0 "" {TEXT 
+233 2 "b)" }{TEXT 233 0 "" }}{PARA 201 "" 0 "" {TEXT 231 0 "" }}
+{EXCHG {PARA 204 "> " 0 "" {MPLTEXT 1 234 20 "restart:with(stats):" }
+{MPLTEXT 1 234 0 "" }}}{EXCHG {PARA 204 "> " 0 "" {MPLTEXT 1 234 56 "P
+b:=2*(1-statevalf[cdf,normald[0,1]](sqrt(2)));evalf(%);" }{MPLTEXT 1 
+234 0 "" }}{PARA 207 "" 1 "" {XPPMATH 20 "6#>%#PbG$\"*2#*Hd\"!\"*" }
+{TEXT 237 0 "" }}{PARA 207 "" 1 "" {XPPMATH 20 "6#$\"*2#*Hd\"!\"*" }
+{TEXT 237 0 "" }}}{EXCHG {PARA 204 "> " 0 "" {MPLTEXT 1 234 67 "Pb2:=s
+tatevalf[cdf,normald[0,1]](2)-statevalf[cdf,normald[0,1]](1);" }
+{MPLTEXT 1 234 0 "" }}{PARA 207 "" 1 "" {XPPMATH 20 "6#>%$Pb2G$\"+?70f
+8!#5" }{TEXT 237 0 "" }}}{EXCHG {PARA 204 "> " 0 "" {MPLTEXT 1 234 0 "
+" }}}}{SECT 0 {PARA 203 "" 0 "" {TEXT 233 3 " c)" }{TEXT 233 0 "" }}
+{PARA 201 "" 0 "" {TEXT 231 0 "" }}{EXCHG {PARA 204 "> " 0 "" 
+{MPLTEXT 1 234 8 "restart:" }{MPLTEXT 1 234 0 "" }}}{EXCHG {PARA 204 "
+> " 0 "" {MPLTEXT 1 234 12 "with(stats):" }{MPLTEXT 1 234 0 "" }}}
+{EXCHG {PARA 204 "> " 0 "" {MPLTEXT 1 234 12 "alpha:=0.05:" }{MPLTEXT 
+1 234 0 "" }}}{EXCHG {PARA 204 "> " 0 "" {MPLTEXT 1 234 46 "eps1:=stat
+evalf[icdf,normald[0,1]](1-alpha/2);" }{MPLTEXT 1 234 0 "" }}{PARA 
+207 "" 1 "" {XPPMATH 20 "6#>%%eps1G$\"+&)R'*f>!\"*" }{TEXT 237 0 "" }}
+}{EXCHG {PARA 204 "> " 0 "" {MPLTEXT 1 234 13 "p:=1-alpha/2:" }
+{MPLTEXT 1 234 0 "" }}}{EXCHG {PARA 204 "> " 0 "" {MPLTEXT 1 234 32 "P
+hi2:=x->1/2*(1+erf(x/sqrt(2))):" }{MPLTEXT 1 234 0 "" }}}{EXCHG {PARA 
+204 "> " 0 "" {MPLTEXT 1 234 45 "k1:=fsolve(Phi2(x)-p,x):assign(x);x;e
+ps2:=k1;" }{MPLTEXT 1 234 0 "" }}{PARA 207 "" 1 "" {XPPMATH 20 "6#>%%e
+ps2G$\"+&)R'*f>!\"*" }{TEXT 237 0 "" }}}{EXCHG {PARA 204 "> " 0 "" 
+{MPLTEXT 1 234 7 "x:='x':" }{MPLTEXT 1 234 0 "" }}}{EXCHG {PARA 204 ">
+ " 0 "" {MPLTEXT 1 234 33 "phi:=x->1/sqrt(2*Pi)*exp(-x^2/2):" }
+{MPLTEXT 1 234 0 "" }}}{EXCHG {PARA 204 "> " 0 "" {MPLTEXT 1 234 36 "P
+hi1:=x->int(phi(t),t=-infinity..x):" }{MPLTEXT 1 234 0 "" }}}{EXCHG 
+{PARA 204 "> " 0 "" {MPLTEXT 1 234 45 "k2:=fsolve(Phi1(x)-p,x):assign(
+x);x;eps2:=k2;" }{MPLTEXT 1 234 0 "" }}{PARA 207 "" 1 "" {XPPMATH 20 "
+6#>%%eps2G$\"+&)R'*f>!\"*" }{TEXT 237 0 "" }}}{EXCHG {PARA 204 "> " 0 
+"" {MPLTEXT 1 234 0 "" }}}}}{SECT 0 {PARA 202 "" 0 "" {TEXT 232 11 "  \+
+P\370\355klad 3" }{TEXT 232 0 "" }}{PARA 201 "" 0 "" {TEXT 231 55 "N\3
+41hodn\341 veli\350ina X m\341 norm\341ln\355 rozd\354len\355 N(1,4). \+
+Ur\350ete" }{TEXT 231 0 "" }}{PARA 201 "" 0 "" {TEXT 231 75 "a) pravd
+\354podobnosti  P( X < 3,178), P(X > -1,456) a P( -4,138 < X < 2,236);
+" }{TEXT 231 0 "" }}{PARA 201 "" 0 "" {TEXT 231 49 "b) pravd\354podobn
+osti  P(X^2 < 5) a P(X^2 > 3*X-4);" }{TEXT 231 0 "" }}{PARA 201 "" 0 "
+" {TEXT 231 9 "c) \350\355slo " }{XPPEDIT 18 0 "epsilon;" "6#%(epsilon
+G" }{TEXT 231 21 "  tak, aby  P(|X-1|< " }{XPPEDIT 18 0 "epsilon;" "6#
+%(epsilonG" }{TEXT 231 7 " )=0.9." }{TEXT 231 0 "" }}{PARA 201 "" 0 ""
+ {TEXT 231 0 "" }}{SECT 0 {PARA 203 "" 0 "" {TEXT 233 2 "a)" }{TEXT 
+233 0 "" }}{PARA 201 "" 0 "" {TEXT 231 0 "" }}{EXCHG {PARA 204 "> " 0 
+"" {MPLTEXT 1 234 20 "restart:with(stats):" }{MPLTEXT 1 234 0 "" }}}
+{EXCHG {PARA 204 "> " 0 "" {MPLTEXT 1 234 65 "Pa1:=statevalf[cdf,norma
+ld[1,2]](3.178);# druhy parametr je sigma" }{MPLTEXT 1 234 0 "" }}
+{PARA 207 "" 1 "" {XPPMATH 20 "6#>%$Pa1G$\"+s0B>')!#5" }{TEXT 237 0 ""
+ }}}{EXCHG {PARA 204 "> " 0 "" {MPLTEXT 1 234 43 "Pa2:=1-statevalf[cdf
+,normald[1,2]](-1.456);" }{MPLTEXT 1 234 0 "" }}{PARA 207 "" 1 "" 
+{XPPMATH 20 "6#>%$Pa2G$\"+g^w-*)!#5" }{TEXT 237 0 "" }}}{EXCHG {PARA 
+204 "> " 0 "" {MPLTEXT 1 234 76 "Pa3:=statevalf[cdf,normald[1,2]](2.23
+6)-statevalf[cdf,normald[1,2]](-4.138);" }{MPLTEXT 1 234 0 "" }}{PARA 
+207 "" 1 "" {XPPMATH 20 "6#>%$Pa3G$\"+yq7ms!#5" }{TEXT 237 0 "" }}}
+{EXCHG {PARA 204 "> " 0 "" {MPLTEXT 1 234 0 "" }}}}{SECT 0 {PARA 203 "
+" 0 "" {TEXT 233 2 "b)" }{TEXT 233 0 "" }}{PARA 201 "" 0 "" {TEXT 231 
+0 "" }}{EXCHG {PARA 204 "> " 0 "" {MPLTEXT 1 234 80 "Pb1:=statevalf[cd
+f,normald[1,2]](sqrt(5))-statevalf[cdf,normald[1,2]](-sqrt(5));" }
+{MPLTEXT 1 234 0 "" }}{PARA 207 "" 1 "" {XPPMATH 20 "6#>%$Pb1G$\"+k*e*
+)y'!#5" }{TEXT 237 0 "" }}}{EXCHG {PARA 204 "> " 0 "" {MPLTEXT 1 234 
+70 "Pb2:=statevalf[cdf,normald[1,2]](-1)+1-statevalf[cdf,normald[1,2]]
+(4);" }{MPLTEXT 1 234 0 "" }}{PARA 207 "" 1 "" {XPPMATH 20 "6#>%$Pb2G$
+\"+`XiaA!#5" }{TEXT 237 0 "" }}}{EXCHG {PARA 204 "> " 0 "" {MPLTEXT 1 
+234 0 "" }}}}{SECT 0 {PARA 203 "" 0 "" {TEXT 233 2 "c)" }{TEXT 233 0 "
+" }}{PARA 201 "" 0 "" {TEXT 231 0 "" }}{EXCHG {PARA 204 "> " 0 "" 
+{MPLTEXT 1 234 37 "eps:=2*statevalf[icdf,normald](0.95);" }{MPLTEXT 1 
+234 0 "" }}{PARA 207 "" 1 "" {XPPMATH 20 "6#>%$epsG$\"+asq*G$!\"*" }
+{TEXT 237 0 "" }}}{EXCHG {PARA 204 "> " 0 "" {MPLTEXT 1 234 0 "" }}}}}
+{SECT 0 {PARA 202 "" 0 "" {TEXT 232 11 "  P\370\355klad 4" }{TEXT 232 
+0 "" }}{PARA 201 "" 0 "" {TEXT 231 46 "N\341hodn\341 veli\350ina X m\3
+41 norm\341ln\355 rozd\354len\355 N(12," }{TEXT 231 2 "  " }{XPPEDIT 
+18 0 "sigma;" "6#%&sigmaG" }{TEXT 231 36 "^2) a P(X>15)=0.2 . Ur\350et
+e parametr " }{XPPEDIT 18 0 "sigma;" "6#%&sigmaG" }{TEXT 231 2 " ." }
+{TEXT 231 0 "" }}{PARA 201 "" 0 "" {TEXT 231 0 "" }}{EXCHG {PARA 204 "
+> " 0 "" {MPLTEXT 1 234 20 "restart:with(stats):" }{MPLTEXT 1 234 0 ""
+ }}}{EXCHG {PARA 204 "> " 0 "" {MPLTEXT 1 234 43 "sigma:=3/statevalf[i
+cdf,normald[0,1]](0.8);" }{MPLTEXT 1 234 0 "" }}{PARA 207 "" 1 "" 
+{XPPMATH 20 "6#>%&sigmaG$\"+])[Xc$!\"*" }{TEXT 237 0 "" }}}{EXCHG 
+{PARA 204 "> " 0 "" {MPLTEXT 1 234 0 "" }}}}{SECT 0 {PARA 202 "" 0 "" 
+{TEXT 232 10 " P\370\355klad 5" }{TEXT 232 0 "" }}{PARA 201 "" 0 "" 
+{TEXT 231 17 "N\341hodn\341 veli\350ina " }{TEXT 238 1 "X" }{TEXT 231 
+23 " m\341 norm\341ln\355 rozd\354len\355 " }{TEXT 238 1 "N" }{TEXT 
+231 5 "(-2; " }{XPPEDIT 18 0 "sigma^2;" "6#*$%&sigmaG\"\"#" }{TEXT 
+231 6 "  ) a " }{TEXT 238 1 "P" }{TEXT 231 1 "(" }{TEXT 238 1 "X" }
+{TEXT 231 29 "  < 0)=0,7. Ur\350ete parametr  " }{XPPEDIT 18 0 "sigma;
+" "6#%&sigmaG" }{TEXT 231 2 " ." }{TEXT 231 0 "" }}{PARA 201 "" 0 "" 
+{TEXT 231 0 "" }}{EXCHG {PARA 204 "> " 0 "" {MPLTEXT 1 234 20 "restart
+:with(stats):" }{MPLTEXT 1 234 0 "" }}}{EXCHG {PARA 204 "> " 0 "" 
+{MPLTEXT 1 234 41 "sig:=2/statevalf[icdf,normald[0,1]](0.7);" }
+{MPLTEXT 1 234 0 "" }}{PARA 207 "" 1 "" {XPPMATH 20 "6#>%$sigG$\"+/)yQ
+\"Q!\"*" }{TEXT 237 0 "" }}}{EXCHG {PARA 204 "> " 0 "" {MPLTEXT 1 234 
+0 "" }}}{EXCHG {PARA 204 "> " 0 "" {MPLTEXT 1 234 0 "" }}}}{SECT 0 
+{PARA 202 "" 0 "" {TEXT 232 11 "  P\370\355klad 6" }{TEXT 232 0 "" }}
+{PARA 201 "" 0 "" {TEXT 231 44 "N\341hodn\341 veli\350ina X m\341 norm
+\341ln\355 rozd\354len\355 N( " }{XPPEDIT 18 0 "mu;" "6#%#muG" }{TEXT 
+231 40 " ,9) a  P(X < 4)=0,96. Ur\350ete parametr  " }{XPPEDIT 18 0 "m
+u;" "6#%#muG" }{TEXT 231 1 "." }{TEXT 231 0 "" }}{PARA 201 "" 0 "" 
+{TEXT 231 0 "" }}{EXCHG {PARA 204 "> " 0 "" {MPLTEXT 1 234 20 "restart
+:with(stats):" }{MPLTEXT 1 234 0 "" }}}{EXCHG {PARA 204 "> " 0 "" 
+{MPLTEXT 1 234 43 "mu:=4-3*statevalf[icdf,normald[0,1]](0.96);" }
+{MPLTEXT 1 234 0 "" }}{PARA 207 "" 1 "" {XPPMATH 20 "6#>%#muG$!+8#e?D
+\"!\"*" }{TEXT 237 0 "" }}}{EXCHG {PARA 204 "> " 0 "" {MPLTEXT 1 234 
+0 "" }}}}{SECT 0 {PARA 202 "" 0 "" {TEXT 232 11 "  P\370\355klad 7" }
+{TEXT 232 0 "" }}{PARA 201 "" 0 "" {TEXT 231 17 "N\341hodn\341 veli\35
+0ina " }{TEXT 238 1 "X" }{TEXT 231 23 " m\341 norm\341ln\355 rozd\354l
+en\355 " }{TEXT 238 1 "N" }{TEXT 231 3 "(  " }{XPPEDIT 18 0 "mu;" "6#%
+#muG" }{TEXT 231 8 " ;16) a " }{TEXT 238 1 "P" }{TEXT 231 1 "(" }
+{TEXT 238 1 "X" }{TEXT 231 30 "  > -6)=0,9. Ur\350ete parametr  " }
+{XPPEDIT 18 0 "mu;" "6#%#muG" }{TEXT 231 2 " ." }{TEXT 231 0 "" }}
+{PARA 201 "" 0 "" {TEXT 231 0 "" }}{EXCHG {PARA 204 "> " 0 "" 
+{MPLTEXT 1 234 20 "restart:with(stats):" }{MPLTEXT 1 234 0 "" }}}
+{EXCHG {PARA 204 "> " 0 "" {MPLTEXT 1 234 43 "mu:=-6+4*statevalf[icdf,
+normald[0,1]](0.9);" }{MPLTEXT 1 234 0 "" }}{PARA 207 "" 1 "" 
+{XPPMATH 20 "6#>%#muG$!*OPzt)!\"*" }{TEXT 237 0 "" }}}{EXCHG {PARA 
+204 "> " 0 "" {MPLTEXT 1 234 0 "" }}}}{SECT 0 {PARA 202 "" 0 "" {TEXT 
+232 11 "  P\370\355klad 8" }{TEXT 232 0 "" }}{PARA 201 "" 0 "" {TEXT 
+231 43 "N\341hodn\341 veli\350ina X m\341 norm\341ln\355 rozd\354len\3
+55 N(" }{XPPEDIT 18 0 "mu;" "6#%#muG" }{TEXT 231 2 ", " }{XPPEDIT 18 
+0 "sigma;" "6#%&sigmaG" }{TEXT 231 70 "^2) a P( X < 85 )=0,9  ,P( X < \+
+95 )=0.95  . Ur\350ete nezn\341m\351 parametry  " }{XPPEDIT 18 0 "mu;"
+ "6#%#muG" }{TEXT 231 4 " a  " }{XPPEDIT 18 0 "sigma;" "6#%&sigmaG" }
+{TEXT 231 42 " a vypo\350t\354te pravd\354podobnost P( X > 60 ) ." }
+{TEXT 231 0 "" }}{PARA 201 "" 0 "" {TEXT 231 0 "" }}{EXCHG {PARA 204 "
+> " 0 "" {MPLTEXT 1 234 20 "restart:with(stats):" }{MPLTEXT 1 234 0 ""
+ }}}{EXCHG {PARA 204 "> " 0 "" {MPLTEXT 1 234 37 "a:=statevalf[icdf,no
+rmald[0,1]](0.9);" }{MPLTEXT 1 234 0 "" }}{PARA 207 "" 1 "" {XPPMATH 
+20 "6#>%\"aG$\"+m:b\"G\"!\"*" }{TEXT 237 0 "" }}}{EXCHG {PARA 204 "> "
+ 0 "" {MPLTEXT 1 234 38 "b:=statevalf[icdf,normald[0,1]](0.95);" }
+{MPLTEXT 1 234 0 "" }}{PARA 207 "" 1 "" {XPPMATH 20 "6#>%\"bG$\"+FO&[k
+\"!\"*" }{TEXT 237 0 "" }}}{EXCHG {PARA 204 "> " 0 "" {MPLTEXT 1 234 
+12 "f:=x+y*a=85:" }{MPLTEXT 1 234 0 "" }}}{EXCHG {PARA 204 "> " 0 "" 
+{MPLTEXT 1 234 12 "g:=x+y*b=95:" }{MPLTEXT 1 234 0 "" }}}{EXCHG {PARA 
+204 "> " 0 "" {MPLTEXT 1 234 25 "res:=fsolve(\{f,g\},\{x,y\});" }
+{MPLTEXT 1 234 0 "" }}{PARA 207 "" 1 "" {XPPMATH 20 "6#>%$resG<$/%\"xG
+$\"+S-\\s\\!\")/%\"yG$\"+!\\IDv#F*" }{TEXT 237 0 "" }}}{EXCHG {PARA 
+204 "> " 0 "" {MPLTEXT 1 234 12 "assign(res);" }{MPLTEXT 1 234 0 "" }}
+}{EXCHG {PARA 204 "> " 0 "" {MPLTEXT 1 234 23 "#A:=49.7249:B:=27.5253:
+" }{MPLTEXT 1 234 0 "" }}}{EXCHG {PARA 204 "> " 0 "" {MPLTEXT 1 234 
+37 "P:=1-statevalf[cdf,normald[x,y]](60);" }{MPLTEXT 1 234 0 "" }}
+{PARA 207 "" 1 "" {XPPMATH 20 "6#>%\"PG$\"+F#RYa$!#5" }{TEXT 237 0 "" 
+}}}{EXCHG {PARA 204 "> " 0 "" {MPLTEXT 1 234 0 "" }}}}{SECT 0 {PARA 
+202 "" 0 "" {TEXT 232 11 "  P\370\355klad 9" }{TEXT 232 0 "" }}{PARA 
+201 "" 0 "" {TEXT 231 34 "D\351lka v\375robku je n\341hodn\341 veli\35
+0ina " }{TEXT 238 1 "X" }{TEXT 231 50 ", kter\341 m\341 norm\341ln\355
+ rozd\354len\355 se st\370edn\355 hodnotou " }{XPPEDIT 18 0 "mu;" "6#%
+#muG" }{TEXT 231 35 " =7,5 cm a sm\354rodatnou odchylkou   " }
+{XPPEDIT 18 0 "sigma;" "6#%&sigmaG" }{TEXT 231 127 " =4 mm. Kontrolou \+
+projdou v\375robky del?\355 ne? 73 mm. Ur\350ete pravd\354podobnost to
+ho, ?e n\341hodn\354 vybran\375 v\375robek je del?\355 ne? 8,2 cm." }
+{TEXT 231 0 "" }}{PARA 201 "" 0 "" {TEXT 231 0 "" }}{EXCHG {PARA 204 "
+> " 0 "" {MPLTEXT 1 234 20 "restart:with(stats):" }{MPLTEXT 1 234 0 ""
+ }}}{EXCHG {PARA 204 "> " 0 "" {MPLTEXT 1 234 14 "mu:=75:sig:=4:" }
+{MPLTEXT 1 234 0 "" }}}{EXCHG {PARA 204 "> " 0 "" {MPLTEXT 1 234 77 "P
+:=(1-statevalf[cdf,normald[75,4]](82))/(1-statevalf[cdf,normald[75,4]]
+(73));" }{MPLTEXT 1 234 0 "" }}{PARA 207 "" 1 "" {XPPMATH 20 "6#>%\"PG
+$\"+edR$z&!#6" }{TEXT 237 0 "" }}}{EXCHG {PARA 204 "> " 0 "" {MPLTEXT 
+1 234 0 "" }}}}{SECT 0 {PARA 202 "" 0 "" {TEXT 232 12 "  P\370\355klad
+ 10" }{TEXT 232 0 "" }}{PARA 201 "" 0 "" {TEXT 231 8 "Pro  a) " }
+{XPPEDIT 18 0 "alpha;" "6#%&alphaG" }{TEXT 231 11 " = 0,9, b) " }
+{XPPEDIT 18 0 "alpha;" "6#%&alphaG" }{TEXT 231 12 " = 0,95, c) " }
+{XPPEDIT 18 0 "alpha;" "6#%&alphaG" }{TEXT 231 69 " = 0,99 stanovte ob
+oustrann\375 a jednostrann\351 intervaly spolehlivosti. " }{TEXT 231 
+0 "" }}{PARA 201 "" 0 "" {TEXT 231 0 "" }}{SECT 0 {PARA 203 "" 0 "" 
+{TEXT 233 5 " a)  " }{XPPEDIT 18 0 "alpha;" "6#%&alphaG" }{TEXT 233 6 
+" = 0,9" }{TEXT 233 0 "" }}{PARA 201 "" 0 "" {TEXT 231 0 "" }}{EXCHG 
+{PARA 204 "> " 0 "" {MPLTEXT 1 234 20 "restart:with(stats):" }
+{MPLTEXT 1 234 0 "" }}}{EXCHG {PARA 204 "> " 0 "" {MPLTEXT 1 234 39 "a
+1:=statevalf[icdf,normald[0,1]](0.95);" }{MPLTEXT 1 234 0 "" }}{PARA 
+207 "" 1 "" {XPPMATH 20 "6#>%#a1G$\"+FO&[k\"!\"*" }{TEXT 237 0 "" }}}
+{EXCHG {PARA 204 "> " 0 "" {MPLTEXT 1 234 38 "a2:=statevalf[icdf,norma
+ld[0,1]](0.9);" }{MPLTEXT 1 234 0 "" }}{PARA 207 "" 1 "" {XPPMATH 20 "
+6#>%#a2G$\"+m:b\"G\"!\"*" }{TEXT 237 0 "" }}}{EXCHG {PARA 204 "> " 0 "
+" {MPLTEXT 1 234 38 "a3:=statevalf[icdf,normald[0,1]](0.1);" }
+{MPLTEXT 1 234 0 "" }}{PARA 207 "" 1 "" {XPPMATH 20 "6#>%#a3G$!+m:b\"G
+\"!\"*" }{TEXT 237 0 "" }}}{EXCHG {PARA 204 "> " 0 "" {MPLTEXT 1 234 
+0 "" }}}}{SECT 0 {PARA 203 "" 0 "" {TEXT 233 6 "  b)  " }{XPPEDIT 18 
+0 "alpha;" "6#%&alphaG" }{TEXT 233 6 " =0,95" }{TEXT 233 0 "" }}{PARA 
+201 "" 0 "" {TEXT 231 0 "" }}{EXCHG {PARA 204 "> " 0 "" {MPLTEXT 1 
+234 20 "restart:with(stats):" }{MPLTEXT 1 234 0 "" }}}{EXCHG {PARA 
+204 "> " 0 "" {MPLTEXT 1 234 40 "a1:=statevalf[icdf,normald[0,1]](0.97
+5);" }{MPLTEXT 1 234 0 "" }}{PARA 207 "" 1 "" {XPPMATH 20 "6#>%#a1G$\"
++&)R'*f>!\"*" }{TEXT 237 0 "" }}}{EXCHG {PARA 204 "> " 0 "" {MPLTEXT 
+1 234 39 "a2:=statevalf[icdf,normald[0,1]](0.95);" }{MPLTEXT 1 234 0 "
+" }}{PARA 207 "" 1 "" {XPPMATH 20 "6#>%#a2G$\"+FO&[k\"!\"*" }{TEXT 
+237 0 "" }}}{EXCHG {PARA 204 "> " 0 "" {MPLTEXT 1 234 39 "a3:=stateval
+f[icdf,normald[0,1]](0.05);" }{MPLTEXT 1 234 0 "" }}{PARA 207 "" 1 "" 
+{XPPMATH 20 "6#>%#a3G$!+FO&[k\"!\"*" }{TEXT 237 0 "" }}}}{SECT 0 
+{PARA 203 "" 0 "" {TEXT 233 6 "  c)  " }{XPPEDIT 18 0 "alpha;" "6#%&al
+phaG" }{TEXT 233 6 " =0,99" }{TEXT 233 0 "" }}{PARA 201 "" 0 "" {TEXT 
+231 0 "" }}{EXCHG {PARA 204 "> " 0 "" {MPLTEXT 1 234 20 "restart:with(
+stats):" }{MPLTEXT 1 234 0 "" }}}{EXCHG {PARA 204 "> " 0 "" {MPLTEXT 
+1 234 40 "a1:=statevalf[icdf,normald[0,1]](0.995);" }{MPLTEXT 1 234 0 
+"" }}{PARA 207 "" 1 "" {XPPMATH 20 "6#>%#a1G$\"+/$Hed#!\"*" }{TEXT 
+237 0 "" }}}{EXCHG {PARA 204 "> " 0 "" {MPLTEXT 1 234 39 "a2:=stateval
+f[icdf,normald[0,1]](0.99);" }{MPLTEXT 1 234 0 "" }}{PARA 207 "" 1 "" 
+{XPPMATH 20 "6#>%#a2G$\"+uyMEB!\"*" }{TEXT 237 0 "" }}}{EXCHG {PARA 
+204 "> " 0 "" {MPLTEXT 1 234 39 "a3:=statevalf[icdf,normald[0,1]](0.01
+);" }{MPLTEXT 1 234 0 "" }}{PARA 207 "" 1 "" {XPPMATH 20 "6#>%#a3G$!+u
+yMEB!\"*" }{TEXT 237 0 "" }}}{EXCHG {PARA 204 "> " 0 "" {MPLTEXT 1 
+234 0 "" }}}{SECT 0 {PARA 208 "" 0 "" {TEXT 239 0 "" }}}}}{SECT 0 
+{PARA 202 "" 0 "" {TEXT 232 12 "  P\370\355klad 11" }{TEXT 232 0 "" }}
+{PARA 201 "" 0 "" {TEXT 231 80 "P\370i balen\355 bal\355\350k\371 cukr
+u o hmotnosti 1 kg je skute\350n\341 hmotnost n\341hodn\341 veli\350in
+a " }{TEXT 238 1 "X" }{TEXT 231 31 ", kter\341 m\341 norm\341ln\355 ro
+zd\354len\355  " }{TEXT 238 1 "N" }{TEXT 231 125 "(1;10^-4). Jak\341 j
+e pravd\354podobnost, ?e v hmotnost krabice, kter\341 obsahuje 20 bal
+\355\350k\371 se bude od 20 kg li?it nejv\375?e o 10 dkg." }{TEXT 231 
+0 "" }}{PARA 201 "" 0 "" {TEXT 231 1 " " }{TEXT 231 0 "" }}{EXCHG 
+{PARA 204 "> " 0 "" {MPLTEXT 1 234 20 "restart:with(stats):" }
+{MPLTEXT 1 234 0 "" }}}{EXCHG {PARA 204 "> " 0 "" {MPLTEXT 1 234 26 "m
+u:=20:sig:=sqrt(20/10^4):" }{MPLTEXT 1 234 0 "" }}}{EXCHG {PARA 204 ">
+ " 0 "" {MPLTEXT 1 234 86 "p:=statevalf[cdf,normald[mu,sig]](20.1)-sta
+tevalf[cdf,normald[mu,sig]](19.9):evalf(%);" }{MPLTEXT 1 234 0 "" }}
+{PARA 207 "" 1 "" {XPPMATH 20 "6#$\"+9o_Y(*!#5" }{TEXT 237 0 "" }}}
+{EXCHG {PARA 204 "> " 0 "" {MPLTEXT 1 234 0 "" }}}}{SECT 0 {PARA 202 "
+" 0 "" {TEXT 232 12 "  P\370\355klad 12" }{TEXT 232 0 "" }}{PARA 201 "
+" 0 "" {TEXT 231 41 "Chyby p\370i m\354\370en\355 maj\355 norm\341ln\3
+55 rozd\354len\355 " }{TEXT 238 1 "N" }{TEXT 231 80 "(0  0,01). Kolik \+
+m\354\370en\355 mus\355me prov\351st, aby byla chyba pr\371m\354ru m\3
+54\370en\355 men?\355 ne? " }{XPPEDIT 18 0 "epsilon;" "6#%(epsilonG" }
+{TEXT 231 26 " =0,04 s pravd\354podobnost\355 " }{TEXT 238 1 "P" }
+{TEXT 231 6 "=0,95." }{TEXT 231 0 "" }}{PARA 201 "" 0 "" {TEXT 231 0 "
+" }}{EXCHG {PARA 204 "> " 0 "" {MPLTEXT 1 234 20 "restart:with(stats):
+" }{MPLTEXT 1 234 0 "" }}}{EXCHG {PARA 204 "> " 0 "" {MPLTEXT 1 234 
+57 "no:=(statevalf[icdf,normald[0,1]](0.975)/0.4)^2:evalf(%);" }
+{MPLTEXT 1 234 0 "" }}{PARA 207 "" 1 "" {XPPMATH 20 "6#$\"+k<\"4S#!\")
+" }{TEXT 237 0 "" }}}{EXCHG {PARA 204 "> " 0 "" {MPLTEXT 1 234 0 "" }}
+}}{SECT 0 {PARA 202 "" 0 "" {TEXT 232 12 "  P\370\355klad 13" }{TEXT 
+232 0 "" }}{PARA 201 "" 0 "" {TEXT 231 137 "Tramvaj jezd\355 po 6 minu
+t\341ch. Chod\355me k tramvaji n\341hodn\354 a jezd\355me 2-kr\341t de
+nn\354 21 dn\371 v m\354s\355ci. Pr\371m\354rn\341 doba \350ek\341n\35
+5 je n\341hodn\341 veli\350ina " }{TEXT 238 2 "T " }{TEXT 231 42 "a ce
+lkov\341 doba \350ek\341n\355 je n\341hodn\341 veli\350ina " }{TEXT 
+238 1 "T" }{TEXT 231 9 "c. Ur\350ete" }{TEXT 231 0 "" }}{PARA 201 "" 0
+ "" {TEXT 231 19 "a) pravd\354podobnost " }{TEXT 238 1 "P" }{TEXT 231 
+2 "1=" }{TEXT 238 1 "P" }{TEXT 231 5 "(2 < " }{TEXT 238 1 "T" }{TEXT 
+231 8 " < 4),  " }{TEXT 238 1 "P" }{TEXT 231 2 "2=" }{TEXT 238 1 "P" }
+{TEXT 231 7 "(2,5 < " }{TEXT 238 1 "T" }{TEXT 231 5 " <4);" }{TEXT 
+231 0 "" }}{PARA 201 "" 0 "" {TEXT 231 10 "b) \350\355slo  " }
+{XPPEDIT 18 0 "epsilon;" "6#%(epsilonG" }{TEXT 231 18 " >0    takov\35
+1, ?e " }{TEXT 238 1 "P" }{TEXT 231 2 "(|" }{TEXT 238 1 "T" }{TEXT 
+231 5 "-3|< " }{XPPEDIT 18 0 "epsilon;" "6#%(epsilonG" }{TEXT 231 7 " \+
+)=0,9;" }{TEXT 231 0 "" }}{PARA 201 "" 0 "" {TEXT 231 20 "c) pravd\354
+podobnost  " }{TEXT 238 1 "P" }{TEXT 231 10 "3=P(100 < " }{TEXT 238 1 
+"T" }{TEXT 231 9 "c  <150)." }{TEXT 231 0 "" }}{PARA 201 "" 0 "" 
+{TEXT 231 0 "" }}{EXCHG {PARA 204 "> " 0 "" {MPLTEXT 1 234 20 "restart
+:with(stats):" }{MPLTEXT 1 234 0 "" }}}{EXCHG {PARA 204 "> " 0 "" 
+{MPLTEXT 1 234 29 "n:=42:mu:=3:sig:=sqrt(3^2/3):" }{MPLTEXT 1 234 0 ""
+ }}}{SECT 0 {PARA 203 "" 0 "" {TEXT 233 2 "a)" }{TEXT 233 0 "" }}
+{PARA 201 "" 0 "" {TEXT 231 0 "" }}{EXCHG {PARA 204 "> " 0 "" 
+{MPLTEXT 1 234 26 "muT:=mu:sigT:=sig/sqrt(n):" }{MPLTEXT 1 234 0 "" }}
+}{EXCHG {PARA 204 "> " 0 "" {MPLTEXT 1 234 76 "P1:=statevalf[cdf,norma
+ld[muT,sigT]](4)-statevalf[cdf,normald[muT,sigT]](2);" }{MPLTEXT 1 
+234 0 "" }}{PARA 207 "" 1 "" {XPPMATH 20 "6#>%#P1G$\"+%*=<)***!#5" }
+{TEXT 237 0 "" }}}{EXCHG {PARA 204 "> " 0 "" {MPLTEXT 1 234 80 "P2:=st
+atevalf[cdf,normald[muT,sigT]](3.5)-statevalf[cdf,normald[muT,sigT]](2
+.5);" }{MPLTEXT 1 234 0 "" }}{PARA 207 "" 1 "" {XPPMATH 20 "6#>%#P2G$
+\"+3<J'Q*!#5" }{TEXT 237 0 "" }}}{EXCHG {PARA 204 "> " 0 "" {MPLTEXT 
+1 234 0 "" }}}}{SECT 0 {PARA 203 "" 0 "" {TEXT 233 3 " b)" }{TEXT 233 
+0 "" }}{PARA 201 "" 0 "" {TEXT 231 0 "" }}{EXCHG {PARA 204 "> " 0 "" 
+{MPLTEXT 1 234 54 "eps:=statevalf[icdf,normald[0,1]](0.95)*sigT:evalf(
+%);" }{MPLTEXT 1 234 0 "" }}{PARA 207 "" 1 "" {XPPMATH 20 "6#$\"+Ki0'R
+%!#5" }{TEXT 237 0 "" }}}{EXCHG {PARA 204 "> " 0 "" {MPLTEXT 1 234 0 "
+" }}{PARA 207 "" 1 "" {XPPMATH 20 "6#,$*(\"#U!\"\"\"\"$#\"\"\"\"\"#F%F
+(F)" }{TEXT 237 0 "" }}}{EXCHG {PARA 204 "> " 0 "" {MPLTEXT 1 234 0 ""
+ }}}}{PARA 201 "" 0 "" {TEXT 231 0 "" }}{SECT 0 {PARA 203 "" 0 "" 
+{TEXT 233 4 "  c)" }{TEXT 233 0 "" }}{PARA 201 "" 0 "" {TEXT 231 0 "" 
+}}{EXCHG {PARA 204 "> " 0 "" {MPLTEXT 1 234 30 "muTc:=n*mu:sigTc:=sqrt
+(n)*sig:" }{MPLTEXT 1 234 0 "" }}}{EXCHG {PARA 204 "> " 0 "" {MPLTEXT 
+1 234 84 "P3:=statevalf[cdf,normald[muTc,sigTc]](150)-statevalf[cdf,no
+rmald[muTc,sigTc]](100);" }{MPLTEXT 1 234 0 "" }}{PARA 207 "" 1 "" 
+{XPPMATH 20 "6#>%#P3G$\"+5NtM(*!#5" }{TEXT 237 0 "" }}}{EXCHG {PARA 
+204 "> " 0 "" {MPLTEXT 1 234 0 "" }}}}}{PARA 209 "" 0 "" {TEXT -1 0 ""
+ }}}{MARK "0 0 0" 0 }{VIEWOPTS 1 1 0 15 10 1804 1 1 1 1 }{PAGENUMBERS 
+0 1 2 33 1 1 }

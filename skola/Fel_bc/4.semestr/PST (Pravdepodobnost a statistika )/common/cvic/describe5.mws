@@ -1,0 +1,101 @@
+{VERSION 6 0 "IBM INTEL NT" "6.0" }
+{USTYLETAB {CSTYLE "Maple Input" -1 0 "Courier" 0 1 255 0 0 1 0 1 0 0 
+1 0 0 0 0 1 }{CSTYLE "2D Math" -1 2 "Times" 0 1 0 0 0 0 0 0 2 0 0 0 0 
+0 0 1 }{CSTYLE "2D Output" 2 20 "" 0 1 0 0 255 1 0 0 0 0 0 0 0 0 0 1 }
+{CSTYLE "" 0 21 "" 0 1 0 0 0 1 0 0 0 0 2 0 0 0 0 1 }{PSTYLE "Normal" 
+-1 0 1 {CSTYLE "" -1 -1 "Times" 1 12 0 0 0 1 2 2 2 2 2 2 1 1 1 1 }1 1 
+0 0 0 0 1 0 1 0 2 2 0 1 }{PSTYLE "Heading 1" -1 3 1 {CSTYLE "" -1 -1 "
+Times" 1 18 0 0 0 1 2 1 2 2 2 2 1 1 1 1 }1 1 0 0 8 4 1 0 1 0 2 2 0 1 }
+{PSTYLE "Maple Output" -1 11 1 {CSTYLE "" -1 -1 "Times" 1 12 0 0 0 1 
+2 2 2 2 2 2 1 1 1 1 }3 3 0 0 0 0 1 0 1 0 2 2 0 1 }{PSTYLE "Maple Plot
+" -1 13 1 {CSTYLE "" -1 -1 "Times" 1 12 0 0 0 1 2 2 2 2 2 2 1 1 1 1 }
+3 1 0 0 0 0 1 0 1 0 2 2 0 1 }}
+{SECT 0 {EXCHG {PARA 0 "" 0 "" {MPLTEXT 0 21 54 "Histogram    statplot
+s                   describe5.mws" }}}{SECT 0 {PARA 3 "" 0 "" {TEXT 
+-1 12 "  Zad\341n\355 dat" }}{PARA 0 "" 0 "" {TEXT -1 0 "" }}{EXCHG 
+{PARA 0 "> " 0 "" {MPLTEXT 1 0 20 "restart:with(stats):" }}}{EXCHG 
+{PARA 0 "> " 0 "" {MPLTEXT 1 0 105 "data1:=[165,170,173,178,189,176,18
+0,175,187,184,182,200,179,182,178,175,176,176,185,185,178,183,181,175]
+:" }}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 26 "n:=describe[count](dat
+a1);" }}{PARA 11 "" 1 "" {XPPMATH 20 "6#>%\"nG\"#C" }}}{EXCHG {PARA 0 
+"> " 0 "" {MPLTEXT 1 0 0 "" }}}}{SECT 0 {PARA 3 "" 0 "" {TEXT -1 10 " \+
+Histogram" }}{PARA 0 "" 0 "" {TEXT -1 0 "" }}{EXCHG {PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 23 "with(stats[statplots]):" }}}{EXCHG {PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 29 "histogram(data1,colour=cyan);" }}{PARA 13 "" 1 "" 
+{GLPLOT2D 331 236 236 {PLOTDATA 2 "6%-%)POLYGONSG6'7&7$\"$l\"\"\"!7$F(
+#\"\"\"\"#]7$\"$v\"F+7$F/F)7&F07$F/#F,\"#:7$\"$y\"F37$F6F)7&F7F57$\"$
+\"=F37$F:F)7&F;7$F:#F,\"#?7$\"$&=F>7$FAF)7&FB7$FA#F,\"#v7$\"$+#FE7$FHF
+)-%'COLOURG6&%$RGBG$F)F)$\"*++++\"!\")FO-%%VIEWG6$;$\"0+++++]h\"!#7$\"
+0+++++].#FX%(DEFAULTG" 1 2 0 1 10 0 2 6 1 4 2 1.000000 47.000000 
+44.000000 0 0 "Curve 1" }}}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 37 "
+histogram(data1, color=red, area=1);\n" }}{PARA 13 "" 1 "" {GLPLOT2D 
+331 213 213 {PLOTDATA 2 "6%-%)POLYGONSG6'7&7$\"$l\"\"\"!7$F(#\"\"\"\"#
+77$\"$s\"F+7$F/F)7&F07$F/#\"\"&F-7$\"$z\"F37$F6F)7&F77$F6#\"\"$\"\")7$
+\"$'=F:7$F>F)7&F?7$F>F+7$\"$$>F+7$FCF)7&FD7$FC#F,\"#C7$\"$+#FG7$FJF)-%
+'COLOURG6&%$RGBG$\"*++++\"!\")$F)F)FS-%%VIEWG6$;$\"0+++++]h\"!#7$\"0++
++++].#FZ%(DEFAULTG" 1 2 0 1 10 0 2 6 1 4 2 1.000000 45.000000 
+45.000000 0 0 "Curve 1" }}}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 42 "
+histogram(data1, color=blue, area=count);\n" }}{PARA 13 "" 1 "" 
+{GLPLOT2D 331 199 199 {PLOTDATA 2 "6%-%)POLYGONSG6'7&7$\"$l\"\"\"!7$F(
+\"\"#7$\"$s\"F+7$F-F)7&F.7$F-\"#57$\"$z\"F17$F3F)7&F47$F3\"\"*7$\"$'=F
+77$F9F)7&F:7$F9F+7$\"$$>F+7$F>F)7&F?7$F>\"\"\"7$\"$+#FB7$FDF)-%'COLOUR
+G6&%$RGBG$F)F)FJ$\"*++++\"!\")-%%VIEWG6$;$\"0+++++]h\"!#7$\"0+++++].#F
+T%(DEFAULTG" 1 2 0 1 10 0 2 6 1 4 2 1.000000 45.000000 45.000000 0 0 "
+Curve 1" }}}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 0 "" }}}}{SECT 0 
+{PARA 3 "" 0 "" {TEXT -1 25 " boxplot  krabicove grafy" }}{PARA 0 "" 
+0 "" {TEXT -1 0 "" }}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 26 "statplo
+ts[boxplot](data1);" }}{PARA 13 "" 1 "" {GLPLOT2D 177 331 331 
+{PLOTDATA 2 "6&-%'POINTSG6#7$\"\"!\"$+#-%'CURVESG6+7$7$#!\"\"\"\"#\"$v
+\"7$#\"\"\"F0F17$7$F.\"$$=7$F3F77$7$F.#\"$d$F07$F3F;7$7$#F/\"#5\"$*=7$
+#F4FAFB7$7$F@\"$l\"7$FDFG7$F-F67$F2F87$7$F'F77$F'FB7$7$F'F17$F'FG-%&CO
+LORG6&%$RGBG$\"\"(F/FU$FAF/-%%VIEWG6$%(DEFAULTG;$\"0+++++]h\"!#7$\"0++
++++].#Fin" 1 2 0 1 10 0 2 6 1 4 2 1.000000 45.000000 45.000000 0 0 "Cu
+rve 1" "Curve 2" }}}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 29 "plots[d
+isplay](%,axes=FRAME);" }}{PARA 13 "" 1 "" {GLPLOT2D 177 331 331 
+{PLOTDATA 2 "6&-%'POINTSG6$7$\"\"!\"$+#-%&COLORG6&%$RGBG$\"\"(!\"\"F-$
+\"#5F/-%'CURVESG6,7$7$#F/\"\"#\"$v\"7$#\"\"\"F8F97$7$F7\"$$=7$F;F?7$7$
+F7#\"$d$F87$F;FC7$7$#F/F1\"$*=7$#F<F1FI7$7$FH\"$l\"7$FKFN7$F6F>7$F:F@7
+$7$F'F?7$F'FI7$7$F'F97$F'FNF)-%*AXESSTYLEG6#%&FRAMEG-%%VIEWG6$%(DEFAUL
+TG;$\"0+++++]h\"!#7$\"0+++++].#F]o" 1 2 0 1 10 0 2 9 1 3 2 1.000000 
+45.000000 45.000000 0 0 "Curve 1" "Curve 2" }}}}{EXCHG {PARA 0 "> " 0 
+"" {MPLTEXT 1 0 43 "boxplot(data1, format=notched, axes=FRAME);" }}
+{PARA 13 "" 1 "" {GLPLOT2D 213 331 331 {PLOTDATA 2 "6'-%'POINTSG6#7$\"
+\"!\"$+#-%'CURVESG6+7$7$#!\"\"\"\"#\"$v\"7$#\"\"\"F0F17$7$F.\"$$=7$F3F
+77$7$#F/\"\"$#\"$d$F07$#F4F<F=7$7$#F/\"#5\"$*=7$#F4FDFE7$7$FC\"$l\"7$F
+GFJ7$7$F'F77$F'FE7$7$F'F17$F'FJ7'F67$F.$\"+$*zj5=!\"(F:7$F.$\"+2?Of<FV
+F-7'F87$F3FTF?7$F3FXF2-%*AXESSTYLEG6#%&FRAMEG-%&COLORG6&%$RGBG$\"\"(F/
+F_o$FDF/-%%VIEWG6$%(DEFAULTG;$\"0+++++]h\"!#7$\"0+++++].#Fio" 1 2 0 1 
+10 0 2 6 1 3 2 1.000000 45.000000 45.000000 0 0 "Curve 1" "Curve 2" }}
+}}{EXCHG {PARA 0 "> " 0 "" {MPLTEXT 1 0 0 "" }}}{EXCHG {PARA 0 "> " 0 
+"" {MPLTEXT 1 0 0 "" }}}}{SECT 0 {PARA 3 "" 0 "" {TEXT -1 13 "  scatte
+rplot" }}{PARA 0 "" 0 "" {TEXT -1 0 "" }}{EXCHG {PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 30 "statplots[scatterplot](data1);" }}{PARA 13 "" 1 "" 
+{GLPLOT2D 330 135 135 {PLOTDATA 2 "6%-%'POINTSG6:7$\"$l\"\"\"\"7$\"$q
+\"F(7$\"$t\"F(7$\"$y\"F(7$\"$*=F(7$\"$w\"F(7$\"$!=F(7$\"$v\"F(7$\"$(=F
+(7$\"$%=F(7$\"$#=F(7$\"$+#F(7$\"$z\"F(F;F-F5F1F17$\"$&=F(FAF-7$\"$$=F(
+7$\"$\"=F(F5-%&COLORG6&%$RGBG$\"\"(!\"\"FK$\"#5FM-%%VIEWG6$;$\"0+++++]
+h\"!#7$\"0+++++].#FV%(DEFAULTG" 1 2 0 1 10 0 2 6 1 4 2 1.000000 
+45.000000 45.000000 0 0 "Curve 1" }}}}{EXCHG {PARA 0 "> " 0 "" 
+{MPLTEXT 1 0 50 "statplots[scatterplot,format=agglomerated](data1);" }
+}{PARA 13 "" 1 "" {GLPLOT2D 331 203 203 {PLOTDATA 2 "6%-%'POINTSG6:7$
+\"$l\"\"\"\"7$\"$q\"F(7$\"$t\"F(7$\"$y\"F(7$\"$*=F(7$\"$w\"F(7$\"$!=F(
+7$\"$v\"F(7$\"$(=F(7$\"$%=F(7$\"$#=F(7$\"$+#F(7$\"$z\"F(F;F-F5F1F17$\"
+$&=F(FAF-7$\"$$=F(7$\"$\"=F(F5-%&COLORG6&%$RGBG$\"\"(!\"\"FK$\"#5FM-%%
+VIEWG6$;$\"0+++++]h\"!#7$\"0+++++].#FV%(DEFAULTG" 1 2 0 1 10 0 2 6 1 
+4 2 1.000000 45.000000 45.000000 0 0 "Curve 1" }}}}{EXCHG {PARA 0 "> \+
+" 0 "" {MPLTEXT 1 0 45 "statplots[scatterplot,format=excised](data1);
+" }}{PARA 13 "" 1 "" {GLPLOT2D 331 195 195 {PLOTDATA 2 "6%-%'POINTSG6:
+7$\"$l\"\"\"\"7$\"$q\"F(7$\"$t\"F(7$\"$y\"F(7$\"$*=F(7$\"$w\"F(7$\"$!=
+F(7$\"$v\"F(7$\"$(=F(7$\"$%=F(7$\"$#=F(7$\"$+#F(7$\"$z\"F(F;F-F5F1F17$
+\"$&=F(FAF-7$\"$$=F(7$\"$\"=F(F5-%&COLORG6&%$RGBG$\"\"(!\"\"FK$\"#5FM-
+%%VIEWG6$;$\"0+++++]h\"!#7$\"0+++++].#FV%(DEFAULTG" 1 2 0 1 10 0 2 6 
+1 4 2 1.000000 45.000000 45.000000 0 0 "Curve 1" }}}}{EXCHG {PARA 0 ">
+ " 0 "" {MPLTEXT 1 0 46 "statplots[scatterplot,format=quantile](data1)
+;" }}{PARA 13 "" 1 "" {GLPLOT2D 331 203 203 {PLOTDATA 2 "6%-%'POINTSG6
+:7$\"$l\"\"\"\"7$\"$q\"F(7$\"$t\"F(7$\"$y\"F(7$\"$*=F(7$\"$w\"F(7$\"$!
+=F(7$\"$v\"F(7$\"$(=F(7$\"$%=F(7$\"$#=F(7$\"$+#F(7$\"$z\"F(F;F-F5F1F17
+$\"$&=F(FAF-7$\"$$=F(7$\"$\"=F(F5-%&COLORG6&%$RGBG$\"\"(!\"\"FK$\"#5FM
+-%%VIEWG6$;$\"0+++++]h\"!#7$\"0+++++].#FV%(DEFAULTG" 1 2 0 1 10 0 2 6 
+1 4 2 1.000000 46.000000 45.000000 0 0 "Curve 1" }}}}{EXCHG {PARA 0 ">
+ " 0 "" {MPLTEXT 1 0 0 "" }}}}}{MARK "2 5 1 0" 0 }{VIEWOPTS 1 1 0 1 1 
+1803 1 1 1 1 }{PAGENUMBERS 0 1 2 33 1 1 }

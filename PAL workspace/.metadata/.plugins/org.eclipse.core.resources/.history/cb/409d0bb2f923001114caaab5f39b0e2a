@@ -1,0 +1,44 @@
+#include <string>
+#include <string.h>
+#include <iostream>
+#include <stdlib.h>
+#include <fstream>
+#include <vector>
+using namespace std;
+
+struct Gen{
+	/** Sequence of distances on DNA END Position, -1 if not find*/
+	int * errorsInDNA;
+	/**Characters sequence of Gen	 */
+	string value;
+	/**Minimal error, could be helpful in minimalizing finding results */
+	int minimalError;
+	/** length of gen **/
+	int length;
+};
+
+/**
+ * List of used characters. Not needed during execution.
+ */
+string alphabet;
+string dna;
+Gen *gens;
+int genCount;
+
+void readData(){
+	cin >> alphabet;
+	cin >> dna;
+	cin >> genCount;
+	for(int i = 0 ; i < genCount ; i++){
+
+	}
+}
+//void process();
+//void writeResults();
+int main(){
+	readData();
+//	process();
+//	writeResults();
+}
+
+

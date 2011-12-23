@@ -1,0 +1,51 @@
+Úkolem je realizovat program, který má na vstupu dve celá nezáporná císla a který na základe techto císel vypíše na svuj standardní výstup postup písemného násobení, jak jsme se jej ucili na základní škole.
+
+Nekolik ukázek práce programu je uvedeno níže. Ukázky zachycují, jak bude vypadat obsah konzole po spuštení programu. Program se zeptá na vstupní parametry (zobrazí výzvu), císelné hodnoty vkládá uživatel, program je znovu nevypisuje. Automatické vyhodnocení kontroluje presný tvar výpisu, dodržte jej vcetne zápisu výzev k zadání vstupu a chybových hlášení. Za posledním rádkem musí být odrádkování (endl) a to i v prípade zobrazení chybové hlášky.
+
+Zadejte dve nezaporna cisla:
+1234 4321
+    1234
+   .4321
+--------
+    1234
+   2468
+  3702
+ 4936
+--------
+ 5332114
+
+Zadejte dve nezaporna cisla:
+9876 340
+   9876
+   .340
+-------
+      0
+ 39504
+29628
+-------
+3357840
+
+Zadejte dve nezaporna cisla:
+100 2000
+    100
+  .2000
+-------
+      0
+     0
+    0
+ 200
+-------
+ 200000
+
+Zadejte dve nezaporna cisla:
+65 -8
+Nespravny vstup.
+
+Zadejte dve nezaporna cisla:
+44 asdfg
+Nespravny vstup.
+
+Poznámky:
+
+    * Pri urcování poctu pomlcek ve výpisu je uvažováno, že výsledek (soucin) má (a+b) cifer, kde a a b jsou pocty cifer cinitelu. Pokud má soucin méne rádu (muže mít (a+b-1) rádu - napr. 10 x 10 = 100 má pouze 3 cifry), pak zustane nejlevejší pozice neobsazená a pomlcek bude o jednu více.
+    * Pri realizaci nemusíte uvažovat pretecení - Progtest zadává pouze takové vstupy, že výsledek se vejde do datového typu int.

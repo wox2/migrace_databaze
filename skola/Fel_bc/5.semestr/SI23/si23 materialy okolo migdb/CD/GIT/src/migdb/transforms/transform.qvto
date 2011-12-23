@@ -1,0 +1,247 @@
+/*
+ * The MIT License
+ * 
+ * Copyright (c) 2010 MigDB team [https://rabbit.felk.cvut.cz/trac/migdb]
+ * 
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ * 
+ * The above copyright notice and this permission notice shall be included in
+ * all copies or substantial portions of the Software.
+ * 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+ * THE SOFTWARE.
+ * 
+ */
+ 
+modeltype APP uses 'mm-app';
+modeltype RDB uses 'mm-db';
+
+transformation Simpleuml_To_Rdb(in uml : APP, out RDB);
+
+main() {
+	log("zacatek transformace");
+	uml.rootObjects()[APP::reduced::ModelRoot]->toRdbRoot();
+	log("konec transformace");
+}
+
+mapping APP::reduced::ModelRoot::toRdbRoot() : RDB::rdb::ModelRoot {
+	log("toRdbRoot sekce");
+	sourceDB := self.sourceModel.map toDBmodel();
+}
+
+mapping APP::reduced::Model::toDBmodel() : RDB::rdb::Database {
+	log("toDBmodel sekce");
+	schemas += self.map toSchema();
+}
+
+mapping APP::reduced::Model::toSchema() : RDB::rdb::Schema {
+	log("toSchema sekce");
+		
+	self.classes->forEach(Class) {
+		if(Class.isPrimitive = false) then {
+			var table:RDB::rdb::Table:= Class.map toTable();
+			tables += table;
+		} endif;
+	};
+	
+	log("uprava");
+	result.tables->forEach(repairedTable){
+		repairedTable.subobjectsOfType(RDB::rdb::ForeignKey)[RDB::rdb::ForeignKey]->forEach(constraint){
+		result.tables ->forEach(table){
+				log(table.name + "-------" + constraint.name);
+				if("fk "+table.name.toLower() = constraint.name.toLower() ) then {
+				table.ownedColumns->forEach(Column){
+					
+					if(Column.isID()) then {
+						log("bingo");
+						constraint.targetTable := table;
+						constraint.constrainedColumn := Column;					
+					}endif;
+				};
+				}endif;	
+			}
+		}
+	}
+}
+
+
+mapping APP::reduced::Class::toTable() : RDB::rdb::Table {
+	log("toTable sekce "+self.name);
+	name := self.name;
+	
+	if(self.parent <> null)then{
+		primaryKey := self.map toAncestorId();
+		constraints += primaryKey;
+		primaryKey.owningTable = result;		
+	}endif;
+	
+	self.properties->forEach(Property) {
+		if((Property.serialization = null or (Property.serialization.isTransient = false))) then {	
+			var col: RDB::rdb::TableColumn = Property.map toColumn(); 
+			ownedColumns += col;	
+			
+			if(Property.isID()) then {
+				primaryKey:= col.map toPrimaryKey();
+				
+				constraints+=primaryKey;
+		    }endif;
+		    
+		    if(Property.isForeignKey()) then{
+		    	var const : RDB::rdb::ForeignKey := Property.map toForeignKey();
+	    		const.owningTable =result;
+				result.constraints+=const;
+		    }endif;		
+		} endif;		
+	};
+	
+}
+
+mapping APP::reduced::Property::toColumn() : RDB::rdb::TableColumn 
+disjuncts APP::reduced::Property::toPrimitive, APP::reduced::Property::toID, APP::reduced::Property::toNx1_FKColumn, APP::reduced::Property::toMxN_FKColumn{
+
+}
+
+mapping APP::reduced::Property::toPrimitive() : RDB::rdb::TableColumn
+when {	self.isPrimitive()	}
+{
+		name:= self.name;
+		switch {
+			case (self.type.name = "String") {
+				type:= "varchar";
+			}
+			case (self.type.name = "Int") {
+				type := "number";
+			}
+			case (self.type.name = "Boolean") {
+				//zatim boolean
+				type := "boolean";
+			}
+			else {
+				log("neznamy typ" + self.type.name);
+			}
+		}
+}
+	
+mapping APP::reduced::Property::toID() : RDB::rdb::TableColumn
+when {	self.isID()	}
+{
+			name := self.name;
+			type :="PK";
+}
+
+query RDB::rdb::TableColumn::isID():Boolean{
+	if(self.type = "PK") then {
+			return true;
+		}endif;
+	return false;
+}
+
+mapping APP::reduced::Property::toNx1_FKColumn() : RDB::rdb::TableColumn
+when {	self.isForeignKey() and self.upperBound=1	}
+{
+	log("mapping toNx1_FK");
+	if(self.type <> null) then {
+		var FK_class:APP::reduced::Class := self.type;
+	 	name:= "FK "+FK_class.name;
+	 } endif;
+}
+
+mapping APP::reduced::Property::toMxN_FKColumn() : RDB::rdb::TableColumn
+//zatim se neprovadi
+when {	self.isForeignKey() and false	}
+{
+		log("neimplementovana sekce toMxN_FK");
+	 //name:= "FK "+self.name;
+}
+
+mapping RDB::rdb::TableColumn::toPrimaryKey() : RDB::rdb::PrimaryKey{
+	log("toPrimaryKey mappovani");
+	result.owningTable = self._owningTable;
+	result.name := self.name+"_"+self._owningTable.name;
+	self._owningTable.primaryKey=result;
+	self._owningTable.constraints+=result;
+}
+
+mapping APP::reduced::Property::toForeignKey(): RDB::rdb::ForeignKey{
+	result.name := "FK "+ self.name;
+	
+	result.targetTable = self.owningClass.owningModel.classes->forEach(Class){
+			if(Class.name = self.name)then {
+				log("bingo");
+				break;
+			}
+			endif;
+	};
+	
+	
+	result.targetTable.ownedColumns->forEach(Column){
+		if(Column.isID())then{
+			result.constrainedColumn = Column;
+			break;
+		}endif;
+	};
+	
+	log("toForeignKey sekce" + "  "+ self.name);
+} 
+
+query APP::reduced::Property::getName(): String{
+	if(self.serialization = null or self.serialization.columnName = "") then {
+		return self.name;
+	} else {
+		return self.serialization.columnName;
+	} endif;
+	return null;
+}
+
+query APP::reduced::Property::isForeignKey(): Boolean{
+	log("v sekci isForeignKey ");
+	if(self.isPrimitive() = false and self.isID() = false ) then {
+		return true;
+	} endif;
+	return false;
+}
+
+mapping APP::reduced::Class::toAncestorId():RDB::rdb::PrimaryKey{
+	log("toAncestorID");
+	var temp := self.getHighestAncestor();
+	temp.properties->forEach(Property){
+		if(Property.isID())then{
+				result.name:=Property.name +" "+ temp.name;
+				log(result.name);
+				break;
+			}endif;
+	};
+}
+
+// vrati nejvyssiho predka, tj predka, ktery nema rodice
+query APP::reduced::Class::getHighestAncestor():APP::reduced::Class{
+	var temp:APP::reduced::Class := self;
+	while(temp.parent <> null){
+		temp:=temp.parent;
+			};	
+			return temp;
+}
+
+query APP::reduced::Property::isID():Boolean{
+	if(self.serialization.isID = true) then {
+		return true;
+	}endif;
+	return false;
+}
+
+query APP::reduced::Property::isPrimitive():Boolean{
+	if(self.type.isPrimitive = true) then {
+		return true;
+	} endif;
+	return false;
+}

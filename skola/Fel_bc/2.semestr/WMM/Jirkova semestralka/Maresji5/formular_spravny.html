@@ -1,0 +1,149 @@
+﻿<!doctype HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <title>Objednavka</title>
+  <link href="styll.css" media="screen" rel="stylesheet" type="text/css" />
+   <script type="text/javascript" src="cena.js"></script>
+   <script type="text/javascript" src="kontrolaFormulare.js"></script>
+ 
+</head>
+
+<body onLoad="nastavFokus()">
+    
+     <div >
+       <img  src="vinice_pokus7.jpg" id="obrazek" alt="vinice"/>
+   </div> 
+      <br />
+    
+    <div class="zarovnaniNavigace">
+        <a class="nabidkaVNavigaci" href="hlavni_stranka.html">Hlavní stránka</a>
+        <a class="nabidkaVNavigaci" href="nabidka_vin.html">Nabídka vín</a>
+        <a class="nabidkaVNavigaci" href="koho_tu_muzete_potkat.html">Koho tu můžete potkat</a>
+        <a class="nabidkaVNavigaci" href ="kontakt.html">Kde nás najdete</a>
+        <a class="nabidkaVNavigaci" href="mapaStranky.xml">Mapa stránky</a>
+        <br />
+    </div>
+    
+  <h2>Objednávka zboží</h2>
+  
+  <div id="formular">
+      
+  <form name="dotaznik" action="http://amun.felk.cvut.cz/vypis_form.php" method="get" onReset="return confirm('Opravdu chcete vymazat obsah formuláře?')"
+    onSubmit="
+    this.jmeno1.povinne = true;
+    this.Prijmeni.povinne = true;
+    this.email1.povinne = true;  
+    this.Ulice.povinne = true;
+    this.Mesto.povinne = true;
+	this.email1.email = true;	
+        this.PSC.cislo = true;  
+    return provedKontrolu(this)">
+    <br />
+  <table id="tabulkaFormular" summary="tabulka slouží k uspořádání formulářových polí">
+      <colgroup span="2">
+              <col class="prvniSloupecFormular"/>
+              <col class="druhySloupecFormular"/>             
+       </colgroup>
+     <tr>
+   <td><label for="jmeno1">Jméno* &nbsp;</label></td><td><input id="jmeno1" name="Jmeno" type="text" value=""/></td> </tr> 
+   <tr><td><label for="prijmeni">Příjmení* &nbsp; </label></td><td><input name="Prijmeni" id="prijmeni" type="text" value=""/></td></tr>
+   <tr><td>Muž <input type="radio" name="pohlavi" value="muz" />
+       Žena <input type="radio" name="pohlavi" value="zena" /></td><td></td></tr>
+   <tr><td> <label for="telefon1">Telefon </label></td><td><input name="telefon_domu" id="telefon1" type="text" value=""/></td></tr>
+   <tr><td> <label for="email1">E-mail* </label></td><td><input name="email" id="email1" type="text" value="" /></td></tr>
+           
+   <tr><td> <label for="ulice">Ulice*</label></td><td> <input type="text" id="ulice" name="Ulice"></td></tr>
+   <tr><td><label for="mesto">Mesto*</label></td><td> <input type="text" id="mesto" name="Mesto"></td></tr>
+   <tr><td><label for="PSC">PSČ* </label></td><td><input type="text" id="PSC" name="PSC"></td></tr>
+      
+      <tr><td>Kraj</td><td> 
+      <select name="kraj">
+          <option>&nbsp;</option>  
+        <option value="Jihocesky">Jihočeský</option>
+        <option value="Jihomoravsky">Jihomoravský</option>
+        <option value="Karlovarsky">Karlovarský</option>
+        <option value="Kralovehradecky">Královéhradecký </option>
+        <option value="Liberecky">Liberecký</option>
+        <option value="Moravskoslezsky">Moravskoslezský &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</option>
+        <option value="Olomoucky">Olomoucký</option>
+        <option value="Pardubicky">Pardubický</option>
+        <option value="Plzensky">Plzeňský</option>
+        <option value="Praha">Praha</option>
+        <option value="Strredocesky">Středočeský</option>
+        <option value="Ustecky">Ústecký</option>
+        <option value="Vysocina">Vysočina</option>
+        <option value="Zlinsky">Zlínský</option>   
+</select> </td> </tr>  
+      
+  </table> 
+<br />
+  <div class="vybraneZdozi">   
+      Vybrane zbozi: &nbsp;&nbsp;<select name="zbozi">
+        <optgroup label="Bílé víno">
+              <option onclick="nastavCenu(cena1,this.value)" value="ChardonnayPozdniSberRocnik2008">Chardonnay pozdní sběr ročník 2008</option>
+              <option onclick="nastavCenu(cena1,this.value)" value="ChardonnayRocnik2005">Chardonnay ročník 2005</option>
+              <option onclick="nastavCenu(cena1,this.value)" value="MullerThurgauKabinetniRocnik2008">Muller Thurgau kabinetní ročník 2008</option>
+              <option onclick="nastavCenu(cena1,this.value)" value="MullerThurgauPozdniSberRocnik2006">Muller Thurgau pozdní sběr ročník 2006</option>
+              <option onclick="nastavCenu(cena1,this.value)" value="PalavaPozdniSberRocnik2008">Pálava pozdní sběr ročník 2008</option>
+              <option onclick="nastavCenu(cena1,this.value)" value="PalavaVyberZBobuliRocnik2005">Pálava výběr z bobulí ročník 2005</option>
+              <option onclick="nastavCenu(cena1,this.value)" value="RulandskeSedeVyberZHroznuRocnik2007">Rulandské šedé výběr z hroznů ročník 2007</option>
+              <option onclick="nastavCenu(cena1,this.value)" value="RulanskeSedePozdniSberRocnik2008">Rulandské šedé pozdní sběr ročník 2008</option>
+              <option onclick="nastavCenu(cena1,this.value)" value="RyzlinkVlasskyZemskyRocnik2008">Ryzlink Vlašský zemský ročník 2008</option>
+              <option onclick="nastavCenu(cena1,this.value)" value="TraminCervenyVyberZBobuliRocnik2007">Tramín červený výběr z bobulí ročník 2007</option>
+              <option onclick="nastavCenu(cena1,this.value)" value="SauvignonPozdniSberRocnik2007">Sauvignon pozdní sběr ročník 2007</option>
+              <option onclick="nastavCenu(cena1,this.value)" value="SauvignonVyberZHroznuRocnik2005">Sauvignon výběr z hroznů ročník 2005</option>
+              <option onclick="nastavCenu(cena1,this.value)" value="VeltlinskeZeleneKabinetniRocnik2008">Veltlínské zelené kabinetní ročník 2008</option>             
+        </optgroup>
+        <optgroup label="Červene víno">
+              <option onclick="nastavCenu(cena1,this.value)" value="AndreZemskeRocnik2008">Andre zemské ročník 2008</option>
+              <option onclick="nastavCenu(cena1,this.value)" value="CabernetMoraviaJakostniRocnik2008">Cabernet Moravia jakostní ročník 2008</option>
+              <option onclick="nastavCenu(cena1,this.value)" value="CabernetSauvignonBarriquePozdniSberRocnik2007">Cabernet Sauvignon barrique pozdní sběr ročník 2007</option>
+              <option onclick="nastavCenu(cena1,this.value)" value="CabernetSauvignonRocnik2002">Cabernet Sauvignon ročník 2002</option>
+              <option onclick="nastavCenu(cena1,this.value)" value="CabernetSauvignonRocnik2006">Cabernet Sauvignon ročník 2006</option>
+              <option onclick="nastavCenu(cena1,this.value)" value="ZweigwltrebePozdniSberRocnik2002">Zweigwltrebe pozdní sběr ročník 2002</option>
+              <option onclick="nastavCenu(cena1,this.value)" value="FrankovkaJakostniRocnik2007">Frankovka jakostní ročník 2007</option>
+              <option onclick="nastavCenu(cena1,this.value)" value="FrankovkaPozdniSberRocnik2007">Frankovka pozdní sběr ročník 2007</option>
+              <option onclick="nastavCenu(cena1,this.value)" value="MerlotPozdniSberRocnik2007">Merlot pozdní sběr ročník 2007</option>
+              <option onclick="nastavCenu(cena1,this.value)" value="MerlotReservadoRocnik2003">Merlot Reservado ročník 2003</option>
+              <option onclick="nastavCenu(cena1,this.value)" value="MerlotRocnik2006">Merlot ročník 2006</option>
+              <option onclick="nastavCenu(cena1,this.value)" value="RulandskeModrePozdniSberRocnik2005">Rulandské modré pozdní sběr ročník 2005</option>
+              <option onclick="nastavCenu(cena1,this.value)" value="ModryPortugalJakostniRocnik2007">Modrý Portugal jakostní ročník 2007</option>
+              <option onclick="nastavCenu(cena1,this.value)" value="ModryPortugalPozdniSberRocnik2007">Modrý Portugal pozdní sběr ročník 2007</option>            
+        </optgroup>  
+        <optgroup label="Růžové víno">
+              <option onclick="nastavCenu(cena1,this.value)" value="CabernetMoraviaPozdniSberRocnik2007">Cabernet Moravia pozdní sběr ročník 2007</option>
+              <option onclick="nastavCenu(cena1,this.value)" value="CuveeRoseKabinetniRocnik2008">Cuvée rose kabinetní ročník 2008</option>
+              <option onclick="nastavCenu(cena1,this.value)" value="FrankovkaKlaretPozdniSberRocnik2007">Frankovka Klaret pozdní sběr ročník 2007</option>    
+        
+        </optgroup>
+        <optgroup label="Šumivé víno">
+              <option onclick="nastavCenu(cena1,this.value)" value="BohemiaSektPrestigeBrut">Bohemia sekt Prestige brut</option>
+              <option onclick="nastavCenu(cena1,this.value)" value="BohemiaSektPrestiguRoseBrut">Bohemia sekt Prestigu rosé brut</option>
+             
+        </optgroup>
+        <optgroup label="Speciální víno">
+              <option onclick="nastavCenu(cena1,this.value)" value="SlamoveCabernetSauvignonRocnik2004">Slámové Cabernet Sauvignon ročník 2004</option>
+              <option onclick="nastavCenu(cena1,this.value)" value="SlamoveSauvignonARulandskeSede2004">Slámové Sauvignon a Rulandské Šedé 2004</option>
+              <option onclick="nastavCenu(cena1,this.value)" value="VeltlinskeZeleneSlamoveRocnik2003">Veltlínské zelené slámové ročník 2003</option>    
+        
+        </optgroup>
+          </select>
+     
+       <br />
+      
+      Cena je:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input style="width:50px;" value=""id="cena1" name="cena1" type="text"/> &nbsp;Kč 
+   
+      <br />
+  </div> 
+   <br />
+    <div style="text-align:center; font-size:110%;">
+        <input style="width:100px;" type="submit" value="Odeslat" />
+        <input style="width:100px;" type="reset" value="Vymazat"/>
+        
+    </div><br />
+  </form>
+</div>
+<br /><br />
+</body>
+</html>

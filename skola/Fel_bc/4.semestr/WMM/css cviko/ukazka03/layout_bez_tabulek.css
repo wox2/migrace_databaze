@@ -1,0 +1,14 @@
+div.sekce {
+  border: 1px solid black;
+  padding: 10px;
+  margin:10px 10px 50px 10px;
+  background-color: lightgrey;
+}
+
+div#navigace {
+  float: left;
+}
+
+div#hlavni_text {
+  float: left;
+}

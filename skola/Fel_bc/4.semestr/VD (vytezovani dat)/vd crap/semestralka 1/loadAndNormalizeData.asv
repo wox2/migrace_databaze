@@ -1,0 +1,13 @@
+% Load data
+houby = dataset('file','vd.data', ...
+    'ReadVarNames', false, 'ReadObsNames', false, ...
+    'delimiter', ',', ...
+    'VarNames', {'jedlaNejedla', 'capShape', 'capSurface', 'capColor', 'bruises', 'odor', 'gillAttachment', 'gillSpacing','gillSize', 'gillColor', 'stalkShape', 'stalkRoot', 'stalkSurfaceAboveRing', 'stalkSurfaceBelow-ring', 'stalk-color-above-ring', 'stalk-color-below-ring', 'veil-type', 'veil-color', 'ring-number', 'ring-type', 'spore-print-color', 'population', 'habitat'});
+
+% Normalize them
+%varInd = 1:7;
+%houby_norm = datasetfun( @minmax, houby(:,varInd), 'UniformOutput', false );
+%houby_norm = [houby_norm{:}];
+%houby = replacedata( houby, houby_norm, varInd );
+
+%nHouby = length(houby);

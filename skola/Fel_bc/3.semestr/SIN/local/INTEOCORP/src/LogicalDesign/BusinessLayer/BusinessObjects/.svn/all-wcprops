@@ -1,0 +1,89 @@
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/courses/36sin/INTEOCORP/!svn/ver/420/src/LogicalDesign/BusinessLayer/BusinessObjects
+END
+ProjektBO.java
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/courses/36sin/INTEOCORP/!svn/ver/420/src/LogicalDesign/BusinessLayer/BusinessObjects/ProjektBO.java
+END
+Komentar.java
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/courses/36sin/INTEOCORP/!svn/ver/420/src/LogicalDesign/BusinessLayer/BusinessObjects/Komentar.java
+END
+KomentarUkoluBO.java
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/courses/36sin/INTEOCORP/!svn/ver/420/src/LogicalDesign/BusinessLayer/BusinessObjects/KomentarUkoluBO.java
+END
+OpravneniBO.java
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/courses/36sin/INTEOCORP/!svn/ver/420/src/LogicalDesign/BusinessLayer/BusinessObjects/OpravneniBO.java
+END
+ZakaznikBO.java
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/courses/36sin/INTEOCORP/!svn/ver/420/src/LogicalDesign/BusinessLayer/BusinessObjects/ZakaznikBO.java
+END
+ZastupceZakaznikaBO.java
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/courses/36sin/INTEOCORP/!svn/ver/420/src/LogicalDesign/BusinessLayer/BusinessObjects/ZastupceZakaznikaBO.java
+END
+UzivatelBO.java
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/courses/36sin/INTEOCORP/!svn/ver/420/src/LogicalDesign/BusinessLayer/BusinessObjects/UzivatelBO.java
+END
+PozadavekBO.java
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/courses/36sin/INTEOCORP/!svn/ver/420/src/LogicalDesign/BusinessLayer/BusinessObjects/PozadavekBO.java
+END
+KomentarPozadavkuBO.java
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/courses/36sin/INTEOCORP/!svn/ver/420/src/LogicalDesign/BusinessLayer/BusinessObjects/KomentarPozadavkuBO.java
+END
+ZamestnanecBO.java
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/courses/36sin/INTEOCORP/!svn/ver/420/src/LogicalDesign/BusinessLayer/BusinessObjects/ZamestnanecBO.java
+END
+PrioritaUkoluBO.java
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/courses/36sin/INTEOCORP/!svn/ver/420/src/LogicalDesign/BusinessLayer/BusinessObjects/PrioritaUkoluBO.java
+END
+UkolBO.java
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/courses/36sin/INTEOCORP/!svn/ver/420/src/LogicalDesign/BusinessLayer/BusinessObjects/UkolBO.java
+END
+TypUkoluBO.java
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/courses/36sin/INTEOCORP/!svn/ver/420/src/LogicalDesign/BusinessLayer/BusinessObjects/TypUkoluBO.java
+END
+StavUkoluBO.java
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/courses/36sin/INTEOCORP/!svn/ver/420/src/LogicalDesign/BusinessLayer/BusinessObjects/StavUkoluBO.java
+END

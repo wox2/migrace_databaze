@@ -1,0 +1,50 @@
+Realizujte program, který ze vstupních dat - celých císel - vypocte, kolik ze zadaných císel bylo unikátních (tj. každý výskyt daného císla je zapocítán pouze jedenkrát).
+
+Vstupem je celé kladné císlo n, které udává pocet zadávaných prohledávaných císel. Za ním následuje n celých císel, která budou programem prohledávána.
+
+Výstupem programu je jediný rádek udávající pocet nalezených unikátních císel. Do unikátních císel je zapocten každý výskyt stejného císla pouze jedenkrát. Výstupem programu muže být též hlášení o chybe (napr. formát zadávaných dat). V obou prípadech (zobrazení poctu nalezených císel, hlášení o chybe) je zobrazovaná rádka ukoncena znakem odrádkování (endl).
+
+Realizovaný program nesmí používat datové struktury z STL (vector, list, ...). Musí pocítat s tím, že je spoušten v prostredí s omezenou pametí (pamet je dostatecne dimenzovaná na uložení binární podoby intervalu na vstupu) a pracuje pouze s omezeným casem (2 s na testovacím pocítaci). Naivní algoritmus zde nestací - kvadratické zpracování vstupu nelze stihnout v casovém limitu pro zadaný pocet císel.
+Ukázka práce programu:
+
+Zadejte pocet cisel:
+5
+1 2 3 4 5
+Celkem ruznych cisel: 5
+
+Zadejte pocet cisel:
+5
+1 2 3 4 1
+Celkem ruznych cisel: 4
+
+Zadejte pocet cisel:
+5
+1 1 1 2 3
+Celkem ruznych cisel: 3
+
+Zadejte pocet cisel:
+10
+1 7 3
+7 1 4
+7
+9 8 600
+Celkem ruznych cisel: 7
+
+Zadejte pocet cisel:
+25
+1 2 3 4 rrr
+Nespravny vstup.
+
+Zadejte pocet cisel:
+aas
+Nespravny vstup.
+
+Zadejte pocet cisel:
+-4
+Nespravny vstup.
+
+Nápoveda
+
+    * Seradte císla na vstupu podle velikosti. Zvolte vhodný algoritmus razení (kvadratický algoritmus jako napr. bubble-sort nebude casove dostacovat).
+    * Mužete využít knihovní funkci qsort, která radí zadané pole prvku algoritmem quick-sort. Alternativou je realizace vlastních algoritmu (merge-sort, heap-sort).
+    * Serazené pole projdete a preskakujte úseky stejných císel.

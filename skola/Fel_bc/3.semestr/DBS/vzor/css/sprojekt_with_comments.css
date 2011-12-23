@@ -1,0 +1,11 @@
+@import "sprojekt.imp";
+
+comment {
+    display: block;
+    white-space: pre;
+    font-style: italic;
+    color: maroon;
+    background-color: silver;
+     border: thin solid gray; 
+} 
+ 

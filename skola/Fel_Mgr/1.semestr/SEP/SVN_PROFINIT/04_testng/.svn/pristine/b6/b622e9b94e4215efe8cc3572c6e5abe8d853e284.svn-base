@@ -1,0 +1,16 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="DefaultSuite">
+    <test name="Vse">
+        <groups>            
+            <run>
+                <exclude name="todo" />
+            </run>
+        </groups>
+        
+        <packages>
+            <package name="cviceni"/>
+        </packages>
+    </test>
+    
+</suite>

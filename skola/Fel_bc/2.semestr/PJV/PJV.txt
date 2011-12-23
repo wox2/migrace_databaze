@@ -1,0 +1,23 @@
+ += je jeden operator nikoliv  dva + =
+
+Jméno tvoøí libovolná neprázdná posloupnost písmen Unicodu  ( tedy i z 
+národních abeced ), znakù  $  _  , tj. dolar a podtržítko ( underscore ) 
+a èíslic, nezaèínající èíslicí a jež není klíèovým slovem
+
+Pro uložení literálu v typu long se sufixem l èi L se používá zápis 
+  napø.:  1230000000000000l  nebo 1230000000000000L
+
+Obsahuje-li literál jen èíslice a pøíp. znaménko ukládá se do typu int.
+  napø.:  -123,  123, +123
+
+Obsahuje-li literál teèku nebo exponent, ukládá se do typu double
+   napø.: 123., +123.45, -123E2, -123e2, 12300e-2  
+
+Pro uložení v typu float se sufixem f èi F
+   napø.:  -123.0f ,  +123.45E+3F
+
+Oktalový literál se vyznaèuje prefixem 0 (nula)
+   napø.:  077  ( dekadicky 63 ),   02313154564646L 
+ 
+Hexadecimální literál se vyznaèuje prefixem 0x (nula iks) 
+   napø.:  0x77 ( dekadicky 119 ),  0x1DADA2CAFE3FEEL   

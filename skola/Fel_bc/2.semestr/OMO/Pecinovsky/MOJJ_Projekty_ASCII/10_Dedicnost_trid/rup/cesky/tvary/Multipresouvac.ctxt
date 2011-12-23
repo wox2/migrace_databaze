@@ -1,0 +1,36 @@
+#BlueJ class context
+comment0.target=int\ getPerioda()
+comment0.text=\nVrati\ hodnotu\ periody\ \=\ \ pocet\ milisekund,\ ktere\ uplynou\ mezi\ dvema\nnaslednymi\ prekreslenimi\ presouvanych\ objektu.\ \n\n@return\ Perioda\ prekreslovani\ v\ milisekundach.\n\n
+comment1.target=int\ getFrekvence()
+comment1.text=\nVrati\ frekvenci\ prekreslovani,\ tj.\ pocet\ prekresleni\ za\ sekundu.\n\n@return\ Frekvence\ prekreslovani.\n\n
+comment10.target=void\ zastavVse()
+comment10.text=\nZastavi\ zastavi\ presouvace\ a\ zrusi\ vsechny\ plany\ presunu.\ \n\n
+comment11.params=ip\ xn\ yn\ rychlost\ milisekund
+comment11.target=void\ presun(IPosuvny,\ int,\ int,\ int,\ double)
+comment11.text=\nPresune\ zadany\ posuvny\ objekt\ do\ pozadovane\ cilove\ pozice\ \nza\ zadanou\ dobu\ nebo\ zadanou\ rychlosti.\n\n@param\ ip\ \ \ \ \ \ \ \ \ \ \ \ Presouvany\ objekt\n@param\ xn\ \ \ \ \ \ \ \ \ \ \ \ Vodorovna\ souradnice\ cilove\ pozice\ \ \ \ \ \ \ \ \ \ \ \n@param\ yn\ \ \ \ \ \ \ \ \ \ \ \ Svisla\ souradnice\ cilove\ pozice\ \ \ \ \ \ \ \ \ \ \ \n@param\ rychlost\ \ \ \ \ \ Pocet\ bodu,\ o\ ktere\ se\ objekt\ presune\ za\ sekundu\n@param\ milisekund\ \ \ \ Doba,\ kterou\ bude\ presun\ trvat,\ v\ sekundach\ \n\n
+comment12.target=void\ stop()
+comment12.text=\nUkonci\ multipresun\ a\ tim\ uvolni\ procesor.\ \ \ \ \n\n
+comment13.target=void\ start()
+comment13.text=\nSpusti\ novy\ multipresun.\ \n\n
+comment2.target=Multipresouvac\ getInstance()
+comment2.text=\nVrati\ multipresouvac\ s\ periodou\ 50\ ms.\n@return\ \n\n
+comment3.target=Multipresouvac()
+comment3.text=\nVytvori\ novy\ multipresouvac\ -\ vsechna\ potrebna\ nastaveni\njsou\ soucasti\ deklaraci\ atributu.\n\n
+comment4.target=IPosuvny[]\ getPresouvane()
+comment4.text=\nVrati\ pole\ se\ vsemi\ prave\ presouvanymi\ objekty.\ Vraceny\ seznam\ je\ vsak\nplatny\ pouze\ v\ dobe\ volani.\ Vzapeti\ na\ to\ mohou\ byt\ nektere\ objekty\ndovezeny\ do\ svych\ cilovych\ pozic\ a\ mohou\ seznam\ "opustit".\n\n@return\ Pole\ prave\ presouvanych\ objektu.\n\n
+comment5.params=ip\ xn\ yn\ sekund
+comment5.target=void\ presun(IPosuvny,\ int,\ int,\ double)
+comment5.text=\nPresune\ zadany\ posuvny\ objekt\ do\ pozadovane\ cilove\ pozice\ \nza\ zadanou\ dobu.\n\n@param\ ip\ \ \ \ \ \ \ \ Presouvany\ objekt\n@param\ xn\ \ \ \ \ \ \ \ Vodorovna\ souradnice\ cilove\ pozice\ \ \ \ \ \ \ \ \ \ \ \n@param\ yn\ \ \ \ \ \ \ \ Svisla\ souradnice\ cilove\ pozice\ \ \ \ \ \ \ \ \ \ \ \n@param\ sekund\ \ \ \ Doba,\ kterou\ bude\ presun\ trvat,\ v\ sekundach\ \n\n
+comment6.params=ip\ pozice\ sekund
+comment6.target=void\ presun(IPosuvny,\ Pozice,\ double)
+comment6.text=\nPresune\ zadany\ posuvny\ objekt\ do\ pozadovane\ cilove\ pozice\ \nza\ zadanou\ dobu.\n\n@param\ ip\ \ \ \ \ \ \ \ Presouvany\ objekt\n@param\ pozice\ \ \ \ Pozadovana\ cilove\ pozice\ \ \ \ \ \ \ \ \ \ \ \n@param\ sekund\ \ \ \ Doba,\ kterou\ bude\ presun\ trvat,\ v\ sekundach\ \n\n
+comment7.params=ip\ pozice\ rychlost
+comment7.target=void\ presun(IPosuvny,\ Pozice,\ int)
+comment7.text=\nPresune\ zadany\ posuvny\ objekt\ do\ pozadovane\ cilove\ pozice\ \nza\ zadanou\ dobu.\n\n@param\ ip\ \ \ \ \ \ \ \ Presouvany\ objekt\n@param\ pozice\ \ \ \ Pozadovana\ cilove\ pozice\ \ \ \ \ \ \ \ \ \ \ \n@param\ rychlost\ \ Pocet\ bodu,\ o\ ktere\ se\ objekt\ presune\ za\ sekundu\n\n
+comment8.params=ip\ xn\ yn\ rychlost
+comment8.target=void\ presun(IPosuvny,\ int,\ int,\ int)
+comment8.text=\nPresune\ zadany\ posuvny\ objekt\ do\ pozadovane\ cilove\ pozice\ \nza\ zadanou\ dobu.\n\n@param\ ip\ \ \ \ \ \ \ \ Presouvany\ objekt\n@param\ xn\ \ \ \ \ \ \ \ Vodorovna\ souradnice\ cilove\ pozice\ \ \ \ \ \ \ \ \ \ \ \n@param\ yn\ \ \ \ \ \ \ \ Svisla\ souradnice\ cilove\ pozice\ \ \ \ \ \ \ \ \ \ \ \n@param\ rychlost\ \ Pocet\ bodu,\ o\ ktere\ se\ objekt\ presune\ za\ sekundu\n\n
+comment9.params=ip
+comment9.target=boolean\ zastav(IPosuvny)
+comment9.text=\nZastavi\ pozadovany\ objekt,\ tj.\ vyjme\ jej\ ze\ seznamu\ objektu,\ \ns\ nimiz\ pohybuje.\ Pro\ jeho\ pristi\ rozpohybovani\ je\ potreba\nznovu\ pozadat\ multipresouvac\ o\ jeho\ presunuti.\ \ \ \ \ \n\n@param\ ip\ \ \ Zastavovany\ objekt\ \ \ \ \ \ \ \ \ \n\n@return\ \ \ \ \ Informace\ o\ tom,\ byl-li\ objekt\ mezi\ presouvanymi\ \ \ \ \ \n\n
+numComments=14

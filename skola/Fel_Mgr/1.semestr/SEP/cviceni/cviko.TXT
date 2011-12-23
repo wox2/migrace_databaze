@@ -1,0 +1,3 @@
+bacha na mezery - nutnost pouzit normalized text nebo contains
+
+login/heslo = prijmeni/prijmeni

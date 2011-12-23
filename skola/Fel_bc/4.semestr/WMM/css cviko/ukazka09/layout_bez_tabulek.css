@@ -1,0 +1,46 @@
+body { margin: 0px;}
+
+div.sekce {
+/*  border: 1px solid black;
+  padding: 10px;
+  margin:10px 10px 50px 10px;
+*/
+  margin: 9px;
+  background-color: lightgrey;
+  border: 1px solid transparent;
+  padding: 10px;
+}
+
+div#navigace {
+  float: left;
+  width: 300px;
+  margin-top: 0px;
+  padding-left: 0px;
+}
+
+div#navigace li {
+  display: block;
+}
+
+div#hlavni_text {
+  margin-left: 329px;  /* pri hodnotach overflow-x "hidden" nebo "scroll" musi byt 0px */
+  overflow-x: visible; /* vyzkousejte take honoty "hidden" a "scroll"*/
+}
+
+div#napoveda {
+  clear: both;
+  text-align:center;
+}
+
+div#napoveda li {
+  display: inline;
+  margin: 0px 20px;
+}
+
+div#kategorie {
+  background-color: red;
+  border: 5px solid white;
+  position: relative;
+  top: 100px;
+  left: 100px;
+}

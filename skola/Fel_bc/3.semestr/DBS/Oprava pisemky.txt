@@ -1,0 +1,5 @@
+(krm deleno zvi [idz] ) [tkr]   kvuli tomu, ze v A deleno B musi mit B podmnozinu atributu A
+PRIMARNI KLICE
+VAZBY
+kardinality 0-1, *, 1, naucit se poradne, kde jsou ktere kardinality.
+A(a_id, b_id)

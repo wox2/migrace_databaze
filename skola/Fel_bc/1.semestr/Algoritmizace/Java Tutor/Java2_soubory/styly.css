@@ -1,0 +1,177 @@
+TABLE {
+	FONT-SIZE: 12px; FONT-FAMILY: Tahoma,Arial
+}
+
+.tlacitko {
+	BACKGROUND-COLOR: #7194b7; BORDER-BOTTOM: 1px outset; BORDER-LEFT: 1px outset; BORDER-RIGHT: 1px outset; BORDER-TOP: 1px outset; COLOR: #ffffff; FONT-FAMILY: Arial
+}
+
+.input1 {
+	BACKGROUND-COLOR: #f3f3f3; BORDER-BOTTOM: 1px inset; BORDER-LEFT: 1px inset; BORDER-RIGHT: 1px inset; BORDER-TOP: 1px inset
+}
+
+.supmenu {
+	FONT-SIZE: 12px;COLOR: #eeeeff; FONT-FAMILY: Arial;font-weight:bold;
+}
+FORM {
+	MARGIN-TOP: 0px; MARGIN-BOTTOM: 0px
+}
+.text {
+	FONT-SIZE: 9pt
+}
+.lista {
+	FONT-SIZE: 8pt
+}
+.lem {
+	COLOR:#eeeeff; FONT-FAMILY: MS Sans Serif
+}
+.mensi {
+	FONT-SIZE: 8pt; FONT-FAMILY: MS Sans Serif
+}
+A {
+	COLOR: #0000ff; TEXT-DECORATION: underline
+}
+A:active {
+	COLOR: #0000ff; TEXT-DECORATION: underline
+}
+A:visited {
+	COLOR: #0000ff; TEXT-DECORATION: underline
+}
+A:hover {
+	COLOR: #0000ff; TEXT-DECORATION: none
+}
+.top {
+	FONT-SIZE: 10px;
+
+.top A {
+	COLOR: #ffffff; TEXT-DECORATION: none
+}
+.top A:active {
+	COLOR: #ffffff; TEXT-DECORATION: none
+}
+.top A:visited {
+	COLOR: #ffffff; TEXT-DECORATION: none
+}
+.top A:hover {
+	COLOR: #c0c0c0; TEXT-DECORATION: none
+}
+.top2 {
+	FONT-SIZE: 10px
+}
+.top2 A {
+	COLOR: #123488; TEXT-DECORATION: none
+}
+.top2 A:active {
+	COLOR: #123488; TEXT-DECORATION: none
+}
+.top2 A:visited {
+	COLOR: #123488; TEXT-DECORATION: none
+}
+.top2 A:hover {
+	COLOR: #000000; TEXT-DECORATION: none
+}
+.titulek {
+	FONT-SIZE: 13pt; COLOR: #333333; FONT-FAMILY: MS Sans Serif
+}
+.titulek A {
+	COLOR: #000077; TEXT-DECORATION: none
+}
+.titulek A:active {
+	COLOR: #000077; TEXT-DECORATION: none
+}
+.titulek A:visited {
+	COLOR: #000077; TEXT-DECORATION: none
+}
+.titulek A:hover {
+	COLOR: #104e94; TEXT-DECORATION: none
+}
+
+.mn {
+	FONT-SIZE: 11px; COLOR: #333333; FONT-FAMILY: Tahoma,Arial
+}
+.mn A {
+	FONT-WEIGHT: bold; COLOR: #104e94; TEXT-DECORATION: none
+}
+.mn A:active {
+	FONT-WEIGHT: bold; COLOR: #104e94; TEXT-DECORATION: none
+}
+.mn A:visited {
+	FONT-WEIGHT: bold; COLOR: #104e94; TEXT-DECORATION: none
+}
+.mn A:hover {
+	FONT-WEIGHT: bold; COLOR: #000089; TEXT-DECORATION: none
+}
+.mn2 {
+	FONT-SIZE: 13px;COLOR: #333333; FONT-FAMILY: Tahoma,Arial
+}
+.mn2 A {
+	FONT-WEIGHT: bold; COLOR: #000089; TEXT-DECORATION: underline
+}
+.mn2 A:active {
+	FONT-WEIGHT: bold; COLOR: #000089; TEXT-DECORATION: underline
+}
+.mn2 A:visited {
+	FONT-WEIGHT: bold; COLOR: #000089; TEXT-DECORATION: underline
+}
+.mn2 A:hover {
+	FONT-WEIGHT: bold; COLOR: #000089; TEXT-DECORATION: none
+}
+.nadpisext {
+	COLOR: #000080; FONT-FAMILY: MS Sans Serif; FONT-SIZE: 15px; FONT-WEIGHT: bold; TEXT-DECORATION: none
+}
+
+.nadpis {
+	FONT-WEIGHT: bold; FONT-SIZE: 18px; COLOR: #000080; FONT-FAMILY: MS Sans Serif; TEXT-DECORATION: none
+}
+.nadpisclanku {
+	FONT-WEIGHT: bold; FONT-SIZE: 16px; COLOR: #000080; FONT-FAMILY: MS Sans Serif
+}
+.nadpis A {
+	FONT-WEIGHT: bold; COLOR: #104e94; TEXT-DECORATION: none
+}
+.nadpis A:active {
+	FONT-WEIGHT: bold; COLOR: #104e94; TEXT-DECORATION: none
+}
+.nadpis A:visited {
+	FONT-WEIGHT: bold; COLOR: #104e94; TEXT-DECORATION: none
+}
+.nadpis A:hover {
+	FONT-WEIGHT: bold; COLOR: #353535; TEXT-DECORATION: none
+}
+#anketa1 {
+        width: 150px;
+        border: 1px solid grey;
+        background-color: #FFFACD;
+        font-family: "Arial CE", "Helvetica CE", Arial, Helvetica, "sans-serif";
+        font-size: 11px;
+        padding: 7px;
+}
+#anketa1 span {
+        display: block;
+}
+#anketa1 a {
+        color: maroon;
+        text-decoration: none;
+        font-weight: bold;
+}
+#anketa1 a:hover {
+        text-decoration: underline;
+}
+#anketa1 img {
+        border: 0px;
+        margin-top: 2px;
+        margin-bottom: 6px;
+}
+#anketa1 .otazka {
+        font-size: 12px;
+        font-weight: bold;
+        margin-bottom: 7px;
+        color: black;
+}
+#anketa1 .spolu {
+        margin-top: 2px;
+}
+#anketa1 .perc {
+        display: inline;
+}
+/*anketa 1 koniec*/

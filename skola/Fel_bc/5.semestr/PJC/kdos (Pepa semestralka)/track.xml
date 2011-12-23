@@ -1,0 +1,614 @@
+<?xml version="1.0" encoding="ISO-8859-2" ?>
+
+<railway_map>
+    <station name="Inn">
+        <departures>
+          <to_station name="Poth">
+                <train id="26">
+                    <travel_time>55</travel_time>
+
+                    <departure_time>9:34</departure_time>
+                    <departure_time>13:47</departure_time>
+                    <departure_time>17:18</departure_time>
+                    <departure_time>20:56</departure_time>
+                    <departure_time>1:12</departure_time>
+                </train>
+            </to_station>       
+               
+            <to_station name="Poth">
+                <train id="26">
+                    <travel_time>55</travel_time>
+
+                    <departure_time>9:34</departure_time>
+                    <departure_time>13:47</departure_time>
+                    <departure_time>17:18</departure_time>
+                    <departure_time>20:56</departure_time>
+                    <departure_time>1:12</departure_time>
+                </train>
+            </to_station>
+
+            <to_station name="Stol">
+            </to_station>
+
+            <to_station name="Brno">
+            </to_station>
+
+            <to_station name="České Budějky">
+            </to_station>
+        </departures>
+    </station>
+    
+    <station name="Stol">
+    
+    </station>
+        
+    <!-- Single station on railway map, name maximally 16 chars long -->
+    <station name="Praha">
+    
+    </station>
+    <station name="Praha">
+
+        <!-- Exact departures from current station to another one -->
+        <departures>
+
+            <to_station name="Brno">
+                <train id="9">
+                    <!-- Amount of time each train needs to reach the final station in minutes -->
+                    <travel_time>86</travel_time>
+                    
+                    <!-- Train departure times -->
+                    <departure_time>7:36</departure_time>
+                    <departure_time>12:45</departure_time>
+                    <departure_time>19:24</departure_time>
+                </train>
+                <train id="15">
+                    <!-- Amount of time each train needs to reach the final station in minutes -->
+                    <travel_time>73</travel_time>
+
+                    <!-- Train departure times -->
+                    <departure_time>9:12</departure_time>
+                    <departure_time>15:0</departure_time>
+                    <departure_time>17:15</departure_time>
+                    <departure_time>22:6</departure_time>
+                </train>
+            </to_station>
+
+            <to_station name="Liberec">
+
+            </to_station>
+            <to_station name="Karlovy Vary">
+
+            </to_station>
+            <to_station name="Pardubice">
+                <train id="3">
+                    <travel_time>15</travel_time>
+
+                    <departure_time>8:49</departure_time>
+                    <departure_time>12:34</departure_time>
+                    <departure_time>16:0</departure_time>
+                    <departure_time>19:50</departure_time>
+                </train>
+            </to_station>
+            <to_station name="Plzeň">
+
+            </to_station>
+            <to_station name="České Budějky">
+                <train id="26">
+                    <travel_time>22</travel_time>
+
+                    <departure_time>8:7</departure_time>
+                    <departure_time>12:20</departure_time>
+                    <departure_time>15:54</departure_time>
+                    <departure_time>19:30</departure_time>
+                    <departure_time>23:50</departure_time>
+                </train>
+            </to_station>
+
+        </departures>
+    </station>
+
+    <station name="Kunratice">
+        <departures>
+            <to_station name="Děčín">
+               <train id="15">
+                    <travel_time>23</travel_time>
+
+                    <departure_time>6:45</departure_time>
+                    <departure_time>12:30</departure_time>
+                    <departure_time>14:45</departure_time>
+                    <departure_time>19:30</departure_time>
+                </train>
+            </to_station>
+        </departures>
+    </station>
+
+    <station name="Děčín">
+        <departures>
+            <to_station name="Liberec">
+               <train id="15">
+                    <travel_time>71</travel_time>
+
+                    <departure_time>7:10</departure_time>
+                    <departure_time>12:55</departure_time>
+                    <departure_time>15:10</departure_time>
+                    <departure_time>19:55</departure_time>
+                </train>
+            </to_station>
+
+            <to_station name="Kunratice">
+            </to_station>
+
+            <to_station name="Karlovy Vary">
+                <train id="3">
+                    <travel_time>39</travel_time>
+
+                    <departure_time>7:25</departure_time>
+                    <departure_time>11:55</departure_time>
+                    <departure_time>14:40</departure_time>
+                    <departure_time>18:27</departure_time>
+                </train>
+            </to_station>
+        </departures>
+    </station>
+
+    <station name="Omsk">
+        <departures>
+            <to_station name="Liberec">
+            </to_station>
+
+            <to_station name="Hradec Králové">
+            </to_station>
+
+        </departures>
+    </station>
+
+    <station name="Liberec">
+        <departures>
+            <to_station name="Praha">
+               <train id="15">
+                    <travel_time>44</travel_time>
+
+                    <departure_time>8:25</departure_time>
+                    <departure_time>14:10</departure_time>
+                    <departure_time>16:25</departure_time>
+                    <departure_time>21:8</departure_time>
+                </train>
+            </to_station>
+
+            <to_station name="Omsk">
+            </to_station>
+
+            <to_station name="Děčín">
+            </to_station>
+
+            <to_station name="Karlovy Vary">
+            </to_station>
+        </departures>
+    </station>
+
+    <station name="Karlovy Vary">
+        <departures>
+            <to_station name="Liberec">
+            </to_station>
+
+            <to_station name="Děčín">
+            </to_station>
+
+            <to_station name="Praha">
+                <train id="26">
+                    <travel_time>106</travel_time>
+
+                    <departure_time>6:17</departure_time>
+                    <departure_time>10:30</departure_time>
+                    <departure_time>13:4</departure_time>
+                    <departure_time>17:40</departure_time>
+                    <departure_time>22:01</departure_time>
+                </train>
+                <train id="3">
+                    <travel_time>34</travel_time>
+
+                    <departure_time>8:10</departure_time>
+                    <departure_time>11:55</departure_time>
+                    <departure_time>15:24</departure_time>
+                    <departure_time>19:9</departure_time>
+                </train>
+            </to_station>
+
+            <to_station name="Drážďany">
+            </to_station>
+        </departures>
+    </station>
+
+    <station name="Drážďany">
+        <departures>
+            <to_station name="Karlovy Vary">
+                <train id="26">
+                    <travel_time>49</travel_time>
+
+                    <departure_time>5:22</departure_time>
+                    <departure_time>9:34</departure_time>
+                    <departure_time>12:10</departure_time>
+                    <departure_time>16:44</departure_time>
+                    <departure_time>21:5</departure_time>
+                </train>
+            </to_station>
+
+            <to_station name="Plzeň">
+                <train id="9">
+                    <!-- Amount of time each train needs to reach the final station in minutes -->
+                    <travel_time>115</travel_time>
+
+                    <!-- Train departure times -->
+                    <departure_time>4:45</departure_time>
+                    <departure_time>10:5</departure_time>
+                    <departure_time>16:41</departure_time>
+                </train>
+            </to_station>
+        </departures>
+    </station>
+
+    <station name="Plzeň">
+        <departures>
+            <to_station name="Drážďany">
+            </to_station>
+
+            <to_station name="Gottwaldov">
+            </to_station>
+
+            <to_station name="Praha">
+                <train id="9">
+                    <!-- Amount of time each train needs to reach the final station in minutes -->
+                    <travel_time>38</travel_time>
+
+                    <!-- Train departure times -->
+                    <departure_time>6:45</departure_time>
+                    <departure_time>12:5</departure_time>
+                    <departure_time>18:41</departure_time>
+                </train>
+            </to_station>
+        </departures>
+    </station>
+
+    <station name="Gottwaldov">
+        <departures>
+            <to_station name="Plzeň">
+            </to_station>
+        </departures>
+    </station>
+
+    <station name="České Budějky">
+        <departures>
+            <to_station name="Praha">
+            </to_station>
+
+            <to_station name="Brno">
+            </to_station>
+
+            <to_station name="Inn">
+                <train id="26">
+                    <travel_time>55</travel_time>
+
+                    <departure_time>8:35</departure_time>
+                    <departure_time>12:49</departure_time>
+                    <departure_time>16:20</departure_time>
+                    <departure_time>19:55</departure_time>
+                    <departure_time>0:15</departure_time>
+                </train>
+            </to_station>
+        </departures>
+    </station>
+
+
+
+    <station name="Brno">
+        <departures>
+            <to_station name="České Budějky">
+            </to_station>
+
+            <to_station name="Inn">
+            </to_station>
+
+            <to_station name="Stol">
+            </to_station>
+
+            <to_station name="Bánská Bystrica">
+                <train id="15">
+                    <travel_time>35</travel_time>
+
+                    <departure_time>10:30</departure_time>
+                    <departure_time>16:17</departure_time>
+                    <departure_time>18:34</departure_time>
+                    <departure_time>23:22</departure_time>
+                </train>
+            </to_station>
+
+            <to_station name="Olomouc">
+                <train id="9">
+                    <!-- Amount of time each train needs to reach the final station in minutes -->
+                    <travel_time>60</travel_time>
+
+                    <!-- Train departure times -->
+                    <departure_time>9:4</departure_time>
+                    <departure_time>14:22</departure_time>
+                    <departure_time>20:58</departure_time>
+                </train>
+            </to_station>
+            
+            <to_station name="Praha">
+            </to_station>
+        </departures>
+    </station>
+
+    <station name="Olomouc">
+        <departures>
+            <to_station name="Brno">
+            </to_station>
+
+            <to_station name="Bánská Bystrica">
+            </to_station>
+
+            <to_station name="Ostrava">
+                <train id="9">
+                    <!-- Amount of time each train needs to reach the final station in minutes -->
+                    <travel_time>60</travel_time>
+
+                    <!-- Train departure times -->
+                    <departure_time>10:9</departure_time>
+                    <departure_time>15:29</departure_time>
+                    <departure_time>22:00</departure_time>
+                </train> 
+            </to_station>
+
+            <to_station name="Bruntál">
+            </to_station>
+
+            <to_station name="Ústí n. Labem">
+            </to_station>
+
+            <to_station name="Pardubice">
+            </to_station>
+        </departures>
+    </station>
+    
+    <station name="Bánská Bystrica">
+        <departures>
+            <to_station name="Brno">
+            </to_station>
+
+            <to_station name="Olomouc">
+            </to_station>
+
+            <to_station name="Žilina">
+            </to_station>
+
+            <to_station name="Martin">
+            </to_station>
+
+            <to_station name="Žižkov">
+            </to_station>
+
+            <to_station name="Ostrava">
+            </to_station>
+        </departures>
+    </station>
+
+    <station name="Ostrava">
+        <departures>
+            <to_station name="Bánská Bystrica">
+            </to_station>
+
+            <to_station name="Olomouc">
+            </to_station>
+
+            <to_station name="Bruntál">
+            </to_station>
+
+            <to_station name="Žilina">
+            </to_station>
+
+            <to_station name="Moskva">
+            </to_station>
+
+            <to_station name="Wroclav">
+            </to_station>
+        </departures>
+    </station>
+
+    <station name="Žižkov">
+        <departures>
+            <to_station name="Bánská Bystrica">
+            </to_station>
+
+            <to_station name="Martin">
+            </to_station>
+
+            <to_station name="Opava">
+            </to_station>
+
+            <to_station name="Gdaňsk">
+            </to_station>
+
+            <to_station name="Stol">
+            </to_station>
+        </departures>
+    </station>
+
+    <station name="Gdaňsk">
+        <departures>
+            <to_station name="Wien">
+            </to_station>
+
+            <to_station name="Žižkov">
+            </to_station>
+
+            <to_station name="Opava">
+            </to_station>
+
+            <to_station name="Poth">
+            </to_station>
+
+            <to_station name="Stol">
+            </to_station>
+        </departures>
+    </station>
+
+    <station name="Ústí n. Labem">
+        <departures>
+            <to_station name="Olomouc">
+            </to_station>
+
+            <to_station name="Bruntál">
+            </to_station>
+
+            <to_station name="Koth">
+                <train id="3">
+                    <travel_time>40</travel_time>
+
+                    <departure_time>11:29</departure_time>
+                    <departure_time>15:9</departure_time>
+                    <departure_time>18:43</departure_time>
+                    <departure_time>23:37</departure_time>
+                </train>
+            </to_station>
+
+            <to_station name="Hradec Králové">
+            </to_station>
+        </departures>
+    </station>
+    
+    <station name="Hradec Králové">
+        <departures>
+            <to_station name="Omsk">
+            </to_station>
+
+            <to_station name="Pardubice">
+            </to_station>
+
+            <to_station name="Ústí n. Labem">
+                <train id="3">
+                    <travel_time>40</travel_time>
+
+                    <departure_time>10:44</departure_time>
+                    <departure_time>14:25</departure_time>
+                    <departure_time>18:0</departure_time>
+                    <departure_time>22:51</departure_time>
+                </train>
+            </to_station>
+        </departures>
+    </station>
+    
+    <station name="Pardubice">
+        <departures>
+            <to_station name="Praha">
+            </to_station>
+
+            <to_station name="Hradec Králové">
+                <train id="3">
+                    <travel_time>91</travel_time>
+
+                    <departure_time>9:10</departure_time>
+                    <departure_time>12:52</departure_time>
+                    <departure_time>16:19</departure_time>
+                    <departure_time>21:8</departure_time>
+                </train>
+            </to_station>
+
+            <to_station name="Olomouc">
+            </to_station>
+        </departures>
+    </station>
+
+    <station name="Koth">
+        <departures>
+            <to_station name="Ústí n. Labem">
+            </to_station>
+        </departures>
+    </station>
+
+    <station name="Wroclav">
+        <departures>
+            <to_station name="Ostrava">
+            </to_station>
+        </departures>
+    </station>
+
+    <station name="Moskva">
+        <departures>
+            <to_station name="Ostrava">
+            </to_station>
+        </departures>
+    </station>
+
+    <station name="Žilina">
+        <departures>
+            <to_station name="Ostrava">
+            </to_station>
+
+            <to_station name="Bánská Bystrica">
+            </to_station>
+
+            <to_station name="Martin">
+            </to_station>
+        </departures>
+    </station>
+
+    <station name="Martin">
+        <departures>
+            <to_station name="Žilina">
+            </to_station>
+
+            <to_station name="Bánská Bystrica">
+            </to_station>
+
+            <to_station name="Žižkov">
+            </to_station>
+        </departures>
+    </station>
+
+    <station name="Bruntál">
+        <departures>
+            <to_station name="Ústí n. Labem">
+            </to_station>
+
+            <to_station name="Olomouc">
+            </to_station>
+
+            <to_station name="Ostrava">
+            </to_station>
+        </departures>
+    </station>
+
+    <station name="Opava">
+        <departures>
+            <to_station name="Žižkov">
+            </to_station>
+
+            <to_station name="Gdaňsk">
+            </to_station>
+        </departures>
+    </station>
+
+    <station name="Wien">
+        <departures>
+            <to_station name="Poth">
+            </to_station>
+
+            <to_station name="Gdaňsk">
+            </to_station>
+        </departures>
+    </station>
+
+    <station name="Poth">
+        <departures>
+            <to_station name="Wien">
+            </to_station>
+
+            <to_station name="Gdaňsk">
+            </to_station>
+
+            <to_station name="Inn">
+            </to_station>
+        </departures>
+    </station>
+    
+</railway_map>

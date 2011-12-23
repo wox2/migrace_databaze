@@ -1,0 +1,9 @@
+1320705482109	Move compilation unit
+1320741236306	Copy compilation units
+1321113883289	Rename local variable 'processedNode'
+1321115511498	Rename field 'output'
+1321115535852	Rename field 'input'
+1321117247024	Rename local variable 'target'
+1321117366143	Rename local variable 'targetRoot'
+1321206961827	Delete element
+1321223699737	Rename type 'Tarjan'

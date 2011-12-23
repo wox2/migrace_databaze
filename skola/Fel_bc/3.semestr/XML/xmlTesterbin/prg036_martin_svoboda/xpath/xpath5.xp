@@ -1,0 +1,2 @@
+(: Vraci cislo letu, ktery ma prave pet cestujicich :)
+//flight[count(passengers/passenger) = 5]/@number

@@ -1,0 +1,101 @@
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/courses/36sin/INTEOCORP/!svn/ver/420/src/LogicalDesign/BusinessLayer/UseCaseRealisation/SpravaZakazniku
+END
+VyhladatZakaznikaModelHolder.java
+K 25
+svn:wc:ra_dav:version-url
+V 142
+/svn/courses/36sin/INTEOCORP/!svn/ver/420/src/LogicalDesign/BusinessLayer/UseCaseRealisation/SpravaZakazniku/VyhladatZakaznikaModelHolder.java
+END
+IVytvoritZakaznikaModelHolder.java
+K 25
+svn:wc:ra_dav:version-url
+V 143
+/svn/courses/36sin/INTEOCORP/!svn/ver/420/src/LogicalDesign/BusinessLayer/UseCaseRealisation/SpravaZakazniku/IVytvoritZakaznikaModelHolder.java
+END
+IZmazatZakaznikaModelHolder.java
+K 25
+svn:wc:ra_dav:version-url
+V 141
+/svn/courses/36sin/INTEOCORP/!svn/ver/420/src/LogicalDesign/BusinessLayer/UseCaseRealisation/SpravaZakazniku/IZmazatZakaznikaModelHolder.java
+END
+VytvoritZakaznikaUCC.java
+K 25
+svn:wc:ra_dav:version-url
+V 134
+/svn/courses/36sin/INTEOCORP/!svn/ver/420/src/LogicalDesign/BusinessLayer/UseCaseRealisation/SpravaZakazniku/VytvoritZakaznikaUCC.java
+END
+ZmazatZakaznikaUCC.java
+K 25
+svn:wc:ra_dav:version-url
+V 132
+/svn/courses/36sin/INTEOCORP/!svn/ver/420/src/LogicalDesign/BusinessLayer/UseCaseRealisation/SpravaZakazniku/ZmazatZakaznikaUCC.java
+END
+IUpravaZakaznikaUCC.java
+K 25
+svn:wc:ra_dav:version-url
+V 133
+/svn/courses/36sin/INTEOCORP/!svn/ver/420/src/LogicalDesign/BusinessLayer/UseCaseRealisation/SpravaZakazniku/IUpravaZakaznikaUCC.java
+END
+IVyhladatZakaznikaModelHolder.java
+K 25
+svn:wc:ra_dav:version-url
+V 143
+/svn/courses/36sin/INTEOCORP/!svn/ver/420/src/LogicalDesign/BusinessLayer/UseCaseRealisation/SpravaZakazniku/IVyhladatZakaznikaModelHolder.java
+END
+VyhladatZakaznikaUCC.java
+K 25
+svn:wc:ra_dav:version-url
+V 134
+/svn/courses/36sin/INTEOCORP/!svn/ver/420/src/LogicalDesign/BusinessLayer/UseCaseRealisation/SpravaZakazniku/VyhladatZakaznikaUCC.java
+END
+IVytvoritZakaznikaUCC.java
+K 25
+svn:wc:ra_dav:version-url
+V 135
+/svn/courses/36sin/INTEOCORP/!svn/ver/420/src/LogicalDesign/BusinessLayer/UseCaseRealisation/SpravaZakazniku/IVytvoritZakaznikaUCC.java
+END
+IZmazatZakaznikaUCC.java
+K 25
+svn:wc:ra_dav:version-url
+V 133
+/svn/courses/36sin/INTEOCORP/!svn/ver/420/src/LogicalDesign/BusinessLayer/UseCaseRealisation/SpravaZakazniku/IZmazatZakaznikaUCC.java
+END
+UpravaZakaznikaModelHolder.java
+K 25
+svn:wc:ra_dav:version-url
+V 140
+/svn/courses/36sin/INTEOCORP/!svn/ver/420/src/LogicalDesign/BusinessLayer/UseCaseRealisation/SpravaZakazniku/UpravaZakaznikaModelHolder.java
+END
+IVyhladatZakaznikaUCC.java
+K 25
+svn:wc:ra_dav:version-url
+V 135
+/svn/courses/36sin/INTEOCORP/!svn/ver/420/src/LogicalDesign/BusinessLayer/UseCaseRealisation/SpravaZakazniku/IVyhladatZakaznikaUCC.java
+END
+VytvoritZakaznikaModelHolder.java
+K 25
+svn:wc:ra_dav:version-url
+V 142
+/svn/courses/36sin/INTEOCORP/!svn/ver/420/src/LogicalDesign/BusinessLayer/UseCaseRealisation/SpravaZakazniku/VytvoritZakaznikaModelHolder.java
+END
+ZmazatZakaznikaModelHolder.java
+K 25
+svn:wc:ra_dav:version-url
+V 140
+/svn/courses/36sin/INTEOCORP/!svn/ver/420/src/LogicalDesign/BusinessLayer/UseCaseRealisation/SpravaZakazniku/ZmazatZakaznikaModelHolder.java
+END
+IUpravaZakaznikaModelHolder.java
+K 25
+svn:wc:ra_dav:version-url
+V 141
+/svn/courses/36sin/INTEOCORP/!svn/ver/420/src/LogicalDesign/BusinessLayer/UseCaseRealisation/SpravaZakazniku/IUpravaZakaznikaModelHolder.java
+END
+UpravaZakaznikaUCC.java
+K 25
+svn:wc:ra_dav:version-url
+V 132
+/svn/courses/36sin/INTEOCORP/!svn/ver/420/src/LogicalDesign/BusinessLayer/UseCaseRealisation/SpravaZakazniku/UpravaZakaznikaUCC.java
+END

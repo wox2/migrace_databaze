@@ -1,0 +1,16 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Nastaveni nekterych hodnot a deklaraci pro makro PSTricks
+%% Jiri Dvorsky, 5.8.1998
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\psset{xunit=1cm, yunit=1cm}
+\psset{linewidth=1pt}
+\newgray{gray10}{0.10}
+\newgray{gray20}{0.20}
+\newgray{gray30}{0.30}
+\newgray{gray40}{0.40}
+\newgray{gray50}{0.50}
+\newgray{gray60}{0.60}
+\newgray{gray70}{0.70}
+\newgray{gray80}{0.80}
+\newgray{gray90}{0.90}

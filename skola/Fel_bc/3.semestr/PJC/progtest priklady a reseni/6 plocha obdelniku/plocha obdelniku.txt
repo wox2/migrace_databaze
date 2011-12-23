@@ -1,0 +1,49 @@
+Úkolem je realizovat program, který bude zpracovávat informace o obdélnících a bude umet vypocítat plochu, kterou obdélníky pokrývají. Obdélníky se mohou prekrývat, program ale zapocte prekrytou plochu pouze jedenkrát.
+
+Vstupem jsou rádky popisující jednotlivé obdélníky. Obdélníky mají hrany rovnobežné s osami x a y. Na každém rádku jsou práve ctyri celá císla, která definují souradnice X1, Y1, X2 a Y2 zadávaného obdélníku. Není garantováno, že X1 < X2, a analogicky nemusí platit, že Y1 < Y2. Zadávání je ukonceno koncem souboru (eof). Pro testování doporucujeme vytvorení textového souboru, který obsahuje testovací data a jeho následné presmerování na standardní vstup testovaného programu.
+
+Výstupem je jediná rádka, která zobrazí údaj o celkové pokryté ploše. Plocha pokrytá více obdélníky se zapocítává pouze jedenkrát. Výpis je ukoncen znakem pro odrádkování (endl).
+
+Program hlásí chybu, pokud detekuje rádku, na které nejsou ctyri celá císla, nebo pokud zjistí, že X1 = X2 nebo Y1 = Y2. Pokud k chybe dojde, je zobrazená chybová hláška podle vzoru níže. Chybová hláška je zobrazená okamžite po nalezení chyby. Za chybovým hlášením je odrádkování (endl).
+
+Program nesmí používat datové struktury z STL (vector, list, ...). Program pracuje v omezeném prostredí, má limit na dobu behu (2s) a omezenou dostupnou pamet (dostacuje na uložení zadávaných obdélníku v binární podobe).
+Ukázka behu programu:
+
+ 
+10 20 30 40
+10 100 30 140
+Pokryta plocha: 1200
+
+ 
+0 0 12 15
+10 10 20 20
+18 19 30 22
+Pokryta plocha: 304
+
+ 
+10 10 20 20
+0 15 30 17 
+15 0 17 30 
+Pokryta plocha: 180
+
+ 
+0 0 5 100
+20 0 25 100
+-10 20 100 25
+-10 40 100 45
+Pokryta plocha: 2000
+
+ 
+10 10 20 aadds
+Nespravny vstup.
+
+ 
+10 20 20 20
+Nespravny vstup.
+
+Nápoveda:
+
+    * Program si bude udržovat seznam obdélníku, ketrý bude prubežne aktualizovat.
+    * Do seznamu si bude pridávat pouze takové obdélníky, které se neprekrývají s jiným obdélníkem v seznamu.
+    * Pokud se do seznamu má pridat obdélník, který se protíná s již existujícím obdélníkem v seznamu, pak je nove vkládaný obdélník rozdelen na menší cásti podle hran existujícího obdélníku a tyto jednotlivé cásti jsou rekurzivne pridány do seznamu.
+

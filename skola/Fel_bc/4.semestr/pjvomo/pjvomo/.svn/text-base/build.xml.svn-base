@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="webserver" default="compile">
+    <taskdef resource="emma_ant.properties">
+		<classpath>
+			<pathelement location="lib/emma.jar" />
+			<pathelement location="lib/emma_ant.jar" />
+		</classpath>
+	</taskdef>
+
+    <target name="compile">
+		<mkdir dir="build"/>
+		<mkdir dir="build/classes"/>
+		<mkdir dir="build/test"/>
+
+		<javac destdir="build/classes" srcdir="src" debug="true" />
+		<javac destdir="build/test" srcdir="test">
+			<classpath>
+				<pathelement location="lib/junit-4.6.jar" />
+				<pathelement location="build/classes" />
+			</classpath>
+		</javac>
+	</target>
+
+	<target name="build" depends="compile" />
+	
+    <target name="run" depends="compile">
+		<java classname="presentation.view.MainLayout" classpath="build/classes" fork="true" />
+	</target>
+
+	<target name="instrument" depends="compile">
+		<mkdir dir="build/instrumented"/>
+
+		<emma>
+			<instr instrpath="build/classes" destdir="build/instrumented" metadatafile="build/metadata.emma" merge="true" />
+		</emma>
+	</target>
+
+	<target name="test" depends="instrument">
+		<mkdir dir="reports" />
+		<mkdir dir="reports/junit" />
+
+		<junit printsummary="yes" haltonfailure="yes" fork="true">
+			<classpath>
+				<pathelement location="build/test" />
+				<pathelement location="build/instrumented" />
+				<pathelement location="lib/emma.jar" />
+				<pathelement location="lib/emma_ant.jar" />
+				<pathelement location="lib/junit-4.6.jar" />
+				<pathelement location="build/classes" />
+			</classpath>
+
+			<formatter type="plain"/>
+
+			<batchtest fork="yes" todir="reports/junit">
+				<fileset dir="test">
+      					<include name="**/*.java"/>
+				</fileset>
+			</batchtest>
+			<jvmarg value="-Demma.coverage.out.file=build/coverage.emma"/>
+			<jvmarg value="-Demma.coverage.out.merge=true" />
+		</junit>
+
+		<emma enabled="true">
+			<report sourcepath="src">
+				<fileset dir="build">
+					<include name="*.emma" />
+				</fileset>
+				<html outfile="reports/coverage.html" />
+			</report>
+		</emma>
+	</target>
+
+    <target name="clean">
+		<delete dir="build"/> <!-- smaze adresar build -->
+		<delete dir="reports"/>
+	</target>
+</project>
+
+

@@ -1,0 +1,56 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+    <h:head>
+        <title>KOS</title>
+    </h:head>
+    <h:body>
+        <ui:composition template="./WEB-INF/includes-templates/x33eja-template.xhtml">
+            <ui:param name="pageTitle" value="#{msgs.students}" />
+            <ui:define name="content">
+                <h:form>
+                    <h1><h:outputText value="#{msgs.students}"/></h1>
+                    <h:commandLink action="#{students.newStudent}" value="#{msgs.students_add}" />
+                    <h:dataTable value="#{students.allStudents}" var="item" styleClass="dataTable">
+                        <f:facet name="caption">
+                            <h:outputText value="#{msgs.list_students_caption}"/>
+                        </f:facet>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{msgs.name_surname}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.firstName} #{item.surname}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{msgs.supervisor}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.hasSupervisor.firstName} #{item.hasSupervisor.surname}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{msgs.enrolled_in}"/>
+                            </f:facet>
+                            <h:dataTable value="#{item.enrolledIn}" var="en" styleClass="innerDataTable">
+                                <h:column>
+                                    <h:outputText value="#{en.courseId}"/>
+                                </h:column>
+                            </h:dataTable>
+                        </h:column>
+                        <h:column>
+                            <h:commandButton value="#{msgs.edit}" action="#{students.editStudent(item)}" />
+                        </h:column>
+                        <h:column>
+                            <h:commandButton value="#{msgs.remove}" action="#{students.removeStudent(item)}" />
+                        </h:column>
+                    </h:dataTable>
+                    <h:messages />
+                </h:form>
+            </ui:define>
+        </ui:composition>
+    </h:body>
+</html>
+

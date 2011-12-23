@@ -1,0 +1,845 @@
+<html><head>
+ 
+  <link href="Java2_soubory/styly.css" type="text/css" rel="stylesheet">
+  <meta http-equiv="Content-Type" content="text/html;" charset="windows-1250">
+  <meta content="časopis o programování, Internetu a počítačích" name="description">
+  <meta content="PHP,ASM,ASP,developer,forum,fórum,programator,programátor,SQL,Pascal,TP,Jan Sova,Sova,MySQL,C/C++,C++,JS,JavaScript,HW,
+   Visual Basic,Hardware,Software,Flash,Assembler,Asembler,Apache,Java,Python name=" keywords="">
+  <meta http-equiv="Author" content="Jan" sova,="" jansova@programator.cz=""><title>Programátor - Začínáme v Javě (2.): Základy OOP</title>
+  
+ <style>
+<!--
+.poznamka    { font-size: x-small; }
+span.codestr { color: #800080 }
+span.codekwd { color: #0000FF }
+span.codeclass { color: #000080 }
+span.codeop  { color: #CC0000 }
+span.codepozn { color: #008000 }
+-->
+</style></head><body topmargin="5" leftmargin="5" bgcolor="#eff1f8" marginheight="0" marginwidth="0">
+
+<table style="border: 1px solid rgb(32, 32, 32);" align="center" bgcolor="black" border="0" cellspacing="1" width="770">
+  <tbody><tr>
+    <td align="center">
+     <span class="top">
+      <a title="Projekt pro všechny programátory" href="http://www.programator.cz/">ProgramatorCZ</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+      <a title="Diskuse na www.programator.cz" href="http://linux.programator.cz/forum">Diskusní
+      fórum</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+      <a title="Největší zdroj dokumentace o Assembleru v ČR" href="http://asm.programator.cz/">ASMDprojekt</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+      <a title="Vtipy nejen pro programátory" href="http://vtipy.programator.cz/">Vtipy</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+      <a title="Knihovna JavaScriptu" href="http://javascript.programator.cz/">JavaScript</a>
+   </span>
+  </td>
+ </tr>
+</tbody></table>
+
+<table style="border-left: 1px solid rgb(32, 32, 32); border-right: 1px solid rgb(32, 32, 32);" align="center" background="Java2_soubory/logo.gif" border="0" cellpadding="0" cellspacing="0" width="770">
+  <tbody><tr>
+    <td align="right">
+<!-- BBSTART: ad2.billboard.cz kod 1.1 - SERVER: Časopis(8512), SEKCE: top(1), POZICE: (1), TYPBANNERU: Full Banner(1), OKRAJ: ne, POPIS: ne. -->
+<script language="JavaScript" type="text/javascript">
+<!--
+var bbs=screen,bbn=navigator,bbh;bbh='&ubl='+bbn.browserLanguage+'&ucc='+bbn.cpuClass+'&ucd='+bbs.colorDepth+'&uce='+bbn.cookieEnabled+'&udx='+bbs.deviceXDPI+'&udy='+bbs.deviceYDPI+'&usl='+bbn.systemLanguage+'&uje='+bbn.javaEnabled()+'&uah='+bbs.availHeight+'&uaw='+bbs.availWidth+'&ubd='+bbs.bufferDepth+'&uhe='+bbs.height+'&ulx='+bbs.logicalXDPI+'&uly='+bbs.logicalYDPI+'&use='+bbs.fontSmoothingEnabled+'&uto='+(new Date()).getTimezoneOffset()+'&uui='+bbs.updateInterval+'&uul='+bbn.userLanguage+'&uwi='+bbs.width;
+var bb9_bgcolor='C0C0C0';
+var bb9_text='000000';
+var bb9_link='0000FF';
+if(document.bgColor) { bb9_bgcolor=document.bgColor.substr(1); }
+if(document.fgColor) { bb9_text=document.fgColor.substr(1); }
+if(document.linkColor) { bb9_link=document.linkColor.substr(1); }
+document.write("<IFRAME WIDTH=468 HEIGHT=60 MARGINWIDTH=0 MARGINHEIGHT=0 FRAMEBORDER=0 HSPACE=0 VSPACE=0 SCROLLING=no BORDERCOLOR='#000000' SRC='http://ad2.billboard.cz/please/showit/8512/1/1/1/?typkodu=html&topmargin=0&leftmargin=0"+bbh+"&href="+escape(location.href)+"&popis=ne&okraj=ne&bgcolor="+bb9_bgcolor+"&text="+bb9_text+"&link="+bb9_link+"&bust="+Math.random()+"&target=_top'>");
+document.write("<scr"+"ipt language='JavaScript' type='text/javascript'>");
+document.write("document.write(\"<scr\"+\"ipt language='JavaScript' type='text/javascript' src='http://ad2.billboard.cz/please/showit/8512/1/1/1/?typkodu=js\"+bbh+\"&href=\"+escape(location.href)+\"&popis=ne&okraj=ne&bust=\"+Math.floor(10000000*Math.random())+\"&target=_top'><\/scr\"+\"ipt>\");");
+document.write("<\/scr"+"ipt>");
+document.write("<\/IFRAME>");
+/**///-->
+</script><iframe marginwidth="0" marginheight="0" hspace="0" vspace="0" bordercolor="#000000" src="Java2_soubory/a.html" frameborder="0" height="60" scrolling="no" width="468">&lt;script
+language='JavaScript'
+type='text/javascript'&gt;document.write("&lt;scr"+"ipt
+language='JavaScript' type='text/javascript'
+src='http://ad2.billboard.cz/please/showit/8512/1/1/1/?typkodu=js"+bbh+"&amp;href="+escape(location.href)+"&amp;popis=ne&amp;okraj=ne&amp;bust="+Math.floor(10000000*Math.random())+"&amp;target=_top'&gt;&lt;/scr"+"ipt&gt;");&lt;/script&gt;</iframe>
+<noscript>
+<table border="0" cellpadding="0" cellspacing="0"><tr><td>
+<a href="http://ad2.billboard.cz/please/redir.bb/8512/1/1/1/"
+target="_top">
+<img
+src="http://ad2.billboard.cz/please/showit/8512/1/1/1/?typkodu=img"
+border="0" width="468" height="60" alt='Kliknete prosim!'></a>
+</td></tr></table>
+</noscript>
+<!-- BBEND: ad2.billboard.cz kod 1.1 -->
+  </td>
+ </tr>
+</tbody></table>
+
+
+<table style="border: 1px solid rgb(32, 32, 32);" align="center" bgcolor="#ccd1ef" cellspacing="1" width="770">
+ <tbody><tr>
+  <td align="left">
+   <span class="top2">
+    <i>Spolupracujeme</i>:&nbsp;&nbsp;
+    <a href="http://www.webguru.cz/">WebGuru</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+    <a href="http://www.komplikator.cz/">Komplikátor</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+    <a href="http://www.minasite.cz/">MinaSite</a>
+   </span>
+   </td>
+   <td align="right">
+    <span class="top2">
+      <a href="javascript:window.external.AddFavorite%20('http://casopis.programator.cz',%20'%C4%8Casopis%20Program%C3%A1tor-%20Internet,%20PHP,%20JavaScipt,%20Pascal,%20Delphi');">Přidat
+         k oblíbeným položkám</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+      <a href="http://casopis.programator.cz/" onclick="this.style.behavior='url(#default#homepage)';this.setHomePage('http://casopis.programator.cz');return(false);">Nastavit
+         jako výchozí stránku</a>
+    </span>
+   </td>
+ </tr>
+</tbody></table>
+
+
+<table align="center" border="0" cellpadding="0" cellspacing="0" width="770">
+  <tbody><tr>
+
+
+    <td cellspacing="0" cellpadding="0" valign="top" width="120">
+
+    <table style="border-left: 1px solid rgb(32, 32, 32); border-right: 1px solid rgb(32, 32, 32); border-bottom: 1px solid rgb(32, 32, 32);" bgcolor="#dce1ef" cellpadding="0" cellspacing="0">
+     <tbody><tr>
+      <td>
+       <img src="Java2_soubory/icon.gif" border="0" height="0" width="1">
+
+
+
+
+      <table align="center" border="0" cellpadding="1" cellspacing="0" width="120">
+        <tbody><tr>
+         <td align="left" bgcolor="#0d3b8e">
+          <span class="supmenu">
+           <b><img src="Java2_soubory/double_point.gif">Časopis</b>
+          </span>
+         </td>
+        </tr>
+        <tr>
+         <td>
+          <span class="mn">
+            <img src="Java2_soubory/x.gif" width="1"><img src="Java2_soubory/odrazka.gif">
+            <a href="http://casopis.programator.cz/index.php"> Hlavní stránka</a><br>
+                        <img src="Java2_soubory/x.gif" width="1"><img src="Java2_soubory/odrazka.gif">
+                 <a href="http://casopis.programator.cz/index.php?rubrika=9" title="I dnes se vyplatí vědět něco o ASM">                 Assembler            </a><br>
+                             <img src="Java2_soubory/x.gif" width="1"><img src="Java2_soubory/odrazka.gif">
+                 <a href="http://casopis.programator.cz/index.php?rubrika=8" title="Vše o C/C++">                 C,C++            </a><br>
+                             <img src="Java2_soubory/x.gif" width="1"><img src="Java2_soubory/odrazka.gif">
+                 <a href="http://casopis.programator.cz/index.php?rubrika=1" title="Programování v Delphi">                 Delphi            </a><br>
+                             <img src="Java2_soubory/x.gif" width="1"><img src="Java2_soubory/odrazka.gif">
+                 <a href="http://casopis.programator.cz/index.php?rubrika=15" title="Vše o Microsoft  .NET - nové platformě">                 DOTNET            </a><br>
+                             <img src="Java2_soubory/x.gif" width="1"><img src="Java2_soubory/odrazka.gif">
+                 <a href="http://casopis.programator.cz/index.php?rubrika=10" title="Velmi zajímavá technologie">                 Flash            </a><br>
+                             <img src="Java2_soubory/x.gif" width="1"><img src="Java2_soubory/odrazka.gif">
+                 <a href="http://casopis.programator.cz/index.php?rubrika=3" title="Stále důležitější jazyk">                 HTML            </a><br>
+                             <img src="Java2_soubory/x.gif" width="1"><img src="Java2_soubory/odrazka.gif">
+                 <a href="http://casopis.programator.cz/index.php?rubrika=16" title="Java">                 Java            </a><br>
+                             <img src="Java2_soubory/x.gif" width="1"><img src="Java2_soubory/odrazka.gif">
+                 <a href="http://casopis.programator.cz/index.php?rubrika=4" title="JavaScript">                 JavaScript            </a><br>
+                             <img src="Java2_soubory/x.gif" width="1"><img src="Java2_soubory/odrazka.gif">
+                 <a href="http://casopis.programator.cz/index.php?rubrika=12" title="Doporučená četba">                 Knihy            </a><br>
+                             <img src="Java2_soubory/x.gif" width="1"><img src="Java2_soubory/odrazka.gif">
+                 <a href="http://casopis.programator.cz/index.php?rubrika=13" title="Vše možné o Internetu">                 O Internetu            </a><br>
+                             <img src="Java2_soubory/x.gif" width="1"><img src="Java2_soubory/odrazka.gif">
+                 <a href="http://casopis.programator.cz/index.php?rubrika=2" title="Vše o programování hlavně v Turbo Pascalu">                 Pascal            </a><br>
+                             <img src="Java2_soubory/x.gif" width="1"><img src="Java2_soubory/odrazka.gif">
+                 <a href="http://casopis.programator.cz/index.php?rubrika=6" title="Vše o PHP">                 PHP            </a><br>
+                             <img src="Java2_soubory/x.gif" width="1"><img src="Java2_soubory/odrazka.gif">
+                 <a href="http://casopis.programator.cz/index.php?rubrika=5" title="Co je nového v projektu Programátor">                 Pro. programátor            </a><br>
+                             <img src="Java2_soubory/x.gif" width="1"><img src="Java2_soubory/odrazka.gif">
+                 <a href="http://casopis.programator.cz/index.php?rubrika=7" title="Programy z našeho projektu">                 Programy            </a><br>
+                             <img src="Java2_soubory/x.gif" width="1"><img src="Java2_soubory/odrazka.gif">
+                 <a href="http://casopis.programator.cz/index.php?rubrika=11" title="Zajímavý programovací jazyk">                 Python            </a><br>
+                             <img src="Java2_soubory/x.gif" width="1"><img src="Java2_soubory/odrazka.gif">
+                 <a href="http://casopis.programator.cz/index.php?rubrika=14" title="Externí zprávy">                 Tiskové zprávy            </a><br>
+                           </span>
+         </td>
+        </tr>
+      </tbody></table>
+      <p></p>
+
+              <table align="center" border="0" cellpadding="1" cellspacing="0" width="120">
+        <tbody><tr>
+         <td align="left" bgcolor="#0d3b8e">
+          <span class="supmenu">
+           <b><img src="Java2_soubory/double_point.gif">Projekty</b>
+          </span>
+         </td>
+        </tr>
+        <tr>
+         <td>
+          <span class="mn">
+            <p>
+             <img src="Java2_soubory/x.gif" width="1"><img src="Java2_soubory/odrazka.gif">
+            <a href="http://casopis.programator.cz/index.php"> </a><a href="http://linux.programator.cz/projekty/javascript">JScript Planet</a><br>
+             <img src="Java2_soubory/x.gif" width="1"><img src="Java2_soubory/odrazka.gif">
+            <a href="http://casopis.programator.cz/index.php"> </a><a href="http://linux.programator.cz/forum">ProProjekty</a></p>
+          </span>
+         </td>
+        </tr>
+        </tbody></table>
+        <p></p>
+
+        <table align="center" border="0" cellpadding="1" cellspacing="0" width="120">
+        <tbody><tr>
+         <td align="left" bgcolor="#0d3b8e">
+          <span class="supmenu">
+           <b><img src="Java2_soubory/double_point.gif">Služby</b>
+          </span>
+         </td>
+        </tr>
+        <tr>
+         <td>
+          <span class="mn">
+            <p>
+             <img src="Java2_soubory/x.gif" width="1"><img src="Java2_soubory/odrazka.gif">
+            <a href="http://casopis.programator.cz/index.php"> </a><a href="http://casopis.programator.cz/monitor.programator.cz">Monitoring</a><br>
+          </p></span>
+         </td>
+        </tr>
+        </tbody></table>
+        <p></p>
+
+       <table align="center" border="0" cellpadding="1" cellspacing="0" width="120">
+        <tbody><tr>
+         <td align="left" bgcolor="#0d3b8e">
+          <span class="supmenu">
+           <b><img src="Java2_soubory/double_point.gif">Informace</b>
+          </span>
+         </td>
+        </tr>
+        <tr>
+         <td>
+          <span class="mn">
+            <img src="Java2_soubory/x.gif" width="1"><img src="Java2_soubory/odrazka.gif">
+            <a href="http://casopis.programator.cz/index.php"> </a><a href="http://casopis.programator.cz/r-users.php">Redakce</a><br>
+            <img src="Java2_soubory/x.gif" width="1"><img src="Java2_soubory/odrazka.gif">
+            <a href="http://casopis.programator.cz/index.php"> </a><a href="http://casopis.programator.cz/o.php">O časopisu</a><br>
+            <img src="Java2_soubory/x.gif" width="1"><img src="Java2_soubory/odrazka.gif">
+            <a href="http://casopis.programator.cz/index.php"> </a><a href="http://casopis.programator.cz/odkazy.php">Odkazy</a><br>
+            <img src="Java2_soubory/x.gif" width="1"><img src="Java2_soubory/odrazka.gif">
+            <a href="http://casopis.programator.cz/index.php"> </a><a href="http://casopis.programator.cz/newredaktor.php">Nový redaktor</a><br>
+          </span>
+         </td>
+       </tr>
+      </tbody></table>
+      <p></p>
+
+      <hr size="1" width="110">
+      <p align="center">ISSN 1213-7359
+      <br>
+      </p><p align="center"><font size="1">Šéfredaktor:</font>
+      <br>
+      <span class="mn"><a href="mailto:jansova@programator.cz"><b>Jan Sova</b></a></span>
+      <br>
+      <br>
+      <font size="1">Zástupci šéfredaktora</font>
+      <br>
+      <b>Frerenzy Dawid</b>
+      <br>
+      <b>Krásenský David</b>
+      <br>
+      <br>
+      <font size="1">Šéfredaktoři rubrik</font>
+      <br>
+      <b>Michal Chalupník</b><br>
+      <b>Formánek Jiří</b><br>
+      <b>Pavel Aleš</b><br>
+      <b>Sojka Zdeněk</b><br>
+      <b>Petr Rympler</b><br>
+      <br>
+      <font size="1">Administrátor</font><br>
+      <span class="mn"><a href="mailto:jansova@programator.cz"><b>Jan Sova</b></a></span>
+      <br>
+      <br>
+
+
+
+      </p><p align="center"><a href="http://casopis.programator.cz/"><img src="Java2_soubory/icon.gif" alt="Naše ikonka" border="0"></a><br>
+      <a href="http://www.minasite.cz/"><img src="Java2_soubory/minasite.gif" alt="MinaSite" border="0"></a><br>
+      <!-- Komplikátorovy stránky - Začátek -->
+       <a href="http://www.komplikator.cz/" target="_top">
+       <img src="Java2_soubory/kikona.gif" alt="Komplikátorovy Stránky" border="0" height="31" width="88"></a><br>
+      <!-- Komplikátorovy stránky - Konec -->
+      <a href="http://www.toplist.cz/" target="_top"><img src="Java2_soubory/count.gif" alt="TOPlist" border="0"></a><br>
+      <a href="http://www.galactica.cz/"><img src="Java2_soubory/gal.gif" alt="GALACTICA" border="0"></a><br>
+
+
+      <br>
+
+      </p><p align="center"><font size="1">Časopis používá redakční systém Sova-Press.</font></p>
+        <br>
+       </td>
+      </tr>
+     </tbody></table>
+
+
+    <!-- vynechání prostoru mezi buňkami -->
+    </td><td width="4">
+    <img src="Java2_soubory/x.gif" width="4"></td>
+      <!--
+          zde končí levá část stránky a začíná střed, musí začítt tm, že se
+          definuje velikost buňky pro střed
+      -->    
+    <td valign="top" width="522">
+    <br>
+         <p><span class="nadpis">Začínáme v Javě (2.): Základy OOP</span> v rubrice Java</p>
+
+        <p><b>Vítejte
+u druhého dílu našeho seriálu. Doufám, že vás minulé, trošku suché
+tlachání neodradilo a těšíte se na dnešek. Dnešní povídání bude poměrně
+dlouhé a načneme tu rozsáhlé téma OOP – objektově orientovaného
+programování a v závěru si na příkladu ukážeme jak to v Javě funguje v
+praxi.</b></p>
+        <p>
+
+</p><h3>2. Základy OOP</h3>
+<p>Jak jsme si minule řekli, OOP přístup se výrazně liší od běžného procedurálního 
+přístupu, se kterým se potkáváme v jazycích jako Pascal či C. Dobré "pochopení" 
+tohoto přístupu sice není úplně nezbytné, a programátor jednoduchých aplikací se 
+bez hlubších znalostí v podstatě obejde, ale už v trošku rozsáhlejších programech je 
+toto nezbytné a pomůže nám jednak se vyvarovat problémů a pak i důsledné 
+dodržování tohoto přístupu nám pomůže při pozdějším ladění či rozšiřování.</p>
+<p>OOP neznamená ani tak velkou změnu na úrovni jazyka jako na úrovni
+řešení problémů a stavbě programů. Umožňuje nám problém rozdělit na
+logické jednotky, které si pak budou navzájem budou poskytovat služby.
+V principu se OOP snaží přenést způsob řešení problémů v reálném světě
+do programování. Pokud v reálném světě používáme různých předmětů
+abychom něčeho docílili, OOP nám umožňuje tyto předměty vhodným
+způsobem realizovat. Můžeme vytvářet samostatné jednotky, které budou
+reprezentovat jednotlivé předměty, které potřebujeme. Pokud budeme
+chtít například naprogramovat katalog domácí knihovny, můžeme
+implementovat samotnou knihovnu jako "zásobník" knih s funkcemi přidat
+a odebrat knihy či vypsat knihy,&nbsp;a pak samotné knihy s funkcemi
+jako půjčit či vypsat informace, které budeme přidávat do této
+knihovny. Našim cílem by pak mělo být i to, pokud se rozhodneme v
+budoucnu knihy nebo knihovnu upravit, abychom tak čili pouze na
+skutečně nezbytných místech a zbytek kódu nemuseli sáhnout.</p>
+<p>Nejprve bychom si ale měli říct o třech základních pilířích OOP, kterými 
+jsou: <b>zapouzdření</b> (encapsulation), <b>dědičnost</b> (inheritance) a <b>polymorfismus</b> (polymorphism).</p>
+<h4>2.1. Zapouzdření</h4>
+<p>Myšlenka zapouzdření spočívá v tom, že pokud už máme nějaká data, bylo by vhodné 
+s nimi mít pohromadě i všechny funkce, s nimi pracují. Tedy tyto data a funkce 
+zabalit do jakéhosi "balíčku". Stejně jako je to v reálném světě – vezměme si 
+třeba vypínač, který má nějaká "data" a nějaké "funkce" – tedy svůj stav (jestli 
+je zapnutý nebo vypnutý) a funkce zapnout a vypnout. Tyto dvě funkce přímo 
+ovlivňují jeho stav a dohromady s datovou položkou tvoří jeden celek.</p>
+<p>Přeneseno do programování - pokud jsme měli v Pascalu nebo C datový typ <code>FILE</code> a 
+potom někde funkce pro práci s ním, náš nový <code>FILE</code> by tyto funkce již obsahoval. 
+Když bychom vytvořili novou proměnnou typu <code>FILE</code>, ta by měla u sebe i svoje funkce, 
+které by pracovaly jen s ní. A další proměnná by měla zase jen svoje funkce atd. 
+Tato struktura je velmi podobná strukturám <b><code>record</code></b> resp. <b>
+<code>struct</code></b> jazyka Pascal 
+resp. C. Ty však mohly obsahovat jen data. V OOP navíc tedy budou obsahovat i 
+funkce.</p>
+<p>Ukážeme si to na našem vypínači: <code>vypinac</code> určitě bude obsahovat položku <code>stav</code> typu 
+<code>boolean</code> (slouží pro uchovávní logických hodnot). Tu bychom mohli v programu nastavit takto: <code>vyp.stav=true</code>. Ale protože 
+<code>vypinac</code> obsahuje i funkci <code>zapnout()</code>, můžeme použít: <code>vyp.zapnout()</code>.
+Tedy, ke všem položkám se přistupuje stejně - pomocí "tečkové
+konvence", jak je to i v jiných jazycích (Pascal či C). Jako první
+určíme proměnnou se kterou chceme pracovat, pak následuje tečka a za ní
+funkce nebo datová položka kterou chceme volat nebo ke které budeme
+přistupovat.</p>
+<p class="poznamka"><b>Poznámka:</b> Syntaxe Javy se nejvíce blíží syntaxi jazyku C. Proto ji budeme 
+používat. Na rozdíl od jazyka C však zná typ <code>boolean</code>. Proměnná
+<code>vyp</code> je v tomto příkladě 
+evidentně typu <code>Vypinac</code>. Stejně jako v C, za každou funkcí musí následovat závorky ve kterých je seznam argumentů. I když funkce nemá žádné 
+argumenty, závorky (prázdné) tam být musejí.</p>
+<p>Těmto novým "typům", které obsahují data pohromadě s funkcemi, se v OOP říká <b>třída</b> (class). A jednotlivým konkrétním
+<b>instancím</b> tříd se říká <b>objekt</b> (object). Tedy objekty jsou něco jako proměnné daného typu (třídy). Takže <code>Vypinac</code> by byla třída a konkrétní vypínač 
+(jako náš <code>vyp</code>) by byl objekt. Datové části dané třídy říkáme obvykle <b>členské proměnné</b> (member 
+variables) a funkcím <b>metody</b> (methods). Každý objekt může jako své členské proměnné obsahovat další objekty. Když se 
+vrátíme k našemu příkladu s knihovnou, tak každý objekt třídy <code>Knihovna</code> bude 
+obsahovat kromě jiných i řadu objektů třídy <code>Kniha</code>.</p>
+<p>Zapouzdření má několik dalších zajímavých vlastností. Jednak nám
+umožňuje logicky rozčlenit problém na poměrně samostatné jednotky, jak
+jsme si už výše řekli. Díky tomu se můžeme lépe orientovat v programech
+a účinněji hledat chyby. Dále díky tomu, že tyto jednotky jsou víceméně
+samostatné, můžeme je kdykoliv jindy znovu použít. Navíc si do budoucna
+necháváme pootevřená dvířka pro vnitřní úpravy v třídách. Stačí nám
+jenom zachovat jejich rozhraní (tedy metody a členské proměnné, které
+můžeme používat ze všech částí programu) a můžeme tak klidně
+optimalizovat jejich chod či dokonce provádět závažnější úpravy, aniž
+by bylo nutné měnit zbytek.</p>
+<p>Další důležitou vlastností zapouzdření je, že ve třídách můžeme jak u členských proměnných, tak i u 
+metod nastavit <b>přístupová práva</b>
+- to znamená, že můžeme omezit přístup k metodám a proměnným kupříkladu
+jen na kód samotných tříd. Pokud bychom se pokoušeli nastavit hodnotu
+takto omezené proměnné z jiné třídy (tedy, kdyby např. nějaký jiný
+programátor využíval našich tříd), kompilátor ohlásí chybu. Toto má
+velký význam protože takto můžeme zabránit nevhodnému (či až
+neodbornému) přístupu, který by mohl způsobit chybu či dokonce havárii
+programu. Pokud bychom chtěli dodržovat OOP do posledního puntíku,
+neměly by být proměnné vůbec přístupné a veškerá práce s nimi by měla
+být realizována přes metody. Obvykle se to ale dělá jen u těch
+proměnných, které by programátor přímo měnit neměl právě z důvodů
+stability a bezpečnosti. Tato vlastnost je dalším plusem i pro možné
+budoucí změny v kódu. Pokud bychom se jednoho krásného dne rozhodli, že
+naše třída bude svá data uchovávat jiným způsobem, programy, které by
+jí využívaly a které by přistupovaly přímo k jejím členským proměnným
+by měly potíže. Pokud by však tyto programy využívaly pouze metod naší
+třídy, nemusely by nastat žádné problémy, protože my bychom tyto metody
+určitě patřičně upravili.</p>
+<p>Podrobněji si nastavování přístupových práv popíšeme v budoucnu.</p>
+<h4>2.2. Dědičnost</h4>
+<p>Dědičnost nám umožňuje třídy zařadit do hierarchické struktury, stejně jako je 
+to v reálném světě. Vezměme si zase nějaký pěkný příklad - třeba auto. Auto může 
+být určitě třídou. Mělo by své členské proměnné jako značku či SPZ a také své 
+metody jako jet někam či natankovat. Auta však můžeme dále dělit do dalších 
+kategorií - nákladní auta, sportovní auta atd. Každá z těchto skupin by ovšem 
+klidně mohla být rovněž třídou. Ta by měla určitě stejné vlastnosti a metody 
+jako třída Auto, ale zároveň by přidávala i svá specifika. Tak u nákladního auta 
+by to mohla být vlastnost nosnost a u sportovního třeba zrychlení. A nakonec Auto 
+je určitě zase podskupina třídy dopravních prostředků. Tuto hierarchii můžeme 
+vytvářet i v OOP. Můžeme totiž vytvářet nové třídy odvozením od jiných. Tyto 
+odvozené třídy jsou pak <b>potomkem</b> původní třídy a <b>dědí</b> jeho členské proměnné a metody. Odvozená třída může (ale i nemusí) přidávat další 
+funkcionalitu (metody a členské proměnné) k již zděděným schopnostem. Ostatně, Java má pro 
+odvozování tříd i přiléhající klíčové slovo: <span class="codekwd"><code>extends</code></span> - což česky znamená 
+"rozšiřuje". </p>
+<p>Velmi podstatnou vlastností dědičnosti je, že se dědí i "příslušnost" ke třídě. Tedy - pokud máme třídu C odvozenou od 
+třídy B, tak každý objekt třídy C je i objektem třídy B. Pokud by navíc byla 
+třída B potomkem třídy A, tak objekt třídy C by byl jak objektem třídy B tak i 
+třídy A. Tedy neustále nahoru.<b> </b>Na samém vrcholu pak v Javě stojí třída <code>Object</code> 
+a každý objekt je i objektem třídy <code>Object</code>. I pokud novou třídu 
+zdánlivě neodvozujeme od žádné, ve skutečnosti je potomkem právě třídy <code>
+Object</code>.</p>
+<h4>2.3. Polymorfismus</h4>
+<p>Když jsme si říkali, že odvozená třída nemusí přidávat další
+funkcionalitu, možná to vypadalo jako hloupost. K čemu by nám byly dvě
+naprosto identické třídy? Při dědění však dochází především ke
+kopírování rozhraní. To znamená, že každá odvozená třída dědí metody a
+vlastnosti jako rodičovská třída. To ale neznamená, že by kód jejich
+metod musel být za každou cenu stejný. My totiž můžeme u odvozených
+tříd zděděné metody doplnit či přepsat znovu. Skutečnosti, že
+přepisujeme metody rodičovské třídy říkáme <b>překrytí</b> - tedy překrýváme metody 
+rodičovské třídy. Metody, které nepřepíšeme pak zůstanou stejné.</p>
+<p>Polymorfismus nám dává do rukou silný nástroj. Jde v něm o to, že
+při překladu nemusí být ještě známo, když v programu voláme metody,
+které třídě budou patřit a teprve za běhu se rozhodne o tom, které to
+budou. Nejlépe bude, když si to ukážeme na konkrétním příkladu. Budeme
+se bavit o geometrických útvarech, které se nacházejí téměř v každém
+kreslícím nástroji - kruh, čtverec a trojúhelník. Nadefinujme si proto
+třídu <code>Tvar</code>, která bude vypadat takto:</p>
+<p><img src="Java2_soubory/trida.gif"></p>
+<p class="poznamka"><b>Poznámka</b>: takto se v diagramech UML znázorňuje třída - první část je její název, 
+v druhé části máme členské proměnné a ve třetí části metody.</p>
+<p>Je patrné, že zatímco vlastnosti <code>pozice</code> a <code>rozmer</code> budou stejné pro každý útvar, metody 
+<code>vykresli()</code> a <code>smaz()</code> budou u každého útvaru jiné - jinak se kreslí čtverec a jinak kruh. Takže 
+můžeme využít vlastností OOP a odvodit třídy <code>Kruh</code>, <code>Ctverec</code> a 
+<code>Trojuhelnik</code> od 
+třídy <code>Tvar</code> a každou metodu <code>vykresli()</code> a <code>smaz()</code> implementovat znovu - dle daného 
+tvaru. Navíc s trojúhelníkem můžeme dělat jiné věci - třeba ho překlopit, takže přidáme 
+metodu <code>preklop()</code>. Nakresleme si to:</p>
+<p><img src="Java2_soubory/tvar_hierarchie.gif"></p>
+<p class="poznamka"><b>Poznámka:</b> Symbol prázdného trojúhelníku znamená odvození. 
+Každá položka v odvozených třídách znamená že buď byla přidána nebo překryta. 
+Proto v odvozených třídách nejsou proměnné <code>pozice</code> a <code>
+rozmer</code>, přestože je obsahují i odvozené třídy.</p>
+<p>A to nejlepší na konec - polymorfismus. Nyní můžeme kdekoliv v programu vytvořit metodu, která 
+bude mít za úkol udělat něco s objektem, který bude v parametru. Nemusíme však 
+psát tři různé metody pro trojúhelník, čtverec a kruh, ale můžeme napsat jen 
+jednu, která bude přijímat objety třídy <code>Tvar</code>. Jak jsme si řekli, je to možné, 
+protože každý čtverec, trojúhelník a kruh jsou zároveň i typu <code>Tvar</code>.
+Mají stejné rozhraní, proto můžeme volat stejné metody. Jak jsme si
+řekli v části o dědičnosti, u odvozování je každý objekt i objektem
+rodičovské třídy, takže to půjde. Toto řešení, kromě toho že je
+nádherně čisté (nemusíme v kódu zjišťovat o jaký konkrétní tvar jde) je
+i otevřené a je schopné pracovat i s dosud neexistujícími tvary. Pokud
+se někdy v budoucnu rozhodneme přidat další tvar, třeba šestiúhelník,
+nebudeme muset kód této metody nijak upravovat.</p>
+<p class="poznamka"><b>Poznámka:</b> V Javě se často "volání" metod označuje jako <b>zaslání zprávy</b> objektu. 
+Tímto způsobem totiž objekty spolu komunikují. Zpráva obsahuje jméno objektu, 
+kterému je zpráva určena, jméno metody, která se má vykonat a parametry metody 
+(data). Tento systém umožňuje komunikaci i mezi objekty, které běží v různých 
+procesech, či dokonce na různých počítačích.</p>
+<p>Takže naše metoda bude vypadat takto: </p>
+<p><span class="codekwd"></span><code><span class="codekwd">void</span> udelejNeco(Tvar t){<br>
+&nbsp;&nbsp;&nbsp;
+t.smaz();<br>
+<span class="codepozn">&nbsp;&nbsp;&nbsp; //další kód...</span><br>
+&nbsp;&nbsp;&nbsp;
+t.vykresli();<br>
+}</code></p>
+<p class="poznamka"><b>Poznámka:</b> <code><span class="codekwd">Void</span></code> znamená návratový typ metody. Více za chvíli.</p>
+<p>Pokud zavoláme metodu <code>udelejNeco()</code> s parametrem typu <code>Kruh</code>, budou se volat metody 
+<code>Kruh.smaz()</code> a <code>Kruh.vykresli()</code>, pokud bude v parametru
+<code>Ctverec,</code> zavolají se 
+metody <code>Ctverec.smaz()</code> a <code>Ctverec.vykresli</code>() a stejně tak to bude i s trojúhelníkem..</p>
+<p>Jak však program pozná, kterou metodu má správně zavolat? V Javě se implicitně 
+používá (na rozdíl od C++ nebo ObjectPascalu) tzv. <b>pozdní vazba</b> (late binding), kdy se teprve za 
+běhu rozhoduje, která metoda se má vykonat. V jazyce C++ (nebo ObjectPascalu) by 
+tato metoda musela být deklarována jako virtuální, jinak by se použilo <b>časné 
+vazby</b> (early binding) a o použití metod by se rozhodlo již v okamžiku kompilace 
+- volaly by se vždy metody třídy Tvar.</p>
+<p>Možná vás napadá další možnost využití: když jsme mluvili o naší knihovně, kde by se uchovávaly objekty třídy <code>Kniha</code>. Klidně bychom mohli od této 
+třídy odvodit další, konkrétnější třídy jako <code>Casopis</code> či <code>Slovnik</code>.
+A ty bychom mohli klidně v této knihovně skladovat aniž bychom museli
+vytvářet speciální místo pro každou z těchto tříd zvlášť (jak by to
+bylo nutné v případě procedurálních jazyků, když bychom ukládali
+záznamy do polí). Tato myšlenka je dobrá, ale má drobnou vadu. V
+knihovně bychom totiž objekty těchto tříd ukládali do "zásobníků" pro
+třídu <code>Kniha</code>.
+Sice bychom tam mohli tyto odvozené třídy rovněž ukládat, ale nemohli
+bychom přímo využívat jejich přidaných vlastností (protože bychom pak k
+těmto objektům přistupovali jako k objektům třídy <code>Kniha</code>). Ale i 
+tento "problém" se dá velmi lehce vyřešit pomocí tzv. "přetypování", o kterém se více zmíníme už příště.</p>
+<p>Jak je vidět i tyto tři prvky nám umožňují dělat doslova kouzla,
+věci, které by v procedurálních jazycích šly jen ztuha. A to není
+všechno, co OOP může nabídnout. Ale pro dnešek dosti teorie. Tyto řádky
+jsou základem OOP a měly by se zažít. Proto příště zvolníme a budeme se
+věnovat spíše méně náročným věcem a ukážeme si i nějaké konkrétní
+příklady. Pokud to teď vypadá podivně, žádný strach, v budoucnu si dáme
+i spoustu příkladů, které to doufám všechno pěkně objasní. </p>
+<h4>2.4. Java v praxi</h4>
+<p>Na dnešek jsem však slíbil i první příklad. A věrni tradici, již započali 
+Kerningham s Ritchiem, když představovali jazyk C, nemůžeme ani my začít jinak 
+než příkladem Ahoj světe. Než začneme ale několik poznámek. Jednak, Java je tzv. 
+<b>case-sensitive</b> - tedy rozlišuje velká a malá písmena (stejně jako jazyk C). Tedy 
+identifikátor <code>pepa</code> je jiný než identifikátor <code>PePa</code>. Dále, názvy tříd se obvykle 
+píší s velkým písmenem na začátku a pokud je název složen z více slov, tak každé 
+další slovo začíná velkým písmenem - tedy <code>Trida</code>, <code>MojeNovaTrida</code> atp. 
+Všechny ostatní identifikátory se píší s malým písmenem na začátku, 
+každé další slovo je velké - tedy <code>osoba</code>, <code>datumNarozeni</code> atp. V identifikátorech 
+se používají jen znaky anglické abecedy, čísla, podtržítko "_" a dolar 
+"$", začínat může 
+však jen podtržítkem nebo písmenem. V identifikátoru lze sice použít i některé 
+národní znaky, ale občas s tím jsou problémy  a tak se tomu raději vyhneme.</p>
+<p>Kód každé třídy se nachází v samostatném souboru, který má stejný název jako ta 
+třída a má koncovku <code>.java</code>. Tedy v souboru<code> Prvni.java</code> se bude nacházet třída 
+<code>Prvni</code>... Je důležité dodržet stejnou velikost písmen v názvu třídy a názvu souboru.</p>
+<p>A teď ke klávesnicím! Pokud jste se rozhodli používat prostředí JCreatoru, 
+vytvořte nový projekt pomocí volby menu File/New... Na záložce Projects vyberte 
+"Basic Java Application", zadejte název projektu a umístění. Pojmenujme si náš 
+projekt <b>AhojSvete</b>. Po kliknutí na OK se nám vytvoří nový soubor s názvem 
+<code>AhojSvete.java</code>, který už bude obsahovat nějaký kód (podle šablony, kterou můžeme 
+změnit). Tento kód smažeme, protože je to kostra pro grafickou aplikaci.</p>
+<p>Pokud používáte jiný editor, prostě vytvořte soubor <code>AhojSvete.java</code>.</p>
+<p>Do našeho souboru nyní napíšeme tento kód:</p>
+<p><code><span class="codekwd">public class</span> AhojSvete {<br>
+&nbsp;&nbsp;&nbsp; <span class="codekwd">public static void</span> main(<span class="codeclass">String[]</span> args){<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="codeclass">System</span>.out.println(<span class="codestr">"Ahoj svete!"</span>);<br>
+&nbsp;&nbsp;&nbsp;
+}<br>
+}</code></p>
+<p>Co to všechno znamená? Tak především, na prvním řádku dáváme najevo, že budeme 
+vytvářet třídu <code>AhojSvete</code> - k tomu se používá klíčové slovo 
+<span class="codekwd"><code>class</code></span>. Celý kód třídy 
+je pak uzavřen do bloku pomocí složených závorek <code>{</code> a <code>}</code> (ekvivalent pascalovského
+<code>Begin</code> a <code>End</code>). A co znamená to slůvko 
+<span class="codekwd"><code>public</code></span>? Jak jsme si už výše řekli, u metod 
+a členských proměnných se dají nastavit přístupová práva. Ty se dají nastavit i 
+u tříd a klíčové slovo  
+<span class="codekwd"><code>public</code></span> znamená, že daná třída/metoda/proměnná je 
+přístupná odkudkoliv - tedy je veřejná.</p>
+<p class="poznamka"><b>Poznámka:</b> JCreator umožňuje vytvářet třídy či metody i daleko elegantnějším způsobem. My je však zatím budeme psát ručně, abychom 
+věděli jak to funguje a vyznali se v tom...</p>
+<p>Na druhém řádku je hlavička metody <code>main()</code>. Metoda <code>main()</code> je zvláštní v tom, že v 
+každém programu musí být právě jednou a program začíná jejím vykonáním. Je to 
+tedy jakýsi vstupní bod. Céčkařům snad netřeba vysvětlovat. Metoda <code>main()</code> má jeden 
+parametr (na rozdíl od C, v Javě musí být!). Je to pole objektů třídy <code>String</code> 
+(třída pro práci s řetězci znaků), ke kterému bude přístup přes identifikátor 
+<code>args</code>. V tomto poli se pak budou nacházet parametry, se kterými byl program 
+spuštěn. Před samotným názvem metody jsou tři zajímavá klíčová slova. Význam 
+slova <span class="codekwd"><code>public</code></span> jsme si už nastínili před chvílí, jen zdůrazním, že metoda <code>main()</code> 
+musí být <span class="codekwd"><code>public</code></span>. Static zatím přeskočíme, klíčové slovo
+<span class="codekwd"><code>void</code></span> znamená, že funkce 
+<code>main()</code> nevrací žádnou hodnotu. Před každým názvem funkce musí být uvedeno jaký je 
+její návratový typ. Toto Céčkaři znají, pro Pascalisty znamená návratová hodnota 
+<span class="codekwd"><code>void</code></span> to, že metoda <code>main()</code> je v podstatě procedura.</p>
+<p>A teď ke slovíčku <span class="codekwd"><code>static</code></span>. Jako statické se označují proměnné nebo metody které 
+se váží ke třídě a nikoliv k objektu. Pro nás to bude momentálně znamenat jen 
+to, že k použití statických metod a proměnných nemusí existovat žádná instance 
+této třídy. Proto je <code>main()</code> statická, protože při spouštění programu ještě 
+neexistuje žádná instance třídy <code>AhojSvete</code>. I k tomuto se v budoucnu vrátíme.</p>
+<p>Poslední řádek je samotný akt výpisu pozdravu. Jednoduše řečeno, třída
+<span class="codeclass">  <code>System</code></span>
+obsahuje členskou proměnnou <code>out</code> (je opět statická - proto nevytváříme žádné její 
+instance, ale přistupujeme k ní přímo). <code>Out</code> reprezentuje standardní výstup - 
+obvykle obrazovku. <code>Out</code> je třídy <span class="codeclass"> <code>PrintStream</code></span>, která obsahuje metodu 
+<code>println(<span class="codeclass">String</span> 
+s)</code>, která vypíše řetězec v parametru a odřádkuje. Jak je vidět je možné za sebou 
+objekty a metody řetězit.</p>
+<p class="poznamka"><b>Poznámka: </b>identifikátorům objektů se říká <b>ovladače</b> nebo reference či referenční proměnné (handler, reference) a neobsahují 
+samotný objekt ani samotnou adresu 
+objektu v paměti. Proto  nelze použít adresové operátory. Více ke 
+zvláštnostem použití ovladačů si povíme příště.</p>
+<p>Nyní nám nezbývá než program přeložit a spustit. Pokud máte správně 
+nakonfigurován JCreator, kompilaci spustíte volbou v menu Build/Compile project 
+(příp. tlačítkem na liště příp. klávesou F7) a po té projekt spustíte volbou v 
+menu Build/Execute project (příp. opět tlačítkem na liště příp. klávesou F5).</p>
+<p>Pokud používáte jiný editor a musíte provádět kompilaci a spouštění z 
+příkazového řádku, tak kompilátor se volá příkazem</p>
+<p><kbd>javac.exe AhojSvete.java</kbd></p>
+<p>Kompilátor zkompiluje zdrojový soubor do souboru se stejným jménem a koncovkou .class 
+a případně vypíše chyby. Pokud program chyby neobsahuje, je kompilace tichá 
+(tedy neobtěžuje žádným výpisem). 
+Hotový program se potom spustí příkazem (tedy se postaráme o interpretaci&nbsp; ByteCode)</p>
+<p><code>java.exe AhojSvete.class</code></p>
+<p>Je dobré mít cestu k těmto programům uloženou v systémové proměnné <code>PATH</code>. Pokud 
+jste JDK instalovali, cesta by měla být nastavena, pokud pouze rozbalovali 
+archiv, je vhodné tuto cestu nastavit. Tyto programy se nacházejí v adresáři
+<kbd>{adresář 
+s jdk}\bin</kbd>.</p>
+<h4>2.5. Slovníček pojmů</h4>
+<p>Dnes jsme si zavedli spoustu pojmů a tak nebude na škodu si je tu na závěr 
+pěkně přehledně shrnout:</p>
+
+<dl>
+  <dt><b>Case-sensitive</b></dt>
+  <dd>Skutečnost, že se rozlišují velká a malá písmena. Java je case-sensitive.</dd>
+  <dt><b>Časná vazba</b> (early binding)</dt>
+  <dd>O tom, která metoda které třídy bude volána se rozhoduje už v průběhu 
+  kompilace.</dd>
+  <dt><b>Členské proměnné</b> (member variables)</dt>
+  <dd>Datová část třídy.</dd>
+  <dt><b>Dědičnost </b>(inheritance)</dt>
+  <dd>Nová třída lze vytvořit tak, že ji odvodíme od již existující. Tato nová 
+  třída zdědí jak členské proměnné tak i metody rodičovské třídy. Dědičnost je 
+  přenosná. Tedy pokud třída A je odvozena od třídy B a třída B od třídy C, pak 
+  objekt třídy A je i objektem třídy B i třídy C.</dd>
+  <dt><b>Instance</b></dt>
+  <dd>Můžeme říct, že nějaký objekt je instancí nějaké třídy - tedy onen objekt 
+  je jakoby proměnnou dané třídy</dd>
+  <dt><b>Metody </b>(methods)</dt>
+  <dd>Funkční část třídy.</dd>
+  <dt><b>Objekt </b>(object)</dt>
+  <dd>Konkrétní zástupce třídy. Něco jako proměnná datového typu. Má vyhrazený 
+  paměťový prostor, lze s ním manipulovat prostřednictvím ovldače.</dd><dt><b>Odvozování</b></dt>
+  <dd>Skutečnost, kdy novou třídu vytvoříme rozšířením/upravením nějaké jiné.</dd>
+  <dt><b>Ovladač či reference, referenční proměnná</b> (handler, reference)</dt>
+  <dd>Identifikátor, pomocí kterého můžeme manipulovat s objekty. Neobsahuje 
+  adresu objektu v paměti, proto nelze použít adresové aritmetiky.</dd>
+  <dt><b>Polymorfismus</b> (polymorphism)</dt>
+  <dd>Vlastnost OOP založená na pozdní vazbě</dd>
+  <dt><b>Pozdní vazba</b> (late binding)</dt>
+  <dd>O tom, která metoda které třídy bude volána se rozhoduje až za běhu 
+  aplikace. Implicitní způsob pro Javu.</dd>
+  <dt><b>Přístupová práva</b></dt>
+  <dd>Jednotlivým třídám, členským proměnným a metodám můžeme nastavit 
+  přístupová práva, čímž můžeme určit, z jakých částí programu je lze použít.</dd>
+  <dt><b>Rozhraní třídy</b></dt>
+  <dd>Seznam použitelných metod. Jinak řečeno informace o tom, jaké zprávy třída 
+  přijímá.</dd>
+  <dt><b>Skládání</b> či kompozice (composition)</dt>
+  <dd>Skutečnost, kdy se objekt vytváří skládáním z dalších objektů.</dd>
+  <dt><b>Třída</b> (class)</dt>
+  <dd>Struktura, která zahrnuje data i programový kód. Vzdáleně podobná typům record/struct 
+  v procedurálních jazycích.</dd>
+  <dt><b>Zapouzdření</b> (encapsulation)</dt>
+  <dd>Skutečnost, že objekty obsahují pohromadě data i funkce s nimi pracující a dále že můžeme omezit přístup k nim.</dd>
+  <dt><b>Zprávy</b></dt>
+  <dd>Objekty spolu komunikují zasíláním zpráv - podobné jako volání metod.</dd>
+</dl>
+
+<h4>2.6. Závěr</h4>
+
+<p>To by myslím pro dnešek bohatě stačilo a tak nezbývá než se
+rozloučit. OOP se budeme věnovat i v budoucnosti, příště si však
+uděláme drobnou zastávku a budeme se věnovat takovým těm běžným
+programátorským problémům jako jsou syntaxe, primitivní datové typy,
+základní programové konstrukce (podmínky, cykly atd.) atd. Takže
+nashledanou za dalších cca 14 dní.</p>
+
+<p>Pokud si chcete ověřit, že před metodou <code>main()</code> musí být ta řada klíčových slov, zkuste si některé z nich odebrat a podívejte se, co na 
+to řekne překladač. Stejně tak i co se týče argumentu této metody.</p>
+
+<p>A pokud se vám nechce přiklad přepisovat, najdete jej zazipovaný <a href="http://casopis.programator.cz/img/cdome/2/AhojSvete.zip">zde</a></p>   <p></p>
+        <p>
+        Autor: <a href="http://casopis.programator.cz/r-users.php?id=50" title="informace o autorovi">Pavel Patz</a>
+        e-mail: <a href="http://casopis.programator.cz/index.php?autor=cdome@centrum.cz" title="e-mail autora" class="mn">cdome@centrum.cz</a>
+        web: <a href="http:///" title="Stránky autora" class="mn"></a>
+        </p>
+        <p align="right"><i></i></p>
+
+
+     <table style="border: 1px solid rgb(0, 0, 128);" align="center" bgcolor="#f0f0f0" cellspacing="1" width="495">
+      <tbody><tr>
+       <td>
+        <p><b>Příspěvky ke článku</b></p>
+       </td>
+      </tr>
+     </tbody></table>
+
+     <table align="center" width="495">
+      <tbody><tr>
+       <td>
+        <span class="mn">
+         <a href="http://casopis.programator.cz/forum.php?clanek=198">Použití národních znaků</a> 12.08.2003 12:35:13 Autor: František <br><a href="http://casopis.programator.cz/forum.php?clanek=198">Re: Použití národních znaků</a> 15.08.2003 16:21:24 Autor: Pavel Patz <br><a href="http://casopis.programator.cz/forum.php?clanek=198">Java 3D</a> 17.08.2003 19:02:03 Autor: Martin Schmid <br><a href="http://casopis.programator.cz/forum.php?clanek=198">re: Java3D</a> 20.08.2003 16:40:49 Autor: Pavel Patz <br><a href="http://casopis.programator.cz/forum.php?clanek=198">Paráááda</a> 20.08.2003 22:48:39 Autor: Axl <br><a href="http://casopis.programator.cz/forum.php?clanek=198">J2ME_wireless_toolkit</a> 22.08.2003 20:01:02 Autor: Martin Schmid <br><a href="http://casopis.programator.cz/forum.php?clanek=198">Re: J2ME_wireless_toolkit</a> 25.08.2003 14:45:38 Autor: Pavel Patz <br><a href="http://casopis.programator.cz/forum.php?clanek=198">Jiricek pise</a> 20.11.2003 21:03:35 Autor: d <br><a href="http://casopis.programator.cz/forum.php?clanek=198">chyba?????</a> 15.03.2004 22:23:12 Autor: Honza <br><a href="http://casopis.programator.cz/forum.php?clanek=198">info</a> 09.06.2004 16:46:55 Autor: Bedo <br><a href="http://casopis.programator.cz/forum.php?clanek=198">problém s javou</a> 14.11.2004 12:05:22 Autor: Honza <br><a href="http://casopis.programator.cz/forum.php?clanek=198">Help</a> 31.01.2005 11:53:57 Autor: x <br>        </span>
+       </td>
+      </tr>
+      <tr>
+       <td align="center">
+        <span class="mn">
+         <a href="http://casopis.programator.cz/forum.php?clanek=198">Přidat komentář</a>
+        </span>
+       </td>
+      </tr>
+     </tbody></table>
+     <p></p>
+
+
+    <table style="border: 1px solid rgb(0, 0, 128);" align="center" bgcolor="#f0f0f0" cellspacing="1" width="495">
+     <tbody><tr>
+      <td>
+       <p><b>Poslední ze stejné rubriky</b></p>
+      </td>
+     </tr>
+    </tbody></table>
+
+
+    <table align="center" width="495">
+     <tbody><tr>
+      <td>
+       <span class="mn">
+        <img src="Java2_soubory/odrazka.gif"> <a href="http://casopis.programator.cz/r-art.php?clanek=208">Začínáme v Javě (7.): Konstruktory a přetěžování metod</a><br><img src="Java2_soubory/odrazka.gif"> <a href="http://casopis.programator.cz/r-art.php?clanek=205">Robocode - aneb Java (bojovou) hrou.</a><br><img src="Java2_soubory/odrazka.gif"> <a href="http://casopis.programator.cz/r-art.php?clanek=204">Začínáme v Javě (6.): Třídy a objekty.</a><br><img src="Java2_soubory/odrazka.gif"> <a href="http://casopis.programator.cz/r-art.php?clanek=203">Začínáme v Javě (5.): Podmínky, cykly a kolektiv.</a><br><img src="Java2_soubory/odrazka.gif"> <a href="http://casopis.programator.cz/r-art.php?clanek=202">Začínáme v Javě (4.): Operace s operátory</a><br>       </span>
+      </td>
+     </tr>
+    </tbody></table>
+
+
+   </td>
+   <td width="4">
+    <img src="Java2_soubory/x.gif" width="4">
+   </td>
+
+
+   <!-- tak tady začíná pravý sloupek -->
+   <td valign="top" width="120">
+   <br>
+
+    <table style="border: 1px solid rgb(32, 32, 32);" align="center" border="0" cellpadding="1" cellspacing="0" width="120">
+        <tbody><tr>
+         <td align="left" bgcolor="#0d3b8e">
+          <span class="supmenu">
+           <b><img src="Java2_soubory/double_point.gif">Funkce ke článku</b>
+       </span>
+      </td>
+     </tr>
+     <tr>
+      <td>
+     <span class="mn">
+         <img src="Java2_soubory/diskuse.gif"> <a href="http://casopis.programator.cz/forum.php?clanek=198">Přidat komentář</a>
+        </span>
+      </td>
+     </tr>
+    </tbody></table>
+    <br>
+        <table style="border: 1px solid rgb(32, 32, 32);" align="center" border="0" cellpadding="1" cellspacing="0" width="120">
+        <tbody><tr>
+         <td align="left" bgcolor="#0d3b8e">
+          <span class="supmenu">
+           <b><img src="Java2_soubory/double_point.gif">Nejnovější články</b></span>
+<b>       </b></td>
+      </tr>
+      <tr>
+       <td>
+        <span class="mn">
+
+                 <img src="Java2_soubory/x.gif" width="1"><img src="Java2_soubory/odrazka.gif"> <a href="http://casopis.programator.cz/r-art.php?clanek=218">
+            Práce s událostmi v .NET Framework. </a>[13885]<br>         <img src="Java2_soubory/x.gif" width="1"><img src="Java2_soubory/odrazka.gif"> <a href="http://casopis.programator.cz/r-art.php?clanek=217">
+            Nová soutěž na 3D Contestu CZ </a>[10603]<br>         <img src="Java2_soubory/x.gif" width="1"><img src="Java2_soubory/odrazka.gif"> <a href="http://casopis.programator.cz/r-art.php?clanek=216">
+            Práce v .NET Framework - Zástupci </a>[12651]<br>         <img src="Java2_soubory/x.gif" width="1"><img src="Java2_soubory/odrazka.gif"> <a href="http://casopis.programator.cz/r-art.php?clanek=215">
+            Práce s XML v C# (5.) - ověřování dokumentu pomocí třídy XmlValidatingReader </a>[10510]<br>         <img src="Java2_soubory/x.gif" width="1"><img src="Java2_soubory/odrazka.gif"> <a href="http://casopis.programator.cz/r-art.php?clanek=214">
+            Práce s XML v C# (4.) - třídy XmlDocument a dotazy jazyka XPath </a>[11856]<br>         </span>
+       </td>
+      </tr>
+     </tbody></table>
+     <br>
+
+    <center>
+<!-- BBSTART: ad2.billboard.cz kod 1.1 - SERVER: Časopis(8512), SEKCE: 120*90(5), POZICE: (1), TYPBANNERU: Button 1(5), OKRAJ: ne, POPIS: ne. -->
+<script language="JavaScript" type="text/javascript">
+<!--
+var bbs=screen,bbn=navigator,bbh;bbh='&ubl='+bbn.browserLanguage+'&ucc='+bbn.cpuClass+'&ucd='+bbs.colorDepth+'&uce='+bbn.cookieEnabled+'&udx='+bbs.deviceXDPI+'&udy='+bbs.deviceYDPI+'&usl='+bbn.systemLanguage+'&uje='+bbn.javaEnabled()+'&uah='+bbs.availHeight+'&uaw='+bbs.availWidth+'&ubd='+bbs.bufferDepth+'&uhe='+bbs.height+'&ulx='+bbs.logicalXDPI+'&uly='+bbs.logicalYDPI+'&use='+bbs.fontSmoothingEnabled+'&uto='+(new Date()).getTimezoneOffset()+'&uui='+bbs.updateInterval+'&uul='+bbn.userLanguage+'&uwi='+bbs.width;
+var bb9_bgcolor='C0C0C0';
+var bb9_text='000000';
+var bb9_link='0000FF';
+if(document.bgColor) { bb9_bgcolor=document.bgColor.substr(1); }
+if(document.fgColor) { bb9_text=document.fgColor.substr(1); }
+if(document.linkColor) { bb9_link=document.linkColor.substr(1); }
+document.write("<IFRAME WIDTH=120 HEIGHT=90 MARGINWIDTH=0 MARGINHEIGHT=0 FRAMEBORDER=0 HSPACE=0 VSPACE=0 SCROLLING=no BORDERCOLOR='#000000' SRC='http://ad2.billboard.cz/please/showit/8512/5/1/5/?typkodu=html&topmargin=0&leftmargin=0"+bbh+"&href="+escape(location.href)+"&popis=ne&okraj=ne&bgcolor="+bb9_bgcolor+"&text="+bb9_text+"&link="+bb9_link+"&bust="+Math.random()+"&target=_top'>");
+document.write("<scr"+"ipt language='JavaScript' type='text/javascript'>");
+document.write("document.write(\"<scr\"+\"ipt language='JavaScript' type='text/javascript' src='http://ad2.billboard.cz/please/showit/8512/5/1/5/?typkodu=js\"+bbh+\"&href=\"+escape(location.href)+\"&popis=ne&okraj=ne&bust=\"+Math.floor(10000000*Math.random())+\"&target=_top'><\/scr\"+\"ipt>\");");
+document.write("<\/scr"+"ipt>");
+document.write("<\/IFRAME>");
+/**///-->
+</script><iframe marginwidth="0" marginheight="0" hspace="0" vspace="0" bordercolor="#000000" src="Java2_soubory/a_002.html" frameborder="0" height="90" scrolling="no" width="120">&lt;script
+language='JavaScript'
+type='text/javascript'&gt;document.write("&lt;scr"+"ipt
+language='JavaScript' type='text/javascript'
+src='http://ad2.billboard.cz/please/showit/8512/5/1/5/?typkodu=js"+bbh+"&amp;href="+escape(location.href)+"&amp;popis=ne&amp;okraj=ne&amp;bust="+Math.floor(10000000*Math.random())+"&amp;target=_top'&gt;&lt;/scr"+"ipt&gt;");&lt;/script&gt;</iframe>
+<noscript>
+<table border="0" cellpadding="0" cellspacing="0"><tr><td>
+<a href="http://ad2.billboard.cz/please/redir.bb/8512/5/1/5/"
+target="_top">
+<img
+src="http://ad2.billboard.cz/please/showit/8512/5/1/5/?typkodu=img"
+border="0" width="120" height="90" alt='Kliknete prosim!'></a>
+</td></tr></table>
+</noscript>
+<!-- BBEND: ad2.billboard.cz kod 1.1 -->
+</center>
+<br>
+
+    <table style="border: 1px solid rgb(32, 32, 32);" align="center" border="0" cellpadding="1" cellspacing="0" width="120">
+        <tbody><tr>
+         <td align="left" bgcolor="#0d3b8e">
+          <span class="supmenu">
+           <b><img src="Java2_soubory/double_point.gif">O článku</b>
+       </span>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       <span class="mn">
+         Datum: 12.08.2003<br>Rubrika: <a href="http://casopis.programator.cz/index.php?16">Java</a><br>Čtenářů: 13973<br>Autor: <a href="mailto:cdome@centrum.cz">Pavel Patz</a><br><p></p><p><b>Hodnocení článku:</b><br>Znamka: 2.79<br>Počet známek: 1331<br>[<a href="http://casopis.programator.cz/r-art.php?clanek=198&amp;znamka=1">1</a>] [<a href="http://casopis.programator.cz/r-art.php?clanek=198&amp;znamka=2">2</a>] [<a href="http://casopis.programator.cz/r-art.php?clanek=198&amp;znamka=3">3</a>] [<a href="http://casopis.programator.cz/r-art.php?clanek=198&amp;znamka=4">4</a>] [<a href="http://casopis.programator.cz/r-art.php?clanek=198&amp;znamka=5">5</a>]<br>
+ </p></span><p></p>       
+      </td>
+     </tr>
+    </tbody></table>
+
+       </td>
+  </tr>
+</tbody></table>
+<p>&nbsp;</p>
+<div align="center">
+
+<!-- BBSTART: ad2.billboard.cz kod 1.1 - SERVER: Časopis(8512), SEKCE: bottom(2), POZICE: (2), TYPBANNERU: Full Banner(1), OKRAJ: ne, POPIS: ne. -->
+<script language="JavaScript" type="text/javascript">
+<!--
+var bbs=screen,bbn=navigator,bbh;bbh='&ubl='+bbn.browserLanguage+'&ucc='+bbn.cpuClass+'&ucd='+bbs.colorDepth+'&uce='+bbn.cookieEnabled+'&udx='+bbs.deviceXDPI+'&udy='+bbs.deviceYDPI+'&usl='+bbn.systemLanguage+'&uje='+bbn.javaEnabled()+'&uah='+bbs.availHeight+'&uaw='+bbs.availWidth+'&ubd='+bbs.bufferDepth+'&uhe='+bbs.height+'&ulx='+bbs.logicalXDPI+'&uly='+bbs.logicalYDPI+'&use='+bbs.fontSmoothingEnabled+'&uto='+(new Date()).getTimezoneOffset()+'&uui='+bbs.updateInterval+'&uul='+bbn.userLanguage+'&uwi='+bbs.width;
+var bb9_bgcolor='C0C0C0';
+var bb9_text='000000';
+var bb9_link='0000FF';
+if(document.bgColor) { bb9_bgcolor=document.bgColor.substr(1); }
+if(document.fgColor) { bb9_text=document.fgColor.substr(1); }
+if(document.linkColor) { bb9_link=document.linkColor.substr(1); }
+document.write("<IFRAME WIDTH=468 HEIGHT=60 MARGINWIDTH=0 MARGINHEIGHT=0 FRAMEBORDER=0 HSPACE=0 VSPACE=0 SCROLLING=no BORDERCOLOR='#000000' SRC='http://ad2.billboard.cz/please/showit/8512/2/2/1/?typkodu=html&topmargin=0&leftmargin=0"+bbh+"&href="+escape(location.href)+"&popis=ne&okraj=ne&bgcolor="+bb9_bgcolor+"&text="+bb9_text+"&link="+bb9_link+"&bust="+Math.random()+"&target=_top'>");
+document.write("<scr"+"ipt language='JavaScript' type='text/javascript'>");
+document.write("document.write(\"<scr\"+\"ipt language='JavaScript' type='text/javascript' src='http://ad2.billboard.cz/please/showit/8512/2/2/1/?typkodu=js\"+bbh+\"&href=\"+escape(location.href)+\"&popis=ne&okraj=ne&bust=\"+Math.floor(10000000*Math.random())+\"&target=_top'><\/scr\"+\"ipt>\");");
+document.write("<\/scr"+"ipt>");
+document.write("<\/IFRAME>");
+/**///-->
+</script><iframe marginwidth="0" marginheight="0" hspace="0" vspace="0" bordercolor="#000000" src="Java2_soubory/a_003.html" frameborder="0" height="60" scrolling="no" width="468">&lt;script
+language='JavaScript'
+type='text/javascript'&gt;document.write("&lt;scr"+"ipt
+language='JavaScript' type='text/javascript'
+src='http://ad2.billboard.cz/please/showit/8512/2/2/1/?typkodu=js"+bbh+"&amp;href="+escape(location.href)+"&amp;popis=ne&amp;okraj=ne&amp;bust="+Math.floor(10000000*Math.random())+"&amp;target=_top'&gt;&lt;/scr"+"ipt&gt;");&lt;/script&gt;</iframe>
+<noscript>
+<table border="0" cellpadding="0" cellspacing="0"><tr><td>
+<a href="http://ad2.billboard.cz/please/redir.bb/8512/2/2/1/"
+target="_top">
+<img
+src="http://ad2.billboard.cz/please/showit/8512/2/2/1/?typkodu=img"
+border="0" width="468" height="60" alt='Kliknete prosim!'></a>
+</td></tr></table>
+</noscript>
+<!-- BBEND: ad2.billboard.cz kod 1.1 -->
+</div><hr size="1" width="760">
+<p align="center"><span class="mn">(c) Systém Jan Sova, Design David Krásenský a Jan Sova<br>Se svými dotazy či problémy se obracejte na diskusní
+<a href="http://linux.prgramator.cz/forum">fórum.</a><br>
+Časopis je součástí projektu <a href="http://www.programator.cz/">Programator</a>
+</span></p>
+
+</body></html>

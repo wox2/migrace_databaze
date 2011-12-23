@@ -1,0 +1,2 @@
+(: vypise jmena vsech hracu, kteri nefaulovali :)
+//hrac/cislo[not(faul)]/jmeno/text()

@@ -1,0 +1,57 @@
+Úkolem je realizovat program, který na svém vstupu precte informace o souradnicích vrcholu konvexního n-úhelníku a vypocte pro nej obvod a obsah.
+
+Vstupem programu jsou souradnice vrcholu v jednom z formátu popsaným níže. Souradnice jsou zadávané v poradí, které odpovídá procházení po obvodu n-úhelníku (nejsou proházené). Zadávání souradnic je ukonceno koncem vstupu (signalizovaný eof). Souradnice jsou na vstupu zadávané v kulatých závorkách bud v kartézském nebo v polárním tvaru. Kartézské souradnice jsou oddelené cárkou, polární znakem menšítko. Úhel v polárních souradnicích je zadán v radiánech jako desetinné císlo nebo ve stupních, pak je povinne uveden ješte údaj o minutách. Na jednom rádku vstupu muže být uvedeno více souradnic, ale zadání jedné souradnice však není roztržené na více rádcích. Pro testování je vhodné si uložit testovací vstupní data do souboru a pak je z tohoto souboru presmerovat na standardní vstup testovaného programu.
+
+Výstupem programu jsou dve rádky s vypoctenými hodnotami obsahu a obvodu. Rádky na výstupu jsou ukonceny znakem odrádkování (endl).
+
+Program detekuje chybu, pokud nalezne nesprávný vstup (formát souradnic, ...) ci pokud pozná, že zadávaný n-úhelník není konvexní. Pro vstupní data je garantováno, že se zadávané hrany neprotínají, program toto nemusí kontrolovat (z casových duvodu to ani nestihne). Za chybu vstupních dat je považováno, pokud zadání vrcholu neodpovídá ani jednomu z formátu nebo pokud zadaný vrchol netvorí vrchol v pravém slova smyslu (tj. pokud úhel k nemu priléhající je 180 stupnu). Pri testu konvexnosti je požadováno, aby program zkontroloval, že vnitrní úhly jsou vždy menší než 180 stupnu. Chybové hlášení "Nesprávný vstup." tedy znamená, že n-úhelník nelze sestrojit. Chybové hlášení o nekonvexnosti znamená, že n-úhelník sestrojit lze, ale není konvexní. Prípadné chybové hlášení je ukonceno znakem odrádkování (endl).
+Ukázka práce programu:
+
+(10,5) (20,5) (20,15) (10,15)
+Obsah: 100.000
+Obvod: 40.000
+
+(10,5) (10,15) (20,15) (20,5)
+Obsah: 100.000
+Obvod: 40.000
+
+(100.000000,0.000000) (-50.000000,86.602540) (-50.000000,-86.602540)
+Obsah: 12990.381
+Obvod: 519.615
+
+(90.000000 < 0s0') (90.000000 < 59s59') (90.000000 < 119s59') (90.000000 < 180s0') 
+(90.000000 < 239s59') (90.000000 < 300s0')
+Obsah: 21044.417
+Obvod: 540.000
+
+(30.000000 < 0.000000) (30.000000 < 1.570796) (30.000000 < 3.141593) (30.000000 < 4.712389)
+Obsah: 1800.000
+Obvod: 169.706
+
+(50.000000 < 0s0') (43.301270,25.000000) 
+(25.000000,43.301270) (50.000000 < 90s0') (-25.000000,43.301270) (50.000000 < 150s0') 
+(50.000000 < 180s0') (50.000000 < 3.665191) (50.000000 < 4.188790) (50.000000 < 4.712389) (25.000000,-43.301270)
+ (50.000000 < 5.759587)
+Obsah: 7500.000
+Obvod: 310.583
+
+(10,10) (20,20)
+Nespravny vstup.
+
+(0,0) (0,5) (0,10) (10,10) (10,0)
+Nespravny vstup.
+
+(10,5) (20,5) (20,15) (10,15) (13,10)
+N-uhelnik neni konvexni.
+
+(10,20,3) (5<4.6.3) (70,23s50')
+Nespravny vstup.
+
+Nápoveda:
+
+    * Obsah n-úhelníku vypoctete jako soucet obsahu n-2 trojúhelníku.
+    * Pro výpocet obsahu trojúhelníku použijte Heronuv vzorec.
+    * Konvexnost n-úhelníku zjistíte tak, že vypoctete úhel který svírají sousední hrany. Pokud je úhel alespon jednou vetší nebo roven 180 stupnu, je obrazec nekonvexní.
+    * Pro urcení svíraného úhlu a kontrolu konvexnosti je z hlediska zaokrouhlovacích chyb nejlépe použít vektorový soucin.
+    * Nekontrolujte protínání zadávaných hran - je garantováno, že se neprotínají.
+    * Pro ukládání souradnic není potreba alokovat pole. Pro výpocet si stací pamatovat celkem 5 souradnic (první a druhou zadanou a poslední tri zpracovávané).

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<zbozi>
+	<vyrobek cena="5262" sleva="20%" slevaKc="1330" id="ID323321" />
+	<vyrobek cena="456" sleva="20%" slevaKc="120" id="ID763276" />
+	<vyrobek cena="676" sleva="15%" slevaKc="110" id="ID872175" />
+	<vyrobek cena="12" sleva="35%" slevaKc="6" id="ID135211" />
+	<vyrobek cena="2000" sleva="10%" slevaKc="239" id="ID126700" />
+</zbozi>

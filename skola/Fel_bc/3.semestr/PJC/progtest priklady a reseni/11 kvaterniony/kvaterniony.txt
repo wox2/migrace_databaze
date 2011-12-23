@@ -1,0 +1,82 @@
+Úkolem je realizovat trídu CQuaternion, která bude implementovat kvaterniony a která pro své instance bude pretežovat operátory pro bežné aritmetické operace. Kvaterniony vznikly rozšírením komplexních císel na 4 dimenze. Nacházejí uplatnení v kvantové fyzice a v pocítacové grafice v krivkách (interpolace, a aproximace ve 3D). Úloha není obtížná ani algoritmicky ani potrebným matematickým aparátem (stací násobit a scítat), je však obtížnejší tím, že musíte správne navrhnout rozhraní implementovaných operátoru.
+
+Popis kvaternionu a predpisy pro operace nad nimi naleznete na stránkách Wikipedie (anglická verze, odkaz Quaternion). Úkolem je prevzít tyto predpisy a na jejich základe implementovat rozhraní trídy. Po realizované tríde je požadováno:
+
+    * Implicitní konstruktor - vytvorí kvaternion se složkami [0,0,0,0].
+    * konstruktor uživatelské konverze z datového typu double na kvaternion. Pri konverzi se desetinné císlo uloží do reálné složky (m_A), ostatní složky budou nastavené na hodnoty 0.
+    * Kopírující konstruktor bude realizován pokud to implementace trídy bude vyžadovat.
+    * Destruktor bude implementován, pokud to implementace trídy bude vyžadovat.
+    * Operátor = bude pretížen, pokud to implementace trídy bude vyžadovat.
+    * Bude realizován pretížený operátor +, který provede soucet dvou kvaternionu.
+    * Bude realizovaný pretížený operátor -, který vypocete rozdíl dvou kvaternionu.
+    * Bude realizovaný pretížený operátor *, který vypocete soucin dvou kvaternionu (pozor - kvaterniony nejsou komutativní).
+    * Bude realizovaný pretížený operátor /, který vypocete podíl dvou kvaternionu (x / y vypocte pravý podíl, tedy x * y-1).
+    * Budou realizované pretížené operátory == a !=, které porovnají kvaterniony a vrátí bool hodnotu výsledku porovnání.
+    * Budou realizované pretížené operátory << a >>, které umožní formátovaný výstup a vstup kvaternionu do výstupního resp. vstupního proudu. Formátování pro výstupní proud je potreba dodržet podle ukázky níže (vcetne mezer, za pravou hranatou závorkou není žádný další znak, formát zobrazní desetinných císel ponechte beze zmen). Pro vstup ze vstupního proudu umožnete ctení s libovolne vloženým whitespace, ale požadujte prítomnost hranatých závorek a cárek. Kvaternion nemusí být posledním obsahem vstupního streamu, není tedy úkolem kontrolovat eof. Pokud se pri ctení kvaternionu vyskytne chyba (napr. nesprávný formát císla, chybející cárka, ...), pak nastavte ve vstupním streamu fail bit - volání is . setstate ( ios::failbit ) a ponechte puvodní obsah instance kvaternionu beze zmeny.
+    * Bude realizovaná metoda Norm, která vrací velikost (normu) kvaternionu jako desetinné císlo - návratovou hodnotu (predpis - viz Wikipedia).
+    * Bude pretížený operátor [], kterým pujde celocíselnými indexy 0, 1, 2 a 3 získávat složky kvaternionu (m_A, m_B, m_C a m_D, v tomto poradí). Bude se tedy jednat o getter. Pokud bude indexováno jiným indexem, vvyvolá volání výjimku InvalidIndexException (volání: throw InvalidIndexException();).
+    * Bude pretížen operátor () jako kvaternární operátor, kterým pujde nastavit jednotlivé složky kvaternionu (setter pro všechny složky najednou).
+    * Clenské promenné m_A, m_B, m_C a m_D budou uchovávat hodnoty jednotlivých složek kvaternionu (m_A reálnou, m_B složku i, m_C složku j a m_D složku k).
+
+Pri realizaci rozhraní (operátoru) dejte dobrý pozor na kvalifikátory const. Testovací prostredí vyžaduje, aby realizované metody a pretížené operátory správne deklarovaly, že nemodifikují parametry tam, kde to není potreba (napr. operandy pro scítání).
+
+Odevzdávejte soubor, který obsahuje pouze implementovanou trídu CQuaternion a prípadné podpurné funkce. Trída musí splnovat slovne popsané verejné rozhraní, ale vlastní presná realizace je na Vás. Pokud Vámi odevzdané rešení nebude splnovat popsané rozhraní, dojde k chybe pri kompilaci. Do trídy si ale mužete doplnit další metody (verejné nebo i privátní) a clenské promenné. Odevzdávaný soubor musí obsahovat jak deklaraci trídy (popis rozhraní) tak i definice metod, konstruktoru a destruktoru. Je jedno, zda jsou metody implementované inline nebo oddelene. Pro usnadnení odevzdávání mužete využít toho, že ProgTest definuje promennou preprocesoru __PROGTEST__.
+
+Implementovaná trída nesmí používat datové struktury z STL (vector, list, ...). Jejich použití povede k chybe pri kompilaci (zde stejne nejsou potreba). Trída je testovaná v omezeném prostredí, kde je limitovaná dostupná pamet (zde ale není problém) a je omezena dobou behu (5s na testovacím pocítaci pro cca 10000 operací, referencní rešení pro výpocet potrebuje cca 0.2 sec).
+Rozhraní trídy:
+
+#ifndef __PROGTEST__
+class InvalidIndexException { };
+#endif /* __PROGTEST__ */
+
+class CQuaternion
+ {
+   public:
+    // konstruktor implicitni
+    // konstruktor uziv. konverze double -> kvaternion
+    // konstruktor se 4 parametry typu double (slozkami)
+    // konstruktor kopirujici (je-li treba) 
+    // destruktror (je-li treba)
+    // operator = (je-li treba) 
+    // operator ==
+    // operator !=
+    // metoda Norm
+    // operator [] (index 0,1,2,3 - getter)
+    // operator () kvaternarni pro 4 desetinna cisla (setter)
+    // operator +
+    // operator -
+    // operator *
+    // operator /
+    // operator <<
+    // operator >>
+
+   protected:
+    double                   m_A, m_B, m_C, m_D; // slozky realna, i, j, k
+ };
+// pripadne podpurne globalni funkce
+
+Ukázka použití trídy:
+
+const CQuaternion  A ( 1.0, 2.0, 3.0, 4.0 );
+const CQuaternion  B ( 8.0, 7.0, 6.0, 5.0 );
+CQuaternion C = 2;
+CQuaternion D;
+
+cout << A << B; // [ 1, 2, 3, 4 ][ 8, 7, 6, 5 ]
+D = A + B; // [ 9, 9, 9, 9 ]
+D = A - B; // [ -7, -5, -3, -1 ]
+D = A * B; // [ -44, 14, 48, 28 ]
+D = B * A; // [ -44, 32, 12, 46 ]
+D = A / B; // [ 0.344828, 0.103448, 0, 0.206897 ]
+D = B / A; // [ 2, -0.6, -5.55112e-17, -1.2 ]
+res = A == B; // false
+res = A != B; // true 
+istringstream is ( "[-5,-7,2,4]" );
+is >> D;
+cout << D; // [ -5, -7, 2, 4 ], is . fail () = false
+is . str ( "[-2,-3 4,5]" );
+is >> D;
+cout << D; // D se nemeni: [ -5, -7, 2, 4 ], is . fail () = true
+D(4,5,6,7);    // operator () - setter
+cout << D[2];  // getter, zde vraci 6 
+cout << D[12]; // vyvola InvalidIndexException

@@ -1,0 +1,106 @@
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+package timetable.sb;
+
+import java.sql.Time;
+import java.util.Date;
+import java.util.List;
+import javax.ejb.Local;
+import timetable.model.*;
+
+/**
+ *
+ * @author janf
+ */
+@Local
+public interface TimetableCenterLocal {
+
+
+    /**
+     * Routes where station1 lies closer to the route beginning than station2
+     */
+    List<Route> getRoutesConnectingStations(Station station1, Station station2);
+    /**
+     * Links which depart from specified station at specified time or later
+     */
+    List<Link> getLinksByDepartureTime(Route route, Station station, Date time);
+    /**
+     * Combination of getRoutesConnectingStations and getLinksByDepartureTime
+     * Links which are useable for journey from station1 to station2 and depart
+     * from station1 at specified time or later
+     */
+    List<Link> getLinksForJourney(Station station1, Station station2, Date time);
+    /**
+     * Stations where the specified link stops
+     */
+    List<Station> getStationsByLink(Link link);
+    /**
+     * Returns departure time of the link in the station
+     */
+    Time getTimeByLinkAndStation(Link link, Station station);
+
+    /* GET BY RELATIONS */
+    List<Note> getNotesByLink(Link link);
+    LinkType getLinkTypeByLink(Link link);
+    Route getRouteByPosition(Position position);
+    List<Link> getLinksByRoute(Route route);
+    List<Position> getPositionsByRoute(Route route);
+    Station getStationByPosition(Position position);
+    List<Position> getPositionsByStation(Station station);
+    List<Link> getLinksByTicket(Ticket ticket);
+
+    /* GET ALL */
+    public List<Route> getAllRoutes();
+    List<Link> getAllLinks();
+    List<LinkType> getAllLinkTypes();
+    List<Note> getAllNotes();
+    List<Position> getAllPositions();
+    List<Station> getAllStations();
+
+    /* GET BY ID */
+    Link getLinkById(int id);
+    LinkType getLinkTypeById(int id);
+    Note getNoteById(int id);
+    Passanger getPassangerById(long id);
+    Position getPositionById(int id);
+    Route getRouteById(long id);
+    Station getStationById(int id);
+
+    /* GET BY PROPERTY */
+    List<Link> getLinksByDepartureTime(Integer departureTime);
+    List<Passanger> getPassangersByFirstName(String firstname);
+    List<Passanger> getPassangersBySurname(String surname);
+    List<Passanger> getPassangerByUsername(String username); // TODO List nebo jeden?
+    List<Position> getPositionsByKmPosition(int km);
+    List<Position> getPositionsByTimePosition(Integer time);
+    List<Station> getStationsByName(String station);
+
+    /* UPDATE */
+    void updateLink(Link link);
+    void updateLinkType(LinkType linkType);
+    void updateNote(Note note);
+    void updatePosition(Position position);
+    public void updateRoute(Route route);
+    void updateStation(Station station);
+
+    /* REMOVE */
+    void removeLink(Link link);
+    void removeLinkType(LinkType linkType);
+    void removeNote(Note note);
+    void removePosition(Position position);
+    public void removeRoute(Route route);
+    void removeStation(Station station);
+
+    List<Passanger> getAllPassangers();
+
+    void updatePassanger(Passanger passanger);
+
+    void removePassanger(Passanger passanger);
+
+    Position getPositionByRouteAndStation(Station station, Route route);
+
+
+}

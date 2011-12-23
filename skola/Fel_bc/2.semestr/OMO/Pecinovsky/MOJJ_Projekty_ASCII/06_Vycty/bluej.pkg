@@ -1,0 +1,35 @@
+#Soubor bluej.pkg prevedeny do ASCII
+#Sat Nov 29 12:36:28 CET 2008
+package.showUses=true
+target1.type=EnumTarget
+package.editor.height=302
+target3.name=Obdobi_6a
+target2.type=EnumTarget
+package.editor.y=0
+readme.editor.y=0
+package.editor.x=300
+readme.editor.x=0
+target3.type=EnumTarget
+target2.y=70
+target2.x=60
+package.showExtends=true
+target3.height=50
+target1.height=50
+target2.width=90
+package.editor.width=184
+target1.width=90
+readme.editor.height=512
+package.numDependencies=0
+target1.y=130
+target1.x=60
+package.numTargets=3
+target1.name=Obdobi_6c
+target3.y=10
+readme.editor.width=618
+target3.x=60
+target1.showInterface=false
+target2.showInterface=false
+target3.width=90
+target2.name=Obdobi_6b
+target3.showInterface=false
+target2.height=50

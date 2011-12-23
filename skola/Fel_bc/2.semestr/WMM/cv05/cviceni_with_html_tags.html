@@ -1,0 +1,133 @@
+<!DOCTYPE html PUBLIC "-//W3C//Dtd HTML 4.01//EN">
+<html>
+<head>
+<title>Ukázka psaní HTML dokumentu</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<link href="layout_bez_tabulek.css" rel="stylesheet" type="text/css"/>
+</head>
+
+
+<body>
+
+<div id="hlavicka" class="sekce">
+<object id="logo" name="logo" title="Logo ČVUT" data="LogoCVUT.gif" type="image/gif">
+České vysoké učení technické
+</object>
+<h1>Elektronický obchod elektronickým zbožím</h1>
+</div>
+
+<div id="navigace" class="sekce">
+<ul>
+  <li><a href="stolni_pocitace.html">Stolní počítače</a></li>
+  <li>Přenosné počítače<ul>
+	<li><a href="notebooky.html">Notebooky</a></li>
+	<li><a href="pda.html">PDA</a></li>
+	<li><a href="smartphone.html">Smart phone</a></li>
+  </ul></li>
+  <li><a href="prislusenstvi.html">Příslušenství</a><ul>
+	<li><a href="prislusenstvi.html">Digitální fotoaparáty</a></li>
+	<li><a href="prislusenstvi.html">Tiskárny</a></li>
+	<li><a href="prislusenstvi.html">Další blíže nespecifikované zboží</a><ul>
+	  <li><a href="prislusenstvi.html">A ještě něco navíc</a></li>
+	  <li><a href="prislusenstvi.html">A aby toho nebylo málo, tak tu máme ještě něco</a></li>
+	   <li><a href="prislusenstvi.html">Tady jsou věci, které nemůžeme prodat</a></li>
+	</ul></li>
+  </ul></li>
+  <li><a href="prislusenstvi.html">Na tyto položky se už dlouho práší</a></li>
+</ul>
+</div>
+
+<div id="hlavni_text" class="sekce">
+<h2>Příslušenství</h2>
+<p>V sekci příslušenství se nachází celá řada zboží, které je rozděleno do různých <a href="#kategorie_zbozi">kategorií</a>. Zboží je rovněž rozděleno do různých cenových skupin.</p>
+
+<p>A jak řekl <cite>Josef Novák</cite>, <q lang="cs">Příslušenství je to, co nás odlišuje od konkurence.</q> Rozsáhlejší pojednání o roli příslušenství v konkurenčním boji najdete v knize <cite>Příslušenství jako nástroj konkurenčního boje</cite>.</p>
+
+<p>Na  našich <abbr title="World Wide Web">WWW</abbr> stránkách naleznete veškeré příslušenství, které jsme schopni dodat. Zboží nacházející se v našich rozsáhlých skladech o velikosti přes 10 000 m<sup>2</sup> jsme schopni <strong>dodat do <del title="smazal Novotný">dvou dnů</del><ins title="vložil Novotný">jednoho dne</ins></strong>. Ostatní zboží, které je třeba objednat, jsme schopni dodat do 5 dnů.</p>
+
+<p>Evidence změn v předchozím odstavci se provede pomocí elementů typu  <var>ins</var> a <var>del</var>. <abbr title="HyperText Markup Language">HTML</abbr> kód by mohl vypadat následovně:</p>
+
+<pre>
+<code>Zboží nacházející se ...
+	dodat do &lt;<strong>del</strong> <em>title</em>="smazal Novotný"&gt;dvou dnů&lt;/<strong>del</strong>&gt;
+	&lt;<strong>ins</strong> <em>title</em>="smazal Novotný"&gt;jednoho dne&lt;/<strong>ins</strong>&gt;.</code>
+</pre>
+
+<h3 id="kategorie_zbozi">Kategorie zboží</h3>
+<div id="kategorie" class="seznamy" title="Kategorie zboží">
+<ul>
+  <li>Kategorie jedna<ol>
+	  <li>Podkategorie jedna</li>
+	  <li>Podkategorie dvě<ol>
+		  <li>Podpodkategorie jedna<ol>
+			  <li>Podpodpodkategorie jedna</li>
+			  <li>Podpodpodkategorie dvě</li>
+			</ol></li>
+		  <li>Podpodkategorie dvě</li>
+		</ol></li>
+	  <li>Podkategorie tři</li>
+	</ol></li>
+  <li>Kategorie blablabla</li>
+</ul>
+</div>
+
+<h4>Seznam příslušenství</h4>
+<p>Tady je seznam příslušenství nabízeném v našem elektronickém obchodu.</p>
+<div class="tabulka_zbozi">
+<table summary="Seznam zboží v kategorii 'příslušenství'.">
+<caption><em>Zboží - příslušenství s množstevní slevou</em></caption>
+<thead>
+  <tr><th rowspan="2" scope="col" abbr="název">Název zboží</th>
+	  <th colspan="2">Cena</th>
+	  <th rowspan="2" scope="col" abbr="sleva">Množstevní sleva</th></tr>
+  <tr><th scope="col">bez DPH</th><th scope="col">s DPH</th></tr>
+</thead>
+<tfoot>
+  <tr><th>SUMA</th><td>4700</td><td>5593</td><td>N/A</td></tr>
+</tfoot>
+<tbody>
+  <tr><td scope="row">Brašna kožená</td><td>1000</td><td>1190</td><td>10%</td></tr>
+  <tr><td scope="row">Brašna velká</td><td>2000</td><td>2380<td>5%</td></tr>
+</tbody>
+<tbody>
+  <tr><td scope="row">Nabíječka do auta</td><td>500</td><td>595<td>7%</td></tr>
+  <tr><td scope="row">Síťový adaptér</td><td>1200</td><td>1428</td><td>10%</td></tr>
+</tbody>
+</table>
+</div>
+
+<h5>Klienti</h5>
+<div id="client-novak" class="client">
+<p><span class="client-title">Informace o klientovi:</span></p>
+<table class="client-data" summary="Jméno, telefon a email klienta">
+<tr><th>Příjmení:</th><td>Novák</td></tr>
+<tr><th>Jméno:</th><td>Josef</td></tr>
+<tr><th>Telefon:</th><td>224 222 123</td></tr>
+<tr><th>Email:</th><td>novakj1@fel.cvut.cz</td></tr>
+</table>
+</div>
+
+<div id="client-novotna" class="client">
+<p><span class="client-title">Informace o klientovi:</span></p>
+<table class="client-data" summary="Jméno, telefon a email klienta">
+<tr><th>Příjmení:</th><td>Novotná</td></tr>
+<tr><th>Jméno:</th><td>Jana</td></tr>
+<tr><th>Telefon:</th><td>234 444 222</td></tr>
+<tr><th>Email:</th><td>jana.novotna@vse.cz</td></tr>
+</table>
+</div>
+
+
+<p>Vyhrazujeme si právo změny bez předchozího upozornění.</p>
+</div>
+
+<div id="napoveda" class="sekce">
+<ul>
+<li><a href="o_nas.html">O nás</a></li>
+<li><a href="kontakt.html">Kontakt</a></li>
+<li><a href="napoveda.html">Speciální akce!</a></li>
+<li><a href="napoveda.html">Nápověda</a></li>
+</ul>
+</div>
+</body>
+</html>

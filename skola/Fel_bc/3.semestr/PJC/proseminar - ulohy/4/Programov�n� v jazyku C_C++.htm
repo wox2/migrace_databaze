@@ -1,0 +1,320 @@
+<html><head> 
+
+ 
+  <title>Programování v jazyku C/C++</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <link href="Programov%C3%A1n%C3%AD%20v%20jazyku%20C_C++_soubory/css.css" rel="stylesheet" type="text/css">
+ </head><body>
+ 
+ <table cellspacing="0" width="100%">
+  <col width="200">
+  <col>
+  <tbody>
+   <tr><td colspan="2" class="ac"><br><h1>Y36PJC - Programování v jazyku C/C++</h1><br></td></tr>
+   <tr>
+    <td class="layout1" valign="top">
+     <table cellpadding="0" width="100%">
+ <col>
+ <col width="50">
+ <col width="50">
+ <col width="50">
+<tbody><tr><td colspan="4" class="menuSel box"><a href="http://moon.felk.cvut.cz/%7Exvagner/Y36PJC/?Sec=1">Harmonogram</a></td></tr>
+<tr><td colspan="4" class="menuSel box"><a href="http://moon.felk.cvut.cz/%7Exvagner/Y36PJC/?Sec=2">Přednášky</a></td></tr>
+<tr><td colspan="4" class="menuSel boxSel"><a href="http://moon.felk.cvut.cz/%7Exvagner/Y36PJC/?Sec=3">Prosemináře</a></td></tr>
+<tr><td>&nbsp;</td><td class="menuSel box ac"><a href="http://moon.felk.cvut.cz/%7Exvagner/Y36PJC/?Sec=301">1</a></td>
+<td class="menuSel box ac"><a href="http://moon.felk.cvut.cz/%7Exvagner/Y36PJC/?Sec=302">2</a></td>
+<td class="menuSel box ac"><a href="http://moon.felk.cvut.cz/%7Exvagner/Y36PJC/?Sec=303">3</a></td>
+</tr><tr><td>&nbsp;</td><td class="menuSel boxSel ac">4</td>
+<td class="menuSel box ac"><a href="http://moon.felk.cvut.cz/%7Exvagner/Y36PJC/?Sec=305">5</a></td>
+<td class="menuSel box ac"><a href="http://moon.felk.cvut.cz/%7Exvagner/Y36PJC/?Sec=306">6</a></td>
+</tr><tr><td>&nbsp;</td><td class="menuSel box ac"><a href="http://moon.felk.cvut.cz/%7Exvagner/Y36PJC/?Sec=307">7</a></td>
+<td>&nbsp;</td><td>&nbsp;</td></tr><tr><td colspan="4" class="menuSel box"><a href="http://moon.felk.cvut.cz/%7Exvagner/Y36PJC/?Sec=4">Semináře</a></td></tr>
+<tr><td colspan="4" class="menuSel box"><a href="http://moon.felk.cvut.cz/%7Exvagner/Y36PJC/?Sec=5">Literatura</a></td></tr>
+<tr><td colspan="4" class="menuSel box"><a href="http://moon.felk.cvut.cz/%7Exvagner/Y36PJC/?Sec=6">Kompilátory</a></td></tr>
+<tr><td colspan="4" class="menuSel box"><a href="http://moon.felk.cvut.cz/%7Exvagner/Y36PJC/?Sec=7">Hodnocení</a></td></tr>
+<tr><td colspan="4" class="menuSel box"><a href="http://moon.felk.cvut.cz/%7Exvagner/Y36PJC/?Sec=9">Sem. práce</a></td></tr>
+</tbody></table>    </td><td valign="top">
+      <h2>Datová struktura fronta</h2><br>
+ 
+ <p>Realizujte v C++ třídu reprezentující datovou strukturu fronta celých čísel. 
+ Fronta bude vnitřně organizovaná jako kruhová, s dopředu zadanou neměnnou velikostí. 
+ Rozhraní fronty bude zahrnovat:</p>
+ 
+ <ul>
+  <li>Konstruktor, destruktor,</li>
+  <li>metodu pro vkládání prvku,</li>
+  <li>metodu pro čtení a odebrání prvku,</li>
+  <li>metodu pro zjištění počtu prvků ve frontě,</li>
+  <li>metodu pro vyprázdnění fronty,</li>
+  <li>metodu pro zobrazení obsahu fronty.</li>
+ </ul>
+
+ <br>
+ 
+ <h3>Příklad:</h3><br>
+ <pre>  int                main                          ( int argc, char * argv [] )
+   {
+     int     x;
+     CQueue1 A ( 5 );
+     
+     A . Enqueue ( 10 );
+     A . Enqueue ( 20 );
+     A . Enqueue ( 30 );
+     A . Enqueue ( 40 );
+     A . Enqueue ( 50 );
+     
+     cout &lt;&lt; "A = ";
+     A . Print ( cout );
+     
+     CQueue1 B = A;
+     
+     B . Read ( x );
+     B . Enqueue ( 60 );
+     
+     cout &lt;&lt; "A = ";
+     A . Print ( cout );
+     
+     cout &lt;&lt; "B = ";
+     B  . Print ( cout );
+     
+     A . Read ( x );
+     cout &lt;&lt; x &lt;&lt; endl;
+    
+     return ( 0 );
+   }
+
+  A = [10 20 30 40 50]
+  A = [10 20 30 40 50]
+  B = [20 30 40 50 60]
+  10
+ </pre>
+
+ <br>
+ 
+ <br>
+<a href="http://moon.felk.cvut.cz/%7Exvagner/Y36PJC/file.php?Sec=304&amp;F=0">Vzorové řešení</a><br>
+<hr>
+ <h2>Datová struktura fronta</h2><br>
+ 
+ <p>Realizujte v C++ třídu reprezentující datovou strukturu fronta celých čísel podobnou jako v minulém příkladu.
+ Fronta bude realizována jako kruhová, ale bude se automaticky přizpůsobovat požadované velikosti.  </p>
+ 
+ <br>
+ 
+ <h3>Příklad:</h3><br>
+ <pre>  int                main                          ( int argc, char * argv [] )
+   {
+     int     x, i;
+     CQueue2 A ( 5 );
+     
+     for ( i = 0; i &lt; 20; i ++ )
+      A . Enqueue ( i );
+     
+     cout &lt;&lt; "A = ";
+     A . Print ( cout );
+     
+     CQueue2 B = A;
+     
+     B . Read ( x );
+     B . Enqueue ( 60 );
+     
+     cout &lt;&lt; "A = ";
+     A . Print ( cout );
+     
+     cout &lt;&lt; "B = ";
+     B  . Print ( cout );
+     
+     A . Read ( x );
+     cout &lt;&lt; x &lt;&lt; endl;
+    
+     return ( 0 );
+   }  
+   
+  A = [0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19]
+  A = [0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19]
+  B = [1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 60]
+  0   
+ </pre>
+
+ <br>
+ 
+ <br>
+<a href="http://moon.felk.cvut.cz/%7Exvagner/Y36PJC/file.php?Sec=304&amp;F=1">Vzorové řešení</a><br>
+<hr>
+ <h2>Datová struktura fronta</h2><br>
+ 
+ <p>Realizujte v C++ třídu reprezentující datovou strukturu fronta celých čísel podobnou jako v minulém případě.
+ Fronta bude realizovaná pomocí spojového seznamu, jednostranně zřetězenému.</p>
+ 
+ <br>
+ 
+ <h3>Příklad:</h3><br>
+ <pre>  int                main                          ( int argc, char * argv [] )
+   {
+     int     x, i;
+     CQueue3 A ;
+     
+     for ( i = 0; i &lt; 20; i ++ )
+      A . Enqueue ( i );
+     
+     cout &lt;&lt; "A = ";
+     A . Print ( cout );
+     
+     CQueue3 B = A;
+     
+     B . Read ( x );
+     B . Enqueue ( 60 );
+     
+     cout &lt;&lt; "A = ";
+     A . Print ( cout );
+     
+     cout &lt;&lt; "B = ";
+     B  . Print ( cout );
+     
+     A . Read ( x );
+     cout &lt;&lt; x &lt;&lt; endl;
+    
+     return ( 0 );
+   }
+  
+  A = [0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19]
+  A = [0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19]
+  B = [1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 60]
+  0
+ </pre>
+
+ <br>
+ 
+ <br>
+<a href="http://moon.felk.cvut.cz/%7Exvagner/Y36PJC/file.php?Sec=304&amp;F=2">Vzorové řešení</a><br>
+<hr>
+ <h2>Datová struktura množina</h2><br>
+ 
+ <p>Realizujte v C++ třídu reprezentující datovou strukturu množina celých čísel. 
+ Množina bude vnitřně realizovaná seřazeným polem hodnot. Rozhraní množiny bude zahrnovat:</p>
+ 
+ <ul>
+  <li>Konstruktor, destruktor, kopírující konstruktor,</li>
+  <li>metodu pro vkládání prvku,</li>
+  <li>metodu pro test přítomnosti prvku,</li>
+  <li>metodu pro odebírání prvku,</li>
+  <li>metodu pro zobrazení obsahu množiny.</li>
+ </ul>
+
+ <br>
+ 
+ <h3>Příklad:</h3><br>
+ <pre>  int                main                          ( int argc, char * argv [] )
+   {
+     CSet1 A;
+     
+     A . Set ( 10 );
+     A . Set ( 20 );
+     A . Set ( 5 );
+     A . Set ( 30 );
+     A . Set ( 8 );
+     
+     cout &lt;&lt; "A = ";
+     A . Print ( cout );
+     
+     A . Reset ( 30 );
+     A . Reset ( 5 );
+     A . Set ( 3 );
+     
+     cout &lt;&lt; A . IsSet ( 3 ) &lt;&lt; " " &lt;&lt; A . IsSet ( 20 ) &lt;&lt; " " &lt;&lt; A . IsSet ( 17 ) &lt;&lt; endl;
+  
+     CSet1 B = A;
+  
+     B . Set ( 25 );
+  
+     A . Reset ( 10 );
+     
+     cout &lt;&lt; "A = ";
+     A . Print ( cout );
+     
+     cout &lt;&lt; "B = ";
+     B . Print ( cout );
+     
+     return ( 0 );
+   }
+
+  A = {5, 8, 10, 20, 30}
+  1 1 0
+  A = {3, 8, 20}
+  B = {3, 8, 10, 20, 25}  
+ </pre>
+
+ <br>
+ 
+ <br>
+<a href="http://moon.felk.cvut.cz/%7Exvagner/Y36PJC/file.php?Sec=304&amp;F=3">Vzorové řešení</a><br>
+<hr>
+ <h2>Datová struktura množina</h2><br>
+ 
+ <p>Realizujte v C++ třídu reprezentující datovou strukturu množina celých čísel. 
+ Množina bude vnitřně realizovaná binárním vyhledávacím stromem (nevyváženým).
+ Rozhraní množiny bude zahrnovat:</p>
+ 
+ <ul>
+  <li>Konstruktor, destruktor, kopírující konstruktor,</li>
+  <li>metodu pro vkládání prvku,</li>
+  <li>metodu pro test přítomnosti prvku,</li>
+  <li>metodu pro odebírání prvku,</li>
+  <li>metodu pro zobrazení obsahu množiny.</li>
+ </ul>
+
+ <br>
+ 
+ <h3>Příklad:</h3><br>
+ <pre>  int                main                          ( int argc, char * argv [] )
+   {
+     CSet2 A;
+     
+     A . Set ( 10 );
+     A . Set ( 20 );
+     A . Set ( 5 );
+     A . Set ( 30 );
+     A . Set ( 8 );
+     
+     cout &lt;&lt; "A = ";
+     A . Print ( cout );
+  
+  
+     A . Reset ( 30 );
+     A . Reset ( 5 ); 
+     A . Reset ( 10 ); 
+     
+     A . Set ( 3 );
+     
+     cout &lt;&lt; A . IsSet ( 3 ) &lt;&lt; " " &lt;&lt; A . IsSet ( 20 ) &lt;&lt; " " &lt;&lt; A . IsSet ( 17 ) &lt;&lt; endl;
+  
+     CSet2 B = A;
+  
+     B . Set ( 25 );
+  
+     A . Reset ( 10 );
+     
+     cout &lt;&lt; "A = ";
+     A . Print ( cout );
+     
+     cout &lt;&lt; "B = ";
+     B . Print ( cout );
+     
+     return ( 0 );
+   }
+  
+   A = {5, 8, 10, 20, 30 }
+   1 1 0
+   A = {3, 8, 20 }
+   B = {3, 8, 20, 25 }
+ </pre>
+
+ <br>
+ 
+ <br>
+<a href="http://moon.felk.cvut.cz/%7Exvagner/Y36PJC/file.php?Sec=304&amp;F=4">Vzorové řešení</a><br>
+    </td>
+   </tr>
+  </tbody>
+ </table>
+ </body></html>

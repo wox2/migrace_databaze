@@ -1,0 +1,268 @@
+/* okraje prvkù, øádkování  */
+body, form {margin: 0px;}
+p {margin: .1em 0px .5em;}
+h2 { margin: 1.3em 0px .3em; padding: .8em 0px 0px;}
+h3 { margin: 1em 0px .2em;}
+p, li, dl, menu, td, th, ul, ol { line-height: 1.3;}
+ul, ol		{ margin-top: 0px ; margin-bottom: .8em}
+
+/* pozicování */
+#text {margin: 150px 3% 0px 3%; width: 68.5%;}
+#gototop, #wherenext {margin: 1em 3% 0px 3%; width: 68.5%;}
+#navigace {position: absolute; top: 150px; left: 73%; width: 25%}
+#hlavicka {position: absolute; top: 0px; left: 0px; width: 100%; height: 100px; overflow: hidden}
+
+#logo {position: absolute; z-index: 10; left: 0px; top: 2px;}
+#slogan {position: absolute; left: 127px; top: 10px}
+#ouska {position: absolute; left: 146px; top: 52px}
+#prouzek {position: absolute; z-index: 5; left: 0px; top: 74px; width: 100%; text-indent: 126px;}
+#hledani {position: absolute; right: 4px; top: 4px}
+
+#gototop {text-align: right;}
+#prevnextbottom, #prevnexttop{position: absolute; left: 73%; width: 25%; z-index: 8; }/* jako navigace */
+#prevnexttop {top: 97px;}
+.panel {text-align: right; font-size: 16px; font-family: sans-serif; word-spacing: .6em; line-height: 1.3; font-weight: normal;}
+.panel a:link, .panel a:visited {text-decoration: none; padding: 0px 5px; border: 1px solid silver; background-color: #eed; color: black;}
+#hrasek {position: absolute; top: 107px; margin-left: 3%; _margin-left: 0px; width: 90%;}
+
+/* text */
+
+body {color: black; background-color: white;}
+
+h1 { color: #009933; text-align: center;}
+h2 { border-top: 1px solid #336; font-size: 130%;}
+
+.podtitul {font-weight: bold; text-align: center; text-decoration: overline; font-size: 110%; margin-top: -0.3em;}
+.nadtitul {font-weight: bold; text-align: center; font-size: 110%;}
+.zalozka {font-weight: bold; font-style: italic;}
+.komix {text-align: center; width: 100%; overflow: auto;}
+dt {font-weight: bold;}
+
+.col2 {width: 49.5%; float: left;} /* dva sloupce */
+.sirsi {width: 137%; } /* co mùže pøelézt doprava*/
+.sirsi {width: "100%"; overflow: "auto"; overflow-y: "visible";} /* ty uvozovky jsou pro IE 5.5*/
+.oriznout {width: 100%; overflow: auto;} /* co nesmí pøelézt doprava*/
+.rozcestnik a {font-weight: bold;} /* vìtšina hlavních stránek */
+	.rozcestnik .podruzne a {font-weight: normal;}
+	.rozcestnik h2 {margin-top: 2em;}
+.hp p, .hp ul {margin: 1.2em 0px; text-align: center;} /* na hlavní stránce */
+.hp a {font-weight: bold;}
+.hp li {list-style-type: none; text-align: center;}
+.mezitext {background-color: #ddd; padding: .5em; margin: 1em 1em 1em;} /* pøedìly v textu, úvod oddílu */
+.about {border-bottom: 1px dashed gray; cursor: help;}
+.clanky ins {text-decoration: none;}
+.clanky blockquote {font-style: italic;}
+#hrasek {font-size: 10px; font-family: MS Sans Serif, Geneva, sans-serif;}
+
+/* výpis kódu a pøíkladù */
+
+code, pre, p code, .code, .wrongcode	{font-family: MS Sans Serif, Geneva, sans-serif ; font-weight: 600; font-size: 70%; color: #494949; letter-spacing: "0.3px"; }
+.code code {font-size: 141%;}/* zrušení chybného dvojího zanoøení .code code*/
+p.code 	{margin: 1em auto; padding: .7em 0px .7em 1em;}
+.wrongcode {text-decoration: line-through;}
+.priklad 	{font-style: italic;}
+.priklad code {font-style: normal;}
+.ok	{background-color: #f0fff0;}
+.bacha {background-color: #fffacd;}
+.zle	{background-color: #ffdab9;}
+.vubec {background-color: #ffe4e1;}
+p.code {background-color: #f6f9f6;}
+.js p.code {background-color: #f8f6f6;}
+.css p.code {background-color: #f8f8f6;}
+.html p.code {background-color: #f7f7f7;}
+.ost p.code {background-color: #f6f6fa;}
+
+
+/* encyklopedie */
+.angl {}
+.viz, .najpw {margin-top: 2em; margin-left: 20px; display: list-item;}
+
+
+/* Fyzické tøídy */
+.center {text-align: center;}
+.underline {text-decoration: underline;}
+.jakoodkaz {cursor: hand; cursor: pointer;}
+.floatright {float: right;}
+
+/* Odkazy */
+a:link {color: #33F;}
+a:visited {color: #23A;}
+a:hover {color: #f33;}
+a img {border: none;}
+
+/*barevne variace NADPISY */
+/* default jako .zak */
+h1	{ color: #009933 }
+h2	{ color: #006600 }
+body.zak h2 a:link, body.zak h2 a:visited { color: #006600 }
+body.zak h2 a:hover {color: red;}
+
+body.html h1 {color: #666 }
+body.html h2 {color: #444 }
+
+body.css h1 {color: #a8761b;}
+body.css h2 {color: #98561b }
+
+body.js h1 {color: #bb3399 }
+body.js h2 {color: #880066 }
+
+body.ost h1 {color: #4069da }
+body.ost h2 {color: darkblue }
+
+/* tabulky a jejich barvy */
+#text table {border-collapse: collapse; margin-bottom: 1em;}
+#text td, #text th {padding: 3px; }
+
+.html #text th { background-color: #aaaaaa}
+.html #text caption	{color: #666666 ; font-weight: bold}
+.html td, .html table     { border: 1px solid #aaaaaa; }
+
+.js table {border: 1px solid #883366}
+.js th 	{background-color: #bb6699}
+.js td 	{border-color: #bb6699}
+
+.css td, .css table {border: 1px solid #ca9820}
+.css th {color: black; background-color: #e0b850}
+.css caption {color: #996600; font-weight: bold}
+
+.zak th, .clanky th {background-color: #e8f5ec;}
+.zak td, .clanky td {border-color: #aaa;}
+.zak caption, .clanky caption {color: #060;}
+
+.ost th {background-color: #aac8ee;}
+.ost td {border-color: #cce;}
+.ost caption {color: darkblue;}
+
+
+/* grafika hlavièky */
+#hlavicka {
+	font-family: MS Sans Serif, Verdana, Arial, Helvetica, sans-serif; 
+	font-size: 11px; 
+	color: #efefde;
+	background-color: #336;
+}
+#hlavicka p {margin: 0px; line-height: inherit;}
+
+#hledani input {border-style: none; }
+#hledani input.submit {height: 18px;}
+
+#ouska  {line-height: 26px; font-size: 12px; letter-spacing:1px;}
+#ouska a {
+	padding: 3px 5px; 
+	border: 4px outset #eed;
+	-moz-border-radius-topleft: 4px;
+	-moz-border-radius-topright: 4px;
+	color: black;
+	background-color: #eed;
+	text-decoration: none;
+}
+
+#prouzek {
+	font-size: 12px; letter-spacing:1px; 
+	line-height: 20px; 
+	height: 31px; overflow: hidden;
+}
+#prouzek a {
+	padding: 3px 7px;
+	border-width: 2px;
+	border-style: solid;
+	position: relative; top: 8px;
+	text-decoration: none;
+	color: black; 
+	-moz-border-radius-topleft: 3px;
+	-moz-border-radius-topright: 3px;
+}
+}
+
+/* Pravý sloupec */
+
+#navigace {
+	padding: .5em 0% .5em 1.5%;
+	border-left: 1px solid #e8e8fd;/*#336*/
+	font-size: 90%;
+}
+
+#navigace h3, #navigace h2 {
+	font-size: 111%;
+	background-color: #f3f3f6;
+	border-top: 1px solid silver;
+	padding-top: .1em;
+	text-indent: 0em;
+}
+#navigace ul {margin-left: 0em; padding-left: 0px;}
+#navigace li { list-style-type: none; margin: .2em 0px;}
+#navigace li:first-letter {text-transform: capitalize;}
+
+/* Patka */
+.patka-global {color: gray; font-size: 80%; padding: .3em 1em 0em; margin-top: 2em; border-top: 1px solid silver; text-align: center;}
+.patka-global a:link, .patka-global a:visited {color: gray;}
+
+
+/* ----------------------------------------------------------------- */
+/* BARVY variace podle classu u body + barvy ousek */
+/* default */
+#prouzek {background-color: #4a6;}/*h1 { behavior: url('priklady/pokus2.htc')}*/
+#ouska a {background-color: #eeeedd; border-color: #eed}
+
+.zak #prouzek {background-color: #4a6;}
+.zak #ouska a.zak, #ouska a.zak:hover {background-color: #4a6; border-color: #4a6}
+.zak #prouzek a {border-color: #4a6}
+
+.html #prouzek {background-color: #999;}
+.html #ouska a.html, #ouska a.html:hover{background-color: #999; border-color: #999}
+.html #prouzek a {border-color: #999}
+
+.css #prouzek {background-color: #dab050; }
+.css #ouska a.css, #ouska a.css:hover{background-color: #dab050; border-color: #dab050}
+.css #prouzek a {border-color: #dab050}
+
+.js #prouzek {background-color: #b69;}
+.js #ouska a.js, #ouska a.js:hover{background-color: #b69; border-color: #b69}
+.js #prouzek a {border-color: #b69}
+
+.ost #prouzek {background-color: #6ad;}
+.ost #ouska a.ost, #ouska a.ost:hover {background-color: #6ad; border-color: #6ad; }/*#4169e1*/
+.ost #prouzek a {border-color: #6ad}
+
+.clanky #prouzek {background-color: #8a9;}
+.clanky #ouska a.clanky, #ouska a.clanky:hover {background-color: #8a9; border-color: #8a9}
+.clanky #prouzek a {border-color: #8a9}
+
+/* vybraná bílá záložka */
+#prouzek a#sel {background-color: white; border-color: white; border-style: outset;}
+#prouzek a:hover {color: #eed}
+#prouzek a#sel:hover {color: black;}
+
+
+/* Tisková verze */
+@media print {
+
+#text {margin: 0em; width: 99%}
+h1 {margin-top: 58px;}
+#navigace {position: static; width: 99%; border-left: none; padding: 0em; border-top: 2px dotted silver;}
+#navigace li {display: inline;}
+#navigace h3 {border-top: none; margin-top: .2em;}
+.sirsi {width: 99%;}
+#hlavicka {visibility: hidden;}
+#logo, #slogan {visibility: visible; z-index: 0;}
+#prevnextbottom, #prevnexttop {display: none;}
+h2,h3 {page-break-after: avoid;}
+}
+
+/* Reklama v pravém sloupku */
+#navigace .ad { width: 100%; overflow: hidden; text-overflow: ellipsis;}
+#navigace .ad h3 {margin-top: 2em;}
+
+.ad h3 a:visited, .ad h3 a:link{ color: gray;}
+.ad p {padding: 1em 0px; margin-top: .8em; font-family: Arial; font-size: 85%; background-color: #ffe; line-height: 1.5;}
+.ad p a {font-weight: bold; font-size: 110%;}
+.ad .visibleurl {color: navy; font-size: 80%;}
+
+/* Reklama nad pravým sloupkem */
+/* #navigace {top: 235px;} */ /*to dìlá nahoøe místo (= 160 plus výška banneru)*/
+/* #reklama-horni {position: absolute; top: 120px; left: 73%; width: 25%; overflow: hidden; margin: .5em 0% .5em 1.5%;}
+.reklama-horni {width: 200px; height: 75px; }
+.reklama-horni-reklama {font-family: verdana; font-size: 11px;}*/
+
+/* Reklama pod textem */
+#text .ad h3 {font-size: 70%; border-top: 1px dotted silver; margin-top: 5em;}

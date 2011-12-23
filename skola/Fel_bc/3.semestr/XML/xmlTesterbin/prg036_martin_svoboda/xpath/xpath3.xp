@@ -1,0 +1,2 @@
+(: Vybere cestujici, kteri nemaji vyplnenou adresu :)
+//passenger[not(address)]

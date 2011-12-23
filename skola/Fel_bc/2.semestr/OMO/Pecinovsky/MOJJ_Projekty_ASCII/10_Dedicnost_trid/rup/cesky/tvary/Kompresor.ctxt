@@ -1,0 +1,40 @@
+#BlueJ class context
+comment0.target=Kompresor()
+comment0.text=\nKonstruktor\ kompresoru\ se\ silou\ nafukovani\ 1\ (sila\ nafukovani\ definuje\npocet\ bodu,\ o\ nez\ se\ zvetsi\ rozmer\ objektu\ po\ jednom\ "stouchu").\ \ \ \ \ \n\n
+comment1.params=sila
+comment1.target=Kompresor(int)
+comment1.text=\nKonstruktor\ kompresoru\ se\ zadanou\ silou\ nafukovani\ (sila\ nafukovani\ndefinuje\ pocet\ bodu,\ o\ nez\ se\ zvetsi\ rozmer\ objektu\ po\ jednom\ "stouchu").\n\n@param\ sila\ \ Sila\ nafukovani\ vytvareneho\ kompresoru\n\n
+comment10.params=x\ y
+comment10.target=double\ delka(int,\ int)
+comment10.text=\nSpocte\ delku\ prepony\ pravouhleho\ trojuelniku\ se\ zadanymi\ odvesnami.\ \n\n@param\ x\ \ \ Delka\ prvni\ odvesny\n@param\ y\ \ \ Delka\ druhe\ odvesny\n\n@return\ \ \ \ Delka\ prepony\n\n
+comment11.params=koho\ sirka\ vyska\ smer\ zaslepka
+comment11.target=void\ nafoukniNa(INafukovaci,\ int,\ int,\ Smer8,\ int)
+comment11.text=\nNafoukne\ ci\ vyfoukne\ zadany\ objekt\ na\ pozadovanou\ velikost.\nNejprve\ ale\ zabezpeci,\ aby\ byl\ objekt\ zobrazen\ na\ platne.\ \ \ \ \ \n\n@param\ koho\ \ \ \ Na(vy)fukovany\ objekt\n@param\ sirka\ \ \ Pozadovana\ vysledna\ sirka\ objektu\n@param\ vyska\ \ \ Pozadovana\ vysledna\ vyska\ objektu\n\n
+comment12.params=koho\ stouchu\ dx\ dy\ smer
+comment12.target=void\ foukej(INafukovaci,\ int,\ double,\ double,\ Smer8)
+comment12.text=\nVykonna\ metoda,\ ktera\ zaridi\ vlastni\ nafouknuti,\ resp.\ vyfouknuti\nzadaneho\ objektu\ na\ zaklade\ pripravenych\ parametru.\n\n@param\ koho\ \ \ \ \ Objekt,\ jehoz\ velikost\ menime.\n@param\ stouchu\ \ Pocet\ kroku,\ v\ nichz\ velikost\ objektu\ zmenime.\n@param\ dx\ \ \ \ \ \ \ Zvetseni\ sirky\ objektu\ v\ jednom\ kroku.\n@param\ dy\ \ \ \ \ \ \ Zvetseni\ vysky\ objektu\ v\ jednom\ kroku.\ \ \ \ \ \ \ \ \ \ \ \ \ \ \n\n
+comment2.params=koho\ stouchu
+comment2.target=void\ prifoukni(INafukovaci,\ int)
+comment2.text=\nMetoda\ zvetsi\ zadanou\ instanci\ o\ zadany\ nasobek\ sily\ sveho\ kompresoru.\nPri\ zmene\ velikosti\ se\ zachovava\ pomer\ stran.\ \ \ \ \ \nNejprve\ ale\ zabezpeci,\ aby\ byl\ objekt\ zobrazen\ na\ platne.\ \ \ \ \ \n\n@param\ koho\ \ \ \ \ Zvetsovany\ objekt\n@param\ stouchu\ \ Pocet\ prifouknuti\ o\ silu\ kompresoru\n\n
+comment3.params=koho
+comment3.target=void\ prifoukni(INafukovaci)
+comment3.text=\nMetoda\ zvetsi\ zadanou\ instanci\ o\ petinasobek\ sily\ sveho\ kompresoru.\nPri\ zmene\ velikosti\ se\ zachovava\ pomer\ stran.\ \ \ \ \ \nNejprve\ ale\ zabezpeci,\ aby\ byl\ objekt\ zobrazen\ na\ platne.\ \ \ \ \ \n\n@param\ koho\ \ Zvetsovany\ objekt\n\n
+comment4.params=koho\ stouchu
+comment4.target=void\ ufoukni(INafukovaci,\ int)
+comment4.text=\nMetoda\ zmensi\ zadanou\ instanci\ o\ zadany\ nasobek\ sily\ sveho\ kompresoru.\nPri\ zmene\ velikosti\ se\ zachovava\ pomer\ stran.\ \ \ \ \ \nNejprve\ ale\ zabezpeci,\ aby\ byl\ objekt\ zobrazen\ na\ platne.\ \ \ \ \ \n\n@param\ koho\ \ \ \ \ \ Zmensovany\ objekt\n@param\ stouchu\ \ \ Pocet\ ufouknuti\ o\ silu\ kompresoru\n\n
+comment5.params=koho
+comment5.target=void\ ufoukni(INafukovaci)
+comment5.text=\nMetoda\ zmensi\ zadanou\ instanci\ o\ petinasobek\ sily\ sveho\ kompresoru.\nPri\ zmene\ velikosti\ se\ zachovava\ pomer\ stran.\ \ \ \ \ \nNejprve\ ale\ zabezpeci,\ aby\ byl\ objekt\ zobrazen\ na\ platne.\ \ \ \ \ \n\n@param\ koho\ \ Zmensovany\ objekt\n\n
+comment6.params=koho\ sirka\ vyska
+comment6.target=void\ nafoukniNa(INafukovaci,\ int,\ int)
+comment6.text=\nNafoukne\ ci\ vyfoukne\ zadany\ objekt\ na\ pozadovanou\ velikost.\nNejprve\ ale\ zabezpeci,\ aby\ byl\ objekt\ zobrazen\ na\ platne.\ \ \ \ \ \n\n@param\ koho\ \ \ \ Na(vy)fukovany\ objekt\n@param\ sirka\ \ \ Pozadovana\ vysledna\ sirka\ objektu\n@param\ vyska\ \ \ Pozadovana\ vysledna\ vyska\ objektu\n\n
+comment7.params=koho\ rozmer
+comment7.target=void\ nafoukniNa(INafukovaci,\ Rozmer)
+comment7.text=\nNafoukne\ ci\ vyfoukne\ zadany\ objekt\ na\ pozadovanou\ velikost.\nNejprve\ ale\ zabezpeci,\ aby\ byl\ objekt\ zobrazen\ na\ platne.\ \ \ \ \ \n\n@param\ koho\ \ \ \ Na(vy)fukovany\ objekt\n@param\ rozmer\ \ Pozadovany\ rozmer\ objektu\n\n
+comment8.params=koho\ sirka\ vyska\ smer
+comment8.target=void\ nafoukniNa(IHybaci,\ int,\ int,\ Smer8)
+comment8.text=\nNafoukne\ ci\ vyfoukne\ zadany\ objekt\ na\ pozadovanou\ velikost.\nNejprve\ ale\ zabezpeci,\ aby\ byl\ objekt\ zobrazen\ na\ platne.\ \ \ \ \ \n\n@param\ koho\ \ \ \ Na(vy)fukovany\ objekt\n@param\ sirka\ \ \ Pozadovana\ vysledna\ sirka\ objektu\n@param\ vyska\ \ \ Pozadovana\ vysledna\ vyska\ objektu\n@param\ smer\ \ \ \ Smer\ od\ stredu\ obrazce,\ v\ nemz\ se\ nachazi\ pevny\ bod,\nktery\ pri\ zmene\ rozmeru\ nemeni\ svoji\ pozici.\nsmer\=\=null\ oznacuje\ symetricky\ rust\ vuci\ stredu\ obrazce.\n\n
+comment9.params=koho\ rozmer\ smer
+comment9.target=void\ nafoukniNa(INafukovaci,\ Rozmer,\ Smer8)
+comment9.text=\nNafoukne\ ci\ vyfoukne\ zadany\ objekt\ na\ pozadovanou\ velikost.\nNejprve\ ale\ zabezpeci,\ aby\ byl\ objekt\ zobrazen\ na\ platne.\ \ \ \ \ \n\n@param\ koho\ \ \ \ Na(vy)fukovany\ objekt\n@param\ rozmer\ \ Pozadovany\ rozmer\ objektu\n@param\ smer\ \ \ \ Smer\ od\ stredu\ obrazce,\ v\ nemz\ se\ nachazi\ pevny\ bod,\nktery\ pri\ zmene\ rozmeru\ nemeni\ svoji\ pozici.\nsmer\=\=null\ oznacuje\ symetricky\ rust\ vuci\ stredu\ obrazce.\n\n
+numComments=13

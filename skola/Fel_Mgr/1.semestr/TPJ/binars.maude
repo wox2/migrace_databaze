@@ -1,0 +1,69 @@
+fmod BINAR_NUM is
+
+*** Definition of number and string of numbers
+  sorts Binar Num .
+  subsort Num < Binar .
+
+*** Definition of number alphabet and operation, that concat two numbers into one string of numbers
+  op 0 : -> Num [ctor] .
+  op 1 : -> Num [ctor] .
+  op nil : -> Num [ctor] .
+  op __ : Binar Binar -> Binar [ctor assoc prec 20] .
+
+*** Definition of Expression, which is used for adding. The form is (A,B,result,Carry) = result = A+B+Carry
+*** Operator reduce is used for reduction itself.
+*** Operator done is used for extracting the result from the Expression.
+  sort Expression .
+
+  op _,_,_,_ : Binar Binar Binar Num -> Expression [ctor].
+  op reduce : Expression -> Expression .
+  op done : Expression -> Binar .
+
+*** Call operator
+  op _+_ : Binar Binar -> Binar [prec 25].
+
+
+  vars Ah Bh : Binar .
+  var C : Binar .
+  var N M O : Num .
+
+*** This is the trick for extractiong result from expression.
+  eq Ah + Bh = done(reduce(Ah, Bh, nil, 0)).
+
+
+*** This part is for numbers, which lengths are different (like 0 0 1 + 0 1).
+  eq reduce(Ah N, M, C, O) = reduce(Ah N, 0 M, C,O) .
+  eq reduce(N, Bh M, C, O) = reduce(0 N, Bh M, C, O) .
+
+*** Reduction part...
+  eq reduce(Ah 0, Bh 0, C, 0) = reduce(Ah, Bh, 0 C, 0) .
+  eq reduce(Ah 0, Bh 0, C, 1) = reduce(Ah, Bh, 1 C, 0) .
+
+  eq reduce(Ah 0, Bh 1, C, 0) = reduce(Ah, Bh, 1 C, 0) .
+  eq reduce(Ah 0, Bh 1, C, 1) = reduce(Ah, Bh, 0 C, 1) .
+
+  eq reduce(Ah 1, Bh 0, C, 0) = reduce(Ah, Bh, 1 C, 0) .
+  eq reduce(Ah 1, Bh 0, C, 1) = reduce(Ah, Bh, 0 C, 1) .
+
+  eq reduce(Ah 1, Bh 1, C, 0) = reduce(Ah, Bh, 0 C, 1) .
+  eq reduce(Ah 1, Bh 1, C, 1) = reduce(Ah, Bh, 1 C, 1) .
+
+
+  eq reduce(0, 0, C, 0) = reduce(nil, nil, C, 0) .
+  eq reduce(0, 0, C, 1) = reduce(nil, nil, 1 C, 0) .
+
+  eq reduce(0, 1, C, 0) = reduce(nil, nil, 1 C, 0) .
+  eq reduce(0, 1, C, 1) = reduce(0, 0, 0 C, 1) .
+
+  eq reduce(1, 0, C, 0) = reduce(nil, nil, 1 C, 0) .
+  eq reduce(1, 0, C, 1) = reduce(0, 0, 0 C, 1) .
+
+  eq reduce(1, 1, C, 0) = reduce(0, 0, 0 C, 1) .
+  eq reduce(1, 1, C, 1) = reduce(0, 0, 1 C, 1) .
+
+*** And final step, get C out of Expression :-)
+  eq done(reduce(nil, nil, C nil, 0)) = C .
+endfm
+
+
+

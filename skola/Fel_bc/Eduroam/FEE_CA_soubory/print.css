@@ -1,0 +1,18 @@
+@media print {
+
+body { font-family: serif; color: black; background: white; font-size: 12pt; margin: 0px; padding: 0px; width: 100%; }
+
+#hlavnimenu, #menu, #motiv, #motive, #linka, #pravysloupec, .odrazka { display: none; }
+
+div { position: static; margin: 0px; padding: 0px; }
+
+#stranka, #vnitrek, #linka2 { width: 99%; background: none; color: black; }
+
+#aktuality, #levysloupec { width: 98%; background: none; }
+
+#linka2 a { color: black;  }
+
+h1, h2, h3, h4 { color:black; page-break-after: avoid; }
+
+
+}

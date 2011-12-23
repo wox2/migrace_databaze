@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-group>
+  
+  <info>
+    <title>Všechny projekty</title>
+    <course>PRG036</course>
+  </info>
+  
+  <project-group>
+    <info>
+      <title>Projekty (Irena Mlýnková)</title>
+      <platform>XML</platform>
+      <supervisor>
+        <firstname>Irena</firstname>
+        <surname>Mlýnková</surname>
+      </supervisor>
+    </info>
+    <project oznaceni="im1">
+      <info>
+        <title>Projekt 1</title>
+      </info>
+      <description>
+        <para>Popis projektu 1</para>
+      </description>
+    </project>
+    <project oznaceni="im2">
+      <info>
+        <title>Projekt 2</title>
+        <platform>Java</platform>
+        <course>BC</course>
+        <supervisor>
+          <firstname>Jana</firstname>
+          <surname>Dvořáková</surname>
+          <email>jana.dvorakova@prg036.mff.cuni.cz</email>
+        </supervisor>
+      </info>
+      <description>
+        <para>Naprogramujte systém pro predikci pohybu sladkovodních tuleňů.</para>
+      </description>
+    </project>
+  </project-group>
+  
+  <project-group>
+    <info>
+      <title>Projekty (Martin Nečaský)</title>
+    </info>
+    <project oznaceni="mn1">
+      <info>
+        <title>Projekt 3</title>
+        <course>PRG036</course>
+        <supervisor>
+          <surname>Ulrych</surname>
+        </supervisor>
+      </info>
+      <description>
+        <para>Popis projektu 3</para>
+      </description>
+    </project>
+    <project>
+      <info>
+        <title>Čarodějnice za Salemu - používané kletby</title>
+      </info>
+      <description>
+        <para>Na základě odborné literatury i osobního interview pořiďte seznam kleteb, které používali Salemské čarodějnice.</para>
+        <note>
+          <para>Pozor, hodně lidí to již zkoušelo ...</para>
+        </note>
+      </description>
+    </project>
+  </project-group>
+  
+  <teachers>
+    <teacher>
+      <firstname>Jana</firstname>
+      <surname>Dvořáková</surname>
+      <phone>111 111 111</phone>
+    </teacher>
+    <teacher>
+      <firstname>Irena</firstname>
+      <surname>Mlýnková</surname>
+      <phone>222 222 222</phone>
+    </teacher>
+    <teacher>
+      <firstname>Martin</firstname>
+      <surname>Nečaský</surname>
+      <phone>333 333 333</phone>
+    </teacher>
+    <teacher>
+      <firstname>Jan</firstname>
+      <surname>Ulrych</surname>
+      <phone>444 444 444</phone>
+    </teacher>
+  </teachers>
+</project-group>

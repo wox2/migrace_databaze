@@ -1,0 +1,10 @@
+<!ELEMENT definice (termin?,pojem?,vyznam+,viz?,zdroj?)>
+<!ELEMENT termin (#PCDATA)>
+<!ELEMENT pojem    (#PCDATA)>
+<!ELEMENT vyznam   (#PCDATA|viz)*>
+<!ELEMENT viz      (#PCDATA)>
+<!ELEMENT zdroj	   (#PCDATA|em)*>
+<!ELEMENT em (#PCDATA)>
+
+<!ATTLIST viz link CDATA #IMPLIED>
+<!ATTLIST zdroj link CDATA #REQUIRED>

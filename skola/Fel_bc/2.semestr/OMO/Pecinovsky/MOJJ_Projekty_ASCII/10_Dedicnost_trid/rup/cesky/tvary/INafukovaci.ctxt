@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.target=Rozmer\ getRozmer()
+comment0.text=\nVrati\ aktualni\ rozmer\ nafukovaciho\ objektu\ (vetsinou\ rozmer\ opsaneho\nobdelniku)\ jako\ instanci\ tridy\ {@code\ Rozmer}.\n\n@return\ \ Rozmer\ objektu.\n\n
+comment1.params=rozmer
+comment1.target=void\ setRozmer(Rozmer)
+comment1.text=\nNastavi\ nove\ rozmery\ nafukovaciho\ objektu\ zadane\ jako\ jako\ instance\ntridy\ {@code\ Rozmer};\ pozice\ objektu\ by\ se\ pritom\ nemela\ zmenit.\n\n@param\ rozmer\ \ Nove\ rozmery\ objektu\n\n
+comment2.params=sirka\ vyska
+comment2.target=void\ setRozmer(int,\ int)
+comment2.text=\nNastavi\ novou\ velikost\ nafukovaciho\ objektu;\npozice\ objektu\ by\ se\ pritom\ nemela\ zmenit.\n\n@param\ vyska\ \ Nova\ sirka\ objektu\n@param\ sirka\ \ Nova\ vyska\ objektu\n\n
+numComments=3

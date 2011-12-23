@@ -1,0 +1,78 @@
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+package timetable.model;
+
+import java.io.Serializable;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import java.util.List;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
+import javax.persistence.OneToMany;
+import javax.persistence.Transient;
+
+/**
+ *
+ * @author janf
+ */
+@Entity
+
+@NamedQueries({
+@NamedQuery(name = Passanger.Q_GET_ALL_PASSENGERS, query = "SELECT p FROM Passanger p"),
+@NamedQuery(name = Passanger.Q_GET_BY_FIRST_NAME, query = "SELECT p FROM Passanger p WHERE p.firstName=:firstName"),
+@NamedQuery(name = Passanger.Q_GET_BY_SURNAME, query = "SELECT p FROM Passanger p WHERE p.surname=:surname")})
+public class Passanger extends Person implements Serializable {
+
+    @Transient
+    public static final String Q_GET_ALL_PASSENGERS = "Passanger.getAll";
+    @Transient
+    public static final String Q_GET_BY_FIRST_NAME = "Passanger.getByFirstName";
+    @Transient
+    public static final String Q_GET_BY_SURNAME = "Passanger.getBySurname";
+
+
+    private String firstName;
+    private String surname;
+    private String city;
+
+    @OneToMany(mappedBy = "passenger")
+    private List<Ticket> tickets;
+
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getSurname() {
+        return surname;
+    }
+
+    public void setSurname(String surname) {
+        this.surname = surname;
+    }
+
+    public List<Ticket> getTickets() {
+        return tickets;
+    }
+
+    public void setTickets(List<Ticket> tickets) {
+        this.tickets = tickets;
+    }
+
+}

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="windows-1250"?>
+<xs:schema
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    targetNamespace="http://www.mff.cuni.cz/MojeSchema"
+    xmlns:my1="http://www.mff.cuni.cz/MojeSchema"
+    elementFormDefault="qualified"
+>
+
+    <xs:element name="kořenový_element"
+                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                xsi:schemaLocation="http://www.mff.cuni.cz/MojeSchema schema1.xsd"
+                xmlns="http://www.mff.cuni.cz/MojeSchema">
+    </xs:element>
+
+    <xs:element name="seznam_predmetu" >
+        <xs:complexType >
+            <xs:sequence>
+                <xs:element ref ="predmet" minOccurs="1" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="predmet">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="nazev" type ="xs:string"/>
+            </xs:sequence>
+            <xs:attribute ref="kod">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:minLength value="6"/>
+                        <xs:maxLength value="6"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute ref="jazyk"/>
+        </xs:complexType>
+    </xs:element>
+
+
+    <xs:attribute name="jazyk" type="JazykType">
+
+    </xs:attribute>
+
+    <xs:complexType name="JazykTyp">
+        <xs:simpleContent>
+            <xs:restriction base="xs:string">
+                <xs:pattern value="[a-z]{2,3}">
+                    <!-- -->
+            </restriction>
+        </xs:simpleContent>
+    </xs:complexType>
+
+
+</xs:schema>

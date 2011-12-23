@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets"
+                template="./template1.xhtml"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core">
+    
+    <ui:define name="content">
+        <h:dataTable value="#{app.collection}" var="dvd">
+            <h:column>
+                <f:facet name="header">Title</f:facet>
+                #{dvd.title}
+            </h:column>
+            <h:column>
+                <f:facet name="header">Year</f:facet>
+                #{dvd.year}
+            </h:column>
+            <h:column>
+                <f:facet name="header">Genre</f:facet>
+                #{dvd.genre}
+            </h:column>
+        </h:dataTable>
+    </ui:define>
+
+</ui:composition>

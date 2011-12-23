@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="type/css" href="styll.css"?>
+<!DOCTYPE mapaStranky SYSTEM "mapaStranky.dtd">
+<?xml-stylesheet type="text/xsl" href="mapaStranek.xsl"?>
+
+
+
+<rozdeleni>
+        <hlavniStranka>Hlavní stránka </hlavniStranka>
+        <nabidkaVin>
+            <nabV>Nabídka vín</nabV> 
+            <druhVin>
+                <nazev>Bílá vína</nazev>
+                <stranka1>1</stranka1>
+                <stranka2>2</stranka2>
+            </druhVin>
+            <druhVin>
+                <nazev1>Červená vína</nazev1>
+                <stranka1>1</stranka1>
+                <stranka2>2</stranka2>
+            </druhVin>
+            <druhVin>
+                <nazev2>Růžová vína</nazev2>
+            </druhVin>
+            <druhVin>
+                <nazev3>Šumivé víno</nazev3>
+            </druhVin>
+            <druhVin>
+                <nazev4>Stáčená vína</nazev4>
+            </druhVin>
+            <druhVin>
+                <nazev5>Speciální vína</nazev5>
+            </druhVin>
+        </nabidkaVin>
+        <potkat>Koho tu můžete potkat</potkat>
+        <kontakt>Kde nás najdete</kontakt>
+        <mapaStran>Mapa stránek</mapaStran>
+</rozdeleni>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="transform.xsl"?>
+<!DOCTYPE home SYSTEM "./definice.dtd">
+
+<Pages>
+     <title>Osobní stránky Martina Lukeše</title>
+  <stranka>
+    <title>Home</title>
+    
+  </stranka>
+  
+  <stranka>
+    <title>Atletika</title>
+  </stranka>
+  
+  <stranka>
+    <title>Připomínky</title>   
+  </stranka>
+  
+  <stranka>
+    <title>O mně</title>  
+  </stranka>
+
+  <stranka>
+    <title>Mapa</title>
+    <subStranka>
+      <title>
+        Mapa stránek
+      </title>      
+      </subStranka>
+    <subStranka>
+      <title>
+        Mapa XML
+      </title>      
+    </subStranka>
+  </stranka>
+
+</Pages>

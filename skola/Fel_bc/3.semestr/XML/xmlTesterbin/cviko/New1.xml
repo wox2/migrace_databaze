@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="windows-1250"?>
+
+<seznam_predmetu>
+    <predmet>
+        <nazev> MA </nazev>
+        <kod> 123 </kod>
+    </predmet>
+    
+    <predmet>
+            <nazev> AJ </nazev>
+        <kod> 125 </kod>
+    </predmet>
+</seznam_predmetu>

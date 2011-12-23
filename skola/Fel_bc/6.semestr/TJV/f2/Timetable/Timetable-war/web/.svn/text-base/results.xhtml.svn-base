@@ -1,0 +1,73 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+    <h:head>
+        <title>Spoje</title>
+    </h:head>
+    <h:body>
+            <ui:param name="pageTitle" value="Výsledky hledání" />
+                <h:form>
+                    <h1><h:outputText value="Výsledky hledání"/></h1>
+                    <ul>
+                        <li>
+                            <strong><h:outputText value="Pro trasu: "/></strong>
+                            <h:outputText value=" #{searching.departing} – #{searching.arriving}"/></li>
+                        <li>
+                            <strong><h:outputText value="Čas odjezdu: "/></strong>
+                            <h:outputText value="#{searching.departureTime}"/>
+                        </li>
+                    </ul>
+                    <h:dataTable value="#{searching.results}" var="item" styleClass="dataTable">
+
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="Spoj"/>
+                            </f:facet>
+                            <h:outputText value="#{item.linkType.shortcut} #{item.linkNumber}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="Odjezd"/>
+                            </f:facet>
+                            <h:outputText value="#{searching.departing}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value=""/>
+                            </f:facet>
+                        <h:outputText value="#{searching.departureTime(item)}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value=""/>
+                            </f:facet>
+                            <h:outputText value="–"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="Příjezd"/>
+                            </f:facet>
+                            <h:outputText value="#{searching.arriving}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value=""/>
+                            </f:facet>
+                            <h:outputText value="#{searching.arrivalTime(item)}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="vzdálenost"/>
+                            </f:facet>
+                            <h:outputText value="#{searching.distance(item)} km"/>
+                        </h:column>
+                    </h:dataTable>
+                <h:commandLink action="index" value="#{msgs.back}" immediate="true" />
+                    <h:messages />
+                </h:form>
+    </h:body>
+</html>
+

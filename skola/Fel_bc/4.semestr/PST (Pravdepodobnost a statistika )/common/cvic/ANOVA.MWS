@@ -1,0 +1,138 @@
+{VERSION 6 1 "SunOS" "6.1" }
+{USTYLETAB {PSTYLE "Left Justified Maple Output" -1 12 1 {CSTYLE "" 
+-1 -1 "Times" 1 12 0 0 0 1 2 2 2 2 2 2 0 0 0 1 }1 3 0 0 0 0 2 0 2 0 2 
+2 -1 1 }{PSTYLE "Warning" -1 7 1 {CSTYLE "" -1 -1 "Courier" 1 10 0 0 
+255 1 0 0 0 2 2 1 0 0 0 1 }1 0 0 -1 -1 -1 1 0 1 0 2 2 -1 1 }{PSTYLE "D
+ash Item" -1 16 1 {CSTYLE "" -1 -1 "Times" 1 12 0 0 0 1 2 2 2 2 2 2 0 
+0 0 1 }1 1 0 0 3 3 2 0 2 0 2 2 -1 3 }{PSTYLE "Heading 4" -1 20 1 
+{CSTYLE "" -1 -1 "Times" 1 10 0 0 0 1 1 1 2 2 2 2 0 0 0 1 }1 1 0 0 0 
+0 2 0 2 0 2 2 -1 1 }{PSTYLE "_pstyle12" -1 200 1 {CSTYLE "" -1 -1 "" 
+0 1 0 0 0 0 0 0 0 2 2 2 0 0 0 1 }1 3 0 -1 -1 -1 1 0 1 0 2 2 -1 1 }
+{PSTYLE "Heading 3" -1 5 1 {CSTYLE "" -1 -1 "Times" 1 12 0 0 0 1 1 1 
+2 2 2 2 0 0 0 1 }1 1 0 0 0 0 2 0 2 0 2 2 -1 1 }{PSTYLE "Error" -1 8 1 
+{CSTYLE "" -1 -1 "Courier" 1 10 255 0 255 1 0 0 0 2 2 1 0 0 0 1 }1 0 
+0 -1 -1 -1 1 0 1 0 2 2 -1 1 }{PSTYLE "Author" -1 19 1 {CSTYLE "" -1 
+-1 "Times" 1 12 0 0 0 1 2 2 2 2 2 2 0 0 0 1 }3 1 0 0 8 8 2 0 2 0 2 2 
+-1 1 }{PSTYLE "Heading 2" -1 4 1 {CSTYLE "" -1 -1 "Times" 1 14 0 0 0 
+1 2 1 2 2 2 2 0 0 0 1 }1 1 0 0 8 2 2 0 2 0 2 2 -1 1 }{PSTYLE "Help" 
+-1 10 1 {CSTYLE "" -1 -1 "Courier" 1 9 0 0 255 1 0 0 0 2 2 1 0 0 0 1 }
+1 0 0 -1 -1 -1 1 0 1 0 2 2 -1 1 }{PSTYLE "Text Output" -1 2 1 {CSTYLE 
+"" -1 -1 "Courier" 1 10 0 0 255 1 0 0 0 2 2 1 0 0 0 1 }1 0 0 -1 -1 -1 
+1 0 1 0 2 2 -1 1 }{PSTYLE "Heading 1" -1 3 1 {CSTYLE "" -1 -1 "Times" 
+1 18 0 0 0 1 2 1 2 2 2 2 0 0 0 1 }1 1 0 0 8 4 2 0 2 0 2 2 -1 1 }
+{PSTYLE "Normal" -1 0 1 {CSTYLE "" -1 -1 "" 0 1 0 0 0 0 0 0 0 2 2 2 0 
+0 0 1 }0 0 0 -1 -1 -1 1 0 1 0 2 2 -1 1 }{PSTYLE "Maple Plot" -1 13 1 
+{CSTYLE "" -1 -1 "Times" 1 12 0 0 0 1 2 2 2 2 2 2 0 0 0 1 }3 1 0 0 0 
+0 2 0 2 0 2 2 -1 1 }{PSTYLE "Line Printed Output" -1 6 1 {CSTYLE "" 
+-1 -1 "Courier" 1 10 0 0 255 1 0 0 0 2 2 1 0 0 0 1 }1 0 0 -1 -1 -1 1 
+0 1 0 2 2 -1 1 }{PSTYLE "Title" -1 18 1 {CSTYLE "" -1 -1 "Times" 1 18 
+0 0 0 1 2 1 1 2 2 2 0 0 0 1 }3 1 0 0 12 12 2 0 2 0 2 2 -1 1 }{PSTYLE "
+Diagnostic" -1 9 1 {CSTYLE "" -1 -1 "Courier" 1 10 64 128 64 1 0 0 0 
+2 2 1 0 0 0 1 }1 0 0 -1 -1 -1 1 0 1 0 2 2 -1 1 }{PSTYLE "Maple Output"
+ -1 11 1 {CSTYLE "" -1 -1 "" 0 1 0 0 0 0 0 0 0 2 2 2 0 0 0 1 }3 3 0 
+-1 -1 -1 1 0 1 0 2 2 -1 1 }{PSTYLE "List Item" -1 14 1 {CSTYLE "" -1 
+-1 "Times" 1 12 0 0 0 1 2 2 2 2 2 2 0 0 0 1 }1 1 0 0 3 3 2 0 2 0 2 2 
+-1 5 }{PSTYLE "Bullet Item" -1 15 1 {CSTYLE "" -1 -1 "Times" 1 12 0 0 
+0 1 2 2 2 2 2 2 0 0 0 1 }1 1 0 0 3 3 2 0 2 0 2 2 -1 2 }{PSTYLE "Fixed \+
+Width" -1 17 1 {CSTYLE "" -1 -1 "Courier" 1 10 0 0 0 1 2 2 2 2 2 2 0 
+0 0 1 }3 1 0 0 0 0 2 0 2 0 2 2 -1 1 }{CSTYLE "LaTeX" -1 32 "" 0 1 0 0 
+0 0 0 0 0 2 2 2 0 0 0 1 }{CSTYLE "Maple Comment" -1 21 "Courier" 0 1 
+0 0 0 1 0 0 0 2 2 2 0 0 0 1 }{CSTYLE "2D Math Bold" -1 5 "Times" 0 1 
+0 0 0 0 0 1 2 2 2 2 0 0 0 1 }{CSTYLE "Help Underlined" -1 44 "Times" 
+1 12 0 0 0 0 0 0 1 2 2 2 0 0 0 1 }{CSTYLE "Output Labels" -1 29 "Times
+" 1 8 0 0 0 1 0 0 0 2 2 2 0 0 0 1 }{CSTYLE "Maple Input" -1 0 "Courier
+" 0 1 255 0 0 1 0 1 0 2 1 2 0 0 0 1 }{CSTYLE "Page Number" -1 33 "Time
+s" 0 1 0 0 0 0 0 0 2 2 2 2 0 0 0 1 }{CSTYLE "Maple Input Placeholder" 
+-1 200 "Courier" 1 12 200 0 200 1 0 1 0 2 1 2 0 0 0 1 }{CSTYLE "Text" 
+-1 201 "Times" 1 12 0 0 0 1 2 2 2 2 2 2 0 0 0 1 }{CSTYLE "2D Math Ital
+ic Small" -1 202 "Times" 0 1 0 0 0 0 1 0 2 2 2 2 0 0 0 1 }{CSTYLE "Hel
+p Heading" -1 26 "" 1 14 0 0 0 0 0 1 0 2 2 2 0 0 0 1 }{CSTYLE "Help It
+alic Bold" -1 40 "Times" 1 12 0 0 0 0 1 1 0 2 2 2 0 0 0 1 }{CSTYLE "He
+lp Normal" -1 30 "Times" 1 12 0 0 0 0 0 0 0 2 2 2 0 0 0 1 }{CSTYLE "He
+lp Nonterminal" -1 24 "Courier" 0 1 0 0 0 1 0 1 0 2 2 2 0 0 0 1 }
+{CSTYLE "2D Math Small" -1 7 "Times" 0 1 0 0 0 0 0 0 2 2 2 2 0 0 0 1 }
+{CSTYLE "Help Underlined Italic" -1 43 "Times" 1 12 0 0 0 0 1 0 1 2 2 
+2 0 0 0 1 }{CSTYLE "2D Math" -1 2 "Times" 0 1 0 0 0 0 0 0 2 2 2 2 0 0 
+0 1 }{CSTYLE "Copyright" -1 34 "Times" 1 10 0 0 0 0 2 2 2 2 2 2 0 0 0 
+1 }{CSTYLE "Hyperlink" -1 17 "" 0 1 0 128 128 1 2 0 1 2 2 2 0 0 0 1 }
+{CSTYLE "Plot Title" -1 27 "" 1 10 0 0 0 0 0 1 0 2 2 2 0 0 0 1 }
+{CSTYLE "2D Input" -1 19 "Times" 0 1 255 0 0 1 0 0 2 2 1 2 0 0 0 1 }
+{CSTYLE "_cstyle21" -1 203 "Courier" 0 1 0 0 0 1 0 1 0 2 2 2 0 0 0 1 }
+{CSTYLE "Help Maple Name" -1 35 "" 0 1 104 64 92 1 0 1 0 2 2 2 0 0 0 
+1 }{CSTYLE "Help Italic" -1 42 "Times" 1 12 0 0 0 0 1 0 0 2 2 2 0 0 0 
+1 }{CSTYLE "Help Underlined Bold" -1 41 "Times" 1 12 0 0 0 0 0 1 1 2 
+2 2 0 0 0 1 }{CSTYLE "Default" -1 38 "" 0 1 0 0 0 0 0 0 0 2 2 2 0 0 0 
+1 }{CSTYLE "Help Fixed" -1 23 "Courier" 1 10 0 0 0 0 0 0 0 2 2 2 0 0 
+0 1 }{CSTYLE "Dictionary Hyperlink" -1 45 "" 0 1 147 0 15 1 2 0 1 2 2 
+2 0 0 0 1 }{CSTYLE "2D Output" -1 20 "Times" 0 1 0 0 255 1 0 0 2 2 2 
+2 0 0 0 1 }{CSTYLE "2D Math Italic" -1 3 "Times" 0 1 0 0 0 0 1 0 2 2 
+2 2 0 0 0 1 }{CSTYLE "Popup" -1 31 "" 0 1 0 128 128 1 1 0 1 2 2 2 0 0 
+0 1 }{CSTYLE "2D Math Symbol 2" -1 16 "Times" 0 1 0 0 0 0 2 2 2 2 2 2 
+0 0 0 1 }{CSTYLE "Plot Text" -1 28 "" 1 8 0 0 0 0 0 0 0 2 2 2 0 0 0 1 
+}{CSTYLE "Help Notes" -1 37 "" 0 1 0 0 0 1 0 1 0 2 2 2 0 0 0 1 }
+{CSTYLE "Help Bold" -1 39 "Times" 1 12 0 0 0 0 0 1 0 2 2 2 0 0 0 1 }
+{CSTYLE "Help Menus" -1 36 "" 0 1 0 0 0 1 0 1 0 2 2 2 0 0 0 1 }
+{CSTYLE "2D Comment" -1 18 "Times" 0 1 0 0 0 0 0 0 2 2 2 2 0 0 0 1 }
+{CSTYLE "Help Variable" -1 25 "Courier" 0 1 0 0 0 1 2 2 0 2 2 2 0 0 0 
+1 }{CSTYLE "2D Math Bold Small" -1 10 "Times" 0 1 0 0 0 0 0 1 2 2 2 2 
+0 0 0 1 }{CSTYLE "Help Emphasized" -1 204 "" 0 1 0 0 0 0 1 2 0 2 2 2 
+0 0 0 1 }{CSTYLE "Prompt" -1 1 "Courier" 0 1 0 0 0 1 0 0 0 2 2 2 0 0 
+0 1 }{PSTYLE "_pstyle1" -1 201 1 {CSTYLE "" -1 -1 "Courier" 0 1 0 0 0 
+1 0 1 0 2 2 2 0 0 0 1 }0 0 0 -1 -1 -1 1 0 1 0 2 2 -1 1 }{PSTYLE "_psty
+le2" -1 202 1 {CSTYLE "" -1 -1 "Courier" 0 1 255 0 0 1 0 1 0 2 1 2 0 
+0 0 1 }0 0 0 -1 -1 -1 1 0 1 0 2 2 -1 1 }{PSTYLE "_pstyle3" -1 203 1 
+{CSTYLE "" -1 -1 "Times" 0 1 0 0 255 1 0 0 2 2 2 2 0 0 0 1 }3 3 0 -1 
+-1 -1 1 0 1 0 2 2 -1 1 }{PSTYLE "_pstyle4" -1 204 1 {CSTYLE "" -1 -1 "
+Times" 0 1 0 0 255 1 0 0 2 2 2 2 0 0 0 1 }1 3 0 -1 -1 -1 1 0 1 0 2 2 
+-1 1 }{PSTYLE "_pstyle5" -1 205 1 {CSTYLE "" -1 -1 "" 0 1 0 0 0 0 0 0 
+0 2 2 2 0 0 0 1 }0 0 0 -1 -1 -1 1 0 1 0 2 2 -1 1 }}
+{SECT 0 {EXCHG {PARA 201 "" 0 "" {TEXT 203 34 "Anova                  \+
+  anova.mws" }{TEXT 203 0 "" }}}{EXCHG {PARA 202 "> " 0 "" {MPLTEXT 1 
+0 20 "restart:with(stats);" }{MPLTEXT 1 0 0 "" }}{PARA 203 "" 1 "" 
+{XPPMATH 20 "6#7*%&anovaG%)describeG%$fitG%+importdataG%'randomG%*stat
+evalfG%*statplotsG%*transformG" }{TEXT 20 0 "" }}}{EXCHG {PARA 202 "> \+
+" 0 "" {MPLTEXT 1 0 41 "with(stats[anova]);with(stats[describe]):" }
+{MPLTEXT 1 0 0 "" }}{PARA 203 "" 1 "" {XPPMATH 20 "6#7#%'onewayG" }
+{TEXT 20 0 "" }}}{EXCHG {PARA 202 "> " 0 "" {MPLTEXT 1 0 102 "a1:=[165
+,170,173,178,189,176,180,175,187,184,182,200,179,182,178,175,176,176,1
+85,185,178,183,181,175];" }{MPLTEXT 1 0 0 "" }}{PARA 204 "" 1 "" 
+{XPPMATH 20 "6#>%#a1G7:\"$l\"\"$q\"\"$t\"\"$y\"\"$*=\"$w\"\"$!=\"$v\"
+\"$(=\"$%=\"$#=\"$+#\"$z\"F0F)F-F+F+\"$&=F3F)\"$$=\"$\"=F-" }{TEXT 20 
+0 "" }}}{EXCHG {PARA 202 "> " 0 "" {MPLTEXT 1 0 102 "a2:=[182,179,175,
+192,184,165,188,185,185,180,190,183,189,183,175,182,178,180,196,175,17
+9,173,183,176];" }{MPLTEXT 1 0 0 "" }}{PARA 204 "" 1 "" {XPPMATH 20 "6
+#>%#a2G7:\"$#=\"$z\"\"$v\"\"$#>\"$%=\"$l\"\"$)=\"$&=F-\"$!=\"$!>\"$$=
+\"$*=F0F(F&\"$y\"F.\"$'>F(F'\"$t\"F0\"$w\"" }{TEXT 20 0 "" }}}{EXCHG 
+{PARA 202 "> " 0 "" {MPLTEXT 1 0 102 "a3:=[176,175,172,185,183,184,174
+,180,193,172,176,175,180,183,178,176,179,180,181,185,175,177,181,180];
+" }{MPLTEXT 1 0 0 "" }}{PARA 204 "" 1 "" {XPPMATH 20 "6#>%#a3G7:\"$w\"
+\"$v\"\"$s\"\"$&=\"$$=\"$%=\"$u\"\"$!=\"$$>F(F&F'F-F*\"$y\"F&\"$z\"F-
+\"$\"=F)F'\"$x\"F1F-" }{TEXT 20 0 "" }}}{EXCHG {PARA 202 "> " 0 "" 
+{MPLTEXT 1 0 17 "data:=[a1,a2,a3];" }{MPLTEXT 1 0 0 "" }}{PARA 204 "" 
+1 "" {XPPMATH 20 "6#>%%dataG7%7:\"$l\"\"$q\"\"$t\"\"$y\"\"$*=\"$w\"\"$
+!=\"$v\"\"$(=\"$%=\"$#=\"$+#\"$z\"F1F*F.F,F,\"$&=F4F*\"$$=\"$\"=F.7:F1
+F3F.\"$#>F0F'\"$)=F4F4F-\"$!>F5F+F5F.F1F*F-\"$'>F.F3F)F5F,7:F,F.\"$s\"
+F4F5F0\"$u\"F-\"$$>F=F,F.F-F5F*F,F3F-F6F4F.\"$x\"F6F-" }{TEXT 20 0 "" 
+}}}{EXCHG {PARA 202 "> " 0 "" {MPLTEXT 1 0 16 "R:=oneway(data);" }
+{MPLTEXT 1 0 0 "" }}{PARA 203 "" 1 "" {XPPMATH 20 "6#>%\"RG6$7%7%\"\"#
+#\"$,$\"\"%#F*\"\")7%\"#p#\"&l<#F-#\"%bs\"$%=7$\"#r#\"&nB#F-7&F(F/#\"%
+BpF3$\",b;>()4'!#6" }{TEXT 20 0 "" }}}{EXCHG {PARA 202 "> " 0 "" 
+{MPLTEXT 1 0 13 "#R:=evalf(R);" }{MPLTEXT 1 0 0 "" }}}{EXCHG {PARA 
+202 "> " 0 "" {MPLTEXT 1 0 12 "Ratio:=%[2];" }{MPLTEXT 1 0 0 "" }}
+{PARA 203 "" 1 "" {XPPMATH 20 "6#>%&RatioG7&\"\"#\"#p#\"%Bp\"%bs$\",b;
+>()4'!#6" }{TEXT 20 0 "" }}}{EXCHG {PARA 202 "> " 0 "" {MPLTEXT 1 0 
+85 "Ratio[1];Ratio[2]; # pocet stupnu volnosti 1- pocet souboru-1, 2 -
+ pocet prvku -2 z 1" }{MPLTEXT 1 0 0 "" }}{PARA 203 "" 1 "" {XPPMATH 
+20 "6#\"\"#" }{TEXT 20 0 "" }}{PARA 203 "" 1 "" {XPPMATH 20 "6#\"#p" }
+{TEXT 20 0 "" }}}{EXCHG {PARA 202 "> " 0 "" {MPLTEXT 1 0 77 "# pocita \+
+p hodnotu Ratio3 je hodnota testove statistiky fratio je F rozdeleni" 
+}}}{EXCHG {PARA 202 "> " 0 "" {MPLTEXT 1 0 62 "sig:=stats[statevalf,cd
+f,fratio[Ratio[1],Ratio[2]]](Ratio[3]);" }{MPLTEXT 1 0 0 "" }}{PARA 
+203 "" 1 "" {XPPMATH 20 "6#>%$sigG$\"+l\">()4'!#5" }{TEXT 20 0 "" }}}
+{EXCHG {PARA 202 "> " 0 "" {MPLTEXT 1 0 13 "R1:=evalf(R);" }{MPLTEXT 
+1 0 0 "" }}{PARA 204 "" 1 "" {XPPMATH 20 "6#>%#R1G6$7%7%$\"\"#\"\"!$\"
+++++Dv!\")$\"+++]iPF-7%$\"#pF*$\"++]i?F!\"'$\"+$yMH%RF-7$$\"#rF*$\"++]
+(ez#F57&F(F1$\"+iXQU&*!#5$\"+m\">()4'F@" }{TEXT 20 0 "" }}}{EXCHG 
+{PARA 202 "> " 0 "" {MPLTEXT 1 0 0 "" }}}{PARA 205 "" 0 "" {TEXT -1 0 
+"" }}}{MARK "0 0 0" 0 }{VIEWOPTS 1 1 0 15 10 1804 1 1 1 1 }
+{PAGENUMBERS 0 1 2 33 1 1 }

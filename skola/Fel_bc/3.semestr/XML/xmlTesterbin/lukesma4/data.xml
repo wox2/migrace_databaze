@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="windows-1252"?>
+<!DOCTYPE fotbalovy_zapas SYSTEM "data.dtd">
+
+<fotbalovy_zapas jmeno_turnaje="fotbalovy turnaj pseudohvezd">
+    <muzstvo id="Horni_Dolni" domaci="ano" hoste="ne">
+        <sestava>
+            <hrac>
+                <cislo id="A1">
+                   1
+                    <jmeno>Jiri Paroubek</jmeno>
+                    <prezdivka>buldozer</prezdivka>
+                </cislo>
+                <kapitan>ano</kapitan>
+            </hrac>
+            <hrac>
+                <cislo id="A2" >
+                   2
+                    <jmeno>Milos Melcak</jmeno>
+                    <prezdivka>kecal</prezdivka>
+                </cislo>
+            </hrac>
+            <hrac>
+                <cislo id="A3">
+                   3
+                    <jmeno>Milos Zeman</jmeno>
+                </cislo>
+            </hrac>
+            <hrac>
+                <cislo id="A4">
+                   4
+                    <jmeno>Petra Buzkova</jmeno>
+                </cislo>
+            </hrac>
+            
+            <hrac>
+                <cislo id="A5">
+                   5
+                    <jmeno>Stanislav Gross</jmeno>
+                </cislo>
+            </hrac>
+            
+            <hrac>
+                <cislo id="A6">
+                   6
+                    <jmeno>Vladimir Spidla</jmeno>
+                </cislo>
+            </hrac>
+            <hrac>
+                <cislo id="A7">
+                   7
+                    <jmeno>David Rath</jmeno>
+                </cislo>
+            </hrac>
+            <hrac>
+                <cislo id="A8">
+                   8
+                    <jmeno>Michal Pohanka</jmeno>
+                </cislo>
+            </hrac>
+            <hrac>
+                <cislo id="A9">
+                   9
+                    <jmeno>Bohuslav Sobotka</jmeno>
+                </cislo>
+            </hrac>
+            <hrac>
+                <cislo id="A10">
+                   10
+                    <jmeno>Vitezslav Jandak</jmeno>
+                    <prezdivka>kecal</prezdivka>
+                </cislo>
+            </hrac>
+            <hrac>
+                <cislo id="A11">
+                   11
+                    <jmeno>Zdenek Skromach</jmeno>
+                </cislo>
+            </hrac>
+        </sestava>
+    </muzstvo>
+
+    <muzstvo id="Dolni_Horni" domaci="ne">
+        <sestava>
+            <hrac>
+                <cislo id="B1">
+                   1
+                    <jmeno>Mirek Topolanek</jmeno>
+                </cislo>
+                <kapitan>
+                   ano
+                </kapitan>
+            </hrac>
+            <hrac>
+                <cislo id="B2">
+                   2
+                    <jmeno>Vlastimil Tlusty</jmeno>
+                </cislo>
+            </hrac>
+            <hrac>
+                <cislo id="B3">
+                   3
+                    <jmeno>Ivan Langer</jmeno>
+                </cislo>
+            </hrac>
+            <hrac>
+                <cislo id="B4">
+                   4
+                    <jmeno>Pavel Bem</jmeno>
+                </cislo>
+            </hrac>
+
+            <hrac>
+                <cislo id="B5">
+                   5
+                    <jmeno>Petr Necas</jmeno>
+                </cislo>
+            </hrac>
+
+            <hrac>
+                <cislo id="B6">
+                   6
+                    <jmeno>Jan Zahradil</jmeno>
+                </cislo>
+            </hrac>
+
+            <hrac>
+                <cislo id="B7">
+                   7
+                    <faul>
+                        <faul_s_cervenou_kartou id="CB7"></faul_s_cervenou_kartou>
+                    </faul>
+                    <jmeno>Miroslav Macek</jmeno>
+                </cislo>
+            </hrac>
+
+            <hrac>
+                <cislo id="B8">
+                   8
+                   <faul>
+                       <faul_s_zlutou_kartou id= "CB81"/>
+                   </faul>
+                   <faul>
+                      <faul_s_cervenou_kartou id="CB7"></faul_s_cervenou_kartou>
+                   </faul>
+                   
+                    <jmeno>Lucie Talmanova</jmeno>
+                </cislo>
+            </hrac>
+
+            <hrac>
+                <cislo id="B9">
+                   9
+                    <faul>
+                    </faul>
+                    <jmeno>Petr Gandalovic</jmeno>
+                </cislo>
+            </hrac>
+
+            <hrac>
+                <cislo id="B10">
+                   10
+                    <jmeno>Petr Bendl</jmeno>
+                </cislo>
+            </hrac>
+
+            <hrac>
+                <cislo id="B11">
+                   11
+                    <jmeno>Miroslava Nemcova</jmeno>
+                </cislo>
+            </hrac>
+
+        </sestava>
+    </muzstvo>
+
+    <rozhodci>
+        <hlavni>
+            <jmeno>Vaclav Klaus</jmeno>
+            <prezdivka>nestranny prezident</prezdivka>
+        </hlavni>
+        <vedlejsi/>
+        <vedlejsi/>
+    </rozhodci>
+    <skore>
+        <polocas>
+                    1:1
+        </polocas>
+        <vysledne>
+             1:2
+        </vysledne>
+    </skore>
+
+    <goly>
+        25. minuta dava
+        <skorujici_hrac id_ref="A2"/> vlastni gol.
+        36. minuta dava
+        <skorujici_hrac id_ref="B2"/> vlastni gol.
+        89. minuta dava
+        <skorujici_hrac id_ref="B6"/> gol.
+    </goly>
+    
+    <karty>
+        <zlute>
+        </zlute>
+        <cervene>V 67. minute dostal
+            <faulujici_cerveny_hrac id_ref="CB7"/> cervenou kartu a jeho
+             tym odehraval v pocetni nevyhode.
+        </cervene>
+    </karty>
+    <zaznam>
+        Kratky sestrih zapasu Dolni_Horni &gt; Horni_Dolni.        
+        <![CDATA[Kratky sestrih zapasu Dolni_Horni >(&gt) Horni_Dolni.   ]]>
+        <?php echo "neco" ?>
+        <!-- rozdilny zapis, stejny vysledek jako sekce pred CDATA-->
+        &copyright;
+        Zadani DU : &zadani;
+    </zaznam>
+</fotbalovy_zapas>

@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/courses/36sin/INTEOCORP/!svn/ver/420/src/LogicalDesign/DataLayer/Hibernate
+END
+ProjektDAO.java
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/courses/36sin/INTEOCORP/!svn/ver/420/src/LogicalDesign/DataLayer/Hibernate/ProjektDAO.java
+END
+KomentarDAO.java
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/courses/36sin/INTEOCORP/!svn/ver/420/src/LogicalDesign/DataLayer/Hibernate/KomentarDAO.java
+END
+KomentarUkoluDAO.java
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/courses/36sin/INTEOCORP/!svn/ver/420/src/LogicalDesign/DataLayer/Hibernate/KomentarUkoluDAO.java
+END
+ZastupceZakaznikaDAO.java
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/courses/36sin/INTEOCORP/!svn/ver/420/src/LogicalDesign/DataLayer/Hibernate/ZastupceZakaznikaDAO.java
+END
+PozadavekDAO.java
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/courses/36sin/INTEOCORP/!svn/ver/420/src/LogicalDesign/DataLayer/Hibernate/PozadavekDAO.java
+END
+KomentarPozadavkuDAO.java
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/courses/36sin/INTEOCORP/!svn/ver/420/src/LogicalDesign/DataLayer/Hibernate/KomentarPozadavkuDAO.java
+END
+ZamestnanecDAO.java
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/courses/36sin/INTEOCORP/!svn/ver/420/src/LogicalDesign/DataLayer/Hibernate/ZamestnanecDAO.java
+END
+UkolDAO.java
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/courses/36sin/INTEOCORP/!svn/ver/420/src/LogicalDesign/DataLayer/Hibernate/UkolDAO.java
+END

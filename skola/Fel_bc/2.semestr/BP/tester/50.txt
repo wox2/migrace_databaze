@@ -1,0 +1,947 @@
+Urèete, kterı z následujících pøedmìtù patøí do tøídy ochrany II. 
+(*)ten, kterı má všude dvojitou nebo zesílenou izolaci a nemá zaøízení na pøipojení ochranného vodièe 
+ten, kterı má všude alespoò pracovní izolaci a ochrannou svorku 
+ten, kterı je urèen pro pøipojení na zdroj bezpeèného malého napìtí SELV a PELV 
+
+V èem spoèívá ochrana doplòkovou izolací ? 
+(*)ve vybavení el. zaøízení izolaèním stanovištìm (napø. izolaèním kobercem) 
+(*)v pouití ochrannıch izolaèních pomùcek - dielektrickıch rukavic, galoší, vypínacích tyèí 
+v doplnìní izolace pracovní izolací pøídavnou 
+
+Které z uvedenıch prostor neodpovídají novému èlenìní dle ÈSN 332000-4-41 ? 
+(*)prostory bezpeèné 
+prostory nebezpeèné 
+prostory zvláš nebezpeèné 
+
+Která z uvedenıch kategorií napìtí odpovídá zaøízení malého napìtí ? 
+(*)I 
+II 
+A 
+
+Oznaète, jaké je bezpeèné malé støídavé napìtí pøi dotyku ivıch èástí v prostorách nebezpeènıch. 
+50 V 
+(*)25 V 
+12 V 
+
+Oznaète, jaké je bezpeèné malé stejnosmìrné napìtí u ivıch èástí v prostorách normálních. 
+(*)100 V 
+60 V 
+25 V 
+
+Kterım z uvedenıch zpùsobù mùe bıt vytvoøena základní ochrana ivıch èástí ? 
+(*)polohou 
+(*)zábranou 
+proudovım chránièem 
+
+Kterımi z uvedenıch zpùsobù mùe bıt vytvoøena ochrana ivıch èástí ? 
+(*)kryty a pøepákami 
+(*)izolací ivıch èástí 
+nulováním 
+
+Jaká je mezní hodnota ustáleného støídavého proudu, tekoucího odporem 2000 Ohmù mezi èástmi souèasnì pøístupnımi dotyku u ochrany omezením ustáleného proudu. 
+(*)3,5 mA 
+10 mA 
+25 mA 
+
+Ve kterıch z uvedenıch prostor lze pouít odnímatelné zábrany (nejedná se o pøechodné stanovištì) ? 
+(*)nepøístupnıch pracovníkùm seznámenım a laikùm 
+pøístupnıch pracovníkùm seznámenım a laikùm 
+(*)v elektrickıch provozovnách 
+
+Jaká je nejmenší vzdálenost ivıch èástí nn (kategorie napìtí II) od stanovištì ve vnitøních prostorách, nepøístupnıch pracovníkùm seznámenım. 
+(*)a = 2,5 m 
+a = 5 m 
+a = 2,7 m 
+
+Kterım z uvedenıch zpùsobù lze zajistit ochranu izolací ivıch èástí (tzn. zabránit dotyku ivıch èástí) ? 
+(*)kauèukovım vulkanizátem - v dostateèné tlouštce dle pøíslušnıch norem 
+smaltováním, vrstvami kyslièníkù 
+nátìry, barvami a laky 
+
+Jak se dosáhne zvıšená ochrana pøed nebezpeènım dotykem u neivıch èástí ? 
+zvıšenou opatrností pøi práci 
+tím, e danou práci vykonává osoba znalá s vyšší kvalifikací 
+(*)rozšíøením ochrany základní o urèitı druh další ochrany 
+
+Ochrana pøed dotykem neivıch èástí v prostorách s mokrım prostøedím se dosáhne : 
+ochranou v síti TN 
+(*)ochranou v síti TN a pospojováním 
+(*)oddìlením obvodù a chránièem 
+
+Oznaète, jaké je nejvyšší dovolené dotykové støídavé napìtí u zaøízení do 1000 V prostorách zvláš nebezpeènıch. 
+50 V 
+(*)25 V 
+12 V 
+
+Oznaète, jaké je nejvyšší dovolené dotykové støídavé napìtí u zaøízení do 1 000 V v prostorách s prostøedím vlhkım. 
+(*)50 V 
+25 V 
+12 V 
+
+Oznaète, které druhy ochrany pøed nebezpeènım dotykem neivıch èástí do 1 000 V patøí mezi ochrany základní. 
+(*)ochrana v síti IT 
+ochrana pospojováním 
+(*)ochrana v síti TN 
+
+Oznaète, jaké je nejvyšší dovolené dotykové støídavé napìtí u zaøízení do 1 000 V v prostorách s prostøedím mokrım. 
+50 V 
+(*)25 V 
+12 V 
+
+Kteøí pracovníci mohou mít pøístup do míst, kde je pouita ochrana doplòkovou izolací ivıch èástí u zaøízení do 1000 V ? 
+seznámení 
+(*)pouèení 
+(*)znalí a znalí s vyšší kvalifikací 
+
+Sítì TN mají jeden bod pøímo uzemnìnı, neivé èásti zaøízení jsou spojeny s tímto bodem prostøednictvím ochrannıch vodièù. Jak se podle uspoøádání vedení støedních a ochrannıch vodièù rozlišují sítì TN ? 
+sí TN-S - funkce støedního a ochranného vodièe je v celé síti slouèena do jednoho vodièe (NPE) 
+(*)sí TN-C-S - funkce støedního a ochranného vodièe je v èásti sítì slouèena do jediného vodièe (PEN) 
+(*)sí TN-C - funkce støedního a ochranného vodièe je v celé síti slouèena do jednoho vodièe (PEN) 
+
+Èím je tvoøena vypínací smyèka v sítích TN ? 
+u sítì TN-S - vinutím transformátoru, fázovım vodièem k místu poruchy a støedním vodièem N 
+(*)u sítì TN-S - vinutím transformátoru, fázovım vodièem k místu poruchy a ochrannım vodièem PE 
+(*)u sítì TN-C - vinutím transformátoru, fázovım vodièem k místu poruchy a vodièem PEN 
+
+Jak je definován vypínací proud ochranného prvku podle nové normy ? 
+(*)je to proud, zajišující samoèinné pùsobení vypínacího prvku v obvodu se zásuvkami s napìtím 230V proti zemi do 0,4 s 
+je to proud, kterı zajistí vypnutí obvodu chránìného zaøízení v dostateènì krátkém èase 
+(*)je to proud, kterı v obvodech rozvodnıch sítí vypne v dohodnuté dobì nepøekraèují 5 s. 
+
+Jak je definován vypínací proud v sítích IT s napìtím 230/400 V podle nové normy ? 
+(*)Je to proud, kterı pøi nevyvedeném støedním vodièi zajistí vypnutí odpojovacího prvku do 0,4 s. 
+(*)Je to proud, kterı pøi vyvedeném støedním vodièi zajistí vypnutí odpojovacího prvku do 0,8 s. 
+Je to proud, kterı zajistí vypnutí v dostateènì krátkém èase. 
+
+Jaká má bıt velikost zemního odporu pracovního uzemnìní støedu (uzlu) zdroje nebo pracovnì uzemnìného místa zdroje pøi ochranì v sítích TN ? NEMÁ bıt vìtší ne 
+(*)5 Ohmù 
+(*)15 Ohmù, ve ztíenıch pùdních pomínkách 
+20 Ohmù 
+
+Jaká má bıt velikost celkového zemního odporu vodièù PEN odcházejících vedení z transformovny vèetnì støedu (uzlu) zdroje ? NESMÍ bıt vìtší ne 
+(*)2 Ohmy 
+5 Ohmù 
+15 Ohmù 
+
+Kde musí bıt spojen vodiè PEN a PE ve vnitøním rozvodu pøi ochranì v sítích TN s uzemòovací soustavou nebo samostatnım vodièem ? 
+(*)v objektech s vlastním transformátorem vdy u hlavních rozvadìèù 
+(*)u podrunıch rozvádìèù, jsou-li vzdáleny více ne 100 m od nejblišího místa zemnìní 
+na konci vıbìku delšího ne 50 m od místa pøedchozího uzemnìní 
+
+Jaké druhy pospojování rozeznáváme ? 
+(*)hlavní pospojování 
+(*)doplòující pospojování 
+uzemnìné místní pospojování 
+
+Smí se vodiè PEN a ochrannı vodiè PE jistit ? 
+smí 
+(*)nesmí 
+smí u ochrany napìovım chránièem, jinak nesmí 
+
+Jakım zpùsobem se oznaèují sítì s izolovanım nulovım bodem ? 
+TT 
+(*)IT 
+TN-C 
+
+Jak se oznaèuje sí TN, v její první èásti plní ochrannı vodiè souèasnì funkci støedního vodièe a v její druhé èásti je ochrannı a støední vodiè veden samostatnì ? 
+TN-C 
+TN-S 
+(*)TN-C-S 
+
+Jaká má bıt velikost zemního odporu uzemnìní spotøebièe nebo podruného rozvadìèe apod. v síti TT ? Nesmí bıt vìtší ne 
+15 Ohmù 
+(*)Ra < 50 / Ia 
+Z < Uo / Ia 
+
+V èem spoèívá princip funkce chránièe ? 
+(*)v odpojení zaøízení, pøestoupí-li poruchovı proud proudového chránièe dovolenou mez 
+(*)v odpojení zaøízení od sítì, vznikne-li na chránìné èásti elektrického zaøízení vìtší napìtí ne dovolené 
+v odpojení zaøízení pøi pøetíení tepelnou ochranou 
+
+Jaké známe chránièe ? 
+tepelné ochrany 
+(*)chránièe napìové 
+(*)chránièe proudové 
+
+Jak se pøipojuje vypínací cívka ochranné spouštì napìtového chránièe? Pøipojuje se jedním pólem na chránièovı zemniè a druhım pólem na: 
+(*)chránìnou èást 
+fázovı vodiè 
+vodiè PEN 
+
+Jaká má bıt hodnota zemního odporu pomocného zemnièe napìového chránièe ? Nemá bıt obvykle vìtší ne: 
+1500 Ohmù 
+1000 Ohmù 
+(*)200 Ohmù 
+
+Které vodièe musí procházet proudovım chránièem pøi ochranì chránièi ? 
+(*)všechny pracovní vodièe 
+pracovní vodièe a ochrannı vodiè 
+pracovní vodièe a chránièovı vodiè 
+
+Jaké kroky musí bıt uèinìny v pøípadì, e v izolované síti IT, kde izolaèní odpor sítì vèetnì spotøebièù je trvale kontrolován, dojde k jednofázovému spojení se zemí ? 
+(*)nemusí bıt sí odpojena, ale musí bıt neprodlenì zahájeny práce na odstranìní závady 
+nemusí bıt sí odpojena, ale mùe bıt provozována do konce pøíslušné smìny 
+musí bıt sí odpojena 
+
+Jakı mùe bıt nejvyšší odpor chránìného zaøízení v soustavì IT ? 
+5 Ohmù 
+15 Ohmù 
+(*)Ra = 50 / Id (Id - poruchovı proud pøi první poruše) 
+
+V èem spoèívá podstata ochrany elektrickım oddìlením obvodù ? 
+v takovém rozmístìní (oddìlení) elektrickıch spotøebièù, e je vylouèen dosah 
+(*)ve vytvoøení dokonale izolaènì oddìleného proudového obvodu od obvodu rozvodné soustavy pro jedno zaøízení 
+(*)ve vytvoøení dokonale izolaènì oddìleného proudového obvodu od obvodu rozvodné soustavy, a to pro více zaøízení, jejich neivé èásti musí bıt navzájem spojeny vodièi neuzemnìného pospojování 
+
+Jaká má bıt délka rozvodu na sekundární stranì ochranného transformátoru ? Nemá bıt vìtší ne 
+300 m - pøi napìtí do 400 V 
+(*)200 m - pøi napìtí do 500 V 
+(*)500 m 
+
+Ve kterıch soustavách se ochranné vodièe dimenzují shodnì (v závislosti na krajním nebo fázovém vodièi) ? 
+(*)v soustavách TN jako v soustavì TT 
+(*)v soustavì IT jako u ochrany pospojováním 
+u všech soustav jako u soustavy TN 
+
+Které z uvedenıch odpovìdí oznaèují podmínky ochrany bezpeènım napìtím ? 
+(*)SELV 
+(*)PELV 
+FELV 
+
+Jakı musí mít izolaèní odpor oddìlovací a bezpeènostní ochranné transformátorky mezi vstupními a vıstupními obvody pøi typové zkoušce ? Musí mít alespoò 
+(*)5 M Ohmù 
+2 M Ohmù 
+7 M Ohmù 
+
+Jak musí bıt uloen ochrannı vodiè v pohyblivém pøívodu ? 
+(*)musí bıt pod spoleènım obloením 
+nesmí bıt pod spoleènım obloením a nemusí bıt soubìnì veden 
+nemusí bıt pod spoleènım obloením, ale musí bıt soubìnì veden a k pøívodu pøipevnìn 
+
+Všechny spoje ochranného vodièe musí bıt vodivé. Oznaète, které spoje jsou dovolené: 
+(*)svaøované, pájené, šroubované 
+kroucené 
+(*)nıtované, zdíøkové nebo jiné jim rovnocenné 
+
+Kam se pøipojuje ochrannı vodiè ? 
+na neivou èást kdekoliv, kde je zajištìn vodivı spoj 
+na kryt spotøebièe nebo svorkovnice, kterı je pøipevnìn šroubovım spojem 
+(*)na svorku urèenou pro pøipojení ochranného vodièe 
+
+Jakı mùe bıt minimální prùøez vodièù PEN u kabelù napø. typu AYKY 
+(*)10 mm^2^ - Cu 
+(*)16 mm^2^ - Al 
+6 mm^2^ Cu, 10 mm^2^ Al 
+
+Jakı má bıt izolaèní odpor elektrického zaøízení ? 
+0,1 M Ohmù u obvodù SELV a PELV napájenıch z ochranného bezpeènostního transformátoru 
+(*)0,5 M Ohmù u obvodù s napìtím do 500 V vèetnì 
+(*)1 M Ohmù u obvodù s napìtím nad 500 V 
+
+Rozhodnìte, která odpovìï uvádí správnı minimální prùøez, vyadovanı s ohledem na mechanickou pevnost a korozivní odolnost pro uzemòovací pøívody: 
+(*)galvanizovaná ocel ............ 50 mm^2^ 
+(*)mìï ............. 25 mm^2^ 
+hliník .......... 25 mm^2^ 
+
+Urèete, které rozmìry ocelovıch zemnièù jsou s ohledem na mechanickou a korozivní odolnost vyhovující: 
+(*)ocelovı pásek FeZn (30x4) mm v ohni pozinkovanı 
+(*)ocelovı pásek (30x5) mm - nepozinkovanı 
+ocelovı drát prùm. 8 mm, nepozinkovanı 
+
+Co vyjadøují èíslice, pouité v IP kódu ? 
+první èíslice vyjadøuje stupeò ochrany proti vniknutí vody 
+(*)druhá èíslice vyjadøuje stupeò ochrany proti vniknutí vody 
+(*)první èíslice vyjadøuje stupeò ochrany pøed vniknutím pevnıch cizích tìles a pøed dotykem nebezpeènıch èástí 
+
+Rozhodnìte, kterı z uvedenıch zpùsobù krytí je monı: 
+(*)IP 00, IP 44 
+(*)IP 68 
+IP 86 
+
+Urèete, jaké krytí má roštovı (otevøenı) rozvadìè: 
+IP 43 
+IP 20 
+(*)IP 00 
+
+Které z uvedenıch podmínek musí splòovat vedoucí práce na elektrickıch zaøízeních ? Musí to bıt: 
+(*)pracovník povìøenı vedením skupiny, popø. pracovník sám pracující 
+pracovník znalı 
+(*)pracovník znalı s vyšší kvalifikací 
+
+Urèete, které tøi z následujících úkonù JSOU z hlediska bezpeènostních úkonù definovány jako PRÁCE elektrickıch zaøízeních. 
+(*)orientaèní mìøení mìøicími pøístroji pøenosnımi 
+spínání 
+regulování 
+ètení trvale namontovanıch pøístrojù 
+vımìna závitovıch pojistek 
+vımìna pøístrojovıch pojistek 
+vımìna árovek 
+(*)èištìní zaøízení 
+(*)údrba zaøízení 
+prohlídka zaøízení 
+
+Co platí pro elektrická zaøízení, která nevyhovují platnım elektrotechnickım normám, pøièem bezprostøednì neohroují bezpeènost pracovníkù a vìcí ? 
+e mohou bıt provozována bez zvláštních opatøení 
+(*)e je dovoleno je provozovat podle zvláštních místních, pracovních, provozních a bezpeènostních pøedpisù 
+(*)e prostory, které svımi rozmìry nevyhovují, musí bıt oznaèeny 
+
+Urèete, které tøi z následujících úkolù JSOU z hlediska bezpeènostních pøedpisù definovány jako OBSLUHA elektrického zaøízení: 
+montá 
+revize a údrba 
+(*)prohlídka zaøízení 
+zøizování novıch zaøízení 
+rekonstrukce a opravy ji provozovanıch zaøízení 
+(*)vımìna závitovıch pojistek 
+èištìní zaøízení 
+všechny úkony pro zajišování pracovištì 
+mìøení pøenosnımi pøístroji 
+(*)vımìna árovek 
+
+Urèete, kdo odpovídá za dodrování bezpeènostních pøedpisù pøi práci pod dozorem: 
+pracovník 
+(*)pracovník provádìjící dozor 
+vrchní mistr 
+
+Rozhodnìte, které z uvedenıch odpovìdí platí pro práci s dohledem: 
+(*)je to práce, která se provádí podle podrobnìjších pokynù 
+je to práce, pro kterou jsou dány jen nejnutnìjší pokyny 
+pracovník provádìjící dohled je zodpovìdnı za dodrování bezpeènostních pøedpisù 
+(*)pracovník provádìjící dohled obèas kontroluje dodrování bezpeènostních pøedpisù 
+(*)za dodrování bezpeènostních pøedpisù zodpovídá pracující 
+
+Urèete, které tøi z následujících úkonù NESMÍ vykonávat pracovníci seznámení: 
+obsluhovat elektrická zaøízení mn 
+obsluhovat jednoduchá elektrická zaøízení nn 
+(*)obsluhovat jednoduchá elektrická zaøízení vn 
+(*)pracovat na jednoduchıch elektrickıch zaøízeních pod napìtím 
+(*)pracovat ve vzdálenosti menší ne 1 m od zaøízení do 1 kV 
+
+Urèete, které z uvedenıch èinností mohou vykonávat pracovníci pouèení: 
+(*)obsluhovat elektrická zaøízení všech napìtí, pokud byli s jejich obsluhou seznámeni a zacvièeni 
+pracovat na èástech elektrického zaøízení nn pod napìtím 
+pracovat v blízkosti nekrytıch èástí nn pod napìtím ve vzdálenosti vìtší ne 20 cm bez dohledu 
+
+Urèete, které z uvedenıch prací mohou vykonávat pracovníci znalí: 
+pracovat v blízkosti ivıch èástí napìtí vn a vvn sami 
+(*)pracovat v blízkosti ivıch èástí napìtí vn a vvn s dohledem nebo pod dozorem 
+(*)pracovat na èástech zaøízení nn pod napìtím - PPN - sami, s dozorem - na všech pracovištích s venkovním prostøedím, v prostorách vlhkıch, mokrıch, horkıch, v prostøedích se zvıšenou a extrémní agresivitou 
+
+Urèete, které z uvedenıch èinností mohou vykonávat pracovníci znalí s vyšší kvalifikací: 
+(*)vykonávat veškerou obsluhu elektrickıch zaøízení 
+vykonávat veškeré práce na zaøízeních všech napìtí sami, pokud jsou provádìny opakovanì 
+(*)vykonávat veškeré práce sami, kromì prací, vyadujících dozor (tj. napø. PPN u vn a vvn) 
+
+Co platí pro pouívání pracovních a ochrannıch pomùcek, pøístrojù apod. (uveïte nejdùleitìjší poadavek) ? 
+e pøed pouitím tìchto pøístrojù nebo pomùcek musí bıt seznámeni s návodem jejich pouívání 
+(*)e musí bıt pouèeni a vycvièeni v zacházení s tìmito pøístroji a pomùckami 
+e musí od organizace obdret návod k uívání 
+
+Jakı odìv se nesmí pouívat pøi práci pod napìtím nebo v jeho blízkosti ? 
+(*)odìv volnì vlající 
+(*)odìv ze vznìtlivé látky 
+odìv bez antistatickıch vlastností 
+
+Kdo vydává a podepisuje pøíkaz "B" ? 
+Pracovník znalı s vyšší kvalifikací, kterı bude vykonávat dozor nad pracovní èetou 
+(*)Pracovník znalı s vyšší kvalifikací, kterı odpovídá za provozování pøíslušného elektrického zaøízení nebo øídí bezprostøednì provoz a údrbu elektrického zaøízení 
+vdy vedoucí práce 
+
+Pro kolik pracovních skupin a pracoviš se vydává pøíkaz B ? 
+pro jedno pracovištì a více pracovních skupin 
+pro jednu pracovní skupinu a více pracoviš 
+(*)pro jednu pracovní skupinu a jedno pracovištì 
+
+Odkdy zaèíná platnost pøíkazu B ? 
+od doby, kdy pracovník odpovìdnı za provozování elektrického zaøízení pøíkaz "B" vydal 
+od okamiku, kdy pracovní skupina nastoupila na pracovištì 
+(*)od doby, kdy vedoucí práce pøevzal pracovištì a podepsal pøíkaz "B" 
+
+Která zásada platí u dlouhotrvajících prací na zaøízení vn trvale odpojenıch a zajištìnıch ? 
+(*)vedoucí práce, ne dá pøíkaz k zahájení práce, se musí dennì pøesvìdèit o tom, e nedošlo ke zmìnì v zajištìní pracovištì a provede záznam do pøíkazu "B" 
+(*)tam, kde se vedoucí práce po celou dobu nemìní, mùe bıt pøíkaz "B" vydán nejdéle na dobu 1 tıdne 
+Pøíkaz "B" mùe bıt vydán s uvedením všech vedoucích práce nejdéle na dobu 1 tıdne 
+
+Kdy nemusí bıt vydán pøíkaz "B" ? 
+u velmi jednoduchıch zaøízení vn 
+(*)pro práce, které se èasto opakují; pro tyto práce musí bıt vydány pøesné místní pracovní a bezpeènostní pøedpisy nahrazující pøíkaz "B" 
+(*)je-li nebezpeèí z prodlení pøi poruchách, mimoøádném provozním stavu, ohroení lidského ivota 
+
+Co je nutno mimo jiné provést, má-li se pracovat na zaøízení nn, které je jištìno tavnımi pojistkami ? 
+povolení pojistkovıch hlavic 
+vytaení pojistkovıch vloek, jejich uloení v blízkosti pojistek a vyvìšení bezpeènostní tabulky 
+(*)bezpeèné uschování vloek i hlavic a vyvìšení bezpeènostní tabulky 
+
+Jak se ovìøuje beznapìovı stav elektrického zaøízení, na nìm se má pracovat ? 
+neovìøuje se v síti IT 
+ovìøí se proti zemi 
+(*)ovìøí se ve všech fázích, pólech a pøívodech 
+
+Jak se dimenzuje a montuje zkratovací souprava u zaøízení s velkımi zkratovımi proudy ? 
+(*)musí se dimenzovat tak, aby vydrela zkratovı proud tak dlouho, ne vypne ochrana pøed místem pøipojení zkratovacího zaøízení 
+(*)nemontuje se na plnı zkratovı vıkon, jestlie se odpojovací dráha od zdrojù zajistí vhodnou izolaèní deskou 
+montují se nanejvıš dvì zkratovací soupravy 
+
+Kdy se namontuje zkratovací souprava ? 
+pøi pøíchodu pracovní skupiny na pracovištì 
+(*)ihned po odzkoušení beznapìového stavu 
+tìsnì pøed zahájením práce na pøíslušném zaøízení 
+
+Jak musí bıt vydán ústní pøíkaz ? 
+na kratší vzdálenost hlasitım voláním 
+(*)jen pøi bezprostøedním styku zúèastnìnıch osob a to jasnì, struènì a jednoznaènì 
+na vìtší vzdálenost máváním nebo jinımi znameními 
+
+Kdo pøesvìdèuje skupinu pøímım dotykem na zajištìnou èást elektrického zaøízení ? 
+vedoucí práce 
+(*)pracovník, kterı pracovištì zajišoval 
+èlen pracovní skupiny, kterého urèil vedoucí práce 
+
+Kdy je povolen vstup pracovní skupiny na zajištìné pracovištì ? 
+po namontování zkratovacích souprav 
+(*)poté, co vedoucí práce s pracovníkem, urèenım k zajištìní pracovištì, zajištìné pracovištì zkontroloval 
+poté, kdy bylo zaøízení vypnuto na pøedem smluvenı èas 
+
+Co je povinen vedoucí práce uèinit, musí-li se nezbytnì vzdálit z pracovištì ? 
+oznámit svùj odchod pracovníkùm skupiny 
+(*)ustavit zástupce s kvalifikací odpovídající provádìné práci 
+(*)nemá-li monost ustavit vhodného zástupce, musí pøed odchodem práci zastavit a pracovní skupinu z pracovištì odvolat 
+
+Kdy zaøízení vn (døíve zajištìné) se povauje za zaøízení pod napìtím ? 
+(*)po odstranìní zkratovacího zaøízení 
+po sepnutí pøívodní kobky a pøivedení napìtí na sbìrny 
+po kontrole, e všichni èlenové pracovní skupiny opustili pracovištì 
+
+Které zásady je nutno dodret pøi vımìnách pojistek nn a vn ? 
+(*)pojistky noové nn smí vymìòovat alespoò pracovník znalı 
+pøetavené pojistky do napìtí 6 kV se nesmí vymìòovat pod napìtím 
+(*)pøetavené pojistky se nesmí vymìòovat pod zatíením a pokud mono se mìní bez napìtí 
+
+Kdo mùe obsluhovat panelové rozvádìèe do 500 V z pøední strany ? 
+osoba bez elektrotechnické kvalifikace 
+(*)pracovník pouèenı 
+(*)pracovník znalı 
+
+Èím je podmínìna prohlídka elektrické provozovny úèastníky exkurze ? 
+aspoò pouèením úèastníkù 
+elektrotechnickou kvalifikací vedoucího exkurze 
+(*)pouèením úèastníkù a doprovodem exkurze odpovìdnım pracovníkem provozovatele 
+
+Jak musí bıt provedeny a zajištìny dveøe u elektrické provozovny ? 
+dveøe musí bıt otevíratelné dovnitø 
+(*)zvenku se mají otevírat klíèem 
+(*)zvnitøku se mají otevírat klikou 
+
+Urèete, v jakém poøadí má bıt realizován správnı postup pøi poskytování první pomoci pøi úrazech elektøinou: 1. vyprostit postieného z dosahu proudu 2. pøivolat lékaøe 3. ihned zavést umìlé dıchání, pokud postienı nedıchá 4. ihned zahájit nepøímou srdeèní masá, není-li hmatnı tep Správnı postup je: 
+1, 2, 3, 4, 
+1, 3, 2, 4, 
+(*)1, 3, 4, 2, 
+
+Které z nabídnutıch moností odpovídají správnım zásadám umìlého dıchání z plic do plic ? 
+(*)vısledná frekvence je 10 a 12 umìlıch vdechù a spontánních vıdechù za minutu 
+(*)umìlı vdech má trvat pøiblinì 2s 
+s novım vdechem není nutno èekat na úplné poklesnutí hrudníku 
+
+Které zásady je nutno dodret pøed zapoèetím i v prùbìhu poskytování umìlého dıchání z plic do plic ? 
+(*)odstranit z dutiny ústní pøekáky, které by mohly bránit umìlému dıchání (zvratky, neèistoty, uvolnìné zubní protézy...) 
+(*)udrovat hlavu trvale v záklonu 
+udrovat hlavu trvale v ose tìla 
+
+Co je nutno uèinit, jestlie postienı po umìlém dıchání nabyl vìdomí ? 
+(*)postienı musí bıt sledován, musí zùstat vlee 
+postienı se mùe opatrnì postavit a s pomocí dojít k dalšímu ošetøení 
+postienému se po lièkách podává teplı nápoj nebo alkohol 
+
+Jak dlouho je nutno provádìt nepøímou srdeèní masá, není-li hmatnı tep na krèní tepnì ? 
+nejdéle 20 minut, jinak hrozí poškození hrudní kosti 
+(*)tak dlouho, a se obnoví srdeèní èinnost 
+(*)a do pøíchodu lékaøe 
+
+Z které strany se postaví zachránce pøi poskytování nepøímé srdeèní masáe k postienému ? 
+z jeho levé strany 
+z jeho pravé strany 
+(*)je to jedno 
+
+Které tísòové èíslo slouí pro pøivolání záchranné sluby ? 
+150 
+158 
+(*)155 
+
+Kde je nutno provádìt ochranu pøed nebezpeènımi úèinky statické elektøiny ? 
+ve všech novıch provozech 
+(*)ve všech novıch provozech v prostøedí s nebezpeèím poáru nebo vıbuchu 
+(*)tam, kde je nutno poèítat s obtìujícími úèinky nebo narušováním vırobnì technického procesu 
+
+Oznaète typy hasicích pøístrojù, které se nesmí pouívat pøi hašení poáru elektrického zaøízení pod napìtím nebo v jeho blízkosti ? 
+(*)vodní 
+(*)pìnovı 
+snìhovı 
+tetrachlorovı 
+práškovı 
+chlorbrommetanovı 
+
+Které z uvedenıch èinností jsou souèástí údrby osvìtlení ? 
+(*)èištìní svítidel, èištìní a vımìna svìtelnıch zdrojù 
+(*)obnova povrchù ploch odráejících nebo propouštìjících svìtlo 
+èištìní oken, svìtlíkù a prosklení vırobních hal 
+
+Èím musí bıt opatøena kadá ochranná a pracovní pomùcka ? 
+(*)jmenovitım napìtím a datumem vıroby - u dielektrickıch rukavic a galoší pro elektrotechniku 
+(*)plombou, jedná-li se o pomùcky, podléhající periodickım zkouškám 
+osvìdèením o jakosti a elektrickıch vlastnostech pomùcky 
+
+Periodické zkoušky u dielektrickıch rukavic pro elektrotechniku jsou: 
+24 mìsícù 
+l8 mìsícù 
+(*)12 mìsícù 
+
+Z jakého hlediska se provádí revize elektrického zaøízení ? 
+z hlediska technické funkènosti 
+(*)z hlediska bezpeènosti 
+z hlediska hospodárnosti 
+
+Kdo ovìøuje stav pøenosného elektrického náøadí ? 
+(*)revizi náøadí mùe provádìt pracovník znalı nebo pouèenı pod dohledem pracovníka znalého 
+kontroluje alespoò pracovník seznámenı 
+revizi náøadí mùe provádìt pracovník pouèenı podle pokynù pracovníka znalého 
+
+Odpor ochranného vodièe mìøenı mezi ochrannou zdíøkou vidlice a pøístupnımi kovovımi èástmi nesmí bıt vìtší ne 
+0,1 Ohm 
+(*)0,2 Ohmù - pøi délce do 3m 
+(*)0,3 Ohmù - pøi délce do 6m 
+
+Znaèení ochrannıch vodièù Oznaète, které z písmenovıch oznaèení ochrannıch vodièù odpovídá pøíslušnım názvùm: 
+uzemòovací vodiè ........................................ PE 
+(*)vodiè ochrannı, kterı je souèasnì pracovním .......... PEN 
+(*)ochranı vodiè ........................................... PE 
+
+K jakému úèelu mùe bıt pouito vodièe, oznaèeného barvou zeleno-lutou ? 
+po pøeznaèení i pro vodièe fázové 
+(*)jen pro vodièe ochranné 
+vıjimeènì i pro vodièe støední 
+
+Jak se provádí oznaèení holıch ochrannıch vodièù ? 
+(*)barvou zelenou, doplnìnou v danıch místech lutımi pruhy - u natøenıch ochrannıch vodièù 
+(*)kombinací barev zelená - lutá, pøíènımi barevnımi pruhy 
+barvou svìtle modrou 
+
+Jakı je obecnı vıznam barev pro bezpeènost osob nebo prostøedí ? 
+(*)èervená barva znaèí nebezpeèí 
+lutá barva znaèí bezpeèí 
+zelená barva znaèí vıstrahu 
+
+Která z barev se pouívá k oznaèení svìtelného návìští, nebezpeèí ? 
+(*)èervená 
+zelená 
+modrá 
+lutá 
+bílá 
+
+Která z barev se pouívá k oznaèení ovládacích tlaèítek, zajišujících bezpeènostní vypnutí (u pracovních strojù STOP) ? 
+(*)èervená 
+zelená 
+modrá 
+lutá 
+bílá 
+èerná 
+
+Jak definujeme prostøedí obyèejná ? 
+(*)jsou to prostøedí, která nemají nepøíznivı vliv na pøedpokládanou ivotnost a spolehlivost elektrického zaøízení a na která elektrická zaøízení nepùsobí 
+jsou to prostøedí, která mají nepøíznivı vliv na spolehlivı a bezpeènı chod, popøípadì ivotnost elektrického zaøízení 
+jsou to prostøedí, na která mohou nepøíznivì pùsobit elektrická zaøízení 
+
+Urèete, která prostøedí patøí mezi tzv. AKTIVNÍ prostøedí. 
+(*)prostøedí studená, horká, vlhká, mokrá, se zvıšenou a s extrémní korozní aktivitou 
+prostøedí s nebezpeèím poáru hoølavıch hmot, prachù, kapalin 
+(*)prostøedí prašná s prachem nehoølavım, s otøesy, s biologickımi škùdci 
+
+Urèete, která prostøedí patøí mezi tzv. PASIVNÍ prostøedí. 
+(*)prostøedí s nebezpeèím poáru - hoølavıch hmot, hoølavıch prachù, hoølavıch kapalin 
+(*)prostøedí s nebezpeèím vıbuchu - hoølavıch prachù, hoølavıch plynù a par, vıbušnin 
+prostøedí obyèejná 
+
+Jak se dìlí prostøedí podle poètu prostøedí, vyskytujících se v jednom prostoru ? 
+(*)na jednoduchá - s jedním druhem vlivu 
+(*)na sloitá - prostøedí s nìkolika vlivy, které pùsobí souèasnì nebo postupnì 
+na kombinovaná - prostøedí s vlivy jak aktivních, tak i pasivních prostøedí 
+
+Kdo urèuje prostøedí ? 
+revizní technik elektrickıch zaøízení ve spolupráci s Inspektorátem bezpeènosti práce 
+(*)provozovatel - u stávajících zaøízení 
+(*)projektová organizace - u projektovanıch zaøízení 
+
+Urèete, která z uvedenıch definic oznaèuje prostøedí MOKRÉ. Je to prostøedí, 
+v nìm se voda sráí na pøedmìtech, stìnách, stropech a na podlaze, avšak neskapává ani nestéká v souvislıch vrstvách, ani nepokrıvá podlahu 
+(*)v nìm voda trvale nebo po vìtšinu doby skapává, støíká nebo tryská, stéká po zaøízení, stìnách nebo po podlaze 
+(*)v nìm dochází obèas k zaplavení elektrického zaøízení 
+
+Které z uvedenıch druhù topení se v provozních prostorách elektrickıch stanic nepouívá ? 
+(*)parní topení 
+teplovodní topení 
+topení vyuívající odpadní (ztrátové) teplo 
+
+Uveïte, která z odpovìdí správnì stanovuje základní podmínky pro provedení ochrany ivıch èástí zábranou - møíí. 
+(*)provedení zábrany musí odpovídat aspoò krytí IP 10 
+volné mezery mezi díly zábran, mezi zábranou a stìnou, podlahou, prahem apod. nesmí bıt širší ne 60 mm 
+(*)svislé zábrany musí bıt vysoké aspoò 1700 mm 
+
+Jak musí bıt mono pøi úniku rychle otevøít únikovı vıchod z elektrické stanice do prostorù pøístupnıch nepovolanım osobám ? 
+(*)bez pouití klíèù nebo nástrojù 
+s pouitím královského (univerzálního) klíèe 
+s pouitím nástroje (šroubovák) 
+
+Jakımi podklady musí bıt zásadnì vybaveno kadé pracovištì závodu ? 
+zákoníkem práce 
+(*)provozními pravidly a místními provozními a pracovními pøedpisy pro obsluhované zaøízení 
+(*)bezpeènostními pøedpisy pøedepsanımi pro dané pracovištì a pracovním øádem 
+
+Kde musí bıt uloeny místní provozní a pracovní pøedpisy ? 
+u pøedáka pracovníka, provádìjícího obsluhu zaøízení 
+(*)pøímo u pracovníka, provádìjícího obsluhu zaøízení 
+(*)i u smìnového vedoucího (spolu s ostatní dokumentací) 
+
+Smluvenı proud krajní je urèená hodnota proudu, kterı: 
+(*)mùe protékat tavnou vlokou po danou (smluvenou) dobu, ani by se pøetavila 
+pøetaví tavnou vloku bìhem urèené (smluvené) doby 
+je tavná vloka, schopná vydret trvale za urèitıch podmínek bez pøerušení 
+
+Jaká je velikost smluveného tavného proudu pojistky I~n~ = 10 A s vypínací charakteristikou gG ? 
+15 A 
+(*)19 A 
+10 A 
+
+Posuïte, které pøiøazení pøepoèítacího souèinitele k je správné, jestlie vodiè AYKY je uloen v prostøedí 35 st. C (základní teplota vzduchu je 30 st. C, dovolená provozní teplota jader 70 st. C). 
+(*)k = 0,94 
+k = 1,00 
+k = 1,06 
+
+Urèete prioritu pøi jištìní vedení a spotøebièù. 
+jistíme pøedevším spotøebiè 
+(*)jistíme pøedevším vedení, pak spotøebiè 
+do velikosti jmenovitého proudu spotøebièe In = 100 A jistíme pøedevším vedení, u vìtších a dùleitìjších spotøebièù jistíme pøedevším spotøebièe 
+
+Vodièe mùeme pøed pøetíením a zkratem jistit pojistkami. Stanovte, která odpovìï je správná. 
+(*)pojistky vypínají malé nadproudy zpùsobené pøetíením pomìrnì v dlouhém èase, velké nadproudy zpùsobené zkraty ve velmi krátkém èase 
+pojistky vypínají malé nadproudy zpùsobené pøetíením v pomìrnì krátkém èase, velké nadproudy vypínají ihned 
+pojistky vypínají ihned jak malé, tak i velké nadproudy 
+
+Posuïte, jak rychle vypínají mot. jistièe a jist. relé stykaèù malé nadproudy (tedy pøetíení) v porovnání s pojistkami a jistièi vedení. 
+podstatnì pomaleji 
+(*)podstatnì rychleji 
+stejnì rychle 
+
+Takovımi prvky mohou bıt 
+(*)jistièe ve spojení s pojistkami 
+jistièe s podproudovım relé 
+(*)specifikované typy pojistek nebo tavnıch vloek 
+
+Uveïte, jak mùe bıt jištìn motor, kterı nemùe bıt pøetíen (jištìní jen proti zkratu). 
+(*)pojistkami 
+(*)jistièem se zkratovou spouští 
+tepelnou ochranou stykaèe 
+
+Jak mùe bıt jištìn asynchronní motor proti pøetíení a zkratu ? 
+(*)jistièem s tepelnou a zkratovou spouští 
+(*)stykaèem s tepelnou ochranou - jisticím relé s pøedøazenou pojistkou 
+pojistkami 
+
+Uveïte, na jakou hodnotu je tøeba nastavit jisticí relé (tepelnou ochranu) nebo motorovı jistiè, kterım se jistí motor proti pøetíení (uvaujte motor s trvalım nebo dlouhodobım zatíením, zapojenım v normálním pracovním reimu do hvìzdy). 
+na 0,8 násobek jmenovitého proudu motoru 
+na 1,2 násobek jmenovitého proudu motoru 
+(*)na jmenovitı proud motoru 
+
+Kde se mohou provádìt spoje izolovanıch vodièù ? 
+(*)v krabicích, rozvodkách, rozvádìèích 
+v trubkách a podobném úloném materiálu 
+(*)v pøístrojích a spotøebièích tomu pøizpùsobenıch 
+
+Kde se mùe pouívat kovovıch hadic na mechanickou ochranu ? 
+(*)u poddajnıch pøívodù pracovních strojù 
+u pohyblivıch pøívodù 
+u prodluovacích šòùr 
+
+Orientace se doporuèuje dosáhnout: 
+proškolením pracovníkù 
+vyznaèením tras podpovrchovıch kanálù na povrchu terénu, dílny 
+(*)jednotnım systematickım oznaèením všech prùchozích a prùleznıch kanálù pomocí tabulek umístìnıch u vstupù, køiovatek a odboèek 
+
+Urèete, co platí pro místo pøipojení pohyblivıch pøívodù a šòùrovıch vedení. 
+(*)pøívody a vedení musí bıt spolehlivì odlehèeny od tahu 
+odlehèovací zaøízení (spona) nemusí bıt u krátkıch pohyblivıch pøívodù do 3 m 
+(*)pøípadná deformace izolaèního pláštì (odlehèovací sponou), pokud se jí nezhorší izolaèní stav, není na závadu 
+
+Jak dlouhá musí bıt ochranná íla u pohyblivıch pøívodù a šòùrovıch vedení v místì pøipojení do svorek ? 
+musí bıt tak dlouhá jako vodièe fázové (pracovní) 
+musí bıt tak dlouhá, aby došlo pøi vytrení nejdøíve k vytrení vodièe ochranného 
+(*)musí bıt tak dlouhá, aby pøi pøípadném vytrení šòùry ze svorek byla namáhána tahem a po pøerušení (vytrení) pracovních il 
+
+Odstavec 1] Jak se musí pohyblivı pøívod nebo šòùrové vedení chránit v místech, kde se vyskytuje monost poškození ? 
+(*)ochrannım krytem nebo ochrannım obloením 
+(*)uloením vedení tak, aby bylo chránìno polohou 
+pouitím kovovıch hadic 
+
+Jaká je pøípustná délka pohyblivého pøívodu ? 
+pøívod nesmí pøekroèit délku 50 m 
+(*)pøívod nemá pøekroèit délku 50 m 
+(*)pøekroèí-li se délka 50 m musí se u pøipojovaného spotøebièe zajistit spolehlivé pùsobení ochrany pøed nebezpeènım dotykem (napø. uzemnìním) 
+
+K èemu je nutno pøihlédnout pøi volbì prùøezu il pohyblivıch prodluovacích pøívodù ? 
+ke jmenovitému proudu elektrického pøedmìtu 
+(*)ke jmenovitému proudu pouité vidlice 
+k mechanické pevnosti šòùry 
+
+Co musí bıt splnìno, aby bylo mono pøipojit odbìrné zaøízení nn k veøejné síti ? 
+(*)mají mít všechny pevnì pøipojované elektrické spotøebièe pøipojené 
+(*)musí mít všechny nezapojené vıvody zajištìny pøed nebezpeènım dotykem 
+musí mít svítidlové vıvody opatøeny izolaèní páskou 
+
+Jaké zvonky nesmí bıt zainstalovány v budovách, kde je zaveden plyn ? 
+(*)jiskøící 
+bzuèákové - nejiskøící 
+elektronické - nejiskøící 
+
+Jak se jistí zásuvkové obvody ? 
+podle pøipojeného spotøebièe 
+(*)nejvıše podle jmenovitého proudu zásuvky 
+(*)podle vedení, všechny svorky musí bıt dimenzovány aspoò na jmenovitı proud jisticího prvku, kterım je obvod jištìn 
+
+Kdy lze ponechat v provozu elektrická zaøízení, provedená podle pøedpisù a norem platnıch v dobì, kdy byla tato zaøízení zøizována a provozována ? 
+jestlie splòují pùvodní technické parametry 
+(*)jestlie nemají závady, je by ohroovaly zdraví 
+(*)jestlie nejsou nebezpeèná ivotu a neohroují bezpeènost vìcí 
+
+V kterıch pøípadech se musí všechny proudové obvody (kromì vodièe PEN a ochranné vodièe) vypínat souèasnì ? 
+u tøífázovıch motorù - ve 2 pólech 
+(*)u motorù - ve všech pólech 
+(*)v proudovıch obvodech se zvıšenım nebezpeèím - ve všech pólech 
+
+Za jakıch podmínek mohou spínaèe viset ? 
+(*)jsou-li jejich èásti vedoucí proud v izolaèním pouzdru 
+jestlie jejich hmotnost není vìtší ne 0,1 kg 
+(*)není-li jejich jmenovitı proud vìtší ne 6 A (napø. šòùrové spínaèe) 
+
+Co patøí mezi hlavní povinnosti pracovníka s elektrotechnickım vzdìláním, povìøeného pravidelnım dohledem nad prozatímním zaøízením ? 
+(*)pøed prvním zapnutím prokazatelnì pouèit vedoucího dílny 
+(*)pouèit osazenstvo dílny 
+nemá jinıch povinností, kromì dohledu 
+
+Které ze zásad platí pro technickou dokumentaci u pracovních strojù ? 
+u velmi jednoduchıch zaøízení nemusí bıt technická dokumentace 
+(*)návod k obsluze musí upøesòovat postupy pøi seøizování a provozu zaøízení a pøípadnì nesprávnım zpùsobùm pouití, pokud je lze pøedvídat 
+blokové (pøehledové) schéma zaøízení musí bıt souèástí kadé technické dokumentace 
+
+Jaké jsou podmínky pro napojení øídicích obvodù u pracovních strojù ? 
+pøímo ze sítì je moné bez zvláštních opatøení jen u sítì s izolovanım støedním vodièem 
+(*)z transformátoru není nutné u strojù pro domácnost, v nich je el. zaøízení uzavøeno v krytu stroje 
+(*)z transformátoru není nutné u strojù, jejich jmenovitı vıkon je menší ne 3 kW a mají jeden spouštìè motoru a nejvıše dva ovládané øídící pøístroje 
+
+Kterım poadavkùm musí vyhovovat (mimo jiné) hlavní vypínaè pracovního stroje ? 
+(*)musí mít zvenèí pøístupnou rukoje (kromì dálkovì ovládaného jistièe) 
+rukoje musí bıt vdy èervená 
+(*)musí bıt vybaven zaøízením pro uzamknutí ve vypnuté poloze 
+
+Které barvy jednoilovıch vodièù se mají pouívat u pracovních strojù ? 
+pro øídicí obvody støídavé - modrá 
+pro øídicí obvody stejnosmìrné - èervená 
+(*)pro obvody stejnosmìrné i støídavé - vedené z vnìjšího rozvodu a které zùstávají pod napìtím i po vypnutí hlavního vypínaèe zdroje - oranová 
+
+Pro funkèní spínání platí tyto zásady 
+(*)mohou bıt pouity vidlice a zásuvková spojení do jmenovitého proudu 16 A 
+pøístroje pro spínání musí bezpodmíneènì ovládat všechny pracovní vodièe 
+(*)jednopólovı spínací pøístroj nesmí bıt zaøazen ve støedním vodièi 
+
+Pro odpojování a spínání platí tyto zásady 
+(*)vidlice a zásuvky nelze pouít k nouzovému vypínání 
+(*)odpojovaèe, pojistky a spodky se nesmí pouít pro funkèní spínání 
+vidlice a zásuvky nelze pouít k vypínání z dùvodù mechanické údrby 
+polovodièové pøístroje se jako odpojovací pøístroje smí pouívat 
+
+Nebezpeèí neúmyslného zapnutí vypínaèe bìhem údrby zaøízení 
+(*)se zabraòuje uzamèením napø. visacím zámkem 
+(*)není nutné, jestlie vypínaè je pod dozorem nìkterého z pracovníkù provádìjících údrbu 
+se nezabraòuje vıstranımi tabulkami 
+
+Jak je oznaèen elektroinstalaèní vırobek v provedení nepromokavém ? 
+IP 42 
+IP 44 
+(*)IP 66 
+
+Kde je potøebné bezpeènostní vypínání elektrickıch zaøízení jako celku ? 
+(*)všude tam, kde je to technicky moné a ekonomicky únosné 
+(*)všude tam, kde rychlım vypnutím lze zabránit havárii, poáru, vıbuchu zaøízení nebo úrazu elektrickım proudem 
+ve všech pøípadech v aktivním a pasivním prostøedí 
+
+Jak silnımi zdroji smí bıt osazována árovková svítidla ? 
+(*)jen tak silnımi, jaké pro dovolenou povrchovou teplotu krytù a skel pøipouští vırobce 
+libovolnì velkımi (pokud vyhoví závit) 
+tak velkımi, aby zdroj bylo mono opatøit ochrannım sklem 
+
+Kde se má pouívat ruèní elektrické náøadí (elektromechanické, elektrotepelné) tøídy II a III ? 
+j e n v prostøedích mokrıch 
+j e n v prostøedích s extrémní korozní agresivitou 
+(*)ve v š e c h prostøedích (kromì prostøedí s nebezpeèím vıbuchu) 
+
+Zemní odpor zemnièe jednoho svodu nemá za obvyklıch pùdních podmínek bıt vìtší ne 
+20 Ohmù 
+5 Ohmù 
+(*)15 Ohmù 
+
+Kovovıch konstrukcí objektù dobøe a trvale spojenıch vodivì jako náhodnıch svodù lze pouít, jestlie v místì uvaovaného svodu mají pøímı prùbìh a prùøez alespoò 
+10 cm^2^ 
+(*)100 mm^2^ 
+50 cm^2^ 
+
+Vnìjší elektrické silové kabelové vedení musí bıt vzdáleno od svodu hromosvodu alespoò 
+(*)0,2 m pøi køiování 
+0,5 m pøi køiování 
+(*)0,5 m pøi soubìhu 
+
+Jaké jsou základní povinnosti zamìstnancù a vedoucích pracovníkù ve vztahu k bezpeènosti práce ? 
+(*)dodrovat pøedpisy vztahující se k práci jimi vykonávané 
+(*)vytváøet pøíznivé pracovní podmínky a zajišovat bezpeènost a ochranu pøi práci 
+dodrovat pøedpisy dle vlastního uváení 
+
+Kdo odpovídá za plnìní úkolù organizace v péèi o bezpeènost a ochranu zdraví pøi práci ? 
+pouze pracovníci dozoru nad bezpeèností a ochranou zdraví 
+pouze pracovníci na úrovni mistrù a vedoucích støedisek 
+(*)vedoucí pracovníci na všech stupních øízení v rozsahu svıch funkcí 
+
+Co má uèinit pracovník, kterı zjistí nedostatky a závady, které by mohly ohrozit ivot nebo zdraví lidí anebo majetek ? 
+(*)oznámit nedostatky a závady svému nadøízenému 
+(*)oznámit nedostatky a závady orgánùm dozoru nad bezpeèností a ochranou práce 
+nemá povinnost je odstranit 
+
+Kdy jsou pracovníci povinni podrobit se zjištìní (vyšetøení), zda nejsou pod vlivem alkoholu nebo omamnıch prostøedkù ? 
+(*)orgánùm k tomu oprávnìnım kdykoliv (jsou to napø. nadøízení - mistr, vedoucí støediska, bezpeènostní technik atd.) 
+orgánùm k tomu oprávnìnım jen v pøípadì úrazu 
+nejsou povinni se podrobit zjištìní 
+
+Jak èasto musí organizace seznamovat pracovníky s pøedpisy k zajištìní bezpeènosti a ochrany zdraví pøi práci ? 
+jde o èinnost jednorázovou - jen pøi nástupu do organizace 
+(*)jde o èinnost soustavnou 
+jde o èinnost, zákoníkem práce nedefinovanou 
+
+Které orgány vykonávají státní odbornı dozor nad bezpeèností práce a technickıch zaøízení ? 
+(*)Èeskı úøad bezpeènosti práce 
+státní energetická inspekce 
+(*)Inspektoráty bezpeènosti práce 
+
+Vlastník elektrické pøípojky je: 
+dodavatel el. energie 
+vlastník objektu 
+(*)ten, kdo uhradil náklady na její zøízení 
+
+Kdo je povinen øídit se pøi své èinnosti závaznımi ustanoveními ès. normy ? 
+jen fyzické osoby 
+jen právnické osoby 
+(*)všechny fyzické i právnické osoby 
+
+Kdo vykonává dozor nad bezpeèností vyhrazenıch tech. zaøízeních ? 
+(*)Instituty technické inspekce 
+(*)Inspektoráty bezpeènosti práce 
+
+
+Kdo jsou orgány státního zkušebnictví ? 
+(*)Úøad pro technickou normalizaci, metrologii a státní zkušebnictví 
+(*)Státní zkušebny 
+
+
+Které vırobky jsou podle zákona o státním zkušebnictví urèeny ke schvalování ? 
+(*)urèení k široké potøebì, jestlie by mohly ohrozit bezpeènost ivota a zdraví uivatele nebo jeho okolí 
+pouze tuzemské vırobky 
+(*)na kterıch je závislá odolnost koneènıch vırobkù do prostøedí se ztíenımi klimatickımi nebo jinımi podmínkami 
+
+Které z názvù, oznaèujících odbornou zpùsobilost v elektrotechnice jsou v souladu s vyhláškou 50/78 Sb. a ÈSN 33 1310 ? 
+osoba neznalá, pouèená s vyšší kvalifikací 
+(*)pracovník pouèenı, pracovník seznámenı 
+(*)osoba bez elektrotechnické kvalifikace, laik 
+
+Kteøí pracovníci jsou povaováni za pracovníky s odbornım elektrotechnickım vzdìláním ? 
+laici 
+pracovníci seznámení, pracovníci pouèení 
+(*)pracovníci znalí, pracovníci znalí s vyšší kvalifikací 
+
+Kdy se stává elektrikáø pracovníkem z n a l ı m (paragraf 5) ? 
+kdy po sloení uèòovskıch zkoušek je mu pøiznána 5. tarifnì kvalifikaèní tøída 
+uzavøením pracovního pomìru s organizací 
+(*)po zaškolení a sloení zkoušky podle vyhl. 50/78 Sb. 
+
+Jaká je nejkratší poadovaná délka praxe u pracovníkù pro * s a m o s t a t n o u èinnost na pøíslušném druhu zaøízení a napìtí do 1 000 V ? 
+6 mìsícù 
+(*)l rok 
+2 roky 
+
+Jaká je nejkratší poadovaná délka praxe u vyuèenıch pracovníkù s kvalifikaèním stupnìm pro ø í z e n í èinnosti na pøíslušném druhu zaøízení a napìtí do 1 000 V ? 
+1 rok 
+(*)2 roky 
+3 roky 
+
+Jaká je nejkratší délka poadované praxe u pracovníkù s ÚSO* s kvalifikaèním stupnìm pro ø í z e n í èinnosti dodavatelskım zpùsobem a pro ø í z e n í provozu u zaøízení do 1 000 V ? 
+2 roky 
+(*)4 roky 
+6 rokù 
+
+Jak se provádìjí zkoušky a pøezkušování revizních technikù pro samostatnou revizní èinnost ? 
+podle poadavkù pro dílèí øízení èinnosti ( § 7 ) 
+podle poadavkù pro samostatnou èinnost ( § 6 ) 
+(*)podle zvláštních pøedpisù vydanıch orgány dozoru 
+
+U kterıch skupin pracovníkù se provádí ovìøování znalostí podle poadavkù paragrafu 10 vyhlášky 50/78 Sb. pro samostatné projektování a øízení projektování ? 
+u konstruktérù 
+(*)u samostatnıch konstruktérù a vyšších 
+(*)u samostatnıch projektantù a vyšších 
+
+Jakou minimální elektrotechnickou kvalifikaci musí mít alespoò jeden ze skupiny dvou pracovníkù, které organizace povìøuje èinností, vyadující kvalifikaci nejménì podle § 5 ? 
+(*)podle § 6, tj. pracovník pro samostatnou èinnost 
+podle § 7, tj. pracovník pro øízení èinnosti 
+podle § 8, tj. pracovník pro øízení èinnosti provádìné dodavatelskım zpùsobem nebo pracovník pro øízení provozu
+
+Pøi pohledu zepøedu se vodiè PE pøipojí na: 
+svorku levé zdíøky zásuvky
+(*)svorku ochranného kolíku
+svorku pravé zdíøky zásuvky
+
+Ochrannı kolík zásuvky musí bıt umístìn: 
+dole 
+(*)nahoøe
+
+Fázovı vodiè se pøipojuje ke svorce 
+(*)levé zdíøky 
+pravé zdíøky
+
+Fázové vodièe (izolované) se oznaèují 
+U, V, W
+(*)L1, L2, L3
+A, B, C
+
+izolace je barvy Fázovıch vodièù
+(*)hnìdé
+oranové
+modré
+(*)èerné
+
+Osoba pouèená smí pracovat od nekrytıch ivıch èástí zaøízení do 1 000 V ve vzdálenosti: 
+neomezenì
+vìtší ne 1 m
+(*)vìtší ne 20 cm
+
+Pøed zahájením práce na kondenzátoru je tøeba tento vybít. To lze provést: 
+skratováním šroubovákem
+pøes pojistku
+(*)pøes vybíjecí zaøízení kondenzátoru
+(*)pøes vinutí elektrického stroje
+
+U elektrického zaøízení tøídy ochrany III je ochrana pøed úrazem el. proudem zaloena na: 
+pospojování
+ochranné svorce na neivé èásti
+(*)pøipojení k obvodu SELV
+dvojité izolaci
+
+Ochrana omezení náboje. Nahromadìnı náboj, kterı se mùe vybít mezi dvìma místy souèasnì pøístupnımi dotyku nesmí bıt vìtší ne: 
+10 uC
+100 uC
+(*)50 uC
+
+První pomoc osobì s hrozícím nebo rozvinutım šokovım stavem spoèívá v: 
+okamitém zjištìní totonosti postieného
+(*)zajištìní úkonù podle pravidla "5 T", tj. ticho, teplo, tekutiny, tišení, transport
+(*)uloení postieného do polohy se zvıšenou dolní polovinou tìla

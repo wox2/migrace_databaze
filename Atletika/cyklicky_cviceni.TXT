@@ -1,0 +1,10 @@
+anglicaci                 10
+sedy lehy                 10
+sklapovacky               15
+kliky                     15
+prednosy                  10
+leva-prava                20
+zvedani se na zebrinach    5
+poskoky                   15
+kliky vzad                10
+veslovani                 15

@@ -2,9 +2,9 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
 		<item value="257" key="DIALOG_WIDTH"/>
-		<item value="234" key="DIALOG_Y_ORIGIN"/>
+		<item value="302" key="DIALOG_Y_ORIGIN"/>
 		<item value="380" key="DIALOG_HEIGHT"/>
-		<item value="793" key="DIALOG_X_ORIGIN"/>
+		<item value="823" key="DIALOG_X_ORIGIN"/>
 		<item value="1|Segoe UI|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI" key="DIALOG_FONT_NAME"/>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
@@ -13,16 +13,16 @@
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="false" key="wholeword"/>
-		<item value="key" key="selection"/>
+		<item value="closedTr" key="selection"/>
 		<list key="findhistory">
-			<item value="key"/>
-			<item value="print"/>
-			<item value="optimalisedP"/>
-			<item value="sum"/>
-			<item value="Except"/>
-			<item value="System."/>
-			<item value="//    &#x09;System.out.println(&quot;----------------------------------------------------------&quot;);"/>
-			<item value="decre"/>
+			<item value="closedTr"/>
+			<item value="closedNode"/>
+			<item value="isNew"/>
+			<item value="findEdge"/>
+			<item value="BFSq"/>
+			<item value="isresult"/>
+			<item value="isResult"/>
+			<item value="Attri"/>
 		</list>
 		<list key="replacehistory">
 			<item value="p"/>

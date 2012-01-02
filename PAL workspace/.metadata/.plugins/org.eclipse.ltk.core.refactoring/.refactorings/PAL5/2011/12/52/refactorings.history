@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="Rename resource &apos;PAL5/PAL5.cpp&apos; to &apos;PAL5_new.cpp&apos;" description="Rename resource &apos;PAL5.cpp&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="PAL5.cpp" name="PAL5_new.cpp" stamp="1325351404367" updateReferences="true"/>&#x0A;<refactoring comment="Rename resource &apos;PAL5/PAL5_new.cpp&apos; to &apos;PAL5.cpp&apos;" description="Rename resource &apos;PAL5_new.cpp&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="PAL5_new.cpp" name="PAL5.cpp" stamp="1325356102870" updateReferences="true"/>
+</session>

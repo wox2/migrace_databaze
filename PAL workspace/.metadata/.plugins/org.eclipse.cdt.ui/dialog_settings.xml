@@ -3,9 +3,9 @@
 	<item value="Default C++ source template" key="LastUsedSourceTemplate"/>
 	<section name="completion_proposal_size">
 	</section>
-	<section name="RenameInformationPopup">
-	</section>
 	<section name="NewClassWizardPage">
+	</section>
+	<section name="RenameInformationPopup">
 	</section>
 	<section name="CRenameRefactoringInputPage">
 	</section>

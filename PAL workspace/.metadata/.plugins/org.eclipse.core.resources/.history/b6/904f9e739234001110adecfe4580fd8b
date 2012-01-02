@@ -1,0 +1,541 @@
+#include <iostream>
+#include <vector>
+#include <map>
+
+using namespace std;
+
+class Edge{
+public:
+    unsigned int parent;
+    unsigned int child;
+    bool isLeft;
+
+};
+
+struct BFSAttributes{
+public:
+    unsigned int tree;
+    unsigned int height;
+};
+
+void printTreeBinary(unsigned int tree);
+unsigned int getLength(unsigned int val);
+unsigned int getTreeCount(unsigned int * catalanArray, unsigned int index, unsigned int current);
+unsigned int append(unsigned int tree, unsigned int subtree);
+unsigned int getLeftSubtree(unsigned int tree);
+unsigned int getRightSubtree(unsigned int tree, unsigned int leftSubtree);
+unsigned int applySwitchCommand(unsigned int tree, unsigned int leftSubtree, unsigned int rightSubtree);
+unsigned int applyLeftRotationCommand(unsigned int tree, unsigned int leftSubtree, unsigned int rightSubtree);
+unsigned int applyRightRotationCommand(unsigned int tree, unsigned int leftSubtree, unsigned int rightSubtree);
+void BFS(unsigned int tree, unsigned int height);
+void BFSHelper(unsigned int height, unsigned int prefix, unsigned int postfix, unsigned int modifiedSubTree, bool isFresh);
+bool isNew(unsigned int tree);
+unsigned int readAndCreateTree();
+void readData();
+Edge* readAndCreateEdge();
+void findEdgeInCollection(unsigned int &prefix, unsigned int parent, bool isLeft, const vector<Edge *> &edges);
+unsigned int completeTree(unsigned int prefix, unsigned int sufix, unsigned int modifiedTree);
+bool isLeaf(unsigned int tree);
+bool isNull(unsigned int tree);
+bool isToBeProcessed(unsigned int tree);
+unsigned int appendSuffix(unsigned int firstPart, unsigned int secondPart);
+unsigned int trimTree(unsigned int value, unsigned int index);
+void isResult(const unsigned int &tree, const unsigned int &height);
+
+
+//vector<unsigned int> closedTrees;
+//unsigned int * closedTrees;
+//unsigned int closedTreesCount;
+/**
+ * pointer after lastQue element
+ */
+unsigned int tailBfsQue;
+/**
+ * pointer to head of que
+ */
+unsigned int headBfsQue;
+
+BFSAttributes * bfsque;
+
+//deque<BFSAttributes *> BFSque;
+int actualWidth;
+unsigned int startTree;
+unsigned int finalTree;
+bool isProgramFinished;
+unsigned int startTreeLength;
+
+const unsigned int MAX_CLOSED_TREE_SIZE = 1000000;
+const unsigned int MAX_BFS_QUE_SIZE = 1000000;
+const unsigned int leaf = 4;
+const unsigned int NULL_SUFFIX = 1;
+std::map< unsigned , bool > closedTrees;
+
+unsigned int methodCounterIsNew;
+unsigned int methodCounterBFS;
+int main(){
+	methodCounterBFS = 0;
+	methodCounterIsNew = 0;
+    isProgramFinished = false;
+    tailBfsQue = 0;
+    headBfsQue = 0;
+    readData();
+//    startTree = 8376320;
+//    finalTree = 7942752;
+    startTreeLength = getLength(startTree);
+    if(startTree == finalTree){
+        cout << 0;
+    } else{
+    //  closedTrees.push_back(startTree);
+    //	closedTreesCount = 0;
+    //  closedTrees = new unsigned int[MAX_CLOSED_TREE_SIZE];
+    //	const unsigned int size = ;
+        bfsque = new BFSAttributes[MAX_BFS_QUE_SIZE];
+        BFS(startTree, 0);
+        while(!isProgramFinished){
+//        	 BFSAttributes * attributes = BFSque.front();
+//        	 BFSque.pop_front();
+        	BFSAttributes * attributes = &bfsque[headBfsQue];
+        	headBfsQue++;
+        	BFS(attributes->tree, attributes->height);
+        }
+    }
+//    cout << "closedTreesCount:" << closedTreesCount << endl;
+//    cout << "metod isNew calls:" << methodCounterIsNew << endl;
+//    cout << "method BFS calls:" << methodCounterBFS << endl;
+    return 0;
+}
+
+bool isNull(unsigned int tree){
+    return tree == 0;
+}
+
+bool isLeaf(unsigned int tree){
+    return tree == leaf;
+}
+
+bool isToBeProcessed(unsigned int tree){
+    return !isNull(tree) && !isLeaf(tree);
+}
+
+void isResult(const unsigned int &tree, const unsigned &height){
+    if(!isProgramFinished && tree == finalTree){
+        cout << height + 1 << endl;
+        isProgramFinished = true;
+    }
+}
+
+unsigned int getLength(unsigned int val){
+	if(val >= 4194304){
+	    return 23;
+	}
+	if(val >= 1048576 && val < 2097152){
+		return 21;
+	}
+	if(val == 0 || val == 1){
+        return 1;
+    }
+    if(val >= 4 && val < 8){
+    	return 3;
+    }
+    if(val >= 262144 && val < 524288){
+        return 19;
+    }
+    if(val >= 65536 && val < 131072){
+       return 17;
+    }
+    if(val >= 16 && val < 32){
+    	return 5;
+    }
+    if(val >= 64 && val < 128){
+    	return 7;
+    }
+    if(val >= 256 && val < 512){
+    	return 9;
+    }
+    if(val >= 1024 && val < 2048){
+    	return 11;
+    }
+
+    if(val >=4096 && val < 8192 ){
+    	return 13;
+    }
+    if(val >= 16384 && val < 32768 ){
+        return 15;
+    }
+
+
+    // sude nakonec, nejsou stromy...
+    if(val >= 2 && val < 4 ){
+        return 2;
+    }
+    if(val >= 8 && val < 16){
+        return 4;
+    }
+    if(val >= 32 && val < 64){
+        return 6;
+    }
+    if(val >= 128 && val < 256){
+        return 8;
+    }
+    if(val >= 512 && val < 1024){
+        return 10;
+    }
+    if(val >= 2048 && val < 4096){
+        return 12;
+    }
+    if(val >= 8192 && val < 16384 ){
+        return 14;
+    }
+    if(val >= 32768 && val < 65536){
+    	return 16;
+    }
+    if(val >= 131072 && val < 262144){
+    	return 18;
+    }
+    if(val >= 524288 && val < 1048576){
+    	return 20;
+    }
+    if(val >= 2097152 && val < 4194304){
+        return 22;
+    }
+    return -1;
+}
+
+void printTreeBinary(unsigned int tree){
+    unsigned int length = getLength(tree);
+    for (unsigned int i = 0 ; i < length ; i++){
+        cout << ((tree >> (length - i - 1)) & 1);
+    }
+}
+
+/**
+ * Recursively count number of possible roots
+ * thanks to vector it is not used
+ */
+unsigned int getTreeCount(unsigned int * catalanArray, unsigned int index, unsigned int current){
+    if(current == index){
+        return catalanArray[index];
+    }
+    if(current == 0){
+        catalanArray[0] = 1;
+    } else{
+        int sum = 0;
+        for(unsigned int i = 0 ; i < current - 1 ; i++){
+            sum+= (catalanArray[i] * catalanArray[current-1-i]);
+        }
+        catalanArray[current] = sum;
+    }
+    return getTreeCount(catalanArray, index, current+1);
+}
+
+/**
+ *  This is modified append, if suffix is number, it can be 0. append(0,0) = 0,
+ *  in chars it should be '00'
+ *  so suffix should be coded as 1 + real suffix
+ *  NULL suffix is coded as 1 , appendSuffix(1,1) = 1
+ *  zero suffix is coded as 10 = 2,  appendSuffix(2,2)  = 100
+ */
+unsigned int appendSuffix(unsigned int firstPart, unsigned int secondPart){
+    if(secondPart == 1){
+        return firstPart;
+    }
+    unsigned int lengthSecondPart = getLength(secondPart);
+    unsigned int realSecondPart = secondPart - (1 << (lengthSecondPart - 1));
+    unsigned int lengthRealSecondPart = getLength(realSecondPart);
+    if( lengthRealSecondPart != lengthSecondPart - 1 ){
+        firstPart = firstPart << (lengthSecondPart - lengthRealSecondPart - 1);
+    }
+    return append(firstPart, realSecondPart);
+}
+
+unsigned int append(unsigned int tree, unsigned int subtree){
+    return (tree << getLength(subtree)) + subtree;
+}
+
+/**
+ *  @Helper
+ *  trim tree from index
+ */
+unsigned int trimTree(unsigned int value, unsigned int index){
+    unsigned int subtree = 0;
+    unsigned int countOnes = 0;
+    unsigned int countZeroes = 0;
+    unsigned int length = getLength(value);
+    // must be in range index
+    for(unsigned int i = index ; i <= length ; i++){
+        unsigned int valAtIndexI = (value >> (length - i)) & 1 ;
+        if(valAtIndexI == 1){
+            countOnes++;
+        } else{
+            countZeroes++;
+        }
+        subtree = (subtree << 1) + valAtIndexI;
+        if(countZeroes > countOnes){
+            break;
+        }
+    }
+    return subtree;
+}
+
+unsigned int getLeftSubtree(unsigned int tree){
+    return trimTree(tree, 2);
+}
+
+unsigned int getRightSubtree(unsigned int tree, unsigned int leftSubtree){
+    unsigned int length = getLength(tree);
+    unsigned int leftLength = getLength(leftSubtree);
+    unsigned int shiftSize = length - leftLength - 1;
+    //is not tree, but tree + sufix
+    unsigned int cutLeftAndRootValue = tree - ((tree >> shiftSize) << shiftSize);
+    return trimTree(cutLeftAndRootValue, 1);
+}
+
+/**
+ * Apply switch command to tree
+ */
+unsigned int applySwitchCommand(unsigned int tree, unsigned int leftSubtree, unsigned int rightSubtree){
+        if(rightSubtree == 0 && leftSubtree == 0){
+            return 0;
+        }
+        return append(append(1, rightSubtree), leftSubtree);
+}
+
+/**
+ *  Applies left rotation to tree
+ */
+unsigned int applyLeftRotationCommand(unsigned int tree, unsigned int leftSubtree, unsigned int rightSubtree){
+    if(rightSubtree == 0){
+        return 0;
+    }
+    unsigned int rightLeftSubtree = getLeftSubtree(rightSubtree);
+    unsigned int rightRightSubtree = getRightSubtree(rightSubtree, rightLeftSubtree);
+//  cout << "RL:";
+//  printTreeBinary(rightLeftSubtree);
+//  cout << "RR:";
+//  printTreeBinary(rightRightSubtree);
+    unsigned int newLeft = append(append(1, leftSubtree), rightLeftSubtree);
+    return append(append(1, newLeft), rightRightSubtree);
+}
+
+unsigned int applyRightRotationCommand(unsigned int tree, unsigned int leftSubtree, unsigned int rightSubtree){
+    if(leftSubtree == 0){
+        return 0;
+    }
+    unsigned int leftLeftSubtree = getLeftSubtree(leftSubtree);
+    unsigned int leftRightSubtree = getRightSubtree(leftSubtree, leftLeftSubtree);
+    unsigned int newRight = append(append(1,leftRightSubtree),rightSubtree);
+    return append(append(1, leftLeftSubtree),newRight);
+}
+
+/**
+ *  @Helper.
+ *  Complete tree after Rotation or Switch command
+ */
+unsigned int completeTree(unsigned int prefix, unsigned int sufix, unsigned int modifiedTreeBody){
+    unsigned int completeTree = append(prefix, appendSuffix(modifiedTreeBody, sufix));
+//  if(getLength(completeTree) != startTreeLength && modifiedTreeBody != 0){
+//      cout << "prefix:";
+//      printTreeBinary(prefix);
+//      cout << " body:";
+//      printTreeBinary(modifiedTreeBody);
+//      cout << " sufix:";
+//      printTreeBinary(sufix);
+//      cout << " completeTree:";
+//      printTreeBinary(completeTree);
+//      cout << " completeTree length:" << getLength(completeTree);
+//      cout << " startTreeLengt:" << getLength(startTree);
+//      cout << endl;
+//  }
+    return completeTree;
+}
+
+/**
+ *  @Helper.
+ *  Checks if tree isNew or if it was processed
+ */
+bool isNew(unsigned int tree){
+//    methodCounterIsNew++;
+//	for(unsigned int i = 0 ; i < closedTreesCount ; i++){
+//        if(closedTrees[i] == tree){
+//            return false;
+//        }
+//    }
+//    return true;
+	map<unsigned int,int>::iterator it = closedTrees.find(tree);
+	if(it != NULL){
+		return it->second;
+	}
+	return false;
+}
+
+/**
+ * Read data
+ */
+void readData(){
+    startTree = readAndCreateTree();
+    finalTree = readAndCreateTree();
+}
+
+/**
+ *  @Helper
+ *  @Reader
+ *  Read tree in format:
+ *  "firstNode secondNode"
+ *  parent is lower, if firstNode is parent then Edge is left
+ */
+Edge* readAndCreateEdge(){
+    unsigned int firstNode;
+    unsigned int secondNode;
+    cin >> firstNode;
+    cin >> secondNode;
+    Edge* edge = new Edge();
+    if(firstNode > secondNode){
+        edge->child = firstNode;
+        edge->parent = secondNode;
+        edge->isLeft = true;
+    } else{
+        edge->child = secondNode;
+        edge->parent = firstNode;
+        edge->isLeft = false;
+    }
+    return edge;
+}
+
+/**
+ *  @Reader
+ *  Reads data in format:
+ *  treeNodeCount\n
+ *  //N x Edge
+ *  firstNode secondNode
+ */
+unsigned int readAndCreateTree(){
+    unsigned int countNodes;
+    cin >> countNodes;
+    vector<Edge *> edges;
+    for(unsigned int i = 0 ; i < countNodes - 1 ; i++){
+        edges.push_back(readAndCreateEdge());
+    }
+    unsigned int prefix = 1;
+    findEdgeInCollection(prefix,1,true, edges);
+    findEdgeInCollection(prefix,1,false, edges);
+    return prefix;
+}
+
+/**
+ *  @Finder
+ *  @ParameterModifier
+ *  Find edge in collection
+ */
+void findEdgeInCollection(unsigned int &prefix, unsigned int parent, bool isLeft, const vector<Edge *> &edges){
+    bool isEdgeFound = false;
+    for(unsigned int i = 0 ; i < edges.size() ; i++){
+        if(edges[i]->isLeft == isLeft && parent == edges[i]->parent){
+            isEdgeFound = true;
+            prefix = append(prefix, 1);
+            findEdgeInCollection(prefix, edges[i]->child, true, edges);
+            findEdgeInCollection(prefix, edges[i]->child, false, edges);
+            break;
+        }
+    }
+    if(!isEdgeFound){
+        prefix = append(prefix, 0);
+    }
+}
+
+void BFS(unsigned int processedTree, unsigned int height){
+    methodCounterBFS++;
+	isResult(processedTree, height);
+	if(isProgramFinished){
+        return;
+    }
+
+    if(!isNew(processedTree)){
+    	return;
+    }
+    closedTrees.insert(std::make_pair(processedTree,true));
+    //closedTrees[closedTreesCount++] = processedTree;
+
+//  isResult(processedTree, height);
+//  cout << "height:" << height << " processedTree:" << processedTree << " final:" << finalTree << endl;
+//  cout << "binary:";
+//  printTreeBinary(processedTree);
+//  cout << endl;
+    BFSHelper(height, 0, NULL_SUFFIX, processedTree, true);
+}
+
+void BFSHelper(unsigned int height, unsigned int prefix, unsigned int sufix, unsigned int modifiedSubTree, bool isFresh){
+    if(isProgramFinished){
+        return;
+    }
+//  cout << "processedSUBTree:";
+//  printTreeBinary(modifiedSubTree);
+//  cout << endl;
+    unsigned int leftSubtree = getLeftSubtree(modifiedSubTree);
+    unsigned int rightSubtree = getRightSubtree(modifiedSubTree, leftSubtree);
+
+    unsigned int leftRotatedTree = applyLeftRotationCommand(modifiedSubTree, leftSubtree, rightSubtree);
+    unsigned int switchedTree = applySwitchCommand(modifiedSubTree, leftSubtree, rightSubtree);
+    unsigned int rightRotatedTree = applyRightRotationCommand(modifiedSubTree, leftSubtree, rightSubtree);
+
+    unsigned int rightRotatedComposedTree;
+    unsigned int switchedComposedTree;
+    unsigned int leftRotatedComposedTree;
+
+    if(!isProgramFinished && !isFresh){
+        rightRotatedComposedTree = completeTree(prefix, sufix, rightRotatedTree);
+        switchedComposedTree = completeTree(prefix, sufix, switchedTree);
+        leftRotatedComposedTree = completeTree(prefix, sufix, leftRotatedTree);
+    } else{
+        rightRotatedComposedTree = rightRotatedTree;
+        switchedComposedTree = switchedTree;
+        leftRotatedComposedTree = leftRotatedTree;
+    }
+    isResult(rightRotatedComposedTree, height);
+    isResult(leftRotatedComposedTree, height);
+    isResult(switchedComposedTree, height);
+    if(!isProgramFinished && leftRotatedTree != 0){
+//      cout << "leftRotatedTree:";
+//      printTreeBinary(leftRotatedTree);
+//      cout << endl;
+//      cout << "leftRotatedComposedTree:";
+//      printTreeBinary(leftRotatedComposedTree);
+//      cout << endl;
+        BFSAttributes * attributes = new BFSAttributes();
+        attributes->height = height + 1;
+        attributes->tree = leftRotatedComposedTree;
+        bfsque[tailBfsQue++] = *attributes;
+    }
+
+    if(!isProgramFinished && switchedTree != 0){
+//      cout << "switchedTree:";
+//      printTreeBinary(switchedTree);
+//      cout << endl;
+//      cout << "switchedComposedTree:";
+//      printTreeBinary(switchedComposedTree);
+//      cout << endl;
+        BFSAttributes * attributes = new BFSAttributes();
+        attributes->height = height + 1;
+        attributes->tree = switchedComposedTree;
+        bfsque[tailBfsQue++] = *attributes;
+    }
+
+    if(!isProgramFinished && rightRotatedTree != 0){
+//      cout << "rightRotatedTree:";
+//      printTreeBinary(rightRotatedTree);
+//      cout << endl;
+//      cout << "rightRotatedComposedTree:";
+//      printTreeBinary(rightRotatedComposedTree);
+//      cout << endl;
+        BFSAttributes * attributes = new BFSAttributes();
+        attributes->height = height + 1;
+        attributes->tree = rightRotatedComposedTree;
+        bfsque[tailBfsQue++] = *attributes;
+    }
+
+    if(!isProgramFinished && isToBeProcessed(leftSubtree)){
+        BFSHelper(height, append(prefix, 1), appendSuffix(append(1,rightSubtree),sufix), leftSubtree, false);
+    }
+    if(!isProgramFinished && isToBeProcessed(rightSubtree)){
+        BFSHelper(height, append(append(prefix, 1), leftSubtree), sufix, rightSubtree, false);
+    }
+}

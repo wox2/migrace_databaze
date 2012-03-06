@@ -1,0 +1,32 @@
+// Deck file for Magic Workstation (http://www.magicworkstation.com)
+
+// Lands
+    4 [TE] Ancient Tomb
+    3 [EX] City of Traitors
+    2 [FUT] Horizon Canopy
+    4 [4E] Mishra's Factory
+    4 [B] Plains (3)
+    4 [TE] Wasteland
+    3 [TSP] Flagstones of Trokair
+
+// Creatures
+    4 [ARC] Lodestone Golem
+
+// Spells
+    3 [FD] Crucible of Worlds
+    3 [ARC] Oblivion Ring
+    3 [US] Smokestack
+    4 [EX] Sphere of Resistance
+    4 [B] Swords to Plowshares
+    4 [NE] Tangle Wire
+    4 [MR] Chalice of the Void
+    2 [SOM] Ratchet Bomb
+    2 [ALA] Elspeth, Knight-Errant
+    3 [JGC] Armageddon
+
+// Sideboard
+SB: 1 [ARC] Oblivion Ring
+SB: 2 [SOM] Ratchet Bomb
+SB: 3 [R] Disenchant
+SB: 4 [FNM] Ghostly Prison
+SB: 4 [ALA] Relic of Progenitus

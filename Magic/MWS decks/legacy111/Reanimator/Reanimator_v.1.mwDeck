@@ -1,0 +1,35 @@
+// Deck file for Magic Workstation (http://www.magicworkstation.com)
+
+// Lands
+    2 [B] Tropical Island
+    2 [JGC] Bloodstained Mire
+    1 [SOM] Swamp (4)
+    2 [ZEN] Scalding Tarn
+    5 [PT] Island (1)
+    4 [JGC] Polluted Delta
+    4 [B] Underground Sea
+
+// Creatures
+    1 [NPH] Elesh Norn, Grand Cenobite
+    1 [ZEN] Iona, Shield of Emeria
+    3 [JU] Hapless Researcher
+    3 [NPH] Jin-Gitaxias, Core Augur
+    2 [ARB] Sphinx of the Steel Wind
+
+// Spells
+    4 [OD] Careful Study
+    2 [PD3] Animate Dead
+    3 [US] Exhume
+    4 [AL] Force of Will
+    4 [NE] Daze
+    4 [BD] Brainstorm
+    4 [PD3] Entomb
+    3 [BRB] Reanimate
+    3 [CHK] Sensei's Divining Top
+
+// Sideboard
+SB: 3 [DS] Echoing Truth
+SB: 4 [FUT] Tarmogoyf
+SB: 2 [M11] Duress
+SB: 4 [JGC] Dark Confidant
+SB: 2 [LRW] Thoughtseize

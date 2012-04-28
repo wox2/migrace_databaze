@@ -1,0 +1,31 @@
+// Deck file for Magic Workstation (http://www.magicworkstation.com)
+
+// Lands
+    4 [ZEN] Scalding Tarn
+    1 [I2P] Swamp (3)
+    4 [B] Underground Sea
+    4 [JGC] Polluted Delta
+    1 [US] Island (3)
+
+// Spells
+    3 [LRW] Thoughtseize
+    1 [ALA] Ad Nauseam
+    4 [NPH] Gitaxian Probe
+    3 [M10] Ponder
+    2 [GPX] Chrome Mox
+    3 [TO] Cabal Ritual
+    4 [IA] Necropotence
+    4 [DIS] Infernal Tutor
+    4 [MI] Lion's Eye Diamond
+    4 [U] Dark Ritual
+    4 [V09] Lotus Petal
+    4 [ARE] Duress
+    2 [SC] Tendrils of Agony
+    4 [IA] Brainstorm
+
+// Sideboard
+SB: 4 [AL] Force of Will
+SB: 2 [TSP] Empty the Warrens
+SB: 4 [PD3] Cabal Therapy
+SB: 2 [ON] Chain of Vapor
+SB: 3 [RAV] Dark Confidant

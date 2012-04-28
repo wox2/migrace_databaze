@@ -1,0 +1,42 @@
+// Deck file for Magic Workstation (http://www.magicworkstation.com)
+
+// Lands
+    2 [TE] Ancient Tomb
+    1 [EX] City of Traitors
+    4 [AQ] Mishra's Workshop
+    4 [PD2] Mountain (2)
+    1 [AQ] Strip Mine (2)
+    1 [US] Tolarian Academy
+    4 [MPR] Wasteland
+
+// Creatures
+    3 [UL] Goblin Welder
+    1 [ARE] Karn, Silver Golem
+    4 [WWK] Lodestone Golem
+    3 [FUT] Magus of the Moon
+    4 [REL] Phyrexian Metamorph
+    3 [MBS] Phyrexian Revoker
+    2 [10E] Razormane Masticore
+    2 [CMD] Solemn Simulacrum
+
+// Spells
+    1 [B] Black Lotus
+    1 [JGC] Mana Crypt
+    1 [B] Mox Emerald
+    1 [B] Mox Jet
+    1 [B] Mox Pearl
+    1 [B] Mox Ruby
+    1 [B] Mox Sapphire
+    1 [B] Sol Ring
+    2 [DS] Sword of Fire and Ice
+    2 [DS] Sword of Light and Shadow
+    4 [NE] Tangle Wire
+    4 [LRW] Thorn of Amethyst
+    1 [V09] Trinisphere
+
+// Sideboard
+SB: 4 [DKA] Grafdigger's Cage
+SB: 1 [HOP] Relic of Progenitus
+SB: 2 [GP] Shattering Spree
+SB: 2 [AQ] Triskelion
+SB: 2 [UL] Viashino Heretic

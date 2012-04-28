@@ -1,0 +1,30 @@
+// Deck file for Magic Workstation (http://www.magicworkstation.com)
+
+// Lands
+    4 [ON] Bloodstained Mire
+    4 [ZEN] Scalding Tarn
+    8 [BRB] Mountain (6)
+    4 [AQ] Mishra's Factory (4)
+
+// Creatures
+    4 [AV] Vexing Devil
+    4 [GTW] Hellspark Elemental
+    4 [ZEN] Goblin Guide
+    4 [M12] Grim Lavamancer
+
+// Spells
+    2 [EX] Price of Progress
+    4 [MPR] Lightning Bolt
+    4 [TSP] Rift Bolt
+    4 [AV] Thunderous Wrath
+    3 [MR] Shrapnel Blast
+    4 [CHK] Sensei's Divining Top
+    3 [PD2] Fireblast
+
+// Sideboard
+SB: 2 [EX] Price of Progress
+SB: 3 [MPR] Searing Blaze
+SB: 3 [NPH] Surgical Extraction
+SB: 2 [ALA] Relic of Progenitus
+SB: 3 [SC] Sulfuric Vortex
+SB: 2 [JU] Flaring Pain

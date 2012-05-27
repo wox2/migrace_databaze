@@ -1,0 +1,33 @@
+// Deck file for Magic Workstation (http://www.magicworkstation.com)
+
+// Lands
+    4 [JGC] Polluted Delta
+    4 [B] Tropical Island
+    3 [B] Volcanic Island
+    4 [TE] Wasteland
+    3 [JGC] Wooded Foothills
+
+// Creatures
+    4 [ISD] Delver of Secrets/Insectile Aberration
+    4 [OD] Nimble Mongoose
+    2 [FUT] Tarmogoyf
+    1 [CMD] Scavenging Ooze
+
+// Spells
+    4 [5E] Brainstorm
+    4 [DD2] Daze
+    4 [AL] Force of Will
+    4 [MPR] Lightning Bolt
+    4 [M10] Ponder
+    4 [DIS] Spell Snare
+    4 [SC] Stifle
+    4 [AVR] Temporal Mastery
+
+// Sideboard
+SB: 2 [ISD] Ancient Grudge
+SB: 2 [IA] Pyroblast
+SB: 3 [ZEN] Spell Pierce
+SB: 2 [TSB] Tormod's Crypt
+SB: 2 [NE] Submerge
+SB: 1 [NPH] Dismember
+SB: 3 [JU] Lava Dart

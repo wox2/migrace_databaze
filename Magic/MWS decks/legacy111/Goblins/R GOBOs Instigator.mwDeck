@@ -2,7 +2,7 @@
 // NAME: rwgoblins
 
 // Lands
-    16 [ALA] Mountain (1)
+    14 [ALA] Mountain (1)
     4 [TE] Wasteland
     4 [MM] Rishadan Port
 
@@ -14,16 +14,16 @@
     4 [EVG] Goblin Warchief
     3 [EVG] Gempalm Incinerator
     2 [EVG] Siege-Gang Commander
-    1 [M10] Goblin Chieftain
-    2 [ZEN] Warren Instigator
+    2 [M10] Goblin Chieftain
+    3 [ZEN] Warren Instigator
 
 // Spells
-    4 [DS] AEther Vial
     4 [AL] Pyrokinesis
+    4 [ALA] Relic of Progenitus
 
 // Sideboard
 SB: 3 [5E] Pyroblast
 SB: 3 [GP] Shattering Spree
-SB: 3 [SC] Pyrostatic Pillar
-SB: 4 [ALA] Relic of Progenitus
 SB: 2 [PLC] Stingscourger
+SB: 4 [SOK] Pithing Needle
+SB: 3 [4E] Lightning Bolt

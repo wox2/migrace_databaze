@@ -1,0 +1,43 @@
+// Deck file for Magic Workstation (http://www.magicworkstation.com)
+
+// Lands
+    1 [SOM] Mountain (4)
+    2 [ZEN] Misty Rainforest
+    4 [B] Volcanic Island
+    4 [ZEN] Scalding Tarn
+    2 [RAV] Island (2)
+    2 [ZEN] Arid Mesa
+
+// Creatures
+    4 [ISD] Delver of Secrets/Insectile Aberration
+    3 [JGC] Grim Lavamancer
+    3 [ISD] Snapcaster Mage
+    4 [ZEN] Goblin Guide
+
+// Spells
+    1 [4E] Red Elemental Blast
+    1 [5E] Pyroblast
+    2 [WL] Null Rod
+    4 [AL] Force of Will
+    1 [M10] Ponder
+    3 [NPH] Mental Misstep
+    1 [B] Black Lotus
+    1 [B] Mox Sapphire
+    1 [B] Mox Ruby
+    1 [B] Ancestral Recall
+    1 [B] Time Walk
+    1 [IA] Brainstorm
+    2 [M11] Preordain
+    3 [ZEN] Spell Pierce
+    2 [MBS] Steel Sabotage
+    2 [FNM] Fire/Ice
+    4 [B] Lightning Bolt
+
+// Sideboard
+SB: 1 [SOM] Mountain (4)
+SB: 4 [LRW] Ingot Chewer
+SB: 1 [AQ] Energy Flux
+SB: 1 [AQ] Hurkyl's Recall
+SB: 4 [DKA] Grafdigger's Cage
+SB: 2 [NE] Submerge
+SB: 2 [PD2] Price of Progress

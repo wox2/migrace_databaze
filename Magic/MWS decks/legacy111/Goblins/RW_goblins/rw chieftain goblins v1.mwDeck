@@ -1,0 +1,32 @@
+// Deck file for Magic Workstation (http://www.magicworkstation.com)
+// NAME: rwgoblins
+
+// Lands
+    10 [ALA] Mountain (1)
+    4 [TE] Wasteland
+    4 [R] Plateau
+    4 [ZEN] Arid Mesa
+
+// Creatures
+    4 [US] Goblin Lackey
+    4 [ON] Goblin Piledriver
+    4 [EVG] Goblin Matron
+    4 [EVG] Goblin Ringleader
+    4 [EVG] Goblin Warchief
+    3 [EVG] Gempalm Incinerator
+    3 [EVG] Siege-Gang Commander
+    1 [CHK] Kiki-Jiki, Mirror Breaker
+    1 [ON] Goblin Pyromancer
+    3 [M10] Goblin Chieftain
+
+// Spells
+    4 [CST] Swords to Plowshares
+    4 [DS] AEther Vial
+
+// Sideboard
+SB: 2 [ALA] Relic of Progenitus
+SB: 2 [TSB] Tormod's Crypt
+SB: 3 [U] Red Elemental Blast
+SB: 3 [A] Disenchant
+SB: 2 [SC] Pyrostatic Pillar
+SB: 3 [AL] Pyrokinesis

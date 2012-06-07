@@ -1,0 +1,38 @@
+// Deck file for Magic Workstation (http://www.magicworkstation.com)
+
+// Lands
+    4 [B] Volcanic Island
+    4 [TE] Wasteland
+    4 [ZEN] Scalding Tarn
+    2 [ZEN] Arid Mesa
+    1 [ON] Bloodstained Mire
+    3 [P2] Mountain (1)
+    4 [AVR] Cavern of Souls
+
+// Creatures
+    4 [US] Goblin Lackey
+    4 [FNM] Goblin Warchief
+    4 [EVG] Goblin Matron
+    3 [JGC] Goblin Piledriver
+    3 [EVG] Gempalm Incinerator
+    3 [LRW] Pestermite
+    2 [CHK] Kiki-Jiki, Mirror Breaker
+    1 [PLC] Stingscourger
+    3 [EVG] Goblin Ringleader
+    2 [SC] Siege-Gang Commander
+    2 [EVG] Mogg War Marshal
+    1 [ON] Goblin Sharpshooter
+
+// Spells
+    4 [DS] AEther Vial
+    3 [ALA] Relic of Progenitus
+
+// Sideboard
+SB: 1 [EVG] Gempalm Incinerator
+SB: 1 [ALA] Relic of Progenitus
+SB: 3 [DS] Echoing Truth
+SB: 3 [ZEN] Spell Pierce
+SB: 3 [MR] Chalice of the Void
+SB: 2 [IA] Pyroblast
+SB: 1 [RAV] Island (2)
+SB: 1 [LRW] Mirror Entity

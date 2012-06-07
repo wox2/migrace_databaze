@@ -1,0 +1,33 @@
+// Deck file for Magic Workstation (http://www.magicworkstation.com)
+
+// Lands
+    3 [B] Tropical Island
+    3 [B] Volcanic Island
+    4 [TE] Wasteland
+    4 [JGC] Wooded Foothills
+    3 [ZEN] Scalding Tarn
+    1 [B] Taiga
+
+// Creatures
+    4 [ISD] Delver of Secrets/Insectile Aberration
+    4 [OD] Nimble Mongoose
+    2 [FUT] Tarmogoyf
+    1 [CMD] Scavenging Ooze
+
+// Spells
+    4 [5E] Brainstorm
+    4 [DD2] Daze
+    4 [AL] Force of Will
+    4 [MPR] Lightning Bolt
+    4 [M10] Ponder
+    4 [DIS] Spell Snare
+    4 [SC] Stifle
+    3 [ZEN] Spell Pierce
+
+// Sideboard
+SB: 3 [ISD] Ancient Grudge
+SB: 2 [IA] Pyroblast
+SB: 2 [TSB] Tormod's Crypt
+SB: 3 [NE] Submerge
+SB: 3 [JU] Lava Dart
+SB: 2 [ISD] Snapcaster Mage

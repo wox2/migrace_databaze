@@ -1,0 +1,29 @@
+// Deck file for Magic Workstation (http://www.magicworkstation.com)
+// NAME: rwgoblins
+
+// Lands
+    14 [ALA] Mountain (1)
+    4 [TE] Wasteland
+    4 [MM] Rishadan Port
+
+// Creatures
+    4 [US] Goblin Lackey
+    4 [ON] Goblin Piledriver
+    4 [EVG] Goblin Matron
+    4 [EVG] Goblin Ringleader
+    4 [EVG] Goblin Warchief
+    3 [EVG] Gempalm Incinerator
+    2 [EVG] Siege-Gang Commander
+    2 [M10] Goblin Chieftain
+    3 [ZEN] Warren Instigator
+
+// Spells
+    4 [DS] AEther Vial
+    4 [AL] Pyrokinesis
+
+// Sideboard
+SB: 3 [5E] Pyroblast
+SB: 3 [GP] Shattering Spree
+SB: 3 [SC] Pyrostatic Pillar
+SB: 4 [ALA] Relic of Progenitus
+SB: 2 [PLC] Stingscourger

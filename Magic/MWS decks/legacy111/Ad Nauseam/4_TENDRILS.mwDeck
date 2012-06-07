@@ -1,0 +1,34 @@
+// Deck file for Magic Workstation (http://www.magicworkstation.com)
+
+// Lands
+    4 [B] Underground Sea
+    4 [ON] Polluted Delta
+    2 [B] Volcanic Island
+    1 [B] Badlands
+    1 [IA] Island (3)
+    1 [M10] Swamp (2)
+    2 [ZEN] Scalding Tarn
+
+// Spells
+    4 [SC] Tendrils of Agony
+    4 [IA] Dark Ritual
+    4 [TO] Cabal Ritual
+    4 [IA] Brainstorm
+    4 [MI] Lion's Eye Diamond
+    4 [V09] Lotus Petal
+    4 [M10] Ponder
+    3 [US] Duress
+    4 [JU] Cabal Therapy
+    4 [NPH] Gitaxian Probe
+    2 [TSP] Empty the Warrens
+    1 [US] Rain of Filth
+    2 [ISD] Past in Flames
+    1 [M11] Preordain
+
+// Sideboard
+SB: 4 [DIS] Infernal Tutor
+SB: 4 [PLC] Extirpate
+SB: 2 [AQ] Hurkyl's Recall
+SB: 2 [DDF] Echoing Truth
+SB: 1 [ALA] Ad Nauseam
+SB: 2 [FBP] Surgical Extraction

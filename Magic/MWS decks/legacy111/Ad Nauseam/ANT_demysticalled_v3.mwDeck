@@ -1,0 +1,37 @@
+// Deck file for Magic Workstation (http://www.magicworkstation.com)
+
+// Lands
+    2 [ON] Bloodstained Mire
+    1 [B] Island (1)
+    4 [ON] Polluted Delta
+    3 [ZEN] Scalding Tarn
+    1 [MI] Swamp (3)
+    3 [B] Underground Sea
+    1 [B] Volcanic Island
+
+// Creatures
+    2 [ISD] Snapcaster Mage
+
+// Spells
+    1 [ALA] Ad Nauseam
+    4 [IA] Brainstorm
+    3 [TO] Cabal Ritual
+    3 [JU] Cabal Therapy
+    4 [IA] Dark Ritual
+    4 [US] Duress
+    4 [NPH] Gitaxian Probe
+    4 [DIS] Infernal Tutor
+    4 [MI] Lion's Eye Diamond
+    4 [V09] Lotus Petal
+    1 [ISD] Past in Flames
+    3 [LRW] Ponder
+    1 [US] Rain of Filth
+    2 [CHK] Sensei's Divining Top
+    1 [SC] Tendrils of Agony
+
+// Sideboard
+SB: 4 [RAV] Dark Confidant
+SB: 3 [PLC] Extirpate
+SB: 2 [R] Hurkyl's Recall
+SB: 2 [ON] Chain of Vapor
+SB: 1 [ISD] Snapcaster Mage

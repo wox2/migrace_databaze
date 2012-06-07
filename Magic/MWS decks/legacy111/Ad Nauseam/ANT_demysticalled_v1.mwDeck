@@ -1,0 +1,41 @@
+// Deck file for Magic Workstation (http://www.magicworkstation.com)
+
+// Lands
+    2 [B] Underground Sea
+    1 [B] Volcanic Island
+    1 [B] Badlands
+    1 [MI] Swamp (3)
+    1 [B] Island (1)
+    4 [ON] Polluted Delta
+    3 [ZEN] Scalding Tarn
+    2 [ON] Bloodstained Mire
+
+// Spells
+    1 [ALA] Ad Nauseam
+    1 [SC] Tendrils of Agony
+    1 [ISD] Past in Flames
+    4 [NPH] Gitaxian Probe
+    4 [US] Duress
+    4 [LRW] Ponder
+    4 [IA] Brainstorm
+    4 [DIS] Infernal Tutor
+    3 [JU] Burning Wish
+    4 [V09] Lotus Petal
+    4 [MI] Lion's Eye Diamond
+    4 [IA] Dark Ritual
+    4 [TO] Cabal Ritual
+    3 [JU] Cabal Therapy
+
+// Sideboard
+SB: 1 [SC] Tendrils of Agony
+SB: 1 [ISD] Past in Flames
+SB: 1 [TSP] Empty the Warrens
+SB: 1 [US] Ill-Gotten Gains
+SB: 1 [US] Meltdown
+SB: 1 [DM] Pyroclasm
+SB: 1 [PT] Virtue's Ruin
+SB: 1 [CS] Deathmark
+SB: 1 [JU] Cabal Therapy
+SB: 2 [PLC] Extirpate
+SB: 1 [TSP] Wipe Away
+SB: 3 [ON] Chain of Vapor

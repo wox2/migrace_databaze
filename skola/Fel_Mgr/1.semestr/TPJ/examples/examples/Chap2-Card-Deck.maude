@@ -1,0 +1,30 @@
+***********************************************************************
+***  Chapter 2 - Functional Modules
+***    Section 1 : Equations
+***
+***  CARD-DECK : your basic deck-o'-cards module, illustrating the 
+***   sort of "access" function that picks apart a constructor, with
+***   CardNum and CardSuit.
+***
+***********************************************************************
+
+
+
+fmod CARD-DECK is
+
+   sorts Number Suit Card .
+   
+   ops A 2 3 4 5 6 7 8 9 10 J Q K : -> Number [ctor] .
+   ops Clubs Diamonds Hearts Spades : -> Suit [ctor] .
+
+   op _of_ : Number Suit -> Card [ctor] .
+
+   op CardNum : Card -> Number .
+   op CardSuit : Card -> Suit .
+
+   var N : Number .   var S : Suit .
+
+   eq CardNum( N of S ) = N . 
+   eq CardSuit( N of S ) = S .
+
+endfm

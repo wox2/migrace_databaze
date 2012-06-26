@@ -1,0 +1,70 @@
+%%This is a very basic article template.
+%%There is just one section and two subsections.
+\documentclass{article}
+\usepackage[utf8]{inputenc}              	%nastavení výchozího kódování textu
+\usepackage[czech]{babel}                	%nastavení českých znaků
+\usepackage[pdftex]{graphicx}				%umožňuje vkládání obrázků v jpg, png
+\usepackage{amsfonts}						%package obsahujici symboly mnozin treba - \mathbb{N}
+\begin{document}
+
+
+\section{Úvod}
+Tato práce byla vypracována v rámci předmětu TPJ jako formální specifikace
+projektu Migdb a ověření správnosti jejího fragmentu.
+
+\section{Neformální nastínění}
+Programátoři v rámci dekompozice rozdělili aplikaci do několika layers - vrstev.
+Dvě z těchto vrstev jsou aplikační a databázová vrstva. ORM mapování převádí
+data a struktury nutné pro uložení těchto dat do databáze.
+
+Projekt Migdb se staví k tomuto úkolu definováním dvou metamodelů - aplikačního
+a databázového. Instance prvního metamodelu definuje
+strukturu aplikace, které třídy je možné definovat, s jakými atributy atp. Instance druhého modelu
+potom definuje strukturu databáze, tudíž tabulky a sloupce, do kterých je možné
+ukládat data. Bez jakýchkoliv dalších features by tyto modely definovaly
+klasický vztah ORM, nicméně Migdb si dalo za cíl definovat možné změny na úrovni
+obou modelů. Tyto změny, které simulují genezi aplikace v průběhu software
+development procesu jsou popsány Operacemi na úrovni obou modelů, které
+spadají do zmiňovaných metamodelů. Vztah mezi těmito dvěmi Migdb metamodely
+definuje Migdb ORM. V následujícím textu bude slovo ORM použito ve významu Migdb
+ORM.
+
+Poznámka: Ačkoliv projekt Migdb v nynější fázi zvažuje problém s ohledem na
+existující instance dat v databázi, instance budou v rámci této práce zanedbány
+a problém bude přehodnocen v budoucnu.
+
+
+\section{Formální popis - gramatika aplikačního modelu}
+Terminály jsou tučně \\
+
+$App \rightarrow (AOp*\ |\ AResult )$ \\
+$AOp \rightarrow AddClass\ |\ RemoveClass\ |\ AddProperty\ |\ RemoveProperty\ |\
+SetParent $ \\
+$AResult \rightarrow$ \textbf{Error} $|\ AGen )$ \\
+$AddClass \rightarrow $ \textbf{addClass (} $String$\textbf{)} \\
+$RemoveClass \rightarrow $ \textbf{removeClass (} $String$\textbf{)} \\
+$AddProperty \rightarrow $ \textbf{addProperty (} $String, Type $\textbf{)} \\
+$RemoveProperty  \rightarrow $ \textbf{removeProperty (} $String,
+String$\textbf{)} \\
+$Type \rightarrow $ \textbf{AInt | AString} \\
+$SetParent \rightarrow setParent(String, String)$ \\
+$String \rightarrow [a-s]*[A-S]* $ \\
+
+\section{Formální popis - gramatika databázového modelu}
+$Db \rightarrow (DOp* | DResult )$ \\
+$DOp \rightarrow AddTable \ |\ RemoveTable\ |\ AddColumn\ |\ RemoveColumn $ \\
+$DResult \rightarrow$ \textbf{DError} $|\ DGen )$ \\
+$AddTable \rightarrow $ \textbf{addTable (} $DString$\textbf{)} \\
+$RemoveTable \rightarrow $ \textbf{removeTable (} $DString$\textbf{)} \\
+$AddColumn \rightarrow $ \textbf{addColumn (} $DString, DType $\textbf{)} \\
+$RemoveColumn  \rightarrow $ \textbf{removeProperty (} $DString,
+DString$\textbf{)} \\
+$DType \rightarrow $ \textbf{DInt | Varchar} \\
+$DString \rightarrow\ [a-s]* $
+
+\section{Denotační sémantika}
+   \textit{viz db.maude}
+   
+   
+\end{document}
+

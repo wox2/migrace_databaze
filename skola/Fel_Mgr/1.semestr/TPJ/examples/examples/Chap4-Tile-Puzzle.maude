@@ -1,0 +1,65 @@
+*********************************************************************
+***  Chapter 4 - Full-Maude & Object-Oriented Modules
+***	Section 5 - Rewrite Laws in Object-Oriented Modules
+***
+***  TILE-PUZZLE : illustrates some of the power of object-oriented
+***	programming
+***
+*********************************************************************
+
+
+(omod TILE-PUZZLE is
+
+   sorts Num Value Coord .
+   subsort Num < Value . 
+
+   ops One Two Three Four Five Six Seven Eight : -> Num .
+   op empty : -> Value .
+
+   ops 0 1 2 : -> Coord .
+ 
+   ops s_ p_ : Coord -> Coord .
+
+   op `(_`,_`) : Coord Coord -> Oid [ctor] .
+
+   eq s 0 = 1 .
+   eq s 1 = 2 .
+   eq p 1 = 0 .
+   eq p 2 = 1 .
+
+   class TILE | val : Value .
+
+   msg move : Oid Oid -> Msg .
+
+   vars R1 R2 C1 C2 : Coord .	var V : Num .  
+
+   crl [goleft] : move((R1, C1), (R1, C2))   
+				< (R1, C1) : TILE | val : V > 
+				< (R1, C2) : TILE | val : empty >
+			=> 	< (R1, C2) : TILE | val : V > 
+				< (R1, C1) : TILE | val : empty > 
+		 	if C2 == p C1 .
+
+   crl [goright] : move((R1, C1), (R1, C2)) 
+				 < (R1, C1) : TILE | val : V > 
+				 < (R1, C2) : TILE | val : empty >
+			=> 	 < (R1, C1) : TILE | val : empty > 
+				 < (R1, C2) : TILE | val : V >
+			if C2 == s C1 .
+
+   crl [goup] : move((R1, C1), (R2, C1)) 	
+				< (R1, C1) : TILE | val : V > 
+				< (R2, C1) : TILE | val : empty >
+			=> 	< (R2, C1) : TILE | val : V > 
+				< (R1, C1) : TILE | val : empty >
+			if R2 == p R1 .
+
+   crl [godown] : move((R1, C1), (R2, C1))  
+				< (R1, C1) : TILE | val : V > 
+				< (R2, C1) : TILE | val : empty >
+			=> 	< (R2, C1) : TILE | val : V > 
+				< (R1, C1) : TILE | val : empty >  
+			if R2 == s C1 .
+
+endom)
+

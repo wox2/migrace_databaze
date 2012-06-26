@@ -1,0 +1,157 @@
+fmod INDEX-PAIR is  
+  pr NAT .  
+  pr STRING .
+  sort IndexPair .  
+  op _,_ : String Nat -> IndexPair [ctor] .  *** vytvoøení indexu (name, 6)
+endfm
+
+view IndexPair from TRIV to INDEX-PAIR is  
+  sort Elt to IndexPair .  
+endv
+
+view ResultList from TRIV to LIST{String} is  
+  sort Elt to List{String} .  
+endv
+
+*** ==================================================================
+*** ====================== Operaèní sémantika ========================
+*** ================================================================== 
+
+fmod TABLE_OS is
+  pr (MAP 
+          * (sort Entry{X,Y} to Entry{Y},
+             sort Map{X,Y} to Matrix{Y})) 
+             {IndexPair, String}.
+  pr LIST{String} .
+  pr MAP{String, ResultList} .
+  
+  *** vytvoøení tabulky (jejího formátu)
+  op CREATE TABLE _ (_) : String List{String} -> Matrix{String} .                 *** interface: název tabulky, seznam sloupcù
+  op createRow(_, _, _) : Matrix{String} List{String} String -> Matrix{String} .  *** vytvoøení jednoho sloupce
+  
+  *** vložení dat
+  op INSERT INTO _(_) VALUES (_) : Matrix{String} List{String} List{String} -> Matrix{String} .
+  
+  *** výbìr jednoho sloupce
+  op SELECT _ FROM _ : String Matrix{String} -> List{String} .                      *** interface : název sloupce, tabulka
+  op getCell(_, _, _, _) : Matrix{String} List{String} String Nat -> List{String} . *** tabulka, list výsledkù, název sloupce, hledané ID
+  
+  *** výbìr vícero sloupcù
+  op SELECT [_] FROM _ : List{String} Matrix{String} -> Matrix{String} .                                    *** interface : názvy sloupcù, tabulka
+  op getMultipleCell(_, _, _, _, _) : Matrix{String} Matrix{String} String List{String} Nat -> Matrix{String} .    *** tabulka, matice výsledkù, aktuálnì prohledávaný sloupec, seznam prohledávaných sloupcù, ID vypisovaného øádku
+    
+  *** pomocne fce
+  op getColumnsCount(_, _) : Matrix{String} Nat -> Nat .      *** vrátí poèet øádkù tabulky od danného ID
+  op _,_ : String String -> List{String} .                    *** vloží 2 textové øetìzce do 1 listu
+  
+  
+ table resultMat : Matrix{String} .
+  vars resultList lookingFor columnNames dataList : List{String} .
+  var columnName tableName tempLeft tempRight : String .
+  var ID : Nat .
+
+  *** vytvoøení tabulky (jejího formátu)
+  eq CREATE TABLE tableName (columnNames) = createRow(empty, "$ID", columnNames) .  
+  eq createRow(table, columnName, columnNames) = if (size(columnNames) =/= 0) then createRow(insert((columnName, 0), "", table), head(columnNames), tail(columnNames)) else insert((columnName, 0), "", table) fi .
+
+  *** vložení dat
+  eq INSERT INTO table(columnNames) VALUES (dataList) =
+    if (size(columnNames) =/= 0 and size(dataList) =/= 0) then
+      INSERT INTO insert((head(columnNames), getColumnsCount(table, 0)), head(dataList), table)(tail(columnNames)) VALUES (tail(dataList))
+    else
+      insert(("$ID", getColumnsCount(table, 0)), "ID", table)
+    fi . 
+
+  *** výbìr jednoho sloupce
+  eq SELECT columnName FROM table = getCell(table, nil, columnName, 1) .   *** Interface
+  eq getCell(table, resultList, columnName, ID) = if $hasMapping(table, (columnName, ID)) then getCell(table, resultList table[columnName, ID], columnName, s ID) else resultList fi .
+  
+  *** výbìr vícero sloupcù
+  eq SELECT [columnNames] FROM table = getMultipleCell(table, empty, head(columnNames), tail(columnNames), s 0) .
+  eq getMultipleCell(table, resultMat, columnName, columnNames, ID) = 
+    if $hasMapping(table, (columnName, ID)) then
+      getMultipleCell(table, insert((columnName, ID), table[columnName,ID], resultMat), columnName, columnNames, s ID)
+    else 
+      if ( size(columnNames) =/= 0 ) then
+        getMultipleCell(table, resultMat, head(columnNames), tail(columnNames), s 0)
+      else
+        resultMat 
+      fi
+    fi .
+   
+  *** pomocne fce
+  eq getColumnsCount(table, ID) = if ($hasMapping(table, ("$ID", ID))) then s getColumnsCount(table, s ID) else 0 fi .   
+  eq tempLeft,tempRight = nil tempLeft tempRight .
+  
+endfm 
+
+*** ==================================================================
+*** ====================== Denotaèní sémantika =======================
+*** ==================================================================  
+
+
+fmod TABLE_DS is
+  pr (MAP 
+          * (sort Entry{X,Y} to Entry{Y},
+             sort Map{X,Y} to Matrix{Y})) 
+             {IndexPair, String}.
+  pr LIST{String} .
+  pr MAP{String, ResultList} .
+  pr 
+  
+  ***sort Universal .
+  sorts syntax result .
+  subsort String < List{String} < Matrix{String} < syntax < Universal .
+  subsort List{String} < Matrix{String} < result < Universal .
+  
+  
+  
+  ***op [[_]] : syntax -> Matrix{String} .
+  ***op [[_+_]] : syntax syntax -> Matrix{String} .
+  op [[_+_]] : Universal Universal -> Matrix{String} [poly (1 2)].
+  ***op [[_ + _]] : Matrix{String} List{String} -> Matrix{String} .
+ *** op [[< _ >]] : List{String} -> Matrix{String} .
+  ***op insert(_,_,_) : Matrix{String}, List{String}, List{String} -> Matrix{String} .
+  op createRow(_, _, _) : Matrix{String} List{String} String -> Matrix{String} .  *** vytvoøení jednoho sloupce
+
+  vars A B : syntax .
+  var X, Y : Universal .
+  vars columnNames rowData : List{String} .
+  var columnName : String .
+  var table resultMat : Matrix{String} .                   
+  
+  ***eq [[ A ]] = empty .
+  eq [[ X + Y ]] = empty .
+  ***eq [[ table + rowData ]] = empty .   
+  ***eq [[< columnNames >]] = createRow(empty, "$ID", columnNames) .
+  eq createRow(table, columnName, columnNames) = if (size(columnNames) =/= 0) then createRow(insert((columnName, 0), "", table), head(columnNames), tail(columnNames)) else insert((columnName, 0), "", table) fi .
+endfm
+
+*** ==================================================================
+*** ====================== Pøíklady ==================================
+*** ==================================================================
+
+red in TABLE_OS : SELECT "surname" FROM
+                    INSERT INTO
+                      INSERT INTO
+                        INSERT INTO
+                          INSERT INTO (
+                            CREATE TABLE "Persons" ("name" "surname" "age"))
+                          ("name" "surname" "age") VALUES ("Lukas" "Viezan" "22")
+                        ("name" "surname" "age") VALUES ("Petr" "Novak" "24")
+                      ("name" "surname" "age") VALUES ("Jan" "Novotny" "20")
+                    ("name" "surname" "age") VALUES ("Tomas" "Svoboda" "22") .
+      
+red in TABLE_OS : SELECT ["name" "age"] FROM
+                    INSERT INTO
+                      INSERT INTO
+                        INSERT INTO
+                          INSERT INTO (
+                            CREATE TABLE "Persons" ("name" "surname" "age"))
+                          ("name" "surname" "age") VALUES ("Lukas" "Viezan" "22")
+                        ("name" "surname" "age") VALUES ("Petr" "Novak" "24")
+                      ("name" "surname" "age") VALUES ("Jan" "Novotny" "20")
+                    ("name" "surname" "age") VALUES ("Tomas" "Svoboda" "22") .
+      
+***red in TABLE_DS : [[ < "X" "Y" "Z" > + "X" ]] .  
+red in TABLE_DS : [[ < "X" "Y" "Z" > + "B" ]] .    

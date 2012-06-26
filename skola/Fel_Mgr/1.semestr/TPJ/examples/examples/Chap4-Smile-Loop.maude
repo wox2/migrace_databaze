@@ -1,0 +1,29 @@
+********************************************************************
+***  Chapter 4 - Full Maude & Object-Oriented Modules
+***	Section 1 : Full Maude
+***
+***  SMILE-LOOP : illustrates the use of LOOP-MODE in a simple 
+***	input/output example
+***
+********************************************************************
+
+
+mod SMILE-LOOP is
+
+   inc LOOP-MODE .
+
+   subsort QidList < State .
+
+   op startsmiling : -> System .
+   op none : -> State .
+
+   eq startsmiling = [nil, none, nil] .
+
+   var S : State .	vars I O : QidList .
+
+   rl [smile] : ['smile I, S, O] => [I, S, O ' ': '- '`)] .
+   rl [wink] : ['wink I, S, O] => [I, S, O ' '; '- '`)] .
+   rl [gawp] : ['gawp I, S, O] => [I, S, O ' '8 '- '0] .
+   rl [elvis] : ['elvis I, S, O] => [I, S, O ' '? 'B '- '`)] .
+   
+endm

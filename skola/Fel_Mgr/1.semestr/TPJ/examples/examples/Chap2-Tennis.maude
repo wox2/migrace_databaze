@@ -1,0 +1,30 @@
+*************************************************************************
+***  Chapter 2 - Functional Modules
+***	Section 5 : Operator and Statement Attributes
+***
+***  TENNIS : illustrates the use of prec and gather flags with the
+***	non-associative versus operator.
+***
+*************************************************************************
+
+
+fmod TENNIS is 
+
+   sort Player .
+
+   op _vs_ : Player Player -> Player [comm prec 33 gather (e E)] .
+   op _murders_ : Player Player -> Player [prec 31] .
+   op _teases_ : Player Player -> Player [prec 34] .
+
+   ops sampras agassi roddick : -> Player [ctor] .
+
+   vars P1 P2 : Player .
+
+   eq sampras vs agassi = sampras .
+   eq sampras vs roddick = roddick .
+   eq agassi vs roddick = agassi .
+
+   eq P1 murders P2 = P1 .
+   eq P1 teases P2 = P2 murders P1 .
+
+endfm

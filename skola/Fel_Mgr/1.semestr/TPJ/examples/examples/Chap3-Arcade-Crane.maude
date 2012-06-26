@@ -1,0 +1,35 @@
+*******************************************************************************
+***  Chapter 3 - System Modules
+***	Section 1 : Rewrite Laws
+***
+***  ARCADE-CRANE : our other running example of a rewrite system, but this one
+***	doesn't terminate.
+***
+*******************************************************************************
+
+
+mod ARCADE-CRANE is
+
+   protecting QID .
+
+   sorts ToyID State .
+   subsort Qid < ToyID .
+
+   op floor : ToyID -> State [ctor] .
+   op on : ToyID ToyID -> State [ctor] .
+   op clear : ToyID -> State [ctor] .
+   op hold : ToyID -> State [ctor] .
+   op empty : -> State [ctor] .
+ 
+   op 1 : -> State [ctor] .
+
+   op _&_ : State State -> State [ctor assoc comm id: 1] .
+
+   vars X Y : ToyID .
+
+   rl [pickup] : empty & clear(X) & floor(X) => hold(X) .
+   rl [putdown] : hold(X) => empty & clear(X) & floor(X) .
+   rl [unstack] : empty & clear(X) & on(X, Y) => hold(X) & clear(Y) . 
+   rl [stack] : hold(X) & clear(Y) => empty & clear(X) & on(X, Y) .
+
+endm

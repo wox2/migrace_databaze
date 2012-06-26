@@ -1,0 +1,17 @@
+Úloha: Vıstavba potrubní pošty
+
+Velká nadnárodní firma se rozhodla ve své centrále vybudovat potrubní poštu, která by umonila rozesílání poštovních zásilek z oddìlení pøíjmu pošty do všech kanceláøí. Za tímto úèelem si firma nechala vypracovat cenové nabídky na jednosmìrné propojení dvojic kanceláøí. Jednosmìrné propojení dvojice rùznıch kanceláøí mùe mít více rùznıch cenovıch návrhù, ale pro nìkteré dvojice kanceláøí nemusí cenová nabídka na jednosmìrné propojení existovat (takové propojení je potom nerealizovatelné). Navíc jsou nìkterá spojení z historickıch dùvodù ji vybudovaná.
+
+Nyní firma potøebuje rozhodnout, která kanceláø by byla nejvhodnìjší pro funkci oddìlení pøíjmu pošty, a jaké propojení jednotlivıch kanceláøí z monıch cenovıch nabídek realizuje pøi splnìní následujících poadavkù:
+
+    Z oddìlení pøíjmu pošty musí existovat buï pøímé nebo nepøímé spojení do všech kanceláøí v centrále. Pøímım spojením se myslí jednosmìrné propojení dvou kanceláøí, na které existuje cenová nabídka. Nepøímım spojením rozumíme nìkolik pøímıch na sebe navazujících spojení dvojic kanceláøí tak, abychom mohli doruèit zásilku ze zdrojové do cílové kanceláøe.
+    Cena vybudování potrubní pošty musí bıt co nejniší. Cenou potrubní pošty pøitom rozumíme souèet cen všech jednosmìrnıch propojení, které je potøeba vybudovat pro správné fungování pošty dle poadavkù firmy.
+    Pokud existuje více øešení za stejnou cenu, je dalším kritériem co nejniší poèet novıch jednosmìrnıch propojení, které je tøeba vybudovat. Pokud je takovıch øešení více, pak jsou mezi sebou rovnocenné a tudí všechny správné.
+
+Napište program, kterı zjistí, zda je na základì vstupních údajù moné vybudovat potrubní poštu dle poadavkù firmy. Pokud ano, program urèí celkovou cenu potrubní pošty, dále kanceláø, která bude mít funkci oddìlení pøíjmu pošty, a koneènì jaká propojení z nabídnutıch cenovıch návrhù budou muset bıt realizována.
+Vstup:
+
+Ve vstupním souboru je na prvním øádku uveden poèet kanceláøí a na kadém dalším øádku je jeden cenovı návrh (nebo ji realizované spojení) pøedstavovanı tøemi celımi èísly (èíslo vıchozí kanceláøe, èíslo cílové kanceláøe a cena realizace) oddìlenımi mezerami. Èísla urèující vıchozí a cílovou kanceláø jsou nezáporná. Pokud je spojení ji vybudované, je cena realizace -1, jinak je cena realizace nezáporná. Poslední øádek obsahuje tøi nuly (oddìlené mezerami).
+Vıstup:
+
+Pokud poštu není moné realizovat, je vıstupem programu jedinı øádek s -1. Jinak je na prvním øádku celková cena pošty. Na druhém øádku je èíslo kanceláøe, která bude mít funkci oddìlení pøíjmu. Na dalších øádcích jsou vypsaná všechna nutná pøímá spojení (jak ta, která jsou ji vybudovaná, tak i ta, která je potøeba ještì vybudovat) jako trojice (formát viz vstup) pro realizaci pošty. Na poøadí øádkù s trojicemi nezáleí. Vıstup je ukonèen trojicí s nulami (stejnì jako ve vstupním souboru). Vypisovaní nadbyteènıch pøímıch spojení, by by se nezvıšila cena realizace, není povoleno.

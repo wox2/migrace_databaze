@@ -1,0 +1,374 @@
+<html><head> 
+
+ 
+  <title>Programování v jazyku C/C++</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <link href="Programov%C3%A1n%C3%AD%20v%20jazyku%20C_C++_soubory/css.css" rel="stylesheet" type="text/css">
+ </head><body>
+ 
+ <table cellspacing="0" width="100%">
+  <col width="200">
+  <col>
+  <tbody>
+   <tr><td colspan="2" class="ac"><br><h1>Y36PJC - Programování v jazyku C/C++</h1><br></td></tr>
+   <tr>
+    <td class="layout1" valign="top">
+     <table cellpadding="0" width="100%">
+ <col>
+ <col width="50">
+ <col width="50">
+ <col width="50">
+<tbody><tr><td colspan="4" class="menuSel box"><a href="http://moon.felk.cvut.cz/%7Exvagner/Y36PJC/?Sec=1">Harmonogram</a></td></tr>
+<tr><td colspan="4" class="menuSel box"><a href="http://moon.felk.cvut.cz/%7Exvagner/Y36PJC/?Sec=2">Přednášky</a></td></tr>
+<tr><td colspan="4" class="menuSel boxSel"><a href="http://moon.felk.cvut.cz/%7Exvagner/Y36PJC/?Sec=3">Prosemináře</a></td></tr>
+<tr><td>&nbsp;</td><td class="menuSel box ac"><a href="http://moon.felk.cvut.cz/%7Exvagner/Y36PJC/?Sec=301">1</a></td>
+<td class="menuSel box ac"><a href="http://moon.felk.cvut.cz/%7Exvagner/Y36PJC/?Sec=302">2</a></td>
+<td class="menuSel box ac"><a href="http://moon.felk.cvut.cz/%7Exvagner/Y36PJC/?Sec=303">3</a></td>
+</tr><tr><td>&nbsp;</td><td class="menuSel box ac"><a href="http://moon.felk.cvut.cz/%7Exvagner/Y36PJC/?Sec=304">4</a></td>
+<td class="menuSel boxSel ac">5</td>
+<td class="menuSel box ac"><a href="http://moon.felk.cvut.cz/%7Exvagner/Y36PJC/?Sec=306">6</a></td>
+</tr><tr><td>&nbsp;</td><td class="menuSel box ac"><a href="http://moon.felk.cvut.cz/%7Exvagner/Y36PJC/?Sec=307">7</a></td>
+<td>&nbsp;</td><td>&nbsp;</td></tr><tr><td colspan="4" class="menuSel box"><a href="http://moon.felk.cvut.cz/%7Exvagner/Y36PJC/?Sec=4">Semináře</a></td></tr>
+<tr><td colspan="4" class="menuSel box"><a href="http://moon.felk.cvut.cz/%7Exvagner/Y36PJC/?Sec=5">Literatura</a></td></tr>
+<tr><td colspan="4" class="menuSel box"><a href="http://moon.felk.cvut.cz/%7Exvagner/Y36PJC/?Sec=6">Kompilátory</a></td></tr>
+<tr><td colspan="4" class="menuSel box"><a href="http://moon.felk.cvut.cz/%7Exvagner/Y36PJC/?Sec=7">Hodnocení</a></td></tr>
+<tr><td colspan="4" class="menuSel box"><a href="http://moon.felk.cvut.cz/%7Exvagner/Y36PJC/?Sec=9">Sem. práce</a></td></tr>
+</tbody></table>    </td><td valign="top">
+      <h2>Racionální čísla</h2><br>
+ 
+ <p>Realizujte v C++ třídu reprezentující racionální čísla. 
+ Rozhraní třídy bude zahrnovat:</p>
+ 
+ <ul>
+  <li>Konstruktor, destruktor,</li>
+  <li>přetížený operátor pro sčítání a odčítání, chceme sčítat jak 
+      racionální čísla mezi sebou, tak i racionální čísla a celá čísla,</li>
+  <li>unární mínus,</li>
+  <li>přetížený operátor pro výpis,</li>
+  <li>přetížený operátor přetypování na datový typ double,</li>
+  <li>konstruktor uživatelské konverze z řetězce.</li>
+ </ul>
+
+ <br>
+ 
+ <h3>Příklad:</h3><br>
+ <pre>  int                main                          ( int argc, char * argv [] )
+   {
+     CRat a ( 3, 8 ), b ( 9, 8 );
+     CRat c ( "2 / 8" );
+     double z;
+     
+     
+     cout &lt;&lt; a &lt;&lt; " + " &lt;&lt; b &lt;&lt; " = " &lt;&lt; (a + b) &lt;&lt; endl;
+     cout &lt;&lt; c &lt;&lt; endl;
+     
+     c = c - 3; // what about c = c * 3
+     
+     z = c;
+     
+     cout &lt;&lt; z &lt;&lt; endl;
+    
+    
+     return ( 0 );
+   } 
+
+  3/8 + 9/8 = 3/2
+  1/4
+  -2.75  
+ </pre>
+
+ <br>
+ 
+ <br>
+<a href="http://moon.felk.cvut.cz/%7Exvagner/Y36PJC/file.php?Sec=305&amp;F=0">Vzorové řešení</a><br>
+<hr>
+  <p>Navrhněte a realizujte třídu <tt>CStr</tt>, která bude reprezentovat 
+  "natahovací" řetězec (obdoba standardní třídy <tt>string</tt>). Řetězec bude 
+  ve třídě uložen ve formátu ASCIIZ (nulou ukončený). Třída bude zajišťovat 
+  základní operace s řetězcem uvedené níže. Bude se přitom starat o alokovanou 
+  paměť tak, aby se řetězec do alokované paměti vešel. Požadované funkce 
+  jsou:</p>
+  
+  <ul>
+    <li>Konstruktor, je ASCIIZ řetězec, který reprezentuje počáteční obsah.</li>
+    <li>Konstruktor explicitní uživatelské konverze mezi typem <tt>double</tt> a <tt>CStr</tt>. Ve vzniklé instanci bude uložena desítková reprezentace zdaného parametru.</li>
+    <li>Konstruktor explicitní uživatelské konverze mezi typem <tt>int</tt> a <tt>CStr</tt>. Ve vzniklé instanci bude uložena desítková reprezentace zdaného parametru.</li>
+    <li>Kopírující konstruktor.</li>
+    <li>Destruktor</li>
+    <li>Přetížený operátor <tt>=</tt>.</li>
+    <li>Metodu <tt>Length</tt>, která zjistí délku řetězce.</li>
+    <li>Přetížené operátory <tt>+=</tt>, které umožní ke stávajícímu řetězci připojit jiný řetězec (operátor bude přetížen pro 
+        <tt>CStr</tt>, <tt>const char *</tt>, <tt>int</tt> a <tt>double</tt>).</li>
+    <li>Přetížený operátor přetypování na <tt>const char *</tt> (výsledkem bude ASCIIZ obsah instance).</li>
+    <li>Přetížený operátor <tt>+</tt>, který umožní zřetězit dvě instance <tt>CStr</tt>.</li>
+    <li>Přetížený operátor <tt>[]</tt>, který umožní číst/zapsat znak na zadané pozici řetězce.</li>
+    <li>Přetížený operátor <tt>&lt;&lt;</tt> umožňující výstup na zadaném výstupním proudu.</li>
+  </ul>
+  
+  <p>Uvedenou třídu realizujte jako modul, vhodně jej otestujte. Jako základ pro testování použijte následující kód:</p>
+
+  <pre>   int               main                           ( int argc, char * argv [] )
+    {
+      CStr      a ( 5 ), b = "Pokusny retezec";
+      int       i;
+      
+      a += " test ";
+      
+      CStr      c ( a );                       // copy konstruktor
+      
+      a += 12.5;                               // testy prettizeni op +=
+      a += b;
+      
+      cout &lt;&lt; "a = " &lt;&lt; a &lt;&lt; endl &lt;&lt;
+              "b = " &lt;&lt; b &lt;&lt; endl &lt;&lt;
+              "c = " &lt;&lt; c &lt;&lt; endl;
+      
+      for ( i = a . Length  () - 1; i &gt;= 0; i -- )  // test op []
+       cout &lt;&lt; a[i];
+      cout &lt;&lt; endl;
+      
+      c = b;
+      
+      const char * pokus = (const char*)  c;       // test op pretypovani
+      
+      cout &lt;&lt; pokus &lt;&lt; endl;
+      
+      c = a + b;                                // test op. zretezeni
+      
+      cout &lt;&lt; "a = " &lt;&lt; a &lt;&lt; endl &lt;&lt;
+              "b = " &lt;&lt; b &lt;&lt; endl &lt;&lt;
+              "c = " &lt;&lt; c &lt;&lt; endl;
+   
+      c = a + "pokus";                               // test kons. uziv konverze
+      
+      // b = a + 5;   // kdo uhodne co se stane?
+      // b = a + 5.0; // nejde, konstruktor je explicitni
+      
+      b = a + CStr ( 5 ); // ok
+      b = a + CStr ( 5.0 ); // ok
+   
+   
+      cout &lt;&lt; "a = " &lt;&lt; a &lt;&lt; endl &lt;&lt;
+              "b = " &lt;&lt; b &lt;&lt; endl &lt;&lt;
+              "c = " &lt;&lt; c &lt;&lt; endl;
+   
+      return ( 0 );
+    }
+
+   a = 5 test 12.500000Pokusny retezec
+   b = Pokusny retezec
+   c = 5 test
+   cezeter ynsukoP000005.21 tset 5
+   Pokusny retezec
+   a = 5 test 12.500000Pokusny retezec
+   b = Pokusny retezec
+   c = 5 test 12.500000Pokusny retezecPokusny retezec
+   a = 5 test 12.500000Pokusny retezec
+   b = 5 test 12.500000Pokusny retezec5.000000
+   c = 5 test 12.500000Pokusny retezecpokus
+  </pre>
+<br>
+<a href="http://moon.felk.cvut.cz/%7Exvagner/Y36PJC/file.php?Sec=305&amp;F=1">Vzorové řešení</a><br>
+<hr>
+  <p>Třída z minulého příkladu je nešikovná v tom, že při kopírování (např. do 
+  kolekcí) se kopíruje celý obsah řetězce. Instance nemůže být sdílená. Vytvořte 
+  třídu, která tuto nešikovnost odstraní. Navrhněte a realizujte třídu 
+  <tt>CStrRes</tt>, která bude fungovat stejně jako třída v minulém příkladu. 
+  Třída bude implementovat mechanismus počítaných referencí, tj. bude udržovat 
+  počítadlo, z kolika míst je referencovaná. K uvolnění (volání <tt>delete</tt>) dojde až 
+  tehdy, když počítadlo referencí dosáhne hodnoty 0. Počet referencí bude 
+  udržován v instanční proměnné <tt>refCnt</tt>, manipulovat se s ním bude 
+  pomocí volání metod <tt>AddRef</tt> a <tt>Release</tt>. Aby mechanismus 
+  pracoval správně, je potřeba vytvářet pouze dynamické instance třídy 
+  (zajistěte to !), je potřeba potlačit volání kopírujícího konstruktoru 
+  (zajistěte !) a operátoru = (zajistěte !).</p>
+
+  <pre>   int main ( int argc, char * argv [] )
+    {
+      // CStrRef   pokus;  // nefunguje. Proc?
+      CStrRef   * a = new CStrRef ( 5 ), * b = new CStrRef ( "Pokusny retezec" );
+      int       i;
+      
+      a -&gt; Append ( " test " );
+      
+      
+      a -&gt; Append ( 12.5 );                               // testy prettizeni op +=
+      a -&gt; Append ( *b );
+      
+      cout &lt;&lt; "a = " &lt;&lt; *a &lt;&lt; endl &lt;&lt;
+              "b = " &lt;&lt; *b &lt;&lt; endl;
+      
+      for ( i = a -&gt; Length  () - 1; i &gt;= 0; i -- )  // test op []
+       cout &lt;&lt; (*a)[i];
+      cout &lt;&lt; endl;
+   
+      CStrRef * c = a;
+      c -&gt; AddRef ();
+      
+      
+      const char * pokus = (const char*)  *c;       // test op pretypovani
+      
+      cout &lt;&lt; pokus &lt;&lt; endl;
+      
+      a -&gt; Release ();
+      b -&gt; Release ();
+   
+      cout &lt;&lt; *c &lt;&lt; endl;
+   
+      c -&gt; Release ();
+      
+      return ( 0 );
+    }   
+    
+   a = 5 test 12.500000Pokusny retezec
+   b = Pokusny retezec
+   cezeter ynsukoP000005.21 tset 5
+   5 test 12.500000Pokusny retezec
+   5 test 12.500000Pokusny retezec    
+  </pre>
+  
+  <h3>Poznámka:</h3> 
+  <p>V tomto řešení není použito přetěžování operátorů pro zřetězování, místo toho je zde zavedena metoda 
+  <tt>Append</tt>. Pokud máme k dispozici pouze dynamicky alokované instance, nepřináší použití přetížených operátorů 
+  efekt, naopak, často vede k nepřehlednému kódu. Operátory jsou přetížené pouze tam, kde to je potřeba (výstup, operátor =).</p>
+  <hr>
+
+<br>
+<a href="http://moon.felk.cvut.cz/%7Exvagner/Y36PJC/file.php?Sec=305&amp;F=2">Vzorové řešení</a><br>
+<hr>
+<p>Počítané reference sice vyřeší problém se zbytečným kopírováním instance, 
+  ale vyžadují, aby jejich uživatel správně volal metody <tt>AddRef</tt> a 
+  <tt>Release</tt>. Vynechání těchto volání způsobí chybu (buď neuvolnění paměti 
+  nebo ztrátu instance). Problémy se zapomínáním řeší tzv. smart pointer. Jedná 
+  se o malou jednoduchou třídu, která má jedinou členskou proměnnou - ukazatel 
+  na dynamicky alokovanou instanci třídy, která používá mechanismus počítaných 
+  referencí (např. <tt>CStrRef</tt>). Smart pointer realizuje mechanismus kopírující 
+  konstruktor/operátor=/destruktor s tím, že odpovídajícím způsopbem upravuje 
+  počítadlo referencí držené instance. Při práci se smart pointrem předáváme 
+  pouze instanci smart pointeru. Aby se nám se vnořenou třídou dobře pracovalo, 
+  bývá zvykem přetížit operátor -&gt; a pomocí něj přistupovat k metodám vnořené 
+  třídy. Operátor -&gt; tedy slouží jako implicitní getter. </p>
+  
+  <p>Úkolem je realizovat smart pointer pro třídu <tt>CStrRef</tt>. (V praxi 
+  se smart pointry realizují genericky pomocí šablon. Pro jednoduchoost je 
+  úkolem realizovat smart pointer pouze pro jedinou konkrétní třídu.)</p>
+
+  <pre>   int main ( int argc, char * argv [] )
+    {
+      CSmartPtr a (new CStrRef ( 5 )), b (new CStrRef ( "Pokusny retezec" ));
+      int       i;
+      
+      a -&gt; Append ( " test " );
+      
+      
+      a -&gt; Append ( 12.5 );                               // testy prettizeni op +=
+      a -&gt; Append ( *b );
+      
+      cout &lt;&lt; "a = " &lt;&lt; a &lt;&lt; endl &lt;&lt;
+              "b = " &lt;&lt; b &lt;&lt; endl;
+      
+      for ( i = a -&gt; Length  () - 1; i &gt;= 0; i -- )  // test op []
+       cout &lt;&lt; (*a)[i];
+      cout &lt;&lt; endl;
+   
+      CSmartPtr  c = a;
+      
+      
+      const char * pokus = (const char*)  *c;       // test op pretypovani
+      
+      cout &lt;&lt; pokus &lt;&lt; endl;
+      
+      cout &lt;&lt; c &lt;&lt; endl;
+   
+      return ( 0 );
+    }
+       
+   a = 5 test 12.500000Pokusny retezec
+   b = Pokusny retezec
+   cezeter ynsukoP000005.21 tset 5
+   5 test 12.500000Pokusny retezec
+   5 test 12.500000Pokusny retezec    
+  </pre>
+  
+  <h3>Poznámka:</h3> 
+  <p>V tomto řešení není použito přetěžování operátorů pro zřetězování, místo toho je zde zavedena metoda 
+  <tt>Append</tt>. Operátory jsou přetížené pouze tam, kde to je potřeba (výstup, operátor = pro 
+  <tt>CStrRef</tt>, výstup, * = -&gt; pro <tt>CSmartPtr</tt>).</p>
+<br>
+<a href="http://moon.felk.cvut.cz/%7Exvagner/Y36PJC/file.php?Sec=305&amp;F=3">Vzorové řešení</a><br>
+<hr>
+  
+  <p>Smart pointer sice řeší problém počítáním referencí, ale pokud volaná metoda 
+  změní obsah instance vnořené třídy, změna se projeví do všech instancí smart pointerů, 
+  které drží odkaz na tu samou instanci vnořené třídy. Aby se smart pointer choval zcela 
+  transparentně, je potřeba jej více integrovat s třídou realizující vlastní funkcionalitu 
+  a umožnit, aby podle volání implemenotval strategii <tt>copy-on-write</tt>. Úkolem je 
+  realizovat třídu <tt>CStrAuto</tt>. Třída bude realizovat rozhraní metod podobné jako třídy 
+  <tt>CStr</tt> a <tt>CStrRef</tt>. Třída <tt>CStrAuto</tt> bude držet jedinou členskou 
+  proměnnou - ukazatel na datovou strukturu, která obsahuje data řetězce (znaky, délku) a počet 
+  referencí. Volání kopírujícího konstruktoru/destruktoru/operátoru= bude správným způsobem upravovat 
+  počítadlo referencí ve vnořené datové struktuře. Při volání metody, která opravuje 
+  obsah řetězce (např. přidání řetězce), bude podle potřeby sdílená struktura
+  zkopírována, aby se změna obsahu promítla pouze do té instance <tt>CStrAuto</tt>, nad kterou 
+  byla změna provedena.</p>
+
+  <pre>   int main ( int argc, char * argv [] )
+    {
+      CStrAuto      a ( 5 ), b = "Pokusny retezec";
+      int       i;
+      
+      a += " test ";
+      
+      CStrAuto      c ( a );                       // copy konstruktor
+      
+      a += 12.5;                               // testy prettizeni op +=
+      a += b;
+      
+      cout &lt;&lt; "a = " &lt;&lt; a &lt;&lt; endl &lt;&lt;
+              "b = " &lt;&lt; b &lt;&lt; endl &lt;&lt;
+              "c = " &lt;&lt; c &lt;&lt; endl;
+      
+      for ( i = a . Length  () - 1; i &gt;= 0; i -- )  // test op []
+       cout &lt;&lt; a[i];
+      cout &lt;&lt; endl;
+      
+      c = b;
+      
+      const char * pokus = (const char*)  c;       // test op pretypovani
+      
+      cout &lt;&lt; pokus &lt;&lt; endl;
+      
+      c = a + b;                                // test op. zretezeni
+      
+      cout &lt;&lt; "a = " &lt;&lt; a &lt;&lt; endl &lt;&lt;
+              "b = " &lt;&lt; b &lt;&lt; endl &lt;&lt;
+              "c = " &lt;&lt; c &lt;&lt; endl;
+   
+   
+      c = a + "pokus";                               // test kons. uziv konverze
+   
+      // b = a + 5;   // kdo uhodne co se stane?
+      // b = a + 5.0; // nejde, konstruktor je explicitni
+      
+      b = a + CStrAuto ( 5 ); // ok
+      b = a + CStrAuto ( 5.0 ); // ok
+   
+      return ( 0 );
+    }
+   
+   a = 12.500000Pokusny retezec
+   b = Pokusny retezec
+   c = 5 test
+   cezeter ynsukoP000005.21
+   Pokusny retezec
+   a = 12.500000Pokusny retezec
+   b = Pokusny retezec
+   c = Pokusny retezec
+  </pre>
+<br>
+<a href="http://moon.felk.cvut.cz/%7Exvagner/Y36PJC/file.php?Sec=305&amp;F=4">Vzorové řešení</a><br>
+    </td>
+   </tr>
+  </tbody>
+ </table>
+ </body></html>

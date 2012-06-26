@@ -1,0 +1,19 @@
+*****************************************************************
+***  Chapter 3 - System Modules
+***	Section 1 : Rewrite Laws
+***
+***  CLIMATE : illustrates the fundamentals of a rewrite law.
+***
+*****************************************************************
+
+
+mod CLIMATE is
+
+  sort weathercondition .
+
+  op sunnyday : -> weathercondition .
+  op rainyday : -> weathercondition .
+
+  rl [raincloud] : sunnyday => rainyday .
+
+endm

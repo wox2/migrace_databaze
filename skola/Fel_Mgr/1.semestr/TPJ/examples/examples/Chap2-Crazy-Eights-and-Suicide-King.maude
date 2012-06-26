@@ -1,0 +1,38 @@
+*******************************************************************
+***  Chapter 2 - Functional Modules
+***	Section 4 : Membership Axioms
+***
+***  CRAZY-EIGHTS : illustrates the use of conditional membership
+***   axioms using our card-deck example.
+***
+***  SUICIDE-KING : illustrates the use of membership axioms using
+***   our card-deck example.
+***
+*******************************************************************
+
+
+fmod CRAZY-EIGHTS is
+
+  protecting CARD-DECK .
+
+  sort WildCard .
+  subsort WildCard < Card .
+
+  var C : Card .
+  
+  cmb C : WildCard if CardNum(C) == 8 .
+
+endfm
+
+
+
+fmod SUICIDE-KING is
+
+  protecting CARD-DECK .
+
+  sort SuicideKing .
+  subsort SuicideKing < Card .
+
+  mb K of Hearts : SuicideKing .
+
+endfm

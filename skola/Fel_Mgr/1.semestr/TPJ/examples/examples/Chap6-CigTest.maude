@@ -1,0 +1,168 @@
+**************************************************************************
+***  Chapter 6 - Metaprogramming
+***	Section 6 : Internal Strategies
+***
+***  CIGARETTE-TEST : the Grand Finale of Maude examples, implementing
+*** 	an internal strategy in an optimization problem based on our
+***	Chapter 3 cigarettes example.
+***
+**************************************************************************
+
+
+mod CIGARETTES-3 is
+
+   pr NAT .
+ 
+   sorts Brand State .
+   
+
+   ops DROMEDARY OLDPORT SCARBOROUGH-MAN MISSOURI-FATS : -> Brand .
+   ops c b : Brand Nat -> State [ctor] .
+   op 1 : -> State [ctor] .
+   op fail : -> Brand .
+   op __ : State State -> State [ctor assoc comm id: 1] .
+
+   op price : Brand -> Nat .
+
+   vars V X W Y Z : Nat .
+   var B : Brand .
+
+   eq price(DROMEDARY) = 312 .
+   eq price(OLDPORT) = 312 .
+   eq price(SCARBOROUGH-MAN) = 364 .
+   eq price(MISSOURI-FATS) = 418 .
+
+   eq price(fail) = 0 .
+
+   rl [smoke] : c(B, X) => b(B, X + 1) .
+
+   rl [makenew] : b(DROMEDARY, V)
+		  b(DROMEDARY, W)
+		  b(DROMEDARY, X)
+		  b(DROMEDARY, Y)
+		  b(DROMEDARY, Z) => c(DROMEDARY, V + W + X + Y + Z) .
+   rl [makenew] : b(OLDPORT, W)
+		  b(OLDPORT, X)
+		  b(OLDPORT, Y)
+		  b(OLDPORT, Z) => c(OLDPORT, W + X + Y + Z) .
+   rl [makenew] : b(SCARBOROUGH-MAN, X)
+		  b(SCARBOROUGH-MAN, Y)
+		  b(SCARBOROUGH-MAN, Z) => c(SCARBOROUGH-MAN, X + Y + Z) .
+   rl [makenew] : b(MISSOURI-FATS, Y) 
+		  b(MISSOURI-FATS, Z) => c(MISSOURI-FATS, Y + Z) .
+
+endm
+
+
+mod CIGARETTE-VENDING-MACHINE is
+
+   protecting CIGARETTES-3 .
+
+   sort BrandSet .
+   subsort Brand < BrandSet .
+
+   op vendor : BrandSet -> State .
+   op _&_ : BrandSet BrandSet -> BrandSet [ctor assoc comm id: null] .
+   op null : -> BrandSet [ctor] .
+
+   var B : Brand .
+   var BS : BrandSet .
+
+   rl [buypack] : vendor(B & BS) =>
+	c(B, 0)	c(B, 0)	c(B, 0)	c(B, 0)	c(B, 0)
+	c(B, 0) c(B, 0)	c(B, 0)	c(B, 0)	c(B, 0)
+	c(B, 0) c(B, 0)	c(B, 0) c(B, 0) c(B, 0)
+	c(B, 0) c(B, 0) c(B, 0) c(B, 0) c(B, 0) .
+
+endm
+   
+
+fmod CIGARETTE-TEST is
+
+   pr META-LEVEL .
+   pr CIGARETTE-VENDING-MACHINE .
+
+   sorts CigTotal CigTotalSet .
+   subsort CigTotal < CigTotalSet .
+
+   op ct : Term Term -> CigTotal [ctor] .
+   op __ : CigTotalSet CigTotalSet -> CigTotalSet [ctor assoc comm id: none] .
+   op none : -> CigTotalSet [ctor] .
+
+   op goTest! : -> CigTotalSet .
+   op cigApply : Nat -> ResultTriple .
+   op cigTest : Nat -> CigTotalSet .
+
+   op total : ResultTriple -> CigTotal .
+   op getbrand : Substitution -> Term .
+   op getnum : ResultPair -> Term .
+   op extract : ResultPair -> Term .
+
+   var TL : TermList .
+   var T : Term .	var Y : Type .		var SB : Substitution .
+   vars Q1 Q2 : Term .	var M : Module .	var N : Nat .
+
+   eq goTest! = cigTest(0) .
+
+   eq cigApply(N) = metaApply(['CIGARETTE-VENDING-MACHINE],
+	'vendor['_&_['DROMEDARY.Brand, '_&_['OLDPORT.Brand, 
+		'_&_['SCARBOROUGH-MAN.Brand, 'MISSOURI-FATS.Brand]]]],
+			'buypack, none, N) .
+   
+   eq cigTest(N) = if cigApply(N) == (failure).ResultTriple?
+		   then none
+		   else total(cigApply(N)) cigTest(N + 1) 
+		   fi .
+
+   eq total({T, Y, SB}) = ct( getbrand(SB), 
+			      extract( metaReduce( ['CIGARETTES-3], 
+		'_quo_['price[getbrand(SB)], getnum(
+				metaRewrite(['CIGARETTES-3], T, 1000)
+						   ) 
+		      ] 			 )
+				     )    
+			     ) .  
+
+   eq getbrand( Q1 <- Q2 ; SB ) = if Q1 == 'B:Brand then Q2
+				  else getbrand(SB) fi .
+   eq getbrand( none ) = 'fail.Brand .
+
+   eq getnum( { '__['b[Q1, Q2] , TL ] , Y } ) = '_+_[Q2, getnum({TL, Y})] .
+   eq getnum( { '__['b[Q1, Q2] , T] , Y } ) = '_+_[Q2, getnum({T, Y})] .
+   eq getnum( { ('b[Q1, Q2] , TL) , Y } ) = '_+_[Q2, getnum({TL, Y})] .
+   eq getnum( { 'b[Q1, Q2] , Y } ) = Q2 .
+
+   eq extract( { T , Y } ) = T .
+
+   eq ct( 'fail.Brand, T ) = none .
+
+endfm
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,24 @@
+**********************************************************************
+***  Chapter 2 - Functional Modules
+*** 	Section 4 : Membership Axioms
+***
+***  CARD-PAIR : uses the matching condition in a conditional 
+***	membership axiom.
+***
+**********************************************************************
+
+
+fmod CARD-PAIR is
+ 
+   protecting CARD-DECK .
+
+   sorts Pair PokerPair .
+   subsort PokerPair < Pair .
+
+   op <_;_> : Card Card -> Pair [comm] .
+
+   var N : Number .   var P : Pair .
+
+   cmb P : PokerPair if < N of S:Suit ; N of S':Suit > := P .
+
+endfm

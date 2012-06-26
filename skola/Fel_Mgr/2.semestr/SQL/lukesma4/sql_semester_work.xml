@@ -1,0 +1,1523 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="http://service.felk.cvut.cz/courses/X36SQL/xml/sproject_sql_html.xsl"?>
+<!DOCTYPE sproject_sql PUBLIC "-//XMLmind//DTD Sproject_sql//EN"
+"http://service.felk.cvut.cz/courses/X36SQL/xml/sproject_sql/sproject_sql.dtd">
+<sproject_sql>
+  <course>
+    <cname>Jazyk SQL</cname>
+
+    <code>X36SQL</code>
+
+    <semester>Léto 2012, přepracovaná práce ze Zimy 2009</semester>
+
+    <seminar>Čtvrtek 14:30</seminar>
+  </course>
+
+  <author>
+    <aname>Martin Lukeš</aname>
+
+    <uname>lukesma4</uname>
+
+    <email>lukesma4@fel.cvut.cz</email>
+  </author>
+
+  <content>
+    <declaration>Prohlašuji, že jsem svou semestrální práci vypracoval
+    samostatně. Všechny zdroje, ze kterých jsem čerpal, jsou uvedeny v části
+    Odkazy.</declaration>
+
+    <title>Magicové turnaje</title>
+
+    <description>
+      <title>Popis</title>
+
+      <para>Magic je nejstarší karetní sběratelská hra. Každý rok jsou v něm
+      uspořádány desítky turnajů. Databázový systém slouží k evidenci
+      úspěšných balíčků ( 1 - 8. místo na turnaji), jejich složení, informace
+      o turnaji, na kterém byly hrány, informacemi o jejich pilotech. Databáze
+      by měla ulehčit vývoj nových a vylepšování starších archetypů. V Magicu
+      vyšlo okolo 16 868 karet (karty s stejným jménem z různých edic jsou
+      započítány vícekrát ). Magicový balíček na limited formáty, které
+      databáze eviduje, je složen z maindecku a sideboardu. Maindeck musí
+      obsahovat 60 a více karet, sideboard je složen z maximálně 15 karet.
+      Maindeck označuje karty, s kterými hráč začína každou první hru.
+      Sideboard je určen k vylepšení balíčku proti problematickým soupeřům v
+      2., případně, třetí hře Karta jednoznačně identifikovaná svým jménem se
+      v součtu může v maindecku i sideboardu vyskytovat maximálně v čtyřech
+      kopiích ( existuje jedna karta, která je výjimkou z tohoto pravidla, ale
+      tu tento model nebude zahrnovat). Dále pak je omezení vzhledem k daným
+      formátům, ale ani tuto skutečnost nebude model zahrnovat.</para>
+
+      <comment>
+        <para> Dalším omezením v reálném světě jsou Banned list &amp; Restricted list. Banned list zakazuje hraní karty na formátu, restricted omezuje 
+maximální možný počet jeích kopií  v balíčku na 1 ks. Tyto listy upravují legálnost daných karet na daném formátu a jsou aktualizované 
+jednou za 3 měsíce. Vzhledem k rozsahu těchto listů  a jejich časté obměně
+- viz http://www.wizards.com/Magic/TCG/Resources.aspx?x=judge/resources/
+-http://www.wizards.com/Magic/TCG/Resources.aspx?x=judge/resources/sfrlegacy
+nebude v modelu uvedena kontrola všech listů.
+</para>
+      </comment>
+
+      <para>Každá karta má kromě jména ( primární klíč ), barvu, typ,
+      vyvolávací cenu, počet kopií, které se vyskytují v sb či md. Základních
+      barev je v MTG 5 - červená, zelená, bílá, modrá, černá. Dále pak
+      existují i jejich kombinace a hybridní barvy, split karty - pro
+      jednoduchost budou karty, které nemají jednoznačně určenu barvu označeny
+      jako multicolor. Kombinace barev mohou být téměř libovolné - barvy se
+      zkráceně značí podle prvního písmene anglického slova (B = black, G=
+      green, R = red, W = white , U = BLUE (jedinýjimka, B už bylo použito). M = multicolor.
+      Tyto znaky zastupují také manu dané barvy v casting costu. Některé karty
+      nemají barvu a jsou jsou označovány jako colorless (některé artefakty -
+      donedávna všechny, landy)</para>
+
+      <comment>
+        <para> </para>
+      </comment>
+
+      <para>Každá karta má svůj typ - základní typy jsou artifact, instant,
+      enchantment, land, planeswalker, creature, sorcery, artifact creature.
+      Každá karta má svoji vyvolávací cenu - converted mana cost/casting cost,
+      která představuje, kolik a jak barevných man (zdrojů energie) je nutné
+      použít k položení karty do hry - karty bez uvdeného CC mají podle
+      pravidel CC 0. Rozsah vyvolávací ceny je ohromný - začíná nulou a končí
+      u 19. Samozřejmě nejsnou zastoupeny všechny kombinace barev, ale je jich
+      obecně dost. Číslo v CC udává počet many libovolné barvy. CC - 2RG = dvě
+      libovolné many, červená a zelená.</para>
+
+      <comment>
+        <para></para>
+      </comment>
+
+      <para>Na každém limited turnaji se hráč zaregistruje, sepíše decklist,
+      který je po odevzdání brán za závaznou podobu balíčku před první hrou.
+      Decklist slouží k kontrole, jestli hráč nefixluje a nemění balíček či
+      jejich části v průběhu turnaje. Každý hráč tedy může hrát jenom jeden
+      balíček na jednom turnaji.</para>
+
+    <title2>Procedurální rozšíření</title2>
+    <para>Procedurální rozšíření bude kontrolovat, že balíček obsahuje sumu karet v sb a md max 4, minimálně 0 (záporná čísla a čísla větší než 4 jsou nepřípustná). Dále bude kontrolovat, že podtyp není podtypem sám sebe. U typu turnaj zvýší počet účastníků turnaje při vytvoření relace hral o jedna.
+
+Bude vytvořen modul pro vygenerování testovacích dat většího rozsahu.
+    </para>
+
+      <comment>
+        <para>S T R U K T U R A   S E M E S T R Á L N Í  P R Á C E 
+
+Semestrálka má tyto části: 
+1. hlavička (údaje o vás a o čase cvičení, prohlášení o autorství, název práce) 
+
+2. popis 
+   2.1 stručná slovní charakteristika vašeho projektu (několik odstavců), kde popíšete "realitu", 
+          kterou budete ve vaší semestrálce databázově modelovat. 
+          Výhodným je navázat na semestrální práce bakalářského předmětu DBS. 
+   2.2. textová specifikace procedurálního rozšíření, která bude podkladem pro doplnění relačního schématu 
+          o objekty procedurálniho typu (package tvořící API rozhraní bussiness logiky systému, 
+          pracujícího nad Vaším úložištěm (podporogramy, triggery):
+         *například realizujte kontrolu dodatečně formulovaného složitějšího integritního omezení pomocí 
+           databázových triggerů, které volaji uložené databázové procedury a funkce,
+        *například dopňte do schématu tabulku/tabulky s odvozenými hodnotami a pomocí procedurálních 
+          DB objektů zajistí jednorázové přepočítání odvozených hodnot z prvotních údajů,
+        *například zevrubně prozkoumejte datové schéma svého úložiště a z výskytu smyček ve schématu 
+          vytypuje případné zdroje nekonzistencí, formulujte integritní omezení a zrealizuje jeho procedurální kontroly, 
+         které budou vzniku těchto potenciálních datových nekonzistencí účinně bránit.
+        *například vypněte některé IO (např. cizí klíč) a jeho kontrolu naprogramujte pomocí příslušných
+         DB triggerů (např. kaskádní update, delete apod.),
+        *napríklad něco podobného.
+   2.3.
+3. datové schéma úložiště
+   3.1 nepovinný obrázek schématu v konceptuálním (převzato z předmětu DBS), nebo databázovém grafickém modelu 
+   3.2 Diskuse k datovému schématu zahrnuje výčet integritních omezení, které nebylo možné zahrnout do obrázku. 
+       Jsou-li ve schématu smyčky, diskuse zda smyčka je potenciálním zdrojem datové nekonzistence
+   3.3. SQL script pro vytvoření relačního db schématu
+   3.4. SQL script pro vytvoření objektově relačního db schématu
+
+4. PLSQL procedura, která automaticky naplní tabulky schématu větším množstvím konzistentních dat. 
+    V proceduře budou vedle příkazů Insert ... Values také použity příkazy Insert ... Select pro naplnění tabulek, 
+    které budou obrazem typu vztahu M:N. Vložíme tak do tabulky výsledek spojení (JOIN) tabulek, 
+    které jsou obrazem účastníků typu vztahu ("vztahových" tabulek) a dle potřeby také Update a Delete. 
+
+5. PLSQL procedura, která automaticky naplní objektové tabulky objektově relačního schématu větším množstvím 
+    konzistentních dat. Optimální je procedura, která extrahuje data z relačního úložiště ad 4), nahradí datové cizí klíče 
+    referencemi a vše uloží do cílových tabulek. 
+6. deset databázových dotazů, které předjímají použití SQL v celém rozsahu jeho výrazových prostředků.
+   Pro každý dotaz:
+   6.1 formulace v přirozeném jazyku 
+   6.2 první verze 
+        6.2.1. formulace v relačním SQL
+        6.2.1. exekuční plán
+        6.2.2. odezva 
+        6.2.3. diskuse, ve které bude konstatováno, že odpověď na dotaz odpovídá očekávání autora dotazu v přirozeném jazyku 
+        6.2.4. diskuse k efektivnosti exekučního plánu, ze které vyplyne změna exekučního plánu:
+              * dotaz lze formulovat syntakticky jinak a tudíž s jiným (lepším/horším) plánem provedení
+              * změny vstupů pro optimalizátor, například přidáním indexů, přidáním pohledů
+   6.3 druhá verze 
+        6.3.1. formulace v relačním SQL
+        6.3.2. exekuční plán
+        6.3.3. odezva 
+        6.3.3. diskuse, ve které bude konstatováno, že odpověď na dotaz odpovídá očekávání autora dotazu v přirozeném jazyku 
+        6.3.4. diskuse porovnávající efektivnost obou dotazů
+   6.4. dotaz nad objektově relačním úložištěm schématem formulace dotazu nad objektově relačním úložištěm
+        6.3.1. formulace v objektově-relačním SQL, kde joiny jsou nahrazeny použitím objektových referencí
+        6.4.1. exekuční plán
+        6.4.2. odezva 
+        6.4.3. diskuse, ve které bude konstatováno, že odpověď na dotaz odpovídá očekávání autora dotazu v přirozeném jazyku 
+        6.4.4. diskuse porovnávající efektivnost všech tří dotazů
+
+7. tabulka pokrytí požadovaných kategorií složitosti dotazů
+
+8. procedurální rozšíření 
+   Pro každý procedurální objekt:
+   8.1. specifikace
+   8.2. zdrojový text
+   8.3. slovní specifikace struktury testu pro ověření fukčnosti o n krocích
+        n-tý krok testu:
+        - podívám se na současný stav relevantního fragmentu dat před testem
+        - provedu pokus o provedení toho a toho ukonu, po provedeni očekávám, že v databázi nastanou ty a ty změny/pokus 
+          bude odmitnut z toho a toho důvodu
+        - pro ověření se podívám na stav relevantního fragmentu dat po akci,
+   8.4 záznam (log) výstupu z proběhlého testu
+   8.5 diskuse k výsledku testu a případnému ladění
+   8.6 konstatování, že test ověřil správnou funkčnost
+
+9. Celkový SQL script, obsahující zdrojové texty všech bodů 
+   
+10. Závěr
+
+11. Odkazy na použité zdroje informací</para>
+      </comment>
+
+      <para>Střelecká tabulka</para>
+
+      <para>Vytvoří se odvozená tabulka střelců, která se bude aktualizovat při vkládání záznamu o vstřelení branky
+      hráčem.</para>
+
+      <comment>
+        <para>T E C H N O L O G I E   A  N Á S T R O J E   
+   Semestrální práci odevzdáte ve formě XML dokumentu, který nahrajete do vašeho projektového adresáře na
+   serveru service.felk.cvut.cz. Do tohoto adresáře umístíte také všechny zdrojové souboru a obrázek datového schématu.
+
+
+UMÍSTĚNÍ PRÁCE:
+   http://service.felk.cvut.cz/courses/X36SQL/prj/&lt;vase_uzivatelske_jmeno&gt; 
+   technologie přístupu do této lokace je WebDAV, návody a nástroje naleznete na:
+   <link url="http://service.felk.cvut.cz/pubguide/">http://service.felk.cvut.cz/pubguide/</link>
+
+STRUKTURA DOKUMENTU:
+   Odevzdaná práce (XML dokument) nechť je validní dle specifikace sprojekct_sql. 
+   Na adrese:   <link url="http://service.felk.cvut.cz/courses/X36SQL/xml/sproject_sql/">http://service.felk.cvut.cz/courses/X36SQL/xml/sproject_sql/</link>
+   najdete specifikace ve formátu DTD, XML Schema, Relax NG (sproject_sql.dtd, sproject_sql.xsd, sproject_sql.rng).
+   Pro editaci práce tedy lze použít libovolný XML editor.
+   Kompletní podpora pro formátování semestrálky (šablony a ukázkové semestrálky) práci offline je:
+<link url="http://service.felk.cvut.cz/courses/X36SQL/xml/sproject_sql.zip">   http://service.felk.cvut.cz/courses/X36SQL/xml/sproject_sql.zip</link>
+
+TVORBA DOKUMENTU (semestrálky)
+   Pokud použijete jiný editor než XML Mind (viz níže), doporučuji stáhnout si šablonu pro semestrálku z SQL,
+      <link url="http://service.felk.cvut.cz/courses/X36SQL/xml/sproject_sql/templates/sql_semester_work_template.xml">http://service.felk.cvut.cz/courses/X36SQL/xml/sproject_sql/templates/sql_semester_work_template.xml</link>
+   tu otevřít a vyplnit vlastním textem vaší semestrální práce.
+   Pokud toto neuděláte, pak je třeba, aby váš nově vytvořený dokument odkazoval na formátovací šablonu 
+   pro zobrazení v html podobě. Za specifikaci kódování v XML souboru:
+   &lt;?xml version="1.0" encoding="UTF-8"?&gt;
+  je třeba umístit tuto instrukci pro provedení:
+&lt;?xml-stylesheet type="text/xsl" href="http://service.felk.cvut.cz/courses/X36SQL/xml/sproject_sql_html.xsl"?&gt;
+
+
+EDITOR XML MIND - DOPORUČUJI PRO TVORBU SEMESTRÁLKY
+Home Edition tohoto nástroje je volně ke stažení pro platformy linux i windows:
+<link url="http://www.xmlmind.com/xmleditor/download.shtml">http://www.xmlmind.com/xmleditor/download.shtml</link>
+Až si ho stáhnete a nainstalujete a spustíte, doinstalujte si podporu dokumentu sproject_sql (tvorba semestrálky):
+
+Instalace balíku "sproject_sql" (šablony pro semestrálku z SQL) v XML Mind
+ Options -&gt; Preferences... -&gt; Install add-ons
+           do okna "Download add-ons from this servers"
+               přidat adresu: 
+         http://service.felk.cvut.cz/courses/X36SQL/xml/sproject_sql.xxe_addon
+ Options -&gt; Install Add-ons...
+      Načtou se informace o balících, tam najdete balík "SQL Semestralni prace"
+
+Po dokončení instalace je třeba XML Mind restartovat. 
+Po dalším spuštění se vám přes volbu File -&gt; New... v nabídce existujících formátů objeví nabídka:
+ SQL Semestral Work Documentation 
+a vy si můžete vybrat, zda si otevřete šablonu kam doplníte vlastní text semestrálky 
+(A Template For Semestral Work With Comments) nebo vzorovou semestrálku s komentáři 
+(Sample of Semestral Work), což přesně tento dokument.</para>
+      </comment>
+    </description>
+
+    <data_model>
+      <title>Schéma datového úložiště</title>
+
+      <dm_picture>
+        <mediaobject>
+          <imageobject>
+            <imagedata fileref="../schema.jpg" />
+          </imageobject>
+        </mediaobject>
+      </dm_picture>
+
+      <comment>
+        <para>nepovinný obrázek schématu v konceptuálním (nejlépe převzato z předmětu DBS), nebo databázovém grafickém 
+modelu</para>
+      </comment>
+
+      <title2>Diskuse datového modelu a popis integritních omezeni</title2>
+
+      <para>Mezi typy TYM a UTKANI vedou dve spojnice přes vztahy DOMACI a HOSTE. Riziko ošetříme integritním
+      omezením:</para>
+
+      <para>IO1: Daný tým nesmí být v jednom utkání současně domácí i hostujícím týmem. Kontrola musí být
+      procedurální.</para>
+
+      <para>Mezi typy SEDADLO (stadionu) a UTKANI vedou dvě spojnice přes PRODANY a REZERVOVANY. Riziko ošetříme
+      integritním omezením:</para>
+
+      <para>IO2: Prodané sedadlo stadionu na utkání nemůže být rezervované.</para>
+
+      <title2>SQL script pro vytvoření relačního db schématu</title2>
+
+      <para><link url="create.sql">Odkaz na skript</link></para>
+
+      <comment>
+        <para>Nejčastěji dávka, kterou vygeneroval ERM</para>
+      </comment>
+
+      <title2>SQL script pro vytvoření objektově relačního db schématu</title2>
+
+      <para><link url="create_objekty.sql">Odkaz na skript</link></para>
+
+      <comment>
+        <para>Nejčastěji dávka, kterou vygeneroval ERM</para>
+      </comment>
+    </data_model>
+
+    <filling_rel>
+      <title>PLSQL procedura pro naplnění relačních tabulek</title>
+
+      <para><link url="data_oracle.sql">Odkaz na Script</link></para>
+
+      <comment>
+        <para>V proceduře budou vedle příkazů Insert ... Values v cyklu také použity příkazy I
+Insert ... Select pro naplnění tabulek, které budou obrazem typu vztahu M:N. 
+Vložíme tak do "vztahové" tabulky výsledek náhodného spojení "účastnických" tabulek, 
+které jsou obrazem účastníků typu vztahu  a dle potřeby také Update a Delete.</para>
+      </comment>
+    </filling_rel>
+
+    <filling_obj>
+      <title>Naplnění objektových tabulek</title>
+
+      <para><link url="prevod_dat.sql">odkaz na dávku</link></para>
+
+      <comment>
+        <para>dávka, která naplní objektové tabulky objektově relačního schématu větším množstvím 
+konzistentních dat. 
+Optimální je extrakce data z relačního úložiště ad 4), transformace datových cizích klíčů na ukazatelové 
+a uložení výsledku do cílových objektových tabulek.</para>
+      </comment>
+    </filling_obj>
+
+    <queries>
+      <title>10 SQL dotazů dle specifikované složitosti</title>
+
+      <query>
+        <title2>Dotaz 1</title2>
+
+        <para>Vyber všechny zaměstnance, kteří nikdy neprováděli akreditaci novináře.</para>
+
+        <title3>První verze</title3>
+
+        <title4>SQL</title4>
+
+        <sql>SELECT Osoba.* 
+FROM (( SELECT z_id_osoby FROM zamestnanec)
+                MINUS 
+               (SELECT z_id_osoby FROM novinar))
+JOIN Osoba ON id_osoby = z_id_osoby;</sql>
+
+        <title4>Exekuční plán</title4>
+
+        <ex_plan>Plan hash value: 2619257640
+-----------------------------------------------------------------------------------------------------
+| Id  | Operation                      | Name            | Rows      | Bytes | Cost (%CPU)| Time     |
+-----------------------------------------------------------------------------------------------------
+|   0 | SELECT STATEMENT               |                 |     3     |   120 |     8  (38)| 00:00:01 |
+|*  1 |  HASH JOIN                     |                 |     3     |   120 |     8  (38)| 00:00:01 |
+|   2 |   VIEW                         |                 |     3     |    39 |     5  (40)| 00:00:01 |
+|   3 |    MINUS                       |                 |           |       |            |          |
+|   4 |     SORT UNIQUE                |                 |     3     |     9 |            |          |
+|   5 |      INDEX FULL SCAN           | PK_ZAMESTNANEC  |     3     |     9 |     1 (0)  | 00:00:01 |
+|   6 |     SORT UNIQUE                |                 |     2     |     6 |            |          |
+|   7 |      TABLE ACCESS FULL         | NOVINAR         |     2     |     6 |     2   (0)| 00:00:01 |
+|   8 |   TABLE ACCESS FULL            | OSOBA           |    97     |  2619 |     2   (0)| 00:00:01 |
+------------------------------------------------------------------------------------------------------
+Predicate Information (identified by operation id):
+---------------------------------------------------
+   1 - access("ID_OSOBY"="Z_ID_OSOBY")
+   Statistics
+</ex_plan>
+
+        <title4>Výsledek dotazu</title4>
+
+        <sql_result>ID_OSOBY               RODNE_CISLO            PRIJMENI       JMENO   NARODNOST 
+---------------------- ---------------------- -------------- -------------------
+30                     5801010012             Novak          Josef   CZE       </sql_result>
+
+        <title4>Diskuse 1</title4>
+
+        <para>Odezva na dotaz je správná.</para>
+
+        <title4>Diskuse 2</title4>
+
+        <para>Dotaz je se pokusím zefektivnit posunutím podmínky do části where a nahrazením operace MINUS operací NOT
+        IN.</para>
+
+        <title3>Druhá verze</title3>
+
+        <title4>SQL</title4>
+
+        <sql>SELECT Osoba.* 
+FROM  zamestnanec
+JOIN Osoba ON id_osoby = z_id_osoby
+WHERE z_id_osoby NOT IN ((SELECT z_id_osoby FROM novinar));</sql>
+
+        <title4>Exekuční plán</title4>
+
+        <ex_plan>ID_OSOBY               RODNE_CISLO            PRIJMENI             JMENO                NARODNOST 
+---------------------- ---------------------- -------------------- -------------------- --------- 
+30                     5801010012             Novak                Josef                CZE       
+1 rows selected
+Plan hash value: 2032996285
+-----------------------------------------------------------------------------------------------
+| Id  | Operation                    | Name           | Rows  | Bytes | Cost (%CPU)| Time     |
+-----------------------------------------------------------------------------------------------
+|   0 | SELECT STATEMENT             |                |     1 |    33 |     5  (20)| 00:00:01 |
+|   1 |  NESTED LOOPS                |                |     1 |    33 |     5  (20)| 00:00:01 |
+|*  2 |   HASH JOIN ANTI             |                |     1 |     6 |     4  (25)| 00:00:01 |
+|   3 |    INDEX FULL SCAN           | PK_ZAMESTNANEC |     3 |     9 |     1   (0)| 00:00:01 |
+|   4 |    TABLE ACCESS FULL         | NOVINAR        |     2 |     6 |     2   (0)| 00:00:01 |
+|   5 |   TABLE ACCESS BY INDEX ROWID| OSOBA          |     1 |    27 |     1   (0)| 00:00:01 |
+|*  6 |    INDEX UNIQUE SCAN         | PK_OSOBA       |     1 |       |     0   (0)| 00:00:01 |
+-----------------------------------------------------------------------------------------------
+Predicate Information (identified by operation id):
+---------------------------------------------------
+   2 - access("ZAMESTNANEC"."Z_ID_OSOBY"="Z_ID_OSOBY")
+   6 - access("ID_OSOBY"="Z_ID_OSOBY")
+   Statistics
+-----------------------------------------------------------
+               0  recursive calls
+               0  consistent gets direct
+               0  physical reads direct
+               0  recovery blocks read
+               0  redo buffer allocation retries </ex_plan>
+
+        <title4>Výsledek dotazu</title4>
+
+        <sql_result>ID_OSOBY               RODNE_CISLO            PRIJMENI       JMENO   NARODNOST 
+---------------------- ---------------------- -------------- -------------------
+30                     5801010012             Novak          Josef   CZE       </sql_result>
+
+        <title4>Diskuse 1</title4>
+
+        <para>Odezva na druhou verzi je stejná a správná.</para>
+
+        <title4>Diskuse 2</title4>
+
+        <para>Dotaz 2 je opravdu efektivnější, cena dotazu je o třetinu levnější. Množinový rozdíl je méně efektivní,
+        než použití poddotazu s negativním predikátem. V tomto případě se tedy vyplatí použít druhou verzi
+        dotazu.</para>
+
+        <title3>Dotaz nad objektově relačním úložištěm</title3>
+
+        <title4>SQL</title4>
+
+        <sql>select...</sql>
+
+        <title4>Exekuční plán</title4>
+
+        <ex_plan>result</ex_plan>
+
+        <title4>Výsledek dotazu</title4>
+
+        <sql_result>RESULT</sql_result>
+
+        <title4>Diskuse 1</title4>
+
+        <para>Neodpovídá očekávané odezvě.</para>
+
+        <title4>Diskuse 2</title4>
+
+        <para>Porovnání všech tří variant z hlediska formulace dotazu a efektivnosti plánů.</para>
+      </query>
+
+      <query>
+        <title2>Dotaz 2</title2>
+
+        <para>Jmenný seznam argentinkých fotbalistů, kteří dostali kartu.</para>
+
+        <title3>První verze</title3>
+
+        <title4>SQL</title4>
+
+        <sql>SELECT distinct prijmeni, jmeno 
+FROM osoba o JOIN nominace n
+ON o.id_osoby = n.h_id_osoby
+WHERE (karta='Z' OR karta='C') AND o.narodnost='ARG'</sql>
+
+        <title4>Exekuční plán</title4>
+
+        <ex_plan>Plan hash value: 1284172236
+ 
+--------------------------------------------------------------------------------
+| Id  | Operation           | Name     | Rows  | Bytes | Cost (%CPU)| Time     |
+--------------------------------------------------------------------------------
+|   0 | SELECT STATEMENT    |          |    11 |   297 |     6  (34)| 00:00:01 |
+|   1 |  SORT UNIQUE        |          |    11 |   297 |     6  (34)| 00:00:01 |
+|*  2 |   HASH JOIN         |          |    11 |   297 |     5  (20)| 00:00:01 |
+|*  3 |    TABLE ACCESS FULL| OSOBA    |    10 |   220 |     2   (0)| 00:00:01 |
+|*  4 |    TABLE ACCESS FULL| NOMINACE |    20 |   100 |     2   (0)| 00:00:01 |
+--------------------------------------------------------------------------------
+ 
+Predicate Information (identified by operation id):
+---------------------------------------------------
+ 
+   2 - access("O"."ID_OSOBY"="N"."H_ID_OSOBY")
+   3 - filter("O"."NARODNOST"='ARG')
+   4 - filter("N"."KARTA"='C' OR "N"."KARTA"='Z')
+</ex_plan>
+
+        <title4>Výsledek dotazu</title4>
+
+        <sql_result>PRIJMENI             JMENO                
+-------------------- -------------------- 
+Almeyda              Matias               
+Crespo               Hernan               
+Simeone              Diego                
+Zanetti              Javier               
+
+4 rows selected</sql_result>
+
+        <title4>Diskuse 1</title4>
+
+        <para>Odezva je správná. Dotaz je koncipován jako spojení 2 tabulek, ze které se aplikuje podmínka.</para>
+
+        <title4>Diskuse 2</title4>
+
+        <para>Zkusím upravit dotaz použitím poddotazu v sekci WHERE. Přeformulování dotazu: Vyber ID hráčů z nominace,
+        kteří splňují podmínky. Z osob vyber ty hráče, jejichž ID jsou ve vybranné množině.</para>
+
+        <title3>Druhá verze</title3>
+
+        <title4>SQL</title4>
+
+        <sql>SELECT prijmeni, jmeno 
+FROM osoba o 
+WHERE id_osoby IN (SELECT h_id_osoby 
+                   FROM nominace 
+                   WHERE (karta='Z' OR karta='C') AND 
+                          o.narodnost='ARG' 
+                   GROUP BY h_id_osoby)   </sql>
+
+        <title4>Exekuční plán</title4>
+
+        <ex_plan>Plan hash value: 3427478916 
+----------------------------------------------------------------------------------
+| Id  | Operation             | Name     | Rows  | Bytes | Cost (%CPU)| Time     |
+----------------------------------------------------------------------------------
+|   0 | SELECT STATEMENT      |          |     1 |    22 |   148  (34)| 00:00:02 |
+|*  1 |  FILTER               |          |       |       |            |          |
+|   2 |   TABLE ACCESS FULL   | OSOBA    |    97 |  2134 |     2   (0)| 00:00:01 |
+|*  3 |   FILTER              |          |       |       |            |          |
+|   4 |    SORT GROUP BY      |          |     1 |     5 |     3  (34)| 00:00:01 |
+|*  5 |     FILTER            |          |       |       |            |          |
+|*  6 |      TABLE ACCESS FULL| NOMINACE |    20 |   100 |     2   (0)| 00:00:01 |
+----------------------------------------------------------------------------------
+Predicate Information (identified by operation id):
+--------------------------------------------------- 
+   1 - filter( EXISTS (SELECT 0 
+                       FROM "NOMINACE" "NOMINACE" 
+                       WHERE :B1='ARG' AND ("KARTA"='C' OR "KARTA"='Z') 
+                       GROUP BY "H_ID_OSOBY" HAVING "H_ID_OSOBY"=:B2))
+   3 - filter("H_ID_OSOBY"=:B1)
+   5 - filter(:B1='ARG')
+   6 - filter("KARTA"='C' OR "KARTA"='Z')
+</ex_plan>
+
+        <title4>Výsledek dotazu</title4>
+
+        <sql_result>PRIJMENI             JMENO                
+-------------------- -------------------- 
+Zanetti              Javier               
+Crespo               Hernan               
+Simeone              Diego                
+Almeyda              Matias               
+4 rows selected</sql_result>
+
+        <title4>Diskuse 1</title4>
+
+        <para>Až na pořadí řádků je výstup dotazů stejný.</para>
+
+        <title4>Diskuse 2</title4>
+
+        <para>Režie dotazu narostla, z původních 21 až na 155, což je zhruba 7x víc. Z toho lze usuzovat, že množinové
+        operace jsou méně efektivní než například spojování tabulek.</para>
+
+        <title3>Dotaz nad objektově relačním úložištěm</title3>
+
+        <title4>SQL</title4>
+
+        <sql>SELECT prijmeni, jmeno
+FROM
+Osoba_obj
+WHERE
+ id_osoby in (Select distinct n.hrac_ref.osoba_ref.id_osoby 
+              from nominace_obj n 
+              WHERE karta='Z' OR karta='C') and
+ narodnost='ARG'    </sql>
+
+        <title4>Exekuční plán</title4>
+
+        <ex_plan>Plan hash value: 1828598644
+-----------------------------------------------------------------------------------------------
+| Id  | Operation                    | Name           | Rows  | Bytes | Cost (%CPU)| Time     |
+-----------------------------------------------------------------------------------------------
+|   0 | SELECT STATEMENT             |                |     1 |    55 |     9  (23)| 00:00:01 |
+|   1 |  NESTED LOOPS                |                |     1 |    55 |     9  (23)| 00:00:01 |
+|   2 |   VIEW                       | VW_NSO_1       |    20 |   260 |     7  (15)| 00:00:01 |
+|   3 |    SORT UNIQUE               |                |     1 |  1660 |            |          |
+|*  4 |     HASH JOIN OUTER          |                |    20 |  1660 |     7  (15)| 00:00:01 |
+|*  5 |      HASH JOIN OUTER         |                |    20 |  1200 |     5  (20)| 00:00:01 |
+|*  6 |       TABLE ACCESS FULL      | NOMINACE_OBJ   |    20 |   260 |     2   (0)| 00:00:01 |
+|   7 |       TABLE ACCESS FULL      | HRAC_OBJ       |    88 |  4136 |     2   (0)| 00:00:01 |
+|   8 |      TABLE ACCESS FULL       | OSOBA_OBJ      |    97 |  2231 |     2   (0)| 00:00:01 |
+|*  9 |   TABLE ACCESS BY INDEX ROWID| OSOBA_OBJ      |     1 |    42 |     1   (0)| 00:00:01 |
+|* 10 |    INDEX UNIQUE SCAN         | SYS_C001311753 |     1 |       |     0   (0)| 00:00:01 |
+-----------------------------------------------------------------------------------------------
+Predicate Information (identified by operation id):
+--------------------------------------------------- 
+   4 - access("P000006$"."SYS_NC_OID$"(+)="P000004$"."SYS_NC00006$")
+   5 - access("P000004$"."SYS_NC_OID$"(+)="N"."HRAC_REF")
+   6 - filter("KARTA"='C' OR "KARTA"='Z')
+   9 - filter("NARODNOST"='ARG')
+  10 - access("ID_OSOBY"="HRAC_REF.OSOBA_REF.ID_OSOBY")
+Note
+-----
+   - dynamic sampling used for this statement
+</ex_plan>
+
+        <title4>Výsledek dotazu</title4>
+
+        <sql_result>PRIJMENI             JMENO                
+-------------------- -------------------- 
+Zanetti              Javier               
+Crespo               Hernan               
+Simeone              Diego                
+Almeyda              Matias               
+4 rows selected</sql_result>
+
+        <title4>Diskuse 1</title4>
+
+        <para>Výstup dotazu odpovídá výstupu dotazů neobjektové verze</para>
+
+        <title4>Diskuse 2</title4>
+
+        <para>Cena objektového dotazu je 44, což je 2x více než je 1. neobjektová verze. Protože je to ale přepis 3.
+        verze dotazu, jehož režie je 103, můžeme v tomto případě konstatovat, že identicky dotaz je v objektové databázi
+        2x levnější.</para>
+      </query>
+
+      <query>
+        <title2>Dotaz 3</title2>
+
+        <para>Formulace v přirozeném jazyku.</para>
+
+        <title3>První verze</title3>
+
+        <title4>SQL</title4>
+
+        <sql>select...</sql>
+
+        <title4>Exekuční plán</title4>
+
+        <ex_plan>result</ex_plan>
+
+        <title4>Výsledek dotazu</title4>
+
+        <sql_result>RESULT</sql_result>
+
+        <title4>Diskuse 1</title4>
+
+        <para>Neodpovídá očekávané odezvě.</para>
+
+        <title4>Diskuse 2</title4>
+
+        <para>Návrh navození podmínek pro změnu exekučního plánu.</para>
+
+        <title3>Druhá verze</title3>
+
+        <title4>SQL</title4>
+
+        <sql>select...</sql>
+
+        <title4>Exekuční plán</title4>
+
+        <ex_plan>result</ex_plan>
+
+        <title4>Výsledek dotazu</title4>
+
+        <sql_result>RESULT</sql_result>
+
+        <title4>Diskuse 1</title4>
+
+        <para>Neodpovídá očekávané odezvě.</para>
+
+        <title4>Diskuse 2</title4>
+
+        <para>Porovnání obou dotazů (plánů) z hlediska efektivnosti.</para>
+
+        <title3>Dotaz nad objektově relačním úložištěm</title3>
+
+        <title4>SQL</title4>
+
+        <sql>select...</sql>
+
+        <title4>Exekuční plán</title4>
+
+        <ex_plan>result</ex_plan>
+
+        <title4>Výsledek dotazu</title4>
+
+        <sql_result>RESULT</sql_result>
+
+        <title4>Diskuse 1</title4>
+
+        <para>Neodpovídá očekávané odezvě.</para>
+
+        <title4>Diskuse 2</title4>
+
+        <para>Porovnání všech tří variant z hlediska formulace dotazu a efektivnosti plánů.</para>
+      </query>
+
+      <query>
+        <title2>Dotaz 4</title2>
+
+        <para>Formulace v přirozeném jazyku.</para>
+
+        <title3>První verze</title3>
+
+        <title4>SQL</title4>
+
+        <sql>select...</sql>
+
+        <title4>Exekuční plán</title4>
+
+        <ex_plan>result</ex_plan>
+
+        <title4>Výsledek dotazu</title4>
+
+        <sql_result>RESULT</sql_result>
+
+        <title4>Diskuse 1</title4>
+
+        <para>Neodpovídá očekávané odezvě.</para>
+
+        <title4>Diskuse 2</title4>
+
+        <para>Návrh navození podmínek pro změnu exekučního plánu.</para>
+
+        <title3>Druhá verze</title3>
+
+        <title4>SQL</title4>
+
+        <sql>select...</sql>
+
+        <title4>Exekuční plán</title4>
+
+        <ex_plan>result</ex_plan>
+
+        <title4>Výsledek dotazu</title4>
+
+        <sql_result>RESULT</sql_result>
+
+        <title4>Diskuse 1</title4>
+
+        <para>Neodpovídá očekávané odezvě.</para>
+
+        <title4>Diskuse 2</title4>
+
+        <para>Porovnání obou dotazů (plánů) z hlediska efektivnosti.</para>
+
+        <title3>Dotaz nad objektově relačním úložištěm</title3>
+
+        <title4>SQL</title4>
+
+        <sql>select...</sql>
+
+        <title4>Exekuční plán</title4>
+
+        <ex_plan>result</ex_plan>
+
+        <title4>Výsledek dotazu</title4>
+
+        <sql_result>RESULT</sql_result>
+
+        <title4>Diskuse 1</title4>
+
+        <para>Neodpovídá očekávané odezvě.</para>
+
+        <title4>Diskuse 2</title4>
+
+        <para>Porovnání všech tří variant z hlediska formulace dotazu a efektivnosti plánů.</para>
+      </query>
+
+      <query>
+        <title2>Dotaz 5</title2>
+
+        <para>Formulace v přirozeném jazyku.</para>
+
+        <title3>První verze</title3>
+
+        <title4>SQL</title4>
+
+        <sql>select...</sql>
+
+        <title4>Exekuční plán</title4>
+
+        <ex_plan>plán</ex_plan>
+
+        <title4>Výsledek dotazu</title4>
+
+        <sql_result>RESULT</sql_result>
+
+        <title4>Diskuse 1</title4>
+
+        <para>Neodpovídá očekávané odezvě.</para>
+
+        <title4>Diskuse 2</title4>
+
+        <para>Návrh navození podmínek pro změnu exekučního plánu.</para>
+
+        <title3>Druhá verze</title3>
+
+        <title4>SQL</title4>
+
+        <sql>select...</sql>
+
+        <title4>Exekuční plán</title4>
+
+        <ex_plan>plán</ex_plan>
+
+        <title4>Výsledek dotazu</title4>
+
+        <sql_result>RESULT</sql_result>
+
+        <title4>Diskuse 1</title4>
+
+        <para>Neodpovídá očekávané odezvě.</para>
+
+        <title4>Diskuse 2</title4>
+
+        <para>Porovnání obou dotazů (plánů) z hlediska efektivnosti.</para>
+
+        <title3>Dotaz nad objektově relačním úložištěm</title3>
+
+        <title4>SQL</title4>
+
+        <sql>select...</sql>
+
+        <title4>Exekuční plán</title4>
+
+        <ex_plan>plán</ex_plan>
+
+        <title4>Výsledek dotazu</title4>
+
+        <sql_result>RESULT</sql_result>
+
+        <title4>Diskuse 1</title4>
+
+        <para>Neodpovídá očekávané odezvě.</para>
+
+        <title4>Diskuse 2</title4>
+
+        <para>Porovnání všech tří variant z hlediska formulace dotazu a efektivnosti plánů. Pokryta dotazy číslo.</para>
+      </query>
+
+      <query>
+        <title2>Dotaz 6</title2>
+
+        <para>Formulace v přirozeném jazyku.</para>
+
+        <title3>První verze</title3>
+
+        <title4>SQL</title4>
+
+        <sql>select...</sql>
+
+        <title4>Exekuční plán</title4>
+
+        <ex_plan>plán</ex_plan>
+
+        <title4>Výsledek dotazu</title4>
+
+        <sql_result>RESULT</sql_result>
+
+        <title4>Diskuse 1</title4>
+
+        <para>Neodpovídá očekávané odezvě.</para>
+
+        <title4>Diskuse 2</title4>
+
+        <para>Návrh navození podmínek pro změnu exekučního plánu.</para>
+
+        <title3>Druhá verze</title3>
+
+        <title4>SQL</title4>
+
+        <sql>select...</sql>
+
+        <title4>Exekuční plán</title4>
+
+        <ex_plan>plán</ex_plan>
+
+        <title4>Výsledek dotazu</title4>
+
+        <sql_result>RESULT</sql_result>
+
+        <title4>Diskuse 1</title4>
+
+        <para>Neodpovídá očekávané odezvě.</para>
+
+        <title4>Diskuse 2</title4>
+
+        <para>Porovnání obou dotazů (plánů) z hlediska efektivnosti.</para>
+
+        <title3>Dotaz nad objektově relačním úložištěm</title3>
+
+        <title4>SQL</title4>
+
+        <sql>select...</sql>
+
+        <title4>Exekuční plán</title4>
+
+        <ex_plan>plán</ex_plan>
+
+        <title4>Výsledek dotazu</title4>
+
+        <sql_result>RESULT</sql_result>
+
+        <title4>Diskuse 1</title4>
+
+        <para>Neodpovídá očekávané odezvě.</para>
+
+        <title4>Diskuse 2</title4>
+
+        <para>Porovnání všech tří variant z hlediska formulace dotazu a efektivnosti plánů. Pokryta dotazy číslo.</para>
+      </query>
+
+      <query>
+        <title2>Dotaz 7</title2>
+
+        <para>Formulace v přirozeném jazyku.</para>
+
+        <title3>První verze</title3>
+
+        <title4>SQL</title4>
+
+        <sql>select...</sql>
+
+        <title4>Exekuční plán</title4>
+
+        <ex_plan>plán</ex_plan>
+
+        <title4>Výsledek dotazu</title4>
+
+        <sql_result>RESULT</sql_result>
+
+        <title4>Diskuse 1</title4>
+
+        <para>Neodpovídá očekávané odezvě.</para>
+
+        <title4>Diskuse 2</title4>
+
+        <para>Návrh navození podmínek pro změnu exekučního plánu.</para>
+
+        <title3>Druhá verze</title3>
+
+        <title4>SQL</title4>
+
+        <sql>select...</sql>
+
+        <title4>Exekuční plán</title4>
+
+        <ex_plan>plán</ex_plan>
+
+        <title4>Výsledek dotazu</title4>
+
+        <sql_result>RESULT</sql_result>
+
+        <title4>Diskuse 1</title4>
+
+        <para>Neodpovídá očekávané odezvě.</para>
+
+        <title4>Diskuse 2</title4>
+
+        <para>Porovnání obou dotazů (plánů) z hlediska efektivnosti.</para>
+
+        <title3>Dotaz nad objektově relačním úložištěm</title3>
+
+        <title4>SQL</title4>
+
+        <sql>select...</sql>
+
+        <title4>Exekuční plán</title4>
+
+        <ex_plan>plán</ex_plan>
+
+        <title4>Výsledek dotazu</title4>
+
+        <sql_result>RESULT</sql_result>
+
+        <title4>Diskuse 1</title4>
+
+        <para>Neodpovídá očekávané odezvě.</para>
+
+        <title4>Diskuse 2</title4>
+
+        <para>Porovnání všech tří variant z hlediska formulace dotazu a efektivnosti plánů.</para>
+      </query>
+
+      <query>
+        <title2>Dotaz 8</title2>
+
+        <para>Formulace v přirozeném jazyku.</para>
+
+        <title3>První verze</title3>
+
+        <title4>SQL</title4>
+
+        <sql>select...</sql>
+
+        <title4>Exekuční plán</title4>
+
+        <ex_plan>plán</ex_plan>
+
+        <title4>Výsledek dotazu</title4>
+
+        <sql_result>RESULT</sql_result>
+
+        <title4>Diskuse 1</title4>
+
+        <para>Neodpovídá očekávané odezvě.</para>
+
+        <title4>Diskuse 2</title4>
+
+        <para>Návrh navození podmínek pro změnu exekučního plánu.</para>
+
+        <title3>Druhá verze</title3>
+
+        <title4>SQL</title4>
+
+        <sql>select...</sql>
+
+        <title4>Exekuční plán</title4>
+
+        <ex_plan>plán</ex_plan>
+
+        <title4>Výsledek dotazu</title4>
+
+        <sql_result>RESULT</sql_result>
+
+        <title4>Diskuse 1</title4>
+
+        <para>Neodpovídá očekávané odezvě.</para>
+
+        <title4>Diskuse 2</title4>
+
+        <para>Porovnání obou dotazů (plánů) z hlediska efektivnosti.</para>
+
+        <title3>Dotaz nad objektově relačním úložištěm</title3>
+
+        <title4>SQL</title4>
+
+        <sql>select...</sql>
+
+        <title4>Exekuční plán</title4>
+
+        <ex_plan>plán</ex_plan>
+
+        <title4>Výsledek dotazu</title4>
+
+        <sql_result>RESULT</sql_result>
+
+        <title4>Diskuse 1</title4>
+
+        <para>Neodpovídá očekávané odezvě.</para>
+
+        <title4>Diskuse 2</title4>
+
+        <para>Porovnání všech tří variant z hlediska formulace dotazu a efektivnosti plánů.</para>
+      </query>
+
+      <query>
+        <title2>Dotaz 9</title2>
+
+        <para>Formulace v přirozeném jazyku.</para>
+
+        <title3>První verze</title3>
+
+        <title4>SQL</title4>
+
+        <sql>select...</sql>
+
+        <title4>Exekuční plán</title4>
+
+        <ex_plan>plán</ex_plan>
+
+        <title4>Výsledek dotazu</title4>
+
+        <sql_result>RESULT</sql_result>
+
+        <title4>Diskuse 1</title4>
+
+        <para>Neodpovídá očekávané odezvě.</para>
+
+        <title4>Diskuse 2</title4>
+
+        <para>Návrh navození podmínek pro změnu exekučního plánu.</para>
+
+        <title3>Druhá verze</title3>
+
+        <title4>SQL</title4>
+
+        <sql>select...</sql>
+
+        <title4>Exekuční plán</title4>
+
+        <ex_plan>plán</ex_plan>
+
+        <title4>Výsledek dotazu</title4>
+
+        <sql_result>RESULT</sql_result>
+
+        <title4>Diskuse 1</title4>
+
+        <para>Neodpovídá očekávané odezvě.</para>
+
+        <title4>Diskuse 2</title4>
+
+        <para>Porovnání obou dotazů (plánů) z hlediska efektivnosti.</para>
+
+        <title3>Dotaz nad objektově relačním úložištěm</title3>
+
+        <title4>SQL</title4>
+
+        <sql>select...</sql>
+
+        <title4>Exekuční plán</title4>
+
+        <ex_plan>plán</ex_plan>
+
+        <title4>Výsledek dotazu</title4>
+
+        <sql_result>RESULT</sql_result>
+
+        <title4>Diskuse 1</title4>
+
+        <para>Neodpovídá očekávané odezvě.</para>
+
+        <title4>Diskuse 2</title4>
+
+        <para>Porovnání všech tří variant z hlediska formulace dotazu a efektivnosti plánů.</para>
+      </query>
+
+      <query>
+        <title2>Dotaz 10</title2>
+
+        <para>Formulace v přirozeném jazyku.</para>
+
+        <title3>První verze</title3>
+
+        <title4>SQL</title4>
+
+        <sql>select...</sql>
+
+        <title4>Exekuční plán</title4>
+
+        <ex_plan>plán</ex_plan>
+
+        <title4>Výsledek dotazu</title4>
+
+        <sql_result>RESULT</sql_result>
+
+        <title4>Diskuse 1</title4>
+
+        <para>Neodpovídá očekávané odezvě.</para>
+
+        <title4>Diskuse 2</title4>
+
+        <para>Návrh navození podmínek pro změnu exekučního plánu.</para>
+
+        <title3>Druhá verze</title3>
+
+        <title4>SQL</title4>
+
+        <sql>select...</sql>
+
+        <title4>Exekuční plán</title4>
+
+        <ex_plan>plán</ex_plan>
+
+        <title4>Výsledek dotazu</title4>
+
+        <sql_result>RESULT</sql_result>
+
+        <title4>Diskuse 1</title4>
+
+        <para>Neodpovídá očekávané odezvě.</para>
+
+        <title4>Diskuse 2</title4>
+
+        <para>Porovnání obou dotazů (plánů) z hlediska efektivnosti.</para>
+
+        <title3>Dotaz nad objektově relačním úložištěm</title3>
+
+        <title4>SQL</title4>
+
+        <sql>select...</sql>
+
+        <title4>Exekuční plán</title4>
+
+        <ex_plan>plán</ex_plan>
+
+        <title4>Výsledek dotazu</title4>
+
+        <sql_result>RESULT</sql_result>
+
+        <title4>Diskuse 1</title4>
+
+        <para>Neodpovídá očekávané odezvě.</para>
+
+        <title4>Diskuse 2</title4>
+
+        <para>Porovnání všech tří variant z hlediska formulace dotazu a efektivnosti plánů. Pokryta dotazy číslo.</para>
+      </query>
+    </queries>
+
+    <queries_cover>
+      <query_cat>
+        <entry>A</entry>
+
+        <entry></entry>
+
+        <entry>pozitivní dotaz nad spojením alespoň dvou tabulek (Seznam kateder - id, název, jejichž učitelé učil/učili
+        v předmětech, které garantuje katedra KKKK), ("vyber seznam se jmény a adresami pacientů, kteří byli vyšetřováni
+        Mudr. Čermákem" )</entry>
+      </query_cat>
+
+      <query_cat>
+        <entry>B</entry>
+
+        <entry></entry>
+
+        <entry>negativní dotaz nad spojením alespoň dvou tabulek (seznam semestrů - id, název, ve kterých NEzkoušel
+        nikdo z katedry Zubních trhaček), ("seznam se jmény a adresami pacientů, kteří nenavštívili lékaře Mudr.
+        Čermáka" ).</entry>
+      </query_cat>
+
+      <query_cat>
+        <entry>C</entry>
+
+        <entry></entry>
+
+        <entry>Vyber ty, které jsou ve vztahu se všemi - dotaz s univerzální kvantifikací (seznam učitelů - id, jmeno,
+        prijmeni, titul, kteří přednášeli ve VŠECH semestrechpočínaje zimním semestrem 2001/2002 až do letního semestru
+        2007/2008 včetně),("seznam mény a adresami lékařů, které navštívíli VŠICHNI pacienti, kteří někdy navštívili
+        Mudr. Čermáka")</entry>
+      </query_cat>
+
+      <query_cat>
+        <entry>D</entry>
+
+        <entry></entry>
+
+        <entry>Vyber ty, kteří mají vztah POUZE k ...(# "seznam se jmény a adresami pacientů, kteří navštívili pouze
+        Mudr. Čermáka (navštívili doktora Čermáka a nenavštívili žádného jiného lékaře)</entry>
+      </query_cat>
+
+      <query_cat>
+        <entry>E1</entry>
+
+        <entry></entry>
+
+        <entry>spojení - CROSS JOIN</entry>
+      </query_cat>
+
+      <query_cat>
+        <entry>E2</entry>
+
+        <entry></entry>
+
+        <entry>spojení - JOIN ON</entry>
+      </query_cat>
+
+      <query_cat>
+        <entry>E3</entry>
+
+        <entry></entry>
+
+        <entry>spojení - JOIN USING</entry>
+      </query_cat>
+
+      <query_cat>
+        <entry>E4</entry>
+
+        <entry></entry>
+
+        <entry>plné (vnější) spojení - FULL OUTER JOIN</entry>
+      </query_cat>
+
+      <query_cat>
+        <entry>E5</entry>
+
+        <entry></entry>
+
+        <entry>vnější polospojení - {LEFT | RIGHT} OUTER JOIN</entry>
+      </query_cat>
+
+      <query_cat>
+        <entry>F1</entry>
+
+        <entry></entry>
+
+        <entry>vnořený poddotaz v klauzuli WHERE</entry>
+      </query_cat>
+
+      <query_cat>
+        <entry>F1</entry>
+
+        <entry></entry>
+
+        <entry>vnořený poddotaz v klauzuli SELECT</entry>
+      </query_cat>
+
+      <query_cat>
+        <entry>G2</entry>
+
+        <entry></entry>
+
+        <entry>vnořený poddotaz v klauzuli FROM</entry>
+      </query_cat>
+
+      <query_cat>
+        <entry>G3</entry>
+
+        <entry></entry>
+
+        <entry>vztažený vnořený poddotaz (EXISTS | NOT EXISTS)</entry>
+      </query_cat>
+
+      <query_cat>
+        <entry>H</entry>
+
+        <entry></entry>
+
+        <entry>množinové sjednocení - UNION, UNION ALL, rozdíl - EXCEPT (MINUS v Oracle), průnik - INTERSECT</entry>
+      </query_cat>
+
+      <query_cat>
+        <entry>I</entry>
+
+        <entry></entry>
+
+        <entry>agregační funkce (count | sum | min | max| avg) nad seskupenými řádky - GROUP BY (HAVING)</entry>
+      </query_cat>
+
+      <query_cat>
+        <entry>J</entry>
+
+        <entry></entry>
+
+        <entry>vytvoření pohledu VIEW a dotaz nad ním</entry>
+      </query_cat>
+
+      <query_cat>
+        <entry>K</entry>
+
+        <entry></entry>
+
+        <entry>INSERT .... SELECT příkaz</entry>
+      </query_cat>
+
+      <query_cat>
+        <entry>L</entry>
+
+        <entry></entry>
+
+        <entry>UPDATE s vnořeným SELECT příkazem</entry>
+      </query_cat>
+
+      <query_cat>
+        <entry>M</entry>
+
+        <entry></entry>
+
+        <entry>DELETE s vnořeným SELECT příkazem</entry>
+      </query_cat>
+
+      <query_cat>
+        <entry>N</entry>
+
+        <entry></entry>
+
+        <entry>SELECT jako příkazový blok WITH</entry>
+      </query_cat>
+
+      <query_cat>
+        <entry>O</entry>
+
+        <entry></entry>
+
+        <entry>rekurzivní, resp hierarchický dotaz</entry>
+      </query_cat>
+    </queries_cover>
+
+    <proc_objects>
+      <title>Procedurální rozšíření</title>
+
+      <proc_object>
+        <title3>1. Modul AAAA</title3>
+
+        <para>Verbální specifikace moduluSkript s triggerem rozhodci_nominace</para>
+
+        <title4>Zdrojový text modulu</title4>
+
+        <para><link url="rozhodci.sql">Skript s triggerem rozhodci_nominace</link></para>
+
+        <title4>Test</title4>
+
+        <para>slovní specifikace struktury testu pro ověření fukčnosti o n krocích n-tý krok testu:</para>
+
+        <proc_log>--Test pro rozhodciho Collinu (27)
+--utkani bez domaciho
+--utkani bez hostu
+--utkani, kde hoste jsou vice nez 2 stejne narodnosti jako rozhodci 
+--utkani, kde domaci jsou vice nez 2 stejne narodnosti jako rozhodci 
+--utkani vporadku
+--utkani, kde tym uz 2x rozhodoval</proc_log>
+
+        <para>- podívám se na současný stav relevantního fragmentu dat před testem</para>
+
+        <para>- provedu pokus o provedení toho a toho ukonu, po provedeni očekávám, že v databázi nastanou ty a ty změny
+        nebo pokus bude odmitnut z toho a toho důvodu</para>
+
+        <para>- pro ověření se podívám na stav relevantního fragmentu dat po akci</para>
+
+        <title4>Záznam o proběhlém testu (log):</title4>
+
+        <proc_log>bbbbbbb</proc_log>
+
+        <title4>Diskuse výsledku testu</title4>
+
+        <para>Diskuse ....</para>
+
+        <title4>Závěr z testování</title4>
+
+        <para>Test NEověřil očekávané chování podprogramu/triggeru</para>
+      </proc_object>
+
+      <proc_object>
+        <title3>2. Modul BBBB</title3>
+
+        <para>Verbální specifikace modulu</para>
+
+        <title4>Zdrojový text modulu</title4>
+
+        <proc_sql>aaaaaaaa</proc_sql>
+
+        <title4>Test</title4>
+
+        <para>slovní specifikace struktury testu pro ověření fukčnosti o n krocích n-tý krok testu:</para>
+
+        <para>- podívám se na současný stav relevantního fragmentu dat před testem</para>
+
+        <para>- provedu pokus o provedení toho a toho ukonu, po provedeni očekávám, že v databázi nastanou ty a ty změny
+        nebo pokus bude odmitnut z toho a toho důvodu</para>
+
+        <para>- pro ověření se podívám na stav relevantního fragmentu dat po akci</para>
+
+        <title4>Záznam o proběhlém testu (log):</title4>
+
+        <proc_log>bbbbbbbbb</proc_log>
+
+        <title4>Diskuse výsledku testu</title4>
+
+        <para>Diskuse...</para>
+
+        <title4>Závěr z testování</title4>
+
+        <para>Závěr ...</para>
+      </proc_object>
+
+      <proc_object>
+        <title3>2. Modul CCCC</title3>
+
+        <para>Verbální specifikace modulu</para>
+
+        <title4>Zdrojový text modulu</title4>
+
+        <proc_sql>zzzzzzzzz</proc_sql>
+
+        <title4>Test</title4>
+
+        <para>slovní specifikace struktury testu pro ověření fukčnosti o n krocích n-tý krok testu:</para>
+
+        <para>a. podívám se na současný stav relevantního fragmentu dat před testem</para>
+
+        <proc_log>aaaaa
+aaaaa</proc_log>
+
+        <para>b. provedu pokus o provedení toho a toho ukonu, po provedeni očekávám, že v databázi nastanou ty a ty
+        změny nebo pokus bude odmitnut z toho a toho důvodu</para>
+
+        <proc_log>bbbbb
+bbbbb</proc_log>
+
+        <para>c. pro ověření se podívám na stav relevantního fragmentu dat po akci</para>
+
+        <proc_log>ccccc
+ccccc</proc_log>
+
+        <title4>Záznam o proběhlém testu (log):</title4>
+
+        <proc_log>bbbbbbbbb</proc_log>
+
+        <title4>Diskuse výsledku testu</title4>
+
+        <para>Diskuse...</para>
+
+        <title4>Závěr z testování</title4>
+
+        <para>Závěr ...</para>
+      </proc_object>
+    </proc_objects>
+
+    <script>
+      <title>Celkový script</title>
+
+      <para><link url="all.sql">odkaz na celkový script</link></para>
+    </script>
+
+    <conclussions>
+      <title>Závěr</title>
+
+      <para>Alespoň jeden odstavec, kde zhodnotíte nabitou zkušenost.</para>
+    </conclussions>
+
+    <references>
+      <title>Odkazy</title>
+
+      <para>[1] Stránky předmětu SQL - <link url="http://service.felk.cvut.cz/courses/X36SQL">
+      http://service.felk.cvut.cz/courses/X36SQL</link></para>
+
+      <para>[2] Božena Němcová: Babička</para>
+    </references>
+  </content>
+</sproject_sql>

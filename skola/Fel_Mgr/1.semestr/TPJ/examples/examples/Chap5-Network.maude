@@ -1,0 +1,127 @@
+************************************************************
+***  Chapter 5 - Parameterization
+***
+***  GRAPH etc. : the complete parameterization system
+***	for the Graph example.  This is the example in the 
+***	tutorial, and also a more complex example involving
+***	a search function.
+***
+************************************************************
+
+(fth GRAPH is 
+
+    sorts Node Edge .
+
+    ops node1 node2 : Edge -> Node .
+
+endfth)
+
+(fmod NETWORK-SIMPLE(X :: GRAPH) is
+
+   sorts NodeSet(X) EdgeSet(X) Network .
+   subsort X@Node < NodeSet(X) .
+   subsort X@Edge < EdgeSet(X) .
+
+   op _net_ : NodeSet(X) EdgeSet(X) -> Network [ctor] .
+   op __ : NodeSet(X) NodeSet(X) -> NodeSet(X) [ctor comm assoc id: nnil] .
+   op __ : EdgeSet(X) EdgeSet(X) -> EdgeSet(X) [ctor comm assoc id: nil] .
+   op nnil : -> NodeSet(X) [ctor] .
+   op nil : -> EdgeSet(X) [ctor] .
+
+   op _in_ : X@Node NodeSet(X) -> Bool .
+   op _in_ : X@Edge EdgeSet(X) -> Bool .
+
+   op search : Network X@Node X@Node -> X@Edge .
+
+   vars N N' : X@Node .		var NS : NodeSet(X) .
+   vars E E' : X@Edge .		var ES : EdgeSet(X) .
+
+   eq N in (N' NS) = N == N' or N in NS .
+   eq N in nnil = false .
+   eq E in (E' ES) = E == E' or E in ES .
+   eq E in nil = false .
+
+endfm)
+
+
+(fmod NETWORK-SEARCH(X :: GRAPH) is
+
+   sorts NodeSet(X) EdgeSet(X) Pathway(X) PathSet Network .
+   subsort X@Node < NodeSet(X) .
+   subsort X@Edge < EdgeSet(X) .
+   subsorts X@Edge < Pathway(X) < PathSet .
+
+   op _net_ : NodeSet(X) EdgeSet(X) -> Network [ctor] .
+   op __ : NodeSet(X) NodeSet(X) -> NodeSet(X) [ctor assoc comm id: nnil] .
+   op __ : EdgeSet(X) EdgeSet(X) -> EdgeSet(X) [ctor assoc comm id: nil] .
+   op _:::_ : PathSet PathSet -> PathSet [ctor assoc comm id: null prec 21] .
+   op _;_ : Pathway(X) Pathway(X) -> Pathway(X) [ctor assoc id: none prec 41] .
+   op nnil : -> NodeSet(X) [ctor] .
+   op nil : -> EdgeSet(X) [ctor] .
+   op none : -> Pathway(X) [ctor] .
+   op null : -> X@Edge [ctor] .
+
+   op _in_ : X@Node NodeSet(X) -> Bool .
+
+   op search : Network X@Node X@Node -> Pathway(X) .
+
+   var NS : NodeSet(X) .	vars A B : X@Node .
+   var ES : EdgeSet(X) .	var E : X@Edge .	var P : Pathway(X) .
+ 
+   eq P ::: none = P .
+
+   eq P ; E ; null = P ; null .
+   eq null ; E ; P = null ; P .
+
+   eq A in B NS = A == B or A in NS .
+   eq A in nnil = false .
+
+   eq search(NS net E ES, A, B) = if A in NS and B in NS then
+	if node2(E) == B then   if node1(E) == A then E else
+				search(NS net ES, A, node1(E)) ; E 
+				fi
+			 else
+	    search(NS net ES, A, B) :::
+		if node1(E) == A 
+		then E ; search(NS net ES, node2(E), B) 
+		else none
+		fi
+	fi
+							 else none fi .
+
+   ceq search(NS net nil, A, B) = null if A =/= B .
+
+endfm)
+
+
+(fmod GREEK-GRAPH is
+
+   protecting NAT .
+
+   sort Letter .
+
+   ops alpha beta gamma delta epsilon lambda theta phi : -> Letter .
+
+   op source : Nat -> Letter .
+   op target : Nat -> Letter .
+
+   eq source(1) = epsilon .	eq target(1) = lambda .
+   eq source(2) = beta .	eq target(2) = alpha .
+   eq source(3) = alpha .	eq target(3) = gamma .
+   eq source(4) = alpha .	eq target(4) = delta .
+   eq source(5) = delta .	eq target(5) = epsilon .
+   eq source(6) = theta .	eq target(6) = phi .
+   eq source(7) = phi .		eq target(7) = theta .
+
+endfm)
+
+
+(view Graph-Greek from GRAPH to GREEK-GRAPH is
+
+   sort Node to Letter .
+   sort Edge to Nat .
+
+   op node1 to source .
+   op node2 to target .
+
+endv)

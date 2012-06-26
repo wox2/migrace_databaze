@@ -1,0 +1,31 @@
+body                 { background-color: #CCCCCC; font-size: 14px; color: #000000; font-family: "Tahoma"; margin-left: 10px; margin-right: 10px; margin-top: 10px; margin-bottom: 10px }
+td                   { padding-top: 1px; padding-bottom: 1px; padding-left: 3px; padding-right: 3px}
+
+tr                   { font-family: "Tahoma"; font-size: 14px; }
+.ac                  { text-align: center }
+.al                  { text-align: left }
+.ar                  { text-align: right }
+
+.deadline            { color: red; font-weight: bold; }
+
+.timeout             { font-size: 15px; font-weight: bold; }
+
+
+.layout1             { padding: 0px; }
+.layout2             { padding: 0px; border-style: solid;  border-color: #000000; border-top-width: 1px; border-bottom-width: 1px; border-right-width: 1px; border-left-width: 1px; }
+
+.textPast            { text-decoration: none; color: #909090; font-weight: normal }
+.textFuture          { text-decoration: none; color: #000000; font-weight: normal }
+.textFutureBold      { text-decoration: none; color: #000000; font-weight: bold; font-size: 20px }
+
+.menu                { text-decoration: none; color: #000000; font-weight: bold; font-size: 24px; }
+.menuSel             { text-decoration: none; color: #000000; font-weight: bold; font-size: 24px }
+
+.box                 { border-color: #000000; border-style: solid; background-color: #CCCCCC; border-width: 1px; }
+.boxSel              { border-color: #000000; border-style: solid; background-color: #FFFFCC; border-width: 1px; }
+
+a                    { text-decoration: none; color: #0000FF; font-weight: bold }
+a:hover              { text-decoration: none; color: #FFFFFF; font-weight: bold }
+
+
+ 

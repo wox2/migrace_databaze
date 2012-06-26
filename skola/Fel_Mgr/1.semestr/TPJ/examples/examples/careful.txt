@@ -1,0 +1,6 @@
+Things to watch out for in Maude:
+
+ connected components and subsort overloading - sometimes, you might mean to
+overload an operator ad-hoc, but without realizing it you're working with
+sorts in the same connected component, and so you're really using subsort
+overloading... which requires that each operator have the same attributes.

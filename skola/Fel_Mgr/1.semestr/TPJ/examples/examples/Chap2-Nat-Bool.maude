@@ -1,0 +1,26 @@
+*********************************************************************
+***  Chapter 2 - Functional Modules
+***    Section 2 : Conditional Equations
+***
+***  NAT-BOOL : illustrates the definition of the comparison
+***   operations using the built-in module BOOL, which is 
+***   automatically imported into every module.
+***
+**********************************************************************
+
+fmod NAT-BOOL is
+
+  pr PEANO-NAT .
+
+  op _<=_ : Nat Nat -> Bool .
+  op _>_ : Nat Nat -> Bool .
+
+  vars N M : Nat .
+
+  eq 0 <= N = true .
+  eq s(M) <= N = false .
+  eq s(M) <= s(N) = M <= N .
+ 
+  eq M > N = not(M <= N) .
+
+endfm

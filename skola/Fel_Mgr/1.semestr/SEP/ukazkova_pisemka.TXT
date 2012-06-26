@@ -1,4 +1,4 @@
-identifikujte a strucne popiste cinnosti tvorici zivotni cyklus yvoje software... ktere dalsi cinnosti lze vramci softwaro
+identifikujte a strucne popiste cinnosti tvorici zivotni cyklus vyvoje software... ktere dalsi cinnosti lze vramci softwaro
 
 - poptavka, vyberove rizeni, vyhra zakazky
 - 1) sber pozadavku

@@ -1,0 +1,40 @@
+********************************************************************
+***  Chapter 4 - Full Maude & Object-Oriented Modules
+*** 	Section 1 : Full Maude
+***
+***  MOOD-LOOP : a more complex version of the smile loop, which 
+***	makes use of the State argument of the i/o constructor.
+***
+********************************************************************
+
+
+mod MOOD-LOOP is
+
+   inc LOOP-MODE .
+
+   sort Mood .
+
+   op <_;_> : Mood Mood -> State [ctor] .
+   op init : -> System .
+
+   ops happy shocked playful : -> Mood .
+   op # : -> Mood .
+
+   eq init = [nil, < # ; # >, nil] .
+
+   vars I O : QidList .		var S : State .
+
+   rl [in-smile] : ['smile I, S, O] => [I, < happy ; # >, O] .
+   rl [in-gape] : ['gape I, S, O] => [I, < shocked ; # >, O] .
+   rl [in-wink] : ['wink I, S, O] => [I, < playful ; # >, O] .
+
+   rl [out-smile] : [I, < # ; happy >, O] => [I, < # ; # >, O ' ': '- '`)] .
+   rl [out-gape] : [I, < # ; shocked >, O] => [I, < # ; # >, O ' '8 '- '0] .
+   rl [out-wink] : [I, < # ; playful >, O] => [I, < # ; # >, O ' '; '- '`)] .
+
+   rl [wow!] : < happy ; # > => < # ; shocked > .
+   rl [hehe] : < happy ; # > => < # ; playful > .
+   rl [hey!] : < playful ; # > => < # ; shocked > .
+
+endm
+

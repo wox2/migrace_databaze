@@ -1,0 +1,44 @@
+*********************************************************************
+***  Chapter 6 - Metaprogramming
+*** 	Section 6 - Internal Strategies
+***
+***  SANS : an elaboration of the rewriteExcept strategy
+***
+*********************************************************************
+
+
+fmod SANS is
+
+   pr META-LEVEL .
+
+   op sans : Module QidList -> Module .
+   op rmvM : MembAxSet Qid -> MembAxSet .
+   op rmvE : EquationSet Qid -> EquationSet .
+   op rmvR : RuleSet Qid -> RuleSet .
+
+   vars N Q : Qid .	var QL : QidList .	var I : ImportList .
+   var S : SortSet .	var SS : SubsortDeclSet .
+   var O : OpDeclSet .	var T1 T2 : Term .	var A : AttrSet .
+   var M : MembAx .	var MS : MembAxSet .	var X : Sort .
+   var E : Equation .	var ES : EquationSet .
+   var R : Rule .	var RS : RuleSet .	var C : Condition .
+
+   eq sans(mod N is I sorts S .  SS O MS ES RS endm, Q QL) =
+	sans(mod N is I sorts S . SS O rmvM(MS, Q) rmvE(ES, Q) rmvR(RS, Q) endm, QL) .
+
+   eq rmvM(mb T1 : X [label(Q) A] . MS, Q) = MS .
+   eq rmvM(cmb T1 : X if C [label(Q) A] . MS, Q) = MS .
+   eq rmvM(M MS, Q) = M rmvM(MS, Q) [owise] .
+   eq rmvM(none, Q) = none .
+
+   eq rmvE(eq T1 = T2 [label(Q) A] . ES, Q) = ES .
+   eq rmvE(ceq T1 = T2 if C [label(Q) A] . ES, Q) = ES .
+   eq rmvE(E ES, Q) = E rmvE(ES, Q) [owise] .
+   eq rmvE(none, Q) = none .
+
+   eq rmvR(rl T1 => T2 [label(Q) A] . RS, Q) = RS .
+   eq rmvR(crl T1 => T2 if C [label(Q) A] . RS, Q) = RS .
+   eq rmvR(R RS, Q) = R rmvR(RS, Q) [owise] .
+   eq rmvR(none, Q) = none .
+
+endfm

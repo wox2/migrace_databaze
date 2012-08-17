@@ -1,0 +1,3 @@
+pri vytvareni scriptu - bacha na
+	cesta k aliasovanemu scriptu neni cesta ke scriptu
+	source config.cfg - da se pouzit source, neni univerzalni, tecka ano - . config.sfg 

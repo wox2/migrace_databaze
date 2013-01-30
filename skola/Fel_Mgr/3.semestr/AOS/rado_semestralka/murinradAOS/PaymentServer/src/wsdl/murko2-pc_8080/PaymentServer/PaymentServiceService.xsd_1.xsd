@@ -1,0 +1,105 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is Metro/2.2.0-1 (tags/2.2.0u1-7139; 2012-06-02T10:55:19+0000) JAXWS-RI/2.2.6-2 JAXWS/2.2 svn-revision#unknown. --><xs:schema xmlns:tns="http://paymentserver.murinrad.fee.ctu.cz/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://paymentserver.murinrad.fee.ctu.cz/">
+
+<xs:element name="DatabaseException" type="tns:DatabaseException"/>
+
+<xs:element name="PaymentException" type="tns:PaymentException"/>
+
+<xs:element name="performBankTransaction" type="tns:performBankTransaction"/>
+
+<xs:element name="performBankTransactionResponse" type="tns:performBankTransactionResponse"/>
+
+<xs:element name="performCardTransaction" type="tns:performCardTransaction"/>
+
+<xs:element name="performCardTransactionResponse" type="tns:performCardTransactionResponse"/>
+
+<xs:element name="performCashTransaction" type="tns:performCashTransaction"/>
+
+<xs:element name="performCashTransactionResponse" type="tns:performCashTransactionResponse"/>
+
+<xs:complexType name="performBankTransaction">
+<xs:sequence>
+<xs:element name="paymentData" type="tns:bankPayment" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="bankPayment">
+<xs:complexContent>
+<xs:extension base="tns:payment">
+<xs:sequence/>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+
+<xs:complexType name="payment" abstract="true">
+<xs:sequence>
+<xs:element name="amountDue" type="xs:double" minOccurs="0"/>
+<xs:element name="amountOver" type="xs:double" minOccurs="0"/>
+<xs:element name="confirmed" type="xs:boolean" minOccurs="0"/>
+<xs:element name="ticketID" type="xs:int" minOccurs="0"/>
+<xs:element name="transactionID" type="xs:int" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="performBankTransactionResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:bankPayment" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="DatabaseException">
+<xs:sequence>
+<xs:element name="message" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="PaymentException">
+<xs:sequence>
+<xs:element name="message" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="performCardTransaction">
+<xs:sequence>
+<xs:element name="paymentData" type="tns:cardPayment" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="cardPayment">
+<xs:complexContent>
+<xs:extension base="tns:payment">
+<xs:sequence>
+<xs:element name="CVC" type="xs:int" minOccurs="0"/>
+<xs:element name="cardNumber" type="xs:int" minOccurs="0"/>
+<xs:element name="expiration" type="xs:string" minOccurs="0"/>
+<xs:element name="owner" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+
+<xs:complexType name="performCardTransactionResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:cardPayment" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="performCashTransaction">
+<xs:sequence>
+<xs:element name="paymentData" type="tns:cashPayment" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="cashPayment">
+<xs:complexContent>
+<xs:extension base="tns:payment">
+<xs:sequence/>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+
+<xs:complexType name="performCashTransactionResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:cashPayment" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>

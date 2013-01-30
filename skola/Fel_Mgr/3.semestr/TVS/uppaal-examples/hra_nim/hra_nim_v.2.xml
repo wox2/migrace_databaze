@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?><!DOCTYPE nta PUBLIC '-//Uppaal Team//DTD Flat System 1.1//EN' 'http://www.it.uu.se/research/group/darts/uppaal/flat-1_1.dtd'><nta><declaration>// Place global declarations here.
+const int MAX = 3;
+typedef int aZap[3];
+typedef int[0,MAX] aVem[3];
+aZap pocet_zapalek;
+aVem vezmi;
+broadcast chan hral_hrac1;
+broadcast chan hral_hrac2;
+broadcast chan hral_hrac3;</declaration><template><name x="5" y="5">hra_nim</name><parameter>aZap &amp;pocet_zapalek, aVem &amp;vezmi, broadcast chan &amp;hraje_hrac1, broadcast chan &amp;hraje_hrac2, broadcast chan &amp;hraje_hrac3</parameter><declaration>
+int getMaximalniHromadku(){
+	int max = 0;
+	int ret = 0;
+	int i;
+	for(i = 0; i &lt; 3; i++){
+		if(pocet_zapalek[i] &gt; max){
+			max = pocet_zapalek[i];
+			ret = i;
+		}
+	}
+	return ret;
+}
+
+bool jeMaximalniHromadka(){
+int i;
+int j;
+int k;
+for(k=0;k&lt;3;k++){if(vezmi[k]!= 0){j=k;}}
+	for(i = 0; i &lt; 3; i++){
+		if(pocet_zapalek[j] &lt; pocet_zapalek[i]){
+			return false;
+		}
+	}
+	return true;
+}
+
+bool jeSpatnyTah(){
+	// pocet_zapalek-vezmi &lt; 0 || vezmi &lt;= 0 || vezmi &gt; MAX
+return 	(pocet_zapalek[0]-vezmi[0] &lt; 0 || vezmi[0] &gt; MAX) || // osetreni vstupu na rozsah
+	(pocet_zapalek[1]-vezmi[1] &lt; 0 || vezmi[1] &gt; MAX) ||
+	(pocet_zapalek[2]-vezmi[2] &lt; 0 || vezmi[2] &gt; MAX) ||
+	!((vezmi[0] == vezmi[1] &amp;&amp; vezmi[1] == vezmi[2])||(jeMaximalniHromadka())); // osetreni spravnosti hry - bud ze vsech stejne, nebo z nejvetsi hromadky
+}
+
+bool jeKonecHry(){
+	return pocet_zapalek[0] == 0 &amp;&amp; pocet_zapalek[1] == 0 &amp;&amp; pocet_zapalek[2] == 0 ;
+}</declaration><location id="id0" x="-264" y="104"><name x="-384" y="128">NEKOREKTNI_TAH_hrace3</name></location><location id="id1" x="-64" y="-96"><name x="-88" y="-192">ZVITEZIL_hrac2</name></location><location id="id2" x="-280" y="-16"><urgent/></location><location id="id3" x="-832" y="80"><name x="-1008" y="48">NEKOREKTNI_TAH_hrace2</name></location><location id="id4" x="-696" y="-312"><name x="-864" y="-352">NEKOREKTNI_TAH_hrace1</name></location><location id="id5" x="-640" y="80"><name x="-664" y="96">ZVITEZIL_hrac1</name></location><location id="id6" x="-200" y="-312"><name x="-232" y="-352">ZVITEZIL_hrac3</name></location><location id="id7" x="-720" y="-56"><name x="-688" y="-72">TAH_HRACE2</name><urgent/></location><location id="id8" x="-480" y="-200"><name x="-512" y="-168">TAH_HRACE1</name><urgent/></location><location id="id9" x="-480" y="-424"><name x="-490" y="-454">START</name><urgent/></location><init ref="id9"/><transition><source ref="id2"/><target ref="id0"/><label kind="guard" x="-264" y="16">jeSpatnyTah() &amp;&amp; ! jeKonecHry()</label><label kind="synchronisation" x="-256" y="56">hraje_hrac3?</label></transition><transition><source ref="id0"/><target ref="id0"/><nail x="-208" y="96"/><nail x="-232" y="120"/></transition><transition><source ref="id1"/><target ref="id1"/><nail x="-56" y="-168"/><nail x="-16" y="-120"/></transition><transition><source ref="id2"/><target ref="id1"/><label kind="guard" x="-208" y="-80">jeKonecHry()</label></transition><transition><source ref="id2"/><target ref="id8"/><label kind="guard" x="-360" y="-168">! jeSpatnyTah() &amp;&amp; ! jeKonecHry()</label><label kind="synchronisation" x="-360" y="-192">hraje_hrac3?</label><label kind="assignment" x="-360" y="-152">pocet_zapalek[0] -= vezmi[0],
+pocet_zapalek[1] -= vezmi[1],
+pocet_zapalek[2] -= vezmi[2]</label></transition><transition><source ref="id6"/><target ref="id6"/><nail x="-216" y="-304"/><nail x="-216" y="-280"/><nail x="-184" y="-288"/></transition><transition><source ref="id4"/><target ref="id4"/><nail x="-720" y="-288"/><nail x="-680" y="-280"/></transition><transition><source ref="id3"/><target ref="id3"/><nail x="-856" y="104"/><nail x="-824" y="104"/></transition><transition><source ref="id5"/><target ref="id5"/><nail x="-648" y="56"/><nail x="-624" y="48"/></transition><transition><source ref="id7"/><target ref="id3"/><label kind="guard" x="-1024" y="8">jeSpatnyTah() &amp;&amp; ! jeKonecHry()</label><label kind="synchronisation" x="-856" y="-24">hraje_hrac2?</label></transition><transition><source ref="id8"/><target ref="id4"/><label kind="guard" x="-656" y="-312">jeSpatnyTah() &amp;&amp; ! jeKonecHry()</label><label kind="synchronisation" x="-616" y="-296">hraje_hrac1?</label></transition><transition><source ref="id9"/><target ref="id8"/><label kind="synchronisation" x="-472" y="-392">hraje_hrac3!</label><label kind="assignment" x="-472" y="-376">pocet_zapalek[0] = 3,
+pocet_zapalek[1] = 4,
+pocet_zapalek[2] = 5</label></transition><transition><source ref="id8"/><target ref="id6"/><label kind="guard" x="-408" y="-288">jeKonecHry()</label></transition><transition><source ref="id7"/><target ref="id5"/><label kind="guard" x="-688" y="-16">jeKonecHry()</label></transition><transition><source ref="id7"/><target ref="id2"/><label kind="guard" x="-536" y="-32">! jeSpatnyTah() &amp;&amp; ! jeKonecHry()</label><label kind="synchronisation" x="-536" y="-56">hraje_hrac2?</label><label kind="assignment" x="-536" y="-16">pocet_zapalek[0] -= vezmi[0],
+pocet_zapalek[1] -= vezmi[1],
+pocet_zapalek[2] -= vezmi[2]</label></transition><transition><source ref="id8"/><target ref="id7"/><label kind="guard" x="-792" y="-176">! jeSpatnyTah() &amp;&amp; ! jeKonecHry()</label><label kind="synchronisation" x="-680" y="-200">hraje_hrac1?</label><label kind="assignment" x="-848" y="-152">pocet_zapalek[0] -= vezmi[0],
+pocet_zapalek[1] -= vezmi[1],
+pocet_zapalek[2] -= vezmi[2]</label></transition></template><template><name>nedeterministicky_hrac</name><parameter>aZap &amp;pocet_zapalek, broadcast chan &amp;hral_oponent, aVem &amp;vezmi, broadcast chan &amp;hraju</parameter><declaration>bool jeMaximalniHromadka(int j){
+int i;
+	for(i = 0; i &lt; 3; i++){
+		if(pocet_zapalek[j] &lt; pocet_zapalek[i]){
+			return false;
+		}
+	}
+	return true;
+}</declaration><location id="id10" x="0" y="0"></location><location id="id11" x="0" y="-352"></location><location id="id12" x="-320" y="-192"></location><init ref="id12"/><transition><source ref="id11"/><target ref="id10"/><label kind="select" x="256" y="-240">i: int[1,MAX]</label><label kind="guard" x="256" y="-216">i &lt;= pocet_zapalek[0] 
+&amp;&amp; i &lt;= pocet_zapalek[1]
+&amp;&amp; i &lt;= pocet_zapalek[2]</label><label kind="assignment" x="256" y="-168">vezmi[0] = i,
+vezmi[1] = i,
+vezmi[2] = i</label><nail x="240" y="-192"/></transition><transition><source ref="id11"/><target ref="id10"/><label kind="select" x="-120" y="-232">i: int[1,MAX],
+j: int[0, 2]</label><label kind="guard" x="-168" y="-192">i &lt;= pocet_zapalek[j] &amp;&amp; jeMaximalniHromadka(j)</label><label kind="assignment" x="-112" y="-168">vezmi[0] = 0,
+vezmi[1] = 0,
+vezmi[2] = 0,
+vezmi[j] = i</label></transition><transition><source ref="id10"/><target ref="id12"/><label kind="synchronisation" x="-208" y="-88">hraju!</label></transition><transition><source ref="id12"/><target ref="id11"/><label kind="synchronisation" x="-232" y="-304">hral_oponent?</label></transition></template><template><name>deterministicky_hrac</name><parameter>aZap &amp;pocet_zapalek, broadcast chan &amp;hral_oponent, aVem &amp;vezmi, broadcast chan &amp;hraju</parameter><declaration>int getMaximalniHromadku(){
+	int max = 0;
+	int ret = 0;
+	int i;
+	for(i = 0; i &lt; 3; i++){
+		if(pocet_zapalek[i] &gt; max){
+			max = pocet_zapalek[i];
+			ret = i;
+		}
+	}
+	return ret;
+}</declaration><location id="id13" x="-72" y="128"></location><location id="id14" x="-72" y="-256"></location><location id="id15" x="-392" y="-64"></location><init ref="id15"/><transition><source ref="id14"/><target ref="id13"/><label kind="guard" x="136" y="-168">!(pocet_zapalek[0] == 3)</label><label kind="assignment" x="136" y="-144">vezmi[0] = 0,
+vezmi[1] = 0,
+vezmi[2] = 0,
+vezmi[getMaximalniHromadku()] = 1</label><nail x="104" y="-192"/><nail x="104" y="64"/></transition><transition><source ref="id14"/><target ref="id13"/><label kind="guard" x="-64" y="-112">pocet_zapalek[0] == 3</label><label kind="assignment" x="-64" y="-80">vezmi[0] = 3,
+vezmi[1] = 3,
+vezmi[2] = 3</label><label kind="comments">Prvni tah prvniho hrace</label></transition><transition><source ref="id13"/><target ref="id15"/><label kind="synchronisation" x="-296" y="24">hraju!</label></transition><transition><source ref="id15"/><target ref="id14"/><label kind="synchronisation" x="-320" y="-192">hral_oponent?</label></transition></template><system>// Place template instantiations here.
+hrac1 = deterministicky_hrac(pocet_zapalek, hral_hrac3, vezmi, hral_hrac1);
+hrac2 = deterministicky_hrac(pocet_zapalek, hral_hrac1, vezmi, hral_hrac2);
+hrac3 = nedeterministicky_hrac(pocet_zapalek, hral_hrac2, vezmi, hral_hrac3);
+hra = hra_nim(pocet_zapalek, vezmi, hral_hrac1, hral_hrac2, hral_hrac3);
+
+// List one or more processes to be composed into a system.
+system hra, hrac1, hrac2, hrac3;</system></nta>

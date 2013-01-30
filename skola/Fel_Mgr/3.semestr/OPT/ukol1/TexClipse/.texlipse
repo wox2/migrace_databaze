@@ -1,0 +1,14 @@
+#TeXlipse project settings
+#Sun Oct 07 09:46:09 CEST 2012
+markTmpDer=true
+builderNum=2
+outputDir=
+makeIndSty=
+bibrefDir=
+outputFormat=pdf
+tempDir=tmp
+mainTexFile=document.tex
+outputFile=lukesma4_opt1.pdf
+langSpell=cs
+markDer=true
+srcDir=

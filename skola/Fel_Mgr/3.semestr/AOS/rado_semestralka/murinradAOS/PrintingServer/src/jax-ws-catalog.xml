@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
+    <system systemId="http://murko2-pc:8080/PrintingServer/PrintingServiceService?wsdl" uri="wsdl/murko2-pc_8080/PrintingServer/PrintingServiceService.wsdl"/>
+    <system systemId="http://murko2-pc:8080/PrintingServer/PrintingServiceService?xsd=1" uri="wsdl/murko2-pc_8080/PrintingServer/PrintingServiceService.xsd_1.xsd"/>
+</catalog>

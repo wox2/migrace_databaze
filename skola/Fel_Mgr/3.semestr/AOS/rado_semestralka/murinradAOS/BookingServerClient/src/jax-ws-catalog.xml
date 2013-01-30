@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
+    <system systemId="http://murko2-pc:8080/BookingServer/FlightFinderService?wsdl" uri="wsdl/murko2-pc_8080/BookingServer/FlightFinderService.wsdl"/>
+    <system systemId="http://murko2-pc:8080/BookingServer/FlightFinderService?xsd=1" uri="wsdl/murko2-pc_8080/BookingServer/FlightFinderService.xsd_1.xsd"/>
+    <system systemId="http://murko2-pc:8080/BookingServer/FlightBookerService?wsdl" uri="wsdl/murko2-pc_8080/BookingServer/FlightBookerService.wsdl"/>
+    <system systemId="http://murko2-pc:8080/BookingServer/FlightBookerService?xsd=1" uri="wsdl/murko2-pc_8080/BookingServer/FlightBookerService.xsd_1.xsd"/>
+</catalog>

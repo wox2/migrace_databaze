@@ -1,0 +1,121 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is Metro/2.2.0-1 (tags/2.2.0u1-7139; 2012-06-02T10:55:19+0000) JAXWS-RI/2.2.6-2 JAXWS/2.2 svn-revision#unknown. --><xs:schema xmlns:tns="http://bookingserver.murinrad.fee.ctu.cz/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://bookingserver.murinrad.fee.ctu.cz/">
+
+<xs:element name="DatabaseException" type="tns:DatabaseException"/>
+
+<xs:element name="FlightDoesNotExistException" type="tns:FlightDoesNotExistException"/>
+
+<xs:element name="MalformedParameterException" type="tns:MalformedParameterException"/>
+
+<xs:element name="findFlightByID" type="tns:findFlightByID"/>
+
+<xs:element name="findFlightByIDResponse" type="tns:findFlightByIDResponse"/>
+
+<xs:element name="findFlightsByFlightData" type="tns:findFlightsByFlightData"/>
+
+<xs:element name="findFlightsByFlightDataResponse" type="tns:findFlightsByFlightDataResponse"/>
+
+<xs:element name="findFlightsByPassengerID" type="tns:findFlightsByPassengerID"/>
+
+<xs:element name="findFlightsByPassengerIDResponse" type="tns:findFlightsByPassengerIDResponse"/>
+
+<xs:element name="listAllFlights" type="tns:listAllFlights"/>
+
+<xs:element name="listAllFlightsResponse" type="tns:listAllFlightsResponse"/>
+
+<xs:complexType name="findFlightsByPassengerID">
+<xs:sequence>
+<xs:element name="passengerID" type="xs:int" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="findFlightsByPassengerIDResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:findFlightsByPassengerIDAnswer" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="findFlightsByPassengerIDAnswer">
+<xs:sequence>
+<xs:element name="content" type="tns:flightCollection" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="flightCollection">
+<xs:sequence>
+<xs:element name="flights" type="tns:flight" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="flight">
+<xs:sequence>
+<xs:element name="arrival" type="xs:long" minOccurs="0"/>
+<xs:element name="arrivalAPT" type="xs:string" minOccurs="0"/>
+<xs:element name="baseFare" type="xs:int" minOccurs="0"/>
+<xs:element name="departAPT" type="xs:string" minOccurs="0"/>
+<xs:element name="departure" type="xs:long" minOccurs="0"/>
+<xs:element name="id" type="xs:int" minOccurs="0"/>
+<xs:element name="fNumber" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="DatabaseException">
+<xs:sequence>
+<xs:element name="message" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="MalformedParameterException">
+<xs:sequence>
+<xs:element name="message" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="listAllFlights">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="listAllFlightsResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:flightCollection" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="findFlightByID">
+<xs:sequence>
+<xs:element name="arg0" type="xs:int" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="findFlightByIDResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:flight" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="FlightDoesNotExistException">
+<xs:sequence>
+<xs:element name="message" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="findFlightsByFlightData">
+<xs:sequence>
+<xs:element name="arrivalAPT" type="xs:string" minOccurs="0"/>
+<xs:element name="departureAPT" type="xs:string" minOccurs="0"/>
+<xs:element name="arrivalTime" type="xs:long" minOccurs="0"/>
+<xs:element name="departureTime" type="xs:long" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="findFlightsByFlightDataResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:findFlightsByFlightDataAnswer" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="findFlightsByFlightDataAnswer">
+<xs:sequence>
+<xs:element name="content" type="tns:flightCollection" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>

@@ -1,0 +1,1369 @@
+<html>
+
+<head>
+<title>Learning WebGL &mdash; lesson 1</title>
+<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+
+<script type="text/javascript" src="glMatrix-0.9.5.min.js"></script>
+<script type="text/javascript" src="webgl-utils.js"></script>
+
+<!-- fragment shader ------------>
+<script id="shader-fs" type="x-shader/x-fragment">
+    precision mediump float;
+
+    varying vec2 vTextureCoord;
+    varying vec3 vLightWeighting;
+
+
+    uniform sampler2D uSampler;
+
+    void main(void) {
+        vec4 textureColor = texture2D(uSampler, vec2(vTextureCoord.s, vTextureCoord.t));
+        gl_FragColor = vec4(textureColor.rgb * vLightWeighting, textureColor.a);
+    }
+</script>
+
+<script id="shader-vs" type="x-shader/x-vertex">
+    attribute vec3 aVertexPosition;
+    attribute vec3 aVertexNormal;
+    attribute vec2 aTextureCoord;
+
+    uniform mat4 uMVMatrix;
+    uniform mat4 uPMatrix;
+    uniform mat3 uNMatrix;
+
+    uniform vec3 uAmbientColor;
+
+    uniform vec3 uLightingDirection;
+    uniform vec3 uDirectionalColor;
+
+    uniform bool uUseLighting;
+
+    varying vec2 vTextureCoord;
+    varying vec3 vLightWeighting;
+
+    void main(void) {
+    gl_Position = uPMatrix * uMVMatrix * vec4(aVertexPosition, 1.0);
+    vTextureCoord = aTextureCoord;
+
+    if (!uUseLighting) {
+    vLightWeighting = vec3(1.0, 1.0, 1.0);
+    } else {
+    vec3 transformedNormal = uNMatrix * aVertexNormal;
+    float directionalLightWeighting = max(dot(transformedNormal, uLightingDirection), 0.0);
+    vLightWeighting = uAmbientColor + uDirectionalColor * directionalLightWeighting;
+    }
+    }
+</script>
+
+
+<script type="text/javascript">
+
+    var gl;
+    var lukesma4 = new namespace();
+    
+    function initGL(canvas) {
+        try {
+            gl = canvas.getContext("experimental-webgl");
+            gl.viewportWidth = canvas.width;
+            gl.viewportHeight = canvas.height;
+        } catch (e) {
+        }
+        if (!gl) {
+            alert("Could not initialise WebGL, sorry :-(");
+        }
+    }
+
+
+    function getShader(gl, id) {
+        var shaderScript = document.getElementById(id);
+        if (!shaderScript) {
+            return null;
+        }
+
+        var str = "";
+        var k = shaderScript.firstChild;
+        while (k) {
+            if (k.nodeType == 3) {
+                str += k.textContent;
+            }
+            k = k.nextSibling;
+        }
+
+        var shader;
+        if (shaderScript.type == "x-shader/x-fragment") {
+            shader = lukesma4.gl_createShader(GL_FRAGMENT_SHADER);
+        } else if (shaderScript.type == "x-shader/x-vertex") {
+            shader = lukesma4.gl_createShader(GL_VERTEX_SHADER);
+        } else {
+            return null;
+        }
+
+        lukesma4.gl_shaderSource(shader, str);
+        lukesma4.gl_compileShader(shader);
+
+        if (!lukesma4.gl_getShaderParameter(shader, GL_COMPILE_STATUS)) {
+            alert(lukesma4.gl_getShaderInfoLog(shader));
+            return null;
+        }
+
+        return shader;
+    }
+
+
+    var shaderProgram;
+
+    function initShaders() {
+        var fragmentShader = getShader(gl, "shader-fs");
+        var vertexShader = getShader(gl, "shader-vs");
+
+        shaderProgram = lukesma4.gl_createProgram();
+        lukesma4.gl_attachShader(shaderProgram, vertexShader);
+        lukesma4.gl_attachShader(shaderProgram, fragmentShader);
+        lukesma4.gl_linkProgram(shaderProgram);
+        
+        if (!lukesma4.gl_getProgramParameter(shaderProgram, GL_LINK_STATUS)) {
+            alert("Could not initialise shaders");
+        }
+
+        lukesma4.gl_useProgram(shaderProgram);
+
+        shaderProgram.vertexPositionAttribute = lukesma4.gl_getAttribLocation(shaderProgram, "aVertexPosition");
+        lukesma4.gl_enableVertexAttribArray(shaderProgram.vertexPositionAttribute);
+
+        shaderProgram.textureCoordAttribute = lukesma4.gl_getAttribLocation(shaderProgram, "aTextureCoord");
+        lukesma4.gl_enableVertexAttribArray(shaderProgram.textureCoordAttribute);
+
+        shaderProgram.vertexNormalAttribute = lukesma4.gl_getAttribLocation(shaderProgram, "aVertexNormal");
+        lukesma4.gl_enableVertexAttribArray(shaderProgram.vertexNormalAttrubute);
+
+        shaderProgram.pMatrixUniform = lukesma4.gl_getUniformLocation(shaderProgram, "uPMatrix");
+        shaderProgram.mvMatrixUniform = lukesma4.gl_getUniformLocation(shaderProgram, "uMVMatrix");
+        shaderProgram.nMatrixUniform = lukesma4.gl_getUniformLocation(shaderProgram, "uNMatrix");
+        shaderProgram.samplerUniform = lukesma4.gl_getUniformLocation(shaderProgram, "uSampler");
+        shaderProgram.useLightingUniform = lukesma4.gl_getUniformLocation(shaderProgram, "uUseLighting");
+        shaderProgram.ambientColorUniform = lukesma4.gl_getUniformLocation(shaderProgram, "uAmbientColor");
+        shaderProgram.lightingDirectionUniform = lukesma4.gl_getUniformLocation(shaderProgram, "uLightingDirection");
+        shaderProgram.directionalColorUniform = lukesma4.gl_getUniformLocation(shaderProgram, "uDirectionalColor");
+    }
+
+    var obstacleTexture;
+    function initTextures() {
+        lukesma4.initObstacleTexture();
+    }
+
+    function handleLoadedTexture(texture) {
+        lukesma4.gl_bindTexture(GL_TEXTURE_2D, texture);
+        lukesma4.gl_pixelStorei(GL_UNPACK_FLIP_Y_WEBGL, true);
+        lukesma4.gl_texImage2D(GL_TEXTURE_2D, 0, GL_RGBA, GL_RGBA, GL_UNSIGNED_BYTE, texture.image);
+
+
+        lukesma4.gl_texParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
+        lukesma4.gl_texParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
+        lukesma4.bindTexture(GL_TEXTURE_2D, null);
+    }
+
+
+    var mvMatrix = mat4.create();
+    var pMatrix = mat4.create();
+
+    function setMatrixUniforms() {
+        lukesma4.gl_uniformMatrix4fv(shaderProgram.pMatrixUniform, false, pMatrix);
+        lukesma4.gl_uniformMatrix4fv(shaderProgram.mvMatrixUniform, false, mvMatrix);
+
+        var normalMatrix = mat3.create();
+        mat4.toInverseMat3(mvMatrix, normalMatrix);
+        mat3.transpose(normalMatrix);
+        lukesma4.gl_uniformMatrix3fv(shaderProgram.nMatrixUniform, false, normalMatrix);
+
+    }
+    
+    //constants extracted from https://gist.github.com/szimek/763999
+	var GL_ACTIVE_ATTRIBUTES;
+	var GL_ACTIVE_ATTRIBUTE_MAX_LENGTH;
+	var GL_ACTIVE_TEXTURE;
+	var GL_ACTIVE_UNIFORMS;
+	var GL_ACTIVE_UNIFORM_MAX_LENGTH;
+	var GL_ALIASED_LINE_WIDTH_RANGE;
+	var GL_ALIASED_POINT_SIZE_RANGE;
+	var GL_ALPHA;
+	var GL_ALPHA_BITS;
+	var GL_ALWAYS;
+	var GL_ARRAY_BUFFER;
+	var GL_ARRAY_BUFFER_BINDING;
+	var GL_ATTACHED_SHADERS;
+	var GL_BACK;
+	var GL_BLEND;
+	var GL_BLEND_COLOR;
+	var GL_BLEND_DST_ALPHA;
+	var GL_BLEND_DST_RGB;
+	var GL_BLEND_EQUATION;
+	var GL_BLEND_EQUATION_ALPHA;
+	var GL_BLEND_EQUATION_RGB;
+	var GL_BLEND_SRC_ALPHA;
+	var GL_BLEND_SRC_RGB;
+	var GL_BLUE_BITS;
+	var GL_BOOL;
+	var GL_BOOL_VEC2;
+	var GL_BOOL_VEC3;
+	var GL_BOOL_VEC4;
+	var GL_BROWSER_DEFAULT_WEBGL;
+	var GL_BUFFER_SIZE;
+	var GL_BUFFER_USAGE;
+	var GL_BYTE;
+	var GL_CCW;
+	var GL_CLAMP_TO_EDGE;
+	var GL_COLOR_ATTACHMENT0;
+	var GL_COLOR_BUFFER_BIT;
+	var GL_COLOR_CLEAR_VALUE;
+	var GL_COLOR_WRITEMASK;
+	var GL_COMPILE_STATUS;
+	var GL_COMPRESSED_TEXTURE_FORMATS;
+	var GL_CONSTANT_ALPHA;
+	var GL_CONSTANT_COLOR;
+	var GL_CONTEXT_LOST_WEBGL;
+	var GL_CULL_FACE;
+	var GL_CULL_FACE_MODE;
+	var GL_CURRENT_PROGRAM;
+	var GL_CURRENT_VERTEX_ATTRIB;
+	var GL_CW;
+	var GL_DECR;
+	var GL_DECR_WRAP;
+	var GL_DELETE_STATUS;
+	var GL_DEPTH_ATTACHMENT;
+	var GL_DEPTH_BITS;
+	var GL_DEPTH_BUFFER_BIT;
+	var GL_DEPTH_CLEAR_VALUE;
+	var GL_DEPTH_COMPONENT;
+	var GL_DEPTH_COMPONENT16;
+	var GL_DEPTH_FUNC;
+	var GL_DEPTH_RANGE;
+	var GL_DEPTH_STENCIL;
+	var GL_DEPTH_STENCIL_ATTACHMENT;
+	var GL_DEPTH_TEST;
+	var GL_DEPTH_WRITEMASK;
+	var GL_DITHER;
+	var GL_DONT_CARE;
+	var GL_DST_ALPHA;
+	var GL_DST_COLOR;
+	var GL_DYNAMIC_DRAW;
+	var GL_ELEMENT_ARRAY_BUFFER;
+	var GL_ELEMENT_ARRAY_BUFFER_BINDING;
+	var GL_EQUAL;
+	var GL_FASTEST;
+	var GL_FLOAT;
+	var GL_FLOAT_MAT2;
+	var GL_FLOAT_MAT3;
+	var GL_FLOAT_MAT4;
+	var GL_FLOAT_VEC2;
+	var GL_FLOAT_VEC3;
+	var GL_FLOAT_VEC4;
+	var GL_FRAGMENT_SHADER;
+	var GL_FRAMEBUFFER;
+	var GL_FRAMEBUFFER_ATTACHMENT_OBJECT_NAME;
+	var GL_FRAMEBUFFER_ATTACHMENT_OBJECT_TYPE;
+	var GL_FRAMEBUFFER_ATTACHMENT_TEXTURE_CUBE_MAP_FACE;
+	var GL_FRAMEBUFFER_ATTACHMENT_TEXTURE_LEVEL;
+	var GL_FRAMEBUFFER_BINDING;
+	var GL_FRAMEBUFFER_COMPLETE;
+	var GL_FRAMEBUFFER_INCOMPLETE_ATTACHMENT;
+	var GL_FRAMEBUFFER_INCOMPLETE_DIMENSIONS;
+	var GL_FRAMEBUFFER_INCOMPLETE_MISSING_ATTACHMENT;
+	var GL_FRAMEBUFFER_UNSUPPORTED;
+	var GL_FRONT;
+	var GL_FRONT_AND_BACK;
+	var GL_FRONT_FACE;
+	var GL_FUNC_ADD;
+	var GL_FUNC_REVERSE_SUBTRACT;
+	var GL_FUNC_SUBTRACT;
+	var GL_GENERATE_MIPMAP_HINT;
+	var GL_GEQUAL;
+	var GL_GREATER;
+	var GL_GREEN_BITS;
+	var GL_HIGH_FLOAT;
+	var GL_HIGH_INT;
+	var GL_INCR;
+	var GL_INCR_WRAP;
+	var GL_INFO_LOG_LENGTH;
+	var GL_INT;
+	var GL_INT_VEC2;
+	var GL_INT_VEC3;
+	var GL_INT_VEC4;
+	var GL_INVALID_ENUM;
+	var GL_INVALID_FRAMEBUFFER_OPERATION;
+	var GL_INVALID_OPERATION;
+	var GL_INVALID_VALUE;
+	var GL_INVERT;
+	var GL_KEEP;
+	var GL_LEQUAL;
+	var GL_LESS;
+	var GL_LINEAR;
+	var GL_LINEAR_MIPMAP_LINEAR;
+	var GL_LINEAR_MIPMAP_NEAREST;
+	var GL_LINES;
+	var GL_LINE_LOOP;
+	var GL_LINE_STRIP;
+	var GL_LINE_WIDTH;
+	var GL_LINK_STATUS;
+	var GL_LOW_FLOAT;
+	var GL_LOW_INT;
+	var GL_LUMINANCE;
+	var GL_LUMINANCE_ALPHA;
+	var GL_MAX_COMBINED_TEXTURE_IMAGE_UNITS;
+	var GL_MAX_CUBE_MAP_TEXTURE_SIZE;
+	var GL_MAX_FRAGMENT_UNIFORM_VECTORS;
+	var GL_MAX_RENDERBUFFER_SIZE;
+	var GL_MAX_TEXTURE_IMAGE_UNITS;
+	var GL_MAX_TEXTURE_SIZE;
+	var GL_MAX_VARYING_VECTORS;
+	var GL_MAX_VERTEX_ATTRIBS;
+	var GL_MAX_VERTEX_TEXTURE_IMAGE_UNITS;
+	var GL_MAX_VERTEX_UNIFORM_VECTORS;
+	var GL_MAX_VIEWPORT_DIMS;
+	var GL_MEDIUM_FLOAT;
+	var GL_MEDIUM_INT;
+	var GL_MIRRORED_REPEAT;
+	var GL_NEAREST;
+	var GL_NEAREST_MIPMAP_LINEAR;
+	var GL_NEAREST_MIPMAP_NEAREST;
+	var GL_NEVER;
+	var GL_NICEST;
+	var GL_NONE;
+	var GL_NOTEQUAL;
+	var GL_NO_ERROR;
+	var GL_NUM_COMPRESSED_TEXTURE_FORMATS;
+	var GL_ONE;
+	var GL_ONE_MINUS_CONSTANT_ALPHA;
+	var GL_ONE_MINUS_CONSTANT_COLOR;
+	var GL_ONE_MINUS_DST_ALPHA;
+	var GL_ONE_MINUS_DST_COLOR;
+	var GL_ONE_MINUS_SRC_ALPHA;
+	var GL_ONE_MINUS_SRC_COLOR;
+	var GL_OUT_OF_MEMORY;
+	var GL_PACK_ALIGNMENT;
+	var GL_POINTS;
+	var GL_POLYGON_OFFSET_FACTOR;
+	var GL_POLYGON_OFFSET_FILL;
+	var GL_POLYGON_OFFSET_UNITS;
+	var GL_RED_BITS;
+	var GL_RENDERBUFFER;
+	var GL_RENDERBUFFER_ALPHA_SIZE;
+	var GL_RENDERBUFFER_BINDING;
+	var GL_RENDERBUFFER_BLUE_SIZE;
+	var GL_RENDERBUFFER_DEPTH_SIZE;
+	var GL_RENDERBUFFER_GREEN_SIZE;
+	var GL_RENDERBUFFER_HEIGHT;
+	var GL_RENDERBUFFER_INTERNAL_FORMAT;
+	var GL_RENDERBUFFER_RED_SIZE;
+	var GL_RENDERBUFFER_STENCIL_SIZE;
+	var GL_RENDERBUFFER_WIDTH;
+	var GL_RENDERER;
+	var GL_REPEAT;
+	var GL_REPLACE;
+	var GL_RGB;
+	var GL_RGB5_A1;
+	var GL_RGB565;
+	var GL_RGBA;
+	var GL_RGBA4;
+	var GL_SAMPLER_2D;
+	var GL_SAMPLER_CUBE;
+	var GL_SAMPLES;
+	var GL_SAMPLE_ALPHA_TO_COVERAGE;
+	var GL_SAMPLE_BUFFERS;
+	var GL_SAMPLE_COVERAGE;
+	var GL_SAMPLE_COVERAGE_INVERT;
+	var GL_SAMPLE_COVERAGE_VALUE;
+	var GL_SCISSOR_BOX;
+	var GL_SCISSOR_TEST;
+	var GL_SHADER_COMPILER;
+	var GL_SHADER_SOURCE_LENGTH;
+	var GL_SHADER_TYPE;
+	var GL_SHADING_LANGUAGE_VERSION;
+	var GL_SHORT;
+	var GL_SRC_ALPHA;
+	var GL_SRC_ALPHA_SATURATE;
+	var GL_SRC_COLOR;
+	var GL_STATIC_DRAW;
+	var GL_STENCIL_ATTACHMENT;
+	var GL_STENCIL_BACK_FAIL;
+	var GL_STENCIL_BACK_FUNC;
+	var GL_STENCIL_BACK_PASS_DEPTH_FAIL;
+	var GL_STENCIL_BACK_PASS_DEPTH_PASS;
+	var GL_STENCIL_BACK_REF;
+	var GL_STENCIL_BACK_VALUE_MASK;
+	var GL_STENCIL_BACK_WRITEMASK;
+	var GL_STENCIL_BITS;
+	var GL_STENCIL_BUFFER_BIT;
+	var GL_STENCIL_CLEAR_VALUE;
+	var GL_STENCIL_FAIL;
+	var GL_STENCIL_FUNC;
+	var GL_STENCIL_INDEX;
+	var GL_STENCIL_INDEX8;
+	var GL_STENCIL_PASS_DEPTH_FAIL;
+	var GL_STENCIL_PASS_DEPTH_PASS;
+	var GL_STENCIL_REF;
+	var GL_STENCIL_TEST;
+	var GL_STENCIL_VALUE_MASK;
+	var GL_STENCIL_WRITEMASK;
+	var GL_STREAM_DRAW;
+	var GL_SUBPIXEL_BITS;
+	var GL_TEXTURE;
+	var GL_TEXTURE0;
+	var GL_TEXTURE1;
+	var GL_TEXTURE2;
+	var GL_TEXTURE3;
+	var GL_TEXTURE4;
+	var GL_TEXTURE5;
+	var GL_TEXTURE6;
+	var GL_TEXTURE7;
+	var GL_TEXTURE8;
+	var GL_TEXTURE9;
+	var GL_TEXTURE10;
+	var GL_TEXTURE11;
+	var GL_TEXTURE12;
+	var GL_TEXTURE13;
+	var GL_TEXTURE14;
+	var GL_TEXTURE15;
+	var GL_TEXTURE16;
+	var GL_TEXTURE17;
+	var GL_TEXTURE18;
+	var GL_TEXTURE19;
+	var GL_TEXTURE20;
+	var GL_TEXTURE21;
+	var GL_TEXTURE22;
+	var GL_TEXTURE23;
+	var GL_TEXTURE24;
+	var GL_TEXTURE25;
+	var GL_TEXTURE26;
+	var GL_TEXTURE27;
+	var GL_TEXTURE28;
+	var GL_TEXTURE29;
+	var GL_TEXTURE30;
+	var GL_TEXTURE31;
+	var GL_TEXTURE_2D;
+	var GL_TEXTURE_BINDING_2D;
+	var GL_TEXTURE_BINDING_CUBE_MAP;
+	var GL_TEXTURE_CUBE_MAP;
+	var GL_TEXTURE_CUBE_MAP_NEGATIVE_X;
+	var GL_TEXTURE_CUBE_MAP_NEGATIVE_Y;
+	var GL_TEXTURE_CUBE_MAP_NEGATIVE_Z;
+	var GL_TEXTURE_CUBE_MAP_POSITIVE_X;
+	var GL_TEXTURE_CUBE_MAP_POSITIVE_Y;
+	var GL_TEXTURE_CUBE_MAP_POSITIVE_Z;
+	var GL_TEXTURE_MAG_FILTER;
+	var GL_TEXTURE_MIN_FILTER;
+	var GL_TEXTURE_WRAP_S;
+	var GL_TEXTURE_WRAP_T;
+	var GL_TRIANGLES;
+	var GL_TRIANGLE_FAN;
+	var GL_TRIANGLE_STRIP;
+	var GL_UNPACK_ALIGNMENT;
+	var GL_UNPACK_COLORSPACE_CONVERSION_WEBGL;
+	var GL_UNPACK_FLIP_Y_WEBGL;
+	var GL_UNPACK_PREMULTIPLY_ALPHA_WEBGL;
+	var GL_UNSIGNED_BYTE;
+	var GL_UNSIGNED_INT;
+	var GL_UNSIGNED_SHORT;
+	var GL_UNSIGNED_SHORT_4_4_4_4;
+	var GL_UNSIGNED_SHORT_5_5_5_1;
+	var GL_UNSIGNED_SHORT_5_6_5;
+	var GL_VALIDATE_STATUS;
+	var GL_VENDOR;
+	var GL_VERSION;
+	var GL_VERTEX_ATTRIB_ARRAY_BUFFER_BINDING;
+	var GL_VERTEX_ATTRIB_ARRAY_ENABLED;
+	var GL_VERTEX_ATTRIB_ARRAY_NORMALIZED;
+	var GL_VERTEX_ATTRIB_ARRAY_POINTER;
+	var GL_VERTEX_ATTRIB_ARRAY_SIZE;
+	var GL_VERTEX_ATTRIB_ARRAY_STRIDE;
+	var GL_VERTEX_ATTRIB_ARRAY_TYPE;
+	var GL_VERTEX_SHADER;
+	var GL_VIEWPORT;
+	var GL_ZERO;
+		
+	
+	var obstaclePositionBuffer;
+	var obstacleIndexBuffer;
+	
+    function namespace(){
+        this.gl_texParameteri = function (target, pname, param) {
+            gl.texParameteri(target, pname, param);
+        };
+
+        this.gl_pixelStorei = function(parameter, parameterName){
+            gl.pixelStorei(parameter, parameterName);
+        };
+
+        //******* WRAPPER FUNCTIONS *************************************************************//
+		this.gl_bindBuffer = function(target, buffer) {
+			gl.bindBuffer(target, buffer);
+		};
+	
+		this.gl_createShader = function(shaderType){
+			return gl.createShader(shaderType);
+		};
+		
+		this.gl_shaderSource = function(shader, str){
+			gl.shaderSource(shader, str);			
+		};
+		
+		this.gl_getShaderParameter = function(shader, shaderParameter){
+			return gl.getShaderParameter(shader, shaderParameter);
+		};
+		
+		this.gl_compileShader = function(shader){
+			gl.compileShader(shader);
+		};
+		
+		this.gl_getShaderInfoLog = function(shader){
+			return gl.getShaderInfoLog(shader);
+		};
+		
+		this.gl_createProgram = function(){
+			return gl.createProgram();
+		};
+		
+		this.gl_attachShader = function(shaderProgram, shader){
+			gl.attachShader(shaderProgram, shader);
+		};
+		
+		this.gl_linkProgram = function(shaderProgram){
+			gl.linkProgram(shaderProgram);
+		};
+		
+		this.gl_getProgramParameter = function(shaderProgram, parameter){
+			return gl.getProgramParameter(shaderProgram, parameter);
+		};
+		
+		this.gl_useProgram = function(shaderProgram){
+			gl.useProgram(shaderProgram);
+		};
+		
+		this.gl_getAttribLocation = function(shaderProgram, attributeName){ 
+			return gl.getAttribLocation(shaderProgram, attributeName)
+    	};
+
+		this.gl_enableVertexAttribArray = function(vertexAttributeName){
+			gl.enableVertexAttribArray(vertexAttributeName);
+		};
+
+		this.gl_getUniformLocation = function(shaderProgram, variableName){
+			return gl.getUniformLocation(shaderProgram, variableName);	
+		};
+		
+		this.gl_uniformMatrix4fv = function(location, transpose, value){
+			gl.uniformMatrix4fv(location, transpose, value);
+		};
+
+        this.gl_uniformMatrix3fv = function(location, transpose, value){
+            gl.uniformMatrix3fv(location, transpose, value);
+        };
+		
+		this.gl_bufferData = function(target, bufferedDataArray, usage){
+			gl.bufferData(target, bufferedDataArray, usage);
+		};
+        
+		this.gl_createBuffer = function(){
+			return gl.createBuffer();
+		};
+		
+		this.gl_viewport = function(x, y, width, height){
+			gl.viewport(x, y, width, height);
+		};
+		
+		this.gl_clear = function(bitFieldMask){
+			gl.clear(bitFieldMask);
+		};
+		
+		this.gl_vertexAttribPointer = function(identifier,size, type, normalised, stride, offset){
+			gl.vertexAttribPointer(identifier, size, type, normalised, stride, offset);
+		};
+		
+		this.gl_drawArrays = function(mode, first, count){
+			gl.drawArrays(mode, first, count);			
+		};
+		
+		this.gl_clearColor = function(red, green, blue, alpha){
+			gl.clearColor(red, green, blue, alpha);
+		};
+		
+		this.gl_enable = function(capability){
+			gl.enable(capability);
+		};
+
+        this.gl_createTexture=function(){
+            return gl.createTexture();
+        };
+
+        this.gl_drawElements = function(mode, count, type, offset){
+            gl.drawElements(mode, count, type, offset);
+        };
+
+        this.gl_activeTexture = function(textureType){
+            gl.activeTexture(textureType);
+        };
+
+        this.gl_bindTexture = function(textureType, texture){
+            gl.bindTexture(textureType, texture);
+        };
+
+        this.gl_uniform1i = function(samplerUniform, value){
+            gl.uniform1i(samplerUniform, value);
+        };
+
+        this.gl_texImage2D = function(target, level, internalFormat, format, type , htmlImageElement){
+            gl.texImage2D(target, level, internalFormat, format, type , htmlImageElement);
+        };
+
+        //***************************************************************************************//
+
+		//initialisation of extracted constants - probably written in non optimal way
+		this.initConstants = function() {
+			GL_ACTIVE_ATTRIBUTES = gl.ACTIVE_ATTRIBUTES;
+			GL_ACTIVE_ATTRIBUTE_MAX_LENGTH = gl.ACTIVE_ATTRIBUTE_MAX_LENGTH;
+			GL_ACTIVE_TEXTURE = gl.ACTIVE_TEXTURE;
+			GL_ACTIVE_UNIFORMS = gl.ACTIVE_UNIFORMS;
+			GL_ACTIVE_UNIFORM_MAX_LENGTH = gl.ACTIVE_UNIFORM_MAX_LENGTH;
+			GL_ALIASED_LINE_WIDTH_RANGE = gl.ALIASED_LINE_WIDTH_RANGE;
+			GL_ALIASED_POINT_SIZE_RANGE = gl.ALIASED_POINT_SIZE_RANGE;
+			GL_ALPHA = gl.ALPHA;
+			GL_ALPHA_BITS = gl.ALPHA_BITS;
+			GL_ALWAYS = gl.ALWAYS;
+			GL_ARRAY_BUFFER = gl.ARRAY_BUFFER;
+			GL_ARRAY_BUFFER_BINDING = gl.ARRAY_BUFFER_BINDING;
+			GL_ATTACHED_SHADERS = gl.ATTACHED_SHADERS;
+			GL_BACK = gl.BACK;
+			GL_BLEND = gl.BLEND;
+			GL_BLEND_COLOR = gl.BLEND_COLOR;
+			GL_BLEND_DST_ALPHA = gl.BLEND_DST_ALPHA;
+			GL_BLEND_DST_RGB = gl.BLEND_DST_RGB;
+			GL_BLEND_EQUATION = gl.BLEND_EQUATION;
+			GL_BLEND_EQUATION_ALPHA = gl.BLEND_EQUATION_ALPHA;
+			GL_BLEND_EQUATION_RGB = gl.BLEND_EQUATION_RGB;
+			GL_BLEND_SRC_ALPHA = gl.BLEND_SRC_ALPHA;
+			GL_BLEND_SRC_RGB = gl.BLEND_SRC_RGB;
+			GL_BLUE_BITS = gl.BLUE_BITS;
+			GL_BOOL = gl.BOOL;
+			GL_BOOL_VEC2 = gl.BOOL_VEC2;
+			GL_BOOL_VEC3 = gl.BOOL_VEC3;
+			GL_BOOL_VEC4 = gl.BOOL_VEC4;
+			GL_BROWSER_DEFAULT_WEBGL = gl.BROWSER_DEFAULT_WEBGL;
+			GL_BUFFER_SIZE = gl.BUFFER_SIZE;
+			GL_BUFFER_USAGE = gl.BUFFER_USAGE;
+			GL_BYTE = gl.BYTE;
+			GL_CCW = gl.CCW;
+			GL_CLAMP_TO_EDGE = gl.CLAMP_TO_EDGE;
+			GL_COLOR_ATTACHMENT0 = gl.COLOR_ATTACHMENT0;
+			GL_COLOR_BUFFER_BIT = gl.COLOR_BUFFER_BIT;
+			GL_COLOR_CLEAR_VALUE = gl.COLOR_CLEAR_VALUE;
+			GL_COLOR_WRITEMASK = gl.COLOR_WRITEMASK;
+			GL_COMPILE_STATUS = gl.COMPILE_STATUS;
+			GL_COMPRESSED_TEXTURE_FORMATS = gl.COMPRESSED_TEXTURE_FORMATS;
+			GL_CONSTANT_ALPHA = gl.CONSTANT_ALPHA;
+			GL_CONSTANT_COLOR = gl.CONSTANT_COLOR;
+			GL_CONTEXT_LOST_WEBGL = gl.CONTEXT_LOST_WEBGL;
+			GL_CULL_FACE = gl.CULL_FACE;
+			GL_CULL_FACE_MODE = gl.CULL_FACE_MODE;
+			GL_CURRENT_PROGRAM = gl.CURRENT_PROGRAM;
+			GL_CURRENT_VERTEX_ATTRIB = gl.CURRENT_VERTEX_ATTRIB;
+			GL_CW = gl.CW;
+			GL_DECR = gl.DECR;
+			GL_DECR_WRAP = gl.DECR_WRAP;
+			GL_DELETE_STATUS = gl.DELETE_STATUS;
+			GL_DEPTH_ATTACHMENT = gl.DEPTH_ATTACHMENT;
+			GL_DEPTH_BITS = gl.DEPTH_BITS;
+			GL_DEPTH_BUFFER_BIT = gl.DEPTH_BUFFER_BIT;
+			GL_DEPTH_CLEAR_VALUE = gl.DEPTH_CLEAR_VALUE;
+			GL_DEPTH_COMPONENT = gl.DEPTH_COMPONENT;
+			GL_DEPTH_COMPONENT16 = gl.DEPTH_COMPONENT16;
+			GL_DEPTH_FUNC = gl.DEPTH_FUNC;
+			GL_DEPTH_RANGE = gl.DEPTH_RANGE;
+			GL_DEPTH_STENCIL = gl.DEPTH_STENCIL;
+			GL_DEPTH_STENCIL_ATTACHMENT = gl.DEPTH_STENCIL_ATTACHMENT;
+			GL_DEPTH_TEST = gl.DEPTH_TEST;
+			GL_DEPTH_WRITEMASK = gl.DEPTH_WRITEMASK;
+			GL_DITHER = gl.DITHER;
+			GL_DONT_CARE = gl.DONT_CARE;
+			GL_DST_ALPHA = gl.DST_ALPHA;
+			GL_DST_COLOR = gl.DST_COLOR;
+			GL_DYNAMIC_DRAW = gl.DYNAMIC_DRAW;
+			GL_ELEMENT_ARRAY_BUFFER = gl.ELEMENT_ARRAY_BUFFER;
+			GL_ELEMENT_ARRAY_BUFFER_BINDING = gl.ELEMENT_ARRAY_BUFFER_BINDING;
+			GL_EQUAL = gl.EQUAL;
+			GL_FASTEST = gl.FASTEST;
+			GL_FLOAT = gl.FLOAT;
+			GL_FLOAT_MAT2 = gl.FLOAT_MAT2;
+			GL_FLOAT_MAT3 = gl.FLOAT_MAT3;
+			GL_FLOAT_MAT4 = gl.FLOAT_MAT4;
+			GL_FLOAT_VEC2 = gl.FLOAT_VEC2;
+			GL_FLOAT_VEC3 = gl.FLOAT_VEC3;
+			GL_FLOAT_VEC4 = gl.FLOAT_VEC4;
+			GL_FRAGMENT_SHADER = gl.FRAGMENT_SHADER;
+			GL_FRAMEBUFFER = gl.FRAMEBUFFER;
+			GL_FRAMEBUFFER_ATTACHMENT_OBJECT_NAME = gl.FRAMEBUFFER_ATTACHMENT_OBJECT_NAME;
+			GL_FRAMEBUFFER_ATTACHMENT_OBJECT_TYPE = gl.FRAMEBUFFER_ATTACHMENT_OBJECT_TYPE;
+			GL_FRAMEBUFFER_ATTACHMENT_TEXTURE_CUBE_MAP_FACE = gl.FRAMEBUFFER_ATTACHMENT_TEXTURE_CUBE_MAP_FACE;
+			GL_FRAMEBUFFER_ATTACHMENT_TEXTURE_LEVEL = gl.FRAMEBUFFER_ATTACHMENT_TEXTURE_LEVEL;
+			GL_FRAMEBUFFER_BINDING = gl.FRAMEBUFFER_BINDING;
+			GL_FRAMEBUFFER_COMPLETE = gl.FRAMEBUFFER_COMPLETE;
+			GL_FRAMEBUFFER_INCOMPLETE_ATTACHMENT = gl.FRAMEBUFFER_INCOMPLETE_ATTACHMENT;
+			GL_FRAMEBUFFER_INCOMPLETE_DIMENSIONS = gl.FRAMEBUFFER_INCOMPLETE_DIMENSIONS;
+			GL_FRAMEBUFFER_INCOMPLETE_MISSING_ATTACHMENT = gl.FRAMEBUFFER_INCOMPLETE_MISSING_ATTACHMENT;
+			GL_FRAMEBUFFER_UNSUPPORTED = gl.FRAMEBUFFER_UNSUPPORTED;
+			GL_FRONT = gl.FRONT;
+			GL_FRONT_AND_BACK = gl.FRONT_AND_BACK;
+			GL_FRONT_FACE = gl.FRONT_FACE;
+			GL_FUNC_ADD = gl.FUNC_ADD;
+			GL_FUNC_REVERSE_SUBTRACT = gl.FUNC_REVERSE_SUBTRACT;
+			GL_FUNC_SUBTRACT = gl.FUNC_SUBTRACT;
+			GL_GENERATE_MIPMAP_HINT = gl.GENERATE_MIPMAP_HINT;
+			GL_GEQUAL = gl.GEQUAL;
+			GL_GREATER = gl.GREATER;
+			GL_GREEN_BITS = gl.GREEN_BITS;
+			GL_HIGH_FLOAT = gl.HIGH_FLOAT;
+			GL_HIGH_INT = gl.HIGH_INT;
+			GL_INCR = gl.INCR;
+			GL_INCR_WRAP = gl.INCR_WRAP;
+			GL_INFO_LOG_LENGTH = gl.INFO_LOG_LENGTH;
+			GL_INT = gl.INT;
+			GL_INT_VEC2 = gl.INT_VEC2;
+			GL_INT_VEC3 = gl.INT_VEC3;
+			GL_INT_VEC4 = gl.INT_VEC4;
+			GL_INVALID_ENUM = gl.INVALID_ENUM;
+			GL_INVALID_FRAMEBUFFER_OPERATION = gl.INVALID_FRAMEBUFFER_OPERATION;
+			GL_INVALID_OPERATION = gl.INVALID_OPERATION;
+			GL_INVALID_VALUE = gl.INVALID_VALUE;
+			GL_INVERT = gl.INVERT;
+			GL_KEEP = gl.KEEP;
+			GL_LEQUAL = gl.LEQUAL;
+			GL_LESS = gl.LESS;
+			GL_LINEAR = gl.LINEAR;
+			GL_LINEAR_MIPMAP_LINEAR = gl.LINEAR_MIPMAP_LINEAR;
+			GL_LINEAR_MIPMAP_NEAREST = gl.LINEAR_MIPMAP_NEAREST;
+			GL_LINES = gl.LINES;
+			GL_LINE_LOOP = gl.LINE_LOOP;
+			GL_LINE_STRIP = gl.LINE_STRIP;
+			GL_LINE_WIDTH = gl.LINE_WIDTH;
+			GL_LINK_STATUS = gl.LINK_STATUS;
+			GL_LOW_FLOAT = gl.LOW_FLOAT;
+			GL_LOW_INT = gl.LOW_INT;
+			GL_LUMINANCE = gl.LUMINANCE;
+			GL_LUMINANCE_ALPHA = gl.LUMINANCE_ALPHA;
+			GL_MAX_COMBINED_TEXTURE_IMAGE_UNITS = gl.MAX_COMBINED_TEXTURE_IMAGE_UNITS;
+			GL_MAX_CUBE_MAP_TEXTURE_SIZE = gl.MAX_CUBE_MAP_TEXTURE_SIZE;
+			GL_MAX_FRAGMENT_UNIFORM_VECTORS = gl.MAX_FRAGMENT_UNIFORM_VECTORS;
+			GL_MAX_RENDERBUFFER_SIZE = gl.MAX_RENDERBUFFER_SIZE;
+			GL_MAX_TEXTURE_IMAGE_UNITS = gl.MAX_TEXTURE_IMAGE_UNITS;
+			GL_MAX_TEXTURE_SIZE = gl.MAX_TEXTURE_SIZE;
+			GL_MAX_VARYING_VECTORS = gl.MAX_VARYING_VECTORS;
+			GL_MAX_VERTEX_ATTRIBS = gl.MAX_VERTEX_ATTRIBS;
+			GL_MAX_VERTEX_TEXTURE_IMAGE_UNITS = gl.MAX_VERTEX_TEXTURE_IMAGE_UNITS;
+			GL_MAX_VERTEX_UNIFORM_VECTORS = gl.MAX_VERTEX_UNIFORM_VECTORS;
+			GL_MAX_VIEWPORT_DIMS = gl.MAX_VIEWPORT_DIMS;
+			GL_MEDIUM_FLOAT = gl.MEDIUM_FLOAT;
+			GL_MEDIUM_INT = gl.MEDIUM_INT;
+			GL_MIRRORED_REPEAT = gl.MIRRORED_REPEAT;
+			GL_NEAREST = gl.NEAREST;
+			GL_NEAREST_MIPMAP_LINEAR = gl.NEAREST_MIPMAP_LINEAR;
+			GL_NEAREST_MIPMAP_NEAREST = gl.NEAREST_MIPMAP_NEAREST;
+			GL_NEVER = gl.NEVER;
+			GL_NICEST = gl.NICEST;
+			GL_NONE = gl.NONE;
+			GL_NOTEQUAL = gl.NOTEQUAL;
+			GL_NO_ERROR = gl.NO_ERROR;
+			GL_NUM_COMPRESSED_TEXTURE_FORMATS = gl.NUM_COMPRESSED_TEXTURE_FORMATS;
+			GL_ONE = gl.ONE;
+			GL_ONE_MINUS_CONSTANT_ALPHA = gl.ONE_MINUS_CONSTANT_ALPHA;
+			GL_ONE_MINUS_CONSTANT_COLOR = gl.ONE_MINUS_CONSTANT_COLOR;
+			GL_ONE_MINUS_DST_ALPHA = gl.ONE_MINUS_DST_ALPHA;
+			GL_ONE_MINUS_DST_COLOR = gl.ONE_MINUS_DST_COLOR;
+			GL_ONE_MINUS_SRC_ALPHA = gl.ONE_MINUS_SRC_ALPHA;
+			GL_ONE_MINUS_SRC_COLOR = gl.ONE_MINUS_SRC_COLOR;
+			GL_OUT_OF_MEMORY = gl.OUT_OF_MEMORY;
+			GL_PACK_ALIGNMENT = gl.PACK_ALIGNMENT;
+			GL_POINTS = gl.POINTS;
+			GL_POLYGON_OFFSET_FACTOR = gl.POLYGON_OFFSET_FACTOR;
+			GL_POLYGON_OFFSET_FILL = gl.POLYGON_OFFSET_FILL;
+			GL_POLYGON_OFFSET_UNITS = gl.POLYGON_OFFSET_UNITS;
+			GL_RED_BITS = gl.RED_BITS;
+			GL_RENDERBUFFER = gl.RENDERBUFFER;
+			GL_RENDERBUFFER_ALPHA_SIZE = gl.RENDERBUFFER_ALPHA_SIZE;
+			GL_RENDERBUFFER_BINDING = gl.RENDERBUFFER_BINDING;
+			GL_RENDERBUFFER_BLUE_SIZE = gl.RENDERBUFFER_BLUE_SIZE;
+			GL_RENDERBUFFER_DEPTH_SIZE = gl.RENDERBUFFER_DEPTH_SIZE;
+			GL_RENDERBUFFER_GREEN_SIZE = gl.RENDERBUFFER_GREEN_SIZE;
+			GL_RENDERBUFFER_HEIGHT = gl.RENDERBUFFER_HEIGHT;
+			GL_RENDERBUFFER_INTERNAL_FORMAT = gl.RENDERBUFFER_INTERNAL_FORMAT;
+			GL_RENDERBUFFER_RED_SIZE = gl.RENDERBUFFER_RED_SIZE;
+			GL_RENDERBUFFER_STENCIL_SIZE = gl.RENDERBUFFER_STENCIL_SIZE;
+			GL_RENDERBUFFER_WIDTH = gl.RENDERBUFFER_WIDTH;
+			GL_RENDERER = gl.RENDERER;
+			GL_REPEAT = gl.REPEAT;
+			GL_REPLACE = gl.REPLACE;
+			GL_RGB = gl.RGB;
+			GL_RGB5_A1 = gl.RGB5_A1;
+			GL_RGB565 = gl.RGB565;
+			GL_RGBA = gl.RGBA;
+			GL_RGBA4 = gl.RGBA4;
+			GL_SAMPLER_2D = gl.SAMPLER_2D;
+			GL_SAMPLER_CUBE = gl.SAMPLER_CUBE;
+			GL_SAMPLES = gl.SAMPLES;
+			GL_SAMPLE_ALPHA_TO_COVERAGE = gl.SAMPLE_ALPHA_TO_COVERAGE;
+			GL_SAMPLE_BUFFERS = gl.SAMPLE_BUFFERS;
+			GL_SAMPLE_COVERAGE = gl.SAMPLE_COVERAGE;
+			GL_SAMPLE_COVERAGE_INVERT = gl.SAMPLE_COVERAGE_INVERT;
+			GL_SAMPLE_COVERAGE_VALUE = gl.SAMPLE_COVERAGE_VALUE;
+			GL_SCISSOR_BOX = gl.SCISSOR_BOX;
+			GL_SCISSOR_TEST = gl.SCISSOR_TEST;
+			GL_SHADER_COMPILER = gl.SHADER_COMPILER;
+			GL_SHADER_SOURCE_LENGTH = gl.SHADER_SOURCE_LENGTH;
+			GL_SHADER_TYPE = gl.SHADER_TYPE;
+			GL_SHADING_LANGUAGE_VERSION = gl.SHADING_LANGUAGE_VERSION;
+			GL_SHORT = gl.SHORT;
+			GL_SRC_ALPHA = gl.SRC_ALPHA;
+			GL_SRC_ALPHA_SATURATE = gl.SRC_ALPHA_SATURATE;
+			GL_SRC_COLOR = gl.SRC_COLOR;
+			GL_STATIC_DRAW = gl.STATIC_DRAW;
+			GL_STENCIL_ATTACHMENT = gl.STENCIL_ATTACHMENT;
+			GL_STENCIL_BACK_FAIL = gl.STENCIL_BACK_FAIL;
+			GL_STENCIL_BACK_FUNC = gl.STENCIL_BACK_FUNC;
+			GL_STENCIL_BACK_PASS_DEPTH_FAIL = gl.STENCIL_BACK_PASS_DEPTH_FAIL;
+			GL_STENCIL_BACK_PASS_DEPTH_PASS = gl.STENCIL_BACK_PASS_DEPTH_PASS;
+			GL_STENCIL_BACK_REF = gl.STENCIL_BACK_REF;
+			GL_STENCIL_BACK_VALUE_MASK = gl.STENCIL_BACK_VALUE_MASK;
+			GL_STENCIL_BACK_WRITEMASK = gl.STENCIL_BACK_WRITEMASK;
+			GL_STENCIL_BITS = gl.STENCIL_BITS;
+			GL_STENCIL_BUFFER_BIT = gl.STENCIL_BUFFER_BIT;
+			GL_STENCIL_CLEAR_VALUE = gl.STENCIL_CLEAR_VALUE;
+			GL_STENCIL_FAIL = gl.STENCIL_FAIL;
+			GL_STENCIL_FUNC = gl.STENCIL_FUNC;
+			GL_STENCIL_INDEX = gl.STENCIL_INDEX;
+			GL_STENCIL_INDEX8 = gl.STENCIL_INDEX8;
+			GL_STENCIL_PASS_DEPTH_FAIL = gl.STENCIL_PASS_DEPTH_FAIL;
+			GL_STENCIL_PASS_DEPTH_PASS = gl.STENCIL_PASS_DEPTH_PASS;
+			GL_STENCIL_REF = gl.STENCIL_REF;
+			GL_STENCIL_TEST = gl.STENCIL_TEST;
+			GL_STENCIL_VALUE_MASK = gl.STENCIL_VALUE_MASK;
+			GL_STENCIL_WRITEMASK = gl.STENCIL_WRITEMASK;
+			GL_STREAM_DRAW = gl.STREAM_DRAW;
+			GL_SUBPIXEL_BITS = gl.SUBPIXEL_BITS;
+			GL_TEXTURE = gl.TEXTURE;
+			GL_TEXTURE0 = gl.TEXTURE0;
+			GL_TEXTURE1 = gl.TEXTURE1;
+			GL_TEXTURE2 = gl.TEXTURE2;
+			GL_TEXTURE3 = gl.TEXTURE3;
+			GL_TEXTURE4 = gl.TEXTURE4;
+			GL_TEXTURE5 = gl.TEXTURE5;
+			GL_TEXTURE6 = gl.TEXTURE6;
+			GL_TEXTURE7 = gl.TEXTURE7;
+			GL_TEXTURE8 = gl.TEXTURE8;
+			GL_TEXTURE9 = gl.TEXTURE9;
+			GL_TEXTURE10 = gl.TEXTURE10;
+			GL_TEXTURE11 = gl.TEXTURE11;
+			GL_TEXTURE12 = gl.TEXTURE12;
+			GL_TEXTURE13 = gl.TEXTURE13;
+			GL_TEXTURE14 = gl.TEXTURE14;
+			GL_TEXTURE15 = gl.TEXTURE15;
+			GL_TEXTURE16 = gl.TEXTURE16;
+			GL_TEXTURE17 = gl.TEXTURE17;
+			GL_TEXTURE18 = gl.TEXTURE18;
+			GL_TEXTURE19 = gl.TEXTURE19;
+			GL_TEXTURE20 = gl.TEXTURE20;
+			GL_TEXTURE21 = gl.TEXTURE21;
+			GL_TEXTURE22 = gl.TEXTURE22;
+			GL_TEXTURE23 = gl.TEXTURE23;
+			GL_TEXTURE24 = gl.TEXTURE24;
+			GL_TEXTURE25 = gl.TEXTURE25;
+			GL_TEXTURE26 = gl.TEXTURE26;
+			GL_TEXTURE27 = gl.TEXTURE27;
+			GL_TEXTURE28 = gl.TEXTURE28;
+			GL_TEXTURE29 = gl.TEXTURE29;
+			GL_TEXTURE30 = gl.TEXTURE30;
+			GL_TEXTURE31 = gl.TEXTURE31;
+			GL_TEXTURE_2D = gl.TEXTURE_2D;
+			GL_TEXTURE_BINDING_2D = gl.TEXTURE_BINDING_2D;
+			GL_TEXTURE_BINDING_CUBE_MAP = gl.TEXTURE_BINDING_CUBE_MAP;
+			GL_TEXTURE_CUBE_MAP = gl.TEXTURE_CUBE_MAP;
+			GL_TEXTURE_CUBE_MAP_NEGATIVE_X = gl.TEXTURE_CUBE_MAP_NEGATIVE_X;
+			GL_TEXTURE_CUBE_MAP_NEGATIVE_Y = gl.TEXTURE_CUBE_MAP_NEGATIVE_Y;
+			GL_TEXTURE_CUBE_MAP_NEGATIVE_Z = gl.TEXTURE_CUBE_MAP_NEGATIVE_Z;
+			GL_TEXTURE_CUBE_MAP_POSITIVE_X = gl.TEXTURE_CUBE_MAP_POSITIVE_X;
+			GL_TEXTURE_CUBE_MAP_POSITIVE_Y = gl.TEXTURE_CUBE_MAP_POSITIVE_Y;
+			GL_TEXTURE_CUBE_MAP_POSITIVE_Z = gl.TEXTURE_CUBE_MAP_POSITIVE_Z;
+			GL_TEXTURE_MAG_FILTER = gl.TEXTURE_MAG_FILTER;
+			GL_TEXTURE_MIN_FILTER = gl.TEXTURE_MIN_FILTER;
+			GL_TEXTURE_WRAP_S = gl.TEXTURE_WRAP_S;
+			GL_TEXTURE_WRAP_T = gl.TEXTURE_WRAP_T;
+			GL_TRIANGLES = gl.TRIANGLES;
+			GL_TRIANGLE_FAN = gl.TRIANGLE_FAN;
+			GL_TRIANGLE_STRIP = gl.TRIANGLE_STRIP;
+			GL_UNPACK_ALIGNMENT = gl.UNPACK_ALIGNMENT;
+			GL_UNPACK_COLORSPACE_CONVERSION_WEBGL = gl.UNPACK_COLORSPACE_CONVERSION_WEBGL;
+			GL_UNPACK_FLIP_Y_WEBGL = gl.UNPACK_FLIP_Y_WEBGL;
+			GL_UNPACK_PREMULTIPLY_ALPHA_WEBGL = gl.UNPACK_PREMULTIPLY_ALPHA_WEBGL;
+			GL_UNSIGNED_BYTE = gl.UNSIGNED_BYTE;
+			GL_UNSIGNED_INT = gl.UNSIGNED_INT;
+			GL_UNSIGNED_SHORT = gl.UNSIGNED_SHORT;
+			GL_UNSIGNED_SHORT_4_4_4_4 = gl.UNSIGNED_SHORT_4_4_4_4;
+			GL_UNSIGNED_SHORT_5_5_5_1 = gl.UNSIGNED_SHORT_5_5_5_1;
+			GL_UNSIGNED_SHORT_5_6_5 = gl.UNSIGNED_SHORT_5_6_5;
+			GL_VALIDATE_STATUS = gl.VALIDATE_STATUS;
+			GL_VENDOR = gl.VENDOR;
+			GL_VERSION = gl.VERSION;
+			GL_VERTEX_ATTRIB_ARRAY_BUFFER_BINDING = gl.VERTEX_ATTRIB_ARRAY_BUFFER_BINDING;
+			GL_VERTEX_ATTRIB_ARRAY_ENABLED = gl.VERTEX_ATTRIB_ARRAY_ENABLED;
+			GL_VERTEX_ATTRIB_ARRAY_NORMALIZED = gl.VERTEX_ATTRIB_ARRAY_NORMALIZED;
+			GL_VERTEX_ATTRIB_ARRAY_POINTER = gl.VERTEX_ATTRIB_ARRAY_POINTER;
+			GL_VERTEX_ATTRIB_ARRAY_SIZE = gl.VERTEX_ATTRIB_ARRAY_SIZE;
+			GL_VERTEX_ATTRIB_ARRAY_STRIDE = gl.VERTEX_ATTRIB_ARRAY_STRIDE;
+			GL_VERTEX_ATTRIB_ARRAY_TYPE = gl.VERTEX_ATTRIB_ARRAY_TYPE;
+			GL_VERTEX_SHADER = gl.VERTEX_SHADER;
+			GL_VIEWPORT = gl.VIEWPORT;
+			GL_ZERO = gl.ZERO;
+
+		};
+
+		this.makeBuffer = function(buffer, target, bufferedDataArray, itemsNum,
+				itemSize) {
+			this.gl_bindBuffer(target, buffer);
+			buffer.itemsNum = itemsNum;
+			buffer.itemSize = itemSize;
+			this.gl_bufferData(target, bufferedDataArray,
+					GL_STATIC_DRAW);
+		};
+
+		this.initBuffers = function() {
+            this.initObstacleBuffers();
+		};
+
+        this.toColor = function(color){
+            return color/255.0;
+        };
+
+        this.getNormal = function(startPoint, endPoint1, endPoint2){
+            var v1 = vec3.subtract(endPoint1, startPoint);
+            var v2 = vec3.subtract(endPoint2, startPoint);
+            var cross = vec3.cross(v1, v2);
+            return vec3.normalize(cross);
+        };
+
+        this.gl_uniform3f = function(uniformLocation, xFloat, yFloat, zFloat){
+            gl.uniform3f(uniformLocation, xFloat, yFloat, zFloat);
+        };
+
+        this.gl_uniform3fv = function(uniformLocation, float32Array){
+            gl.uniform3fv(uniformLocation, float32Array);
+        };
+
+        /**
+         *  Precondition for this function is that vertices are stored in groups of size groupSize defining surface
+         *  MixedArray must be in form - row: [0-3] Position, ... [offset] normal
+         * @param mixedArray
+         * @param rowLength
+         * @param offset
+         * @param groupSize
+         */
+        this.updateNormals = function(mixedArray, rowLength, offset, groupSize){
+            if(groupSize < 3){
+                alert("ERROR - cannot get normal from " + groupSize + " vertices");
+                return;
+            }
+
+            for(var i = 0 ; i < mixedArray.length/rowLength ; i+= groupSize){
+                //index of first point in mixed array
+                var firstPointIndex = i * rowLength + offset;
+                var firstPoint = mixedArray.slice(i * rowLength, 3);
+                var secondPoint = mixedArray.slice((i + 1) * rowLength, rowLength + 3);
+                var thirdPoint = mixedArray.slice((i + 2) * rowLength, 2 * rowLength + 3);
+
+                var normal = this.getNormal(firstPoint, secondPoint, thirdPoint);
+                //update group normals
+                for(var j = 0 ; j < groupSize ; j++){
+                    var elementIndex = i + j;
+                    //update normal of j
+                    var normalIndex = elementIndex * rowLength + offset;
+                    mixedArray[normalIndex] = normal[0];
+                    mixedArray[normalIndex + 1] = normal[1];
+                    mixedArray[normalIndex + 2] = normal[2];
+                }
+            }
+        };
+
+        this.bindTexture = function(target, texture){
+            gl.bindTexture(target, texture);
+        };
+
+		this.initObstacleBuffers = function(){
+			var obstacleDepth = 1.0;
+            var obstacleVertices = [
+                //---------top side positions - measured from 0.0 - long rectangle
+                //long rectangle
+                //position                  //texture coords   //space for normal
+                0.0, 0.0,  0.0,             0.0, 0.0,       0.0, 0.0, 0.0,
+                1.0, 0.0,  0.0,             1.0, 0.0,       0.0, 0.0, 0.0,
+                1.0, 10.0, 0.0,             1.0, 10.0,      0.0, 0.0, 0.0,
+                0.0, 10.0, 0.0,             0.0, 10.0,      0.0, 0.0, 0.0,
+
+                // right rectangle
+                1.0, 7.0, 0.0,              0.0, 0.0,       0.0, 0.0, 0.0,
+                3.0, 7.0, 0.0,              1.0, 0.0,       0.0, 0.0, 0.0,
+                3.0, 8.0, 0.0,              1.0, 1.0,       0.0, 0.0, 0.0,
+                1.0, 8.0, 0.0,              0.0, 1.0,       0.0, 0.0, 0.0,
+
+                //left rectangle
+                -2.0, 7.0, 0.0,              0.0, 0.0,       0.0, 0.0, 0.0,
+                0.0, 7.0, 0.0,              1.0, 0.0,       0.0, 0.0, 0.0,
+                0.0, 8.0, 0.0,              1.0, 1.0,       0.0, 0.0, 0.0,
+                -2.0, 8.0, 0.0,              0.0, 1.0,       0.0, 0.0, 0.0,
+
+                //----------bottom side positions
+                //long rectangle
+                //position                  //texture coords //space for normal
+                0.0, 0.0,  obstacleDepth,   0.0, 0.0,       0.0, 0.0, 0.0,
+                1.0, 0.0,  obstacleDepth,   1.0, 0.0,       0.0, 0.0, 0.0,
+                1.0, 10.0, obstacleDepth,   1.0, 10.0,      0.0, 0.0, 0.0,
+                0.0, 10.0, obstacleDepth,   0.0, 10.0,      0.0, 0.0, 0.0,
+
+                // right rectangle
+                1.0, 7.0, obstacleDepth,    0.0, 0.0,       0.0, 0.0, 0.0,
+                3.0, 7.0, obstacleDepth,    1.0, 0.0,       0.0, 0.0, 0.0,
+                3.0, 8.0, obstacleDepth,    1.0, 1.0,       0.0, 0.0, 0.0,
+                1.0, 8.0, obstacleDepth,    0.0, 1.0,       0.0, 0.0, 0.0,
+
+                //left rectangle
+                -2.0, 7.0, obstacleDepth,    0.0, 0.0,       0.0, 0.0, 0.0,
+                0.0, 7.0, obstacleDepth,    1.0, 0.0,       0.0, 0.0, 0.0,
+                0.0, 8.0, obstacleDepth,    1.0, 1.0,       0.0, 0.0, 0.0,
+                -2.0, 8.0, obstacleDepth,    0.0, 1.0,       0.0, 0.0, 0.0,
+
+                //---------FRONT depth
+                //long rectangle near
+                //position                  //texture coords //space for normal
+                0.0, 0.0, obstacleDepth,    0.0, 0.0,       0.0, 0.0, 0.0,
+                1.0, 0.0, obstacleDepth,    1.0, 0.0,       0.0, 0.0, 0.0,
+                1.0, 0.0, 0,                1.0, 1.0,       0.0, 0.0, 0.0,
+                0.0, 0.0, 0,                0.0, 1.0,       0.0, 0.0, 0.0,
+
+                //right near
+                1.0, 7.0, obstacleDepth,    0.0, 0.0,       0.0, 0.0, 0.0,
+                3.0, 7.0, obstacleDepth,    1.0, 0.0,       0.0, 0.0, 0.0,
+                3.0, 7.0, 0,                1.0, 1.0,       0.0, 0.0, 0.0,
+                1.0, 7.0, 0,                0.0, 1.0,       0.0, 0.0, 0.0,
+
+                //left near
+                -2.0, 7.0, obstacleDepth,   0.0, 0.0,       0.0, 0.0, 0.0,
+                0.0, 7.0, obstacleDepth,    1.0, 0.0,       0.0, 0.0, 0.0,
+                0.0, 7.0, 0.0,              1.0, 1.0,       0.0, 0.0, 0.0,
+                -2.0, 7.0, 0.0,             0.0, 1.0,       0.0, 0.0, 0.0,
+
+                //right far
+                1.0, 8.0, obstacleDepth,    0.0, 0.0,       0.0, 0.0, 0.0,
+                3.0, 8.0, obstacleDepth,    1.0, 0.0,       0.0, 0.0, 0.0,
+                3.0, 8.0, 0,                1.0, 1.0,       0.0, 0.0, 0.0,
+                1.0, 8.0, 0,                0.0, 1.0,       0.0, 0.0, 0.0,
+
+                //left far
+                -2.0, 8.0, obstacleDepth,    0.0, 0.0,       0.0, 0.0, 0.0,
+                0.0, 8.0, obstacleDepth,     1.0, 0.0,       0.0, 0.0, 0.0,
+                0.0, 8.0, 0.0,               1.0, 1.0,       0.0, 0.0, 0.0,
+                -2.0, 8.0, 0.0,              0.0, 1.0,       0.0, 0.0, 0.0,
+
+                //long rectangle far
+                0.0, 10.0, obstacleDepth,   0.0, 0.0,       0.0, 0.0, 0.0,
+                1.0, 10.0, obstacleDepth,   1.0, 0.0,       0.0, 0.0, 0.0,
+                1.0, 10.0, 0,               1.0, 1.1,       0.0, 0.0, 0.0,
+                0.0, 10.0, 0,               0.0, 1.0,       0.0, 0.0, 0.0,
+
+                //---------SIDE DEPTHS - measured from left
+                //left rectangle near
+                //position                   //texture coords //space for normal
+                -2.0, 8.0, obstacleDepth,    0.0, 0.0,       0.0, 0.0, 0.0,
+                -2.0, 7.0, obstacleDepth,    1.0, 0.0,       0.0, 0.0, 0.0,
+                -2.0, 7.0, 0,                1.0, 1.0,       0.0, 0.0, 0.0,
+                -2.0, 8.0, 0,                0.0, 1.0,       0.0, 0.0, 0.0,
+
+                //long rectangle far left
+                0.0, 10.0, obstacleDepth,    0.0, 0.0,       0.0, 0.0, 0.0,
+                0.0,  8.0, obstacleDepth,    1.0, 0.0,       0.0, 0.0, 0.0,
+                0.0,  8.0, 0,                1.0, 1.0,       0.0, 0.0, 0.0,
+                0.0, 10.0, 0,                0.0, 1.0,       0.0, 0.0, 0.0,
+
+                //long rectangle near left
+                0.0,  7.0, obstacleDepth,   0.0, 0.0,       0.0, 0.0, 0.0,
+                0.0,  0.0, obstacleDepth,   1.0, 0.0,       0.0, 0.0, 0.0,
+                0.0,  0.0, 0,               1.0, 1.0,       0.0, 0.0, 0.0,
+                0.0,  7.0, 0,               0.0, 1.0,       0.0, 0.0, 0.0,
+
+                //long rectangle far right
+                1.0, 10.0, obstacleDepth,   0.0, 0.0,       0.0, 0.0, 0.0,
+                1.0,  8.0, obstacleDepth,   1.0, 0.0,       0.0, 0.0, 0.0,
+                1.0,  8.0, 0,               1.0, 1.0,       0.0, 0.0, 0.0,
+                1.0, 10.0, 0,               0.0, 1.0,       0.0, 0.0, 0.0,
+
+                //long rectangle near right
+                1.0,  7.0, obstacleDepth,   0.0, 0.0,       0.0, 0.0, 0.0,
+                1.0,  0.0, obstacleDepth,   1.0, 0.0,       0.0, 0.0, 0.0,
+                1.0,  0.0, 0,               1.0, 1.0,       0.0, 0.0, 0.0,
+                1.0,  7.0, 0,               0.0, 1.0,       0.0, 0.0, 0.0,
+
+                //right rectangle far
+                3.0, 8.0, obstacleDepth,   0.0, 0.0,       0.0, 0.0, 0.0,
+                3.0, 7.0, obstacleDepth,   1.0, 0.0,       0.0, 0.0, 0.0,
+                3.0, 7.0, 0,               1.0, 1.0,       0.0, 0.0, 0.0,
+                3.0, 8.0, 0,               0.0, 1.0,       0.0, 0.0, 0.0
+            ];
+
+            obstaclePositionBuffer = lukesma4.gl_createBuffer();
+            //orderOfStoredData - positions, textureIndexes, normals...
+            obstaclePositionBuffer.positionSize = 3;
+            obstaclePositionBuffer.textureIndexSize = 2;
+            obstaclePositionBuffer.normalSize = 3;
+
+            var bufferRowLength = obstaclePositionBuffer.textureIndexSize + obstaclePositionBuffer.positionSize +
+                    obstaclePositionBuffer.normalSize;
+            this.updateNormals(obstacleVertices,
+                    bufferRowLength,
+                    obstaclePositionBuffer.positionSize + obstaclePositionBuffer.textureIndexSize,
+                    4
+            );
+
+            this.makeBuffer(obstaclePositionBuffer, GL_ARRAY_BUFFER, new Float32Array(obstacleVertices),
+                    obstacleVertices.length, bufferRowLength);
+
+            var obstacleIndices = [];
+            //insert group of fours to obstacleIndices
+            for(var i =0 ; i < obstacleVertices.length/bufferRowLength ; i= i+4){
+                obstacleIndices.push( i);
+                obstacleIndices.push(1 + i);
+                obstacleIndices.push(2 + i);
+                obstacleIndices.push( i);
+                obstacleIndices.push(2 + i);
+                obstacleIndices.push(3 + i);
+            }
+
+            var obstacleIndexLength = obstacleIndices.length;
+
+            obstacleIndexBuffer = lukesma4.gl_createBuffer();
+            this.makeBuffer (obstacleIndexBuffer, GL_ELEMENT_ARRAY_BUFFER, new Uint16Array(obstacleIndices),
+                    obstacleIndices.length, 1);
+        };
+
+
+        this.drawObstacle = function(){
+            this.gl_bindBuffer(GL_ARRAY_BUFFER, obstaclePositionBuffer);
+            this.gl_vertexAttribPointer(shaderProgram.vertexPositionAttribute,
+                    obstaclePositionBuffer.positionSize,
+                    GL_FLOAT,
+                    false,
+                    obstaclePositionBuffer.itemSize * 4,
+                    0
+            );
+
+            this.gl_bindBuffer(GL_ARRAY_BUFFER, obstaclePositionBuffer);
+            this.gl_vertexAttribPointer(shaderProgram.textureCoordAttribute,
+                    obstaclePositionBuffer.textureIndexSize,
+                    GL_FLOAT,
+                    false,
+                    obstaclePositionBuffer.itemSize * 4,
+                    obstaclePositionBuffer.positionSize * 4
+            );
+
+            this.gl_bindBuffer(GL_ARRAY_BUFFER, obstaclePositionBuffer);
+            this.gl_vertexAttribPointer(shaderProgram.vertexNormalAttribute,
+                    obstaclePositionBuffer.normalSize,
+                    GL_FLOAT,
+                    false,
+                    obstaclePositionBuffer.itemSize * 4,
+                    (obstaclePositionBuffer.positionSize + obstacleIndexBuffer.textureIndexSize) * 4);
+
+            this.gl_activeTexture(GL_TEXTURE0);
+            this.gl_bindTexture(GL_TEXTURE_2D, obstacleTexture);
+            this.gl_uniform1i(shaderProgram.samplerUniform, 0);
+
+            this.gl_uniform1i(shaderProgram.samplerUniform, 0);
+            //can be changed - obtained from key input etc...
+            var lighting = true;
+            this.gl_uniform1i(shaderProgram.useLightingUniform, lighting);
+            if (lighting) {
+                this.gl_uniform3f(
+                        shaderProgram.ambientColorUniform,
+                        0.5,
+                        0.5,
+                        0.6
+                );
+
+                var lightingDirection = [
+                    0.5,
+                    0.3,
+                    0.2
+                ];
+                var adjustedLD = vec3.create();
+                vec3.normalize(lightingDirection, adjustedLD);
+                vec3.scale(adjustedLD, -1);
+                lukesma4.gl_uniform3fv(shaderProgram.lightingDirectionUniform, adjustedLD);
+
+                lukesma4.gl_uniform3f(
+                        shaderProgram.directionalColorUniform,
+                        1.0,
+                        0.0,
+                        0.0
+                );
+            }
+
+            this.gl_bindBuffer(GL_ELEMENT_ARRAY_BUFFER, obstacleIndexBuffer);
+            setMatrixUniforms();
+            this.gl_drawElements(GL_TRIANGLES, obstacleIndexBuffer.itemsNum, GL_UNSIGNED_SHORT, 0);
+        };
+
+		this.checkExistance = function(object, name) {
+			if (!object.hasOwnProperty(name)) {
+				throw new Error("Error - object " + object.toString()
+						+ " has no initialised attribute " + name);
+			}
+		};
+
+        this.initObstacleTexture = function(){
+            obstacleTexture = lukesma4.gl_createTexture();
+            obstacleTexture.image = new Image();
+            obstacleTexture.image.onload = function() {
+                handleLoadedTexture(obstacleTexture);
+            }
+
+            obstacleTexture.image.src = "crate.gif";
+        };
+	}
+
+
+    var xRot = 5;
+    var xSpeed = 5;
+
+    var yRot = 5;
+    var ySpeed = 5;
+
+    var z = -5.0;
+
+    var currentlyPressedKeys = {};
+
+    function degToRad(degrees) {
+        return degrees * Math.PI / 180;
+    }
+
+    function handleKeyDown(event) {
+        currentlyPressedKeys[event.keyCode] = true;
+
+        if(String.fromCharCode(event.keyCode) == "R"){
+            xSpeed = 0;
+            ySpeed = 0;
+        }
+    }
+
+    function handleKeyUp(event) {
+        currentlyPressedKeys[event.keyCode] = false;
+    }
+
+    function handleKeys() {
+        if (currentlyPressedKeys[33]) {
+            // Page Up
+            z -= 0.05;
+        }
+        if (currentlyPressedKeys[34]) {
+            // Page Down
+            z += 0.05;
+        }
+        if (currentlyPressedKeys[37]) {
+            // Left cursor key
+            ySpeed -= 1;
+        }
+        if (currentlyPressedKeys[39]) {
+            // Right cursor key
+            ySpeed += 1;
+        }
+        if (currentlyPressedKeys[38]) {
+            // Up cursor key
+            xSpeed -= 1;
+        }
+        if (currentlyPressedKeys[40]) {
+            // Down cursor key
+            xSpeed += 1;
+        }
+    }
+
+	function initBuffers() {
+		lukesma4.initBuffers();
+	}
+
+	function drawScene() {
+		lukesma4.gl_viewport(0, 0, gl.viewportWidth, gl.viewportHeight);
+		lukesma4.gl_clear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+
+		mat4.perspective(45, gl.viewportWidth / gl.viewportHeight, 0.1, 100.0,
+				pMatrix);
+
+		mat4.identity(mvMatrix);
+        mat4.translate(mvMatrix, [0.0, -3.0, -20]);
+        mat4.translate(mvMatrix, [0.0, 0.0, z]);
+
+        mat4.rotate(mvMatrix, degToRad(xRot), [1, 0, 0]);
+        mat4.rotate(mvMatrix, degToRad(yRot), [0, 1, 0]);
+
+        lukesma4.drawObstacle();
+    }
+
+    var lastTime = 0;
+
+    function animate() {
+        var timeNow = new Date().getTime();
+        if (lastTime != 0) {
+            var elapsed = timeNow - lastTime;
+
+            xRot += (xSpeed * elapsed) / 1000.0;
+            yRot += (ySpeed * elapsed) / 1000.0;
+        }
+        lastTime = timeNow;
+    }
+
+
+    function tick() {
+        requestAnimFrame(tick);
+        handleKeys();
+        drawScene();
+        animate();
+    }
+
+	function webGLStart() {
+		var canvas = document.getElementById("lesson01-canvas");
+		initGL(canvas);
+		lukesma4.initConstants();
+		initShaders();
+		initBuffers();
+        initTextures();
+
+		lukesma4.gl_clearColor(0.0, 0.0, 0.0, 1.0);
+		lukesma4.gl_enable(GL_DEPTH_TEST);
+
+        document.onkeydown = handleKeyDown;
+        document.onkeyup = handleKeyUp;
+        tick();
+	}
+</script>
+
+
+</head>
+
+
+<body onload="webGLStart();">
+	<a href="http://learningwebgl.com/blog/?p=28">&lt;&lt; Back to
+		Lesson 1</a>
+	<br />
+
+	<canvas id="lesson01-canvas" style="border: none;" width="1000"
+		height="1000"></canvas>
+
+	<br />
+	<a href="http://learningwebgl.com/blog/?p=28">&lt;&lt; Back to
+		Lesson 1</a>
+	<br />
+
+</body>
+
+</html>

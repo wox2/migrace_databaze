@@ -1,0 +1,59 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+
+    <ui:composition template="template.xhtml">,
+
+        <ui:define name="header">
+            <script>
+                window.onload=date ;
+            </script>
+            
+            <div id="title">AOS mashup class from 1.11.2012.</div>
+            
+            <p>
+                But now the exact time is:
+            </p>
+            
+            <div id="date"/>
+        </ui:define>
+
+        <ui:define name="leftPart">
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel>Username</h:outputLabel>
+                    <h:inputText value="#{usersBean.username}"/>
+                    <h:outputLabel>Goals</h:outputLabel>
+                    <h:inputText value="#{usersBean.goals}"/>
+                    <div/>
+                    <h:commandButton action="#{usersBean.add}" value="Send"/>
+                </h:panelGrid>
+            </h:form>
+        </ui:define>
+
+        <ui:define name="rightPart">
+            <div>
+                <h:dataTable  id="nameTable" value="#{usersBean.users}" var="user">
+                    <h:column>
+                        <f:facet name="header">Name</f:facet>
+                        <h:outputText value="#{user.name}"/>
+                    </h:column>
+                    
+                    <h:column>
+                        <f:facet name="header">Goals</f:facet>
+                        <h:outputText style="float:right" value="#{user.goals}"/>
+                    </h:column>
+                </h:dataTable>
+            </div>
+        </ui:define>
+
+        <ui:define name="specialContent">
+            Your own web service call.
+        </ui:define>
+
+    </ui:composition>
+</html>
+

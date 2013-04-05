@@ -1,0 +1,32 @@
+********************************************************************
+***  Chapter 1 - Foundation
+***    Section 5: Kinds
+***
+***  ANIMALS : illustrates the use of kinds within connected 
+***  components using a dog-breeding model.
+***
+********************************************************************
+
+fmod ANIMALS is
+
+  sorts Animal Vegetable Dog .
+  sorts Terrier Hound Toy Sporting .
+
+  subsort Dog < Animal .
+  subsorts Terrier Hound Toy Sporting < Dog .
+
+  ops 	bloodhound
+	collie
+	dalmatian
+	pitbull
+	schnauzer : -> Dog .
+
+  ops	penguin
+	frog : -> Animal .
+
+  op bromeliad : -> Vegetable .
+
+  op breed : Dog Dog -> Dog [ctor] .
+
+endfm
+  

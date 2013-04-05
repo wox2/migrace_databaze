@@ -1,0 +1,34 @@
+*************************************************************************
+***  Chapter 6 - Metaprogramming
+***	Section 6 : Internal Strategies
+***
+***  REWRITE-EXCEPT : a quick and easy internal strategy which makes use
+***   of the META-LEVEL descent functions.
+***
+*************************************************************************
+
+
+fmod REWRITE-EXCEPT is
+
+  pr META-LEVEL .
+
+  op name : Rule -> Qid .
+  op rmv : RuleSet Qid -> RuleSet .
+  op rewriteExcept : Module Term Qid Nat -> ResultPair .
+
+  vars L Q : Qid .	var I : ImportList .
+  var S : SortSet .	var SS : SubsortDeclSet .
+  var O : OpDeclSet .	var M : MembAxSet .	var E : EquationSet .
+  var RS : RuleSet .	var R : Rule .		vars T1 T2 : Term .
+  var N : Nat .
+
+  eq name(rl T1 => T2 [label(Q) A:AttrSet] .) = Q .
+  eq name(crl T1 => T2 if C:Condition [label(Q) A:AttrSet] .) = Q .
+
+  eq rmv(R RS, L) = if name(R) == L then RS else R rmv(RS, L) fi .
+  eq rmv(none, L) = none .
+
+  eq rewriteExcept(mod Q is I sorts S . SS O M E RS endm, T1, L, N) =
+	metaRewrite(mod Q is I sorts S . SS O M E rmv(RS, L) endm, T1, N) .
+
+endfm

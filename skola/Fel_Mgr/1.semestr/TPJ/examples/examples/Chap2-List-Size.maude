@@ -1,0 +1,33 @@
+*****************************************************************
+***  Chap 2 - Functional Modules
+***    Section 1 : Equations
+***
+***  LIST-SIZE : another example of recursive equation-writing
+***  for lists.
+***
+*****************************************************************
+
+fmod LIST is
+
+  sorts Elt List .
+  subsort Elt < List .
+
+  op nil : -> List [ctor] .
+  op __ : List List -> List [ctor assoc id: nil] .
+
+endfm
+
+
+fmod LIST-SIZE is
+
+  protecting LIST .
+  protecting PEANO-NAT .
+
+  op size : List -> Nat .
+  
+  var E : Elt .		var L : List .
+
+  eq size(nil) = 0 .
+  eq size(E L) = s(size(L)) .
+
+endfm

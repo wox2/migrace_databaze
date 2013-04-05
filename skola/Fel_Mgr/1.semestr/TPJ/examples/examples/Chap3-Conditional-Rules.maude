@@ -1,0 +1,34 @@
+************************************************************************
+***  Chapter 3 - System Modules
+***	Section 2 : Conditional Rewrite Laws
+***
+***  CONDITIONAL-RULES : illustrates the several different types of 
+***	conditions that work for a rewrite rule.
+***
+************************************************************************
+
+
+mod CONDITIONAL-RULES is
+
+   protecting NAT .
+
+   sort State .
+
+   ops a b c : Nat -> State [ctor] .
+   op __ : State State -> State [ctor] .
+
+   op _-_ : Nat Nat -> Nat .
+
+   vars X Y : Nat .
+
+   eq X - Y = if X > Y then sd(X, Y) else 0 fi .
+
+***   crl [equation1] : a(X) => b(X - 1) if X > 0 .
+***   crl [equation2] : a(X) => b(X - 1) if X > 0 == true .
+***   crl [equation3] : a(X) => b(X - 1) if X > 0 = true .
+***   crl [membership1] : a(X) => b(X - 1) if X :: NzNat .
+***   crl [membership2] : a(X) => b(X - 1) if X : NzNat .
+   crl [patternmatch] : a(X) => b(X - 1) if s(N:Nat) := X .
+   crl [rewrite] : b(X) => c(X * 2) if a(X) => b(Y) .
+ 
+endm

@@ -1,0 +1,21 @@
+***********************************************************************
+***  Chapter 3 - System Modules
+***	Section 1 : Rewrite Laws
+***
+***  CIGARETTES - this example of rewrite laws will be a running
+***    example throughout the rest of the chapter and tutorial.
+***
+***********************************************************************
+
+
+mod CIGARETTES is
+
+   sort State .
+
+   ops c b : -> State [ctor] .   *** cigarettes and butts
+   op __ : State State -> State [ctor assoc comm] .
+
+   rl [smoke] : c => b .
+   rl [makenew] : b b b b => c .
+
+endm

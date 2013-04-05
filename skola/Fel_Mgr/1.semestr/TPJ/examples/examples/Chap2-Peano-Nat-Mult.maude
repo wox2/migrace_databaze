@@ -1,0 +1,33 @@
+***************************************************************
+***  Chapter 2 - Functional Modules
+***    Section 1 : Equations
+***
+***  PEANO-NAT-MULT : multiplication operator for the Peano
+***  natural numbers, a good illustration of recursive
+***  algorithms in Maude.
+***
+***************************************************************
+
+fmod PEANO-NAT-MULT is
+
+  protecting PEANO-NAT-EXTRA .
+
+  op _*_ : Nat Nat -> Nat .
+
+  vars M N : Nat .
+
+  eq N * 0 = 0 .
+  eq N * s(M) = N + (N * M) .
+
+endfm
+
+
+set trace select on .
+
+trace select (_*_) .
+
+set trace on .
+
+red s^3(0) * s^5(0) .
+
+set trace off .

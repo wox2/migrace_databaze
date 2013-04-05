@@ -1,0 +1,588 @@
+**** Definice souřadnic
+***********************
+mod COORDS is
+
+	protecting INT .
+
+	sorts Coords CoordsTuple .
+	subsorts Coords < CoordsTuple .
+
+	op nul  		: -> CoordsTuple [ctor] .
+	op [_,_] 		: Int Int -> Coords [prec 1 ctor] .
+
+	vars N1 N2 N3 N4 	: Int .
+
+	op _+_	: Coords Coords -> Coords [assoc] .	
+	eq [N1,N2] + [N3,N4] = [N1 + N3, N2 + N4] .
+
+	*** operátor pro testování hranic herní plochy - je menší rovno než obě hranice
+	op _<|_	: Coords Coords -> Bool [prec 5].
+	eq [N1,N2] <| [N3,N4] = N1 <= N3 and N2 <= N4 .
+
+	*** operátor pro testování hranic herní plochy - je větší rovno než obě hranice
+	op _>|_	: Coords Coords -> Bool [prec 5].
+	eq [N1,N2] >| [N3,N4] = N1 >= N3 and N2 >= N4 .
+
+	op _<_ 	: Coords Coords -> Bool .
+	eq [N1,N2] < [N3,N4] = if N1 < N3 then true else if N1 == N3 then N2 < N4 else false fi fi .
+
+	op __ : CoordsTuple CoordsTuple -> CoordsTuple [ prec 50 assoc ctor id: nul ] .		
+
+	var C C' : Coords .
+	var REST REST' : CoordsTuple .
+
+	op _->contains(_) : CoordsTuple Coords -> Bool [prec 10].
+	eq ( nul )->contains( C ) = false .
+	eq ( C' REST )->contains( C ) = if C == C' then true else ( REST )->contains( C )  fi .
+
+	op _->containsAll(_) : CoordsTuple CoordsTuple -> Bool .
+	eq ( REST )->containsAll( nul ) = true .
+	eq ( REST )->containsAll( C' REST' ) = ( REST )->contains( C' ) and ( REST )->containsAll( REST' ) .
+
+	op _->top()	: CoordsTuple -> Coords .
+	eq ( C REST )->top() = C .
+
+	op _->pop()	: CoordsTuple -> Coords .
+	eq ( C REST )->pop() = REST .
+
+	op _->remove(_)	: CoordsTuple Coords -> CoordsTuple [prec 10]. 
+	eq ( nul )->remove( C ) = nul .
+	eq ( C' REST )->remove( C ) = if C == C' then ( REST )->remove( C ) else C' ( REST )->remove( C ) fi .
+
+	op _->unique() 	: CoordsTuple -> CoordsTuple .
+	eq ( nul )->unique() = nul .
+	eq ( C REST )->unique() = if ( REST )->contains( C ) then nul else C fi ( REST )->unique() .
+
+	op _->sort() : CoordsTuple -> CoordsTuple .
+	eq ( nul )->sort()  = nul .
+	eq ( REST )->sort() = ( REST )->min() ( REST )->remove( ( REST )->min() )->sort() .
+
+	op _->min() : CoordsTuple -> Coords .
+	eq ( C )->min() = C .
+	eq ( C REST )->min() = if C < ( REST )->min() then C else ( REST )->min() fi .
+
+	*** Odstraní souřadnice mimo hranice herní plochy
+	op _->crop() : CoordsTuple -> CoordsTuple .
+	eq ( nul )->crop() = nul .
+	eq ( C REST )->crop() = if ( C )->defined() then C else nul fi ( REST )->crop() .
+
+	*** test definovanosti pole = zda-li je na hrací ploše
+	op _->defined() : Coords -> Bool .
+	eq ( C )->defined() = ( ( C <| [10,10] ) and ( C >| [1,1] ) ) . 
+
+	op _ ->getHorizontalSides() : Coords -> CoordsTuple .
+	eq C ->getHorizontalSides() = ( C + [-1,-1] ) ( C + [0,-1] ) ( C + [1,-1] ) ( C + [-1,1] ) ( C + [0,1] ) ( C + [1,1] ) .
+
+	op _ ->getVerticalSides() : Coords -> CoordsTuple .
+	eq C ->getVerticalSides() = ( C + [-1,-1] ) ( C + [-1,0] ) ( C + [-1,1] ) ( C + [1,-1] ) ( C + [1,0] ) ( C + [1,1] ) .
+
+	op  _->containsNeighbours() : CoordsTuple -> Bool .
+	eq C ->containsNeighbours() = false .
+	eq ( C REST ) ->containsNeighbours() = if REST ->contains(C + [0,1]) or REST ->contains(C + [1,0]) or REST ->contains(C + [0,-1]) or REST ->contains(C + [-1,0]) then true else REST ->containsNeighbours() fi .
+
+	*** iterace od 1,1 do 10,10 a na každém poli se provede kontrola
+	op iterate(_,_) : Coords CoordsTuple -> CoordsTuple .
+	eq iterate(C,REST) = 
+		if C ->defined() then 
+			REST ->checkCross(C) iterate( C + [1,0], REST ) 
+		else 
+			if (C + [-10,1])->defined() then 
+				iterate(C + [-10,1],REST) 
+			else 
+				nul 
+			fi 
+		fi .
+
+	op checkFree(_,_) : Coords CoordsTuple -> Bool .
+	eq checkFree(C,REST) = not( REST ->contains(C) ) and C ->defined()  . 
+
+	op _->isCross(_) : CoordsTuple Coords -> Bool .
+	eq ( REST )->isCross( C ) = if checkFree(C +[1,0],REST) or checkFree(C +[-1,0],REST) or checkFree(C +[0,1],REST) or checkFree(C +[0,-1],REST) then false else true fi .
+
+	op _->checkCross(_) : CoordsTuple Coords -> Coords .
+	eq ( REST )->checkCross( C ) = if ( REST )->isCross( C ) then C else nul fi .
+
+	op _->detectCrosses() : CoordsTuple -> CoordsTuple .
+	eq REST ->detectCrosses() = iterate( [1,1], REST ) .
+
+ 
+endm
+
+	rew [7,1] == [7,1] .
+	rew [7,1] [7,2] == [7,1] [7,2] .
+
+
+	rew ( [7,1] [4,3] [5,3] )->remove( [7,1] ) == ( [4,3] [5,3] ) .
+	rew ( [4,3] [7,1] [5,3] )->remove( [7,1] ) == ( [4,3] [5,3] ) .
+	rew ( [4,3] [5,3] [7,1] )->remove( [7,1] ) == ( [4,3] [5,3] ) .
+	rew ( [4,3] [5,3] [7,1] )->remove( [7,2] ) == ( [4,3] [5,3] [7,1] ) .
+	rew ( [7,1] [5,3] [7,1] )->remove( [7,1] ) == ( [5,3] ) .
+
+	rew ( [4,3] [5,3] [7,1] )->unique() == ( [4,3] [5,3] [7,1] ) .
+	rew ( [7,1] [5,3] [7,1] )->unique() == ( [5,3] [7,1] ) .
+
+	rew ( [7,1] [5,3] [4,3] )->sort() == ( [4,3] [5,3] [7,1] ) .
+
+
+	rew checkFree( [6,6], ([4,5] [6,5]) ) == true .
+
+	*** TESTY detekce nedosažitelných křížů
+
+	rew ( [5,6] )->detectCrosses() == nul .
+	rew ( [5,6] [4,5] [6,5] )->detectCrosses() == nul .
+	rew ( [4,5] [6,5] [5,4] [5,5] )->detectCrosses() == nul .
+	rew ( [4,5] [6,5] [5,4] [5,6] )->detectCrosses() == ( [5,5] ) .
+	rew ( [1,2] )->detectCrosses() == nul .
+	rew ( [1,2] [2,1] )->detectCrosses() == ( [1,1] ) .
+	rew ( [1,3] [1,5] )->detectCrosses() == nul .
+	rew ( [1,3] [1,5] [2,4] )->detectCrosses() == ( [1,4] ) .
+	rew ( [1,3] [1,5] [2,4] [4,5] [6,5] [5,4] [5,6] [1,2] [2,1] )->detectCrosses() == ( [1,1] [1,4] [5,5] ) .
+	rew ( [4,5] [6,5] [5,4] [5,6] [7,4] [7,6] [8,5])->detectCrosses() == ( [5,5] [7,5] ) .
+
+
+
+**** Prvky herní plochy 
+***********************
+mod POSITIONS is
+
+	protecting COORDS .
+
+	sorts Position Positions .				
+	subsort Position < Positions .
+
+	op { } : -> Position [ctor] .  
+	eq { nul } = { } .
+	op { _ } : Coords -> Position [ctor prec 9].
+
+	op { _ } : CoordsTuple -> Positions [ctor prec 10] .
+
+	vars CT1 CT2 	: CoordsTuple .
+
+	op __ : Positions Positions -> Positions [assoc  prec 50 id: { } ] .
+	eq { CT1 } { CT2 } = { CT1 CT2 } .
+
+	var C 		: Coords .
+	var REST	: CoordsTuple .
+
+	op _->contains(_) : Positions Position -> Bool [prec 10].
+	eq (  { REST }  )->contains( { C } ) = ( REST )->contains( C ) .
+
+	op _->containsAll(_) : Positions Positions -> Bool .
+	eq ( {} )->containsAll( { CT2 } ) = false .
+	eq ( { CT1 } )->containsAll( { CT2 } ) = ( CT1 )->containsAll( CT2 ) .
+
+	var  POS	: Positions .
+	var  P		: Position .
+
+	op _->empty()	: Positions -> Bool [prec 10].
+	eq ( POS )->empty() = POS == { } .
+
+	op _->remove(_)	: Positions Position -> Positions [prec 10].
+	eq ( { REST } )->remove( { C } ) = { ( REST ) ->remove( C ) } .
+
+	op _->top()	: Positions -> Position .
+	eq ( { REST } )->top() = { ( REST )->top()  } .
+
+	op _->pop()	: Positions -> Positions .
+	eq ( { REST } )->pop() = { ( REST )->pop()  } .
+
+	op _->unique() 	: Positions -> Positions .
+	eq ( {} )->unique() = {} .
+	eq ( { REST } )->unique() = { ( REST )->unique() } .
+
+	op _->sort() : Positions -> Positions .
+	eq ( {} )->sort() = {} .
+	eq ( { REST } )->sort() = { ( REST )->sort() } .
+
+	op _->crop() : Positions -> Positions .
+	eq ( {} )->crop() = {} .
+	eq ( { REST } )->crop() = { ( REST )->crop() } .
+
+	*** detekuje místa, kam nemá smysl střílet, neboť tam už žádná loď nemůže být - pozice je obklopena blokem ze všech 4 stran
+	op _->detectCrosses() : Positions -> Positions .
+	eq {} ->detectCrosses() = {} .
+	eq { REST } ->detectCrosses() = { REST ->detectCrosses() } .
+
+endm
+
+
+mod BOAT is 
+
+	protecting POSITIONS .
+
+	sort Boat BoatType BoatRotation .
+	
+	*** Typy lodí
+	*****
+	*****  - SMALL 	= xx
+	*****  - LARGE 	= xxxx
+	ops SMALL LARGE : -> BoatType .
+
+	*** Otočení základního tvaru lodi
+	ops HORIZONTAL VERTICAL : -> BoatRotation .
+
+	op [_ _ _] : BoatType BoatRotation Coords -> Boat [prec 10].
+
+	*** POSITIONS = umístění lodi, HITS = zásahy
+	op [_, _, _, _, _] : BoatType BoatRotation Coords Positions Positions -> Boat [prec 10].
+
+	var C 		: Coords .
+
+	eq [ SMALL HORIZONTAL C ] = [ SMALL, HORIZONTAL, C, { ( [0,0] + C ) ( [1,0] + C ) }, {} ] .
+	eq [ SMALL   VERTICAL C ] = [ SMALL,   VERTICAL, C, { ( [0,0] + C ) ( [0,1] + C ) }, {} ] .
+
+	eq [ LARGE HORIZONTAL C ] = [ LARGE, HORIZONTAL, C, { ( [0,0] + C ) ( [1,0] + C ) ( [2,0] + C ) ( [3,0] + C ) }, {} ] .
+	eq [ LARGE   VERTICAL C ] = [ LARGE,   VERTICAL, C, { ( [0,0] + C ) ( [0,1] + C ) ( [0,2] + C ) ( [0,3] + C ) }, {} ] .
+
+	var POS HITS 	: Positions .
+	var P 		: Position .
+	var TYPE	: BoatType .
+	var ROT		: BoatRotation .
+	var B		: Boat .
+	var C'		: Coords .
+	var REST	: CoordsTuple .
+	
+	op _->isSunk() : Boat -> Bool .
+	eq [ TYPE, ROT, C, POS, HITS ]->isSunk() = HITS ->containsAll( POS ) .
+
+	op _->isHit(_) : Boat Position -> Bool .
+	eq [ TYPE, ROT, C, POS, HITS ] ->isHit( P ) = ( POS ) ->contains( P ) .
+
+	op _->hit(_) : Boat Position -> Boat .
+	eq [ TYPE, ROT, C, POS, HITS ] ->hit( P ) = if [ TYPE, ROT, C, POS, HITS ] ->isHit( P ) then [ TYPE, ROT, C, POS, ( HITS P )->unique() ] else [ TYPE, ROT, C, POS, HITS ] fi .
+
+	*** určuje, zda-li má už loď 2 zásahy vedle sebe a tedy definovanou orientaci - mezera mezi nimi by to nezaručila
+	op _->isRotationDefined() : Boat -> Bool .
+	eq [ TYPE, ROT, C, POS, {} ] ->isRotationDefined() = false .
+	eq [ TYPE, ROT, C, POS, { REST } ] ->isRotationDefined() = ( REST ->sort() ) ->containsNeighbours() .
+
+	op _->getFrontAndBack() : Boat -> Positions .
+	eq [ SMALL, HORIZONTAL, C, POS, HITS ] ->getFrontAndBack() = { ( C + [-1,0] ) ( C + [2,0] ) } .
+	eq [ SMALL,   VERTICAL, C, POS, HITS ] ->getFrontAndBack() = { ( C + [0,-1] ) ( C + [0,2] ) } .
+	eq [ LARGE, HORIZONTAL, C, POS, HITS ] ->getFrontAndBack() = { ( C + [-1,0] ) ( C + [4,0] ) } .
+	eq [ LARGE,   VERTICAL, C, POS, HITS ] ->getFrontAndBack() = { ( C + [0,-1] ) ( C + [0,4] ) } .
+
+	op _->getSides() : Boat -> Positions .
+	eq [ TYPE, HORIZONTAL, C, POS, { C' } ] ->getSides() 		= { C' ->getHorizontalSides() } .
+	eq [ TYPE, HORIZONTAL, C, POS, { C' REST } ] ->getSides() 	= { C' ->getHorizontalSides() } ( [ TYPE, HORIZONTAL, C, POS, { REST } ] ->getSides() ) .
+	eq [ TYPE,   VERTICAL, C, POS, { C' } ] ->getSides() 		= { C' ->getVerticalSides()   } .
+	eq [ TYPE,   VERTICAL, C, POS, { C' REST } ] ->getSides() 	= { C' ->getVerticalSides()   } ( [ TYPE,   VERTICAL, C, POS, { REST } ] ->getSides() ) .
+
+	*** Vrací seznam políček kam nemá smysl střílet - jedná se o okolí lodí
+	op _->getSurround() : Boat -> Positions .
+	eq B ->getSurround() = if B ->isRotationDefined() then ( B ->getSides() ( if B ->isSunk() then B ->getFrontAndBack() else {} fi ) ) ->crop() ->unique() ->sort() else {} fi .
+
+	*** Vrací seznam políček kam nemá smysl střílet - jedná se o okolí lodí a samotné zásahy lodí
+	op _->getBlocked() : Boat -> Positions .
+	eq [ TYPE, ROT, C, POS, HITS ] ->getBlocked() = ( HITS [ TYPE, ROT, C, POS, HITS ] ->getSurround() ) ->sort().
+
+endm
+
+
+	rew [ SMALL HORIZONTAL [5,5] ] == [ SMALL,HORIZONTAL,[5,5],{[5,5] [6,5]},{}] .
+
+	rew [ SMALL HORIZONTAL [5,5] ] ->isHit( { [4,4] } ) == false .
+	rew [ SMALL HORIZONTAL [5,5] ] ->isHit( { [5,5] } ) == true .
+	rew [ SMALL HORIZONTAL [5,5] ] ->isHit( { [6,5] } ) == true .
+
+	rew [ SMALL HORIZONTAL [5,5] ] ->hit( { [6,5] } ) == [SMALL,HORIZONTAL,[5,5],{[5,5] [6,5]},{[6,5]}] .
+
+
+ *** Test okolí lodi
+	rew [LARGE,HORIZONTAL,[5,5],{[5,5] [6,5] [7,5] [8,5]},{}] ->getSurround() == {} .
+	rew [LARGE,HORIZONTAL,[5,5],{[5,5] [6,5] [7,5] [8,5]},{ [5,5] }] ->getSurround() == {} .
+	rew [LARGE,HORIZONTAL,[5,5],{[5,5] [6,5] [7,5] [8,5]},{ [5,5] [7,5] }] ->getSurround() == {} .
+	rew [LARGE,HORIZONTAL,[5,5],{[5,5] [6,5] [7,5] [8,5]},{ [5,5] [6,5] }] ->getSurround() == {[4,4] [4,6] [5,4] [5,6] [6,4] [6,6] [7,4] [7,6]} .
+	rew [LARGE,HORIZONTAL,[5,5],{[5,5] [6,5] [7,5] [8,5]},{ [6,5] [7,5] }] ->getSurround() == {[5,4] [5,6] [6,4] [6,6] [7,4] [7,6] [8,4] [8,6]} .
+	rew [LARGE,HORIZONTAL,[5,5],{[5,5] [6,5] [7,5] [8,5]},{ [8,5] [7,5] }] ->getSurround() == {[6,4] [6,6] [7,4] [7,6] [8,4] [8,6] [9,4] [9,6]} .
+	rew [LARGE,HORIZONTAL,[5,5],{[5,5] [6,5] [7,5] [8,5]},{ [5,5] [6,5] [7,5] [8,5] }] ->getSurround() == {[4,4] [4,5] [4,6] [5,4] [5,6] [6,4] [6,6] [7,4] [7,6] [8,4] [8,6] [9,4] [9,5] [9,6]} .
+	rew [SMALL,  VERTICAL,[5,5],{[5,5] [5,6]},{ [5,5] [5,6] }] ->getSurround() ==  {[4,4] [4,5] [4,6] [4,7] [5,4] [5,7] [6,4] [6,5] [6,6] [6,7]} .
+	rew [LARGE,  VERTICAL,[5,5],{[5,5] [5,6] [5,7] [5,8]},{ [5,5] [5,6] [5,7] [5,8] }] ->getSurround() == {[4,4] [4,5] [4,6] [4,7] [4,8] [4,9] [5,4] [5,9] [6,4] [6,5] [6,6] [6,7] [6,8] [6,9]} .
+
+
+ *** Test zablokováných polí vážících se k dané lodi
+	rew [LARGE,HORIZONTAL,[5,5],{[5,5] [6,5] [7,5] [8,5]},{}] ->getBlocked() == {} .
+	rew [LARGE,HORIZONTAL,[5,5],{[5,5] [6,5] [7,5] [8,5]},{ [5,5] }] ->getBlocked() == {[5,5]} .
+	rew [LARGE,HORIZONTAL,[5,5],{[5,5] [6,5] [7,5] [8,5]},{ [5,5] [7,5] }] ->getBlocked() == {[5,5] [7,5]} .
+	rew [LARGE,HORIZONTAL,[5,5],{[5,5] [6,5] [7,5] [8,5]},{ [5,5] [6,5] }] ->getBlocked() == {[4,4] [4,6] [5,4] [5,5] [5,6] [6,4] [6,5] [6,6] [7,4] [7,6]} .
+	rew [LARGE,HORIZONTAL,[5,5],{[5,5] [6,5] [7,5] [8,5]},{ [6,5] [7,5] }] ->getBlocked() == {[5,4] [5,6] [6,4] [6,5] [6,6] [7,4] [7,5] [7,6] [8,4] [8,6]} .
+	rew [LARGE,HORIZONTAL,[5,5],{[5,5] [6,5] [7,5] [8,5]},{ [8,5] [7,5] }] ->getBlocked() == {[6,4] [6,6] [7,4] [7,5] [7,6] [8,4] [8,5] [8,6] [9,4] [9,6]} .
+	rew [LARGE,HORIZONTAL,[5,5],{[5,5] [6,5] [7,5] [8,5]},{ [5,5] [6,5] [7,5] [8,5] }] ->getBlocked() == {[4,4] [4,5] [4,6] [5,4] [5,5] [5,6] [6,4] [6,5] [6,6] [7,4] [7,5] [7,6] [8,4] [8,5] [8,6] [9,4] [9,5] [9,6]} .
+	rew [SMALL,  VERTICAL,[5,5],{[5,5] [5,6]},{ [5,5] [5,6]}] ->getBlocked() ==  {[4,4] [4,5] [4,6] [4,7] [5,4] [5,5] [5,6] [5,7] [6,4] [6,5] [6,6] [6,7]} .
+	rew [LARGE,  VERTICAL,[5,5],{[5,5] [5,6] [5,7] [5,8]},{ [5,5] [5,6] [5,7] [5,8] }] ->getBlocked() == {[4,4] [4,5] [4,6] [4,7] [4,8] [4,9] [5,4] [5,5] [5,6] [5,7] [5,8] [5,9] [6,4] [6,5] [6,6] [6,7] [6,8] [6,9]} .
+
+
+mod BOATS is
+	protecting BOAT .
+
+	sort Boats .
+	subsort Boat < Boats .
+
+	op __ : Boats Boats -> Boats [ ctor assoc prec 70 ].
+
+	var P 		: Position .
+	var B		: Boat .
+	var REST	: Boats .
+	var MISSES	: Positions .
+
+	op _->isHit(_) : Boats Position -> Bool .
+	eq ( B REST )->isHit( P ) = ( B )->isHit( P ) or ( REST )->isHit( P ) .
+
+	op _->hit(_) : Boats Position -> Boats .
+	eq ( B REST )->hit( P ) = ( B )->hit( P ) ( REST )->hit( P ) .
+
+	*** Test, jestli je celá flotila potopena
+	op _->isSunk() : Boats -> Bool .
+	eq ( B REST )->isSunk() = ( B )->isSunk() and ( REST )->isSunk() .
+
+	*** Vrací seznam políček kam nemá smysl střílet - jedná se o okolí lodí
+	op _->getSurround() : Boats -> Positions .
+	eq ( B REST )->getSurround() = B ->getSurround() REST ->getSurround() .
+
+	*** Vrací seznam políček kam nemá smysl střílet - jedná se o okolí lodí a samotné zásahy lodí
+	op _->getBlocked() : Boats -> Positions .
+	eq ( B REST )->getBlocked() = B ->getBlocked() REST ->getBlocked() .
+
+	*********************************************************************************************************************************
+	*********************************************************************************************************************************
+	******* HLAVNÍ FUNKCE PRO DŮKAZ - DOSTANE SADU LODÍ* A SEZNAM ZÁSAHŮ DO VODY A VRACÍ SEZNAM POLÍ KAM NEMÁ SMYSL STŘÍLET *********
+	*********************************************************************************************************************************
+	*********************************************************************************************************************************
+	op whereNotToShoot(_,_) : Boats Positions -> Positions .
+	eq whereNotToShoot( REST, MISSES ) = ( REST ->getBlocked() ( REST ->getSurround() MISSES ) ->detectCrosses() ) ->unique() ->sort() .
+endm
+
+	*********************************************************************************************************************************
+	*********************************************************************************************************************************
+	***************************************** HLAVNÍ FUNKCE PRO DŮKAZ - TEST FUNKČNOSTI *********************************************
+	*********************************************************************************************************************************
+	*********************************************************************************************************************************
+
+	************ Formát pro loď - velikost, orientace, umístění, seznam obsažených políček, seznam zasažených políček
+	************ druhý parametr funkce je seznam zásahů do vody
+
+	*** dvě potopené lodě
+	rew whereNotToShoot( 
+		[ SMALL,   VERTICAL, [5,5], {[5,5] [6,5]},             {[5,5] [6,5]} ] 
+		[ LARGE, HORIZONTAL, [1,8], {[1,8] [2,8] [3,8] [4,8]}, {[1,8] [2,8] [3,8] [4,8]} ]
+		, {} ) 
+		== {[1,7] [1,8] [1,9] [2,7] [2,8] [2,9] [3,7] [3,8] [3,9] [4,4] [4,5] [4,6] [4,7] [4,8] [4,9] [5,4] [5,5] [5,6] [5,7] [5,8] [5,9] [6,4] [6,5] [6,6] [7,4] [7,5] [7,6]} .
+
+
+	*** jedna málo zasažená a jedna zasažená tak aby definovala orientaci ale ne potopená
+	rew whereNotToShoot( 
+		[ SMALL,   VERTICAL, [5,5], {[5,5] [6,5]},             {[5,5]} ] 
+		[ LARGE, HORIZONTAL, [1,8], {[1,8] [2,8] [3,8] [4,8]}, {[1,8] [3,8] [4,8]} ]
+		, {} ) 
+		== {[1,7] [1,8] [1,9] [2,7] [2,9] [3,7] [3,8] [3,9] [4,7] [4,8] [4,9] [5,5] [5,7] [5,9]} .
+
+
+	*** pouze zásahy, nic se nedá určit
+	rew whereNotToShoot( 
+		[ SMALL,   VERTICAL, [5,5], {[5,5] [6,5]},             {[5,5]} ] 
+		[ LARGE, HORIZONTAL, [1,8], {[1,8] [2,8] [3,8] [4,8]}, {[1,8] [3,8]} ]
+		, {} ) 
+		== {[1,8] [3,8] [5,5]} .
+
+	*** samá voda, eliminace 2 políček pro nedostatek místa
+	rew whereNotToShoot( 
+		[ SMALL,   VERTICAL, [5,5], {[5,5] [6,5]},             {} ] 
+		[ LARGE, HORIZONTAL, [1,8], {[1,8] [2,8] [3,8] [4,8]}, {} ]
+		, {[1,2] [2,1] [7,4] [9,4] [8,5] [8,3]} ) 
+		== {[1,1] [8,4]} .
+
+	*** zásahy do vody a zásahy do lodí, žádná eliminace navíc
+	rew whereNotToShoot( 
+		[ SMALL,   VERTICAL, [5,5], {[5,5] [6,5]},             {[5,5]} ] 
+		[ LARGE, HORIZONTAL, [1,8], {[1,8] [2,8] [3,8] [4,8]}, {[1,8] [3,8]} ]
+		, {[1,2] [4,1] [7,4] [9,4] [8,5] [9,3] } ) 
+		== {[1,8] [3,8] [5,5]} .
+
+	*** tři potopené lodě + zásahy do vody, eliminace 2 políček, 1 pole eliminováno kombinací okraje lodě a výstřelem do vody
+	rew whereNotToShoot( 
+		[ SMALL,   VERTICAL, [ 5,5], {[ 5,5] [ 6,5]},               {[ 5,5] [ 6,5]} ] 
+		[ LARGE, HORIZONTAL, [ 1,8], {[ 1,8] [ 2,8] [ 3,8] [ 4,8]}, {[ 1,8] [ 2,8] [ 3,8] [ 4,8]} ]
+		[ LARGE,   VERTICAL, [10,1], {[10,1] [10,2] [10,3] [10,4]}, {[10,1] [10,2] [10,3] [10,4]} ]
+		, {[2,10] [7,4] [9,4] [8,5] [8,3]} ) 
+		== {[1,7] [1,8] [1,9] [1,10] [2,7] [2,8] [2,9] [3,7] [3,8] [3,9] [4,4] [4,5] [4,6] [4,7] [4,8] [4,9] [5,4] [5,5] [5,6] [5,7] [5,8] [5,9] [6,4] [6,5] [6,6] [7,4] [7,5] [7,6] [8,4] [9,1] [9,2] [9,3] [9,4] [9,5] [10,1] [10,2] [10,3] [10,4] [10,5]} .
+
+
+
+	rew [LARGE,HORIZONTAL,[5,5],{[5,5] [6,5] [7,5] [8,5]},{ [8,5] [7,5] }] ->getSurround() == {[6,4] [6,6] [7,4] [7,6] [8,4] [8,6] [9,4] [9,6]} .
+	rew [LARGE,HORIZONTAL,[5,5],{[5,5] [6,5] [7,5] [8,5]},{ [5,5] [6,5] [7,5] [8,5] }] ->getSurround() == {[4,4] [4,5] [4,6] [5,4] [5,6] [6,4] [6,6] [7,4] [7,6] [8,4] [8,6] [9,4] [9,5] [9,6]} .
+	rew [SMALL,  VERTICAL,[5,5],{[5,5] [5,6]},{ [5,5] [5,6] }] ->getSurround() ==  {[4,4] [4,5] [4,6] [4,7] [5,4] [5,7] [6,4] [6,5] [6,6] [6,7]} .
+	rew [LARGE,  VERTICAL,[5,5],{[5,5] [5,6] [5,7] [5,8]},{ [5,5] [5,6] [5,7] [5,8] }] ->getSurround() == {[4,4] [4,5] [4,6] [4,7] [4,8] [4,9] [5,4] [5,9] [6,4] [6,5] [6,6] [6,7] [6,8] [6,9]} .
+
+
+
+	rew ( [ SMALL HORIZONTAL [5,5] ] [ LARGE HORIZONTAL [1,8] ] ) == ( [ SMALL, HORIZONTAL, [5,5], {[5,5] [6,5]},{}] [ LARGE, HORIZONTAL, [1,8], {[1,8] [2,8] [3,8] [4,8]}, {}] ) .
+
+	rew ( [ SMALL HORIZONTAL [5,5] ] [ LARGE HORIZONTAL [1,8] ] ) ->isHit( { [5,5] } ) == true .
+	rew ( [ LARGE HORIZONTAL [1,8] ] [ SMALL HORIZONTAL [5,5] ] ) ->isHit( { [5,5] } ) == true .
+	rew ( [ SMALL HORIZONTAL [5,5] ] [ LARGE HORIZONTAL [1,8] ] ) ->isHit( { [4,5] } ) == false .
+
+	rew ( [ SMALL HORIZONTAL [5,5] ] [ LARGE HORIZONTAL [1,8] ] ) ->hit( { [5,5] } ) == ( [ SMALL, HORIZONTAL, [5,5], {[5,5] [6,5]},{[5,5]}] [ LARGE, HORIZONTAL, [1,8], {[1,8] [2,8] [3,8] [4,8]}, {}] ) .
+	rew ( [ LARGE HORIZONTAL [1,8] ] [ SMALL HORIZONTAL [5,5] ] ) ->hit( { [5,5] } ) == ( [ LARGE, HORIZONTAL, [1,8], {[1,8] [2,8] [3,8] [4,8]}, {}] [ SMALL, HORIZONTAL, [5,5], {[5,5] [6,5]},{[5,5]}] ) .
+	rew ( [ SMALL HORIZONTAL [5,5] ] [ LARGE HORIZONTAL [1,8] ] ) ->hit( { [4,5] } ) == ( [ SMALL, HORIZONTAL, [5,5], {[5,5] [6,5]},{}] [ LARGE, HORIZONTAL, [1,8], {[1,8] [2,8] [3,8] [4,8]}, {}] ) .
+
+	rew ( [ SMALL, HORIZONTAL, [5,5], {[5,5] [6,5]},{[5,5] [6,5]}] 	[ LARGE, HORIZONTAL, [1,8], {[1,8] [2,8] [3,8] [4,8]}, {[1,8] [2,8] [3,8] [4,8]}] )->isSunk() == true .
+	rew ( [ SMALL, HORIZONTAL, [5,5], {[5,5] [6,5]},{[5,5] [6,5]}] 	[ LARGE, HORIZONTAL, [1,8], {[1,8] [2,8] [3,8] [4,8]}, {[1,8] [2,8] [3,8]}] )->isSunk() == false .
+	rew ( [ SMALL, HORIZONTAL, [5,5], {[5,5] [6,5]},{[5,5]}] 	[ LARGE, HORIZONTAL, [1,8], {[1,8] [2,8] [3,8] [4,8]}, {[1,8] [2,8] [3,8] [4,8]}] )->isSunk() == false .
+	rew ( [ SMALL, HORIZONTAL, [5,5], {[5,5] [6,5]},{[5,5] [6,5]}] 	[ LARGE, HORIZONTAL, [1,8], {[1,8] [2,8] [3,8] [4,8]}, {}] )->isSunk() == false .
+	rew ( [ SMALL, HORIZONTAL, [5,5], {[5,5] [6,5]},{}] 		[ LARGE, HORIZONTAL, [1,8], {[1,8] [2,8] [3,8] [4,8]}, {[1,8] [2,8] [3,8] [4,8]}] )->isSunk() == false .
+	rew ( [ SMALL, HORIZONTAL, [5,5], {[5,5] [6,5]},{}] 		[ LARGE, HORIZONTAL, [1,8], {[1,8] [2,8] [3,8] [4,8]}, {}] )->isSunk() == false .
+
+
+ 
+	*** Test okolí lodí a zablokováných polí pro množinu více lodí
+	rew ( [LARGE,HORIZONTAL,[1,1],{[1,1] [2,1] [3,1] [4,1]},{ [1,1] [2,1] [3,1] [4,1] }] [SMALL,  VERTICAL,[5,5],{[5,5] [5,6]},{[5,5] [5,6]}] ) ->getSurround() 
+		== {[1,2] [2,2] [3,2] [4,2] [5,1] [5,2] [4,4] [4,5] [4,6] [4,7] [5,4] [5,7] [6,4] [6,5] [6,6] [6,7]}.
+	*** Test zablokováných polí vážících se k množině lodí
+	rew ( [LARGE,HORIZONTAL,[1,1],{[1,1] [2,1] [3,1] [4,1]},{ [1,1] [2,1] [3,1] [4,1] }] [SMALL,  VERTICAL,[5,5],{[5,5] [5,6]},{[5,5] [5,6]}] ) ->getBlocked() 
+		== {[1,1] [1,2] [2,1] [2,2] [3,1] [3,2] [4,1] [4,2] [5,1] [5,2] [4,4] [4,5] [4,6] [4,7] [5,4] [5,5] [5,6] [5,7] [6,4] [6,5] [6,6] [6,7]} .
+
+
+mod GAME_STATE is
+
+	protecting BOATS .
+	sort Player .
+
+	sort GameState .
+	
+	ops A B : -> Player [ctor] .
+
+	var P		: Player .
+	var POS		: Position .
+	var FLEET	: Boats .
+	var SHOTS	: Positions .
+	var MISSES	: Positions .
+	var STATE	: GameState .
+
+	*** jméno hráče, jeho lodě, seznam výstřelů - vstup od hráče
+	op <_,_,_> : Player Boats Positions -> GameState .
+	eq < P, FLEET, SHOTS > = < P, FLEET, SHOTS, {} > .
+
+	*** jméno hráče, jeho lodě, seznam výstřelů, seznam minel - pracovní stav
+	op <_,_,_,_> : Player Boats Positions Positions -> GameState .	
+
+
+	op _->hasShots() : GameState -> Bool .
+	eq < P, FLEET, SHOTS, MISSES > ->hasShots() = not( SHOTS ->empty() ) .
+
+	op _->hasBoats() : GameState -> Bool .
+	eq < P, FLEET, SHOTS, MISSES > ->hasBoats() = not( FLEET ->isSunk() ) .
+
+	op _->name() : GameState -> Player .
+	eq < P, FLEET, SHOTS, MISSES > ->name() = P .
+
+	op _->takeHit(_) : GameState Position -> GameState .
+	eq < P, FLEET, SHOTS, MISSES > ->takeHit( POS ) = if FLEET ->isHit( POS ) then < P, FLEET ->hit( POS ), SHOTS, MISSES > else < P, FLEET, SHOTS, MISSES POS > fi .
+
+	op _->topShot() : GameState -> Position .
+	eq < P, FLEET, SHOTS, MISSES > ->topShot() = SHOTS ->top() .
+
+	op _->popShot() : GameState -> GameState .
+	eq < P, FLEET, SHOTS, MISSES > ->popShot() = < P, FLEET, SHOTS ->pop(), MISSES > .
+
+	op _->getSurround() : GameState -> Positions .
+	eq < P, FLEET, SHOTS, MISSES > ->getSurround() = FLEET ->getSurround() .
+
+	op _->getBlocked() : GameState -> Positions .
+	eq < P, FLEET, SHOTS, MISSES > ->getBlocked() = FLEET ->getBlocked() .
+
+endm
+
+
+	rew < A, [ SMALL HORIZONTAL [5,5] ] [ LARGE HORIZONTAL [1,8] ], { [1,1] [1,2] [2,1] [2,2] } > == < A, ( [SMALL,HORIZONTAL,[5,5],{[5,5] [6,5]},{}] [LARGE,HORIZONTAL,[1,8],{[1,8] [2,8] [3,8] [4,8]}, {}] ), { [1,1] [1,2] [2,1] [2,2] }, {} > .
+
+	rew < A, [ SMALL HORIZONTAL [5,5] ] [ LARGE HORIZONTAL [1,8] ], { [1,1] [1,2] [2,1] [2,2] } > ->hasShots() == true .
+	rew < A, [ SMALL HORIZONTAL [5,5] ] [ LARGE HORIZONTAL [1,8] ], {} > ->hasShots() == false .
+
+	rew < A, [ SMALL HORIZONTAL [5,5] ] [ LARGE HORIZONTAL [1,8] ], { [1,1] [1,2] [2,1] [2,2] } > ->hasBoats() == true .
+
+	rew < B, [ SMALL HORIZONTAL [5,5] ] [ LARGE HORIZONTAL [1,8] ], { [1,1] [1,2] [2,1] [2,2] } > ->name() == B .
+
+
+mod GAME is 
+
+	protecting GAME_STATE .
+	sort Phase .
+
+	*** úvod kola, vyhodnocení stavu střel
+	op START(__) : GameState GameState -> Phase [prec 50] .
+
+	*** střed kola, výstřel
+	op SHOOT(__) : GameState GameState -> Phase [prec 50] .
+
+	*** zúčtování kola - test vítěze
+	op EVAL(__)  : GameState GameState -> Phase [prec 50].
+
+	*** výhra, definuje vítěze
+	op WIN(_)   : Player    -> Phase [prec 50] .
+
+	*** remíza, definuje hráče ktery měl být na tahu
+	op DRAW(_)  : Player    -> Phase [prec 50] .
+
+	vars A B : GameState .
+
+	*** vyhodnocení stavu střel - pokud nejsou, konec
+	ceq START( A B ) = SHOOT( A B )		if A ->hasShots() .
+	ceq START( A B ) = DRAW( A ->name() )	if not( A ->hasShots() ) .
+
+	eq SHOOT( A B ) = EVAL( A ->popShot() B ->takeHit( A ->topShot() ) ) .
+
+	ceq EVAL( A B ) = START( B A ) 		if B ->hasBoats() .
+	ceq EVAL( A B ) = WIN( A ->name() ) 	if not( B ->hasBoats() ) .
+
+endm
+
+	*********************************************************************************************************************************
+	*********************************************************************************************************************************
+	******************************************** HLAVNÍ OVLÁDÁNÍ HRY - TEST FUNKČNOSTI **********************************************
+	*********************************************************************************************************************************
+	*********************************************************************************************************************************
+	****** definice hry ****** Formát pro loď - velikost, orientace, umístění ************ seznam výstřelů **************************
+
+*** WIN
+	rew START( 
+		< A, [ SMALL HORIZONTAL [5,5] ] [ LARGE HORIZONTAL [1,8] ], { [1,1] [2,1] [5,5] [5,6] [5,7] [5,9] } > 
+		< B, [ SMALL HORIZONTAL [1,1] ] [ LARGE VERTICAL [5,5] ], { [5,5] [6,5] [1,8] [2,8] [3,8] [4,8] } > 
+	) == WIN( B ) .
+
+	rew START( 
+		< A, [ SMALL HORIZONTAL [5,5] ] [ LARGE HORIZONTAL [1,8] ], { [1,1] [2,1] [5,5] [5,6] [5,7] [5,8] } > 
+		< B, [ SMALL HORIZONTAL [1,1] ] [ LARGE VERTICAL [5,5] ], { [5,5] [6,5] [1,8] [2,8] [3,8] [4,8] } >
+	 ) == WIN( A ) .
+
+	rew START( 
+		< A, [ SMALL HORIZONTAL [5,5] ] [ LARGE HORIZONTAL [1,8] ], { [2,3] [1,1] [5,3] [2,1] [7,3] [5,5] [5,6] [5,7] [5,9] } > 
+		< B, [ SMALL HORIZONTAL [1,1] ] [ LARGE VERTICAL [5,5] ], { [5,5] [1,1] [6,5] [1,2] [1,8] [1,3] [2,8] [3,8] [4,8] } > 
+	) == WIN( B ) .
+
+	rew START( 
+		< A, [ SMALL HORIZONTAL [5,5] ] [ LARGE HORIZONTAL [1,8] ], { [1,1] [5,3] [2,1] [7,3] [5,5] [5,6] [5,7] [5,8] [2,3]  } > 
+		< B, [ SMALL HORIZONTAL [1,1] ] [ LARGE VERTICAL [5,5] ], { [5,5] [1,1] [6,5] [1,2] [1,8] [1,3] [2,8] [3,8] [4,8] } > 
+	) == WIN( A ) .
+
+
+*** DRAW
+	rew START( 
+		< A, [ SMALL HORIZONTAL [5,5] ] [ LARGE HORIZONTAL [1,8] ], { [1,1] [2,1] [5,5] [6,5] [7,5] [8,6] } > 
+		< B, [ SMALL HORIZONTAL [1,1] ] [ LARGE VERTICAL [5,5] ], { [5,5] [6,5] [1,8] [2,8] [3,8] } > 
+	) == DRAW( B ) .
+
+	rew START( 
+		< A, [ SMALL HORIZONTAL [5,5] ] [ LARGE HORIZONTAL [1,8] ], { [1,1] [2,1] [5,5] [6,5] [7,5] } > 
+		< B, [ SMALL HORIZONTAL [1,1] ] [ LARGE VERTICAL [5,5] ], { [5,5] [6,5] [1,8] [2,8] [3,8] [4,8] } > 
+	) == DRAW( A ) .
+
+	rew START( 
+		< A, [ SMALL HORIZONTAL [5,5] ] [ LARGE HORIZONTAL [1,8] ], { [1,1] } > 
+		< B, [ SMALL HORIZONTAL [1,1] ] [ LARGE VERTICAL [5,5] ], {} > 
+	) == DRAW( B ) .
+
+	rew START( 
+		< A, [ SMALL HORIZONTAL [5,5] ] [ LARGE HORIZONTAL [1,8] ], {} > 
+		< B, [ SMALL HORIZONTAL [1,1] ] [ LARGE VERTICAL [5,5] ], { [5,5] } > 
+	) == DRAW( A ) .
+

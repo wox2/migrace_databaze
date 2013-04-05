@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html">
+
+    <h:head>
+        <h:outputStylesheet library="css"         name="common.css"/>
+        <h:outputScript     library="js"          name="date.js"/>
+        <h:outputScript     library="js"          name="rest.js"/>
+        <h:outputScript     library="javax.faces" name="jsf.js"/>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>AOS simple mashup</title>
+    </h:head>
+
+    <h:body>
+        <div id="main">
+            <h:panelGroup>
+                <ui:insert name="header"/>
+            </h:panelGroup>
+            
+            <hr/>
+            
+            <h:panelGrid  columns="2" id="upper-content" styleClass="content">
+                <h:panelGroup id="leftPart">
+                    <ui:insert name="leftPart"/>
+                </h:panelGroup>
+                <h:panelGroup id="rightPart">
+                    <ui:insert name="rightPart"/>
+                </h:panelGroup>
+            </h:panelGrid>
+            
+            <hr/>
+            
+            <h:panelGroup id="lower-content" styleClass="content">
+                   <ui:insert name="specialContent"/>
+            </h:panelGroup>
+            
+            <hr/>
+            
+            <ui:include src="/footer.xhtml"/>
+        </div>
+    </h:body>
+</html>  

@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?><!DOCTYPE nta PUBLIC '-//Uppaal Team//DTD Flat System 1.1//EN' 'http://www.it.uu.se/research/group/darts/uppaal/flat-1_1.dtd'><nta><declaration>// Place global declarations here.
+
+clock periodTime;
+clock sunkTime;
+
+const int START_PASSANGER_COUNT = 100;
+const int TIME_LIMIT = 100;
+int PERIOD_TIME = 25;
+
+int passangerCountOnBoard = START_PASSANGER_COUNT;
+
+// the size of channel between 2 places on board 
+const int SIZE_CHANNEL = 20;
+
+//type for channels - array with size in interval 0-SIZE_CHANNEL
+typedef int[0, SIZE_CHANNEL] channels_type [4][4];
+
+typedef int [0, START_PASSANGER_COUNT] position_people_count_type [4];
+
+//amount of people on positions
+position_people_count_type positionPeopleCount;
+
+
+// sums of channels between two places must be lower than 20 - check in method lead
+channels_type channels;
+
+//type for flooded parts
+typedef bool flooded_parts_type [4];
+
+//flags of flooded parts of boat 
+flooded_parts_type floodedParts;</declaration><template><name>Captain</name><parameter>int &amp;peopleAmount, int &amp;partIndex</parameter><declaration>int getSuccessorIndex(int partIndex){
+	if(partIndex = 3){
+		return 0;
+	}
+	return partIndex +1;
+}
+
+int getPrecedessorIndex(int partIndex){
+	if(partIndex = 0){
+		return 3;
+	}
+	return partIndex -1;
+}
+
+//send people to position
+void referPeopleToPosition(int position){
+	int sendPeople = SIZE_CHANNEL;
+	//
+	
+}
+
+//captain decides who to send to another positions
+void managePeople(){
+	int precedessor = getPrecedessorIndex(partIndex);
+	int successor = getSuccessorIndex(partIndex);
+	positionPeopleCount[successor] = 0;
+	//more people at successor	
+	if(positionPeopleCount[successor] &lt; positionPeopleCount[partIndex]){
+		referPeopleToPosition(successor);
+	}
+	//more People at precedessor
+	if(positionPeopleCount[precedessor] &lt; positionPeopleCount[partIndex]){
+		referPeopleToPosition(precedessor);
+	}
+		 
+}
+
+
+bool isPartSunken(){
+	return floodedParts[partIndex];
+}
+
+bool isNonePeopleAtPosition(){
+	return  positionPeopleCount[partIndex] == 0;
+}</declaration><location id="id0" x="-16" y="-120"><name x="-26" y="-150">Away</name></location><location id="id1" x="-224" y="-32"><name x="-234" y="-62">Dead</name></location><location id="id2" x="0" y="0"><name x="24" y="0">Ruling</name></location><init ref="id2"/><transition><source ref="id0"/><target ref="id0"/><nail x="-120" y="-88"/><nail x="-64" y="-136"/></transition><transition><source ref="id1"/><target ref="id1"/><nail x="-328" y="-32"/><nail x="-264" y="24"/></transition><transition><source ref="id2"/><target ref="id0"/><label kind="guard" x="-8" y="-88">isNonePeopleAtPosition()</label></transition><transition><source ref="id2"/><target ref="id2"/><label kind="guard" x="-160" y="64">positionPeopleCount[partIndex] &gt;= 1</label><label kind="assignment" x="-152" y="40">managePeople()</label><nail x="-48" y="32"/><nail x="0" y="40"/></transition><transition><source ref="id2"/><target ref="id1"/><label kind="guard" x="-172" y="-46">isPartSunken()</label></transition></template><template><name>Ship</name><parameter>clock &amp;periodTime, int &amp; PERIOD, position_people_count_type &amp; positionPeopleCount, flooded_parts_type &amp; floodedPartsm, channels_type &amp; channels</parameter><declaration>void sunkPart(){
+	int i = 0;
+	for( i ; i &lt; 4 ; i++){
+		if(floodedParts[i] == false){
+			floodedParts[i] = true;
+			return;
+		}
+	}
+}
+
+bool isShipSunken(){
+	int i = 0;
+	for( i ; i &lt; 4 ; i++){
+		if(floodedParts[i] == false){
+			return false;
+		}
+	}
+	return true;
+}</declaration><location id="id3" x="-2960" y="-16"><committed/></location><location id="id4" x="-2712" y="-8"><name x="-2728" y="32">SHIP_SUNKEN</name></location><location id="id5" x="-2736" y="-112"><name x="-2744" y="-160">SHIP_FLOATING</name></location><init ref="id3"/><transition><source ref="id3"/><target ref="id5"/><label kind="assignment" x="-3776" y="-96">positionPeopleCount[0] = 25,
+positionPeopleCount[1] = 25,
+positionPeopleCount[2] = 25,
+positionPeopleCount[3] = 25</label></transition><transition><source ref="id4"/><target ref="id4"/><nail x="-2648" y="24"/><nail x="-2656" y="-32"/></transition><transition><source ref="id5"/><target ref="id4"/><label kind="guard" x="-2696" y="-80">isShipSunken()</label></transition><transition><source ref="id5"/><target ref="id5"/><label kind="guard" x="-3152" y="-200">!isShipSunken() and periodTime &gt;= PERIOD</label><label kind="assignment" x="-2952" y="-160">sunkPart(),
+periodTime = 0</label><nail x="-2808" y="-112"/><nail x="-2784" y="-176"/></transition></template><template><name>HazardPlayer</name><parameter>int &amp; partIndex, position_people_count_type &amp; positionPeopleCount, int &amp; passangersOnBoard, channels_type &amp; channels, flooded_parts_type &amp; floodedParts</parameter><declaration>clock progress_time;
+
+bool isPartSunken(){
+	return floodedParts[partIndex];
+}
+
+void managePeople(){
+	int i = 0;
+	//save people - let them jump to boat
+	positionPeopleCount[partIndex] = positionPeopleCount[partIndex] - 10;
+	passangersOnBoard = passangersOnBoard - 10;
+ 
+	//people arrived to position
+	for(i; i &lt; 4 ; i++){
+		positionPeopleCount[i] = positionPeopleCount[i] + channels[partIndex][i];
+		channels[partIndex][i] = 0;
+	}
+	i = 0;
+	//send new people
+	for(i; i &lt; 4 ; i++){
+		//channels[partIndex][i] = SIZE_CHANNEL - channels[i][partIndex];
+		//don't send negative amount of people...
+	}
+}</declaration><location id="id6" x="-208" y="-32"><name x="-218" y="-62">Dead</name></location><location id="id7" x="0" y="0"><name x="-10" y="-30">Ruling</name></location><init ref="id7"/><transition><source ref="id7"/><target ref="id7"/><label kind="guard" x="64" y="-8">!isPartSunken()</label><label kind="assignment" x="-104" y="104">managePeople()</label><nail x="120" y="48"/><nail x="48" y="112"/></transition><transition><source ref="id7"/><target ref="id6"/><label kind="guard" x="-164" y="-46">isPartSunken()</label></transition></template><template><name>Priest</name><parameter>int &amp; partIndex</parameter><declaration>bool isPartSunken(){
+	return floodedParts[partIndex];
+}</declaration><location id="id8" x="-112" y="-48"></location><location id="id9" x="0" y="0"></location><init ref="id9"/><transition><source ref="id9"/><target ref="id8"/></transition></template><system>// Place template instantiations here.
+//ship = Ship(period_time, move_people, boat_sunken, time_progress);
+int captain_index = 2;
+//captain = Captain (boat_sunken, move_people, people_amount, captain_index);
+
+// List one or more processes to be composed into a system.
+//system captain, timer;
+
+int index_0 = 0;
+
+int index_1 = 1;
+
+int index_2 = 2;
+
+int index_3 = 3;
+
+position1 = HazardPlayer(index_0,  positionPeopleCount, passangerCountOnBoard, channels, floodedParts);
+position2 = HazardPlayer(index_1,  positionPeopleCount, passangerCountOnBoard, channels, floodedParts);
+position3 = HazardPlayer(index_2, positionPeopleCount, passangerCountOnBoard, channels, floodedParts);
+position4 = HazardPlayer(index_3, positionPeopleCount, passangerCountOnBoard, channels, floodedParts);
+ship = Ship(periodTime, PERIOD_TIME, positionPeopleCount, floodedParts, channels);
+
+floodedParts[0] = false;
+floodedParts[1] = false;
+floodedParts[2] = false;
+floodedParts[3] = false;
+channels[0][0] = 0;
+channels[0][1] = 0;
+channels[0][2] = 0;
+channels[0][3] = 0;
+channels[1][0] = 0;
+channels[1][1] = 0;
+channels[1][2] = 0;
+channels[1][3] = 0;
+channels[2][0] = 0;
+channels[2][1] = 0;
+channels[2][2] = 0;
+channels[2][3] = 0;
+channels[3][0] = 0;
+channels[3][1] = 0;
+channels[3][2] = 0;
+channels[3][3] = 0;
+
+system ship, position1, position2, position3, position4;</system></nta>

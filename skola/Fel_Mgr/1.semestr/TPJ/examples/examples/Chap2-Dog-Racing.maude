@@ -1,0 +1,38 @@
+***************************************************************************
+***  Chapter 2 - Functional Modules
+***	Section 6 : Expanding on Chapter 1
+***
+***  DOG-RACING : expands on the ANIMALS example from Chapter 1 to
+***	illustrate some of the usefulness of kinds.
+***
+***************************************************************************
+
+
+fmod DOG-RACING is
+
+   protecting ANIMALS .
+   protecting NAT .
+
+   op race : Dog Dog -> Dog .
+   op speed : Dog -> Nat .
+
+   op jackRusselTerrier : -> Terrier .
+
+   vars N M : [Dog] .
+
+   eq speed(bloodhound) = 20 .
+   eq speed(collie) = 25 .
+   eq speed(dalmatian) = 30 .
+   eq speed(pitbull) = 15 .
+   eq speed(schnauzer) = 30 .
+   eq speed(jackRusselTerrier) = 10 .
+
+   eq speed(frog) = 5 .
+   eq speed(penguin) = 5 .
+
+   eq speed(breed(N, M)) = (speed(N) + speed(M)) quo 2 .
+
+   ceq race(N, M) = N if speed(N) > speed(M) .
+   eq race(N, M) = M [owise] .
+
+endfm

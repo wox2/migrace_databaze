@@ -1,0 +1,44 @@
+****************************************************************************
+***  Chapter 4 - Full Maude & Object-Oriented Modules
+***	Section 5 : Rewrite Laws in Object-Oriented Modules
+***
+***  RESTAURANT : illustrates the basics of messages and rewriting
+***
+****************************************************************************
+
+
+(omod RESTAURANT is
+
+   protecting NAT .
+
+   class TABLE | occupied : Bool , chairs : Nat .
+   class OutDoorTABLE | next2heater : Bool .
+   subclass OutDoorTABLE < TABLE .
+
+   ops One Two Three : -> Oid .
+
+   msgs sit@ heaterswitch : Oid -> Msg .
+   msgs _borrowchairfrom_ changetables : Oid Oid -> Msg .
+
+   vars A B : Oid .  vars M N : Nat .
+
+   rl [sit] : sit@(A) < A : TABLE | occupied : false >
+		=> < A : TABLE | occupied : true > .
+
+   rl [switchoff] : heaterswitch(A) < A : OutDoorTABLE | next2heater : true >
+		=> < A : OutDoorTABLE | next2heater : false > .
+
+   rl [switchon] : heaterswitch(A) < A : OutDoorTABLE | next2heater : false >
+		=> < A : OutDoorTABLE | next2heater : true > .
+
+   rl [move] : changetables(A, B) < A : TABLE | occupied : true >
+				   < B : TABLE | occupied : false >
+		=>	< A : TABLE | occupied : false >
+			< B : TABLE | occupied : true > .
+
+   rl [takechair] : (A borrowchairfrom B) < A : TABLE | chairs : M >
+					   < B : TABLE | chairs : s N >
+		=>	< A : TABLE | chairs : s M > 
+			< B : TABLE | chairs : N > .
+
+endom)

@@ -1,0 +1,233 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is Metro/2.2.0-1 (tags/2.2.0u1-7139; 2012-06-02T10:55:19+0000) JAXWS-RI/2.2.6-2 JAXWS/2.2 svn-revision#unknown. --><xs:schema xmlns:tns="http://bookingserver.murinrad.fee.ctu.cz/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://bookingserver.murinrad.fee.ctu.cz/">
+
+<xs:element name="ChangeReservation" type="tns:ChangeReservation"/>
+
+<xs:element name="ChangeReservationResponse" type="tns:ChangeReservationResponse"/>
+
+<xs:element name="ChangeTicketException" type="tns:ChangeTicketException"/>
+
+<xs:element name="DatabaseException" type="tns:DatabaseException"/>
+
+<xs:element name="PassengerDoesNotExistException" type="tns:PassengerDoesNotExistException"/>
+
+<xs:element name="SeatIsAlreadyReservedException" type="tns:SeatIsAlreadyReservedException"/>
+
+<xs:element name="TicketDoesNotExistException" type="tns:TicketDoesNotExistException"/>
+
+<xs:element name="TicketIsNotCancellableException" type="tns:TicketIsNotCancellableException"/>
+
+<xs:element name="TimeSpaceException" type="tns:TimeSpaceException"/>
+
+<xs:element name="bookFlight" type="tns:bookFlight"/>
+
+<xs:element name="bookFlightResponse" type="tns:bookFlightResponse"/>
+
+<xs:element name="cancelReservation" type="tns:cancelReservation"/>
+
+<xs:element name="cancelReservationResponse" type="tns:cancelReservationResponse"/>
+
+<xs:element name="confirmTicketPaid" type="tns:confirmTicketPaid"/>
+
+<xs:element name="confirmTicketPaidResponse" type="tns:confirmTicketPaidResponse"/>
+
+<xs:element name="getFreeSeats" type="tns:getFreeSeats"/>
+
+<xs:element name="getFreeSeatsResponse" type="tns:getFreeSeatsResponse"/>
+
+<xs:element name="getPassengerDataForATicket" type="tns:getPassengerDataForATicket"/>
+
+<xs:element name="getPassengerDataForATicketResponse" type="tns:getPassengerDataForATicketResponse"/>
+
+<xs:element name="getSpecificTicket" type="tns:getSpecificTicket"/>
+
+<xs:element name="getSpecificTicketResponse" type="tns:getSpecificTicketResponse"/>
+
+<xs:element name="getTicketsForPassenger" type="tns:getTicketsForPassenger"/>
+
+<xs:element name="getTicketsForPassengerResponse" type="tns:getTicketsForPassengerResponse"/>
+
+<xs:complexType name="bookFlight">
+<xs:sequence>
+<xs:element name="Passenger" type="tns:passenger" minOccurs="0"/>
+<xs:element name="seatID" type="xs:int" minOccurs="0"/>
+<xs:element name="flightID" type="xs:int" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="passenger">
+<xs:sequence>
+<xs:element name="id" type="xs:int" minOccurs="0"/>
+<xs:element name="idDocNumber" type="xs:string" minOccurs="0"/>
+<xs:element name="name" type="xs:string" minOccurs="0"/>
+<xs:element name="sex" type="xs:string" minOccurs="0"/>
+<xs:element name="surname" type="xs:string" minOccurs="0"/>
+<xs:element name="title" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="bookFlightResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:ticket" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="ticket">
+<xs:sequence>
+<xs:element name="flightID" type="xs:int" minOccurs="0"/>
+<xs:element name="seatNumber" type="xs:int" minOccurs="0"/>
+<xs:element name="status" type="xs:int" minOccurs="0"/>
+<xs:element name="ticketNumber" type="xs:int" minOccurs="0"/>
+<xs:element name="totalPrice" type="xs:double" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="DatabaseException">
+<xs:sequence>
+<xs:element name="message" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="SeatIsAlreadyReservedException">
+<xs:sequence>
+<xs:element name="message" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="TimeSpaceException">
+<xs:sequence>
+<xs:element name="message" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="confirmTicketPaid">
+<xs:sequence>
+<xs:element name="ticketID" type="xs:int" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="confirmTicketPaidResponse">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="TicketDoesNotExistException">
+<xs:sequence>
+<xs:element name="message" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="ChangeReservation">
+<xs:sequence>
+<xs:element name="ticketID" type="xs:int" minOccurs="0"/>
+<xs:element name="newFlightID" type="xs:int" minOccurs="0"/>
+<xs:element name="newSeatNumber" type="xs:int" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="ChangeReservationResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:ticket" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="TicketIsNotCancellableException">
+<xs:sequence>
+<xs:element name="message" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="ChangeTicketException">
+<xs:sequence>
+<xs:element name="message" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getFreeSeats">
+<xs:sequence>
+<xs:element name="flightID" type="xs:int" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getFreeSeatsResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:seatCollection" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="seatCollection">
+<xs:sequence>
+<xs:element name="content" type="tns:seat" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="seat">
+<xs:sequence>
+<xs:element name="flightID" type="xs:int" minOccurs="0"/>
+<xs:element name="seatNo" type="xs:int" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="cancelReservation">
+<xs:sequence>
+<xs:element name="passengerIDDoc" type="xs:string" minOccurs="0"/>
+<xs:element name="flightID" type="xs:int" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="cancelReservationResponse">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="PassengerDoesNotExistException">
+<xs:sequence>
+<xs:element name="message" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getTicketsForPassenger">
+<xs:sequence>
+<xs:element name="passengerIDDoc" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getTicketsForPassengerResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:ticketPackage" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="ticketPackage">
+<xs:sequence>
+<xs:element name="content" type="tns:ticket" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getSpecificTicket">
+<xs:sequence>
+<xs:element name="ticketID" type="xs:int" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getSpecificTicketResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:getTicketAnswer" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getTicketAnswer">
+<xs:sequence>
+<xs:element name="content" type="tns:ticket" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getPassengerDataForATicket">
+<xs:sequence>
+<xs:element name="ticketID" type="xs:int" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getPassengerDataForATicketResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:passenger" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>

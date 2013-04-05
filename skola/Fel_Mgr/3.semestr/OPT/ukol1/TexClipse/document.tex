@@ -1,0 +1,45 @@
+%%This is a very basic article template.
+%%There is just one section and two subsections.
+\documentclass{article}
+\usepackage[czech, english]{babel}
+\usepackage[T1]{fontenc} % pouzije EC fonty \usepackage[utf8]{inputenc}
+\usepackage{graphicx} 
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}  %package potrebny pro matiku
+\usepackage{amsfonts}  %package obsahujici symboly mnozin 
+\usepackage{hyperref}
+\begin{document}
+
+\section{Vypracoval}
+Martin Lukeš \\
+aka woxie\\
+7.10. 2012
+
+
+\section{Úlohy - původ}
+Vypracované úlohy 2.5, 2.6, 2.10 pochází z Boydova kurzu - \\ viz
+\hyperref[Boydova
+kurzu]{http://www.stanford.edu/class/ee263/hw/263homework.pdf}.
+
+\section{Úloha 2.19}
+Máme dvě matice A a B, přičemž B je inverzní k A. Všechny prvky obou matic jsou
+nezáporné.
+\subsection{Předpoklad}
+Z prvního pohledu to vypadá, že jednotková matice je řešením úlohy, tudíž
+předpokládejme, že matice A=B, pro kterou platí : $a_{ii} = 1,\ a_{ij} = 0
+\forall\ i \neq j ,\ i \in \mathbb{R},\ j \in \mathbb{R} $
+\subsection{Pozorování} Výpočet inverzní matice B k regulární matici A. Pro
+matici A platí :
+$a_{ij} > 0 \forall\ i \neq j ,\ i \in \mathbb{R},\ j \in \mathbb{R} $ . K
+výpočtu inverze k A je používána Gauss/Jordanova eliminační metoda, kdy za sebe
+napíšeme eliminační metoda.
+
+\subsection{Řešení}
+
+
+\subsection{Another subtitle}
+
+More plain text.
+
+
+\end{document}

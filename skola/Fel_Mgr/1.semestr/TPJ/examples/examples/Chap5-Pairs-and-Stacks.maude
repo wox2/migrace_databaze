@@ -1,0 +1,104 @@
+**************************************************************************
+***  Chapter 5 - Parameterization
+***
+***  PAIRS and STACK : an example of multiple parameters, parameterized
+***	views, and parameterized theories, using our Pair sort and our
+***	Deck of Cards examples.
+***
+**************************************************************************
+
+(fth OELT is
+
+   sort Elt .
+
+   op _>=_ : Elt Elt -> Bool .
+
+endfth)
+
+
+
+(fmod OPAIRLIST(X :: OELT | Y :: TRIV) is
+
+   sorts Pair(X | Y) OPairList .
+   subsort Pair(X | Y) < OPairList .
+
+   op _~_ : X@Elt Y@Elt -> Pair(X | Y) [ctor] .
+   op _;_ : OPairList OPairList -> OPairList [ctor assoc id: nil] .
+   op nil : -> OPairList [ctor] .
+
+   op top : OPairList -> Pair(X | Y) .
+   op add : Pair(X | Y) OPairList -> OPairList .
+
+   vars A1 A2 : Y@Elt .  vars E1 E2 : X@Elt .  var O : OPairList .
+
+   eq top((E1 ~ A1) ; O) = E1 ~ A1 .
+
+   eq add((E1 ~ A1), (E2 ~ A2) ; O) = 	if E1 >= E2 
+					then (E2 ~ A2) ; add((E1 ~ A1) , O) 
+					else (E1 ~ A1) ; (E2 ~ A2) ; O 
+					fi .
+   eq add((E1 ~ A1), nil) = E1 ~ A1 .
+
+endfm)
+
+
+(view Triv-String from TRIV to STRING is
+
+   sort Elt to String .
+
+endv)
+
+(view OElt-Nat from OELT to NAT is
+
+   sort Elt to Nat .
+   op _>=_ to _>=_ .
+
+endv)
+
+
+
+(fmod DECK-COLOR is
+
+   sort Color .		ops red blue : -> Color .
+   op _>=_ : Color Color -> Bool .
+
+   eq red >= blue = true .
+   eq blue >= red = false .
+   eq red >= red = true .
+   eq blue >= blue = true .
+
+endfm)
+
+
+(view OElt-Color from OELT to DECK-COLOR is
+
+   sort Elt to Color .
+   op _>=_ to _>=_ .
+
+endv)
+
+
+(fmod STACK(X :: TRIV) is
+
+   sort Stack(X) .
+   subsort X@Elt < Stack(X) .
+
+   op _;_ : Stack(X) Stack(X) -> Stack(X) [ctor assoc id: end] .
+   op end : -> Stack(X) [ctor] .
+
+   op top : Stack(X) -> X@Elt .
+   op pop : Stack(X) -> Stack(X) .
+   op push : X@Elt Stack(X) -> Stack(X) .
+
+   var E : X@Elt .	var S : Stack(X) .
+
+   eq top(E ; S) = E .
+   eq pop(E ; S) = S .
+   eq push(E, S) = E ; S .
+
+endfm)
+
+
+(view Triv-Stack(X :: TRIV) from TRIV to STACK(X) is
+
+    sort Elt to Stack(X) .	endv)

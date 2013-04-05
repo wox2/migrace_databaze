@@ -1,0 +1,23 @@
+*********************************************************************
+***  Chapter 1 - Foundation
+***    Section 4: Constructors and Operator Attributes
+***
+***  SETS-AND-LISTS: sets down the fundamentals for the Set and List
+***  sorts, including the main binary operator attributes "assoc,"
+***  "comm," and "id: "
+***
+*********************************************************************
+
+fmod SETS-AND-LISTS is
+
+  sorts Set List Elt .
+  subsort Elt < Set .
+  subsort Elt < List .
+
+  op nil : -> List [ctor] .
+  op none : -> Set [ctor] .
+
+  op _;_ : List List -> List [ctor assoc id: nil] .
+  op __ : Set Set -> Set [ctor assoc comm id: none] .
+
+endfm

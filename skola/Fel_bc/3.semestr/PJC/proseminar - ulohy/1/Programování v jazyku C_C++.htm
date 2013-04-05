@@ -1,0 +1,193 @@
+<html><head> 
+
+ 
+  <title>Programování v jazyku C/C++</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <link href="Programov%C3%A1n%C3%AD%20v%20jazyku%20C_C++_soubory/css.css" rel="stylesheet" type="text/css">
+ </head><body>
+ 
+ <table cellspacing="0" width="100%">
+  <col width="200">
+  <col>
+  <tbody>
+   <tr><td colspan="2" class="ac"><br><h1>Y36PJC - Programování v jazyku C/C++</h1><br></td></tr>
+   <tr>
+    <td class="layout1" valign="top">
+     <table cellpadding="0" width="100%">
+ <col>
+ <col width="50">
+ <col width="50">
+ <col width="50">
+<tbody><tr><td colspan="4" class="menuSel box"><a href="http://moon.felk.cvut.cz/%7Exvagner/Y36PJC/?Sec=1">Harmonogram</a></td></tr>
+<tr><td colspan="4" class="menuSel box"><a href="http://moon.felk.cvut.cz/%7Exvagner/Y36PJC/?Sec=2">Přednášky</a></td></tr>
+<tr><td colspan="4" class="menuSel boxSel"><a href="http://moon.felk.cvut.cz/%7Exvagner/Y36PJC/?Sec=3">Prosemináře</a></td></tr>
+<tr><td>&nbsp;</td><td class="menuSel boxSel ac">1</td>
+<td class="menuSel box ac"><a href="http://moon.felk.cvut.cz/%7Exvagner/Y36PJC/?Sec=302">2</a></td>
+<td class="menuSel box ac"><a href="http://moon.felk.cvut.cz/%7Exvagner/Y36PJC/?Sec=303">3</a></td>
+</tr><tr><td>&nbsp;</td><td class="menuSel box ac"><a href="http://moon.felk.cvut.cz/%7Exvagner/Y36PJC/?Sec=304">4</a></td>
+<td class="menuSel box ac"><a href="http://moon.felk.cvut.cz/%7Exvagner/Y36PJC/?Sec=305">5</a></td>
+<td class="menuSel box ac"><a href="http://moon.felk.cvut.cz/%7Exvagner/Y36PJC/?Sec=306">6</a></td>
+</tr><tr><td>&nbsp;</td><td class="menuSel box ac"><a href="http://moon.felk.cvut.cz/%7Exvagner/Y36PJC/?Sec=307">7</a></td>
+<td>&nbsp;</td><td>&nbsp;</td></tr><tr><td colspan="4" class="menuSel box"><a href="http://moon.felk.cvut.cz/%7Exvagner/Y36PJC/?Sec=4">Semináře</a></td></tr>
+<tr><td colspan="4" class="menuSel box"><a href="http://moon.felk.cvut.cz/%7Exvagner/Y36PJC/?Sec=5">Literatura</a></td></tr>
+<tr><td colspan="4" class="menuSel box"><a href="http://moon.felk.cvut.cz/%7Exvagner/Y36PJC/?Sec=6">Kompilátory</a></td></tr>
+<tr><td colspan="4" class="menuSel box"><a href="http://moon.felk.cvut.cz/%7Exvagner/Y36PJC/?Sec=7">Hodnocení</a></td></tr>
+<tr><td colspan="4" class="menuSel box"><a href="http://moon.felk.cvut.cz/%7Exvagner/Y36PJC/?Sec=9">Sem. práce</a></td></tr>
+</tbody></table>    </td><td valign="top">
+      <h2>Jednoduchá kalkulačka</h2><br>
+ 
+ <p>Sestrojte v C program, který načte ze vstupu 2 desetinná čísla a zobrazí 
+ jejich součet, rozdíl, součin a podíl. Využijte pouze knihovnu C, nepoužívejte C++ streamy.</p>
+
+ <br>
+ 
+ <h3>Příklad:</h3><br>
+ <pre>  Zadej cisla a b
+  30 40
+  30.000000 + 40.000000 = 70.000000
+  30.000000 - 40.000000 = -10.000000
+  30.000000 * 40.000000 = 1200.000000
+  30.000000 / 40.000000 = 0.750000  
+ </pre>
+
+ <br>
+<a href="http://moon.felk.cvut.cz/%7Exvagner/Y36PJC/file.php?Sec=301&amp;F=0">Vzorové řešení</a><br>
+<hr>
+ <h2>Jednoduchá kalkulačka</h2><br>
+ 
+ <p>Sestrojte v C++ program, který načte ze vstupu 2 desetinná čísla a zobrazí 
+ jejich součet, rozdíl, součin a podíl. Program bude využívat C++ streamy. Zajistěte, 
+ aby program správně poznal, pokud dostane nesmyslný vstup (ne čísla).</p>
+
+ <br>
+ 
+ <h3>Příklad:</h3><br>
+ <pre>  Zadej cisla a b
+  30 40
+  30.000000 + 40.000000 = 70.000000
+  30.000000 - 40.000000 = -10.000000
+  30.000000 * 40.000000 = 1200.000000
+  30.000000 / 40.000000 = 0.750000  
+ </pre>
+
+ <pre>  Zadej cisla a b
+  20 dasddsa
+  Chyba formatu vstupnich dat </pre>
+ <br>
+ 
+ <br>
+<a href="http://moon.felk.cvut.cz/%7Exvagner/Y36PJC/file.php?Sec=301&amp;F=1">Vzorové řešení</a><br>
+<hr>
+ <h2>Existence dne</h2><br>
+ 
+ <p>Sestrojte v C/C++ program, který načte ze vstupu 3 celá čísla reprezentující den, 
+ měsíc a rok. Program rozhodne, zda takové datum existovalo v našem kalendáři (Juliánský 
+ do září roku 1752 / Gregoriánský od září 1752).</p>
+
+ <br>
+ 
+ <h3>Příklad:</h3><br>
+ <pre>  Zadej den mesic a rok
+  29 2 2000
+  Datum: 29.02.2000 je platne
+  
+  Zadej den mesic a rok
+  29 2 1999
+  Datum: 29.02.1999 neni platne
+  
+  Zadej den mesic a rok
+  29 2 2004
+  Datum: 29.02.2004 je platne
+  
+  Zadej den mesic a rok
+  29 2 1900
+  Datum: 29.02.1900 neni platne
+  
+  Zadej den mesic a rok
+  29 2 1500
+  Datum: 29.02.1500 je platne
+  
+  Zadej den mesic a rok
+  5 9 1752
+  Datum: 5.09.1752 neni platne  
+ </pre>
+
+ <h3>Poznámky:</h3><br>
+ <ul> 
+  
+  <li>Do září roku 1752 se ve většině západní Evropy používal tzv. Juliánský 
+  kalendář. V tomto kalendáři byl přestupný každý čtvrtý rok.</li>
+  
+  <li>Od září 1752 se používá Gregoriánský kalendář, který má přestupný každý 
+  čtvrtý rok, ale roky dělitelné 100 přestupné nejsou, s výjimkou roků 
+  dělitelných 400, které naiopak přestupné jsou. Roky 1896, 1904, 1908, ... 
+  přestupné byly, rok 1800, 1900, 2100 nebyly/nebudou a roky 2000, 2400, ... 
+  přestupné byly/budou.</li>
+  
+  <li>Při změně kalendáře v září 1752 došlo k vypuštění několika dní. Po 
+  2.9.1752 následovalo 14.9.1752.</li>
+  
+ </ul>
+  
+ <br>
+ 
+ <br>
+<a href="http://moon.felk.cvut.cz/%7Exvagner/Y36PJC/file.php?Sec=301&amp;F=2">Vzorové řešení</a><br>
+<hr>
+ <h2>Výpočet celočíselné mocniny</h2><br>
+ 
+ <p>Sestrojte v C/C++ program, který pro desetinné číslo <tt>a</tt> a celé číslo <tt>n</tt> vypočte 
+ mocninu <tt>a<sup>n</sup></tt>. Jakou časovou složitost má implementovaný algoritmus?</p>
+
+ <br>
+ 
+ <h3>Příklad:</h3><br>
+ <pre>  Zadej zaklad a exponent
+  1.000001 1000000
+  1.000001^1000000 = 2.718280469
+
+  Zadej zaklad a exponent
+  1.000001 300000000
+  1.000001^300000000 = 1.942135005e+130  
+ </pre>
+
+ <br>
+ 
+ <br>
+<a href="http://moon.felk.cvut.cz/%7Exvagner/Y36PJC/file.php?Sec=301&amp;F=3">Vzorové řešení</a><br>
+<hr>
+ <h2>Test prvočíselnosti</h2><br>
+ 
+ <p>Sestrojte v C/C++ program, který pro zadané číslo rozhodne, zda se jedná o 
+ prvočíslo či číslo složené. Jakou časovou složitost má implementovaný 
+ algoritmus? Rozšiřte program tak, aby dokázal:</p>
+ 
+ <ul>
+  <li>vypočítat prvočíslo nejbližší vyšší než zadaná hodnota <tt>n</tt>,</li>
+  <li>vypočítat kolik prvočísel je menších než zadané <tt>n</tt>.</li>
+ </ul>
+
+ <br>
+ 
+ <h3>Příklad:</h3><br>
+ <pre>  Zadej cislo
+  10000
+  10000 neni prvocislo
+  Nejblizsi vyssi prvocislo je: 10007
+  Odhad poctu prvocisel &lt; 10000: 1085
+  Pocet prvocisel &lt; 10000: 1229
+
+  Zadej cislo
+  1000000
+  1000000 neni prvocislo
+  Nejblizsi vyssi prvocislo je: 1000003
+  Odhad poctu prvocisel &lt; 1000000: 72382
+  Pocet prvocisel &lt; 1000000: 78498
+ </pre>
+ <br>
+<a href="http://moon.felk.cvut.cz/%7Exvagner/Y36PJC/file.php?Sec=301&amp;F=4">Vzorové řešení</a><br>
+    </td>
+   </tr>
+  </tbody>
+ </table>
+ </body></html>

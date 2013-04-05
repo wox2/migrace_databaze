@@ -1,0 +1,24 @@
+*****************************************************************
+***  Chapter 3 - System Modules
+***	Section 1 : Rewrite Laws
+***
+***  COUNTING-CIGARETTES : an expansion on the cigarettes example
+***
+*****************************************************************
+
+
+mod COUNTING-CIGARETTES is
+
+   protecting NAT .
+
+   sort State .
+
+   ops c b : Nat -> State [ctor] .   ***cigarettes and butts
+   op __ : State State -> State [ctor assoc comm] .
+
+   vars W X Y Z : Nat .
+
+   rl [smoke] : c(X) => b(X + 1) .
+   rl [makenew] : b(W) b(X) b(Y) b(Z) => c(W + X + Y + Z) .
+
+endm

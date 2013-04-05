@@ -1,0 +1,61 @@
+***************************************************************************
+***  Chapter 5 - Parameterization
+***	Section 5 : Parameterized Views and Theories
+***
+***  FMAP : another example of parameterized views and theories
+***
+**************************************************************************
+
+
+
+(fth FUNCTION(X :: TRIV | Y :: TRIV) is
+
+   op f : X@Elt -> Y@Elt .
+
+endfth)
+
+(fmod FMAP(F :: FUNCTION(X :: TRIV | Y :: TRIV)) is
+
+   sorts IndSet(X) DepSet(Y) .
+   subsort X@Elt < IndSet(X) .
+   subsort Y@Elt < DepSet(Y) .
+   
+   op __ : IndSet(X) IndSet(X) -> IndSet(X) [ctor assoc comm id: ind-null] .
+   op _;_ : DepSet(Y) DepSet(Y) -> DepSet(Y) [ctor assoc comm id: dep-null] .
+   op ind-null : -> IndSet(X) [ctor] .
+   op dep-null : -> DepSet(Y) [ctor] .
+
+   op fmap : IndSet(X) -> DepSet(Y) .
+
+   var N : X@Elt .	var NS : IndSet(X) .
+
+   eq fmap(N NS) = f(N) ; fmap(NS) .
+   eq fmap(ind-null) = dep-null .
+
+endfm)
+
+(fmod NEGATIVE is
+
+   pr NAT .	pr INT .
+
+   op _timesneg1 : Nat -> Int .
+
+   var N : Nat .
+
+   eq N timesneg1 = - N .
+
+endfm)
+
+
+(view Triv-Nat from TRIV to NAT is sort Elt to Nat .  endv)
+
+(view Triv-Int from TRIV to INT is sort Elt to Int .  endv)
+
+(view Fun-Neg(X :: TRIV | Y :: TRIV) from FUNCTION(X | Y) to NEGATIVE is
+
+   op f to _timesneg1 .
+
+endv)
+
+
+(red in FMAP(Fun-Neg(Triv-Nat | Triv-Int)) : fmap(5 9 11 2 0) .)

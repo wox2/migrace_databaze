@@ -1,0 +1,29 @@
+***********************************************************************
+***  Chapter 2 - Functional Modules
+*** 	Section 2 : Conditional Equations
+***
+***  IRRITABLE-PROFESSOR : illustrates the two uses of pattern
+***   matching - as a search method or as a value assignment.
+***
+***********************************************************************
+
+
+fmod IRRITABLE-PROFESSOR is
+
+   protecting STRING .
+
+   sorts Question Exclamation Interruption .
+   subsorts Question Exclamation < Interruption .
+
+   op _? : String -> Question [ctor] .
+   op _! : String -> Exclamation [ctor] .
+
+   op reply : Interruption -> String .
+
+   var I : Interruption .
+
+   ceq reply(I) = "Questions after class, please" if (S:String) ? := I .
+***eq reply( S:String ?) = "Questions after class, please" .
+   ceq reply( S:String !) = T:String if T:String := "Please be quiet!" .
+
+endfm

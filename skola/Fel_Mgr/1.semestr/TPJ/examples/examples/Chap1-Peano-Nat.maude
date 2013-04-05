@@ -1,0 +1,17 @@
+***********************************************************************
+***  Chapter 1 - Foundation
+***    Section 4:  Constructors and Operator Attributes
+***
+***  PEANO-NAT : sets down the algebra for the Peano notation of the
+***  natural numbers, using two constructors - the successor s and 0.
+***
+***********************************************************************
+
+fmod PEANO-NAT is
+
+  sort Nat .
+ 
+  op 0 : -> Nat [ctor] .
+  op s : Nat -> Nat [ctor] .
+
+endfm

@@ -1,0 +1,23 @@
+***********************************************************************
+***  Chapter 2 - Functional Modules
+***    Section 1 : Equations
+***
+***  PEANO-NAT-EXTRA : illustrates the fundamentals of equation
+***  writing with the addition operator defined with Peano notation.
+***
+***********************************************************************
+
+fmod PEANO-NAT-EXTRA is
+
+  sort Nat .
+
+  op 0 : -> Nat [ctor] .
+  op s : Nat -> Nat [ctor iter] .
+  op _+_ : Nat Nat -> Nat .
+
+  vars M N : Nat .
+
+  eq 0 + N = N .
+  eq s(M) + N = s(M + N) .
+
+endfm

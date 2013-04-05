@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
+    <system systemId="http://murko2-pc:8080/PaymentServer/PaymentServiceService?wsdl" uri="wsdl/murko2-pc_8080/PaymentServer/PaymentServiceService.wsdl"/>
+    <system systemId="http://murko2-pc:8080/PaymentServer/PaymentServiceService?xsd=1" uri="wsdl/murko2-pc_8080/PaymentServer/PaymentServiceService.xsd_1.xsd"/>
+</catalog>

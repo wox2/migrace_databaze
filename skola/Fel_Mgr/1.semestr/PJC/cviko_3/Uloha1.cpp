@@ -21,27 +21,9 @@
 
 
 #include <iostream>	// Hlavickovy soubor potrebny pro praci se vstupem a vystupem
-using namespace std;
 
 class Number {
-private int value;
 
-public Number(int value){
-
-}
-
-public Number::
-void printBinar(){
-  int rest = value;
-  while (rest > 0){
-    if(rest %2 == 0){
-        cout << "0";
-    } else{
-      cout << "1";
-    }
-    }
-    cout << endl; 
-}
 	// ****************************************************************
 	// Zde doplnte kod:
 	// ****************************************************************

@@ -1,0 +1,504 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!-- saved from url=(0044)http://rtime.felk.cvut.cz/osp/prednasky/gui/ -->
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
+<title>Grafická uživatelská prostředí a knihovny</title>
+
+<link rel="stylesheet" href="./Grafická uživatelská prostředí a knihovny_files/style.css" type="text/css">
+
+<link rel="stylesheet" href="./Grafická uživatelská prostředí a knihovny_files/local.css" type="text/css">
+
+
+<link rel="alternate" type="application/x-wiki" title="Edit this page" href="https://rtime.felk.cvut.cz/osp/ikiwiki.cgi?page=prednasky%2Fgui&do=edit">
+
+
+
+
+</head>
+<body>
+
+<div class="page">
+
+<div class="pageheader">
+<div class="header">
+<span>
+<span class="parentlinks">
+
+<a href="http://rtime.felk.cvut.cz/osp/">Open Source Programování</a> »
+
+<a href="http://rtime.felk.cvut.cz/osp/prednasky/">prednasky</a> »
+
+</span>
+<span class="title">
+Grafická uživatelská prostředí a knihovny
+
+</span>
+</span>
+
+</div>
+
+
+<div class="actions">
+<ul>
+
+<li><a href="https://rtime.felk.cvut.cz/osp/ikiwiki.cgi?page=prednasky%2Fgui&do=edit" rel="nofollow">Edit</a></li>
+
+
+
+<li><a href="http://rtime.felk.cvut.cz/gitweb/edu/osp-wiki.git/history/HEAD:prednasky/gui/index.mdwn">History</a></li>
+
+
+
+<li><a href="https://rtime.felk.cvut.cz/osp/ikiwiki.cgi?do=prefs">Preferences</a></li>
+
+
+
+<li><a href="https://rtime.felk.cvut.cz/osp/ikiwiki.cgi?page=prednasky%2Fgui&do=comment">Comment</a></li>
+
+</ul>
+</div>
+
+
+
+
+
+<div class="sidebar">
+<ul>
+<li><a href="http://rtime.felk.cvut.cz/osp/">Úvodní strana</a></li>
+<li><a href="http://rtime.felk.cvut.cz/osp/prednasky/">Přednášky</a></li>
+<li><a href="http://rtime.felk.cvut.cz/osp/cviceni/">Cvičení</a></li>
+<li><a href="http://rtime.felk.cvut.cz/osp/student/2012/">Studenti</a></li>
+<li><a href="http://rtime.felk.cvut.cz/osp/projects/">Projekty</a></li>
+</ul>
+
+</div>
+
+
+</div>
+
+<div id="pagebody">
+
+<div id="content">
+<div class="toc">
+<ol>
+	<li class="L1"><a href="http://rtime.felk.cvut.cz/osp/prednasky/gui/#index1h1">Tvorba grafických aplikací</a>
+	<ol>
+		<li class="L2"><a href="http://rtime.felk.cvut.cz/osp/prednasky/gui/#index1h2">Nová doba, host vyhazuje vrchního</a>
+		</li>
+		<li class="L2"><a href="http://rtime.felk.cvut.cz/osp/prednasky/gui/#index2h2">Potřebujeme vůbec GUI?</a>
+		</li>
+		<li class="L2"><a href="http://rtime.felk.cvut.cz/osp/prednasky/gui/#index3h2">Tvorba aplikaci</a>
+		</li>
+	</ol>
+	</li>
+	<li class="L1"><a href="http://rtime.felk.cvut.cz/osp/prednasky/gui/#index2h1">Grafický subsystém např. v Unixu</a>
+	<ol>
+		<li class="L2"><a href="http://rtime.felk.cvut.cz/osp/prednasky/gui/#index4h2">X Window System</a>
+		</li>
+		<li class="L2"><a href="http://rtime.felk.cvut.cz/osp/prednasky/gui/#index5h2">Alternativy</a>
+		</li>
+		<li class="L2"><a href="http://rtime.felk.cvut.cz/osp/prednasky/gui/#index6h2">Správce oken (window manager)</a>
+		</li>
+		<li class="L2"><a href="http://rtime.felk.cvut.cz/osp/prednasky/gui/#index7h2">X protokol</a>
+		</li>
+	</ol>
+	</li>
+	<li class="L1"><a href="http://rtime.felk.cvut.cz/osp/prednasky/gui/#index3h1">Knihovny pro desktopové aplikace</a>
+	<ol>
+		<li class="L2"><a href="http://rtime.felk.cvut.cz/osp/prednasky/gui/#index8h2">Gnome</a>
+		</li>
+		<li class="L2"><a href="http://rtime.felk.cvut.cz/osp/prednasky/gui/#index9h2">KDE</a>
+		</li>
+		<li class="L2"><a href="http://rtime.felk.cvut.cz/osp/prednasky/gui/#index10h2">FLTK</a>
+		</li>
+		<li class="L2"><a href="http://rtime.felk.cvut.cz/osp/prednasky/gui/#index11h2">wxWindows / wxWidgets</a>
+		</li>
+		<li class="L2"><a href="http://rtime.felk.cvut.cz/osp/prednasky/gui/#index12h2">GTK+ (GIMP Toolkit)</a>
+		</li>
+		<li class="L2"><a href="http://rtime.felk.cvut.cz/osp/prednasky/gui/#index13h2">QT</a>
+		</li>
+	</ol>
+	</li>
+	<li class="L1"><a href="http://rtime.felk.cvut.cz/osp/prednasky/gui/#index4h1">Úspěšné postupy při tvorbě GUI aplikací</a>
+	<ol>
+		<li class="L2"><a href="http://rtime.felk.cvut.cz/osp/prednasky/gui/#index14h2">Komunikace objektů</a>
+		</li>
+		<li class="L2"><a href="http://rtime.felk.cvut.cz/osp/prednasky/gui/#index15h2">Model-View-Controller(Delegate) architektura</a>
+		</li>
+	</ol>
+	</li>
+</ol>
+</div>
+
+<h1><a name="index1h1"></a>Tvorba grafických aplikací</h1>
+
+<h2><a name="index1h2"></a>Nová doba, host vyhazuje vrchního</h2>
+
+<ul>
+<li>dlouho jsme měli klávesnici, myš a jasno</li>
+<li>postupně se vžívá názor, že aplikace musí být průhledná, nepřehledná a zmatená, aby byla úspěšná na trhu, uživatelé na to přistupují</li>
+<li>pak přišel (velmi zjednodušeně) Steve Jobs vynalezl iphone a ipad a řekl swipe or die</li>
+<li>vysledkem je, že v grafických aplikacích jsme v podstatě zase na začátku</li>
+</ul>
+
+<h2><a name="index2h2"></a>Potřebujeme vůbec GUI?</h2>
+
+<h3><a name="index1h3"></a>Výhody/nevýhody GUI aplikací</h3>
+
+<ul>
+<li>Uživatel může být hloupější a nemusí se tolik učit, existuje jisté latentní Know-How, aplikace se ovládají obdobně pomocí stejných typů widgetů.</li>
+<li>Stačí pasivní znalost UI.</li>
+<li>Větší vyjadřovací schopnost, obrázek má nespornou vyjadřovací schopnost.</li>
+<li>Lze maximálně využít display.</li>
+<li>Počítačová grafika</li>
+<li>Většinu aplikace tvoří GUI</li>
+<li>Lze je používat v režimu sváteční uživatel</li>
+</ul>
+
+<h3><a name="index2h3"></a>Výhody/nevýhody CLI aplikací</h3>
+
+<ul>
+<li>Učící křivka je jednotkový skok</li>
+<li>Lze jednoduše skriptovat a automatizovat práci</li>
+<li>Většinu aplikace tvoří business logika</li>
+<li>Je třeba je používat pravidelně, jinak uživatel zapomene, jak se to psalo</li>
+</ul>
+
+<h3><a name="index3h3"></a>CLI aplikace s GUI kabátkem</h3>
+
+<ul>
+<li>V podstatě ideální stav</li>
+<li>Asi nejvíc práce</li>
+</ul>
+
+<h2><a name="index3h2"></a>Tvorba aplikaci</h2>
+
+<h3><a name="index4h3"></a>Požadavky na aplikaci</h3>
+
+<ul>
+<li>logování</li>
+<li>konfigurace</li>
+<li>kontainery</li>
+<li>persistentní data</li>
+<li>komunikace s okolím, často nějaký druh RPC (SQL, HTTP, AJAX, DBus)</li>
+<li>podpora standardů (XML, JSON, PDF, JPG, PNG, SVG)</li>
+<li>autentizace uživatelů</li>
+<li>bezpečnost (systémová, práva uživatelů)</li>
+<li>lokalizace</li>
+<li>multithreading, synchronizace</li>
+<li>pluginy</li>
+<li>atd. …</li>
+</ul>
+
+<p>GUI aplikace mají navíc:</p>
+
+<ul>
+<li>zpracování eventů (event driven aplikace, xev)</li>
+<li>widgetset</li>
+<li>layout manager</li>
+<li>3D layer, podporu akcelerace</li>
+<li>atd. …</li>
+</ul>
+
+<h3><a name="index5h3"></a>Režie</h3>
+
+<ul>
+<li>instalátor/balíčkovací systém</li>
+<li>aktualizace</li>
+<li>build system (CMake, QMake, Ant, …)</li>
+</ul>
+
+<h4><a name="index1h4"></a>Stále nemáme ani řádek cílené funkcionality</h4>
+
+<h3><a name="index6h3"></a>Systémové požadavky</h3>
+
+<ul>
+<li>použité programovací jazyky a jejich počet</li>
+<li>cílová platforma (cílový OS) / multiplatformnost</li>
+<li>lokální, síťová, tenký/tlustý klient, 1-2-3 vrstvá </li>
+<li>desktop 
+<ul>
+<li>widgetset</li>
+</ul></li>
+<li>web 
+<ul>
+<li>framework</li>
+<li>HTML5</li>
+</ul></li>
+<li>mobile
+<ul>
+<li>Android - Java</li>
+<li>Apple iOS - Object C</li>
+<li>Windows Mobile ?</li>
+<li>Meego - Qt + QML</li>
+<li>Bada, BB OS X</li>
+</ul></li>
+<li>embeded 
+<ul>
+<li>MicroWindows</li>
+<li>mnoho dalších možností</li>
+</ul></li>
+<li>HW nároky (paměť, procesor, konektivita)</li>
+<li>GC ano či ne?</li>
+</ul>
+
+<h3><a name="index7h3"></a>Ekonomické</h3>
+
+<ul>
+<li>možství času</li>
+<li>množství peněz</li>
+<li>množství developerů</li>
+</ul>
+
+<h3><a name="index8h3"></a>Vývojové nástroje</h3>
+
+<ul>
+<li>dobré nářadí nám výrazně ulehčí praci a ušetří čas a nervy</li>
+</ul>
+
+<h3><a name="index9h3"></a>V neposlední řadě</h3>
+
+<ul>
+<li><strong>MUSÍ TO FUNGOVAT</strong></li>
+</ul>
+
+<hr>
+
+<h1><a name="index2h1"></a>Grafický subsystém např. v Unixu</h1>
+
+<p>vždy je dobré znát protivníka</p>
+
+<h2><a name="index4h2"></a>X Window System</h2>
+
+<ul>
+<li>Grafické prostředí pro operační systém UNIX</li>
+<li>Začal vyvíjet institut MIT (Massachusetts Institute of Technology) v r. 1984.</li>
+<li>Označení X11 (verze 11) od r. 1987</li>
+<li>Další verze jsou označovány jako revize. </li>
+<li>Současná podoba systému oken X se principiálně nemění a nová vydání jsou rozšiřující především z pohledu způsobů implementace grafických režimů.</li>
+<li>Klient-server architektura, klient (GUI aplikace) nemusí nutně běžet na stejném stroji, jako server.</li>
+<li>Server se stará o klávesnici, myš a zobrazení grafického výstupu aplikací.</li>
+<li>Klient komunikuje se serverem pomocí socketu. Používá <a href="http://rtime.felk.cvut.cz/osp/prednasky/gui/#x-protocol">X-protokol</a>. </li>
+<li>XFree86 v roce 1992 z X386, což byla implementace X serveru pro 386 architekturu.</li>
+<li>X11R6.4 restriktivnější licence ve verzi 4.4 v únoru 2004.</li>
+<li>Referenční implementací je X server vyvíjený X.Org Foundation.</li>
+</ul>
+
+<p><img src="./Grafická uživatelská prostředí a knihovny_files/X_client_sever_example.svg" alt="X architektura"></p>
+
+<h2><a name="index5h2"></a>Alternativy</h2>
+
+<ul>
+<li>Wayland display server - kompozice, zatím no network transparency</li>
+<li>Apple Quartz</li>
+<li>Android SurfaceFlinger</li>
+<li>MS Windows</li>
+<li>atd.</li>
+</ul>
+
+<h2><a name="index6h2"></a>Správce oken (window manager)</h2>
+
+<p>Samotný X Server má na starost pouze zobrazení na obrazovku, obsluhu hardware (grafická karta, myš, klávesnice, touchpad) a sám o sobě je těžko použitelný. Proto se používá spolu se správcem oken (anglicky window manager), který se stará o ovládání uživatelem (přesun a změna velikosti okna) a podobně (horní lišta oken, ohraničení oken, změna velikosti, překrývání atp.). Z hlediska X Serveru je ovšem správce oken jen další klient, a proto je snadno zaměnitelný. Pro Linux existuje několik desítek správců oken, přičemž mezi nejznámějším patří IceWM, FVWM, Sawfish, Window Maker, Kwm, Metacity nebo Fluxbox.</p>
+
+<p><a name="x-protocol"></a></p><a name="x-protocol">
+
+</a><h2><a name="x-protocol"></a><a name="index7h2"></a>X protokol</h2>
+
+<ul>
+<li>Specifikuje způsob komunikace mezi X-Serverem a X-Klienty. </li>
+<li>Nejslavnější implementací je Xlib.</li>
+</ul>
+
+<p><img src="./Grafická uživatelská prostředí a knihovny_files/xlib.png" alt="Xlib"></p>
+
+<p>Používat přímo xlib by bylo poněkud těžkopádné (<a href="http://rtime.felk.cvut.cz/osp/prednasky/gui/_xlib-example/">příklad</a>), proto vzniklo mnoho knihoven, které se snaží tvorbu GUI aplikací zjednodušit. Např. GTK+, Qt, FLTK, wxWindows, HTML + DOM + JavaScript, atd.</p>
+
+<h1><a name="index3h1"></a>Knihovny pro desktopové aplikace</h1>
+
+<h2><a name="index8h2"></a>Gnome</h2>
+
+<ul>
+<li>GNU Network Object Model Environment</li>
+<li>Window manager</li>
+<li>Vývojová platforma</li>
+<li>GTK+</li>
+<li>Bylo potřeba něco jako Win95 pro Linux.</li>
+<li>V r. 1997 Miguel de Icaza and Federico Mena mimo jiné i kvůli problémům s Qt licencí v KDE.</li>
+<li><a href="http://primates.ximian.com/~miguel/gnome-history.html">the story o the Gnome</a></li>
+</ul>
+
+<hr>
+
+<h2><a name="index9h2"></a>KDE</h2>
+
+<ul>
+<li>1996 Matthias Ettrich, student Eberhard Karls University v Tübingen (1998 zaměstnanec TrollTech).</li>
+<li>I jemu scházelo něco jako Win95 pro Linux.</li>
+<li>Qt</li>
+<li>Trošku jiná filosofie než Gnome, ale v podstatě to samé.</li>
+</ul>
+
+<hr>
+
+<h2><a name="index10h2"></a>FLTK</h2>
+
+<ul>
+<li>Vhodná pro aplikace s nízkými HW nároky a statické linkování</li>
+</ul>
+
+<hr>
+
+<h2><a name="index11h2"></a>wxWindows / wxWidgets</h2>
+
+<p><a href="http://www.wxwindows.org/">wxWidgets</a></p>
+
+<hr>
+
+<h2><a name="index12h2"></a>GTK+ (GIMP Toolkit)</h2>
+
+<ul>
+<li>Vytvořen v roce 1997 členy skupiny eXperimental Computing Facility (XCF) Kalifornské university v Berkeley (Peter Mattis, Spencer Kimball, Josh MacDonald) pro vývoj programu GIMP (GNU Image Manipulation Program) jako náhrada knihovny Motif.</li>
+<li>Napsán objektově v jazyce C, což sebou nese řadu výhod i nevýhod.</li>
+<li>LGPL licence.</li>
+<li>Současná verze již multiplatformní.</li>
+<li>Součást GNU projektu.</li>
+<li>Využívá jej mnoho vyšších programovacích jazyků pro snadný wrapping.</li>
+</ul>
+
+<p><a href="http://rtime.felk.cvut.cz/osp/prednasky/gui/gtk+_hello_world/">GTK+ hello world</a></p>
+
+<hr>
+
+<h2><a name="index13h2"></a>QT</h2>
+
+<ul>
+<li>Haavard Nord a Eirik Chambe-Eng (Norwegian Institute of Technology in Trondheim) začali vývoj v roce 1991, později založili firmu Trolltech <a href="http://www.civilnet.cn/book/embedded/gui/qt4/pref04.html">celkem zajímavé</a>.</li>
+<li>V r. 2009 ji koupila Nokia.</li>
+<li>V C++ =&gt; obtížnější wrapping.</li>
+<li>Od samého počátku multiplatformní (dokonce vlastni make systém).</li>
+<li>Signal/Slot koncept (implementace observer pattern).</li>
+<li>Komerční a LGPL licence (od r. 2009), dříve GPL, ještě dříve podivná QPL (1998) kvuli KDE.</li>
+<li>Snaží se doplnit C++ a libc/c++ o chybějící vlastnosti vyplývající zejména z chabého RTTI v C++
+<ol>
+<li>signals and slots</li>
+<li>object properties</li>
+<li>QSharedPointer, QWeakPointer, QScopedPointer - guarded pointers that are automatically set to 0 when the referenced object is destroyed, unlike normal C++ pointers which become dangling pointers when their objects are destroyed</li>
+<li>qobject_cast - a dynamic cast that works across library boundaries</li>
+<li>contextual string translation for internationalization</li>
+<li>sophisticated interval driven timers that make it possible to elegantly integrate many tasks in an event-driven GUI</li>
+<li>hierarchical and queryable object trees that organize object ownership in a natural way</li>
+</ol></li>
+<li>Implementují velké množství objektů, které se využívají při tvorbě aplikací jako kontajnery, grafické formáty, sockety, SQL konektivita, SSL, JavaScript interpreter, QML apod. <strong>multiplatformním způsobem</strong>.</li>
+<li>Model/View architektura.</li>
+<li>Implicitně sdílené objekty.</li>
+<li>Cenou, kterou za to platíme je MOC (Meta Object Compiler)</li>
+</ul>
+
+<p><a href="http://rtime.felk.cvut.cz/osp/prednasky/gui/qt_hello_world/">Qt hello world</a></p>
+
+<h1><a name="index4h1"></a>Úspěšné postupy při tvorbě GUI aplikací</h1>
+
+<p>Ať už se rozhodnete pro jakoukoliv platformu, narazíte nakonec na stejné problémy</p>
+
+<h2><a name="index14h2"></a>Komunikace objektů</h2>
+
+<ul>
+<li>objekty spolu musí komunikovat
+<ul>
+<li>callback - dangling pointers</li>
+<li>inner classes Java</li>
+<li>SIGNAL/SLOT</li>
+</ul></li>
+</ul>
+
+<h3><a name="index10h3"></a>Signal/Slot koncept</h3>
+
+<ul>
+<li>Obecně řeší observer pattern.</li>
+<li>Many to many relationship.</li>
+<li>Velice se hodí na řešení volání callback funkcí widgetů.</li>
+<li>dokáží multiplatformě obalit problém synchronizace window system eventů a eventů od file desriptorů (implementace není vždy ideální)</li>
+<li>Kromě toho řeší mnoho dalších problémů, zejména neexistující reference (dangling pointers).</li>
+</ul>
+
+<p><img src="./Grafická uživatelská prostředí a knihovny_files/abstract-connections.png" alt="signal-slot"></p>
+
+<h2><a name="index15h2"></a>Model-View-Controller(Delegate) architektura</h2>
+
+<ul>
+<li>Odděluje data od jejich prezentace.</li>
+<li>Data jsou v aplikaci jen jednou, řeší data redundancy hell</li>
+<li>Jedny data mohpu být zobrazeny více způsoby či perspektivami.</li>
+<li>Jeden pohled lze použít pro zobrazní různých dat, pro různé modely</li>
+<li>Modely generující data, data vubec nemusí existovat, počítají se na požádání.</li>
+<li>Delegát/Controller slouží pro zobrazení/editaci dat</li>
+</ul>
+
+<p><img src="./Grafická uživatelská prostředí a knihovny_files/modelview-overview.png" alt="model-view-overview"></p>
+
+<p><img src="./Grafická uživatelská prostředí a knihovny_files/modelview-example.svg" alt="model-view"></p>
+
+<h3><a name="index11h3"></a>Použití layout manageru</h3>
+
+<ul>
+<li>Zaručuje optimální umístění a velikost widgetů při změně velikosti okna.</li>
+<li>Je přirozenější říct tlčítka jsou nalevo pod sebou, než specifikovat jejich souřadnice</li>
+</ul>
+
+</div>
+
+
+
+<div id="comments">
+
+
+
+
+<div class="addcomment">
+<a href="https://rtime.felk.cvut.cz/osp/ikiwiki.cgi?page=prednasky%2Fgui&do=comment">Add a comment</a>
+</div>
+
+</div>
+
+
+
+</div>
+
+<div id="footer" class="pagefooter">
+
+<div id="pageinfo">
+
+
+
+
+<div id="backlinks">
+Links:
+
+<a href="http://rtime.felk.cvut.cz/osp/prednasky/">prednasky</a>
+
+
+</div>
+
+
+
+
+
+
+<div class="pagedate">
+Last edited <span class="date">Wed Mar 21 04:26:45 2012</span>
+<!-- Created <span class="date">Wed Mar 17 12:29:19 2010</span> -->
+</div>
+
+</div>
+
+
+<!-- from Open Source Programování -->
+Webmaster: sojkam1 at fel cvut cz
+</div>
+
+</div>
+
+
+
+</body></html>

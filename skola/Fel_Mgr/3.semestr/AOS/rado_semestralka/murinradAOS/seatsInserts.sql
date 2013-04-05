@@ -1,0 +1,66 @@
+/*
+-- Query: SELECT * FROM bookingdb.seats
+LIMIT 0, 1000
+
+-- Date: 2012-12-10 00:05
+*/
+INSERT INTO `seats` (`Flights_id`,`Seatnumber`) VALUES (1,1);
+INSERT INTO `seats` (`Flights_id`,`Seatnumber`) VALUES (1,2);
+INSERT INTO `seats` (`Flights_id`,`Seatnumber`) VALUES (1,3);
+INSERT INTO `seats` (`Flights_id`,`Seatnumber`) VALUES (1,4);
+INSERT INTO `seats` (`Flights_id`,`Seatnumber`) VALUES (1,5);
+INSERT INTO `seats` (`Flights_id`,`Seatnumber`) VALUES (1,6);
+INSERT INTO `seats` (`Flights_id`,`Seatnumber`) VALUES (1,7);
+INSERT INTO `seats` (`Flights_id`,`Seatnumber`) VALUES (1,8);
+INSERT INTO `seats` (`Flights_id`,`Seatnumber`) VALUES (1,9);
+INSERT INTO `seats` (`Flights_id`,`Seatnumber`) VALUES (1,10);
+INSERT INTO `seats` (`Flights_id`,`Seatnumber`) VALUES (1,11);
+INSERT INTO `seats` (`Flights_id`,`Seatnumber`) VALUES (1,12);
+INSERT INTO `seats` (`Flights_id`,`Seatnumber`) VALUES (1,13);
+INSERT INTO `seats` (`Flights_id`,`Seatnumber`) VALUES (1,14);
+INSERT INTO `seats` (`Flights_id`,`Seatnumber`) VALUES (1,15);
+INSERT INTO `seats` (`Flights_id`,`Seatnumber`) VALUES (1,16);
+INSERT INTO `seats` (`Flights_id`,`Seatnumber`) VALUES (1,17);
+INSERT INTO `seats` (`Flights_id`,`Seatnumber`) VALUES (1,18);
+INSERT INTO `seats` (`Flights_id`,`Seatnumber`) VALUES (1,19);
+INSERT INTO `seats` (`Flights_id`,`Seatnumber`) VALUES (1,20);
+INSERT INTO `seats` (`Flights_id`,`Seatnumber`) VALUES (1,21);
+INSERT INTO `seats` (`Flights_id`,`Seatnumber`) VALUES (1,22);
+INSERT INTO `seats` (`Flights_id`,`Seatnumber`) VALUES (1,23);
+INSERT INTO `seats` (`Flights_id`,`Seatnumber`) VALUES (1,24);
+INSERT INTO `seats` (`Flights_id`,`Seatnumber`) VALUES (1,25);
+INSERT INTO `seats` (`Flights_id`,`Seatnumber`) VALUES (1,26);
+INSERT INTO `seats` (`Flights_id`,`Seatnumber`) VALUES (1,27);
+INSERT INTO `seats` (`Flights_id`,`Seatnumber`) VALUES (1,28);
+INSERT INTO `seats` (`Flights_id`,`Seatnumber`) VALUES (1,29);
+INSERT INTO `seats` (`Flights_id`,`Seatnumber`) VALUES (1,30);
+INSERT INTO `seats` (`Flights_id`,`Seatnumber`) VALUES (1,31);
+INSERT INTO `seats` (`Flights_id`,`Seatnumber`) VALUES (1,32);
+INSERT INTO `seats` (`Flights_id`,`Seatnumber`) VALUES (3,1);
+INSERT INTO `seats` (`Flights_id`,`Seatnumber`) VALUES (3,2);
+INSERT INTO `seats` (`Flights_id`,`Seatnumber`) VALUES (3,3);
+INSERT INTO `seats` (`Flights_id`,`Seatnumber`) VALUES (3,4);
+INSERT INTO `seats` (`Flights_id`,`Seatnumber`) VALUES (3,5);
+INSERT INTO `seats` (`Flights_id`,`Seatnumber`) VALUES (3,6);
+INSERT INTO `seats` (`Flights_id`,`Seatnumber`) VALUES (3,7);
+INSERT INTO `seats` (`Flights_id`,`Seatnumber`) VALUES (3,8);
+INSERT INTO `seats` (`Flights_id`,`Seatnumber`) VALUES (3,9);
+INSERT INTO `seats` (`Flights_id`,`Seatnumber`) VALUES (4,1);
+INSERT INTO `seats` (`Flights_id`,`Seatnumber`) VALUES (4,2);
+INSERT INTO `seats` (`Flights_id`,`Seatnumber`) VALUES (4,3);
+INSERT INTO `seats` (`Flights_id`,`Seatnumber`) VALUES (4,4);
+INSERT INTO `seats` (`Flights_id`,`Seatnumber`) VALUES (4,5);
+INSERT INTO `seats` (`Flights_id`,`Seatnumber`) VALUES (4,6);
+INSERT INTO `seats` (`Flights_id`,`Seatnumber`) VALUES (4,7);
+INSERT INTO `seats` (`Flights_id`,`Seatnumber`) VALUES (4,8);
+INSERT INTO `seats` (`Flights_id`,`Seatnumber`) VALUES (4,9);
+INSERT INTO `seats` (`Flights_id`,`Seatnumber`) VALUES (4,10);
+INSERT INTO `seats` (`Flights_id`,`Seatnumber`) VALUES (5,1);
+INSERT INTO `seats` (`Flights_id`,`Seatnumber`) VALUES (5,2);
+INSERT INTO `seats` (`Flights_id`,`Seatnumber`) VALUES (5,3);
+INSERT INTO `seats` (`Flights_id`,`Seatnumber`) VALUES (5,4);
+INSERT INTO `seats` (`Flights_id`,`Seatnumber`) VALUES (5,5);
+INSERT INTO `seats` (`Flights_id`,`Seatnumber`) VALUES (5,6);
+INSERT INTO `seats` (`Flights_id`,`Seatnumber`) VALUES (5,7);
+INSERT INTO `seats` (`Flights_id`,`Seatnumber`) VALUES (5,8);
+INSERT INTO `seats` (`Flights_id`,`Seatnumber`) VALUES (5,9);

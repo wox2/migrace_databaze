@@ -1,0 +1,95 @@
+%%This is a very basic article template.
+%%There is just one section and two subsections.
+\documentclass{article}
+\usepackage[czech, english]{babel}
+\usepackage[T1]{fontenc} % pouzije EC fonty \usepackage[utf8]{inputenc}
+\usepackage{graphicx} 
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}  %package potrebny pro matiku
+\usepackage{amsfonts}  %package obsahujici symboly mnozin 
+\begin{document}
+
+\section{Vypracoval}
+Martin Lukeš \\
+aka woxie\\
+21.6. 2012
+
+\section{Zadání}
+Navrhněte deterministický Turingův stroj s jednou páskou, který realizuje
+funkci f(w)= $w^r$, kde $w^r$ je reverze slova w, $w \in \{0,1\}^*$. Nejprve
+vysvětlete princip, pak popište jeho přechodovou funkci buď tabulkou nebo
+stavovým diagramem.) Zdůvodněte, že navržený Turingův stroj funkci opravdu
+realizuje.
+
+\section{Princip}
+\begin{enumerate}
+  \item  Stroj dopíše na konec slova písmeno Z, které odlišuje původní slovo od
+výstupu.
+  \item  Následně bude kopírovat písmena z konce slova za Z, čímž vznikne
+otočeného slova kopie slova. 
+	\begin{enumerate}
+		\item Jako zarážku bude v původním slově použivat
+očárkovanou verzi písmene, v otočeném slově není nutná zarážka, písmena se budou
+kopírovat na místo prvního blank symbolu (B) za slovem.
+		\item v každé iteraci se provede zkopírování očárkovaného písmene do části za
+		Z, následně se při návratu posune index kopírovaného písmene doleva
+		\item kopírování skončí, jakmile se TM dostane při posunu očárkovaného písmene
+		na blank symbol		
+	\end{enumerate}
+\item  Poté, co je celé původní slovo zkopírované dojde k smazání počátku (původního
+ slova a symbolu Z).
+\end{enumerate}
+
+Daný stroj funkci realizuje - invariant - v každé iteraci jsou zkopírovaná
+všechna písmena mezi očárkovaným písmenem a Z v reverzním pořadí. Variant -
+konečnost - energie - algoritmus je konečný, jako variant zvolíme vzdálenost
+mezi prvním písmenem slova a očárkovaným písmenem. Tato vzdálenost se v každé
+iteraci (2) snižuje o jedna, až následně se dostane na hodnotu 0, kdy se
+kopíruje první písmeno slova a algoritmus končí.
+
+\section{Tabulka}
+
+\begin{tabular}{|c|c|c|c|c|c|c|c|}
+\hline
+ stav & popis & 0 & 1 & B & $0'$ & $1'$ & Z \\
+ \hline
+ \hline
+ $q_0$ & init/alespoň jeden znak & $q_1 0R$ & $q_1 1R$ & $q_f BR$ & & & \\
+ \hline
+ $q_1$ & přeskoč na konec slova & $q_1 0R$ & $q_1 1R$ & $q_2 ZL$ & & & \\
+ \hline
+ $q_2$ & if 0 - copy 0 if 1 copy 1 else break & $q_3 0'R$ & $q_5 1'R$ & $q_6 BR$
+ & & & \\
+ \hline
+ $q_3$ & zkopíruj 0 & $q_3 0R$ & $q_3 1R$ & $q_4 0L$ & & & $q_3 ZR$\\
+ \hline
+ $q_4$ & návrat do ifu & $q_4 0L$ & $q_4 1L$ & & $q_2 0L$ & $q_2 1L$ & $q_4 ZL$
+ \\
+ \hline
+ $q_5$ & zkopíruj 1 & $q_5 0R$ & $q_5 1R$ & $q_4 1L$ & & & $q_5 ZR$\\
+ \hline
+ $q_6$ & smaž začátek & $q_6 BR$ & $q_6 BR$ & & & & $q_f BR$ \\
+ \hline
+ $q_f$ & konec & & & & & & \\
+ \hline 
+\end{tabular}
+
+\section{Výpočet na instancích}
+\subsection{prázdné slovo - $\epsilon$}
+$q_0 B \vdash\ Bq_f$
+
+\subsection{slovo 0}
+$q_0 0 \vdash 0q_1 \vdash q_2 0Z \vdash 0'q_3 Z \vdash 0'q_4 Z0 \vdash q_4 0'Z0
+\vdash q_2 B0Z0 \vdash q_6 0Z0 \vdash q_6 ZO \vdash q_f 0$
+
+\subsection{slovo 001}
+$q_0 001 \vdash 0q_1 01 \vdash 00q_1 1 \vdash 001q_1 \vdash 00q_2 1Z \vdash
+001'q_5 Z \vdash 001'Zq_5 B \vdash 001'Zq_4 1 \vdash 001'q_4 Z1 \vdash 00q_4
+1'Z1 \vdash 0q_2 01Z1 \vdash 0'0q_3 1Z1 \vdash 0'01q_3 Z1 \vdash 0'01Zq_3 1
+\vdash 0'01Z1q_3 B \vdash 0'01Zq_4 10 \vdash 0'01q_4 Z10 \vdash 0'0q_4 1Z10
+\vdash 0q_4 0'1Z10 \vdash q_2 001Z10 \vdash 0'q_3 01Z10 \vdash 0'0q_3 1Z10 \vdash 0'01q_3 Z10
+\vdash 0'01Zq_3 10 \vdash 0'01Z1q_3 0 \vdash  0'01Z10 q_3 B \vdash 0'01Z1q_4 00
+\vdash 0'01Zq_4 100 \vdash 0'01q_4 Z100 \vdash 0'0q_4 1Z100 \vdash 0'q_4 01Z100
+\vdash q_4 0'01Z100 \vdash q_2 B001Z100 \vdash q_6 001Z100 \vdash q_6 01Z100
+\vdash q_6 1Z100 \vdash q_6 Z100 \vdash q_f 100 $
+\end{document}

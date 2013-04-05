@@ -1,0 +1,14 @@
+#TeXlipse project settings
+#Sat Feb 04 08:01:13 CET 2012
+markTmpDer=true
+builderNum=2
+outputDir=
+makeIndSty=
+bibrefDir=
+outputFormat=pdf
+tempDir=tmp
+mainTexFile=migdb_formal.tex
+outputFile=migdb_formal.pdf
+langSpell=cs
+markDer=true
+srcDir=

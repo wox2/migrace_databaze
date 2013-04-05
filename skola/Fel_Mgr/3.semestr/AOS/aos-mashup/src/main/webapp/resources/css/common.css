@@ -1,0 +1,30 @@
+#main{
+    border-style: solid;
+    width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+#title{
+    font-size: 30px;
+}
+
+.content{
+    width: 880px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#leftPart{
+    text-align: left;
+}
+#rightPart{
+    text-align: right;
+}
+
+#nameTable{
+    margin: auto;
+    border: 1px solid #bbbbbb;
+    border-spacing: 5px;
+}

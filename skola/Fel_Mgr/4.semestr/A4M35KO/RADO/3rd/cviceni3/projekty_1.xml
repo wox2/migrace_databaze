@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf8"?>
+<?xml-stylesheet type="text/xsl" href="u1.xsl"?>
+<p:project-group 
+    xmlns:p="http://moon.felk.cvut.cz/~vranyj1/xmlns/projects/0.1"
+    xmlns:db="http://docbook.org/ns/docbook">
+
+  <p:info>
+    <db:title>Vsechny projekty</db:title> 
+    <p:course>Y36XML</p:course>
+      <p:supervisor>
+	<db:firstname>Karel</db:firstname>
+	<db:surname>Richta</db:surname>
+      </p:supervisor>
+    
+  </p:info>
+
+  <p:project-group>
+    <p:info>
+      <db:title>Projekty (Jan Vraný)</db:title>
+      <p:platform>XML</p:platform>
+      <p:supervisor>
+	<db:firstname>Jan</db:firstname>
+	<db:surname>Vraný</db:surname>
+      </p:supervisor>
+
+    </p:info>
+    
+    <p:project xml:id="jv1">
+      <p:info>
+	<db:title>Projekt 1</db:title>
+      </p:info>
+      <p:description>
+	<db:para>Popis projektu 1</db:para>
+      </p:description>
+    </p:project>
+
+    <p:project xml:id="jv2">
+      <p:info>
+	<db:title>Bakalarka 1 - externi</db:title>
+	<p:platform>Sčot I</p:platform>
+	<p:course>X36BP</p:course>
+	<p:supervisor>
+	  <db:firstname>Semjon</db:firstname>
+	  <db:surname>Burjatov</db:surname>
+	  <db:email>semjon.burjatov@zapovedniky.ru</db:email>
+	</p:supervisor>
+      </p:info>
+      <p:description>
+	<db:para>
+	  Naprogramujte systém pro predikci pohybu
+	  sladkovodních tuleňů na základě nameřených 
+	  hustot hejn ómolů.
+	</db:para>
+      </p:description>	
+    </p:project>
+  </p:project-group>
+
+  <p:project-group>
+    <p:info>
+      <db:title>Projekty (Martin Nečaský)</db:title>
+      
+    </p:info>
+        
+
+    <p:project xml:id="mn1">
+      <p:info>
+	<db:title>Projekt 3</db:title>
+	<p:course>Y36XML</p:course>
+	<p:supervisor>
+	  <db:firstname>Michal</db:firstname>
+	  <db:surname>Voráček</db:surname>
+	</p:supervisor>
+      </p:info>
+      <p:description>
+	<db:para>Popis projektu 3</db:para>
+      </p:description>
+    </p:project>
+
+    <p:project xml:id="czs">
+      <p:info>
+	<db:title>Čarodějnice za Salemu - používané kletby</db:title>
+      </p:info>
+      <p:description>
+	<db:para>
+	  Na základě odborné literatury i osobního interview
+	  pořiďte seznam kleteb, které používali Salemské 
+	  čarodějnice.
+	</db:para>
+	<db:note>
+	  <db:para>Pozor, hodně lidí to již zkoušelo...</db:para>
+	</db:note>
+      </p:description>
+    </p:project>
+  </p:project-group>	
+</p:project-group>
+

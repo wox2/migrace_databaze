@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{F778C434-ABF6-4BEF-9BDB-67E2763FB625}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>pgrlib</RootNamespace>
+    <ProjectName>pgr-lib</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>NotSet</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>NotSet</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup />
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>GLEW_STATIC;WIN32;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>include;$(PGR_FRAMEWORK_ROOT)include</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+    <Lib>
+      <AdditionalDependencies>freeglut.lib;glew32s.lib;assimp.lib;DevIL.lib</AdditionalDependencies>
+    </Lib>
+    <Lib>
+      <AdditionalLibraryDirectories>$(PGR_FRAMEWORK_ROOT)lib</AdditionalLibraryDirectories>
+      <IgnoreAllDefaultLibraries>true</IgnoreAllDefaultLibraries>
+      <AdditionalOptions>/NODEFAULTLIB:library
+ %(AdditionalOptions)</AdditionalOptions>
+    </Lib>
+    <PostBuildEvent>
+      <Command>copy $(SolutionDir)$(Configuration)\$(TargetFileName) $(PGR_FRAMEWORK_ROOT)lib\pgrd.lib</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>GLEW_STATIC;WIN32;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>include;$(PGR_FRAMEWORK_ROOT)include</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+    <Lib>
+      <AdditionalDependencies>freeglut.lib;glew32s.lib;assimp.lib;DevIL.lib</AdditionalDependencies>
+    </Lib>
+    <Lib>
+      <AdditionalLibraryDirectories>$(PGR_FRAMEWORK_ROOT)lib</AdditionalLibraryDirectories>
+      <IgnoreAllDefaultLibraries>true</IgnoreAllDefaultLibraries>
+      <AdditionalOptions>/NODEFAULTLIB:library
+ %(AdditionalOptions)</AdditionalOptions>
+    </Lib>
+    <PostBuildEvent>
+      <Command>copy $(SolutionDir)$(Configuration)\$(TargetFileName) $(PGR_FRAMEWORK_ROOT)lib\pgr.lib</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <None Include="..\ReadMe.txt" />
+    <None Include="..\data\sceneGraph\MeshNode.frag" />
+    <None Include="..\data\sceneGraph\MeshNode.vert" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\include\Image.h" />
+    <ClInclude Include="..\include\pgr.h" />
+    <ClInclude Include="..\include\Shader.h" />
+    <ClInclude Include="..\include\MeshData.h" />
+    <ClInclude Include="..\include\trackball.h" />
+    <ClInclude Include="..\include\sceneGraph\AxesNode.h" />
+    <ClInclude Include="..\include\sceneGraph\MeshNode.h" />
+    <ClInclude Include="..\include\sceneGraph\Resources.h" />
+    <ClInclude Include="..\include\sceneGraph\SceneNode.h" />
+    <ClInclude Include="..\include\sceneGraph\TransformNode.h" />
+    <ClInclude Include="..\include\sceneGraph\ShaderProgram.h" />
+    <ClInclude Include="..\include\sceneGraph\MeshGeometry.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\src\Image.cpp" />
+    <ClCompile Include="..\src\pgr.cpp" />
+    <ClCompile Include="..\src\Shader.cpp" />
+    <ClCompile Include="..\src\trackball.cpp" />
+    <ClCompile Include="..\src\data\cube.cpp" />
+    <ClCompile Include="..\src\data\icosphere3.cpp" />
+    <ClCompile Include="..\src\data\teapot.cpp" />
+    <ClCompile Include="..\src\data\monkey.cpp" />
+    <ClCompile Include="..\src\sceneGraph\AxesNode.cpp" />
+    <ClCompile Include="..\src\sceneGraph\MeshNode.cpp" />
+    <ClCompile Include="..\src\sceneGraph\Resources.cpp" />
+    <ClCompile Include="..\src\sceneGraph\SceneNode.cpp" />
+    <ClCompile Include="..\src\sceneGraph\TransformNode.cpp" />
+    <ClCompile Include="..\src\sceneGraph\ShaderProgram.cpp" />
+    <ClCompile Include="..\src\sceneGraph\MeshGeometry.cpp" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

@@ -1,0 +1,9 @@
+;;; PUT PROPER PATHS TO THE FOLLOWING FILES 
+(load "f:\\E36JUI\\pack\\utilities.lisp")
+(load "f:\\E36JUI\\pack\\binary-tree.lisp")
+(load "f:\\E36JUI\\pack\\queue.lisp")
+(load "f:\\E36JUI\\pack\\cltl2.lisp")
+(load "f:\\E36JUI\\pack\\basic-env.lisp")
+(load "f:\\E36JUI\\pack\\grid-env.lisp")
+(load "f:\\E36JUI\\pack\\agent.lisp")
+(load "f:\\E36JUI\\pack\\grid.lisp")

@@ -1,0 +1,8 @@
+(defun foo (n)
+(dotimes (i 10)
+(dotimes (j 10)
+(when (> (* i j) n)
+(return_from foo (list i j))))))
+
+foo(2);
+

@@ -1,0 +1,17 @@
+vstup grafik,
+vystup - vektor vzdalenost, seznam predchudcu vrcholu
+
+- ukol Dijkstra
+- lin fce
+- penalizace - 	1) Alfa
+		2) Odchylky ve vzorcich(Beta)
+
+penalizace jsou ve vzorci 2, c_i_j odpovida vaze hrany v grafu
+grafik odpovida soust., vahova matice - vypocitat, spocitat, ktere z tech vzorku uvazovat a ktere neuvazovat
+
+c_i_i = ALFA + BETA + [suma]
+
+f'(k) - odchylka od f(k) uvedena ve vztahu 3
+
+
+2 maximalne tri slidy

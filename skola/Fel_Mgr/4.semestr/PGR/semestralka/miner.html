@@ -1,0 +1,369 @@
+<!-- this code was based on the http://learningwebgl.com/blog/?p=28 tutorials -->
+<html>
+
+<head>
+<title>Miner game</title>
+<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+
+<script type="text/javascript" src="glMatrix-0.9.5.min.js"></script>
+<script type="text/javascript" src="webgl-utils.js"></script>
+
+<script src="webgl-debug.js"></script>
+
+<!--<script id="shader-fs" type="x-shader/x-fragment">
+    precision mediump float;
+
+    varying vec4 vColor;
+    
+    void main(void) {
+        gl_FragColor = vColor;
+    }
+</script>
+
+<script id="shader-vs" type="x-shader/x-vertex">
+    attribute vec3 aVertexPosition;
+    attribute vec4 aVertexColor;
+
+    uniform mat4 uMVMatrix;
+    uniform mat4 uPMatrix;
+    
+    varying vec4 vColor;
+
+
+    void main(void) {
+        gl_Position = uPMatrix * uMVMatrix * vec4(aVertexPosition, 1.0);
+        vColor = aVertexColor;
+    }
+</script>-->
+
+<script id="shader-fs" type="x-shader/x-fragment">
+  precision mediump float;
+
+  void main(void) {
+    gl_FragColor = vec4(1.0, 1.0, 1.0, 1.0);
+  }
+</script>
+
+<script id="shader-vs" type="x-shader/x-vertex">
+  attribute vec3 aVertexPosition;
+
+  uniform mat4 uMVMatrix;
+  uniform mat4 uPMatrix;
+
+  void main(void) {
+    gl_Position = uPMatrix * uMVMatrix * vec4(aVertexPosition, 1.0);
+  }
+</script>
+
+
+<script type="text/javascript">
+    
+    //code of my namespace
+    function namespace(){
+        //alert("creating namespace");
+        //creating crate 
+        this.initCrateBuffer = function(){
+//            alert("initCrateBuffer call");
+              squareVertexPositionBuffer = gl.createBuffer();
+              gl.bindBuffer(gl.ARRAY_BUFFER, squareVertexPositionBuffer);
+              var squareVertices = [
+                    1.0,  1.0,  0.0,
+                   -1.0,  1.0,  0.0,
+                    1.0, -1.0,  0.0,
+                    -1.0, -1.0,  0.0
+                ];
+              
+              gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(squareVertices), gl.STATIC_DRAW);
+              squareVertexPositionBuffer.itemSize = 3;
+              squareVertexPositionBuffer.numItems = 4;
+              
+//            crateVertexPositionBuffer = gl.createBuffer();
+//            gl.bindBuffer(gl.ARRAY_BUFFER, crateVertexPositionBuffer);
+//            
+//            var bottomBase = 5.0;
+//            var height = 1.73;
+//            var diffLowerToUpper = 1;
+//            var zDiff = 9;
+//            var crateVertices = [
+//                //FRONT FACE
+//                0.0,  0.0,  0.0,
+//                bottomBase, 0.0,  0.0,
+//                bottomBase + diffLowerToUpper, height,  0.0,
+//                - diffLowerToUpper, height, 0.0,
+//                
+//                //RIGHT FACE 
+//                bottomBase, 0.0,  0.0,
+//                bottomBase + diffLowerToUpper, height,  0.0,
+//                bottomBase, 0.0,  zDiff,
+//                bottomBase + diffLowerToUpper, height,  zDiff,
+//                
+//                //LEFT FACE
+//                0.0, 0.0,  0.0,
+//                0.0 - diffLowerToUpper, height,  0.0,
+//                0.0, 0.0,  zDiff,
+//                -diffLowerToUpper, height,  zDiff,
+//                
+//                //BACK FACE
+//                0.0,  0.0,  zDiff,
+//                bottomBase, 0.0,  zDiff,
+//                bottomBase + diffLowerToUpper, height,  zDiff,
+//                - diffLowerToUpper, height, zDiff,
+//                
+//                //BOTTOM FACE
+//                0.0,  0.0,  0.0,
+//                bottomBase, 0.0,  0.0,
+//                bottomBase, 0.0,  zDiff,
+//                0.0, 0.0, zDiff,
+//                
+//            ];
+//            gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(crateVertices), gl.STATIC_DRAW);
+//            crateVertexPositionBuffer.itemSize = 3;
+//            crateVertexPositionBuffer.numItems = 20;
+//
+//            crateVertexColorBuffer = gl.createBuffer();
+//            gl.bindBuffer(gl.ARRAY_BUFFER, crateVertexColorBuffer);
+//            colors = [
+//                [1.0, 0.0, 0.0, 1.0], // Front face
+//                [1.0, 0.0, 1.0, 1.0], // Right face
+//                [1.0, 1.0, 0.0, 1.0], // Back face
+//                [0.0, 0.0, 1.0, 1.0]  // Left face
+//                [1.0, 0.5, 0.5, 1.0], // Bottom face
+//            ];
+//        //assign colors to right vertices    
+//        var unpackedColors = [];
+//        for (var i in colors) {
+//            var color = colors[i];
+//            for (var j=0; j < 4; j++) {
+//                unpackedColors = unpackedColors.concat(color);
+//            }
+//        }
+//        
+//        gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(unpackedColors), gl.STATIC_DRAW);
+//        crateVertexColorBuffer.itemSize = 4;
+//        crateVertexColorBuffer.numItems = 20;
+//
+//        crateVertexIndexBuffer = gl.createBuffer();
+//        gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, crateVertexIndexBuffer);
+//        //TODO put into method - not done in alfa version
+//        var crateVertexIndices = [
+//            0, 1, 2,      0, 2, 3,    // Front face
+//            4, 5, 6,      4, 6, 7,    // Right face
+//            8, 9, 10,     8, 10, 11,  // Back face
+//            12, 13, 14,   12, 14, 15, // Left face
+//            16, 17, 18,   16, 18, 19, //  Bottom face
+//        ];
+//        gl.bufferData(gl.ELEMENT_ARRAY_BUFFER, new Uint16Array(crateVertexIndices), gl.STATIC_DRAW);
+//        crateVertexIndices.itemSize = 1;
+//        crateVertexIndices.numItems = 30;
+//
+                };
+        
+    }
+    
+    function logGLCall(functionName, args) {   
+        console.log("gl." + functionName + "(" + 
+        WebGLDebugUtils.glFunctionArgsToString(functionName, args) + ")");   
+    }
+    
+    var lukesma4 = new namespace();
+        
+    var gl;
+    function initGL(canvas) {
+        try {
+            gl = canvas.getContext("experimental-webgl");
+            //gl = WebGLDebugUtils.makeDebugContext(gl, undefined, logGLCall);
+            gl.viewportWidth = canvas.width;
+            gl.viewportHeight = canvas.height;
+        } catch (e) {
+        }
+        if (!gl) {
+            alert("Could not initialise WebGL, sorry :-(");
+        }
+    }
+
+
+    function getShader(gl, id) {
+        var shaderScript = document.getElementById(id);
+        if (!shaderScript) {
+            return null;
+        }
+
+        var str = "";
+        var k = shaderScript.firstChild;
+        while (k) {
+            if (k.nodeType == 3) {
+                str += k.textContent;
+            }
+            k = k.nextSibling;
+        }
+
+        var shader;
+        if (shaderScript.type == "x-shader/x-fragment") {
+            shader = gl.createShader(gl.FRAGMENT_SHADER);
+        } else if (shaderScript.type == "x-shader/x-vertex") {
+            shader = gl.createShader(gl.VERTEX_SHADER);
+        } else {
+            return null;
+        }
+
+        gl.shaderSource(shader, str);
+        gl.compileShader(shader);
+
+        if (!gl.getShaderParameter(shader, gl.COMPILE_STATUS)) {
+            alert(gl.getShaderInfoLog(shader));
+            return null;
+        }
+
+        return shader;
+    }
+
+
+    var shaderProgram;
+
+    function initShaders() {
+        var fragmentShader = getShader(gl, "shader-fs");
+        var vertexShader = getShader(gl, "shader-vs");
+
+        shaderProgram = gl.createProgram();
+        gl.attachShader(shaderProgram, vertexShader);
+        gl.attachShader(shaderProgram, fragmentShader);
+        gl.linkProgram(shaderProgram);
+
+        if (!gl.getProgramParameter(shaderProgram, gl.LINK_STATUS)) {
+            alert("Could not initialise shaders");
+        }
+
+        gl.useProgram(shaderProgram);
+
+        shaderProgram.vertexPositionAttribute = gl.getAttribLocation(shaderProgram, "aVertexPosition");
+        gl.enableVertexAttribArray(shaderProgram.vertexPositionAttribute);
+        
+//        shaderProgram.vertexColorAttribute = gl.getAttribLocation(shaderProgram, "aVertexColor");
+//        gl.enableVertexAttribArray(shaderProgram.vertexColorAttribute);
+
+        shaderProgram.pMatrixUniform = gl.getUniformLocation(shaderProgram, "uPMatrix");
+        shaderProgram.mvMatrixUniform = gl.getUniformLocation(shaderProgram, "uMVMatrix");
+    }
+
+
+    var mvMatrix = mat4.create();
+    var pMatrix = mat4.create();
+    var mvMatrixStack = [];
+
+    function setMatrixUniforms() {
+        gl.uniformMatrix4fv(shaderProgram.pMatrixUniform, false, pMatrix);
+        gl.uniformMatrix4fv(shaderProgram.mvMatrixUniform, false, mvMatrix);
+    }
+
+
+    
+    var squareVertexPositionBuffer;
+    //var crateVertexPositionBuffer;
+    //var crateVertexColorBuffer;
+    //var crateVertexIndexBuffer;
+    
+    function initBuffers() {
+        lukesma4.initCrateBuffer();
+        alert("finished method in namespace");
+    }
+
+    // rotating variable
+    var rCrate
+    function drawScene() {
+        gl.viewport(0, 0, gl.viewportWidth, gl.viewportHeight);
+        gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT);
+
+        mat4.perspective(45, gl.viewportWidth / gl.viewportHeight, 0.1, 100.0, pMatrix);
+
+        mat4.identity(mvMatrix);
+        
+        mat4.translate(mvMatrix, [3.0, 0.0, -7.0]);
+
+
+        gl.bindBuffer(gl.ARRAY_BUFFER, squareVertexPositionBuffer);
+        gl.vertexAttribPointer(shaderProgram.vertexPositionAttribute, squareVertexPositionBuffer.itemSize, gl.FLOAT, false, 0, 0);
+        gl.drawArrays(gl.TRIANGLE_STRIP, 0, squareVertexPositionBuffer.numItems);
+        alert("finished drawing");
+ //       mvPushMatrix();
+ //       mat4.rotate(mvMatrix, degToRad(rCrate), [0, 1, 0]);
+
+//        gl.bindBuffer(gl.ARRAY_BUFFER, crateVertexPositionBuffer);
+//        gl.vertexAttribPointer(shaderProgram.vertexPositionAttribute, crateVertexPositionBuffer.itemSize, gl.FLOAT, false, 0, 0);
+//
+//        gl.bindBuffer(gl.ARRAY_BUFFER, crateVertexColorBuffer);
+//        gl.vertexAttribPointer(shaderProgram.vertexColorAttribute, crateVertexColorBuffer.itemSize, gl.FLOAT, false, 0, 0);
+//
+//        gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, crateVertexIndexBuffer);
+//        setMatrixUniforms();
+//        gl.drawElements(gl.TRIANGLES, crateVertexIndexBuffer.numItems, gl.UNSIGNED_SHORT, 0);
+//        mvPopMatrix();
+    }
+
+    var lastTime = 0;
+
+    function animate() {
+        var timeNow = new Date().getTime();
+        if (lastTime != 0) {
+            var elapsed = timeNow - lastTime;
+
+            rCrate -= (75 * elapsed) / 1000.0;
+        }
+        lastTime = timeNow;
+    }
+    
+    function mvPushMatrix() {
+        var copy = mat4.create();
+        mat4.set(mvMatrix, copy);
+        mvMatrixStack.push(copy);
+    }
+
+    function mvPopMatrix() {
+        if (mvMatrixStack.length == 0) {
+            throw "Invalid popMatrix!";
+        }
+        mvMatrix = mvMatrixStack.pop();
+    }
+    
+    function degToRad(degrees) {
+        return degrees * Math.PI / 180;
+    }
+
+
+    function webGLStart() {
+        var canvas = document.getElementById("lukesma4-canvas");
+        initGL(canvas);
+        initShaders();
+        //alert("init buffs");
+        initBuffers();
+
+        gl.clearColor(0.0, 0.0, 0.0, 1.0);
+        gl.enable(gl.DEPTH_TEST);
+        
+        drawScene();
+ //       alert("drawing");
+//        tick();
+//        alert("drawing finished");
+    }
+    
+    function tick() {
+        requestAnimFrame(tick);
+        drawScene();
+        animate();
+    }
+
+
+</script>
+
+
+</head>
+
+
+<!-- specify refs + controls -->
+<body onload="webGLStart();">
+    
+    <canvas id="lukesma4-canvas" style="border: none;" width="700" height="700"></canvas>
+
+    
+</body>
+
+</html>

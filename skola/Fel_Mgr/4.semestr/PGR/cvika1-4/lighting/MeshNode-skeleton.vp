@@ -1,0 +1,295 @@
+// Petr Felkel, 2012 - PGR - inspired by 3D Labs GLSL ShaderGen
+#version 130
+//#version 330
+
+#define GOURAUD
+
+// I/O structures_____________________________________________________________
+struct Smaterial {
+   vec3  ambient;
+   vec3  diffuse;
+   vec3  specular;
+   float shininess;
+};
+
+struct Slight {
+   vec3  ambient;
+   vec3  diffuse;
+   vec3  specular;
+   vec3  position;  // should be vec4, while position[3] = 0 for vector and 1 for position
+   vec3  spotDirection;
+   float spotCosCutoff;
+   float spotExponent;
+};
+
+// used for light 0 to 4 - it is impossile to create an array of stuctures
+Slight light;
+
+///* Set global ambient light - independent of all lights. - another uniform */
+const vec3 globalAmbientLight = vec3(0.1, 0.0, 0.0);
+ 
+
+// Light intensity accumulators - global variables ___________________________
+vec3 ambient  = vec3(0.0);
+vec3 diffuse  = vec3(0.0);
+vec3 specular = vec3(0.0);
+
+
+// Interface __________________________________________________________________
+uniform mat4      PVMmatrix;    // Projection * View * Model  --> model to clip coordinates
+uniform mat4      Vmatrix;      // View                       --> world to eye coordinates
+uniform mat4      Mmatrix;      // Model                      --> model to world coordinates
+uniform mat4      NormalMatrix; // inverse transposed VMmatrix
+uniform Smaterial material;
+uniform float     time;         // used for simulation of moving lights (such as sun)
+uniform vec3      jeepLightLPos; // for simulation of left reflector
+uniform vec3      jeepLightRPos; // for simulation of right reflector
+uniform vec3      jeepDirection;
+
+in      vec3      position;     // vertex position in world space
+in      vec3      normal;       // vertex normal 
+
+smooth out vec4   theColor;     // diffuse color
+smooth out vec3   theNormal;    // camera space normal 
+smooth out vec3   thePosition;  // camera space fragment position
+
+// _____________ Directional Light_____________________________________________
+// contribution of one directional light source
+// light direction is in light.position member, as usual in OpenGL
+// (the w coord would be = 0.0) 
+void directionalLight( in vec3 normal, in Slight light, in vec3 eyeDirection )  // all three in the same coordinate space !!!
+{
+	                  
+	float NdotL;      // normal * light direction
+	float NdotH;      // normal * light-viewer half vector
+	vec3  halfVector; // half vector between light direction and viewer direction
+    vec3  L;          // direction to the light, light direction is in light.position (the w coord would be = 0.0) 
+	vec3  N;          // normalized normal  
+	vec3  V;		  // normalized eye direction 
+	float pf;         // specular power factor
+
+	L = normalize(light.position);      // stores the light Direction in this case
+	V = normalize(eyeDirection);        //[0,0,0] - VMposition
+	N = normalize(normal);  
+
+	// Task 1a - start -------------------------
+	// add necessary computations for Phong lighting model
+	// useful fuctions dot(), normalize(), max(), clamp()
+	//halfVector = ...
+    //
+
+	// halfVector je vektor mezi smerem svetla a smerem kamery
+	// spocitame halfVector jako normalizovany soucet vektoru smeru ke svetlu a smeru kamery
+	halfVector = normalize(L + V);
+	
+	NdotL = dot(L,N); // skalarni soucin normaly a smeru ke svetlu
+	NdotH = dot(V,N); // skalarni soucin normaly a smeru kamery
+
+	pf = dot(N,halfVector); // skalarni soucin halfVectoru a normaly
+
+	//
+	// Task 1a - end ---------------------------
+
+ 	if( NdotH == 0 ) {  
+		pf = 0.0; 
+	} 
+	else {
+		pf = pow(NdotH, material.shininess);
+	}
+	
+	// accumulate this light intensity from this light
+    ambient += light.ambient;          // light.ambient, etc...
+	diffuse += light.diffuse * NdotL;
+
+#ifdef GOURAUD
+	specular+= light.specular * pf;
+#endif
+
+    
+}
+
+// _____________ Point Light_____________________________________________
+// contribution of one directional light source
+// light position is in light.position member, as usual in OpenGL
+// (the w coord would be = 0.0) 
+void pointLight( in vec3 VMnormal, in Slight light, in vec3 eyeDirection, in vec3 VMposition )
+{
+	float dist;       // distance from surface to light
+	float NdotL;      // normal * light direction
+	float NdotH;      // normal * light-viewer half vector
+	vec3  halfVector; // half vector between light direction and viewer direction
+    vec3  L;          // direction from the this surface point to the light
+	vec3  N;          // normalized normal  
+	vec3  V;		  // normalized eye direction 
+	float pf;         // specular power factor
+    float spotDot;    // cosine of angle between spotlight
+	float spotAttenuation; // exponent for light distribution inside the cone
+
+
+	// Task 2a - start -------------------------
+	// add necessary computations for Phong lighting model
+
+    L = normalize(light.position - VMposition); // vektor smeru mezi povrchem a svetlem
+	V = normalize(eyeDirection);   // vektor pohledu kamery
+	N = normalize(normal);  // normalizovana normala
+
+	halfVector = normalize(L + V); // halfVector
+
+	// skalarni soucin vektoru
+	NdotL = dot(L,N);
+	NdotH = dot(V,N);
+	pf = dot(N,halfVector);
+
+
+
+	if(NdotH == 0){
+	  pf = 0.0;
+	}
+
+
+	
+    // Compute attenuation, if you need it
+	// dist = length(L);  
+    //attenuation = 1.0 / (light.constantAttenuation +
+    //                     light.linearAttenuation * dist +
+    //                     light.quadraticAttenuation * dist * dist);
+
+
+    // See if point on surface is inside cone of illumination
+    spotDot = max( 0.0, dot(-L, normalize(light.spotDirection)));
+
+    if (spotDot < light.spotCosCutoff)
+    {
+        spotAttenuation = 0.0; // light adds no contribution
+    }
+    else
+    {
+        spotAttenuation = pow(spotDot, light.spotExponent);
+    }
+
+	// accumulate this light intensity from this light
+	ambient += light.ambient * spotAttenuation;          // * attenuation;
+
+	diffuse += light.diffuse * NdotL * spotAttenuation;  // * attenuation;
+#ifdef GOURAUD
+	specular+= light.specular * pf * spotAttenuation;    // * attenuation;
+#endif
+
+
+}
+
+
+// Simple light defined directly in the vertex shader code - should be uniform
+#define a  0.05
+#define d  0.6
+#define s  0.9
+
+// _____________________________________________________________________________
+void main()
+{
+    vec3 color;
+    // vetex position after the projection predefined variable
+	gl_Position = PVMmatrix * vec4(position, 1);  // out:v vertex in clip coordinates
+
+	// eye-coordinate position of vertex
+	vec4 VMposition = Vmatrix * Mmatrix * vec4(position, 1);              //vertex in eye coordinates
+	vec3 VMnormal = normalize( NormalMatrix * vec4(normal, 0.0) ).xyz;  //normal in eye coordinates by NormalMatrix
+
+	float alfa = time * 3.1415927 / 5.0;    // once circle in 10 seconds
+
+	// Task 1b - start -----------------------
+	// Light 0 - directional light
+
+
+	// vypocet pozice kamery a smeru svetla
+	vec3 VMeyeDirection   = -VMposition.xyz;  
+	vec3 VMlightDirection =  (Vmatrix *  vec4(  sin(alfa),  0.0, cos(alfa), 0.0)).xyz; 
+
+	// intenzita svetla zavisla na uhlu, meni se slozky R a B
+	vec3 sunCoefs = vec3((cos(alfa)+1)/2,  0.4, (sin(alfa)+1)/2); 
+
+	// inicializace svetla
+    light = Slight(  a*sunCoefs,		    // ambient      
+                     s*sunCoefs,	        // diffuse 
+                     vec3(0.0, 0.0, 0.0),	// specular
+                     VMlightDirection,      // direction TO the light in world space - in this task
+                     vec3(1.0, 1.0, 1.0 ),  // spotDirection  - not used for directional light
+					 0.0,					// spotCosCutoff  - not used for directional light
+					 1.0					// spotExponent   - not used for directional light
+				   );
+	directionalLight( VMnormal, light, VMeyeDirection ); 
+    // Task 1b - end -------------------------
+
+
+	// Task 2b - start -----------------------
+	// Light 1 - reflector in camera position
+    //light = ...
+
+
+	// baterka, specular slozka zde bude nulova (matne svetlo)
+	// pozice svetla bude 0,0,0, protoze pocatek je zde odvozen od pozice kamery
+	// smer svetla bude (0,0,-1), aby byla baterka videt uprostred obrazovky
+
+	// baterka je umyslne trochu niz, nez je kamera, aby byl dobre videt kuzel svetla
+
+	 light = Slight(a*vec3(1.0,1.0,1.0),		    // ambient      
+                     s*vec3(1.0,1.0,1.0),	        // diffuse 
+                     vec3(1.0, 0.0, 0.0),	// specular
+                     vec3(0.0,-8,0.0),      // direction TO the light in world space - in this task
+                     vec3(0.0,0.0,-1.0),      // spotDirection  - not used for directional light
+					 0.99,					// spotCosCutoff  - not used for directional light
+					 1.0					// spotExponent   - not used for directional light
+				   );
+
+	// aplikace svetla light s normalou VMnormal, pozice kamery je VMeyeDirection a pozice VMposition.xyz			   
+	pointLight(VMnormal, light, VMeyeDirection, VMposition.xyz);
+	// Task 2b - end -----------------------
+
+
+	// Task 3 - start -----------------------
+	//Light 2 - left car reflector 
+
+	// uloha3 --> velmi jednoducha, staci pouze pouzit ulohu 2 a dat sem pozici a smer svetel na auticku
+
+    light = Slight(  vec3(a, a, a),			// ambient      
+                     vec3(1, 0, 0),			// diffuse 
+                     vec3(1, 0, 0),			// specular
+                     //...,          // light position in eye space - reflector in cameraPos
+					 jeepLightLPos,
+					 //... replace the line above with your code, // spotDirection
+					 jeepDirection,
+					 //... replace the line above with your code,
+					 0.99,					// spotCosCutoff
+					 1.0					// spotExponent
+				   );
+   
+	pointLight( VMnormal, light, jeepDirection, VMposition.xyz ); 
+
+	//Light 3 - right car reflector 
+    light = Slight(  vec3(a, a, a),			// ambient      
+                     vec3(0, 1, 0),			// diffuse 
+                     vec3(1, 0, 0),			// specular
+                     //...,          // light position in eye space - reflector in cameraPos
+					 jeepLightRPos,
+					 //... replace the line above with your code, // spotDirection
+					 jeepDirection,
+					 //... replace the line above with your code,
+					 0.99,					// spotCosCutoff
+					 1.0					// spotExponent
+				   );
+	
+	pointLight( VMnormal, light, jeepDirection, VMposition.xyz ); 
+	// Task 3 - end -----------------------
+	
+
+	// final color as light from all lights interacts with the material
+	color = (globalAmbientLight + ambient) * material.ambient +
+	         diffuse  * material.diffuse +
+			 specular * material.specular;
+    color = clamp( color, 0.0, 1.0 );   // min(color, 1.0) should suffice 
+
+	// vystupy do fragment shaderu
+	theColor    = vec4( color, 1.0);
+	theNormal   = VMnormal;
+	thePosition = VMposition.xyz;
+}

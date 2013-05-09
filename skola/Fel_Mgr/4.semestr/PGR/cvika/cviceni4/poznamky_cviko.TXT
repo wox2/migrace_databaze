@@ -1,0 +1,11 @@
+draw arrays - potrebuje vsechny vrcholy, souradnice vrcholu se pro jednotlive 
+draw elemenets - ma navic elements array buffer - neduplikuji se souradnice vrchnolu, rychlejsi kvuli 
+               cachovani graficke karty, 
+
+bindVAO, drawArrays
+
+v OpenGL - VertexAttribute - nazev, 
+
+semestralka - namespacy
+
+stridy - find co to je

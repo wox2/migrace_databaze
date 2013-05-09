@@ -1,0 +1,22 @@
+casove slozitosti
+BFS O(b^d)  - pocet hran
+DFS b^d, nekonecno u slepych vetvi
+IDS b^d
+
+pametove slozitosti
+BFS O(b^d) - pocet uzlu
+DFS b * d
+IDS b * d
+
+
+Informed Search
+vyuzivame heureistiku 
+Hill Climbing
+... (prezentace)
+
+
+
+
+Priklad 
+
+

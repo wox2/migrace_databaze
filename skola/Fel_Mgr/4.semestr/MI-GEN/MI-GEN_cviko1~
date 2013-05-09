@@ -1,0 +1,20 @@
+Radomir Polach radomir.polach@fit.cvut.cz || polacrad@fit.cvut.cz
+
+cviceni nepovinna    - opakovani PJP :) funny
+
+semestralka schopny ji delat od 5. tydne - Mila (Jazyk prof Millera) -> Tiny Machine
+odevzdabu senestraky 3.6.? C++
+1 pisemka
+
+template zdrojaku, pripraveny lexikalni a syntakticky analyzator
+
+11. tyden pisemka
+
+Progtest pusti na nejakem kodu a bude kontrolovat na Tiny Machine, spocita pocty instrukci, asi se nebude pocitat moc cas. 5 s na beh programu v Progtestu, kontroluje pocty instrukci
+
+
+gcc, g++ -> mezikod (trojadresovy kod) -> strojovy kod
+
+AST Abstract syntax tree
+
+Martin Bily - it.fit.cvut.cz

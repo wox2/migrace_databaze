@@ -1,0 +1,5 @@
+s3 = fiverSolver(3)
+s4 = fiverSolver(4)
+s5 = fiverSolver(5)
+s6 = fiverSolver(6)
+s7 = fiverSolver(7)

@@ -1,0 +1,97 @@
+// Petr Felkel, 2012 - PGR - inspired by 3D Labs GLSL ShaderGen
+#version 130
+
+// I/O structures
+struct Smaterial {
+   vec3  ambient;
+   vec3  diffuse;
+   vec3  specular;
+   float shininess;
+};
+
+struct Slight {
+   vec3  ambient;
+   vec3  diffuse;
+   vec3  specular;
+   vec3  position;  // should be vec4, while position[3] = 0 for vector and 1 for position
+};
+
+// Simple light defined directly in the vertex shader code - should be uniform
+#define a  0.1
+#define d  0.8
+#define s  0.3
+// Light 0
+const Slight light = Slight( vec3(a, a, a),			// ambient      
+							 vec3(d, d, d),			// diffuse 
+							 vec3(0.0, s, s),		// specular
+							 vec3(0.0, 0.0, 1.0 )	// direction TO the light or position in eye space
+					       );
+/* Set global ambient light - independent of all lights. - another uniform */
+const vec3 globalAmbientLight = vec3(0.1, 0.0, 0.0);
+ 
+
+// Light intensity accumulators
+vec3 ambient;
+vec3 diffuse;
+vec3 specular;
+
+uniform mat4  VMmatrix;  // View * Model               --> to eye coordinates
+uniform mat4 PVMmatrix;  // Projection * View * Model  --> to clip coordinates
+uniform Smaterial material;
+
+in vec3 position;
+in vec3 normal;
+
+smooth out vec4 theColor;
+
+
+// i states for lightNumber - reserved for the future
+void directionalLight( in int i, in vec3 VMnormal, in vec3 eye )
+{
+	float NdotL;      // normal * light direction
+	float NdotH;      // normal * light-viewer half vector
+	float pf;         // specular power factor
+
+	NdotL = max( 0.0, dot( VMnormal, normalize(light.position) ));
+
+
+	if( NdotL > 0 ) {  // light is above the surface
+		//NdotH = max( 0.0, dot( reflection, VMposition.xyz) );
+  		//vec3 reflection = reflect(normalize(light.position), VMnormal);
+		vec3 halfvector = normalize(normalize(light.position) + eye);
+		NdotH = max( 0.0, dot( VMnormal, halfvector ) );
+
+		pf = pow(NdotH, material.shininess);
+	} 
+	else {
+		pf = 0.0; 
+	}
+	
+	// accumulate this light intensity
+	ambient += light.ambient;          // light[i].ambient, etc...
+	diffuse += light.diffuse * NdotL;
+	specular+= light.specular * pf;
+}
+
+void main()
+{
+	vec3 color;
+
+    // vetex position
+	gl_Position = PVMmatrix * vec4(position, 1);  // out: vertex in clip coordinates
+
+	// eye-coordinate position of vertex
+	vec4 VMposition = VMmatrix * vec4(position, 1);                   //vertex in eye coordinates
+	vec3 VMnormal   = normalize( VMmatrix * vec4(normal, 0.0) ).xyz;  //normal in eye coordinates - change to normalMatrix
+	vec3 eye = vec3(0.0, 0.0, 1.0); // normalized - direction to the viewer
+
+	//Light 0
+	directionalLight( 0, VMnormal, eye ); 
+
+	// final color as light from all lights interacts with the material
+	color = (globalAmbientLight + ambient) * material.ambient +
+	         diffuse  * material.diffuse +
+			 specular * material.specular;
+    color = clamp( color, 0.0, 1.0 );   // min(color, 1.0) should suffice 
+	theColor = vec4( color, 1.0);
+}

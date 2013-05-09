@@ -1,0 +1,16 @@
+3 absence
+4 testy
+
+
+ukol - pridani hran v 
+obarveni grafu
+
+funkce pro vrcholove barveni grafu graphcoloring
+
+
+
+
+
+
+6. tyden - reserse - kategorizace - zarazeni
+                   - nalezt podobny problem/clanek, popsat autorovi vysledky, vypichnout vyznam clanku... Souvisly text - obsahuje odkazy, ...  na konci odkazy

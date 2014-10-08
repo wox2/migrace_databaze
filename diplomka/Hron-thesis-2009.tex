@@ -1,0 +1,583 @@
+%% History:
+% Pavel Tvrdik (26.12.2004)
+%  + initial version for PhD Report
+%
+% Daniel Sykora (27.01.2005)
+%
+% Michal Valenta (3.12.2008)
+% rada zmen ve formatovani (diky M. Duškovi, J. Holubovi a J. Žďárkovi)
+% sjednoceni zdrojoveho kodu pro anglickou, ceskou, bakalarskou a diplomovou praci
+
+% One-page layout: (proof-)reading on display
+%%%% \documentclass[11pt,oneside,a4paper]{book}
+% Two-page layout: final printing
+\documentclass[11pt,twoside,a4paper]{book}   
+%=-=-=-=-=-=-=-=-=-=-=-=--=%
+% The user of this template may find useful to have an alternative to these 
+% officially suggested packages:
+\usepackage[czech, english]{babel}
+\usepackage[T1]{fontenc} % pouzije EC fonty 
+% pripadne pisete-li cesky, pak lze zkusit take:
+% \usepackage[OT1]{fontenc} 
+\usepackage[utf8]{inputenc}
+%=-=-=-=-=-=-=-=-=-=-=-=--=%
+% In case of problems with PDF fonts, one may try to uncomment this line:
+%\usepackage{lmodern}
+%=-=-=-=-=-=-=-=-=-=-=-=--=%
+%=-=-=-=-=-=-=-=-=-=-=-=--=%
+% Depending on your particular TeX distribution and version of conversion tools 
+% (dvips/dvipdf/ps2pdf), some (advanced | desperate) users may prefer to use 
+% different settings.
+% Please uncomment the following style and use your CSLaTeX (cslatex/pdfcslatex) 
+% to process your work. Note however, this file is in UTF-8 and a conversion to 
+% your native encoding may be required. Some settings below depend on babel 
+% macros and should also be modified. See \selectlanguage \iflanguage.
+%\usepackage{czech}  %%%%%\usepackage[T1]{czech} %%%%[IL2] [T1] [OT1]
+%=-=-=-=-=-=-=-=-=-=-=-=--=%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Styles required in your work follow %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{graphicx}
+%\usepackage{indentfirst} %1. odstavec jako v cestine.
+
+\usepackage{k336_thesis_macros} % specialni makra pro formatovani DP a BP
+ % muzete si vytvorit i sva vlastni v souboru k336_thesis_macros.sty
+ % najdete  radu jednoduchych definic, ktere zde ani nejsou pouzity
+ % napriklad: 
+ % \newcommand{\bfig}{\begin{figure}\begin{center}}
+ % \newcommand{\efig}{\end{center}\end{figure}}
+ % umoznuje pouzit prikaz \bfig namisto \begin{figure}\begin{center} atd.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Zvolte jednu z moznosti 
+% Choose one of the following options
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand\TypeOfWork{Diplomová práce} \typeout{Diplomova prace}
+% \newcommand\TypeOfWork{Master's Thesis}   \typeout{Master's Thesis} 
+% \newcommand\TypeOfWork{Bakalářská práce}  \typeout{Bakalarska prace}
+% \newcommand\TypeOfWork{Bachelor's Project}  \typeout{Bachelor's Project}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Zvolte jednu z moznosti 
+% Choose one of the following options
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% nabidky jsou z: http://www.fel.cvut.cz/cz/education/bk/prehled.html
+
+%\newcommand\StudProgram{Elektrotechnika a informatika, dobíhající, Bakalářský}
+%\newcommand\StudProgram{Elektrotechnika a informatika, dobíhající, Magisterský}
+% \newcommand\StudProgram{Elektrotechnika a informatika, strukturovaný, Bakalářský}
+ \newcommand\StudProgram{Elektrotechnika a informatika, strukturovaný, Navazující magisterský}
+% \newcommand\StudProgram{Softwarové technologie a management, Bakalářský}
+% English study:
+% \newcommand\StudProgram{Electrical Engineering and Information Technology}  % bachelor programe
+% \newcommand\StudProgram{Electrical Engineering and Information Technology}  %master program
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Zvolte jednu z moznosti 
+% Choose one of the following options
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% nabidky jsou z: http://www.fel.cvut.cz/cz/education/bk/prehled.html
+
+%\newcommand\StudBranch{Výpočetní technika}   % pro program EaI bak. (dobihajici i strukt.)
+\newcommand\StudBranch{Výpočetní technika}   % pro prgoram EaI mag. (dobihajici i strukt.)
+%\newcommand\StudBranch{Softwarové inženýrství}            %pro STM
+%\newcommand\StudBranch{Web a multimedia}                  % pro STM
+%\newcommand\StudBranch{Computer Engineering}              % bachelor programe
+%\newcommand\StudBranch{Computer Science and Engineering}  % master programe
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Vyplnte nazev prace, autora a vedouciho
+% Set up Work Title, Author and Supervisor
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand\WorkTitle{Simulace inhibice zpětného vychytávání pomocí neuronové sítě typu KVAZI-$\omega$}
+\newcommand\FirstandFamilyName{Bc. Cornelius Hron}
+\newcommand\Supervisor{prof. Ing. Damián Zlo, CSc.}
+
+
+% Pouzijete-li pdflatex, tak je prijemne, kdyz bude mit vase prace
+% funkcni odkazy i v pdf formatu
+\usepackage[
+pdftitle={\WorkTitle},
+pdfauthor={\FirstandFamilyName},
+bookmarks=true,
+colorlinks=true,
+breaklinks=true,
+urlcolor=red,
+citecolor=blue,
+linkcolor=blue,
+unicode=true,
+]
+{hyperref}
+
+
+
+
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Zvolte jednu z moznosti 
+% Choose one of the following options
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\selectlanguage{czech}
+%\selectlanguage{english} 
+
+% prikaz \typeout vypise vyse uvedena nastaveni v prikazovem okne
+% pro pohodlne ladeni prace
+
+
+\iflanguage{czech}{
+	 \typeout{************************************************}
+	 \typeout{Zvoleny jazyk: cestina}
+	 \typeout{Typ prace: \TypeOfWork}
+	 \typeout{Studijni program: \StudProgram}
+	 \typeout{Obor: \StudBranch}
+	 \typeout{Jmeno: \FirstandFamilyName}
+	 \typeout{Nazev prace: \WorkTitle}
+	 \typeout{Vedouci prace: \Supervisor}
+	 \typeout{***************************************************}
+	 \newcommand\Department{Katedra počítačů}
+	 \newcommand\Faculty{Fakulta elektrotechnická}
+	 \newcommand\University{České vysoké učení technické v Praze}
+	 \newcommand\labelSupervisor{Vedoucí práce}
+	 \newcommand\labelStudProgram{Studijní program}
+	 \newcommand\labelStudBranch{Obor}
+}{
+	 \typeout{************************************************}
+	 \typeout{Language: english}
+	 \typeout{Type of Work: \TypeOfWork}
+	 \typeout{Study Program: \StudProgram}
+	 \typeout{Study Branch: \StudBranch}
+	 \typeout{Author: \FirstandFamilyName}
+	 \typeout{Title: \WorkTitle}
+	 \typeout{Supervisor: \Supervisor}
+	 \typeout{***************************************************}
+	 \newcommand\Department{Department of Computer Science and Engineering}
+	 \newcommand\Faculty{Faculty of Electrical Engineering}
+	 \newcommand\University{Czech Technical University in Prague}
+	 \newcommand\labelSupervisor{Supervisor}
+	 \newcommand\labelStudProgram{Study Programme} 
+	 \newcommand\labelStudBranch{Field of Study}
+}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%    Poznamky ke kompletaci prace
+% Nasledujici pasaz uzavrenou v {} ve sve praci samozrejme 
+% zakomentujte nebo odstrante. 
+% Ve vysledne svazane praci bude nahrazena skutecnym 
+% oficialnim zadanim vasi prace.
+{
+\pagenumbering{roman} \cleardoublepage \thispagestyle{empty}
+\chapter*{Na tomto místě bude oficiální zadání vaší práce}
+\begin{itemize}
+\item Toto zadání je podepsané děkanem a vedoucím katedry,
+\item musíte si ho vyzvednout na studiijním oddělení Katedry počítačů na Karlově náměstí,
+\item v jedné odevzdané práci bude originál tohoto zadání (originál zůstává po obhajobě na katedře),
+\item ve druhé bude na stejném místě neověřená kopie tohoto dokumentu (tato se vám vrátí po obhajobě).
+\end{itemize}
+\newpage
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%    Titulni stranka / Title page 
+
+\coverpagestarts
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%    Podekovani / Acknowledgements 
+
+\acknowledgements
+\noindent
+Chtěl bych poděkovat vedoucímu své diplomové práce Ing. Ondřeji Mackovi za pomoc
+s vypracovávánáním této práce. Dále bych chtěl poděkovat svým kolegům z týmu
+Migdb, obzvláště Martinu Mazanci, kteří svými připomínkami napomáhali k zkvalitnění této práce a
+zahlazení některých nepřesností. V neposlední řadě bych chtěl poděkovat
+firmě CollectionsPro s.r.o, jež přišla s původní myšlenkou, která vedla k
+vytvoření Migdb týmu.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%   Prohlaseni / Declaration 
+
+\declaration{V~Praze dne 22.\,5.\,2014}
+%\declaration{In Kořenovice nad Bečvárkou on May 15, 2008}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%    Abstract 
+ 
+\abstractpage
+\noindent 
+This work is concerned with specifying the contract and implement the transformation changes 
+of the application model into changes of the database model. It also
+deals with the automation of the derivation of the changes applied to one model
+leading to another without loss or with minimal loss of stored data.
+
+% Prace v cestine musi krome abstraktu v anglictine obsahovat i
+% abstrakt v cestine.
+\vglue60mm
+
+\noindent{\Huge \textbf{Abstrakt}}
+\vskip 2.75\baselineskip
+
+\noindent
+Tato práce se zabývá upřesněním kontraktu a realizací transformací změn
+aplikačního modelu na změny modelu databázového. Dále se zabývá automatizací odvození změn vedoucích z
+jednoho modelu k druhému bez ztráty či s minimální ztrátou uložených dat.
+%Abstrakt práce by měl velmi stručně vystihovat její podstatu. Tedy čím se práce
+% zabývá a co je jejím výsledkem/přínosem.
+
+\noindent
+%Očekávají se cca 1 -- 2 odstavce, maximálně půl stránky.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  Obsah / Table of Contents 
+
+\tableofcontents
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  Seznam obrazku / List of Figures 
+
+\listoffigures
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  Seznam tabulek / List of Tables
+
+\listoftables
+
+
+%**************************************************************
+
+\mainbodystarts
+% Odsazeni prvniho radku odstavce resi class book (neaplikuje se na prvni 
+% odstavce kapitol, sekci, podsekci atd.) Viz usepackage{indentfirst}.
+% Chcete-li selektivne zamezit odsazeni 1. radku nektereho odstavce,
+% pouzijte prikaz \noindent.
+
+%**************************************************************
+
+% Pro snadnejsi praci s vetsimi texty je rozumne tyto rozdelit
+% do samostatnych souboru nejlepe dle kapitol a tyto potom vkladat
+% pomoci prikazu \include{jmeno_souboru.tex} nebo \include{jmeno_souboru}.
+% Napr.:
+% \input{1_uvod.tex}
+% \input{2_teorie.tex}
+% atd...
+
+%*****************************************************************************
+\chapter{Úvod}
+\section{Motivace}
+V průběhu poslední dekády je vyvíjeno více nového softwaru než kdy předtím a
+současně je i stávající software stále více a častěji modifikován, ať už
+je to zapříčiněno  existencí rozsáhlého legacy systému, špatného návrhu či
+upravovánim funkcionality softwaru. Dá se předpokládat, že díky masivnímu
+rozšíření informačních technologií, obzvláště mobilních tento trend nejenže bude
+pokračovat, ale bude i dále na vzestupu.
+
+Díky nutnosti zpracování a ukládání velkého množství dat se již od padesátých
+let dvacátého století prosazovaly myšlenky vedoucí k vytvoření speciálních
+systémů k těmto účelům určeným - tento software se v české odborné literatuře
+nazývá systém řízení báze dat (SŘBD). 
+
+Kvůli nutnosti modifikace, dokumentace a komunikace mezi vývojáři vznikají různé
+typy modelů. Objektový model aplikace popisuje strukturu aplikace a je doplněn
+modelem databázovým modelem popisujícím stav databáze. Aby byla aplikace
+funkční, je nutné zajistit konzistenci mezi databázovým a aplikačním modelem.
+Tato konzistence je zaručena automatickou transformací aplikačního modelu na
+model databázový, což vývojářům softwaru šetří čas strávený vývojem softwaru.
+Tento problém byl již vyřešen a jeho řešení bývá v literatuře nazýváno objektově
+relační mapování(ORM). Dnešní implementace ORM jsou schopny nejen transformovat
+aplikační model na model databázový, ale také vyjádřit změnu v struktuře
+aplikace pomocí DDL SQL skriptů, které pozmění model databázový tak aby
+odpovídal modelu aplikačnímu. Problém nastává, jakmile zahrneme do zachování
+nejen strukturu dat, ale i samotná data. Změnit strukturu dat a zároveň
+transformovat data tak, aby měla stejnou vyjadřovací schopnost jako původní
+data(považujme změny aplikačního modelu jako smazání třídy, atributu apod za
+zachovávající informaci).
+
+
+\section{Projekt Migdb}
+Tato dipomová práce byla napsána v rámci projektu Migdb. Zabývá se zkoumáním
+změn aplikačního modelu, jejich popisem a rozpoznáváním změn vedoucích od
+jednoho aplikačního modelu vedoucích k druhému. Dále pak dokončuje a upřesňuje
+kontrakt takzvaných operací nad aplikačním modelem a popisuje jejich
+transformaci na změny modelu databázového. Ne nepodstatnou částí je poté
+vygenerování SQL příkazů spustitelných nad relační databází PostgreSQL.
+
+V rámci Migdb byly v posledních letech vytvořeny již vytvořeny 4 bakalářské
+práce členů Migdb. Jednalo se o práce mé osoby jež pojednávala o problematice
+mapování aplikačního modelu na model databázový Jiřího Ježka, dále práce Petra
+Taranta popisující databázového modelu a poslední práce pojednává o popisu
+testování projektu.
+
+Projekt Migdb byl započat v spolupráci se společností Collections Pro a byl
+prezentován na konferenci Code Generation v Cambridge.
+
+\section{Aplikační model}
+Aplikační model zachycuje vztahy mezi jednotlivými objekty tvořícími
+aplikaci. Ačkoliv byl tento model vytvořen již v raných fázích projektu Migdb a
+byl často upravován, tak se charakter popisující objekty v aplikačním modelu
+příliš nezměnil. Některé entity v modelu se zjednodušily,
+již neexistují atributy tableName a columnName, které byly obsaženy v první
+verzi modelu. V důsledku přidání funkcionality od
+
+
+%*****************************************************************************
+\chapter{Popis problému, specifikace cíle}
+Tato diplomová práce si klade za cíl dokončit vývoj na projektu Migdb. Tj
+doimplementovat a otestovat ORM transformace vzniklé v předešlých fázích
+projektu, upravit a otestovat generátor SQL, případně upravit aplikační a
+databázový metamodel.
+
+Dalším cílem, který jsem si před vypracováním diplomové práce stanovil bylo
+vytvoření a zdokumentování algoritmu generující z dvou vstupních modelů
+sekvenci operací, jejichž aplikací se model zdrojový transformuje na model
+koncový.
+
+
+\chapter{Ukázka zdrojového kódu práce}
+
+%\begin{itemize}
+%\item Popis řešeného problému, vymezení cílů DP/BP a požadavků na
+% implementovaný systém.
+%\item Popis struktury DP/BP ve vztahu k vytyčeným cílům.
+%\item Rešeršní zpracování existujících implementací, pokud jsou známy.
+%\end{itemize}
+
+%*****************************************************************************
+%\chapter{UML diagramy}
+%\textbf{\large Tato příloha není povinná a zřejmě se neobjeví v každé práci.
+% Máte-li ale větší množství podobných diagramů popisujících systém, není nutné všechny umísťovat do hlavního textu, zvláště pokud by to snižovalo jeho čitelnost.}
+
+%*****************************************************************************
+%\chapter{Instalační a uživatelská příručka}
+%\textbf{\large Tato příloha velmi žádoucí zejména u softwarových
+% implementačních prací.}
+
+%*****************************************************************************
+\chapter{Obsah přiloženého CD}
+%\textbf{\large Tato příloha je povinná pro každou práci. Každá práce musí totiž
+% obsahovat přiložené CD. Viz dále.}
+
+%Může vypadat například takto. Váš seznam samozřejmě bude odpovídat typu vaší
+%práce. (viz \cite{infodp}):
+
+\begin{figure}[h]
+\begin{center}
+\includegraphics[width=14cm]{figures/seznamcd}
+\caption{Seznam přiloženého CD}
+\label{fig:seznamcd}
+\end{center}
+\end{figure}
+
+\chapter{Závěr}
+Ačkoliv se mi nepodařilo dokončit tuto diplomovou práci v termínu, dokončil jsem
+implementační(viz ukázka kódu) a testovací části projektu, které jsem nestihl
+zdokumentovat. Proto bych byl rád, kdybych mohl věnovat následující půlrok
+přepracování textu diplomové práce.
+
+
+\section{Odkazy v textu}
+\subsection{Odkazy na literaturu}
+Jsou realizovány příkazem \verb|\cite{odkaz}|. 
+
+Seznam literatury je dobré zapsat do samostatného souboru a ten pak zpracovat programem bibtex (viz soubor \verb|reference.bib|). Zdrojový soubor pro \verb|bibtex| vypadá například takto:
+\begin{verbatim}
+@Article{Chen01,
+  author  = "Yong-Sheng Chen and Yi-Ping Hung and Chiou-Shann Fuh",
+  title   = "Fast Block Matching Algorithm Based on 
+             the Winner-Update Strategy",
+  journal = "IEEE Transactions On Image Processing",
+  pages   = "1212--1222",
+  volume  =  10,
+  number  =   8,
+  year    = 2001,
+}
+
+@Misc{latexdocweb,
+  author  = "",
+  title   = "{\LaTeX} --- online manuál",
+  note    = "\verb|http://www.cstug.cz/latex/lm/frames.html|",
+  year    = "",
+}
+...
+\end{verbatim}
+
+%11.12.2008, 3.5.2009
+\textbf{Pozor:} Sazba názvů odkazů je dána Bib\TeX{} stylem\\ (\verb|\bibliographystyle{abbrv}|). 
+%Budete-li používat české prostředí (\verb|\usepackage[czech]{babel}|), 
+Bib\TeX{} tedy obvykle vysází velké pouze počáteční písmeno z názvu zdroje, 
+ostatní písmena zůstanou malá bez ohledu na to, jak je napíšete. 
+Přesněji řečeno, styl může zvolit pro každý typ publikace jiné konverze. 
+Pro časopisecké články třeba výše uvedené, jiné pro monografie (u nich často bývá 
+naopak velikost písmen zachována).
+
+Pokud chcete Bib\TeX u napovědět, která písmena nechat bez konverzí 
+(viz \texttt{title = "\{$\backslash$LaTeX\} -{}-{}- online manuál"} 
+v~předchozím příkladu), je nutné příslušné písmeno (zde celé makro) uzavřít 
+do složených závorek. Pro přehlednost je proto vhodné celé parametry 
+uzavírat do uvozovek (\texttt{author = "\dots"}), nikoliv do složených závorek.
+
+Odkazy na literaturu ve zdrojovém textu se pak zapisují:
+\begin{verbatim}
+Podívejte se na \cite{Chen01}, 
+další detaily najdete na \cite{latexdocweb}
+\end{verbatim}
+
+Vazbu mezi soubory \verb|*.tex| a \verb|*.bib| zajistíte příkazem 
+\verb|\bibliography{}| v souboru \verb|*.tex|.  V našem případě tedy zdrojový 
+dokument \verb|thesis.tex| obsahuje příkaz\\
+\verb|\bibliography{reference}|.
+
+Zpracování zdrojového textu s odkazy se provede postupným voláním programů\\
+\verb|pdflatex <soubor>| (případně \verb|latex <soubor>|), \verb|bibtex <soubor>| 
+a opět\\ \verb|pdflatex <soubor>|.\footnote{První volání \texttt{pdflatex} 
+vytvoří soubor s~koncovkou \texttt{*.aux}, který je vstupem pro program 
+\texttt{bibtex}, pak je potřeba znovu zavolat program \texttt{pdflatex} 
+(\texttt{latex}), který tentokrát zpracuje soubory s příponami \texttt{.aux} a 
+\texttt{.tex}. 
+Informaci o případných nevyřešených odkazech (cross-reference) vidíte přímo při 
+zpracovávání zdrojového souboru příkazem \texttt{pdflatex}. Program \texttt{pdflatex} 
+(\texttt{latex}) lze volat vícekrát, pokud stále vidíte nevyřešené závislosti.}
+
+
+Níže uvedený příklad je převzat z dříve existujících pokynů studentům, kteří 
+dělají svou diplomovou nebo bakalářskou práci v~Grafické skupině.\footnote{Několikrát 
+jsem byl upozorněn, že web s těmito pokyny byl zrušen, proto jej zde přímo necituji. 
+Nicméně příklad sám o sobě dokumentuje obecně přijímaný konsensus ohledně citací 
+v~bakalářských a diplomových pracích na KP.} Zde se praví:
+\begin{small}
+\begin{verbatim}
+...
+j) Seznam literatury a dalších použitých pramenů, odkazy na WWW stránky, ...
+ Pozor na to, že na veškeré uvedené prameny se musíte v textu práce 
+ odkazovat -- [1]. 
+Pramen, na který neodkazujete, vypadá, že jste ho vlastně nepotřebovali 
+a je uveden jen do počtu. Příklad citace knihy [1], článku v časopise [2], 
+stati ve sborníku [3] a html odkazu [4]: 
+[1] J. Žára, B. Beneš;, and P. Felkel. 
+     Moderní počítačová grafika. Computer Press s.r.o, Brno, 1 edition, 1998. 
+     (in Czech). 
+[2] P. Slavík. Grammars and Rewriting Systems as Models for Graphical User 
+     Interfaces. Cognitive Systems, 4(4--3):381--399, 1997. 
+[3] M. Haindl, Š. Kment, and P. Slavík. Virtual Information Systems. 
+     In WSCG'2000 -- Short communication papers, pages 22--27, Pilsen, 2000. 
+     University of West Bohemia. 
+[4] Knihovna grafické skupiny katedry počítačů: 
+     http://www.cgg.cvut.cz/Bib/library/ 
+\end{verbatim}
+\end{small}
+\ldots{} abychom výše citované odkazy skutečně našli v (automaticky generovaném) seznamu literatury tohoto textu, musíme je nyní alespoň jednou citovat: Kniha \cite{kniha}, článek v~časopisu \cite{clanek}, příspěvek na konferenci \cite{sbornik}, www odkaz \cite{www}.
+
+\subsection{Odkazy na obrázky, tabulky a kapitoly}
+\begin{itemize}
+\item Označení místa v textu, na které chcete později čtenáře práce odkázat, se provede příkazem \verb|\label{navesti}|. Lze použít v prostředích \verb|figure| a  \verb|table|, ale též za názvem kapitoly nebo podkapitoly.
+\item Na návěští se odkážeme příkazem \verb|\ref{navesti}| nebo \verb|\pageref{navesti}|.
+\end{itemize}
+
+\section{Rovnice, centrovaná, číslovaná matematika}
+Jednoduchý matematický výraz zapsaný přímo do textu se vysází pomocí prostředí \verb|math|, resp. zkrácený zápis pomocí uzavření textu rovnice mezi znaky \verb|$|.
+
+Kód \verb|$ S = \pi * r^2 $| bude vysázen takto: $ S = \pi * r^2 $.
+
+Pokud chcete nečíslované rovnice, ale umístěné centrovaně na samostatné řádky, pak lze použít prostředí \verb|displaymath|, resp. zkrácený zápis pomocí uzavření textu rovnice mezi znaky \verb|$$|. Zdrojový kód: 
+\begin{verb}
+|$$ S = \pi * r^2 $$|
+\end{verb}
+bude pak vysázen takto:
+$$ S = \pi * r^2 $$
+
+Chcete-li mít rovnice číslované, je třeba použít prostředí \verb|eqation|. Kód:
+\begin{verbatim}
+\begin{equation}
+  S = \pi * r^2
+\end{equation}
+
+\begin{equation}
+  V = \pi * r^3
+\end{equation}
+\end{verbatim}
+je potom vysázen takto:
+\begin{equation}
+  S = \pi * r^2
+\end{equation}
+
+\begin{equation}
+  V = \pi * r^3
+\end{equation}
+
+\section{Kódy programu}
+Chceme-li vysázet například část zdrojového kódu programu (bez formátování), hodí se prostředí \verb|verbatim|: 
+\begin{verbatim}
+         (* nickname2 *)
+Lego> Refine in1
+             (do_reg (nickname1 h));
+Refine by  in1 (do_reg (nickname1 h))
+   ?4 : pcdata
+   ?5 : pcdata
+          (* surname2 *)
+Lego> Refine surname1 h;
+Refine by  surname1 h
+   ?5 : pcdata
+          (* email2 *)
+Lego> Refine undo_reg (email1 h);
+Refine by  undo_reg (email1 h)
+*** QED ***
+\end{verbatim}
+
+\section{Další poznámky}
+\subsection{České uvozovky}
+V souboru \verb|k336_thesis_macros.tex| je příkaz \verb|\uv{}| pro sázení českých uvozovek. \uv{Text uzavřený do českých uvozovek.}
+
+% JZ: 3.5.2009 \chapter z book zajistí automaticky
+%\subsection{Začátky kapitol na liché stránky}
+%Ve výsledném textu je dobré, když každá kapitola začíná na liché stránce. Tedy použijte:
+%\begin{verbatim}
+%  \cleardoublepage\include{1_uvod}
+%  \cleardoublepage\include{2_teorie}
+%   atd.\ldots{}
+%\end{verbatim}
+
+%*****************************************************************************
+\chapter{Seznam použitých zkratek}
+
+\begin{description}
+\item[2D] Two-Dimensional
+\item[ABN] Abstract Boolean Networks
+\item[ASIC] Application-Specific Integrated Circuit
+\end{description}
+\vdots
+
+%*****************************************************************************
+\chapter{UML diagramy}
+\textbf{\large Tato příloha není povinná a zřejmě se neobjeví v každé práci. Máte-li ale větší množství podobných diagramů popisujících systém, není nutné všechny umísťovat do hlavního textu, zvláště pokud by to snižovalo jeho čitelnost.}
+
+%*****************************************************************************
+\chapter{Instalační a uživatelská příručka}
+\textbf{\large Tato příloha velmi žádoucí zejména u softwarových implementačních prací.}
+
+%*****************************************************************************
+\chapter{Obsah přiloženého CD}
+\textbf{\large Tato příloha je povinná pro každou práci. Každá práce musí totiž obsahovat přiložené CD. Viz dále.}
+
+Může vypadat například takto. Váš seznam samozřejmě bude odpovídat typu vaší práce. (viz \cite{infodp}):
+
+\begin{figure}[h]
+\begin{center}
+\includegraphics[width=14cm]{figures/seznamcd}
+\caption{Seznam přiloženého CD --- příklad}
+\label{fig:seznamcd}
+\end{center}
+\end{figure}
+
+Na GNU/Linuxu si strukturu přiloženého CD můžete snadno vyrobit příkazem:\\ 
+\verb|$ tree . >tree.txt|\\
+Ve vzniklém souboru pak stačí pouze doplnit komentáře.
+
+Z \textbf{README.TXT} (případne index.html apod.)  musí být rovněž zřejmé, jak programy instalovat, spouštět a jaké požadavky mají tyto programy na hardware.
+
+Adresář \textbf{text}  musí obsahovat soubor s vlastním textem práce v PDF nebo PS formátu, který bude později použit pro prezentaci diplomové práce na WWW.
+
+\end{document}

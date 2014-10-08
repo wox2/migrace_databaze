@@ -1,0 +1,327 @@
+%% History:
+% Pavel Tvrdik (26.12.2004)
+%  + initial version for PhD Report
+%
+% Daniel Sykora (27.01.2005)
+%
+% Michal Valenta (3.12.2008)
+% rada zmen ve formatovani (diky M. Du¹kovi, J. Holubovi a J. ®ïárkovi)
+% sjednoceni zdrojoveho kodu pro anglickou, ceskou, bakalarskou a diplomovou praci
+
+% CSLaTeX version: 22.3.2010
+
+% One-page layout: (proof-)reading on display
+%%%% \documentclass[11pt,oneside,a4paper]{book}
+% Two-page layout: final printing
+\documentclass[11pt,twoside,a4paper]{book}   
+%=-=-=-=-=-=-=-=-=-=-=-=--=%
+\usepackage[czech]{babel}
+% UTF-8
+%\usepackage[utf8]{inputenc}
+%
+% ISO 8859-2
+\usepackage[latin2]{inputenc}
+% T1 or CSFonts
+\usepackage[T1]{fontenc} % pouzije EC fonty
+%\usepackage[IL2]{fontenc}
+%=-=-=-=-=-=-=-=-=-=-=-=--=%
+% In case of problems with PDF fonts, one may try to uncomment this line:
+%\usepackage{lmodern}
+%=-=-=-=-=-=-=-=-=-=-=-=--=%
+% Depending on your particular TeX distribution and version of conversion tools 
+% (dvips/dvipdf/ps2pdf), some (advanced | desperate) users may prefer to use 
+% different settings.
+% In such case please uncomment the following style and use your CSLaTeX (cslatex/pdfcslatex) 
+% to process your work. Note however, this file is in UTF-8 and a conversion to 
+% your native encoding may be required. Some settings below depend on babel 
+% macros and should also be modified. See \selectlanguage \iflanguage.
+%\usepackage{czech}  %%%%%\usepackage[T1]{czech} %%%%[IL2] [T1] [OT1]
+%=-=-=-=-=-=-=-=-=-=-=-=--=%
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Internationalisation/Localisation of your work
+% Zvolte jednu z moznosti 
+% Choose one of the following options
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\input{k336_czech.tex}
+%\input{k336_english.tex}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Styles required in your work follow %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\usepackage{vaucanson-g}
+%%% 10.2.2011 JZ hot fix addition to Hron...style.
+\usepackage{ws-alg}
+\usepackage{theorem}
+%IJFCS fixes
+%\makeatletter
+%\def\@xthm#1#2{\@begintheorem{#2}{\csname the#1\endcsname.}{}\ignorespaces}
+%\def\@ythm#1#2[#3]{\@opargbegintheorem{#2}{\csname
+%       the#1\endcsname}{\bfseries\boldmath #3}\ignorespaces}%
+%\makeatother
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newtheorem{theorem}{Theorem}[chapter]
+\renewcommand\theorembodyfont{\upshape}
+\newtheorem{lemma}[theorem]{Lemma}%[section]
+\newcommand\lemmabodyfont{\upshape}
+\newtheorem{proposition}[theorem]{Proposition}%[section]
+\newcommand\propositionbodyfont{\upshape}
+\newtheorem{corollary}[theorem]{Corollary}%[section]
+\newcommand\corollarybodyfont{\upshape}
+\newtheorem{assertion}[theorem]{Assertion}%[section]
+\newcommand\assertionbodyfont{\upshape}
+%
+\newtheorem{algorithm}[theorem]{Algorithm}%[section]
+\newcommand\algorithmbodyfont{\upshape}
+\newtheorem{answer}[theorem]{Answer}%[section]
+\newcommand\answerbodyfont{\upshape}
+\newtheorem{assumption}[theorem]{Assumption}%[section]
+\newcommand\assumptionbodyfont{\upshape}
+\newtheorem{comment}[theorem]{Comment}%[section]
+\newcommand\commentbodyfont{\upshape}
+\newtheorem{definition}[theorem]{Definition}%[section]
+\newcommand\definitionbodyfont{\upshape}
+\newtheorem{example}[theorem]{Example}%[section]
+\newcommand\examplebodyfont{\upshape}
+\newtheorem{remark}[theorem]{Remark}%[section]
+\newcommand\remarkbodyfont{\upshape}
+\newtheorem{solution}[theorem]{Solution}%[section]
+\newcommand\solutionbodyfont{\upshape}
+%%% End of hot fix addition to Hron...style.
+%Macro definitions for theorem testing
+\newcommand{\TA}{T}\newcommand{\PA}{P}\newcommand{\abeceda}{A}
+\newcommand{\rankabeceda}{A_{\#}}\newcommand{\arity}[1]{|#1|}
+%End of macro definitions for theorem testing
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Styles required for DP / BP macros  %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{graphicx}
+\usepackage{k336_thesis_macros} % specialni makra pro formatovani DP a BP
+
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%    Poznamky ke kompletaci prace
+% Nasledujici pasaz uzavrenou v {} ve sve praci samozrejme 
+% zakomentujte nebo odstrante. 
+% Ve vysledne svazane praci bude nahrazena skutecnym 
+% oficialnim zadanim vasi prace.
+%{
+%\pagenumbering{roman} \cleardoublepage \thispagestyle{empty}
+%\chapter*{Na tomto místì bude oficiální zadání va¹í práce}
+%\begin{itemize}
+%\item Toto zadání je podepsané dìkanem a vedoucím katedry,
+%\item musíte si ho vyzvednout na studiijním oddìlení Katedry poèítaèù na
+% Karlovì námìstí,
+%\item v jedné odevzdané práci bude originál tohoto zadání (originál zùstává po
+% obhajobì na katedøe),
+%\item ve druhé bude na stejném místì neovìøená kopie tohoto dokumentu (tato se
+% vám vrátí po obhajobì).
+%\end{itemize}
+%\newpage
+%}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%    Titulni stranka / Title page 
+
+\coverpagestarts
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%    Podekovani / Acknowledgements 
+
+\acknowledgements
+\noindent
+Chtìl bych podìkovat vedoucímu své diplomové práce Ing. Ondøeji Mackovi za pomoc
+s vypracovávánáním této práce. Dále bych chtìl podìkovat svým kolegùm z týmu
+Migdb, obzvlá¹tì Martinu Mazanci, kteøí svými pøipomínkami napomáhali k zkvalitnìní této práce a
+zahlazení nìkterých nepøesností. V neposlední øadì bych chtìl podìkovat
+firmì CollectionsPro s.r.o, je¾ pøi¹la s pùvodní my¹lenkou, která vedla k
+vytvoøení Migdb týmu.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%   Prohlaseni / Declaration 
+
+\declaration{V~Praze dne 22.\,5.\,2014}
+%\declaration{In Koøenovice nad Beèvárkou on May 15, 2008}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%    Abstract 
+ 
+\abstractpage
+\noindent 
+This work is concerned with specifying the contract and implement the transformation changes 
+of the application model into changes of the database model. It also
+deals with the automation of the derivation of the changes applied to one model
+leading to another without loss or with minimal loss of stored data.
+
+% Prace v cestine musi krome abstraktu v anglictine obsahovat i
+% abstrakt v cestine.
+\vglue60mm
+
+\noindent{\Huge \textbf{Abstrakt}}
+\vskip 2.75\baselineskip
+
+\noindent
+Tato práce se zabývá upøesnìním kontraktu a realizací transformací zmìn
+aplikaèního modelu na zmìny modelu databázového. Dále se zabývá automatizací odvození zmìn vedoucích z
+jednoho modelu k druhému bez ztráty èi s minimální ztrátou ulo¾ených dat.
+%Abstrakt práce by mìl velmi struènì vystihovat její podstatu. Tedy èím se práce
+% zabývá a co je jejím výsledkem/pøínosem.
+
+\noindent
+%Oèekávají se cca 1 -- 2 odstavce, maximálnì pùl stránky.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  Obsah / Table of Contents 
+
+\tableofcontents
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  Seznam obrazku / List of Figures 
+
+\listoffigures
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  Seznam tabulek / List of Tables
+
+\listoftables
+
+
+%**************************************************************
+
+\mainbodystarts
+% Odsazeni prvniho radku odstavce resi class book (neaplikuje se na prvni 
+% odstavce kapitol, sekci, podsekci atd.) Viz usepackage{indentfirst}.
+% Chcete-li selektivne zamezit odsazeni 1. radku nektereho odstavce,
+% pouzijte prikaz \noindent.
+
+%**************************************************************
+
+% Pro snadnejsi praci s vetsimi texty je rozumne tyto rozdelit
+% do samostatnych souboru nejlepe dle kapitol a tyto potom vkladat
+% pomoci prikazu \include{jmeno_souboru.tex} nebo \include{jmeno_souboru}.
+% Napr.:
+% \input{1_uvod.tex}
+% \input{2_teorie.tex}
+% atd...
+
+%*****************************************************************************
+\chapter{Úvod}
+\section{Motivace}
+V prùbìhu poslední dekády je vyvíjeno více nového softwaru ne¾ kdy pøedtím a
+souèasnì je i stávající software stále více a èastìji modifikován, a» u¾
+je to zapøíèinìno  existencí rozsáhlého legacy systému, ¹patného návrhu èi
+upravovánim funkcionality softwaru. Dá se pøedpokládat, ¾e díky masivnímu
+roz¹íøení informaèních technologií, obzvlá¹tì mobilních tento trend nejen¾e bude
+pokraèovat, ale bude i dále na vzestupu.
+
+Díky nutnosti zpracování a ukládání velkého mno¾ství dat se ji¾ od padesátých
+let dvacátého století prosazovaly my¹lenky vedoucí k vytvoøení speciálních
+systémù k tìmto úèelùm urèeným - tento software se v èeské odborné literatuøe
+nazývá systém øízení báze dat (SØBD). 
+
+Kvùli nutnosti modifikace, dokumentace a komunikace mezi vývojáøi vznikají rùzné
+typy modelù. Objektový model aplikace popisuje strukturu aplikace a je doplnìn
+modelem databázovým modelem popisujícím stav databáze. Aby byla aplikace
+funkèní, je nutné zajistit konzistenci mezi databázovým a aplikaèním modelem.
+Tato konzistence je zaruèena automatickou transformací aplikaèního modelu na
+model databázový, co¾ vývojáøùm softwaru ¹etøí èas strávený vývojem softwaru.
+Tento problém byl ji¾ vyøe¹en a jeho øe¹ení bývá v literatuøe nazýváno objektovì
+relaèní mapování(ORM). Dne¹ní implementace ORM jsou schopny nejen transformovat
+aplikaèní model na model databázový, ale také vyjádøit zmìnu v struktuøe
+aplikace pomocí DDL SQL skriptù, které pozmìní model databázový tak aby
+odpovídal modelu aplikaènímu. Problém nastává, jakmile zahrneme do zachování
+nejen strukturu dat, ale i samotná data. Zmìnit strukturu dat a zároveò
+transformovat data tak, aby mìla stejnou vyjadøovací schopnost jako pùvodní
+data(pova¾ujme zmìny aplikaèního modelu jako smazání tøídy, atributu apod za
+zachovávající informaci).
+
+
+\section{Projekt Migdb}
+Tato dipomová práce byla napsána v rámci projektu Migdb. Zabývá se zkoumáním
+zmìn aplikaèního modelu, jejich popisem a rozpoznáváním zmìn vedoucích od
+jednoho aplikaèního modelu vedoucích k druhému. Dále pak dokonèuje a upøesòuje
+kontrakt takzvaných operací nad aplikaèním modelem a popisuje jejich
+transformaci na zmìny modelu databázového. Ne nepodstatnou èástí je poté
+vygenerování SQL pøíkazù spustitelných nad relaèní databází PostgreSQL.
+
+V rámci Migdb byly v posledních letech vytvoøeny ji¾ vytvoøeny 4 bakaláøské
+práce èlenù Migdb. Jednalo se o práce mé osoby je¾ pojednávala o problematice
+mapování aplikaèního modelu na model databázový Jiøího Je¾ka, dále práce Petra
+Taranta popisující databázového modelu a poslední práce pojednává o popisu
+testování projektu.
+
+Projekt Migdb byl zapoèat v spolupráci se spoleèností Collections Pro a byl
+prezentován na konferenci Code Generation v Cambridge.
+
+\section{Aplikaèní model}
+Aplikaèní model zachycuje vztahy mezi jednotlivými objekty tvoøícími
+aplikaci. Aèkoliv byl tento model vytvoøen ji¾ v raných fázích projektu Migdb a
+byl èasto upravován, tak se charakter popisující objekty v aplikaèním modelu
+pøíli¹ nezmìnil. Nìkteré entity v modelu se zjednodu¹ily,
+ji¾ neexistují atributy tableName a columnName, které byly obsa¾eny v první
+verzi modelu. V dùsledku pøidání funkcionality od
+
+
+%*****************************************************************************
+\chapter{Popis problému, specifikace cíle}
+Tato diplomová práce si klade za cíl dokonèit vývoj na projektu Migdb. Tj
+doimplementovat a otestovat ORM transformace vzniklé v pøede¹lých fázích
+projektu, upravit a otestovat generátor SQL, pøípadnì upravit aplikaèní a
+databázový metamodel.
+
+Dal¹ím cílem, který jsem si pøed vypracováním diplomové práce stanovil bylo
+vytvoøení a zdokumentování algoritmu generující z dvou vstupních modelù
+sekvenci operací, jejich¾ aplikací se model zdrojový transformuje na model
+koncový.
+
+
+\chapter{Ukázka zdrojového kódu práce}
+
+%\begin{itemize}
+%\item Popis øe¹eného problému, vymezení cílù DP/BP a po¾adavkù na
+% implementovaný systém.
+%\item Popis struktury DP/BP ve vztahu k vytyèeným cílùm.
+%\item Re¹er¹ní zpracování existujících implementací, pokud jsou známy.
+%\end{itemize}
+
+%*****************************************************************************
+%\chapter{UML diagramy}
+%\textbf{\large Tato pøíloha není povinná a zøejmì se neobjeví v ka¾dé práci.
+% Máte-li ale vìt¹í mno¾ství podobných diagramù popisujících systém, není nutné v¹echny umís»ovat do hlavního textu, zvlá¹tì pokud by to sni¾ovalo jeho èitelnost.}
+
+%*****************************************************************************
+%\chapter{Instalaèní a u¾ivatelská pøíruèka}
+%\textbf{\large Tato pøíloha velmi ¾ádoucí zejména u softwarových
+% implementaèních prací.}
+
+%*****************************************************************************
+\chapter{Obsah pøilo¾eného CD}
+%\textbf{\large Tato pøíloha je povinná pro ka¾dou práci. Ka¾dá práce musí toti¾
+% obsahovat pøilo¾ené CD. Viz dále.}
+
+%Mù¾e vypadat napøíklad takto. Vá¹ seznam samozøejmì bude odpovídat typu va¹í
+%práce. (viz \cite{infodp}):
+
+\begin{figure}[h]
+\begin{center}
+\includegraphics[width=14cm]{figures/seznamcd}
+\caption{Seznam pøilo¾eného CD}
+\label{fig:seznamcd}
+\end{center}
+\end{figure}
+
+\chapter{Závìr}
+Aèkoliv se mi nepodaøilo dokonèit tuto diplomovou práci v termínu, dokonèil jsem
+implementaèní(viz ukázka kódu) a testovací èásti projektu, které jsem nestihl
+zdokumentovat. Proto bych byl rád, kdybych mohl vìnovat následující pùlrok
+pøepracování textu diplomové práce.
+
+%Na GNU/Linuxu si strukturu pøilo¾eného CD mù¾ete snadno vyrobit pøíkazem:\\ 
+%\verb|$ tree . >tree.txt|\\
+%Ve vzniklém souboru pak staèí pouze doplnit komentáøe.
+
+%Z \textbf{README.TXT} (pøípadne index.html apod.)  musí být rovnì¾ zøejmé, jak
+% programy instalovat, spou¹tìt a jaké po¾adavky mají tyto programy na hardware.
+
+%Adresáø \textbf{text}  musí obsahovat soubor s vlastním textem práce v PDF nebo
+% PS formátu, který bude pozdìji pou¾it pro prezentaci diplomové práce na WWW.
+
+\end{document}

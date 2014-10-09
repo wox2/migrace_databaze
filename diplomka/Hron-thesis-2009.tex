@@ -321,10 +321,116 @@ aplikaci. Ačkoliv byl tento model vytvořen již v raných fázích projektu Mi
 byl často upravován, tak se charakter popisující objekty v aplikačním modelu
 příliš nezměnil. Některé entity v modelu se zjednodušily,
 již neexistují atributy tableName a columnName, které byly obsaženy v první
-verzi modelu. V důsledku přidání funkcionality od
+verzi modelu.
+
+\subsection{Operace nad aplikačním modelem}
+
+Operace nad aplikačním modelem je možné dělit podle dvou kritérií - 1. nad jakým
+typem entity pracují, 2. jaký je charakter význam pro tito entity. První
+kritérium dělí aplikační operace na operace pracující s třídami a operace
+pracující pouze s properties daných tříd. Podle druhého kritéria je možné
+rozdělit operace nad aplikačním modelem 5 skupin - aditivní,
+subtraktivní, konstruktivní, destruktivní a modifikační operace. Aditivní
+operace jsou takové, které po své aplikaci vytvoří 1 novou entitu v výsledném
+modelu, která nemá žádné vazby na jiné entity. Příkladem aditivní operace je
+operace AddClass. Subtraktivní operace je opak aditivní, v vstupním modelu
+existuje entita a ta je aplikaci subtraktivní operace odstraněna. Operace
+konstruktivní přídává do výstupního modelu jednu entitu, čímž se podobá operaci
+aditivní, nicméně zároveň je vázána na jinou entitu stejného typu a zmenšuje
+její obsah. Příkladem konstruktivní operace je ExtractClass. Destruktivní
+operace je inverzí k operaci konstruktivní. Tato operace entitu z vstupního
+modelu odstraní a zároveň entitě, která pro operaci řídící změní obsah.
+Příkladem této operace je InlineClass.\\
+
+Rozdělení operací nad aplikačním modelem je jen formální, neprojevilo se změnou
+hierarchické struktury operací. Struktura operací byla zjednodušena - již
+neexistuje rozhlodatelná operace ComposedOperation, všechny operace jsou nyní
+defakto atomické. Tato změna byla zapříčiněna neschopností rozložit některé
+dekomponovatelné operace na operace atomické. Je zde nutné podotknout, že tento
+rozklad je v nynější chvíli možný, ačkoliv si vyžádal neformální
+obohacení aplikačního modelu o některé atomické operace jakými jsou
+mergePropery, distributeProperty a exportProperty. Tyto operace v aplikačním
+modelu neexistují, ale v rámci transformace ORM jsou v metodách
+použity/volány.\\
+
+V literatuře mají operace některé specifické vlastnosti jako je
+invertovatelnost a rozložitelnost. Je nutné říci, že operace zmiňované v
+literatuře pracují jen se strukturou dat, nikoliv s daty samotnými a jsou
+kontextově nezávislé - tyto operace jsou tvořeny téměř výlučně aditivními
+operacemi a operacemi subtraktivními. V projektu Migdb na druhé straně existují
+operace, které jsou kontextově závislé, což je uživatelskou přívětivostí
+operací - jako zástupcem takové operace se dá uvést operace AddParent, která
+nezmiňuje všechny Property, které se mají odstranit a její inverze - operace
+RemoveParent. Je zajímavé si uvědomit, že operace RemoveParent i AddParent mohou
+mít různé inverze v závislosti na kontextu (inverzí těchto operací nemusí být
+jedna operace, ale jejich set).
 
 
-%*****************************************************************************
+\subsection{Diff elementy}
+ Kvůli nutnosti rozpoznávat operace vznikly v aplikačním modelu nové
+ elementy. Kořenovým elementem diff modelu je Diff element. Tento element
+ obsahuje kolekce elementů classpairs typů ClassPair, propertyPairs
+ typu PropertyPair, a dále pak addedClasses a removedClasses typu DiffClass a
+ addedProperties a removedProperties typu DiffProperty. Element ClassPair
+ shlukuje zpárované zdrojové (source) a obrazové (reflection) třídy, dále pak
+ referenci owningDiff na Diff element, v kterém jsou obsaženy a která je
+ důležitá pro implementaci algoritmu a v neposlední řadě underlyingPairs -
+ shodné páry Properties typu EqualPropertyPair, které jsou detekované danou
+ operací. 
+ 
+ Projevem subtraktivních a aditivních operací jsou elementy DiffClass a
+ DiffProperty, které zaobalují třídy a property tak, aby bylo možné referencovat
+ na jiný objekt než element Structure. Oproti jednodušším operacím aditivním a
+ subtraktivním jsou operace destruktivní, konstruktivní a modifikační v Diff
+ modelu zobrazeny do elementů ConstructiveClassPair, DestructiveClassPair a
+ ModifyingClassPair. 
+
+\section{Rozpoznávání operací}
+Algoritmem pro rozpoznávání operací nazveme každý algoritmus, který nám pro
+každý vstupní model A a cílový model B najde uspořádaný seznam operací, jejichž
+postupná aplikace transformuje model A do modelu B. Tento algoritmus nemusí být
+deterministický.
+
+Jedním z zajímavých faktů je poznatek, že seznam operací nemusí být jednoznačný
+a to i u jednoduchých změn. Pokud aplikujeme sekvenci operaci Inline A, B + 
+Rename B ->C na model X dostaneme stejný výstup jako aplikací operací Inline B,
+A + Rename A->C, ještě zajímavějším poznatkem je, že nejsme schopni rozeznat
+rozdíl mezi aplikací sekvence operací Rename A, C + Inline C, B.
+
+Samostatným tématem je pořadí operací a jeho permutace. Je zřejmé, že pořadí v
+seznamu operací operujících nad jinými elementy bude možné libovolně prohazovat.
+Také je samozřejmé, že seznam subtraktivních operací je také možné libovolně
+zpermutovat. Stejně tak seznam aditivních operací.
+
+
+
+ 
+ \section{Algoritmus rozpoznávání operací}
+ V literatuře byly popsány algoritmy pro mapování shodných entit modelů
+ (ModelMatching) a algoritmy pro získávání rozdílu modelů (Model Diff).
+ Principem těchto modelů je párování elementů vstupního modelu s elementy z
+ modelu cílového. Toto párování je řízeno jedním ze 3 kritérií. 1 párování podle
+ jména, 2. párování podle umělého ID, 3. párování podle obsahu.
+ 
+ Vzniklo několik implementací párovacích algoritmů. První a nejjednodušší
+ používá párování tříd podle jména, následné rozdíly řeší rozpoznáním
+ aditivních a subtraktivních třídních a property operací, případně operací
+ modifikačních.
+ 
+ Složitější implementace algoritmu bylo páruje stejně jako jednodušší v
+ první fázi shodné elementy - modely se mění, ale některé třídy jsou zachovány.
+Shodné elementy potom tvoří jakési pilíře pro operace konstruktivní a
+destruktivní, které se vážou na rozpoznané páry.
+
+Algoritmus rozpoznávání operací byl napsán se snahou o zachovávání co největšího
+množství dat. Ačkoliv triviální algoritmus pro přechod z modelu A k modelu B by
+mohl pomocí subtraktivních operací zničit model A a následně složit model B
+pomocí aditivních operací je zřejmé, že tento algoritmus neuchová žádná data.
+Proto byly zavedeny Konstruktivní a destruktivní operace. S
+
+
+
+% *****************************************************************************
 \chapter{Popis problému, specifikace cíle}
 Tato diplomová práce si klade za cíl dokončit vývoj na projektu Migdb. Tj
 doimplementovat a otestovat ORM transformace vzniklé v předešlých fázích

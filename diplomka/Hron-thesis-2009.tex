@@ -366,6 +366,21 @@ mít různé inverze v závislosti na kontextu (inverzí těchto operací nemus�
 jedna operace, ale jejich set).
 
 
+\section{Evoluce operací}
+Evuluce operací se řídí následujícím 
+
+
+
+\section{ODBCHM operací}
+Ačkoliv v průběhu projektu Migdb byla transformace operace z aplikačního modelu
+na sadu operací databázových označována jako ORM operací, rozhodli jsme se
+změnit název této transformace na Operation Database Change Mapping, kde dána
+databázová změna reprezentuje sadu DDL, DML operací, které vzniknou pomocí
+transformace.
+
+
+
+
 \subsection{Diff elementy}
  Kvůli nutnosti rozpoznávat operace vznikly v aplikačním modelu nové
  elementy. Kořenovým elementem diff modelu je Diff element. Tento element
@@ -376,7 +391,15 @@ jedna operace, ale jejich set).
  referenci owningDiff na Diff element, v kterém jsou obsaženy a která je
  důležitá pro implementaci algoritmu a v neposlední řadě underlyingPairs -
  shodné páry Properties typu EqualPropertyPair, které jsou detekované danou
- operací. 
+ operací. Podobně jako operace jsou i páry rozděleny do rodin ConstructiveClassPair,
+ DestructiveClassPair a ModifyingClassPair, ale aby bylo možné rozpoznat specifický 
+ pár závislý na jiném páru, byla přidána třída ReplacingClassPair - nahrazující pár,
+ který se používá jako pivot pro hledání konstruktivních, destruktivních a 
+ modifikačních párů. Od elementu ReplacingClassPair dědí elementy EqualClassPair 
+ - třída, která si uchovala jméno z původního modelu a element ReplacingClassPair - 
+ reprezentující třídu, která si neuchovala jméno, ale má změněný název. Podmínky 
+ získávání konkrétních typů párů a jejich pořadí specifikuje konkrétní rozpoznávací 
+ algoritmus.
  
  Projevem subtraktivních a aditivních operací jsou elementy DiffClass a
  DiffProperty, které zaobalují třídy a property tak, aby bylo možné referencovat
@@ -400,7 +423,8 @@ rozdíl mezi aplikací sekvence operací Rename A, C + Inline C, B.
 Samostatným tématem je pořadí operací a jeho permutace. Je zřejmé, že pořadí v
 seznamu operací operujících nad jinými elementy bude možné libovolně prohazovat.
 Také je samozřejmé, že seznam subtraktivních operací je také možné libovolně
-zpermutovat. Stejně tak seznam aditivních operací.
+zpermutovat. Stejně tak seznam aditivních operací. Obecný princip seřazení kolekce 
+operací není znám.
 
 
 
@@ -420,13 +444,24 @@ zpermutovat. Stejně tak seznam aditivních operací.
  Složitější implementace algoritmu bylo páruje stejně jako jednodušší v
  první fázi shodné elementy - modely se mění, ale některé třídy jsou zachovány.
 Shodné elementy potom tvoří jakési pilíře pro operace konstruktivní a
-destruktivní, které se vážou na rozpoznané páry.
+destruktivní, které se vážou na rozpoznané páry. Závislost rozpoznání
 
 Algoritmus rozpoznávání operací byl napsán se snahou o zachovávání co největšího
 množství dat. Ačkoliv triviální algoritmus pro přechod z modelu A k modelu B by
 mohl pomocí subtraktivních operací zničit model A a následně složit model B
 pomocí aditivních operací je zřejmé, že tento algoritmus neuchová žádná data.
-Proto byly zavedeny Konstruktivní a destruktivní operace. S
+Proto byly zavedeny Konstruktivní a destruktivní operace. 
+\section{alternativní algoritmus}
+V ranné fázi byl napsán prototyp jiného rozpoznávacího algoritmu, který se snaží 
+minimalizovat vzdálenost současného modelu od modelu cílového pomocí rozpoznáná 
+operací a aplikace operací. Výhodou tohoto přístupu je nalezení více alternativních 
+cest, nevýhodou je potom velikost stavového prostoru. Algoritmus prochází těmito fázemi:
+
+Spočítání vzdálenosti vstupního modelu od modelu cílového
+Nastavení nalezeného maxima na nula
+Pro každou operaci O
+     zjištění, jestli má operace vhodné kandidáty na parametr
+     nalezení nejvhodnějších parametrů operace
 
 
 

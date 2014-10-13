@@ -40,7 +40,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage{graphicx}
 %\usepackage{indentfirst} %1. odstavec jako v cestine.
-
+\usepackage{zref-savepos}
 \usepackage{k336_thesis_macros} % specialni makra pro formatovani DP a BP
  % muzete si vytvorit i sva vlastni v souboru k336_thesis_macros.sty
  % najdete  radu jednoduchych definic, ktere zde ani nejsou pouzity
@@ -48,6 +48,26 @@
  % \newcommand{\bfig}{\begin{figure}\begin{center}}
  % \newcommand{\efig}{\end{center}\end{figure}}
  % umoznuje pouzit prikaz \bfig namisto \begin{figure}\begin{center} atd.
+
+\makeatletter
+% \zsaveposx is defined since 2011/12/05 v2.23 of zref-savepos
+\@ifundefined{zsaveposx}{\let\zsaveposx\zsavepos}{}
+\makeatother
+\newcounter{hposcnt}
+\renewcommand*{\thehposcnt}{hpos\number\value{hposcnt}}
+\newcommand*{\SP}{% set position
+  \stepcounter{hposcnt}%
+  \zsaveposx{\thehposcnt s}%
+}
+\makeatletter
+\newcommand*{\UP}{% use previous position
+  \zsaveposx{\thehposcnt u}%
+  \zref@refused{\thehposcnt s}%
+  \zref@refused{\thehposcnt u}%
+  \kern\zposx{\thehposcnt s}sp\relax
+  \kern-\zposx{\thehposcnt u}sp\relax
+}
+\makeatother
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -366,11 +386,6 @@ mít různé inverze v závislosti na kontextu (inverzí těchto operací nemus�
 jedna operace, ale jejich set).
 
 
-\section{Evoluce operací}
-Evuluce operací se řídí následujícím 
-
-
-
 \section{ODBCHM operací}
 Ačkoliv v průběhu projektu Migdb byla transformace operace z aplikačního modelu
 na sadu operací databázových označována jako ORM operací, rozhodli jsme se
@@ -378,8 +393,37 @@ změnit název této transformace na Operation Database Change Mapping, kde dán
 databázová změna reprezentuje sadu DDL, DML operací, které vzniknou pomocí
 transformace.
 
+\section{Modul Migdb}
+Původně modul mapování operace fungoval podle následujícího schématu:
 
+Pro \SP každou vstupní operaci AOp\\
+	\UP 1. validace AOp \\
+    \UP 2. aplikace AOp na vstupní model \\
+    \UP 3. Rozklad operace AOp na seznam db operací \\
+    \UP 4. Pro každou\SP operaci DbOp rozkladu:\\ 
+           \UP a) validace operace DbOp\\
+           \UP b) aplikace operace DbOp
+Generování SQL z seznamu DB OP
+\\
 
+Tento přístup narazil na některé problematické případy v průběhu testování
+aplikace výsledných SQL nad daty v databázi. Z tohoto důvodu a z důvodu
+přehlednější implementace bylo základní schéma modulu pozměneno a byl přidán
+koncept mirroredOperations.
+
+Představme si, že uživatel potřebuje aplikovat operaci ExtractClass(A, B,
+props), A je třída, z které se extrahuje, B je nově vzniklá třída, do které se
+budou přesouvat property z kolekce props a jejich data.
+
+Tato oper\SP ace pracuje nad aplikačním modelem následovně: \\
+         \UP Vytvoří třídu B\\
+ 		 \UP Vytvoří v třídě A referenční property, která bude mít typ B \\
+ 	     \UP Pro každou property z kolekce props vytvoří v třídě B Property
+ 	     a smaže property z původní třídy A\\
+ 	     \UP přesune data z kolekce props
+
+Problém nadtavá v situaci, kdy není možné oddělit v ODBCH krok 2, vytvoření
+referenční Property. V databázi je nutné vytvořit sloupec, nicméně tento 
 
 \subsection{Diff elementy}
  Kvůli nutnosti rozpoznávat operace vznikly v aplikačním modelu nové

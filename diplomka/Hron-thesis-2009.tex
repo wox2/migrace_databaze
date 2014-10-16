@@ -396,6 +396,7 @@ transformace.
 \section{Modul Migdb}
 Původně modul mapování operace fungoval podle následujícího schématu:
 
+
 Pro \SP každou vstupní operaci AOp\\
 	\UP 1. validace AOp \\
     \UP 2. aplikace AOp na vstupní model \\
@@ -417,13 +418,15 @@ budou přesouvat property z kolekce props a jejich data.
 
 Tato oper\SP ace pracuje nad aplikačním modelem následovně: \\
          \UP Vytvoří třídu B\\
- 		 \UP Vytvoří v třídě A referenční property, která bude mít typ B \\
- 	     \UP Pro každou property z kolekce props vytvoří v třídě B Property
- 	     a smaže property z původní třídy A\\
- 	     \UP přesune data z kolekce props
+ 		 \UP Vytvoří v třídě A referenční property, která bude mít typ B\\
+ 	     \UP Pro každou property z kolekce props aplikuje operaci MoveProp
+ 	     - vytvoří v třídě B Property, přesune data do nově vzniklé property,
+ 	     smaže ji z původní třídy A
 
-Problém nadtavá v situaci, kdy není možné oddělit v ODBCH krok 2, vytvoření
-referenční Property. V databázi je nutné vytvořit sloupec, nicméně tento 
+Krok 1 se v databázi projeví standardně. V kroku 2. je v databázi kromě
+vytvoření sloupce nutné vygenerovat data v nově vzniklé a referencovat je
+v tabulce kdy není možné oddělit v ODBCH krok 2, vytvoření referenční Property.
+V databázi je nutné vytvořit sloupec, nicméně tento sloupec musí obsahovat 
 
 \subsection{Diff elementy}
  Kvůli nutnosti rozpoznávat operace vznikly v aplikačním modelu nové
@@ -470,10 +473,20 @@ Také je samozřejmé, že seznam subtraktivních operací je také možné libo
 zpermutovat. Stejně tak seznam aditivních operací. Obecný princip seřazení kolekce 
 operací není znám.
 
+\section{Obecné principy model matching}
+Jak je diskutováno v 19 a Different Models for Model Matching:
+An analysis of approaches to support model differencing existuje několik
+požadavků na algoritmus řešící problém model matching. Tyto požadavky zahrnují
+přesnost, vysokou míru abstrakce na které je porovnávání provedeno, nezávislost
+na konkrétních nástrojích, doménách a jazycích (přelož independence from
+particular tools), použitelnost(efficiency) a minimální nutnost adaptace
+algoritmus pro daný problém. Tyto požadavky jdou proti sobě a je nutné
+preferovat některé na úkor jiných, proto není možné označit za nejlepší, ale je
+nutné vybrat si správný algoritmus v závislosti na řešeném problému.
 
 
  
- \section{Algoritmus rozpoznávání operací}
+ \section{Implementovaný algoritmus rozpoznávání operací}
  V literatuře byly popsány algoritmy pro mapování shodných entit modelů
  (ModelMatching) a algoritmy pro získávání rozdílu modelů (Model Diff).
  Principem těchto modelů je párování elementů vstupního modelu s elementy z

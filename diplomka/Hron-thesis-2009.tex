@@ -315,7 +315,7 @@ odpovídal modelu aplikačnímu. Problém nastává, jakmile zahrneme do zachov�
 nejen strukturu dat, ale i samotná data. Změnit strukturu dat a zároveň
 transformovat data tak, aby měla stejnou vyjadřovací schopnost jako původní
 data(považujme změny aplikačního modelu jako smazání třídy, atributu apod za
-zachovávající informaci).
+změny zachovávající informaci).
 
 
 \section{Projekt Migdb}
@@ -344,22 +344,34 @@ již neexistují atributy tableName a columnName, které byly obsaženy v první
 verzi modelu.
 
 \subsection{Operace nad aplikačním modelem}
+\subsubsection{Cíle při modelování operací}
+V průběhu modelování operací nad aplikačním modelem jsme se snažili, aby tyto
+operace byly jednoznačné(strojově zpracovatelné) v rámci daného kontextu, dále
+vzhledem k nutnosti textového zápisu uživatelem o minimalističnost zápisu. Tyto
+dva koncepty jdou obecně proti sobě, proto jsme došli k jistému jejich
+kompromisu uživatelské jednoduchosti zápisu a jednoznačnosti.
 
+\subsection{Seznam aplikačních operací}
+
+
+\subsubsection {Rozdělení aplikačních operací} 
 Operace nad aplikačním modelem je možné dělit podle dvou kritérií - 1. nad jakým
-typem entity pracují, 2. jaký je charakter význam pro tito entity. První
-kritérium dělí aplikační operace na operace pracující s třídami a operace
+typem entity pracují, 2. jaký je charakter/význam pro tito entity daná operace
+má.
+
+První kritérium dělí aplikační operace na operace pracující s třídami a operace
 pracující pouze s properties daných tříd. Podle druhého kritéria je možné
-rozdělit operace nad aplikačním modelem 5 skupin - aditivní,
-subtraktivní, konstruktivní, destruktivní a modifikační operace. Aditivní
-operace jsou takové, které po své aplikaci vytvoří 1 novou entitu v výsledném
-modelu, která nemá žádné vazby na jiné entity. Příkladem aditivní operace je
-operace AddClass. Subtraktivní operace je opak aditivní, v vstupním modelu
-existuje entita a ta je aplikaci subtraktivní operace odstraněna. Operace
-konstruktivní přídává do výstupního modelu jednu entitu, čímž se podobá operaci
-aditivní, nicméně zároveň je vázána na jinou entitu stejného typu a zmenšuje
-její obsah. Příkladem konstruktivní operace je ExtractClass. Destruktivní
-operace je inverzí k operaci konstruktivní. Tato operace entitu z vstupního
-modelu odstraní a zároveň entitě, která pro operaci řídící změní obsah.
+rozdělit operace nad aplikačním modelem 5 skupin - konstruktivní, destruktivní,
+expanzivní, reduktivní a modifikační operace. Konstruktivní operace jsou takové,
+které po své aplikaci vytvoří 1 novou entitu v výsledném modelu, která nemá žádné 
+vazby na jiné entity. Příkladem aditivní operace je
+operace AddClass. Destruktivní operace je opak konstruktivní, v vstupním modelu
+existuje entita a ta je aplikaci destruktivní operace odstraněna. Operace
+expanzivní přídává do výstupního modelu jednu entitu, čímž se podobá operaci
+konstruktivní, nicméně zároveň je vázána na jinou entitu stejného typu a
+zmenšuje její obsah. Příkladem expanzivní operace je ExtractClass. Reduktivní
+operace je inverzí k operaci expanzivní. Tato operace entitu z vstupního
+modelu odstraní a zároveň entitě, která je pro operaci řídící změní obsah.
 Příkladem této operace je InlineClass.\\
 
 Rozdělení operací nad aplikačním modelem je jen formální, neprojevilo se změnou
@@ -370,20 +382,37 @@ dekomponovatelné operace na operace atomické. Je zde nutné podotknout, že te
 rozklad je v nynější chvíli možný, ačkoliv si vyžádal neformální
 obohacení aplikačního modelu o některé atomické operace jakými jsou
 mergePropery, distributeProperty a exportProperty. Tyto operace v aplikačním
-modelu neexistují, ale v rámci transformace ORM jsou v metodách
+modelu neexistují, ale v rámci transformace ODBCHM jsou v metodách
 použity/volány.\\
 
+\subsubsection{Vlastnosti operací}
 V literatuře mají operace některé specifické vlastnosti jako je
 invertovatelnost a rozložitelnost. Je nutné říci, že operace zmiňované v
 literatuře pracují jen se strukturou dat, nikoliv s daty samotnými a jsou
-kontextově nezávislé - tyto operace jsou tvořeny téměř výlučně aditivními
-operacemi a operacemi subtraktivními. V projektu Migdb na druhé straně existují
-operace, které jsou kontextově závislé, což je uživatelskou přívětivostí
-operací - jako zástupcem takové operace se dá uvést operace AddParent, která
-nezmiňuje všechny Property, které se mají odstranit a její inverze - operace
-RemoveParent. Je zajímavé si uvědomit, že operace RemoveParent i AddParent mohou
-mít různé inverze v závislosti na kontextu (inverzí těchto operací nemusí být
-jedna operace, ale jejich set).
+kontextově nezávislé - tyto operace jsou tvořeny téměř výlučně konstruktivními
+a destruktivními operacemi. V projektu Migdb na druhé straně existují operace, 
+které jsou kontextově závislé, což je uživatelskou přívětivostí
+operací - jako zástupcem takové operace se dá uvést operace
+AddParent(parentClass=B, childClass=A), která nezmiňuje všechny Property, které
+se mají odstranit, ale dynamicky si je dopočítává v závislosti na daném
+kontextu. Její inverzí je operace RemoveParent(childClass=A). Vzhledem k
+minimalističnosti neexistuje k operaci RemoveParent(childClass=A) jednoznačná 
+inverze bez daného konktextu.
+
+Inverzi AddParent(sourceClass=A parentClass=B) získáme, pokud v
+kontextu přidruženém modelu aplikaci RemoveParent má třída A předka B. Nicméně i
+v takovém případě neplatí, že aplikace sekvence těchto dvou inverzních operací
+na vstupní model M vygeneruje vždy původní model. Příkladem tohoto neočekávaného
+chování je vstupní model Man(int age, String name), Person(int age, String name, String sureName).
+Aplikace operace AddParent(Man, Person) odstraní přebytečné atributy v třídě man
+a přidá rodiče této třídě, tj vznikne model : Man()->Person, Person(int age,
+String name, String sureName). Nyní je aplikována operace RemoveParent(Person),
+která sice získá z modelu jméno rodičovské třídy, ale nezíská seznam property,
+které se distribuují do třídy Man. Operace byly navrženy tak, aby maximalizovali
+objem zachovaných dat, proto operace RemoveParent distribuuje všechny
+atributy třídy Person do třídy Man. Výsledný model je tedy: Man(int age, String
+name, String sureName), Person(int age, String name, String sureName) a odlišuje
+se od vstupního modelu o property sureName v třídě Man.
 
 
 \section{ODBCHM operací}

@@ -351,8 +351,81 @@ vzhledem k nutnosti textového zápisu uživatelem o minimalističnost zápisu. 
 dva koncepty jdou obecně proti sobě, proto jsme došli k jistému jejich
 kompromisu uživatelské jednoduchosti zápisu a jednoznačnosti.
 
-\subsection{Seznam aplikačních operací}
+\subsubsection{Seznam aplikačních operací}
+\begin{tabular}{| c|| p{5cm}|p {5cm}|}
+\hline
+\bfseries Název operace & \bfseries popis &
+\bfseries parametry \\[2mm] 
+\hline \hline
+AddStandardClass & Operace vytvoří novou třídu a její id odvozené z názvu třídy
+& name, isAbstract, inHeritanceType \\
+\hline
+RenameEntity & Operace změní název třídy na nový & name, newName\\
+\hline
+SetAbstract & Operace nastaví třídě atribut abstract na danou hodnotu & name,
+isAbstract\\
+\hline
+RemoveEntity & Operace odstraní entitu (standardní třídu) z modelu & name\\
+\hline
+AddProperty & Operace vytvoří v dané třídě novou property & owningClassName,
+name - jméno vytvořené property, typeName - typ vytvářené property, lowerBound - dolní mez property, upperBound - horní mez, isOrdered - isUnique\\
+\hline
+RenameProperty & Přejmenuje property & owningClassName, name, newName \\
+\hline
+RemoveProperty & Odstraní property z třídy & owningClassName, name \\
+\hline
+SetBounds & Nastaví horní a dolní hranici property & upperBound, lowerBound \\
+\hline
+SetOrdered & Nastaví property seřaditelnost & owningClassName, name, isOrdered
+\\
+\hline
+SetUnique & Nastaví property unikátnost & owningClassName, name, isUnique \\
+\hline
+AddParent & Nastaví třídě předka a přesune překrývající atributy do rodičovské
+třídy & className, parentClassName
+\\
+\hline
+RemoveParent & Odstraní třídě rodičovskou třídu a rozdistribuje data z
+rodičovské třídy do nově nezávislé třídy (původního potomka) & className \\
+\hline
+ExtractClass & Vytvoří novou třídu, kterou napojí na původní třídu, exportuje
+do nově vzniklé třídy vyjmenované property & sourceClassName, extractClassName,
+associationPropertyName, oppositePropertyName, propertyNames \\
+\hline 
+InlineClass & Přesune property a jejich data do cílové třídy s ohledem na
+unidirectional asociaci & targetClassName, associationPropertyName,
+extractPropertyNames\\
+\hline
+ChangeUniToBidir & Vytvoří zpětný link k property a nastaví správně data &
+className, associationPropertyName, oppositePropertyName \\
+\hline
+ChangeBiToUnidir & Odstraní opoziční property & className,
+associationPropertyName \\
+\hline
+\end{tabular}
 
+\begin{tabular}{| c|| p{5cm}|p {5cm}|}
+\hline
+\bfseries Název operace & \bfseries popis &
+\bfseries parametry \\[2mm] 
+\hline \hline
+CollapseHierarchy & Exportuje property z jedné třídy do jejího předka a třídy
+spojí, upraví dědičné vazby & superClassName, subClassName, isIntoSub\\
+\hline
+ExtractSubClass & Vytvoří třídě nového potomka a přesune do něj vyjmenované
+property & sourceClassName, extractedClassName, extractedPropertyNames\\
+\hline
+ExtractSuperClass & Vytvoří třídě nového předka a přesune do něj vyjmenované
+property, pokud měla původní třída předka nastaví tohoto předka rodičem nově
+vzniklé třídě & sourceClassesName, extractParentName, propertyNames \\
+\hline
+PullUpProperties & Exportuje property do rodičovské třídy & childClassName,
+pulledPropertiesNames\\
+\hline
+PushDownProperties & exportuje vyjmenované property do třídy potomka &
+childClassName, pushedPropertiesNames\\
+\hline
+\end{tabular}
 
 \subsubsection {Rozdělení aplikačních operací} 
 Operace nad aplikačním modelem je možné dělit podle dvou kritérií - 1. nad jakým
@@ -414,6 +487,9 @@ atributy třídy Person do třídy Man. Výsledný model je tedy: Man(int age, S
 name, String sureName), Person(int age, String name, String sureName) a odlišuje
 se od vstupního modelu o property sureName v třídě Man.
 
+Stejná vlastnost platí pro dvojici ChangeUniToBidir a ChangeBiToUnidir, s
+rozdílem, že se nejedná o automaticky získanou rodičovskou třídu, ale
+opozitní property.
 
 \section{ODBCHM operací}
 Ačkoliv v průběhu projektu Migdb byla transformace operace z aplikačního modelu

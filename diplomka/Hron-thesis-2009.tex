@@ -289,6 +289,7 @@ jednoho modelu k druhému bez ztráty či s minimální ztrátou uložených dat
 %*****************************************************************************
 \chapter{Úvod}
 \section{Motivace}
+
 V průběhu poslední dekády je vyvíjeno více nového softwaru než kdy předtím a
 současně je i stávající software stále více a častěji modifikován, ať už
 je to zapříčiněno  existencí rozsáhlého legacy systému, špatného návrhu či
@@ -319,6 +320,7 @@ změny zachovávající informaci).
 
 
 \section{Projekt Migdb}
+
 Tato dipomová práce byla napsána v rámci projektu Migdb. Zabývá se zkoumáním
 změn aplikačního modelu, jejich popisem a rozpoznáváním změn vedoucích od
 jednoho aplikačního modelu vedoucích k druhému. Dále pak dokončuje a upřesňuje
@@ -336,6 +338,7 @@ Projekt Migdb byl započat v spolupráci se společností Collections Pro a byl
 prezentován na konferenci Code Generation v Cambridge.
 
 \section{Aplikační model}
+
 Aplikační model zachycuje vztahy mezi jednotlivými objekty tvořícími
 aplikaci. Ačkoliv byl tento model vytvořen již v raných fázích projektu Migdb a
 byl často upravován, tak se charakter popisující objekty v aplikačním modelu
@@ -345,6 +348,7 @@ verzi modelu.
 
 \subsection{Operace nad aplikačním modelem}
 \subsubsection{Cíle při modelování operací}
+
 V průběhu modelování operací nad aplikačním modelem jsme se snažili, aby tyto
 operace byly jednoznačné(strojově zpracovatelné) v rámci daného kontextu, dále
 vzhledem k nutnosti textového zápisu uživatelem o minimalističnost zápisu. Tyto
@@ -352,7 +356,26 @@ dva koncepty jdou obecně proti sobě, proto jsme došli k jistému jejich
 kompromisu uživatelské jednoduchosti zápisu a jednoznačnosti.
 
 \subsubsection{Seznam aplikačních operací}
-\begin{tabular}{| c|| p{5cm}|p {5cm}|}
+
+Operace v aplikačním modelu se vyvíjeli parametricky, ale také se měnil jejich
+seznam. Z operací v první verzi modelu byly odstraněny operace MoveProperty,
+AddPrimitiveClass, SetOpposite a SetType. Operace AddPrimitive byla označena za
+nadbytečnou, protože není cílem modifikace modelu změna seznamu primitivních tříd, který bývá
+definován použitým programovacím jazykem a tudíž by měl tento seznam být v
+vstupní generaci. V průběhu analýzy operace SetOpposite bylo zjištěno, že tato
+operace má smysl na strukturální úrovni, ale není možné ji aplikovat na obecná
+data, proto byla tato operace nahrazena dvojicí operací ChangeUniToBidir a
+ChangeBiToUnidir, které plní nároky kladené na původní operaci a jsou
+aplikovatelné na datové úrovni. Operace SetType byla prozkoumána, ale
+nebyla exaktně popsána, nebylo nalezeno její mapování na operace v databázi ani
+validační podmínky nutné k úspěšné aplikaci operace na aplikační model. Je
+očekatelné, že by tato operace měla souviset s dědičnými hierarchiemi. Operace
+jsou uvedeny v tabulkách \ref{tab:opsSeznam1} a \ref{tab:opsSeznam2}
+
+
+\begin{table}
+\begin{center}
+\begin{tabular}{| c|| p{5cm}|p {6cm}|}
 \hline
 \bfseries Název operace & \bfseries popis &
 \bfseries parametry \\[2mm] 
@@ -368,7 +391,8 @@ isAbstract\\
 RemoveEntity & Operace odstraní entitu (standardní třídu) z modelu & name\\
 \hline
 AddProperty & Operace vytvoří v dané třídě novou property & owningClassName,
-name - jméno vytvořené property, typeName - typ vytvářené property, lowerBound - dolní mez property, upperBound - horní mez, isOrdered - isUnique\\
+name - jméno vytvořené property, typeName - typ vytvářené property, lowerBound - dolní mez property, 
+upperBound - horní mez, isOrdered - isUnique\\
 \hline
 RenameProperty & Přejmenuje property & owningClassName, name, newName \\
 \hline
@@ -403,8 +427,14 @@ ChangeBiToUnidir & Odstraní opoziční property & className,
 associationPropertyName \\
 \hline
 \end{tabular}
+\end{center}
+\caption{Seznam operací část 1}
+\label{tab:opsSeznam1}
+\end{table}
 
-\begin{tabular}{| c|| p{5cm}|p {5cm}|}
+\begin{table}
+\begin{center}
+\begin{tabular}{| c|| p{5cm}|p {6cm}|}
 \hline
 \bfseries Název operace & \bfseries popis &
 \bfseries parametry \\[2mm] 
@@ -422,12 +452,17 @@ vzniklé třídě & sourceClassesName, extractParentName, propertyNames \\
 PullUpProperties & Exportuje property do rodičovské třídy & childClassName,
 pulledPropertiesNames\\
 \hline
-PushDownProperties & exportuje vyjmenované property do třídy potomka &
+PushDownProperties & Exportuje vyjmenované property do třídy potomka &
 childClassName, pushedPropertiesNames\\
 \hline
 \end{tabular}
+\end{center}
+\caption{Seznam operací část 2}
+\label{tab:opsSeznam2}
+\end{table}
 
 \subsubsection {Rozdělení aplikačních operací} 
+
 Operace nad aplikačním modelem je možné dělit podle dvou kritérií - 1. nad jakým
 typem entity pracují, 2. jaký je charakter/význam pro tito entity daná operace
 má.
@@ -459,6 +494,7 @@ modelu neexistují, ale v rámci transformace ODBCHM jsou v metodách
 použity/volány.\\
 
 \subsubsection{Vlastnosti operací}
+
 V literatuře mají operace některé specifické vlastnosti jako je
 invertovatelnost a rozložitelnost. Je nutné říci, že operace zmiňované v
 literatuře pracují jen se strukturou dat, nikoliv s daty samotnými a jsou
@@ -492,6 +528,7 @@ rozdílem, že se nejedná o automaticky získanou rodičovskou třídu, ale
 opozitní property.
 
 \section{ODBCHM operací}
+
 Ačkoliv v průběhu projektu Migdb byla transformace operace z aplikačního modelu
 na sadu operací databázových označována jako ORM operací, rozhodli jsme se
 změnit název této transformace na Operation Database Change Mapping, kde dána
@@ -534,6 +571,7 @@ v tabulce kdy není možné oddělit v ODBCH krok 2, vytvoření referenční Pr
 V databázi je nutné vytvořit sloupec, nicméně tento sloupec musí obsahovat 
 
 \subsection{Diff elementy}
+
  Kvůli nutnosti rozpoznávat operace vznikly v aplikačním modelu nové
  elementy. Kořenovým elementem diff modelu je Diff element. Tento element
  obsahuje kolekce elementů classpairs typů ClassPair, propertyPairs
@@ -561,6 +599,7 @@ V databázi je nutné vytvořit sloupec, nicméně tento sloupec musí obsahovat
  ModifyingClassPair. 
 
 \section{Rozpoznávání operací}
+
 Algoritmem pro rozpoznávání operací nazveme každý algoritmus, který nám pro
 každý vstupní model A a cílový model B najde uspořádaný seznam operací, jejichž
 postupná aplikace transformuje model A do modelu B. Tento algoritmus nemusí být
@@ -589,19 +628,63 @@ algoritmus pro daný problém. Tyto požadavky jdou proti sobě a je nutné
 preferovat některé na úkor jiných, proto není možné označit za nejlepší, ale je
 nutné vybrat si správný algoritmus v závislosti na řešeném problému.
 
+Nejtriviálnější implementovatelný algoritmus by mohl smazat zdrojový model
+pomocí destruktivních operací a následně vytvořit výsledný model pomocí operací
+konstruktivních, připadně poupravit atributy jednotlivých elementů pomocí
+operací modifikačních. Argumentem proti použití takového algoritmu je smazání jakýchkoliv dat, které v
+původní databázi byla a dobré si uvědomit, že funkci vytvoření DB modelu zvládá
+ORM mapování integrované do většiny současných IDE.
 
+ V literatuře (Different Models for Model Matching:
+An analysis of approaches to support model differencing) byly popsány algoritmy
+pro mapování shodných entit modelů (ModelMatching) a algoritmy pro získávání rozdílu modelů (Model Diff).
+ Principem těchto modelů je párování elementů vstupního modelu s elementy z
+ modelu cílového. Existují 4 obecné skupiny dělení matching algoritmů. 1
+ párování podle statického identifikátoru, 2. signature based matching, 3.
+ similarity based matching a custom language specific matching.
+ 
+ Párování podle statického identifikátoru páruje elementy podle perzistentního
+ identifikátoru, který je přiřazen každé entitě v době jejího vzniku, je
+ neměnný a unikátní. Nejzákladnějším principem model matchingu je tedy párování
+ entit na základě shodnosti jejich identifikátorů. Tento princip má výhody
+ jednoduchosti implementace a rychlosti. Tento algoritmus není použitelný pro
+ modely vytvořené nezávisle jeden na druhém či u technologií nepodporujících
+ maintenance unikátních identifikátorů.
+ 
+ Algoritmus signature based matching byl navržen kvůli limitaci párování podle
+ statického identifikátoru, tento algoritmus je založen na dynamickém vypočtení
+ nestatické signatury jednotlivých features pomocí uživatelem definovaných
+ funkcí specifikovaných pomocí nějakého dotazovacího jazyka. Tento princip tedy
+ může být použit pro modely vzniklé nezávisle na sobě. Nevýhodou je potom
+ nutnost specifikovat query, které dopočítají signaturu.
+ 
+ Similarity based matching používá podobně jako signature based matching
+ podobnost features jednotlivých elementů, kterou agreguje do skalární hodnoty.
+ Každá feature modelu můýe mít jinou váhu pro porovnávání, napřiklad u
+ podobnosti tříd má jméno vyšší důležitost nežli abstractnost dané třídy.
+ Tento algoritmus musí být typicky doplněn o konfiguraci vah jednotlivých
+ features elementů, kterou většinou píše vývojář. Zástupcem tohoto principu je
+ EMF Compare
+ 
+ Kromě algoritmů pro model matching byly v http://www.sc.ehu.es/acwbecae/ikerkuntza/these/Ch2.pdf
+ rozděleny a popsány algoritmy pro graph matching. Viz převzatý obrázek
+ \ref{fig:graph_matching}
+ 
+ \begin{figure}[ht]
+\begin{center}
+\includegraphics[width=15cm]{figures/graph_matching.jpg}
+\caption{Typy graph matchingu}
+\label{fig:graph_matching}
+\end{center}
+\end{figure}
+ 
  
  \section{Implementovaný algoritmus rozpoznávání operací}
- V literatuře byly popsány algoritmy pro mapování shodných entit modelů
- (ModelMatching) a algoritmy pro získávání rozdílu modelů (Model Diff).
- Principem těchto modelů je párování elementů vstupního modelu s elementy z
- modelu cílového. Toto párování je řízeno jedním ze 3 kritérií. 1 párování podle
- jména, 2. párování podle umělého ID, 3. párování podle obsahu.
  
  Vzniklo několik implementací párovacích algoritmů. První a nejjednodušší
  používá párování tříd podle jména, následné rozdíly řeší rozpoznáním
- aditivních a subtraktivních třídních a property operací, případně operací
- modifikačních.
+ konstruktivních a destruktivnívh, případně některých operací modifikačních, ať
+ už tyto operace pracovali s třídami nebo s property.
  
  Složitější implementace algoritmu bylo páruje stejně jako jednodušší v
  první fázi shodné elementy - modely se mění, ale některé třídy jsou zachovány.
@@ -613,7 +696,9 @@ množství dat. Ačkoliv triviální algoritmus pro přechod z modelu A k modelu
 mohl pomocí subtraktivních operací zničit model A a následně složit model B
 pomocí aditivních operací je zřejmé, že tento algoritmus neuchová žádná data.
 Proto byly zavedeny Konstruktivní a destruktivní operace. 
+
 \section{alternativní algoritmus}
+
 V ranné fázi byl napsán prototyp jiného rozpoznávacího algoritmu, který se snaží 
 minimalizovat vzdálenost současného modelu od modelu cílového pomocí rozpoznáná 
 operací a aplikace operací. Výhodou tohoto přístupu je nalezení více alternativních 
@@ -847,9 +932,9 @@ V souboru \verb|k336_thesis_macros.tex| je příkaz \verb|\uv{}| pro sázení č
 \chapter{Seznam použitých zkratek}
 
 \begin{description}
-\item[2D] Two-Dimensional
-\item[ABN] Abstract Boolean Networks
-\item[ASIC] Application-Specific Integrated Circuit
+\item[IDE] Integrated Development Environment
+\item[ORM] Object-relational mapping
+\item[EMF] Eclipse modeling framework
 \end{description}
 \vdots
 

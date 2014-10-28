@@ -658,17 +658,51 @@ pro mapování shodných entit modelů (ModelMatching) a algoritmy pro získáv�
  může být použit pro modely vzniklé nezávisle na sobě. Nevýhodou je potom
  nutnost specifikovat query, které dopočítají signaturu.
  
- Similarity based matching používá podobně jako signature based matching
- podobnost features jednotlivých elementů, kterou agreguje do skalární hodnoty.
- Každá feature modelu můýe mít jinou váhu pro porovnávání, napřiklad u
- podobnosti tříd má jméno vyšší důležitost nežli abstractnost dané třídy.
- Tento algoritmus musí být typicky doplněn o konfiguraci vah jednotlivých
- features elementů, kterou většinou píše vývojář. Zástupcem tohoto principu je
- EMF Compare
+ Algoritmus Similarity based matching používá podobně jako signature based
+ matching podobnost features jednotlivých elementů, kterou agreguje do skalární hodnoty.
+ Tento princip se řadí mezi podtyp attribute graph matchingu. Každá feature
+ modelu může mít jinou váhu pro porovnávání, napřiklad u podobnosti tříd má
+ jméno vyšší důležitost nežli abstractnost dané třídy.  Tento algoritmus musí
+ být typicky doplněn o konfiguraci vah jednotlivých features elementů, kterou
+ většinou píše vývojář. Zástupcem tohoto principu je framework EMF Compare, 
+ který je doplněn o defaultní konfiguraci vah. Výhodami je větší přesnost,
+ nevýhodou je potom TRIAL ERROR metoda získávání vhodné konfigurace vah.
  
- Kromě algoritmů pro model matching byly v http://www.sc.ehu.es/acwbecae/ikerkuntza/these/Ch2.pdf
- rozděleny a popsány algoritmy pro graph matching. Viz převzatý obrázek
- \ref{fig:graph_matching}
+ Algoritmy v kategorii Custom language specific matching jsou vytvořené
+ přímo k využití daného modelovacího jazyka. Hlavní výhodou je, že
+ algoritmus na dané doméně může začlenit do metody similarity based matchingu
+ sémantické detaily, což vede k přesnějším výsledkům a redukuje prohledávaný 
+stavový prostor. Jako příklad je uváděn jazyk UMLDiff, který při porovnávání
+dvou UML modelů může využít faktu, že dvě třídy nebo dva datové typy
+stejného jména tvoří po všech praktických stránkách pár(match). Nicméně výhoda
+začlenění sémantických detailů konkrétní domény je vykoupeno vysokou cenou -
+všechny ostatní kategorie algoritmů potřebují minimální neb téměř žádné úpravy
+od vývojáře, pro tuto kategorii vývojáře musí napsat celý matchovací algoritmus
+sám.
+
+\subsection{Graph matching}
+ Problém model matching je podproblémem generičtějšího tasku graph matching,
+ který studuje http://www.sc.ehu.es/acwbecae/ikerkuntza/these/Ch2.pdf a
+ rozděluje a popisuje algoritmy pro graph matching. Problém je definován na
+ obecné struktuře Graf, což je uspořádaná dvojice G = (V, E), kde G je množina
+ uzlů a E je množina hran grafu, přičemž $E \subset V \times V$. Grafy mohou být
+ orientované či neorientované, mohou mít vícenásobné hrany.
+ 
+ Každý graf může přidávat informace do své struktury pomocí labelu (popisku
+ nebo číslu) do hran a vrcholů, pokud je nutné přidat více informací, je možné
+ přidat do hran a/nebo vrcholů atributy, potom hovoříme o vertex-atributed
+ grafech a edge atributed grafech, případně attributed grafech. V některé
+ literatuře jsou attributed grafy označovány jako labeled grafy. Graph
+ matching je aplikován v mnoho oborů jako je počítačové vidění, analýza
+ scény(scene analysis), chemie a molekulární biologie. V těchto oborech musí být
+ vzorce nalezeny v daných datech. 
+  
+ Problém graph matchingu dvou grafů $G_P (grafu patternu) a G_M (grafu modelu)$,
+ přičemž se dělí podle převzatého obrázku \ref{fig:graph_matching} na matching nalezení přesné shody vzorku v hledaném
+ grafu či matching hledání podobnosti grafu vzorku v hledaném grafu. 
+ 
+ Matching hledání přesné shody je definován následně 
+ 
  
  \begin{figure}[ht]
 \begin{center}

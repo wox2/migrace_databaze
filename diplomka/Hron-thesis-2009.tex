@@ -549,7 +549,14 @@ databázová změna reprezentuje sadu DDL, DML operací, které vzniknou pomocí
 transformace. Ačkoliv na úrovni aplikační všechny operace fungují se všemi inheritanceTypy 
 bylo nutné zjednodušit aplikační model tak, aby byla transformace ODBCHM implementovatelná, 
 proto jsme v rámci týmu Migdb rozhodli o redukci počtu inheritanceTypů na jeden - nejvhodnější
-typ je nejspíše joined, který je pravděpodobně nejpoužívanějším.
+typ je nejspíše joined, který je pravděpodobně nejpoužívanějším. Vzhledem k nedostatku času nebyla implementována myšlenka .q 
+souborů, které kontrolují některé vlastnosti nejen modelu, ale i konkrétních dat, dále není mapováno omezení LB = 0, 
+které by některé operace stížilo. Algoritmus ODBCHM si bere všechna data z aplikačního modelu, čímž je nezávislý na aplikaci 
+databázových operací nad databázovým modelem, ale předává veškerou zodpovědnost za údržbu - tj vytvoření a odstranění omezení.
+V tabulkách \ref{tab:odbchmSeznam1} a \ref{tab:odbchmSeznam1} nejsou uvedena vytváření a 
+odstraňování unikátních constrainů pro unikátní či ordered kolekce primitivních a neprimitivních typů. 
+
+V tabulkách 
 
 \begin{table}
 \begin{center}
@@ -561,33 +568,50 @@ typ je nejspíše joined, který je pravděpodobně nejpoužívanějším.
 AddStandardClass & Neexistuje třída s jménem nově vznikající
 &  Vytvoří tabulku, id sloupec této tabulky a primární klíč\\
 \hline
-RenameEntity &  Existuje třída s původním jménem, neexistuje třída s novým jménem & Operace změní název tabulky na nový, odstraní a vytvoří PK s novým jménem\\
+RenameEntity &  Existuje třída s původním jménem, neexistuje třída s novým jménem & Operace změní název tabulky 
+na nový, odstraní a vytvoří PK s novým jménem\\
 \hline
 SetAbstract & Existuje třída s daným jménem & pro isAbstract = true maže data, která náleží pouze dané třídě\\
 \hline
-RemoveEntity & Existuje třída s daným jménem, neexistuje link na tuto třídu & name\\
+RemoveEntity & Existuje třída s daným jménem, neexistuje link na tuto třídu, třída neobsahuje žádné property, 
+neexistuje pro tuto třídu žádný potomek & V Db je smazán primární klíč, property a tabulka\\
 \hline
-AddProperty & Operace vytvoří v dané třídě novou property & owningClassName,
-name - jméno vytvořené property, typeName - typ vytvářené property, lowerBound - dolní mez property, 
-upperBound - horní mez, isOrdered - isUnique\\
+AddProperty & zadané bounds jsou validní, v hierarchii dědičnosti neexistuje koliyní property & 
+operace přidá do cílové tabulky atribut pro primitivní property S UB = 1\\
+\ & \ & operace přidá tabulku, datový sloupec, referenční sloupec a referenci na vlastnickou tabulku pro primitivní 
+property s UB = > 1\\
+\ & \ & operace přidá sloupec pro neprimitivní property S UB = 1 do vlastnické tabulky a referenci na tabulku typu\\
+\ & \ & operace vytvoří vazební tabulku pro neprimitivní property s UB > 1, vloží do ní referenční sloupce na 
+vlastnickou tabulku a tabulku typu, na které vytvoří cizí klíč\\
 \hline
-RenameProperty & Přejmenuje property & owningClassName, name, newName \\
+RenameProperty & Existuje přejmenovaná property v dané třídě, nexistuje property v dané třídy nového jména & pro danou property s 
+UB = 1 a primitivním typem přejmenuje property v vlastnické tabulce\\
+\ & \ & pro danou primitivní property s UB > 1 přejmenuje datový sloupec, FK na vlastníka kolekce a tabulku kolekce \\
+\ & \ & pro danou associační property přejmenuje sloupec v vlastnické tabulce a cizí klíč referující tabulku typu\\
+\ & \ & pro danou asociační property přejmenuje vazební tabulku s referenčními sloupci na vlastníka a typ asociace + cizí klíče \\
 \hline
-RemoveProperty & Odstraní property z třídy & owningClassName, name \\
+RemoveProperty & Musí exitovat vlastnická třída property a v ní odstraňovaná property & pro primitivní property S UB = 1 odstraní 
+sloupec z dané tabulky\\
+\ & \ & pro danou property primitivního typu s UB > 1 odstraní referenci na vlastnickou tabulku, sloupec z tabulky dané kolekce, 
+datový sloupec a smaže kolekční tabulku \\
+\ & \ & pro danou asociační property s UB = 1 odstraní referenci na tabulku vlastníka a referenční sloupec\\
+\ & \ & pro danou asociační property s UB > 1 odstraní reference na vlastnickou tabulku a tabulku typu, datový 
+sloupec a sloupec typu a smaže vazební tabulku \\
 \hline
-SetBounds & Nastaví horní a dolní hranici property & upperBound, lowerBound \\
+SetBounds & bounds musí být validní a musí existovat daná trída a property & NEIMPLEMENTOVÁNO \\
 \hline
-SetOrdered & Nastaví property seřaditelnost & owningClassName, name, isOrdered
-\\
+SetOrdered & musí existovat daná trída a property & pro nastavní = true přidá sloupec ordering, (měl by přenastavit data) a vytvoří 
+unikátní constraint přes typový, referenční a orgering sloupec\\
+\ & \ & pro nastavení = false sma6e ordering constraint a ordering column\\
 \hline
 SetUnique & Nastaví property unikátnost & owningClassName, name, isUnique \\
 \hline
-AddParent & Nastaví třídě předka a přesune překrývající atributy do rodičovské
-třídy & className, parentClassName
-\\
+AddParent & Musí existovat rodičovská třída a třída potomka, třída potomka nesmí mít nastaveného rodiče & 
+Aplikuje obraz operace MergeProperty na všechny kolizní property, přidá cizí klíč na rodičovskou třídu\\
 \hline
-RemoveParent & Odstraní třídě rodičovskou třídu a rozdistribuje data z
-rodičovské třídy do nově nezávislé třídy (původního potomka) & className \\
+RemoveParent & & musí existovat třída child a mít nastavenou rodičovskou třídu & aplikuje obraz operace 
+DistrubuteProperty na všechny property rodičovské třídy, odstraní cizí klíč, smaže data třídy potomka z 
+tabulky rodiče\\
 \hline
 ExtractClass & Vytvoří novou třídu, kterou napojí na původní třídu, exportuje
 do nově vzniklé třídy vyjmenované property & sourceClassName, extractClassName,

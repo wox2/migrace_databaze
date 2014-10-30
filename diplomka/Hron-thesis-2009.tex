@@ -370,7 +370,11 @@ aplikovatelné na datové úrovni. Operace SetType byla prozkoumána, ale
 nebyla exaktně popsána, nebylo nalezeno její mapování na operace v databázi ani
 validační podmínky nutné k úspěšné aplikaci operace na aplikační model. Je
 očekatelné, že by tato operace měla souviset s dědičnými hierarchiemi. Operace
-jsou uvedeny v tabulkách \ref{tab:opsSeznam1} a \ref{tab:opsSeznam2}
+jsou uvedeny v tabulkách \ref{tab:opsSeznam1} a \ref{tab:opsSeznam2}. Kromě regulérních 
+operací, které může vytvořit uživatel jsou v tabulce \ref{tab:opsSeznam2} uvedeny operace 
+DistributeProperty, MergeProperty a operace ExportProperty, které jsou používány jako pomocné 
+v implementaci složitějších reduktivních a expanzivních operací a manipulují s Property v rámci 
+dědičné struktury.
 
 
 \begin{table}
@@ -452,8 +456,17 @@ vzniklé třídě & sourceClassesName, extractParentName, propertyNames \\
 PullUpProperties & Exportuje property do rodičovské třídy & childClassName,
 pulledPropertiesNames\\
 \hline
-PushDownProperties & Exportuje vyjmenované property do třídy potomka &
+PushDownProperties & Exportuje vyjmenované property do třídy potomka a přesune JEN data potomka &
 childClassName, pushedPropertiesNames\\
+\hline
+ExportProperty(virtuální operace) & Exportuje property v rámci hierarchie a data do cílové třídy & exportedPropertyName, 
+className
+\hline
+DistributeProperty(virtuální operace) & Zduplikuje strukturu dané property do cílové třídy a přesune data přiřazená 
+této třídě & DistributedPropertyName, className
+\hline
+MergeProperty(virtuální operace) & Přesune data zdrojové property do cílové property a smaže strukturu původní property & 
+mergedPropertyName, className
 \hline
 \end{tabular}
 \end{center}
@@ -533,7 +546,106 @@ Ačkoliv v průběhu projektu Migdb byla transformace operace z aplikačního mo
 na sadu operací databázových označována jako ORM operací, rozhodli jsme se
 změnit název této transformace na Operation Database Change Mapping, kde dána
 databázová změna reprezentuje sadu DDL, DML operací, které vzniknou pomocí
-transformace.
+transformace. Ačkoliv na úrovni aplikační všechny operace fungují se všemi inheritanceTypy 
+bylo nutné zjednodušit aplikační model tak, aby byla transformace ODBCHM implementovatelná, 
+proto jsme v rámci týmu Migdb rozhodli o redukci počtu inheritanceTypů na jeden - nejvhodnější
+typ je nejspíše joined, který je pravděpodobně nejpoužívanějším.
+
+\begin{table}
+\begin{center}
+\begin{tabular}{| c|| p{5cm}|p {6cm}|}
+\hline
+\bfseries Název operace & \bfseries podmínky validnosti &
+\bfseries Rozklad na db operace \\[2mm] 
+\hline \hline
+AddStandardClass & Neexistuje třída s jménem nově vznikající
+&  Vytvoří tabulku, id sloupec této tabulky a primární klíč\\
+\hline
+RenameEntity &  Existuje třída s původním jménem, neexistuje třída s novým jménem & Operace změní název tabulky na nový, odstraní a vytvoří PK s novým jménem\\
+\hline
+SetAbstract & Existuje třída s daným jménem & pro isAbstract = true maže data, která náleží pouze dané třídě\\
+\hline
+RemoveEntity & Existuje třída s daným jménem, neexistuje link na tuto třídu & name\\
+\hline
+AddProperty & Operace vytvoří v dané třídě novou property & owningClassName,
+name - jméno vytvořené property, typeName - typ vytvářené property, lowerBound - dolní mez property, 
+upperBound - horní mez, isOrdered - isUnique\\
+\hline
+RenameProperty & Přejmenuje property & owningClassName, name, newName \\
+\hline
+RemoveProperty & Odstraní property z třídy & owningClassName, name \\
+\hline
+SetBounds & Nastaví horní a dolní hranici property & upperBound, lowerBound \\
+\hline
+SetOrdered & Nastaví property seřaditelnost & owningClassName, name, isOrdered
+\\
+\hline
+SetUnique & Nastaví property unikátnost & owningClassName, name, isUnique \\
+\hline
+AddParent & Nastaví třídě předka a přesune překrývající atributy do rodičovské
+třídy & className, parentClassName
+\\
+\hline
+RemoveParent & Odstraní třídě rodičovskou třídu a rozdistribuje data z
+rodičovské třídy do nově nezávislé třídy (původního potomka) & className \\
+\hline
+ExtractClass & Vytvoří novou třídu, kterou napojí na původní třídu, exportuje
+do nově vzniklé třídy vyjmenované property & sourceClassName, extractClassName,
+associationPropertyName, oppositePropertyName, propertyNames \\
+\hline 
+InlineClass & Přesune property a jejich data do cílové třídy s ohledem na
+unidirectional asociaci & targetClassName, associationPropertyName,
+extractPropertyNames\\
+\hline
+ChangeUniToBidir & Vytvoří zpětný link k property a nastaví správně data &
+className, associationPropertyName, oppositePropertyName \\
+\hline
+ChangeBiToUnidir & Odstraní opoziční property & className,
+associationPropertyName \\
+\hline
+\end{tabular}
+\end{center}
+\caption{ODBCHM Seznam operací část 1}
+\label{tab:odbchmSeznam1}
+\end{table}
+
+\begin{table}
+\begin{center}
+\begin{tabular}{| c|| p{5cm}|p {6cm}|}
+\hline
+\bfseries Název operace & \bfseries popis &
+\bfseries parametry \\[2mm] 
+\hline \hline
+CollapseHierarchy & Exportuje property z jedné třídy do jejího předka a třídy
+spojí, upraví dědičné vazby & superClassName, subClassName, isIntoSub\\
+\hline
+ExtractSubClass & Vytvoří třídě nového potomka a přesune do něj vyjmenované
+property & sourceClassName, extractedClassName, extractedPropertyNames\\
+\hline
+ExtractSuperClass & Vytvoří třídě nového předka a přesune do něj vyjmenované
+property, pokud měla původní třída předka nastaví tohoto předka rodičem nově
+vzniklé třídě & sourceClassesName, extractParentName, propertyNames \\
+\hline
+PullUpProperties & Exportuje property do rodičovské třídy & childClassName,
+pulledPropertiesNames\\
+\hline
+PushDownProperties & Exportuje vyjmenované property do třídy potomka a přesune JEN data potomka &
+childClassName, pushedPropertiesNames\\
+\hline
+ExportProperty(virtuální operace) & Exportuje property v rámci hierarchie a data do cílové třídy & exportedPropertyName, 
+className
+\hline
+DistributeProperty(virtuální operace) & Zduplikuje strukturu dané property do cílové třídy a přesune data přiřazená 
+této třídě & DistributedPropertyName, className
+\hline
+MergeProperty(virtuální operace) & Přesune data zdrojové property do cílové property a smaže strukturu původní property & 
+mergedPropertyName, className
+\hline
+\end{tabular}
+\end{center}
+\caption{ODBCHM Seznam operací část 2}
+\label{tab:odbchmSeznam2}
+\end{table}
 
 \section{Modul Migdb}
 Původně modul mapování operace fungoval podle následujícího schématu:
@@ -743,9 +855,15 @@ sám.
  algoritmy shledány za vhodné k použití pro problém hledání sady
  aplikačních operací. První 3 popsané algoritmy model matchingu ( 1
  párování podle statického identifikátoru, 2. signature based matching, 3.
- similarity based matching)nejsou taktéž vhodné k použití z důdodu, že popsané
- expanzivní a reduktivní operace  mně inspirovaly k vytvoření Problém hledání
- sekvence operací by byl založen na
+ similarity based matching) nejsou taktéž vhodné k použití z důdodu, že k rozpoznání popsaných
+ expanzivních a reduktivních operací je nutné rozpoznat 2 třídy, které se mapují na jednu třídu pro reduktivní 
+ operace a naopak jednu operaci, která se mapuje na 2 třídy. Problém rozpoznávání operací je tudíž nadskupinou problému 
+ model matchingu, protože matching páruje 1 ku jedné, ale ná na algoritmus řešící rozpoznávání operací musí řešit 
+ matching M entit ku N entitám. 
+ 
+ Zmiňované algoritmy mě inspirovaly k vytvoření Custom language specific matching algoritmu pro tento problém, který si 
+ z zmiňovaných algoritmů bere hlavně poznámku u UMLDiffu - ze všech praktických důvodů považujeme třídy se stejným jménem 
+ jako matchující.
 
  \subsection{Implementace}
  Vzniklo několik implementací párovacích algoritmů. První a nejjednodušší

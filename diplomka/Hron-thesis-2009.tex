@@ -697,24 +697,26 @@ sám.
  scény(scene analysis), chemie a molekulární biologie. V těchto oborech musí být
  vzorce nalezeny v daných datech. 
   
- Problém graph matchingu dvou grafů $G_P (grafu patternu) a G_M (grafu modelu)$,
- přičemž se dělí podle převzatého obrázku \ref{fig:graph_matching} na matching nalezení přesné shody vzorku v hledaném
+ Problém graph matchingu dvou grafů $G_P$ (grafu patternu) a $G_M$ (grafu
+ modelu), přičemž se dělí podle převzatého obrázku \ref{fig:graph_matching} na matching nalezení přesné shody vzorku v hledaném
  grafu či matching hledání podobnosti grafu vzorku v hledaném grafu. 
  
- Matching hledání přesné shody je definován následně Mějme grafy $G_P = (V_P , E_P) a G_M = (V_M, E_M), přičemž 
- \| V_M\| = \| V_P\|$, úkolem je potom najít takové prosté zobrazení  $f: V_D \rightarrow V_M, $ takové, že (u, v) \in 
- $E_P iff (f(u), f(v)) \in E_M$. Pokud takové mapování existuje, nazveme ho exact graph matchingem(matching přesné shody). \\
+ Matching hledání přesné shody je definován následně: Mějme grafy $G_P = (V_P ,
+ E_P)$ a $G_M = (V_M, E_M)$, přičemž $\| V_M\| = \| V_P\|$, úkolem je potom
+ najít takové prosté zobrazení  $f: V_D \rightarrow V_M$, takové, že $(u, v) \in
+ E_P$ iff $(f(u), f(v)) \in E_M$. Pokud takové mapování existuje, nazveme ho
+ exact graph matchingem(matching přesné shody). \\
  
  Termín Inexact matching aplikovaný na některé problémy týkající se shodnosti grafů vyjadřuje/znamená, že není možné nalézt 
  izomorfismus mezi dvěma grafy, aby byly matched (shodné?). To je stav, kdy oba grafy mají jiný počet vrcholů. Takže v těchto 
  případech není očekávatelné hledání izomorfismu dvou grafů, ale v hledání největší možné shody mezi nimi (best matching). 
  Toto vede k třídě problémů známé jako inexact graph matching. V takovém případě hledáme nebijektivní korespondenci (přiřazení)
- mezi pattern grafem a model grafem. V následujícím textu předpokládejme $|V_P| < |V_M|$. Inexact matching je používán v oborech 
- kartografie, rozpoznávání znaků a medicíně. Nejlepší korespondence graph matching problému je definována jako optimum nějaké objective
- function, ktérá měří podobnost mezi matchovanými uzly a hranami. Tato funkce je nazvána fitness funkcí, případně energy function.
+ mezi pattern grafem a model grafem. V následujícím textu předpokládejme
+ $\|V_P\| < \|V_M\|$. Inexact matching je používán v oborech kartografie,
+ rozpoznávání znaků a medicíně. Nejlepší korespondence graph matching problému je definována jako optimum nějaké objective function, ktérá měří podobnost mezi matchovanými uzly a hranami. Tato funkce je nazvána fitness funkcí, případně energy function.
 
  Formálně je tedy inexact matching definován takto: mějme dva grafy, $G_M a G_P$ přičemž $\| V_M \| < \| V_D\|$ a cílem je nalezení mapování
- $f' : V_D  \rightarrow V_M že (u, v) \in E_P iff (f(u), f(v)) \in E_M$.\\
+ $f' : V_D  \rightarrow V_M že (u, v) \in E_P$ iff $(f(u), f(v)) \in E_M$.\\
  
  Podtypem těchto úloh jsou problémy subgraph matching a subgraph izomorfizmu.
  
@@ -737,8 +739,13 @@ sám.
  
  \subsection{Návrh ze studia článků}
  
- Vzhledem k obecnosti algoritmů pro graph matching nebyly tyto algoritmy shledány za vhodné.
- Problém hledání sekvence operací by byl založen na 
+ Vzhledem k obecné použitelnosti algoritmů pro graph matching nebyly tyto
+ algoritmy shledány za vhodné k použití pro problém hledání sady
+ aplikačních operací. První 3 popsané algoritmy model matchingu ( 1
+ párování podle statického identifikátoru, 2. signature based matching, 3.
+ similarity based matching)nejsou taktéž vhodné k použití z důdodu, že popsané
+ expanzivní a reduktivní operace  mně inspirovaly k vytvoření Problém hledání
+ sekvence operací by byl založen na
 
  \subsection{Implementace}
  Vzniklo několik implementací párovacích algoritmů. První a nejjednodušší

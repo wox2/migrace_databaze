@@ -576,32 +576,33 @@ SetAbstract & Existuje třída s daným jménem & pro isAbstract = true maže da
 RemoveEntity & Existuje třída s daným jménem, neexistuje link na tuto třídu, třída neobsahuje žádné property, 
 neexistuje pro tuto třídu žádný potomek & V Db je smazán primární klíč, property a tabulka\\
 \hline
-AddProperty & zadané bounds jsou validní, v hierarchii dědičnosti neexistuje koliyní property & 
-operace přidá do cílové tabulky atribut pro primitivní property S UB = 1\\
+AddProperty & zadané bounds jsou validní, v hierarchii dědičnosti neexistuje kolizní property & 
+operace přidá do cílové tabulky sloupec pro primitivní property S UB = 1\\
 \ & \ & operace přidá tabulku, datový sloupec, referenční sloupec a referenci na vlastnickou tabulku pro primitivní 
 property s UB = > 1\\
 \ & \ & operace přidá sloupec pro neprimitivní property S UB = 1 do vlastnické tabulky a referenci na tabulku typu\\
 \ & \ & operace vytvoří vazební tabulku pro neprimitivní property s UB > 1, vloží do ní referenční sloupce na 
 vlastnickou tabulku a tabulku typu, na které vytvoří cizí klíč\\
 \hline
-RenameProperty & Existuje přejmenovaná property v dané třídě, nexistuje property v dané třídy nového jména & pro danou property s 
-UB = 1 a primitivním typem přejmenuje property v vlastnické tabulce\\
+RenameProperty & Existuje přejmenovaná property v dané třídě, nexistuje property v dané třídy nového jména & pro danou 
+property s UB = 1 a primitivním typem přejmenuje property v vlastnické tabulce\\
 \ & \ & pro danou primitivní property s UB > 1 přejmenuje datový sloupec, FK na vlastníka kolekce a tabulku kolekce \\
 \ & \ & pro danou associační property přejmenuje sloupec v vlastnické tabulce a cizí klíč referující tabulku typu\\
-\ & \ & pro danou asociační property přejmenuje vazební tabulku s referenčními sloupci na vlastníka a typ asociace + cizí klíče \\
+\ & \ & pro danou asociační property přejmenuje vazební tabulku s referenčními sloupci na vlastníka a typ asociace + 
+cizí klíče \\
 \hline
-RemoveProperty & Musí exitovat vlastnická třída property a v ní odstraňovaná property & pro primitivní property S UB = 1 odstraní 
-sloupec z dané tabulky\\
-\ & \ & pro danou property primitivního typu s UB > 1 odstraní referenci na vlastnickou tabulku, sloupec z tabulky dané kolekce, 
-datový sloupec a smaže kolekční tabulku \\
+RemoveProperty & Musí exitovat vlastnická třída property a v ní odstraňovaná property & pro primitivní property S 
+UB = 1 odstraní sloupec z dané tabulky\\
+\ & \ & pro danou property primitivního typu s UB > 1 odstraní referenci na vlastnickou tabulku, sloupec z tabulky 
+dané kolekce, datový sloupec a smaže kolekční tabulku \\
 \ & \ & pro danou asociační property s UB = 1 odstraní referenci na tabulku vlastníka a referenční sloupec\\
 \ & \ & pro danou asociační property s UB > 1 odstraní reference na vlastnickou tabulku a tabulku typu, datový 
 sloupec a sloupec typu a smaže vazební tabulku \\
 \hline
 SetBounds & bounds musí být validní a musí existovat daná trída a property & NEIMPLEMENTOVÁNO \\
 \hline
-SetOrdered & musí existovat daná trída a property & pro nastavní = true přidá sloupec ordering, (měl by přenastavit data) a vytvoří 
-unikátní constraint přes typový, referenční a orgering sloupec\\
+SetOrdered & musí existovat daná trída a property & pro nastavní = true přidá sloupec ordering, (měl by přenastavit 
+data) a vytvoří unikátní constraint přes typový, referenční a orgering sloupec\\
 \ & \ & pro nastavení = false sma6e ordering constraint a ordering column\\
 \hline
 SetUnique & Nastaví property unikátnost & owningClassName, name, isUnique \\
@@ -613,16 +614,15 @@ RemoveParent & & musí existovat třída child a mít nastavenou rodičovskou t�
 DistrubuteProperty na všechny property rodičovské třídy, odstraní cizí klíč, smaže data třídy potomka z 
 tabulky rodiče\\
 \hline
-ExtractClass & Vytvoří novou třídu, kterou napojí na původní třídu, exportuje
-do nově vzniklé třídy vyjmenované property & sourceClassName, extractClassName,
-associationPropertyName, oppositePropertyName, propertyNames \\
+ExtractClass & existuje zdrojová třída, neexistuje property s jménem linku na nově vzniklou třídu, 
+existují exportované property & vytvoří novou tabulku, aplikuje obraz operací exportProperty pro 
+každou exportovanou property\\
 \hline 
-InlineClass & Přesune property a jejich data do cílové třídy s ohledem na
-unidirectional asociaci & targetClassName, associationPropertyName,
-extractPropertyNames\\
+InlineClass & Exisutuje cílová třída a existuje linkProperty v této třídě & aplikuje obraz operací exportProperty, 
+smaže linkProperty a Inlinovanou tabulku\\
 \hline
-ChangeUniToBidir & Vytvoří zpětný link k property a nastaví správně data &
-className, associationPropertyName, oppositePropertyName \\
+ChangeUniToBidir &  existuje vlastnická třída property, existuje asociační property, která nemá nastavenou 
+opposite & pro associační property vytvoří sloupec a nastaví validně opposite  \\
 \hline
 ChangeBiToUnidir & Odstraní opoziční property & className,
 associationPropertyName \\

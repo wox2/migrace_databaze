@@ -460,13 +460,13 @@ PushDownProperties & Exportuje vyjmenované property do třídy potomka a přesu
 childClassName, pushedPropertiesNames\\
 \hline
 ExportProperty(virtuální operace) & Exportuje property v rámci hierarchie a data do cílové třídy & exportedPropertyName, 
-className
+className\\
 \hline
 DistributeProperty(virtuální operace) & Zduplikuje strukturu dané property do cílové třídy a přesune data přiřazená 
-této třídě & DistributedPropertyName, className
+této třídě & DistributedPropertyName, className\\
 \hline
 MergeProperty(virtuální operace) & Přesune data zdrojové property do cílové property a smaže strukturu původní property & 
-mergedPropertyName, className
+mergedPropertyName, className\\
 \hline
 \end{tabular}
 \end{center}
@@ -603,14 +603,14 @@ SetBounds & bounds musí být validní a musí existovat daná trída a property
 \hline
 SetOrdered & musí existovat daná trída a property & pro nastavní = true přidá sloupec ordering, (měl by přenastavit 
 data) a vytvoří unikátní constraint přes typový, referenční a orgering sloupec\\
-\ & \ & pro nastavení = false sma6e ordering constraint a ordering column\\
+\ & \ & pro nastavení = false smaže ordering constraint a ordering column\\
 \hline
 SetUnique & Nastaví property unikátnost & owningClassName, name, isUnique \\
 \hline
 AddParent & Musí existovat rodičovská třída a třída potomka, třída potomka nesmí mít nastaveného rodiče & 
 Aplikuje obraz operace MergeProperty na všechny kolizní property, přidá cizí klíč na rodičovskou třídu\\
 \hline
-RemoveParent & & musí existovat třída child a mít nastavenou rodičovskou třídu & aplikuje obraz operace 
+RemoveParent & musí existovat třída child a mít nastavenou rodičovskou třídu & aplikuje obraz operace 
 DistrubuteProperty na všechny property rodičovské třídy, odstraní cizí klíč, smaže data třídy potomka z 
 tabulky rodiče\\
 \hline
@@ -657,13 +657,13 @@ PushDownProperties & Exportuje vyjmenované property do třídy potomka a přesu
 childClassName, pushedPropertiesNames\\
 \hline
 ExportProperty(virtuální operace) & Exportuje property v rámci hierarchie a data do cílové třídy & exportedPropertyName, 
-className
+className\\
 \hline
 DistributeProperty(virtuální operace) & Zduplikuje strukturu dané property do cílové třídy a přesune data přiřazená 
-této třídě & DistributedPropertyName, className
+této třídě & DistributedPropertyName, className\\
 \hline
 MergeProperty(virtuální operace) & Přesune data zdrojové property do cílové property a smaže strukturu původní property & 
-mergedPropertyName, className
+mergedPropertyName, className\\
 \hline
 \end{tabular}
 \end{center}
@@ -751,7 +751,7 @@ Samostatným tématem je pořadí operací a jeho permutace. Je zřejmé, že po
 seznamu operací operujících nad jinými elementy bude možné libovolně prohazovat.
 Také je samozřejmé, že seznam subtraktivních operací je také možné libovolně
 zpermutovat. Stejně tak seznam aditivních operací. Obecný princip seřazení kolekce 
-operací není znám.
+operací není znám. 
 
 \section{Obecné principy model matching}
 Jak je diskutováno v 19 a Different Models for Model Matching:

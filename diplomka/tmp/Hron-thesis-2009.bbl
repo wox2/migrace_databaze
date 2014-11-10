@@ -1,0 +1,19 @@
+\begin{thebibliography}{Luk13}
+
+\bibitem[Je�12]{Jezek}
+Jiří Ježek.
+\newblock Modelem řízená evoluce objektů, 2012.
+
+\bibitem[Luk11]{Lukes}
+Martin Lukeš.
+\newblock Transformace objektových modelů, 2011.
+
+\bibitem[Luk13]{Luksch}
+David Luksch.
+\newblock Katalog refaktoringu frameworku migdb, 2013.
+
+\bibitem[Tar12]{Tarant}
+Petr Tarant.
+\newblock Modelem řízená evoluce databáze, 2012.
+
+\end{thebibliography}

@@ -89,7 +89,8 @@
 %\newcommand\StudProgram{Elektrotechnika a informatika, dobíhající, Bakalářský}
 %\newcommand\StudProgram{Elektrotechnika a informatika, dobíhající, Magisterský}
 % \newcommand\StudProgram{Elektrotechnika a informatika, strukturovaný, Bakalářský}
- \newcommand\StudProgram{Elektrotechnika a informatika, strukturovaný, Navazující magisterský}
+ \newcommand\StudProgram{Otevřená informatika, strukturovaný,
+ Navazující magisterský}
 % \newcommand\StudProgram{Softwarové technologie a management, Bakalářský}
 % English study:
 % \newcommand\StudProgram{Electrical Engineering and Information Technology}  % bachelor programe
@@ -103,8 +104,8 @@
 % nabidky jsou z: http://www.fel.cvut.cz/cz/education/bk/prehled.html
 
 %\newcommand\StudBranch{Výpočetní technika}   % pro program EaI bak. (dobihajici i strukt.)
-\newcommand\StudBranch{Výpočetní technika}   % pro prgoram EaI mag. (dobihajici i strukt.)
-%\newcommand\StudBranch{Softwarové inženýrství}            %pro STM
+\newcommand\StudBranch{Softwarové inženýrství a interakce}   % pro prgoram EaI mag.
+% (dobihajici i strukt.) \newcommand\StudBranch{Softwarové inženýrství}            %pro STM
 %\newcommand\StudBranch{Web a multimedia}                  % pro STM
 %\newcommand\StudBranch{Computer Engineering}              % bachelor programe
 %\newcommand\StudBranch{Computer Science and Engineering}  % master programe
@@ -115,9 +116,9 @@
 % Set up Work Title, Author and Supervisor
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\newcommand\WorkTitle{Simulace inhibice zpětného vychytávání pomocí neuronové sítě typu KVAZI-$\omega$}
-\newcommand\FirstandFamilyName{Bc. Cornelius Hron}
-\newcommand\Supervisor{prof. Ing. Damián Zlo, CSc.}
+\newcommand\WorkTitle{Migrace databáze}
+\newcommand\FirstandFamilyName{Bc. Martin Lukeš}
+\newcommand\Supervisor{Ing. Ondřej Macek}
 
 
 % Pouzijete-li pdflatex, tak je prijemne, kdyz bude mit vase prace
@@ -134,9 +135,6 @@ linkcolor=blue,
 unicode=true,
 ]
 {hyperref}
-
-
-
 
 \begin{document}
 
@@ -302,37 +300,46 @@ let dvacátého století prosazovaly myšlenky vedoucí k vytvoření speciáln�
 systémů k těmto účelům určeným - tento software se v české odborné literatuře
 nazývá systém řízení báze dat (SŘBD). 
 
-Kvůli nutnosti modifikace, dokumentace a komunikace mezi vývojáři vznikají různé
-typy modelů. Objektový model aplikace popisuje strukturu aplikace a je doplněn
+Kvůli nutnosti dokumentace a komunikace mezi vývojáři vznikají různé typy
+modelů. Objektový model aplikace popisuje strukturu aplikace a je doplněn 
 modelem databázovým modelem popisujícím stav databáze. Aby byla aplikace
-funkční, je nutné zajistit konzistenci mezi databázovým a aplikačním modelem.
-Tato konzistence je zaručena automatickou transformací aplikačního modelu na
-model databázový, což vývojářům softwaru šetří čas strávený vývojem softwaru.
+funkční,  je nutné zajistit konzistenci mezi databázovým a aplikačním modelem.
 Tento problém byl již vyřešen a jeho řešení bývá v literatuře nazýváno objektově
 relační mapování(ORM). Dnešní implementace ORM jsou schopny nejen transformovat
 aplikační model na model databázový, ale také vyjádřit změnu v struktuře
-aplikace pomocí DDL SQL skriptů, které pozmění model databázový tak aby
-odpovídal modelu aplikačnímu. Problém nastává, jakmile zahrneme do zachování
+aplikace pomocí skriptů Data definition Language (DDL), podmnožiny Structured
+Query Language (SQL). Tyto skripty pozmění model databázový tak aby
+odpovídal modelu aplikačnímu. Tato konzistence je zaručena automatickou
+transformací aplikačního modelu na model databázový, což vývojářům softwaru
+šetří čas strávený vývojem softwaru.
+
+Problém nastává, jakmile zahrneme do zachování
 nejen strukturu dat, ale i samotná data. Změnit strukturu dat a zároveň
 transformovat data tak, aby měla stejnou vyjadřovací schopnost jako původní
 data(považujme změny aplikačního modelu jako smazání třídy, atributu apod za
 změny zachovávající informaci).
 
 
-\section{Projekt Migdb}
+\chapter{Projekt Migdb}
 
-Tato dipomová práce byla napsána v rámci projektu Migdb. Zabývá se zkoumáním
-změn aplikačního modelu, jejich popisem a rozpoznáváním změn vedoucích od
-jednoho aplikačního modelu vedoucích k druhému. Dále pak dokončuje a upřesňuje
+Tato dipomová práce byla napsána v rámci projektu Migdb. Cílem tohoto projektu
+je definovat ucelenou množinu změn, tj. operací, kterými mohou vývojáři změnit
+model aplikace a transformovat tyto změny do spustitelnáho SQL skriptu, který
+změní strukturu databáze a přesune data do odpovídajících elementů z modelu
+aplikace.
+
+Zabývá se zkoumáním změn aplikačního modelu, jejich popisem a rozpoznáváním změn
+vedoucích od jednoho aplikačního modelu vedoucích k druhému. Dále pak dokončuje a upřesňuje
 kontrakt takzvaných operací nad aplikačním modelem a popisuje jejich
 transformaci na změny modelu databázového. Ne nepodstatnou částí je poté
 vygenerování SQL příkazů spustitelných nad relační databází PostgreSQL.
 
 V rámci Migdb byly v posledních letech vytvořeny již vytvořeny 4 bakalářské
-práce členů Migdb. Jednalo se o práce mé osoby jež pojednávala o problematice
-mapování aplikačního modelu na model databázový Jiřího Ježka, dále práce Petra
-Taranta popisující databázového modelu a poslední práce pojednává o popisu
-testování projektu.
+práce členů Migdb. Jednalo se o práce mé osoby \cite{Lukes}, jež pojednávala o
+problematice mapování aplikačního modelu na model databázový práce Jiřího 
+Ježka \cite{Jezek} popisující aplikační model a jeho transformace, dále práce
+Petra Taranta \cite{Tarant} popisující databázový model a jeho transformace a poslední
+práce pojednává o popisu testování projektu \cite{Luksch}.
 
 Projekt Migdb byl započat v spolupráci se společností Collections Pro a byl
 prezentován na konferenci Code Generation v Cambridge.
@@ -976,153 +983,10 @@ zdokumentovat. Proto bych byl rád, kdybych mohl věnovat následující půlrok
 přepracování textu diplomové práce.
 
 
-\section{Odkazy v textu}
-\subsection{Odkazy na literaturu}
-Jsou realizovány příkazem \verb|\cite{odkaz}|. 
-
-Seznam literatury je dobré zapsat do samostatného souboru a ten pak zpracovat programem bibtex (viz soubor \verb|reference.bib|). Zdrojový soubor pro \verb|bibtex| vypadá například takto:
-\begin{verbatim}
-@Article{Chen01,
-  author  = "Yong-Sheng Chen and Yi-Ping Hung and Chiou-Shann Fuh",
-  title   = "Fast Block Matching Algorithm Based on 
-             the Winner-Update Strategy",
-  journal = "IEEE Transactions On Image Processing",
-  pages   = "1212--1222",
-  volume  =  10,
-  number  =   8,
-  year    = 2001,
-}
-
-@Misc{latexdocweb,
-  author  = "",
-  title   = "{\LaTeX} --- online manuál",
-  note    = "\verb|http://www.cstug.cz/latex/lm/frames.html|",
-  year    = "",
-}
-...
-\end{verbatim}
-
-%11.12.2008, 3.5.2009
-\textbf{Pozor:} Sazba názvů odkazů je dána Bib\TeX{} stylem\\ (\verb|\bibliographystyle{abbrv}|). 
-%Budete-li používat české prostředí (\verb|\usepackage[czech]{babel}|), 
-Bib\TeX{} tedy obvykle vysází velké pouze počáteční písmeno z názvu zdroje, 
-ostatní písmena zůstanou malá bez ohledu na to, jak je napíšete. 
-Přesněji řečeno, styl může zvolit pro každý typ publikace jiné konverze. 
-Pro časopisecké články třeba výše uvedené, jiné pro monografie (u nich často bývá 
-naopak velikost písmen zachována).
-
-Pokud chcete Bib\TeX u napovědět, která písmena nechat bez konverzí 
-(viz \texttt{title = "\{$\backslash$LaTeX\} -{}-{}- online manuál"} 
-v~předchozím příkladu), je nutné příslušné písmeno (zde celé makro) uzavřít 
-do složených závorek. Pro přehlednost je proto vhodné celé parametry 
-uzavírat do uvozovek (\texttt{author = "\dots"}), nikoliv do složených závorek.
-
-Odkazy na literaturu ve zdrojovém textu se pak zapisují:
-\begin{verbatim}
-Podívejte se na \cite{Chen01}, 
-další detaily najdete na \cite{latexdocweb}
-\end{verbatim}
-
-Vazbu mezi soubory \verb|*.tex| a \verb|*.bib| zajistíte příkazem 
-\verb|\bibliography{}| v souboru \verb|*.tex|.  V našem případě tedy zdrojový 
-dokument \verb|thesis.tex| obsahuje příkaz\\
-\verb|\bibliography{reference}|.
-
-Zpracování zdrojového textu s odkazy se provede postupným voláním programů\\
-\verb|pdflatex <soubor>| (případně \verb|latex <soubor>|), \verb|bibtex <soubor>| 
-a opět\\ \verb|pdflatex <soubor>|.\footnote{První volání \texttt{pdflatex} 
-vytvoří soubor s~koncovkou \texttt{*.aux}, který je vstupem pro program 
-\texttt{bibtex}, pak je potřeba znovu zavolat program \texttt{pdflatex} 
-(\texttt{latex}), který tentokrát zpracuje soubory s příponami \texttt{.aux} a 
-\texttt{.tex}. 
-Informaci o případných nevyřešených odkazech (cross-reference) vidíte přímo při 
-zpracovávání zdrojového souboru příkazem \texttt{pdflatex}. Program \texttt{pdflatex} 
-(\texttt{latex}) lze volat vícekrát, pokud stále vidíte nevyřešené závislosti.}
 
 
-Níže uvedený příklad je převzat z dříve existujících pokynů studentům, kteří 
-dělají svou diplomovou nebo bakalářskou práci v~Grafické skupině.\footnote{Několikrát 
-jsem byl upozorněn, že web s těmito pokyny byl zrušen, proto jej zde přímo necituji. 
-Nicméně příklad sám o sobě dokumentuje obecně přijímaný konsensus ohledně citací 
-v~bakalářských a diplomových pracích na KP.} Zde se praví:
-\begin{small}
-\begin{verbatim}
-...
-j) Seznam literatury a dalších použitých pramenů, odkazy na WWW stránky, ...
- Pozor na to, že na veškeré uvedené prameny se musíte v textu práce 
- odkazovat -- [1]. 
-Pramen, na který neodkazujete, vypadá, že jste ho vlastně nepotřebovali 
-a je uveden jen do počtu. Příklad citace knihy [1], článku v časopise [2], 
-stati ve sborníku [3] a html odkazu [4]: 
-[1] J. Žára, B. Beneš;, and P. Felkel. 
-     Moderní počítačová grafika. Computer Press s.r.o, Brno, 1 edition, 1998. 
-     (in Czech). 
-[2] P. Slavík. Grammars and Rewriting Systems as Models for Graphical User 
-     Interfaces. Cognitive Systems, 4(4--3):381--399, 1997. 
-[3] M. Haindl, Š. Kment, and P. Slavík. Virtual Information Systems. 
-     In WSCG'2000 -- Short communication papers, pages 22--27, Pilsen, 2000. 
-     University of West Bohemia. 
-[4] Knihovna grafické skupiny katedry počítačů: 
-     http://www.cgg.cvut.cz/Bib/library/ 
-\end{verbatim}
-\end{small}
-\ldots{} abychom výše citované odkazy skutečně našli v (automaticky generovaném) seznamu literatury tohoto textu, musíme je nyní alespoň jednou citovat: Kniha \cite{kniha}, článek v~časopisu \cite{clanek}, příspěvek na konferenci \cite{sbornik}, www odkaz \cite{www}.
 
-\subsection{Odkazy na obrázky, tabulky a kapitoly}
-\begin{itemize}
-\item Označení místa v textu, na které chcete později čtenáře práce odkázat, se provede příkazem \verb|\label{navesti}|. Lze použít v prostředích \verb|figure| a  \verb|table|, ale též za názvem kapitoly nebo podkapitoly.
-\item Na návěští se odkážeme příkazem \verb|\ref{navesti}| nebo \verb|\pageref{navesti}|.
-\end{itemize}
-
-\section{Rovnice, centrovaná, číslovaná matematika}
-Jednoduchý matematický výraz zapsaný přímo do textu se vysází pomocí prostředí \verb|math|, resp. zkrácený zápis pomocí uzavření textu rovnice mezi znaky \verb|$|.
-
-Kód \verb|$ S = \pi * r^2 $| bude vysázen takto: $ S = \pi * r^2 $.
-
-Pokud chcete nečíslované rovnice, ale umístěné centrovaně na samostatné řádky, pak lze použít prostředí \verb|displaymath|, resp. zkrácený zápis pomocí uzavření textu rovnice mezi znaky \verb|$$|. Zdrojový kód: 
-\begin{verb}
-|$$ S = \pi * r^2 $$|
-\end{verb}
-bude pak vysázen takto:
-$$ S = \pi * r^2 $$
-
-Chcete-li mít rovnice číslované, je třeba použít prostředí \verb|eqation|. Kód:
-\begin{verbatim}
-\begin{equation}
-  S = \pi * r^2
-\end{equation}
-
-\begin{equation}
-  V = \pi * r^3
-\end{equation}
-\end{verbatim}
-je potom vysázen takto:
-\begin{equation}
-  S = \pi * r^2
-\end{equation}
-
-\begin{equation}
-  V = \pi * r^3
-\end{equation}
-
-\section{Kódy programu}
-Chceme-li vysázet například část zdrojového kódu programu (bez formátování), hodí se prostředí \verb|verbatim|: 
-\begin{verbatim}
-         (* nickname2 *)
-Lego> Refine in1
-             (do_reg (nickname1 h));
-Refine by  in1 (do_reg (nickname1 h))
-   ?4 : pcdata
-   ?5 : pcdata
-          (* surname2 *)
-Lego> Refine surname1 h;
-Refine by  surname1 h
-   ?5 : pcdata
-          (* email2 *)
-Lego> Refine undo_reg (email1 h);
-Refine by  undo_reg (email1 h)
-*** QED ***
-\end{verbatim}
+\cite{Tarant}
 
 \section{Další poznámky}
 \subsection{České uvozovky}
@@ -1159,7 +1023,7 @@ V souboru \verb|k336_thesis_macros.tex| je příkaz \verb|\uv{}| pro sázení č
 \chapter{Obsah přiloženého CD}
 \textbf{\large Tato příloha je povinná pro každou práci. Každá práce musí totiž obsahovat přiložené CD. Viz dále.}
 
-Může vypadat například takto. Váš seznam samozřejmě bude odpovídat typu vaší práce. (viz \cite{infodp}):
+Může vypadat například takto. Váš seznam samozřejmě bude odpovídat typu vaší práce. 
 
 \begin{figure}[h]
 \begin{center}
@@ -1176,5 +1040,7 @@ Ve vzniklém souboru pak stačí pouze doplnit komentáře.
 Z \textbf{README.TXT} (případne index.html apod.)  musí být rovněž zřejmé, jak programy instalovat, spouštět a jaké požadavky mají tyto programy na hardware.
 
 Adresář \textbf{text}  musí obsahovat soubor s vlastním textem práce v PDF nebo PS formátu, který bude později použit pro prezentaci diplomové práce na WWW.
+ \bibliographystyle{alpha}
+\bibliography{reference}
 
 \end{document}

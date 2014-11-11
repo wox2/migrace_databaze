@@ -1,7 +1,7 @@
-\begin{thebibliography}{Luk13}
+\begin{thebibliography}{PMH12}
 
-\bibitem[Je�12]{Jezek}
-Jiří Ježek.
+\bibitem[Jez12]{Jezek}
+Jiří Jezek.
 \newblock Modelem řízená evoluce objektů, 2012.
 
 \bibitem[Luk11]{Lukes}
@@ -12,8 +12,23 @@ Martin Lukeš.
 David Luksch.
 \newblock Katalog refaktoringu frameworku migdb, 2013.
 
-\bibitem[Tar12]{Tarant}
+\bibitem[PMH12]{Cambridge}
+Jiří~Jezek Pavel~Moravec, Petr~Tarant and David Harmanec.
+\newblock A practical approach to dealing with evolving models and persisted
+  data.
+\newblock Technical report, FEL ČVUT, CollectionsPro, 15.4. 2012.
+\newblock "Dostupný na
+  \url{http://www.codegeneration.net/cg2012/sessioninfo.php?session=37}".
+
+\bibitem[Tar12]{Tarant_bp}
 Petr Tarant.
 \newblock Modelem řízená evoluce databáze, 2012.
+
+\bibitem[Val10]{Relacni_algebra}
+Michal Valenta.
+\newblock Databazové modely.
+\newblock Technical report, Fakulta informačních technologií ČVUT, 2010.
+\newblock "Dostupný na
+  \url{https://users.fit.cvut.cz/valenta/doku/lib/exe/fetch.php/bivs/dbs_02_databazove_modely.pdf"}.
 
 \end{thebibliography}

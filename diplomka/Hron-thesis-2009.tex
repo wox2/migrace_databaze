@@ -302,22 +302,41 @@ nazývá systém řízení báze dat (SŘBD).
 
 Kvůli nutnosti dokumentace a komunikace mezi vývojáři vznikají různé typy
 modelů. Objektový model aplikace popisuje strukturu aplikace a je doplněn 
-modelem databázovým modelem popisujícím stav databáze. Aby byla aplikace
-funkční,  je nutné zajistit konzistenci mezi databázovým a aplikačním modelem.
+modelem databázovým modelem popisujícím stav databáze. Nejrozšířenějším typem
+databáze jsou v nynější době databáze relační, která uspořádává data podle
+relařního modelu. Relační model je dle \cite{Relacni_algebra} formální abstrakce
+využívající relaci jakožto jediný konstrukt. Relace je uspořádaná n-tice
+souvislých dat R(A1:D1, A2:D2, \ldots An:Dn), přičemž "R" je název relace, Ai
+jsou názvy atributů a Di jsou k nim přidružené typy. Relační algebra definuje
+pomocí relací a integritních omezení strukturu databáze. Dotazovacím aparátem
+pro data definovaná pomocí relační algebry je relační algebra. Relační algebra
+využívá operátorů $\bigcup$ (sjednocení), $\bigcap$ (průnik),
+$\setminus$ (množinový rozdíl) a $\times$ (kartézský součin) a operací selekce
+značená R($\varphi $) = \{ u | u $\in$ R a  $\varphi(u)$\} a projekce značená
+R[C] = { u[C] | u $\in$ R} a operace přirozené spojení T(C) = R * S =\{u |
+u[A] $\in$ R a u[B] $\in$ S\}.
+\cite{Relacni_algebra} dále definuje relačně úplný jazyk jako takový, který
+umožňuje realizovat relační algebru. Takovým jazykem je například jazyk SQL 
+(Structured Query Language). Relační databáze implementuje relaci tabulkou, její
+atributy Ai jednotlivými sloupci s typy Di. V dotazovacím jazyce SQL nahrazuje
+projekci R[a1, \ldots , an] operací SELECT a1, \ldots an FROM R, operaci
+selekce R[ a = 1] klauzulí where v dotaze select  SELECT * FROM R WHERE a = 1; 
+
+Aby byla aplikace funkční, je nutné zajistit
+konzistenci mezi databázovým a aplikačním modelem.
 Tento problém byl již vyřešen a jeho řešení bývá v literatuře nazýváno objektově
-relační mapování(ORM). Dnešní implementace ORM jsou schopny nejen transformovat
-aplikační model na model databázový, ale také vyjádřit změnu v struktuře
-aplikace pomocí skriptů Data definition Language (DDL), podmnožiny Structured
-Query Language (SQL). Tyto skripty pozmění model databázový tak aby
-odpovídal modelu aplikačnímu. Tato konzistence je zaručena automatickou
+relační mapování(ORM) \cite{ORM}. Dnešní implementace ORM jsou schopny nejen
+transformovat aplikační model na model databázový, ale také vyjádřit změnu v struktuře
+aplikace pomocí skriptů Data definition Language (DDL), podmnožiny jazyka SQL.
+Tyto skripty pozmění model databázový tak aby odpovídal modelu aplikačnímu. Tato konzistence je zaručena automatickou
 transformací aplikačního modelu na model databázový, což vývojářům softwaru
 šetří čas strávený vývojem softwaru.
 
 Problém nastává, jakmile zahrneme do zachování
 nejen strukturu dat, ale i samotná data. Změnit strukturu dat a zároveň
 transformovat data tak, aby měla stejnou vyjadřovací schopnost jako původní
-data(považujme změny aplikačního modelu jako smazání třídy, atributu apod za
-změny zachovávající informaci).
+data - považujme změny aplikačního modelu jako smazání třídy, atributu apod za
+změny zachovávající informaci.
 
 
 \chapter{Projekt Migdb}
@@ -331,27 +350,26 @@ aplikace.
 Zabývá se zkoumáním změn aplikačního modelu, jejich popisem a rozpoznáváním změn
 vedoucích od jednoho aplikačního modelu vedoucích k druhému. Dále pak dokončuje a upřesňuje
 kontrakt takzvaných operací nad aplikačním modelem a popisuje jejich
-transformaci na změny modelu databázového. Ne nepodstatnou částí je poté
-vygenerování SQL příkazů spustitelných nad relační databází PostgreSQL.
+transformaci na změny modelu databázového a následným vygenerováním SQL příkazů
+spustitelných nad relační databází PostgreSQL.
 
-V rámci Migdb byly v posledních letech vytvořeny již vytvořeny 4 bakalářské
-práce členů Migdb. Jednalo se o práce mé osoby \cite{Lukes}, jež pojednávala o
-problematice mapování aplikačního modelu na model databázový práce Jiřího 
-Ježka \cite{Jezek} popisující aplikační model a jeho transformace, dále práce
-Petra Taranta \cite{Tarant} popisující databázový model a jeho transformace a poslední
+V rámci Migdb bylo v posledních letech vytvořeny 4 bakalářské práce a 2
+diplomové práce členů Migdb.
+Jednalo se o práce mé osoby \cite{Lukes}, jež pojednávala o problematice mapování 
+aplikačního modelu na model databázový práce Jiřího Ježka \cite{Jezek}
+popisující aplikační model a jeho transformace, dále práce Petra Taranta
+\cite{Tarant_bp} popisující databázový model a jeho transformace a poslední
 práce pojednává o popisu testování projektu \cite{Luksch}.
 
-Projekt Migdb byl započat v spolupráci se společností Collections Pro a byl
-prezentován na konferenci Code Generation v Cambridge.
+Projekt Migdb byl započat v spolupráci se společností Collections Pro Výsledky
+dosavadní práce byly v roce 2012 prezentovány jako case-study na prestižní
+modelové konferenci Code Generation 2012 \cite{Cambridge} v Anglickém Cambridge.
 
 \section{Aplikační model}
 
 Aplikační model zachycuje vztahy mezi jednotlivými objekty tvořícími
 aplikaci. Ačkoliv byl tento model vytvořen již v raných fázích projektu Migdb a
-byl často upravován, tak se charakter popisující objekty v aplikačním modelu
-příliš nezměnil. Některé entity v modelu se zjednodušily,
-již neexistují atributy tableName a columnName, které byly obsaženy v první
-verzi modelu.
+byl často upravován, většinou zjednodušován.
 
 \subsection{Operace nad aplikačním modelem}
 \subsubsection{Cíle při modelování operací}
@@ -362,26 +380,28 @@ vzhledem k nutnosti textového zápisu uživatelem o minimalističnost zápisu. 
 dva koncepty jdou obecně proti sobě, proto jsme došli k jistému jejich
 kompromisu uživatelské jednoduchosti zápisu a jednoznačnosti.
 
-\subsubsection{Seznam aplikačních operací}
-
-Operace v aplikačním modelu se vyvíjeli parametricky, ale také se měnil jejich
-seznam. Z operací v první verzi modelu byly odstraněny operace MoveProperty,
-AddPrimitiveClass, SetOpposite a SetType. Operace AddPrimitive byla označena za
-nadbytečnou, protože není cílem modifikace modelu změna seznamu primitivních tříd, který bývá
-definován použitým programovacím jazykem a tudíž by měl tento seznam být v
-vstupní generaci. V průběhu analýzy operace SetOpposite bylo zjištěno, že tato
+\subsubsection{Historický vývoj}
+Operace v aplikačním modelu se vyvíjely a měnily se jejich parametry, ale
+současně se měnil i seznam dostupných operací nad aplikačním modelem. Z operací
+v první verzi modelu byly odstraněny operace MoveProperty, AddPrimitiveClass,
+SetOpposite a SetType. Operace AddPrimitive byla označena za nadbytečnou,
+protože není cílem modifikace modelu změna seznamu primitivních tříd, který
+bývá definován použitým programovacím jazykem a tudíž by měl tento seznam být v
+vstupní generaci.V průběhu analýzy operace SetOpposite bylo zjištěno, že tato
 operace má smysl na strukturální úrovni, ale není možné ji aplikovat na obecná
 data, proto byla tato operace nahrazena dvojicí operací ChangeUniToBidir a
 ChangeBiToUnidir, které plní nároky kladené na původní operaci a jsou
-aplikovatelné na datové úrovni. Operace SetType byla prozkoumána, ale
-nebyla exaktně popsána, nebylo nalezeno její mapování na operace v databázi ani
+aplikovatelné  na datové úrovni. Operace SetType byla prozkoumána, ale nebyla
+exaktně popsána, nebylo nalezeno její mapování na operace v databázi ani
 validační podmínky nutné k úspěšné aplikaci operace na aplikační model. Je
-očekatelné, že by tato operace měla souviset s dědičnými hierarchiemi. Operace
-jsou uvedeny v tabulkách \ref{tab:opsSeznam1} a \ref{tab:opsSeznam2}. Kromě regulérních 
-operací, které může vytvořit uživatel jsou v tabulce \ref{tab:opsSeznam2} uvedeny operace 
-DistributeProperty, MergeProperty a operace ExportProperty, které jsou používány jako pomocné 
-v implementaci složitějších reduktivních a expanzivních operací a manipulují s Property v rámci 
-dědičné struktury.
+očekatelné, že by tato operace měla souviset s dědičnými hierarchiemi. 
+
+\subsubsection{Seznam aplikačních operací}
+Operace jsou uvedeny v tabulkách \ref{tab:opsSeznam1} a \ref{tab:opsSeznam2}. Kromě
+regulérních operací, které může vytvořit uživatel jsou v tabulce
+\ref{tab:opsSeznam2} uvedeny operace DistributeProperty, MergeProperty a
+operace ExportProperty, které jsou používány jako pomocné v implementaci 
+složitějších reduktivních a expanzivních operací a manipulují s Property v rámci dědičné struktury.
 
 
 \begin{table}
@@ -488,19 +508,28 @@ typem entity pracují, 2. jaký je charakter/význam pro tito entity daná opera
 má.
 
 První kritérium dělí aplikační operace na operace pracující s třídami a operace
-pracující pouze s properties daných tříd. Podle druhého kritéria je možné
-rozdělit operace nad aplikačním modelem 5 skupin - konstruktivní, destruktivní,
-expanzivní, reduktivní a modifikační operace. Konstruktivní operace jsou takové,
-které po své aplikaci vytvoří 1 novou entitu v výsledném modelu, která nemá žádné 
-vazby na jiné entity. Příkladem aditivní operace je
-operace AddClass. Destruktivní operace je opak konstruktivní, v vstupním modelu
-existuje entita a ta je aplikaci destruktivní operace odstraněna. Operace
-expanzivní přídává do výstupního modelu jednu entitu, čímž se podobá operaci
-konstruktivní, nicméně zároveň je vázána na jinou entitu stejného typu a
-zmenšuje její obsah. Příkladem expanzivní operace je ExtractClass. Reduktivní
-operace je inverzí k operaci expanzivní. Tato operace entitu z vstupního
-modelu odstraní a zároveň entitě, která je pro operaci řídící změní obsah.
-Příkladem této operace je InlineClass.\\
+pracující pouze s properties daných tříd. Příkladem operací pracujících s
+třídami jsou operace AddStandardClass, AddParent a RemoveEntity. Příkladem
+operací pracujících s properties jsou operace AddProperty, RemoveProperty,
+SetAbstract.
+
+Podle druhého kritéria je možné rozdělit operace nad aplikačním modelem 5 skupin
+- konstruktivní, destruktivní, expanzivní, reduktivní a modifikační operace.
+Konstruktivní operace jsou takové, které po své aplikaci vytvoří 1 novou entitu
+v výsledném modelu, která nemá žádné vazby na jiné entity. Příklady aditivní
+operace je operace AddClass. 
+
+Destruktivní operace je opak konstruktivní, v vstupním modelu existuje entita a
+ta je aplikaci destruktivní operace odstraněna. Příkladem destruktivní operace
+je operace RemoveProperty.
+
+Operace expanzivní přídává do výstupního modelu jednu entitu, čímž se
+podobá operaci konstruktivní, nicméně zároveň je vázána na jinou entitu stejného typu a
+zmenšuje její obsah. Příkladem expanzivní operace je ExtractClass. 
+
+Reduktivní operace entitu z vstupního modelu odstraní a zároveň entitě, která
+je pro operaci řídící změní obsah. Příkladem této operace je InlineClass.
+Reduktivní operace jsou inverzní k operacím expanzivním.\\
 
 Rozdělení operací nad aplikačním modelem je jen formální, neprojevilo se změnou
 hierarchické struktury operací. Struktura operací byla zjednodušena - již

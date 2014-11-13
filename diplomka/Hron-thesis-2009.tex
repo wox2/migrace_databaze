@@ -17,6 +17,7 @@
 % officially suggested packages:
 \usepackage[czech, english]{babel}
 \usepackage[T1]{fontenc} % pouzije EC fonty 
+\usepackage{listings} %pouzivani referencovatelneho bloku kodu 
 % pripadne pisete-li cesky, pak lze zkusit take:
 % \usepackage[OT1]{fontenc} 
 \usepackage[utf8]{inputenc}
@@ -544,18 +545,148 @@ použity/volány.\\
 
 \subsubsection{Vlastnosti operací}
 
-V literatuře mají operace některé specifické vlastnosti jako je
-invertovatelnost a rozložitelnost. Je nutné říci, že operace zmiňované v
-literatuře pracují jen se strukturou dat, nikoliv s daty samotnými a jsou
-kontextově nezávislé - tyto operace jsou tvořeny téměř výlučně konstruktivními
-a destruktivními operacemi. V projektu Migdb na druhé straně existují operace, 
-které jsou kontextově závislé, což je uživatelskou přívětivostí
-operací - jako zástupcem takové operace se dá uvést operace
-AddParent(parentClass=B, childClass=A), která nezmiňuje všechny Property, které
-se mají odstranit, ale dynamicky si je dopočítává v závislosti na daném
-kontextu. Její inverzí je operace RemoveParent(childClass=A). Vzhledem k
-minimalističnosti neexistuje k operaci RemoveParent(childClass=A) jednoznačná 
-inverze bez daného konktextu.
+V \cite{Cincetti} autor definuje operace pomocí delta notace. Delta notace
+je taková, která ukazuje všechny změny mezi danými dvěma artefakty stejné
+úrovně abstrackce. 
+
+Příklad Delta notace za pomoci linuxových nástrojů diff dvou souborů\\
+\begin{lstlisting}[language=JAVA,frame=single,caption=Man1.java,label=Man1]
+class Man {
+	private String name;
+
+	public Man(String name){
+		this.name = name;
+	}
+
+}
+\end{lstlisting}
+
+\begin{lstlisting}[language=JAVA,frame=single,caption=Man2.java,label=Man2]
+class Man {
+	private String name;
+
+	private String surename;
+
+	public Man(String name){
+		this.name = name;
+	}
+
+	public Man(String name, String surename){
+		this(name);
+		this.surename = surename;
+	}
+}
+\end{lstlisting}
+
+\begin{lstlisting}[language=JAVA,frame=single,caption=Diff Man1
+Man2,label=Diff_1_2]
+3a4,5
+> 	private String surename;
+> 
+5a8,12
+> 	}
+> 
+> 	public Man(String name, String surename){
+> 		this(name);
+> 		this.surename = surename;	
+\end{lstlisting}
+
+Ukázka kódu \ref{Man1} zobrazuje zdrojový kód třídy Man v první
+verzi. Ukázka \ref{Man2} potom zdrojový kód třídy Man po první naší editaci,
+kdy jsme do dané třídy přidali nový atribut a nový konstruktor.
+Diff v delta notaci těchto dvou souborů je ukázán v \ref{Diff_1_2}. V delta
+notaci vidíme, že do prvního souboru byly za 3. řádek vloženy řádky 4-5 z
+druhého souboru - řádek definující nový atribut surename a oddělující prázdný
+řádek, dále za 5. řádek byly vloženy řádky 8-12 z druhého souboru definující
+nový konstruktor a uzavírací závorka.\\
+
+Delta notace je dle autora výhodná díky snadné
+rozložitelnosti velkých patchů na více menších patchů a také díky oddělení ve
+více konkurenčních patchích konfliktních operací od operací nazávislých. 
+
+Patch \ref{Diff_1_2} můžeme rozdělit například na \ref{Diff_1_2_a} a
+\ref{Diff_1_2_b}. Inverzní diff vidíme v \ref{Diff_reverse}, kde z souboru
+\ref{Man2} byly odstraněny řádky 4-5, které by se jinak zařadily za řádek 3,
+dále byly odstraněny řádky 10-13, které by jinak patřily za řádek 7 souboru
+Man1.
+
+\begin{lstlisting}[language=JAVA,frame=single,caption=patch
+$part_a$,label=Diff_1_2_a]
+3a4,5
+> 	private String surename;
+> 
+\end{lstlisting}
+
+\begin{lstlisting}[language=JAVA,frame=single,caption=patch
+$part_b$,label=Diff_1_2_b]
+5a8,12
+> 	}
+> 
+> 	public Man(String name, String surename){
+> 		this(name);
+> 		this.surename = surename;	
+\end{lstlisting}
+
+\begin{lstlisting}[language=JAVA,frame=single,caption=patch
+$part_b$,label=Diff_reverse]
+4,5d3
+< 	private String surename;
+< 
+8,12d5
+< 	}
+< 
+< 	public Man(String name, String surename){
+< 		this(name);
+< 		this.surename = surename;
+\end{lstlisting}
+
+Delta notace umožňuje snadný forward i backward differencing, protože díky
+kontextové nezávislosti je možné snadno invertovat operace. Kontextová nezávislost znamená,
+že jakýkoliv patch je možné aplikovat na jakýkoliv model. Aplikace patche
+\ref{Diff_1_2} na \ref{Man2} by vypadala \ref{Man2_p1_2}. Atribut byl přidán na
+správné místo, ale konstruktor byl přidán na místo špatné - uzavírací závorka
+neuzavírá předchozí konstruktor, ale celou třídu.
+
+\begin{lstlisting}[language=JAVA,frame=single,caption=patch
+aplikován na třídu Man2,label=Man2_p1_2]
+class Man {
+	private String name;
+
+	private String surename;
+
+	private String surename;
+
+	}
+
+	public Man(String name, String surename){
+		this(name);
+		this.surename = surename;
+	public Man(String name){
+		this.name = name;
+	}
+
+	public Man(String name, String surename){
+		this(name);
+		this.surename = surename;
+	}
+}
+\end{lstlisting}
+
+(intensional vs extensional - první potřebuje konkrétní model ke své aplikaci, 
+druhá ne, extensional je možné použít na paralelní vývojové větve).
+
+Tato notace mají operace některé specifické
+vlastnosti jako je invertovatelnost a rozložitelnost. Je nutné říci, že operace
+zmiňované v  literatuře pracují jen se strukturou dat, nikoliv s daty samotnými
+a  jsou kontextově nezávislé - tyto operace jsou tvořeny téměř výlučně
+konstruktivními a  destruktivními operacemi. V projektu Migdb na druhé straně 
+existují operace, které jsou kontextově závislé, což je uživatelskou
+přívětivostí  operací - jako zástupcem takové operace se dá uvést operace 
+AddParent(parentClass=B, childClass=A), která nezmiňuje všechny Property,  které
+se mají odstranit, ale dynamicky si je dopočítává v závislosti na daném kontextu. 
+Její inverzí je operace RemoveParent(childClass=A). Vzhledem k minimalističnosti
+neexistuje k operaci RemoveParent(childClass=A) jednoznačná inverze bez daného
+konktextu.
 
 Inverzi AddParent(sourceClass=A parentClass=B) získáme, pokud v
 kontextu přidruženém modelu aplikaci RemoveParent má třída A předka B. Nicméně i

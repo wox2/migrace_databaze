@@ -1,0 +1,9 @@
+3a4,5
+> 	private String age;
+> 
+5a8,12
+> 	}
+> 
+> 	public Man(String name, String age){
+> 		this(name);
+> 		this.age = age;

@@ -1,0 +1,14 @@
+class Man {
+	private String name;
+
+	private String age;
+
+	public Man(String name){
+		this.name = name;
+	}
+
+	public Man(String name, String age){
+		this(name);
+		this.age = age;
+	}
+}

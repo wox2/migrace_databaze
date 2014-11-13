@@ -1,5 +1,11 @@
 \begin{thebibliography}{PMH12}
 
+\bibitem[Cic08]{Cincetti}
+Antonio Cicchetti.
+\newblock {\em Difference Representation and Conflict Management in
+  Model-Driven Engineering}.
+\newblock PhD thesis, Universit` a di L’Aquila, 2008.
+
 \bibitem[Jez12]{Jezek}
 Jiří Jezek.
 \newblock Modelem řízená evoluce objektů, 2012.

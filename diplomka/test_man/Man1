@@ -1,6 +1,13 @@
 class Man {
 	private String name;
 
+	private String surename;
+
+	}
+
+	public Man(String name, String surename){
+		this(name);
+		this.surename = surename;
 	public Man(String name){
 		this.name = name;
 	}

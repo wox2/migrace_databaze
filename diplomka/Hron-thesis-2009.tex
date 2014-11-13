@@ -604,11 +604,29 @@ Delta notace je dle autora výhodná díky snadné
 rozložitelnosti velkých patchů na více menších patchů a také díky oddělení ve
 více konkurenčních patchích konfliktních operací od operací nazávislých. 
 
-Patch \ref{Diff_1_2} můžeme rozdělit například na \ref{Diff_1_2_a} a
-\ref{Diff_1_2_b}. Inverzní diff vidíme v \ref{Diff_reverse}, kde z souboru
+Inverzní diff vidíme v \ref{Diff_reverse}, kde z souboru
 \ref{Man2} byly odstraněny řádky 4-5, které by se jinak zařadily za řádek 3,
 dále byly odstraněny řádky 10-13, které by jinak patřily za řádek 7 souboru
 Man1.
+
+\begin{lstlisting}[language=JAVA,frame=single,caption=patch
+$part_b$,label=Diff_reverse]
+4,5d3
+< 	private String surename;
+< 
+8,12d5
+< 	}
+< 
+< 	public Man(String name, String surename){
+< 		this(name);
+< 		this.surename = surename;
+\end{lstlisting}
+
+Patch \ref{Diff_1_2} bychom mohli rozdělit například na \ref{Diff_1_2_a} a
+\ref{Diff_1_2_b}, protože změny jsou na různých řádcích a jsou zdánlivě
+nezávislé. Aplikací těchto dvou patchů v pořadí $part_a$ a $part_b$ vznikne
+\ref{Man1_alternative}, kdežto aplikace patchů v pořadí $part_b$, $part_a$ dá
+vzniknout původnímu souboru \ref{Man2}
 
 \begin{lstlisting}[language=JAVA,frame=single,caption=patch
 $part_a$,label=Diff_1_2_a]
@@ -627,25 +645,36 @@ $part_b$,label=Diff_1_2_b]
 > 		this.surename = surename;	
 \end{lstlisting}
 
-\begin{lstlisting}[language=JAVA,frame=single,caption=patch
-$part_b$,label=Diff_reverse]
-4,5d3
-< 	private String surename;
-< 
-8,12d5
-< 	}
-< 
-< 	public Man(String name, String surename){
-< 		this(name);
-< 		this.surename = surename;
+\begin{lstlisting}[language=JAVA,frame=single,caption=aplikace pořadí
+difů $part_a part_b$,label=Man1_alternative] class Man { private String name;
+
+	private String surename;
+
+	}
+
+	public Man(String name, String surename){
+		this(name);
+		this.surename = surename;
+	public Man(String name){
+		this.name = name;
+	}
+}
 \end{lstlisting}
+
+
 
 Delta notace umožňuje snadný forward i backward differencing, protože díky
 kontextové nezávislosti je možné snadno invertovat operace. Kontextová nezávislost znamená,
 že jakýkoliv patch je možné aplikovat na jakýkoliv model. Aplikace patche
 \ref{Diff_1_2} na \ref{Man2} by vypadala \ref{Man2_p1_2}. Atribut byl přidán na
-správné místo, ale konstruktor byl přidán na místo špatné - uzavírací závorka
-neuzavírá předchozí konstruktor, ale celou třídu.
+správné místo, ale konstruktor byl přidán na místo špatné - přídaná uzavírací
+závorka neuzavírá předchozí konstruktor, ale celou třídu. Navzdory tomu, že
+tento Java kód je nevalidní, patch bylo možné aplikovat.\\
+
+Všimněme si, že standardní unixový diff obsahuje redundantní informaci -
+řádek \ref{Diff_1_2_a} 3a4,5 musí obsahovat číslo řádku, za který se má
+navazující text diffu přidat, ale nemusí obsahovat, které řádky v druhém
+souboru budou .
 
 \begin{lstlisting}[language=JAVA,frame=single,caption=patch
 aplikován na třídu Man2,label=Man2_p1_2]

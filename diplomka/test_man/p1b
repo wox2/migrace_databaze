@@ -1,0 +1,6 @@
+5a8,12
+> 	}
+> 
+> 	public Man(String name, String surename){
+> 		this(name);
+> 		this.surename = surename;

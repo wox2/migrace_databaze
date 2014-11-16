@@ -11,4 +11,5 @@ class Man {
 	public Man(String name){
 		this.name = name;
 	}
+
 }

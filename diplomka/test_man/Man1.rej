@@ -1,0 +1,15 @@
+*** /dev/null
+--- /dev/null
+***************
+*** 4,5
+- 	private String surename;
+- 
+--- 0 -----
+***************
+*** 8,12
+- 	}
+- 
+- 	public Man(String name, String surename){
+- 		this(name);
+- 		this.surename = surename;
+--- 0 -----

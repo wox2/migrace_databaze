@@ -23,8 +23,8 @@ Jiří~Jezek Pavel~Moravec, Petr~Tarant and David Harmanec.
 \newblock A practical approach to dealing with evolving models and persisted
   data.
 \newblock Technical report, FEL ČVUT, CollectionsPro, 15.4. 2012.
-\newblock "Dostupný na
-  \url{http://www.codegeneration.net/cg2012/sessioninfo.php?session=37}".
+\newblock Dostupný na
+  \url{http://www.codegeneration.net/cg2012/sessioninfo.php?session=37}.
 
 \bibitem[Tar12]{Tarant_bp}
 Petr Tarant.
@@ -34,7 +34,20 @@ Petr Tarant.
 Michal Valenta.
 \newblock Databazové modely.
 \newblock Technical report, Fakulta informačních technologií ČVUT, 2010.
-\newblock "Dostupný na
-  \url{https://users.fit.cvut.cz/valenta/doku/lib/exe/fetch.php/bivs/dbs_02_databazove_modely.pdf"}.
+\newblock Dostupný na
+  \url{https://users.fit.cvut.cz/valenta/doku/lib/exe/fetch.php/bivs/dbs_02_databazove_modely.pdf}.
+
+\bibitem[wc14a]{diff_wiki}
+wiki community.
+\newblock Diff definice.
+\newblock Technical report, Wikipedia.org, 16.11. 2014.
+\newblock Dostupný na \url{http://cs.wikipedia.org/wiki/Diff}.
+
+\bibitem[wc14b]{ORM}
+wiki community.
+\newblock Orm definice.
+\newblock Technical report, Wikipedia.org, 16.11. 2014.
+\newblock Dostupný na
+  \url{http://cs.wikipedia.org/wiki/Objektov%C4%9B_rela%C4%8Dn%C3%AD_mapov%C3%A1n%C3%AD}.
 
 \end{thebibliography}

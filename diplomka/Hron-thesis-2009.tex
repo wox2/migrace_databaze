@@ -114,7 +114,7 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Vyplnte nazev prace, autora a vedouciho
-% Set up Work Title, Author and Supervisor
+% Set up Work Title, Author and Supervifsor
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \newcommand\WorkTitle{Migrace databáze}
@@ -312,7 +312,7 @@ jsou názvy atributů a Di jsou k nim přidružené typy. Relační algebra defi
 pomocí relací a integritních omezení strukturu databáze. Dotazovacím aparátem
 pro data definovaná pomocí relační algebry je relační algebra. Relační algebra
 využívá operátorů $\bigcup$ (sjednocení), $\bigcap$ (průnik),
-$\setminus$ (množinový rozdíl) a $\times$ (kartézský součin) a operací selekce
+$\setminus$ (množinový rozdíl), $\times$ (kartézský součin), selekce
 značená R($\varphi $) = \{ u | u $\in$ R a  $\varphi(u)$\} a projekce značená
 R[C] = { u[C] | u $\in$ R} a operace přirozené spojení T(C) = R * S =\{u |
 u[A] $\in$ R a u[B] $\in$ S\}.
@@ -366,11 +366,56 @@ Projekt Migdb byl započat v spolupráci se společností Collections Pro Výsle
 dosavadní práce byly v roce 2012 prezentovány jako case-study na prestižní
 modelové konferenci Code Generation 2012 \cite{Cambridge} v Anglickém Cambridge.
 
-\section{Aplikační model}
+\section{Aplikační metamodel}
 
 Aplikační model zachycuje vztahy mezi jednotlivými objekty tvořícími
 aplikaci. Ačkoliv byl tento model vytvořen již v raných fázích projektu Migdb a
-byl často upravován, většinou zjednodušován.
+byl často upravován, většinou zjednodušován. Na obrázku \ref{fig:app_roots} jsou
+znázorněny kořenové elementy nynějšího aplikačního modelu - každý aplikační
+model musí obsahovat jeden container - potomka třídy ModelRoot. Na obrázku
+\ref{fig:app_meta} jsou zobrazeny elementy patřící do Structury aplikačního
+modelu. Při vývoji byla přejmonována třída Class, kterou je možno vidět na
+\ref{fig:lukes:app_meta} z původního metamodelu na StandardClass.
+Oproti aplikačnímu metamodelu \cite{Jezek} byly odstraněny Entity EmbeddedClass a její předek GeneralClass, dále byla
+zjednodušena třída Property, u níž ubyly atributy defaultValue, sequenceName a
+atribut isId. Atribut isId byl nahrazen přímou referencí na idProperty ve třídě
+StandardClass který byl nahrazen referencí. 
+
+Koncept generace modelů byl zachován, ale tyto generace nejsou obsaženy z
+implementačních a testovacích důvodů v jednom souboru, ale ve více souborech.
+
+\begin{figure}[ht]
+\begin{center}
+\includegraphics[width=15cm]{figures/app_meta_BP}
+\caption{Aplikační metamodel v počátku vývoje z \cite{Lukes}}
+\label{fig:lukes:app_meta}
+\end{center}
+\end{figure}
+
+\begin{figure}[ht]
+\begin{center}
+\includegraphics[width=15cm]{figures/app_meta_BP_jezek}
+\caption{Aplikační metamodel v průběhu vývoje z \cite{Jezek}}
+\label{fig:jezek:app_meta}
+\end{center}
+\end{figure}
+
+\begin{figure}[ht]
+\begin{center}
+\includegraphics[width=15cm]{figures/app_roots}
+\caption{Rootové elementy aplikačního modelu}
+\label{fig:app_roots}
+\end{center}
+\end{figure}
+
+
+\begin{figure}[ht]
+\begin{center}
+\includegraphics[width=15cm]{figures/app_meta}
+\caption{Aplikační metamodel}
+\label{fig:app_meta}
+\end{center}
+\end{figure}
 
 \subsection{Operace nad aplikačním modelem}
 \subsubsection{Cíle při modelování operací}
@@ -398,109 +443,179 @@ validační podmínky nutné k úspěšné aplikaci operace na aplikační model
 očekatelné, že by tato operace měla souviset s dědičnými hierarchiemi. 
 
 \subsubsection{Seznam aplikačních operací}
-Operace jsou uvedeny v tabulkách \ref{tab:opsSeznam1} a \ref{tab:opsSeznam2}. Kromě
+Operace jsou uvedeny v tabulkách následujícím seznamu. Kromě
 regulérních operací, které může vytvořit uživatel jsou v tabulce
-\ref{tab:opsSeznam2} uvedeny operace DistributeProperty, MergeProperty a
-operace ExportProperty, které jsou používány jako pomocné v implementaci 
-složitějších reduktivních a expanzivních operací a manipulují s Property v rámci dědičné struktury.
+zde uvedeny i virtuální operace DistributeProperty, MergeProperty a operace
+ExportProperty, které jsou používány jako pomocné v implementaci složitějších
+reduktivních a expanzivních operací a manipulují s Property v rámci dědičné
+struktury. Tyto operace mohou narozdíl od nevirtuálních operací být aplikovány
+na model, který je z nějakého hlediska nevalidní. Například operace
+MergeProperty počítá s hierarchií s kolizní property v třídě předka a
+potomka.
 
-
-\begin{table}
-\begin{center}
-\begin{tabular}{| c|| p{5cm}|p {6cm}|}
-\hline
-\bfseries Název operace & \bfseries popis &
-\bfseries parametry \\[2mm] 
-\hline \hline
-AddStandardClass & Operace vytvoří novou třídu a její id odvozené z názvu třídy
-& name, isAbstract, inHeritanceType \\
-\hline
-RenameEntity & Operace změní název třídy na nový & name, newName\\
-\hline
-SetAbstract & Operace nastaví třídě atribut abstract na danou hodnotu & name,
-isAbstract\\
-\hline
-RemoveEntity & Operace odstraní entitu (standardní třídu) z modelu & name\\
-\hline
-AddProperty & Operace vytvoří v dané třídě novou property & owningClassName,
-name - jméno vytvořené property, typeName - typ vytvářené property, lowerBound - dolní mez property, 
-upperBound - horní mez, isOrdered - isUnique\\
-\hline
-RenameProperty & Přejmenuje property & owningClassName, name, newName \\
-\hline
-RemoveProperty & Odstraní property z třídy & owningClassName, name \\
-\hline
-SetBounds & Nastaví horní a dolní hranici property & upperBound, lowerBound \\
-\hline
-SetOrdered & Nastaví property seřaditelnost & owningClassName, name, isOrdered
-\\
-\hline
-SetUnique & Nastaví property unikátnost & owningClassName, name, isUnique \\
-\hline
-AddParent & Nastaví třídě předka a přesune překrývající atributy do rodičovské
-třídy & className, parentClassName
-\\
-\hline
-RemoveParent & Odstraní třídě rodičovskou třídu a rozdistribuje data z
-rodičovské třídy do nově nezávislé třídy (původního potomka) & className \\
-\hline
-ExtractClass & Vytvoří novou třídu, kterou napojí na původní třídu, exportuje
-do nově vzniklé třídy vyjmenované property & sourceClassName, extractClassName,
-associationPropertyName, oppositePropertyName, propertyNames \\
-\hline 
-InlineClass & Přesune property a jejich data do cílové třídy s ohledem na
-unidirectional asociaci & targetClassName, associationPropertyName,
-extractPropertyNames\\
-\hline
-ChangeUniToBidir & Vytvoří zpětný link k property a nastaví správně data &
-className, associationPropertyName, oppositePropertyName \\
-\hline
-ChangeBiToUnidir & Odstraní opoziční property & className,
-associationPropertyName \\
-\hline
-\end{tabular}
-\end{center}
-\caption{Seznam operací část 1}
-\label{tab:opsSeznam1}
-\end{table}
-
-\begin{table}
-\begin{center}
-\begin{tabular}{| c|| p{5cm}|p {6cm}|}
-\hline
-\bfseries Název operace & \bfseries popis &
-\bfseries parametry \\[2mm] 
-\hline \hline
-CollapseHierarchy & Exportuje property z jedné třídy do jejího předka a třídy
-spojí, upraví dědičné vazby & superClassName, subClassName, isIntoSub\\
-\hline
-ExtractSubClass & Vytvoří třídě nového potomka a přesune do něj vyjmenované
-property & sourceClassName, extractedClassName, extractedPropertyNames\\
-\hline
-ExtractSuperClass & Vytvoří třídě nového předka a přesune do něj vyjmenované
-property, pokud měla původní třída předka nastaví tohoto předka rodičem nově
-vzniklé třídě & sourceClassesName, extractParentName, propertyNames \\
-\hline
-PullUpProperties & Exportuje property do rodičovské třídy & childClassName,
-pulledPropertiesNames\\
-\hline
-PushDownProperties & Exportuje vyjmenované property do třídy potomka a přesune JEN data potomka &
-childClassName, pushedPropertiesNames\\
-\hline
-ExportProperty(virtuální operace) & Exportuje property v rámci hierarchie a data do cílové třídy & exportedPropertyName, 
-className\\
-\hline
-DistributeProperty(virtuální operace) & Zduplikuje strukturu dané property do cílové třídy a přesune data přiřazená 
-této třídě & DistributedPropertyName, className\\
-\hline
-MergeProperty(virtuální operace) & Přesune data zdrojové property do cílové property a smaže strukturu původní property & 
-mergedPropertyName, className\\
-\hline
-\end{tabular}
-\end{center}
-\caption{Seznam operací část 2}
-\label{tab:opsSeznam2}
-\end{table}
+\newcounter{ListCitac}
+\begin{list}{Operace \Roman{ListCitac}:}{\usecounter{ListCitac}}
+  \item AddStandardClass(name, isAbstract, inHeritanceType)
+  \begin{itemize}
+    \item Validační podmínky - neexistuje třída s jménem nově vznikající
+    \item Operace vytvoří novou třídu a její id odvozené z názvu třídy
+  \end{itemize}
+  \item RenameEntity(name, newName)
+  \begin{itemize}
+    \item Validační podmínky - existuje třída s původním jménem, neexistuje
+    třída s novým jménem
+    \item Operace změní název třídy na nový
+  \end{itemize}
+  \item SetAbstract(name, isAbstract)
+  \begin{itemize}
+    \item Validační podmínky - existuje třída s daným jménem
+    \item Operace nastaví třídě atribut abstract na danou hodnotu    
+  \end{itemize}
+  \item RemoveEntity(name)
+  \begin{itemize}
+    \item Validační podmínky - existuje třída s daným jménem, neexistuje link na
+    tuto třídu, třída neobsahuje žádné property, neexistuje pro tuto třídu žádný potomek
+    \item Operace odstraní entitu (standardní třídu) z modelu
+  \end{itemize}
+  \item AddProperty(owningClassName, name, typeName, lowerBound, upperBound,
+  isOrdered, isUnique) 
+  \begin{itemize}
+    \item Validační podmínky - zadané bounds jsou validní, v hierarchii
+    dědičnosti neexistuje kolizní property se stejným jménem
+    \item  Operace vytvoří v dané třídě novou property se zadanou horní mezí,
+    dolní mezí, typem, seřaditelností a unikátností
+  \end{itemize}
+  \item RenameProperty(owningClassName, name, newName)
+  \begin{itemize}
+    \item Validační podmínky - existuje přejmenovaná property v dané třídě,
+    nexistuje property v dané třídy nového jména
+    \item  Operace změní název property v dané třídě ze starého na nový
+  \end{itemize}
+  \item RemoveProperty(owningClassName, name)
+  \begin{itemize}
+    \item Validační podmínky - musí exitovat vlastnická třída property a v ní
+    odstraňovaná property
+    \item  Operace odstraní property z dané třídy
+  \end{itemize}
+  \item SetBounds(upperBound, lowerBound)
+  \begin{itemize}
+    \item Validační podmínky - bounds musí být validní a musí existovat daná
+    trída a property
+    \item  Operace nastaví horní a dolní mez property na nové hodnoty
+  \end{itemize}
+  \item SetOrdered(owningClassName, name, isOrdered)
+  \begin{itemize}
+    \item Validační podmínky - musí existovat daná trída a property
+    \item  Operace nastaví property seřaditelnost
+  \end{itemize}
+  \item SetUnique(owningClassName, name, isUnique)
+  \begin{itemize}
+    \item Validační podmínky - musí existovat daná třída a property
+    \item  Operace nastaví property unikátnost
+  \end{itemize}
+  \item AddParent(className, parentClassName)
+  \begin{itemize}
+    \item Validační podmínky - musí existovat rodičovská třída a třída potomka,
+    třída potomka nesmí mít nastaveného rodiče
+    \item Operace nastaví třídě předka a přesune překrývající atributy do
+    rodičovské třídy
+  \end{itemize}
+  \item RemoveParent(className, parentClassName)
+  \begin{itemize}
+    \item Validační podmínky - musí existovat třída child a mít nastavenou
+    rodičovskou třídu
+    \item Operace odstraní třídě rodičovskou třídu a rozdistribuje (použije
+    virtuální operaci distribute property) property z rodičovské třídy do třídy původního potomka
+  \end{itemize}
+  \item ExtractClass(sourceClassName, extractClassName, associationPropertyName, oppositePropertyName, propertyNames)
+  \begin{itemize}
+    \item Validační podmínky - musí existovat zdrojová třída, neexistuje
+    property s jménem linku na nově vzniklou třídu, existují exportované property
+    \item Operace vytvoří novou třídu, kterou napojí na původní třídu,
+    exportuje(využije virtuální operaci export property) do nově vzniklé třídy
+    vyjmenované property
+  \end{itemize}
+  \item InlineClass(targetClassName, associationPropertyName)
+  \begin{itemize}
+    \item Validační podmínky - musí existovat cílová třída a
+    musí existovat asociační property typu Inlinované třídy, která má upper
+    bound 1
+    \item Operace exportuje všechny property z inlinované třídy do cílové třídy
+    přes specifikovanou unidirectional asociaci
+  \end{itemize}
+  \item ChangeUniToBidir(className, associationPropertyName, oppositePropertyName)
+  \begin{itemize}
+    \item Validační podmínky - v dané třídě musí existovat asociační property
+    s daným jménem a nesmí mít nastavenou opposite property 
+    \item Operace vytvoří nový zpětný link s oppositePropertyName k property
+    targetClassName a nastaví správně data do opepositePropertyName
+  \end{itemize}
+  \item ChangeBiToUnidir(className, associationPropertyName)
+  \begin{itemize}
+    \item Validační podmínky - v dané třídě musí existovat asociační property
+    s daným jménem a musí mít nastavenou opposite property
+    \item Operace odstraní opoziční property
+  \end{itemize}
+  \item CollapseHierarchy(superClassName, subClassName, isIntoSub)
+  \begin{itemize}
+    \item Validační podmínky - musí existovat subclass a superclass, subclass
+    musí mít nastavenou superclass jako parenta
+    \item Operace exportuje (aplikuje virtuální operaci) všechny property z
+    jedné třídy do jejího předka a třídy spojí, upraví dědičné vazby
+  \end{itemize}
+  \item ExtractSubClass(sourceClassName, extractedClassName, extractedPropertyNames)
+  \begin{itemize}
+    \item Validační podmínky - musí existovat třída s name sourceClassName a
+    nesmí existovat třída s jménem extractedClassName, v třídě sourceClass musí
+    existovat property s názvy z kolekce extractedPropertyNames
+    \item Operace vytvoří třídě nového potomka a
+    exportuje(aplikuje virtuální operaci export property) do něj vyjmenované property
+  \end{itemize}
+  \item ExtractSuperClass(sourceClassesName, extractParentName, propertyNames)
+  \begin{itemize}
+    \item Validační podmínky - musí existovat třída s name sourceClassName a
+    nesmí existovat třída s jménem extractedParentName, v třídě sourceClass musí
+    existovat property s názvy z kolekce propertyNames
+    \item Operace vytvoří třídě nového předka a přesune do něj vyjmenované
+    property, pokud měla původní třída předka nastaví tohoto předka rodičem 
+    nově vzniklé třídě
+  \end{itemize}
+  \item PullUpProperties(childClassName, pulledPropertiesNames)
+  \begin{itemize}
+    \item Validační podmínky - musí existovat childClass a mít nastavenou
+    rodičovskou třídu, v třídě potomka musí existovat properties z kolekce
+    pulledPropertiesNames, v okolních subhierarchiích nesmí existovat properties
+    z této kolekce
+    \item Operace exportuje(aplikuje virtuální operaci export property) property
+    do rodičovské třídy
+  \end{itemize}
+  \item PushDownProperties(childClassName, pushedPropertiesNames)
+  \begin{itemize}
+    \item Validační podmínky - musí existovat class s childClassName a mít
+    nastavenu parentClass, v třídě potomka musí existovat properties z kolekce
+    pushedPropertiesNames
+    \item Operace exportuje(aplikuje virtuální operaci export property) 
+   vyjmenované property do třídy potomka a přesune JEN data potomka
+  \end{itemize}
+  \item ExportProperty(exportedPropertyName, className)
+  \begin{itemize}
+    \item virtuální operace
+    \item Operace přesune property a data v ní obsažená v rámci hierarchie do
+    cílové třídy
+  \end{itemize}
+  \item DistributeProperty(distributedPropertyName, className)
+  \begin{itemize}
+    \item virtuální operace
+    \item Operace zduplikuje strukturu v rámci hierarchie dané property do
+    cílové třídy a přesune data přiřazená této třídě
+  \end{itemize}
+  \item MergeProperty(mergedPropertyName, className)
+  \begin{itemize}
+    \item virtuální operace
+    \item Operace přesune data zdrojové property do cílové property a smaže
+    strukturu původní property
+  \end{itemize}
+\end{list}
 
 \subsubsection {Rozdělení aplikačních operací} 
 
@@ -543,13 +658,45 @@ mergePropery, distributeProperty a exportProperty. Tyto operace v aplikačním
 modelu neexistují, ale v rámci transformace ODBCHM jsou v metodách
 použity/volány.\\
 
-\subsubsection{Vlastnosti operací}
 
-V \cite{Cincetti} autor definuje operace pomocí delta notace. Delta notace
+\subsection{Delta notace}
+V \cite{Cincetti} jsou definovány operace pomocí delta notace. Delta notace
 je taková, která ukazuje všechny změny mezi danými dvěma artefakty stejné
 úrovně abstrackce. 
 
-Příklad Delta notace za pomoci linuxových nástrojů diff dvou souborů\\
+Nejznámějším a nejrozšířenějším typem delta notace je výstup linuxového
+příkazu diff. Každý rozdíl v delta notaci příkazu diff je dle
+\cite{diff_wiki} definován následně:
+
+\begin{verbatim}
+popis změny
+<řádek z prvního souboru
+<řádek z prvního souboru…
+---
+>řádek ze druhého souboru
+>řádek ze druhého souboru…
+\end{verbatim}
+
+Popis změny může nabývat tvaru: LaR, FcT nebo RdL.\\
+
+\begin{itemize}
+   	\item [LaR ] \hfill \\
+   		Ve druhém souboru jsou navíc řádky R patřící za řádek L prvního souboru. 
+    	Např. 8a12, 15 znamená, že ve druhém souboru jsou navíc řádky 12-15 a patří
+    	za řádek 8 v prvním souboru.
+	\item [FcT] \hfill \\
+		Řádky F z prvního souboru byly změněny. Ve druhém souboru jsou jim
+		odpovídající řádky T. Např. popis 5,7c8,10 znamená, že se liší řádky 5-7 v
+		prvním souboru a jim odpovídající jsou řádky 8-10 ve druhém souboru.	 
+  \item [RdL] \hfill \\
+		Ve druhém souboru chybí řádky R z prvního souboru. Tyto řádky by patřily za
+		řádek L druhého souboru. Např. 5,7d3 znamená, že za řádkem 3 ve druhém souboru
+		chybějí řádky 5-7 prvního souboru.	  
+\end{itemize}
+
+
+Příklad Delta notace za pomoci linuxových
+nástrojů diff dvou souborů\\
 \begin{lstlisting}[language=JAVA,frame=single,caption=Man1.java,label=Man1]
 class Man {
 	private String name;
@@ -646,7 +793,9 @@ $part_b$,label=Diff_1_2_b]
 \end{lstlisting}
 
 \begin{lstlisting}[language=JAVA,frame=single,caption=aplikace pořadí
-difů $part_a part_b$,label=Man1_alternative] class Man { private String name;
+difů $part_a part_b$,label=Man1_alternative] 
+class Man {
+	private String name;
 
 	private String surename;
 
@@ -658,23 +807,21 @@ difů $part_a part_b$,label=Man1_alternative] class Man { private String name;
 	public Man(String name){
 		this.name = name;
 	}
-}
-\end{lstlisting}
 
+}\end{lstlisting}
 
 
 Delta notace umožňuje snadný forward i backward differencing, protože díky
 kontextové nezávislosti je možné snadno invertovat operace. Kontextová nezávislost znamená,
-že jakýkoliv patch je možné aplikovat na jakýkoliv model. Aplikace patche
-\ref{Diff_1_2} na \ref{Man2} by vypadala \ref{Man2_p1_2}. Atribut byl přidán na
-správné místo, ale konstruktor byl přidán na místo špatné - přídaná uzavírací
-závorka neuzavírá předchozí konstruktor, ale celou třídu. Navzdory tomu, že
-tento Java kód je nevalidní, patch bylo možné aplikovat.\\
+že jakýkoliv patch je možné aplikovat na jakýkoliv model, přičemž očekávatelný
+výsledek je výstupní soubor nebo chyba. Přidávání řádků do souboru je vždy
+aplikovatelné. Náhrada a odstranění řádků ze souboru, ve kterém nefigurují
+naopak vyvolá chybu. 
 
-Všimněme si, že standardní unixový diff obsahuje redundantní informaci -
-řádek \ref{Diff_1_2_a} 3a4,5 musí obsahovat číslo řádku, za který se má
-navazující text diffu přidat, ale nemusí obsahovat, které řádky v druhém
-souboru budou .
+Aplikace patche \ref{Diff_1_2} na \ref{Man2} by vypadala \ref{Man2_p1_2}.
+Atribut byl přidán na správné místo, ale konstruktor byl přidán na místo špatné 
+- přídaná uzavírací závorka neuzavírá předchozí konstruktor, ale celou třídu. 
+Navzdory tomu, že tento Java kód je nevalidní, patch bylo možné aplikovat.\\
 
 \begin{lstlisting}[language=JAVA,frame=single,caption=patch
 aplikován na třídu Man2,label=Man2_p1_2]
@@ -701,21 +848,63 @@ class Man {
 }
 \end{lstlisting}
 
-(intensional vs extensional - první potřebuje konkrétní model ke své aplikaci, 
-druhá ne, extensional je možné použít na paralelní vývojové větve).
+Všimněme si, že standardní unixový diff obsahuje redundantní informaci -
+řádek \ref{Diff_1_2_a} 3a4,5 musí obsahovat číslo řádku, za který se má
+navazující text diffu přidat, ale nemusí obsahovat, na které pozice v
+druhém souboru budou přidány, tato informace by byla dopočitatelná z aplikace
+všech předchozích řádků, přičtení počtu řádků přidávaných a odečtení řádků
+odebíraných. Takovouto změnou standardní delta notace dostaneme další možnou
+variantu delta notace.
 
-Tato notace mají operace některé specifické
-vlastnosti jako je invertovatelnost a rozložitelnost. Je nutné říci, že operace
-zmiňované v  literatuře pracují jen se strukturou dat, nikoliv s daty samotnými
-a  jsou kontextově nezávislé - tyto operace jsou tvořeny téměř výlučně
-konstruktivními a  destruktivními operacemi. V projektu Migdb na druhé straně 
-existují operace, které jsou kontextově závislé, což je uživatelskou
-přívětivostí  operací - jako zástupcem takové operace se dá uvést operace 
-AddParent(parentClass=B, childClass=A), která nezmiňuje všechny Property,  které
-se mají odstranit, ale dynamicky si je dopočítává v závislosti na daném kontextu. 
-Její inverzí je operace RemoveParent(childClass=A). Vzhledem k minimalističnosti
-neexistuje k operaci RemoveParent(childClass=A) jednoznačná inverze bez daného
-konktextu.
+Standardní delta notace obsahuje další redundantní prvky. Například v deltě
+mazající řádky je redundantní informací seznam mazaných řádků. Jeho odstraněním
+bychom získali plně operaci aplikovatelnou na jakýkoliv model. Tato změna
+nevytváří delta notaci - neuchovává všechny informace o změně modifikovaných
+elementů. Pro ilustraci diff na \ref{reverse_add_1_2} je reverzní vůči diffu
+\ref{Diff_1_2}. Odstraněním seznamu mazaných řádků a pozice v druhém souboru
+získáme diff \ref{delete_minimal}. Z tohoto vyplývá, že delta notace není
+minimální, obsahuje redundatní informace. Prostým pozorováním můžeme zjistit,
+že oproti delta notaci nemůže v nově vzniklé minimální notaci být odvozena
+inverze \ref{Diff_1_2} diffu \ref{delete_minimal}, obrácený postup -
+transformace diffu \ref{Diff_1_2} na \ref{delete_minimal} bez znalosti
+kontextových modelů \ref{Man1} a \ref{Man2} je naopak zachována z delta notace.
+Nově vzniklá notace je tudíž neidempotentní vůči operaci inverze bez znalosti
+kontextového vstupního a výstupního modelu. 
+
+\begin{lstlisting}[language=JAVA,frame=single,caption=diff
+modelů 2 a 1,label=reverse_add_1_2] 
+4,5d3
+< 	private String surename;
+< 
+10,13d7
+< 	public Man(String name, String surename){
+< 		this(name);
+< 		this.surename = surename;
+< 	}
+\end{lstlisting}
+
+\begin{lstlisting}[language=JAVA,frame=single,caption=diff
+modelů 2 a 1,label=delete_minimal] 
+4,5d
+10,13d7
+\end{lstlisting}
+
+\subsubsection{Vlastnosti operací}
+V \cite{Cincetti} jsou popsány některé specifické vlastnosti jako
+je invertovatelnost a rozložitelnost operací. Je nutné říci, že operace
+zmiňované v literatuře pracují jen se strukturou dat, nikoliv s daty samotnými a jsou
+kontextově nezávislé - tyto operace jsou tvořeny téměř výlučně konstruktivními
+a  destruktivními operacemi. (intensional vs extensional - první potřebuje
+konkrétní model ke své aplikaci, druhá ne, extensional je možné použít na
+paralelní vývojové větve).
+
+V projektu Migdb na druhé straně existují operace,
+které jsou kontextově závislé, což je uživatelskou přívětivostí  operací - jako
+zástupcem takové operace se dá uvést operace AddParent(parentClass=B,
+childClass=A), která nezmiňuje všechny Property,  které se mají odstranit, ale
+dynamicky si je dopočítává v závislosti na daném kontextu. Její inverzí je
+operace RemoveParent(childClass=A). Vzhledem k minimalističnosti neexistuje k
+operaci RemoveParent(childClass=A) jednoznačná inverze bez daného konktextu.
 
 Inverzi AddParent(sourceClass=A parentClass=B) získáme, pokud v
 kontextu přidruženém modelu aplikaci RemoveParent má třída A předka B. Nicméně i
@@ -761,7 +950,7 @@ V tabulkách
 \bfseries Název operace & \bfseries podmínky validnosti &
 \bfseries Rozklad na db operace \\[2mm] 
 \hline \hline
-AddStandardClass & Neexistuje třída s jménem nově vznikající
+AddStandardClass & 
 &  Vytvoří tabulku, id sloupec této tabulky a primární klíč\\
 \hline
 RenameEntity &  Existuje třída s původním jménem, neexistuje třída s novým jménem & Operace změní název tabulky 

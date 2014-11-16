@@ -1,0 +1,9 @@
+4,5d3
+< 	private String surename;
+< 
+8,12d5
+< 	}
+< 
+< 	public Man(String name, String surename){
+< 		this(name);
+< 		this.surename = surename;

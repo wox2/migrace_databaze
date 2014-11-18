@@ -18,36 +18,37 @@ Martin Lukeš.
 David Luksch.
 \newblock Katalog refaktoringu frameworku migdb, 2013.
 
+\bibitem[Maz14]{Mazanec}
+Martin Mazanec.
+\newblock Doménově specifický jazyk pro migdb, 2014.
+
 \bibitem[PMH12]{Cambridge}
 Jiří~Jezek Pavel~Moravec, Petr~Tarant and David Harmanec.
 \newblock A practical approach to dealing with evolving models and persisted
   data.
-\newblock Technical report, FEL ČVUT, CollectionsPro, 15.4. 2012.
-\newblock Dostupný na
-  \url{http://www.codegeneration.net/cg2012/sessioninfo.php?session=37}.
+\newblock [online], [konference], publikováno 15.4.2012.
 
 \bibitem[Tar12]{Tarant_bp}
 Petr Tarant.
 \newblock Modelem řízená evoluce databáze, 2012.
 
-\bibitem[Val10]{Relacni_algebra}
+\bibitem[Tar14]{Tarant_dip}
+Petr Tarant.
+\newblock Migdb - formální specifikace, 2014.
+
+\bibitem[Val14]{Relacni_algebra}
 Michal Valenta.
 \newblock Databazové modely.
-\newblock Technical report, Fakulta informačních technologií ČVUT, 2010.
-\newblock Dostupný na
-  \url{https://users.fit.cvut.cz/valenta/doku/lib/exe/fetch.php/bivs/dbs_02_databazove_modely.pdf}.
+\newblock [online], Citováno 16.11.2014.
 
 \bibitem[wc14a]{diff_wiki}
 wiki community.
 \newblock Diff definice.
-\newblock Technical report, Wikipedia.org, 16.11. 2014.
-\newblock Dostupný na \url{http://cs.wikipedia.org/wiki/Diff}.
+\newblock [online], Citováno 16.11.2014.
 
 \bibitem[wc14b]{ORM}
 wiki community.
 \newblock Orm definice.
-\newblock Technical report, Wikipedia.org, 16.11. 2014.
-\newblock Dostupný na
-  \url{http://cs.wikipedia.org/wiki/Objektov%C4%9B_rela%C4%8Dn%C3%AD_mapov%C3%A1n%C3%AD}.
+\newblock [online], Citováno 16.11.2014.
 
 \end{thebibliography}

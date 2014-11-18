@@ -354,17 +354,26 @@ kontrakt takzvaných operací nad aplikačním modelem a popisuje jejich
 transformaci na změny modelu databázového a následným vygenerováním SQL příkazů
 spustitelných nad relační databází PostgreSQL.
 
-V rámci Migdb bylo v posledních letech vytvořeny 4 bakalářské práce a 2
-diplomové práce členů Migdb.
-Jednalo se o práce mé osoby \cite{Lukes}, jež pojednávala o problematice mapování 
-aplikačního modelu na model databázový práce Jiřího Ježka \cite{Jezek}
-popisující aplikační model a jeho transformace, dále práce Petra Taranta
-\cite{Tarant_bp} popisující databázový model a jeho transformace a poslední
-práce pojednává o popisu testování projektu \cite{Luksch}.
+V rámci Migdb bylo v posledních letech vytvořeny a obhájeny 4 bakalářské práce a
+2 diplomové práce členů Migdb.
+
+Jednalo se o tyto bakalářské práce - brakalářská práce mé osoby \cite{Lukes},
+jež pojednávala o problematice mapování aplikačního modelu na model databázový,
+bakalářské práce Jiřího Ježka \cite{Jezek} popisující aplikační model a jeho
+transformace, dále bakalářská práce Petra Taranta \cite{Tarant_bp} popisující
+databázový model a jeho transformace a poslední bakalářskou prací je
+práce popisující testování projektu \cite{Luksch}.
+
+V roce 2014 byla obhájena diplomová práce Petra Taranta \cite{Tarant_dip}
+formálně specifikující aplikační operace a diplomová práce Martina Mazance
+\cite{Mazanec} definující doménově specifikující jazyk aplikačních operací.
 
 Projekt Migdb byl započat v spolupráci se společností Collections Pro Výsledky
 dosavadní práce byly v roce 2012 prezentovány jako case-study na prestižní
 modelové konferenci Code Generation 2012 \cite{Cambridge} v Anglickém Cambridge.
+
+\section{Framework Migdb}
+
 
 \section{Aplikační metamodel}
 
@@ -387,7 +396,7 @@ implementačních a testovacích důvodů v jednom souboru, ale ve více soubore
 \begin{figure}[ht]
 \begin{center}
 \includegraphics[width=15cm]{figures/app_meta_BP}
-\caption{Aplikační metamodel v počátku vývoje z \cite{Lukes}}
+\caption{Aplikační metamodel v počátku vývoje obrázek převzat z \cite{Lukes}}
 \label{fig:lukes:app_meta}
 \end{center}
 \end{figure}
@@ -395,7 +404,7 @@ implementačních a testovacích důvodů v jednom souboru, ale ve více soubore
 \begin{figure}[ht]
 \begin{center}
 \includegraphics[width=15cm]{figures/app_meta_BP_jezek}
-\caption{Aplikační metamodel v průběhu vývoje z \cite{Jezek}}
+\caption{Aplikační metamodel v průběhu vývoje obrázek převzat z \cite{Jezek}}
 \label{fig:jezek:app_meta}
 \end{center}
 \end{figure}
@@ -412,10 +421,58 @@ implementačních a testovacích důvodů v jednom souboru, ale ve více soubore
 \begin{figure}[ht]
 \begin{center}
 \includegraphics[width=15cm]{figures/app_meta}
-\caption{Aplikační metamodel}
+\caption{Struktura aplikačního metamodelu}
 \label{fig:app_meta}
 \end{center}
 \end{figure}
+
+\section{Databázový metamodel}
+
+Stejně jako aplikační model byl i model databázové struktury často upravován a v
+konečném důsledku zjednodušován. Na obr. \ref{fig:rdb_str} vidíme aktuální
+matamodel databázové struktury, na obr. \ref{fig:rdb_str_lukes} vidíme model na
+počátku vývoje převzatý z \cite{Lukes} a na obrázku \ref{fig:rdb_str_tarant}
+model v pozdější fázi vývoje převzatý z \cite{Tarant_bp}.
+
+ Nejvýraznější změnami databázového modelu jsou - stejně jako v
+ aplikačním metamodelu odstraněním generace modelů, odstranění elementu
+ UnderlyingIndex, odstranění elementu ColumnConstraint, nahrazení elementu
+ NotNullConstraint atributem boolean v Column a snížení kardinality Sequence
+ obsažených ve schematu z * na 1.
+ 
+ Myšlenka generace modelů byla zachována, ale jejich připadné uchovávání bylo
+ zvoleno ve více oddělených souborech. Element UnderlyingIndex byl shládán
+ nadbytečným, stejně jako element ColumnConstraint. Bezatributový element
+ NotNullConstraint byl shledán příliš informačně chudým a byl nahrazen atributem
+ isNillable zachovávajícím stejnou informační hodnotu jako element v původních
+ modelech. 
+	
+\begin{figure}[ht]
+\begin{center}
+\includegraphics[width=15cm]{figures/rdb_structure}
+\caption{Struktura databázového metamodelu}
+\label{fig:rdb_str}
+\end{center}
+\end{figure}
+
+\begin{figure}[ht]
+\begin{center}
+\includegraphics[width=15cm]{figures/rdb_structure_tarant}
+\caption{Struktura databázového metamodelu v průběhu vývoje, obrázek převzat z
+\cite{Tarant_bp}}
+\label{fig:rdb_str_tarant}
+\end{center}
+\end{figure}
+
+\begin{figure}[ht]
+\begin{center}
+\includegraphics[width=15cm]{figures/rdb_structure_lukes}
+\caption{Struktura databázového metamodelu v průběhu vývoje, obrázek převzat z
+\cite{Lukes}}
+\label{fig:rdb_str_lukes}
+\end{center}
+\end{figure}
+
 
 \subsection{Operace nad aplikačním modelem}
 \subsubsection{Cíle při modelování operací}
@@ -427,6 +484,7 @@ dva koncepty jdou obecně proti sobě, proto jsme došli k jistému jejich
 kompromisu uživatelské jednoduchosti zápisu a jednoznačnosti.
 
 \subsubsection{Historický vývoj}
+
 Operace v aplikačním modelu se vyvíjely a měnily se jejich parametry, ale
 současně se měnil i seznam dostupných operací nad aplikačním modelem. Z operací
 v první verzi modelu byly odstraněny operace MoveProperty, AddPrimitiveClass,
@@ -443,13 +501,14 @@ validační podmínky nutné k úspěšné aplikaci operace na aplikační model
 očekatelné, že by tato operace měla souviset s dědičnými hierarchiemi. 
 
 \subsubsection{Seznam aplikačních operací}
+
 Operace jsou uvedeny v tabulkách následujícím seznamu. Kromě
 regulérních operací, které může vytvořit uživatel jsou v tabulce
 zde uvedeny i virtuální operace DistributeProperty, MergeProperty a operace
 ExportProperty, které jsou používány jako pomocné v implementaci složitějších
 reduktivních a expanzivních operací a manipulují s Property v rámci dědičné
-struktury. Tyto operace mohou narozdíl od nevirtuálních operací být aplikovány
-na model, který je z nějakého hlediska nevalidní. Například operace
+struktury tříd. Tyto operace mohou narozdíl od nevirtuálních operací být
+aplikovány na model, který je z nějakého hlediska nevalidní. Například operace
 MergeProperty počítá s hierarchií s kolizní property v třídě předka a
 potomka.
 
@@ -662,7 +721,9 @@ použity/volány.\\
 \subsection{Delta notace}
 V \cite{Cincetti} jsou definovány operace pomocí delta notace. Delta notace
 je taková, která ukazuje všechny změny mezi danými dvěma artefakty stejné
-úrovně abstrackce. 
+úrovně abstrakce. Změnami můžeme rozumět přidáním elementu, odstraněním elementu
+a modifikací elementu.
+
 
 Nejznámějším a nejrozšířenějším typem delta notace je výstup linuxového
 příkazu diff. Každý rozdíl v delta notaci příkazu diff je dle
@@ -755,6 +816,7 @@ Inverzní diff vidíme v \ref{Diff_reverse}, kde z souboru
 \ref{Man2} byly odstraněny řádky 4-5, které by se jinak zařadily za řádek 3,
 dále byly odstraněny řádky 10-13, které by jinak patřily za řádek 7 souboru
 Man1.
+
 
 \begin{lstlisting}[language=JAVA,frame=single,caption=patch
 $part_b$,label=Diff_reverse]
@@ -925,6 +987,9 @@ Stejná vlastnost platí pro dvojici ChangeUniToBidir a ChangeBiToUnidir, s
 rozdílem, že se nejedná o automaticky získanou rodičovskou třídu, ale
 opozitní property.
 
+\section{Databázové operace}
+
+
 \section{ODBCHM operací}
 
 Ačkoliv v průběhu projektu Migdb byla transformace operace z aplikačního modelu
@@ -945,72 +1010,66 @@ V tabulkách
 
 \begin{table}
 \begin{center}
-\begin{tabular}{| c|| p{5cm}|p {6cm}|}
+\begin{tabular}{| c|| p {6cm}|}
 \hline
-\bfseries Název operace & \bfseries podmínky validnosti &
+\bfseries Název operace &
 \bfseries Rozklad na db operace \\[2mm] 
 \hline \hline
-AddStandardClass & 
-&  Vytvoří tabulku, id sloupec této tabulky a primární klíč\\
+AddStandardClass &   Vytvoří tabulku, id sloupec této tabulky a primární klíč\\
 \hline
-RenameEntity &  Existuje třída s původním jménem, neexistuje třída s novým jménem & Operace změní název tabulky 
-na nový, odstraní a vytvoří PK s novým jménem\\
+RenameEntity & Operace změní název tabulky na nový, odstraní a vytvoří PK s
+novým jménem\\
 \hline
-SetAbstract & Existuje třída s daným jménem & pro isAbstract = true maže data, která náleží pouze dané třídě\\
+SetAbstract & pro isAbstract = true maže data, která náleží pouze dané třídě\\
 \hline
-RemoveEntity & Existuje třída s daným jménem, neexistuje link na tuto třídu, třída neobsahuje žádné property, 
-neexistuje pro tuto třídu žádný potomek & V Db je smazán primární klíč, property a tabulka\\
+RemoveEntity & V Db je smazán primární klíč, id property a tabulka
+odpovídající dané třídě\\
 \hline
-AddProperty & zadané bounds jsou validní, v hierarchii dědičnosti neexistuje kolizní property & 
-operace přidá do cílové tabulky sloupec pro primitivní property S UB = 1\\
-\ & \ & operace přidá tabulku, datový sloupec, referenční sloupec a referenci na vlastnickou tabulku pro primitivní 
+AddProperty & operace přidá do cílové tabulky sloupec pro primitivní property S UB = 1\\
+\ & operace přidá tabulku, datový sloupec, referenční sloupec a referenci na vlastnickou tabulku pro primitivní 
 property s UB = > 1\\
-\ & \ & operace přidá sloupec pro neprimitivní property S UB = 1 do vlastnické tabulky a referenci na tabulku typu\\
-\ & \ & operace vytvoří vazební tabulku pro neprimitivní property s UB > 1, vloží do ní referenční sloupce na 
+\ & operace přidá sloupec pro neprimitivní property S UB = 1 do vlastnické tabulky a referenci na tabulku typu\\
+\ & operace vytvoří vazební tabulku pro neprimitivní property s UB > 1, vloží do ní referenční sloupce na 
 vlastnickou tabulku a tabulku typu, na které vytvoří cizí klíč\\
 \hline
-RenameProperty & Existuje přejmenovaná property v dané třídě, nexistuje property v dané třídy nového jména & pro danou 
+RenameProperty & pro danou 
 property s UB = 1 a primitivním typem přejmenuje property v vlastnické tabulce\\
-\ & \ & pro danou primitivní property s UB > 1 přejmenuje datový sloupec, FK na vlastníka kolekce a tabulku kolekce \\
-\ & \ & pro danou associační property přejmenuje sloupec v vlastnické tabulce a cizí klíč referující tabulku typu\\
-\ & \ & pro danou asociační property přejmenuje vazební tabulku s referenčními sloupci na vlastníka a typ asociace + 
+\ & pro danou primitivní property s UB > 1 přejmenuje datový sloupec, FK na vlastníka kolekce a tabulku kolekce \\
+\ & pro danou associační property přejmenuje sloupec v vlastnické tabulce a cizí klíč referující tabulku typu\\
+\ & pro danou asociační property přejmenuje vazební tabulku s referenčními sloupci na vlastníka a typ asociace + 
 cizí klíče \\
 \hline
-RemoveProperty & Musí exitovat vlastnická třída property a v ní odstraňovaná property & pro primitivní property S 
-UB = 1 odstraní sloupec z dané tabulky\\
-\ & \ & pro danou property primitivního typu s UB > 1 odstraní referenci na vlastnickou tabulku, sloupec z tabulky 
+RemoveProperty & pro primitivní property S UB = 1 odstraní sloupec z dané
+tabulky\\
+\ & pro danou property primitivního typu s UB > 1 odstraní referenci na vlastnickou tabulku, sloupec z tabulky 
 dané kolekce, datový sloupec a smaže kolekční tabulku \\
-\ & \ & pro danou asociační property s UB = 1 odstraní referenci na tabulku vlastníka a referenční sloupec\\
-\ & \ & pro danou asociační property s UB > 1 odstraní reference na vlastnickou tabulku a tabulku typu, datový 
+\ & pro danou asociační property s UB = 1 odstraní referenci na tabulku vlastníka a referenční sloupec\\
+\ & pro danou asociační property s UB > 1 odstraní reference na vlastnickou tabulku a tabulku typu, datový 
 sloupec a sloupec typu a smaže vazební tabulku \\
 \hline
-SetBounds & bounds musí být validní a musí existovat daná trída a property & NEIMPLEMENTOVÁNO \\
+SetBounds & NEIMPLEMENTOVÁNO \\
 \hline
-SetOrdered & musí existovat daná trída a property & pro nastavní = true přidá sloupec ordering, (měl by přenastavit 
+SetOrdered & pro nastavní = true přidá sloupec ordering, (měl by přenastavit 
 data) a vytvoří unikátní constraint přes typový, referenční a orgering sloupec\\
-\ & \ & pro nastavení = false smaže ordering constraint a ordering column\\
+\ & pro nastavení = false smaže ordering constraint a ordering column\\
 \hline
-SetUnique & Nastaví property unikátnost & owningClassName, name, isUnique \\
+SetUnique & owningClassName, name, isUnique \\
 \hline
-AddParent & Musí existovat rodičovská třída a třída potomka, třída potomka nesmí mít nastaveného rodiče & 
-Aplikuje obraz operace MergeProperty na všechny kolizní property, přidá cizí klíč na rodičovskou třídu\\
+AddParent &  Aplikuje obraz operace MergeProperty na všechny kolizní property,
+přidá cizí klíč na rodičovskou třídu\\
 \hline
-RemoveParent & musí existovat třída child a mít nastavenou rodičovskou třídu & aplikuje obraz operace 
-DistrubuteProperty na všechny property rodičovské třídy, odstraní cizí klíč, smaže data třídy potomka z 
-tabulky rodiče\\
+RemoveParent & aplikuje obraz operace DistrubuteProperty na všechny property
+rodičovské třídy, odstraní cizí klíč, smaže data třídy potomka z tabulky rodiče\\
 \hline
-ExtractClass & existuje zdrojová třída, neexistuje property s jménem linku na nově vzniklou třídu, 
-existují exportované property & vytvoří novou tabulku, aplikuje obraz operací exportProperty pro 
+ExtractClass & vytvoří novou tabulku, aplikuje obraz operací exportProperty pro 
 každou exportovanou property\\
 \hline 
-InlineClass & Exisutuje cílová třída a existuje linkProperty v této třídě & aplikuje obraz operací exportProperty, 
-smaže linkProperty a Inlinovanou tabulku\\
+InlineClass & aplikuje obraz operací exportProperty, smaže linkProperty a
+Inlinovanou tabulku\\
 \hline
-ChangeUniToBidir &  existuje vlastnická třída property, existuje asociační property, která nemá nastavenou 
-opposite & pro associační property vytvoří sloupec a nastaví validně opposite  \\
+ChangeUniToBidir & pro associační property vytvoří sloupec a nastaví validně opposite  \\
 \hline
-ChangeBiToUnidir & Odstraní opoziční property & className,
-associationPropertyName \\
+ChangeBiToUnidir & className, associationPropertyName \\
 \hline
 \end{tabular}
 \end{center}
@@ -1318,6 +1377,7 @@ vytvoření a zdokumentování algoritmu generující z dvou vstupních modelů
 sekvenci operací, jejichž aplikací se model zdrojový transformuje na model
 koncový.
 
+\chapter{Testování projektu Migdb}
 
 \chapter{Ukázka zdrojového kódu práce}
 
@@ -1355,16 +1415,88 @@ koncový.
 \end{figure}
 
 \chapter{Závěr}
-Ačkoliv se mi nepodařilo dokončit tuto diplomovou práci v termínu, dokončil jsem
-implementační(viz ukázka kódu) a testovací části projektu, které jsem nestihl
-zdokumentovat. Proto bych byl rád, kdybych mohl věnovat následující půlrok
-přepracování textu diplomové práce.
+Po několikaletém teoretickém a praktickém studiu změn v aplikačním modelu a
+jejich projevu v modelu aplikačním se nám podařilo definovat ucelenou množinu
+operací, pomocí nichž je možné měnit aplikační model a definovat jejich mapování
+na operace databázové úrovně.
 
+Nejjednodušším a teoreticky nejzajímavějším tématem našeho projektu je aplikační
+model, kterému byly věnovány celkově 2 bakalářké a 2 diplomové práce
+BP - \cite{Tarant_bp} a  \cite{Lukes}, DP \cite{Tarant_dip},  a \cite{Mazanec}.
 
+Implementačně nejnáročnějším a zároveň nejvíce teoreticky vyčerpaným tématem se
+stala samotná transformace aplikačních operací na operace databázové, čehož jsem
+využil a k implementaci, otestování a dospecifikaci tohoto mapování jsem přidal
+téma čerstvé a velmi málo prozkoumané. Tímto atraktivním tématem vzhledem k
+verzování modelů je automatické rozpoznávání operací provedených nad aplikačním
+modelem.
 
+Mrzí mně, že jsem se nemohl více věnovat tématu rozpoznávání operací nad
+aplikačním modelem, takže jsem se nedostal k tématům jako je sémantickém
+rozpoznávání operací vycházející pravděpodobně z idei sémantického
+webu a implementací Resource Description Framework (RDF) a Ontology Web
+Language (OWL). Implementace sémantického rozpoznávání by mohla v budoucnu
+odhadnout změny nejen na základě syntaxe(struktury) databáze, ale i na základě
+významu názvů jednotlivých entit v databázi. Předpokládám, že potom by bylo
+možné detekovat mnohem jednoznačněji přejmenování entit - pokud by pomocí nějaké
+ontologie či podobného nástroje bylo jasně specifikováno, že zvíře je nadtypem
+býložravce a tento je nadtypem entity zebra, potom pokud v původním modelu
+existuje třída Zebra, která má jako rodičovskou třídu nastavenu třídu
+Býložravec a v výsledném modelu existuje třída Zebra s nadtřídou Zvíře a
+neexistuje třída Býložravec, potom by algoritmus měl snadněji detekovat
+přejmenování třídy Býložravec na třídu Zvíře i přes velkou strukturální
+podobnost s jinou třídou.
 
+Je otázkou, jak by sémantičtější rozpoznávání operací bylo prospěšné v
+kontextu stále větších informačních systémech, kdy je občas těžké nazvat
+smysluplně entity aplikačního modelu, natož sémantiku jejich relace vůči jiným
+entitám.
 
-\cite{Tarant}
+V průběhu psaní této diplomové práce jsem si uvědomil, proč pro nás bylo občas
+obtížné definovat správné mapování aplikačních operací na operace databázové.
+Čím blíže bylo zaměření daného participanta bližší aplikačnímu modelu, tím více
+si tento participant přibližoval databázový model aplikačnímu a vznikaly tak
+entity jako jsou HasNoInstance s názvem rodičovské tabulky bez jakékoliv relace
+rodičovství existující v databízovém modelu. Tato odlehlost členů Migdb od
+databázového modelu vytvořila nemalé koncepční problémy, jejichž řešení bylo
+nutné s nemalým úsilím vymyslet a implementovat ve velmi pozdní fázi projektu.
+
+Poslední otázkou, na kterou jsem neměl moc času hledat odpověď je portabilita
+projektu Migdb funkčního nad relační databází Postgresql na jiné
+relační databáze. Předpokládám, že by nebylo složité změnit generátor kódu
+pro jiné relační databáze - algoritmus vygenerování SQL kódu je poměrně
+přímočarý a pro Postgresql nebyl dlouhý. Struktura jiných relačních databází
+není vždy stejná, ale většinově se shoduje, takže ani modifikace databázového
+metamodelu by neměla být obtížná. Moje minimální zkoumání tohoto tématu
+odhalilo, že námi používaná databáze Postgresql má maximální délku 64 znaků, 
+databáze Oracle má maximální délku identifikátoru 30 znaků a databáze Microsoft 
+SQL server má maximum stanoveno na 128 znaků. Z tohoto vyplývá, že převod Migdb 
+na databázi Microsoft SQL server by nebyl tolik problematický z tohoto pohledu.
+30 znaků pro Oracle nevypadá jako problematické - vývojáři mají málokdy třídy
+ukládané do databáze s jmény delšími než 30 znaků, problém nastává při zahrnutí
+service pro získávání názvů databázových entit k entitám z aplikačního modelu.
+Získání názvu cizího klíče, kolekce a asociační tabulky spojuje název atributu a
+tabulky s nějakým prefixem a odděluje tyto položky jména podtržítky. 
+
+Tudíž skutečné omezení délky názvu třídy může být základních 30 oslabeno o 3
+(prefix FK či kolekce), oslabeno o 3 (podtržítka oddělující jednotlivé tři
+části jména - prefix a dvě tabulky) děleno 2 (dvě části). Aplikací těchto
+operací dostaneme horní hranici 12 znaků, která vypadá jako dostatečná, ačkoliv 
+ne tolik komfortní. V této hranici jsme nicméně nezapočítaly Camel-podtržítkovou
+konverzi velkých písmen na malá předražená podtržítky. Předpokládejme, že každý
+identifikátor nebude mít víc jak 3 slova, tudíž musíme odečíst další 3 znaky. 9
+nemusí být vždy dostatečná hranice vzhledem k velikosti nynějších systémů a
+nezapočítáváme do toho fakt, že třídy v aplikačním modelu mohou(a často jsou)
+prefixovány nějakým workspacem či balíčkem. Tudíž délka 9 nemusí být maximální
+horní hranice jmen našich tříd a property. Je tedy zřejmé, že potom bude muset
+uživatel projektu Migdb nad databází Oracle používat krátké a naprosto
+neintuitivní názvy entit typu Vec102 či je nutné vymyslet jiný způsob překládání
+jmen do databázového modelu, který bude automatizovaný, jednoznačný, nezávislý
+na ostatních entitách v modelu a nejlépe pro člověka snadno získatelný bez
+pomoci nějakého překladače.
+Není možné generovat zkrátit názvy entit - vedlo by to u kolizních názvů pomocí
+indexace, protože bez dalších pravidel jako například očív případě potřeby
+odstranit Constraint není možné zjistit, ke které entitě
 
 \section{Další poznámky}
 \subsection{České uvozovky}

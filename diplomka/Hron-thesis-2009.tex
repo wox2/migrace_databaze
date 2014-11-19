@@ -1379,6 +1379,57 @@ koncový.
 
 \chapter{Testování projektu Migdb}
 
+V průběhu vývoje byl za účelem ověření správné funkcionality vytvořen projekt
+Migdb.testing.run, který spouští jednotlivé testy kompoment aplikace. 
+
+V rámci projektu byly vytvořeny testy komponent Workflow obsažené v packagi
+migdb.testing.components.run, testy aplikační evoluce inkludované do Workflow
+test\_app\_atomic.mwe2 v packagi migdb.testing.app.atomic.run, testy databázové
+evoluce obsažené workflow test\_rdb\_atomic.mwe2 v packagi
+migdb.testing.rdb.atomic.run, testy validátorů aplikačního a databázového
+modelu obsažené v packagi migdb.testing.validators.run, test ORM transformace
+struktury aplikace na DB schema + ODBCHM transformace obsažené v workflow
+migdb.testing.orm.run, testy generování SQL schématu obsažené v packagi
+migdb.testing.generators.run, integrované testy celého frameworku migdb
+obsažené v packagi migdb.testing.migdb\_executer a posledními testy jsou testy
+algoritmů rozpoznávajících operace obsažené v packagi
+migdb.testing.app.oracle.run.
+
+Testy komponent testují správnou funkcionalitu komponenty Comparator, která
+musí správně porovnat očekávaný a reálný výstupní soubor xmi ostatních testů.
+Tyto testy jsou rozděleny do více workflow, protože některé musí být neúspěšné,
+jak už napovídá klíčové slovo fail v jejich názvu. Dalšími komponentami
+vzniklými v rámci projektu Migdb byly QVTOExecutor, TestWorkflow,
+DirectoryCleaner a TestComponent. Komponenta TestComponent vznikla, aby bylo
+přehlednější a efektivnější psát QVT testy Migdb, je složena z několika dalších
+načítacích, ukládacích a porovnávacích komponent a zkracuje zápis testů ve
+workflow asi 10 krát. Nebylo jasné, jak vytvořit testy na správnou funkcionalitu
+ostatních komponent - správné jejich zapojení do jiných testů bylo pro nás
+dostatečným testem.
+
+Ostatní testy se řadí do xmi kategorie testů, tj testů, které mají jako
+vstupní model xmi soubor. Po spuštění xmi testů se v projektu
+migdb.testing.run vygeneruje složka output-tests, která obsahuje výstupní data 
+jednotlivých testů. Výstupní data mohou obsahovat výstupní xmi soubory
+porovnávané s očekávaným xmi souborem nebo SQL souborem, který je možné
+aplikovat na databázi Postgresql.
+
+Speciálním testem je test\_code\_generator.mwe2, tento test vygeneruje pro
+zadaný vstupní aplikační model a sadu aplikačních operací výstupní rdb model, sadu
+databázových operací, výstupní SQL generující strukturu databáze a SQL
+reprezentující výstupní databázové operace. Kromě těchto vygenerovaných dat je
+možné najít ke každému testu v adresáři test\_data reálná data, s kterými může
+být test spuštěn. Reálná data jsou vytvořena jen pro testy komplexnějších
+operací(007 - 010), které jen nemění strukturu databáze, ale i manipulují s
+daty. Postup testování tohoto testu je - spuštění workflow vedoucí k
+vygenerování SQL db schematu a SQL db operací. Spuštění SQL vytvářející
+strukturu databáze, spuštění SQL s daty uloženými v souboru data.sql z
+přidružené složky v adresáři test\_data, aplikace vygenerovaného souboru
+transformačních SQL, zobrazení výstupních dat za pomoci souboru
+check\_selects.sql ze složky s daty. Bohužel nebyl nalezen lepší způsob
+otestování než manuální spuštění a vizuální porovnáných selectů s vstupním
+souborem data.sql.
+
 \chapter{Ukázka zdrojového kódu práce}
 
 %\begin{itemize}
@@ -1457,9 +1508,29 @@ obtížné definovat správné mapování aplikačních operací na operace data
 Čím blíže bylo zaměření daného participanta bližší aplikačnímu modelu, tím více
 si tento participant přibližoval databázový model aplikačnímu a vznikaly tak
 entity jako jsou HasNoInstance s názvem rodičovské tabulky bez jakékoliv relace
-rodičovství existující v databízovém modelu. Tato odlehlost členů Migdb od
-databázového modelu vytvořila nemalé koncepční problémy, jejichž řešení bylo
-nutné s nemalým úsilím vymyslet a implementovat ve velmi pozdní fázi projektu.
+rodičovství existující v databázovém modelu. Druhou chybou, kterou jsme
+dělali při zaměření se na aplikační metamodel bylo modelování aplikačních
+operací, které měly přespříliš složité mapování na databázové operace či někdy
+až nesmyslný vliv na data v modelu - příkladem bylo modelování operace
+SetOpposite, která v aplikačním modelu spojí dvě existující property tříd a až
+při implementaci mapování na databázové operace bylo zjišťěno, že tato operace
+pozbývá smyslu. Tato odlehlost členů Migdb od databázového modelu vytvořila
+nemalé koncepční problémy, jejichž řešení bylo nutné s nemalým úsilím vymyslet
+a implementovat ve velmi pozdní fázi projektu. Pokud bych psal Migdb znovu od
+začátku, zaměřil bych se více na kooperaci jednotlivých částí, aby bylo pro mně
+psaní transformace ODBCHM snazší. Tato transformace je esenciální pro chod
+projektu a proto je její správná implementace alfa omegou na úspěch projektu.
+
+Věcí, kterou bych udělal znovu jinak při psaní Migdb od začátku by bylo využití
+jiného jazyka než je QVT. Tento mapovací jazyk se našim potřebám hodil málo,
+proto jsme časem přestali používat jeho zakladní koncept - mapování a nahradili
+ho Java-like programovacím stylem queries a helperů. Naráželi jsme na stále
+větší problémy a QVT nám nepřinášelo moc užitku, nýbrž některé nevýhody. Jedna z
+těchto nevýhod je například automatické ukládání jakýchkoliv pomocných entit do
+výstupních modelů, které bylo nutné vyřešit (za účelem správného
+otestování) speciální transformací kopírující jen ty části výstupního modelu,
+které byly opravdovým výstupem, nikoliv meziproduktem. Tato transformace
+vzhledem ke svojí povaze samozřejmě zpomaluje exekuci Migdb Workflow.
 
 Poslední otázkou, na kterou jsem neměl moc času hledat odpověď je portabilita
 projektu Migdb funkčního nad relační databází Postgresql na jiné
@@ -1494,6 +1565,7 @@ neintuitivní názvy entit typu Vec102 či je nutné vymyslet jiný způsob pře
 jmen do databázového modelu, který bude automatizovaný, jednoznačný, nezávislý
 na ostatních entitách v modelu a nejlépe pro člověka snadno získatelný bez
 pomoci nějakého překladače.
+
 Není možné generovat zkrátit názvy entit - vedlo by to u kolizních názvů pomocí
 indexace, protože bez dalších pravidel jako například očív případě potřeby
 odstranit Constraint není možné zjistit, ke které entitě

@@ -342,8 +342,12 @@ změny zachovávající informaci.
 
 \chapter{Projekt Migdb}
 
-Tato dipomová práce byla napsána v rámci projektu Migdb. Cílem tohoto projektu
-je definovat ucelenou množinu změn, tj. operací, kterými mohou vývojáři změnit
+Tato dipomová práce byla napsána v rámci projektu Migdb, který vznikl díky
+spolupraci akademické sféry se sférou komerční v roce 2011. Komerční sféra byla
+v tomto případě zastoupena firmou CollectionsPro, s.r.o (dále jen CP) a
+akademická potom Katedrou počítačů fakulty Elektrotechnické na pražském
+Českém vysokém učení technickém. Ambiciózním cílem tohoto projektu bylo od
+pořátku projektu definování ucelené množiny změn, tj. operací, kterými mohou vývojáři změnit
 model aplikace a transformovat tyto změny do spustitelnáho SQL skriptu, který
 změní strukturu databáze a přesune data do odpovídajících elementů z modelu
 aplikace.
@@ -373,6 +377,74 @@ dosavadní práce byly v roce 2012 prezentovány jako case-study na prestižní
 modelové konferenci Code Generation 2012 \cite{Cambridge} v Anglickém Cambridge.
 
 \section{Framework Migdb}
+	
+Tato kapitola je věnována krátkému představní frameworku Migdb. Projekt Migdb se
+věnuje evolučním procesem v průběhu vývoje software. Na obr
+\ref{fig:mazanma:framework} převzatého z \cite{Mazanec}. Objektová vrstva každé
+aplikace je reprezentována jejím modelem obsahujícím entity aplikace. Databázová
+vrstva zajišťuje perzistenci obsahuje jednak schéma definující strukturu
+databíze a dále potom samotná perzistované instance dat.
+
+Proces evoluce změn v životním cyklu softwaru definoval v práci \cite{Jezek}
+následujícně:
+
+
+\begin{enumerate}\label{framework:jezek_def}
+  \item redefinice entit na objektové vrstvě
+  \item opětovná tvorba databázového schématu dle redefinovaných entit
+  \item sběr potřebných informací pro migraci dat a příprava migračního skriptu
+  \item ověření proveditelnosti migračního skriptu
+  \item migrace dat
+\end{enumerate}
+
+Po bližší analýze potřeb společnosti CP a po ověření nadbytečnosti vrstvy
+ověřující proveditelnost migrovaných skriptů byl tento koncept přepracován do
+formy \ref{fig:framework:modified}. Na obrázku vidíme aplikační a databázový
+metamodel, které jsou ulořeny v souborech s příponou ecore. Instancemi
+aplikačního APP metamodelu jsou jednotlivé generace aplikačního modelu. 
+Instancemi databázového RDB metamodelu jsou potom generace RDB modelů. Aplikační
+i databázové modely jsou uloženy ve formě .xmi souborů.  Změny, které se
+provádějí v aplikaci jsou transformovány na databázové operace aplikovatelné na
+RDB model. Databázové operace jsou potom transformovány na SQL scripty. V
+původní představě byl do frameworku zapojen i exekutor těchto skriptů nad
+databází, ale po konzultaci s CP byl vzhledem k znovupoužitelnosti SQL souborů
+z frameworku vypuštěn. 
+
+V rámci projektu jsem vytvořil ve své bakalářské práci \cite{Lukes} ORM
+transformaci Aplikační struktury na databázovou a následné vygenerování SQL
+skriptu vytvářející strukturu aplikace. Tento nástroj není ve frameworku použit
+při nasazení, ale byl použit při testování frameworku - viz
+kapitola \ref{chapt:testování}. Ve framework Migdb pracují
+oproti původní sekvenční představě viz \ref{framework:jezek_def} po částech
+sekvenčně. První aplikační operace je aplikována na aplikační model, je
+transformována do databáze, kde jsou je její obraz(sekvence databázových
+operací) provedena nad databázovým modelem. Po provedení první operace prochází
+tímto cyklem druhá operace, potom třetí \ldots
+
+Evoluce na databázové úrovni nemá vliv na tvar vygenerovaných SQL skriptů, ale
+po konzultaci s CP jsme usoudili i po zkušenostech z praxe s databází
+Postgresql, že evoluce databázového modelu odhalující chyby je užitečným
+uspořením času vývojáře, protože aplikace některých SQL skriptů může trvat(a
+typicky trvá) delší čas než průběh evoluce RDB modelu a dobrým nahrazením přímé
+exekuce SQL skriptů.
+
+\begin{figure}[ht]
+\begin{center}
+\includegraphics[width=15cm]{figures/framework_structura}
+\caption{Rozdělení vrstev softwaru - převzato z \cite{Mazanec}}
+\label{fig:mazanma:framework}
+\end{center}
+\end{figure}
+
+
+\begin{figure}[ht]
+\begin{center}
+\includegraphics[width=15cm]{figures/framework_structura_tarant_modified}
+\caption{Rozdělení vrstev softwaru - převzato z \cite{Tarant_bp} a částečně
+upraveno}
+\label{fig:framework:modified}
+\end{center}
+\end{figure}
 
 
 \section{Aplikační metamodel}
@@ -510,7 +582,7 @@ reduktivních a expanzivních operací a manipulují s Property v rámci dědič
 struktury tříd. Tyto operace mohou narozdíl od nevirtuálních operací být
 aplikovány na model, který je z nějakého hlediska nevalidní. Například operace
 MergeProperty počítá s hierarchií s kolizní property v třídě předka a
-potomka.
+potomka. 
 
 \newcounter{ListCitac}
 \begin{list}{Operace \Roman{ListCitac}:}{\usecounter{ListCitac}}
@@ -714,7 +786,7 @@ dekomponovatelné operace na operace atomické. Je zde nutné podotknout, že te
 rozklad je v nynější chvíli možný, ačkoliv si vyžádal neformální
 obohacení aplikačního modelu o některé atomické operace jakými jsou
 mergePropery, distributeProperty a exportProperty. Tyto operace v aplikačním
-modelu neexistují, ale v rámci transformace ODBCHM jsou v metodách
+modelu neexistují, ale v rámci transformace ORMo jsou v metodách
 použity/volány.\\
 
 
@@ -990,21 +1062,25 @@ opozitní property.
 \section{Databázové operace}
 
 
-\section{ODBCHM operací}
+
+\section{ORMo (ORM operací)}
 
 Ačkoliv v průběhu projektu Migdb byla transformace operace z aplikačního modelu
-na sadu operací databázových označována jako ORM operací, rozhodli jsme se
-změnit název této transformace na Operation Database Change Mapping, kde dána
-databázová změna reprezentuje sadu DDL, DML operací, které vzniknou pomocí
-transformace. Ačkoliv na úrovni aplikační všechny operace fungují se všemi inheritanceTypy 
-bylo nutné zjednodušit aplikační model tak, aby byla transformace ODBCHM implementovatelná, 
-proto jsme v rámci týmu Migdb rozhodli o redukci počtu inheritanceTypů na jeden - nejvhodnější
-typ je nejspíše joined, který je pravděpodobně nejpoužívanějším. Vzhledem k nedostatku času nebyla implementována myšlenka .q 
-souborů, které kontrolují některé vlastnosti nejen modelu, ale i konkrétních dat, dále není mapováno omezení LB = 0, 
-které by některé operace stížilo. Algoritmus ODBCHM si bere všechna data z aplikačního modelu, čímž je nezávislý na aplikaci 
-databázových operací nad databázovým modelem, ale předává veškerou zodpovědnost za údržbu - tj vytvoření a odstranění omezení.
-V tabulkách \ref{tab:odbchmSeznam1} a \ref{tab:odbchmSeznam1} nejsou uvedena vytváření a 
-odstraňování unikátních constrainů pro unikátní či ordered kolekce primitivních a neprimitivních typů. 
+na sadu operací databázových označována jako ORM operací, zkráceně ORMo,
+Ačkoliv na úrovni aplikační všechny operace fungují se všemi inheritanceTypy 
+bylo nutné zjednodušit aplikační model tak, aby byla transformace ORMo
+implementovatelná, proto jsme v rámci týmu Migdb rozhodli o redukci počtu
+inheritanceTypů na jeden - nejvhodnější typ je nejspíše joined, který je
+pravděpodobně nejpoužívanějším.
+Vzhledem k nedostatku času nebyla implementována myšlenka .q souborů, které
+kontrolují některé vlastnosti nejen modelu, ale i konkrétních dat, dále není
+mapováno omezení LB = 0, které by některé operace stížilo. Algoritmus ORMo si
+bere všechna data z aplikačního modelu, čímž je nezávislý na aplikaci
+databázových operací nad databázovým modelem, ale předává veškerou zodpovědnost
+za údržbu - tj vytvoření a odstranění omezení.
+V tabulkách \ref{tab:odbchmSeznam1} a \ref{tab:odbchmSeznam1} nejsou uvedena
+vytváření a odstraňování unikátních constrainů pro unikátní či ordered kolekce
+primitivních a neprimitivních typů.
 
 V tabulkách 
 
@@ -1115,41 +1191,6 @@ mergedPropertyName, className\\
 \label{tab:odbchmSeznam2}
 \end{table}
 
-\section{Modul Migdb}
-Původně modul mapování operace fungoval podle následujícího schématu:
-
-
-Pro \SP každou vstupní operaci AOp\\
-	\UP 1. validace AOp \\
-    \UP 2. aplikace AOp na vstupní model \\
-    \UP 3. Rozklad operace AOp na seznam db operací \\
-    \UP 4. Pro každou\SP operaci DbOp rozkladu:\\ 
-           \UP a) validace operace DbOp\\
-           \UP b) aplikace operace DbOp
-Generování SQL z seznamu DB OP
-\\
-
-Tento přístup narazil na některé problematické případy v průběhu testování
-aplikace výsledných SQL nad daty v databázi. Z tohoto důvodu a z důvodu
-přehlednější implementace bylo základní schéma modulu pozměneno a byl přidán
-koncept mirroredOperations.
-
-Představme si, že uživatel potřebuje aplikovat operaci ExtractClass(A, B,
-props), A je třída, z které se extrahuje, B je nově vzniklá třída, do které se
-budou přesouvat property z kolekce props a jejich data.
-
-Tato oper\SP ace pracuje nad aplikačním modelem následovně: \\
-         \UP Vytvoří třídu B\\
- 		 \UP Vytvoří v třídě A referenční property, která bude mít typ B\\
- 	     \UP Pro každou property z kolekce props aplikuje operaci MoveProp
- 	     - vytvoří v třídě B Property, přesune data do nově vzniklé property,
- 	     smaže ji z původní třídy A
-
-Krok 1 se v databázi projeví standardně. V kroku 2. je v databázi kromě
-vytvoření sloupce nutné vygenerovat data v nově vzniklé a referencovat je
-v tabulce kdy není možné oddělit v ODBCH krok 2, vytvoření referenční Property.
-V databázi je nutné vytvořit sloupec, nicméně tento sloupec musí obsahovat 
-
 \subsection{Diff elementy}
 
  Kvůli nutnosti rozpoznávat operace vznikly v aplikačním modelu nové
@@ -1161,22 +1202,25 @@ V databázi je nutné vytvořit sloupec, nicméně tento sloupec musí obsahovat
  referenci owningDiff na Diff element, v kterém jsou obsaženy a která je
  důležitá pro implementaci algoritmu a v neposlední řadě underlyingPairs -
  shodné páry Properties typu EqualPropertyPair, které jsou detekované danou
- operací. Podobně jako operace jsou i páry rozděleny do rodin ConstructiveClassPair,
- DestructiveClassPair a ModifyingClassPair, ale aby bylo možné rozpoznat specifický 
- pár závislý na jiném páru, byla přidána třída ReplacingClassPair - nahrazující pár,
- který se používá jako pivot pro hledání konstruktivních, destruktivních a 
- modifikačních párů. Od elementu ReplacingClassPair dědí elementy EqualClassPair 
- - třída, která si uchovala jméno z původního modelu a element ReplacingClassPair - 
- reprezentující třídu, která si neuchovala jméno, ale má změněný název. Podmínky 
- získávání konkrétních typů párů a jejich pořadí specifikuje konkrétní rozpoznávací 
- algoritmus.
+ operací. Podobně jako operace jsou i páry rozděleny do několika rodin.
+ Konstruktivní a destruktivní operace nemají svůj obraz v diff metamodelu - tyto
+ operace nemapují vzniklý nebo odstraněný element na jakýkoliv jiný element.
+ 
+ Oproti jednodušším konstruktivním a destruktivním operacím jsou operace
+ expanzívní, konstruktivní a modifikační v Diff modelu zobrazeny jako
+ ExpansiveClassPair, ReductiveClassPair a ModifyingClassPair, mapují element
+ vstupního modelu na element cílového modelu. Aby bylo možné rozpoznat
+ specifický pár závislý na jiném páru, byla přidána třída ReplacingClassPair -
+ nahrazující pár, který se používá jako pivot pro hledání expansivních, 
+ reduktivních a modifikačních párů. Od elementu ReplacingClassPair dědí elementy
+ EqualClassPair - třída, která si uchovala jméno z původního modelu a element
+ ReplacingClassPair - reprezentující třídu, která si neuchovala jméno, ale má
+ změněný název. Podmínky získávání konkrétních typů párů a jejich pořadí
+specifikuje konkrétní rozpoznávací algoritmus.
  
  Projevem subtraktivních a aditivních operací jsou elementy DiffClass a
  DiffProperty, které zaobalují třídy a property tak, aby bylo možné referencovat
- na jiný objekt než element Structure. Oproti jednodušším operacím aditivním a
- subtraktivním jsou operace destruktivní, konstruktivní a modifikační v Diff
- modelu zobrazeny do elementů ConstructiveClassPair, DestructiveClassPair a
- ModifyingClassPair. 
+ na jiný objekt než element Structure. 
 
 \section{Rozpoznávání operací}
 
@@ -1278,8 +1322,9 @@ sám.
  vzorce nalezeny v daných datech. 
   
  Problém graph matchingu dvou grafů $G_P$ (grafu patternu) a $G_M$ (grafu
- modelu), přičemž se dělí podle převzatého obrázku \ref{fig:graph_matching} na matching nalezení přesné shody vzorku v hledaném
- grafu či matching hledání podobnosti grafu vzorku v hledaném grafu. 
+ modelu), přičemž se dělí podle převzatého obrázku \ref{fig:graph_matching} na
+ matching nalezení přesné shody vzorku v hledaném grafu či matching hledání
+ podobnosti grafu vzorku v hledaném grafu.
  
  Matching hledání přesné shody je definován následně: Mějme grafy $G_P = (V_P ,
  E_P)$ a $G_M = (V_M, E_M)$, přičemž $\| V_M\| = \| V_P\|$, úkolem je potom
@@ -1287,24 +1332,33 @@ sám.
  E_P$ iff $(f(u), f(v)) \in E_M$. Pokud takové mapování existuje, nazveme ho
  exact graph matchingem(matching přesné shody). \\
  
- Termín Inexact matching aplikovaný na některé problémy týkající se shodnosti grafů vyjadřuje/znamená, že není možné nalézt 
- izomorfismus mezi dvěma grafy, aby byly matched (shodné?). To je stav, kdy oba grafy mají jiný počet vrcholů. Takže v těchto 
- případech není očekávatelné hledání izomorfismu dvou grafů, ale v hledání největší možné shody mezi nimi (best matching). 
- Toto vede k třídě problémů známé jako inexact graph matching. V takovém případě hledáme nebijektivní korespondenci (přiřazení)
- mezi pattern grafem a model grafem. V následujícím textu předpokládejme
- $\|V_P\| < \|V_M\|$. Inexact matching je používán v oborech kartografie,
- rozpoznávání znaků a medicíně. Nejlepší korespondence graph matching problému je definována jako optimum nějaké objective function, ktérá měří podobnost mezi matchovanými uzly a hranami. Tato funkce je nazvána fitness funkcí, případně energy function.
+ Termín Inexact matching aplikovaný na některé problémy týkající se shodnosti
+ grafů vyjadřuje/znamená, že není možné nalézt izomorfismus mezi dvěma grafy,
+ aby byly matched (shodné?). To je stav, kdy oba grafy mají jiný počet vrcholů.
+ Takže v těchto případech není očekávatelné hledání izomorfismu dvou grafů, ale
+ v hledání největší možné shody mezi nimi (best matching).
+ Toto vede k třídě problémů známé jako inexact graph matching. V takovém
+ případě hledáme nebijektivní korespondenci (přiřazení) mezi pattern grafem a
+ model grafem. V následujícím textu předpokládejme $\|V_P\| < \|V_M\|$. Inexact
+ matching je používán v oborech kartografie, rozpoznávání znaků a medicíně.
+ Nejlepší korespondence graph matching problému je definována jako optimum
+ nějaké objective function, ktérá měří podobnost mezi matchovanými uzly a
+ hranami. Tato funkce je nazvána fitness funkcí, případně energy function.
 
- Formálně je tedy inexact matching definován takto: mějme dva grafy, $G_M a G_P$ přičemž $\| V_M \| < \| V_D\|$ a cílem je nalezení mapování
- $f' : V_D  \rightarrow V_M že (u, v) \in E_P$ iff $(f(u), f(v)) \in E_M$.\\
+ Formálně je tedy inexact matching definován takto: mějme dva grafy, $G_M a G_P$
+ přičemž $\| V_M \| < \| V_D\|$ a cílem je nalezení mapování $f' : V_D 
+\rightarrow V_M že (u, v) \in E_P$ iff $(f(u), f(v)) \in E_M$.\\
  
  Podtypem těchto úloh jsou problémy subgraph matching a subgraph izomorfizmu.
  
- Složitost uváděných problémů uvádí autor u Exact graph matchingu jako P až NP kompletní, přičemž že u problémů této kategorie nebyla dokázána nejvyšší složitost 
- NP complete. Pro složitost problémů u subgraph isomorphismu byla dokázáno, že patří do třídy NP complete. Pro složitost nepřesného graph matchingu bylo dokázáno, 
- že patří do třídy NP-complete. 
+ Složitost uváděných problémů uvádí autor u Exact graph matchingu jako P až NP
+ kompletní, přičemž že u problémů této kategorie nebyla dokázána nejvyšší
+ složitost NP complete. Pro složitost problémů u subgraph isomorphismu byla
+ dokázáno, že patří do třídy NP complete. Pro složitost nepřesného graph
+ matchingu bylo dokázáno, že patří do třídy NP-complete.
  
  
+
  
  \begin{figure}[ht]
 \begin{center}
@@ -1323,15 +1377,17 @@ sám.
  algoritmy shledány za vhodné k použití pro problém hledání sady
  aplikačních operací. První 3 popsané algoritmy model matchingu ( 1
  párování podle statického identifikátoru, 2. signature based matching, 3.
- similarity based matching) nejsou taktéž vhodné k použití z důdodu, že k rozpoznání popsaných
- expanzivních a reduktivních operací je nutné rozpoznat 2 třídy, které se mapují na jednu třídu pro reduktivní 
- operace a naopak jednu operaci, která se mapuje na 2 třídy. Problém rozpoznávání operací je tudíž nadskupinou problému 
- model matchingu, protože matching páruje 1 ku jedné, ale ná na algoritmus řešící rozpoznávání operací musí řešit 
- matching M entit ku N entitám. 
+ similarity based matching) nejsou taktéž vhodné k použití z důdodu, že k
+ rozpoznání popsaných expanzivních a reduktivních operací je nutné rozpoznat 2
+ třídy, které se mapují na jednu třídu pro reduktivní operace a naopak jednu
+ operaci, která se mapuje na 2 třídy. Problém rozpoznávání operací je tudíž
+ nadskupinou problému model matchingu, protože matching páruje 1 ku jedné, ale
+ ná na algoritmus řešící rozpoznávání operací musí řešit matching M entit ku N entitám.
  
- Zmiňované algoritmy mě inspirovaly k vytvoření Custom language specific matching algoritmu pro tento problém, který si 
- z zmiňovaných algoritmů bere hlavně poznámku u UMLDiffu - ze všech praktických důvodů považujeme třídy se stejným jménem 
- jako matchující.
+ Zmiňované algoritmy mě inspirovaly k vytvoření Custom language specific
+ matching algoritmu pro tento problém, který si z zmiňovaných algoritmů bere
+ hlavně poznámku u UMLDiffu - ze všech praktických důvodů považujeme třídy se
+ stejným jménem jako matchující.
 
  \subsection{Implementace}
  Vzniklo několik implementací párovacích algoritmů. První a nejjednodušší
@@ -1377,7 +1433,7 @@ vytvoření a zdokumentování algoritmu generující z dvou vstupních modelů
 sekvenci operací, jejichž aplikací se model zdrojový transformuje na model
 koncový.
 
-\chapter{Testování projektu Migdb}
+\chapter{Testování projektu Migdb}\label{chapt:testování}
 
 V průběhu vývoje byl za účelem ověření správné funkcionality vytvořen projekt
 Migdb.testing.run, který spouští jednotlivé testy kompoment aplikace. 
@@ -1388,7 +1444,7 @@ test\_app\_atomic.mwe2 v packagi migdb.testing.app.atomic.run, testy databázov�
 evoluce obsažené workflow test\_rdb\_atomic.mwe2 v packagi
 migdb.testing.rdb.atomic.run, testy validátorů aplikačního a databázového
 modelu obsažené v packagi migdb.testing.validators.run, test ORM transformace
-struktury aplikace na DB schema + ODBCHM transformace obsažené v workflow
+struktury aplikace na DB schema + ORMo transformace obsažené v workflow
 migdb.testing.orm.run, testy generování SQL schématu obsažené v packagi
 migdb.testing.generators.run, integrované testy celého frameworku migdb
 obsažené v packagi migdb.testing.migdb\_executer a posledními testy jsou testy
@@ -1427,8 +1483,8 @@ strukturu databáze, spuštění SQL s daty uloženými v souboru data.sql z
 přidružené složky v adresáři test\_data, aplikace vygenerovaného souboru
 transformačních SQL, zobrazení výstupních dat za pomoci souboru
 check\_selects.sql ze složky s daty. Bohužel nebyl nalezen lepší způsob
-otestování než manuální spuštění a vizuální porovnáných selectů s vstupním
-souborem data.sql.
+otestování než manuální spuštění a vizuální porovnáných selectů s očekávaným
+výstupem po apliaci dané operace na data.sql.
 
 \chapter{Ukázka zdrojového kódu práce}
 
@@ -1518,7 +1574,7 @@ pozbývá smyslu. Tato odlehlost členů Migdb od databázového modelu vytvoři
 nemalé koncepční problémy, jejichž řešení bylo nutné s nemalým úsilím vymyslet
 a implementovat ve velmi pozdní fázi projektu. Pokud bych psal Migdb znovu od
 začátku, zaměřil bych se více na kooperaci jednotlivých částí, aby bylo pro mně
-psaní transformace ODBCHM snazší. Tato transformace je esenciální pro chod
+psaní transformace ORMo snazší. Tato transformace je esenciální pro chod
 projektu a proto je její správná implementace alfa omegou na úspěch projektu.
 
 Věcí, kterou bych udělal znovu jinak při psaní Migdb od začátku by bylo využití

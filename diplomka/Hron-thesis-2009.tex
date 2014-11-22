@@ -17,7 +17,7 @@
 % officially suggested packages:
 \usepackage[czech, english]{babel}
 \usepackage[T1]{fontenc} % pouzije EC fonty 
-\usepackage{listings} %pouzivani referencovatelneho bloku kodu 
+\usepackage{listings} %pouzivani referencovatelneho bloku kodu \]
 % pripadne pisete-li cesky, pak lze zkusit take:
 % \usepackage[OT1]{fontenc} 
 \usepackage[utf8]{inputenc}
@@ -305,17 +305,22 @@ Kvůli nutnosti dokumentace a komunikace mezi vývojáři vznikají různé typy
 modelů. Objektový model aplikace popisuje strukturu aplikace a je doplněn 
 modelem databázovým modelem popisujícím stav databáze. Nejrozšířenějším typem
 databáze jsou v nynější době databáze relační, která uspořádává data podle
-relařního modelu. Relační model je dle \cite{Relacni_algebra} formální abstrakce
+relařního modelu. Relační model je dle \cite{DBS_02} formální abstrakce
 využívající relaci jakožto jediný konstrukt. Relace je uspořádaná n-tice
 souvislých dat R(A1:D1, A2:D2, \ldots An:Dn), přičemž "R" je název relace, Ai
-jsou názvy atributů a Di jsou k nim přidružené typy. Relační algebra definuje
-pomocí relací a integritních omezení strukturu databáze. Dotazovacím aparátem
-pro data definovaná pomocí relační algebry je relační algebra. Relační algebra
-využívá operátorů $\bigcup$ (sjednocení), $\bigcap$ (průnik),
-$\setminus$ (množinový rozdíl), $\times$ (kartézský součin), selekce
-značená R($\varphi $) = \{ u | u $\in$ R a  $\varphi(u)$\} a projekce značená
-R[C] = { u[C] | u $\in$ R} a operace přirozené spojení T(C) = R * S =\{u |
-u[A] $\in$ R a u[B] $\in$ S\}.
+jsou názvy atributů a Di jsou k nim přidružené typy. K zajištění konzistence
+jsou v SŘDB používána Integritní omezení (IO). IO jsou dle \cite{DBS2_02} tvrzení
+vymezující korektnost DB, stupeň souladu datového obrazu s předlohou (jaká data
+v databází mohou být a jaká již ne).
+
+
+Relační algebra definuje pomocí relací a integritních omezení strukturu
+databáze. Dotazovacím aparátem pro data definovaná pomocí relační algebry je
+relační algebra. Relační algebra využívá operátorů $\bigcup$ (sjednocení),
+$\bigcap$ (průnik), $\setminus$ (množinový rozdíl), $\times$ (kartézský
+součin), selekce značená R($\varphi $) = \{ u | u $\in$ R a  $\varphi(u)$\} a
+projekce značená R[C] = { u[C] | u $\in$ R} a operace přirozené spojení T(C) =
+R * S =\{u | u[A] $\in$ R a u[B] $\in$ S\}.
 \cite{Relacni_algebra} dále definuje relačně úplný jazyk jako takový, který
 umožňuje realizovat relační algebru. Takovým jazykem je například jazyk SQL 
 (Structured Query Language). Relační databáze implementuje relaci tabulkou, její
@@ -325,19 +330,18 @@ selekce R[ a = 1] klauzulí where v dotaze select  SELECT * FROM R WHERE a = 1;
 
 Aby byla aplikace funkční, je nutné zajistit
 konzistenci mezi databázovým a aplikačním modelem.
-Tento problém byl již vyřešen a jeho řešení bývá v literatuře nazýváno objektově
-relační mapování(ORM) \cite{ORM}. Dnešní implementace ORM jsou schopny nejen
+Tento problém byl již vyřešen a jeho řešení bývá v odborných kruzích nazýváno
+objektově relační mapování(ORM) \cite{orm}. Dnešní implementace ORM jsou schopny nejen
 transformovat aplikační model na model databázový, ale také vyjádřit změnu v struktuře
 aplikace pomocí skriptů Data definition Language (DDL), podmnožiny jazyka SQL.
-Tyto skripty pozmění model databázový tak aby odpovídal modelu aplikačnímu. Tato konzistence je zaručena automatickou
-transformací aplikačního modelu na model databázový, což vývojářům softwaru
-šetří čas strávený vývojem softwaru.
+Tyto skripty pozmění model databázový tak aby odpovídal modelu aplikačnímu.
+Tato konzistence je zaručena automatickou transformací aplikačního modelu na
+model databázový, což vývojářům softwaru šetří čas strávený vývojem softwaru.
 
-Problém nastává, jakmile zahrneme do zachování
-nejen strukturu dat, ale i samotná data. Změnit strukturu dat a zároveň
-transformovat data tak, aby měla stejnou vyjadřovací schopnost jako původní
-data - považujme změny aplikačního modelu jako smazání třídy, atributu apod za
-změny zachovávající informaci.
+Problém nastává, jakmile zahrneme do zachování nejen strukturu dat, ale i
+samotná data. Změnit strukturu dat a zároveň transformovat data tak, aby měla
+stejnou vyjadřovací schopnost jako původní data - považujme změny aplikačního
+modelu jako smazání třídy, atributu apod za změny zachovávající informaci.
 
 
 \chapter{Projekt Migdb}
@@ -361,12 +365,12 @@ spustitelných nad relační databází PostgreSQL.
 V rámci Migdb bylo v posledních letech vytvořeny a obhájeny 4 bakalářské práce a
 2 diplomové práce členů Migdb.
 
-Jednalo se o tyto bakalářské práce - brakalářská práce mé osoby \cite{Lukes},
+Jednalo se o tyto bakalářské práce - bakalářská práce mé osoby \cite{Lukes},
 jež pojednávala o problematice mapování aplikačního modelu na model databázový,
 bakalářské práce Jiřího Ježka \cite{Jezek} popisující aplikační model a jeho
-transformace, dále bakalářská práce Petra Taranta \cite{Tarant_bp} popisující
-databázový model a jeho transformace a poslední bakalářskou prací je
-práce popisující testování projektu \cite{Luksch}.
+transformace, bakalářská práce Petra Taranta \cite{Tarant_bp} popisující
+databázový model a jeho transformace a poslední bakalářskou prací je práce
+popisující testování projektu \cite{Luksch}.
 
 V roce 2014 byla obhájena diplomová práce Petra Taranta \cite{Tarant_dip}
 formálně specifikující aplikační operace a diplomová práce Martina Mazance
@@ -382,8 +386,8 @@ Tato kapitola je věnována krátkému představní frameworku Migdb. Projekt Mi
 věnuje evolučním procesem v průběhu vývoje software. Na obr
 \ref{fig:mazanma:framework} převzatého z \cite{Mazanec}. Objektová vrstva každé
 aplikace je reprezentována jejím modelem obsahujícím entity aplikace. Databázová
-vrstva zajišťuje perzistenci obsahuje jednak schéma definující strukturu
-databíze a dále potom samotná perzistované instance dat.
+vrstva zajišťující perzistenci dat obsahuje jednak schéma definující strukturu
+databáze, ale takí samotné perzistované instance dat.
 
 Proces evoluce změn v životním cyklu softwaru definoval v práci \cite{Jezek}
 následujícně:
@@ -411,22 +415,32 @@ databází, ale po konzultaci s CP byl vzhledem k znovupoužitelnosti SQL soubor
 z frameworku vypuštěn. 
 
 V rámci projektu jsem vytvořil ve své bakalářské práci \cite{Lukes} ORM
-transformaci Aplikační struktury na databázovou a následné vygenerování SQL
+transformaci aplikační struktury na databázovou a následné vygenerování SQL
 skriptu vytvářející strukturu aplikace. Tento nástroj není ve frameworku použit
 při nasazení, ale byl použit při testování frameworku - viz
 kapitola \ref{chapt:testování}. Ve framework Migdb pracují
 oproti původní sekvenční představě viz \ref{framework:jezek_def} po částech
 sekvenčně. První aplikační operace je aplikována na aplikační model, je
-transformována do databáze, kde jsou je její obraz(sekvence databázových
-operací) provedena nad databázovým modelem. Po provedení první operace prochází
-tímto cyklem druhá operace, potom třetí \ldots
+transformována do databáze, kde je její obraz(sekvence databázových operací)
+aplikován na databázový model. Po provedení první operace prochází tímto
+cyklem druhá operace, potom třetí \ldots
 
-Evoluce na databázové úrovni nemá vliv na tvar vygenerovaných SQL skriptů, ale
-po konzultaci s CP jsme usoudili i po zkušenostech z praxe s databází
-Postgresql, že evoluce databázového modelu odhalující chyby je užitečným
-uspořením času vývojáře, protože aplikace některých SQL skriptů může trvat(a
-typicky trvá) delší čas než průběh evoluce RDB modelu a dobrým nahrazením přímé
-exekuce SQL skriptů.
+Ačkoliv evoluce na databázové úrovni nemá vliv na tvar vygenerovaných SQL
+skriptů, ale po konzultaci s CP jsme usoudili i po zkušenostech z praxe s
+databází Postgresql, že evoluce databázového modelu odhalující chyby je
+užitečným uspořením času vývojáře, protože aplikace některých SQL skriptů může
+trvat(a typicky trvá) delší čas než průběh evoluce RDB modelu a dobrým
+nahrazením přímé exekuce SQL skriptů, proto byl tento modul ve frameworku
+zachován.
+
+V průběhu vývoje existoval koncept ComposedOperation a AtomicOperation, kdy
+každá operace byla buď Composed nebo Atomic, každá Composed operace byla na
+aplikační vrstvě nejdříve dekomponována na set atomických, které se později
+vykonaly a mapovaly přes ORMo na databázové operace. Tento koncept jsme zavrhli,
+protože jsme nedokázali dekomponovat správně některé operace a obzvláště
+pořadí ORMo obrazu nám dělalo problémy. Nicméně v nynější chvíli by se tento
+koncept mohl navrátit po přidání konceptu mirrored operations, ale asi by bylo
+nutné předefinovat či přidat některé aplikační operace.
 
 \begin{figure}[ht]
 \begin{center}
@@ -447,20 +461,29 @@ upraveno}
 \end{figure}
 
 
-\section{Aplikační metamodel}
+\section{Metamodel struktury aplikace}
 
-Aplikační model zachycuje vztahy mezi jednotlivými objekty tvořícími
-aplikaci. Ačkoliv byl tento model vytvořen již v raných fázích projektu Migdb a
-byl často upravován, většinou zjednodušován. Na obrázku \ref{fig:app_roots} jsou
-znázorněny kořenové elementy nynějšího aplikačního modelu - každý aplikační
-model musí obsahovat jeden container - potomka třídy ModelRoot. Na obrázku
-\ref{fig:app_meta} jsou zobrazeny elementy patřící do Structury aplikačního
-modelu. Při vývoji byla přejmonována třída Class, kterou je možno vidět na
-\ref{fig:lukes:app_meta} z původního metamodelu na StandardClass.
-Oproti aplikačnímu metamodelu \cite{Jezek} byly odstraněny Entity EmbeddedClass a její předek GeneralClass, dále byla
-zjednodušena třída Property, u níž ubyly atributy defaultValue, sequenceName a
-atribut isId. Atribut isId byl nahrazen přímou referencí na idProperty ve třídě
-StandardClass který byl nahrazen referencí. 
+Metamodel struktury aplikace zachycuje vztahy mezi jednotlivými objekty
+tvořícími aplikaci. Tento model byl vytvořen již v raných fázích projektu Migdb a
+byl často upravován, většinou zjednodušován. V raných fázích projektu
+\ref{fig:app_meta} viz \cite{Lukes} byl metamodel struktury aplikace
+ekvivalentní metamodelu aplikačnímu. Postupem času byl aplikační metamodel obohacen o
+strukturu operací \ref{fig:jezek:app_meta} a seznam Diff elementů
+\ref{fig:diff_meta}.
+Ačkoliv tušíme, že tento způsob uchování metamodelů v jednom souboru ideální, vybrali jsme si ho kvůli snadnější
+údržbě.
+
+Na obrázku \ref{fig:app_roots} jsou znázorněny kořenové elementy
+nynějšího aplikačního modelu - každý aplikační model musí obsahovat jeden
+container - potomka třídy ModelRoot. Na obrázku \ref{fig:app_meta} jsou
+zobrazeny elementy patřící do Structury aplikačního modelu. Při vývoji byla
+přejmonována třída Class, kterou je možno vidět na \ref{fig:lukes:app_meta} z
+původního metamodelu na StandardClass.
+Oproti aplikačnímu metamodelu \cite{Jezek} byly odstraněny Entity EmbeddedClass 
+a její předek GeneralClass, dále byla zjednodušena třída Property, u níž ubyly
+atributy defaultValue, sequenceName a atribut isId. Atribut isId byl nahrazen
+přímou referencí na idProperty ve třídě StandardClass který byl nahrazen 
+referencí.
 
 Koncept generace modelů byl zachován, ale tyto generace nejsou obsaženy z
 implementačních a testovacích důvodů v jednom souboru, ale ve více souborech.
@@ -498,23 +521,27 @@ implementačních a testovacích důvodů v jednom souboru, ale ve více soubore
 \end{center}
 \end{figure}
 
-\section{Databázový metamodel}
+\section{Databázový metamodel structury}
 
-Stejně jako aplikační model byl i model databázové struktury často upravován a v
-konečném důsledku zjednodušován. Na obr. \ref{fig:rdb_str} vidíme aktuální
-matamodel databázové struktury, na obr. \ref{fig:rdb_str_lukes} vidíme model na
-počátku vývoje převzatý z \cite{Lukes} a na obrázku \ref{fig:rdb_str_tarant}
-model v pozdější fázi vývoje převzatý z \cite{Tarant_bp}.
+Stejně jako metamodel structury aplikace byl i metamodel databázové struktury
+původně ekvivalentní databázovému metamodelu a následně byly do metamodelu
+vloženy databázové operace. Metamodel databázové struktury se ukázal jako
+celkem dobře definovaný a proto změny na něm udělané ho zjednodušovaly.
 
- Nejvýraznější změnami databázového modelu jsou - stejně jako v
- aplikačním metamodelu odstraněním generace modelů, odstranění elementu
+Na obr. \ref{fig:rdb_str} vidíme aktuální matamodel databázové struktury, na
+obr. \ref{fig:rdb_str_lukes} vidíme model na počátku vývoje převzatý z
+\cite{Lukes} a na obrázku \ref{fig:rdb_str_tarant} model v pozdější fázi vývoje
+převzatý z \cite{Tarant_bp}.
+
+ Nejvýraznější změnami databázového metamodelu struktury jsou - stejně jako v
+ metamodelu aplikační struktury odstranění generace modelů, odstranění elementu
  UnderlyingIndex, odstranění elementu ColumnConstraint, nahrazení elementu
  NotNullConstraint atributem boolean v Column a snížení kardinality Sequence
  obsažených ve schematu z * na 1.
  
  Myšlenka generace modelů byla zachována, ale jejich připadné uchovávání bylo
  zvoleno ve více oddělených souborech. Element UnderlyingIndex byl shládán
- nadbytečným, stejně jako element ColumnConstraint. Bezatributový element
+ nadbytečným, stejně jako element ColumnConstraint. Neatributový element
  NotNullConstraint byl shledán příliš informačně chudým a byl nahrazen atributem
  isNillable zachovávajícím stejnou informační hodnotu jako element v původních
  modelech. 
@@ -547,15 +574,15 @@ model v pozdější fázi vývoje převzatý z \cite{Tarant_bp}.
 
 
 \subsection{Operace nad aplikačním modelem}
-\subsubsection{Cíle při modelování operací}
+
+
+\subsubsection{Historický vývoj}
 
 V průběhu modelování operací nad aplikačním modelem jsme se snažili, aby tyto
 operace byly jednoznačné(strojově zpracovatelné) v rámci daného kontextu, dále
 vzhledem k nutnosti textového zápisu uživatelem o minimalističnost zápisu. Tyto
 dva koncepty jdou obecně proti sobě, proto jsme došli k jistému jejich
 kompromisu uživatelské jednoduchosti zápisu a jednoznačnosti.
-
-\subsubsection{Historický vývoj}
 
 Operace v aplikačním modelu se vyvíjely a měnily se jejich parametry, ale
 současně se měnil i seznam dostupných operací nad aplikačním modelem. Z operací
@@ -574,15 +601,16 @@ očekatelné, že by tato operace měla souviset s dědičnými hierarchiemi.
 
 \subsubsection{Seznam aplikačních operací}
 
-Operace jsou uvedeny v tabulkách následujícím seznamu. Kromě
-regulérních operací, které může vytvořit uživatel jsou v tabulce
-zde uvedeny i virtuální operace DistributeProperty, MergeProperty a operace
-ExportProperty, které jsou používány jako pomocné v implementaci složitějších
-reduktivních a expanzivních operací a manipulují s Property v rámci dědičné
-struktury tříd. Tyto operace mohou narozdíl od nevirtuálních operací být
-aplikovány na model, který je z nějakého hlediska nevalidní. Například operace
-MergeProperty počítá s hierarchií s kolizní property v třídě předka a
-potomka. 
+Operace jsou uvedeny v následujícím seznamu. Kromě regulérních operací, které
+může vytvořit uživatel jsou v tabulce zde uvedeny i virtuální operace
+DistributeProperty, MergeProperty a operace ExportProperty, které jsou
+používány jako pomocné v implementaci složitějších reduktivních a expanzivních
+operací a manipulují s Property v rámci dědičné struktury tříd. Tyto operace
+mohou narozdíl od nevirtuálních operací být aplikovány na model, který je z
+nějakého hlediska nevalidní. Například operace MergeProperty počítá s
+hierarchií s kolizní property v třídě předka a potomka. Hlavním přínosem
+virtuálních operací je zabránění duplikace v definici ORMo mapování a
+zjednodušení kódu.
 
 \newcounter{ListCitac}
 \begin{list}{Operace \Roman{ListCitac}:}{\usecounter{ListCitac}}
@@ -648,7 +676,7 @@ potomka.
   \begin{itemize}
     \item Validační podmínky - musí existovat rodičovská třída a třída potomka,
     třída potomka nesmí mít nastaveného rodiče
-    \item Operace nastaví třídě předka a přesune překrývající atributy do
+    \item Operace nastaví třídě předka a přesune namerguje kolizní atributy do
     rodičovské třídy
   \end{itemize}
   \item RemoveParent(className, parentClassName)
@@ -752,7 +780,9 @@ potomka.
 
 Operace nad aplikačním modelem je možné dělit podle dvou kritérií - 1. nad jakým
 typem entity pracují, 2. jaký je charakter/význam pro tito entity daná operace
-má.
+má. Operace byly rozděleny podle obou kritérií spíše formálně. Všechny operace
+jsou potomkem generické operace ModelOperation. Rozdělení podle druhého kritéria
+vzniklo až po přidání funkcionality rozpoznávání operací.
 
 První kritérium dělí aplikační operace na operace pracující s třídami a operace
 pracující pouze s properties daných tříd. Příkladem operací pracujících s
@@ -778,27 +808,14 @@ Reduktivní operace entitu z vstupního modelu odstraní a zároveň entitě, kt
 je pro operaci řídící změní obsah. Příkladem této operace je InlineClass.
 Reduktivní operace jsou inverzní k operacím expanzivním.\\
 
-Rozdělení operací nad aplikačním modelem je jen formální, neprojevilo se změnou
-hierarchické struktury operací. Struktura operací byla zjednodušena - již
-neexistuje rozhlodatelná operace ComposedOperation, všechny operace jsou nyní
-defakto atomické. Tato změna byla zapříčiněna neschopností rozložit některé
-dekomponovatelné operace na operace atomické. Je zde nutné podotknout, že tento
-rozklad je v nynější chvíli možný, ačkoliv si vyžádal neformální
-obohacení aplikačního modelu o některé atomické operace jakými jsou
-mergePropery, distributeProperty a exportProperty. Tyto operace v aplikačním
-modelu neexistují, ale v rámci transformace ORMo jsou v metodách
-použity/volány.\\
-
-
 \subsection{Delta notace}
 V \cite{Cincetti} jsou definovány operace pomocí delta notace. Delta notace
 je taková, která ukazuje všechny změny mezi danými dvěma artefakty stejné
 úrovně abstrakce. Změnami můžeme rozumět přidáním elementu, odstraněním elementu
 a modifikací elementu.
 
-
-Nejznámějším a nejrozšířenějším typem delta notace je výstup linuxového
-příkazu diff. Každý rozdíl v delta notaci příkazu diff je dle
+Nedá se zde přesně Nejznámějším a nejrozšířenějším typem delta notace je výstup
+linuxového příkazu diff. Každý rozdíl v delta notaci příkazu diff je dle
 \cite{diff_wiki} definován následně:
 
 \begin{verbatim}
@@ -1024,65 +1041,308 @@ modelů 2 a 1,label=delete_minimal]
 \end{lstlisting}
 
 \subsubsection{Vlastnosti operací}
-V \cite{Cincetti} jsou popsány některé specifické vlastnosti jako
-je invertovatelnost a rozložitelnost operací. Je nutné říci, že operace
+V \cite{Cincetti} Antonio Cincetti popisuje některé specifické vlastnosti
+jako je invertovatelnost a rozložitelnost operací. Je nutné říci, že operace
 zmiňované v literatuře pracují jen se strukturou dat, nikoliv s daty samotnými a jsou
 kontextově nezávislé - tyto operace jsou tvořeny téměř výlučně konstruktivními
-a  destruktivními operacemi. (intensional vs extensional - první potřebuje
-konkrétní model ke své aplikaci, druhá ne, extensional je možné použít na
-paralelní vývojové větve).
+a  destruktivními operacemi. Cincetti rozděluje zmiňuje, že v
+minulosti byly operace aplikovatelné na jeden konkrétní model(intensional) a
+modernější differenční modely jsou tzv. extensional - je možné je aplikovat na
+jakýkoliv model, například na paralelní vývojové větve.
 
-V projektu Migdb na druhé straně existují operace,
-které jsou kontextově závislé, což je uživatelskou přívětivostí  operací - jako
-zástupcem takové operace se dá uvést operace AddParent(parentClass=B,
-childClass=A), která nezmiňuje všechny Property,  které se mají odstranit, ale
-dynamicky si je dopočítává v závislosti na daném kontextu. Její inverzí je
-operace RemoveParent(childClass=A). Vzhledem k minimalističnosti neexistuje k
-operaci RemoveParent(childClass=A) jednoznačná inverze bez daného konktextu.
+V projektu Migdb jsou operace invertovatelné se znalostí původního modelu.
+Například u operace RemoveParent(childClass) nezískáme parentClass přímo z
+operace, ale musíme ho dopočítat ze vstupního modelu.
 
-Inverzi AddParent(sourceClass=A parentClass=B) získáme, pokud v
-kontextu přidruženém modelu aplikaci RemoveParent má třída A předka B. Nicméně i
-v takovém případě neplatí, že aplikace sekvence těchto dvou inverzních operací
-na vstupní model M vygeneruje vždy původní model. Příkladem tohoto neočekávaného
-chování je vstupní model Man(int age, String name), Person(int age, String name, String sureName).
-Aplikace operace AddParent(Man, Person) odstraní přebytečné atributy v třídě man
-a přidá rodiče této třídě, tj vznikne model : Man()->Person, Person(int age,
-String name, String sureName). Nyní je aplikována operace RemoveParent(Person),
-která sice získá z modelu jméno rodičovské třídy, ale nezíská seznam property,
-které se distribuují do třídy Man. Operace byly navrženy tak, aby maximalizovali
-objem zachovaných dat, proto operace RemoveParent distribuuje všechny
-atributy třídy Person do třídy Man. Výsledný model je tedy: Man(int age, String
-name, String sureName), Person(int age, String name, String sureName) a odlišuje
-se od vstupního modelu o property sureName v třídě Man.
+Problémem je, že i po odvození inverze nemusí vést aplikace operace do stejného
+vstupního modelu. Pokud například na stav \ref{fig:add_parent} aplikujeme
+operaci AddParent(Teacher, UniversityTeacher), získáme cílový stav
+\ref{fig:remove_parent}. Pokud se chceme vrátit zpět z \ref{fig:remove_parent}
+do výchozího stavu, měli bychom aplikovat operaci
+RemoveParent(UniversityTeacher), nicméně aplikace této operace nepovede do
+výchozího stavu \ref{fig:add_parent}, ale do stavu \ref{fig:remove_parent_apl}.
+Po aplikaci operace RemoveParent bude v třídě UniversityTeacher navíc property
+class. Tento stav je zapříčiněn vývojem operace AddParent - v původní verzi
+operace nemohla být použita na jakékoliv třídy s kolizními atributy, ale
+shledali jsme tuto operaci nepoužitelnou - většinou přidáváme supertyp třídě,
+pokud je třída potomka speciálním typem třídy rodičovské, což se ale v
+drtivé většině případů projevuje kolizními atributy. Možným odstraněním tohoto
+problému by bylo přidání informací o distribuovaných properties do operace
+RemoveParent, čímž bychom se nicméně odklonili od cílu minimalizovat operace.
 
-Stejná vlastnost platí pro dvojici ChangeUniToBidir a ChangeBiToUnidir, s
-rozdílem, že se nejedná o automaticky získanou rodičovskou třídu, ale
-opozitní property.
+\begin{figure}[ht]
+\begin{center}
+\includegraphics[width=5cm]{figures/teacher_university_teacher}
+\caption{AddParent(Teacher, UniversityTeacher)}
+\label{fig:add_parent}
+\end{center}
+\end{figure}
+
+\begin{figure}[ht]
+\begin{center}
+\includegraphics[width=5cm]{figures/teacher_university_teacher_remove}
+\caption{Výsledek po operaci AddParent}
+\label{fig:remove_parent}
+\end{center}
+\end{figure}
+
+\begin{figure}[ht]
+\begin{center}
+\includegraphics[width=5cm]{figures/teacher_university_teacher_remove_inversion}
+\caption{Výsledný stav po aplikaci RemoveParent}
+\label{fig:remove_parent_apl}
+\end{center}
+\end{figure}
 
 \section{Databázové operace}
+Databázové operace reprezentují změny proveditelné na úrovni databáze. Mělo by z
+nich být možné generovat SQL kód jednoduchou Model-to-text transformací
+zajišťovanou modulem Generator.xtend.
 
 
+Seznam operací s jejich validačními podmínkami:
+\newcounter{ListCitac2}
+\begin{list}{Operace \Roman{ListCitac2}:}{\usecounter{ListCitac2}}
+  \item AddSchema(name)
+  \begin{itemize}
+    \item Vytvoří nové schéma s zadaným jménem
+    \item Nesmí existovat schéma s zadaným
+    jménem
+  \end{itemize}
+  
+  \item AddSequence(owningSchemaName, name, startValue)
+  \begin{itemize}
+    \item Vytvoří v cílovém schématu sekvenci s zadanou startovní hodnotou
+    \item Musí existovat schéma, do kterého se vkládá, v něm nesmí existovat
+    sequence s jménem name
+  \end{itemize}
+  
+  \item AddTable(owningSchemaName, name)
+  \begin{itemize}
+    \item V daném schématu vytvoří tabulku, id sloupec této tabulky a primární
+    klíč odvozený z jména tabulky
+    \item Musí existovat dané schéma, v
+    němž nesmí existovat tabulka s jménem name
+  \end{itemize}
+  
+  \item AddColumn(owningSchemaName, owningTableName, name, type)
+  \begin{itemize}
+    \item Vytvoří v daném schématu a tabulce column s zadaným primitivním typem
+    \item Musí existovat daní schéma, tabulka a v dané lokaci nesmí existovat
+    daný sloupec
+  \end{itemize}
+  
+  \item AddPrimaryKey(owningSchemaName, owningTableName,
+  constrainedColumnName, name)
+  \begin{itemize}
+    \item Vytvoří v daném schématu a tabulce nad constrainedColumn Primární klíč
+    s daným jménem
+    \item Musí existovat dané schéma, daná tabulka, daná column, nesmí existovat
+    constraint s daným jménem
+  \end{itemize}
+
+  \item AddForeignKey(owningSchemaName, owningTableName, constrainedColumnName,
+  name, targetTableName)
+  \begin{itemize}
+    \item Vytvoří v daném schématu a tabulce cizí klíč s daným jménem, který
+    referencuje IdColumn cílové tabulky
+    \item Musí existovat dané schéma, daná tabulka, daná column, nesmí existovat
+    constraint s daným jménem, musí existovat targetTable
+  \end{itemize}
+  
+  \item AddUnique(owningSchemaName, owningTableName,
+  constrainedColumnNames, name)
+  \begin{itemize}
+    \item Vytvoří v daném schématu a tabulce unique constraint s daným jménem
+    nad zadanými sloupci
+    \item Musí existovat dané schéma, musí existovat daná tabulka, musí
+    existovat dané constrainované sloupce, nesmí existovat constraint s jménem
+    name
+  \end{itemize}
+
+  \item AddNotNull(owningSchemaName, owningTableName, constrainedColumnName)
+  \begin{itemize}
+    \item Nastaví v daném schématu a tabulce cílové property hodnotu notNull na
+    true
+    \item Musí existovat dané schéma, daná tabulka, daná column
+  \end{itemize}
+
+  \item RemoveNotNull(owningSchemaName, owningTableName, constrainedColumnName)
+  \begin{itemize}
+    \item Nastaví v daném schématu a tabulce cílové property hodnotu notNull na
+    false
+    \item Musí existovat dané schéma, daná tabulka, daná column
+  \end{itemize}
+
+  \item RenameTable(owningSchemaName, name, newName)
+  \begin{itemize}
+    \item Změní cílové tabulce jméno na nové
+    \item Musí existovat dané schéma, daná tabulka, nesmí existovat tabulka s
+    novým jménem
+  \end{itemize}
+
+  \item RenameColumn{owningSchemaName, owningTableName, name, newName}
+  \begin{itemize}
+    \item Přenastaví v daném schématu a tabulce jméno z name na hodnotu newName
+    \item  Musí existovat dané schéma, daná tabulka, daná column
+  \end{itemize}
+
+  \item RemoveTable{owningSchemaName, name}
+  \begin{itemize}
+    \item Odstraní z daného schematu tabulku s jménem name
+    \item Musí existovat dané schéma, daná tabulka
+  \end{itemize}
+
+  \item RemoveColumn{owningSchemaName, owningTableName, name}
+  \begin{itemize}
+    \item Odstraní v daném schématu a tabulce column s jménem name
+    \item Musí existovat dané schéma, daná tabulka, daná column, která nesmí na
+    sobě mít constraint PrimaryKey, ForeignKey nebo Unique
+  \end{itemize}
+
+  \item RemoveConstraint{owningSchemaName, owningTableName, name}
+  \begin{itemize}
+    \item Přenastaví v daném schématu a tabulce column s jménem name
+    \item  Musí existovat dané schéma, tabulka a column
+  \end{itemize}
+
+  \item RemoveSequence{owningSchemaName, name}
+  \begin{itemize}
+    \item Odstraní v daném schématu sequence s jménem name
+    \item Musí existovat dané schéma a daná sequence
+  \end{itemize}
+
+  \item UpdateRows{owningSchemaName, sourceTableName,
+  sourceColumnName, targetTableName, targetColumnName,
+  selectionWhereCondition, safeWhereCondition}
+  \begin{itemize}
+    \item v daném schématu updatuje hodnoty z tabulky sourceTable hodnoty z
+    sourceColumns a nastaví je do taragetColumns tabulky targetTable pro
+    instance splňující selectionWhereCondition, pozn. aby nebyly nullovány
+    hodnoty, pro které nebyly vybrány hodnoty z sourceTable byla přidána
+    safeWhereCondition
+    \item Musí existovat dané schéma, v něm sourceTable, v ní sourceColumn, v
+    dále musí v schématu existovat targetTable, v ní targetColumn, sourceColumn
+    musí mít stejný typ jako targetColumn
+  \end{itemize}
+
+  \item NillRows{owningSchemaName, tableName, columnName, whereCondition}
+  \begin{itemize}
+    \item Nastraví sloupci v daném schematu a tabulce hodnoty null instancím
+    splňující whereCondition
+    \item Musí existovat dané schéma, daná tabulka, daná column
+  \end{itemize}
+
+  \item InsertRows{owningSchemaName, sourceTableName, sourceColumnName,
+  targetTableName, targetColumnName, whereCondition}
+  \begin{itemize}
+    \item v daném schématu zkopíruje z tabulky sourceTable hodnoty z
+    sloupce sourceColumns instance splňující whereCondition a vloží je do
+    taragetColumns tabulky targetTable    
+    \item Musí existovat dané schéma, v něm sourceTable, v ní sourceColumn, v
+    dále musí v schématu existovat targetTable, v ní targetColumn, sourceColumn
+    musí mít stejný typ jako targetColumn
+  \end{itemize}
+
+  \item DeleteRows{owningSchemaName, tableName, whereCondition}
+  \begin{itemize}
+    \item Operace smaže instance z daného schematu, dané tableName instance
+    splňující whereCondition
+    \item Musí existovat dané schéma, v něm daná table
+  \end{itemize}
+
+\end{list}
+
+\subsection{ukázka kódu}
+V následujícím kódu je ukázáno validační query pro validaci operace AddTable
+\begin{verbatim}
+query RDB::ops::AddTable::isValid(structure : RDB::Structure, 
+  inout errorLog : ErrorLog, operationIndex : Integer) : Boolean {
+    var existSchema : Boolean := checkExistSchema(
+                                        self.owningSchemaName, 
+                                        structure, 
+                                        errorLog, 
+                                        operationIndex, 
+                                        getEvolutionRdbTransformationId());
+    var notExistTable : Boolean := checkNotExistTable(
+                                        self.owningSchemaName, 
+                                        self.name, 
+                                        structure, 
+                                        errorLog, 
+                                        operationIndex, 
+                                        getEvolutionRdbTransformationId());
+    return existSchema and notExistTable;
+}
+
+helper checkExistSchema(schemaName : String, structure : Structure, 
+  inout errorLog : ErrorLog, operationIndex : Integer, 
+  transformationId : String) : Boolean{ 
+    var existSchema : Boolean := structure.containsSchema(schemaName);
+    if(not existSchema)then{
+        var errorMessage : String := "Schema " + schemaName + " doesn't exist";
+        errorLog.errors += _evolutionError(
+                                          operationIndex, 
+                                          errorMessage,
+                                          transformationId); 
+    }endif;
+    return existSchema;	
+}
+
+helper checkNotExistTable(owningSchemaName : String, tableName : String, 
+  structure : Structure, inout errorLog : ErrorLog, operationIndex : Integer,
+  transformationId : String) : Boolean{ 
+    if(not structure.containsSchema(owningSchemaName))then{
+       return false;
+    }endif;
+    var notExistTable: Boolean := not
+                  structure.containsTableInSchema(owningSchemaName, tableName); 
+    if(not notExistTable)then{ 
+        var errorMessage : String := "Table " + tableName + " exists in schema "
+                     + owningSchemaName;
+    errorLog.errors += _evolutionError(
+                                     operationIndex, 
+                                     errorMessage,
+                                     transformationId); 
+    }endif;
+	return notExistTable;
+}
+\end{verbatim}
+
+Je možné zaznamenat, že helpery nejen vrací hodnotu, ale i loggují chyby do
+errorLogu pro daný index operaxe a danou transformaci, tudíž není možné volat
+helper checkExistTable a invertovat navrácenou hodnotu, ale bylo nutné napsat
+helpery kladné i záporné.
 
 \section{ORMo (ORM operací)}
 
-Ačkoliv v průběhu projektu Migdb byla transformace operace z aplikačního modelu
-na sadu operací databázových označována jako ORM operací, zkráceně ORMo,
-Ačkoliv na úrovni aplikační všechny operace fungují se všemi inheritanceTypy 
-bylo nutné zjednodušit aplikační model tak, aby byla transformace ORMo
-implementovatelná, proto jsme v rámci týmu Migdb rozhodli o redukci počtu
-inheritanceTypů na jeden - nejvhodnější typ je nejspíše joined, který je
-pravděpodobně nejpoužívanějším.
+Ačkoliv ORM transformace vstupního aplikačního modelu funguje se všemi
+inheritanceTypy bylo nutné zjednodušit aplikační model tak, aby byla
+transformace ORMo implementovatelná, proto jsme v rámci týmu Migdb rozhodli o
+redukci počtu inheritanceTypů na jeden - nejvhodnější typ je nejspíše joined,
+který je pravděpodobně nejpoužívanějším.
+
 Vzhledem k nedostatku času nebyla implementována myšlenka .q souborů, které
 kontrolují některé vlastnosti nejen modelu, ale i konkrétních dat, dále není
-mapováno omezení LB = 0, které by některé operace stížilo. Algoritmus ORMo si
-bere všechna data z aplikačního modelu, čímž je nezávislý na aplikaci
-databázových operací nad databázovým modelem, ale předává veškerou zodpovědnost
-za údržbu - tj vytvoření a odstranění omezení.
-V tabulkách \ref{tab:odbchmSeznam1} a \ref{tab:odbchmSeznam1} nejsou uvedena
-vytváření a odstraňování unikátních constrainů pro unikátní či ordered kolekce
-primitivních a neprimitivních typů.
+mapováno omezení LB = 0, které by některé operace stížilo. 
 
-V tabulkách 
+Algoritmus ORMo si bere všechna data z aplikačního modelu, čímž je seznam
+výstupních operací nezávislý na aplikaci databázových operací nad databázovým
+modelem, ale přebírá veškerou zodpovědnost za údržbu - tj vytvoření, odstranění
+a údržbu (úpravu) integritních omezení.
+V následujícím seznamu jsou specifikovány ORMo mapování jednotlivých operací.
+
+\begin{list}{Operace \Roman{ListCitac}:}{\usecounter{ListCitac}}
+  \item AddStandardClass
+  \begin{itemize}
+    \item Vytvoří tabulku, id sloupec této tabulky a primární klíč
+  \end{itemize}
+  
+  \item RenameEntity
+  \begin{itemize}
+    \item Operace změní název tabulky na nový, odstraní a vytvoří PK s
+novým jménem
+  \end{itemize}
+\end{list}
 
 \begin{table}
 \begin{center}
@@ -1091,10 +1351,7 @@ V tabulkách
 \bfseries Název operace &
 \bfseries Rozklad na db operace \\[2mm] 
 \hline \hline
-AddStandardClass &   Vytvoří tabulku, id sloupec této tabulky a primární klíč\\
-\hline
-RenameEntity & Operace změní název tabulky na nový, odstraní a vytvoří PK s
-novým jménem\\
+RenameEntity & \\
 \hline
 SetAbstract & pro isAbstract = true maže data, která náleží pouze dané třídě\\
 \hline
@@ -1220,7 +1477,15 @@ specifikuje konkrétní rozpoznávací algoritmus.
  
  Projevem subtraktivních a aditivních operací jsou elementy DiffClass a
  DiffProperty, které zaobalují třídy a property tak, aby bylo možné referencovat
- na jiný objekt než element Structure. 
+ na jiný objekt než element Structure . 
+
+\begin{figure}[ht]
+\begin{center}
+\includegraphics[width=15cm]{figures/framework_structura_tarant_modified}
+\caption{Seznam diff elementů}
+\label{fig:diff_meta}
+\end{center}
+\end{figure}
 
 \section{Rozpoznávání operací}
 
@@ -1255,13 +1520,14 @@ nutné vybrat si správný algoritmus v závislosti na řešeném problému.
 Nejtriviálnější implementovatelný algoritmus by mohl smazat zdrojový model
 pomocí destruktivních operací a následně vytvořit výsledný model pomocí operací
 konstruktivních, připadně poupravit atributy jednotlivých elementů pomocí
-operací modifikačních. Argumentem proti použití takového algoritmu je smazání jakýchkoliv dat, které v
-původní databázi byla a dobré si uvědomit, že funkci vytvoření DB modelu zvládá
-ORM mapování integrované do většiny současných IDE.
+operací modifikačních. Argumentem proti použití takového algoritmu je smazání
+jakýchkoliv dat, které v původní databázi byla a dobré si uvědomit, že funkci
+vytvoření DB modelu zvládá ORM mapování integrované do většiny současných IDE.
 
  V literatuře (Different Models for Model Matching:
 An analysis of approaches to support model differencing) byly popsány algoritmy
-pro mapování shodných entit modelů (ModelMatching) a algoritmy pro získávání rozdílu modelů (Model Diff).
+pro mapování shodných entit modelů (ModelMatching) a algoritmy pro získávání
+rozdílu modelů (Model Diff). 
  Principem těchto modelů je párování elementů vstupního modelu s elementy z
  modelu cílového. Existují 4 obecné skupiny dělení matching algoritmů. 1
  párování podle statického identifikátoru, 2. signature based matching, 3.
@@ -1577,6 +1843,11 @@ začátku, zaměřil bych se více na kooperaci jednotlivých částí, aby bylo
 psaní transformace ORMo snazší. Tato transformace je esenciální pro chod
 projektu a proto je její správná implementace alfa omegou na úspěch projektu.
 
+Samotná definice operací aplikovatelných na databázový model není pevná, což
+vzhledem k malému vzorku sbíraných požadavků vede k nejednoznačným ORMo
+mapováním. Proto v navazujících pracích by bylo dobré udělat operační výzkum a
+získat větší množství požadavků na tyto operace.
+
 Věcí, kterou bych udělal znovu jinak při psaní Migdb od začátku by bylo využití
 jiného jazyka než je QVT. Tento mapovací jazyk se našim potřebám hodil málo,
 proto jsme časem přestali používat jeho zakladní koncept - mapování a nahradili
@@ -1646,6 +1917,8 @@ V souboru \verb|k336_thesis_macros.tex| je příkaz \verb|\uv{}| pro sázení č
 \item[IDE] Integrated Development Environment
 \item[ORM] Object-relational mapping
 \item[EMF] Eclipse modeling framework
+\item[SŘBD] Systém řízení báze dat
+\item[IO] Integritní omezení
 \end{description}
 \vdots
 

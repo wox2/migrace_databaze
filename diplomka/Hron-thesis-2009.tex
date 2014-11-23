@@ -1315,6 +1315,7 @@ helpery kladné i záporné.
 
 \section{ORMo (ORM operací)}
 
+\ref{orm_merge_prop}
 Ačkoliv ORM transformace vstupního aplikačního modelu funguje se všemi
 inheritanceTypy bylo nutné zjednodušit aplikační model tak, aby byla
 transformace ORMo implementovatelná, proto jsme v rámci týmu Migdb rozhodli o
@@ -1332,121 +1333,176 @@ a údržbu (úpravu) integritních omezení.
 V následujícím seznamu jsou specifikovány ORMo mapování jednotlivých operací.
 
 \begin{list}{Operace \Roman{ListCitac}:}{\usecounter{ListCitac}}
-  \item AddStandardClass
+  \item AddStandardClass(name, isAbstract, inHeritanceType)
   \begin{itemize}
     \item Vytvoří tabulku, id sloupec této tabulky a primární klíč
   \end{itemize}
   
-  \item RenameEntity
+  \item AddProperty(owningClassName, name, typeName, lowerBound, upperBound,
+  isOrdered, isUnique)
+  \begin{description}
+    \item[Primitivní typ a UB = 1] operace přidá do cílové tabulky sloupec pro
+    primitivní property
+    \item[Primitivní typ a UB != 1] operace přidá collection tabulku, datový
+    sloupec, referenční sloupec a FK referencující vlastnickou tabulku
+    \item[Neprimitivní typ a UB = 1] operace přidá do do cílové tabulky a
+    referenci na tabulku typu
+    \item[Neprimitivní typ a UB != 1] operace vytvoří vazební tabulku pro
+    neprimitivní property, vloží do ní referenční sloupce na vlastnickou
+    tabulku a tabulku typu, na které vytvoří cizí klíč
+  \end{description}
+  
+  \item RenameEntity(owningClassName, name, newName)
   \begin{itemize}
     \item Operace změní název tabulky na nový, odstraní a vytvoří PK s
 novým jménem
   \end{itemize}
+  
+  \item SetAbstract(name, isAbstract)
+  \begin{description}
+    \item[isAbstract = true] maže data, která náleží pouze dané třídě
+  \end{description}
+  
+  \item RemoveEntity(name)
+  \begin{itemize}
+    \item operace smaže primární klíč, id property a tabulka
+odpovídající dané třídě
+  \end{itemize}
+  
+  \item RenameProperty(owningClassName, name, newName)
+  \begin{description}
+  \item[primitivní typ a UB = 1] přejmenuje property v vlastnické
+  tabulce
+  \item[primitivní typ a UB != 1] přejmenuje datový sloupec, FK
+  na vlastníka kolekce a tabulku kolekce
+  \item[neprimititní typ a UB = 1] přejmenuje sloupec ve vlastnické tabulce a
+  cizí klíč referující tabulku typu
+  \item[neprimitivní typ a UB != 1] přejmenuje vazební tabulku s referenčními
+  sloupci na vlastníka a typ asociace + cizí klíče
+  \end{description}
+
+  \item RemoveProperty(owningClassName, name)
+  \begin{description}
+  	\item[primitivní typ a UB = 1] odstraní sloupec z dané tabulky
+	\item[primitivní typ a UB != 1] odstraní referenci na vlastnickou tabulku,
+	sloupec z tabulky dané kolekce, datový sloupec a smaže kolekční tabulku
+	\item[neprimitivní typ a UB = 1] odstraní referenci na tabulku vlastníka a
+	referenční sloupec
+	\item[neprimitivní typ a UB != 1] odstraní reference na vlastnickou tabulku a
+	tabulku typu, datový sloupec a sloupec typu a smaže vazební tabulku
+  \end{description}
+
+   %\item SetBounds()
+   %\begin{itemize}
+   %\itemNEIMPLEMENTOVÁNO \\
+	%\end{itemize}
+
+  \item SetOrdered(owningClassName, name, isOrdered)
+  \begin{description}
+  	\item[isOrdered = true] přidá sloupec ordering, přenastaví data a vytvoří
+  	unikátní constraint přes typový, referenční a orgering sloupec
+	\item[isOrdered = false] smaže ordering unique constraint a ordering sloupec 
+  \end{description}
+
+  \item SetUnique(owningClassName, name, isUnique)
+  \begin{description}
+  	\item[isUnique = true] vytvoří unikátní constraint přes typový a referenční
+  	sloupec
+	\item[isUnique = false] smaže unique constraint
+  \end{description}
+  
+  \item AddParent(className, parentClassName)
+  \begin{itemize}
+    \item Aplikuje obraz operace MergeProperty na všechny kolizní property,
+	přidá cizí klíč na rodičovskou třídu
+  \end{itemize}
+
+  \item RemoveParent(className)
+  \begin{itemize}
+    \item aplikuje obraz operace DistrubuteProperty na všechny property
+	rodičovské třídy, odstraní cizí klíč, smaže data třídy potomka z tabulky
+	rodiče
+  \end{itemize}
+
+  \item ExtractClass(sourceClassName, extractClassName, associationPropertyName,
+  oppositePropertyName, propertyNames)
+  \begin{itemize}
+    \item vytvoří novou sekvenci, vytvoří novou
+    tabulku a nové sloupce spolu se sloupcem pro opposite referenci na
+    zdrojovou tabulku, aplikuje obraz operací exportProperty pro každou
+    exportovanou property, vytvoří sloupec referencující nově vzniklou tabulku, updatuje
+    mu hodnoty, smaže vygenerovanou sekvenci
+  \end{itemize}
+  
+  \item InlineClass(targetClassName, associationPropertyName)
+  \begin{itemize}
+    \item aplikuje obraz operací exportProperty, smaže association column a
+	Inlinovanou tabulku
+  \end{itemize}
+
+%\item ChangeUniToBidir & pro associační property vytvoří sloupec a nastaví
+%validně opposite
+%ChangeBiToUnidir & className, associationPropertyName \\
+
+%  \item CollapseHierarchy(superClassName, subClassName, isIntoSub)
+%  \begin{itemize}
+%    \item aplikuje obraz Exportuje property z jedné třídy do jejího předka a
+    % třídy spojí, upraví dědičné vazby
+%  \end{itemize}
+%ExtractSubClass & Vytvoří třídě nového potomka a přesune do něj vyjmenované
+%property & sourceClassName, extractedClassName, extractedPropertyNames\\
+%\hline
+%ExtractSuperClass & Vytvoří třídě nového předka a přesune do něj vyjmenované
+%property, pokud měla původní třída předka nastaví tohoto předka rodičem nově
+%vzniklé třídě & sourceClassesName, extractParentName, propertyNames \\
+\item PullUpProperties(childClassName, pulledPropertiesNames)
+ \begin{itemize}
+   \item aplikuje obraz operace export property do rodičovské třídy pro každou
+   property s name z pulledPropertiesNames
+ \end{itemize}
+
+\item PushDownProperties(childClassName, pushedPropertiesNames)
+\begin{itemize}
+  \item aplikuje obraz exportProperty pro každou property s name z p vyjmenované
+  property do třídy potomka a přesune JEN data potomka
+\end{itemize}
+
+\item ExportProperty(virtuální operace) 
+\begin{description}
+	\item[primitivní typ a UB = 1] 
+	\item[primitivní typ a UB !=1]
+	\item[neprimitivní typ a UB = 1]
+	\item[neprimitivní typ a UB !=1]
+\end{description}
+
+\item DistributeProperty(virtuální operace) 
+\begin{description}
+	\item[primitivní typ a UB = 1]
+	\item[primitivní typ a UB !=1]
+	\item[neprimitivní typ a UB = 1]
+	\item[neprimitivní typ a UB !=1]
+\end{description}
+
+\item MergeProperty(propertyName, targetClassName) 
+\begin{description}
+	\item[primitivní typ a UB = 1] updatuje column v cílové tabulce smaže column ze
+	zdrojové tabulky
+	\item[primitivní typ a UB !=1] vloží řádky do tabulky collection, smaže FK
+	z zdrojové collectionTable(případně odstraní UX a ORD
+	constrainty), smaže data, reference column z zdrovové
+	collection table a nakonec i zdrojovou collectionTable
+	\item[neprimitivní typ a UB = 1] updatuje column v cílové tabulce smaže column ze
+	zdrojové tabulky
+	\item[neprimitivní typ a UB !=1] vloží řádky do tabulky collection, smaže FK
+	z zdrojové collectionTable(případně odstraní UX a ORD
+	constrainty), smaže data, reference column z zdrovové
+	collection table a nakonec i zdrojovou collectionTable
+\end{description}
+  
 \end{list}
 
-\begin{table}
-\begin{center}
-\begin{tabular}{| c|| p {6cm}|}
-\hline
-\bfseries Název operace &
-\bfseries Rozklad na db operace \\[2mm] 
-\hline \hline
-RenameEntity & \\
-\hline
-SetAbstract & pro isAbstract = true maže data, která náleží pouze dané třídě\\
-\hline
-RemoveEntity & V Db je smazán primární klíč, id property a tabulka
-odpovídající dané třídě\\
-\hline
-AddProperty & operace přidá do cílové tabulky sloupec pro primitivní property S UB = 1\\
-\ & operace přidá tabulku, datový sloupec, referenční sloupec a referenci na vlastnickou tabulku pro primitivní 
-property s UB = > 1\\
-\ & operace přidá sloupec pro neprimitivní property S UB = 1 do vlastnické tabulky a referenci na tabulku typu\\
-\ & operace vytvoří vazební tabulku pro neprimitivní property s UB > 1, vloží do ní referenční sloupce na 
-vlastnickou tabulku a tabulku typu, na které vytvoří cizí klíč\\
-\hline
-RenameProperty & pro danou 
-property s UB = 1 a primitivním typem přejmenuje property v vlastnické tabulce\\
-\ & pro danou primitivní property s UB > 1 přejmenuje datový sloupec, FK na vlastníka kolekce a tabulku kolekce \\
-\ & pro danou associační property přejmenuje sloupec v vlastnické tabulce a cizí klíč referující tabulku typu\\
-\ & pro danou asociační property přejmenuje vazební tabulku s referenčními sloupci na vlastníka a typ asociace + 
-cizí klíče \\
-\hline
-RemoveProperty & pro primitivní property S UB = 1 odstraní sloupec z dané
-tabulky\\
-\ & pro danou property primitivního typu s UB > 1 odstraní referenci na vlastnickou tabulku, sloupec z tabulky 
-dané kolekce, datový sloupec a smaže kolekční tabulku \\
-\ & pro danou asociační property s UB = 1 odstraní referenci na tabulku vlastníka a referenční sloupec\\
-\ & pro danou asociační property s UB > 1 odstraní reference na vlastnickou tabulku a tabulku typu, datový 
-sloupec a sloupec typu a smaže vazební tabulku \\
-\hline
-SetBounds & NEIMPLEMENTOVÁNO \\
-\hline
-SetOrdered & pro nastavní = true přidá sloupec ordering, (měl by přenastavit 
-data) a vytvoří unikátní constraint přes typový, referenční a orgering sloupec\\
-\ & pro nastavení = false smaže ordering constraint a ordering column\\
-\hline
-SetUnique & owningClassName, name, isUnique \\
-\hline
-AddParent &  Aplikuje obraz operace MergeProperty na všechny kolizní property,
-přidá cizí klíč na rodičovskou třídu\\
-\hline
-RemoveParent & aplikuje obraz operace DistrubuteProperty na všechny property
-rodičovské třídy, odstraní cizí klíč, smaže data třídy potomka z tabulky rodiče\\
-\hline
-ExtractClass & vytvoří novou tabulku, aplikuje obraz operací exportProperty pro 
-každou exportovanou property\\
-\hline 
-InlineClass & aplikuje obraz operací exportProperty, smaže linkProperty a
-Inlinovanou tabulku\\
-\hline
-ChangeUniToBidir & pro associační property vytvoří sloupec a nastaví validně opposite  \\
-\hline
-ChangeBiToUnidir & className, associationPropertyName \\
-\hline
-\end{tabular}
-\end{center}
-\caption{ODBCHM Seznam operací část 1}
-\label{tab:odbchmSeznam1}
-\end{table}
 
-\begin{table}
-\begin{center}
-\begin{tabular}{| c|| p{5cm}|p {6cm}|}
-\hline
-\bfseries Název operace & \bfseries popis &
-\bfseries parametry \\[2mm] 
-\hline \hline
-CollapseHierarchy & Exportuje property z jedné třídy do jejího předka a třídy
-spojí, upraví dědičné vazby & superClassName, subClassName, isIntoSub\\
-\hline
-ExtractSubClass & Vytvoří třídě nového potomka a přesune do něj vyjmenované
-property & sourceClassName, extractedClassName, extractedPropertyNames\\
-\hline
-ExtractSuperClass & Vytvoří třídě nového předka a přesune do něj vyjmenované
-property, pokud měla původní třída předka nastaví tohoto předka rodičem nově
-vzniklé třídě & sourceClassesName, extractParentName, propertyNames \\
-\hline
-PullUpProperties & Exportuje property do rodičovské třídy & childClassName,
-pulledPropertiesNames\\
-\hline
-PushDownProperties & Exportuje vyjmenované property do třídy potomka a přesune JEN data potomka &
-childClassName, pushedPropertiesNames\\
-\hline
-ExportProperty(virtuální operace) & Exportuje property v rámci hierarchie a data do cílové třídy & exportedPropertyName, 
-className\\
-\hline
-DistributeProperty(virtuální operace) & Zduplikuje strukturu dané property do cílové třídy a přesune data přiřazená 
-této třídě & DistributedPropertyName, className\\
-\hline
-MergeProperty(virtuální operace) & Přesune data zdrojové property do cílové property a smaže strukturu původní property & 
-mergedPropertyName, className\\
-\hline
-\end{tabular}
-\end{center}
-\caption{ODBCHM Seznam operací část 2}
-\label{tab:odbchmSeznam2}
-\end{table}
+
 
 \subsection{Diff elementy}
 
@@ -1753,6 +1809,147 @@ otestování než manuální spuštění a vizuální porovnáných selectů s o
 výstupem po apliaci dané operace na data.sql.
 
 \chapter{Ukázka zdrojového kódu práce}
+
+Ukázka helperu mergeProperty
+\label{orm_merge_prop}
+\begin{verbatim}
+helper AssociationProperty::ormMergeProperty(appStructure : APP::Structure, 
+     targetClassName : String, operations : RDB::Operations) : RDB::Operations {
+   var defaultSchemaName : String := getDefaultSchemaName();
+   var sourceClassName : String := self.owningGeneralClass.name;
+   var typeClassName : String := self.type.name;
+   var sourceTableName : String := sourceClassName.translate();
+   var targetTableName : String := targetClassName.translate();
+   var typeTableName : String := typeClassName.translate();
+   var mergedColumnName : String := self.name.translate();
+   var idSourceTableName : String := getDbIdColumnName(sourceTableName);
+   var idTargetTableName : String := getDbIdColumnName(targetTableName);
+   var idTypeTableName : String := getDbIdColumnName(typeTableName);
+
+   if(self.upperBound = 1)then{
+      var equalWhereCondition : String := getEqualityWhereCondition(
+                                                         sourceTableName,
+                                                         idSourceTableName,
+                                                         targetTableName,
+                                                         idTargetTableName);
+      var safeUpdateCondition : String := getSafeCondition(
+                                                      defaultSchemaName,
+                                                      idTargetTableName,
+                                                      sourceTableName,
+                                                      idSourceTableName);
+      var updateRows : RDB::ops::ModelOperation := _updateRows(
+                                                            defaultSchemaName,
+                                                            sourceTableName,
+                                                            mergedColumnName,
+                                                            targetTableName,
+                                                            mergedColumnName,
+                                                            equalWhereCondition,
+                                                            safeUpdateCondition);
+	  addOperation(updateRows, operations);
+      var fkName : String := getFkRefencingOppositeName(
+                                                  self.name,
+                                                  sourceClassName,
+                                                  typeClassName);
+      var removeFkConstr : RDB::ops::ModelOperation := _removeConstraint(
+                                                                  defaultSchemaName,
+                                                                  sourceTableName,
+                                                                  fkName);
+      addOperation(removeFkConstr, operations);
+      var removeMergedColumn : RDB::ops::ModelOperation := _removeColumn(
+                                                                  defaultSchemaName,
+                                                                  sourceTableName,
+                                                                  mergedColumnName);
+     addOperation(removeMergedColumn, operations);
+     //M x N association	
+     }else{
+         var sourceAssociationTableName : String := getAssociationTableName(
+                                                                   self.name,
+                                                                   sourceClassName);
+         var targetAssociationTableName : String := getAssociationTableName(
+                                                                     self.name,
+                                                                     targetClassName);
+         var sourceColumnNames : OrderedSet(String) := OrderedSet{
+                                                            idSourceTableName,
+                                                            idTypeTableName};
+         var destinationColumnNames : OrderedSet(String) := OrderedSet{
+                                                               idTargetTableName,
+                                                               idTypeTableName};
+         if(self.isOrdered)then{ 
+            sourceColumnNames += getDbOrderingColumnName();
+            destinationColumnNames += getDbOrderingColumnName();
+         }endif;
+         var transferData : RDB::ops::ModelOperation := _insertRows(
+                                                            defaultSchemaName,
+                                                            sourceAssociationTableName,
+                                                            sourceColumnNames,
+                                                            targetAssociationTableName,
+                                                            destinationColumnNames);
+         addOperation(transferData, operations);
+         if(self.isOrdered)then{
+            var ordName : String := getUXOrderingName(sourceAssociationTableName); 
+            var removeOrdConst : RDB::ops::ModelOperation := 
+                                                    _removeConstraint(
+                                                           defaultSchemaName,
+                                                           sourceAssociationTableName,
+                                                           ordName);
+            addOperation(removeOrdConst, operations);
+            var removeOrdCol : RDB::ops::ModelOperation := 
+                                                     _removeColumn(
+                                                         defaultSchemaName,
+                                                         sourceAssociationTableName,
+                                                         getDbOrderingColumnName());
+            addOperation(removeOrdCol, operations);
+         }endif;
+         if(self.isUnique)then{
+            var uxName : String := getUXName(sourceClassName, self.name);
+            var removeUxConst : RDB::ops::ModelOperation := 
+                                                      _removeConstraint(
+                                                          defaultSchemaName,
+                                                          sourceAssociationTableName,
+                                                          uxName);
+            addOperation(removeUxConst, operations);
+         }endif;
+         var fkSourceName : String := 
+                             getFKAssociationTableRefName(
+                                          sourceAssociationTableName,
+                                          sourceTableName);
+         var removeFkSourceConst : RDB::ops::ModelOperation :=
+                                                    _removeConstraint( 
+                                                         defaultSchemaName,
+                                                         sourceAssociationTableName,
+                                                         fkSourceName);
+         addOperation(removeFkSourceConst, operations);
+         var fkTypeName : String := 
+                             getFKAssociationTableRefName(
+                                                        sourceAssociationTableName,
+                                                        typeTableName);
+         var removeFkTypeConst : RDB::ops::ModelOperation := 
+                                                   _removeConstraint(
+                                                        defaultSchemaName,
+                                                        sourceAssociationTableName,
+                                                        fkTypeName);
+         addOperation(removeFkTypeConst, operations);
+         var removeIdSourceRefCol : RDB::ops::ModelOperation := 
+                                                      _removeColumn(
+                                                           defaultSchemaName,
+                                                           sourceAssociationTableName,
+                                                           idSourceTableName);
+         addOperation(removeIdSourceRefCol, operations);
+         var removeIdTypeRefCol : RDB::ops::ModelOperation := 
+                                                   _removeColumn(
+                                                      defaultSchemaName,
+                                                      sourceAssociationTableName,
+                                                      idTypeTableName);
+         addOperation(removeIdTypeRefCol, operations);
+         var removeSourceAssociationTable : RDB::ops::ModelOperation :=
+                                                         _removeTable(
+                                                           defaultSchemaName,
+                                                           sourceAssociationTableName);
+         addOperation(removeSourceAssociationTable, operations);																								
+      }endif;	
+      return operations;	
+}
+\end{verbatim}
 
 %\begin{itemize}
 %\item Popis řešeného problému, vymezení cílů DP/BP a požadavků na

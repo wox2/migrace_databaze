@@ -305,7 +305,7 @@ Kvůli nutnosti dokumentace a komunikace mezi vývojáři vznikají různé typy
 modelů. Objektový model aplikace popisuje strukturu aplikace a je doplněn 
 modelem databázovým modelem popisujícím stav databáze. Nejrozšířenějším typem
 databáze jsou v nynější době databáze relační, která uspořádává data podle
-relařního modelu. Relační model je dle \cite{DBS_02} formální abstrakce
+relačního modelu. Relační model je dle \cite{DBS_02} formální abstrakce
 využívající relaci jakožto jediný konstrukt. Relace je uspořádaná n-tice
 souvislých dat R(A1:D1, A2:D2, \ldots An:Dn), přičemž "R" je název relace, Ai
 jsou názvy atributů a Di jsou k nim přidružené typy. K zajištění konzistence
@@ -356,11 +356,11 @@ model aplikace a transformovat tyto změny do spustitelnáho SQL skriptu, který
 změní strukturu databáze a přesune data do odpovídajících elementů z modelu
 aplikace.
 
-Zabývá se zkoumáním změn aplikačního modelu, jejich popisem a rozpoznáváním změn
-vedoucích od jednoho aplikačního modelu vedoucích k druhému. Dále pak dokončuje a upřesňuje
-kontrakt takzvaných operací nad aplikačním modelem a popisuje jejich
-transformaci na změny modelu databázového a následným vygenerováním SQL příkazů
-spustitelných nad relační databází PostgreSQL.
+Tato diplomová práce se zabývá se zkoumáním změn aplikačního modelu, jejich
+popisem a rozpoznáváním změn vedoucích od jednoho aplikačního modelu vedoucích
+k druhému. Dále pak dokončuje a upřesňuje kontrakt takzvaných operací nad
+aplikačním modelem a popisuje jejich transformaci na změny modelu databázového
+a následným vygenerováním SQL příkazů spustitelných nad relační databází PostgreSQL.
 
 V rámci Migdb bylo v posledních letech vytvořeny a obhájeny 4 bakalářské práce a
 2 diplomové práce členů Migdb.
@@ -383,14 +383,15 @@ modelové konferenci Code Generation 2012 \cite{Cambridge} v Anglickém Cambridg
 \section{Framework Migdb}
 	
 Tato kapitola je věnována krátkému představní frameworku Migdb. Projekt Migdb se
-věnuje evolučním procesem v průběhu vývoje software. Na obr
-\ref{fig:mazanma:framework} převzatého z \cite{Mazanec}. Objektová vrstva každé
-aplikace je reprezentována jejím modelem obsahujícím entity aplikace. Databázová
+věnuje evolučním procesem v průběhu vývoje software. Software použitý v této
+práci je reprezentován na obr \ref{fig:mazanma:framework} převzatého z
+\cite{Mazanec}.
+Objektová vrstva každé aplikace je reprezentována jejím modelem obsahujícím entity aplikace. Databázová
 vrstva zajišťující perzistenci dat obsahuje jednak schéma definující strukturu
-databáze, ale takí samotné perzistované instance dat.
+databáze, ale také samotné perzistované instance dat.
 
-Proces evoluce změn v životním cyklu softwaru definoval v práci \cite{Jezek}
-následujícně:
+Proces evoluce změn v životním cyklu je definován v \cite{Jezek}
+následovně:
 
 
 \begin{enumerate}\label{framework:jezek_def}
@@ -403,9 +404,10 @@ následujícně:
 
 Po bližší analýze potřeb společnosti CP a po ověření nadbytečnosti vrstvy
 ověřující proveditelnost migrovaných skriptů byl tento koncept přepracován do
-formy \ref{fig:framework:modified}. Na obrázku vidíme aplikační a databázový
-metamodel, které jsou ulořeny v souborech s příponou ecore. Instancemi
-aplikačního APP metamodelu jsou jednotlivé generace aplikačního modelu. 
+formy zobrazené na obrázku \ref{fig:framework:modified}. Na obrázku vidíme
+aplikační a databázový metamodel, které jsou ulořeny v souborech s příponou
+ecore. Instancemi aplikačního APP metamodelu jsou jednotlivé generace
+aplikačního modelu.
 Instancemi databázového RDB metamodelu jsou potom generace RDB modelů. Aplikační
 i databázové modely jsou uloženy ve formě .xmi souborů.  Změny, které se
 provádějí v aplikaci jsou transformovány na databázové operace aplikovatelné na
@@ -418,14 +420,14 @@ V rámci projektu jsem vytvořil ve své bakalářské práci \cite{Lukes} ORM
 transformaci aplikační struktury na databázovou a následné vygenerování SQL
 skriptu vytvářející strukturu aplikace. Tento nástroj není ve frameworku použit
 při nasazení, ale byl použit při testování frameworku - viz
-kapitola \ref{chapt:testování}. Ve framework Migdb pracují
-oproti původní sekvenční představě viz \ref{framework:jezek_def} po částech
-sekvenčně. První aplikační operace je aplikována na aplikační model, je
-transformována do databáze, kde je její obraz(sekvence databázových operací)
-aplikován na databázový model. Po provedení první operace prochází tímto
-cyklem druhá operace, potom třetí \ldots
+kapitola \ref{chapt:testování}. Framework Migdb pracuje oproti původní
+sekvenční představě viz \ref{framework:jezek_def} iteračně. V první iteraci
+je první aplikační operace aplikována na aplikační model, transformována do
+databáze, kde je její obraz (sekvence databázových operací) aplikován na
+databázový model. Po provedení první iterace prochází tímto cyklem druhá
+operace, potom třetí \ldots
 
-Ačkoliv evoluce na databázové úrovni nemá vliv na tvar vygenerovaných SQL
+Ačkoliv Evoluce na databázové úrovni nemá vliv na tvar vygenerovaných SQL
 skriptů, ale po konzultaci s CP jsme usoudili i po zkušenostech z praxe s
 databází Postgresql, že evoluce databázového modelu odhalující chyby je
 užitečným uspořením času vývojáře, protože aplikace některých SQL skriptů může
@@ -468,10 +470,10 @@ tvořícími aplikaci. Tento model byl vytvořen již v raných fázích projekt
 byl často upravován, většinou zjednodušován. V raných fázích projektu
 \ref{fig:app_meta} viz \cite{Lukes} byl metamodel struktury aplikace
 ekvivalentní metamodelu aplikačnímu. Postupem času byl aplikační metamodel obohacen o
-strukturu operací \ref{fig:jezek:app_meta} a seznam Diff elementů
-\ref{fig:diff_meta}.
-Ačkoliv tušíme, že tento způsob uchování metamodelů v jednom souboru ideální, vybrali jsme si ho kvůli snadnější
-údržbě.
+strukturu operací zobrazenou na obr. \ref{fig:jezek:app_meta} a seznam Diff
+elementů viz. seznam \ref{fig:diff_meta}.
+Ačkoliv tušíme, že tento způsob uchování metamodelů v jednom souboru ideální,
+vybrali jsme si ho kvůli snadnější údržbě.
 
 Na obrázku \ref{fig:app_roots} jsou znázorněny kořenové elementy
 nynějšího aplikačního modelu - každý aplikační model musí obsahovat jeden
@@ -479,7 +481,7 @@ container - potomka třídy ModelRoot. Na obrázku \ref{fig:app_meta} jsou
 zobrazeny elementy patřící do Structury aplikačního modelu. Při vývoji byla
 přejmonována třída Class, kterou je možno vidět na \ref{fig:lukes:app_meta} z
 původního metamodelu na StandardClass.
-Oproti aplikačnímu metamodelu \cite{Jezek} byly odstraněny Entity EmbeddedClass 
+Oproti aplikačnímu metamodelu \cite{Jezek} byly odstraněny entity EmbeddedClass 
 a její předek GeneralClass, dále byla zjednodušena třída Property, u níž ubyly
 atributy defaultValue, sequenceName a atribut isId. Atribut isId byl nahrazen
 přímou referencí na idProperty ve třídě StandardClass který byl nahrazen 
@@ -523,7 +525,7 @@ implementačních a testovacích důvodů v jednom souboru, ale ve více soubore
 
 \section{Databázový metamodel structury}
 
-Stejně jako metamodel structury aplikace byl i metamodel databázové struktury
+Stejně jako metamodel struktury aplikace byl i metamodel databázové struktury
 původně ekvivalentní databázovému metamodelu a následně byly do metamodelu
 vloženy databázové operace. Metamodel databázové struktury se ukázal jako
 celkem dobře definovaný a proto změny na něm udělané ho zjednodušovaly.
@@ -596,8 +598,8 @@ data, proto byla tato operace nahrazena dvojicí operací ChangeUniToBidir a
 ChangeBiToUnidir, které plní nároky kladené na původní operaci a jsou
 aplikovatelné  na datové úrovni. Operace SetType byla prozkoumána, ale nebyla
 exaktně popsána, nebylo nalezeno její mapování na operace v databázi ani
-validační podmínky nutné k úspěšné aplikaci operace na aplikační model. Je
-očekatelné, že by tato operace měla souviset s dědičnými hierarchiemi. 
+validační podmínky nutné k úspěšné aplikaci operace na aplikační model.
+Předpokládáme, že by tato operace měla souviset s dědičnými hierarchiemi.
 
 \subsubsection{Seznam aplikačních operací}
 
@@ -779,8 +781,8 @@ zjednodušení kódu.
 \subsubsection {Rozdělení aplikačních operací} 
 
 Operace nad aplikačním modelem je možné dělit podle dvou kritérií - 1. nad jakým
-typem entity pracují, 2. jaký je charakter/význam pro tito entity daná operace
-má. Operace byly rozděleny podle obou kritérií spíše formálně. Všechny operace
+typem modelové entity pracují, 2. jaký je charakter/význam pro tito entity daná
+operace má. Operace byly rozděleny podle obou kritérií spíše formálně. Všechny operace
 jsou potomkem generické operace ModelOperation. Rozdělení podle druhého kritéria
 vzniklo až po přidání funkcionality rozpoznávání operací.
 
@@ -790,8 +792,8 @@ třídami jsou operace AddStandardClass, AddParent a RemoveEntity. Příkladem
 operací pracujících s properties jsou operace AddProperty, RemoveProperty,
 SetAbstract.
 
-Podle druhého kritéria je možné rozdělit operace nad aplikačním modelem 5 skupin
-- konstruktivní, destruktivní, expanzivní, reduktivní a modifikační operace.
+Podle druhého kritéria je možné rozdělit operace nad aplikačním modelem do 5
+skupin - konstruktivní, destruktivní, expanzivní, reduktivní a modifikační operace.
 Konstruktivní operace jsou takové, které po své aplikaci vytvoří 1 novou entitu
 v výsledném modelu, která nemá žádné vazby na jiné entity. Příklady aditivní
 operace je operace AddClass. 
@@ -801,8 +803,9 @@ ta je aplikaci destruktivní operace odstraněna. Příkladem destruktivní oper
 je operace RemoveProperty.
 
 Operace expanzivní přídává do výstupního modelu jednu entitu, čímž se
-podobá operaci konstruktivní, nicméně zároveň je vázána na jinou entitu stejného typu a
-zmenšuje její obsah. Příkladem expanzivní operace je ExtractClass. 
+podobá operaci konstruktivní, nicméně zároveň je vázána na jinou entitu
+stejného typu a zmenšuje její obsah. Příkladem expanzivní operace je
+ExtractClass.
 
 Reduktivní operace entitu z vstupního modelu odstraní a zároveň entitě, která
 je pro operaci řídící změní obsah. Příkladem této operace je InlineClass.
@@ -814,9 +817,9 @@ je taková, která ukazuje všechny změny mezi danými dvěma artefakty stejné
 úrovně abstrakce. Změnami můžeme rozumět přidáním elementu, odstraněním elementu
 a modifikací elementu.
 
-Nedá se zde přesně Nejznámějším a nejrozšířenějším typem delta notace je výstup
-linuxového příkazu diff. Každý rozdíl v delta notaci příkazu diff je dle
-\cite{diff_wiki} definován následně:
+Nejznámějším a nejrozšířenějším typem delta notace je výstup linuxového příkazu
+diff. Každý rozdíl v delta notaci příkazu diff je dle \cite{diff_wiki}
+definován následně:
 
 \begin{verbatim}
 popis změny
@@ -1043,9 +1046,9 @@ modelů 2 a 1,label=delete_minimal]
 \subsubsection{Vlastnosti operací}
 V \cite{Cincetti} Antonio Cincetti popisuje některé specifické vlastnosti
 jako je invertovatelnost a rozložitelnost operací. Je nutné říci, že operace
-zmiňované v literatuře pracují jen se strukturou dat, nikoliv s daty samotnými a jsou
-kontextově nezávislé - tyto operace jsou tvořeny téměř výlučně konstruktivními
-a  destruktivními operacemi. Cincetti rozděluje zmiňuje, že v
+zmiňované v literatuře pracují jen se strukturou dat, nikoliv s daty samotnými
+a jsou kontextově nezávislé - tyto operace jsou tvořeny téměř výlučně
+konstruktivními a  destruktivními operacemi. Cincetti rozděluje zmiňuje, že v
 minulosti byly operace aplikovatelné na jeden konkrétní model(intensional) a
 modernější differenční modely jsou tzv. extensional - je možné je aplikovat na
 jakýkoliv model, například na paralelní vývojové větve.
@@ -1253,7 +1256,7 @@ Seznam operací s jejich validačními podmínkami:
 
 \end{list}
 
-\subsection{ukázka kódu}
+\subsection{Ukázka kódu}
 V následujícím kódu je ukázáno validační query pro validaci operace AddTable
 \begin{verbatim}
 query RDB::ops::AddTable::isValid(structure : RDB::Structure, 
@@ -1515,9 +1518,12 @@ odpovídající dané třídě
  referenci owningDiff na Diff element, v kterém jsou obsaženy a která je
  důležitá pro implementaci algoritmu a v neposlední řadě underlyingPairs -
  shodné páry Properties typu EqualPropertyPair, které jsou detekované danou
- operací. Podobně jako operace jsou i páry rozděleny do několika rodin.
- Konstruktivní a destruktivní operace nemají svůj obraz v diff metamodelu - tyto
- operace nemapují vzniklý nebo odstraněný element na jakýkoliv jiný element.
+ operací. Podobně jako operace jsou i páry rozděleny do několika skupin.
+ 
+ Konstruktivní a destruktivní operace nemají svůj obraz v diff metamodelu jako
+ ClassPair ani PropertyPair, protože tyto operace nemapují element ze vstupního
+ modelu na element z výstupního modelu. Konstruktivní operace by jinak mapovaly
+ prázdný vstup na element a destruktivní obráceně element na prázdný výstup.
  
  Oproti jednodušším konstruktivním a destruktivním operacím jsou operace
  expanzívní, konstruktivní a modifikační v Diff modelu zobrazeny jako
@@ -1563,8 +1569,15 @@ zpermutovat. Stejně tak seznam aditivních operací. Obecný princip seřazení
 operací není znám. 
 
 \section{Obecné principy model matching}
-Jak je diskutováno v 19 a Different Models for Model Matching:
-An analysis of approaches to support model differencing existuje několik
+Nejtriviálnější implementovatelný algoritmus by mohl smazat zdrojový model
+pomocí destruktivních operací a následně vytvořit výsledný model pomocí operací
+konstruktivních, připadně poupravit atributy jednotlivých elementů pomocí
+operací modifikačních. Argumentem proti použití takového algoritmu je smazání
+jakýchkoliv dat, které v původní databázi byla. Takovýto algoritmus tudíže
+nemigruje žádná data, ale nahrazuje funkci ORM mapování integrované
+do většiny současných IDE. Proto se jím v této práci nezaobírám.
+
+Jak je diskutováno v 19 a \cite{Kolovos:Different_models} existuje několik
 požadavků na algoritmus řešící problém model matching. Tyto požadavky zahrnují
 přesnost, vysokou míru abstrakce na které je porovnávání provedeno, nezávislost
 na konkrétních nástrojích, doménách a jazycích (přelož independence from
@@ -1572,13 +1585,6 @@ particular tools), použitelnost(efficiency) a minimální nutnost adaptace
 algoritmus pro daný problém. Tyto požadavky jdou proti sobě a je nutné
 preferovat některé na úkor jiných, proto není možné označit za nejlepší, ale je
 nutné vybrat si správný algoritmus v závislosti na řešeném problému.
-
-Nejtriviálnější implementovatelný algoritmus by mohl smazat zdrojový model
-pomocí destruktivních operací a následně vytvořit výsledný model pomocí operací
-konstruktivních, připadně poupravit atributy jednotlivých elementů pomocí
-operací modifikačních. Argumentem proti použití takového algoritmu je smazání
-jakýchkoliv dat, které v původní databázi byla a dobré si uvědomit, že funkci
-vytvoření DB modelu zvládá ORM mapování integrované do většiny současných IDE.
 
  V literatuře (Different Models for Model Matching:
 An analysis of approaches to support model differencing) byly popsány algoritmy

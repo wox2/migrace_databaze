@@ -1,4 +1,11 @@
-\begin{thebibliography}{PMH12}
+\begin{thebibliography}{OMG14b}
+
+\bibitem[Ben02]{bengoetxeaPHD02}
+E.~Bengoetxea.
+\newblock {\em Inexact Graph Matching Using Estimation of Distribution
+  Algorithms}.
+\newblock PhD thesis, Ecole Nationale Sup\'erieure des T\'el\'ecommunications,
+  Paris, France, Dec 2002.
 
 \bibitem[Cic08]{Cincetti}
 Antonio Cicchetti.
@@ -10,6 +17,16 @@ Antonio Cicchetti.
 D.~Di Ruscio R. F.~Paige D.~S.~Kolovos, Alfonso~Pierantonio.
 \newblock Different models for model matching: An analysis of approaches to
   support model differencing.
+\newblock [online], Citováno 16.11.2014.
+
+\bibitem[Fou14a]{Eclipse_ide}
+The~Eclipse Foundation.
+\newblock Eclipse.
+\newblock [online], Citováno 16.11.2014.
+
+\bibitem[Fou14b]{Xtend}
+The~Eclipse Foundation.
+\newblock Xtend - modernized java.
 \newblock [online], Citováno 16.11.2014.
 
 \bibitem[FW14]{diff_merge_diagrams}
@@ -32,6 +49,22 @@ David Luksch.
 \bibitem[Maz14]{Mazanec}
 Martin Mazanec.
 \newblock Doménově specifický jazyk pro migdb, 2014.
+
+\bibitem[OMG14a]{QVTo}
+OMG.
+\newblock Meta object facility (mof) 2.0 query/view/transformation final
+  adopted specification.
+\newblock [online], Citováno 16.11.2014.
+
+\bibitem[OMG14b]{XMI}
+OMG.
+\newblock Xmi.
+\newblock [online], Citováno 16.11.2014.
+
+\bibitem[OMG14c]{OMG}
+OMG.
+\newblock Omg.
+\newblock [online], Odkazováno 16.11.2014.
 
 \bibitem[PMH12]{Cambridge}
 Jiří~Jezek Pavel~Moravec, Petr~Tarant and David Harmanec.

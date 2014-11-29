@@ -12,6 +12,11 @@ D.~Di Ruscio R. F.~Paige D.~S.~Kolovos, Alfonso~Pierantonio.
   support model differencing.
 \newblock [online], Citováno 16.11.2014.
 
+\bibitem[FW14]{diff_merge_diagrams}
+Sabrina Fortsch and Bernhard Westfechtel.
+\newblock Differencing and merging of software diagrams.
+\newblock [online], Citováno 16.11.2014.
+
 \bibitem[Jez12]{Jezek}
 Jiří Jezek.
 \newblock Modelem řízená evoluce objektů, 2012.
@@ -57,7 +62,12 @@ wiki community.
 \newblock Diff definice.
 \newblock [online], Citováno 16.11.2014.
 
-\bibitem[wc14b]{orm}
+\bibitem[wc14b]{wiki_lcs}
+wiki community.
+\newblock Longest common subsequence problem.
+\newblock [online], Citováno 16.11.2014.
+
+\bibitem[wc14c]{orm}
 wiki community.
 \newblock Orm definice.
 \newblock [online], Citováno 16.11.2014.

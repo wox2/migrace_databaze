@@ -21,6 +21,7 @@
 % pripadne pisete-li cesky, pak lze zkusit take:
 % \usepackage[OT1]{fontenc} 
 \usepackage[utf8]{inputenc}
+\usepackage[pdftex]{graphicx}
 %=-=-=-=-=-=-=-=-=-=-=-=--=%
 % In case of problems with PDF fonts, one may try to uncomment this line:
 %\usepackage{lmodern}
@@ -305,31 +306,10 @@ Kvůli nutnosti dokumentace a komunikace mezi vývojáři vznikají různé typy
 modelů. Objektový model aplikace popisuje strukturu aplikace a je doplněn 
 modelem databázovým modelem popisujícím stav databáze. Nejrozšířenějším typem
 databáze jsou v nynější době databáze relační, která uspořádává data podle
-relačního modelu. Relační model je dle \cite{DBS_02} formální abstrakce
-využívající relaci jakožto jediný konstrukt. Relace je uspořádaná n-tice
-souvislých dat R(A1:D1, A2:D2, \ldots An:Dn), přičemž "R" je název relace, Ai
-jsou názvy atributů a Di jsou k nim přidružené typy. K zajištění konzistence
-jsou v SŘDB používána Integritní omezení (IO). IO jsou dle \cite{DBS2_02} tvrzení
-vymezující korektnost DB, stupeň souladu datového obrazu s předlohou (jaká data
-v databází mohou být a jaká již ne).
+relačního modelu. 
 
-
-Relační algebra definuje pomocí relací a integritních omezení strukturu
-databáze. Dotazovacím aparátem pro data definovaná pomocí relační algebry je
-relační algebra. Relační algebra využívá operátorů $\bigcup$ (sjednocení),
-$\bigcap$ (průnik), $\setminus$ (množinový rozdíl), $\times$ (kartézský
-součin), selekce značená R($\varphi $) = \{ u | u $\in$ R a  $\varphi(u)$\} a
-projekce značená R[C] = { u[C] | u $\in$ R} a operace přirozené spojení T(C) =
-R * S =\{u | u[A] $\in$ R a u[B] $\in$ S\}.
-\cite{Relacni_algebra} dále definuje relačně úplný jazyk jako takový, který
-umožňuje realizovat relační algebru. Takovým jazykem je například jazyk SQL 
-(Structured Query Language). Relační databáze implementuje relaci tabulkou, její
-atributy Ai jednotlivými sloupci s typy Di. V dotazovacím jazyce SQL nahrazuje
-projekci R[a1, \ldots , an] operací SELECT a1, \ldots an FROM R, operaci
-selekce R[ a = 1] klauzulí where v dotaze select  SELECT * FROM R WHERE a = 1; 
-
-Aby byla aplikace funkční, je nutné zajistit
-konzistenci mezi databázovým a aplikačním modelem.
+Aby byla aplikace funkční, je nutné zajistit konzistenci mezi databázovým a
+aplikačním modelem.
 Tento problém byl již vyřešen a jeho řešení bývá v odborných kruzích nazýváno
 objektově relační mapování(ORM) \cite{orm}. Dnešní implementace ORM jsou schopny nejen
 transformovat aplikační model na model databázový, ale také vyjádřit změnu v struktuře
@@ -341,7 +321,9 @@ model databázový, což vývojářům softwaru šetří čas strávený vývoje
 Problém nastává, jakmile zahrneme do zachování nejen strukturu dat, ale i
 samotná data. Změnit strukturu dat a zároveň transformovat data tak, aby měla
 stejnou vyjadřovací schopnost jako původní data - považujme změny aplikačního
-modelu jako smazání třídy, atributu apod za změny zachovávající informaci.
+modelu jako smazání třídy, atributu apod za změny zachovávající informaci. 
+
+Práce obsahuje tyto kapitoly :
 
 
 \chapter{Projekt Migdb}
@@ -380,15 +362,47 @@ Projekt Migdb byl započat v spolupráci se společností Collections Pro Výsle
 dosavadní práce byly v roce 2012 prezentovány jako case-study na prestižní
 modelové konferenci Code Generation 2012 \cite{Cambridge} v Anglickém Cambridge.
 
+\section{Relační model}
+Relační model je dle \cite{DBS_02} formální abstrakce
+využívající relaci jakožto jediný konstrukt. Relace je uspořádaná n-tice
+souvislých dat R(A1:D1, A2:D2, \ldots An:Dn), přičemž "R" je název relace, Ai
+jsou názvy atributů a Di jsou k nim přidružené typy. K zajištění konzistence
+jsou v SŘDB používána Integritní omezení (IO). IO jsou dle \cite{DBS2_02} tvrzení
+vymezující korektnost DB, stupeň souladu datového obrazu s předlohou (jaká data
+v databází mohou být a jaká již ne).
+
+
+Relační algebra definuje pomocí relací a integritních omezení strukturu
+databáze. Dotazovacím aparátem pro data definovaná pomocí relační algebry je
+relační algebra. Relační algebra využívá operátorů $\bigcup$ (sjednocení),
+$\bigcap$ (průnik), $\setminus$ (množinový rozdíl), $\times$ (kartézský
+součin), selekce značená R($\varphi $) = \{ u | u $\in$ R a  $\varphi(u)$\} a
+projekce značená R[C] = { u[C] | u $\in$ R} a operace přirozené spojení T(C) =
+R * S =\{u | u[A] $\in$ R a u[B] $\in$ S\}.
+\cite{DBS_02} dále definuje relačně úplný jazyk jako takový, který
+umožňuje realizovat relační algebru. Takovým jazykem je například jazyk SQL 
+(Structured Query Language). Relační databáze implementuje relaci tabulkou, její
+atributy Ai jednotlivými sloupci s typy Di. V dotazovacím jazyce SQL nahrazuje
+projekci R[a1, \ldots , an] operací SELECT a1, \ldots an FROM R, operaci
+selekce R[ a = 1] klauzulí where v dotaze select  SELECT * FROM R WHERE a = 1; 
+
 \section{Framework Migdb}
 	
 Tato kapitola je věnována krátkému představní frameworku Migdb. Projekt Migdb se
 věnuje evolučním procesem v průběhu vývoje software. Software použitý v této
-práci je reprezentován na obr \ref{fig:mazanma:framework} převzatého z
+práci je reprezentován na obr. \ref{fig:mazanma:framework} převzatého z
 \cite{Mazanec}.
 Objektová vrstva každé aplikace je reprezentována jejím modelem obsahujícím entity aplikace. Databázová
 vrstva zajišťující perzistenci dat obsahuje jednak schéma definující strukturu
 databáze, ale také samotné perzistované instance dat.
+
+\begin{figure}[Ht]
+\begin{center}
+\includegraphics[width=15cm]{figures/framework_structura}
+\caption{Rozdělení vrstev softwaru - převzato z \cite{Mazanec}}
+\label{fig:mazanma:framework}
+\end{center}
+\end{figure}
 
 Proces evoluce změn v životním cyklu je definován v \cite{Jezek}
 následovně:
@@ -405,16 +419,24 @@ následovně:
 Po bližší analýze potřeb společnosti CP a po ověření nadbytečnosti vrstvy
 ověřující proveditelnost migrovaných skriptů byl tento koncept přepracován do
 formy zobrazené na obrázku \ref{fig:framework:modified}. Na obrázku vidíme
-aplikační a databázový metamodel, které jsou ulořeny v souborech s příponou
-ecore. Instancemi aplikačního APP metamodelu jsou jednotlivé generace
-aplikačního modelu.
-Instancemi databázového RDB metamodelu jsou potom generace RDB modelů. Aplikační
-i databázové modely jsou uloženy ve formě .xmi souborů.  Změny, které se
-provádějí v aplikaci jsou transformovány na databázové operace aplikovatelné na
-RDB model. Databázové operace jsou potom transformovány na SQL scripty. V
-původní představě byl do frameworku zapojen i exekutor těchto skriptů nad
-databází, ale po konzultaci s CP byl vzhledem k znovupoužitelnosti SQL souborů
-z frameworku vypuštěn. 
+aplikační a databázový metamodel.
+
+\begin{figure}[Ht]
+\begin{center}
+\includegraphics[width=15cm]{figures/framework_structura_tarant_modified}
+\caption{Rozdělení vrstev softwaru - převzato z \cite{Tarant_bp} a částečně
+upraveno}
+\label{fig:framework:modified}
+\end{center}
+\end{figure}
+
+Instancemi aplikačního APP metamodelu jsou jednotlivé generace aplikačního
+modelu. Instancemi databázového RDB metamodelu jsou potom generace RDB modelů.
+Změny, které se provádějí v aplikaci jsou transformovány na databázové operace
+aplikovatelné na RDB model. Databázové operace jsou potom transformovány na SQL
+scripty. V původní představě byl do frameworku zapojen i exekutor těchto
+skriptů nad databází, ale po konzultaci s CP byl vzhledem k znovupoužitelnosti
+SQL souborů z frameworku vypuštěn. 
 
 V rámci projektu jsem vytvořil ve své bakalářské práci \cite{Lukes} ORM
 transformaci aplikační struktury na databázovou a následné vygenerování SQL
@@ -427,14 +449,6 @@ databáze, kde je její obraz (sekvence databázových operací) aplikován na
 databázový model. Po provedení první iterace prochází tímto cyklem druhá
 operace, potom třetí \ldots
 
-Ačkoliv Evoluce na databázové úrovni nemá vliv na tvar vygenerovaných SQL
-skriptů, ale po konzultaci s CP jsme usoudili i po zkušenostech z praxe s
-databází Postgresql, že evoluce databázového modelu odhalující chyby je
-užitečným uspořením času vývojáře, protože aplikace některých SQL skriptů může
-trvat(a typicky trvá) delší čas než průběh evoluce RDB modelu a dobrým
-nahrazením přímé exekuce SQL skriptů, proto byl tento modul ve frameworku
-zachován.
-
 V průběhu vývoje existoval koncept ComposedOperation a AtomicOperation, kdy
 každá operace byla buď Composed nebo Atomic, každá Composed operace byla na
 aplikační vrstvě nejdříve dekomponována na set atomických, které se později
@@ -444,24 +458,13 @@ pořadí ORMo obrazu nám dělalo problémy. Nicméně v nynější chvíli by s
 koncept mohl navrátit po přidání konceptu mirrored operations, ale asi by bylo
 nutné předefinovat či přidat některé aplikační operace.
 
-\begin{figure}[Ht]
-\begin{center}
-\includegraphics[width=15cm]{figures/framework_structura}
-\caption{Rozdělení vrstev softwaru - převzato z \cite{Mazanec}}
-\label{fig:mazanma:framework}
-\end{center}
-\end{figure}
-
-
-\begin{figure}[Ht]
-\begin{center}
-\includegraphics[width=15cm]{figures/framework_structura_tarant_modified}
-\caption{Rozdělení vrstev softwaru - převzato z \cite{Tarant_bp} a částečně
-upraveno}
-\label{fig:framework:modified}
-\end{center}
-\end{figure}
-
+Ačkoliv Evoluce na databázové úrovni nemá vliv na tvar vygenerovaných SQL
+skriptů, ale po konzultaci s CP jsme usoudili i po zkušenostech z praxe s
+databází Postgresql, že evoluce databázového modelu odhalující chyby je
+užitečným uspořením času vývojáře, protože aplikace některých SQL skriptů může
+trvat(a typicky trvá) delší čas než průběh evoluce RDB modelu a dobrým
+nahrazením přímé exekuce SQL skriptů, proto byl tento modul ve frameworku
+zachován.
 
 \section{Metamodel struktury aplikace}
 
@@ -475,6 +478,16 @@ elementů viz. seznam \ref{fig:diff_meta}.
 Ačkoliv tušíme, že tento způsob uchování metamodelů v jednom souboru ideální,
 vybrali jsme si ho kvůli snadnější údržbě.
 
+\begin{figure}[Ht]
+\begin{center}
+\includegraphics[width=15cm]{figures/app_meta_BP_jezek}
+\caption{Aplikační metamodel v průběhu vývoje obrázek převzat z \cite{Jezek}}
+\label{fig:jezek:app_meta}
+\end{center}
+\end{figure}
+
+
+
 Na obrázku \ref{fig:app_roots} jsou znázorněny kořenové elementy
 nynějšího aplikačního modelu - každý aplikační model musí obsahovat jeden
 container - potomka třídy ModelRoot. Na obrázku \ref{fig:app_meta} jsou
@@ -487,26 +500,7 @@ atributy defaultValue, sequenceName a atribut isId. Atribut isId byl nahrazen
 přímou referencí na idProperty ve třídě StandardClass který byl nahrazen 
 referencí.
 
-Koncept generace modelů byl zachován, ale tyto generace nejsou obsaženy z
-implementačních a testovacích důvodů v jednom souboru, ale ve více souborech.
-
-\begin{figure}[Ht]
-\begin{center}
-\includegraphics[width=15cm]{figures/app_meta_BP}
-\caption{Aplikační metamodel v počátku vývoje obrázek převzat z \cite{Lukes}}
-\label{fig:lukes:app_meta}
-\end{center}
-\end{figure}
-
-\begin{figure}[Ht]
-\begin{center}
-\includegraphics[width=15cm]{figures/app_meta_BP_jezek}
-\caption{Aplikační metamodel v průběhu vývoje obrázek převzat z \cite{Jezek}}
-\label{fig:jezek:app_meta}
-\end{center}
-\end{figure}
-
-\begin{figure}[Ht]
+\begin{figure}[h!]
 \begin{center}
 \includegraphics[width=15cm]{figures/app_roots}
 \caption{Rootové elementy aplikačního modelu}
@@ -514,8 +508,7 @@ implementačních a testovacích důvodů v jednom souboru, ale ve více soubore
 \end{center}
 \end{figure}
 
-
-\begin{figure}[Ht]
+\begin{figure}[h!]
 \begin{center}
 \includegraphics[width=15cm]{figures/app_meta}
 \caption{Struktura aplikačního metamodelu}
@@ -523,31 +516,30 @@ implementačních a testovacích důvodů v jednom souboru, ale ve více soubore
 \end{center}
 \end{figure}
 
+\begin{figure}[h!]
+\begin{center}
+\includegraphics[width=15cm]{figures/app_meta_BP}
+\caption{Aplikační metamodel v počátku vývoje obrázek převzat z \cite{Lukes}}
+\label{fig:lukes:app_meta}
+\end{center}
+\end{figure}
+
+Koncept generace modelů byl zachován, ale tyto generace nejsou obsaženy z
+implementačních a testovacích důvodů v jednom souboru, ale ve více souborech.
+
+
 \section{Databázový metamodel structury}
 
 Stejně jako metamodel struktury aplikace byl i metamodel databázové struktury
 původně ekvivalentní databázovému metamodelu a následně byly do metamodelu
 vloženy databázové operace. Metamodel databázové struktury se ukázal jako
-celkem dobře definovaný a proto změny na něm udělané ho zjednodušovaly.
+celkem dobře definovaný a proto nedocházelo k zásadním změnám.
 
-Na obr. \ref{fig:rdb_str} vidíme aktuální matamodel databázové struktury, na
-obr. \ref{fig:rdb_str_lukes} vidíme model na počátku vývoje převzatý z
-\cite{Lukes} a na obrázku \ref{fig:rdb_str_tarant} model v pozdější fázi vývoje
-převzatý z \cite{Tarant_bp}.
+ Na obr. \ref{fig:rdb_str} vidíme aktuální matamodel databázové struktury, na
+ obr. \ref{fig:rdb_str_lukes} vidíme model na počátku vývoje převzatý z
+ \cite{Lukes} a na obrázku \ref{fig:rdb_str_tarant} model v pozdější fázi vývoje
+ převzatý z \cite{Tarant_bp}.
 
- Nejvýraznější změnami databázového metamodelu struktury jsou - stejně jako v
- metamodelu aplikační struktury odstranění generace modelů, odstranění elementu
- UnderlyingIndex, odstranění elementu ColumnConstraint, nahrazení elementu
- NotNullConstraint atributem boolean v Column a snížení kardinality Sequence
- obsažených ve schematu z * na 1.
- 
- Myšlenka generace modelů byla zachována, ale jejich připadné uchovávání bylo
- zvoleno ve více oddělených souborech. Element UnderlyingIndex byl shládán
- nadbytečným, stejně jako element ColumnConstraint. Neatributový element
- NotNullConstraint byl shledán příliš informačně chudým a byl nahrazen atributem
- isNillable zachovávajícím stejnou informační hodnotu jako element v původních
- modelech. 
-	
 \begin{figure}[Ht]
 \begin{center}
 \includegraphics[width=15cm]{figures/rdb_structure}
@@ -573,6 +565,19 @@ převzatý z \cite{Tarant_bp}.
 \label{fig:rdb_str_lukes}
 \end{center}
 \end{figure}
+
+ Nejvýraznější změnami databázového metamodelu struktury jsou - stejně jako v
+ metamodelu aplikační struktury odstranění generace modelů, odstranění elementu
+ UnderlyingIndex, odstranění elementu ColumnConstraint, nahrazení elementu
+ NotNullConstraint atributem boolean v Column a snížení kardinality Sequence
+ obsažených ve schematu z * na 1.
+ 
+ Myšlenka generace modelů byla zachována, ale jejich připadné uchovávání bylo
+ zvoleno ve více oddělených souborech. Element UnderlyingIndex byl shládán
+ nadbytečným, stejně jako element ColumnConstraint. Neatributový element
+ NotNullConstraint byl shledán příliš informačně chudým a byl nahrazen atributem
+ isNillable zachovávajícím stejnou informační hodnotu jako element v původních
+ modelech. 
 
 
 \subsection{Operace nad aplikačním modelem}
@@ -811,292 +816,6 @@ Reduktivní operace entitu z vstupního modelu odstraní a zároveň entitě, kt
 je pro operaci řídící změní obsah. Příkladem této operace je InlineClass.
 Reduktivní operace jsou inverzní k operacím expanzivním.\\
 
-\subsection{Delta notace}
-V \cite{Cincetti} jsou definovány operace pomocí delta notace. Delta notace
-je taková, která ukazuje všechny změny mezi danými dvěma artefakty stejné
-úrovně abstrakce. Změnami můžeme rozumět přidáním elementu, odstraněním elementu
-a modifikací elementu.
-
-Nejznámějším a nejrozšířenějším typem delta notace je výstup linuxového příkazu
-diff. Každý rozdíl v delta notaci příkazu diff je dle \cite{diff_wiki}
-definován následně:
-
-\begin{verbatim}
-popis změny
-<řádek z prvního souboru
-<řádek z prvního souboru…
----
->řádek ze druhého souboru
->řádek ze druhého souboru…
-\end{verbatim}
-
-Popis změny může nabývat tvaru: LaR, FcT nebo RdL.\\
-
-\begin{itemize}
-   	\item [LaR ] \hfill \\
-   		Ve druhém souboru jsou navíc řádky R patřící za řádek L prvního souboru. 
-    	Např. 8a12, 15 znamená, že ve druhém souboru jsou navíc řádky 12-15 a patří
-    	za řádek 8 v prvním souboru.
-	\item [FcT] \hfill \\
-		Řádky F z prvního souboru byly změněny. Ve druhém souboru jsou jim
-		odpovídající řádky T. Např. popis 5,7c8,10 znamená, že se liší řádky 5-7 v
-		prvním souboru a jim odpovídající jsou řádky 8-10 ve druhém souboru.	 
-  \item [RdL] \hfill \\
-		Ve druhém souboru chybí řádky R z prvního souboru. Tyto řádky by patřily za
-		řádek L druhého souboru. Např. 5,7d3 znamená, že za řádkem 3 ve druhém souboru
-		chybějí řádky 5-7 prvního souboru.	  
-\end{itemize}
-
-
-Příklad Delta notace za pomoci linuxových
-nástrojů diff dvou souborů\\
-\begin{lstlisting}[language=JAVA,frame=single,caption=Man1.java,label=Man1]
-class Man {
-	private String name;
-
-	public Man(String name){
-		this.name = name;
-	}
-
-}
-\end{lstlisting}
-
-\begin{lstlisting}[language=JAVA,frame=single,caption=Man2.java,label=Man2]
-class Man {
-	private String name;
-
-	private String surename;
-
-	public Man(String name){
-		this.name = name;
-	}
-
-	public Man(String name, String surename){
-		this(name);
-		this.surename = surename;
-	}
-}
-\end{lstlisting}
-
-\begin{lstlisting}[language=JAVA,frame=single,caption=Diff Man1
-Man2,label=Diff_1_2]
-3a4,5
-> 	private String surename;
-> 
-5a8,12
-> 	}
-> 
-> 	public Man(String name, String surename){
-> 		this(name);
-> 		this.surename = surename;	
-\end{lstlisting}
-
-Ukázka kódu \ref{Man1} zobrazuje zdrojový kód třídy Man v první
-verzi. Ukázka \ref{Man2} potom zdrojový kód třídy Man po první naší editaci,
-kdy jsme do dané třídy přidali nový atribut a nový konstruktor.
-Diff v delta notaci těchto dvou souborů je ukázán v \ref{Diff_1_2}. V delta
-notaci vidíme, že do prvního souboru byly za 3. řádek vloženy řádky 4-5 z
-druhého souboru - řádek definující nový atribut surename a oddělující prázdný
-řádek, dále za 5. řádek byly vloženy řádky 8-12 z druhého souboru definující
-nový konstruktor a uzavírací závorka.\\
-
-Delta notace je dle autora výhodná díky snadné
-rozložitelnosti velkých patchů na více menších patchů a také díky oddělení ve
-více konkurenčních patchích konfliktních operací od operací nazávislých. 
-
-Inverzní diff vidíme v \ref{Diff_reverse}, kde z souboru
-\ref{Man2} byly odstraněny řádky 4-5, které by se jinak zařadily za řádek 3,
-dále byly odstraněny řádky 10-13, které by jinak patřily za řádek 7 souboru
-Man1.
-
-
-\begin{lstlisting}[language=JAVA,frame=single,caption=patch
-$part_b$,label=Diff_reverse]
-4,5d3
-< 	private String surename;
-< 
-8,12d5
-< 	}
-< 
-< 	public Man(String name, String surename){
-< 		this(name);
-< 		this.surename = surename;
-\end{lstlisting}
-
-Patch \ref{Diff_1_2} bychom mohli rozdělit například na \ref{Diff_1_2_a} a
-\ref{Diff_1_2_b}, protože změny jsou na různých řádcích a jsou zdánlivě
-nezávislé. Aplikací těchto dvou patchů v pořadí $part_a$ a $part_b$ vznikne
-\ref{Man1_alternative}, kdežto aplikace patchů v pořadí $part_b$, $part_a$ dá
-vzniknout původnímu souboru \ref{Man2}
-
-\begin{lstlisting}[language=JAVA,frame=single,caption=patch
-$part_a$,label=Diff_1_2_a]
-3a4,5
-> 	private String surename;
-> 
-\end{lstlisting}
-
-\begin{lstlisting}[language=JAVA,frame=single,caption=patch
-$part_b$,label=Diff_1_2_b]
-5a8,12
-> 	}
-> 
-> 	public Man(String name, String surename){
-> 		this(name);
-> 		this.surename = surename;	
-\end{lstlisting}
-
-\begin{lstlisting}[language=JAVA,frame=single,caption=aplikace pořadí
-difů $part_a part_b$,label=Man1_alternative] 
-class Man {
-	private String name;
-
-	private String surename;
-
-	}
-
-	public Man(String name, String surename){
-		this(name);
-		this.surename = surename;
-	public Man(String name){
-		this.name = name;
-	}
-
-}\end{lstlisting}
-
-
-Delta notace umožňuje snadný forward i backward differencing, protože díky
-kontextové nezávislosti je možné snadno invertovat operace. Kontextová nezávislost znamená,
-že jakýkoliv patch je možné aplikovat na jakýkoliv model, přičemž očekávatelný
-výsledek je výstupní soubor nebo chyba. Přidávání řádků do souboru je vždy
-aplikovatelné. Náhrada a odstranění řádků ze souboru, ve kterém nefigurují
-naopak vyvolá chybu. 
-
-Aplikace patche \ref{Diff_1_2} na \ref{Man2} by vypadala \ref{Man2_p1_2}.
-Atribut byl přidán na správné místo, ale konstruktor byl přidán na místo špatné 
-- přídaná uzavírací závorka neuzavírá předchozí konstruktor, ale celou třídu. 
-Navzdory tomu, že tento Java kód je nevalidní, patch bylo možné aplikovat.\\
-
-\begin{lstlisting}[language=JAVA,frame=single,caption=patch
-aplikován na třídu Man2,label=Man2_p1_2]
-class Man {
-	private String name;
-
-	private String surename;
-
-	private String surename;
-
-	}
-
-	public Man(String name, String surename){
-		this(name);
-		this.surename = surename;
-	public Man(String name){
-		this.name = name;
-	}
-
-	public Man(String name, String surename){
-		this(name);
-		this.surename = surename;
-	}
-}
-\end{lstlisting}
-
-Všimněme si, že standardní unixový diff obsahuje redundantní informaci -
-řádek \ref{Diff_1_2_a} 3a4,5 musí obsahovat číslo řádku, za který se má
-navazující text diffu přidat, ale nemusí obsahovat, na které pozice v
-druhém souboru budou přidány, tato informace by byla dopočitatelná z aplikace
-všech předchozích řádků, přičtení počtu řádků přidávaných a odečtení řádků
-odebíraných. Takovouto změnou standardní delta notace dostaneme další možnou
-variantu delta notace.
-
-Standardní delta notace obsahuje další redundantní prvky. Například v deltě
-mazající řádky je redundantní informací seznam mazaných řádků. Jeho odstraněním
-bychom získali plně operaci aplikovatelnou na jakýkoliv model. Tato změna
-nevytváří delta notaci - neuchovává všechny informace o změně modifikovaných
-elementů. Pro ilustraci diff na \ref{reverse_add_1_2} je reverzní vůči diffu
-\ref{Diff_1_2}. Odstraněním seznamu mazaných řádků a pozice v druhém souboru
-získáme diff \ref{delete_minimal}. Z tohoto vyplývá, že delta notace není
-minimální, obsahuje redundatní informace. Prostým pozorováním můžeme zjistit,
-že oproti delta notaci nemůže v nově vzniklé minimální notaci být odvozena
-inverze \ref{Diff_1_2} diffu \ref{delete_minimal}, obrácený postup -
-transformace diffu \ref{Diff_1_2} na \ref{delete_minimal} bez znalosti
-kontextových modelů \ref{Man1} a \ref{Man2} je naopak zachována z delta notace.
-Nově vzniklá notace je tudíž neidempotentní vůči operaci inverze bez znalosti
-kontextového vstupního a výstupního modelu. 
-
-\begin{lstlisting}[language=JAVA,frame=single,caption=diff
-modelů 2 a 1,label=reverse_add_1_2] 
-4,5d3
-< 	private String surename;
-< 
-10,13d7
-< 	public Man(String name, String surename){
-< 		this(name);
-< 		this.surename = surename;
-< 	}
-\end{lstlisting}
-
-\begin{lstlisting}[language=JAVA,frame=single,caption=diff
-modelů 2 a 1,label=delete_minimal] 
-4,5d
-10,13d7
-\end{lstlisting}
-
-\subsubsection{Vlastnosti operací}
-V \cite{Cincetti} Antonio Cincetti popisuje některé specifické vlastnosti
-jako je invertovatelnost a rozložitelnost operací. Je nutné říci, že operace
-zmiňované v literatuře pracují jen se strukturou dat, nikoliv s daty samotnými
-a jsou kontextově nezávislé - tyto operace jsou tvořeny téměř výlučně
-konstruktivními a  destruktivními operacemi. Cincetti rozděluje zmiňuje, že v
-minulosti byly operace aplikovatelné na jeden konkrétní model(intensional) a
-modernější differenční modely jsou tzv. extensional - je možné je aplikovat na
-jakýkoliv model, například na paralelní vývojové větve.
-
-V projektu Migdb jsou operace invertovatelné se znalostí původního modelu.
-Například u operace RemoveParent(childClass) nezískáme parentClass přímo z
-operace, ale musíme ho dopočítat ze vstupního modelu.
-
-Problémem je, že i po odvození inverze nemusí vést aplikace operace do stejného
-vstupního modelu. Pokud například na stav \ref{fig:add_parent} aplikujeme
-operaci AddParent(Teacher, UniversityTeacher), získáme cílový stav
-\ref{fig:remove_parent}. Pokud se chceme vrátit zpět z \ref{fig:remove_parent}
-do výchozího stavu, měli bychom aplikovat operaci
-RemoveParent(UniversityTeacher), nicméně aplikace této operace nepovede do
-výchozího stavu \ref{fig:add_parent}, ale do stavu \ref{fig:remove_parent_apl}.
-Po aplikaci operace RemoveParent bude v třídě UniversityTeacher navíc property
-class. Tento stav je zapříčiněn vývojem operace AddParent - v původní verzi
-operace nemohla být použita na jakékoliv třídy s kolizními atributy, ale
-shledali jsme tuto operaci nepoužitelnou - většinou přidáváme supertyp třídě,
-pokud je třída potomka speciálním typem třídy rodičovské, což se ale v
-drtivé většině případů projevuje kolizními atributy. Možným odstraněním tohoto
-problému by bylo přidání informací o distribuovaných properties do operace
-RemoveParent, čímž bychom se nicméně odklonili od cílu minimalizovat operace.
-
-\begin{figure}[Ht]
-\begin{center}
-\includegraphics[width=5cm]{figures/teacher_university_teacher}
-\caption{AddParent(Teacher, UniversityTeacher)}
-\label{fig:add_parent}
-\end{center}
-\end{figure}
-
-\begin{figure}[Ht]
-\begin{center}
-\includegraphics[width=5cm]{figures/teacher_university_teacher_remove}
-\caption{Výsledek po operaci AddParent}
-\label{fig:remove_parent}
-\end{center}
-\end{figure}
-
-\begin{figure}[Ht]
-\begin{center}
-\includegraphics[width=5cm]{figures/teacher_university_teacher_remove_inversion}
-\caption{Výsledný stav po aplikaci RemoveParent}
-\label{fig:remove_parent_apl}
-\end{center}
-\end{figure}
-
 \section{Databázové operace}
 Databázové operace reprezentují změny proveditelné na úrovni databáze. Mělo by z
 nich být možné generovat SQL kód jednoduchou Model-to-text transformací
@@ -1316,6 +1035,61 @@ errorLogu pro daný index operaxe a danou transformaci, tudíž není možné vo
 helper checkExistTable a invertovat navrácenou hodnotu, ale bylo nutné napsat
 helpery kladné i záporné.
 
+\subsubsection{Vlastnosti operací}
+V \cite{Cincetti} Antonio Cincetti popisuje některé specifické vlastnosti
+jako je invertovatelnost a rozložitelnost operací. Je nutné říci, že operace
+zmiňované v literatuře pracují jen se strukturou dat, nikoliv s daty samotnými
+a jsou kontextově nezávislé - tyto operace jsou tvořeny téměř výlučně
+konstruktivními a  destruktivními operacemi. Cincetti rozděluje zmiňuje, že v
+minulosti byly operace aplikovatelné na jeden konkrétní model(intensional) a
+modernější differenční modely jsou tzv. extensional - je možné je aplikovat na
+jakýkoliv model, například na paralelní vývojové větve.
+
+V projektu Migdb jsou operace invertovatelné se znalostí původního modelu.
+Například u operace RemoveParent(childClass) nezískáme parentClass přímo z
+operace, ale musíme ho dopočítat ze vstupního modelu.
+
+Problémem je, že i po odvození inverze nemusí vést aplikace operace do stejného
+vstupního modelu. Pokud například na stav \ref{fig:add_parent} aplikujeme
+operaci AddParent(Teacher, UniversityTeacher), získáme cílový stav
+\ref{fig:remove_parent}. Pokud se chceme vrátit zpět z \ref{fig:remove_parent}
+do výchozího stavu, měli bychom aplikovat operaci
+RemoveParent(UniversityTeacher), nicméně aplikace této operace nepovede do
+výchozího stavu \ref{fig:add_parent}, ale do stavu \ref{fig:remove_parent_apl}.
+Po aplikaci operace RemoveParent bude v třídě UniversityTeacher navíc property
+class. Tento stav je zapříčiněn vývojem operace AddParent - v původní verzi
+operace nemohla být použita na jakékoliv třídy s kolizními atributy, ale
+shledali jsme tuto operaci nepoužitelnou - většinou přidáváme supertyp třídě,
+pokud je třída potomka speciálním typem třídy rodičovské, což se ale v
+drtivé většině případů projevuje kolizními atributy. Možným odstraněním tohoto
+problému by bylo přidání informací o distribuovaných properties do operace
+RemoveParent, čímž bychom se nicméně odklonili od cílu minimalizovat operace.
+
+\begin{figure}[Ht]
+\begin{center}
+\includegraphics[width=5cm]{figures/teacher_university_teacher}
+\caption{AddParent(Teacher, UniversityTeacher)}
+\label{fig:add_parent}
+\end{center}
+\end{figure}
+
+\begin{figure}[Ht]
+\begin{center}
+\includegraphics[width=5cm]{figures/teacher_university_teacher_remove}
+\caption{Výsledek po operaci AddParent}
+\label{fig:remove_parent}
+\end{center}
+\end{figure}
+
+\begin{figure}[Ht]
+\begin{center}
+\includegraphics[width=5cm]{figures/teacher_university_teacher_remove_inversion}
+\caption{Výsledný stav po aplikaci RemoveParent}
+\label{fig:remove_parent_apl}
+\end{center}
+\end{figure}
+
+
 \section{ORMo (ORM operací)}
 
 \ref{orm_merge_prop}
@@ -1504,10 +1278,101 @@ odpovídající dané třídě
   
 \end{list}
 
+\chapter{Řešení problému rozpoznávání operací}
 
+\section{Diff a delta notace}
+Nejznámějším algoritmem používaným při porovnávání a zjišťování změn dvou
+textových souborů je diff verzování souborů je nástroj diff\cite{diff_wiki}.
+Diff je založen na algoritmu hledání největší společné podsekvence (LCS) viz
+\cite{wiki_lcs}. Algoritmus LCS byl analyzován a nebyl shledán jako dostatečným
+pro námi definovaný problém, jelikož nezohledňuje doménu problému. Výstup
+algoritmu se dá vyjádřit pomocí delta notace.
 
+Příklad Delta notace za pomoci linuxových
+nástrojů diff dvou souborů\\
+\begin{lstlisting}[language=JAVA,frame=single,caption=Man1.java,label=Man1]
+class Man {
+	private String name;
 
-\subsection{Diff elementy}
+	public Man(String name){
+		this.name = name;
+	}
+
+}
+\end{lstlisting}
+
+\begin{lstlisting}[language=JAVA,frame=single,caption=Man2.java,label=Man2]
+class Man {
+	private String name;
+
+	private String surename;
+
+	public Man(String name){
+		this.name = name;
+	}
+
+	public Man(String name, String surename){
+		this(name);
+		this.surename = surename;
+	}
+}
+\end{lstlisting}
+
+\begin{lstlisting}[language=JAVA,frame=single,caption=Diff Man1
+Man2,label=Diff_1_2]
+3a4,5
+> 	private String surename;
+> 
+5a8,12
+> 	}
+> 
+> 	public Man(String name, String surename){
+> 		this(name);
+> 		this.surename = surename;	
+\end{lstlisting}
+
+Ukázka kódu \ref{Man1} zobrazuje zdrojový kód třídy Man v první
+verzi. Ukázka \ref{Man2} potom zdrojový kód třídy Man po první naší editaci,
+kdy jsme do dané třídy přidali nový atribut a nový konstruktor.
+Diff v delta notaci těchto dvou souborů je ukázán v \ref{Diff_1_2}. V delta
+notaci vidíme, že do prvního souboru byly za 3. řádek vloženy řádky 4-5 z
+druhého souboru - řádek definující nový atribut surename a oddělující prázdný
+řádek, dále za 5. řádek byly vloženy řádky 8-12 z druhého souboru definující
+nový konstruktor a uzavírací závorka.\\
+
+V \cite{Cincetti} jsou definovány operace pomocí delta notace. Delta notace
+je taková, která ukazuje všechny změny mezi danými dvěma artefakty stejné
+úrovně abstrakce. Změnami můžeme rozumět přidáním elementu, odstraněním elementu
+a modifikací elementu.
+
+Delta notace je dle autora výhodná díky snadné
+rozložitelnosti velkých patchů na více menších patchů a také díky oddělení ve
+více konkurenčních patchích konfliktních operací od operací nazávislých. 
+
+Delta notace vytvořená dle metamodelu na obr. \ref{fig:diff_cincetti} add,
+delete entit a modify atributů jednotlivých entit, ale v našem modelu existují
+operace, kterí se nedají zařadit ani do skupiny add, delete a modify operací,
+proto jsme mohli postupovat jednou z následujících cest
+
+\begin{itemize}
+  	\item získat standardní diff dvou modelů a aplikovat na něj algoritmus
+  	rozpoznávání jakožto sadu podmínek, které musí platit, aby algoritmus rozpoznal operaci.
+	\item vytvořit vlastní Diff metamodel, který podobně jako v
+	\ref{fig:diff_cincetti} odpovídá vlastnímu seznamu operací aplikovatelých na
+	model.
+\end{itemize}
+
+Zvolili jsme si cestu definice vlastního metamodelu.
+
+\begin{figure}[Ht]
+\begin{center}
+\includegraphics[width=15cm]{figures/uml_diference_cincetti}
+\caption{Diff model převzatý dle \cite{Cincetti}}
+\label{fig:diff_cincetti}
+\end{center}
+\end{figure}
+
+\section{Diff elementy}
 
  Kvůli nutnosti rozpoznávat operace vznikly v aplikačním modelu nové
  elementy. Kořenovým elementem diff modelu je Diff element. Tento element
@@ -1577,59 +1442,59 @@ jakýchkoliv dat, které v původní databázi byla. Takovýto algoritmus tudí�
 nemigruje žádná data, ale nahrazuje funkci ORM mapování integrované
 do většiny současných IDE. Proto se jím v této práci nezaobírám.
 
-Jak je diskutováno v 19 a \cite{Kolovos:Different_models} existuje několik
-požadavků na algoritmus řešící problém model matching. Tyto požadavky zahrnují
-přesnost, vysokou míru abstrakce na které je porovnávání provedeno, nezávislost
-na konkrétních nástrojích, doménách a jazycích (přelož independence from
-particular tools), použitelnost(efficiency) a minimální nutnost adaptace
+Jak je diskutováno v \cite{diff_merge_diagrams} a
+\cite{Kolovos:Different_models} existuje několik požadavků na algoritmus řešící
+problém model matching. Tyto požadavky zahrnují přesnost, vysokou míru
+abstrakce na které je porovnávání provedeno, nezávislost na konkrétních
+nástrojích, doménách a jazycích, použitelnost a minimální nutnost adaptace
 algoritmus pro daný problém. Tyto požadavky jdou proti sobě a je nutné
 preferovat některé na úkor jiných, proto není možné označit za nejlepší, ale je
 nutné vybrat si správný algoritmus v závislosti na řešeném problému.
 
  V \cite{Kolovos:Different_models} byly popsány algoritmy
-pro mapování shodných entit modelů (ModelMatching) a algoritmy pro získávání
-rozdílu modelů (Model Diff). 
+ pro mapování shodných entit modelů a algoritmy pro získávání rozdílu modelů. 
  Principem těchto modelů je párování elementů vstupního modelu s elementy z
- modelu cílového. Existují 4 obecné skupiny dělení matching algoritmů. 1
- párování podle statického identifikátoru, 2. signature based matching, 3.
- similarity based matching a custom language specific matching.
+ modelu cílového. Existují 4 obecné skupiny dělení matching algoritmů. 
  
- Párování podle statického identifikátoru páruje elementy podle perzistentního
- identifikátoru, který je přiřazen každé entitě v době jejího vzniku, je
- neměnný a unikátní. Nejzákladnějším principem model matchingu je tedy párování
- entit na základě shodnosti jejich identifikátorů. Tento princip má výhody
- jednoduchosti implementace a rychlosti. Tento algoritmus není použitelný pro
- modely vytvořené nezávisle jeden na druhém či u technologií nepodporujících
- maintenance unikátních identifikátorů.
+ \begin{itemize}
+   \item Párování podle statického identifikátoru páruje elementy podle
+ 	perzistentního identifikátoru, který je přiřazen každé entitě v době jejího
+ 	vzniku, je neměnný a unikátní. Nejzákladnějším principem model matchingu je
+ 	tedy párování entit na základě shodnosti jejich identifikátorů. Tento princip
+ 	má výhody jednoduchosti implementace a rychlosti. Tento algoritmus není
+ 	použitelný pro modely vytvořené nezávisle jeden na druhém či u technologií
+ 	nepodporujících maintenance unikátních identifikátorů.
  
- Algoritmus signature based matching byl navržen kvůli limitaci párování podle
- statického identifikátoru, tento algoritmus je založen na dynamickém vypočtení
- nestatické signatury jednotlivých features pomocí uživatelem definovaných
- funkcí specifikovaných pomocí nějakého dotazovacího jazyka. Tento princip tedy
- může být použit pro modely vzniklé nezávisle na sobě. Nevýhodou je potom
- nutnost specifikovat query, které dopočítají signaturu.
+ 	\item Algoritmus signature based matching byl navržen kvůli limitaci párování
+ 	podle statického identifikátoru, tento algoritmus je založen na dynamickém
+ 	vypočtení nestatické signatury jednotlivých features pomocí uživatelem
+ 	definovaných funkcí specifikovaných pomocí nějakého dotazovacího jazyka.
+ 	Tento princip tedy může být použit pro modely vzniklé nezávisle na sobě.
+ 	Nevýhodou je potom nutnost specifikovat query, které dopočítají signaturu.
  
- Algoritmus Similarity based matching používá podobně jako signature based
- matching podobnost features jednotlivých elementů, kterou agreguje do skalární hodnoty.
- Tento princip se řadí mezi podtyp attribute graph matchingu. Každá feature
- modelu může mít jinou váhu pro porovnávání, napřiklad u podobnosti tříd má
- jméno vyšší důležitost nežli abstractnost dané třídy.  Tento algoritmus musí
- být typicky doplněn o konfiguraci vah jednotlivých features elementů, kterou
- většinou píše vývojář. Zástupcem tohoto principu je framework EMF Compare, 
- který je doplněn o defaultní konfiguraci vah. Výhodami je větší přesnost,
- nevýhodou je potom TRIAL ERROR metoda získávání vhodné konfigurace vah.
+ 	\item Algoritmus Similarity based matching používá podobně jako signature
+ 	based matching podobnost features jednotlivých elementů, kterou agreguje do
+ 	skalární hodnoty. Tento princip se řadí mezi podtyp attribute graph matchingu.
+ 	Každá feature modelu může mít jinou váhu pro porovnávání, napřiklad u
+ 	podobnosti tříd má jméno vyšší důležitost nežli abstractnost dané třídy. 
+ 	Tento algoritmus musí být typicky doplněn o konfiguraci vah jednotlivých
+ 	features elementů, kterou většinou píše vývojář. Zástupcem tohoto principu je
+ 	framework EMF Compare, který je doplněn o defaultní konfiguraci vah. Výhodami
+ 	je větší přesnost, nevýhodou je potom TRIAL ERROR (pokus omyl) metoda
+ 	získávání vhodné konfigurace vah.
  
- Algoritmy v kategorii Custom language specific matching jsou vytvořené
- přímo k využití daného modelovacího jazyka. Hlavní výhodou je, že
- algoritmus na dané doméně může začlenit do metody similarity based matchingu
- sémantické detaily, což vede k přesnějším výsledkům a redukuje prohledávaný 
-stavový prostor. Jako příklad je uváděn jazyk UMLDiff, který při porovnávání
-dvou UML modelů může využít faktu, že dvě třídy nebo dva datové typy
-stejného jména tvoří po všech praktických stránkách pár(match). Nicméně výhoda
-začlenění sémantických detailů konkrétní domény je vykoupeno vysokou cenou -
-všechny ostatní kategorie algoritmů potřebují minimální neb téměř žádné úpravy
-od vývojáře, pro tuto kategorii vývojáře musí napsat celý matchovací algoritmus
-sám.
+	\item Algoritmy v kategorii Custom language specific matching jsou vytvořené
+ 	přímo k využití daného modelovacího jazyka. Hlavní výhodou je, že
+ 	algoritmus na dané doméně může začlenit do metody similarity based matchingu
+ 	sémantické detaily, což vede k přesnějším výsledkům a redukuje prohledávaný 
+	stavový prostor. Jako příklad je uváděn jazyk UMLDiff, který při porovnávání
+	dvou UML modelů může využít faktu, že dvě třídy nebo dva datové typy
+	stejného jména tvoří po všech praktických stránkách pár(match). Nicméně výhoda
+	začlenění sémantických detailů konkrétní domény je vykoupeno vysokou cenou -
+	všechny ostatní kategorie algoritmů potřebují minimální neb téměř žádné úpravy
+	od vývojáře, pro tuto kategorii vývojáře musí napsat celý matchovací algoritmus
+	sám.
+\end{itemize}
 
 \subsection{Graph matching}
  Problém model matching je podproblémem generičtějšího tasku graph matching,
@@ -1697,6 +1562,80 @@ sám.
  
  
  \section{Vytvořený algoritmus rozpoznávání operací}
+
+\section{Experimentální algoritmus}
+
+V ranné fázi byl napsán prototyp jiného rozpoznávacího algoritmu, který se snaží 
+minimalizovat vzdálenost současného modelu od modelu cílového pomocí
+rozpoznáná operací a aplikace operací. Výhodou tohoto přístupu je nalezení více alternativních 
+cest, nevýhodou je potom velikost stavového prostoru. Algoritmus prochází těmito fázemi:
+
+\begin{itemize}
+  	\item Spočítání vzdálenosti vstupního modelu od modelu cílového
+  	\item Nastavení nalezeného maxima zlepšujícího kroku na nula
+  	\item Opakování následujícího cyklu dokud je rozpoznána jiná operace než je
+  	Dummy operation a vzdálenost je větší než nula
+  	\begin{itemize}
+  	  \item nastavení zlepšující operace na Dummy Operation
+  	  \item  Pro každou operaci 
+  	  	\begin{itemize} 
+    		\item nalezení nalezení nejvhodnějších parametrů operace
+    		\item spočítání zlepšujícího kroku
+    		\item aktualizace maxima zlepšujího kroku, podle
+    		nalezených parametrů, aktualizace zlepšující operace
+    	\end{itemize}
+    	\item aktualizace vzdálenosti
+    	\item aplikace nejvýhodnější operace
+    	\item nastavení maxima zlepšujícího kroku na nula
+    \end{itemize}
+\end{itemize}
+
+Algoritmus předpokládá, že operace přibližující aktuální stav k cílovému by měly
+být rozpoznány (a aplikovány) co nejdříve. Například pro počáteční model
+zobrazený na obrázku \ref{fig:exp_contact} a cílový model zobrazený na obrázku
+\ref{fig:exp_contact_address}. Algoritmus spočítá vzdálenost například
+jako součet přidaných/odebraných tříd, primitivních atributů a asociačních
+vazeb.
+Vzdálenost těchto dvou modelů je tudíž 7 - 2 odebrané atributy z třídy Contact,
+1 přidaná třída Address, 2 přidané atributy do třídy Address a 2 x vazba do tříd
+Contact a Address (bidirectional vazby je nutné počítat za dvě asociace). 
+
+Algoritmus v prvním průchodu rozpozná, že je možné aplikovat operace
+AddClass(Address), RemoveProperty(Street) a ExtractClass(Address, Contact,
+\{Street, City\}). AddClass zlepšuje vzdálenost o 1, RemoveProperty také o
+jedna a ExtractClass o 7. Z těchto operací vyhodnotí jako nejlepší
+ExtractClass a následně algoritmus skončí, protože po aplikaci se současný
+model dostal do cílového stavu.
+
+\begin{figure}[Htl]
+\begin{center}
+\includegraphics[width=5cm]{figures/exp_contact.jpg}
+\caption{Počáteční model}
+\label{fig:exp_contact}
+\end{center}
+\end{figure}
+
+\begin{figure}[Htr]
+\begin{center}
+\includegraphics[width=12cm]{figures/exp_contact_address.jpg}
+\caption{Cílový model}
+\label{fig:exp_contact_address}
+\end{center}
+\end{figure}
+     
+Přes počáteční slibné výsledky testované na konstruktivních operacích byl tento
+algoritmus zavrhnut jako neefektivní. Algoritmus v každém kroku hledá parametry
+i pro všechny operace, nedá se jednoduše analyzovat, pro které operace je nutné
+hledat parametry znovu a které operace se již nedají rozpoznat. Druhou nevýhodou
+je šířka prohledávaného stromu - algoritmus může nalézt víc operací, které
+přinližují model stejnou měrou modelu cílovému, ale jakmile jednu z nich náhodně
+vybere, zapomene veškeré mezivýsledky a v dalším kroku může rozpoznat všechny
+operace z minulé iterace vyjma operace rozpoznané. 
+
+Nalezení vhodných vah jednotlivých elementů modelu a jejich atributů se dá
+získat jedině metodou pokus-omyl a je nutné váhy znovu přehodnotit po přidání
+nových operací.
+
  
  \subsection{Návrh ze studia článků}
  
@@ -1732,19 +1671,6 @@ množství dat. Ačkoliv triviální algoritmus pro přechod z modelu A k modelu
 mohl pomocí subtraktivních operací zničit model A a následně složit model B
 pomocí aditivních operací je zřejmé, že tento algoritmus neuchová žádná data.
 Proto byly zavedeny Konstruktivní a destruktivní operace. 
-
-\section{alternativní algoritmus}
-
-V ranné fázi byl napsán prototyp jiného rozpoznávacího algoritmu, který se snaží 
-minimalizovat vzdálenost současného modelu od modelu cílového pomocí rozpoznáná 
-operací a aplikace operací. Výhodou tohoto přístupu je nalezení více alternativních 
-cest, nevýhodou je potom velikost stavového prostoru. Algoritmus prochází těmito fázemi:
-
-Spočítání vzdálenosti vstupního modelu od modelu cílového
-Nastavení nalezeného maxima na nula
-Pro každou operaci O
-     zjištění, jestli má operace vhodné kandidáty na parametr
-     nalezení nejvhodnějších parametrů operace
 
 
 
@@ -1803,8 +1729,8 @@ databázových operací, výstupní SQL generující strukturu databáze a SQL
 reprezentující výstupní databázové operace. Kromě těchto vygenerovaných dat je
 možné najít ke každému testu v adresáři test\_data reálná data, s kterými může
 být test spuštěn. Reálná data jsou vytvořena jen pro testy komplexnějších
-operací(007 - 010), které jen nemění strukturu databáze, ale i manipulují s
-daty. Postup testování tohoto testu je - spuštění workflow vedoucí k
+operací (operace 007 - 010), které jen nemění strukturu databáze, ale i
+manipulují s daty. Postup testování tohoto testu je - spuštění workflow vedoucí k
 vygenerování SQL db schematu a SQL db operací. Spuštění SQL vytvářející
 strukturu databáze, spuštění SQL s daty uloženými v souboru data.sql z
 přidružené složky v adresáři test\_data, aplikace vygenerovaného souboru
@@ -2121,6 +2047,7 @@ V souboru \verb|k336_thesis_macros.tex| je příkaz \verb|\uv{}| pro sázení č
 \item[EMF] Eclipse modeling framework
 \item[SŘBD] Systém řízení báze dat
 \item[IO] Integritní omezení
+\item[LCS] Longest common Subsequence
 \end{description}
 \vdots
 

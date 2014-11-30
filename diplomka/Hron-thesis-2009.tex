@@ -304,8 +304,8 @@ nazývá systém řízení báze dat (SŘBD).
 
 Kvůli nutnosti dokumentace a komunikace mezi vývojáři vznikají různé typy
 modelů. Objektový model aplikace popisuje strukturu aplikace a je doplněn 
-modelem databázovým modelem popisujícím stav databáze. Nejrozšířenějším typem
-databáze jsou v nynější době databáze relační, která uspořádává data podle
+modelem databázovým popisujícím stav databáze. Nejrozšířenějším typem
+databáze jsou v nynější době databáze relační, které uspořádávají data podle
 relačního modelu. 
 
 Aby byla aplikace funkční, je nutné zajistit konzistenci mezi databázovým a
@@ -320,8 +320,9 @@ model databázový, což vývojářům softwaru šetří čas strávený vývoje
 
 Problém nastává, jakmile zahrneme do zachování nejen strukturu dat, ale i
 samotná data. Změnit strukturu dat a zároveň transformovat data tak, aby měla
-stejnou vyjadřovací schopnost jako původní data - považujme změny aplikačního
-modelu jako smazání třídy, atributu apod za změny zachovávající informaci. 
+stejnou vyjadřovací schopnost jako původní data je zatím problémem nevyřešeným.
+Považujme změny aplikačního modelu jako smazání třídy, atributu apod za změny
+zachovávající informaci.
 
 Práce obsahuje tyto kapitoly :
 
@@ -333,16 +334,18 @@ spolupraci akademické sféry se sférou komerční v roce 2011. Komerční sfé
 v tomto případě zastoupena firmou CollectionsPro, s.r.o (dále jen CP) a
 akademická potom Katedrou počítačů fakulty Elektrotechnické na pražském
 Českém vysokém učení technickém. Ambiciózním cílem tohoto projektu bylo od
-pořátku projektu definování ucelené množiny změn, tj. operací, kterými mohou vývojáři změnit
-model aplikace a transformovat tyto změny do spustitelnáho SQL skriptu, který
-změní strukturu databáze a přesune data do odpovídajících elementů z modelu
-aplikace.
+pořátku projektu definování ucelené množiny změn, tj. operací, kterými mohou
+vývojáři změnit model aplikace a transformovat tyto změny do spustitelného SQL
+skriptu, který změní strukturu databáze a přesune data do odpovídajících
+elementů z modelu aplikace.
 
 Tato diplomová práce se zabývá se zkoumáním změn aplikačního modelu, jejich
-popisem a rozpoznáváním změn vedoucích od jednoho aplikačního modelu vedoucích
+popisem a rozpoznáváním změn vedoucích od jednoho aplikačního modelu
 k druhému. Dále pak dokončuje a upřesňuje kontrakt takzvaných operací nad
-aplikačním modelem a popisuje jejich transformaci na změny modelu databázového
-a následným vygenerováním SQL příkazů spustitelných nad relační databází PostgreSQL.
+aplikačním modelem, popisuje jejich transformaci na změny modelu databázového
+a následným vygenerováním SQL příkazů spustitelných nad relační databází
+PostgreSQL. Dalším tématem této diplomové práce je automatizace odvození množiny
+změn ze vstupních dvou modelů.
 
 V rámci Migdb bylo v posledních letech vytvořeny a obhájeny 4 bakalářské práce a
 2 diplomové práce členů Migdb.
@@ -361,30 +364,6 @@ formálně specifikující aplikační operace a diplomová práce Martina Mazan
 Projekt Migdb byl započat v spolupráci se společností Collections Pro Výsledky
 dosavadní práce byly v roce 2012 prezentovány jako case-study na prestižní
 modelové konferenci Code Generation 2012 \cite{Cambridge} v Anglickém Cambridge.
-
-\section{Relační model}
-Relační model je dle \cite{DBS_02} formální abstrakce
-využívající relaci jakožto jediný konstrukt. Relace je uspořádaná n-tice
-souvislých dat R(A1:D1, A2:D2, \ldots An:Dn), přičemž "R" je název relace, Ai
-jsou názvy atributů a Di jsou k nim přidružené typy. K zajištění konzistence
-jsou v SŘDB používána Integritní omezení (IO). IO jsou dle \cite{DBS2_02} tvrzení
-vymezující korektnost DB, stupeň souladu datového obrazu s předlohou (jaká data
-v databází mohou být a jaká již ne).
-
-
-Relační algebra definuje pomocí relací a integritních omezení strukturu
-databáze. Dotazovacím aparátem pro data definovaná pomocí relační algebry je
-relační algebra. Relační algebra využívá operátorů $\bigcup$ (sjednocení),
-$\bigcap$ (průnik), $\setminus$ (množinový rozdíl), $\times$ (kartézský
-součin), selekce značená R($\varphi $) = \{ u | u $\in$ R a  $\varphi(u)$\} a
-projekce značená R[C] = { u[C] | u $\in$ R} a operace přirozené spojení T(C) =
-R * S =\{u | u[A] $\in$ R a u[B] $\in$ S\}.
-\cite{DBS_02} dále definuje relačně úplný jazyk jako takový, který
-umožňuje realizovat relační algebru. Takovým jazykem je například jazyk SQL 
-(Structured Query Language). Relační databáze implementuje relaci tabulkou, její
-atributy Ai jednotlivými sloupci s typy Di. V dotazovacím jazyce SQL nahrazuje
-projekci R[a1, \ldots , an] operací SELECT a1, \ldots an FROM R, operaci
-selekce R[ a = 1] klauzulí where v dotaze select  SELECT * FROM R WHERE a = 1; 
 
 \section{Framework Migdb}
 	
@@ -442,28 +421,11 @@ transformaci aplikační struktury na databázovou a následné vygenerování S
 skriptu vytvářející strukturu aplikace. Tento nástroj není ve frameworku použit
 při nasazení, ale byl použit při testování frameworku - viz
 kapitola \ref{chapt:testování}. Framework Migdb pracuje oproti původní
-sekvenční představě viz \ref{framework:jezek_def} iteračně. V první iteraci
-je první aplikační operace aplikována na aplikační model, transformována do
+sekvenční představě iteračně viz obr. \ref{framework:jezek_def}. V první
+iteraci je první aplikační operace aplikována na aplikační model, transformována do
 databáze, kde je její obraz (sekvence databázových operací) aplikován na
 databázový model. Po provedení první iterace prochází tímto cyklem druhá
 operace, potom třetí \ldots
-
-V průběhu vývoje existoval koncept ComposedOperation a AtomicOperation, kdy
-každá operace byla buď Composed nebo Atomic, každá Composed operace byla na
-aplikační vrstvě nejdříve dekomponována na set atomických, které se později
-vykonaly a mapovaly přes ORMo na databázové operace. Tento koncept jsme zavrhli,
-protože jsme nedokázali dekomponovat správně některé operace a obzvláště
-pořadí ORMo obrazu nám dělalo problémy. Nicméně v nynější chvíli by se tento
-koncept mohl navrátit po přidání konceptu mirrored operations, ale asi by bylo
-nutné předefinovat či přidat některé aplikační operace.
-
-Ačkoliv Evoluce na databázové úrovni nemá vliv na tvar vygenerovaných SQL
-skriptů, ale po konzultaci s CP jsme usoudili i po zkušenostech z praxe s
-databází Postgresql, že evoluce databázového modelu odhalující chyby je
-užitečným uspořením času vývojáře, protože aplikace některých SQL skriptů může
-trvat(a typicky trvá) delší čas než průběh evoluce RDB modelu a dobrým
-nahrazením přímé exekuce SQL skriptů, proto byl tento modul ve frameworku
-zachován.
 
 \section{Moduly frameworku}
 Framework byl od začátku vývoje používán v rámci Eclipse IDE
@@ -484,7 +446,7 @@ sekci \ref{app_ops}.
 Nad databázovou vrstvou je definován modul Databázové evoluce, který pro
 každou databázovou operaci definuje, jaký bude mít tato operace vliv na databázový
 model a jaké podmínky musí daný model splňovat, aby se tato operace mohla
-úspěšně provést. Více v sekci \ref{db_ops}. \\
+úspěšně provést. Více v sekci \ref{db_ops}.\\
 
 Spojnici mezi aplikačním a databázovým modulem tvoří dva moduly - modul ORM a
 modul ORMo.
@@ -517,125 +479,17 @@ napsány v jazyce QVT Operational (QVTo) \cite{QVTo}.
 Za účelem ověření správné funkcionality byl vytvořen projekt Migdb.testing.run,
 který je zmíněn v kapitole \ref{chapt:testování}.
 
-\section{QVTo}
-QVTo je imperativní jazyk, který je součástí standardu QVT definovaným
-konsorciem Object Management Group (OMG) viz. \cite{OMG}. Součástí QVT je
-jazyk OCL (Object Constraint Language). Pomocí tohoto jazyka je možné definovat
-model to model transformaci.
-Základními konstrukty jazyka jsou mapping, helper a query. Mapping je konstrukt
-měníci pomocí nějakých pravidel vstupní element na výstupní. Query je
-dotazovací konstrukt, který získá potřebnou výstupní informaci z daného
-elementu. Helper je konstrukt, který má může narozdíl od query měnit své parametry.
+\section{Metamodely}
+Frameworku MigDb je postaven na konceptu MDA \cite{MDA} a pro popsání
+jednotlivých vrstev software zavádí pojem metamodel. Metamodel definuje
+strukturu popsaných modelů stejně jako model definuje
+strukturu dat odpovídajících tomuto modelu.
 
-\begin{verbatim}
-import orm;
-import queries_app;
-import queries_rdb;
-import validator_app;
-	
-modeltype APP uses "http://www.collectionspro.eu/jam/mm/app";
-modeltype RDB uses "http://www.collectionspro.eu/jam/mm/rdb";
-modeltype ERR uses "http://www.collectionspro.eu/jam/mm/errors";
+Ve frameworku Migdb jsou popsány dva metamodely - aplikační metamodel a
+databázový metamodel. Aplikační metamodel definuje elementy tvořící strukturu
+aplikace, množinu aplikačních operací a diff entity použité při rozpoznávání
+operací.
 
-transformation orm_run(in inStr : APP, in inOps : APP, out rdbOutOps : RDB, out errorModel : ERR);
-
-main(){	
-    var rdbOps : RDB::Operations := rdbOutOps.rootObjects()![RDB::Operations];
-    rdbOps := _rdbOperations();
-    var errorLog : ErrorLog := errorModel.rootObjects()![ErrorLog];
-    errorLog := object ErrorLog{ 
-        errors:= OrderedSet{};
-    };
-	
-	var appOps :APP::Operations := inOps.rootObjects()![APP::Operations];
-	var appStr :APP::Structure := inStr.rootObjects()![APP::Structure];
-	
-    if(canProcessTest(appStr, appOps, errorLog))then{
-       appOps.operations->forEach(op){
-          op.toRdb(appStr, rdbOps);
-       };
-       consolidate(rdbOps);
-       setApplied(rdbOps);
-    }endif;
-    log("ending");
-}
-
-query canProcessTest(structure : APP::Structure, ops : APP::Operations, inout errorLog : ErrorLog) : Boolean{
-   if(inOps.rootObjects()![APP::Operations].operations->size() > 1 or 
-         inOps.rootObjects()![APP::Operations].operations->isEmpty())then{
-      log("Unsupported input operations count:" + 
-         inOps.rootObjects()![APP::Operations].operations->size().repr());
-      log("model invalid 1");
-      return false;
-   }endif;
-
-   if(not inStr.rootObjects()![APP::Structure].isModelValid(errorLog))then{
-      log("model invalid 2");
-      return false;
-   }endif;
-   return true;	
-}
-\end{verbatim}
-
-
-Na předchozí stránce je vidět ukázka kódu transformace. Na začátku filu
-importujeme knihovny pomocí klíčového slova import, následně deklarujeme typy
-modelů, které bude naše transformace používat. Pomocí klíčového slova transform
-deklarujeme, jaké typy parametrů požaduje naše transformace. Vstupním
-bodem transformace je metoda main. V ní můžeme pomocí klíčového slova var
-deklarovat proměnné, do kterých přiřazujeme data pomocí operátoru := , na ukázce
-máme také definované query canProcessTest, které pro vstupní strukturu zjistí,
-jestli jsou vstupní data validní či ne, případně vypíše původ chyby.
-
-\section{Metamodel struktury aplikace}
-
-Metamodel struktury aplikace zachycuje vztahy mezi jednotlivými objekty
-tvořícími aplikaci. Tento model byl vytvořen již v raných fázích projektu Migdb a
-byl často upravován, většinou zjednodušován. V raných fázích projektu
-\ref{fig:app_meta} viz \cite{Lukes} byl metamodel struktury aplikace
-ekvivalentní metamodelu aplikačnímu. Postupem času byl aplikační metamodel obohacen o
-strukturu operací zobrazenou na obr. \ref{fig:jezek:app_meta} a seznam Diff
-elementů viz. seznam \ref{fig:diff_meta}.
-Ačkoliv tušíme, že tento způsob uchování metamodelů v jednom souboru ideální,
-vybrali jsme si ho kvůli snadnější údržbě.
-
-\begin{figure}[Ht]
-\begin{center}
-\includegraphics[width=15cm]{figures/app_meta_BP_jezek}
-\caption{Aplikační metamodel v průběhu vývoje obrázek převzat z \cite{Jezek}}
-\label{fig:jezek:app_meta}
-\end{center}
-\end{figure}
-
-
-
-Na obrázku \ref{fig:app_roots} jsou znázorněny kořenové elementy
-nynějšího aplikačního modelu - každý aplikační model musí obsahovat jeden
-container - potomka třídy ModelRoot. Na obrázku \ref{fig:app_meta} jsou
-zobrazeny elementy patřící do Structury aplikačního modelu. Při vývoji byla
-přejmonována třída Class, kterou je možno vidět na \ref{fig:lukes:app_meta} z
-původního metamodelu na StandardClass.
-Oproti aplikačnímu metamodelu \cite{Jezek} byly odstraněny entity EmbeddedClass 
-a její předek GeneralClass, dále byla zjednodušena třída Property, u níž ubyly
-atributy defaultValue, sequenceName a atribut isId. Atribut isId byl nahrazen
-přímou referencí na idProperty ve třídě StandardClass který byl nahrazen 
-referencí.
-
-\begin{figure}[h!]
-\begin{center}
-\includegraphics[width=15cm]{figures/app_roots}
-\caption{Rootové elementy aplikačního modelu}
-\label{fig:app_roots}
-\end{center}
-\end{figure}
-
-\begin{figure}[h!]
-\begin{center}
-\includegraphics[width=15cm]{figures/app_meta}
-\caption{Struktura aplikačního metamodelu}
-\label{fig:app_meta}
-\end{center}
-\end{figure}
 
 \begin{figure}[h!]
 \begin{center}
@@ -645,21 +499,116 @@ referencí.
 \end{center}
 \end{figure}
 
+\begin{figure}[h!]
+\begin{center}
+\includegraphics[width=15cm]{figures/app_meta_BP_jezek}
+\caption{Aplikační metamodel v průběhu vývoje obrázek převzat z \cite{Jezek}}
+\label{fig:jezek:app_meta}
+\end{center}
+\end{figure}
+
+\section{Aplikační metamodel}
+Aplikační metamodel byl vytvořen již v ranných fázích projektu Migdb, kdy
+obsahoval jen elementy tvořící strukturu aplikace a její vztah k
+aplikačním operacím. Evoluce byla v tehdejší době reprezentována
+modelově jako sekvence generací. Každá operace měla přiřazenou jednu vstupní
+generaci a jednu výstupní.
+
+Aplikační metamodel z ranné fáze vývoje je zobrazené na obr.
+\ref{fig:lukes:app_meta} viz \cite{Lukes}.
+
+
+Postupem času byl aplikační model měněn viz. \ref{fig:jezek:app_meta}
+\cite{Jezek} a dočasně byly přidány entity podporující EmbeddedClass, které v
+nynější době v modelu již znovu nejsou.\\
+
+V nynější chvíli došlo k oddělení struktury aplikace od seznamu
+aplikačních operací a přibyl kořenový element Diff. Na obrázku
+\ref{fig:app_roots} jsou znázorněny kořenové elementy nynějšího aplikačního
+modelu - každý aplikační model musí obsahovat jeden container - potomka třídy ModelRoot.
+
+\begin{figure}[h!]
+\begin{center}
+\includegraphics[width=15cm]{figures/app_roots}
+\caption{Rootové elementy aplikačního modelu}
+\label{fig:app_roots}
+\end{center}
+\end{figure}
+
+
+\section{Metamodel struktury aplikace}
+
+Metamodel struktury aplikace zachycuje vztahy mezi jednotlivými objekty
+tvořícími aplikaci. Na obrázku \ref{fig:app_meta} jsou
+zobrazeny elementy patřící do Structury aplikačního modelu.
+
+Structura aplikačního modelu obsahuje množinu elementu \textit{ModelEntity}
+obsahuje svůj identifikátor name. Primitivní typy programovacího jazyka jsou
+reprezentované elementem \textit{PrimitiveClass} potomkem ModelEntity. 
+PrimitiveClass obsahuje jen \textit{primitiveType}. Druhým potomkem ModelEntity
+je \textit{StandardClass} obsahuje specifikaci svého \textit{inheritancetType}, příznak
+\textit{isAbstract}, referenci na seznam \textit{Property}, referenci na
+svou \textit{idProperty} a referenci na \textit{parent} StandardClass.
+Podporujemem pouze jednoduchou dědičnost, proto může mít každá třída maximálně 
+jednu rodičovskou třídu. Element \textit{Property} obsahuje svůj \textit{name},
+\textit{lowerBound} a \textit{upperBound} specifikující svou aritu, pro kolekce
+důležité atributy \textit{isUnique} a \textit{isUnique}. Potomek
+\textit{PrimitiveProperty} rozšiřuje svou rodičovskou třídu jen o svůj
+\textit{type}.
+\textit{AssociationProperty}, druhý potomek Property, obsahuje také
+\textit{type} [StandardClass], referenci na \textit{oppositteProperty} pro
+bidirectional vazby a atribut isOwning, který je přidán z implementačních
+důvodů. \\
+
+\begin{figure}[h!]
+\begin{center}
+\includegraphics[width=15cm]{figures/app_meta}
+\caption{Struktura aplikačního metamodelu}
+\label{fig:app_meta}
+\end{center}
+\end{figure}
+
+
+Oproti aplikačnímu metamodelu \cite{Jezek} byly odstraněny entity EmbeddedClass 
+a její předek GeneralClass, dále byla zjednodušena třída Property, u níž ubyly
+atributy defaultValue, sequenceName a atribut isId. Atribut isId byl nahrazen
+přímou referencí na idProperty ve třídě StandardClass který byl nahrazen 
+referencí.
+
 Koncept generace modelů byl zachován, ale tyto generace nejsou obsaženy z
 implementačních a testovacích důvodů v jednom souboru, ale ve více souborech.
 
 
 \section{Databázový metamodel struktury}
 
-Stejně jako metamodel struktury aplikace byl i metamodel databázové struktury
-původně ekvivalentní databázovému metamodelu a následně byly do metamodelu
-vloženy databázové operace. Metamodel databázové struktury se ukázal jako
-celkem dobře definovaný a proto nedocházelo k zásadním změnám.
+ Databázový metamodel od počátku vývoje specifikuje elementy nutné k specifikaci
+ struktury databáze a databázové operace. Základním databázovým
+ konstruktem je \textit{Schema}, které je jednoznačně identifikované svým
+ \textit{name}, obsahuje sezname tabulek a seznam Sequencí. Sekvence je
+ databázový element potřebný k postupnému generování čísel a je
+ identifikovaná pomocí svého \textit{name} a musí obsahovat své startValue.
+ Každá \textit{Table} má své \textit{name}, obsahuje seznam Column a seznam
+ TableConstraint. Každý \textit{Column} má své \textit{jméno}, atribut
+ \textit{nillable}, který povoluje či zakazuje NULL hodnoty v tomto sloupci,
+ \textit{type} [PrimitiveType] a odkaz na vlastnickou tabulu
+ \textit{ownintTable}.
+
+Potomci TableConstraint jsou jednotlivé IO a mají společné \textit{name}
+zpřístupňující Constraint.  TableConstraint \textit{Unique} obsahuje seznan
+unikátních sloupců a odkaz na vlastnickou tabulu \textit{ownintTable}. Omezili
+jsme si \textit{PrimaryKey} tak, aby ho bylo možné definovat jen nad jedním
+sloupcem \textit{constrainedColumn}. \textit{ForeignKey} je poslední
+TableConstraint a podobně jako PrimaryKey má omezen počet constrainedColumns na
+1 a obsahuje také odkaz na referencovanou tabulku.
+
+ Metamodel databázové struktury se ukázal jako celkem dobře definovaný a proto
+ nedocházelo k zásadním změnám.
 
  Na obr. \ref{fig:rdb_str} vidíme aktuální matamodel databázové struktury, na
  obr. \ref{fig:rdb_str_lukes} vidíme model na počátku vývoje převzatý z
  \cite{Lukes} a na obrázku \ref{fig:rdb_str_tarant} model v pozdější fázi vývoje
  převzatý z \cite{Tarant_bp}.
+
 
 \begin{figure}[Ht]
 \begin{center}
@@ -701,12 +650,36 @@ celkem dobře definovaný a proto nedocházelo k zásadním změnám.
  modelech. 
 
 
+\section{Relační model}
+Relační model je dle \cite{DBS_02} formální abstrakce
+využívající relaci jakožto jediný konstrukt. Relace je uspořádaná n-tice
+souvislých dat R(A1:D1, A2:D2, \ldots An:Dn), přičemž "R" je název relace, Ai
+jsou názvy atributů a Di jsou k nim přidružené typy. K zajištění konzistence
+jsou v SŘDB používána Integritní omezení (IO). IO jsou dle \cite{DBS2_02} tvrzení
+vymezující korektnost DB, stupeň souladu datového obrazu s předlohou (jaká data
+v databází mohou být a jaká již ne).
+
+
+Relační algebra definuje pomocí relací a integritních omezení strukturu
+databáze. Dotazovacím aparátem pro data definovaná pomocí relační algebry je
+relační algebra. Relační algebra využívá operátorů $\bigcup$ (sjednocení),
+$\bigcap$ (průnik), $\setminus$ (množinový rozdíl), $\times$ (kartézský
+součin), selekce značená R($\varphi $) = \{ u | u $\in$ R a  $\varphi(u)$\} a
+projekce značená R[C] = { u[C] | u $\in$ R} a operace přirozené spojení T(C) =
+R * S =\{u | u[A] $\in$ R a u[B] $\in$ S\}.
+\cite{DBS_02} dále definuje relačně úplný jazyk jako takový, který
+umožňuje realizovat relační algebru. Takovým jazykem je například jazyk SQL 
+(Structured Query Language). Relační databáze implementuje relaci tabulkou, její
+atributy Ai jednotlivými sloupci s typy Di. V dotazovacím jazyce SQL nahrazuje
+projekci R[a1, \ldots , an] operací SELECT a1, \ldots an FROM R, operaci
+selekce R[ a = 1] klauzulí where v dotaze select  SELECT * FROM R WHERE a = 1; 
+
 \section{Operace nad aplikačním modelem} \label{app_ops}
 
 \subsection{Historický vývoj}
 
 V průběhu modelování operací nad aplikačním modelem jsme se snažili, aby tyto
-operace byly jednoznačné(strojově zpracovatelné) v rámci daného kontextu, dále
+operace byly jednoznačné (strojově zpracovatelné) v rámci daného kontextu, dále
 vzhledem k nutnosti textového zápisu uživatelem o minimalističnost zápisu. Tyto
 dva koncepty jdou obecně proti sobě, proto jsme došli k jistému jejich
 kompromisu uživatelské jednoduchosti zápisu a jednoznačnosti.
@@ -903,6 +876,16 @@ zjednodušení kódu.
   \end{itemize}
 \end{list}
 
+V průběhu vývoje existoval koncept ComposedOperation a AtomicOperation, kdy
+každá operace byla buď Composed nebo Atomic, každá Composed operace byla na
+aplikační vrstvě nejdříve dekomponována na set atomických, které se později
+vykonaly a mapovaly přes ORMo na databázové operace. Tento koncept jsme zavrhli,
+protože jsme nedokázali dekomponovat správně některé operace a obzvláště
+pořadí ORMo obrazů nám dělalo problémy. Nicméně v nynější chvíli by se tento
+koncept mohl navrátit po přidání konceptu mirrored operations, ale asi by bylo
+nutné předefinovat či přidat některé aplikační operace.
+
+
 \subsection {Rozdělení aplikačních operací} 
 
 Operace nad aplikačním modelem je možné dělit podle dvou kritérií - 1. nad jakým
@@ -942,7 +925,7 @@ jako je invertovatelnost a rozložitelnost operací. Je nutné říci, že opera
 zmiňované v literatuře pracují jen se strukturou dat, nikoliv s daty samotnými
 a jsou kontextově nezávislé - tyto operace jsou tvořeny téměř výlučně
 konstruktivními a  destruktivními operacemi. Cincetti rozděluje zmiňuje, že v
-minulosti byly operace aplikovatelné na jeden konkrétní model(intensional) a
+minulosti byly operace aplikovatelné na jeden konkrétní model (intensional) a
 modernější differenční modely jsou tzv. extensional - je možné je aplikovat na
 jakýkoliv model, například na paralelní vývojové větve.
 
@@ -991,6 +974,14 @@ RemoveParent, čímž bychom se nicméně odklonili od cílu minimalizovat opera
 \end{figure}
 
 \section{Databázové operace} \label{db_ops}
+
+Evoluce na databázové vrstvě nemá vliv na vygenerování SQL kódu a je jen
+jakousi simulací změn, které se provedou na databázové vrstvě, tudíž se může
+jevit nadbytečnou. Tato simulace může odhalit chyby ve vygenerovaném
+SQL skriptu podstatně rychleji oproti generování databáze a aplikaci migračních
+skriptů, které jak z praxe víme často probíhají v řádu desítek minut až
+několika hodin.
+
 Databázové operace reprezentují změny proveditelné na úrovni databáze. Mělo by z
 nich být možné generovat SQL kód jednoduchou Model-to-text transformací
 zajišťovanou modulem Generator.xtend.
@@ -1148,6 +1139,77 @@ Seznam operací s jejich validačními podmínkami:
   \end{itemize}
 
 \end{list}
+
+\section{QVTo}
+QVTo je imperativní jazyk, který je součástí standardu QVT definovaným
+konsorciem Object Management Group (OMG) viz. \cite{OMG}. Součástí QVT je
+jazyk OCL (Object Constraint Language). Pomocí tohoto jazyka je možné definovat
+model to model transformaci.
+
+Základními konstrukty jazyka jsou mapping, helper a query. Mapping je konstrukt
+měníci pomocí nějakých pravidel vstupní element na výstupní. Query je
+dotazovací konstrukt, který získá potřebnou výstupní informaci z daného
+elementu. Helper je konstrukt, který má může narozdíl od query měnit své parametry.
+
+\begin{verbatim}
+import orm;
+import queries_app;
+import queries_rdb;
+import validator_app;
+	
+modeltype APP uses "http://www.collectionspro.eu/jam/mm/app";
+modeltype RDB uses "http://www.collectionspro.eu/jam/mm/rdb";
+modeltype ERR uses "http://www.collectionspro.eu/jam/mm/errors";
+
+transformation orm_run(in inStr : APP, in inOps : APP, out rdbOutOps : RDB, out errorModel : ERR);
+
+main(){	
+    var rdbOps : RDB::Operations := rdbOutOps.rootObjects()![RDB::Operations];
+    rdbOps := _rdbOperations();
+    var errorLog : ErrorLog := errorModel.rootObjects()![ErrorLog];
+    errorLog := object ErrorLog{ 
+        errors:= OrderedSet{};
+    };
+	
+	var appOps :APP::Operations := inOps.rootObjects()![APP::Operations];
+	var appStr :APP::Structure := inStr.rootObjects()![APP::Structure];
+	
+    if(canProcessTest(appStr, appOps, errorLog))then{
+       appOps.operations->forEach(op){
+          op.toRdb(appStr, rdbOps);
+       };
+       consolidate(rdbOps);
+       setApplied(rdbOps);
+    }endif;
+    log("ending");
+}
+
+query canProcessTest(structure : APP::Structure, ops : APP::Operations, inout errorLog : ErrorLog) : Boolean{
+   if(inOps.rootObjects()![APP::Operations].operations->size() > 1 or 
+         inOps.rootObjects()![APP::Operations].operations->isEmpty())then{
+      log("Unsupported input operations count:" + 
+         inOps.rootObjects()![APP::Operations].operations->size().repr());
+      log("model invalid 1");
+      return false;
+   }endif;
+
+   if(not inStr.rootObjects()![APP::Structure].isModelValid(errorLog))then{
+      log("model invalid 2");
+      return false;
+   }endif;
+   return true;	
+}
+\end{verbatim}
+
+
+Na předchozí stránce je vidět ukázka kódu transformace. Na začátku filu
+importujeme knihovny pomocí klíčového slova import, následně deklarujeme typy
+modelů, které bude naše transformace používat. Pomocí klíčového slova transform
+deklarujeme, jaké typy parametrů požaduje naše transformace. Vstupním
+bodem transformace je metoda main. V ní můžeme pomocí klíčového slova var
+deklarovat proměnné, do kterých přiřazujeme data pomocí operátoru := , na ukázce
+máme také definované query canProcessTest, které pro vstupní strukturu zjistí,
+jestli jsou vstupní data validní či ne, případně vypíše původ chyby.
 
 \subsection{Ukázka kódu}
 V následujícím kódu je ukázáno validační query pro validaci operace AddTable
@@ -1502,40 +1564,6 @@ Zvolili jsme si cestu definice vlastního metamodelu.
 \end{center}
 \end{figure}
 
-\subsection{Diff elementy}
-
- Kvůli nutnosti rozpoznávat operace vznikly v aplikačním modelu nové
- elementy. Kořenovým elementem diff modelu je Diff element. Tento element
- obsahuje kolekce elementů classpairs typů ClassPair, propertyPairs
- typu PropertyPair, a dále pak addedClasses a removedClasses typu DiffClass a
- addedProperties a removedProperties typu DiffProperty. Element ClassPair
- shlukuje zpárované zdrojové (source) a obrazové (reflection) třídy, dále pak
- referenci owningDiff na Diff element, v kterém jsou obsaženy a která je
- důležitá pro implementaci algoritmu a v neposlední řadě underlyingPairs -
- shodné páry Properties typu EqualPropertyPair, které jsou detekované danou
- operací. Podobně jako operace jsou i páry rozděleny do několika skupin.
- 
- Konstruktivní a destruktivní operace nemají svůj obraz v diff metamodelu jako
- ClassPair ani PropertyPair, protože tyto operace nemapují element ze vstupního
- modelu na element z výstupního modelu. Konstruktivní operace by jinak mapovaly
- prázdný vstup na element a destruktivní obráceně element na prázdný výstup.
- 
- Oproti jednodušším konstruktivním a destruktivním operacím jsou operace
- expanzívní, konstruktivní a modifikační v Diff modelu zobrazeny jako
- ExpansiveClassPair, ReductiveClassPair a ModifyingClassPair, mapují element
- vstupního modelu na element cílového modelu. Aby bylo možné rozpoznat
- specifický pár závislý na jiném páru, byla přidána třída ReplacingClassPair -
- nahrazující pár, který se používá jako pivot pro hledání expansivních, 
- reduktivních a modifikačních párů. Od elementu ReplacingClassPair dědí elementy
- EqualClassPair - třída, která si uchovala jméno z původního modelu a element
- ReplacingClassPair - reprezentující třídu, která si neuchovala jméno, ale má
- změněný název. Podmínky získávání konkrétních typů párů a jejich pořadí
-specifikuje konkrétní rozpoznávací algoritmus.
- 
- Projevem subtraktivních a aditivních operací jsou elementy DiffClass a
- DiffProperty, které zaobalují třídy a property tak, aby bylo možné referencovat
- na jiný objekt než element Structure . 
-
 \begin{figure}[Ht]
 \begin{center}
 \includegraphics[width=15cm]{figures/framework_structura_tarant_modified}
@@ -1693,7 +1721,7 @@ nutné vybrat si správný algoritmus v závislosti na řešeném problému.
 \end{figure}
  
  
- \section{Vytvořený algoritmus rozpoznávání operací}
+ \chapter{Vytvořený algoritmus rozpoznávání operací}
 
 \section{Experimentální algoritmus}
 
@@ -1702,25 +1730,25 @@ minimalizovat vzdálenost současného modelu od modelu cílového pomocí
 rozpoznáná operací a aplikace operací. Výhodou tohoto přístupu je nalezení více alternativních 
 cest, nevýhodou je potom velikost stavového prostoru. Algoritmus prochází těmito fázemi:
 
-\begin{itemize}
+\begin{enumerate}
   	\item Spočítání vzdálenosti vstupního modelu od modelu cílového
   	\item Nastavení nalezeného maxima zlepšujícího kroku na nula
   	\item Opakování následujícího cyklu dokud je rozpoznána jiná operace než je
   	Dummy operation a vzdálenost je větší než nula
-  	\begin{itemize}
+  	\begin{enumerate}
   	  \item nastavení zlepšující operace na Dummy Operation
   	  \item  Pro každou operaci 
-  	  	\begin{itemize} 
+  	  	\begin{enumerate} 
     		\item nalezení nalezení nejvhodnějších parametrů operace
     		\item spočítání zlepšujícího kroku
     		\item aktualizace maxima zlepšujího kroku, podle
     		nalezených parametrů, aktualizace zlepšující operace
-    	\end{itemize}
+    	\end{enumerate}
     	\item aktualizace vzdálenosti
     	\item aplikace nejvýhodnější operace
     	\item nastavení maxima zlepšujícího kroku na nula
-    \end{itemize}
-\end{itemize}
+    \end{enumerate}
+\end{enumerate}
 
 Algoritmus předpokládá, že operace přibližující aktuální stav k cílovému by měly
 být rozpoznány (a aplikovány) co nejdříve. Například pro počáteční model
@@ -1762,14 +1790,18 @@ hledat parametry znovu a které operace se již nedají rozpoznat. Druhou nevýh
 je šířka prohledávaného stromu - algoritmus může nalézt víc operací, které
 přinližují model stejnou měrou modelu cílovému, ale jakmile jednu z nich náhodně
 vybere, zapomene veškeré mezivýsledky a v dalším kroku může rozpoznat všechny
-operace z minulé iterace vyjma operace rozpoznané. 
+operace z minulé iterace vyjma operace rozpoznané. V případě paralelizace by
+prohledávaný prostor mohl exponenciálně růst. 
 
 Nalezení vhodných vah jednotlivých elementů modelu a jejich atributů se dá
 získat jedině metodou pokus-omyl a je nutné váhy znovu přehodnotit po přidání
-nových operací.
+nových operací. 
 
+Experimentální algoritmus měl definován krok pro operace AddPrimitiveClass,
+AddStandardClass, RenameEntity, RemoveEntity, RenameProperty. Problematickou
+operací pro nastavování vah se stala operace ExtractClass.
  
- \subsection{Návrh ze studia článků}
+ \section{Návrh ze studia článků}
  
  Vzhledem k obecné použitelnosti algoritmů pro graph matching nebyly tyto
  algoritmy shledány za vhodné k použití pro problém hledání sady
@@ -1789,22 +1821,99 @@ nových operací.
  zmiňovaného pod Custom Language skupinou \ref{UML_Diff} - ze všech praktických důvodů
  považujeme třídy se stejným jménem jako shodné.
 
- \subsection{Implementace}
- Vzniklo několik implementací párovacích algoritmů. První a nejjednodušší
- používá párování tříd podle jména, následné rozdíly řeší rozpoznáním
- konstruktivních a destruktivnívh, případně některých operací modifikačních, ať
+ Vznikly dvě implementace párovacích algoritmů. 
+ 
+ \section{První implementace}
+ První jednodušší používá základu z UMLDiffu a očekává, že dvě třídy se stejným
+ jménem jsou shodné, páruje tedy třídy podle jména. Následné rozdíly řeší rozpoznáním
+ konstruktivních a destruktivních, případně některých operací modifikačních, ať
  už tyto operace pracovali s třídami nebo s property.
  
+ První algoritmus pracuje podle tohoto pseudokódu:
+ \begin{enumerate}
+   \item Nastaví do seznamu SClses Standardní třídy z vstupního modelu  
+   \item Nastaví do seznamu TClses Standardní třídy z cílového modelu  
+   \item Nastaví do seznamu SProps Properties z vstupního modelu
+   \item Nastaví do seznamu TProps Properties z cílového modelu
+   \item seznam OPS :=\{\}
+   \item Pro každou třídu S z vstupního modelu, která má stejné jméno jako třída
+   T obsažená v modelu výstupním
+   \begin{enumerate}
+     \item Pro každou property $P_S$ z S, která má stejné jméno jako $P_T$
+     Property z T
+     \begin{enumerate}
+       \item odstraň $P_S$ z SProps
+       \item odstraň $P_T$ z TProps
+     \end{enumerate}
+     \item odstraň $S$ z SClses
+     \item odstraň $T$ z TClses  
+   \end{enumerate}
+   \item Výsledný seznam SClasses transformuj na operace RemoveCls a přidej do
+   seznamu Ops
+   \item Výsledný seznam TClasses transformuj na operace AddCls a přidej do
+   seznamu Ops
+   \item Výsledný seznam SProps transformuj na operace RemoveProperty a přidej do
+   seznamu Ops
+   \item Výsledný seznam TProps transformuj na operace AddProperty a přidej do
+   seznamu Ops
+   \item Pro případně změněné atributy (isAbstract, parent, isUnique, isOrdered
+  \ldots) přidej do seznamu Ops dané modifikační operace
+ \end{enumerate}
+ 
+ Tento algoritmus má schopnost rozeznat jen konstruktivní a destruktivní
+ operace. Tudíž zachovvává data, jejichž identifikátor se nemění.
+ Ostatní data naopak nekompromistně maže. Tento algoritmus není schopný
+ rozpoznat operace RenameClass, RenameProperty, které jsou dle \cite{Luksch}
+ nejčastěji používanými operacemi. Výhodou tohoto algoritmu je, že nepotřebuje
+ definovat jiný diff nežli delta notaci.
+ 
+ \section{Složitější implementace}
  Složitější implementace algoritmu páruje stejně jako jednodušší v
  první fázi shodné elementy - modely se mění, ale některé třídy jsou zachovány.
  Shodné elementy potom tvoří jakési pilíře pro operace konstruktivní a
  destruktivní, které se vážou na rozpoznané páry. Závislost rozpoznání
 
-Algoritmus rozpoznávání operací byl napsán se snahou o zachovávání co největšího
-množství dat. Ačkoliv triviální algoritmus pro přechod z modelu A k modelu B by
-mohl pomocí subtraktivních operací zničit model A a následně složit model B
-pomocí aditivních operací je zřejmé, že tento algoritmus neuchová žádná data.
-Proto byly zavedeny Konstruktivní a destruktivní operace. 
+ Algoritmus rozpoznávání operací byl napsán se snahou o zachovávání co
+ největšího množství dat. Ačkoliv triviální algoritmus pro přechod z modelu A k
+ modelu B by mohl pomocí subtraktivních operací zničit model A a následně složit
+ model B pomocí aditivních operací je zřejmé, že tento algoritmus neuchová žádná
+ data.
+ Proto byly zavedeny Konstruktivní a destruktivní operace. 
+
+\subsection{Diff elementy}
+
+ Kvůli nutnosti rozpoznávat operace vznikly v aplikačním metamodelu nové
+ elementy. Kořenovým elementem diff modelu je Diff element. Tento element
+ obsahuje kolekce elementů classpairs typů ClassPair, propertyPairs
+ typu PropertyPair, a dále pak addedClasses a removedClasses typu DiffClass a
+ addedProperties a removedProperties typu DiffProperty. Element ClassPair
+ shlukuje zpárované zdrojové (source) a obrazové (reflection) třídy, dále pak
+ referenci owningDiff na Diff element, v kterém jsou obsaženy a která je
+ důležitá pro implementaci algoritmu a v neposlední řadě underlyingPairs -
+ shodné páry Properties typu EqualPropertyPair, které jsou detekované danou
+ operací. Podobně jako operace jsou i páry rozděleny do několika skupin.
+ 
+ Konstruktivní a destruktivní operace nemají svůj obraz v diff metamodelu jako
+ ClassPair ani PropertyPair, protože tyto operace nemapují element ze vstupního
+ modelu na element z výstupního modelu. Konstruktivní operace by jinak mapovaly
+ prázdný vstup na element a destruktivní obráceně element na prázdný výstup.
+ 
+ Oproti jednodušším konstruktivním a destruktivním operacím jsou operace
+ expanzívní, konstruktivní a modifikační v Diff modelu zobrazeny jako
+ ExpansiveClassPair, ReductiveClassPair a ModifyingClassPair, mapují element
+ vstupního modelu na element cílového modelu. Aby bylo možné rozpoznat
+ specifický pár závislý na jiném páru, byla přidána třída ReplacingClassPair -
+ nahrazující pár, který se používá jako pivot pro hledání expansivních, 
+ reduktivních a modifikačních párů. Od elementu ReplacingClassPair dědí elementy
+ EqualClassPair - třída, která si uchovala jméno z původního modelu a element
+ ReplacingClassPair - reprezentující třídu, která si neuchovala jméno, ale má
+ změněný název. Podmínky získávání konkrétních typů párů a jejich pořadí
+specifikuje konkrétní rozpoznávací algoritmus.
+ 
+ Projevem subtraktivních a aditivních operací jsou elementy DiffClass a
+ DiffProperty, které zaobalují třídy a property tak, aby bylo možné referencovat
+ na jiný objekt než element Structure . 
+
 
 % *****************************************************************************
 
@@ -1843,7 +1952,7 @@ vstupní model xmi soubor. Po spuštění xmi testů se v projektu
 migdb.testing.run vygeneruje složka output-tests, která obsahuje výstupní data 
 jednotlivých testů. Výstupní data mohou obsahovat výstupní xmi soubory
 porovnávané s očekávaným xmi souborem nebo SQL souborem, který je možné
-aplikovat na databázi Postgresql.
+aplikovat na databázi PostgreSQL.
 
 Speciálním testem je test\_code\_generator.mwe2, tento test vygeneruje pro
 zadaný vstupní aplikační model a sadu aplikačních operací výstupní rdb model, sadu
@@ -2110,16 +2219,16 @@ které byly opravdovým výstupem, nikoliv meziproduktem. Tato transformace
 vzhledem ke svojí povaze samozřejmě zpomaluje exekuci Migdb Workflow.
 
 Poslední otázkou, na kterou jsem neměl moc času hledat odpověď je portabilita
-projektu Migdb funkčního nad relační databází Postgresql na jiné
+projektu Migdb funkčního nad relační databází PostgreSQL na jiné
 relační databáze. Předpokládám, že by nebylo složité změnit generátor kódu
 pro jiné relační databáze - algoritmus vygenerování SQL kódu je poměrně
-přímočarý a pro Postgresql nebyl dlouhý. Struktura jiných relačních databází
+přímočarý a pro PostgreSQL nebyl dlouhý. Struktura jiných relačních databází
 není vždy stejná, ale většinově se shoduje, takže ani modifikace databázového
 metamodelu by neměla být obtížná. Moje minimální zkoumání tohoto tématu
-odhalilo, že námi používaná databáze Postgresql má maximální délku 64 znaků, 
+odhalilo, že námi používaná databáze PostgreSQL má maximální délku 64 znaků, 
 databáze Oracle má maximální délku identifikátoru 30 znaků a databáze Microsoft 
 SQL server má maximum stanoveno na 128 znaků. Z tohoto vyplývá, že převod Migdb 
-na databázi Microsoft SQL server by nebyl tolik problematický z tohoto pohledu.
+na databázi Microsoft SQL server by nebyl  z tohoto pohledu problematický.
 30 znaků pro Oracle nevypadá jako problematické - vývojáři mají málokdy třídy
 ukládané do databáze s jmény delšími než 30 znaků, problém nastává při zahrnutí
 service pro získávání názvů databázových entit k entitám z aplikačního modelu.

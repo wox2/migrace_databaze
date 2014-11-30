@@ -1,4 +1,4 @@
-\begin{thebibliography}{OMG14b}
+\begin{thebibliography}{OMG14d}
 
 \bibitem[Ben02]{bengoetxeaPHD02}
 E.~Bengoetxea.
@@ -61,7 +61,12 @@ OMG.
 \newblock Xmi.
 \newblock [online], Citováno 16.11.2014.
 
-\bibitem[OMG14c]{OMG}
+\bibitem[OMG14c]{MDA}
+OMG.
+\newblock Model driven architecture.
+\newblock [online], Odkazováno 16.11.2014.
+
+\bibitem[OMG14d]{OMG}
 OMG.
 \newblock Omg.
 \newblock [online], Odkazováno 16.11.2014.

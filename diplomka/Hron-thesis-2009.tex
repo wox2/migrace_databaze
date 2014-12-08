@@ -24,11 +24,12 @@
 \usepackage[pdftex]{graphicx}
 \usepackage{caption}
 \usepackage{subcaption}
+\usepackage{capt-of}
 
 %\usepackage[]{algorithm2e}
 \usepackage[]{algorithmicx}
 \usepackage{algpseudocode}
-\usepackage{algorithm}
+%\usepackage{algorithm}
 
 \renewcommand{\algorithmicrequire}{\textbf{Input:}}
 \renewcommand{\algorithmicensure}{\textbf{Output:}}
@@ -1752,27 +1753,97 @@ nutné vybrat si správný algoritmus v závislosti na řešeném problému.
 V ranné fázi byl napsán prototyp jiného rozpoznávacího algoritmu, který se snaží 
 minimalizovat vzdálenost současného modelu od modelu cílového pomocí
 rozpoznání operací a jejich následné aplikace. Výhodou tohoto přístupu
-je nalezení více alternativních cest, nevýhodou je potom velikost stavového
-prostoru zvětšující se s počtem rozpoznávaných operací. Mezi operace
+je možnost nalezení více alternativních cest, nevýhodou je potom velikost
+stavového prostoru zvětšující se s počtem rozpoznávaných operací. Mezi operace
 byla přidána takzvaná Dummy operation v případě, že nebyla rozpoznána
 žádná operace. Algoritmus popsaný v pseudokódu viz %\ref{algo} 
 \\
 
-\begin{algorithm}
-\caption{Euclid’s algorithm}\label{euclid}
+%\begin{algorithm}
+%\caption{Euclid’s algorithm}\label{euclid}
+
 \begin{algorithmic}[1]
-\Procedure{Euclid}{$a,b$}\Comment{The g.c.d. of a and b}
-\State $r\gets a\bmod b$
-\While{$r\not=0$}\Comment{We have the answer if r is 0}
-\State $a\gets b$
-\State $b\gets r$
-\State $r\gets a\bmod b$
-\EndWhile\label{euclidendwhile}
-\State \textbf{return} $b$\Comment{The gcd is b}
+\Require Zdrojový model S, cílový model T
+\Ensure Seznam operací $R_ops$, po jejichž aplikaci se model S tranformuje na
+     model T
+\Statex
+\Procedure{Algoritmus procházení stavů}{$S,T$}
+\State \textbf{Inicializace:}
+%\State Vzdálenost modelů $D\gets$ dist(S, T)
+\State $A \gets S$ \Comment {aktuální model}
+\State $R\gets  DUMMY\_OPERATION$\Comment{Rozpoznaná operace}
+\State $R_{ops} \gets \{\}$
+\Statex
+   \While{$R \neq NONE\_OPERATION$}\Comment{byla rozpoznána nějaká operace} 
+   \State $R\gets NONE\_OPERATION$
+   \State $K\gets 0$ \Comment{Zlepšující krok}
+      \ForAll{op from Ops} \Comment{Pro každou operací z app metamodelu}
+         \State $K_{op} \gets ZjistiZlepseni(op, A, T)$ \Comment{spočítá
+         zlepšení}
+      	\If{$K < K_{op}$}
+      	   \State $K\gets K_{op}$
+      	   \State $R \gets op$
+      	\EndIf
+      \EndFor
+      \If{$R \neq NONE\_OPERATION$}
+         \State $params \gets getParams(op, A, S)$
+         \State $R_{ops}\gets R_{ops} +R(params)$
+         \State apply(op, A)      
+      \EndIf
+   \EndWhile
 \EndProcedure
 \end{algorithmic}
-\end{algorithm}
+
+%\end{algorithm}
 \ \\
+Algoritmus potřebuje ke svému běhu konfiguraci vah atributů jednotlivých
+elementů modelu.
+\begin{itemize}
+   \item Váhy atributů třídy
+   \begin{description}
+      \item[classname] jméno třídy
+      \item[parent] reference na rodičovskou třídu 
+   \end{description}
+   \item Váhy atributů všech property
+   \begin{description}
+      \item[propertyName] jméno property
+      \item[type] reference na typ property
+      \item[isOrdered] boolean značící ordered kolekci
+      \item[isUnique] boolean značící unikátní kolekci
+      \item[LowerBound + UpperBound] horní a dolní mez hodnot property
+   \end{description}
+   \item Váhy atributů asociačních property
+   \begin{description}
+      \item[oppositteProperty] reference na opozitní property u bidirectional
+      vazby
+   \end{description}
+\end{itemize}
+
+\begin{algorithmic}[1]
+   \Require Zdrojový model S, cílový model T
+   \Ensure Celočíselná hodnota vyjadřující vzdálenost modelu S od modelu T
+   \Statex
+   \Procedure{getDistance}{S, T}
+   \State 
+   \EndProcedure
+\end{algorithmic}
+\ \\
+Příklad konfigurace:
+\begin{itemize}
+      \item classname = 1
+      \item parent = 1 
+      \item propertyName = 1
+      \item type = 1
+      \item isOrdered = 1
+      \item isUnique = 1
+      \item LowerBound + UpperBound = 1
+      \item oppositteProperty = 1
+\end{itemize}
+
+Na obrázcích vidíme \ref{fig:exp_contact} a cílový model
+zobrazený na obrázku
+\ref{fig:exp_contact_address}
+
 Algoritmus předpokládá, že operace přibližující aktuální stav k cílovému by
 měly být rozpoznány (a aplikovány) co nejdříve. Například pro počáteční model
 zobrazený na obrázku \ref{fig:exp_contact} a cílový model zobrazený na obrázku
@@ -2136,38 +2207,7 @@ helper AssociationProperty::ormMergeProperty(appStructure : APP::Structure,
 }
 \end{verbatim}
 
-%\begin{itemize}
-%\item Popis řešeného problému, vymezení cílů DP/BP a požadavků na
-% implementovaný systém.
-%\item Popis struktury DP/BP ve vztahu k vytyčeným cílům.
-%\item Rešeršní zpracování existujících implementací, pokud jsou známy.
-%\end{itemize}
-
 %*****************************************************************************
-%\chapter{UML diagramy}
-%\textbf{\large Tato příloha není povinná a zřejmě se neobjeví v každé práci.
-% Máte-li ale větší množství podobných diagramů popisujících systém, není nutné všechny umísťovat do hlavního textu, zvláště pokud by to snižovalo jeho čitelnost.}
-
-%*****************************************************************************
-%\chapter{Instalační a uživatelská příručka}
-%\textbf{\large Tato příloha velmi žádoucí zejména u softwarových
-% implementačních prací.}
-
-%*****************************************************************************
-\chapter{Obsah přiloženého CD}
-%\textbf{\large Tato příloha je povinná pro každou práci. Každá práce musí totiž
-% obsahovat přiložené CD. Viz dále.}
-
-%Může vypadat například takto. Váš seznam samozřejmě bude odpovídat typu vaší
-%práce. (viz \cite{infodp}):
-
-\begin{figure}[H]
-\begin{center}
-\includegraphics[width=14cm]{figures/seznamcd}
-\caption{Seznam přiloženého CD}
-\label{fig:seznamcd}
-\end{center}
-\end{figure}
 
 \chapter{Závěr}
 Po několikaletém teoretickém a praktickém studiu změn v aplikačním modelu a

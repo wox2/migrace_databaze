@@ -22,6 +22,17 @@
 % \usepackage[OT1]{fontenc} 
 \usepackage[utf8]{inputenc}
 \usepackage[pdftex]{graphicx}
+\usepackage{caption}
+\usepackage{subcaption}
+
+%\usepackage[]{algorithm2e}
+\usepackage[]{algorithmicx}
+\usepackage{algpseudocode}
+\usepackage{algorithm}
+
+\renewcommand{\algorithmicrequire}{\textbf{Input:}}
+\renewcommand{\algorithmicensure}{\textbf{Output:}}
+
 %=-=-=-=-=-=-=-=-=-=-=-=--=%
 % In case of problems with PDF fonts, one may try to uncomment this line:
 %\usepackage{lmodern}
@@ -382,11 +393,11 @@ schéma definující strukturu databáze, ale také samotné perzistované insta
 \label{fig:mazanma:framework}
 \end{center}
 \end{figure}
-
+%
 Proces evoluce změn v životním cyklu je definován v \cite{Jezek}
 následovně:
-
-
+%
+%
 \begin{enumerate}\label{framework:jezek_def}
   \item redefinice entit na objektové vrstvě
   \item opětovná tvorba databázového schématu dle redefinovaných entit
@@ -394,11 +405,11 @@ následovně:
   \item ověření proveditelnosti migračního skriptu
   \item migrace dat
 \end{enumerate}
-
+%
 Po ověření nadbytečnosti vrstvy ověřující proveditelnost migrovaných skriptů byl
 tento koncept přepracován do formy zobrazené na obrázku
 \ref{fig:framework:modified}. Na obrázku vidíme aplikační a databázový metamodel.
-
+%
 \begin{figure}[Ht]
 \begin{center}
 \includegraphics[width=15cm]{figures/framework_structura_tarant_modified}
@@ -407,7 +418,7 @@ upraveno}
 \label{fig:framework:modified}
 \end{center}
 \end{figure}
-
+%
 Instancemi aplikačního APP metamodelu jsou jednotlivé generace aplikačního
 modelu. Instancemi databázového RDB metamodelu jsou potom generace RDB modelů.
 Změny, které se provádějí v aplikaci jsou transformovány na databázové operace
@@ -415,7 +426,7 @@ aplikovatelné na RDB model. Databázové operace jsou potom transformovány na 
 scripty. V původní představě byl do frameworku zapojen i exekutor těchto
 skriptů nad databází, ale vzhledem ke znovupoužitelnosti SQL souborů byl z
 frameworku vypuštěn.
-
+%
 V rámci projektu jsem vytvořil ve své bakalářské práci \cite{Lukes} ORM
 transformaci aplikační struktury na databázovou a následné vygenerování SQL
 skriptu vytvářející strukturu aplikace. Tento nástroj není ve frameworku použit
@@ -426,71 +437,71 @@ iteraci je první aplikační operace aplikována na aplikační model, transfor
 databáze, kde je její obraz (sekvence databázových operací) aplikován na
 databázový model. Po provedení první iterace prochází tímto cyklem druhá
 operace, potom třetí \ldots
-
+%
 \section{Moduly frameworku}
 Framework byl od začátku vývoje používán v rámci Eclipse IDE
 \cite{Eclipse_ide}. Nad vrstvou aplikační byly vytvořeny 2 moduly. Modul
 Operations a modul aplikační evoluce.
-
+% 
 Modul Operations umožňující napsat vyjídřit vstupní operace pomocí textového
 souboru zapsaném v DSL jazyce. Kromě zápisu tento modul transformuje textově
 zapsané operace do XMI \cite{XMI} souboru pomocí model to text transformačního
 jazyka Xtend \cite{Xtend}. Tento modul je podrobně popsán v
 \cite{Mazanec} a není v této práci blíže rozebírán.
-
+% 
 Modul aplikační evoluce definuje pro každou operaci, jaký vliv bude mít
 provedení této operace na daný aplikační model a jaké podmínky musí daný
 aplikační model splňovat, aby se tato operace dala úspěšně provést. Více v
 sekci \ref{app_ops}.
-
+% 
 Nad databázovou vrstvou je definován modul Databázové evoluce, který pro
 každou databázovou operaci definuje, jaký bude mít tato operace vliv na databázový
 model a jaké podmínky musí daný model splňovat, aby se tato operace mohla
 úspěšně provést. Více v sekci \ref{db_ops}.\\
-
+% 
 Spojnici mezi aplikačním a databázovým modulem tvoří dva moduly - modul ORM a
-modul ORMo.
-
+modul ORMo. Modul ORMo.
+% 
 Modul ORM transformuje model struktury aplikace na model struktury databáze.
 Tento modul byl prezentován v mé bakalářské práci \cite{Lukes} a není více v
 této diplomové práci rozebírán.
-
+% 
 Modul ORMo transformuje seznam aplikačních operací na seznam operací
 databázových. Tento modul byl popsán v \cite{Jezek} a \cite{Tarant_bp}. Tento
 modul tvoří motor celého frameworku a jeho popisu je věnována sekce \ref{ORMo}.\\
-
+% 
 Výstupem frameworku Migdb není databázový model, ale textový soubor s SQL
 příkazy. Textové výstupy vytvářejí dva moduly generátorů kódu. SQL generátor
 generuje ze souboru operací výstupní upgrade skript zajišťující samotnou migraci
 dat. Schema generator potom generuje ze souboru databázové struktury SQL skript
 vytvářející strukturu databáze. Ani jedním z těchto modulů se nebudu v této
 práci blíže zabývat. Oba dva generátory byly napsány v jazyce Xtend.\\
-
+%
 Nejnovějším modulem frameworku je modul OPS recognition. Tento modul se
 snaží ze dvou vstupních aplikačních modelů odvodit seznam aplikačních operací,
 které byly provedeny nad zdrojovým modelem a transformovaly ho do modelu
 výstupního. Tento modul je samostatným nástrojem a pracuje nezávisle na
 ostatních modulech. Je mu věnována sekce rozpoznávání operací
 \ref{ops_recognition}. \\
-
+%
 Moduly Aplikační evoluce, databázové evoluce, ORM, ORMo a OPS recognition byly
 napsány v jazyce QVT Operational (QVTo) \cite{QVTo}.
-
+%
 Za účelem ověření správné funkcionality byl vytvořen projekt Migdb.testing.run,
 který je zmíněn v kapitole \ref{chapt:testování}.
-
+%
 \section{Metamodely}
 Frameworku MigDb je postaven na konceptu MDA \cite{MDA} a pro popsání
 jednotlivých vrstev software zavádí pojem metamodel. Metamodel definuje
 strukturu popsaných modelů stejně jako model definuje
 strukturu dat odpovídajících tomuto modelu.
-
+%
 Ve frameworku Migdb jsou popsány dva metamodely - aplikační metamodel a
 databázový metamodel. Aplikační metamodel definuje elementy tvořící strukturu
 aplikace, množinu aplikačních operací a diff entity použité při rozpoznávání
 operací.
-
-
+%
+%
 \begin{figure}[h!]
 \begin{center}
 \includegraphics[width=15cm]{figures/app_meta_BP}
@@ -498,7 +509,7 @@ operací.
 \label{fig:lukes:app_meta}
 \end{center}
 \end{figure}
-
+%
 \begin{figure}[h!]
 \begin{center}
 \includegraphics[width=15cm]{figures/app_meta_BP_jezek}
@@ -506,7 +517,7 @@ operací.
 \label{fig:jezek:app_meta}
 \end{center}
 \end{figure}
-
+%
 \section{Aplikační metamodel}
 Aplikační metamodel byl vytvořen již v ranných fázích projektu Migdb, kdy
 obsahoval jen elementy tvořící strukturu aplikace a její vztah k
@@ -617,7 +628,7 @@ TableConstraint a podobně jako PrimaryKey má omezen počet constrainedColumns 
 \label{fig:rdb_str}
 \end{center}
 \end{figure}
-
+%
 \begin{figure}[Ht]
 \begin{center}
 \includegraphics[width=15cm]{figures/rdb_structure_tarant}
@@ -626,7 +637,7 @@ TableConstraint a podobně jako PrimaryKey má omezen počet constrainedColumns 
 \label{fig:rdb_str_tarant}
 \end{center}
 \end{figure}
-
+%
 \begin{figure}[Ht]
 \begin{center}
 \includegraphics[width=15cm]{figures/rdb_structure_lukes}
@@ -635,7 +646,7 @@ TableConstraint a podobně jako PrimaryKey má omezen počet constrainedColumns 
 \label{fig:rdb_str_lukes}
 \end{center}
 \end{figure}
-
+%
  Nejvýraznější změnami databázového metamodelu struktury jsou - stejně jako v
  metamodelu aplikační struktury odstranění generace modelů, odstranění elementu
  UnderlyingIndex, odstranění elementu ColumnConstraint, nahrazení elementu
@@ -676,30 +687,7 @@ selekce R[ a = 1] klauzulí where v dotaze select  SELECT * FROM R WHERE a = 1;
 
 \section{Operace nad aplikačním modelem} \label{app_ops}
 
-\subsection{Historický vývoj}
-
-V průběhu modelování operací nad aplikačním modelem jsme se snažili, aby tyto
-operace byly jednoznačné (strojově zpracovatelné) v rámci daného kontextu, dále
-vzhledem k nutnosti textového zápisu uživatelem o minimalističnost zápisu. Tyto
-dva koncepty jdou obecně proti sobě, proto jsme došli k jistému jejich
-kompromisu uživatelské jednoduchosti zápisu a jednoznačnosti.
-
-Operace v aplikačním modelu se vyvíjely a měnily se jejich parametry, ale
-současně se měnil i seznam dostupných operací nad aplikačním modelem. Z operací
-v první verzi modelu byly odstraněny operace MoveProperty, AddPrimitiveClass,
-SetOpposite a SetType. Operace AddPrimitive byla označena za nadbytečnou,
-protože není cílem modifikace modelu změna seznamu primitivních tříd, který
-bývá definován použitým programovacím jazykem a tudíž by měl tento seznam být v
-vstupní generaci.V průběhu analýzy operace SetOpposite bylo zjištěno, že tato
-operace má smysl na strukturální úrovni, ale není možné ji aplikovat na obecná
-data, proto byla tato operace nahrazena dvojicí operací ChangeUniToBidir a
-ChangeBiToUnidir, které plní nároky kladené na původní operaci a jsou
-aplikovatelné  na datové úrovni. Operace SetType byla prozkoumána, ale nebyla
-exaktně popsána, nebylo nalezeno její mapování na operace v databázi ani
-validační podmínky nutné k úspěšné aplikaci operace na aplikační model.
-Předpokládáme, že by tato operace měla souviset s dědičnými hierarchiemi.
-
-\subsection{Seznam aplikačních operací}\label{ORMo}
+\subsection{Seznam aplikačních operací}
 
 Operace jsou uvedeny v následujícím seznamu. Kromě regulérních operací, které
 může vytvořit uživatel jsou v tabulce zde uvedeny i virtuální operace
@@ -949,28 +937,27 @@ drtivé většině případů projevuje kolizními atributy. Možným odstraněn
 problému by bylo přidání informací o distribuovaných properties do operace
 RemoveParent, čímž bychom se nicméně odklonili od cílu minimalizovat operace.
 
-\begin{figure}[Ht]
-\begin{center}
-\includegraphics[width=5cm]{figures/teacher_university_teacher}
+\begin{figure}
+\centering
+\begin{subfigure}[b]{0.33\textwidth}
+\fbox{\includegraphics{figures/teacher_university_teacher_a}}
 \caption{AddParent(Teacher, UniversityTeacher)}
 \label{fig:add_parent}
-\end{center}
-\end{figure}
-
-\begin{figure}[Ht]
-\begin{center}
-\includegraphics[width=5cm]{figures/teacher_university_teacher_remove}
-\caption{Výsledek po operaci AddParent}
+\end{subfigure}
+%
+\begin{subfigure}[b]{0.33\textwidth}
+\fbox{\includegraphics{figures/teacher_university_teacher_b}}
+\caption{Výsledek po aplikaci operace AddParent}
 \label{fig:remove_parent}
-\end{center}
-\end{figure}
-
-\begin{figure}[Ht]
-\begin{center}
-\includegraphics[width=5cm]{figures/teacher_university_teacher_remove_inversion}
+\end{subfigure}
+%
+\begin{subfigure}[b]{0.33\textwidth}
+\fbox{\includegraphics{figures/teacher_university_teacher_c}}
 \caption{Výsledný stav po aplikaci RemoveParent}
 \label{fig:remove_parent_apl}
-\end{center}
+\end{subfigure}
+%
+\caption{Ukázka operace AddParent}
 \end{figure}
 
 \section{Databázové operace} \label{db_ops}
@@ -1143,8 +1130,8 @@ Seznam operací s jejich validačními podmínkami:
 \section{QVTo}
 QVTo je imperativní jazyk, který je součástí standardu QVT definovaným
 konsorciem Object Management Group (OMG) viz. \cite{OMG}. Součástí QVT je
-jazyk OCL (Object Constraint Language). Pomocí tohoto jazyka je možné definovat
-model to model transformaci.
+jazyk OCL (Object Constraint Language) \cite{OCL}. Pomocí tohoto jazyka je možné
+definovat model to model transformaci.
 
 Základními konstrukty jazyka jsou mapping, helper a query. Mapping je konstrukt
 měníci pomocí nějakých pravidel vstupní element na výstupní. Query je
@@ -1202,7 +1189,7 @@ query canProcessTest(structure : APP::Structure, ops : APP::Operations, inout er
 \end{verbatim}
 
 
-Na předchozí stránce je vidět ukázka kódu transformace. Na začátku filu
+Na předchozí stránce je vidět ukázka kódu transformace. Na začátku souboru
 importujeme knihovny pomocí klíčového slova import, následně deklarujeme typy
 modelů, které bude naše transformace používat. Pomocí klíčového slova transform
 deklarujeme, jaké typy parametrů požaduje naše transformace. Vstupním
@@ -1271,24 +1258,17 @@ errorLogu pro daný index operaxe a danou transformaci, tudíž není možné vo
 helper checkExistTable a invertovat navrácenou hodnotu, ale bylo nutné napsat
 helpery kladné i záporné.
 
-\section{ORMo (ORM operací)}
+\section{ORMo (ORM operací)}\label{ORMo}
 
-\ref{orm_merge_prop}
+ORMo mapování je transformace, která mapuje elementy z dómény aplikačních
+operací na elementy z domény operací databázových. Toto mapování mapuje 1
+aplikační operaci na 1 až N operací databázových. 
+
 Ačkoliv ORM transformace vstupního aplikačního modelu funguje se všemi
 inheritanceTypy bylo nutné zjednodušit aplikační model tak, aby byla
 transformace ORMo implementovatelná, proto jsme v rámci týmu Migdb rozhodli o
-redukci počtu inheritanceTypů na jeden - nejvhodnější typ je nejspíše joined,
-který je pravděpodobně nejpoužívanějším.
-
-Vzhledem k nedostatku času nebyla implementována myšlenka .q souborů, které
-kontrolují některé vlastnosti nejen modelu, ale i konkrétních dat, dále není
-mapováno omezení LB = 0, které by některé operace stížilo. 
-
-Algoritmus ORMo si bere všechna data z aplikačního modelu, čímž je seznam
-výstupních operací nezávislý na aplikaci databázových operací nad databázovým
-modelem, ale přebírá veškerou zodpovědnost za údržbu - tj vytvoření, odstranění
-a údržbu (úpravu) integritních omezení.
-V následujícím seznamu jsou specifikovány ORMo mapování jednotlivých operací.
+redukci počtu inheritanceTypů na jeden - nejvhodnější typ je joined, který je
+nejvíce používaným.
 
 \begin{list}{Operace \Roman{ListCitac}:}{\usecounter{ListCitac}}
   \item AddStandardClass(name, isAbstract, inHeritanceType)
@@ -1299,21 +1279,27 @@ V následujícím seznamu jsou specifikovány ORMo mapování jednotlivých oper
   \item AddProperty(owningClassName, name, typeName, lowerBound, upperBound,
   isOrdered, isUnique)
   \begin{description}
-    \item[Primitivní typ a UB = 1] operace přidá do cílové tabulky sloupec pro
-    primitivní property
-    \item[Primitivní typ a UB != 1] operace přidá collection tabulku, datový
-    sloupec, referenční sloupec a FK referencující vlastnickou tabulku
-    \item[Neprimitivní typ a UB = 1] operace přidá do do cílové tabulky a
-    referenci na tabulku typu
-    \item[Neprimitivní typ a UB != 1] operace vytvoří vazební tabulku pro
-    neprimitivní property, vloží do ní referenční sloupce na vlastnickou
-    tabulku a tabulku typu, na které vytvoří cizí klíč
+    \item[Primitivní typ a UpperBoubd = 1] operace přidá do cílové tabulky
+    sloupec pro primitivní property
+    \item[Primitivní typ a UpperBound != 1] operace přidá tabulku, která je
+    obrazem kolekce, datový sloupec do této tabulky, referenční sloupec a
+    ForeignKey referencující tabulku, která je obrazem vlastnické třídy 
+    \item[Neprimitivní typ a UpperBound = 1] operace přidá do tabulky, která je
+    obrazem vlastnické třídy property a ForeignKey odkazující na tabulku, která
+    je obrazem třídy typu přidávané property
+    \item[Neprimitivní typ a UpperBound != 1] operace vytvoří vazební tabulku
+    pro neprimitivní property, vloží do ní referenční sloupce na tabulku, která je
+    obrazem vlastnické třídy, a tabulku, která je obrazem třídy typu. Nad
+    vazební tabulkou vytvoří cizí klíče na tabulku, která je
+    obrazem vlastnické třídy, a cizí klíč na tabulku, která je obrazem třídy
+    typu
   \end{description}
   
   \item RenameEntity(owningClassName, name, newName)
   \begin{itemize}
     \item Operace změní název tabulky na nový, odstraní a vytvoří PK s
-novým jménem
+novým jménem, odstraní všechny ForeignKey referencující obraz vlastnické
+třídy a vytvoří nové ForeignKey s pozměněným jménem , 
   \end{itemize}
   
   \item SetAbstract(name, isAbstract)
@@ -1329,14 +1315,18 @@ odpovídající dané třídě
   
   \item RenameProperty(owningClassName, name, newName)
   \begin{description}
-  \item[primitivní typ a UB = 1] přejmenuje property v vlastnické
-  tabulce
-  \item[primitivní typ a UB != 1] přejmenuje datový sloupec, FK
-  na vlastníka kolekce a tabulku kolekce
-  \item[neprimititní typ a UB = 1] přejmenuje sloupec ve vlastnické tabulce a
-  cizí klíč referující tabulku typu
-  \item[neprimitivní typ a UB != 1] přejmenuje vazební tabulku s referenčními
-  sloupci na vlastníka a typ asociace + cizí klíče
+  \item[primitivní typ a UpperBound = 1] přejmenuje property v
+  tabulce, která je obrazem vlastnické třídy property
+  \item[primitivní typ a UpperBound != 1] přejmenuje datový sloupec, odstraní
+  a vytvoří ForeignKey s novým jménem referencujícím třídu, která je obraz
+  vlastnické třídu property a přejmenuje tabulku obrazu kolekce
+  \item[neprimititní typ a UpperBound = 1] přejmenuje sloupec v
+  tabulce, která je obrazem vlastnické třídy property, odstraní a vytvoří
+  ForeignKey referující tabulku, která je obrazem třídy typu
+  \item[neprimitivní typ a UpperBound != 1] přejmenuje vazební tabulku s
+  referenčními sloupci na tabulku, která je obrazem třídy vlastníka property a
+  tabulku, který je obrazem třídy typu asociace, odstraní a vytvoří ForeignKey s
+  novými jmény na obraz třídy vlastníka property a obraz třídy typu
   \end{description}
 
   \item RemoveProperty(owningClassName, name)
@@ -1459,11 +1449,39 @@ odpovídající dané třídě
   
 \end{list}
 
-\chapter{Popis problému, specifikace cíle}
-Tato diplomová práce si klade za cíl dokončit vývoj na projektu Migdb. Tj
-doimplementovat a otestovat ORM transformace vzniklé v předešlých fázích
+\chapter{Dokončení projektu Migdb}
+Tato diplomová práce si klade za první ze svých cílů dokončit vývoj na projektu
+Migdb.
+Tj. doimplementovat a otestovat ORM transformace vzniklé v předešlých fázích
 projektu, upravit a otestovat generátor SQL, případně upravit aplikační a
 databázový metamodel.
+
+\section{Historický vývoj operací}
+
+V průběhu modelování operací nad aplikačním modelem jsme se snažili, aby tyto
+operace byly jednoznačné (strojově zpracovatelné) v rámci daného kontextu, dále
+vzhledem k nutnosti textového zápisu uživatelem o minimalističnost zápisu. Tyto
+dva koncepty jdou obecně proti sobě, proto jsme došli k jistému jejich
+kompromisu uživatelské jednoduchosti zápisu a jednoznačnosti.
+
+Operace v aplikačním modelu se vyvíjely a měnily se jejich parametry, ale
+současně se měnil i seznam dostupných operací nad aplikačním modelem. Z operací
+v první verzi modelu byly odstraněny operace MoveProperty, AddPrimitiveClass,
+SetOpposite a SetType. Operace AddPrimitive byla označena za nadbytečnou,
+protože není cílem modifikace modelu změna seznamu primitivních tříd, který
+bývá definován použitým programovacím jazykem a tudíž by měl tento seznam být v
+vstupní generaci.V průběhu analýzy operace SetOpposite bylo zjištěno, že tato
+operace má smysl na strukturální úrovni, ale není možné ji aplikovat na obecná
+data, proto byla tato operace nahrazena dvojicí operací ChangeUniToBidir a
+ChangeBiToUnidir, které plní nároky kladené na původní operaci a jsou
+aplikovatelné  na datové úrovni. Operace SetType byla prozkoumána, ale nebyla
+exaktně popsána, nebylo nalezeno její mapování na operace v databázi ani
+validační podmínky nutné k úspěšné aplikaci operace na aplikační model.
+Předpokládáme, že by tato operace měla souviset s dědičnými hierarchiemi.
+
+
+
+\chapter{Popis problému, specifikace cíle}
 
 Dalším cílem, který jsem si před vypracováním diplomové práce stanovil bylo
 vytvoření a zdokumentování algoritmu generující z dvou vstupních modelů
@@ -1473,15 +1491,15 @@ koncový.
 \section{Řešení problému rozpoznávání operací}\label{ops_recognition}
 
 \subsection{Diff a delta notace}
-Nejznámějším algoritmem používaným při porovnávání a zjišťování změn dvou
-textových souborů je diff verzování souborů je nástroj diff\cite{diff_wiki}.
+Nejznámějším nástrojen používaným při porovnávání a zjišťování změn dvou
+textových souborů tzv. patchů \cite{patch} je nástroj diff \cite{diff_wiki} .
 Diff je založen na algoritmu hledání největší společné podsekvence (LCS) viz
 \cite{wiki_lcs}. Algoritmus LCS byl analyzován a nebyl shledán jako dostatečným
 pro námi definovaný problém, jelikož nezohledňuje doménu problému. Výstup
 algoritmu se dá vyjádřit pomocí delta notace.
 
 Příklad Delta notace za pomoci linuxových
-nástrojů diff dvou souborů\\
+nástrojů diff dvou souborů najdeme na výpisu \ref{Patch_1_2} \\
 \begin{lstlisting}[language=JAVA,frame=single,caption=Man1.java,label=Man1]
 class Man {
 	private String name;
@@ -1510,8 +1528,8 @@ class Man {
 }
 \end{lstlisting}
 
-\begin{lstlisting}[language=JAVA,frame=single,caption=Diff Man1
-Man2,label=Diff_1_2]
+\begin{lstlisting}[language=JAVA,frame=single,caption=Patch Man1
+Man2,label=Patch_1_2]
 3a4,5
 > 	private String surename;
 > 
@@ -1526,24 +1544,27 @@ Man2,label=Diff_1_2]
 Ukázka kódu \ref{Man1} zobrazuje zdrojový kód třídy Man v první
 verzi. Ukázka \ref{Man2} potom zdrojový kód třídy Man po první naší editaci,
 kdy jsme do dané třídy přidali nový atribut a nový konstruktor.
-Diff v delta notaci těchto dvou souborů je ukázán v \ref{Diff_1_2}. V delta
+Diff v delta notaci těchto dvou souborů je ukázán v \ref{Patch_1_2}. V delta
 notaci vidíme, že do prvního souboru byly za 3. řádek vloženy řádky 4-5 z
 druhého souboru - řádek definující nový atribut surename a oddělující prázdný
 řádek, dále za 5. řádek byly vloženy řádky 8-12 z druhého souboru definující
 nový konstruktor a uzavírací závorka.\\
 
 V \cite{Cincetti} jsou definovány operace pomocí delta notace. Delta notace
-je taková, která ukazuje všechny změny mezi danými dvěma artefakty stejné
-úrovně abstrakce. Změnami můžeme rozumět přidáním elementu, odstraněním elementu
-a modifikací elementu.
+ukazuje všechny změny mezi danými dvěma artefakty stejné úrovně abstrakce.
+Změnami můžeme rozumět přidáním elementu, odstraněním elementu a modifikací elementu.
 
-Delta notace je dle autora výhodná díky snadné
-rozložitelnosti velkých patchů na více menších patchů a také díky oddělení ve
-více konkurenčních patchích konfliktních operací od operací nazávislých. 
+Delta notace je dle autora výhodná díky snadné rozložitelnosti velkých patchů na
+více menších patchů. Druhá výhoda je použitelná při paralelním vývoji. Pokud
+vznikne více verzí souboru v různých větvích, delta notace umožňuje snadné
+oddělení konfliktních operací od operací nezávislých.
 
-Delta notace vytvořená dle metamodelu na obr. \ref{fig:diff_cincetti} add,
-delete entit a modify atributů jednotlivých entit, ale v našem modelu existují
-operace, kterí se nedají zařadit ani do skupiny add, delete a modify operací,
+Delta notace vytvořená dle metamodelu na obr. \ref{fig:diff_cincetti} definuje
+add, delete entit a modify atributů jednotlivých entit. V našem modelu existují
+operace, které se nedají zařadit ani do skupiny add, delete a modify operací.
+Operace ExtractClass, ExtractSuperClass, InlineClass, CollapseHierarchy,
+PullUpProperties a PushDownProperties naopak nepatří mezi modifikační, add ani
+delete operace.
 proto jsme mohli postupovat jednou z následujících cest
 
 \begin{itemize}
@@ -1585,11 +1606,12 @@ Rename B ->C na model X dostaneme stejný výstup jako aplikací operací Inline
 A + Rename A->C, ještě zajímavějším poznatkem je, že nejsme schopni rozeznat
 rozdíl mezi aplikací sekvence operací Rename A, C + Inline C, B.
 
-Samostatným tématem je pořadí operací a jeho permutace. Je zřejmé, že pořadí v
-seznamu operací operujících nad jinými elementy bude možné libovolně prohazovat.
-Také je samozřejmé, že seznam subtraktivních operací je také možné libovolně
-zpermutovat. Stejně tak seznam aditivních operací. Obecný princip seřazení kolekce 
-operací není znám. 
+Samostatným tématem je pořadí operací a jeho permutace. Je zřejmé, že pořadí
+transformací v seznamu operací operujících nad hierarchiemi dědičnosti bude
+možné libovolně prohazovat.
+Také je samozřejmé, že seznam reduktivních operací stejného typu je také možné
+libovolně zpermutovat. Stejně tak seznam aditivních operací stejného typu.
+Obecný princip seřazení kolekce operací není znám. 
 
 \subsection{Obecné principy model matching} \label{model_matching_principles}
 Nejtriviálnější implementovatelný algoritmus by mohl smazat zdrojový model
@@ -1612,7 +1634,7 @@ nutné vybrat si správný algoritmus v závislosti na řešeném problému.
  V \cite{Kolovos:Different_models} byly popsány algoritmy
  pro mapování shodných entit modelů a algoritmy pro získávání rozdílu modelů. 
  Principem těchto modelů je párování elementů vstupního modelu s elementy z
- modelu cílového. Existují 4 obecné skupiny dělení matching algoritmů. 
+ modelu cílového. Autor je dělí na 4 obecné skupiny matching algoritmů.
  
  \begin{itemize}
    \item Párování podle statického identifikátoru páruje elementy podle
@@ -1621,20 +1643,21 @@ nutné vybrat si správný algoritmus v závislosti na řešeném problému.
  	tedy párování entit na základě shodnosti jejich identifikátorů. Tento princip
  	má výhody jednoduchosti implementace a rychlosti. Tento algoritmus není
  	použitelný pro modely vytvořené nezávisle jeden na druhém či u technologií
- 	nepodporujících maintenance unikátních identifikátorů.
+ 	nepodporujících údržba unikátních identifikátorů.
  
  	\item Algoritmus signature based matching byl navržen kvůli limitaci párování
  	podle statického identifikátoru, tento algoritmus je založen na dynamickém
- 	vypočtení nestatické signatury jednotlivých features pomocí uživatelem
+ 	vypočtení nestatické signatury jednotlivých elementů pomocí uživatelem
  	definovaných funkcí specifikovaných pomocí nějakého dotazovacího jazyka.
  	Tento princip tedy může být použit pro modely vzniklé nezávisle na sobě.
  	Nevýhodou je potom nutnost specifikovat query, které dopočítají signaturu.
  
  	\item Algoritmus Similarity based matching používá podobně jako signature
- 	based matching podobnost features jednotlivých elementů, kterou agreguje do
- 	skalární hodnoty. Tento princip se řadí mezi podtyp attribute graph matchingu.
+ 	based matching podobnost sublementů jednotlivých elementů, kterou agreguje do
+ 	skalární hodnoty. Tento princip se řadí mezi podtyp attribute graph
+ 	\cite{attributed_graph} matchingu.
  	Každá feature modelu může mít jinou váhu pro porovnávání, napřiklad u
- 	podobnosti tříd má jméno vyšší důležitost nežli abstractnost dané třídy. 
+ 	podobnosti tříd má jméno vyšší důležitost nežli abstraktnost dané třídy. 
  	Tento algoritmus musí být typicky doplněn o konfiguraci vah jednotlivých
  	features elementů, kterou většinou píše vývojář. Zástupcem tohoto principu je
  	framework EMF Compare, který je doplněn o defaultní konfiguraci vah. Výhodami
@@ -1655,7 +1678,7 @@ nutné vybrat si správný algoritmus v závislosti na řešeném problému.
 \end{itemize}
 
 \subsection{Graph matching}
- Problém model matching je podproblémem generičtějšího tasku graph matching, 
+ Problém model matching je podproblémem generičtějšího problému graph matching, 
  který studuje \cite{bengoetxeaPHD02} a rozděluje a popisuje algoritmy pro
  graph matching - algoritmus nalezení shody grafů. Problém je definován na
  obecné struktuře Graf, což je uspořádaná dvojice G = (V, E), kde G je množina
@@ -1667,9 +1690,9 @@ nutné vybrat si správný algoritmus v závislosti na řešeném problému.
  přidat do hran a/nebo vrcholů atributy, potom hovoříme o vertex-atributed
  grafech a edge atributed grafech, případně attributed grafech. V některé
  literatuře jsou attributed grafy označovány jako labeled grafy. Graph
- matching je aplikován v mnoho oborů jako je počítačové vidění, analýza
- scény(scene analysis), chemie a molekulární biologie. V těchto oborech musí být
- vzorky nalezeny v daných datech. 
+ matching je aplikován v mnoho oborech jako je počítačové vidění, analýza
+ scény (scene analysis), chemie a molekulární biologie. Pro tyto obory je
+ esenciálním nalézt vzorky nalezeny v daných datech. 
   
  Problém shodnosti dvou grafů $G_O$ (grafu originálu) a $G_V$ (grafu
  vzorku), se dělí na algoritmus nalezení přesné shody vzorku v hledaném grafu
@@ -1682,15 +1705,16 @@ nutné vybrat si správný algoritmus v závislosti na řešeném problému.
  E_O$ iff $(f(u), f(v)) \in E_V$. Pokud takové mapování existuje, nazveme ho
  přesnou shodou. \\
  
- Termín Hledání podobnosti grafů(inexact macthing) aplikovaný na některé
- problémy týkající se shodnosti grafů vyjadřuje/znamená, že není možné nalézt
+ Termín Hledání podobnosti grafů (inexact macthing) aplikovaný na některé
+ problémy týkající se shodnosti grafů vyjadřuje, že není možné nalézt
  izomorfismus mezi dvěma grafy, aby byly shodné. V těchto případech mají grafy
  rozdílné charakteristiky jako je například jiný počet vrcholů, jiný počet hran
  či jiná délka nejdelší kružnice.
- V těchto případech není hledán izomorfismus dvou grafů, ale problém je upraven
- na hledání největší možné shody mezi grafy.
- Toto vede k třídě problémů známé jako inexact graph matching. V takovém
- případě hledáme nebijektivní korespondenci mezi grafem vzorku a grafem
+ Tedy není hledán izomorfismus dvou grafů, ale problém je upraven na hledání
+ největší možné shody mezi grafy.
+ Tato transformace mění problém a zařazuje ho do třídy problémů známé jako
+ inexact graph matching.
+ V takovém případě hledáme nebijektivní korespondenci mezi grafem vzorku a grafem
  originálu. V následujícím textu předpokládejme $\|V_V\| < \|V_O\|$. Inexact
  matching je používán v oborech kartografie, rozpoznávání znaků a medicíně.
  Nejlepší korespondence graph matching problému je definována jako optimum
@@ -1723,35 +1747,34 @@ nutné vybrat si správný algoritmus v závislosti na řešeném problému.
  
  \chapter{Vytvořený algoritmus rozpoznávání operací}
 
-\section{Experimentální algoritmus}
+\section{Stavový algoritmus}
 
 V ranné fázi byl napsán prototyp jiného rozpoznávacího algoritmu, který se snaží 
 minimalizovat vzdálenost současného modelu od modelu cílového pomocí
-rozpoznáná operací a aplikace operací. Výhodou tohoto přístupu je nalezení více alternativních 
-cest, nevýhodou je potom velikost stavového prostoru. Algoritmus prochází těmito fázemi:
+rozpoznání operací a jejich následné aplikace. Výhodou tohoto přístupu
+je nalezení více alternativních cest, nevýhodou je potom velikost stavového
+prostoru zvětšující se s počtem rozpoznávaných operací. Mezi operace
+byla přidána takzvaná Dummy operation v případě, že nebyla rozpoznána
+žádná operace. Algoritmus popsaný v pseudokódu viz %\ref{algo} 
+\\
 
-\begin{enumerate}
-  	\item Spočítání vzdálenosti vstupního modelu od modelu cílového
-  	\item Nastavení nalezeného maxima zlepšujícího kroku na nula
-  	\item Opakování následujícího cyklu dokud je rozpoznána jiná operace než je
-  	Dummy operation a vzdálenost je větší než nula
-  	\begin{enumerate}
-  	  \item nastavení zlepšující operace na Dummy Operation
-  	  \item  Pro každou operaci 
-  	  	\begin{enumerate} 
-    		\item nalezení nalezení nejvhodnějších parametrů operace
-    		\item spočítání zlepšujícího kroku
-    		\item aktualizace maxima zlepšujího kroku, podle
-    		nalezených parametrů, aktualizace zlepšující operace
-    	\end{enumerate}
-    	\item aktualizace vzdálenosti
-    	\item aplikace nejvýhodnější operace
-    	\item nastavení maxima zlepšujícího kroku na nula
-    \end{enumerate}
-\end{enumerate}
-
-Algoritmus předpokládá, že operace přibližující aktuální stav k cílovému by měly
-být rozpoznány (a aplikovány) co nejdříve. Například pro počáteční model
+\begin{algorithm}
+\caption{Euclid’s algorithm}\label{euclid}
+\begin{algorithmic}[1]
+\Procedure{Euclid}{$a,b$}\Comment{The g.c.d. of a and b}
+\State $r\gets a\bmod b$
+\While{$r\not=0$}\Comment{We have the answer if r is 0}
+\State $a\gets b$
+\State $b\gets r$
+\State $r\gets a\bmod b$
+\EndWhile\label{euclidendwhile}
+\State \textbf{return} $b$\Comment{The gcd is b}
+\EndProcedure
+\end{algorithmic}
+\end{algorithm}
+\ \\
+Algoritmus předpokládá, že operace přibližující aktuální stav k cílovému by
+měly být rozpoznány (a aplikovány) co nejdříve. Například pro počáteční model
 zobrazený na obrázku \ref{fig:exp_contact} a cílový model zobrazený na obrázku
 \ref{fig:exp_contact_address}. Algoritmus spočítá vzdálenost například
 jako součet přidaných/odebraných tříd, primitivních atributů a asociačních
@@ -2285,7 +2308,7 @@ V souboru \verb|k336_thesis_macros.tex| je příkaz \verb|\uv{}| pro sázení č
 \item[QVTo] QVT operational
 \item[DDL] Data definition Language
 \item[SŘBD] Systém řízení báze dat
-\item[OCL] Object Constrain Language
+\item[OCL] Object Constraint Language
 \end{description}
 \vdots
 

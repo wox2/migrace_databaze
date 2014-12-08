@@ -1,4 +1,4 @@
-\begin{thebibliography}{OMG14d}
+\begin{thebibliography}{OMG14}
 
 \bibitem[Ben02]{bengoetxeaPHD02}
 E.~Bengoetxea.
@@ -19,20 +19,15 @@ D.~Di Ruscio R. F.~Paige D.~S.~Kolovos, Alfonso~Pierantonio.
   support model differencing.
 \newblock [online], Citováno 16.11.2014.
 
-\bibitem[Fou14a]{Eclipse_ide}
-The~Eclipse Foundation.
-\newblock Eclipse.
-\newblock [online], Citováno 16.11.2014.
-
-\bibitem[Fou14b]{Xtend}
-The~Eclipse Foundation.
-\newblock Xtend - modernized java.
-\newblock [online], Citováno 16.11.2014.
-
 \bibitem[FW14]{diff_merge_diagrams}
 Sabrina Fortsch and Bernhard Westfechtel.
 \newblock Differencing and merging of software diagrams.
 \newblock [online], Citováno 16.11.2014.
+
+\bibitem[HET14]{attributed_graph}
+Ulrike~Prange Hartmut~Ehrig and Gabriele Taentzer.
+\newblock Fundamental theory for typed attributed graph transformation.
+\newblock [online], Citováno 7.12.2014.
 
 \bibitem[Jez12]{Jezek}
 Jiří Jezek.
@@ -50,23 +45,12 @@ David Luksch.
 Martin Mazanec.
 \newblock Doménově specifický jazyk pro migdb, 2014.
 
-\bibitem[OMG14a]{QVTo}
-OMG.
-\newblock Meta object facility (mof) 2.0 query/view/transformation final
-  adopted specification.
-\newblock [online], Citováno 16.11.2014.
-
-\bibitem[OMG14b]{XMI}
-OMG.
-\newblock Xmi.
-\newblock [online], Citováno 16.11.2014.
-
-\bibitem[OMG14c]{MDA}
-OMG.
-\newblock Model driven architecture.
+\bibitem[OCL14]{OCL}
+OCL.
+\newblock Object constraint language.
 \newblock [online], Odkazováno 16.11.2014.
 
-\bibitem[OMG14d]{OMG}
+\bibitem[OMG14]{OMG}
 OMG.
 \newblock Omg.
 \newblock [online], Odkazováno 16.11.2014.
@@ -108,6 +92,11 @@ wiki community.
 \bibitem[wc14c]{orm}
 wiki community.
 \newblock Orm definice.
+\newblock [online], Citováno 16.11.2014.
+
+\bibitem[wc14d]{patch}
+wiki community.
+\newblock Patch.
 \newblock [online], Citováno 16.11.2014.
 
 \end{thebibliography}

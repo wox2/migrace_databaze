@@ -25,11 +25,12 @@
 \usepackage{caption}
 \usepackage{subcaption}
 \usepackage{capt-of}
+\usepackage[section]{placeins}
 
 %\usepackage[]{algorithm2e}
 \usepackage[]{algorithmicx}
 \usepackage{algpseudocode}
-%\usepackage{algorithm}
+\usepackage{algorithm}
 
 \renewcommand{\algorithmicrequire}{\textbf{Input:}}
 \renewcommand{\algorithmicensure}{\textbf{Output:}}
@@ -103,8 +104,8 @@
 %\newcommand\StudProgram{Elektrotechnika a informatika, dobíhající, Bakalářský}
 %\newcommand\StudProgram{Elektrotechnika a informatika, dobíhající, Magisterský}
 % \newcommand\StudProgram{Elektrotechnika a informatika, strukturovaný, Bakalářský}
- \newcommand\StudProgram{Otevřená informatika, strukturovaný,
- Navazující magisterský}
+ \newcommand\StudProgram{Otevřená informatika, strukturovaný, navazující
+ Magisterský}
 % \newcommand\StudProgram{Softwarové technologie a management, Bakalářský}
 % English study:
 % \newcommand\StudProgram{Electrical Engineering and Information Technology}  % bachelor programe
@@ -130,7 +131,7 @@
 % Set up Work Title, Author and Supervifsor
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\newcommand\WorkTitle{Migrace databáze}
+\newcommand\WorkTitle{Dokončení projektu Migdb}
 \newcommand\FirstandFamilyName{Bc. Martin Lukeš}
 \newcommand\Supervisor{Ing. Ondřej Macek}
 
@@ -227,10 +228,10 @@ unicode=true,
 \noindent
 Chtěl bych poděkovat vedoucímu své diplomové práce Ing. Ondřeji Mackovi za pomoc
 s vypracovávánáním této práce. Dále bych chtěl poděkovat svým kolegům z týmu
-Migdb, obzvláště Martinu Mazanci, kteří svými připomínkami napomáhali k zkvalitnění této práce a
-zahlazení některých nepřesností. V neposlední řadě bych chtěl poděkovat
-firmě CollectionsPro s.r.o, jež přišla s původní myšlenkou, která vedla k
-vytvoření Migdb týmu.
+Migdb, obzvláště Martinu Mazanci, kteří svými připomínkami napomáhali ke
+zkvalitnění této práce a zahlazení některých nepřesností. V neposlední řadě
+bych chtěl poděkovat firmě CollectionsPro s.r.o, jež přišla s původní
+myšlenkou, která vedla k vytvoření Migdb týmu.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%   Prohlaseni / Declaration 
@@ -257,8 +258,9 @@ leading to another without loss or with minimal loss of stored data.
 
 \noindent
 Tato práce se zabývá upřesněním kontraktu a realizací transformací změn
-aplikačního modelu na změny modelu databázového. Dále se zabývá automatizací odvození změn vedoucích z
-jednoho modelu k druhému bez ztráty či s minimální ztrátou uložených dat.
+aplikačního modelu na změny modelu databázového. Dále se zabývá automatizací
+odvození změn vedoucích z jednoho modelu k druhému bez ztráty či s minimální
+ztrátou uložených dat.
 %Abstrakt práce by měl velmi stručně vystihovat její podstatu. Tedy čím se práce
 % zabývá a co je jejím výsledkem/přínosem.
 
@@ -387,7 +389,7 @@ Objektová vrstva každé aplikace je reprezentována jejím modelem obsahujíc�
 entity aplikace. Databázová vrstva zajišťující perzistenci dat obsahuje jednak
 schéma definující strukturu databáze, ale také samotné perzistované instance dat.
 
-\begin{figure}[Ht]
+\begin{figure}[H]
 \begin{center}
 \includegraphics[width=15cm]{figures/framework_structura}
 \caption{Rozdělení vrstev softwaru - převzato z \cite{Mazanec}}
@@ -411,7 +413,7 @@ Po ověření nadbytečnosti vrstvy ověřující proveditelnost migrovaných sk
 tento koncept přepracován do formy zobrazené na obrázku
 \ref{fig:framework:modified}. Na obrázku vidíme aplikační a databázový metamodel.
 %
-\begin{figure}[Ht]
+\begin{figure}[H]
 \begin{center}
 \includegraphics[width=15cm]{figures/framework_structura_tarant_modified}
 \caption{Rozdělení vrstev softwaru - převzato z \cite{Tarant_bp} a částečně
@@ -427,6 +429,7 @@ aplikovatelné na RDB model. Databázové operace jsou potom transformovány na 
 scripty. V původní představě byl do frameworku zapojen i exekutor těchto
 skriptů nad databází, ale vzhledem ke znovupoužitelnosti SQL souborů byl z
 frameworku vypuštěn.
+\FloatBarrier
 %
 V rámci projektu jsem vytvořil ve své bakalářské práci \cite{Lukes} ORM
 transformaci aplikační struktury na databázovou a následné vygenerování SQL
@@ -503,7 +506,7 @@ aplikace, množinu aplikačních operací a diff entity použité při rozpozná
 operací.
 %
 %
-\begin{figure}[h!]
+\begin{figure}[h]
 \begin{center}
 \includegraphics[width=15cm]{figures/app_meta_BP}
 \caption{Aplikační metamodel v počátku vývoje obrázek převzat z \cite{Lukes}}
@@ -511,13 +514,14 @@ operací.
 \end{center}
 \end{figure}
 %
-\begin{figure}[h!]
+\begin{figure}[h]
 \begin{center}
 \includegraphics[width=15cm]{figures/app_meta_BP_jezek}
 \caption{Aplikační metamodel v průběhu vývoje obrázek převzat z \cite{Jezek}}
 \label{fig:jezek:app_meta}
 \end{center}
 \end{figure}
+\FloatBarrier
 %
 \section{Aplikační metamodel}
 Aplikační metamodel byl vytvořen již v ranných fázích projektu Migdb, kdy
@@ -539,14 +543,14 @@ aplikačních operací a přibyl kořenový element Diff. Na obrázku
 \ref{fig:app_roots} jsou znázorněny kořenové elementy nynějšího aplikačního
 modelu - každý aplikační model musí obsahovat jeden container - potomka třídy ModelRoot.
 
-\begin{figure}[h!]
+\begin{figure}[h]
 \begin{center}
 \includegraphics[width=15cm]{figures/app_roots}
 \caption{Rootové elementy aplikačního modelu}
 \label{fig:app_roots}
 \end{center}
 \end{figure}
-
+\FloatBarrier
 
 \section{Metamodel struktury aplikace}
 
@@ -572,7 +576,7 @@ důležité atributy \textit{isUnique} a \textit{isUnique}. Potomek
 bidirectional vazby a atribut isOwning, který je přidán z implementačních
 důvodů. \\
 
-\begin{figure}[h!]
+\begin{figure}[h]
 \begin{center}
 \includegraphics[width=15cm]{figures/app_meta}
 \caption{Struktura aplikačního metamodelu}
@@ -580,7 +584,7 @@ důvodů. \\
 \end{center}
 \end{figure}
 
-
+\FloatBarrier
 Oproti aplikačnímu metamodelu \cite{Jezek} byly odstraněny entity EmbeddedClass 
 a její předek GeneralClass, dále byla zjednodušena třída Property, u níž ubyly
 atributy defaultValue, sequenceName a atribut isId. Atribut isId byl nahrazen
@@ -622,7 +626,7 @@ TableConstraint a podobně jako PrimaryKey má omezen počet constrainedColumns 
  převzatý z \cite{Tarant_bp}.
 
 
-\begin{figure}[Ht]
+\begin{figure}[H]
 \begin{center}
 \includegraphics[width=15cm]{figures/rdb_structure}
 \caption{Struktura databázového metamodelu}
@@ -630,7 +634,7 @@ TableConstraint a podobně jako PrimaryKey má omezen počet constrainedColumns 
 \end{center}
 \end{figure}
 %
-\begin{figure}[Ht]
+\begin{figure}[H]
 \begin{center}
 \includegraphics[width=15cm]{figures/rdb_structure_tarant}
 \caption{Struktura databázového metamodelu v průběhu vývoje, obrázek převzat z
@@ -639,7 +643,7 @@ TableConstraint a podobně jako PrimaryKey má omezen počet constrainedColumns 
 \end{center}
 \end{figure}
 %
-\begin{figure}[Ht]
+\begin{figure}[H]
 \begin{center}
 \includegraphics[width=15cm]{figures/rdb_structure_lukes}
 \caption{Struktura databázového metamodelu v průběhu vývoje, obrázek převzat z
@@ -648,6 +652,8 @@ TableConstraint a podobně jako PrimaryKey má omezen počet constrainedColumns 
 \end{center}
 \end{figure}
 %
+\FloatBarrier
+
  Nejvýraznější změnami databázového metamodelu struktury jsou - stejně jako v
  metamodelu aplikační struktury odstranění generace modelů, odstranění elementu
  UnderlyingIndex, odstranění elementu ColumnConstraint, nahrazení elementu
@@ -960,6 +966,8 @@ RemoveParent, čímž bychom se nicméně odklonili od cílu minimalizovat opera
 %
 \caption{Ukázka operace AddParent}
 \end{figure}
+
+\FloatBarrier
 
 \section{Databázové operace} \label{db_ops}
 
@@ -1578,7 +1586,7 @@ proto jsme mohli postupovat jednou z následujících cest
 
 Zvolili jsme si cestu definice vlastního metamodelu.
 
-\begin{figure}[Ht]
+\begin{figure}[H]
 \begin{center}
 \includegraphics[width=15cm]{figures/uml_diference_cincetti}
 \caption{Diff model převzatý dle \cite{Cincetti}}
@@ -1586,13 +1594,15 @@ Zvolili jsme si cestu definice vlastního metamodelu.
 \end{center}
 \end{figure}
 
-\begin{figure}[Ht]
+\begin{figure}[H]
 \begin{center}
 \includegraphics[width=15cm]{figures/framework_structura_tarant_modified}
 \caption{Seznam diff elementů}
 \label{fig:diff_meta}
 \end{center}
 \end{figure}
+
+\FloatBarrier
 
 \subsection{Rozpoznávání operací}
 
@@ -1733,11 +1743,8 @@ nutné vybrat si správný algoritmus v závislosti na řešeném problému.
  této kategorie nebyla dokázána nejvyšší složitost NP complete. Pro problémy
  subgraph isomorphismu bylo dokázáno, že patří do třídy NP complete. Pro
  složitost nepřesného graph matchingu bylo dokázáno, že patří do třídy NP-complete.
- 
- 
-
- 
- \begin{figure}[Ht]
+  
+ \begin{figure}[H]
 \begin{center}
 \includegraphics[width=15cm]{figures/graph_matching.jpg}
 \caption{Typy graph matchingu}
@@ -1745,40 +1752,39 @@ nutné vybrat si správný algoritmus v závislosti na řešeném problému.
 \end{center}
 \end{figure}
  
+\FloatBarrier
  
  \chapter{Vytvořený algoritmus rozpoznávání operací}
 
 \section{Stavový algoritmus}
 
-V ranné fázi byl napsán prototyp jiného rozpoznávacího algoritmu, který se snaží 
-minimalizovat vzdálenost současného modelu od modelu cílového pomocí
-rozpoznání operací a jejich následné aplikace. Výhodou tohoto přístupu
-je možnost nalezení více alternativních cest, nevýhodou je potom velikost
-stavového prostoru zvětšující se s počtem rozpoznávaných operací. Mezi operace
-byla přidána takzvaná Dummy operation v případě, že nebyla rozpoznána
-žádná operace. Algoritmus popsaný v pseudokódu viz %\ref{algo} 
-\\
+V ranné fázi jsem napsal prototyp rozpoznávacího algoritmu, který se snaží 
+minimalizovat vzdálenost současného modelu od modelu cílového pomocí rozpoznání
+operací a jejich následné aplikace. Výhodou tohoto přístupu je možnost nalezení
+více alternativních cest, nevýhodou je potom velikost stavového prostoru
+zvětšující se s počtem rozpoznávaných operací. Algoritmus popsaný v pseudokódu
+viz algoritmus \ref{algo:state}
+%\\
 
-%\begin{algorithm}
-%\caption{Euclid’s algorithm}\label{euclid}
+\begin{algorithm}
+\caption{Algoritmus procházení stavů}\label{algo:state}
 
 \begin{algorithmic}[1]
 \Require Zdrojový model S, cílový model T
 \Ensure Seznam operací $R_ops$, po jejichž aplikaci se model S tranformuje na
      model T
 \Statex
-\Procedure{Algoritmus procházení stavů}{$S,T$}
+\Procedure{}{$S,T$}
 \State \textbf{Inicializace:}
 %\State Vzdálenost modelů $D\gets$ dist(S, T)
-\State $A \gets S$ \Comment {aktuální model}
-\State $R\gets  DUMMY\_OPERATION$\Comment{Rozpoznaná operace}
+\State $A \gets S$ \Comment {Aktuální model}
 \State $R_{ops} \gets \{\}$
 \Statex
-   \While{$R \neq NONE\_OPERATION$}\Comment{byla rozpoznána nějaká operace} 
-   \State $R\gets NONE\_OPERATION$
+  \Repeat
+   \State $R\gets NULL$
    \State $K\gets 0$ \Comment{Zlepšující krok}
-      \ForAll{op from Ops} \Comment{Pro každou operací z app metamodelu}
-         \State $K_{op} \gets ZjistiZlepseni(op, A, T)$ \Comment{spočítá
+   	  \ForAll{op from Ops} \Comment{Pro každou operací z app metamodelu}
+         \State $K_{op} \gets ZjistiZlepseni(op, A, T)$ \Comment{Spočítá
          zlepšení}
       	\If{$K < K_{op}$}
       	   \State $K\gets K_{op}$
@@ -1787,34 +1793,36 @@ byla přidána takzvaná Dummy operation v případě, že nebyla rozpoznána
       \EndFor
       \If{$R \neq NONE\_OPERATION$}
          \State $params \gets getParams(op, A, S)$
-         \State $R_{ops}\gets R_{ops} +R(params)$
+         \State $R_{ops}\gets R_{ops} \bigcup R(params)$
          \State apply(op, A)      
       \EndIf
-   \EndWhile
+   \Until{$R = NULL$}\Comment{Opakuje cyklus, dokud byla rozpoznána
+   nějaká operace}
 \EndProcedure
 \end{algorithmic}
 
-%\end{algorithm}
-\ \\
+\end{algorithm}
+%\ \\
 Algoritmus potřebuje ke svému běhu konfiguraci vah atributů jednotlivých
-elementů modelu.
+elementů modelu. Tato konfigurace se používá k zjištění vzdálenosti mezi
+jednotlivými modely.
 \begin{itemize}
    \item Váhy atributů třídy
    \begin{description}
-      \item[classname] jméno třídy
-      \item[parent] reference na rodičovskou třídu 
+      \item[W(classname)] jméno třídy
+      \item[W(parent)] reference na rodičovskou třídu 
    \end{description}
    \item Váhy atributů všech property
    \begin{description}
-      \item[propertyName] jméno property
-      \item[type] reference na typ property
-      \item[isOrdered] boolean značící ordered kolekci
-      \item[isUnique] boolean značící unikátní kolekci
-      \item[LowerBound + UpperBound] horní a dolní mez hodnot property
+      \item[W(propertyName)] jméno property
+      \item[W(type)] reference na typ property
+      \item[W(isOrdered)] boolean značící ordered kolekci
+      \item[W(isUnique)] boolean značící unikátní kolekci
+      \item[W(LowerBound, UpperBound)] horní a dolní mez hodnot property
    \end{description}
    \item Váhy atributů asociačních property
    \begin{description}
-      \item[oppositteProperty] reference na opozitní property u bidirectional
+      \item[W(oppositteProperty)] reference na opozitní property u bidirectional
       vazby
    \end{description}
 \end{itemize}
@@ -1861,7 +1869,7 @@ jedna a ExtractClass o 7. Z těchto operací vyhodnotí jako nejlepší
 ExtractClass a následně algoritmus skončí, protože po aplikaci se současný
 model dostal do cílového stavu.
 
-\begin{figure}[Htl]
+\begin{figure}[H]
 \begin{center}
 \includegraphics[width=5cm]{figures/exp_contact.jpg}
 \caption{Počáteční model}
@@ -1869,13 +1877,15 @@ model dostal do cílového stavu.
 \end{center}
 \end{figure}
 
-\begin{figure}[Htr]
+\begin{figure}[H]
 \begin{center}
 \includegraphics[width=12cm]{figures/exp_contact_address.jpg}
 \caption{Cílový model}
 \label{fig:exp_contact_address}
 \end{center}
 \end{figure}
+
+\FloatBarrier
      
 Přes počáteční slibné výsledky testované na konstruktivních operacích byl tento
 algoritmus zavrhnut jako neefektivní. Algoritmus v každém kroku hledá parametry

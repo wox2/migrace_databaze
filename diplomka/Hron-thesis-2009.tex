@@ -1778,8 +1778,9 @@ který je ukončen splněním terminální podmínky uvedené v pseudokódu na �
 v těle cyklu nebyla rozpoznána žádná operace.
 
 V těle cyklu Repeat potom algoritmus nastaví hodnotu R na NULL a nastaví
-hodnotu aktuálního nejlepšího zlepšujícího kroku K na 0, aby zajistil přemazání
-dat nalezené operace v minulé iteraci cyklu. 
+na zmíněném řádku \ref{algo:state:improvement} hodnotu aktuálního nejlepšího
+zlepšujícího kroku K na 0, aby zajistil přemazání dat nalezené operace v minulé
+iteraci cyklu.
 
 Algoritmus spočítá v cyklu na řádcích
 \ref{algo:state:forOps}-\ref{algo:state:forOpsEnd} pro každou operaci maximální
@@ -1792,11 +1793,12 @@ nalezla jméno třídy, která neexistuje v zdrojovém modelu, ale existuje v c�
 modelu. Algoritmus přidá operaci R s aplikovanými(params) do množiny $R_{ops}$ a
 aplikuje operaci R(params) na aktuální model A.\ \\
 
-Základní myšlenkou pro vytvoření algoritmu byla vzdálenost modelu od prázdného
-modelu. Tuto základní vzdálenost můžeme nazvat energií modelu. Pokud se zaměříme
-na samotnou existenci tříd s daným jménem a properties s daným jménem v modelu
-a pomineme ostatní atributy properties a tříd můžeme si představit energii
-modelu jako součet existujících tříd a jejich properties.
+Základními myšlenkou pro vytvoření algoritmu byla existence
+vzdálenosti dvou modelů. Vzdálenost dvou modelů je snižována v každém
+kroku o zlepšující krok a jakmile jsou dva modely shodné (či pro danou množinu
+operací $R_{ops}$ velmi podobné), algoritmus již žádnou další operaci
+nerozezná, hodnota vzdálenosti je na minimu a algoritmus končí.
+Vzdálenost modelu od prázdného modelu nazveme energií modelu.
 
 \begin{algorithm}
 \caption{Algoritmus procházení stavů}\label{algo:state}
@@ -1814,7 +1816,7 @@ modelu jako součet existujících tříd a jejich properties.
 \Statex
   \Repeat \label{algo:state:repeat}
    \State $R\gets NULL$
-   \State $K\gets 0$ \Comment{Zlepšující krok}
+   \State $K\gets 0$ \Comment{Zlepšující krok}\label{algo:state:improvement}
    	  \ForAll{op from Ops} \Comment{Pro každou operací z app metamodelu}
    	  \label{algo:state:forOps}
    	  \State $K_{op} \gets getImprovement(op, A, T)$ \Comment{Spočítá
@@ -1836,6 +1838,10 @@ modelu jako součet existujících tříd a jejich properties.
 \end{algorithm}
 
 \subsection{Energie modelu}
+Pokud se zaměříme na samotnou existenci tříd s daným jménem a properties s
+daným jménem v modelu a pomineme ostatní atributy properties a tříd můžeme si
+představit energii modelu jako součet existujících tříd a jejich properties.
+
 Pro jednoduchost si můžeme reprezentovat textově s následujícími pravidly:
 název třídy budeme reprezentovat velkými písmeny a názvy properties
 malými písmeny. V zájmu jednoduchosti nereprezentujeme
@@ -1940,9 +1946,11 @@ E(C_{XY}) + E(P_{XY}) + E(C_{YX}) + E(P_{YX}) + \nonumber \\ + & E(PRIM_{XY})
 \nonumber
 \end{align}
 
-Přičemž $E(PRIM_{XY})$ reprezentuje energii změněných primitivních atributů:
-$$E(PRIM_{XY}) = \sum_{A: (A.owner \notin M_{X} \vee A.owner \notin M_{Y})
-\vee A_{X} != A_{Y} }E(A)$$
+Přičemž $E(PRIM_{XY})$ reprezentuje energii změněných primitivních atributů a
+gamma reprezentuje podmínku pro započítaný atribut:
+$$\gamma=A: (A.owner \notin M_{X} \vee A.owner \notin M_{Y})
+\vee A_{X} != A_{Y} $$
+$$E(PRIM_{XY}) = \sum_{\gamma}E(A)$$
 
 Pro rozšířený výpočet energie property $p_{XY} \in P_{XY}$ je zakomponována do
 vzorce energie referenčních propertie:
@@ -1994,7 +2002,7 @@ počáteční model vyjádřit pomocí jednoduché textové formy se
 zkrácením názvů na počáteční písmeno a dolním indexem pro
 property s neunikátním názvem "$M_1$(Cscp)" a cílový model jako $M_2(Cpc_{on},
 Acsa)$ vzdálenost těchto dvou modelů vyjádřit pomocí
- delta notace:
+ delta notace zobrazené v listings \ref{algo:state:delta_example}.
 
 \begin{lstlisting}[mathescape,frame=single,caption=Textový diff
 modelů pro ukázkový příklad,label=algo:state:delta_example]
@@ -2022,6 +2030,12 @@ ExtractClass a následně algoritmus skončí, protože po aplikaci se současn�
 model dostal do cílového stavu a již nerozpozná další operaci.
 
 
+Algoritmus dává stejnou váhu atributům jako třídám, což nemusí být
+správné. Aby algoritmus lépe splňoval požadavky uživatele, tj. priorizoval
+některé operace, je možné modifikovat výpočet energie a místo konstanty 1 v
+předešlých vzorcích použít konfiguraci vah jednotlivých atributů.
+Všechny atributy jsou vyjmenovány v následujícím seznamu.
+
 \begin{itemize}
    \item Váhy atributů třídy
    \begin{description}
@@ -2043,32 +2057,45 @@ model dostal do cílového stavu a již nerozpozná další operaci.
    \end{description}
 \end{itemize}
 
-\begin{algorithmic}[1]
-   \Require Zdrojový model S, cílový model T
-   \Ensure Celočíselná hodnota vyjadřující vzdálenost modelu S od modelu T
-   \Statex
-   \Procedure{getDistance}{S, T}
-   \State 
-   \EndProcedure
-\end{algorithmic}
 \ \\
 Příklad konfigurace:
 \begin{itemize}
       \item classname = 1
-      \item parent = 1 
+      \item parent = 0 
       \item propertyName = 1
-      \item type = 1
-      \item isOrdered = 1
-      \item isUnique = 1
-      \item LowerBound + UpperBound = 1
-      \item oppositteProperty = 1
+      \item type = 0
+      \item isOrdered = 0
+      \item isUnique = 0
+      \item LowerBound + UpperBound = 0
+      \item oppositteProperty = 0
 \end{itemize}
+
+Tato konfigurace redukuje získávání energie na původně zmiňovaný způsob definice
+Enerigie.
+
+Další možnou modifikací je úprava seznamu procházených operací. Algoritmus je
+schopný rozpoznat jednotlivé operace, ale může mít problémy s rozpoznáním
+některých dvojic operací. Problematickým stavem je například, pokud jediným
+rozdílem je primitivní typ property odlišný ve vstupním a výstupním modelu.
+Algoritmus vyhodnotí vzdálenost > 0 a musí buď aplikovat operaci RemoveProperty,
+která smaže property a má záporný zlepšovací krok. Bylo by nutné upravit
+zisk zlepšujícího kroku, značně zesložitit implementaci metody getImprovement
+pro operaci RemoveParent, upravit inicializaci zlepšujícího kroku tak, aby se
+na řádku \ref{algo:state:improvement}
+nainicializovala hodnotou $-\infty$ a
+upravit terminální condition na řádku \ref{algo:state:terminal_condition}, tak,
+aby algoritmus neběžel do nekonečna. Druhou možností vyřešení tohoto problému je
+rozšíření seznamu $R_{ops}$ o dvojici operací RemoveProperty a AddProperty, je
+nutné a nastavit získávání zlepšujícího kroku pouze pro případy, kdy existuje
+property, která má v výstupním modelu jiný typ než ve vstupním.
+
      
 Přes počáteční slibné výsledky testované na konstruktivních operacích byl tento
 algoritmus zavrhnut jako neefektivní. Algoritmus v každém kroku hledá parametry
 i pro všechny operace, nedá se jednoduše analyzovat, pro které operace je nutné
-hledat parametry znovu a které operace se již nedají rozpoznat. Druhou nevýhodou
-je šířka prohledávaného stromu - algoritmus může nalézt víc operací, které
+hledat parametry znovu, kterých operací se aplikace rozpoznané operace nedotkla 
+a které operace se již po aplikaci nedají rozpoznat.
+Druhou nevýhodou je šířka prohledávaného stromu - algoritmus může nalézt víc operací, které
 přinližují model stejnou měrou modelu cílovému, ale jakmile jednu z nich náhodně
 vybere, zapomene veškeré mezivýsledky a v dalším kroku může rozpoznat všechny
 operace z minulé iterace vyjma operace rozpoznané. V případě paralelizace by

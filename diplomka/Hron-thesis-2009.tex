@@ -31,6 +31,7 @@
 \usepackage[]{algorithmicx}
 \usepackage{algpseudocode}
 \usepackage{algorithm}
+\usepackage{mathtools}
 
 \renewcommand{\algorithmicrequire}{\textbf{Input:}}
 \renewcommand{\algorithmicensure}{\textbf{Output:}}
@@ -1762,50 +1763,265 @@ V ranné fázi jsem napsal prototyp rozpoznávacího algoritmu, který se snaž�
 minimalizovat vzdálenost současného modelu od modelu cílového pomocí rozpoznání
 operací a jejich následné aplikace. Výhodou tohoto přístupu je možnost nalezení
 více alternativních cest, nevýhodou je potom velikost stavového prostoru
-zvětšující se s počtem rozpoznávaných operací. Algoritmus popsaný v pseudokódu
-viz algoritmus \ref{algo:state}
+zvětšující se s počtem rozpoznávaných operací. Algoritmus je popsaný v
+pseudokódu viz algoritmus \ref{algo:state}
 %\\
+
+Algoritmus v prvním svém kroku inicialializuje hodnoty.
+Aktuálnímu modelu nastaví hodnotu modelu zdrojového. Množinu rozpoznaných
+operací $R_{ops}$ inicializuje prázdnou množinou. Rozpoznanou R operaci nastaví
+na NULL.
+
+Následně opakuje cyklus repeat začínající na řádce \ref{algo:state:repeat},
+který je ukončen splněním terminální podmínky uvedené v pseudokódu na řádce
+\ref{algo:state:terminal_condition}, R = NULL. Tj. algoritmus je ukončen, pokud
+v těle cyklu nebyla rozpoznána žádná operace.
+
+V těle cyklu Repeat potom algoritmus nastaví hodnotu R na NULL a nastaví
+hodnotu aktuálního nejlepšího zlepšujícího kroku K na 0, aby zajistil přemazání
+dat nalezené operace v minulé iteraci cyklu. 
+
+Algoritmus spočítá v cyklu na řádcích
+\ref{algo:state:forOps}-\ref{algo:state:forOpsEnd} pro každou operaci maximální
+zlepšující krok této operace $K_{op}$. Pokud je $K_{op}$ lepší než
+dosavadní maximum K, aktualizuje $K_{op}$ a R. Následně algoritmus v případě
+rozpoznání nějaké operace - viz. řádek \ref{algo:state:addOp} nalezne parametry
+params pro operaci R viz metoda getParams(R, A, S) na řádku
+\ref{algo:state:getParams}. Tato metoda by například pro operaci AddClass
+nalezla jméno třídy, která neexistuje v zdrojovém modelu, ale existuje v cílovém
+modelu. Algoritmus přidá operaci R s aplikovanými(params) do množiny $R_{ops}$ a
+aplikuje operaci R(params) na aktuální model A.\ \\
+
+Základní myšlenkou pro vytvoření algoritmu byla vzdálenost modelu od prázdného
+modelu. Tuto základní vzdálenost můžeme nazvat energií modelu. Pokud se zaměříme
+na samotnou existenci tříd s daným jménem a properties s daným jménem v modelu
+a pomineme ostatní atributy properties a tříd můžeme si představit energii
+modelu jako součet existujících tříd a jejich properties.
 
 \begin{algorithm}
 \caption{Algoritmus procházení stavů}\label{algo:state}
 
 \begin{algorithmic}[1]
 \Require Zdrojový model S, cílový model T
-\Ensure Seznam operací $R_ops$, po jejichž aplikaci se model S tranformuje na
+\Ensure Seznam operací $R_{ops}$, po jejichž aplikaci se model S tranformuje na
      model T
 \Statex
-\Procedure{}{$S,T$}
 \State \textbf{Inicializace:}
 %\State Vzdálenost modelů $D\gets$ dist(S, T)
 \State $A \gets S$ \Comment {Aktuální model}
 \State $R_{ops} \gets \{\}$
+\State $R\gets NULL$ \Comment{Rozpoznaná operace}
 \Statex
-  \Repeat
+  \Repeat \label{algo:state:repeat}
    \State $R\gets NULL$
    \State $K\gets 0$ \Comment{Zlepšující krok}
    	  \ForAll{op from Ops} \Comment{Pro každou operací z app metamodelu}
-         \State $K_{op} \gets ZjistiZlepseni(op, A, T)$ \Comment{Spočítá
+   	  \label{algo:state:forOps}
+   	  \State $K_{op} \gets getImprovement(op, A, T)$ \Comment{Spočítá
          zlepšení}
-      	\If{$K < K_{op}$}
-      	   \State $K\gets K_{op}$
-      	   \State $R \gets op$
+      	\If{$K < K_{op}$}\Comment
+      	  \State $K\gets K_{op}$
+      	  \State $R \gets op$
       	\EndIf
-      \EndFor
-      \If{$R \neq NONE\_OPERATION$}
-         \State $params \gets getParams(op, A, S)$
+      \EndFor \label{algo:state:forOpsEnd} 
+      \If{$R \neq NULL$} \label{algo:state:addOp}
+         \State $params \gets getParams(R, A, S)$ \label{algo:state:getParams}
          \State $R_{ops}\gets R_{ops} \bigcup R(params)$
-         \State apply(op, A)      
+         \State apply(R(params), A)      
       \EndIf
    \Until{$R = NULL$}\Comment{Opakuje cyklus, dokud byla rozpoznána
-   nějaká operace}
-\EndProcedure
+   nějaká operace}\label{algo:state:terminal_condition}
 \end{algorithmic}
 
 \end{algorithm}
-%\ \\
-Algoritmus potřebuje ke svému běhu konfiguraci vah atributů jednotlivých
-elementů modelu. Tato konfigurace se používá k zjištění vzdálenosti mezi
-jednotlivými modely.
+
+\subsection{Energie modelu}
+Pro jednoduchost si můžeme reprezentovat textově s následujícími pravidly:
+název třídy budeme reprezentovat velkými písmeny a názvy properties
+malými písmeny. V zájmu jednoduchosti nereprezentujeme
+idProperties, která má většinou název jednoznačně odvoditelný od názvu třídy, která ji
+vlastní. Třída je řetězec obsahující svůj název a seznam properties. Řetězec
+Abcd tedy reprezentuje třídu A s properties "b","c" a "d". Řetězec Bef potom
+reprezentuje třídu B obsahující property "e" a "f". Tuto reprezentaci
+nazveme Jednoduchovou textovou reprezentací. Model $M_1$(Abcd, Bef) obsahuje
+dříve zmíněné třídy.
+Jeho energie je rovna součtu energie třídy A a třídy B. Energie každé třídy je
+rovna 1 + sumy energií jednotlivých properties.
+Properties mají v naší demonstrativní ukázce bez započítání jiných atributů než
+name energii 1.
+ $$E(M_1) = E(A) + E(B) = 1 + \sum_{p \in A}E(p) + 1 + \sum_{p
+\in B}(E(p)) = 1 + 3 + 1 + 2 = 7$$
+
+Energie je v tomto případě rovna počtu konstruktivních operací nutných k
+vytvoření tohoto modelu. Energie také vyjadřuje v tomto případě počet
+destruktivních operacích nutných k smazání tohoto modelu. Pokud vytvoříme
+další model, můžeme si vyjádřit hodnotu změny těchto modelů. 
+
+Můžeme vytvořit model $M_2$ například tak, že z modelu $M_1$ odebereme z třídy A
+property "c", přejmenujeme property "d" na "g" a přejmenujeme třídu B na C. Tak
+získáme model Model $M_2$(Abg, Cef), který má energii rovnu hodnotě 6.
+Patch($M_1, M_2$) můžeme definovat pomocí delta notace. Naší delta notaci můžeme
+zapsat ve tvaru +X pro přidanou třídu, +Xyz pro přidané atributy "y" a "z" ze
+třídy X, -X pro odstraněnou třídu a -Xyz pro odstraněné atributy "y" a "z" ze třídy X.
+
+\FloatBarrier
+
+\begin{lstlisting}[language=JAVA,frame=single,caption=Textový diff
+modelů,label=algo:state:delta]
+   +Ag           -Acd
+   +C            -B
+   +Cef          -Bef
+\end{lstlisting}
+
+\FloatBarrier
+
+Pro tento minimalistický přístup můžeme použít výpočet symetrické delty
+následující vzorce:
+
+$$distance(M_1,M_2) = E(\Delta(M_1,M_2)) + E(\Delta(M_2, M_1))$$
+Vzdálenost dvou modelů $M_1, M_2$ je potom rovna energii, množinového rozdílu
+$M_1,M_2$, sečtené s energií množinového rozdílu $M_2, M_1$.
+
+$$\Delta(M_X,M_Y) = (\Delta {C_{XY}}, \Delta{P_{XY}}) $$
+
+Delta modelů X a Y je uspořádaná dvojice rozdílu tříd a rozdílu properties.
+$$\Delta {C_{XY}} = \{c: c \in M_X \wedge c \notin M_Y\}$$
+Delta tříd modelů X a Y je množina tříd, které jsou v modelu X, ale nejsou v
+modelu Y.
+ $$\Delta{P_{XY}} = \{p: p \in X \wedge p \notin Y \wedge p.owner
+\notin \Delta {C_{XY}}\})$$
+Delta properties modelů X a Y je množina properties, které patří do modelu X,
+ale nejsou v modelu Y a jejich vlastnická třída není obsažena v množině  $\Delta
+{C_{XY}}$. Explicitní podmínka pro vlastnickou třídu property je, že je obsažen
+v X, protože i p je obsaženo v X.
+
+
+Předpokládejme dále, že energie dvojice $E(C_{XY}, P_{XY}) = E(C_{XY}) +
+E(P_{XY})$ 
+
+Původní rovnice se nám tedy přepíše na :
+
+\begin{align} distance(M_X,M_Y) = & E(\Delta(M_X,M_Y)) + E(\Delta(M_Y, M_X)) =
+E(C_{XY}, P_{XY}) + E(C_{YX}, P_{YX}) = \nonumber \\ = & E(C_{XY}) + E(P_{XY}) +
+E(C_{YX}) + E(P_{YX}) \nonumber
+\end{align}
+
+
+
+Na listing \ref{algo:state:delta} máme na levé straně zobrazenou
+$\Delta(M_1,M_2)$ a na pravé straně $\Delta(M_2,M_1)$ pro zadaný příklad. Pro
+naše konkrétní modely $M_1 a M_2$ je distance tedy:
+
+$distance(M_1,M_2) = E(C_{12}) + E_{P_{12}} + E(C_{12}) + E_{P_{12}} = 1 + 3 +
+1 + 4 = 9$
+
+Tento způsob vypočítávání Energie nicméně zanedbává energii, o kterou model
+obohacují atributy tříd a properties. Atributy properties a tříd dělíme do
+skupiny primitivních typů a skupiny referencí. Mezi primitivní atributy řadíme
+třídní atributy name a isAbstract a atributy lowerBound, upperBound,
+isOrdered, isUnique a name vlastněné properties. Mezi referenční atributy patří
+třídní atribut parent a atributy type a oppositteProperty vlastněné property. Zásadním
+rozdílem mezi skupinou referenčních a primitivních atributů je způsob jejich
+změny jednotlivými operacemi. Primitivní atribut můžeme změnit aplikací jedné
+operace na jinou hodnotu. Například property atribut isUnique změníme
+aplikací operace SetUnique. Výjimečné jsou atributy lowerBound a upperBound,
+jejichž hodnotu můžeme změnit současně jednou operací SetBounds.
+Hodnotu referenčních atributů nemůžeme změnit jednou operací, ale
+dvěma. Například na změnu parent třídy musíme rodičovskou třídu nejdříve
+odstranit operací RemoveParent a následně operací AddParent přidat
+referenci na novou rodičovskou třídu. Změna referenčních hodnot modelů je
+započítána dvakrát oproti změně hodnot primitivních atributů. Primitivní
+hodnoty je nutné do vzorce tedy započítat. Původní vzorec pro vzdálenost dvou
+modelů se tedy změní na:
+
+\begin{align} distance(M_X,M_Y) = & E(\Delta(M_X,M_Y)) + E(\Delta(M_Y, M_X)) =
+E(C_{XY}, P_{XY}) + E(C_{YX}, P_{YX}) + \nonumber \\ + & E(PRIM_{XY}) = 
+E(C_{XY}) + E(P_{XY}) + E(C_{YX}) + E(P_{YX}) + \nonumber \\ + & E(PRIM_{XY})
+\nonumber
+\end{align}
+
+Přičemž $E(PRIM_{XY})$ reprezentuje energii změněných primitivních atributů:
+$$E(PRIM_{XY}) = \sum_{A: (A.owner \notin M_{X} \vee A.owner \notin M_{Y})
+\vee A_{X} != A_{Y} }E(A)$$
+
+Pro rozšířený výpočet energie property $p_{XY} \in P_{XY}$ je zakomponována do
+vzorce energie referenčních propertie:
+$$E(p_{XY}) = 1 + \sum_{A \in p_X \wedge A_Y = null \vee A_Y != A_X}$$ 
+
+
+Takto definovaný výpočet energie s položením $E(A) = 1$ udává maximální počet
+konstruktivních, destruktivních a modifikačních operací nutných k transformaci
+modelu $M_X$ na model $M_Y$.
+
+Zlepšující krok operace je definován jako vzdálenost, o kterou se přiblíží
+aktuální model A po aplikaci operace op k modelu cílovému T s nejlepšími
+možnými parametry. Nejlepší parametry jsou takové, které přibližují
+aktuální model o takovou vzdálenost, že neexistují parametry, které by zdrojový
+model přibližovaly k cílovému o vzdálenost větší. Není zaručena jedinečnost
+nejlepších parametrů. Při neexistenci jakýchkoliv vhodných parametrů
+vrací operace $-\infty$. Pro zlepšující krok getImprovement(op, A, T) platí:
+
+$$distance(M_A, M_T) = distance(M_X, M_T) + getImprovement(op, A, T)$$
+
+Ilustrujme běh algoritmu na příkladě. Na obrázku \ref{fig:exp_contact} je
+zobrazen ukázkový zdrojový a cílový model je zobrazený na obrázku
+\ref{fig:exp_contact_address}.
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=5cm]{figures/exp_contact.jpg}
+\caption{Počáteční model}
+\label{fig:exp_contact}
+\end{center}
+\end{figure}
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=12cm]{figures/exp_contact_address.jpg}
+\caption{Cílový model}
+\label{fig:exp_contact_address}
+\end{center}
+\end{figure}
+
+\FloatBarrier
+
+Algoritmus předpokládá, že operace přibližující aktuální stav k cílovému by
+měly být rozpoznány (a aplikovány) co nejdříve. Například pro počáteční model
+zobrazený na obrázku \ref{fig:exp_contact} a cílový model zobrazený na obrázku
+\ref{fig:exp_contact_address}. 
+Pokud použijeme základní definici vzdálenosti energie, můžeme
+počáteční model vyjádřit pomocí jednoduché textové formy se
+zkrácením názvů na počáteční písmeno a dolním indexem pro
+property s neunikátním názvem "$M_1$(Cscp)" a cílový model jako $M_2(Cpc_{on},
+Acsa)$ vzdálenost těchto dvou modelů vyjádřit pomocí
+ delta notace:
+
+\begin{lstlisting}[mathescape,frame=single,caption=Textový diff
+modelů pro ukázkový příklad,label=algo:state:delta_example]
+   +C$c_{on}$    -Csc
+   +A            
+   +Asca
+\end{lstlisting}
+
+
+$$distance(M_1,M_2) = E(C_{12}) + E_{P_{12}} + E(C_{12})
++ E_{P_{12}} = 0 + 2 + 1 + 4 = 7$$
+
+Algoritmus v prvním průchodu rozpozná, že je možné aplikovat operace
+AddClass, RemoveProperty a ExtractClass. Nejlepším parametrem pro AddClass je
+třída Address. AddClass zlepšuje vzdálenost o 1. Nejlepším parametrem pro
+operaci RemoveProperty je jedna z odstraněných property, takže například
+Street. RemoveProperty zlepšuje vzdálenost také o 1. Vhodnými
+parametry pro operaci ExtractClass jsou třídy zdrojová třída Address,
+extrahovaná třída Contact, referenční property contact, její oppositum address a
+nějaký seznam properties obsažených v třídě address.
+Nejlepšími parametry pro ExtractClass jsou dvě zmiňované třídy s asociačními
+properties a seznam všech properies v nově vzniklé třídě Contact. ExtractClass
+má hodnotu zlepšujícího kroku 7. Z těchto operací vyhodnotí jako nejlepší
+ExtractClass a následně algoritmus skončí, protože po aplikaci se současný
+model dostal do cílového stavu a již nerozpozná další operaci.
+
+
 \begin{itemize}
    \item Váhy atributů třídy
    \begin{description}
@@ -1847,45 +2063,6 @@ Příklad konfigurace:
       \item LowerBound + UpperBound = 1
       \item oppositteProperty = 1
 \end{itemize}
-
-Na obrázcích vidíme \ref{fig:exp_contact} a cílový model
-zobrazený na obrázku
-\ref{fig:exp_contact_address}
-
-Algoritmus předpokládá, že operace přibližující aktuální stav k cílovému by
-měly být rozpoznány (a aplikovány) co nejdříve. Například pro počáteční model
-zobrazený na obrázku \ref{fig:exp_contact} a cílový model zobrazený na obrázku
-\ref{fig:exp_contact_address}. Algoritmus spočítá vzdálenost například
-jako součet přidaných/odebraných tříd, primitivních atributů a asociačních
-vazeb.
-Vzdálenost těchto dvou modelů je tudíž 7 - 2 odebrané atributy z třídy Contact,
-1 přidaná třída Address, 2 přidané atributy do třídy Address a 2 x vazba do tříd
-Contact a Address (bidirectional vazby je nutné počítat za dvě asociace). 
-
-Algoritmus v prvním průchodu rozpozná, že je možné aplikovat operace
-AddClass(Address), RemoveProperty(Street) a ExtractClass(Address, Contact,
-\{Street, City\}). AddClass zlepšuje vzdálenost o 1, RemoveProperty také o
-jedna a ExtractClass o 7. Z těchto operací vyhodnotí jako nejlepší
-ExtractClass a následně algoritmus skončí, protože po aplikaci se současný
-model dostal do cílového stavu.
-
-\begin{figure}[H]
-\begin{center}
-\includegraphics[width=5cm]{figures/exp_contact.jpg}
-\caption{Počáteční model}
-\label{fig:exp_contact}
-\end{center}
-\end{figure}
-
-\begin{figure}[H]
-\begin{center}
-\includegraphics[width=12cm]{figures/exp_contact_address.jpg}
-\caption{Cílový model}
-\label{fig:exp_contact_address}
-\end{center}
-\end{figure}
-
-\FloatBarrier
      
 Přes počáteční slibné výsledky testované na konstruktivních operacích byl tento
 algoritmus zavrhnut jako neefektivní. Algoritmus v každém kroku hledá parametry

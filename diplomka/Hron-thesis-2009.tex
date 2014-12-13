@@ -1755,7 +1755,7 @@ nutné vybrat si správný algoritmus v závislosti na řešeném problému.
  
 \FloatBarrier
  
- \chapter{Vytvořený algoritmus rozpoznávání operací}
+ \chapter{Vytvořené algoritmy rozpoznávání operací}
 
 \section{Stavový algoritmus}
 
@@ -2002,10 +2002,10 @@ počáteční model vyjádřit pomocí jednoduché textové formy se
 zkrácením názvů na počáteční písmeno a dolním indexem pro
 property s neunikátním názvem "$M_1$(Cscp)" a cílový model jako $M_2(Cpc_{on},
 Acsa)$ vzdálenost těchto dvou modelů vyjádřit pomocí
- delta notace zobrazené v listings \ref{algo:state:delta_example}.
-
-\begin{lstlisting}[mathescape,frame=single,caption=Textový diff
-modelů pro ukázkový příklad,label=algo:state:delta_example]
+ delta notace zobrazené v seznamu \ref{algo:state:delta_example}.
+ 
+\begin{lstlisting}[mathescape,frame=single,caption=Textový patch
+modelů pro ukázkový příklad v delta notaci,label=algo:state:delta_example]
    +C$c_{on}$    -Csc
    +A            
    +Asca
@@ -2034,9 +2034,9 @@ Algoritmus dává stejnou váhu atributům jako třídám, což nemusí být
 správné. Aby algoritmus lépe splňoval požadavky uživatele, tj. priorizoval
 některé operace, je možné modifikovat výpočet energie a místo konstanty 1 v
 předešlých vzorcích použít konfiguraci vah jednotlivých atributů.
-Všechny atributy jsou vyjmenovány v následujícím seznamu.
+Všechny atributy jsou vyjmenovány v seznamu \ref{algo:state:attribute_list}.
 
-\begin{itemize}
+\begin{itemize}\label{algo:state:attribute_list}
    \item Váhy atributů třídy
    \begin{description}
       \item[W(classname)] jméno třídy
@@ -2073,8 +2073,9 @@ Příklad konfigurace:
 Tato konfigurace redukuje získávání energie na původně zmiňovaný způsob definice
 Enerigie.
 
-Další možnou modifikací je úprava seznamu procházených operací. Algoritmus je
-schopný rozpoznat jednotlivé operace, ale může mít problémy s rozpoznáním
+Další možnou modifikací je úprava seznamu $R_{ops}$ použitého v algoritmu na
+řádku \ref{algo:state:forOps}.
+Algoritmus je schopný rozpoznat jednotlivé operace, ale může mít problémy s rozpoznáním
 některých dvojic operací. Problematickým stavem je například, pokud jediným
 rozdílem je primitivní typ property odlišný ve vstupním a výstupním modelu.
 Algoritmus vyhodnotí vzdálenost > 0 a musí buď aplikovat operaci RemoveProperty,
@@ -2085,36 +2086,66 @@ na řádku \ref{algo:state:improvement}
 nainicializovala hodnotou $-\infty$ a
 upravit terminální condition na řádku \ref{algo:state:terminal_condition}, tak,
 aby algoritmus neběžel do nekonečna. Druhou možností vyřešení tohoto problému je
-rozšíření seznamu $R_{ops}$ o dvojici operací RemoveProperty a AddProperty, je
-nutné a nastavit získávání zlepšujícího kroku pouze pro případy, kdy existuje
-property, která má v výstupním modelu jiný typ než ve vstupním.
+definovat seznam $R_{ops}$ nikoliv jako seznam operací v aplikačním
+metamodelu, ale jako seznam sekvencí operací. Konverze původního seznamu operací
+na jednoprvkové sekvence a rozšíření seznamu $R_{ops}$ o sekvenci operací
+RemoveProperty a AddProperty, s metodou getImprovement získávání zlepšujícího
+kroku pouze pro případy, kdy existuje property, která má v výstupním modelu
+jiný typ než ve vstupním.
 
      
-Přes počáteční slibné výsledky testované na konstruktivních operacích byl tento
-algoritmus zavrhnut jako neefektivní. Algoritmus v každém kroku hledá parametry
-i pro všechny operace, nedá se jednoduše analyzovat, pro které operace je nutné
-hledat parametry znovu, kterých operací se aplikace rozpoznané operace nedotkla 
-a které operace se již po aplikaci nedají rozpoznat.
-Druhou nevýhodou je šířka prohledávaného stromu - algoritmus může nalézt víc operací, které
-přinližují model stejnou měrou modelu cílovému, ale jakmile jednu z nich náhodně
-vybere, zapomene veškeré mezivýsledky a v dalším kroku může rozpoznat všechny
-operace z minulé iterace vyjma operace rozpoznané. V případě paralelizace by
-prohledávaný prostor mohl exponenciálně růst. 
+Přes počáteční slibné výsledky testované na konstruktivních operacích nebyl
+tento algoritmus shledán jako příliš efektivní. První nevýhodou je, že
+algoritmus v každém kroku hledá nejlepší zlepšující krok i pro všechny operace nalezené v
+iteraci minulé. Rozpoznané operace z minulého kroku by bylo možné zapamatovat,
+ale nebyl nalezen způsob hledání konfliktních operací vyjma případů, kdy dvě
+operace pracují nad jinou hierarchickou strukturou. Proto se nedá jednoduše
+analyzovat, pro které operace je nutné hledat nový zlepšující krok znovu,
+kterých operací se aplikace rozpoznané operace nedotkla, a které operace již
+nemusí mít zlepšující krok shodný a mohou mít jiné parametry.
 
-Nalezení vhodných vah jednotlivých elementů modelu a jejich atributů se dá
-získat jedině metodou pokus-omyl a je nutné váhy znovu přehodnotit po přidání
-nových operací. 
+Druhou nevýhodou je šířka prohledávaného stromu - algoritmus testuje v každé
+iteraci všechny operace, jejichž seznam (či v modifikaci zmiňovaná sekvence
+operací) $R_{ops}$ může nabývat velkých hodnot. Při všech váhách nastavených na
+jedna při vzdálenosti dvou modelů distance $distance(M_1,M_2) = d$, velikosti
+$R_{ops} = n$, složitosti aplikace operací $op_{appply}$, složitosti zisku zlepšujícího kroku operace
+$op_{getImprovement}$ a složitosti zisku parametrů $op_{getParams}$
+má algoritmus algoritmickou složitost $O(d) = O((Max(op_{getImprovement})^n *
+op_{getParams} * op_{appply})^d)$. V každé z maximálně d iterací je nutné v
+nejhorším případě získat zlepšující krok pro každou operaci a pro operaci s
+nejvyšším zlepšujícím krokem potom nalézt pro tuto operaci nejlepší parametry a
+aplikovat ji. Složitost operace $op_{getImprovement}$ se různí v závislosti na
+typu operace. Pro c tříd ve vstupním modelu a výstupním modelu má složitost
+hledání parametrů operace AddClass $O(AddClass_{getImprovement})= c^2$ a,
+protože hledáme třídu, která není ve vstupním modelu, ale je ve výstupním, tedy
+procházíme c tříd ve vstupním modelu a c tříd v modelu výstupním. Složitost
+$O(ExtractClass_{getImprovement})= c^2 * p * r * p $ příčemž c je počet tříd ve
+vstupním a výstupním modelu, p je maximální počet operací ve třídě a r je počet
+extrahovaných property. Hledáme třídu, ve které existuje asociační property v
+cílovém modelu, která neexistovala v modelu zdrojovém, jejíž součet energie
+properties, které jsou "extrahovány" do třídy typu asociace je největší.
+Po položení r = p dostáváme $O(ExtractClass_{getImprovement})= c^2 * p^3 $.
+Vzhledem k standardním modelům, které obsahují hodně malých tříd můžeme za
+předpokladu $c >> p$ položit $O(op_{getImprovement})= c^2$. U většiny
+operací hledáme třídu ze vstupního modelu, ke které hledáme její protějšek ve
+výstupním modelu se zadanými vlastnostmi, proto berme $O(op_{getImprovement})= c^2$. Stejnou
+složitost získáme ekvivalentním postupem pro funkci getParams.
+Funkce $op_{appply})^d)$ hledá jen třídu z vstupního modelu, na které
+provede nějaké změny, takže můžeme aproximovat její algoritmickou složitost
+hodnotou c.
 
-Experimentální algoritmus měl definován krok pro operace AddPrimitiveClass,
-AddStandardClass, RenameEntity, RemoveEntity, RenameProperty. Problematickou
-operací pro nastavování vah se stala operace ExtractClass.
+$O((Max(op_{getImprovement})^n * op_{getParams} * op_{appply})^d) = O(c^2 * c^2
+* c)^d = O(c^{5*d})$
+
+Stavový algoritmus měl definován krok pro operace AddPrimitiveClass,
+AddStandardClass, RenameEntity, RemoveEntity, RenameProperty.
  
  \section{Návrh ze studia článků}
  
- Vzhledem k obecné použitelnosti algoritmů pro graph matching nebyly tyto
- algoritmy shledány za vhodné k použití pro problém hledání sady
- aplikačních operací. První 3 popsané algoritmy model matchingu ( 1
- párování podle statického identifikátoru, 2. signature based matching, 3.
+ Kvůli přílišné obecnosti algoritmů pro graph matching nebyly tyto algoritmy
+ shledány za vhodné k použití pro problém hledání sady aplikačních operací.
+ První 3 popsané algoritmy model matchingu ( 1 párování podle statického
+ identifikátoru, 2. signature based matching, 3.
  similarity based matching) nejsou vhodné k použití z důdodu, že k rozpoznání
  popsaných expanzivních a reduktivních operací je nutné rozpoznat 2 třídy,
  které se mapují na jednu třídu pro reduktivní operace a naopak jednu operaci,
@@ -2131,19 +2162,47 @@ operací pro nastavování vah se stala operace ExtractClass.
 
  Vznikly dvě implementace párovacích algoritmů. 
  
- \section{První implementace}
+ \section{Základní implementace}
  První jednodušší používá základu z UMLDiffu a očekává, že dvě třídy se stejným
  jménem jsou shodné, páruje tedy třídy podle jména. Následné rozdíly řeší rozpoznáním
  konstruktivních a destruktivních, případně některých operací modifikačních, ať
  už tyto operace pracovali s třídami nebo s property.
  
  První algoritmus pracuje podle tohoto pseudokódu:
+ \begin{algorithm}
+\caption{Algoritmus procházení stavů}\label{algo:state}
+
+\begin{algorithmic}[1]
+\Require Zdrojový model S, cílový model T
+\Ensure Seznam operací $R_{ops}$, po jejichž aplikaci se model S tranformuje na
+     model T
+\Statex
+\State \textbf{Inicializace:}
+%\State Vzdálenost modelů $D\gets$ dist(S, T)
+   \State $SClses \gets S.classes$ \Comment{Nenamatchované třídy z vstupního
+   modelu}
+   \State $TClses \gets T.classes$ \Comment{Nenamatchované třídy z cílového
+   modelu}
+   \State $SProps \gets S.classes.properties$ \Comment{Nenamatchované properties
+   z vstupního modelu}
+   \State $TProps \gets T.classes.properties$ \Comment{Nenamatchované properties
+   z cílového modelu}
+   \State $OPS \gets \{\}$
+	   
+   \ForAll{$C_S \in S: \exists C_T \in  T \: C_T.name = C_S.name$} \Comment{b}
+   	
+   \EndFor \label{algo:state:forOpsEnd}
+   	
+   	
+%   	\begin{procedure}
+   	   
+%   	\end{procedure}  
+\end{algorithmic}
+
+\end{algorithm}
+
  \begin{enumerate}
-   \item Nastaví do seznamu SClses Standardní třídy z vstupního modelu  
-   \item Nastaví do seznamu TClses Standardní třídy z cílového modelu  
-   \item Nastaví do seznamu SProps Properties z vstupního modelu
-   \item Nastaví do seznamu TProps Properties z cílového modelu
-   \item seznam OPS :=\{\}
+
    \item Pro každou třídu S z vstupního modelu, která má stejné jméno jako třída
    T obsažená v modelu výstupním
    \begin{enumerate}

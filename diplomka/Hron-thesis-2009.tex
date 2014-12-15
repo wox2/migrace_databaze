@@ -1914,7 +1914,7 @@ E(C_{YX}) + E(P_{YX}) \nonumber
 
 
 
-Na listing \ref{algo:state:delta} máme na levé straně zobrazenou
+Na výpisu \ref{algo:state:delta} máme na levé straně zobrazenou
 $\Delta(M_1,M_2)$ a na pravé straně $\Delta(M_2,M_1)$ pro zadaný příklad. Pro
 naše konkrétní modely $M_1 a M_2$ je distance tedy:
 
@@ -2224,12 +2224,12 @@ AddStandardClass, RenameEntity, RemoveEntity, RenameProperty.
 
 \FloatBarrier
 
-Algoritmus inicializuje množiny nezpárovaných tříd z vstupního (a výstupního)
+Algoritmus inicializuje množiny nespárovaných tříd z vstupního (a výstupního)
 modelu všemi třídami z vstupního (resp výstupního modelu) a seznam výstupních
 operací prázdnou množinou. Následně algoritmus zpáruje třídy podle jména,
-odstraní zpárované třídy z množin SClasses a TClasses a zpáruje jejich property
+odstraní spárované třídy z množin SClasses a TClasses a zpáruje jejich property
 podle jména v proceduře MATCH\_EQUAL\_PROPERTIES. Procedura
-MATCH\_EQUAL\_PROPERTIES odstraní v zpárovaných třídách property se stejným
+MATCH\_EQUAL\_PROPERTIES odstraní v spárovaných třídách property se stejným
 jménem z množin SProps a TProps.
 
 Algoritmus pokračuje rozpoznáváním operací. V fázi rozpoznávání operací jsou
@@ -2366,23 +2366,29 @@ OBRÁZEK BUDE DOPLNĚN.\\
  Složitější implementace algoritmu páruje stejně jako jednodušší v
  první fázi shodné elementy - modely se mění, ale některé třídy jsou zachovány.
  Oproti základní verzi algoritmu je nutné vytvořit entitu reprezentující shodu -
- EqualClassPair. V druhé fázi párování musí algoritmus párovat třídy podle
- jiného kritéria. Tímto mnou zvoleným kritériem je suma properties se shodným
- jménem. Čím vyšší je tato suma, tím jsou si třídy podobnější.\\
+ EqualClassPair. Shodné třídy a třídy přejmenované potom tvoří pilíře pro
+ operace reduktivní a expanzivní, které se vážou na rozpoznané páry. Operace
+ expanzivní a reduktivní není tedy možné bez jejich pilířů rozpoznat. V
+ druhé fázi algoritmus páruje již spárované třídy v zdrojovém modelu s třídami
+ nespárovanými z cílového modelu a obráceně třídy nespárované ze zdrojového
+ modelu s třídami spárovanými. V druhé fázi párování musí algoritmus párovat
+ třídy podle jiného kritéria.
+ Tímto mnou zvoleným kritériem je suma properties se shodným jménem. Čím vyšší
+ je tento koeficient, tím jsou si třídy podobnější.\\
  
  Pro ilustraci si představme, že máme zdrojový model $M_1 = (Abcde)$ a cílový
- model $M_2 = (Abcf, Bdeg)$. Diff těchto dvou modelů je zobrazen v listings
- \ref{algo:match_exp:delta_exp}
- 
+ model $M_2 = (Abcf, Bdeg)$. Diff těchto dvou modelů je zobrazen na výpisu
+ \ref{algo:match_ext:delta_exp}
+
  \begin{lstlisting}[frame=single,caption=Textový diff pro
- expanzivní operaci,label=algo:match_exp:delta_ext]
+ expanzivní operaci,label=algo:match_ext:delta_exp]
    +B            -Ade
    +Bdeg          
    +Af
 \end{lstlisting}
  
  Vidíme, že třída A byla zachována, třída B, třída B je podobná A s koeficientem
- podobnosti 2, existují 2 property("e" a "f") ve třídě A ve zdrojovém modelu se
+ podobnosti 2, existují 2 property("e" a "d") ve třídě A ve zdrojovém modelu se
  shodným jménem jako mají property v modelu cílovém ve třídě B. Třída B byla
  přidána do modelu a je podobná třídě A, algoritmus očekává rozpoznání
  expanzivní operace. Pokud je přidaná property "f" typu B a property "g" ve
@@ -2394,39 +2400,38 @@ OBRÁZEK BUDE DOPLNĚN.\\
  
  V ilustračním příkladě 2 zaměníme $M_1$
  za model $M_2$ v původním příkladu, tj. $M_2 = (Abcde)$ a $M_1 = (Abcf,
- Bdeg)$. Textový
+ Bdeg)$. Textový diff je zobrazen na výpisu \ref{algo:match_ext:delta_red}
  
   \begin{lstlisting}[frame=single,caption=Textový diff pro
- reduktivní operaci,label=algo:match_exp:delta_red]
+ reduktivní operaci,label=algo:match_ext:delta_red]
    +Ade          -B            
                  -Bdeg          
                  -Af
 \end{lstlisting}
  
+ Algoritmus pro tento příklad zjistí, že třída A byla zachována, třída B byla
+ odstraněna, z třídy B byly odstraněny properties "d", "e" a "g", z třídy A
+ byla odstraněna property f, naopak do třídy A byly přidány property "de". Třída
+ B je podobná s koeficientem 2 (shodnost properties "d" a "e") třídě A. Třída B
+ byla ze zdrojového modelu odstraněna, algoritmus prověřuje reduktivní operace.
+ Pokud platí B.parent = A algoritmus rozpozná operaci CollapseHierarchy, v
+ případě, že property f a g tvoří oboustraně navigabilní vazbu, algoritmus
+ rozpozná operaci InlineClass. V případě, že algoritmus nerozpozná ani jeden z
+ těchto párů bude třída B rozpoznána jako třída odstraněná operací RemoveEntity.
  
  Algoritmus počítá podobnost tříd pomoci počtu properties se stejným jménem.
  Další možností by byla definice energetické funkce viz sekce
- \ref{sec:algo_state}
+ \ref{sec:algo_state}. Aby bylo snazší rozpoznat operace reduktivní a
+ expanzivní, byly zavedeny ClassPairy a PropertyPairy.
  
- Shodné třídy a třídy přejmenované potom tvoří pilíře pro operace reduktivní a
- expanzivní, které se vážou na rozpoznané páry.
-
- Algoritmus rozpoznávání operací byl napsán se snahou o zachovávání co
- největšího množství dat. Ačkoliv triviální algoritmus pro přechod z modelu A k
- modelu B by mohl pomocí subtraktivních operací zničit model A a následně složit
- model B pomocí aditivních operací je zřejmé, že tento algoritmus neuchová žádná
- data.
- Proto byly zavedeny Konstruktivní a destruktivní operace. 
-
 \subsection{Diff elementy}
- Základní párovací algoritmus pároval třídy podle jména
-
+ 
  Kvůli nutnosti rozpoznávat operace vznikly v aplikačním metamodelu nové
  elementy. Kořenovým elementem diff modelu je Diff element. Tento element
  obsahuje kolekce elementů classpairs typů ClassPair, propertyPairs
  typu PropertyPair, a dále pak addedClasses a removedClasses typu DiffClass a
  addedProperties a removedProperties typu DiffProperty. Element ClassPair
- shlukuje zpárované zdrojové (source) a obrazové (reflection) třídy, dále pak
+ shlukuje spárované zdrojové (source) a obrazové (reflection) třídy, dále pak
  referenci owningDiff na Diff element, v kterém jsou obsaženy a která je
  důležitá pro implementaci algoritmu a v neposlední řadě underlyingPairs -
  shodné páry Properties typu EqualPropertyPair, které jsou detekované danou
@@ -2447,16 +2452,72 @@ OBRÁZEK BUDE DOPLNĚN.\\
  vstupního modelu na element cílového modelu. 
  
  Aby bylo možné rozpoznat specifický pár závislý na jiném páru je nutné při
- nejd, byla přidána třída ReplacingClassPair - nahrazující pár, který se používá jako pivot pro hledání expansivních, 
- reduktivních a modifikačních párů. Od elementu ReplacingClassPair dědí elementy
- EqualClassPair - třída, která si uchovala jméno z původního modelu a element
- ReplacingClassPair - reprezentující třídu, která si neuchovala jméno, ale má
- změněný název. Podmínky získávání konkrétních typů párů a jejich pořadí
-specifikuje konkrétní rozpoznávací algoritmus.
+ nejd, byla přidána třída ReplacingClassPair - nahrazující pár, který se
+ používá jako pivot pro hledání expansivních, reduktivních a modifikačních
+ párů. Od elementu ReplacingClassPair dědí elementy EqualClassPair - třída,
+ která si uchovala jméno z původního modelu a element ReplacingClassPair -
+ reprezentující třídu, která si neuchovala jméno, ale má změněný název.
+ Podmínky získávání konkrétních typů párů a jejich pořadí specifikuje konkrétní
+ rozpoznávací algoritmus.
  
- Projevem subtraktivních a aditivních operací jsou elementy DiffClass a
+ Projevem konstruktivních a destruktivních operací jsou elementy DiffClass a
  DiffProperty, které zaobalují třídy a property tak, aby bylo možné referencovat
- na jiný objekt než element Structure . 
+ na jiný objekt než element Structure. 
+
+\subsection{Popis rozšířeného párovacího algoritmu}
+\begin{algorithm}
+ \caption{Rozšířený párovací
+ algoritmus}\label{algo:matching_ext:ops_recognition}
+
+\begin{algorithmic}[1]
+   \Require Zdrojový model S, cílový model T
+   \Ensure Seznam operací $R_{ops}$, po jejichž aplikaci se model S transformuje
+       na model T
+   \Statex
+   \State \textbf{Inicializace:}
+   \State $SClses \gets S.classes$ \Comment{Nenamatchované třídy z vstupního
+      modelu} 
+   \State $TClses \gets T.classes$ \Comment{Nenamatchované třídy z
+      cílového modelu}
+   \State $SProps \gets S.classes.properties$ \Comment{Nenamatchované properties
+      z vstupního modelu}
+   \State $TProps \gets T.classes.properties$ \Comment{Nenamatchované properties
+      z cílového modelu}
+   \State $R_{ops} \gets \{\}$
+   \State 
+   \Statex	   
+   \ForAll{$C_S \in S$} \label{algo:matching:forEqualCls}
+      \ForAll{$C_T \in T$}
+         \If{$C_T.name = C_S.name$}
+   	        %\State markMatched(S, T, 'Equal') \Comment{Vytvoření equal páru}
+   	        \State MATCH\_EQUAL\_PROPS(S, T) \Comment{Aktualizace matchovaných
+   	        properties}
+   	        \State $SClses \gets SClses \setminus \{ C_S\}$
+   	        \Comment{Aktualnizace nenamatchovaných tříd ze zdrojového modelu}
+   	        \State $TClses \gets TClses \setminus \{ C_T\}$\Comment{Aktualizace
+   	        nenamatchovaných tříd z cílového modelu}   	        
+   	     \EndIf
+      \EndFor
+   \EndFor
+   \State $R_{ops}$= RECOGNIZE\_OPS()\Comment{Rozpoznání operací}
+   \State \textbf{END\_ALGORITHM}
+   
+   \Statex	
+   \Procedure{match\_equal\_props}{clsSrcModel, clsTargetModel)}
+   	   \ForAll{$P_S \in clsSrcModel$}
+   	      \ForAll{$P_T \in clsTargetModel$}
+   	        \If{$P_S.name = P_T.name$}
+   	           %\State markMatched($P_S, P_T$, 'Equal')
+   	           \State $SProps \gets SProps \setminus \{ P_S\}$
+   	           \State $TProps \gets TProps \setminus \{ P_T\}$
+   	        \EndIf
+   	      \EndFor
+   	   \EndFor
+   \EndProcedure  
+\end{algorithmic}
+\end{algorithm}
+
+\FloatBarrier
 
 
 % *****************************************************************************

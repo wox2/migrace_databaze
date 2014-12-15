@@ -1757,7 +1757,7 @@ nutné vybrat si správný algoritmus v závislosti na řešeném problému.
  
  \chapter{Vytvořené algoritmy rozpoznávání operací}
 
-\section{Stavový algoritmus}
+\section{Stavový algoritmus}\label{sec:algo_state}
 
 V ranné fázi jsem napsal prototyp rozpoznávacího algoritmu, který se snaží 
 minimalizovat vzdálenost současného modelu od modelu cílového pomocí rozpoznání
@@ -2071,7 +2071,7 @@ Příklad konfigurace:
 \end{itemize}
 
 Tato konfigurace redukuje získávání energie na původně zmiňovaný způsob definice
-Enerigie.
+Energie.
 
 Další možnou modifikací je úprava seznamu $R_{ops}$ použitého v algoritmu na
 řádku \ref{algo:state:forOps}.
@@ -2162,7 +2162,7 @@ AddStandardClass, RenameEntity, RemoveEntity, RenameProperty.
 
  Vznikly dvě implementace párovacích algoritmů. 
  
- \section{Jednoduchá implementace}
+ \section{Základní párovací algoritmus}
  První, jednodušší implementace používá základu z UMLDiffu a očekává, že dvě
  třídy se stejným jménem jsou shodné, páruje tedy třídy podle jména, podobně
  předpokládá, že dvě property ve stejné tříde se stejným jménem jsou shodné.
@@ -2224,9 +2224,84 @@ AddStandardClass, RenameEntity, RemoveEntity, RenameProperty.
 
 \FloatBarrier
 
+Algoritmus inicializuje množiny nezpárovaných tříd z vstupního (a výstupního)
+modelu všemi třídami z vstupního (resp výstupního modelu) a seznam výstupních
+operací prázdnou množinou. Následně algoritmus zpáruje třídy podle jména,
+odstraní zpárované třídy z množin SClasses a TClasses a zpáruje jejich property
+podle jména v proceduře MATCH\_EQUAL\_PROPERTIES. Procedura
+MATCH\_EQUAL\_PROPERTIES odstraní v zpárovaných třídách property se stejným
+jménem z množin SProps a TProps.
+
+Algoritmus pokračuje rozpoznáváním operací. V fázi rozpoznávání operací jsou
+již zpárovány všechny třídy, které základní párovací algoritmus dokáže
+rozpoznat. Základní párovací algoritmus dělí třídy do tří skupin:
+\begin{enumerate}
+   \item třídy, které byly v průběhu Evoluce modelu zachovány
+   \item třídy, které byly v průběhu Evoluce z modelu odstraněny
+   \item třídy, které byly v průběhu Evoluce do modelu přidány
+\end{enumerate}
+
+Základní algoritmus předpokládá, že s třídami z první skupiny bylo manipulováno
+pouze za pomoci třídních modifikačních operací a s
+properties těchto tříd mohlo být manipulováno pomocí konstruktivních,
+destruktivních nebo modifikačních operací. Třídy z druhé skupiny byly z modelu
+odstraněny pomocí operace RemoveEntity. Aby byly validační podmínky
+destruktivních operací platné, je nutné před aplikací destruktivních operací
+RemoveEntity odstranit přebytečné properties operací RemoveProperty a upravit
+třídy pomocí třídních modifikačních operací RemoveParent. Třídy v třetí skupině
+je nutné do modelu přidat konstruktivní operací AddClass, následně je možné s
+třídami manipulovat pomocí třídních modify operací a modifikovat properties
+pomocí konstruktivních, destruktivních a modifikačních operací.
+Jediné modifikační třídní operace, které mají vliv na strukturu modelu a byly
+zařazeny do rozpoznávání jsou operace AddParent a RemoveParent. Operace
+AddParent může v nynější implementaci odstraňovat z aktuálního modelu
+kolizní properties, má tedy vliv na seznam nenamapovaných properties SProps a
+musí předcházet operaci RemoveProperty. 
+\\
+OBRÁZEK BUDE DOPLNĚN.\\
+OBRÁZEK BUDE DOPLNĚN.\\
+OBRÁZEK BUDE DOPLNĚN.\\
+OBRÁZEK BUDE DOPLNĚN.\\
+OBRÁZEK BUDE DOPLNĚN.\\
+OBRÁZEK BUDE DOPLNĚN.\\
+ Algoritmus by mohl rozpoznat operace v libovolné přípustné sekvenci. Tato
+ přípustná sekvence operací musí splňovat precedenční vztahy zobrazené na obr.
+ REF DOPLNěného obr. Každý model je možné rozdělit na množinu nezávislých
+ hierarchických strukturálních operací. Dvě třídy A, B patří pro základní
+ párovací algoritmus do stejné hierarchické struktury pokud $A.parent = B \vee
+ B.parent = A \ \vee \ (\exists X \in M.clses: X \in ancestor(A)\ \wedge\ X \in
+ ancestor(B))$, přičemž ancestor(Z) je množina všech předků třídy Z. Sekvence
+ operací $op_1, op_2, \ldots op_n$ je nezávislá, pokud všechny operace z
+ vstupního modelu operují nad třídami třídami z různých hierarchických struktur
+  a žádná z operací op není AddParent. 
+  
+ Pro každou skupinu množinu operací $\{op_1, op_2, \ldots op_n\}$ můžeme najít
+ grupu operací - tj seznam operací operujících nad jedinou hierarchickou
+ strukturou či více hierarchickými strukturami spojenými sjednocenými operací
+ AddParent.
+ 
+ Nejjednodušší implementací zisku validní sekvence je předpoklad existence
+ jediné grupy, tj rozpoznávání operací po skupinách ze seznamu 
+ ref algo:match:ops\_seq. Tato implementace je zobrazena v pseudokódu \ref{algo:matching:ops_recognition}
+ \\
+ Základní rozpoznávací algoritmus má schopnost rozeznat jen konstruktivní,
+ destruktivní a modifikační operace. Zachovává data, jejichž identifikátor se
+ nemění.
+ Ostatní data naopak nekompromisně maže. Tento algoritmus není schopný
+ rozpoznat operace RenameClass, RenameProperty, které jsou dle \cite{Luksch}
+ nejčastěji používanými operacemi. Tento algoritmus není schopný
+ rozpoznat ani žádné expanzivní a reduktivní třídní operace. Výhodou
+ implementace tohoto algoritmu je, že nepotřebuje definovat žádný diff
+ metamodel. Za předpokladu $C_S \gg P_S \ a\ C_T \gg P_T \ a\  C_S \approx C_T =
+ c$ má tento algoritmus složitost $O(c^2)$, protože
+ prochází všechny třídy v zdrojovém modelu a hledá pro ně třídu se stejným
+ jménem v modelu cílovém.
+ 
+ 
 
 \begin{algorithm}
- \caption{Rozpoznání operací}\label{algo:matching: ops recognition}
+ \caption{Rozpoznání operací v základním
+ algoritmu}\label{algo:matching:ops_recognition}
 
 \begin{algorithmic}[1]
    \Statex
@@ -2282,25 +2357,59 @@ AddStandardClass, RenameEntity, RemoveEntity, RenameProperty.
    \Statex
    \State ADD\_MODIF\_PROP\_OPS()
    \EndProcedure
-   	
-
 \end{algorithmic}
 \end{algorithm}
 
-algo:matching:forEqualCls
+\FloatBarrier
  
- Tento algoritmus má schopnost rozeznat jen konstruktivní a destruktivní
- operace. Tudíž zachovvává data, jejichž identifikátor se nemění.
- Ostatní data naopak nekompromistně maže. Tento algoritmus není schopný
- rozpoznat operace RenameClass, RenameProperty, které jsou dle \cite{Luksch}
- nejčastěji používanými operacemi. Výhodou tohoto algoritmu je, že nepotřebuje
- definovat jiný diff nežli delta notaci.
- 
- \section{Složitější implementace}
+ \section{Rozšířený algoritmus}
  Složitější implementace algoritmu páruje stejně jako jednodušší v
  první fázi shodné elementy - modely se mění, ale některé třídy jsou zachovány.
- Shodné elementy potom tvoří jakési pilíře pro operace konstruktivní a
- destruktivní, které se vážou na rozpoznané páry. Závislost rozpoznání
+ Oproti základní verzi algoritmu je nutné vytvořit entitu reprezentující shodu -
+ EqualClassPair. V druhé fázi párování musí algoritmus párovat třídy podle
+ jiného kritéria. Tímto mnou zvoleným kritériem je suma properties se shodným
+ jménem. Čím vyšší je tato suma, tím jsou si třídy podobnější.\\
+ 
+ Pro ilustraci si představme, že máme zdrojový model $M_1 = (Abcde)$ a cílový
+ model $M_2 = (Abcf, Bdeg)$. Diff těchto dvou modelů je zobrazen v listings
+ \ref{algo:match_exp:delta_exp}
+ 
+ \begin{lstlisting}[frame=single,caption=Textový diff pro
+ expanzivní operaci,label=algo:match_exp:delta_ext]
+   +B            -Ade
+   +Bdeg          
+   +Af
+\end{lstlisting}
+ 
+ Vidíme, že třída A byla zachována, třída B, třída B je podobná A s koeficientem
+ podobnosti 2, existují 2 property("e" a "f") ve třídě A ve zdrojovém modelu se
+ shodným jménem jako mají property v modelu cílovém ve třídě B. Třída B byla
+ přidána do modelu a je podobná třídě A, algoritmus očekává rozpoznání
+ expanzivní operace. Pokud je přidaná property "f" typu B a property "g" ve
+ třídě B je typu A, algoritmus rozpozná operaci ExtractClass. Pokud v
+ cílovém modelu platí B.parent = A, algoritmus rozpozná operaci ExtractSubClass.
+ V případě nerozpoznaného typu páru algoritmus skončí s matchovací fází, protože
+ neexistuje jiný kandidát pro třídu B na vytvoření páru a třída B bude
+ rozpoznána jako třída přidaná operací AddClass. \\ 
+ 
+ V ilustračním příkladě 2 zaměníme $M_1$
+ za model $M_2$ v původním příkladu, tj. $M_2 = (Abcde)$ a $M_1 = (Abcf,
+ Bdeg)$. Textový
+ 
+  \begin{lstlisting}[frame=single,caption=Textový diff pro
+ reduktivní operaci,label=algo:match_exp:delta_red]
+   +Ade          -B            
+                 -Bdeg          
+                 -Af
+\end{lstlisting}
+ 
+ 
+ Algoritmus počítá podobnost tříd pomoci počtu properties se stejným jménem.
+ Další možností by byla definice energetické funkce viz sekce
+ \ref{sec:algo_state}
+ 
+ Shodné třídy a třídy přejmenované potom tvoří pilíře pro operace reduktivní a
+ expanzivní, které se vážou na rozpoznané páry.
 
  Algoritmus rozpoznávání operací byl napsán se snahou o zachovávání co
  největšího množství dat. Ačkoliv triviální algoritmus pro přechod z modelu A k
@@ -2310,6 +2419,7 @@ algo:matching:forEqualCls
  Proto byly zavedeny Konstruktivní a destruktivní operace. 
 
 \subsection{Diff elementy}
+ Základní párovací algoritmus pároval třídy podle jména
 
  Kvůli nutnosti rozpoznávat operace vznikly v aplikačním metamodelu nové
  elementy. Kořenovým elementem diff modelu je Diff element. Tento element
@@ -2322,17 +2432,22 @@ algo:matching:forEqualCls
  shodné páry Properties typu EqualPropertyPair, které jsou detekované danou
  operací. Podobně jako operace jsou i páry rozděleny do několika skupin.
  
- Konstruktivní a destruktivní operace nemají svůj obraz v diff metamodelu jako
- ClassPair ani PropertyPair, protože tyto operace nemapují element ze vstupního
- modelu na element z výstupního modelu. Konstruktivní operace by jinak mapovaly
- prázdný vstup na element a destruktivní obráceně element na prázdný výstup.
+ Konstruktivní a destruktivní operace nemají svůj obraz v diff metamodelu. Je s
+ nimi v rámci rozšířeného algoritmu zacházeno stejně jako v základním párovacím
+ algoritmu.
+ Konstruktivni ani destruktivní operace nejsou reprezentovány jako ClassPair ani
+ PropertyPair, protože tyto operace nemapují element ze vstupního modelu na
+ element z výstupního modelu.
+ Konstruktivní operace by jinak mapovaly prázdný vstup na element a
+ destruktivní obráceně element na prázdný výstup.
  
  Oproti jednodušším konstruktivním a destruktivním operacím jsou operace
- expanzívní, konstruktivní a modifikační v Diff modelu zobrazeny jako
- ExpansiveClassPair, ReductiveClassPair a ModifyingClassPair, mapují element
- vstupního modelu na element cílového modelu. Aby bylo možné rozpoznat
- specifický pár závislý na jiném páru, byla přidána třída ReplacingClassPair -
- nahrazující pár, který se používá jako pivot pro hledání expansivních, 
+ expanzívní a reduktivní a modifikační v Diff modelu zobrazeny jako
+ ExpansiveClassPair a ReductiveClassPair, které mapují element
+ vstupního modelu na element cílového modelu. 
+ 
+ Aby bylo možné rozpoznat specifický pár závislý na jiném páru je nutné při
+ nejd, byla přidána třída ReplacingClassPair - nahrazující pár, který se používá jako pivot pro hledání expansivních, 
  reduktivních a modifikačních párů. Od elementu ReplacingClassPair dědí elementy
  EqualClassPair - třída, která si uchovala jméno z původního modelu a element
  ReplacingClassPair - reprezentující třídu, která si neuchovala jméno, ale má
@@ -2654,9 +2769,10 @@ Není možné generovat zkrátit názvy entit - vedlo by to u kolizních názvů
 indexace, protože bez dalších pravidel jako například očív případě potřeby
 odstranit Constraint není možné zjistit, ke které entitě
 
-\section{Další poznámky}
-\subsection{České uvozovky}
-V souboru \verb|k336_thesis_macros.tex| je příkaz \verb|\uv{}| pro sázení českých uvozovek. \uv{Text uzavřený do českých uvozovek.}
+%\section{Další poznámky}
+%\subsection{České uvozovky}
+%V souboru \verb|k336_thesis_macros.tex| je příkaz \verb|\uv{}| pro sázení
+% českých uvozovek. \uv{Text uzavřený do českých uvozovek.}
 
 % JZ: 3.5.2009 \chapter z book zajistí automaticky
 %\subsection{Začátky kapitol na liché stránky}
@@ -2685,7 +2801,6 @@ V souboru \verb|k336_thesis_macros.tex| je příkaz \verb|\uv{}| pro sázení č
 \item[SŘBD] Systém řízení báze dat
 \item[OCL] Object Constraint Language
 \end{description}
-\vdots
 
 %*****************************************************************************
 \chapter{UML diagramy}

@@ -1805,7 +1805,7 @@ Vzdálenost modelu od prázdného modelu nazveme energií modelu.
 
 \begin{algorithmic}[1]
 \Require Zdrojový model S, cílový model T
-\Ensure Seznam operací $R_{ops}$, po jejichž aplikaci se model S tranformuje na
+\Ensure Seznam operací $R_{ops}$, po jejichž aplikaci se model S transformuje na
      model T
 \Statex
 \State \textbf{Inicializace:}
@@ -2060,14 +2060,14 @@ Všechny atributy jsou vyjmenovány v seznamu \ref{algo:state:attribute_list}.
 \ \\
 Příklad konfigurace:
 \begin{itemize}
-      \item classname = 1
-      \item parent = 0 
-      \item propertyName = 1
-      \item type = 0
-      \item isOrdered = 0
-      \item isUnique = 0
-      \item LowerBound + UpperBound = 0
-      \item oppositteProperty = 0
+      \item W(classname) = 1
+      \item W(parent) = 0 
+      \item W(propertyName) = 1
+      \item W(type) = 0
+      \item W(isOrdered) = 0
+      \item W(isUnique) = 0
+      \item W(LowerBound, UpperBound) = 0
+      \item W(oppositteProperty) = 0
 \end{itemize}
 
 Tato konfigurace redukuje získávání energie na původně zmiňovaný způsob definice
@@ -2162,70 +2162,132 @@ AddStandardClass, RenameEntity, RemoveEntity, RenameProperty.
 
  Vznikly dvě implementace párovacích algoritmů. 
  
- \section{Základní implementace}
- První jednodušší používá základu z UMLDiffu a očekává, že dvě třídy se stejným
- jménem jsou shodné, páruje tedy třídy podle jména. Následné rozdíly řeší rozpoznáním
- konstruktivních a destruktivních, případně některých operací modifikačních, ať
- už tyto operace pracovali s třídami nebo s property.
+ \section{Jednoduchá implementace}
+ První, jednodušší implementace používá základu z UMLDiffu a očekává, že dvě
+ třídy se stejným jménem jsou shodné, páruje tedy třídy podle jména, podobně
+ předpokládá, že dvě property ve stejné tříde se stejným jménem jsou shodné.
+ Následné rozdíly řeší rozpoznáním konstruktivních a destruktivních, případně
+ některých operací modifikačních, ať už tyto operace pracovali s třídami nebo s
+ property.
  
- První algoritmus pracuje podle tohoto pseudokódu:
+ Základní algoritmus pracuje podle pseudokódu \ref{algo:matching}
+
  \begin{algorithm}
-\caption{Algoritmus procházení stavů}\label{algo:state}
+ \caption{Základní párovací algoritmus}\label{algo:matching}
 
 \begin{algorithmic}[1]
-\Require Zdrojový model S, cílový model T
-\Ensure Seznam operací $R_{ops}$, po jejichž aplikaci se model S tranformuje na
-     model T
-\Statex
-\State \textbf{Inicializace:}
-%\State Vzdálenost modelů $D\gets$ dist(S, T)
+   \Require Zdrojový model S, cílový model T
+   \Ensure Seznam operací $R_{ops}$, po jejichž aplikaci se model S transformuje
+       na model T
+   \Statex
+   \State \textbf{Inicializace:}
    \State $SClses \gets S.classes$ \Comment{Nenamatchované třídy z vstupního
-   modelu}
-   \State $TClses \gets T.classes$ \Comment{Nenamatchované třídy z cílového
-   modelu}
+      modelu} 
+   \State $TClses \gets T.classes$ \Comment{Nenamatchované třídy z
+      cílového modelu}
    \State $SProps \gets S.classes.properties$ \Comment{Nenamatchované properties
-   z vstupního modelu}
+      z vstupního modelu}
    \State $TProps \gets T.classes.properties$ \Comment{Nenamatchované properties
-   z cílového modelu}
-   \State $OPS \gets \{\}$
-	   
-   \ForAll{$C_S \in S: \exists C_T \in  T \: C_T.name = C_S.name$} \Comment{b}
-   	
-   \EndFor \label{algo:state:forOpsEnd}
-   	
-   	
-%   	\begin{procedure}
-   	   
-%   	\end{procedure}  
+      z cílového modelu}
+   \State $R_{ops} \gets \{\}$
+   \Statex	   
+   \ForAll{$C_S \in S$} \label{algo:matching:forEqualCls}
+      \ForAll{$C_T \in T$}
+         \If{$C_T.name = C_S.name$}
+   	        %\State markMatched(S, T, 'Equal') \Comment{Vytvoření equal páru}
+   	        \State MATCH\_EQUAL\_PROPS(S, T) \Comment{Aktualizace matchovaných
+   	        properties}
+   	        \State $SClses \gets SClses \setminus \{ C_S\}$
+   	        \Comment{Aktualnizace nenamatchovaných tříd ze zdrojového modelu}
+   	        \State $TClses \gets TClses \setminus \{ C_T\}$\Comment{Aktualizace
+   	        nenamatchovaných tříd z cílového modelu}   	        
+   	     \EndIf
+      \EndFor
+   \EndFor
+   \State $R_{ops}$= RECOGNIZE\_OPS()\Comment{Rozpoznání operací}
+   \State \textbf{END\_ALGORITHM}
+   
+   \Statex	
+   \Procedure{match\_equal\_props}{clsSrcModel, clsTargetModel)}
+   	   \ForAll{$P_S \in clsSrcModel$}
+   	      \ForAll{$P_T \in clsTargetModel$}
+   	        \If{$P_S.name = P_T.name$}
+   	           %\State markMatched($P_S, P_T$, 'Equal')
+   	           \State $SProps \gets SProps \setminus \{ P_S\}$
+   	           \State $TProps \gets TProps \setminus \{ P_T\}$
+   	        \EndIf
+   	      \EndFor
+   	   \EndFor
+   \EndProcedure  
 \end{algorithmic}
-
 \end{algorithm}
 
- \begin{enumerate}
+\FloatBarrier
 
-   \item Pro každou třídu S z vstupního modelu, která má stejné jméno jako třída
-   T obsažená v modelu výstupním
-   \begin{enumerate}
-     \item Pro každou property $P_S$ z S, která má stejné jméno jako $P_T$
-     Property z T
-     \begin{enumerate}
-       \item odstraň $P_S$ z SProps
-       \item odstraň $P_T$ z TProps
-     \end{enumerate}
-     \item odstraň $S$ z SClses
-     \item odstraň $T$ z TClses  
-   \end{enumerate}
-   \item Výsledný seznam SClasses transformuj na operace RemoveCls a přidej do
-   seznamu Ops
-   \item Výsledný seznam TClasses transformuj na operace AddCls a přidej do
-   seznamu Ops
-   \item Výsledný seznam SProps transformuj na operace RemoveProperty a přidej do
-   seznamu Ops
-   \item Výsledný seznam TProps transformuj na operace AddProperty a přidej do
-   seznamu Ops
-   \item Pro případně změněné atributy (isAbstract, parent, isUnique, isOrdered
-  \ldots) přidej do seznamu Ops dané modifikační operace
- \end{enumerate}
+
+\begin{algorithm}
+ \caption{Rozpoznání operací}\label{algo:matching: ops recognition}
+
+\begin{algorithmic}[1]
+   \Statex
+   \Procedure{recognize\_ops}{}
+   \ForAll{$C \in TClses$}
+   \State $ops \gets R_{ops} \bigcup AddCls(C.name)$
+   \EndFor
+   \Statex
+   \ForAll{$C \in TClses$} \Comment{Oprava parency 1.AddParent pro přidané
+   Neimplementováno}
+      \If{ $C.parent \neq NULL $}
+         \State $ops \gets R_{ops} \bigcup AddParent$
+         \ForAll{$P \in C.properties and P \in SProps$}
+            \State $SProps \gets SProps \setminus P$
+         \EndFor
+      \EndIf
+   \EndFor
+   \Statex
+   \ForAll{$C \in SClses$} \Comment{Oprava parency 2.
+   RemoveParent pro smazané. Neimplementováno}
+      \If{ $C.parent \neq NULL $}
+         \State $ops \gets R_{ops} \bigcup RemoveParent$
+         \ForAll{$P \in C.properties and P \in C.parent.properties$}
+            \State $TProps \gets TProps \bigcup P$
+         \EndFor
+      \EndIf
+   \EndFor
+   \Statex
+   \ForAll{$C_T \in T.Classes \setminus TClses$} \Comment{Oprava parency 3 a 4
+   pro namatchované}
+      \ForAll{$C_S \in S.Classes \setminus SClses$}
+         \If{$C_S.name = C_T.name \wedge C_S.parent = NULL \wedge C_T.parent
+         != null$}
+            \State $ops \gets R_{ops} \bigcup AddParent$
+            \ForAll{$P \in C.properties and P \in SProps$}
+               \State $SProps \gets SProps \setminus P$
+            \EndFor
+         \EndIf
+      \EndFor
+   \EndFor
+   \Statex
+   \ForAll{$P \in TProps$}
+   \State $ops \gets R_{ops} \bigcup AddProperty(P.owner, P.name)$
+   \EndFor
+   \Statex
+   \ForAll{$P \in SProps$}
+   \State $ops \gets R_{ops} \bigcup RemoveProperty(P.owner, P.name)$
+   \EndFor
+   \Statex
+   \ForAll{$C \in SClses$}
+   \State $ops \gets R_{ops} \bigcup RemoveCls(C.name)$
+   \EndFor   
+   \Statex
+   \State ADD\_MODIF\_PROP\_OPS()
+   \EndProcedure
+   	
+
+\end{algorithmic}
+\end{algorithm}
+
+algo:matching:forEqualCls
  
  Tento algoritmus má schopnost rozeznat jen konstruktivní a destruktivní
  operace. Tudíž zachovvává data, jejichž identifikátor se nemění.

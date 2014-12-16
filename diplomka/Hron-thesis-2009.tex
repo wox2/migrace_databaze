@@ -282,6 +282,7 @@ ztrátou uložených dat.
 
 \listoftables
 
+\listofalgorithms
 
 %**************************************************************
 
@@ -1937,8 +1938,8 @@ dvěma. Například na změnu parent třídy musíme rodičovskou třídu nejdř
 odstranit operací RemoveParent a následně operací AddParent přidat
 referenci na novou rodičovskou třídu. Změna referenčních hodnot modelů je
 započítána dvakrát oproti změně hodnot primitivních atributů. Primitivní
-hodnoty je nutné do vzorce tedy započítat. Původní vzorec pro vzdálenost dvou
-modelů se tedy změní na:
+hodnoty je nutné do vzorce tedy započítat jen jednou. Původní vzorec pro
+vzdálenost dvou modelů se tedy změní na:
 
 \begin{align} distance(M_X,M_Y) = & E(\Delta(M_X,M_Y)) + E(\Delta(M_Y, M_X)) =
 E(C_{XY}, P_{XY}) + E(C_{YX}, P_{YX}) + \nonumber \\ + & E(PRIM_{XY}) = 
@@ -1947,14 +1948,16 @@ E(C_{XY}) + E(P_{XY}) + E(C_{YX}) + E(P_{YX}) + \nonumber \\ + & E(PRIM_{XY})
 \end{align}
 
 Přičemž $E(PRIM_{XY})$ reprezentuje energii změněných primitivních atributů a
-gamma reprezentuje podmínku pro započítaný atribut:
+$\gamma$ reprezentuje množinu primitivních atributů splňující podmínku pro
+započítání atributu do energie:
 $$\gamma=A: (A.owner \notin M_{X} \vee A.owner \notin M_{Y})
 \vee A_{X} != A_{Y} $$
 $$E(PRIM_{XY}) = \sum_{\gamma}E(A)$$
 
 Pro rozšířený výpočet energie property $p_{XY} \in P_{XY}$ je zakomponována do
-vzorce energie referenčních propertie:
-$$E(p_{XY}) = 1 + \sum_{A \in p_X \wedge A_Y = null \vee A_Y != A_X}$$ 
+vzorce energie referenčních properties:
+$$E(p_{XY}) = 1 + \sum_{A \in p_X \wedge A_Y = null \vee A_Y !=
+A_X}E(REF_{XY})$$
 
 
 Takto definovaný výpočet energie s položením $E(A) = 1$ udává maximální počet
@@ -2191,11 +2194,16 @@ AddStandardClass, RenameEntity, RemoveEntity, RenameProperty.
       z cílového modelu}
    \State $R_{ops} \gets \{\}$
    \Statex	   
-   \ForAll{$C_S \in S$} \label{algo:matching:forEqualCls}
-      \ForAll{$C_T \in T$}
+   \State MATCH\_CLS\_BY\_NAME()
+   \State $R_{ops}$= RECOGNIZE\_OPS()\Comment{Rozpoznání operací}
+   \State \textbf{END\_ALGORITHM}
+   \Statex
+   \Procedure{match\_cls\_by\_name}{}
+   \ForAll{$C_S \in S.classes$} \label{algo:matching:forEqualCls}
+      \ForAll{$C_T \in T.classes$}
          \If{$C_T.name = C_S.name$}
    	        %\State markMatched(S, T, 'Equal') \Comment{Vytvoření equal páru}
-   	        \State MATCH\_EQUAL\_PROPS(S, T) \Comment{Aktualizace matchovaných
+   	        \State MATCH\_EQUAL\_PROPS(S, T) \Comment{Aktualizace nespárovaných
    	        properties}
    	        \State $SClses \gets SClses \setminus \{ C_S\}$
    	        \Comment{Aktualnizace nenamatchovaných tříd ze zdrojového modelu}
@@ -2204,13 +2212,11 @@ AddStandardClass, RenameEntity, RemoveEntity, RenameProperty.
    	     \EndIf
       \EndFor
    \EndFor
-   \State $R_{ops}$= RECOGNIZE\_OPS()\Comment{Rozpoznání operací}
-   \State \textbf{END\_ALGORITHM}
-   
+  \EndProcedure	      
    \Statex	
    \Procedure{match\_equal\_props}{clsSrcModel, clsTargetModel)}
-   	   \ForAll{$P_S \in clsSrcModel$}
-   	      \ForAll{$P_T \in clsTargetModel$}
+   	   \ForAll{$P_S \in clsSrcModel.properties$}
+   	      \ForAll{$P_T \in clsTargetModel.properties$}
    	        \If{$P_S.name = P_T.name$}
    	           %\State markMatched($P_S, P_T$, 'Equal')
    	           \State $SProps \gets SProps \setminus \{ P_S\}$
@@ -2221,7 +2227,6 @@ AddStandardClass, RenameEntity, RemoveEntity, RenameProperty.
    \EndProcedure  
 \end{algorithmic}
 \end{algorithm}
-
 \FloatBarrier
 
 Algoritmus inicializuje množiny nespárovaných tříd z vstupního (a výstupního)
@@ -2465,12 +2470,54 @@ OBRÁZEK BUDE DOPLNĚN.\\
  na jiný objekt než element Structure. 
 
 \subsection{Popis rozšířeného párovacího algoritmu}
+Pseudokód rozšířeného algoritmu je zobrazen na \ref{algo:matching_ext}
+
+Algoritmus potřebuje kromě vstupních dat přenesených z původního algoritmu i
+počet matchovacích fází, které budou v rámci podobnosti provedeny.
+
+V inicializační fázi stejně jako základní párovací algoritmus nainicializuje
+množiny nespárovaných tříd SClses a TClses, množiny nespárovaných properties
+SProps a TProps a seznam rozpoznaných operací $R_{ops}$.
+Oproti základnímu algoritmu musí nainicializovat i množinu spárovaných tříd
+CPairs a množinu spárovaných properties PrPairs. Párem p properties je
+uspořádaná dvojice $(P_S, P_T)$ , kde $P_S$ je property ze zdrojového modelu
+a $P_T$ je property z modelu cílového, třídě $P_S$ v páru p. Navzdory názvu pár
+% naznačujícího dvojici elementů, je CPair uspořádaná čtveřice $(C_S, C_T, Pairs, owningPair)$, kde
+$C_S$ je třída ze vstupního modelu, $C_T$ je třída z cílového modelu, třídě
+$C_S$ v páru říkejme zdrojová třída, třídě $C_T$ potom obrazová třída.
+Pairs je množina párů, které náleží danému spárování, dá se říci, že Pairs je množina
+párů podobnosti signalizující spárování tříd, která je využita v dalších fázích
+algoritmu. OwningPair je nepovinná složka - představuje referenci na
+ReplacingPair u Reduktivních a Expanzivních párů a je použita v dalších fázích
+algoritmu. Základní párovací algoritmus nepotřeboval zaznamenávat páry, protože
+sprárované třídy byly jednoznačně identifikovány svým názvem.
+
+V základní kostře algoritmu se rozšířená verze párovacího algoritmu příliš
+neliší od základní verze.  Algoritmus po inicializaci provede párování tříd
+podle jména a párování tříd podle podobnosti a zakončí svůj běh rozpoznáním
+operací.
+
+V fázi matchování tříd podle jména jsou třídy ze zdrojového modelu párovány s
+třídami z cílového modelu na základě společného jména. Oproti fázi matchování v
+základním algoritmu zobrazeném na \ref{algo:matching} je v fázi párování podle
+jména nutné vytvořit pár tříd - viz řádek \ref{algo:matching_ext:make_pair}.
+Následuje rozpoznání shodných properties v proceduře MATCH\_EQUAL\_PROPS viz.
+řádek \ref{algo:matching_ext:match_equal_props}. V této proceduře jsou oproti
+základnímu algoritmu vytvořeny shodné páry properties. Shodné páry jsou přidány
+do čtveřice Cpair.
+% do
+
+Pseudokód \ref{algo:matching_ext:match_similarity} ukazuje průběh párovací fáze
+za pomoci podobnosti. V první fázi je inicializován seznam kandidátů podobnosti
+pro každou třídu. Tento seznam je vrácen  pokud jsou třídy podobné
+
+
 \begin{algorithm}
  \caption{Rozšířený párovací
- algoritmus}\label{algo:matching_ext:ops_recognition}
+ algoritmus}\label{algo:matching_ext}
 
 \begin{algorithmic}[1]
-   \Require Zdrojový model S, cílový model T
+   \Require Zdrojový model S, cílový model T, C počet matchovacích fází
    \Ensure Seznam operací $R_{ops}$, po jejichž aplikaci se model S transformuje
        na model T
    \Statex
@@ -2480,18 +2527,29 @@ OBRÁZEK BUDE DOPLNĚN.\\
    \State $TClses \gets T.classes$ \Comment{Nenamatchované třídy z
       cílového modelu}
    \State $SProps \gets S.classes.properties$ \Comment{Nenamatchované properties
-      z vstupního modelu}
+      ze vstupního modelu}
    \State $TProps \gets T.classes.properties$ \Comment{Nenamatchované properties
       z cílového modelu}
    \State $R_{ops} \gets \{\}$
-   \State 
+   \State $CPairs \gets \{\}$
+   \State $PrPairs \gets \{\}$
    \Statex	   
-   \ForAll{$C_S \in S$} \label{algo:matching:forEqualCls}
-      \ForAll{$C_T \in T$}
+   \State MATCH\_CLSES\_BY\_NAME()
+   \State MATCH\_CLSES\_BY\_SIMILARITY(C)
+   \State $R_{ops}$= RECOGNIZE\_OPS()\Comment{Rozpoznání operací}
+   \State \textbf{END\_ALGORITHM}
+   \Statex
+   \Procedure{match\_clses\_by\_name}{}
+   \ForAll{$C_S \in S.classes$} \label{algo:matching:forEqualCls}
+      \ForAll{$C_T \in T.classes$}
          \If{$C_T.name = C_S.name$}
-   	        %\State markMatched(S, T, 'Equal') \Comment{Vytvoření equal páru}
-   	        \State MATCH\_EQUAL\_PROPS(S, T) \Comment{Aktualizace matchovaných
-   	        properties}
+   	        \State cPair = markMatched(S, T, 'Equal') \Comment{Vytvoření equal
+   	        páru}
+   	        \label{algo:matching_ext:make_pair} 
+   	        \State  pairs = MATCH\_EQUAL\_PROPS(S, T)
+   	        \State  addUnderlyingPairs(cPair, pairs)
+   	        \State  $CPairs = CPairs\ \bigcup \ cPair$
+   	        \Comment{Aktualizace nespárovaných properties}
    	        \State $SClses \gets SClses \setminus \{ C_S\}$
    	        \Comment{Aktualnizace nenamatchovaných tříd ze zdrojového modelu}
    	        \State $TClses \gets TClses \setminus \{ C_T\}$\Comment{Aktualizace
@@ -2499,26 +2557,65 @@ OBRÁZEK BUDE DOPLNĚN.\\
    	     \EndIf
       \EndFor
    \EndFor
-   \State $R_{ops}$= RECOGNIZE\_OPS()\Comment{Rozpoznání operací}
-   \State \textbf{END\_ALGORITHM}
-   
+  \EndProcedure	      
    \Statex	
    \Procedure{match\_equal\_props}{clsSrcModel, clsTargetModel)}
-   	   \ForAll{$P_S \in clsSrcModel$}
-   	      \ForAll{$P_T \in clsTargetModel$}
+   \label{algo:matching_ext:match_equal_props} \State Pairs = \{\}
+   	   \ForAll{$P_S \in clsSrcModel.properties$}
+   	      \ForAll{$P_T \in clsTargetModel.properties$}
    	        \If{$P_S.name = P_T.name$}
-   	           %\State markMatched($P_S, P_T$, 'Equal')
+   	           \State pair = markMatched($P_S, P_T$, 'Equal')
+   	           \State $Pairs = Pairs\ \bigcup\ pair$
    	           \State $SProps \gets SProps \setminus \{ P_S\}$
    	           \State $TProps \gets TProps \setminus \{ P_T\}$
    	        \EndIf
    	      \EndFor
    	   \EndFor
+   	   \State \textbf{return } Pairs
    \EndProcedure  
 \end{algorithmic}
 \end{algorithm}
 
 \FloatBarrier
+ 
+\begin{algorithm}
+ \caption{Matchování podle podobnosti rozšířeného
+ algoritmu}\label{algo:matching_ext:match_similarity}
+ \begin{algorithmic}[1]
+ \Procedure{match\_clses\_by\_similarity}{iterCount}
+    \State CSets = initSimilarityCandidates() \Comment {mapa kandidátů CSets}
+    \For{i = 0 ; i < iterCount ; i++}\Comment{Proveď iterCount párovacích
+    iterací}
+       \ForAll{$cls \in CSets.keys()$}
+          \State candidates = CSets.get(cls)
+          \State $MATCH\_CLS\_BY\_SIMILARITY(cls, candidates)$
+       \EndFor
+    \EndFor
+ \EndProcedure
+ \Statex
+ \Procedure{match\_cls\_by\_similarity}{sourceCls, reflectionCandidates}
+ 	\ForAll{$candidate \in reflectionCandidates$}
+ 	   \If{isReflectionReplacingPairRecognised(candidate)}
+ 	      \If{isSourceClassReplacingPairRecognised(sourceCls)}
+ 	         \State \Comment{Nevzniká nový pár, je rozpoznána modifying operace
+ 	         ve fázi rozpoznávání operací}
+ 	      \Else
+ 	         \State matchReductivePair(sourceCls, candidate)
+ 	      \EndIf
+ 	   \Else
+ 	      \If{isSourceClassReplacingPairRecognised(sourceCls)}
+ 	         \State matchConstructivePair(sourceCls, candidate)
+ 	      \Else
+ 	         \State matchRenamePair(sourceCls, candidate)
+ 	      \EndIf
+ 	   \EndIf 
+ 	\EndFor
+ \EndProcedure
+ \end{algorithmic}
+\end{algorithm}
 
+\FloatBarrier
+ = Map\{$Class_S, \{Class_T$\}\}
 
 % *****************************************************************************
 

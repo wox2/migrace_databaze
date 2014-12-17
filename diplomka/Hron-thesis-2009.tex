@@ -1467,8 +1467,9 @@ Tj. doimplementovat a otestovat ORM transformace vzniklé v předešlých fází
 projektu, upravit a otestovat generátor SQL, případně upravit aplikační a
 databázový metamodel.
 
-\section{Historický vývoj operací}
+\section{Změny v aplikačním metamodelu}
 
+\section{Změny aplikačních operací}
 V průběhu modelování operací nad aplikačním modelem jsme se snažili, aby tyto
 operace byly jednoznačné (strojově zpracovatelné) v rámci daného kontextu, dále
 vzhledem k nutnosti textového zápisu uživatelem o minimalističnost zápisu. Tyto
@@ -1490,6 +1491,11 @@ exaktně popsána, nebylo nalezeno její mapování na operace v databázi ani
 validační podmínky nutné k úspěšné aplikaci operace na aplikační model.
 Předpokládáme, že by tato operace měla souviset s dědičnými hierarchiemi.
 
+\section{Změny Databázového metamodelu}
+
+\section{Změny databázových operací}
+
+\section{Implementace a testování ORMo mapování}
 
 
 \chapter{Popis problému, specifikace cíle}
@@ -2370,6 +2376,29 @@ OBRÁZEK BUDE DOPLNĚN.\\
  \section{Rozšířený algoritmus}
  Složitější implementace algoritmu páruje stejně jako jednodušší v
  první fázi shodné elementy - modely se mění, ale některé třídy jsou zachovány.
+ 
+ Algoritmus předpokládá, že napárované elementy tvoří tzv. páry. Každá třída ze
+ zdrojového modelu může být nahrazena, expandována nebo redukována. \\
+ 
+ Třída je nahrazena (tvoří replacing pár), pokud je její jméno změněno či je
+ třída zachována. Třída je zachována, pokud v cílovém modelu existuje třída se
+ stejným jménem. Algoritmus zavrhuje sekvenci operací mazající všechny
+ properties této třídy, smazání třídy a opětovnému vytvoření této třídy s
+ jejich properties. Problém hledání RenamePair bude diskutován později. Každá
+ třída může být součástí maximálně jednoho replacing páru. Je tedy zakázáno, aby
+ v byla třída součástí dvou replacing párů, jednoho replacing a jednoho rename
+ páru či dvou rename párů.
+ 
+ Redukované a expandované páry jsou navázány na právě jeden replacing pár.
+ 
+ Třída tvoří redukovaný pár, pokud existuje v zdrojovém modelu, ale neexistuje
+ v modelu cílovém a je podobná třídě v cílovém modelu, která je již součástí
+ replacing páru.
+ 
+ Třída tvoří expandovaný pár, pokud neexistuje v zdrojovém modelu,
+ ale existuje v modelu cílovém a je podobná třídě ze zdrojového modelu, která
+ je již součástí replacing páru.\\
+ 
  Oproti základní verzi algoritmu je nutné vytvořit entitu reprezentující shodu -
  EqualClassPair. Shodné třídy a třídy přejmenované potom tvoří pilíře pro
  operace reduktivní a expanzivní, které se vážou na rozpoznané páry. Operace
@@ -2380,49 +2409,6 @@ OBRÁZEK BUDE DOPLNĚN.\\
  třídy podle jiného kritéria.
  Tímto mnou zvoleným kritériem je suma properties se shodným jménem. Čím vyšší
  je tento koeficient, tím jsou si třídy podobnější.\\
- 
- Pro ilustraci si představme, že máme zdrojový model $M_1 = (Abcde)$ a cílový
- model $M_2 = (Abcf, Bdeg)$. Diff těchto dvou modelů je zobrazen na výpisu
- \ref{algo:match_ext:delta_exp}
-
- \begin{lstlisting}[frame=single,caption=Textový diff pro
- expanzivní operaci,label=algo:match_ext:delta_exp]
-   +B            -Ade
-   +Bdeg          
-   +Af
-\end{lstlisting}
- 
- Vidíme, že třída A byla zachována, třída B, třída B je podobná A s koeficientem
- podobnosti 2, existují 2 property("e" a "d") ve třídě A ve zdrojovém modelu se
- shodným jménem jako mají property v modelu cílovém ve třídě B. Třída B byla
- přidána do modelu a je podobná třídě A, algoritmus očekává rozpoznání
- expanzivní operace. Pokud je přidaná property "f" typu B a property "g" ve
- třídě B je typu A, algoritmus rozpozná operaci ExtractClass. Pokud v
- cílovém modelu platí B.parent = A, algoritmus rozpozná operaci ExtractSubClass.
- V případě nerozpoznaného typu páru algoritmus skončí s matchovací fází, protože
- neexistuje jiný kandidát pro třídu B na vytvoření páru a třída B bude
- rozpoznána jako třída přidaná operací AddClass. \\ 
- 
- V ilustračním příkladě 2 zaměníme $M_1$
- za model $M_2$ v původním příkladu, tj. $M_2 = (Abcde)$ a $M_1 = (Abcf,
- Bdeg)$. Textový diff je zobrazen na výpisu \ref{algo:match_ext:delta_red}
- 
-  \begin{lstlisting}[frame=single,caption=Textový diff pro
- reduktivní operaci,label=algo:match_ext:delta_red]
-   +Ade          -B            
-                 -Bdeg          
-                 -Af
-\end{lstlisting}
- 
- Algoritmus pro tento příklad zjistí, že třída A byla zachována, třída B byla
- odstraněna, z třídy B byly odstraněny properties "d", "e" a "g", z třídy A
- byla odstraněna property f, naopak do třídy A byly přidány property "de". Třída
- B je podobná s koeficientem 2 (shodnost properties "d" a "e") třídě A. Třída B
- byla ze zdrojového modelu odstraněna, algoritmus prověřuje reduktivní operace.
- Pokud platí B.parent = A algoritmus rozpozná operaci CollapseHierarchy, v
- případě, že property f a g tvoří oboustraně navigabilní vazbu, algoritmus
- rozpozná operaci InlineClass. V případě, že algoritmus nerozpozná ani jeden z
- těchto párů bude třída B rozpoznána jako třída odstraněná operací RemoveEntity.
  
  Algoritmus počítá podobnost tříd pomoci počtu properties se stejným jménem.
  Další možností by byla definice energetické funkce viz sekce
@@ -2482,9 +2468,9 @@ Oproti základnímu algoritmu musí nainicializovat i množinu spárovaných tř
 CPairs a množinu spárovaných properties PrPairs. Párem p properties je
 uspořádaná dvojice $(P_S, P_T)$ , kde $P_S$ je property ze zdrojového modelu
 a $P_T$ je property z modelu cílového, třídě $P_S$ v páru p. Navzdory názvu pár
-% naznačujícího dvojici elementů, je CPair uspořádaná čtveřice $(C_S, C_T, Pairs, owningPair)$, kde
-$C_S$ je třída ze vstupního modelu, $C_T$ je třída z cílového modelu, třídě
-$C_S$ v páru říkejme zdrojová třída, třídě $C_T$ potom obrazová třída.
+naznačujícího dvojici elementů, je CPair uspořádaná čtveřice $(C_S, C_T, Pairs,
+owningPair)$, kde $C_S$ je třída ze vstupního modelu, $C_T$ je třída z cílového
+modelu, třídě $C_S$ v páru říkejme zdrojová třída, třídě $C_T$ potom obrazová třída.
 Pairs je množina párů, které náleží danému spárování, dá se říci, že Pairs je množina
 párů podobnosti signalizující spárování tříd, která je využita v dalších fázích
 algoritmu. OwningPair je nepovinná složka - představuje referenci na
@@ -2504,13 +2490,84 @@ jména nutné vytvořit pár tříd - viz řádek \ref{algo:matching_ext:make_pa
 Následuje rozpoznání shodných properties v proceduře MATCH\_EQUAL\_PROPS viz.
 řádek \ref{algo:matching_ext:match_equal_props}. V této proceduře jsou oproti
 základnímu algoritmu vytvořeny shodné páry properties. Shodné páry jsou přidány
-do čtveřice Cpair.
+do čtveřice Cpair, s nastaveným owningPairem NULL.
 % do
 
 Pseudokód \ref{algo:matching_ext:match_similarity} ukazuje průběh párovací fáze
-za pomoci podobnosti. V první fázi je inicializován seznam kandidátů podobnosti
-pro každou třídu. Tento seznam je vrácen  pokud jsou třídy podobné
+za pomoci podobnosti. V prvním jejím kroku je nainicializován seznam
+kandidátů podobnosti pro každou třídu. Třída $C_T$ je podobná třídě zdrojové
+třídě $C_S$, pokud existuje nejméně jedna property ve třídě $C_S$, která má
+shodné jméno jako property v třídě $C_T$. Množinu podobné tříd nazývejme
+množinu kandidátů k párování. Mohou nastat 4 situace pro zdrojovou třídu $C_S$ a
+jejího kandidáta k párování $C_T$.
 
+\begin{enumerate}
+  \item Pro zdrojovou třídu již existuje replacingPair,pro kandidáta podobnosti
+     nikoliv.V tomto případě se algoritmus pokusí vytvořit expanzivní pár
+     vytvářející novou třídu viz řádek \ref{algo:matching_ext:expansive_pair}
+     v pseudokódu \ref{algo:matching_ext:match_similarity}
+  \item Pro zdrojovou třídu $C_S$ i pro jejího kandidáta $C_T$ existuje
+     replacingPair viz řádek \ref{algo:matching_ext:modifying operation}
+     v pseudokódu \ref{algo:matching_ext:match_similarity}. Tato situace
+     zahrnuje jednak spárování tříd v rámci replacing páru a také oddělené
+     spárování v rámci modifying operací.
+  \item Pro zdrojovou třídu neexistuje replacingPair, ale pro kandidáta
+     podobnosti existuje replacing pár. viz řádek
+     \ref{algo:matching_ext:reductive_pair} v pseudokódu
+     \ref{algo:matching_ext:match_similarity}. V této situaci se algoritmus
+     pokusí spárovat třídy do reductivního páru. 
+  \item Pro zdrojovou třídu ani pro kandidáta podobnosti neexistuje
+     replacingPair. viz řádek \ref{algo:matching_ext:rename_pair} v
+     pseudokódu \ref{algo:matching_ext:match_similarity}. V této situaci se algoritmus
+     pokusí spárovat třídy do RenamePáru páru. Tato situace může zakrývat
+     situaci 1 či 3
+\end{enumerate}
+
+Aby byla třída spárována do reduktivního nebo expanzívního páru, musí být
+splněny podmínky vycházející z aplikace dané reduktivní či expanzivní operace.
+
+ Pro ilustraci si představme, že máme zdrojový model $M_1 = (Abcde)$ a cílový
+ model $M_2 = (Abcf, Bdeg)$. Diff těchto dvou modelů je zobrazen na výpisu
+ \ref{algo:match_ext:delta_exp}
+
+ \begin{lstlisting}[frame=single,caption=Textový diff pro
+ expanzivní operaci,label=algo:match_ext:delta_exp]
+   +B            -Ade
+   +Bdeg          
+   +Af
+\end{lstlisting}
+ 
+ Vidíme, že třída A byla zachována, třída B, třída B je podobná A s koeficientem
+ podobnosti 2, existují 2 property("e" a "d") ve třídě A ve zdrojovém modelu se
+ shodným jménem jako mají property v modelu cílovém ve třídě B. Třída B byla
+ přidána do modelu a je podobná třídě A, algoritmus očekává rozpoznání
+ expanzivní operace. Pokud je přidaná property "f" typu B a property "g" ve
+ třídě B je typu A, algoritmus rozpozná operaci ExtractClass. Pokud v
+ cílovém modelu platí B.parent = A, algoritmus rozpozná operaci ExtractSubClass.
+ V případě nerozpoznaného typu páru algoritmus skončí s matchovací fází, protože
+ neexistuje jiný kandidát pro třídu B na vytvoření páru a podobnost bude
+ zanedbána.\\
+ 
+ V ilustračním příkladě 2 zaměníme $M_1$
+ za model $M_2$ v původním příkladu, tj. $M_2 = (Abcde)$ a $M_1 = (Abcf,
+ Bdeg)$. Textový diff je zobrazen na výpisu \ref{algo:match_ext:delta_red}
+ 
+  \begin{lstlisting}[frame=single,caption=Textový diff pro
+ reduktivní operaci,label=algo:match_ext:delta_red]
+   +Ade          -B            
+                 -Bdeg          
+                 -Af
+\end{lstlisting}
+ 
+ Algoritmus pro tento příklad zjistí, že třída A byla zachována, třída B byla
+ odstraněna, z třídy B byly odstraněny properties "d", "e" a "g", z třídy A
+ byla odstraněna property f, naopak do třídy A byly přidány property "de". Třída
+ B je podobná s koeficientem 2 (shodnost properties "d" a "e") třídě A. Třída B
+ byla ze zdrojového modelu odstraněna, algoritmus prověřuje reduktivní operace.
+ Pokud platí B.parent = A algoritmus rozpozná operaci CollapseHierarchy, v
+ případě, že property f a g tvoří oboustraně navigabilní vazbu, algoritmus
+ rozpozná operaci InlineClass. V případě, že algoritmus nerozpozná ani jeden z
+ těchto párů bude podobnost zanedbána.
 
 \begin{algorithm}
  \caption{Rozšířený párovací
@@ -2598,15 +2655,19 @@ pro každou třídu. Tento seznam je vrácen  pokud jsou třídy podobné
  	   \If{isReflectionReplacingPairRecognised(candidate)}
  	      \If{isSourceClassReplacingPairRecognised(sourceCls)}
  	         \State \Comment{Nevzniká nový pár, je rozpoznána modifying operace
- 	         ve fázi rozpoznávání operací}
+ 	         ve fázi rozpoznávání operací}\label{algo:matching_ext:modifying
+ 	         operation}
  	      \Else
  	         \State matchReductivePair(sourceCls, candidate)
+ 	         \label{algo:matching_ext:reductive_pair}
  	      \EndIf
  	   \Else
  	      \If{isSourceClassReplacingPairRecognised(sourceCls)}
- 	         \State matchConstructivePair(sourceCls, candidate)
+ 	         \State matchExpansivePair(sourceCls,
+ 	         candidate)\label{algo:matching_ext:expansive_pair}
  	      \Else
- 	         \State matchRenamePair(sourceCls, candidate)
+ 	         \State matchRenamePair(sourceCls,
+ 	         candidate)\label{algo:matching_ext:rename_pair}
  	      \EndIf
  	   \EndIf 
  	\EndFor
@@ -2615,7 +2676,6 @@ pro každou třídu. Tento seznam je vrácen  pokud jsou třídy podobné
 \end{algorithm}
 
 \FloatBarrier
- = Map\{$Class_S, \{Class_T$\}\}
 
 % *****************************************************************************
 

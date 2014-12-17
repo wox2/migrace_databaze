@@ -507,43 +507,9 @@ databázový metamodel. Aplikační metamodel definuje elementy tvořící struk
 aplikace, množinu aplikačních operací a diff entity použité při rozpoznávání
 operací.
 %
-%
-\begin{figure}[h]
-\begin{center}
-\includegraphics[width=15cm]{figures/app_meta_BP}
-\caption{Aplikační metamodel v počátku vývoje obrázek převzat z \cite{Lukes}}
-\label{fig:lukes:app_meta}
-\end{center}
-\end{figure}
-%
-\begin{figure}[h]
-\begin{center}
-\includegraphics[width=15cm]{figures/app_meta_BP_jezek}
-\caption{Aplikační metamodel v průběhu vývoje obrázek převzat z \cite{Jezek}}
-\label{fig:jezek:app_meta}
-\end{center}
-\end{figure}
-\FloatBarrier
-%
 \section{Aplikační metamodel}
-Aplikační metamodel byl vytvořen již v ranných fázích projektu Migdb, kdy
-obsahoval jen elementy tvořící strukturu aplikace a její vztah k
-aplikačním operacím. Evoluce byla v tehdejší době reprezentována
-modelově jako sekvence generací. Každá operace měla přiřazenou jednu vstupní
-generaci a jednu výstupní.
-
-Aplikační metamodel z ranné fáze vývoje je zobrazené na obr.
-\ref{fig:lukes:app_meta} viz \cite{Lukes}.
-
-
-Postupem času byl aplikační model měněn viz. \ref{fig:jezek:app_meta}
-\cite{Jezek} a dočasně byly přidány entity podporující EmbeddedClass, které v
-nynější době v modelu již znovu nejsou.\\
-
-V nynější chvíli došlo k oddělení struktury aplikace od seznamu
-aplikačních operací a přibyl kořenový element Diff. Na obrázku
-\ref{fig:app_roots} jsou znázorněny kořenové elementy nynějšího aplikačního
-modelu - každý aplikační model musí obsahovat jeden container - potomka třídy ModelRoot.
+Na obrázku \ref{fig:app_roots} jsou znázorněny kořenové elementy nynějšího
+aplikačního modelu - každý aplikační model musí obsahovat jeden container - potomka třídy ModelRoot.
 
 \begin{figure}[h]
 \begin{center}
@@ -930,9 +896,10 @@ V projektu Migdb jsou operace invertovatelné se znalostí původního modelu.
 Například u operace RemoveParent(childClass) nezískáme parentClass přímo z
 operace, ale musíme ho dopočítat ze vstupního modelu.
 
-Problémem je, že i po odvození inverze nemusí vést aplikace operace do stejného
-vstupního modelu. Pokud například na stav \ref{fig:add_parent} aplikujeme
-operaci AddParent(Teacher, UniversityTeacher), získáme cílový stav
+\label{app_ops:removeParent_example} Problémem je, že i po odvození inverze
+nemusí vést aplikace operace do stejného vstupního modelu. Pokud například na
+stav \ref{fig:add_parent} aplikujeme operaci AddParent(Teacher,
+UniversityTeacher), získáme cílový stav
 \ref{fig:remove_parent}. Pokud se chceme vrátit zpět z \ref{fig:remove_parent}
 do výchozího stavu, měli bychom aplikovat operaci
 RemoveParent(UniversityTeacher), nicméně aplikace této operace nepovede do
@@ -1467,35 +1434,169 @@ Tj. doimplementovat a otestovat ORM transformace vzniklé v předešlých fází
 projektu, upravit a otestovat generátor SQL, případně upravit aplikační a
 databázový metamodel.
 
-\section{Změny v aplikačním metamodelu}
+\section{Aplikační vrstva}
+
+
+\subsection{Změny v aplikačním metamodelu}
+\begin{figure}[h]
+\begin{center}
+\includegraphics[width=15cm]{figures/app_meta_BP}
+\caption{Aplikační metamodel v počátku vývoje obrázek převzat z \cite{Lukes}}
+\label{fig:lukes:app_meta}
+\end{center}
+\end{figure}
+%
+\begin{figure}[h]
+\begin{center}
+\includegraphics[width=15cm]{figures/app_meta_BP_jezek}
+\caption{Aplikační metamodel v průběhu vývoje obrázek převzat z \cite{Jezek}}
+\label{fig:jezek:app_meta}
+\end{center}
+\end{figure}
+\FloatBarrier
+
+Aplikační metamodel byl vytvořen již v ranných fázích projektu Migdb, kdy
+obsahoval jen elementy tvořící strukturu aplikace a její vztah k
+aplikačním operacím. Evoluce byla v tehdejší době reprezentována
+modelově jako sekvence generací. Každá operace měla přiřazenou jednu vstupní
+generaci a jednu výstupní.
+
+Aplikační metamodel z ranné fáze vývoje je zobrazené na obr.
+\ref{fig:lukes:app_meta} viz \cite{Lukes}.
+
+
+Postupem času byl aplikační model měněn viz. \ref{fig:jezek:app_meta}
+\cite{Jezek} a dočasně byly přidány entity podporující EmbeddedClass, které v
+nynější době v modelu již znovu nejsou.\\
+
+V nynější chvíli došlo k oddělení struktury aplikace od seznamu
+aplikačních operací a přibyl kořenový element Diff.
 
 \section{Změny aplikačních operací}
 V průběhu modelování operací nad aplikačním modelem jsme se snažili, aby tyto
 operace byly jednoznačné (strojově zpracovatelné) v rámci daného kontextu, dále
 vzhledem k nutnosti textového zápisu uživatelem o minimalističnost zápisu. Tyto
 dva koncepty jdou obecně proti sobě, proto jsme došli k jistému jejich
-kompromisu uživatelské jednoduchosti zápisu a jednoznačnosti.
+kompromisu uživatelské jednoduchosti zápisu a jednoznačnosti. Druhým cílem bylo
+po odstranění kontrolního mechanismu snaha o odstranění kontrolních queries,
+které až při práci s instancemi dat zjistili, že daný skript vyvolá nad daty
+chybu.
 
 Operace v aplikačním modelu se vyvíjely a měnily se jejich parametry, ale
 současně se měnil i seznam dostupných operací nad aplikačním modelem. Z operací
 v první verzi modelu byly odstraněny operace MoveProperty, AddPrimitiveClass,
-SetOpposite a SetType. Operace AddPrimitive byla označena za nadbytečnou,
-protože není cílem modifikace modelu změna seznamu primitivních tříd, který
-bývá definován použitým programovacím jazykem a tudíž by měl tento seznam být v
-vstupní generaci.V průběhu analýzy operace SetOpposite bylo zjištěno, že tato
-operace má smysl na strukturální úrovni, ale není možné ji aplikovat na obecná
-data, proto byla tato operace nahrazena dvojicí operací ChangeUniToBidir a
-ChangeBiToUnidir, které plní nároky kladené na původní operaci a jsou
-aplikovatelné  na datové úrovni. Operace SetType byla prozkoumána, ale nebyla
-exaktně popsána, nebylo nalezeno její mapování na operace v databázi ani
-validační podmínky nutné k úspěšné aplikaci operace na aplikační model.
-Předpokládáme, že by tato operace měla souviset s dědičnými hierarchiemi.
+SetOpposite a SetType. 
 
-\section{Změny Databázového metamodelu}
+\subsection{AddPrimitive} 
+Operace AddPrimitive byla označena za nadbytečnou, protože není cílem modifikace
+modelu změnit seznam primitivních tříd. Tento seznam bývá definován použitým
+programovacím jazykem a tudíž by měl být ve vstupní generaci.
 
-\section{Změny databázových operací}
+\subsection{SetOppositte}
+V průběhu analýzy operace SetOpposite bylo zjištěno, že tato operace má smysl na
+strukturální úrovni, ale stává se problematickou při práci s instancemi dat.
+Operace bezproblémově funguje, pokud má odstranit nastavenou oppositeProperty,
+tj. rozpojit oboustraně navigabilní vazbu. Pokud má operace naopak stvořit
+oboustranně navigabilní vazbu, musí na aplikační úrovni zkontrolovat
+existenci opozičních properties, zkontrolovat typy nastavovaných properties.
+Strukturální kontrolu provede operace isValid(). Operace musí zkontrolovat, že
+existují správné instance dat v databázi a spojit je. A v tom tkví problém této
+operace. Bez znalosti instancí v databázi není možné najít takové mapování. Díky
+odstranění kontrol při běhu skriptu nad databází není možné uživatele frameworku
+upozornit na chybu v průběhu této operace.\\
+
+Zdrojový stav máme zobrazený na obrázku
+\ref{fig:finalization:setOpposite_source} a cílový stav Validační podmínky jsou
+v pořádku.
+Chceme dosáhnout stavu zobrazeného na obrázku
+\ref{fig:finalization:setOpposite_target}. Řešením tohoto problému bylo
+nahrazení operace SetOppositte dvojící operací ChangeBiToUnidir a
+ChangeUniToBidir. Operace ChangeUniToBidir mění jednostranně navigabilní vazbu
+přidáním property do třídy typu a nastavuje data opoziční property, operace tak
+nepotřebuje kontrolovat, jaká data jsou v opoziční property, protože ta před započetím
+operace neexistovala. Operace ChangeBiToUnidir pak odstraní oppositte atribut z
+vlastnické property a odstraní samotnou property nesoucí data. Nechtěným, avšak
+vítaným produktem této změny bylo zjednodušení vytváření oppositeProperty.
+Původní plán počítal s operací AddProperty následovanou operací SetOppositte.
+Nyní je možné dosáhnout tohoto cíle jedinou operací ChangeUniToBidir.
+Zjednodušuje se i mazání oboustraně navigabilní vazby. V původní variantě bylo
+nutné spustit operace SetOpposite s parametrem NULL pro opposite sloupec a
+následně smazat opposite property operací RemoveProperty. Nyní tuto
+funkcionalitu zajišťuje operace ChangeBiToUnidir.
+
+\begin{figure}
+\centering
+\begin{subfigure}[b]{0.5\textwidth}
+\fbox{\includegraphics{figures/setOpposite_source}}
+\caption{Stav před operací SetOpposite}
+\label{fig:finalization:setOpposite_source}
+\end{subfigure}
+%
+\begin{subfigure}[b]{0.5\textwidth}
+\fbox{\includegraphics{figures/setOpposite_target}}
+\caption{Výsledek po aplikaci operace SetOpposite}
+\label{fig:finalization:setOpposite_target}
+\end{subfigure}
+\caption{Ilustrativní příklad k operaci SetOppositte}
+\end{figure}
+\FloatBarrier
+
+\subsection{AddParent, RemoveParent}
+V původním smyslu měla operace AddParent přidávat předka A třídě B, přičemž
+třídy A a B neměly kolizní property. Z praktického pohledu je tato aplikace
+operace AddParent nepoužitelná. Přidáváme-li existující třídu do hierarchie,
+chceme získat vztah isA, který nám definuje, že třídy mají nejen společnou
+funkcionalitu, ale téměř vždy i data. Představme si například, že modelujeme
+grafický editor. V prvním kroku jsme vytvořili třídu Square, která má properties
+area a side. Naprogramovali jsme kód používající třídu Square, vytvořili jich
+několik, nakreslili\ldots a uložili. V druhé fázi jsme zjistili, že potřebujeme
+více tvarů a tak jsme vytvořili třídu Circuit pro kruh. Následně jsme po napsání
+kódu zjistili a uložení některých instancí Circuit do databáze, že
+potřebujeme zacházet v některých případech pracovat s třídou Circuit stejně
+jako s třídou Rectangle. Proto jsme extrahovali třídu Shape, předka třídy
+Square. A v nynější chvíli nám operace ve frameworku Migdb nedostačují,
+protože potřebujeme nastavit Shape jako rodičovskou třídu třídě Circuit, ale v
+tom nám zabraňuje kolizní property. Na obrázku
+\ref{fig:finalization:addParent_source} vidíme nynější stav. Tento stav jsme
+vyřešili změnou validačních podmínek operace AddParent, kolizní property mohou
+existovat. V zájmu jednoduchosti operace AddParent a jejího snadného zápisu v
+jazyku Martina Mazance jsme nepřidávali kolizní property do signatury operace.
+Operace je schopna si kolizní property dopočítat. 
+
+Operace RemoveParent, inverzní operace AddParent, neví nic o původním stavu,
+není schopna si původní kolizní property spočítat, takže její implementace se
+změnila a tato operace kopíruje všechny property rodičovské třídy do potomka.
+Slabinou v tomto přístupu je vznik nekonzistence inverze s původní operací viz
+příklad nekonzistence uvedený v subsekci \ref{app_ops:removeParent_example}.
+
+\begin{figure}
+\fbox{\includegraphics{figures/addParent_source}}
+\caption{Stav v průběhu vývoje aplikace}
+\label{fig:finalization:addParent_source}
+\end{figure}
+\FloatBarrier
+
+
+
+\subsection{SetType}
+Operace SetType byla zkoumána, ale nebyla exaktně popsána, nebylo nalezeno
+její mapování na operace v databázi ani validační podmínky nutné k úspěšné
+aplikaci operace na aplikační model. Předpokládáme, že tato operace by měla být
+aplikována na změny typu v hierarchii. Pokud by byla tato operace totiž
+aplikována na primitivní typy, není možné kontrolovat data či dát uživateli
+zprávu o nevalidnosti SQL skriptu.
+
+\subsection{Změny evouluce aplikačního modelu}
+
+\section{Databázová vrstva}
+\subsection{Změny Databázového metamodelu}
+
+\subsection{Změny databázových operací}
+
+\subsection{Změny SQL generátorů}
 
 \section{Implementace a testování ORMo mapování}
+
 
 
 \chapter{Popis problému, specifikace cíle}
@@ -1532,15 +1633,15 @@ class Man {
 class Man {
 	private String name;
 
-	private String surename;
+	private String surname;
 
 	public Man(String name){
 		this.name = name;
 	}
 
-	public Man(String name, String surename){
+	public Man(String name, String surname){
 		this(name);
-		this.surename = surename;
+		this.surname = surname;
 	}
 }
 \end{lstlisting}
@@ -1548,14 +1649,14 @@ class Man {
 \begin{lstlisting}[language=JAVA,frame=single,caption=Patch Man1
 Man2,label=Patch_1_2]
 3a4,5
-> 	private String surename;
+> 	private String surname;
 > 
 5a8,12
 > 	}
 > 
-> 	public Man(String name, String surename){
+> 	public Man(String name, String surname){
 > 		this(name);
-> 		this.surename = surename;	
+> 		this.surname = surname;	
 \end{lstlisting}
 
 Ukázka kódu \ref{Man1} zobrazuje zdrojový kód třídy Man v první

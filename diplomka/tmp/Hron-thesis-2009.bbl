@@ -87,6 +87,11 @@ Jiří~Jezek Pavel~Moravec, Petr~Tarant and David Harmanec.
   data.
 \newblock [online], [konference], publikováno 15.4.2012.
 
+\bibitem[Siq14]{QVTO_Example}
+Fábio~Levy Siqueira.
+\newblock Qvto tutorial.
+\newblock [online], Citováno 18.12.2014.
+
 \bibitem[Tar12]{Tarant_bp}
 Petr Tarant.
 \newblock Modelem řízená evoluce databáze, 2012.
@@ -94,16 +99,6 @@ Petr Tarant.
 \bibitem[Tar14]{Tarant_dip}
 Petr Tarant.
 \newblock Migdb - formální specifikace, 2014.
-
-\bibitem[Val14a]{DBS_02}
-Michal Valenta.
-\newblock Relační algebra.
-\newblock [online], Citováno 16.11.2014.
-
-\bibitem[Val14b]{DBS2_02}
-Michal Valenta.
-\newblock Integritní omezení.
-\newblock [online], Citováno 22.11.2014.
 
 \bibitem[wc14a]{diff_wiki}
 wiki community.

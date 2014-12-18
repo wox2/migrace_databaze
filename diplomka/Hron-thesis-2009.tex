@@ -303,7 +303,7 @@ ztrátou uložených dat.
 % atd...
 
 %*****************************************************************************
-\chapter{Úvod}
+\chapter{Úvod}\label{chapt:uvod}
 \section{Motivace}
 
 V průběhu poslední dekády je vyvíjeno více nového softwaru než kdy předtím a
@@ -327,10 +327,11 @@ relačního modelu.
 Aby byla aplikace funkční, je nutné zajistit konzistenci mezi databázovým a
 aplikačním modelem.
 Tento problém byl již vyřešen a jeho řešení bývá v odborných kruzích nazýváno
-objektově relační mapování(ORM) \cite{orm}. Dnešní implementace ORM jsou schopny nejen
-transformovat aplikační model na model databázový, ale také vyjádřit změnu v struktuře
-aplikace pomocí skriptů Data definition Language (DDL), podmnožiny jazyka SQL.
-Tyto skripty pozmění model databázový tak aby odpovídal modelu aplikačnímu.
+objektově relační mapování (ORM) \cite{orm}. Dnešní implementace ORM jsou
+schopny nejen transformovat aplikační model na model databázový, ale také
+vyjádřit změnu v struktuře aplikace pomocí skriptů Data definition Language
+(DDL), podmnožiny jazyka SQL.
+Tyto skripty pozmění model databázový tak, aby odpovídal modelu aplikačnímu.
 Tato konzistence je zaručena automatickou transformací aplikačního modelu na
 model databázový, což vývojářům softwaru šetří čas strávený vývojem softwaru.
 
@@ -338,12 +339,27 @@ Problém nastává, jakmile zahrneme do zachování nejen strukturu dat, ale i
 samotná data. Změnit strukturu dat a zároveň transformovat data tak, aby měla
 stejnou vyjadřovací schopnost jako původní data je zatím problémem nevyřešeným.
 Považujme změny aplikačního modelu jako smazání třídy, atributu apod za změny
-zachovávající informaci.
+zachovávající informaci. \\
 
-Práce obsahuje tyto kapitoly :
+Tato diplomová práce se věnuje dvěma základním tématům. Prvním tématem je
+dokončení projektu Migdb, aby byl implementovaný framework provozuschopný,
+tomuto tématu se věnuje kapitola \ref{chapt:dokonceni_projektu}, přičemž kapitola
+\ref{chapt:projekt_migdb} popisuje projekt Migdb, jeho historii a
+dosažené výsledky před započetím této diplomové práce. Druhým tématem je
+automatické rozpoznávání operací nad aplikačním modelem. Tomuto tématu se věnuje
+kapitola \ref{chapt:recognition}, implementaci rozpoznávacích algoritmů se potom
+věnuje kapitola \ref{chapt:recognition_implementation}. V kapitole
+\ref{chapt:testování} jsou shrnuty způsoby otestování jednotlivých částí
+implementovaného frameworku a jsou zhodnoceny jejich výstupy. Kapitola
+\ref{chapt:zaver} bilancuje dosažené výsledky této diplomové práce a navrhuje
+další možné směry k rozvíjení daných dvou témat.
+
+Kapitoly \ref{chapt:manual} a \ref{chapt:obsah_cd} obsahují
+manuál popisující použití frameworku Migdb, který je uložen na přiloženém CD.
 
 
-\chapter{Projekt Migdb}
+
+\chapter{Projekt Migdb}\label{chapt:projekt_migdb}
 
 Tato dipomová práce byla napsána v rámci projektu Migdb, který vznikl díky
 spolupraci akademické sféry se sférou komerční v roce 2011. Komerční sféra byla
@@ -1427,7 +1443,7 @@ odpovídající dané třídě
   
 \end{list}
 
-\chapter{Dokončení projektu Migdb}
+\chapter{Dokončení projektu Migdb}\label{chapt:dokonceni_projektu}
 Tato diplomová práce si klade za první ze svých cílů dokončit vývoj na projektu
 Migdb.
 Tj. doimplementovat a otestovat ORM transformace vzniklé v předešlých fázích
@@ -1599,16 +1615,14 @@ zprávu o nevalidnosti SQL skriptu.
 
 
 
-\chapter{Popis problému, specifikace cíle}
+\chapter{Řešení problému rozpoznávání operací}\label{chapt:recognition}
 
 Dalším cílem, který jsem si před vypracováním diplomové práce stanovil bylo
 vytvoření a zdokumentování algoritmu generující z dvou vstupních modelů
 sekvenci operací, jejichž aplikací se model zdrojový transformuje na model
 koncový.
 
-\section{Řešení problému rozpoznávání operací}\label{ops_recognition}
-
-\subsection{Diff a delta notace}
+\section{Diff a delta notace}
 Nejznámějším nástrojen používaným při porovnávání a zjišťování změn dvou
 textových souborů tzv. patchů \cite{patch} je nástroj diff \cite{diff_wiki} .
 Diff je založen na algoritmu hledání největší společné podsekvence (LCS) viz
@@ -1713,7 +1727,7 @@ Zvolili jsme si cestu definice vlastního metamodelu.
 
 \FloatBarrier
 
-\subsection{Rozpoznávání operací}
+\section{Rozpoznávání operací}
 
 Algoritmem pro rozpoznávání operací nazveme každý algoritmus, který nám pro
 každý vstupní model A a cílový model B najde uspořádaný seznam operací, jejichž
@@ -1733,7 +1747,7 @@ Také je samozřejmé, že seznam reduktivních operací stejného typu je také
 libovolně zpermutovat. Stejně tak seznam aditivních operací stejného typu.
 Obecný princip seřazení kolekce operací není znám. 
 
-\subsection{Obecné principy model matching} \label{model_matching_principles}
+\section{Obecné principy model matching} \label{model_matching_principles}
 Nejtriviálnější implementovatelný algoritmus by mohl smazat zdrojový model
 pomocí destruktivních operací a následně vytvořit výsledný model pomocí operací
 konstruktivních, připadně poupravit atributy jednotlivých elementů pomocí
@@ -1797,7 +1811,7 @@ nutné vybrat si správný algoritmus v závislosti na řešeném problému.
 	sám.
 \end{itemize}
 
-\subsection{Graph matching}
+\section{Graph matching}
  Problém model matching je podproblémem generičtějšího problému graph matching, 
  který studuje \cite{bengoetxeaPHD02} a rozděluje a popisuje algoritmy pro
  graph matching - algoritmus nalezení shody grafů. Problém je definován na
@@ -1863,7 +1877,8 @@ nutné vybrat si správný algoritmus v závislosti na řešeném problému.
  
 \FloatBarrier
  
- \chapter{Vytvořené algoritmy rozpoznávání operací}
+ \chapter{Vytvořené algoritmy rozpoznávání
+ operací}\label{chapt:recognition_implementation}
 
 \section{Stavový algoritmus}\label{sec:algo_state}
 
@@ -2833,7 +2848,7 @@ check\_selects.sql ze složky s daty. Bohužel nebyl nalezen lepší způsob
 otestování než manuální spuštění a vizuální porovnáných selectů s očekávaným
 výstupem po apliaci dané operace na data.sql.
 
-\chapter{Ukázka zdrojového kódu práce}
+\chapter{Ukázka zdrojového kódu práce}\label{chapt:ukazka_kodu}
 
 Ukázka helperu mergeProperty
 \label{orm_merge_prop}
@@ -2978,7 +2993,7 @@ helper AssociationProperty::ormMergeProperty(appStructure : APP::Structure,
 
 %*****************************************************************************
 
-\chapter{Závěr}
+\chapter{Závěr}\label{chapt:zaver}
 Po několikaletém teoretickém a praktickém studiu změn v aplikačním modelu a
 jejich projevu v modelu aplikačním se nám podařilo definovat ucelenou množinu
 operací, pomocí nichž je možné měnit aplikační model a definovat jejich mapování
@@ -3103,7 +3118,7 @@ odstranit Constraint není možné zjistit, ke které entitě
 %\end{verbatim}
 
 %*****************************************************************************
-\chapter{Seznam použitých zkratek}
+\chapter{Seznam použitých zkratek}\label{chapt:seznam_zkratek}
 
 \begin{description}
 \item[IDE] Integrated Development Environment
@@ -3122,15 +3137,16 @@ odstranit Constraint není možné zjistit, ke které entitě
 \end{description}
 
 %*****************************************************************************
-\chapter{UML diagramy}
-\textbf{\large Tato příloha není povinná a zřejmě se neobjeví v každé práci. Máte-li ale větší množství podobných diagramů popisujících systém, není nutné všechny umísťovat do hlavního textu, zvláště pokud by to snižovalo jeho čitelnost.}
+%\chapter{UML diagramy}
+%\textbf{\large Tato příloha není povinná a zřejmě se neobjeví v každé práci.
+% Máte-li ale větší množství podobných diagramů popisujících systém, není nutné všechny umísťovat do hlavního textu, zvláště pokud by to snižovalo jeho čitelnost.}
 
 %*****************************************************************************
-\chapter{Instalační a uživatelská příručka}
+\chapter{Instalační a uživatelská příručka}\label{chapt:manual}
 \textbf{\large Tato příloha velmi žádoucí zejména u softwarových implementačních prací.}
 
 %*****************************************************************************
-\chapter{Obsah přiloženého CD}
+\chapter{Obsah přiloženého CD}\label{chapt:obsah_cd}
 \textbf{\large Tato příloha je povinná pro každou práci. Každá práce musí totiž obsahovat přiložené CD. Viz dále.}
 
 Může vypadat například takto. Váš seznam samozřejmě bude odpovídat typu vaší práce. 

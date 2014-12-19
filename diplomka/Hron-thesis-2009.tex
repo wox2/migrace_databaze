@@ -376,7 +376,7 @@ popisem a rozpoznáváním změn vedoucích od jednoho aplikačního modelu
 k druhému. Dále pak dokončuje a upřesňuje kontrakt takzvaných operací nad
 aplikačním modelem, popisuje jejich transformaci na změny modelu databázového
 a následným vygenerováním SQL příkazů spustitelných nad relační databází
-PostgreSQL. Dalším tématem této diplomové práce je automatizace odvození množiny
+PostgreSql. Dalším tématem této diplomové práce je automatizace odvození množiny
 změn ze vstupních dvou modelů.\\
 
 V rámci projektu Migdb bylo v posledních letech vytvořeny a obhájeny 4
@@ -595,7 +595,7 @@ důvodů více o něm bude zmíněno v kapitole \ref{chapt:dokonceni_projektu}. 
 \end{figure}
 \FloatBarrier
 
-\section{Metamodel struktury databáze}
+\section{Struktura databáze}
  Databázový metamodel od počátku vývoje definuje elementy nutné k specifikaci
  struktury databáze a databázové operace. Námi používanou databází je databáze
  PostgreSql, databázový metamodel je vytvořen na základě této
@@ -852,6 +852,39 @@ definici ORMo mapování a zjednodušení kódu.
   \end{itemize}
 \end{list}
 
+\subsection {Rozdělení aplikačních operací} 
+
+Operace nad aplikačním modelem je možné dělit podle dvou kritérií - 1. nad jakým
+typem modelové entity pracují, 2. jaký je charakter/význam pro tito entity daná
+operace má. Operace byly rozděleny podle obou kritérií spíše formálně. Všechny operace
+jsou potomkem generické operace ModelOperation. Rozdělení podle druhého kritéria
+vzniklo až po přidání funkcionality rozpoznávání operací.
+
+První kritérium dělí aplikační operace na operace pracující s třídami a operace
+pracující pouze s properties daných tříd. Příkladem operací pracujících s
+třídami jsou operace AddStandardClass, AddParent a RemoveEntity. Příkladem
+operací pracujících s properties jsou operace AddProperty, RemoveProperty,
+SetAbstract.
+
+Podle druhého kritéria je možné rozdělit operace nad aplikačním modelem do 5
+skupin - konstruktivní, destruktivní, expanzivní, reduktivní a modifikační operace.
+Konstruktivní operace jsou takové, které po své aplikaci vytvoří 1 novou entitu
+v výsledném modelu, která nemá žádné vazby na jiné entity. Příklady aditivní
+operace je operace AddClass. 
+
+Destruktivní operace je opak konstruktivní, v vstupním modelu existuje entita a
+ta je aplikaci destruktivní operace odstraněna. Příkladem destruktivní operace
+je operace RemoveProperty.
+
+Operace expanzivní přídává do výstupního modelu jednu entitu, čímž se
+podobá operaci konstruktivní, nicméně zároveň je vázána na jinou entitu
+stejného typu a zmenšuje její obsah. Příkladem expanzivní operace je
+ExtractClass.
+
+Reduktivní operace entitu z vstupního modelu odstraní a zároveň entitě, která
+je pro operaci řídící změní obsah. Příkladem této operace je InlineClass.
+Reduktivní operace jsou inverzní k operacím expanzivním.\\
+
 \section{Databázové operace} \label{db_ops}
 
 Databázové operace popisují transformace, které mohou být provedeny nad
@@ -863,18 +896,21 @@ aplikačního. Metoda isValid(Structure structure) určuje, jestli je operace
 aplikovatelná na daný model databázové struktury. Metoda apply potom definuje
 důsledky, které má aplikace operace na daný databázový model.
 
+Databázové operace reprezentují změny proveditelné na úrovni databáze. Mělo by z
+nich být možné generovat SQL kód jednoduchou Model-to-text transformací
+zajišťovanou modulem Generator.xtend.
+
 Seznam operací s jejich validačními podmínkami a důsledky jejich aplikakace je
 uveden v následujícím seznamu:
 
 \newcounter{ListCitac2}
-\begin{list}{Operace \Roman{ListCitac2}:}{\usecounter{ListCitac2}}
+\begin{list}{Operace \Roman{ListCitac2}:}{\usecounter{ListCitac2}} 
   \item AddSchema(name)
   \begin{itemize}
     \item Vytvoří nové schéma s zadaným jménem
     \item Nesmí existovat schéma s zadaným
     jménem
   \end{itemize}
-  
   \item AddSequence(owningSchemaName, name, startValue)
   \begin{itemize}
     \item Vytvoří v cílovém schématu sekvenci s zadanou startovní hodnotou
@@ -946,40 +982,40 @@ uveden v následujícím seznamu:
     novým jménem
   \end{itemize}
 
-  \item RenameColumn{owningSchemaName, owningTableName, name, newName}
+  \item RenameColumn(owningSchemaName, owningTableName, name, newName)
   \begin{itemize}
     \item Přenastaví v daném schématu a tabulce jméno z name na hodnotu newName
     \item  Musí existovat dané schéma, daná tabulka, daná column
   \end{itemize}
 
-  \item RemoveTable{owningSchemaName, name}
+  \item RemoveTable(owningSchemaName, name)
   \begin{itemize}
     \item Odstraní z daného schematu tabulku s jménem name
     \item Musí existovat dané schéma, daná tabulka
   \end{itemize}
 
-  \item RemoveColumn{owningSchemaName, owningTableName, name}
+  \item RemoveColumn(owningSchemaName, owningTableName, name)
   \begin{itemize}
     \item Odstraní v daném schématu a tabulce column s jménem name
     \item Musí existovat dané schéma, daná tabulka, daná column, která nesmí na
     sobě mít constraint PrimaryKey, ForeignKey nebo Unique
   \end{itemize}
 
-  \item RemoveConstraint{owningSchemaName, owningTableName, name}
+  \item RemoveConstraint(owningSchemaName, owningTableName, name)
   \begin{itemize}
     \item Přenastaví v daném schématu a tabulce column s jménem name
     \item  Musí existovat dané schéma, tabulka a column
   \end{itemize}
 
-  \item RemoveSequence{owningSchemaName, name}
+  \item RemoveSequence(owningSchemaName, name)
   \begin{itemize}
     \item Odstraní v daném schématu sequence s jménem name
     \item Musí existovat dané schéma a daná sequence
   \end{itemize}
 
-  \item UpdateRows{owningSchemaName, sourceTableName,
+  \item UpdateRows(owningSchemaName, sourceTableName,
   sourceColumnName, targetTableName, targetColumnName,
-  selectionWhereCondition, safeWhereCondition}
+  selectionWhereCondition, safeWhereCondition)
   \begin{itemize}
     \item v daném schématu updatuje hodnoty z tabulky sourceTable hodnoty z
     sourceColumns a nastaví je do taragetColumns tabulky targetTable pro
@@ -991,15 +1027,15 @@ uveden v následujícím seznamu:
     musí mít stejný typ jako targetColumn
   \end{itemize}
 
-  \item NillRows{owningSchemaName, tableName, columnName, whereCondition}
+  \item NillRows(owningSchemaName, tableName, columnName, whereCondition)
   \begin{itemize}
     \item Nastraví sloupci v daném schematu a tabulce hodnoty null instancím
     splňující whereCondition
     \item Musí existovat dané schéma, daná tabulka, daná column
   \end{itemize}
 
-  \item InsertRows{owningSchemaName, sourceTableName, sourceColumnName,
-  targetTableName, targetColumnName, whereCondition}
+  \item InsertRows(owningSchemaName, sourceTableName, sourceColumnName,
+  targetTableName, targetColumnName, whereCondition)
   \begin{itemize}
     \item v daném schématu zkopíruje z tabulky sourceTable hodnoty z
     sloupce sourceColumns instance splňující whereCondition a vloží je do
@@ -1009,7 +1045,7 @@ uveden v následujícím seznamu:
     musí mít stejný typ jako targetColumn
   \end{itemize}
 
-  \item DeleteRows{owningSchemaName, tableName, whereCondition}
+  \item DeleteRows(owningSchemaName, tableName, whereCondition)
   \begin{itemize}
     \item Operace smaže instance z daného schematu, dané tableName instance
     splňující whereCondition
@@ -1104,25 +1140,28 @@ určuje doplňující podmínku, budou se mapovat jen entity typu A s id > 0.
 Mapování nastaví výsledné entitě id vstupní entity a rozšíří text uložený v
 entitě o řetězec \textit{World!}. 
 
-Ukázkový kód bude tedy pro ukázková data 
+Ukázkový kód bude tedy transformovat vstupní model 
 \begin{verbatim}
    A: id=1, A=”Hello”
    A: id=-1, A=”World”
    C: id=1, C=”Something”
 \end{verbatim}
-Mít výstup
+
+Na výstupní model
 \begin{verbatim}
    A: id=1, A=”Hello World!”
 \end{verbatim}
 
 \subsection{Ukázka kódu Migdb}
 Jak již bylo řečeno v předchozí sekci, je možné kromě mapování definovat
-dotazovací konstrukt query a modifikační konstrukt helper. V následujícím kódu
-je ukázáno validační query pro zjištění splnitelnosti validačních podmínek
-operace AddTable. Query isValid převolává  další dvě query. V helperu
-checkExistSchema vidíme kontrolu a případné zalogování chyby při nenalezení
-schématu, Není tedy možné vracet obrácenou hodnotu volání pokud chceme zjistit,
-že daná validační podmínka neplatí, protože by tímto voláním byla zalogována chyba.
+dotazovací konstrukt query a modifikační konstrukt helper. Oba konstrukty jsou
+si velmi podobné, jejich jedinou odlišností je, že query nesmí modifikovat
+objekt, nad kterým je voláno a helper může. V následujícím kódu je ukázáno
+validační query pro zjištění splnitelnosti validačních podmínek operace
+AddTable. Query isValid převolává dvě helpery. V helperu checkExistSchema
+vidíme kontrolu a případné zalogování chyby při nenalezení schématu, Není tedy
+možné vracet obrácenou hodnotu volání pokud chceme zjistit, že daná validační
+podmínka neplatí, protože by tímto voláním byla zalogována chyba.
 
 \begin{verbatim}
 query RDB::ops::AddTable::isValid(structure : RDB::Structure, 
@@ -1163,7 +1202,9 @@ helper checkExistSchema(schemaName : String, structure : Structure,
 
 ORMo mapování je transformace, která mapuje elementy z dómény aplikačních
 operací na elementy z domény operací databázových. Toto mapování mapuje 1
-aplikační operaci na 1 až N operací databázových. 
+aplikační operaci na 0 až N operací databázových. Většinou je aplikační
+operace namapována na nejméně jednu databázovou operaci. Výjimkou je operace
+SetAbstract pro případ v případě, že měníme abstraktní třídu na neabstraktní.
 
 Ačkoliv ORM transformace vstupního aplikačního modelu funguje se všemi
 inheritanceTypy bylo nutné zjednodušit aplikační model tak, aby byla
@@ -1180,11 +1221,11 @@ nejvíce používaným.
   \item AddProperty(owningClassName, name, typeName, lowerBound, upperBound,
   isOrdered, isUnique)
   \begin{description}
-    \item[Primitivní typ a UpperBoubd = 1] operace přidá do cílové tabulky
+    \item[Primitivní typ a UpperBoubd = 1] operace přidá do vlastnické tabulky
     sloupec pro primitivní property
-    \item[Primitivní typ a UpperBound != 1] operace přidá tabulku, která je
-    obrazem kolekce, datový sloupec do této tabulky, referenční sloupec a
-    ForeignKey referencující tabulku, která je obrazem vlastnické třídy 
+    \item[Primitivní typ a UpperBound != 1] operace přidá do modelu tabulku,
+    která je obrazem kolekce, do této tabulky přidá datový sloupec, referenční
+    sloupec a ForeignKey referencující tabulku, která je obrazem vlastnické třídy
     \item[Neprimitivní typ a UpperBound = 1] operace přidá do tabulky, která je
     obrazem vlastnické třídy property a ForeignKey odkazující na tabulku, která
     je obrazem třídy typu přidávané property
@@ -1206,6 +1247,7 @@ třídy a vytvoří nové ForeignKey s pozměněným jménem ,
   \item SetAbstract(name, isAbstract)
   \begin{description}
     \item[isAbstract = true] maže data, která náleží pouze dané třídě
+    \item[isAbstract = false] mapuje na prázdnou množinu
   \end{description}
   
   \item RemoveEntity(name)
@@ -1277,10 +1319,11 @@ odpovídající dané třídě
   oppositePropertyName, propertyNames)
   \begin{itemize}
     \item vytvoří novou sekvenci, vytvoří novou
-    tabulku a nové sloupce spolu se sloupcem pro opposite referenci na
-    zdrojovou tabulku, aplikuje obraz operací exportProperty pro každou
-    exportovanou property, vytvoří sloupec referencující nově vzniklou tabulku, updatuje
-    mu hodnoty, smaže vygenerovanou sekvenci
+    tabulku. Do této tabulky vytvoří nové sloupce extrahovaných properties a 
+    sloupec pro opposite referenci na zdrojovou tabulku. Aplikuje obraz operací
+    exportProperty pro každou exportovanou property, vytvoří sloupec
+    referencující nově vzniklou tabulku, updatuje mu hodnoty, smaže
+    vygenerovanou sekvenci
   \end{itemize}
   
   \item InlineClass(targetClassName, associationPropertyName)
@@ -1316,10 +1359,15 @@ odpovídající dané třídě
   property do třídy potomka a přesune JEN data potomka
 \end{itemize}
 
-\item ExportProperty(virtuální operace) 
+\item virtual ExportProperty(sourceClassName, targetClassName, propertyName) 
 \begin{description}
-	\item[primitivní typ a UB = 1] 
-	\item[primitivní typ a UB !=1]
+	\item[primitivní typ a UB = 1] Operace vytvoří sloupec v cílové tabulce,
+	updatuje data v tomto sloupci a smaže sloupec v původní tabulce
+	\item[primitivní typ a UB !=1] Operace přejmenuje referenční sloupec tabulky
+	kolekce, odstraní cizí klíč referencující zdrojovou tabulku, přejmenuje starou
+	tabulku obrazu původní kolekce na nové jméno, smaže z tabulky kolekce data,
+	která nepatří targetClass, vytvoří cizí klíč referencující cílovou tabulku a
+	přejmenuje tabulku kolekce
 	\item[neprimitivní typ a UB = 1]
 	\item[neprimitivní typ a UB !=1]
 \end{description}
@@ -1332,7 +1380,7 @@ odpovídající dané třídě
 	\item[neprimitivní typ a UB !=1]
 \end{description}
 
-\item MergeProperty(propertyName, targetClassName) 
+\item MergeProperty(sourceClassName, targetClassName, propertyName) 
 \begin{description}
 	\item[primitivní typ a UB = 1] updatuje column v cílové tabulce smaže column ze
 	zdrojové tabulky
@@ -1357,26 +1405,8 @@ Tj. doimplementovat a otestovat ORM transformace vzniklé v předešlých fází
 projektu, upravit a otestovat generátor SQL, případně upravit aplikační a
 databázový metamodel.
 
-\section{Aplikační vrstva}
 
-
-\subsection{Změny v aplikačním metamodelu}
-\begin{figure}[h]
-\begin{center}
-\includegraphics[width=15cm]{figures/app_meta_BP}
-\caption{Aplikační metamodel v počátku vývoje obrázek převzat z \cite{Lukes}}
-\label{fig:lukes:app_meta}
-\end{center}
-\end{figure}
-%
-\begin{figure}[h]
-\begin{center}
-\includegraphics[width=15cm]{figures/app_meta_BP_jezek}
-\caption{Aplikační metamodel v průběhu vývoje obrázek převzat z \cite{Jezek}}
-\label{fig:jezek:app_meta}
-\end{center}
-\end{figure}
-\FloatBarrier
+\section{Změny v aplikačním metamodelu}
 
 Aplikační metamodel byl vytvořen již v ranných fázích projektu Migdb, kdy
 obsahoval jen elementy tvořící strukturu aplikace a její vztah k
@@ -1404,6 +1434,23 @@ referencí.
 Koncept generace modelů byl zachován, ale tyto generace nejsou obsaženy z
 implementačních a testovacích důvodů v jednom souboru, ale ve více souborech.
 
+\begin{figure}[h]
+\begin{center}
+\includegraphics[width=15cm]{figures/app_meta_BP}
+\caption{Aplikační metamodel v počátku vývoje obrázek převzat z \cite{Lukes}}
+\label{fig:lukes:app_meta}
+\end{center}
+\end{figure}
+%
+\begin{figure}[h]
+\begin{center}
+\includegraphics[width=15cm]{figures/app_meta_BP_jezek}
+\caption{Aplikační metamodel v průběhu vývoje obrázek převzat z \cite{Jezek}}
+\label{fig:jezek:app_meta}
+\end{center}
+\end{figure}
+\FloatBarrier
+
 \section{Změny aplikačních operací}
 V průběhu modelování operací nad aplikačním modelem jsme se snažili, aby tyto
 operace byly jednoznačné (strojově zpracovatelné) v rámci daného kontextu, dále
@@ -1417,17 +1464,28 @@ chybu.
 Operace v aplikačním modelu se vyvíjely a měnily se jejich parametry, ale
 současně se měnil i seznam dostupných operací nad aplikačním modelem. Z operací
 v první verzi modelu byly odstraněny operace MoveProperty, AddPrimitiveClass,
-SetOpposite a SetType. 
+SetOpposite a SetType.
 
-
-V průběhu vývoje existoval koncept ComposedOperation a AtomicOperation, kdy
-každá operace byla buď Composed nebo Atomic, každá Composed operace byla na
+\subsection{Atomic, composed a virtuální operace}
+V průběhu vývoje existoval entity ComposedOperation a AtomicOperation, kdy
+každá operace byla buď composed nebo atomic, každá composed operace byla na
 aplikační vrstvě nejdříve dekomponována na set atomických, které se později
 vykonaly a mapovaly přes ORMo na databázové operace. Tento koncept jsme zavrhli,
 protože jsme nedokázali dekomponovat správně některé operace a obzvláště
-pořadí ORMo obrazů nám dělalo problémy. Nicméně v nynější chvíli by se tento
-koncept mohl navrátit po přidání konceptu mirrored operations, ale asi by bylo
-nutné předefinovat či přidat některé aplikační operace.
+pořadí ORMo obrazů nám dělalo problémy. 
+
+Některé nyní aplikované operace se rozkládají na operace virtuální na úrovni
+kódu, nikoliv modelu, aby bylo zabráněno duplikaci kódu. Na první pohled se zdá
+, že virtuální operace je obdobou Atomická operace, ale mezi těmito dvěma
+koncepty existují dva rozdíly. Prvním rozdílem je, že pro atomické operace
+vznikaly entity v modelu, což vedlo k jejich ukládání do mezivýsledných modelů a
+bylo nutné je mazat. Druhým rozdílem je, že pro atomické operace se ověřovaly
+validační podmínky, což se pro virtuální operace nedělá.
+
+Koncept rozkladu operací na operace atomické se nedá považovat za špatný, ale je
+nutné definovat širší množinu atomických operací - některé jen pomocné například
+spojující třídy na základě nějakého kritéria. Tento čistší návrh podlehl nižšímu
+množství práce na implementaci a měl za následek vyšší složitost testů.
 
 \subsection{AddPrimitive} 
 Operace AddPrimitive byla označena za nadbytečnou, protože není cílem modifikace
@@ -1519,7 +1577,6 @@ příklad nekonzistence uvedený v subsekci \ref{app_ops:removeParent_example}.
 \FloatBarrier
 
 
-
 \subsection{SetType}
 Operace SetType byla zkoumána, ale nebyla exaktně popsána, nebylo nalezeno
 její mapování na operace v databázi ani validační podmínky nutné k úspěšné
@@ -1527,39 +1584,6 @@ aplikaci operace na aplikační model. Předpokládáme, že tato operace by mě
 aplikována na změny typu v hierarchii. Pokud by byla tato operace totiž
 aplikována na primitivní typy, není možné kontrolovat data či dát uživateli
 zprávu o nevalidnosti SQL skriptu.
-
-\subsection {Rozdělení aplikačních operací} 
-
-Operace nad aplikačním modelem je možné dělit podle dvou kritérií - 1. nad jakým
-typem modelové entity pracují, 2. jaký je charakter/význam pro tito entity daná
-operace má. Operace byly rozděleny podle obou kritérií spíše formálně. Všechny operace
-jsou potomkem generické operace ModelOperation. Rozdělení podle druhého kritéria
-vzniklo až po přidání funkcionality rozpoznávání operací.
-
-První kritérium dělí aplikační operace na operace pracující s třídami a operace
-pracující pouze s properties daných tříd. Příkladem operací pracujících s
-třídami jsou operace AddStandardClass, AddParent a RemoveEntity. Příkladem
-operací pracujících s properties jsou operace AddProperty, RemoveProperty,
-SetAbstract.
-
-Podle druhého kritéria je možné rozdělit operace nad aplikačním modelem do 5
-skupin - konstruktivní, destruktivní, expanzivní, reduktivní a modifikační operace.
-Konstruktivní operace jsou takové, které po své aplikaci vytvoří 1 novou entitu
-v výsledném modelu, která nemá žádné vazby na jiné entity. Příklady aditivní
-operace je operace AddClass. 
-
-Destruktivní operace je opak konstruktivní, v vstupním modelu existuje entita a
-ta je aplikaci destruktivní operace odstraněna. Příkladem destruktivní operace
-je operace RemoveProperty.
-
-Operace expanzivní přídává do výstupního modelu jednu entitu, čímž se
-podobá operaci konstruktivní, nicméně zároveň je vázána na jinou entitu
-stejného typu a zmenšuje její obsah. Příkladem expanzivní operace je
-ExtractClass.
-
-Reduktivní operace entitu z vstupního modelu odstraní a zároveň entitě, která
-je pro operaci řídící změní obsah. Příkladem této operace je InlineClass.
-Reduktivní operace jsou inverzní k operacím expanzivním.\\
 
 \subsection{Vlastnosti operací}
 V \cite{Cincetti} Antonio Cincetti popisuje některé specifické vlastnosti
@@ -1617,10 +1641,7 @@ RemoveParent, čímž bychom se nicméně odklonili od cílu minimalizovat opera
 
 \FloatBarrier
 
-\subsection{Změny evouluce aplikačního modelu}
-
-\section{Databázová vrstva}
-\subsection{Změny Databázového metamodelu}
+\section{Změny Databázového Structury}
  Metamodel databázové struktury se ukázal jako celkem dobře definovaný a proto
  nedocházelo k zásadním změnám.
 
@@ -1629,9 +1650,22 @@ RemoveParent, čímž bychom se nicméně odklonili od cílu minimalizovat opera
  \cite{Lukes} a na obrázku \ref{fig:rdb_str_tarant} model v pozdější fázi vývoje
  převzatý z \cite{Tarant_bp}.
 
+ Nejvýraznější změnami databázového metamodelu struktury jsou - stejně jako v
+ metamodelu aplikační struktury odstranění generace modelů, odstranění elementu
+ UnderlyingIndex, odstranění elementu ColumnConstraint, nahrazení elementu
+ NotNullConstraint atributem boolean v Column a snížení kardinality Sequence
+ obsažených ve schematu z * na 1.
+ 
+ Myšlenka generace modelů byla zachována, ale jejich připadné uchovávání bylo
+ zvoleno ve více oddělených souborech. Element UnderlyingIndex byl shládán
+ nadbytečným, stejně jako element ColumnConstraint. Neatributový element
+ NotNullConstraint byl shledán příliš informačně chudým a byl nahrazen atributem
+ isNillable zachovávajícím stejnou informační hodnotu jako element v původních
+ modelech. 
+
 \begin{figure}[H]
 \begin{center}
-\includegraphics[width=15cm]{figures/rdb_structure_tarant}
+\includegraphics[width=10cm]{figures/rdb_structure_tarant}
 \caption{Struktura databázového metamodelu v průběhu vývoje, obrázek převzat z
 \cite{Tarant_bp}}
 \label{fig:rdb_str_tarant}
@@ -1648,36 +1682,219 @@ RemoveParent, čímž bychom se nicméně odklonili od cílu minimalizovat opera
 \end{figure}
 %
 \FloatBarrier
- Nejvýraznější změnami databázového metamodelu struktury jsou - stejně jako v
- metamodelu aplikační struktury odstranění generace modelů, odstranění elementu
- UnderlyingIndex, odstranění elementu ColumnConstraint, nahrazení elementu
- NotNullConstraint atributem boolean v Column a snížení kardinality Sequence
- obsažených ve schematu z * na 1.
- 
- Myšlenka generace modelů byla zachována, ale jejich připadné uchovávání bylo
- zvoleno ve více oddělených souborech. Element UnderlyingIndex byl shládán
- nadbytečným, stejně jako element ColumnConstraint. Neatributový element
- NotNullConstraint byl shledán příliš informačně chudým a byl nahrazen atributem
- isNillable zachovávajícím stejnou informační hodnotu jako element v původních
- modelech. 
 
-\subsection{Změny databázových operací}
+\section{Změny databázových operací}
+
+Databázové operace v původní verzi byly designově nečisté, některé operace
+obsahovaly ve své definici odkazy na entity z modelu aplikačního, které již v
+modelu databázovém neexistují a ani nemohou existovat. Mou prací na databázových
+operacích bylo odstranění entit aplikace, které v databázovém metamodelu již
+nemohou existovat a dodefinovat potřebné obecně použitelné operace.
+
+\subsection{AddSchema a RemoveSchema}
+Operace AddSchema a RemoveSchema byly odstraněny. Pro každou tabulku je
+definováno, ve kterém schematu se nalézá, ale neexistuje aplikační operace,
+která by zapříčinila vznik nebo smazání databázového schematu.
+
+\subsection{HasNoInstances, HasNoOwnInstances}
+Operace HasNoInstances měla zjistit, jestli v dané tabulce existují data.
+Operace HasNoOwnInstances zjišťovala, jestli v tabulce odpovídající třídě A
+existují data odpovídající konkrétní instanci A, nikoliv data odpovídající
+instancím jejích potomků.
+Tyto dvě operace byly napsány jako základ ověřování proveditelnost migrovaných
+skriptů, který byl z frameworku vypuštěn. Pokud by se měl do frameworku
+navrátit, bylo by lepší namodelovat jednu operaci HasNoInstances s where
+podmínkou vybírající daná data.
+
+\subsection{GenerateSequenceNumbers}
+Operace GenerateSequenceNumbers byla shledána nadbytečnou, protože při vkládání
+dat je možné generovat je ze sekvence přidružené k tabulce či specifikované v
+parametru. Není tedy nutné vkládání dat do tabulky oddělovat od Generování data
+ze sekvence.
+
+\subsection{AddIndex, RemoveIndex}
+Z databázového metamodelu byl odstaněn element Index. Některé operace sice
+vytvářejí defaultní index, ale k tomuto vytvoření stačí jejich samotné zavolání.
+Z těchto důvodů byly operace z metamodelu odstraněny.
+
+\subsection{SetColumnType}
+Operace SetColumnType měla konvertovat data z jednoho primitivního typu na
+druhý. V nynější chvíli není aplikační operace, která by se na tuto databázovou
+operaci mapovala a je očekávané, že aplikační operace SetType bude měnit
+neprimitivní typ. Operace se tedy stala nadbytečnou a byla z modelu odstraněna.
+
+
+\subsection{UpdateRows}
+V původní verzi měla tato operace signaturu:
+
+\begin{verbatim}
+    class UpdateRows extends ModelOperation {
+      attr String[1] owningSchemaName;
+      attr String[1] sourceTableName;
+      attr String[1] sourceColumnName;
+      attr String[1] targetTableName;
+      attr String[1] targetColumnName;
+      attr ToleranceType[1] tolerance;
+      attr String[1] idName;
+    }
+\end{verbatim}
+
+Na verzi nynější:
+
+\begin{verbatim}     
+     class UpdateRows extends ModelOperation {
+      attr String[1] owningSchemaName;
+      attr String[1] sourceTableName;
+      attr String[1] sourceColumnName;
+      attr String[1] targetTableName;
+      attr String[1] targetColumnName;
+      attr String[1] selectionWhereCondition;
+      attr String[?] safeWhereCondition;
+    }
+    \end{verbatim}
+Shledal jsem nadbytečným atribut ToleranceType, jelikož jeho přesný význam nebyl
+definován a nebyl použit v ORMo mapování. V operaci byl nahrazen atribut idName
+atributem selectionWhereCondition. Testy odhalily, že je nutné přidat volitelný
+atribut safeWhereCondition, aby byla zajištěna neměnnost instancí dat, které
+operace nemá změnit.
+
+\subsection{DeleteRows}
+Signatura operace byla změněna z verze:
+\begin{verbatim}
+    class DeleteRows extends ModelOperation {
+      attr String[1] owningSchemaName;
+      attr String[1] tableName;
+      attr String[*] descendantsNames;
+      attr String[1] idName;
+    }
+\end{verbatim}
+Na verzi:
+\begin{verbatim}
+   class DeleteRows extends ModelOperation {
+      attr String[1] owningSchemaName;
+      attr String[1] tableName;
+      attr String[1] whereCondition;
+    }
+\end{verbatim}  
+Výstupní verze je čitelnější, obecněji použitelná a designově čistší.
+
+\subsection{NillRows}
+Motivací k vytvoření této operace bylo shledání potřebného nastavování
+NULL hodnoty v cílové tabulce. Operace nebyla shledána jako speciální typ
+UpdateRows, jelikož operace neaktualizuje data v cílové tabulce na základě
+zdrojové tabulky.
+
+\subsection{InsertRows}
+Do operace byl přidán atribut whereCondition, aby byla operace lépe použitelná.
+
+\subsection{RemoveNotNull}
+NotNull constraint byl zpočátku vývoje chybně zařazen mezi TableConstraints a
+bylo předpokládáno, že je odstranitelný operací RemoveConstraint. Po zjištění
+neplatnosti tohoto předpokladu jsem vytvořil tuto operaci.
+
+\section{Databázová evoluce, Aplikační Evoluce a Migdb\_Executor}
 Evoluce na databázové vrstvě nemá vliv na vygenerování SQL kódu a je jen
 jakousi simulací změn, které se provedou na databázové vrstvě, tudíž se může
 jevit nadbytečnou. Nicméně tato simulace může odhalit chyby ve vygenerovaném
 SQL skriptu podstatně rychleji oproti generování databáze a aplikaci migračních
 skriptů, které jak z praxe víme často probíhají v řádu desítek minut až
-několika hodin.
-
-Databázové operace reprezentují změny proveditelné na úrovni databáze. Mělo by z
-nich být možné generovat SQL kód jednoduchou Model-to-text transformací
-zajišťovanou modulem Generator.xtend.
+několika hodin. Proto jsem se rozhodl tuto část zachovat ve frameworku.
 
 \subsection{Změny SQL generátorů}
+Vzhledem k změnám databázových operací bylo nutné upravit i generátor SQL kódu z
+těchto operací. Druhou podstatnou prací bylo přepsání základního algoritmu pro
+vytvoření databázového schematu z aplikačního modelu použitého v mé bakalářské
+práci viz \cite{Lukes}, aby bylo možné napsat testy celého frameworku.
+
 
 \section{Implementace a testování ORMo mapování}
+Nejnáročnější implementační částí bylo napsání ORMo mapování a jeho testů.
+Původní implementace prezentovaná v Cambridge se ukázala jako velmi neflexibilní
+, špatně rozšířitelná a testovatelná. Proto jsem téměř celou ORMo implementaci
+přepsal. Implementace ORMo zabírá přes 2000 řádků kódu. Vzniklo 42 testů ORMo
+mapování.
+
+\subsection{Mapování jmen}
+ORMo mapování udržuje konzistenci mezi aplikačním modelem a modelem databázovým.
+Databáze umožňuje definovat nepojmenované constrainy, ale aby bylo možné smazat
+TableConstrain je nutné ho referencovat pomocí jeho jména. Databáze
+neumožňují měnit název TableConstrainů a tak je každou změnu názvu jména
+TableConstrainu nutné reprezentovat jako odstranění a jeho opětovné vytvoření.
+Aby ORMo mapování zajistilo konzistenci mezi aplikačním a databázovým modelem,
+bylo nutné zajistit jednoznačné mapování mezi elementy aplikační vrstvy a
+elementy databázovými. Kritickým problémem se stalo mapování jmen. Vznikla
+knihovna name\_service, která tento problém řeší. Jména tříd je jednoduché
+transformovat na jména tabulek pomocí následujících pravidel:
+
+\begin{itemize}
+  \item Počáteční písmeno je zmenšeno
+  \item Každé další velké písmeno je nahrazeno malým písmenem stejného typu
+  předraženého znakem '\_'
+\end{itemize}
+
+Stejná pravidla jsou použita při transformaci primitivních properties s
+upperBound 1 na sloupce. Tedy třída LegalPerson(businessName,
+registrationNumber) se transformuje na tabulku legal\_person(business\_name,
+registration\_number). Použití daných dvou pravidel označme jako volání funkce
+translate na daný název.
+
+Při transformaci asociačních property s upperBound != 1 na asociační tabulku je
+nutné zajistit unikátnost názvu této tabulky. Neexistuje předpoklad, že by byl
+název property unikátní ve všech třídách. Ale dvojice (table, property) musí být
+unikátní. Proto je název asociační tabulky získán jako spojení názvu vlastnické
+tabulky s názvem asociační property pomocí znaku '\_'. 
+$$owningTableName = translate(owningClassName)$$
+$$assocTableName = owningTableName + '\_' +
+translate(associationPropertyName)$$
+
+Transformace primitivní property s upperBound != 1 (kolekce) na tabulku má
+podobný důsledek. Aby bylo pro vývojáře snadnější rozpoznat obraz třídy kolekce
+je název tabulky předražen prefixem 'col\_'
+
+$$owningClstranslation = translate(owningClassName)$$
+$$propertyTranslation = translate(primitivePropertyName)$$
+$$collectionTableName = col\_ + owningClsTranslation + '\_' +
+propertyTranslation$$
+
+Názvy constrainů musí být unikátní v rámci celé databáze. Toto je
+zajištěno. Názvy unique constrainů jsou odvozeny od tabulky, nad kterou je
+constrain vytvořen. Existují dva atributy, které jsou mapovány na 
+UniqueConstraint. Aplikační atribut kolekce isUnique je mapován na
+UniqueConstraint s jménem předraženým 'ux\_'. Název constraintu pro
+atribut isOrdered je předražen řetězcem 'ux\_' a nakonec je doplněn
+řetězec '\_ord'.
+Vzhledem k unikátnosti dvojice (class, property) bylo využito mapování prefix spojený s přelozeným názvem třídy a
+přeloženým názvem property.
+$$owningClstranslation = translate(owningClassName)$$
+$$propertyTranslation = translate(primitivePropertyName)$$
+$$uxName = ux\_ + owningClsTranslation + '\_' +
+propertyTranslation$$
+$$ordName = uxName + '\_ord'$$
+
+Relace parent je do databáze transformována jako cizí klíč. Vzhledem k
+zákazu vícenásobné dědičnosti je každá relace parency nad tabulkou
+jednoznačně určena vzorem této tabulky. Tento klíč má proto jméno odvozeno od
+přeloženého názvu třídy předražené řetězcem 'par\_'.
+
+$$ parentFkName = 'par\_' + translate(owningClassName)$$
+
+Tabulka kolekce referencuje vlastnickou tabulku právě jednou a název cizího
+klíče je tedy odvozen z názvu tabulky kolekce.
+
+$$fkCollectionName = 'fk\_' + collectionTableName$$
+
+Poslední pravidlo vytváření cizích klíčů platí pro asociační tabulky. Každá
+asociační tabulka referencuje právě dvě tabulky. Název cizího klíče je vytvořen
+z názvu asociační tabulky a tabulky, kterou referencuje předražený řetězcem
+'fk\_'.
+
+$$fkAssociationReference ='fk\_' + associationTableName + '\_' +
+referencedTableName$$
 
 
+Tato pravidla nezajišťují unikátnost jmen elementů ve všech případech, ale
+zajišťují unikátnost jmen ve všech skupinách. Celkovou unikátnost jmen zajistí
+dobrý návrh aplikace a zkontroluje Databázová evoluce.
 
 \chapter{Řešení problému rozpoznávání operací}\label{chapt:recognition}
 
@@ -2370,13 +2587,13 @@ AddStandardClass, RenameEntity, RemoveEntity, RenameProperty.
        na model T
    \Statex
    \State \textbf{Inicializace:}
-   \State $SClses \gets S.classes$ \Comment{Nenamatchované třídy z vstupního
+   \State $SClses \gets S.classes$ \Comment{Nespárované třídy z vstupního
       modelu} 
-   \State $TClses \gets T.classes$ \Comment{Nenamatchované třídy z
+   \State $TClses \gets T.classes$ \Comment{Nespárované třídy z
       cílového modelu}
-   \State $SProps \gets S.classes.properties$ \Comment{Nenamatchované properties
+   \State $SProps \gets S.classes.properties$ \Comment{Nespárované properties
       z vstupního modelu}
-   \State $TProps \gets T.classes.properties$ \Comment{Nenamatchované properties
+   \State $TProps \gets T.classes.properties$ \Comment{Nespárované properties
       z cílového modelu}
    \State $R_{ops} \gets \{\}$
    \Statex	   
@@ -2894,7 +3111,7 @@ vstupní model xmi soubor. Po spuštění xmi testů se v projektu
 migdb.testing.run vygeneruje složka output-tests, která obsahuje výstupní data 
 jednotlivých testů. Výstupní data mohou obsahovat výstupní xmi soubory
 porovnávané s očekávaným xmi souborem nebo SQL souborem, který je možné
-aplikovat na databázi PostgreSQL.
+aplikovat na databázi PostgreSql.
 
 Speciálním testem je test\_code\_generator.mwe2, tento test vygeneruje pro
 zadaný vstupní aplikační model a sadu aplikačních operací výstupní rdb model, sadu
@@ -2914,146 +3131,6 @@ výstupem po apliaci dané operace na data.sql.
 
 \chapter{Ukázka zdrojového kódu práce}\label{chapt:ukazka_kodu}
 
-Ukázka helperu mergeProperty
-\label{orm_merge_prop}
-\begin{verbatim}
-helper AssociationProperty::ormMergeProperty(appStructure : APP::Structure, 
-     targetClassName : String, operations : RDB::Operations) : RDB::Operations {
-   var defaultSchemaName : String := getDefaultSchemaName();
-   var sourceClassName : String := self.owningGeneralClass.name;
-   var typeClassName : String := self.type.name;
-   var sourceTableName : String := sourceClassName.translate();
-   var targetTableName : String := targetClassName.translate();
-   var typeTableName : String := typeClassName.translate();
-   var mergedColumnName : String := self.name.translate();
-   var idSourceTableName : String := getDbIdColumnName(sourceTableName);
-   var idTargetTableName : String := getDbIdColumnName(targetTableName);
-   var idTypeTableName : String := getDbIdColumnName(typeTableName);
-
-   if(self.upperBound = 1)then{
-      var equalWhereCondition : String := getEqualityWhereCondition(
-                                                         sourceTableName,
-                                                         idSourceTableName,
-                                                         targetTableName,
-                                                         idTargetTableName);
-      var safeUpdateCondition : String := getSafeCondition(
-                                                      defaultSchemaName,
-                                                      idTargetTableName,
-                                                      sourceTableName,
-                                                      idSourceTableName);
-      var updateRows : RDB::ops::ModelOperation := _updateRows(
-                                                            defaultSchemaName,
-                                                            sourceTableName,
-                                                            mergedColumnName,
-                                                            targetTableName,
-                                                            mergedColumnName,
-                                                            equalWhereCondition,
-                                                            safeUpdateCondition);
-	  addOperation(updateRows, operations);
-      var fkName : String := getFkRefencingOppositeName(
-                                                  self.name,
-                                                  sourceClassName,
-                                                  typeClassName);
-      var removeFkConstr : RDB::ops::ModelOperation := _removeConstraint(
-                                                                  defaultSchemaName,
-                                                                  sourceTableName,
-                                                                  fkName);
-      addOperation(removeFkConstr, operations);
-      var removeMergedColumn : RDB::ops::ModelOperation := _removeColumn(
-                                                                  defaultSchemaName,
-                                                                  sourceTableName,
-                                                                  mergedColumnName);
-     addOperation(removeMergedColumn, operations);
-     //M x N association	
-     }else{
-         var sourceAssociationTableName : String := getAssociationTableName(
-                                                                   self.name,
-                                                                   sourceClassName);
-         var targetAssociationTableName : String := getAssociationTableName(
-                                                                     self.name,
-                                                                     targetClassName);
-         var sourceColumnNames : OrderedSet(String) := OrderedSet{
-                                                            idSourceTableName,
-                                                            idTypeTableName};
-         var destinationColumnNames : OrderedSet(String) := OrderedSet{
-                                                               idTargetTableName,
-                                                               idTypeTableName};
-         if(self.isOrdered)then{ 
-            sourceColumnNames += getDbOrderingColumnName();
-            destinationColumnNames += getDbOrderingColumnName();
-         }endif;
-         var transferData : RDB::ops::ModelOperation := _insertRows(
-                                                            defaultSchemaName,
-                                                            sourceAssociationTableName,
-                                                            sourceColumnNames,
-                                                            targetAssociationTableName,
-                                                            destinationColumnNames);
-         addOperation(transferData, operations);
-         if(self.isOrdered)then{
-            var ordName : String := getUXOrderingName(sourceAssociationTableName); 
-            var removeOrdConst : RDB::ops::ModelOperation := 
-                                                    _removeConstraint(
-                                                           defaultSchemaName,
-                                                           sourceAssociationTableName,
-                                                           ordName);
-            addOperation(removeOrdConst, operations);
-            var removeOrdCol : RDB::ops::ModelOperation := 
-                                                     _removeColumn(
-                                                         defaultSchemaName,
-                                                         sourceAssociationTableName,
-                                                         getDbOrderingColumnName());
-            addOperation(removeOrdCol, operations);
-         }endif;
-         if(self.isUnique)then{
-            var uxName : String := getUXName(sourceClassName, self.name);
-            var removeUxConst : RDB::ops::ModelOperation := 
-                                                      _removeConstraint(
-                                                          defaultSchemaName,
-                                                          sourceAssociationTableName,
-                                                          uxName);
-            addOperation(removeUxConst, operations);
-         }endif;
-         var fkSourceName : String := 
-                             getFKAssociationTableRefName(
-                                          sourceAssociationTableName,
-                                          sourceTableName);
-         var removeFkSourceConst : RDB::ops::ModelOperation :=
-                                                    _removeConstraint( 
-                                                         defaultSchemaName,
-                                                         sourceAssociationTableName,
-                                                         fkSourceName);
-         addOperation(removeFkSourceConst, operations);
-         var fkTypeName : String := 
-                             getFKAssociationTableRefName(
-                                                        sourceAssociationTableName,
-                                                        typeTableName);
-         var removeFkTypeConst : RDB::ops::ModelOperation := 
-                                                   _removeConstraint(
-                                                        defaultSchemaName,
-                                                        sourceAssociationTableName,
-                                                        fkTypeName);
-         addOperation(removeFkTypeConst, operations);
-         var removeIdSourceRefCol : RDB::ops::ModelOperation := 
-                                                      _removeColumn(
-                                                           defaultSchemaName,
-                                                           sourceAssociationTableName,
-                                                           idSourceTableName);
-         addOperation(removeIdSourceRefCol, operations);
-         var removeIdTypeRefCol : RDB::ops::ModelOperation := 
-                                                   _removeColumn(
-                                                      defaultSchemaName,
-                                                      sourceAssociationTableName,
-                                                      idTypeTableName);
-         addOperation(removeIdTypeRefCol, operations);
-         var removeSourceAssociationTable : RDB::ops::ModelOperation :=
-                                                         _removeTable(
-                                                           defaultSchemaName,
-                                                           sourceAssociationTableName);
-         addOperation(removeSourceAssociationTable, operations);																								
-      }endif;	
-      return operations;	
-}
-\end{verbatim}
 
 %*****************************************************************************
 

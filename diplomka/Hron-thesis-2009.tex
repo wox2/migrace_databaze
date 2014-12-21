@@ -363,7 +363,7 @@ manuál popisující použití frameworku Migdb, který je uložen na přiložen
 
 Tato dipomová práce byla napsána v rámci projektu Migdb, který vznikl díky
 spolupraci akademické sféry se sférou komerční v roce 2011. Komerční sféra byla
-v tomto případě zastoupena firmou CollectionsPro, s.r.o (dále jen CP) a
+v tomto případě zastoupena firmou CollectionsPro, s.r.o (CP) a
 akademická potom Katedrou počítačů fakulty Elektrotechnické na pražském
 Českém vysokém učení technickém. Ambiciózním cílem tohoto projektu bylo od
 pořátku projektu definování ucelené množiny změn, tj. operací, kterými mohou
@@ -393,12 +393,12 @@ V roce 2014 byla obhájena diplomová práce Petra Taranta \cite{Tarant_dip}
 formálně specifikující aplikační operace a diplomová práce Martina Mazance
 \cite{Mazanec} definující doménově specifikující jazyk aplikačních operací.
 
-Projekt Migdb byl započat v spolupráci se společností Collections Pro Výsledky
+Projekt Migdb byl započat v spolupráci se společností Collections Pro. Výsledky
 dosavadní práce byly v roce 2012 prezentovány jako case-study na prestižní
 modelové konferenci Code Generation 2012 \cite{Cambridge} v Anglickém Cambridge.
 
 \section{Metamodely}
-Frameworku MigDb je postaven na konceptu MDA \cite{MDA} a pro popsání
+Frameworku Migdb je postaven na konceptu MDA \cite{MDA} a pro popsání
 jednotlivých vrstev software zavádí pojem metamodel. Metamodel definuje
 strukturu popsaných modelů stejně jako model definuje
 strukturu dat odpovídajících tomuto modelu.
@@ -431,20 +431,7 @@ schéma definující strukturu databáze, ale také samotné perzistované insta
 \end{center}
 \end{figure}
 %
-Proces evoluce změn v životním cyklu je definován v \cite{Jezek}
-následovně:
-%
-%
-\begin{enumerate}\label{framework:jezek_def}
-  \item Redefinice entit na objektové vrstvě
-  \item Opětovná tvorba databázového schématu dle redefinovaných entit
-  \item Sběr potřebných informací pro migraci dat a příprava migračního skriptu
-  \item Ověření proveditelnosti migračního skriptu
-  \item Migrace dat
-\end{enumerate}
-%
-Po ověření nadbytečnosti vrstvy ověřující proveditelnost migrovaných skriptů byl
-tento koncept přepracován do formy zobrazené na obrázku
+Proces transformace modelů frameworkem je zobrazen na obrázku
 \ref{fig:framework:modified}.
 %
 \begin{figure}[H]
@@ -467,12 +454,12 @@ Evoluce aplikačního modelu.
 Instancemi databázového RDB metamodelu jsou potom jednotlivé RDB modely. Stejně
 jako aplikační model je i model databázový postupně transformován. Procesu
 vývoje databázového modelu budeme říkat Databázová Evoluce nebo Evoluce
-databázového modelu. Množinu stavů, kterými databázový model prochází potom
+databázového modelu. Stavy, kterými databázový model prochází potom
 nazveme generace databázového modelu.
 
 Změny, které se provádějí v aplikaci jsou transformovány na databázové operace
 aplikovatelné na RDB model. Databázové operace jsou potom transformovány na SQL
-scripty. V původní představě byl do frameworku zapojen i exekutor těchto
+skripty. V původní představě byl do frameworku zapojen i exekutor těchto
 skriptů nad databází, ale vzhledem ke znovupoužitelnosti SQL souborů byl z
 frameworku vypuštěn.
 \FloatBarrier
@@ -482,8 +469,7 @@ transformaci aplikační struktury na databázovou a následné vygenerování S
 skriptu vytvářející strukturu aplikace. Tento nástroj není ve frameworku použit
 při nasazení frameworku, ale byl použit při testování frameworku - viz
 kapitola \ref{chapt:testování}. Framework Migdb pracuje oproti původní
-sekvenční představě viz popis \ref{framework:jezek_def} iteračně viz obr.
-\ref{fig:framework:modified}.
+sekvenční představě iteračně viz obr. \ref{fig:framework:modified}.
 V první iteraci je první aplikační operace aplikována na aplikační model,
 transformována do databáze, kde je její obraz (sekvence databázových operací)
 aplikován na databázový model. Po provedení první iterace prochází tímto cyklem
@@ -494,7 +480,7 @@ Framework byl od začátku vývoje používán v rámci Eclipse IDE
 \cite{Eclipse_ide}. Nad vrstvou aplikační byly vytvořeny 2 moduly. Modul
 Operations a modul aplikační evoluce.
  
-Modul Operations umožňující napsat vyjídřit vstupní operace pomocí textového
+Modul Operations umožňující napsat vyjádřit vstupní operace pomocí textového
 souboru zapsaném v DSL jazyce. Kromě zápisu tento modul transformuje textově
 zapsané operace do XMI \cite{XMI} souboru pomocí model to text transformačního
 jazyka Xtend \cite{Xtend}. Tento modul je podrobně popsán v
@@ -503,7 +489,7 @@ jazyka Xtend \cite{Xtend}. Tento modul je podrobně popsán v
 Modul Aplikační Evoluce definuje pro každou operaci, jaký vliv bude mít
 provedení této operace na daný aplikační model a jaké podmínky musí daný
 aplikační model splňovat, aby se tato operace dala úspěšně provést. Více v
-sekci \ref{app_ops}.
+sekci \ref{sect:app_ops}.
  
 Nad databázovou vrstvou je definován modul Databázové Evoluce, který pro
 každou databázovou operaci definuje, jaký bude mít tato operace vliv na
@@ -511,7 +497,7 @@ databázový model a jaké podmínky musí daný model splňovat, aby se tato op
 mohla úspěšně provést. Více v sekci \ref{db_ops}.\\
  
 Spojnici mezi aplikačním a databázovým modulem tvoří dva moduly - modul ORM a
-modul ORMo. Modul ORMo.
+modul ORMo.
  
 Modul ORM transformuje model struktury aplikace na model struktury databáze.
 Tento modul byl prezentován v mé bakalářské práci \cite{Lukes} a není více v
@@ -525,17 +511,21 @@ Výstupem frameworku Migdb není databázový model, ale textový soubor s SQL
 příkazy. Textové výstupy vytvářejí dva moduly generátorů kódu. SQL generátor
 generuje ze souboru operací výstupní upgrade skript zajišťující samotnou migraci
 dat. Schema generator potom generuje ze souboru databázové struktury SQL skript
-vytvářející strukturu databáze. Ani jedním z těchto modulů se nebudu v této
-práci blíže zabývat. Oba dva generátory byly napsány v jazyce Xtend.\\
+vytvářející strukturu databáze. Detailnějším popisem implementace těchto modulů
+se nebudu v této práci blíže zabývat. Oba dva generátory byly napsány v jazyce
+Xtend.\\
 
-Nejnovějším modulem frameworku je modul OPS recognition. Tento modul se
-snaží ze dvou vstupních aplikačních modelů odvodit seznam aplikačních operací,
-které byly provedeny nad zdrojovým modelem a transformovaly ho do modelu
-výstupního. Tento modul je samostatným nástrojem a pracuje nezávisle na
-ostatních modulech. Je mu věnována kapitola rozpoznávání operací
-\ref{chapt:recognition}. \\
+Nejnovějším modulem frameworku je modul OpsRecognition. Tento modul se
+snaží ze dvou vstupních aplikačních modelů odvodit seznam aplikačních operací.
+První vstupní model označíme jako model zdrojový. Druhý vstupní model označíme
+jako cílový model. které byly provedeny nad zdrojovým modelem a transformovaly
+ho do modelu cílového. Tento modul je samostatným nástrojem a pracuje
+nezávisle na ostatních modulech. V rámci tohoto modulu byly definovány dva
+algoritmy pro rozpoznávání operací. Tématu rozpoznávání operací je věnována
+kapitola \ref{chapt:recognition}.
+\\
 
-Moduly Aplikační Evoluce, Databázové Evoluce, ORM, ORMo a OPS recognition byly
+Moduly Aplikační Evoluce, Databázové Evoluce, ORM, ORMo a OpsRecognition byly
 napsány v jazyce QVT Operational (QVTo) \cite{QVTo}.
 
 Za účelem ověření správné funkcionality byl vytvořen projekt Migdb.testing.run,
@@ -543,11 +533,13 @@ který je zmíněn v kapitole \ref{chapt:testování}.
 %
 \section{Aplikační metamodel}
 Aplikační metamodel je rozdělen do 3 částí - definice struktury aplikace,
-seznam aplikačních operací a seznam Diff elementů. Pro každou část je
+seznam aplikačních operací a seznam rozdílových elementů. Pro každou část je
 definován vlastní container, do kterého se ukládají elementy obsažené v této
 části. Na obrázku \ref{fig:app_roots} jsou znázorněny kořenové elementy
 nynějšího aplikačního modelu - každý aplikační model musí obsahovat nejméně
-jeden container - potomka třídy ModelRoot.
+jeden container - potomka třídy ModelRoot. Aplikační operace jsou popsány v
+sekci \ref{sect:app_ops}. Kořenový element Diff je popsán v sekci
+\ref{subsect:Diff elementy}.
 
 \begin{figure}[h]
 \begin{center}
@@ -566,25 +558,26 @@ kořenovém elementu \textit{Structure}. Na obrázku \ref{fig:app_meta} jsou
 zobrazeny elementy patřící do Struktury aplikačního metamodelu.
 
 Struktura aplikačního modelu obsahuje množinu elementů \textit{ModelEntity}.
-Každá ModelEntita obsahuje svůj identifikátor name. Primitivní typy
-programovacího jazyka jsou reprezentované elementem \textit{PrimitiveClass}
-potomkem ModelEntity. První potomek ModelEntity, PrimitiveClass obsahuje jen
-\textit{primitiveType}.
-Druhým potomkem ModelEntity je \textit{StandardClass} a obsahuje specifikaci
-svého \textit{inheritancetType}, příznak \textit{isAbstract}, referenci na
+Každá \textit{ModelEntita} obsahuje svůj identifikátor \textit{name}. Primitivní
+typy programovacího jazyka jsou reprezentované elementem \textit{PrimitiveClass}
+potomkem \textit{ModelEntity}. První potomek \textit{ModelEntity},
+\textit{PrimitiveClass} obsahuje jen \textit{primitiveType}.
+Druhým potomkem \textit{ModelEntity} je \textit{StandardClass} a obsahuje
+specifikaci svého \textit{inheritancetType}, určující způsob uložení dat.
+\textit{StandardClass} dále obsahuje příznak \textit{isAbstract}, referenci na
 seznam \textit{Property}, referenci na svou \textit{idProperty} a referenci na
 \textit{parent} StandardClass.
 Podporujemem pouze jednoduchou dědičnost, proto může mít každá třída maximálně 
 jednu rodičovskou třídu. Element \textit{Property} obsahuje svůj \textit{name},
 \textit{lowerBound} a \textit{upperBound}, které dohromady určují násobnost
-vazby či vymezují vlastnosti primitivní Property, pro kolekce důležité atributy
-\textit{isUnique} a \textit{isUnique}. \textit{PrimitiveProperty}, potomek
-Property, rozšiřuje svou rodičovskou třídu jen o svůj \textit{type}, který musí
-být primitivní.
+vazby či vymezují vlastnosti primitivní Property. \textit{Property} dále
+obsahuje pro kolekce důležité atributy \textit{isUnique} a \textit{isUnique}.
+\textit{PrimitiveProperty}, potomek Property, rozšiřuje svou rodičovskou třídu
+jen o svůj \textit{type}, který musí být primitivní.
 \textit{AssociationProperty}, druhý potomek Property, obsahuje také
 \textit{type} [StandardClass], referenci na \textit{oppositteProperty} pro
-bidirectional vazby a atribut isOwning, který existuje z implementačních
-důvodů více o něm bude zmíněno v kapitole \ref{chapt:dokonceni_projektu}. \\
+bidirectional vazby a atribut isOwning, který existuje z implementačních důvodů
+více o něm bude zmíněno v kapitole \ref{chapt:dokonceni_projektu}. \\
 
 \begin{figure}[h]
 \begin{center}
@@ -601,27 +594,29 @@ důvodů více o něm bude zmíněno v kapitole \ref{chapt:dokonceni_projektu}. 
  PostgreSql, databázový metamodel je vytvořen na základě této
  databáze a může se mírně odklánět od jiných relačních databází.
  Základním databázovým konstruktem je \textit{Schema}, které je jednoznačně
- identifikované svým \textit{name}, obsahuje sezname tabulek a seznam Sequencí.
- Sekvence je databázový element potřebný k postupnému generování čísel a je
- identifikovaná pomocí svého \textit{name} a musí obsahovat své startValue.
- Každá \textit{Table} má své \textit{name}, obsahuje seznam Column a seznam
- TableConstraint. Každý \textit{Column} má své \textit{jméno}, atribut
- \textit{nillable}, který povoluje či zakazuje NULL hodnoty v tomto sloupci,
+ identifikované svým \textit{name}, obsahuje sezname tabulek a seznam
+ sekvencí.
+ \textit{Sequence} je databázový element potřebný k postupnému
+ generování čísel, je identifikovaná pomocí svého \textit{name} a musí
+ obsahovat své \textit{startValue}.
+ Každá \textit{Table} má své \textit{name}, obsahuje seznam \textit{Column} a
+ seznam \textit{TableConstraint}. Každý \textit{Column} má své \textit{jméno},
+ atribut \textit{nillable}, který povoluje či zakazuje NULL hodnoty v tomto sloupci,
  \textit{type} [PrimitiveType] a odkaz na vlastnickou tabulku
- \textit{ownintTable}.
+ \textit{owningTable}.
 
-Potomci TableConstraint jsou jednotlivé IO a mají společné \textit{name}
-zpřístupňující Constraint.  TableConstraint \textit{Unique} obsahuje seznam
-unikátních sloupců a odkaz na vlastnickou tabulku \textit{ownintTable}.
+Potomci \textit{TableConstraint} jsou jednotlivé IO a mají společné
+\textit{name} zpřístupňující daný TableConstraint.  TableConstraint
+\textit{Unique} obsahuje seznam unikátních sloupců \textit{uniqueColumns} a
+odkaz na vlastnickou tabulku \textit{ownintTable}.
 Ačkoliv je v databázi možné mít vícesloupcový primární klíč, omezili jsme si
 \textit{PrimaryKey} tak, aby ho bylo možné definovat jen nad jedním sloupcem
 \textit{constrainedColumn}, protože již od začátku vývoje bylo zřejmé, že
 v našem frameworku budeme pracovat jen s umělými jednosloupcovými klíči.
 \textit{ForeignKey} je poslední TableConstraint a podobně jako PrimaryKey má
-omezen počet \textit{constrainedColumns} na 1 a obsahuje také odkaz na
-referencovanou tabulku. Na obr. \ref{fig:rdb_str} je zobrazen aktuální
-databázový metamodel.
-
+omezen počet sloupců tvořící cizí klíč na jeden \textit{constrainedColumn} a
+obsahuje také odkaz na referencovanou tabulku \textit{targetTable}. Na obr.
+\ref{fig:rdb_str} je zobrazen aktuální databázový metamodel.
 
 
 \begin{figure}[H]
@@ -658,14 +653,14 @@ databázový metamodel.
 %projekci R[a1, \ldots , an] operací SELECT a1, \ldots an FROM R, operaci
 %selekce R[ a = 1] klauzulí where v dotaze select  SELECT * FROM R WHERE a = 1; 
 
-\section{Operace nad aplikačním modelem} \label{app_ops}
+\section{Operace nad aplikačním modelem} \label{sect:app_ops}
 Operace nad aplikačním modelu definují možné transformace, které je možné
 provést aplikačním modelem. Každá aplikační operace má definované dvě metody.
-První metodou je metoda boolean isValid(Structure structure), která pro danou
-aplikační strukturu zjistí, jestli je daná operace proveditelná nad touto
-strukturou, a vrátí tuto informaci ve své náhratové hodnotě. Druhá metoda
-void apply(Structure structure) aplikuje operaci na danou strukturu, tj. pozmění
-elementy v ní obsažené.
+První metodou je metoda se signaturou boolean isValid(Structure structure),
+která pro danou aplikační strukturu zjistí, jestli je daná operace proveditelná
+nad touto strukturou, a vrátí tuto informaci ve své návratové hodnotě. Druhá
+metoda se signaturou void apply(Structure structure) aplikuje operaci na danou
+strukturu, tj. pozmění elementy v ní obsažené.
 
 \subsection{Seznam aplikačních operací}
 
@@ -705,23 +700,24 @@ definici ORMo mapování a zjednodušení kódu.
   \end{itemize}
   \item RemoveEntity(name)
   \begin{itemize}
-    \item Validační podmínky - existuje třída s daným jménem, neexistuje link
-    na tuto třídu, třída neobsahuje žádné property, neexistuje pro tuto třídu
-    žádný potomek
+    \item Validační podmínky - existuje třída s daným jménem, neexistuje
+    asociační property odkazující typem na tuto třídu, třída neobsahuje žádné
+    property, neexistuje pro tuto třídu žádný potomek
     \item Operace odstraní entitu (standardní třídu) z modelu
   \end{itemize}
   \item AddProperty(owningClassName, name, typeName, lowerBound, upperBound,
   isOrdered, isUnique) 
   \begin{itemize}
     \item Validační podmínky - zadané bounds jsou validní, v hierarchii
-    dědičnosti neexistuje kolizní property se stejným jménem
+    dědičnosti neexistuje kolizní property se stejným jménem, existuje
+    ModelEntity s názvem shodným s typeName
     \item  Operace vytvoří v dané třídě novou property se zadanou horní mezí,
     dolní mezí, typem, seřaditelností a unikátností
   \end{itemize}
   \item RenameProperty(owningClassName, name, newName)
   \begin{itemize}
     \item Validační podmínky - existuje přejmenovaná property v dané třídě,
-    nexistuje property v dané třídy nového jména
+    nexistuje property s jménem shodným s newName v dané třídě 
     \item  Operace změní název property v dané třídě ze starého na nový
   \end{itemize}
   \item RemoveProperty(owningClassName, name)
@@ -739,44 +735,45 @@ definici ORMo mapování a zjednodušení kódu.
   \item SetOrdered(owningClassName, name, isOrdered)
   \begin{itemize}
     \item Validační podmínky - musí existovat daná trída a property
-    \item  Operace nastaví property seřaditelnost
+    \item  Operace nastaví property atribut isOrdered na odpovídající hodnotu
   \end{itemize}
   \item SetUnique(owningClassName, name, isUnique)
   \begin{itemize}
     \item Validační podmínky - musí existovat daná třída a property
-    \item  Operace nastaví property unikátnost
+    \item  Operace nastaví property atribut isUnique na odpovídající hodnotu
   \end{itemize}
   \item AddParent(className, parentClassName)
   \begin{itemize}
     \item Validační podmínky - musí existovat rodičovská třída a třída potomka,
     třída potomka nesmí mít nastaveného rodiče
-    \item Operace nastaví třídě předka a přesune namerguje kolizní atributy do
-    rodičovské třídy
+    \item Operace nastaví třídě předka a přesune namerguje (aplikuje virtuální
+    operaci MergeProperty) kolizní atributy do rodičovské třídy
   \end{itemize}
   \item RemoveParent(className, parentClassName)
   \begin{itemize}
     \item Validační podmínky - musí existovat třída child a mít nastavenou
     rodičovskou třídu
-    \item Operace odstraní třídě rodičovskou třídu a rozdistribuje (použije
-    virtuální operaci distribute property) property z rodičovské třídy do třídy
-    původního potomka
+    \item Operace odstraní třídě rodičovskou třídu a použije
+    virtuální operaci DistributeProperty na  property z rodičovské třídy do
+    třídy původního potomka
   \end{itemize}
   \item ExtractClass(sourceClassName, extractClassName,
   associationPropertyName, oppositePropertyName, propertyNames)
   \begin{itemize}
     \item Validační podmínky - musí existovat zdrojová třída, neexistuje
     property s jménem linku na nově vzniklou třídu, existují exportované property
-    \item Operace vytvoří novou třídu, kterou napojí na původní třídu,
-    exportuje(využije virtuální operaci export property) do nově vzniklé třídy
-    vyjmenované property
+    \item Operace vytvoří novou třídu, kterou napojí na původní třídu přes
+    asociační property associationPropertyName, exportuje(využije virtuální
+    operaci export property) do nově vzniklé třídy vyjmenované property
   \end{itemize}
   \item InlineClass(targetClassName, associationPropertyName)
   \begin{itemize}
     \item Validační podmínky - musí existovat cílová třída a
-    musí existovat asociační property typu Inlinované třídy, která má upper
-    bound 1
-    \item Operace exportuje všechny property z inlinované třídy do cílové třídy
-    přes specifikovanou unidirectional asociaci
+    musí existovat asociační property s jménem associationPropertyName typu
+    Inlinované třídy, která má upper bound 1
+    \item Operace exportuje (aplikuje virtuální operaci exportProperty)
+    na všechny property z inlinované třídy do cílové třídy přes specifikovanou
+    unidirectional asociaci
   \end{itemize}
   \item ChangeUniToBidir(className, associationPropertyName, oppositePropertyName)
   \begin{itemize}
@@ -795,8 +792,9 @@ definici ORMo mapování a zjednodušení kódu.
   \begin{itemize}
     \item Validační podmínky - musí existovat subclass a superclass, subclass
     musí mít nastavenou superclass jako parenta
-    \item Operace exportuje (aplikuje virtuální operaci) všechny property z
-    jedné třídy do jejího předka a třídy spojí, upraví dědičné vazby
+    \item Operace exportuje (aplikuje virtuální operaci ExportProperty)
+    všechny property z jedné třídy do jejího předka a třídy spojí, upraví
+    dědičné vazby
   \end{itemize}
   \item ExtractSubClass(sourceClassName, extractedClassName, extractedPropertyNames)
   \begin{itemize}
@@ -804,7 +802,8 @@ definici ORMo mapování a zjednodušení kódu.
     nesmí existovat třída s jménem extractedClassName, v třídě sourceClass musí
     existovat property s názvy z kolekce extractedPropertyNames
     \item Operace vytvoří třídě nového potomka a
-    exportuje(aplikuje virtuální operaci export property) do něj vyjmenované property
+    exportuje (aplikuje virtuální operaci export property) do něj vyjmenované
+    property
   \end{itemize}
   \item ExtractSuperClass(sourceClassesName, extractParentName, propertyNames)
   \begin{itemize}
@@ -821,8 +820,8 @@ definici ORMo mapování a zjednodušení kódu.
     rodičovskou třídu, v třídě potomka musí existovat properties z kolekce
     pulledPropertiesNames, v okolních subhierarchiích nesmí existovat properties
     z této kolekce
-    \item Operace exportuje(aplikuje virtuální operaci export property) property
-    do rodičovské třídy
+    \item Operace exportuje (aplikuje virtuální operaci export property)
+    property do rodičovské třídy
   \end{itemize}
   \item PushDownProperties(childClassName, pushedPropertiesNames)
   \begin{itemize}
@@ -863,22 +862,21 @@ vzniklo až po přidání funkcionality rozpoznávání operací.
 První kritérium dělí aplikační operace na operace pracující s třídami a operace
 pracující pouze s properties daných tříd. Příkladem operací pracujících s
 třídami jsou operace AddStandardClass, AddParent a RemoveEntity. Příkladem
-operací pracujících s properties jsou operace AddProperty, RemoveProperty,
-SetAbstract.
+operací pracujících s properties jsou operace AddProperty, RemoveProperty, SetAbstract.
 
 Podle druhého kritéria je možné rozdělit operace nad aplikačním modelem do 5
 skupin - konstruktivní, destruktivní, expanzivní, reduktivní a modifikační operace.
 Konstruktivní operace jsou takové, které po své aplikaci vytvoří 1 novou entitu
-v výsledném modelu, která nemá žádné vazby na jiné entity. Příklady aditivní
+ve výsledném modelu, která nemá žádné vazby na jiné entity. Příklady aditivní
 operace je operace AddClass. 
 
-Destruktivní operace je opak konstruktivní, v vstupním modelu existuje entita a
+Destruktivní operace je opak konstruktivní, ve vstupním modelu existuje entita a
 ta je aplikaci destruktivní operace odstraněna. Příkladem destruktivní operace
 je operace RemoveProperty.
 
 Operace expanzivní přídává do výstupního modelu jednu entitu, čímž se
 podobá operaci konstruktivní, nicméně zároveň je vázána na jinou entitu
-stejného typu a zmenšuje její obsah. Příkladem expanzivní operace je
+stejného typu a mění její obsah. Příkladem expanzivní operace je
 ExtractClass.
 
 Reduktivní operace entitu z vstupního modelu odstraní a zároveň entitě, která
@@ -1434,6 +1432,10 @@ referencí.
 Koncept generace modelů byl zachován, ale tyto generace nejsou obsaženy z
 implementačních a testovacích důvodů v jednom souboru, ale ve více souborech.
 
+Kvůli zajištění jednoznačnosti jmen odvozených z jmen aplikačních elementů byl
+do Property přidán atribut isOwning. Více o významu atributu isOwning bude
+zmíněno v sekci \ref{subsect:map_translation}.
+
 \begin{figure}[h]
 \begin{center}
 \includegraphics[width=15cm]{figures/app_meta_BP}
@@ -1814,7 +1816,7 @@ Původní implementace prezentovaná v Cambridge se ukázala jako velmi neflexib
 přepsal. Implementace ORMo zabírá přes 2000 řádků kódu. Vzniklo 42 testů ORMo
 mapování.
 
-\subsection{Mapování jmen}
+\subsection{Mapování jmen}\label{subsect:map_translation}
 ORMo mapování udržuje konzistenci mezi aplikačním modelem a modelem databázovým.
 Databáze umožňuje definovat nepojmenované constrainy, ale aby bylo možné smazat
 TableConstrain je nutné ho referencovat pomocí jeho jména. Databáze
@@ -2812,7 +2814,7 @@ OBRÁZEK BUDE DOPLNĚN.\\
  \ref{sec:algo_state}. Aby bylo snazší rozpoznat operace reduktivní a
  expanzivní, byly zavedeny ClassPairy a PropertyPairy.
  
-\subsection{Diff elementy}
+\subsection{Diff elementy}\label{subsect:Diff elementy}
  
  Kvůli nutnosti rozpoznávat operace vznikly v aplikačním metamodelu nové
  elementy. Kořenovým elementem diff modelu je Diff element. Tento element

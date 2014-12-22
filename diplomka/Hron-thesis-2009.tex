@@ -751,11 +751,11 @@ definici ORMo mapování a zjednodušení kódu.
   \end{itemize}
   \item RemoveParent(className, parentClassName)
   \begin{itemize}
-    \item Validační podmínky - musí existovat třída child a mít nastavenou
-    rodičovskou třídu
-    \item Operace odstraní třídě rodičovskou třídu a použije
-    virtuální operaci DistributeProperty na  property z rodičovské třídy do
-    třídy původního potomka
+    \item Validační podmínky - musí existovat třída s name className a mít
+    nastavenou hodnotu parent != NULL
+    \item Operace odstraní třídě s name rovným className rodičovskou třídu a
+    použije virtuální operaci DistributeProperty na property z rodičovské třídy
+    do třídy původního potomka
   \end{itemize}
   \item ExtractClass(sourceClassName, extractClassName,
   associationPropertyName, oppositePropertyName, propertyNames)
@@ -927,7 +927,7 @@ uveden v následujícím seznamu:
   \item AddColumn(owningSchemaName, owningTableName, name, type)
   \begin{itemize}
     \item Vytvoří v daném schématu a tabulce column s zadaným primitivním typem
-    \item Musí existovat daní schéma, tabulka a v dané lokaci nesmí existovat
+    \item Musí existovat dané schéma, tabulka a v dané lokaci nesmí existovat
     daný sloupec
   \end{itemize}
   
@@ -995,8 +995,9 @@ uveden v následujícím seznamu:
   \item RemoveColumn(owningSchemaName, owningTableName, name)
   \begin{itemize}
     \item Odstraní v daném schématu a tabulce column s jménem name
-    \item Musí existovat dané schéma, daná tabulka, daná column, která nesmí na
-    sobě mít constraint PrimaryKey, ForeignKey nebo Unique
+    \item Musí existovat schéma s name owningSchemaName, tabulka s name
+    owningTableName, sloupec s name rovým name. Sloupec nesmí obsahovat
+    constraint PrimaryKey, ForeignKey ani Unique
   \end{itemize}
 
   \item RemoveConstraint(owningSchemaName, owningTableName, name)
@@ -1038,14 +1039,16 @@ uveden v následujícím seznamu:
     \item v daném schématu zkopíruje z tabulky sourceTable hodnoty z
     sloupce sourceColumns instance splňující whereCondition a vloží je do
     taragetColumns tabulky targetTable    
-    \item Musí existovat dané schéma, v něm sourceTable, v ní sourceColumn, v
-    dále musí v schématu existovat targetTable, v ní targetColumn, sourceColumn
-    musí mít stejný typ jako targetColumn
+    \item Musí existovat schéma s name owningSchemaName, v něm table
+    identifikovaná sourceTableName, v ní column identifikovaná sourceColumnName,
+    Ve schématu musí existovat table identifikovaná targetTableName, v ní
+    column identifikovaná targetColumnName. SourceColumn musí mít stejný typ
+    jako targetColumn
   \end{itemize}
 
   \item DeleteRows(owningSchemaName, tableName, whereCondition)
   \begin{itemize}
-    \item Operace smaže instance z daného schematu, dané tableName instance
+    \item Operace smaže z daného schematu, instance z dané table
     splňující whereCondition
     \item Musí existovat dané schéma, v něm daná table
   \end{itemize}
@@ -1061,7 +1064,8 @@ definovat model to model transformaci.
 Základními konstrukty jazyka jsou mapping, helper a query. Mapping je konstrukt
 měníci pomocí nějakých pravidel vstupní element na výstupní. Query je
 dotazovací konstrukt, který získá potřebnou výstupní informaci z daného
-elementu. Helper je konstrukt, který má může narozdíl od query měnit své parametry.
+elementu. Helper je konstrukt, který může narozdíl od query měnit objekt, nad
+kterým byl helper vyvolán.
 
 Na následující ukázce vidíme ukázkový HelloWorld příklad QVTo kódu převzatý z
 \cite{QVTO_Example}
@@ -1114,8 +1118,8 @@ subelementů typu Element.
 
 Řádek \textit{transformation HelloWorld(in source:ABC, out target:ABC);} nám
 definuje hlavičku transformace. Název transformace je HelloWorld a transformace
-mapuje jeden vstupní model \'source\' typu ABC na jeden výstupní model
-\'target\' typu ABC. Kromě vstupních a výstupních elementů mohou být v
+mapuje jeden vstupní model \textit{source} typu ABC na jeden výstupní model
+\textit{target} typu ABC. Kromě vstupních a výstupních elementů mohou být v
 transformaci modely vstupně-výstupní označené klíčovým slovem inout.
 
 Vstupním bodem každé transformace je metoda main. Ukázkový příklad v metodě main
@@ -1130,16 +1134,17 @@ Transformace volá nad vybranou kolekcí elementů mapování Root2Root pomocí
 Mapování Root2Root s hlavičkou \textit{mapping Root:: Root2Root() : Root}
 mapuje Element typu Root na jiný Element typu Root. V těle metody je vybrán
 každý element typu A z kolekce elementů vstupního elementu Root viz
-\textit{self.elements[A]} a je výsledek volání mapování A2B() je přidán do
+\textit{self.elements[A]} a výsledek volání mapování A2B() je přidán do
 kolekce elements výstupní entity Root.
 
-Mapování A2B() mapuje entity typu A na elementy typu B. podmínkou v bloku when
-určuje doplňující podmínku, budou se mapovat jen entity typu A s id > 0.
+Mapování A2B() mapuje entity typu A na elementy typu B. Kódem v bloku when
+je určuna doplňující podmínka, mapovat se budou jen entity typu A s id > 0.
 Mapování nastaví výsledné entitě id vstupní entity a rozšíří text uložený v
 entitě o řetězec \textit{World!}. 
 
 Ukázkový kód bude tedy transformovat vstupní model 
 \begin{verbatim}
+ ROOT:
    A: id=1, A=”Hello”
    A: id=-1, A=”World”
    C: id=1, C=”Something”
@@ -1201,7 +1206,7 @@ helper checkExistSchema(schemaName : String, structure : Structure,
 ORMo mapování je transformace, která mapuje elementy z dómény aplikačních
 operací na elementy z domény operací databázových. Toto mapování mapuje 1
 aplikační operaci na 0 až N operací databázových. Většinou je aplikační
-operace namapována na nejméně jednu databázovou operaci. Výjimkou je operace
+operace namapována na nejméně 1 databázovou operaci. Výjimkou je operace
 SetAbstract pro případ v případě, že měníme abstraktní třídu na neabstraktní.
 
 Ačkoliv ORM transformace vstupního aplikačního modelu funguje se všemi
@@ -1239,13 +1244,13 @@ nejvíce používaným.
   \begin{itemize}
     \item Operace změní název tabulky na nový, odstraní a vytvoří PK s
 novým jménem, odstraní všechny ForeignKey referencující obraz vlastnické
-třídy a vytvoří nové ForeignKey s pozměněným jménem , 
+třídy a vytvoří nové ForeignKey s pozměněným jménem
   \end{itemize}
   
   \item SetAbstract(name, isAbstract)
   \begin{description}
     \item[isAbstract = true] maže data, která náleží pouze dané třídě
-    \item[isAbstract = false] mapuje na prázdnou množinu
+    \item[isAbstract = false] mapuje na prázdnou množinu operací
   \end{description}
   
   \item RemoveEntity(name)
@@ -1401,8 +1406,9 @@ Tato diplomová práce si klade za první ze svých cílů dokončit vývoj na p
 Migdb.
 Tj. doimplementovat a otestovat ORM transformace vzniklé v předešlých fázích
 projektu, upravit a otestovat generátor SQL, případně upravit aplikační a
-databázový metamodel.
-
+databázový metamodel a upravit Databázovou a Aplikační Evoluci. Tato kapitola
+popisuje změny těch částí projektu, které jsem samostatně nebo z větší části
+vymyslel a/nebo implementoval v poslední fázi vývoje.
 
 \section{Změny v aplikačním metamodelu}
 
@@ -1459,7 +1465,7 @@ operace byly jednoznačné (strojově zpracovatelné) v rámci daného kontextu,
 vzhledem k nutnosti textového zápisu uživatelem o minimalističnost zápisu. Tyto
 dva koncepty jdou obecně proti sobě, proto jsme došli k jistému jejich
 kompromisu uživatelské jednoduchosti zápisu a jednoznačnosti. Druhým cílem bylo
-po odstranění kontrolního mechanismu snaha o odstranění kontrolních queries,
+po odstranění kontrolního mechanismu a snaha o odstranění kontrolních queries,
 které až při práci s instancemi dat zjistili, že daný skript vyvolá nad daty
 chybu.
 
@@ -1801,6 +1807,27 @@ jevit nadbytečnou. Nicméně tato simulace může odhalit chyby ve vygenerovan�
 SQL skriptu podstatně rychleji oproti generování databáze a aplikaci migračních
 skriptů, které jak z praxe víme často probíhají v řádu desítek minut až
 několika hodin. Proto jsem se rozhodl tuto část zachovat ve frameworku.
+
+\subsection{Sekvenční představa}
+Původní představa o funkci frameworku Migdb je zobrazena na obrázku
+\ref{fig:framework_seq}. Problémem tohoto návrhu je úplná sekvenčnost zpracování
+jednotlivých kroků. V prvním kroku se všechny aplikační operace aplikují na
+vstupní mode. V druhém kroku se tyto operace transformují pomocí ORMo Modulu na
+databázové operace. Díky závislosti ORMo mapování na aktuálním aplikačním
+modelu zde může nastat problém. Pokud budeme mít sekvenci operací $O_1,\ldots
+O_n$, která pozmění aplikační model tak, že některá z operací nebude validní,
+nemůžeme očekávat korektní transformaci na databázové operace neboť framework
+nám vypíše chybu.
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=13cm]{figures/framework_cycle}
+\caption{Původní sekvenční představa. Převzato z \cite{Tarant_bp}}
+\label{fig:framework_seq}
+\end{center}
+\end{figure}
+
+\FloatBarrier
 
 \subsection{Změny SQL generátorů}
 Vzhledem k změnám databázových operací bylo nutné upravit i generátor SQL kódu z

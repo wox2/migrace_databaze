@@ -342,17 +342,18 @@ Považujme změny aplikačního modelu jako smazání třídy, atributu apod za 
 zachovávající informaci. \\
 
 Tato diplomová práce se věnuje dvěma základním tématům. Prvním tématem je
-dokončení projektu Migdb, aby byl implementovaný framework provozuschopný,
-tomuto tématu se věnuje kapitola \ref{chapt:dokonceni_projektu}, přičemž kapitola
-\ref{chapt:projekt_migdb} popisuje projekt Migdb, jeho historii a
-dosažené výsledky před započetím této diplomové práce. Druhým tématem je
-automatické rozpoznávání operací nad aplikačním modelem. Tomuto tématu se věnuje
-kapitola \ref{chapt:recognition}, implementaci rozpoznávacích algoritmů se potom
-věnuje kapitola \ref{chapt:recognition_implementation}. V kapitole
-\ref{chapt:testování} jsou shrnuty způsoby otestování jednotlivých částí
-implementovaného frameworku a jsou zhodnoceny jejich výstupy. Kapitola
-\ref{chapt:zaver} bilancuje dosažené výsledky této diplomové práce a navrhuje
-další možné směry k rozvíjení daných dvou témat.
+dokončení projektu Migdb, aby byl implementovaný framework nasaditelný k
+reálnému použití, tomuto tématu se věnuje kapitola
+\ref{chapt:dokonceni_projektu}, přičemž kapitola \ref{chapt:projekt_migdb}
+popisuje projekt Migdb, jeho historii a dosažené výsledky před započetím této
+diplomové práce. Druhým tématem je automatické rozpoznávání operací nad
+aplikačním modelem. Tomuto tématu se věnuje kapitola \ref{chapt:recognition},
+implementaci rozpoznávacích algoritmů se potom věnuje kapitola
+\ref{chapt:recognition_implementation}. V kapitole \ref{chapt:testování} jsou
+shrnuty způsoby otestování jednotlivých částí implementovaného frameworku a
+jsou zhodnoceny jejich výstupy. Kapitola \ref{chapt:zaver} bilancuje dosažené
+výsledky této diplomové práce a navrhuje další možné směry k rozvíjení daných
+dvou témat.
 
 Kapitoly \ref{chapt:manual} a \ref{chapt:obsah_cd} obsahují
 manuál popisující použití frameworku Migdb, který je uložen na přiloženém CD.
@@ -395,23 +396,7 @@ formálně specifikující aplikační operace a diplomová práce Martina Mazan
 
 Projekt Migdb byl započat v spolupráci se společností Collections Pro. Výsledky
 dosavadní práce byly v roce 2012 prezentovány jako case-study na prestižní
-modelové konferenci Code Generation 2012 \cite{Cambridge} v Anglickém Cambridge.
-
-\section{Metamodely}
-Frameworku Migdb je postaven na konceptu MDA \cite{MDA} a pro popsání
-jednotlivých vrstev software zavádí pojem metamodel. Metamodel definuje
-strukturu popsaných modelů stejně jako model definuje
-strukturu dat odpovídajících tomuto modelu.
-%
-Ve frameworku Migdb jsou popsány dva metamodely - aplikační metamodel a
-databázový metamodel. Aplikační metamodel definuje elementy tvořící strukturu
-aplikace, množinu aplikačních operací a diff entity použité při rozpoznávání
-operací. Databázový metamodel definuje elementy tvořící databázi a operace
-aplikovatelné na tyto elementy.\\
-
-Skutečnost, že model A je definován pomocí metamodelu $M_A$, vyjadřuje, že
-metamodel $M_A$ popisuje model A a model A je instancí metamodelu $M_A$.
-%
+modelové konferenci Code Generation 2012 \cite{Cambridge} v Anglickém Cambridge.%
 
 \section{Framework Migdb}
 	
@@ -431,6 +416,23 @@ schéma definující strukturu databáze, ale také samotné perzistované insta
 \end{center}
 \end{figure}
 %
+
+\subsection{Metamodely}
+Frameworku Migdb je postaven na konceptu MDA \cite{MDA} a pro popsání
+jednotlivých vrstev software zavádí pojem metamodel. Metamodel definuje
+strukturu popsaných modelů stejně jako model definuje
+strukturu dat odpovídajících tomuto modelu.
+%
+Ve frameworku Migdb jsou popsány dva metamodely - aplikační metamodel a
+databázový metamodel. Aplikační metamodel definuje elementy tvořící strukturu
+aplikace, množinu aplikačních operací a diff entity použité při rozpoznávání
+operací. Databázový metamodel definuje elementy tvořící databázi a operace
+aplikovatelné na tyto elementy.\\
+
+Skutečnost, že model A je definován pomocí metamodelu $M_A$, vyjadřuje, že
+metamodel $M_A$ popisuje model A a model A je instancí metamodelu $M_A$.
+
+\subsection{Proces transformace modelů}
 Proces transformace modelů frameworkem je zobrazen na obrázku
 \ref{fig:framework:modified}.
 %
@@ -1578,8 +1580,9 @@ Slabinou v tomto přístupu je vznik nekonzistence inverze s původní operací 
 příklad nekonzistence uvedený v subsekci \ref{app_ops:removeParent_example}.
 
 \begin{figure}
+\centering
 \fbox{\includegraphics{figures/addParent_source}}
-\caption{Stav v průběhu vývoje aplikace}
+\caption{Model v průběhu vývoje aplikace}
 \label{fig:finalization:addParent_source}
 \end{figure}
 \FloatBarrier
@@ -1649,7 +1652,7 @@ RemoveParent, čímž bychom se nicméně odklonili od cílu minimalizovat opera
 
 \FloatBarrier
 
-\section{Změny Databázového Structury}
+\section{Změny Databázového Struktury}
  Metamodel databázové struktury se ukázal jako celkem dobře definovaný a proto
  nedocházelo k zásadním změnám.
 
@@ -1812,12 +1815,15 @@ několika hodin. Proto jsem se rozhodl tuto část zachovat ve frameworku.
 Původní představa o funkci frameworku Migdb je zobrazena na obrázku
 \ref{fig:framework_seq}. Problémem tohoto návrhu je úplná sekvenčnost zpracování
 jednotlivých kroků. V prvním kroku se všechny aplikační operace aplikují na
-vstupní mode. V druhém kroku se tyto operace transformují pomocí ORMo Modulu na
+vstupní model. V druhém kroku se tyto operace transformují pomocí ORMo modulu na
 databázové operace. Díky závislosti ORMo mapování na aktuálním aplikačním
 modelu zde může nastat problém. Pokud budeme mít sekvenci operací $O_1,\ldots
-O_n$, která pozmění aplikační model tak, že některá z operací nebude validní,
-nemůžeme očekávat korektní transformaci na databázové operace neboť framework
-nám vypíše chybu.
+O_n$, která pozmění aplikační model na model $M_1$ tak, že některá z operací
+nebude validní, transformace ORMo nemusí dávat korektní výstup. Příklad této
+anomálie je aplikace operací SetBounds(1, 1), RemoveProperty(\uv{C}, \uv{P}).
+Pokud aplikujeme na model obsahující třídu \uv{C} s Property \uv{P} tyto dvě
+operace, pak v cílovém modelu nebude existovat Property \uv{P}, kterou
+transformace ORMo potřebuje k namapování operace SetBounds.
 
 \begin{figure}[H]
 \begin{center}
@@ -1833,7 +1839,10 @@ nám vypíše chybu.
 Vzhledem k změnám databázových operací bylo nutné upravit i generátor SQL kódu z
 těchto operací. Druhou podstatnou prací bylo přepsání základního algoritmu pro
 vytvoření databázového schematu z aplikačního modelu použitého v mé bakalářské
-práci viz \cite{Lukes}, aby bylo možné napsat testy celého frameworku.
+práci viz \cite{Lukes}, aby bylo možné napsat testy celého frameworku. Byly
+naimplementovány metody apply pro operace:
+
+
 
 
 \section{Implementace a testování ORMo mapování}
@@ -1858,7 +1867,7 @@ transformovat na jména tabulek pomocí následujících pravidel:
 \begin{itemize}
   \item Počáteční písmeno je zmenšeno
   \item Každé další velké písmeno je nahrazeno malým písmenem stejného typu
-  předraženého znakem '\_'
+  předraženého znakem "\_"
 \end{itemize}
 
 Stejná pravidla jsou použita při transformaci primitivních properties s
@@ -1871,54 +1880,54 @@ Při transformaci asociačních property s upperBound != 1 na asociační tabulk
 nutné zajistit unikátnost názvu této tabulky. Neexistuje předpoklad, že by byl
 název property unikátní ve všech třídách. Ale dvojice (table, property) musí být
 unikátní. Proto je název asociační tabulky získán jako spojení názvu vlastnické
-tabulky s názvem asociační property pomocí znaku '\_'. 
+tabulky s názvem asociační property pomocí znaku "\_". 
 $$owningTableName = translate(owningClassName)$$
-$$assocTableName = owningTableName + '\_' +
-translate(associationPropertyName)$$
+$assocTableName = owningTableName$ + "\_" +
+$translate(associationPropertyName)$
 
 Transformace primitivní property s upperBound != 1 (kolekce) na tabulku má
 podobný důsledek. Aby bylo pro vývojáře snadnější rozpoznat obraz třídy kolekce
-je název tabulky předražen prefixem 'col\_'
+je název tabulky předražen prefixem "col\_"
 
 $$owningClstranslation = translate(owningClassName)$$
 $$propertyTranslation = translate(primitivePropertyName)$$
-$$collectionTableName = col\_ + owningClsTranslation + '\_' +
-propertyTranslation$$
+$collectionTableName = $"col\_" $+ owningClsTranslation + $"\_" $+
+propertyTranslation$
 
 Názvy constrainů musí být unikátní v rámci celé databáze. Toto je
 zajištěno. Názvy unique constrainů jsou odvozeny od tabulky, nad kterou je
 constrain vytvořen. Existují dva atributy, které jsou mapovány na 
 UniqueConstraint. Aplikační atribut kolekce isUnique je mapován na
-UniqueConstraint s jménem předraženým 'ux\_'. Název constraintu pro
-atribut isOrdered je předražen řetězcem 'ux\_' a nakonec je doplněn
-řetězec '\_ord'.
-Vzhledem k unikátnosti dvojice (class, property) bylo využito mapování prefix spojený s přelozeným názvem třídy a
-přeloženým názvem property.
+UniqueConstraint s jménem předraženým "ux\_". Název constraintu pro
+atribut isOrdered je předražen řetězcem "ux\_" a nakonec je doplněn
+řetězec "\_ord".
+Vzhledem k unikátnosti dvojice (class, property) bylo využito mapování prefix
+spojený s přelozeným názvem třídy a přeloženým názvem property.
 $$owningClstranslation = translate(owningClassName)$$
 $$propertyTranslation = translate(primitivePropertyName)$$
-$$uxName = ux\_ + owningClsTranslation + '\_' +
-propertyTranslation$$
-$$ordName = uxName + '\_ord'$$
+$uxName = $"ux\_" $+ owningClsTranslation + $"\_" $+
+propertyTranslation$
+$ordName = uxName + $"\_ord"
 
 Relace parent je do databáze transformována jako cizí klíč. Vzhledem k
 zákazu vícenásobné dědičnosti je každá relace parency nad tabulkou
 jednoznačně určena vzorem této tabulky. Tento klíč má proto jméno odvozeno od
-přeloženého názvu třídy předražené řetězcem 'par\_'.
+přeloženého názvu třídy předražené řetězcem "par\_".
 
-$$ parentFkName = 'par\_' + translate(owningClassName)$$
+$ parentFkName = $"par\_" $+ translate(owningClassName)$
 
 Tabulka kolekce referencuje vlastnickou tabulku právě jednou a název cizího
 klíče je tedy odvozen z názvu tabulky kolekce.
 
-$$fkCollectionName = 'fk\_' + collectionTableName$$
+$fkCollectionName = $"fk\_" $+ collectionTableName$
 
 Poslední pravidlo vytváření cizích klíčů platí pro asociační tabulky. Každá
 asociační tabulka referencuje právě dvě tabulky. Název cizího klíče je vytvořen
 z názvu asociační tabulky a tabulky, kterou referencuje předražený řetězcem
-'fk\_'.
+"fk\_".
 
-$$fkAssociationReference ='fk\_' + associationTableName + '\_' +
-referencedTableName$$
+$fkAssociationReference =$"fk\_" $+ associationTableName + $"\_"$ +
+referencedTableName$
 
 
 Tato pravidla nezajišťují unikátnost jmen elementů ve všech případech, ale
@@ -2055,7 +2064,7 @@ transformací v seznamu operací operujících nad hierarchiemi dědičnosti bud
 možné libovolně prohazovat.
 Také je samozřejmé, že seznam reduktivních operací stejného typu je také možné
 libovolně zpermutovat. Stejně tak seznam aditivních operací stejného typu.
-Obecný princip seřazení kolekce operací není znám. 
+Obecný princip permutability kolekce operací není znám. 
 
 \section{Obecné principy model matching} \label{model_matching_principles}
 Nejtriviálnější implementovatelný algoritmus by mohl smazat zdrojový model
@@ -2323,7 +2332,7 @@ $M_1,M_2$, sečtené s energií množinového rozdílu $M_2, M_1$.
 
 $$\Delta(M_X,M_Y) = (\Delta {C_{XY}}, \Delta{P_{XY}}) $$
 
-Delta modelů X a Y je uspořádaná dvojice rozdílu tříd a rozdílu properties.
+Rozdíl modelů X a Y je uspořádaná dvojice rozdílu tříd a rozdílu properties.
 $$\Delta {C_{XY}} = \{c: c \in M_X \wedge c \notin M_Y\}$$
 Delta tříd modelů X a Y je množina tříd, které jsou v modelu X, ale nejsou v
 modelu Y.
@@ -2666,12 +2675,36 @@ modelu všemi třídami z vstupního (resp výstupního modelu) a seznam výstup
 operací prázdnou množinou. Následně algoritmus zpáruje třídy podle jména,
 odstraní spárované třídy z množin SClasses a TClasses a zpáruje jejich property
 podle jména v proceduře MATCH\_EQUAL\_PROPERTIES. Procedura
-MATCH\_EQUAL\_PROPERTIES odstraní v spárovaných třídách property se stejným
-jménem z množin SProps a TProps.
+MATCH\_EQUAL\_PROPERTIES odstraní property ze spárovaných tříd se shodným jménem
+z množin SProps a TProps.
 
 Algoritmus pokračuje rozpoznáváním operací. V fázi rozpoznávání operací jsou
-již zpárovány všechny třídy, které základní párovací algoritmus dokáže
-rozpoznat. Základní párovací algoritmus dělí třídy do tří skupin:
+již spárovány všechny třídy, které základní párovací algoritmus dokáže
+rozpoznat. 
+
+Základní algoritmus rozpoznává operace v pořadí takovém, aby zajistil nejdříve
+existenci správné třídy pro přesouvané a odstraňované properties.
+Následně algoritmus modifikuje třídy modifikačními operacemi. Tato úprava musí
+být provedena před prací s properties, protože algoritmus v některých
+modifikačních operacích upravuje množiny SProps a TProps. Následně algoritmus
+upraví properties modifikačními operacemi pro properties, aby dostal
+properties do cílového stavu nebo do stavu, kdy je možné je z modelu
+odstranit. Po úpravě properties odstraní přebytečné properties obsažené v
+kolekci SProps. V posledním kroku algoritmus smaže odstraněné třídy. Tento
+základní proces je zobrazen na aktivity diagramu \ref{fig:recog_ops_order1}.
+Diagram má téměř lineární formu a rozpoznání jednotlivých skupin operací má
+tedy pro základní algoritmus v zásadě jednoznačné pořadí.
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=15cm]{figures/recognition_order_basic1.jpg}
+\caption{Rozpoznávání operací pořadí}
+\label{fig:recog_ops_order1}
+\end{center}
+\end{figure}
+
+
+Základní párovací algoritmus dělí třídy do tří skupin:
 \begin{enumerate}
    \item třídy, které byly v průběhu Evoluce modelu zachovány
    \item třídy, které byly v průběhu Evoluce z modelu odstraněny
@@ -2695,12 +2728,15 @@ AddParent může v nynější implementaci odstraňovat z aktuálního modelu
 kolizní properties, má tedy vliv na seznam nenamapovaných properties SProps a
 musí předcházet operaci RemoveProperty. 
 \\
-OBRÁZEK BUDE DOPLNĚN.\\
-OBRÁZEK BUDE DOPLNĚN.\\
-OBRÁZEK BUDE DOPLNĚN.\\
-OBRÁZEK BUDE DOPLNĚN.\\
-OBRÁZEK BUDE DOPLNĚN.\\
-OBRÁZEK BUDE DOPLNĚN.\\
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=15cm]{figures/recognition_order_basic2.jpg}
+\caption{Rozpoznávání operací pořadí, více tříd}
+\label{fig:recog_ops_order2}
+\end{center}
+\end{figure}
+\FloatBarrier
+
  Algoritmus by mohl rozpoznat operace v libovolné přípustné sekvenci. Tato
  přípustná sekvence operací musí splňovat precedenční vztahy zobrazené na obr.
  REF DOPLNěného obr. Každý model je možné rozdělit na množinu nezávislých
@@ -2844,8 +2880,17 @@ OBRÁZEK BUDE DOPLNĚN.\\
 \subsection{Diff elementy}\label{subsect:Diff elementy}
  
  Kvůli nutnosti rozpoznávat operace vznikly v aplikačním metamodelu nové
- elementy. Kořenovým elementem diff modelu je Diff element. Tento element
- obsahuje kolekce elementů classpairs typů ClassPair, propertyPairs
+ elementy. Základní párovací algoritmus si nepotřebuje uchovávat páry,
+ třídy jsou spárovány jen na základě shodnosti jména, takže je kdykoliv
+ v průběhu algoritmu tento seznam i jednotlivé páry možné získat. Na druhé
+ straně rozšířený párovací algoritmus může rozpoznat operaci i RenameEntity a
+ její vstupní a výstupní třídu tvořící pár není možné snadno identifikovat.
+ Rozšířený párovací algoritmus rozpoznává operace závislé na dvou podobnostech,
+ proto je nutné vytvořit 2 páry. První pár určí, která třída byla zachována, či
+ měla změněné jméno. Druhý pár potom pomoci podobnosti určí, jestli 
+ 
+  Kořenovým elementem diff modelu je Diff element.
+ Tento element obsahuje kolekce elementů classpairs typů ClassPair, propertyPairs
  typu PropertyPair, a dále pak addedClasses a removedClasses typu DiffClass a
  addedProperties a removedProperties typu DiffProperty. Element ClassPair
  shlukuje spárované zdrojové (source) a obrazové (reflection) třídy, dále pak

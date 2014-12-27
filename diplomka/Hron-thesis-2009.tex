@@ -1736,33 +1736,6 @@ neprimitivní typ. Operace se tedy stala nadbytečnou a byla z modelu odstraněn
 
 
 \subsection{UpdateRows}
-V původní verzi měla tato operace signaturu:
-
-\begin{verbatim}
-    class UpdateRows extends ModelOperation {
-      attr String[1] owningSchemaName;
-      attr String[1] sourceTableName;
-      attr String[1] sourceColumnName;
-      attr String[1] targetTableName;
-      attr String[1] targetColumnName;
-      attr ToleranceType[1] tolerance;
-      attr String[1] idName;
-    }
-\end{verbatim}
-
-Na verzi nynější:
-
-\begin{verbatim}     
-     class UpdateRows extends ModelOperation {
-      attr String[1] owningSchemaName;
-      attr String[1] sourceTableName;
-      attr String[1] sourceColumnName;
-      attr String[1] targetTableName;
-      attr String[1] targetColumnName;
-      attr String[1] selectionWhereCondition;
-      attr String[?] safeWhereCondition;
-    }
-    \end{verbatim}
 Shledal jsem nadbytečným atribut ToleranceType, jelikož jeho přesný význam nebyl
 definován a nebyl použit v ORMo mapování. V operaci byl nahrazen atribut idName
 atributem selectionWhereCondition. Testy odhalily, že je nutné přidat volitelný
@@ -1876,11 +1849,12 @@ registrationNumber) se transformuje na tabulku legal\_person(business\_name,
 registration\_number). Použití daných dvou pravidel označme jako volání funkce
 translate na daný název.
 
-Při transformaci asociačních property s upperBound != 1 na asociační tabulku je
-nutné zajistit unikátnost názvu této tabulky. Neexistuje předpoklad, že by byl
-název property unikátní ve všech třídách. Ale dvojice (table, property) musí být
-unikátní. Proto je název asociační tabulky získán jako spojení názvu vlastnické
-tabulky s názvem asociační property pomocí znaku "\_". 
+Při transformaci asociačních property s atributem isOwning = true a upperBound
+!= 1 na asociační tabulku je nutné zajistit unikátnost názvu této tabulky.
+Neexistuje předpoklad, že by byl název property unikátní ve všech třídách. Ale
+dvojice (table, property) musí být unikátní. Proto je název asociační tabulky
+získán jako spojení názvu vlastnické tabulky s názvem asociační property pomocí
+znaku "\_".
 $$owningTableName = translate(owningClassName)$$
 $assocTableName = owningTableName$ + "\_" +
 $translate(associationPropertyName)$
@@ -2013,9 +1987,8 @@ oddělení konfliktních operací od operací nezávislých.
 Delta notace vytvořená dle metamodelu na obr. \ref{fig:diff_cincetti} definuje
 add, delete entit a modify atributů jednotlivých entit. V našem modelu existují
 operace, které se nedají zařadit ani do skupiny add, delete a modify operací.
-Operace ExtractClass, ExtractSuperClass, InlineClass, CollapseHierarchy,
-PullUpProperties a PushDownProperties naopak nepatří mezi modifikační, add ani
-delete operace.
+Operace ExtractClass, ExtractSuperClass, InlineClass a CollapseHierarchy naopak
+nepatří mezi modifikační, konstruktivní ani destruktivní operace.
 proto jsme mohli postupovat jednou z následujících cest
 
 \begin{itemize}
@@ -2031,20 +2004,50 @@ Zvolili jsme si cestu definice vlastního metamodelu.
 \begin{figure}[H]
 \begin{center}
 \includegraphics[width=15cm]{figures/uml_diference_cincetti}
-\caption{Diff model převzatý dle \cite{Cincetti}}
+\caption{Diff model definovaný v \cite{Cincetti}}
 \label{fig:diff_cincetti}
 \end{center}
 \end{figure}
 
 \begin{figure}[H]
 \begin{center}
-\includegraphics[width=15cm]{figures/framework_structura_tarant_modified}
-\caption{Seznam diff elementů}
+\includegraphics[width=15cm]{figures/diff_metamodel}
+\caption{Seznam diff elementů v projektu Migdb}
 \label{fig:diff_meta}
 \end{center}
 \end{figure}
 
 \FloatBarrier
+
+\section{Migdb Diff a textová reprezentace modelu}
+
+V rámci projektu Migdb nepracujeme se soubory, ale s modely. Každý model je
+možné textově reprezentovat. Pro jednoduchost si můžeme reprezentovat textově s
+následujícími pravidly:
+\begin{itemize}
+  \item název třídy budeme reprezentovat velkými písmeny
+  \item názvy properties malými písmeny
+\end{itemize}
+ V zájmu jednoduchosti nereprezentujeme idProperties, která má většinou název
+ jednoznačně odvoditelný od názvu třídy, která ji vlastní. Třída je řetězec
+ obsahující svůj název a seznam properties. Řetězec "Abcd" tedy reprezentuje
+ třídu A s properties "b","c" a "d". Řetězec "Bef" potom reprezentuje třídu B
+ obsahující property "e" a "f". Tuto reprezentaci nazveme Jednoduchovou 
+ textovou reprezentací. Model M_1 = odpovídající této reprezentaci je zobrazen
+ na obrázku \ref{fig:basic_text_repre}. Na obrázku je slovem undefined znázorněno,
+ že Jednoduchá textová reprezentace neposkytuje žádné informace o typu. Pro
+ reprezenraci odpovídající Modelu Typ properties tedy 
+ 
+ \begin{figure}[H]
+\begin{center}
+\includegraphics[width=5cm]{figures/basic_text_notation_1}
+\caption{Model ekvivalentní základní textové reprezentaci}
+\label{fig:basic_text_repre}
+\end{center}
+\end{figure}
+
+\FloatBarrier
+ 
 
 \section{Rozpoznávání operací}
 
@@ -2212,28 +2215,15 @@ pseudokódu viz algoritmus \ref{algo:state}
 Algoritmus v prvním svém kroku inicialializuje hodnoty.
 Aktuálnímu modelu nastaví hodnotu modelu zdrojového. Množinu rozpoznaných
 operací $R_{ops}$ inicializuje prázdnou množinou. Rozpoznanou R operaci nastaví
-na NULL.
-
-Následně opakuje cyklus repeat začínající na řádce \ref{algo:state:repeat},
-který je ukončen splněním terminální podmínky uvedené v pseudokódu na řádce
-\ref{algo:state:terminal_condition}, R = NULL. Tj. algoritmus je ukončen, pokud
-v těle cyklu nebyla rozpoznána žádná operace.
-
-V těle cyklu Repeat potom algoritmus nastaví hodnotu R na NULL a nastaví
-na zmíněném řádku \ref{algo:state:improvement} hodnotu aktuálního nejlepšího
-zlepšujícího kroku K na 0, aby zajistil přemazání dat nalezené operace v minulé
-iteraci cyklu.
-
-Algoritmus spočítá v cyklu na řádcích
-\ref{algo:state:forOps}-\ref{algo:state:forOpsEnd} pro každou operaci maximální
-zlepšující krok této operace $K_{op}$. Pokud je $K_{op}$ lepší než
-dosavadní maximum K, aktualizuje $K_{op}$ a R. Následně algoritmus v případě
-rozpoznání nějaké operace - viz. řádek \ref{algo:state:addOp} nalezne parametry
-params pro operaci R viz metoda getParams(R, A, S) na řádku
-\ref{algo:state:getParams}. Tato metoda by například pro operaci AddClass
-nalezla jméno třídy, která neexistuje v zdrojovém modelu, ale existuje v cílovém
-modelu. Algoritmus přidá operaci R s aplikovanými(params) do množiny $R_{ops}$ a
-aplikuje operaci R(params) na aktuální model A.\ \\
+na NULL. Následně algoritmus se snaží najít operaci, která ho nejblíže
+přibližuje k cílovému modelu. Algoritmus pro každou třídu operací nalezne
+hodnotu zlepšení, o kterou daná třída přibližuje současný model k modelu
+cílovému. Třídou operace rozumíme AddClass, RemoveEntity, InlineClass bez
+konkrétních parametrů operace. Pro vítěznou třídu operací algoritmus najde
+vhodné parametry a vloží konkrétní operaci i s jejími parametry do množiny
+$R_{ops}$. Algoritmus končí, pokud není rozpoznána žádná operace. Toho může být
+dosáženo, pokud je aktuální model shodný s cílovým či algoritmus nedokáže
+rozpoznat viz diskuze v sekci .
 
 Základními myšlenkou pro vytvoření algoritmu byla existence
 vzdálenosti dvou modelů. Vzdálenost dvou modelů je snižována v každém
@@ -2280,21 +2270,12 @@ Vzdálenost modelu od prázdného modelu nazveme energií modelu.
 \end{algorithm}
 
 \subsection{Energie modelu}
-Pokud se zaměříme na samotnou existenci tříd s daným jménem a properties s
-daným jménem v modelu a pomineme ostatní atributy properties a tříd můžeme si
-představit energii modelu jako součet existujících tříd a jejich properties.
+Do základní formy energie jsou započítány pouze identifikátory properties a
+tříd. Ostatní atributy tříd a jejich properties jsou zanedbány. Základní forma
+energie je definovaná jako součet existujících tříd a jejich properties.
 
-Pro jednoduchost si můžeme reprezentovat textově s následujícími pravidly:
-název třídy budeme reprezentovat velkými písmeny a názvy properties
-malými písmeny. V zájmu jednoduchosti nereprezentujeme
-idProperties, která má většinou název jednoznačně odvoditelný od názvu třídy, která ji
-vlastní. Třída je řetězec obsahující svůj název a seznam properties. Řetězec
-Abcd tedy reprezentuje třídu A s properties "b","c" a "d". Řetězec Bef potom
-reprezentuje třídu B obsahující property "e" a "f". Tuto reprezentaci
-nazveme Jednoduchovou textovou reprezentací. Model $M_1$(Abcd, Bef) obsahuje
-dříve zmíněné třídy.
-Jeho energie je rovna součtu energie třídy A a třídy B. Energie každé třídy je
-rovna 1 + sumy energií jednotlivých properties.
+Mějme model $M_1$(Abcd, Bef). Jeho energie je rovna součtu energie třídy A a
+třídy B. Energie každé třídy je rovna 1 + sumy energií jednotlivých properties.
 Properties mají v naší demonstrativní ukázce bez započítání jiných atributů než
 name energii 1.
  $$E(M_1) = E(A) + E(B) = 1 + \sum_{p \in A}E(p) + 1 + \sum_{p
@@ -2323,6 +2304,8 @@ modelů,label=algo:state:delta]
 
 \FloatBarrier
 
+
+\subsection{Výpočet rozdílu}
 Pro tento minimalistický přístup můžeme použít výpočet symetrické delty
 následující vzorce:
 
@@ -2334,11 +2317,11 @@ $$\Delta(M_X,M_Y) = (\Delta {C_{XY}}, \Delta{P_{XY}}) $$
 
 Rozdíl modelů X a Y je uspořádaná dvojice rozdílu tříd a rozdílu properties.
 $$\Delta {C_{XY}} = \{c: c \in M_X \wedge c \notin M_Y\}$$
-Delta tříd modelů X a Y je množina tříd, které jsou v modelu X, ale nejsou v
+Rozdíl tříd modelů X a Y je množina tříd, které jsou v modelu X, ale nejsou v
 modelu Y.
  $$\Delta{P_{XY}} = \{p: p \in X \wedge p \notin Y \wedge p.owner
 \notin \Delta {C_{XY}}\})$$
-Delta properties modelů X a Y je množina properties, které patří do modelu X,
+Rozdíl properties modelů X a Y je množina properties, které patří do modelu X,
 ale nejsou v modelu Y a jejich vlastnická třída není obsažena v množině  $\Delta
 {C_{XY}}$. Explicitní podmínka pro vlastnickou třídu property je, že je obsažen
 v X, protože i p je obsaženo v X.
@@ -2401,9 +2384,13 @@ $$E(p_{XY}) = 1 + \sum_{A \in p_X \wedge A_Y = null \vee A_Y !=
 A_X}E(REF_{XY})$$
 
 
+\subsection{Význam energie}
+
 Takto definovaný výpočet energie s položením $E(A) = 1$ udává maximální počet
 konstruktivních, destruktivních a modifikačních operací nutných k transformaci
 modelu $M_X$ na model $M_Y$.
+
+Některé operace 
 
 Zlepšující krok operace je definován jako vzdálenost, o kterou se přiblíží
 aktuální model A po aplikaci operace op k modelu cílovému T s nejlepšími
@@ -2414,6 +2401,8 @@ nejlepších parametrů. Při neexistenci jakýchkoliv vhodných parametrů
 vrací operace $-\infty$. Pro zlepšující krok getImprovement(op, A, T) platí:
 
 $$distance(M_A, M_T) = distance(M_X, M_T) + getImprovement(op, A, T)$$
+
+\subsection{Ilustrativní příklad běhu algoritmu}
 
 Ilustrujme běh algoritmu na příkladě. Na obrázku \ref{fig:exp_contact} je
 zobrazen ukázkový zdrojový a cílový model je zobrazený na obrázku
@@ -2474,7 +2463,8 @@ ExtractClass a následně algoritmus skončí, protože po aplikaci se současn�
 model dostal do cílového stavu a již nerozpozná další operaci.
 
 
-Algoritmus dává stejnou váhu atributům jako třídám, což nemusí být
+\subsection{Konfigurace vah}
+Stavový algoritmus dává stejnou váhu atributům jako třídám, což nemusí být
 správné. Aby algoritmus lépe splňoval požadavky uživatele, tj. priorizoval
 některé operace, je možné modifikovat výpočet energie a místo konstanty 1 v
 předešlých vzorcích použít konfiguraci vah jednotlivých atributů.
@@ -2517,6 +2507,7 @@ Příklad konfigurace:
 Tato konfigurace redukuje získávání energie na původně zmiňovaný způsob definice
 Energie.
 
+\subsection{Personalizovatelnost}
 Další možnou modifikací je úprava seznamu $R_{ops}$ použitého v algoritmu na
 řádku \ref{algo:state:forOps}.
 Algoritmus je schopný rozpoznat jednotlivé operace, ale může mít problémy s rozpoznáním
@@ -2537,32 +2528,35 @@ RemoveProperty a AddProperty, s metodou getImprovement získávání zlepšujíc
 kroku pouze pro případy, kdy existuje property, která má v výstupním modelu
 jiný typ než ve vstupním.
 
-     
+
+\subsection{Zhodnocení}     
 Přes počáteční slibné výsledky testované na konstruktivních operacích nebyl
 tento algoritmus shledán jako příliš efektivní. První nevýhodou je, že
-algoritmus v každém kroku hledá nejlepší zlepšující krok i pro všechny operace nalezené v
-iteraci minulé. Rozpoznané operace z minulého kroku by bylo možné zapamatovat,
-ale nebyl nalezen způsob hledání konfliktních operací vyjma případů, kdy dvě
-operace pracují nad jinou hierarchickou strukturou. Proto se nedá jednoduše
-analyzovat, pro které operace je nutné hledat nový zlepšující krok znovu,
-kterých operací se aplikace rozpoznané operace nedotkla, a které operace již
-nemusí mít zlepšující krok shodný a mohou mít jiné parametry.
+algoritmus není časově příliš optimální. V každém kroku hledá nejlepší
+zlepšující krok i pro všechny operace nalezené v iteraci minulé. Rozpoznané
+operace z minulého kroku by bylo možné zapamatovat, ale nebyl nalezen způsob
+hledání konfliktních operací vyjma případů, kdy dvě operace pracují nad jinou
+hierarchickou strukturou. Proto se nedá jednoduše analyzovat, pro které operace
+je nutné hledat nový zlepšující krok znovu, kterých operací se aplikace
+rozpoznané operace nedotkla, a které operace již nemusí mít zlepšující krok
+shodný a mohou mít jiné parametry.
 
 Druhou nevýhodou je šířka prohledávaného stromu - algoritmus testuje v každé
-iteraci všechny operace, jejichž seznam (či v modifikaci zmiňovaná sekvence
-operací) $R_{ops}$ může nabývat velkých hodnot. Při všech váhách nastavených na
-jedna při vzdálenosti dvou modelů distance $distance(M_1,M_2) = d$, velikosti
-$R_{ops} = n$, složitosti aplikace operací $op_{appply}$, složitosti zisku zlepšujícího kroku operace
-$op_{getImprovement}$ a složitosti zisku parametrů $op_{getParams}$
-má algoritmus algoritmickou složitost $O(d) = O((Max(op_{getImprovement})^n *
-op_{getParams} * op_{appply})^d)$. V každé z maximálně d iterací je nutné v
-nejhorším případě získat zlepšující krok pro každou operaci a pro operaci s
-nejvyšším zlepšujícím krokem potom nalézt pro tuto operaci nejlepší parametry a
-aplikovat ji. Složitost operace $op_{getImprovement}$ se různí v závislosti na
-typu operace. Pro c tříd ve vstupním modelu a výstupním modelu má složitost
-hledání parametrů operace AddClass $O(AddClass_{getImprovement})= c^2$ a,
-protože hledáme třídu, která není ve vstupním modelu, ale je ve výstupním, tedy
-procházíme c tříd ve vstupním modelu a c tříd v modelu výstupním. Složitost
+iteraci všechny operace, jejichž počet (či v modifikaci zmiňovaný počet
+sekvencí operací) $R_{ops}$ může nabývat velkých hodnot. Při všech váhách
+nastavených na jedna při vzdálenosti dvou modelů distance $distance(M_1,M_2) =
+d$, velikosti $R_{ops} = n$, složitosti aplikace operací $op_{appply}$,
+složitosti zisku zlepšujícího kroku operace $op_{getImprovement}$ a složitosti
+zisku parametrů $op_{getParams}$ má algoritmus algoritmickou složitost $O(d) =
+O((Max(op_{getImprovement})^n * op_{getParams} * op_{appply})^d)$. V každé z
+maximálně d iterací je nutné v nejhorším případě získat zlepšující krok pro
+každou operaci a pro operaci s nejvyšším zlepšujícím krokem potom nalézt pro
+tuto operaci nejlepší parametry a aplikovat ji. Složitost operace
+$op_{getImprovement}$ se různí v závislosti na typu operace. Pro c tříd ve
+vstupním modelu a výstupním modelu má složitost hledání parametrů operace
+AddClass $O(AddClass_{getImprovement})= c^2$ a, protože hledáme třídu, která
+není ve vstupním modelu, ale je ve výstupním, tedy procházíme c tříd ve
+vstupním modelu a c tříd v modelu výstupním. Složitost
 $O(ExtractClass_{getImprovement})= c^2 * p * r * p $ příčemž c je počet tříd ve
 vstupním a výstupním modelu, p je maximální počet operací ve třídě a r je počet
 extrahovaných property. Hledáme třídu, ve které existuje asociační property v
@@ -2582,7 +2576,8 @@ $O((Max(op_{getImprovement})^n * op_{getParams} * op_{appply})^d) = O(c^2 * c^2
 * c)^d = O(c^{5*d})$
 
 Stavový algoritmus měl definován krok pro operace AddPrimitiveClass,
-AddStandardClass, RenameEntity, RemoveEntity, RenameProperty.
+AddStandardClass, RenameEntity, RemoveEntity, RenameProperty. Tyto operace
+je nynější implementace schopna rozpoznat.
  
  \section{Návrh ze studia článků}
  

@@ -864,7 +864,8 @@ vzniklo až po přidání funkcionality rozpoznávání operací.
 První kritérium dělí aplikační operace na operace pracující s třídami a operace
 pracující pouze s properties daných tříd. Příkladem operací pracujících s
 třídami jsou operace AddStandardClass, AddParent a RemoveEntity. Příkladem
-operací pracujících s properties jsou operace AddProperty, RemoveProperty, SetAbstract.
+operací pracujících s properties jsou operace AddProperty, RemoveProperty,
+SetAbstract.\\
 
 Podle druhého kritéria je možné rozdělit operace nad aplikačním modelem do 5
 skupin - konstruktivní, destruktivní, expanzivní, reduktivní a modifikační operace.
@@ -872,18 +873,22 @@ Konstruktivní operace jsou takové, které po své aplikaci vytvoří 1 novou e
 ve výsledném modelu, která nemá žádné vazby na jiné entity. Příklady aditivní
 operace je operace AddClass. 
 
-Destruktivní operace je opak konstruktivní, ve vstupním modelu existuje entita a
-ta je aplikaci destruktivní operace odstraněna. Příkladem destruktivní operace
-je operace RemoveProperty.
+Aplikace destruktivní operace zapříčiní, že entita ze vstupního modelu
+je odstraněna. Destruktivní operace jsou inverzí k operacím konstruktivním.
+Příkladem destruktivní operace je operace RemoveProperty.
 
-Operace expanzivní přídává do výstupního modelu jednu entitu, čímž se
-podobá operaci konstruktivní, nicméně zároveň je vázána na jinou entitu
-stejného typu a mění její obsah. Příkladem expanzivní operace je
-ExtractClass.
+Některé entity v modelu zůstávají či jsou nahrazeny entitami s jiným jménem a
+\uv{stejným} obsahem. Těmto entitám budem říkat řídící. Operace expanzivní
+přídává do výstupního modelu jednu entitu, čímž se podobá operaci konstruktivní,
+nicméně zároveň je vázána na jinou řídící entitu stejného typu a mění její
+obsah. Příkladem expanzivní operace je ExtractClass.
 
 Reduktivní operace entitu z vstupního modelu odstraní a zároveň entitě, která
 je pro operaci řídící změní obsah. Příkladem této operace je InlineClass.
 Reduktivní operace jsou inverzní k operacím expanzivním.\\
+
+Modifikační operace nemění počet entit určitého typu, ale mění jejich atributy.
+Příkladem modifikační operace je operace SetBounds.
 
 \section{Databázové operace} \label{db_ops}
 
@@ -1466,10 +1471,7 @@ V průběhu modelování operací nad aplikačním modelem jsme se snažili, aby
 operace byly jednoznačné (strojově zpracovatelné) v rámci daného kontextu, dále
 vzhledem k nutnosti textového zápisu uživatelem o minimalističnost zápisu. Tyto
 dva koncepty jdou obecně proti sobě, proto jsme došli k jistému jejich
-kompromisu uživatelské jednoduchosti zápisu a jednoznačnosti. Druhým cílem bylo
-po odstranění kontrolního mechanismu a snaha o odstranění kontrolních queries,
-které až při práci s instancemi dat zjistili, že daný skript vyvolá nad daty
-chybu.
+kompromisu uživatelské jednoduchosti zápisu a jednoznačnosti.
 
 Operace v aplikačním modelu se vyvíjely a měnily se jejich parametry, ale
 současně se měnil i seznam dostupných operací nad aplikačním modelem. Z operací
@@ -1527,7 +1529,8 @@ nepotřebuje kontrolovat, jaká data jsou v opoziční property, protože ta př
 operace neexistovala. Operace ChangeBiToUnidir pak odstraní oppositte atribut z
 vlastnické property a odstraní samotnou property nesoucí data. Nechtěným, avšak
 vítaným produktem této změny bylo zjednodušení vytváření oppositeProperty.
-Původní plán počítal s operací AddProperty následovanou operací SetOppositte.
+Původní sekvence nutná k dosažení požadovaného výsledku zahrnovala operaci
+AddProperty následovanou operací SetOppositte.
 Nyní je možné dosáhnout tohoto cíle jedinou operací ChangeUniToBidir.
 Zjednodušuje se i mazání oboustraně navigabilní vazby. V původní variantě bylo
 nutné spustit operace SetOpposite s parametrem NULL pro opposite sloupec a
@@ -1561,8 +1564,8 @@ grafický editor. V prvním kroku jsme vytvořili třídu Square, která má pro
 area a side. Naprogramovali jsme kód používající třídu Square, vytvořili jich
 několik, nakreslili\ldots a uložili. V druhé fázi jsme zjistili, že potřebujeme
 více tvarů a tak jsme vytvořili třídu Circuit pro kruh. Následně jsme po napsání
-kódu zjistili a uložení některých instancí Circuit do databáze, že
-potřebujeme zacházet v některých případech pracovat s třídou Circuit stejně
+kódu a uložení některých instancí Circuit do databáze zjistili, že
+potřebujeme v některých případech pracovat s třídou Circuit stejně
 jako s třídou Rectangle. Proto jsme extrahovali třídu Shape, předka třídy
 Square. A v nynější chvíli nám operace ve frameworku Migdb nedostačují,
 protože potřebujeme nastavit Shape jako rodičovskou třídu třídě Circuit, ale v
@@ -1602,8 +1605,8 @@ jako je invertovatelnost a rozložitelnost operací. Je nutné říci, že opera
 zmiňované v literatuře pracují jen se strukturou dat, nikoliv s daty samotnými
 a jsou kontextově nezávislé - tyto operace jsou tvořeny téměř výlučně
 konstruktivními a  destruktivními operacemi. Cincetti rozděluje zmiňuje, že v
-minulosti byly operace aplikovatelné na jeden konkrétní model (intensional) a
-modernější differenční modely jsou tzv. extensional - je možné je aplikovat na
+minulosti byly operace aplikovatelné na jeden konkrétní model tzv. intensional
+a modernější differenční modely jsou tzv. extensional - je možné je aplikovat na
 jakýkoliv model, například na paralelní vývojové větve.
 
 V projektu Migdb jsou operace invertovatelné se znalostí původního modelu.
@@ -1661,15 +1664,15 @@ RemoveParent, čímž bychom se nicméně odklonili od cílu minimalizovat opera
  \cite{Lukes} a na obrázku \ref{fig:rdb_str_tarant} model v pozdější fázi vývoje
  převzatý z \cite{Tarant_bp}.
 
- Nejvýraznější změnami databázového metamodelu struktury jsou - stejně jako v
- metamodelu aplikační struktury odstranění generace modelů, odstranění elementu
- UnderlyingIndex, odstranění elementu ColumnConstraint, nahrazení elementu
- NotNullConstraint atributem boolean v Column a snížení kardinality Sequence
- obsažených ve schematu z * na 1.
+ Nejvýraznější změnou databázového metamodelu struktury je stejně jako v
+ metamodelu aplikační struktury odstranění generace modelů. Dalšími změnami jsou 
+ odstranění elementu UnderlyingIndex, odstranění elementu ColumnConstraint,
+ nahrazení elementu NotNullConstraint atributem boolean v Column a snížení
+ kardinality Sequence obsažených ve schematu z * na 1.
  
  Myšlenka generace modelů byla zachována, ale jejich připadné uchovávání bylo
  zvoleno ve více oddělených souborech. Element UnderlyingIndex byl shládán
- nadbytečným, stejně jako element ColumnConstraint. Neatributový element
+ nadbytečným, stejně jako element ColumnConstraint. Bezatributový element
  NotNullConstraint byl shledán příliš informačně chudým a byl nahrazen atributem
  isNillable zachovávajícím stejnou informační hodnotu jako element v původních
  modelech. 
@@ -1712,7 +1715,7 @@ Operace HasNoInstances měla zjistit, jestli v dané tabulce existují data.
 Operace HasNoOwnInstances zjišťovala, jestli v tabulce odpovídající třídě A
 existují data odpovídající konkrétní instanci A, nikoliv data odpovídající
 instancím jejích potomků.
-Tyto dvě operace byly napsány jako základ ověřování proveditelnost migrovaných
+Tyto dvě operace byly napsány jako základ ověřování proveditelnosti migrovaných
 skriptů, který byl z frameworku vypuštěn. Pokud by se měl do frameworku
 navrátit, bylo by lepší namodelovat jednu operaci HasNoInstances s where
 podmínkou vybírající daná data.
@@ -1760,7 +1763,7 @@ Na verzi:
       attr String[1] whereCondition;
     }
 \end{verbatim}  
-Výstupní verze je čitelnější, obecněji použitelná a designově čistší.
+Výstupní verze je čitelnější, univerzálnější a designově čistší.
 
 \subsection{NillRows}
 Motivací k vytvoření této operace bylo shledání potřebného nastavování
@@ -1812,11 +1815,7 @@ transformace ORMo potřebuje k namapování operace SetBounds.
 Vzhledem k změnám databázových operací bylo nutné upravit i generátor SQL kódu z
 těchto operací. Druhou podstatnou prací bylo přepsání základního algoritmu pro
 vytvoření databázového schematu z aplikačního modelu použitého v mé bakalářské
-práci viz \cite{Lukes}, aby bylo možné napsat testy celého frameworku. Byly
-naimplementovány metody apply pro operace:
-
-
-
+práci viz \cite{Lukes}, aby bylo možné napsat testy celého frameworku.
 
 \section{Implementace a testování ORMo mapování}
 Nejnáročnější implementační částí bylo napsání ORMo mapování a jeho testů.
@@ -1849,12 +1848,13 @@ registrationNumber) se transformuje na tabulku legal\_person(business\_name,
 registration\_number). Použití daných dvou pravidel označme jako volání funkce
 translate na daný název.
 
-Při transformaci asociačních property s atributem isOwning = true a upperBound
-!= 1 na asociační tabulku je nutné zajistit unikátnost názvu této tabulky.
-Neexistuje předpoklad, že by byl název property unikátní ve všech třídách. Ale
-dvojice (table, property) musí být unikátní. Proto je název asociační tabulky
-získán jako spojení názvu vlastnické tabulky s názvem asociační property pomocí
-znaku "\_".
+Pro asociační property s isOwning = false není odvozeno jméno databázového
+elementu. Při transformaci asociačních property s atributem isOwning = true a
+upperBound != 1 na asociační tabulku je nutné zajistit unikátnost názvu této
+tabulky. Neexistuje předpoklad, že by byl název property unikátní ve všech
+třídách. Ale dvojice (table, property) musí být unikátní. Proto je název
+asociační tabulky získán jako spojení názvu vlastnické tabulky s názvem
+asociační property pomocí znaku "\_".
 $$owningTableName = translate(owningClassName)$$
 $assocTableName = owningTableName$ + "\_" +
 $translate(associationPropertyName)$
@@ -1865,7 +1865,7 @@ je název tabulky předražen prefixem "col\_"
 
 $$owningClstranslation = translate(owningClassName)$$
 $$propertyTranslation = translate(primitivePropertyName)$$
-$collectionTableName = $"col\_" $+ owningClsTranslation + $"\_" $+
+$collectionTableName = $"col\_" $\ +\ owningClsTranslation\ +\ $"\_" $\ +\
 propertyTranslation$
 
 Názvy constrainů musí být unikátní v rámci celé databáze. Toto je
@@ -1879,29 +1879,30 @@ Vzhledem k unikátnosti dvojice (class, property) bylo využito mapování prefi
 spojený s přelozeným názvem třídy a přeloženým názvem property.
 $$owningClstranslation = translate(owningClassName)$$
 $$propertyTranslation = translate(primitivePropertyName)$$
-$uxName = $"ux\_" $+ owningClsTranslation + $"\_" $+
-propertyTranslation$
-$ordName = uxName + $"\_ord"
+
+$uxName = $"ux\_" $ \ +\ owningClsTranslation\ +\ $"\_" $\ +\
+ propertyTranslation$\\
+$ordName = uxName\ +\ $"\_ord"
 
 Relace parent je do databáze transformována jako cizí klíč. Vzhledem k
 zákazu vícenásobné dědičnosti je každá relace parency nad tabulkou
 jednoznačně určena vzorem této tabulky. Tento klíč má proto jméno odvozeno od
 přeloženého názvu třídy předražené řetězcem "par\_".
 
-$ parentFkName = $"par\_" $+ translate(owningClassName)$
+$ parentFkName = $"par\_" $\ +\ translate(owningClassName)$
 
 Tabulka kolekce referencuje vlastnickou tabulku právě jednou a název cizího
 klíče je tedy odvozen z názvu tabulky kolekce.
 
-$fkCollectionName = $"fk\_" $+ collectionTableName$
+$fkCollectionName = $"fk\_" $\ +\ collectionTableName$
 
 Poslední pravidlo vytváření cizích klíčů platí pro asociační tabulky. Každá
 asociační tabulka referencuje právě dvě tabulky. Název cizího klíče je vytvořen
 z názvu asociační tabulky a tabulky, kterou referencuje předražený řetězcem
 "fk\_".
 
-$fkAssociationReference =$"fk\_" $+ associationTableName + $"\_"$ +
-referencedTableName$
+\begin{align}fkAssociationReference = &"fk\_" \ +\ associationTableName\
++"\_"\ + \nonumber\\ \ & + \ referencedTableName \nonumber\end{align}
 
 
 Tato pravidla nezajišťují unikátnost jmen elementů ve všech případech, ale
@@ -1913,9 +1914,9 @@ dobrý návrh aplikace a zkontroluje Databázová evoluce.
 Dalším cílem, který jsem si před vypracováním diplomové práce stanovil bylo
 vytvoření a zdokumentování algoritmu generující z dvou vstupních modelů
 sekvenci operací, jejichž aplikací se model zdrojový transformuje na model
-koncový.
+cílový.
 
-\section{Diff a delta notace}
+\section{Diff a delta notace}\label{sec:diff_and_delta_notace}
 Nejznámějším nástrojen používaným při porovnávání a zjišťování změn dvou
 textových souborů tzv. patchů \cite{patch} je nástroj diff \cite{diff_wiki} .
 Diff je založen na algoritmu hledání největší společné podsekvence (LCS) viz
@@ -2018,36 +2019,6 @@ Zvolili jsme si cestu definice vlastního metamodelu.
 \end{figure}
 
 \FloatBarrier
-
-\section{Migdb Diff a textová reprezentace modelu}
-
-V rámci projektu Migdb nepracujeme se soubory, ale s modely. Každý model je
-možné textově reprezentovat. Pro jednoduchost si můžeme reprezentovat textově s
-následujícími pravidly:
-\begin{itemize}
-  \item název třídy budeme reprezentovat velkými písmeny
-  \item názvy properties malými písmeny
-\end{itemize}
- V zájmu jednoduchosti nereprezentujeme idProperties, která má většinou název
- jednoznačně odvoditelný od názvu třídy, která ji vlastní. Třída je řetězec
- obsahující svůj název a seznam properties. Řetězec "Abcd" tedy reprezentuje
- třídu A s properties "b","c" a "d". Řetězec "Bef" potom reprezentuje třídu B
- obsahující property "e" a "f". Tuto reprezentaci nazveme Jednoduchovou 
- textovou reprezentací. Model M_1 = odpovídající této reprezentaci je zobrazen
- na obrázku \ref{fig:basic_text_repre}. Na obrázku je slovem undefined znázorněno,
- že Jednoduchá textová reprezentace neposkytuje žádné informace o typu. Pro
- reprezenraci odpovídající Modelu Typ properties tedy 
- 
- \begin{figure}[H]
-\begin{center}
-\includegraphics[width=5cm]{figures/basic_text_notation_1}
-\caption{Model ekvivalentní základní textové reprezentaci}
-\label{fig:basic_text_repre}
-\end{center}
-\end{figure}
-
-\FloatBarrier
- 
 
 \section{Rozpoznávání operací}
 
@@ -2202,6 +2173,59 @@ nutné vybrat si správný algoritmus v závislosti na řešeném problému.
  \chapter{Vytvořené algoritmy rozpoznávání
  operací}\label{chapt:recognition_implementation}
 
+\section{Textová reprezentace modelu}
+V rámci projektu Migdb nepracujeme se soubory, ale s modely. Každý model je
+možné textově reprezentovat. Pro jednoduchost si můžeme reprezentovat
+textově s následujícími pravidly:
+\begin{itemize}
+  \item název třídy budeme reprezentovat velkými písmeny
+  \item názvy properties malými písmeny
+\end{itemize}
+ V zájmu jednoduchosti nereprezentujeme idProperties, která má většinou název
+ jednoznačně odvoditelný od názvu třídy, která ji vlastní. Třída je řetězec
+ obsahující svůj název a seznam properties. Řetězec "Abcd" tedy reprezentuje
+ třídu A s properties "b","c" a "d". Řetězec "Bef" potom reprezentuje třídu B
+ obsahující property "e" a "f". Tuto reprezentaci nazveme Jednoduchovou 
+ textovou reprezentací. Model $M_1(Abcd, Bef)$ odpovídající této reprezentaci
+ je zobrazen na obrázku \ref{fig:basic_text_repre}. Na obrázku je slovem
+ undefined znázorněno, že Jednoduchá textová reprezentace neposkytuje žádné
+ informace o typu. Pro reprezentaci odpovídající modelu typ properties
+ tedy neznáme, v textu je vždy uvedena diskuze ohledně typu.
+ 
+ \begin{figure}[H]
+\begin{center}
+\includegraphics[width=5cm]{figures/basic_text_notation_1}
+\caption{Model $M_1$ v UML}
+\label{fig:basic_text_repre}
+\end{center}
+\end{figure}
+
+\FloatBarrier
+ 
+ \section{Migdb textový Diff}\label{sec:migdb_diff}
+ Pro snadné, rychlé a jednoznačné zobrazení rozdílů mezi modely jsem vytvořil
+ textovou notaci, která je inspirována výstupem programu diff uvedeným v sekci
+ \ref{sec:diff_and_delta_notace}. Pro $M_1(Abcd, Bef)$ definovaný v minulé sekci
+ a $M_2(Abg, Cef)$ je textový diff
+ 
+ \begin{lstlisting}[language=JAVA,frame=single,caption=Textový diff
+modelů $M_1$ a $M_2$,label=migdb_diff:delta]
+   +Ag           -Acd
+   +C            -B
+   +Cef          -Bef
+\end{lstlisting}
+
+\FloatBarrier
+
+V Migdb diffu vyjadřujeme řádkem +X pro přidaní třídy X do vstupního
+modelu modelu, +Xyz pro přidané properties "y" a "z" ze třídy X do vstupního
+modelu, -X pro odstranění třídy ze vstupního modelu a -Xyz pro odstraněné
+atributy "y" a "z" ze třídy X z vstupního modelu. Tj. do modelu $M_1$ byla
+přidána třída C, její property "e" a "f" a do třídy A byla přidána property
+"g". Naopak ze třídy A byly odstraněny property "c" a "d" a třída B byla
+odstraněna i se svými property "e" a "f".
+
+
 \section{Stavový algoritmus}\label{sec:algo_state}
 
 V ranné fázi jsem napsal prototyp rozpoznávacího algoritmu, který se snaží 
@@ -2277,9 +2301,9 @@ energie je definovaná jako součet existujících tříd a jejich properties.
 Mějme model $M_1$(Abcd, Bef). Jeho energie je rovna součtu energie třídy A a
 třídy B. Energie každé třídy je rovna 1 + sumy energií jednotlivých properties.
 Properties mají v naší demonstrativní ukázce bez započítání jiných atributů než
-name energii 1.
+name energii 1.\ref{eq:1}
  $$E(M_1) = E(A) + E(B) = 1 + \sum_{p \in A}E(p) + 1 + \sum_{p
-\in B}(E(p)) = 1 + 3 + 1 + 2 = 7$$
+\in B}(E(p)) = 1 + 3 + 1 + 2 = 7$$\label{eq:1}
 
 Energie je v tomto případě rovna počtu konstruktivních operací nutných k
 vytvoření tohoto modelu. Energie také vyjadřuje v tomto případě počet
@@ -2288,21 +2312,9 @@ další model, můžeme si vyjádřit hodnotu změny těchto modelů.
 
 Můžeme vytvořit model $M_2$ například tak, že z modelu $M_1$ odebereme z třídy A
 property "c", přejmenujeme property "d" na "g" a přejmenujeme třídu B na C. Tak
-získáme model Model $M_2$(Abg, Cef), který má energii rovnu hodnotě 6.
-Patch($M_1, M_2$) můžeme definovat pomocí delta notace. Naší delta notaci můžeme
-zapsat ve tvaru +X pro přidanou třídu, +Xyz pro přidané atributy "y" a "z" ze
-třídy X, -X pro odstraněnou třídu a -Xyz pro odstraněné atributy "y" a "z" ze třídy X.
-
-\FloatBarrier
-
-\begin{lstlisting}[language=JAVA,frame=single,caption=Textový diff
-modelů,label=algo:state:delta]
-   +Ag           -Acd
-   +C            -B
-   +Cef          -Bef
-\end{lstlisting}
-
-\FloatBarrier
+získáme model Model $M_2$(Abg, Cef), který má energii rovnu hodnotě 6. Diff
+těchto dvou modelů byl zobrazen v sekci \ref{sec:migdb_diff} na ukázce
+\ref{migdb_diff:delta}.
 
 
 \subsection{Výpočet rozdílu}

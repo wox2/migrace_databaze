@@ -100,6 +100,16 @@ Petr Tarant.
 Petr Tarant.
 \newblock Migdb - formální specifikace, 2014.
 
+\bibitem[W3C14a]{rdf}
+W3C.
+\newblock Resource description framework.
+\newblock [online], Citováno 16.11.2014.
+
+\bibitem[W3C14b]{owl}
+W3C.
+\newblock Web ontology language.
+\newblock [online], Citováno 16.11.2014.
+
 \bibitem[wc14a]{diff_wiki}
 wiki community.
 \newblock Diff definice.

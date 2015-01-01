@@ -32,6 +32,8 @@
 \usepackage{algpseudocode}
 \usepackage{algorithm}
 \usepackage{mathtools}
+\usepackage{amsmath}
+
 
 \renewcommand{\algorithmicrequire}{\textbf{Input:}}
 \renewcommand{\algorithmicensure}{\textbf{Output:}}
@@ -2301,9 +2303,11 @@ energie je definovaná jako součet existujících tříd a jejich properties.
 Mějme model $M_1$(Abcd, Bef). Jeho energie je rovna součtu energie třídy A a
 třídy B. Energie každé třídy je rovna 1 + sumy energií jednotlivých properties.
 Properties mají v naší demonstrativní ukázce bez započítání jiných atributů než
-name energii 1.\ref{eq:1}
- $$E(M_1) = E(A) + E(B) = 1 + \sum_{p \in A}E(p) + 1 + \sum_{p
-\in B}(E(p)) = 1 + 3 + 1 + 2 = 7$$\label{eq:1}
+name energii 1. Základní výpočet energie je zobrazen na
+rovnici \eqref{eq:energy_basic}.
+ \begin{equation}E(M_1) = E(A) + E(B) = 1 + \sum_{p \in A}E(p) + 1 + \sum_{p
+\in B}(E(p)) = 1 + 3 + 1 + 2 = \label{eq:energy_basic}\end{equation}
+
 
 Energie je v tomto případě rovna počtu konstruktivních operací nutných k
 vytvoření tohoto modelu. Energie také vyjadřuje v tomto případě počet
@@ -2312,48 +2316,59 @@ další model, můžeme si vyjádřit hodnotu změny těchto modelů.
 
 Můžeme vytvořit model $M_2$ například tak, že z modelu $M_1$ odebereme z třídy A
 property "c", přejmenujeme property "d" na "g" a přejmenujeme třídu B na C. Tak
-získáme model Model $M_2$(Abg, Cef), který má energii rovnu hodnotě 6. Diff
-těchto dvou modelů byl zobrazen v sekci \ref{sec:migdb_diff} na ukázce
+získáme model Model $M_2$(Abg, Cef), který má podle
+rovnice \eqref{eq:energy_basic} energii rovnu hodnotě 6.
+Diff těchto dvou modelů byl zobrazen v sekci \ref{sec:migdb_diff} na ukázce
 \ref{migdb_diff:delta}.
 
 
 \subsection{Výpočet rozdílu}
 Pro tento minimalistický přístup můžeme použít výpočet symetrické delty
-následující vzorce:
+vzorce \eqref{eq:distance:basic}. Vzdálenost dvou modelů $M_1, M_2$ je
+rovna energii, množinového rozdílu $M_1,M_2$, sečtené s energií množinového
+rozdílu $M_2, M_1$ definovaného v \eqref{eq:delta_MX_MY}.
 
-$$distance(M_1,M_2) = E(\Delta(M_1,M_2)) + E(\Delta(M_2, M_1))$$
-Vzdálenost dvou modelů $M_1, M_2$ je potom rovna energii, množinového rozdílu
-$M_1,M_2$, sečtené s energií množinového rozdílu $M_2, M_1$.
 
-$$\Delta(M_X,M_Y) = (\Delta {C_{XY}}, \Delta{P_{XY}}) $$
+\begin{equation}distance(M_1,M_2) = E(\Delta(M_1,M_2)) + E(\Delta(M_2,
+M_1))\label{eq:distance:basic}\end{equation} 
 
-Rozdíl modelů X a Y je uspořádaná dvojice rozdílu tříd a rozdílu properties.
-$$\Delta {C_{XY}} = \{c: c \in M_X \wedge c \notin M_Y\}$$
+
+\begin{equation}\Delta(M_X,M_Y) = (\Delta {C_{XY}}, \Delta{P_{XY}})
+\label{eq:delta_MX_MY}\end{equation}
+
+Rozdíl modelů X a Y je uspořádaná dvojice rozdílu tříd a rozdílu properties viz
+\eqref{eq:delta_MX_MY}.
+\begin{equation}\Delta {C_{XY}} = \{c: c \in M_X \wedge c \notin
+M_Y\}\label{eq:delta_CXY}\end{equation} 
+
 Rozdíl tříd modelů X a Y je množina tříd, které jsou v modelu X, ale nejsou v
-modelu Y.
- $$\Delta{P_{XY}} = \{p: p \in X \wedge p \notin Y \wedge p.owner
-\notin \Delta {C_{XY}}\})$$
+modelu Y viz \eqref{eq:delta_CXY}.
+
+ \begin{equation}\Delta{P_{XY}} = \{p: p \in X \wedge p \notin Y \wedge p.owner
+\notin \Delta {C_{XY}}\}\label{eq:delta_PXY}\end{equation}
+
 Rozdíl properties modelů X a Y je množina properties, které patří do modelu X,
 ale nejsou v modelu Y a jejich vlastnická třída není obsažena v množině  $\Delta
 {C_{XY}}$. Explicitní podmínka pro vlastnickou třídu property je, že je obsažen
-v X, protože i p je obsaženo v X.
+v X, protože i p je obsaženo v X viz \eqref{eq:delta_PXY}.
 
 
 Předpokládejme dále, že energie dvojice $E(C_{XY}, P_{XY}) = E(C_{XY}) +
 E(P_{XY})$ 
 
-Původní rovnice se nám tedy přepíše na :
+Rovnice \eqref{eq:distance:basic} se nám tedy přepíše na
+\eqref{eq:distance:extended}.
 
 \begin{align} distance(M_X,M_Y) = & E(\Delta(M_X,M_Y)) + E(\Delta(M_Y, M_X)) =
 E(C_{XY}, P_{XY}) + E(C_{YX}, P_{YX}) = \nonumber \\ = & E(C_{XY}) + E(P_{XY}) +
-E(C_{YX}) + E(P_{YX}) \nonumber
+E(C_{YX}) + E(P_{YX}) \label{eq:distance:extended}
 \end{align}
 
 
 
-Na výpisu \ref{algo:state:delta} máme na levé straně zobrazenou
+Na výpisu \ref{migdb_diff:delta} máme na levé straně zobrazenou
 $\Delta(M_1,M_2)$ a na pravé straně $\Delta(M_2,M_1)$ pro zadaný příklad. Pro
-naše konkrétní modely $M_1 a M_2$ je distance tedy:
+naše konkrétní modely $M_1$ a $M_2$ je distance tedy:
 
 $distance(M_1,M_2) = E(C_{12}) + E_{P_{12}} + E(C_{12}) + E_{P_{12}} = 1 + 3 +
 1 + 4 = 9$
@@ -2375,25 +2390,30 @@ odstranit operací RemoveParent a následně operací AddParent přidat
 referenci na novou rodičovskou třídu. Změna referenčních hodnot modelů je
 započítána dvakrát oproti změně hodnot primitivních atributů. Primitivní
 hodnoty je nutné do vzorce tedy započítat jen jednou. Původní vzorec pro
-vzdálenost dvou modelů se tedy změní na:
+vzdálenost dvou modelů se tedy změní na \eqref{eq:distance:attributes}.
 
 \begin{align} distance(M_X,M_Y) = & E(\Delta(M_X,M_Y)) + E(\Delta(M_Y, M_X)) =
 E(C_{XY}, P_{XY}) + E(C_{YX}, P_{YX}) + \nonumber \\ + & E(PRIM_{XY}) = 
 E(C_{XY}) + E(P_{XY}) + E(C_{YX}) + E(P_{YX}) + \nonumber \\ + & E(PRIM_{XY})
-\nonumber
+\label{eq:distance:attributes}
 \end{align}
 
 Přičemž $E(PRIM_{XY})$ reprezentuje energii změněných primitivních atributů a
-$\gamma$ reprezentuje množinu primitivních atributů splňující podmínku pro
-započítání atributu do energie:
-$$\gamma=A: (A.owner \notin M_{X} \vee A.owner \notin M_{Y})
-\vee A_{X} != A_{Y} $$
-$$E(PRIM_{XY}) = \sum_{\gamma}E(A)$$
+$\gamma$ reprezentuje množinu primitivních atributů splňující podmínku
+ pro započítání atributů do energie viz \eqref{eq:condition}.
+ Výpočet $E(PRIM_{XY})$ je zobrazen na rovnici
+ \eqref{eq:energy:prim:attributes}
+
+\begin{equation}\gamma=A: (A.owner \notin M_{X} \vee A.owner \notin M_{Y})
+\vee A_{X} != A_{Y}\label{eq:condition}\end{equation}
+
+\begin{equation}E(PRIM_{XY}) =
+\sum_{\gamma}\label{eq:energy:prim:attributes}\end{equation}
 
 Pro rozšířený výpočet energie property $p_{XY} \in P_{XY}$ je zakomponována do
 vzorce energie referenčních properties:
-$$E(p_{XY}) = 1 + \sum_{A \in p_X \wedge A_Y = null \vee A_Y !=
-A_X}E(REF_{XY})$$
+\begin{equation}E(p_{XY}) = 1 + \sum_{A \in p_X \wedge A_Y = null \vee A_Y !=
+A_X}E(REF_{XY}\label{eq:energy:prim:attributes:extended}\end{equation}
 
 
 \subsection{Význam energie}
@@ -3160,32 +3180,68 @@ splněny podmínky vycházející z aplikace dané reduktivní či expanzivní o
 \chapter{Testování projektu Migdb}\label{chapt:testování}
 
 V průběhu vývoje byl za účelem ověření správné funkcionality vytvořen projekt
-Migdb.testing.run, který spouští jednotlivé testy kompoment aplikace. 
+Migdb.testing.run, v kterém jsou obsaženy soubory workflow jednotlivých modulů.
+Workflow (pracovní tok) je vstupní bod každé samostatně definované množiny
+testů. Workflow odpovídá JUnit TestSuite.
 
-V rámci projektu byly vytvořeny testy komponent Workflow obsažené v packagi
-migdb.testing.components.run, testy aplikační evoluce inkludované do Workflow
-test\_app\_atomic.mwe2 v packagi migdb.testing.app.atomic.run, testy databázové
-evoluce obsažené workflow test\_rdb\_atomic.mwe2 v packagi
-migdb.testing.rdb.atomic.run, testy validátorů aplikačního a databázového
-modelu obsažené v packagi migdb.testing.validators.run, test ORM transformace
-struktury aplikace na DB schema + ORMo transformace obsažené v workflow
-migdb.testing.orm.run, testy generování SQL schématu obsažené v packagi
-migdb.testing.generators.run, integrované testy celého frameworku migdb
-obsažené v packagi migdb.testing.migdb\_executer a posledními testy jsou testy
-algoritmů rozpoznávajících operace obsažené v packagi
-migdb.testing.app.oracle.run.
+\section{Jednotkové testy}
+V rámci projektu byly vytvořeny některé jednotkové testy, aby byla zaručena
+izolovaná správnost běhu jednotlivých komponent a jejich nahraditelnost.
 
+\subsection{Testy komponent}
 Testy komponent testují správnou funkcionalitu komponenty Comparator, která
 musí správně porovnat očekávaný a reálný výstupní soubor xmi ostatních testů.
-Tyto testy jsou rozděleny do více workflow, protože některé musí být neúspěšné,
-jak už napovídá klíčové slovo fail v jejich názvu. Dalšími komponentami
-vzniklými v rámci projektu Migdb byly QVTOExecutor, TestWorkflow,
-DirectoryCleaner a TestComponent. Komponenta TestComponent vznikla, aby bylo
-přehlednější a efektivnější psát QVT testy Migdb, je složena z několika dalších
-načítacích, ukládacích a porovnávacích komponent a zkracuje zápis testů ve
-workflow asi 10 krát. Nebylo jasné, jak vytvořit testy na správnou funkcionalitu
-ostatních komponent - správné jejich zapojení do jiných testů bylo pro nás
-dostatečným testem.
+Tyto testy jsou rozděleny do více workflow, protože existují i negativní
+testy - běh některých testů musí skončit chybovou hláškou, jak už napovídá
+klíčové slovo fail v jejich názvu.\\
+
+Druhou otestovanou komponentou je TestComponent. Tato komponenta vznikla, aby
+bylo přehlednější a efektivnější psát QVT testy Migdb, je složena z několika
+dalších načítacích, ukládacích a porovnávacích komponent. TestComponent zkracuje
+délku zápisu testů ve workflow asi desetkrát. Testem správné funkce je
+zalogování očekávaného výsledku testu (pozitivního či negativního) do konzole.
+
+\subsection{Testy Aplikační Evoluce}
+Aplikační Evoluce byla otestována pomocí workflow \\test\_app\_atomic.mwe2 v
+balíčku migdb.testing.app.atomic.run. Balíček obsahuje 37 testů přípustných
+případů užití i případů, které mají zalogovat chybu (tedy případů, pro které
+metoda isValid dané operace vrací hodnotu false).
+Každý test má v oddělených souborech definován vstupní aplikační model a
+operaci, která se má nad tímto modelem provést. Výstupní modely po
+aplikaci operace a seznam zalogovaných chyb jsou porovnány s očekávaným
+výstupem definovaným v souborech předaných TestComponentě jako parametry
+qvtComparison. Tyto testy jsou automatické.
+
+\subsection{Testy Databázové Evoluce}
+Testy Databázové Evoluce jsou obsažené ve workflow \\test\_rdb\_atomic.mwe2 v
+balíčku migdb.testing.rdb.atomic.run. Balíček obsahuje 22 testů přípustných
+případů i případů, které mají zalogovat chybu (tedy případů, pro které
+metoda isValid dané operace vrací hodnotu false).
+Každý test má v oddělených souborech definován vstupní model databázové
+struktury a databázovou operaci, která se má na vstupní strukturu aplikovat.
+Výstupní modely po aplikaci databázové operace a seznam zalogovaných chyb jsou
+porovnány s očekávaným výstupem definovaným v souborech předaných 
+TestComponentě jako parametry qvtComparison. Tyto testy jsou automatické.
+
+\subsection{Testy ORM}
+Testy modulu ORM jsou obsažené ve workflow
+migb.testing.orm.run.tests\_orm\_structure v balíčku \\migdb.testing.orm.run.
+Balíček obsahuje 5 testů mapování jednotlivých inheritanceType. TestComponent
+obsažené ve workflow dostávají vstupní aplikační model, na který aplikují ORM
+transformaci. Výstupní model databázové struktury a seznam zalogovaných chyb
+jsou porovnány s očekávanými výstupy definovanými v souborech předaných 
+TestComponentě jako parametry qvtComparison. Tyto testy jsou automatické.
+
+\subsection{Testy ORMo}
+Testy Modulu ORMo jsou obsažené ve workflow \\migb.testing.orm.run.tests\_orm v
+balíčku migdb.testing.orm.run. Balíček obsahuje 42 testů mapování aplikačních
+operací na operace databázové. TestComponent obsažené ve workflow dostávají
+vstupní aplikační model a aplikační operaci, která se má aplikovat na tento
+model. Výstupní seznam databázových operací a seznam zalogovaných chyb jsou
+porovnány s očekávanými výstupy definovanými v souborech předaných
+TestComponentě jako parametry qvtComparison. V průběhu testování neprobíhá
+Aplikační Evoluce, tyto testy předpokládají validnost vstupní aplikační operace
+nad daným vstupním aplikačním modelem. 
 
 Ostatní testy se řadí do xmi kategorie testů, tj testů, které mají jako
 vstupní model xmi soubor. Po spuštění xmi testů se v projektu
@@ -3210,36 +3266,65 @@ check\_selects.sql ze složky s daty. Bohužel nebyl nalezen lepší způsob
 otestování než manuální spuštění a vizuální porovnáných selectů s očekávaným
 výstupem po apliaci dané operace na data.sql.
 
-\chapter{Ukázka zdrojového kódu práce}\label{chapt:ukazka_kodu}
+%%\chapter{Ukázka zdrojového kódu práce}\label{chapt:ukazka_kodu}
 
 
 %*****************************************************************************
 
 \chapter{Závěr}\label{chapt:zaver}
+\section{Zhodnocení výsledků diplomové práce}
 Po několikaletém teoretickém a praktickém studiu změn v aplikačním modelu a
 jejich projevu v modelu aplikačním se nám podařilo definovat ucelenou množinu
 operací, pomocí nichž je možné měnit aplikační model a definovat jejich mapování
 na operace databázové úrovně.
 
 Nejjednodušším a teoreticky nejzajímavějším tématem našeho projektu je aplikační
-model, kterému byly věnovány celkově 2 bakalářké a 2 diplomové práce
-BP - \cite{Tarant_bp} a  \cite{Lukes}, DP \cite{Tarant_dip},  a \cite{Mazanec}.
+model, kterému byly věnovány celkově 2 bakalářké a 2 diplomové práce.
+Aplikačnímu modelu se věnovaly bakalářské práce \cite{Tarant_bp} a 
+\cite{Lukes}, a diplomové práce \cite{Tarant_dip} a \cite{Mazanec}. Aplikační
+model je tedy celkem dobře popsaný a Aplikační Evoluce je plně
+otestovaná.\\
 
-Implementačně nejnáročnějším a zároveň nejvíce teoreticky vyčerpaným tématem se
-stala samotná transformace aplikačních operací na operace databázové, čehož jsem
-využil a k implementaci, otestování a dospecifikaci tohoto mapování jsem přidal
-téma čerstvé a velmi málo prozkoumané. Tímto atraktivním tématem vzhledem k
-verzování modelů je automatické rozpoznávání operací provedených nad aplikačním
-modelem.
+Modelem databázovým se věnovaly práce bakalářské práce \cite{Lukes} a
+\cite{Jezek}. Databázový metamodel je nyní dobře definovaný a Databázová Evoluce
+je dobře definovaná a plně otestovaná.\\
+
+Modul ORMo se stal implementačně nejnáročnějším a teoreticky nejméně
+popsatelným. Počet transformací, testů a nutná specifikace všech případů
+užití je tak obsáhlá, že by se vešla do samostatné diplomové práce. Tento modul
+není plně implementován, vybral jsem si podmnožinu aplikačních operací, pro
+které jsem definoval transformaci na operace databázové. Tyto transformace jsou
+otestované viz. kapitola \ref{chapt:testování}.
+
+Projekt Migdb je nyní v funkční podobě, jeho nasazení brání jen nízký
+počet operací, které mají definováno ORMo mapování. Proto si myslím, že jsem
+úspěšně dokončil projekt Migdb.\\
+
+Modul OpsRecognition se stal velice zajímavou částí této diplomové práce.
+Nepodařilo se mi definovat algoritmus pro rozpoznání všech operací, ale podařilo
+se mi prozkoumat základní principy použitelné při rozpoznávání operací. Tyto
+principy jsem shrnul v kapitole \ref{chapt:recognition},
+naimplementoval zkušební implementace algoritmů viz.
+kapitola \ref{chapt:recognition_implementation}. Přes nízký počet rozpoznaných
+operací si troufám tvrdit, že navrhnuté algoritmy jdou správným směrem. Proto
+si myslím, že i cíl prozkoumání automatizace rozpoznávání operací jsem dosáhl.\\
+
+\section{Budoucí rozšiřitelnost}
+Prvním nutným směrem k úspěšnému nasazení projektu Migdb je dodefinování a
+otestování ORMo transformací zbylých aplikačních operací. Samotná definice operací
+aplikovatelných na databázový model není pevná, což vzhledem k malému vzorku
+sbíraných požadavků vede k nejednoznačným ORMo mapováním. Proto by v
+dalších pracích bylo dobré udělat operační výzkum a získat větší množství
+požadavků na tyto operace.
 
 Mrzí mně, že jsem se nemohl více věnovat tématu rozpoznávání operací nad
 aplikačním modelem, takže jsem se nedostal k tématům jako je sémantickém
 rozpoznávání operací vycházející pravděpodobně z idei sémantického
-webu a implementací Resource Description Framework (RDF) a Ontology Web
-Language (OWL). Implementace sémantického rozpoznávání by mohla v budoucnu
-odhadnout změny nejen na základě syntaxe(struktury) databáze, ale i na základě
-významu názvů jednotlivých entit v databázi. Předpokládám, že potom by bylo
-možné detekovat mnohem jednoznačněji přejmenování entit - pokud by pomocí nějaké
+webu a implementací Resource Description Framework (RDF) \cite{rdf} a Ontology
+Web Language (OWL) \cite{owl}. Implementace sémantického rozpoznávání by mohla v
+budoucnu odhadnout změny nejen na základě syntaxe(struktury) aplikace, ale i na
+základě významu názvů jednotlivých entit v aplikaci. Předpokládám, že potom by
+bylo možné detekovat mnohem jednoznačněji přejmenování entit - pokud by pomocí nějaké
 ontologie či podobného nástroje bylo jasně specifikováno, že zvíře je nadtypem
 býložravce a tento je nadtypem entity zebra, potom pokud v původním modelu
 existuje třída Zebra, která má jako rodičovskou třídu nastavenu třídu
@@ -3253,29 +3338,6 @@ kontextu stále větších informačních systémech, kdy je občas těžké naz
 smysluplně entity aplikačního modelu, natož sémantiku jejich relace vůči jiným
 entitám.
 
-V průběhu psaní této diplomové práce jsem si uvědomil, proč pro nás bylo občas
-obtížné definovat správné mapování aplikačních operací na operace databázové.
-Čím blíže bylo zaměření daného participanta bližší aplikačnímu modelu, tím více
-si tento participant přibližoval databázový model aplikačnímu a vznikaly tak
-entity jako jsou HasNoInstance s názvem rodičovské tabulky bez jakékoliv relace
-rodičovství existující v databázovém modelu. Druhou chybou, kterou jsme
-dělali při zaměření se na aplikační metamodel bylo modelování aplikačních
-operací, které měly přespříliš složité mapování na databázové operace či někdy
-až nesmyslný vliv na data v modelu - příkladem bylo modelování operace
-SetOpposite, která v aplikačním modelu spojí dvě existující property tříd a až
-při implementaci mapování na databázové operace bylo zjišťěno, že tato operace
-pozbývá smyslu. Tato odlehlost členů Migdb od databázového modelu vytvořila
-nemalé koncepční problémy, jejichž řešení bylo nutné s nemalým úsilím vymyslet
-a implementovat ve velmi pozdní fázi projektu. Pokud bych psal Migdb znovu od
-začátku, zaměřil bych se více na kooperaci jednotlivých částí, aby bylo pro mně
-psaní transformace ORMo snazší. Tato transformace je esenciální pro chod
-projektu a proto je její správná implementace alfa omegou na úspěch projektu.
-
-Samotná definice operací aplikovatelných na databázový model není pevná, což
-vzhledem k malému vzorku sbíraných požadavků vede k nejednoznačným ORMo
-mapováním. Proto v navazujících pracích by bylo dobré udělat operační výzkum a
-získat větší množství požadavků na tyto operace.
-
 Věcí, kterou bych udělal znovu jinak při psaní Migdb od začátku by bylo využití
 jiného jazyka než je QVT. Tento mapovací jazyk se našim potřebám hodil málo,
 proto jsme časem přestali používat jeho zakladní koncept - mapování a nahradili
@@ -3287,43 +3349,45 @@ otestování) speciální transformací kopírující jen ty části výstupníh
 které byly opravdovým výstupem, nikoliv meziproduktem. Tato transformace
 vzhledem ke svojí povaze samozřejmě zpomaluje exekuci Migdb Workflow.
 
+\subsection{Portabilita}
 Poslední otázkou, na kterou jsem neměl moc času hledat odpověď je portabilita
-projektu Migdb funkčního nad relační databází PostgreSQL na jiné
-relační databáze. Předpokládám, že by nebylo složité změnit generátor kódu
+projektu Migdb na jiné relační databáze. Projekt Migdb funguje nad
+databází PostgreSQL. Předpokládám, že by nebylo složité změnit generátor kódu
 pro jiné relační databáze - algoritmus vygenerování SQL kódu je poměrně
 přímočarý a pro PostgreSQL nebyl dlouhý. Struktura jiných relačních databází
 není vždy stejná, ale většinově se shoduje, takže ani modifikace databázového
 metamodelu by neměla být obtížná. Moje minimální zkoumání tohoto tématu
-odhalilo, že námi používaná databáze PostgreSQL má maximální délku 64 znaků, 
-databáze Oracle má maximální délku identifikátoru 30 znaků a databáze Microsoft 
-SQL server má maximum stanoveno na 128 znaků. Z tohoto vyplývá, že převod Migdb 
-na databázi Microsoft SQL server by nebyl  z tohoto pohledu problematický.
+odhalilo, že námi používaná databáze PostgreSQL má maximální délku 64 znaků,
+databáze Oracle má maximální délku identifikátoru 30 znaků a databáze Microsoft
+SQL server má maximum stanoveno na 128 znaků. Z tohoto vyplývá, že převod Migdb
+na databázi Microsoft SQL server by nebyl  z tohoto pohledu problematický, je
+možné zachovat modul mapování jmen definovaný v sekci \ref{subsect:map_translation}.
 30 znaků pro Oracle nevypadá jako problematické - vývojáři mají málokdy třídy
 ukládané do databáze s jmény delšími než 30 znaků, problém nastává při zahrnutí
 service pro získávání názvů databázových entit k entitám z aplikačního modelu.
 Získání názvu cizího klíče, kolekce a asociační tabulky spojuje název atributu a
-tabulky s nějakým prefixem a odděluje tyto položky jména podtržítky. 
+tabulky s nějakým prefixem a odděluje tyto položky jména podtržítky.\\
 
 Tudíž skutečné omezení délky názvu třídy může být základních 30 oslabeno o 3
 (prefix FK či kolekce), oslabeno o 3 (podtržítka oddělující jednotlivé tři
 části jména - prefix a dvě tabulky) děleno 2 (dvě části). Aplikací těchto
 operací dostaneme horní hranici 12 znaků, která vypadá jako dostatečná, ačkoliv 
-ne tolik komfortní. V této hranici jsme nicméně nezapočítaly Camel-podtržítkovou
-konverzi velkých písmen na malá předražená podtržítky. Předpokládejme, že každý
-identifikátor nebude mít víc jak 3 slova, tudíž musíme odečíst další 3 znaky. 9
-nemusí být vždy dostatečná hranice vzhledem k velikosti nynějších systémů a
-nezapočítáváme do toho fakt, že třídy v aplikačním modelu mohou(a často jsou)
-prefixovány nějakým workspacem či balíčkem. Tudíž délka 9 nemusí být maximální
-horní hranice jmen našich tříd a property. Je tedy zřejmé, že potom bude muset
-uživatel projektu Migdb nad databází Oracle používat krátké a naprosto
-neintuitivní názvy entit typu Vec102 či je nutné vymyslet jiný způsob překládání
-jmen do databázového modelu, který bude automatizovaný, jednoznačný, nezávislý
-na ostatních entitách v modelu a nejlépe pro člověka snadno získatelný bez
-pomoci nějakého překladače.
+ne tolik komfortní. V této hranici jsme nicméně nezapočítaly konverzi velkých
+písmen na malá předražená podtržítky. Předpokládejme, že každý identifikátor
+nebude mít víc jak 3 slova, tudíž musíme odečíst další 3 znaky. 9 nemusí být
+vždy dostatečná hranice vzhledem k velikosti nynějších systémů a nezapočítáváme
+do toho fakt, že třídy v aplikačním modelu mohou (a často jsou) prefixovány
+nějakými dalšími znaky (například balíčkem). Tudíž délka 9 nemusí
+být maximální horní hranice jmen našich tříd a property, ale reálná
+maximální délka může být nižší. 
 
-Není možné generovat zkrátit názvy entit - vedlo by to u kolizních názvů pomocí
-indexace, protože bez dalších pravidel jako například očív případě potřeby
-odstranit Constraint není možné zjistit, ke které entitě
+Je tedy zřejmé, že potom bude muset uživatel projektu Migdb nad databází Oracle
+používat krátké a naprosto neintuitivní názvy entit typu Vec102 či je nutné
+vymyslet jiný způsob překládání jmen do databázového modelu, který bude
+automatizovaný, jednoznačný, nezávislý na ostatních entitách v modelu a nejlépe
+pro člověka snadno získatelný bez pomoci nějakého překladače a nahradit
+implementaci modulu mapování jmen popsanou v sekci
+\ref{subsect:map_translation}.
 
 %\section{Další poznámky}
 %\subsection{České uvozovky}

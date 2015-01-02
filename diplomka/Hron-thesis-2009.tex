@@ -357,8 +357,9 @@ jsou zhodnoceny jejich výstupy. Kapitola \ref{chapt:zaver} bilancuje dosažené
 výsledky této diplomové práce a navrhuje další možné směry k rozvíjení daných
 dvou témat.
 
-Kapitoly \ref{chapt:manual} a \ref{chapt:obsah_cd} obsahují
-manuál popisující použití frameworku Migdb, který je uložen na přiloženém CD.
+Kapitola \ref{chapt:manual} obsahuje manuál popisující použití frameworku Migdb,
+který je uložen na přiloženém CD. Kapitola \ref{chapt:obsah_cd} potom obsah
+přiloženého CD.
 
 
 
@@ -3210,7 +3211,7 @@ Každý test má v oddělených souborech definován vstupní aplikační model 
 operaci, která se má nad tímto modelem provést. Výstupní modely po
 aplikaci operace a seznam zalogovaných chyb jsou porovnány s očekávaným
 výstupem definovaným v souborech předaných TestComponentě jako parametry
-qvtComparison. Tyto testy jsou automatické.
+qvtComparison. Vyhodnocení těchto testů je automatizováno.
 
 \subsection{Testy Databázové Evoluce}
 Testy Databázové Evoluce jsou obsažené ve workflow \\test\_rdb\_atomic.mwe2 v
@@ -3221,7 +3222,7 @@ Každý test má v oddělených souborech definován vstupní model databázové
 struktury a databázovou operaci, která se má na vstupní strukturu aplikovat.
 Výstupní modely po aplikaci databázové operace a seznam zalogovaných chyb jsou
 porovnány s očekávaným výstupem definovaným v souborech předaných 
-TestComponentě jako parametry qvtComparison. Tyto testy jsou automatické.
+TestComponentě jako parametry qvtComparison. Vyhodnocení těchto testů je automatizováno.
 
 \subsection{Testy ORM}
 Testy modulu ORM jsou obsažené ve workflow
@@ -3230,10 +3231,10 @@ Balíček obsahuje 5 testů mapování jednotlivých inheritanceType. TestCompon
 obsažené ve workflow dostávají vstupní aplikační model, na který aplikují ORM
 transformaci. Výstupní model databázové struktury a seznam zalogovaných chyb
 jsou porovnány s očekávanými výstupy definovanými v souborech předaných 
-TestComponentě jako parametry qvtComparison. Tyto testy jsou automatické.
+TestComponentě jako parametry qvtComparison. Vyhodnocení těchto testů je automatizováno.
 
-\subsection{Testy ORMo}
-Testy Modulu ORMo jsou obsažené ve workflow \\migb.testing.orm.run.tests\_orm v
+\subsection{Testy modulu ORMo}
+Testy modulu ORMo jsou obsažené ve workflow \\migb.testing.orm.run.tests\_orm v
 balíčku migdb.testing.orm.run. Balíček obsahuje 42 testů mapování aplikačních
 operací na operace databázové. TestComponent obsažené ve workflow dostávají
 vstupní aplikační model a aplikační operaci, která se má aplikovat na tento
@@ -3241,30 +3242,55 @@ model. Výstupní seznam databázových operací a seznam zalogovaných chyb jso
 porovnány s očekávanými výstupy definovanými v souborech předaných
 TestComponentě jako parametry qvtComparison. V průběhu testování neprobíhá
 Aplikační Evoluce, tyto testy předpokládají validnost vstupní aplikační operace
-nad daným vstupním aplikačním modelem. 
+nad daným vstupním aplikačním modelem. Vyhodnocení těchto testů je
+automatizováno.
 
-Ostatní testy se řadí do xmi kategorie testů, tj testů, které mají jako
-vstupní model xmi soubor. Po spuštění xmi testů se v projektu
-migdb.testing.run vygeneruje složka output-tests, která obsahuje výstupní data 
-jednotlivých testů. Výstupní data mohou obsahovat výstupní xmi soubory
-porovnávané s očekávaným xmi souborem nebo SQL souborem, který je možné
-aplikovat na databázi PostgreSql.
+\subsection{Testy modulu OpsRecognition}
 
-Speciálním testem je test\_code\_generator.mwe2, tento test vygeneruje pro
-zadaný vstupní aplikační model a sadu aplikačních operací výstupní rdb model, sadu
-databázových operací, výstupní SQL generující strukturu databáze a SQL
-reprezentující výstupní databázové operace. Kromě těchto vygenerovaných dat je
-možné najít ke každému testu v adresáři test\_data reálná data, s kterými může
-být test spuštěn. Reálná data jsou vytvořena jen pro testy komplexnějších
-operací (operace 007 - 010), které jen nemění strukturu databáze, ale i
-manipulují s daty. Postup testování tohoto testu je - spuštění workflow vedoucí k
-vygenerování SQL db schematu a SQL db operací. Spuštění SQL vytvářející
-strukturu databáze, spuštění SQL s daty uloženými v souboru data.sql z
-přidružené složky v adresáři test\_data, aplikace vygenerovaného souboru
-transformačních SQL, zobrazení výstupních dat za pomoci souboru
-check\_selects.sql ze složky s daty. Bohužel nebyl nalezen lepší způsob
-otestování než manuální spuštění a vizuální porovnáných selectů s očekávaným
-výstupem po apliaci dané operace na data.sql.
+
+\section{Integrační Testy}
+\subsection{Testy generátoru databázového schema}
+V databázi bylo vytvořeno workflow test\_schema\_generator.mwe2 v balíčku
+migdb.testing.generators.run sloužící k otestování generátoru databázového
+schema. Workflow obsahuje 41 testů. Každý případ užití transformuje vstupní
+aplikační model na model databázový, z kterého potom komponenta SchemaGenerator
+vygeneruje SQL skripty do souboru s příponou .sql. Vyhodnocení testu musí udělat
+buď vývojář zkontrolováním testu nebo tento test spustit nad PostgreSql
+databází a zkontrolovat, že se vytvořily správné databázové elementy.
+
+\subsection{Testy běhu celého frameworku}
+Testy funkčnosti celého frameworku jsou obsaženy ve workflow
+test\_code\_generator.mwe2. Vyhodnocení testů není automatické. Po proběhnutí
+celého workflow jsou pro každý případ užití vygenerovány soubory tvaru
+XXXb\_nazevTestu.sql, kde \uv{XXX} je prefix (číslo testu) a  \uv{b} je
+varianta.
+V podsložce schema každého případu užití je potom soubor schema.sql. Dále jsou v
+projektu migdb.testing.run uloženy ve složce test\_data testovací data a ověřovací selecty k vygenerovaným složitějším případům užití manipulujícími s daty (prefixy 007-010).
+K otestování správné funkcionality je nutné mít nainstalovánu databázi
+PostgreSql. Postup otestování funkce testu je popsán v algoritmu
+\ref{testing:framework}
+
+\begin{algorithm}
+ \caption{Postup otestování celého
+ frameworku}\label{testing:framework} 
+ \begin{algorithmic}[1]
+	\State  Spuštění workflow test\_code\_generator.mwe2
+	\ForAll{testCase $\in output-tests/$gen\_SQL}
+		\If{testCase ma prefix > 007}
+		  \State Aplikace soubor schema.sql na databází
+		  \State Aplikace soubor data.sql z odpovídající složky obsažené v složce
+		  test\_data
+		\EndIf
+		\State Aplikace sql soubor z složky testCasu na databázi
+		\If{testCase ma prefix > 007}
+		   \State Aplikace soubor Aplikuj soubor check\_selects.sql z odpovídající
+		   složky obsažené v složce test\_data
+		   \State Porovnání navrácené hodnoty z selectu s očekávaným výstupem		    
+		\EndIf
+		\State Kontrola struktury databáze
+	\EndFor
+ \end{algorithmic}
+ \end{algorithm}
 
 %%\chapter{Ukázka zdrojového kódu práce}\label{chapt:ukazka_kodu}
 

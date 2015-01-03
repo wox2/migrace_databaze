@@ -2459,7 +2459,7 @@ Pro výpočty energie definované podle vzorců \eqref{eq:distance:attributes} -
 destruktivních a modifikačních operací. V subsekci \ref{subsec:configurace} je
 zavedena konfigurace vah atributů. Po zavedení konfigurace vah atributů je
 energie horní hranicí minimálního počtu konstruktivních, destruktivních a
-modifikačních operací.
+modifikačních operacígit .
 
 \subsection{Zlepšující krok}
 Jak bylo řečeno, energie udává počet konstruktivních, destruktivních a
@@ -2481,7 +2481,7 @@ aktuální model o takovou vzdálenost, že neexistují parametry, které by zdr
 model přibližovaly k cílovému o vzdálenost větší. Není zaručena jedinečnost
 nejlepších parametrů. Při neexistenci jakýchkoliv vhodných parametrů
 algoritmus vrátí pro operaci hodnotu $-\infty$. Pro zlepšující krok
-getImprovement(c_{op}, A, T) platí \eqref{eq:improvement}.
+getImprovement($c_{op}$, A, T) platí \eqref{eq:improvement}.
 
 \begin{equation}distance(M_A, M_T) = distance(M_X, M_T) + getImprovement(op, A,
 \label{eq:improvement}\end{equation}
@@ -2555,25 +2555,43 @@ předešlých vzorcích použít konfiguraci vah jednotlivých atributů.
 Všechny atributy jsou vyjmenovány v seznamu \ref{algo:state:attribute_list}.
 
 \begin{itemize}\label{algo:state:attribute_list}
-   \item Váhy atributů třídy
+   \item Váhy atributů třídy W(C)
    \begin{description}
       \item[W(classname)] jméno třídy
       \item[W(parent)] reference na rodičovskou třídu 
    \end{description}
-   \item Váhy atributů všech property
+   \item Váhy atributů primitivních property W(A)
    \begin{description}
       \item[W(propertyName)] jméno property
-      \item[W(type)] reference na typ property
       \item[W(isOrdered)] boolean značící ordered kolekci
       \item[W(isUnique)] boolean značící unikátní kolekci
       \item[W(LowerBound, UpperBound)] horní a dolní mez hodnot property
    \end{description}
-   \item Váhy atributů asociačních property
+   \item Váhy referenčních atributů property W(R)
    \begin{description}
       \item[W(oppositteProperty)] reference na opozitní property u bidirectional
       vazby
+      \item[W(type)] reference na typ property
    \end{description}
 \end{itemize}
+
+Po zavedení konfigurace vah se rovnice \ref{eq:energy:prim:attributes} změní na
+\ref{eq:energy:prim:attributes:extended} a rovnice
+\eqref{eq:energy:ref:attributes} se změní na
+\eqref{eq:energy:ref:attributes:extended}. A stejně tak se změní vzorec pro
+energii \eqref{eq:energy_basic} na \eqref{eq:energy_extended}.
+
+\begin{equation}E(PRIM_{XY}) =
+\sum_{\gamma}W(A_\gamma) 
+\label{eq:energy:prim:attributes:extended}\end{equation}
+
+\begin{equation}E(p_{XY}) = \sum_\beta
+ W(R_\beta)
+ \label{eq:energy:ref:attributes:extended}\end{equation}
+
+ \begin{equation}E(M_1) = \sum_{C \in
+ M_1}E(C)= \sum_{C \in
+ M_1}(\sum W(C) + \sum_{P \in C} E(P))\label{eq:energy_extended}\end{equation}
 
 \ \\
 Příklad konfigurace:
@@ -2589,7 +2607,7 @@ Příklad konfigurace:
 \end{itemize}
 
 Tato konfigurace redukuje získávání energie na původně zmiňovaný způsob definice
-Energie.
+Energie a vzdálenosti.
 
 \subsection{Personalizovatelnost}
 Další možnou modifikací je úprava seznamu $R_{ops}$ použitého v algoritmu na
@@ -2772,7 +2790,10 @@ odstranit. Po úpravě properties odstraní přebytečné properties obsažené 
 kolekci SProps. V posledním kroku algoritmus smaže odstraněné třídy. Tento
 základní proces je zobrazen na aktivity diagramu \ref{fig:recog_ops_order1}.
 Diagram má téměř lineární formu a rozpoznání jednotlivých skupin operací má
-tedy pro základní algoritmus v zásadě jednoznačné pořadí.
+tedy pro základní algoritmus v zásadě jednoznačné pořadí. Přesnější pořadí
+rozpoznávaných operací je zobrazeno na \ref{fig:recog_ops_order2}, kde jsou
+rozděleny třídy podle toho, jestli byly zachovány (skupina R), přidány(skupina
+A), odstraněny(skupina M).
 
 \begin{figure}[H]
 \begin{center}
@@ -2783,30 +2804,30 @@ tedy pro základní algoritmus v zásadě jednoznačné pořadí.
 \end{figure}
 
 
-Základní párovací algoritmus dělí třídy do tří skupin:
-\begin{enumerate}
-   \item třídy, které byly v průběhu Evoluce modelu zachovány
-   \item třídy, které byly v průběhu Evoluce z modelu odstraněny
-   \item třídy, které byly v průběhu Evoluce do modelu přidány
-\end{enumerate}
+% Základní párovací algoritmus dělí třídy do tří skupin:
+% \begin{enumerate}
+%    \item třídy, které byly v průběhu Evoluce modelu zachovány
+%    \item třídy, které byly v průběhu Evoluce z modelu odstraněny
+%    \item třídy, které byly v průběhu Evoluce do modelu přidány
+% \end{enumerate}
+% 
+% Základní algoritmus předpokládá, že s třídami z první skupiny bylo manipulováno
+% pouze za pomoci třídních modifikačních operací a s
+% properties těchto tříd mohlo být manipulováno pomocí konstruktivních,
+% destruktivních nebo modifikačních operací. Třídy z druhé skupiny byly z modelu
+% odstraněny pomocí operace RemoveEntity. Aby byly validační podmínky
+% destruktivních operací platné, je nutné před aplikací destruktivních operací
+% RemoveEntity odstranit přebytečné properties operací RemoveProperty a upravit
+% třídy pomocí třídních modifikačních operací RemoveParent. Třídy v třetí skupině
+% je nutné do modelu přidat konstruktivní operací AddClass, následně je možné s
+% třídami manipulovat pomocí třídních modify operací a modifikovat properties
+% pomocí konstruktivních, destruktivních a modifikačních operací.
+% Jediné modifikační třídní operace, které mají vliv na strukturu modelu a byly
+% zařazeny do rozpoznávání jsou operace AddParent a RemoveParent. Operace
+% AddParent může v nynější implementaci odstraňovat z aktuálního modelu
+% kolizní properties, má tedy vliv na seznam nenamapovaných properties SProps a
+% musí předcházet operaci RemoveProperty. 
 
-Základní algoritmus předpokládá, že s třídami z první skupiny bylo manipulováno
-pouze za pomoci třídních modifikačních operací a s
-properties těchto tříd mohlo být manipulováno pomocí konstruktivních,
-destruktivních nebo modifikačních operací. Třídy z druhé skupiny byly z modelu
-odstraněny pomocí operace RemoveEntity. Aby byly validační podmínky
-destruktivních operací platné, je nutné před aplikací destruktivních operací
-RemoveEntity odstranit přebytečné properties operací RemoveProperty a upravit
-třídy pomocí třídních modifikačních operací RemoveParent. Třídy v třetí skupině
-je nutné do modelu přidat konstruktivní operací AddClass, následně je možné s
-třídami manipulovat pomocí třídních modify operací a modifikovat properties
-pomocí konstruktivních, destruktivních a modifikačních operací.
-Jediné modifikační třídní operace, které mají vliv na strukturu modelu a byly
-zařazeny do rozpoznávání jsou operace AddParent a RemoveParent. Operace
-AddParent může v nynější implementaci odstraňovat z aktuálního modelu
-kolizní properties, má tedy vliv na seznam nenamapovaných properties SProps a
-musí předcházet operaci RemoveProperty. 
-\\
 \begin{figure}[H]
 \begin{center}
 \includegraphics[width=15cm]{figures/recognition_order_basic2.jpg}
@@ -2818,8 +2839,8 @@ musí předcházet operaci RemoveProperty.
 
  Algoritmus by mohl rozpoznat operace v libovolné přípustné sekvenci. Tato
  přípustná sekvence operací musí splňovat precedenční vztahy zobrazené na obr.
- REF DOPLNěného obr. Každý model je možné rozdělit na množinu nezávislých
- hierarchických strukturálních operací. Dvě třídy A, B patří pro základní
+ \ref{fig:recog_ops_order2}. Každý model je možné rozdělit na množinu
+ nezávislých hierarchických strukturálních operací. Dvě třídy A, B patří pro základní
  párovací algoritmus do stejné hierarchické struktury pokud $A.parent = B \vee
  B.parent = A \ \vee \ (\exists X \in M.clses: X \in ancestor(A)\ \wedge\ X \in
  ancestor(B))$, přičemž ancestor(Z) je množina všech předků třídy Z. Sekvence
@@ -2833,8 +2854,8 @@ musí předcházet operaci RemoveProperty.
  AddParent.
  
  Nejjednodušší implementací zisku validní sekvence je předpoklad existence
- jediné grupy, tj rozpoznávání operací po skupinách ze seznamu 
- ref algo:match:ops\_seq. Tato implementace je zobrazena v pseudokódu \ref{algo:matching:ops_recognition}
+ jediné grupy, tj rozpoznávání operací po třídách operací. 
+ Tato implementace je zobrazena v pseudokódu \ref{algo:matching:ops_recognition}
  \\
  Základní rozpoznávací algoritmus má schopnost rozeznat jen konstruktivní,
  destruktivní a modifikační operace. Zachovává data, jejichž identifikátor se

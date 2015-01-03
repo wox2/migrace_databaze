@@ -2470,21 +2470,21 @@ Vývojář může přiblížit model aplikací konstruktivních, destruktivních
 modifikační operace mohou přiblížit model o 1 jednotku energie. Kromě
 konstruktivních, destruktivních a modifikačních operací existují i operace
 vyšší. Abychom určili efektivitu aplikace těchto operací, definujeme si tzv.
-zlepšující krok (improvement). V průběhu vývoje je možné aplikovat operaci ze
-stejné třídy s jinými parametry. Proto algoritmus hledá nejlepší zlepšující krok
-pro danou třídu operací viz řádek \ref{algo:state:improvement}. 
+zlepšující krok (improvement). Nechť $M_S$ je zdrojový model,
+$M_T$ je cílový model a op je aplikační operaci, po jejíž aplikaci je model
+$M_S$ transformován do modelu $M_X$. Potom zlepšující krok je rozdíl vzdáleností
+distance $(M_A, M_T)$ - distance$(M_X, M_T)$ viz \eqref{eq:improvement}.
 
- Zlepšující krok operace je definován jako vzdálenost, o kterou se přiblíží
-aktuální model A po aplikaci operace op k modelu cílovému T s nejlepšími
-možnými parametry. Nejlepší parametry jsou takové, které přibližují
-aktuální model o takovou vzdálenost, že neexistují parametry, které by zdrojový
-model přibližovaly k cílovému o vzdálenost větší. Není zaručena jedinečnost
-nejlepších parametrů. Při neexistenci jakýchkoliv vhodných parametrů
-algoritmus vrátí pro operaci hodnotu $-\infty$. Pro zlepšující krok
-getImprovement($c_{op}$, A, T) platí \eqref{eq:improvement}.
-
-\begin{equation}distance(M_A, M_T) = distance(M_X, M_T) + getImprovement(op, A,
+\begin{equation}distance(M_A, M_T)-distance(M_X, M_T) =  + getImprovement(op,
+M_A),
 \label{eq:improvement}\end{equation}
+
+
+V průběhu vývoje je možné aplikovat operaci ze stejné třídy s jinými parametry.
+Proto algoritmus hledá nejlepší zlepšující krok pro danou třídu operací viz
+řádek \ref{algo:state:improvement}. Při neexistenci jakýchkoliv vhodných
+parametrů algoritmus vrátí pro operaci hodnotu $-\infty$.
+
 
 \subsection{Ilustrativní příklad běhu algoritmu}
 
@@ -2769,8 +2769,8 @@ je nynější implementace schopna rozpoznat.
 
 Algoritmus inicializuje množiny nespárovaných tříd z vstupního (a výstupního)
 modelu všemi třídami z vstupního (resp výstupního modelu) a seznam výstupních
-operací prázdnou množinou. Následně algoritmus zpáruje třídy podle jména,
-odstraní spárované třídy z množin SClasses a TClasses a zpáruje jejich property
+operací prázdnou množinou. Následně algoritmus spáruje třídy podle jména,
+odstraní spárované třídy z množin SClasses a TClasses a spáruje jejich property
 podle jména v proceduře MATCH\_EQUAL\_PROPERTIES. Procedura
 MATCH\_EQUAL\_PROPERTIES odstraní property ze spárovaných tříd se shodným jménem
 z množin SProps a TProps.
@@ -2934,70 +2934,28 @@ A), odstraněny(skupina M).
 \end{algorithm}
 
 \FloatBarrier
- 
- \section{Rozšířený algoritmus}
- Složitější implementace algoritmu páruje stejně jako jednodušší v
- první fázi shodné elementy - modely se mění, ale některé třídy jsou zachovány.
- 
- Algoritmus předpokládá, že napárované elementy tvoří tzv. páry. Každá třída ze
- zdrojového modelu může být nahrazena, expandována nebo redukována. \\
- 
- Třída je nahrazena (tvoří replacing pár), pokud je její jméno změněno či je
- třída zachována. Třída je zachována, pokud v cílovém modelu existuje třída se
- stejným jménem. Algoritmus zavrhuje sekvenci operací mazající všechny
- properties této třídy, smazání třídy a opětovnému vytvoření této třídy s
- jejich properties. Problém hledání RenamePair bude diskutován později. Každá
- třída může být součástí maximálně jednoho replacing páru. Je tedy zakázáno, aby
- v byla třída součástí dvou replacing párů, jednoho replacing a jednoho rename
- páru či dvou rename párů.
- 
- Redukované a expandované páry jsou navázány na právě jeden replacing pár.
- 
- Třída tvoří redukovaný pár, pokud existuje v zdrojovém modelu, ale neexistuje
- v modelu cílovém a je podobná třídě v cílovém modelu, která je již součástí
- replacing páru.
- 
- Třída tvoří expandovaný pár, pokud neexistuje v zdrojovém modelu,
- ale existuje v modelu cílovém a je podobná třídě ze zdrojového modelu, která
- je již součástí replacing páru.\\
- 
- Oproti základní verzi algoritmu je nutné vytvořit entitu reprezentující shodu -
- EqualClassPair. Shodné třídy a třídy přejmenované potom tvoří pilíře pro
- operace reduktivní a expanzivní, které se vážou na rozpoznané páry. Operace
- expanzivní a reduktivní není tedy možné bez jejich pilířů rozpoznat. V
- druhé fázi algoritmus páruje již spárované třídy v zdrojovém modelu s třídami
- nespárovanými z cílového modelu a obráceně třídy nespárované ze zdrojového
- modelu s třídami spárovanými. V druhé fázi párování musí algoritmus párovat
- třídy podle jiného kritéria.
- Tímto mnou zvoleným kritériem je suma properties se shodným jménem. Čím vyšší
- je tento koeficient, tím jsou si třídy podobnější.\\
- 
- Algoritmus počítá podobnost tříd pomoci počtu properties se stejným jménem.
- Další možností by byla definice energetické funkce viz sekce
- \ref{sec:algo_state}. Aby bylo snazší rozpoznat operace reduktivní a
- expanzivní, byly zavedeny ClassPairy a PropertyPairy.
- 
+
 \subsection{Diff elementy}\label{subsect:Diff elementy}
  
- Kvůli nutnosti rozpoznávat operace vznikly v aplikačním metamodelu nové
- elementy. Základní párovací algoritmus si nepotřebuje uchovávat páry,
- třídy jsou spárovány jen na základě shodnosti jména, takže je kdykoliv
- v průběhu algoritmu tento seznam i jednotlivé páry možné získat. Na druhé
- straně rozšířený párovací algoritmus může rozpoznat operaci i RenameEntity a
- její vstupní a výstupní třídu tvořící pár není možné snadno identifikovat.
- Rozšířený párovací algoritmus rozpoznává operace závislé na dvou podobnostech,
- proto je nutné vytvořit 2 páry. První pár určí, která třída byla zachována, či
- měla změněné jméno. Druhý pár potom pomoci podobnosti určí, jestli 
+ Kvůli nutnosti rozpoznávat některé operace rozšířeným párovacím
+ algoritmem vznikly v aplikačním metamodelu nové elementy. Základní párovací
+ algoritmus si nepotřebuje uchovávat páry, třídy jsou spárovány jen na základě
+ shodnosti jména, takže je kdykoliv v průběhu algoritmu tento seznam i
+ jednotlivé páry možné získat. Na druhé straně rozšířený párovací algoritmus
+ může rozpoznat operaci i RenameEntity a její vstupní a výstupní třídu tvořící
+ pár není možné identifikovat podle shodnosti jména. Obrázek \ref{fig:diff_meta}
+ zobrazující elementy Diff metamodelu byl uveden v sekci
+ \ref{sec:diff_and_delta_notace}.
  
-  Kořenovým elementem diff modelu je Diff element.
- Tento element obsahuje kolekce elementů classpairs typů ClassPair, propertyPairs
- typu PropertyPair, a dále pak addedClasses a removedClasses typu DiffClass a
- addedProperties a removedProperties typu DiffProperty. Element ClassPair
- shlukuje spárované zdrojové (source) a obrazové (reflection) třídy, dále pak
- referenci owningDiff na Diff element, v kterém jsou obsaženy a která je
- důležitá pro implementaci algoritmu a v neposlední řadě underlyingPairs -
- shodné páry Properties typu EqualPropertyPair, které jsou detekované danou
- operací. Podobně jako operace jsou i páry rozděleny do několika skupin.
+ Kořenovým elementem diff modelu je Diff element. Tento element obsahuje
+ kolekce elementů classpairs typů ClassPair, propertyPairs typu PropertyPair, a
+ dále pak addedClasses a removedClasses typu DiffClass a addedProperties a
+ removedProperties typu DiffProperty. Element ClassPair shlukuje spárované
+ zdrojové (source) a obrazové (reflection) třídy, dále pak referenci owningDiff
+ na Diff element, v kterém jsou obsaženy a která je důležitá pro implementaci
+ algoritmu a v neposlední řadě underlyingPairs - shodné páry Properties typu
+ EqualPropertyPair, které jsou detekované danou operací. Podobně jako operace
+ jsou i páry rozděleny do několika skupin.
  
  Konstruktivní a destruktivní operace nemají svůj obraz v diff metamodelu. Je s
  nimi v rámci rozšířeného algoritmu zacházeno stejně jako v základním párovacím
@@ -3007,30 +2965,53 @@ A), odstraněny(skupina M).
  element z výstupního modelu.
  Konstruktivní operace by jinak mapovaly prázdný vstup na element a
  destruktivní obráceně element na prázdný výstup.
- 
- Oproti jednodušším konstruktivním a destruktivním operacím jsou operace
- expanzívní a reduktivní a modifikační v Diff modelu zobrazeny jako
- ExpansiveClassPair a ReductiveClassPair, které mapují element
- vstupního modelu na element cílového modelu. 
- 
- Aby bylo možné rozpoznat specifický pár závislý na jiném páru je nutné při
- nejd, byla přidána třída ReplacingClassPair - nahrazující pár, který se
- používá jako pivot pro hledání expansivních, reduktivních a modifikačních
- párů. Od elementu ReplacingClassPair dědí elementy EqualClassPair - třída,
- která si uchovala jméno z původního modelu a element ReplacingClassPair -
- reprezentující třídu, která si neuchovala jméno, ale má změněný název.
- Podmínky získávání konkrétních typů párů a jejich pořadí specifikuje konkrétní
- rozpoznávací algoritmus.
- 
  Projevem konstruktivních a destruktivních operací jsou elementy DiffClass a
  DiffProperty, které zaobalují třídy a property tak, aby bylo možné referencovat
  na jiný objekt než element Structure. 
 
+ Rozšířený párovací algoritmus rozpoznává operace závislé na dvou podobnostech,
+ proto je nutné vytvořit 2 páry. První pár určí, která třída byla zachována, či
+ měla změněné jméno. Druhý pár potom pomoci podobnosti určí, jestli byla třída
+ expandována či redukována.
+ 
+ Aby bylo možné rozpoznat specifický pár závislý na jiném páru je nutné při
+ nejd, byla přidána třída ReplacingClassPair - řídící pár, který se
+ používá jako pivot pro hledání expansivních, reduktivních a modifikačních
+ párů. Od elementu ReplacingClassPair (dále nahrazující pár) dědí elementy
+ EqualClassPair (dále shodný pár)- třída, která si uchovala jméno z původního
+ modelu a element RenameClassPair - reprezentující třídu, která si
+ neuchovala jméno, ale má změněný název.
+ Podmínky získávání konkrétních typů párů a jejich pořadí specifikuje konkrétní
+ rozpoznávací algoritmus.
+ 
+ Oproti jednodušším konstruktivním a destruktivním operacím jsou operace
+ expansivní a reduktivní v Diff modelu zobrazeny jako
+ ExpansiveClassPair (dále expanzivní pár) a ReductiveClassPair (dále reduktivní
+ pár pár), které mapují element vstupního modelu na element cílového modelu. 
+ 
+ Expanzivní pár mapuje třídu již nahrazenou ze zdrojového modelu na podobnou
+ třídu, která ještě spárována nebyla z modelu cílového. Nahrazení třídy ze
+ zdrojového modelu je znázorněno referencí na sourceReplacingPair. 
+ 
+ Reduktivní pár mapuje nespárovanou třídu ze zdrojového modelu na nahrazenou
+ třídu z modelu cílového. Nahrazení třídy z cílového modelu je zobrazeno
+ referencí reflectionReplacingPair.
+ 
+ \section{Rozšířený algoritmus}
+ Rozšířená algoritmus vychází ze základního algoritmu, ale je schopen rozpoznat
+ i reduktivní a expanzivní operace. U párování v základním párovacím algoritmu
+ platí, že je jedna třída spárována s jednou třídou z modelu cílového. U tříd
+ zachovávající jméno je tato skutečnost pravdivá i v rozšířeném párovacím
+ algoritmu. Po základním spárování podle jména ale algoritmus dochází do další
+ fáze \uv{párování} - párování podle podobnosti. Oproti párování podle jména
+ nemusí nastat spárování 1 x 1, ale také 1 x M a N x 1 čili obecně M x N. 
+ 
 \subsection{Popis rozšířeného párovacího algoritmu}
-Pseudokód rozšířeného algoritmu je zobrazen na \ref{algo:matching_ext}
+Pseudokód rozšířeného algoritmu je popsán v pseudokódu
+\ref{algo:matching_ext}.
 
 Algoritmus potřebuje kromě vstupních dat přenesených z původního algoritmu i
-počet matchovacích fází, které budou v rámci podobnosti provedeny.
+počet matchovacích fází podobnosti, které budou provedeny.
 
 V inicializační fázi stejně jako základní párovací algoritmus nainicializuje
 množiny nespárovaných tříd SClses a TClses, množiny nespárovaných properties
@@ -3047,21 +3028,15 @@ párů podobnosti signalizující spárování tříd, která je využita v dal�
 algoritmu. OwningPair je nepovinná složka - představuje referenci na
 ReplacingPair u Reduktivních a Expanzivních párů a je použita v dalších fázích
 algoritmu. Základní párovací algoritmus nepotřeboval zaznamenávat páry, protože
-sprárované třídy byly jednoznačně identifikovány svým názvem.
+spárované třídy byly jednoznačně identifikovány svým názvem.
 
 V základní kostře algoritmu se rozšířená verze párovacího algoritmu příliš
 neliší od základní verze.  Algoritmus po inicializaci provede párování tříd
 podle jména a párování tříd podle podobnosti a zakončí svůj běh rozpoznáním
 operací.
 
-V fázi matchování tříd podle jména jsou třídy ze zdrojového modelu párovány s
-třídami z cílového modelu na základě společného jména. Oproti fázi matchování v
-základním algoritmu zobrazeném na \ref{algo:matching} je v fázi párování podle
-jména nutné vytvořit pár tříd - viz řádek \ref{algo:matching_ext:make_pair}.
-Následuje rozpoznání shodných properties v proceduře MATCH\_EQUAL\_PROPS viz.
-řádek \ref{algo:matching_ext:match_equal_props}. V této proceduře jsou oproti
-základnímu algoritmu vytvořeny shodné páry properties. Shodné páry jsou přidány
-do čtveřice Cpair, s nastaveným owningPairem NULL.
+Oproti fázi matchování v základním algoritmu zobrazeném na \ref{algo:matching}
+je v fázi párování podle jména nutné vytvořit pár tříd.
 % do
 
 Pseudokód \ref{algo:matching_ext:match_similarity} ukazuje průběh párovací fáze
@@ -3108,13 +3083,13 @@ splněny podmínky vycházející z aplikace dané reduktivní či expanzivní o
    +Af
 \end{lstlisting}
  
- Vidíme, že třída A byla zachována, třída B, třída B je podobná A s koeficientem
- podobnosti 2, existují 2 property("e" a "d") ve třídě A ve zdrojovém modelu se
- shodným jménem jako mají property v modelu cílovém ve třídě B. Třída B byla
- přidána do modelu a je podobná třídě A, algoritmus očekává rozpoznání
- expanzivní operace. Pokud je přidaná property "f" typu B a property "g" ve
- třídě B je typu A, algoritmus rozpozná operaci ExtractClass. Pokud v
- cílovém modelu platí B.parent = A, algoritmus rozpozná operaci ExtractSubClass.
+ Vidíme, že třída A byla zachována, třída B je podobná A, existují 2
+ property("e" a "d") ve třídě A ve zdrojovém modelu se shodným jménem jako mají
+ property v modelu cílovém ve třídě B. Třída B byla přidána do modelu a je
+ podobná třídě A, algoritmus očekává rozpoznání expanzivní operace. Pokud je
+ přidaná property "f" typu B a property "g" ve třídě B je typu A, algoritmus
+ rozpozná operaci ExtractClass. Pokud v cílovém modelu platí B.parent = A,
+ algoritmus rozpozná operaci ExtractSubClass.
  V případě nerozpoznaného typu páru algoritmus skončí s matchovací fází, protože
  neexistuje jiný kandidát pro třídu B na vytvoření páru a podobnost bude
  zanedbána.\\
@@ -3133,7 +3108,7 @@ splněny podmínky vycházející z aplikace dané reduktivní či expanzivní o
  Algoritmus pro tento příklad zjistí, že třída A byla zachována, třída B byla
  odstraněna, z třídy B byly odstraněny properties "d", "e" a "g", z třídy A
  byla odstraněna property f, naopak do třídy A byly přidány property "de". Třída
- B je podobná s koeficientem 2 (shodnost properties "d" a "e") třídě A. Třída B
+ B je podobná (shodnost properties "d" a "e") třídě A. Třída B
  byla ze zdrojového modelu odstraněna, algoritmus prověřuje reduktivní operace.
  Pokud platí B.parent = A algoritmus rozpozná operaci CollapseHierarchy, v
  případě, že property f a g tvoří oboustraně navigabilní vazbu, algoritmus
@@ -3177,11 +3152,11 @@ splněny podmínky vycházející z aplikace dané reduktivní či expanzivní o
    	        \State  pairs = MATCH\_EQUAL\_PROPS(S, T)
    	        \State  addUnderlyingPairs(cPair, pairs)
    	        \State  $CPairs = CPairs\ \bigcup \ cPair$
-   	        \Comment{Aktualizace nespárovaných properties}
+   	        \Comment{Aktualizace spárovaných tříd}
    	        \State $SClses \gets SClses \setminus \{ C_S\}$
-   	        \Comment{Aktualnizace nenamatchovaných tříd ze zdrojového modelu}
+   	        \Comment{Aktualnizace nespárovaných tříd ze zdrojového modelu}
    	        \State $TClses \gets TClses \setminus \{ C_T\}$\Comment{Aktualizace
-   	        nenamatchovaných tříd z cílového modelu}   	        
+   	        nespárovaných tříd z cílového modelu}   	        
    	     \EndIf
       \EndFor
    \EndFor
@@ -3193,8 +3168,10 @@ splněny podmínky vycházející z aplikace dané reduktivní či expanzivní o
    	      \ForAll{$P_T \in clsTargetModel.properties$}
    	        \If{$P_S.name = P_T.name$}
    	           \State pair = markMatched($P_S, P_T$, 'Equal')
-   	           \State $Pairs = Pairs\ \bigcup\ pair$
-   	           \State $SProps \gets SProps \setminus \{ P_S\}$
+   	           \State $Pairs = Pairs\ \bigcup\ pair$ \Comment{Aktualizace
+   	           spárovaných properties} 
+   	           \State $SProps \gets SProps \setminus \{
+   	           P_S\}$ 
    	           \State $TProps \gets TProps \setminus \{ P_T\}$
    	        \EndIf
    	      \EndFor
@@ -3318,7 +3295,23 @@ nad daným vstupním aplikačním modelem. Vyhodnocení těchto testů je
 automatizováno.
 
 \subsection{Testy modulu OpsRecognition}
+V balíčku migdb.testing.app.oracle.run byly vytvořeny 4 workflow použité k
+otestování experimentálních algoritmů pro rozpoznávání. Workflow
+test\_app\_oracle.mwe2 testuje funkčnost stavového algoritmu. Vzhledem k tomu,
+že jsem se zasekl s implementací u definice energie, jsou otestovány pouze 2
+případy užití. Workflow test.app.matcher.mwe2 testuje funkčnost základního
+párovacího algoritmu na 6 konstruktivních, destruktivních a modifikačních
+operacích. Workflow test\_app\_matcher2.mwe2 testuje funkcionalitu rozšířeného
+párovacího algoritmu na 6 expanzivních a reduktivních operacích, pro které jsou
+uvedené páry v Diff metamodelu. Vyhodnocení těchto testů je automatizované.
 
+Workflow test\_app\_matcher2\_sequences.mwe2 testuje 24 kombinací základních
+kombinací zmiňovaných 6 reduktivních a expanzivních operací. Vyhodnotit tyto
+testy musí vývojář, protože neexistuje deterministický postup k rozpoznáná
+operací.
+
+Vstupem všech testCasů v těchto workflow jsou 2 vstupní modely, výstupem potom
+seznam rozpoznaných operací.
 
 \section{Integrační Testy}
 \subsection{Testy generátoru databázového schema}
@@ -3338,7 +3331,8 @@ XXXb\_nazevTestu.sql, kde \uv{XXX} je prefix (číslo testu) a  \uv{b} je
 varianta. Proběhnutí testovacího případu v rámci workflow zaručuje pouze, že
 nenastala žádná chyba v rámci tohoto testovacího případu.
 V podsložce schema každého případu užití je potom soubor schema.sql. Dále jsou v
-projektu migdb.testing.run uloženy ve složce test\_data testovací data a ověřovací selecty k vygenerovaným složitějším případům užití manipulujícími s daty (prefixy 007-010).
+projektu migdb.testing.run uloženy ve složce test\_data testovací data a
+ověřovací selecty k vygenerovaným složitějším případům užití manipulujícími s daty (prefixy 007-010).
 K otestování správné funkcionality je nutné mít nainstalovánu databázi
 PostgreSql. Postup otestování funkce testu je popsán v algoritmu
 \ref{testing:framework}
@@ -3406,7 +3400,7 @@ principy jsem shrnul v kapitole \ref{chapt:recognition},
 naimplementoval zkušební implementace algoritmů viz.
 kapitola \ref{chapt:recognition_implementation}. Přes nízký počet rozpoznaných
 operací si troufám tvrdit, že navrhnuté algoritmy jdou správným směrem. Proto
-si myslím, že i cíl prozkoumání automatizace rozpoznávání operací jsem dosáhl.\\
+si myslím, že i cíl prozkoumání automatizace rozpoznávání operací jsem dosáhl.
 
 \section{Budoucí rozšiřitelnost}
 Prvním nutným směrem k úspěšnému nasazení projektu Migdb je dodefinování a
@@ -3488,6 +3482,12 @@ pro člověka snadno získatelný bez pomoci nějakého překladače a nahradit
 implementaci modulu mapování jmen popsanou v sekci
 \ref{subsect:map_translation}.
 
+
+\section{Shrnutí}
+Framework Migdb je otestovaný a připravený k nasazení.
+Aplikační a databázový metamodel jsou dobře definované. Transformace jsou dobře
+definované, snadno otestovatelné, lépe rozšiřitelnější než kdy byly.Myslím si,
+že jsem dosáhl výsledků, které jsem si na začátku psaní této diplomové práce dal. 
 %\section{Další poznámky}
 %\subsection{České uvozovky}
 %V souboru \verb|k336_thesis_macros.tex| je příkaz \verb|\uv{}| pro sázení

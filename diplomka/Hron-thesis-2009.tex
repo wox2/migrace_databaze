@@ -2276,9 +2276,10 @@ Vzdálenost modelu od prázdného modelu nazveme energií modelu.
   \Repeat \label{algo:state:repeat}
    \State $R\gets NULL$
    \State $K\gets 0$ \Comment{Zlepšující krok}\label{algo:state:improvement}
-   	  \ForAll{op from Ops} \Comment{Pro každou operací z app metamodelu}
+   	  \ForAll{$c_{op}$ from Ops} \Comment{Pro každou třídu operací z app
+   	  metamodelu}
    	  \label{algo:state:forOps}
-   	  \State $K_{op} \gets getImprovement(op, A, T)$ \Comment{Spočítá
+   	  \State $K_{op} \gets getImprovement(c_{op}, A, T)$ \Comment{Spočítá
          zlepšení}
       	\If{$K < K_{op}$}\Comment
       	  \State $K\gets K_{op}$
@@ -2306,8 +2307,9 @@ třídy B. Energie každé třídy je rovna 1 + sumy energií jednotlivých prop
 Properties mají v naší demonstrativní ukázce bez započítání jiných atributů než
 name energii 1. Základní výpočet energie je zobrazen na
 rovnici \eqref{eq:energy_basic}.
- \begin{equation}E(M_1) = E(A) + E(B) = 1 + \sum_{p \in A}E(p) + 1 + \sum_{p
-\in B}(E(p)) = 1 + 3 + 1 + 2 = \label{eq:energy_basic}\end{equation}
+ \begin{equation}E(M_1) = \sum_{C \in
+ M_1}E(C)= \sum_{C \in
+ M_1}(1 + \sum_{P \in C} 1)\label{eq:energy_basic}\end{equation}
 
 
 Energie je v tomto případě rovna počtu konstruktivních operací nutných k
@@ -2315,12 +2317,13 @@ vytvoření tohoto modelu. Energie také vyjadřuje v tomto případě počet
 destruktivních operacích nutných k smazání tohoto modelu. Pokud vytvoříme
 další model, můžeme si vyjádřit hodnotu změny těchto modelů. 
 
-Můžeme vytvořit model $M_2$ například tak, že z modelu $M_1$ odebereme z třídy A
-property "c", přejmenujeme property "d" na "g" a přejmenujeme třídu B na C. Tak
-získáme model Model $M_2$(Abg, Cef), který má podle
-rovnice \eqref{eq:energy_basic} energii rovnu hodnotě 6.
-Diff těchto dvou modelů byl zobrazen v sekci \ref{sec:migdb_diff} na ukázce
-\ref{migdb_diff:delta}.
+Model $M_1$ má podle
+rovnice \eqref{eq:energy_basic} energii rovnu hodnotě 7 viz výpočet
+\ref{eq:energy:example}.
+
+\begin{equation} 
+ E(M_1)= E(A) + E(B) = 1 + \sum_{p \in A}E(p) + 1 + \sum_{p
+\in B}(E(p)) = 1 + 3 + 1 + 2 = 7 \label{eq:energy:example} \end{equation}
 
 
 \subsection{Výpočet rozdílu}
@@ -2369,10 +2372,10 @@ E(C_{YX}) + E(P_{YX}) \label{eq:distance:extended}
 
 Na výpisu \ref{migdb_diff:delta} máme na levé straně zobrazenou
 $\Delta(M_1,M_2)$ a na pravé straně $\Delta(M_2,M_1)$ pro zadaný příklad. Pro
-naše konkrétní modely $M_1$ a $M_2$ je distance tedy:
+naše konkrétní modely $M_1$ a $M_2$ je distance tedy:\\
 
-$distance(M_1,M_2) = E(C_{12}) + E_{P_{12}} + E(C_{12}) + E_{P_{12}} = 1 + 3 +
-1 + 4 = 9$
+$distance(M_1,M_2) = E(C_{12}) + E(P_{12}) + E(C_{21}) + E(P_{21}) = 1 + 3 +
+1 + 4 = 9$\\
 
 Tento způsob vypočítávání Energie nicméně zanedbává energii, o kterou model
 obohacují atributy tříd a properties. Atributy properties a tříd dělíme do
@@ -2390,8 +2393,9 @@ dvěma. Například na změnu parent třídy musíme rodičovskou třídu nejdř
 odstranit operací RemoveParent a následně operací AddParent přidat
 referenci na novou rodičovskou třídu. Změna referenčních hodnot modelů je
 započítána dvakrát oproti změně hodnot primitivních atributů. Primitivní
-hodnoty je nutné do vzorce tedy započítat jen jednou. Původní vzorec pro
-vzdálenost dvou modelů se tedy změní na \eqref{eq:distance:attributes}.
+hodnoty je nutné do vzorce tedy započítat jen jednou. Proto jsou
+primitivní atributy vyčleněny z energie property. Původní vzorec pro vzdálenost
+dvou modelů se tedy změní na \eqref{eq:distance:attributes}.
 
 \begin{align} distance(M_X,M_Y) = & E(\Delta(M_X,M_Y)) + E(\Delta(M_Y, M_X)) =
 E(C_{XY}, P_{XY}) + E(C_{YX}, P_{YX}) + \nonumber \\ + & E(PRIM_{XY}) = 
@@ -2403,37 +2407,84 @@ Přičemž $E(PRIM_{XY})$ reprezentuje energii změněných primitivních atribu
 $\gamma$ reprezentuje množinu primitivních atributů splňující podmínku
  pro započítání atributů do energie viz \eqref{eq:condition}.
  Výpočet $E(PRIM_{XY})$ je zobrazen na rovnici
- \eqref{eq:energy:prim:attributes}
+ \eqref{eq:energy:prim:attributes}. Hodnota primitivního atributu $A_\gamma$ je
+ započítána do součtu \eqref{eq:energy:prim:attributes} pokud vlastník atributu
+ (property) není obsažen v modelu X či modelu Y nebo se hodnoty atributů v
+ modelech X a Y liší.
 
-\begin{equation}\gamma=A: (A.owner \notin M_{X} \vee A.owner \notin M_{Y})
-\vee A_{X} != A_{Y}\label{eq:condition}\end{equation}
+\begin{equation}\gamma=A: ((A.owner \notin M_{X} \vee A.owner \notin M_{Y})
+\vee A_{X} != A_{Y}) \wedge \ isPrimitive(A)  \label{eq:condition}\end{equation}
 
 \begin{equation}E(PRIM_{XY}) =
-\sum_{\gamma}\label{eq:energy:prim:attributes}\end{equation}
+\sum_{\gamma}1
+%A_\gamma 
+\label{eq:energy:prim:attributes}\end{equation}
 
 Pro rozšířený výpočet energie property $p_{XY} \in P_{XY}$ je zakomponována do
-vzorce energie referenčních properties:
-\begin{equation}E(p_{XY}) = 1 + \sum_{A \in p_X \wedge A_Y = null \vee A_Y !=
-A_X}E(REF_{XY}\label{eq:energy:prim:attributes:extended}\end{equation}
+vzorce energie referenčních properties viz vzorec
+\ref{eq:energy:ref:attributes}. Podmínka $\beta$ zajišťuje, že
+neprimitivní atribut je do energie property započítán, pokud má nastavenu
+hodnotu null v modelu Y nebo se jeho hodnoty v modelech X a Y nerovnají nebo
+vlastnická property atributu není v modelu Y.
+\begin{equation}\beta = A :
+A \in p_X \wedge \ (A_Y = null \ \vee \ A_Y != A_X \vee A_Y.owner \notin Y)\
+\wedge \ !isPrimitive(A) \end{equation} 
+
+\begin{equation}E(p_{XY}) = 1 + \sum_\beta
+ 1
+ %R_\beta
+ \label{eq:energy:ref:attributes}\end{equation}
 
 
 \subsection{Význam energie}
 
-Takto definovaný výpočet energie s položením $E(A) = 1$ udává maximální počet
-konstruktivních, destruktivních a modifikačních operací nutných k transformaci
-modelu $M_X$ na model $M_Y$.
+Výpočet energie definovaný podle vzorců \eqref{eq:distance:attributes} -
+\eqref{eq:energy:ref:attributes} udávají přesný počet konstruktivních
+destruktivních a modifikačních operací nutných k transformaci modelu $M_X$ na
+model $M_Y$. Pokud bude vzdálenost modelů $M_1 a M_2$
+rovna X, tak je možné pomocí X operací přejít z modelu $M_1 do modelu M_2$
 
-Některé operace 
+Výpočet definovaný na vzorci \eqref{eq:energy_basic} udává počet
+konstruktivních, destruktivních a modifikačních konstrukci operací nutných k
+vytvoření z prázdného modelu. Pokud bude mít energie hodnotu X, je zaručeno, že
+maximálně X operacemi je model zkonstruovatelný.
 
-Zlepšující krok operace je definován jako vzdálenost, o kterou se přiblíží
+Z toho vyplývá, že $E(M_1) = distance(EMPTY, M_1)$, přičemž EMPTY je prázdný
+model. Dále vzhledem k symetričnosti výpočtu vzdálenosti platí $distance(M_1,
+M_2) = distance(M_2, M_1)$. Při substituci $M_1 = EMPTY$ nám energie udává tedy
+počet operací nutných k odstranění modelu.
+
+Pro výpočty energie definované podle vzorců \eqref{eq:distance:attributes} -
+\eqref{eq:energy:ref:attributes} je energie přesný počet kostruktivních,
+destruktivních a modifikačních operací. V subsekci \ref{subsec:configurace} je
+zavedena konfigurace vah atributů. Po zavedení konfigurace vah atributů je
+energie horní hranicí minimálního počtu konstruktivních, destruktivních a
+modifikačních operací.
+
+\subsection{Zlepšující krok}
+Jak bylo řečeno, energie udává počet konstruktivních, destruktivních a
+modifikačních operací nutných k konstrukci či destruktci modelu a vzdálenost
+modelů $M_1 a M_2$ udává počet konstruktivních, destruktivních a
+modifikačních operací nutných k přechodu od modelu $M_1$ k modelu $M_2$.
+Vývojář může přiblížit model aplikací konstruktivních, destruktivních a
+modifikační operace mohou přiblížit model o 1 jednotku energie. Kromě
+konstruktivních, destruktivních a modifikačních operací existují i operace
+vyšší. Abychom určili efektivitu aplikace těchto operací, definujeme si tzv.
+zlepšující krok (improvement). V průběhu vývoje je možné aplikovat operaci ze
+stejné třídy s jinými parametry. Proto algoritmus hledá nejlepší zlepšující krok
+pro danou třídu operací viz řádek \ref{algo:state:improvement}. 
+
+ Zlepšující krok operace je definován jako vzdálenost, o kterou se přiblíží
 aktuální model A po aplikaci operace op k modelu cílovému T s nejlepšími
 možnými parametry. Nejlepší parametry jsou takové, které přibližují
 aktuální model o takovou vzdálenost, že neexistují parametry, které by zdrojový
 model přibližovaly k cílovému o vzdálenost větší. Není zaručena jedinečnost
 nejlepších parametrů. Při neexistenci jakýchkoliv vhodných parametrů
-vrací operace $-\infty$. Pro zlepšující krok getImprovement(op, A, T) platí:
+algoritmus vrátí pro operaci hodnotu $-\infty$. Pro zlepšující krok
+getImprovement(c_{op}, A, T) platí \eqref{eq:improvement}.
 
-$$distance(M_A, M_T) = distance(M_X, M_T) + getImprovement(op, A, T)$$
+\begin{equation}distance(M_A, M_T) = distance(M_X, M_T) + getImprovement(op, A,
+\label{eq:improvement}\end{equation}
 
 \subsection{Ilustrativní příklad běhu algoritmu}
 
@@ -2496,7 +2547,7 @@ ExtractClass a následně algoritmus skončí, protože po aplikaci se současn�
 model dostal do cílového stavu a již nerozpozná další operaci.
 
 
-\subsection{Konfigurace vah}
+\subsection{Konfigurace vah}\label{subsec:configurace}
 Stavový algoritmus dává stejnou váhu atributům jako třídám, což nemusí být
 správné. Aby algoritmus lépe splňoval požadavky uživatele, tj. priorizoval
 některé operace, je možné modifikovat výpočet energie a místo konstanty 1 v
@@ -3260,10 +3311,11 @@ databází a zkontrolovat, že se vytvořily správné databázové elementy.
 
 \subsection{Testy běhu celého frameworku}
 Testy funkčnosti celého frameworku jsou obsaženy ve workflow
-test\_code\_generator.mwe2. Vyhodnocení testů není automatické. Po proběhnutí
+test\_code\_generator.mwe2. Vyhodnocení testů je poloautomatické. Po proběhnutí
 celého workflow jsou pro každý případ užití vygenerovány soubory tvaru
 XXXb\_nazevTestu.sql, kde \uv{XXX} je prefix (číslo testu) a  \uv{b} je
-varianta.
+varianta. Proběhnutí testovacího případu v rámci workflow zaručuje pouze, že
+nenastala žádná chyba v rámci tohoto testovacího případu.
 V podsložce schema každého případu užití je potom soubor schema.sql. Dále jsou v
 projektu migdb.testing.run uloženy ve složce test\_data testovací data a ověřovací selecty k vygenerovaným složitějším případům užití manipulujícími s daty (prefixy 007-010).
 K otestování správné funkcionality je nutné mít nainstalovánu databázi

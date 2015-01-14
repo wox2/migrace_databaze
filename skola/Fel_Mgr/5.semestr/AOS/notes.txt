@@ -1,0 +1,205 @@
+client-server = aplikace je rozlisena na klienta a server
+stateless - bezestavovy, 
+layered system - 
+code on demand - server muze vratit kod, ktery klient muze vykonat
+uniform interface - rozhrani navrzene stejnym zpusobem
+
+Cachovani
+- dva pristupy - last modified Date nebo Hash Rest objektu
+
+
+
+popis komunikace LastModified
+	GET ->
+	<- return 200 Ok, LM 12.10. 2013
+	prodleni
+	GET IF MODIFIED SINCE 12.10.2013 ->
+	<- bud GETem nacashovana data(304) nebo vrati GET s novym LM (200)
+
+Etag - vraci popis objektu, u kolekci pocet objektu
+popis komunikace Hash 
+	GET ->
+	<- 200 OK, Etag AABB
+	GET IF N M ->
+	<- bud cashovana data nebo nova data s novym tagem
+
+
+client1 A2 - > zmenim na A3
+client2 A2 -> zmenim na B2 - prvni zmena je ztracena, protoze client2 udelal zmenu pozdeji
+
+
+
+cviceni 24.10.
+gson je pry jednodussi
+
+
+
+
+Prednaska Karel Cemus
+Jednou z vyhod softwarove orientovane architektury
+
+Cviko Karel
+REST(Arch. styl) vs RPC(Corba - impl. nezav. na platforme) 
+RPC definuje metody REST zdroje - data
+SOAP - protokol apl. vrstvy zalozeny na prenosu zprav 
+
+SOAP
+- Simple Object Access protocol.
+- se chova ke vsemu jako k objektu
+
+TOP DOWN - (kontrakt - pak implementace) pouziti mezi firmami, cistsi navrh rozhrani, vyssi stabilita
+BOTTOM UP - (implementace - pak kontrakt) hur citelny/kvalitni kod kontraktu, min pravdepodobneji udelam chybu(kontrola typu)
+
+
+Semestralka
+ws PrintService
+client centr banka
+
+RPC vs SOAP
+- vetsinou SOAP textovy, RPC binarni
+- SOAP - pevny kontrakt
+- SOAP - se chova ke vsemu jako k objektu
+
+REST vs SOAP
+- REST je sada pravidel(architektura), SOAP protokol
+- REST - kazdej zdroj ma svoji jednoznacne definovanou URI, operace specifikovane nad protokolem (typ. HTTP)
+
+
+WSDL
+- Web service definition language
+- popisuje format zprav
+
+JAX-WS
+- standard v Jave
+
+
+Prenos souboru
+-------------------------------------------------------------------------------------------
+Base 64 
+- pole znaku
+
+Octet-stream
+ - obecne oznaceni pro binarni data
+ - DataHandler - je nutne pouzit MTOM optimalizaci
+ - 
+
+impl notes
+server 
+.getBinding + .setMTOMEnabled(true) client MTOM anotace
+
+pri nasazovani na JBoss
+-zmenit scope provided u zavislosti
+
+
+
+--------------------------------------------------------------------------------------------
+
+Oauth - Lubos
+---------------
+OpenID 
+
+
+Sifrovani
+---------------
+- asym. sifra - lepsi nez symetricka, ale vypocetne narocnejsi
+- https - asymetricky se posle klic pro symetrickou sifru
+- Point-to-Point zabezpeceni mezi jednotlivymi uzly, proxy muze presifrovat, je nutne sifrovat primo data pro end-to-end
+
+JAX-WS
+- bezpecnostni politika
+- namespacy
+- nejsou tutorialy ani jednoducha dokumentace... je jich hodne, koliznich
+
+server keystore - Beans.xml
+client - filtry, programove
+
+point to point
+   od uzlu k uzlu 
+
+end to end
+   od konce ke konci
+
+HTTPS
+  - zabezpeceni point to point... pres proxy se neda zabezpecit
+
+Enterprise service Bus
+ - sbernice, sluzby
+ - tok zprav
+ - fronta - zaruceni, ze se zpravy neztratej(nezarucuje jejich zpracovani/doruceni)
+ - enterprise - 
+ - orchestrace - spoluprace systemu pomoci popisu procesu, ESB ma workflow, popis procesu, dostane zpravu s jejim popisem a odesle ji podle popisu procesu
+
+REST
+- bezestavovost 
+- vrstevnaty (layered) - z hlediska site, mezi pocatecnim a koncovym bodem bude libovolny pocet prostredniku
+- single entry point
+- cachovani
+- uniform interface
+- client, server
+- bezpecnost - point to point, end to end ziskame  
+
+
+SOAP
+- protokol
+- zameren na operace, nezavisly na platforme
+- posilani zpravy popsane kontraktem v WSDL
+- 
+
+Skalovani
+- rozkladani zateze
+
+Cachovani
+- ukladani dat
+- usetreni sitove komunikace
+
+sifrovani
+- zabezpeceni dat proti precteni
+
+Pohadka o sedmi chodech
+1) problemy
+  a) - problem - uprava standardu - nemusi to podporovat knihovny
+  b) - prime ovlivnovani db - problem se synchronizaci
+  c) - posilani data pres GET v QS (GET )
+  d) - neoptimalni posilat Javascript 
+  e) - nevhodny SOAP API - vypada jako REST
+  f) - data v XML a v tom pribalenej JSON
+  g) - zvlastni prihlasovani
+  h) - servlet api - jedna URL
+  i) - spolecna db
+2) a1) client QS - zmenit na REST - akce zdroje - posilam JSON v Postu, akce soucast URL,
+klient nevraci JS, vracime JSON
+
+   a2) agregace pozadavku - akce -> tam , pak get <- zpet
+        - pokud je stranka AJAXova, tak rozdelit
+        - pokud nejsem schopen cashovat data od klienta, nedelam to tak
+   a3) posilani appkey - klice identifikujici eshop v v contentu, v hlavicce ci v URL, URL - /id/akce ci hlavicce je nejlepsi
+   
+   c,d, h upraveno
+------------------------------------
+uprava standardu - zavrhnout
+   upraveno a
+--------------------------------
+ze SOAP API udelame REST
+   - autentizace BASIC
+   - zdroje - podobne jako predtim, username passwd v hlavicce, 
+   - zabezpeceni pres https - certifikat na serveru jiste... na klientovi zalezi, kdo se muze k serveru 
+
+-------------------------------------
+rodzdeleni db na dve
+
+
+--------------------------------------
+prime ovlivnovani db - odstranime UI server - tlusty klient
+
+
+3) zvyseni vykonu
+   - load balancer
+   - cachovani (statistiky)
+   - rozdeleni GETu a POSTu na dva servery
+
+4) emailing
+   - server posilajici maily
+   - pripojime k CORE...
+
+5) statistiky
+   - asynchronni pozadavek, vhozen do fronty

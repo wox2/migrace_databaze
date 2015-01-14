@@ -1,5 +1,5 @@
 #TeXlipse project settings
-#Wed Oct 08 06:59:34 CEST 2014
+#Sun Jan 04 18:53:49 CET 2015
 markTmpDer=true
 builderNum=2
 outputDir=
@@ -8,7 +8,7 @@ bibrefDir=
 outputFormat=pdf
 tempDir=tmp
 mainTexFile=Hron-thesis-2009.tex
-outputFile=diplomka.pdf
+outputFile=lukesma4-dip.pdf
 langSpell=cs
 markDer=true
 srcDir=

@@ -1,0 +1,198 @@
+Service-oriented architecture 
+- set of design principles used during the phases 
+             of systems development and integration
+- provides a loosely integrated suite of services that 
+            can be used within multiple business domains
+- defines how to integrate widely disparate (ruznorodych) 
+            applications for a world that is distributed 
+            and uses multiple implementation platforms
+- defines the interface in terms of protocols and 
+            functionality
+- requires loose coupling of services with operating 
+            systems, and other technologies that underlie 
+            applications
+- separates functions into distinct units, or services, 
+            which developets make accessible over a network
+
+
+Services
+ - way to communicaty with well defined format
+ - units of functionality
+ - each service implements one action
+ - defined protocols - descibed by description metadata
+ - allow user to combine and reuse them
+
+service principles
+ - service encapsulation - many services are consolidated 
+      for use under SOA, often services not planned to be 
+      under SOA
+ - service loose coupling - services maintain a relationship 
+      that minimizes dependencies and only requires that 
+      they maintain an awareness of each other
+ - service contract - services adhere to a communications 
+       agreement, as defined collectively by one or more 
+       service-description documents
+ - service abstraction - beyond descriptions in the service 
+      contract, services hide logic from outside the world
+ - services reusability - logic is divided into services 
+       with intention of promoting reuse
+ - service composability - collections of services can be 
+       coordinated and assembled to form composite service
+ - service autonomy - services have control over the logic 
+       they encapsulate
+
+
+   RPC
+= Inter-process communication allowing a program to execute 
+  subroutine in another address space without the need of 
+  explicitly coding this remote interaction
+- RPC is initiated by client that is blocked until 
+    server responses
+- Can fail because of unpredictable network conditions
+- idempotent request
+- Programmer writes essentially the same code whether 
+   the subroutine is local or remote
+    
+0. The client calls the client stub. The call is a local 
+   procedure call, with parameters pushed on to the stack 
+   in the normal way.
+1. The client stub packs the parameters into a message and 
+   makes a system call to send the message. Packing the 
+   parameters is called marshalling.
+2. The client's local operating system sends the message 
+   from the client machine to the server machine.
+3. The local operating system on the server machine passes 
+   the incoming packets to the server stub.
+4. The server stub unpacks the parameters from the message. 
+   Unpacking the parameters is called unmarshalling.
+5. Finally, the server stub calls the server procedure. The 
+   reply traces the same steps in the reverse direction.
+6. packing response...
+
+   
+CORBA
+ - enables sw components written in multiple computer 
+    languages, running on multiple computers to work together
+ - includes data typing, exceptions, network protocols, 
+    communication
+ - Does not address: object lifetimes, redundancy, 
+     naming/models semantics, memory management, 
+     load balancing, etc.
+     
+DCOM
+  - COM based implementation of RPC
+  - proprietary Microsoft technology for communication among SW components distributed across networked computers
+  - solved problems
+        - Marshallings
+        - distributed garbage collecting
+        - agregating hundreds of references held by clients 
+            results into single PING function
+
+HTTP
+  - network protocol for distributed, collaborative, hypermedia
+      information systems
+  - application layer request-response protocol in the client-server 
+      computing model
+  - Request methods
+       HEAD - similar to get but without response body
+       GET - requests a representation of the specific resource
+       POST - submits data to be processed to identified resource
+       PUT... 
+           
+XML
+  - set of rules for encoding documents in machine readable form
+  - textual data format with focus on documents
+  - widely used for interface data definitions
+  - use tags, elements, attributes 
+  - defined by schemas - DTD or XML Schema Definition 
+  
+UDDI
+  - platforme nezavisly XML registr WS pro podporu businessu     
+  - provider se zaregistruje do UDDI registru, klient zada dotaz a UDDI 
+       a najde si info o servicu...
+  - yellow pages
+  - white pages
+  - green pages   
+
+WSDL Web service description language
+  - XML based language that provides a model for describing web services
+  - defines services as collections of network endpoints, or ports associating a network address with a reusable bindings
+  - describes the public interface to the web service
+  - used in combination of SOAP and XML schema to provide web services over the Internet
+
+REST - Representational state transfer
+   - style of SW architecture for distributed hypermedia such as WWW
+   - Roy Fielding, principal author of HTTP 1.0 and 1.1
+   - conforming to the rest constraints is referred to as being RESTful
+
+   Rest architecture
+     - clients and servers
+     - client initiate requests
+     - servers process requests and return appropriate responses
+     - at any particular time client can either be in transition between application states or "at rest" (is able to interact with its user, but creates no load and consumes no per-client storage on the set of servers or on the network)
+     - initially described in the context of HTTP, but it is not limited to
+     - RESTful architectures can be based on other Application Layer protocols
+     - utilize preexisting defined interface and other build-in capabilities provided by the network protocol (minimize the addition of new application specific features on top of it)
+     
+    Rest Constraints
+      - client server - uniform interface, separation of concept, easy replacability, independent development
+      - stateless - server si nepamaruje context clienta, ten je zachycen jen na klientovi, pozadavky obsahuji vsechny potrebne informace k jejich zpracovani na danem zdroji, vyhoda - je to cachovatelne, lehci obnova z partial failure,  nevyhoda - opakovani pozadavku
+      - cachable - cachovatelna data na klientovi - snizuje se komunikace po siti, odstranuje se nevyhoda s opakovanymi pozadavky
+      - layered system
+      - uniform interface
+      - code on demand (optional) - stazeni a spusteni scriptu nebo apletu
+
+   Uniform Interface[edit]
+The uniform interface constraint is fundamental to the design of any REST service.[11] The uniform interface simplifies and decouples the architecture, which enables each part to evolve independently. The four guiding principles of this interface are:
+
+   Identification of resources
+Individual resources are identified in requests, for example using URIs in web-based REST systems. The resources themselves are conceptually separate from the representations that are returned to the client. For example, the server does not send its database, but rather, perhaps, some HTML, XML or JSON that represents some database records expressed, for instance, in Swahili and encoded in UTF-8, depending on the details of the request and the server implementation.
+
+    Manipulation of resources through these representations
+When a client holds a representation of a resource, including any metadata attached, it has enough information to modify or delete the resource on the server should it have permission to do so.
+
+     Self-descriptive messages
+Each message includes enough information to describe how to process the message. For example, which parser to invoke may be specified by an Internet media type (previously known as a MIME type). Responses also explicitly indicate their cacheability.[1]
+
+      Hypermedia as the engine of application state (A.K.A. HATEOAS)
+Clients make state transitions only through actions that are dynamically identified within hypermedia by the server (e.g., by hyperlinks within hypertext). Except for simple fixed entry points to the application, a client does not assume that any particular action is available for any particular resources beyond those described in representations previously received from the server
+
+SOAP
+   - protokol pro vymenu strukturovanych informaci pres WS
+   - format zprav - XML
+   - vyuziva jine protokoly aplikacni vrstvy
+   - puvodne navrzen jako object-access protokol
+   - zalozen na WSDL a UDDI 
+
+
+Restful WS
+    - primary purpose is to manipulate representations of Web resources
+    - uniform set of "stateless" operations
+    - PUT, GET, POST
+
+
+Orchestration - executable process, koordinace udalosti v procesu
+Choreography - sekvence zprav, spoluprace vice stran, popsano pomoci WS-CDL, 
+     rozsireni WSDL
+
+
+MVC trvanlivost
+  V - 1 rok
+  C - 2-5 let
+  M - 10 + let
+
+Mashup 
+  - je webova aplikace nebo sluzba vznikla kombinaci dat, funkcionality 
+        nebo prezentace z vice zdroju
+
+  business - kombinace aplikaci
+  consumer - kombinace dat vice typu
+  data - kombinace dat z vice zdroju
+  
+OWL
+   - Web Ontology Language
+   - je to kolekce jazykù pro reprezentaci znalostí
+   - je charakteristický formální sémantinkou RDF/XML-based serializací 
+       pro Sémantický web  
+  
+  

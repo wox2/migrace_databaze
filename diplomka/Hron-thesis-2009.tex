@@ -244,7 +244,7 @@ myšlenkou, která vedla k vytvoření Migdb týmu.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%    Abstract 
- 
+ l
 \abstractpage
 \noindent 
 This work is concerned with specifying the contract and implement the transformation changes 
@@ -2442,7 +2442,7 @@ Výpočet energie definovaný podle vzorců \eqref{eq:distance:attributes} -
 \eqref{eq:energy:ref:attributes} udávají přesný počet konstruktivních
 destruktivních a modifikačních operací nutných k transformaci modelu $M_X$ na
 model $M_Y$. Pokud bude vzdálenost modelů $M_1 a M_2$
-rovna X, tak je možné pomocí X operací přejít z modelu $M_1 do modelu M_2$
+rovna X, tak je možné pomocí X operací přejít z modelu $M_1$ do modelu $M_2$
 
 Výpočet definovaný na vzorci \eqref{eq:energy_basic} udává počet
 konstruktivních, destruktivních a modifikačních konstrukci operací nutných k
@@ -2475,8 +2475,8 @@ $M_T$ je cílový model a op je aplikační operaci, po jejíž aplikaci je mode
 $M_S$ transformován do modelu $M_X$. Potom zlepšující krok je rozdíl vzdáleností
 distance $(M_A, M_T)$ - distance$(M_X, M_T)$ viz \eqref{eq:improvement}.
 
-\begin{equation}distance(M_A, M_T)-distance(M_X, M_T) =  + getImprovement(op,
-M_A),
+\begin{equation}
+getImprovement(op, M_A) = distance(M_A, M_T) - distance(M_X, M_T)
 \label{eq:improvement}\end{equation}
 
 
@@ -3484,9 +3484,9 @@ implementaci modulu mapování jmen popsanou v sekci
 
 
 \section{Shrnutí}
-Framework Migdb je otestovaný a připravený k nasazení.
+Framework Migdb je otestovaný a téměř připravený k nasazení.
 Aplikační a databázový metamodel jsou dobře definované. Transformace jsou dobře
-definované, snadno otestovatelné, lépe rozšiřitelnější než kdy byly.Myslím si,
+definované, snadno otestovatelné, lépe rozšiřitelnější než kdy byly. Myslím si,
 že jsem dosáhl výsledků, které jsem si na začátku psaní této diplomové práce dal. 
 %\section{Další poznámky}
 %\subsection{České uvozovky}
@@ -3527,30 +3527,19 @@ definované, snadno otestovatelné, lépe rozšiřitelnější než kdy byly.Mys
 % Máte-li ale větší množství podobných diagramů popisujících systém, není nutné všechny umísťovat do hlavního textu, zvláště pokud by to snižovalo jeho čitelnost.}
 
 %*****************************************************************************
-\chapter{Instalační a uživatelská příručka}\label{chapt:manual}
-\textbf{\large Tato příloha velmi žádoucí zejména u softwarových implementačních prací.}
-
 %*****************************************************************************
 \chapter{Obsah přiloženého CD}\label{chapt:obsah_cd}
-\textbf{\large Tato příloha je povinná pro každou práci. Každá práce musí totiž obsahovat přiložené CD. Viz dále.}
-
-Může vypadat například takto. Váš seznam samozřejmě bude odpovídat typu vaší práce. 
-
+Na obrázku \ref{fig:CD_content} jsou zobrazeny nejdůležitější části CD s
+popisem.
 \begin{figure}[H]
 \begin{center}
-\includegraphics[width=14cm]{figures/seznamcd}
-\caption{Seznam přiloženého CD --- příklad}
-\label{fig:seznamcd}
+\includegraphics[width=15cm]{figures/obsah_cd}
+\caption{Obsah CD}
+\label{fig:CD_content}
 \end{center}
 \end{figure}
+\FloatBarrier
 
-Na GNU/Linuxu si strukturu přiloženého CD můžete snadno vyrobit příkazem:\\ 
-\verb|$ tree . >tree.txt|\\
-Ve vzniklém souboru pak stačí pouze doplnit komentáře.
-
-Z \textbf{README.TXT} (případne index.html apod.)  musí být rovněž zřejmé, jak programy instalovat, spouštět a jaké požadavky mají tyto programy na hardware.
-
-Adresář \textbf{text}  musí obsahovat soubor s vlastním textem práce v PDF nebo PS formátu, který bude později použit pro prezentaci diplomové práce na WWW.
  \bibliographystyle{alpha}
 \bibliography{reference}
 

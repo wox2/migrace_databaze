@@ -2397,9 +2397,10 @@ hodnoty je nutné do vzorce tedy započítat jen jednou. Proto jsou
 primitivní atributy vyčleněny z energie property. Původní vzorec pro vzdálenost
 dvou modelů se tedy změní na \eqref{eq:distance:attributes}.
 
-\begin{align} distance(M_X,M_Y) = & E(\Delta(M_X,M_Y)) + E(\Delta(M_Y, M_X)) =
-E(C_{XY}, P_{XY}) + E(C_{YX}, P_{YX}) + \nonumber \\ + & E(PRIM_{XY}) = 
-E(C_{XY}) + E(P_{XY}) + E(C_{YX}) + E(P_{YX}) + \nonumber \\ + & E(PRIM_{XY})
+\begin{align} distance(M_X,M_Y) = & \ E(\Delta(M_X,M_Y)) + E(\Delta(M_Y, M_X)) =
+\nonumber \\ = & \ E(C_{XY}, P_{XY}) + E(C_{YX}, P_{YX}) + E(PRIM_{XY}) =
+\nonumber \\ = & \ E(C_{XY}) + E(P_{XY}) + E(C_{YX}) + E(P_{YX}) + \nonumber \\
++ &\ E(PRIM_{XY})
 \label{eq:distance:attributes}
 \end{align}
 

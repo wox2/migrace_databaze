@@ -1,0 +1,47 @@
+1
+Vážená komise, vážený předsedo, dovolte mi představit se a prezentovat tu výsledky práce na mé diplomové práci. Jmenuji se Martin Lukeš a téma mé diplomové práce je Dokončení projektu Migdb.
+
+2
+Projekt Migdb je studentský projekt, který se zabývá transformací změn apliačního modelu na změny modelu databázového a následné vygenerování SQL kódu. V rámci tohoto projektu bylo využito paradigma Model Driven Architecture. V roce 2012 byl projekt prezentován v britské Cambridge na konferenci Code Generation.
+
+3
+Na začátku práce na své diplomové práci jsem si stanovil dva cíle. Prvním cílem je Dokončení frameworku Migdb. Druhým cílem je potom Prozkoumání tématu Rozpoznávání operací.
+
+4
+Framework Migdb je složen z několika modulů. Prvními dvěma moduly jsou aplikační a databázový metamodel. Metamodel je struktura popisující model stejným způsobem jako model popisuje svoji instanci. Aplikační metamodel reprezentující strukturu entit v aplikaci. Aplikační metamodel obsahuje elementy jako je třída a Property a také seznam aplikačních operací. Databázový metamodel reprezentuje strukturu databáze, obsahuje tedy elementy jako je tabulka a sloupec a také seznam databázových operací. Dalšími dvěma moduly jsou modul Aplikační a Databázové Evoluce. Evoluce znamená v rámci Migdb aplikace dané aplikační (databázové) operace na model stejného typu v případě, že jsou splněny dané validační podmínky. Dalšími dvěma moduly jsou modul Objektově Relačního Mapování, který transformuje strukturu aplikace na strukturu databáze a modul Objektově Relačního Mapování operací transformující aplikační změny na změny databázové. Posledním význačným modulem je modul generátorů SQL kódu z databázových operací a z databázové struktury.
+
+5
+V rámci dokončení frameworku bylo nutné splnit několik úkolů. Téměř všechny tyto úkoly jsou implementačního rázu. Nejdůležitějšími z nich je úprava metamodelů, implementace ORM aplikačních operací. Otestování nové i staré funkcionality. A posledním úkolem byla úprava-implementace generátorů kódu. Tato implementační část čítala implementaci několika tisíc řádků a testování několik desítek až stovek testovacích případů užití.
+
+6
+Druhým cílem mé diplomové práce je rozpoznávání operací. Rozpoznávání operací je definované pro dva vstupní aplikační modely. Jeden nazveme zdrojovým modelem S a druhý cílovým modelem T. Výstupem rozpoznávacího algoritmu je potom sekvence operací Operations, jejichž aplikace transformuje zdrojový model S na cílový model T. Mým cílem bylo plně automatizovat tento proces. Nynější algoritmy jsou poloautomatické. Druhého kritéria, ke kterému by se měl každý rozpoznávací algoritmus přiblížit je maximální uchování dat.
+
+7
+V rámci cíle rozpoznávání operací jsem zpracoval tyto úkoly: Rešerše článků na téma Graf matching a model Matching. Popis a implementace dvou experimentálních algoritmů - Stavovým a Párovacím. Definice Energie modelu a vzdálenost modelu používané Stavovým rozpoznávacím algoritmem. A definice Diff metamodelu používaného druhým, párovacím algoritmem.
+
+8
+Vzdálenost modelů S a T je skalární hodnota, která udává maximální počet operací, pomocí kterých je možné transformovat model S na model T. Energie modelu je definována pomocí vzdálenosti jako vzdálenost modelu M od prázdného modelu a obráceně vzdálenost prázdného modelu od modelu M. Energii je možné si tedy představit jako maximální počet operací, které jsou nutné k zničení nebo vytvoření modelu.
+
+9
+Stavový algoritmus je algoritmus založený na minimalizaci vzdálenosti dvou modelů. Algoritmus najde v každé iteraci pro každou třídu operací nejvyšší hodnotu energie, o kterou aplikace instance dané třídy přibližuje model aktuální modelu cílovému. Nejvýhodnější operace je následně aplikována.
+
+10
+Pro ilustraci jsem na tomto pristupu bych zde chtel ukazat základní vzorec pro spočítání energie. Tento vzorec spočítá energii jako součet tříd a properties v těchto třídách. Algoritmus s tako definovanou energií a ekvivalentně definovanou vzdáleností je schopen rozpoznat strukturální operace.
+
+11
+Na tomto slidu bych chtěl ukázat část vzorce pro výpočet vzdálenosti dvou modelů. Nebudu ji zde popisovat, jen upozorním na výraz E(PRIM_XY), který zajišťuje konzistenci mezi výpočtem energie primtivních atributů. Tento vzorec nám dovoluje rozpoznat všechny námi definované operace. Tento vzorec dále umožňuje pomocí nastavení vah jednotlivých atributů personalizovat algoritmus rozpoznávání.
+
+12
+Druhým rozpoznávacím algoritmem, který jsem implementoval je algoritmus párovací. Tento algoritmus je inspirován článkem Alberta Cincettiho o model Matchingu. Tento algoritmus v první fázi páruje entity podle shodnosti identifikátorů a v druhé podle podobnosti.
+
+13
+Standardní algoritmy párují 1 entitu ze zdrojového modelu s 1 entitou z modelu cílového. Můj párovací algoritmus páruje párováním typu N x M a díky tomu dokáže rozpoznat i jiné operace než operace AddClass, AddProperty, RemoveClass, RemoveProperty.
+
+14
+Pokud porovnáme párovací a stavový algoritmus, zjistíme, že párovací algoritmus je efektivnější. Stavový algoritmus je paralelizovatelnější. Stavový algoritmus je personalizovatelny. Stavový algoritmus dokáže řešit víc instancí úlohy, je složitější na implementaci, definici energie, ...
+Párovací algoritmus má problémy s rozpoznáním operace RenameClass a RenameProperty, obzvláště RenameClass je problematická operace, protože přejmenované třídy tvoří stejně jako třídy se shodnými identifikátory etalon pro algoritmus.
+
+15
+Teď bych jen shrnul nejdůležitější body mé diplomové práce. Implementoval jsem dva experimentální rozpoznávací algoritmy. Doimplementoval jsem ORM operací. Otestoval jsem starou i nově přidanou funkcionalitu. Definoval jsem Energii a Vzdálenost modelů a jejich význam.
+
+

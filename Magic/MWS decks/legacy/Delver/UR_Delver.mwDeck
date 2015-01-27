@@ -1,0 +1,36 @@
+// Deck file for Magic Workstation (http://www.magicworkstation.com)
+
+// Lands
+    4 [ON] Flooded Strand
+    2 [U] Island (3)
+    4 [ZEN] Scalding Tarn
+    4 [B] Volcanic Island
+    4 [TE] Wasteland
+
+// Creatures
+    4 [ISD] Delver of Secrets/Insectile Aberration
+    1 [TO] Grim Lavamancer
+    4 [KTK] Monastery Swiftspear
+    4 [M14] Young Pyromancer
+
+// Spells
+    4 [IA] Brainstorm
+    4 [NE] Daze
+    4 [AL] Force of Will
+    2 [ROE] Forked Bolt
+    3 [NPH] Gitaxian Probe
+    4 [U] Lightning Bolt
+    4 [LRW] Ponder
+    4 [KTK] Treasure Cruise
+
+// Sideboard
+SB: 2 [8E] Blood Moon
+SB: 1 [CMD] Flusterstorm
+SB: 2 [DKA] Grafdigger's Cage
+SB: 1 [IN] Mountain (2)
+SB: 1 [10E] Pithing Needle
+SB: 1 [EX] Price of Progress
+SB: 2 [IA] Pyroblast
+SB: 1 [R] Red Elemental Blast
+SB: 2 [SHM] Smash to Smithereens
+SB: 2 [SC] Sulfuric Vortex

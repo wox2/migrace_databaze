@@ -1,0 +1,36 @@
+// Deck file for Magic Workstation (http://www.magicworkstation.com)
+
+// Lands
+    1 [US] Island (2)
+    4 [ZEN] Scalding Tarn
+    4 [B] Tundra
+    4 [B] Volcanic Island
+    4 [ON] Flooded Strand
+    1 [US] Plains (2)
+    2 [ON] Polluted Delta
+
+// Creatures
+    4 [SHM] Painter's Servant
+    3 [WWK] Stoneforge Mystic
+
+// Spells
+    4 [5E] Brainstorm
+    4 [AL] Force of Will
+    3 [TE] Grindstone
+    4 [TE] Lotus Petal
+    4 [LRW] Ponder
+    2 [5E] Pyroblast
+    4 [IA] Swords to Plowshares
+    1 [B] Red Elemental Blast
+    4 [KTK] Treasure Cruise
+    1 [NPH] Batterskull
+    2 [ZEN] Spell Pierce
+
+// Sideboard
+SB: 2 [5E] Pyroblast
+SB: 1 [B] Red Elemental Blast
+SB: 1 [NPH] Batterskull
+SB: 3 [IA] Hydroblast
+SB: 1 [WWK] Stoneforge Mystic
+SB: 3 [RTR] Rest in Peace
+SB: 3 [DGM] Wear/Tear

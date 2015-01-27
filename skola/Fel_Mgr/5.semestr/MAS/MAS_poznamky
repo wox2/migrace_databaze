@@ -1,0 +1,10 @@
+- solving difficult  problems
+- for example decentralised, distributed CSPs
+- game theory, social choice, voting, economy
+- coordination betweens agents - simple coordination
+
+conditions - 
+3 programming assignments
+   - 1. (2 weaks) reactive agents    MASIM
+   - 2. game theory (formalise and solve extension for game)  CPLEX
+   - 3. implment algorithm for decentralised optimisation MASIM
